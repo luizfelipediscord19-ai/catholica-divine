@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, CardGrid, ContentCard, Prose, Pullquote } from "../components/PageShell";
 import { ReadingMode, FnRef } from "../components/ReadingMode";
 import { VersiculoDoDia } from "../components/VersiculoDoDia";
+import { MapaAnoLiturgico } from "../components/MapaAnoLiturgico";
 
 export const Route = createFileRoute("/calendario-liturgico")({
   head: () => ({
