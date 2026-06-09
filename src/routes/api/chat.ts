@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { convertToModelMessages, streamText, type UIMessage } from "ai";
-import { createLovableAiGatewayProvider } from "@/lib/ai-gateway.server";
+import { groq } from "@ai-sdk/groq";
 
 const SYSTEM_PROMPT = `Você é Sophia, assistente de teologia católica do Portal Católico, em português do Brasil.
 
@@ -26,15 +26,14 @@ export const Route = createFileRoute("/api/chat")({
           return new Response("Messages are required", { status: 400 });
         }
 
-        const key = process.env.LOVABLE_API_KEY;
+        const key = process.env.GROQ_API_KEY;
         if (!key) {
-          return new Response("Missing LOVABLE_API_KEY", { status: 500 });
+          return new Response("Missing GROQ_API_KEY", { status: 500 });
         }
 
         try {
-          const gateway = createLovableAiGatewayProvider(key);
           const result = streamText({
-            model: gateway("google/gemini-3-flash-preview"),
+            model: groq("llama-3.3-70b-versatile"),
             system: SYSTEM_PROMPT,
             messages: await convertToModelMessages(messages as UIMessage[]),
           });
