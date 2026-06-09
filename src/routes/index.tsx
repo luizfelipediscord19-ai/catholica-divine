@@ -226,30 +226,40 @@ function Home() {
       </section>
 
       {/* Editorial split */}
-      <section className="bg-card border-y border-gold/20">
-        <div className="max-w-6xl mx-auto px-6 py-20 md:py-28 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div
-            className="aspect-[4/5] bg-cover bg-center border border-gold/30"
-            style={{ backgroundImage: `url(${maria})` }}
-          />
-          <div>
-            <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-4">Maria, Mater Ecclesiae</p>
-            <h2 className="font-display text-5xl md:text-7xl text-foreground leading-[0.9] tracking-tight">
-              “Faça-se em mim <br/> <span className="text-gold">segundo a tua palavra.</span>”
+      <section className="bg-muted/30 relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+        <div className="max-w-7xl mx-auto px-8 py-32 md:py-48 grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+          <div className="relative animate-reveal">
+            <div className="absolute -inset-4 border border-gold/10 -z-10 translate-x-4 translate-y-4" />
+            <div
+              className="aspect-[4/5] bg-cover bg-center grayscale hover:grayscale-0 transition-all duration-1000 shadow-[0_30px_60px_rgba(0,0,0,0.5)]"
+              style={{ backgroundImage: `url(${maria})` }}
+            />
+            <div className="absolute bottom-8 right-8 bg-background/80 backdrop-blur-md px-6 py-4 border border-gold/20">
+              <p className="text-[9px] tracking-[0.4em] uppercase text-gold">Regina Caeli</p>
+            </div>
+          </div>
+          <div className="animate-reveal stagger-1">
+            <p className="text-[10px] tracking-[0.4em] uppercase text-gold mb-6 flex items-center gap-4">
+              <span className="h-px w-6 bg-gold/40" /> Maria, Mater Ecclesiae
+            </p>
+            <h2 className="font-display text-6xl md:text-8xl text-foreground leading-[0.9] tracking-tight mb-8">
+              “Faça-se em mim <br/> <span className="text-gold italic">segundo a tua palavra.</span>”
             </h2>
-            <p className="mt-6 text-base text-muted-foreground leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed font-light mb-12 max-w-lg">
               A Virgem Maria é o caminho mais seguro a Cristo. Conheça os dogmas marianos,
-              as aparições aprovadas pela Igreja, as ladainhas, o Rosário e a teologia da
-              Mãe de Deus segundo os Padres e Doutores.
+              as aparições aprovadas pela Igreja e a teologia da Mãe de Deus segundo os Padres e Doutores.
             </p>
             <Link
               to="/maria"
-              className="inline-block mt-10 px-10 py-5 border border-gold/30 text-gold text-[10px] uppercase tracking-[0.4em] font-bold hover:bg-gold hover:text-deep transition-smooth hover:scale-105"
+              className="group inline-flex items-center gap-4 px-10 py-5 border border-gold/30 text-gold text-[10px] uppercase tracking-[0.4em] font-bold hover:bg-gold hover:text-deep transition-premium"
             >
-              Estudar Mariologia
+              <span>Estudar Mariologia</span>
+              <span className="group-hover:translate-x-2 transition-transform">→</span>
             </Link>
           </div>
         </div>
+        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
       </section>
 
       {/* AI feature */}
