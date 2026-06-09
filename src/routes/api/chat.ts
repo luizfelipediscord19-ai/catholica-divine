@@ -206,9 +206,9 @@ const chatSchema = z.object({
   messages: z.array(z.object({
     id: z.string().optional(),
     role: z.enum(["user", "assistant", "system"]),
-    parts: z.array(z.looseObject({
+    parts: z.array(z.object({
       type: z.string(),
-    })).min(1),
+    }).passthrough()).min(1),
   })).min(1).max(100),
 });
 
