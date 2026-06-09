@@ -80,3 +80,42 @@ export function ContentCard({
     </article>
   );
 }
+
+export function Prose({ children }: { children: ReactNode }) {
+  return (
+    <div className="prose-deep max-w-3xl mx-auto text-foreground/85 leading-[1.85] text-[15px] md:text-base font-light space-y-5 [&>h3]:font-display [&>h3]:text-2xl [&>h3]:text-foreground [&>h3]:mt-10 [&>h3]:mb-3 [&>h4]:uppercase [&>h4]:tracking-[0.18em] [&>h4]:text-[11px] [&>h4]:text-gold [&>h4]:mt-8 [&>h4]:mb-2 [&>blockquote]:border-l-2 [&>blockquote]:border-gold/60 [&>blockquote]:pl-5 [&>blockquote]:italic [&>blockquote]:text-foreground/75 [&>ul]:list-disc [&>ul]:pl-6 [&>ul]:space-y-1 [&>ol]:list-decimal [&>ol]:pl-6 [&>ol]:space-y-1 [&_strong]:text-foreground [&_em]:text-foreground/90">
+      {children}
+    </div>
+  );
+}
+
+export function Sources({ items }: { items: { label: string; ref: string }[] }) {
+  return (
+    <aside className="max-w-3xl mx-auto mt-12 border-t border-gold/20 pt-6">
+      <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-4">Fontes consultadas</p>
+      <ol className="space-y-2 text-xs text-muted-foreground leading-relaxed list-decimal pl-5">
+        {items.map((s) => (
+          <li key={s.label}>
+            <span className="text-foreground/80">{s.label}</span>
+            {s.ref ? <span className="text-muted-foreground"> — {s.ref}</span> : null}
+          </li>
+        ))}
+      </ol>
+    </aside>
+  );
+}
+
+export function Pullquote({ children, cite }: { children: ReactNode; cite?: string }) {
+  return (
+    <figure className="max-w-3xl mx-auto my-12 border-y border-gold/25 py-8 px-2 text-center">
+      <blockquote className="font-display text-2xl md:text-3xl leading-snug text-foreground italic">
+        “{children}”
+      </blockquote>
+      {cite ? (
+        <figcaption className="mt-4 text-[10px] tracking-[0.3em] uppercase text-gold/80">
+          {cite}
+        </figcaption>
+      ) : null}
+    </figure>
+  );
+}
