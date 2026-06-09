@@ -1,0 +1,125 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { useChat } from "@ai-sdk/react";
+import { DefaultChatTransport } from "ai";
+import { useState, useRef, useEffect } from "react";
+import { Sparkles, Send } from "lucide-react";
+import ReactMarkdown from "react-markdown";
+
+export const Route = createFileRoute("/assistente")({
+  head: () => ({
+    meta: [
+      { title: "Assistente IA Católica — Portal Católico" },
+      { name: "description", content: "Sophia, IA fiel ao Magistério: tire suas dúvidas sobre a fé católica com base na Bíblia, Catecismo e documentos oficiais." },
+      { property: "og:title", content: "Assistente IA Católica" },
+      { property: "og:description", content: "IA católica baseada na Bíblia, Catecismo e documentos oficiais." },
+    ],
+  }),
+  component: Page,
+});
+
+const SUGESTOES = [
+  "O que é a Santíssima Trindade?",
+  "Por que os católicos veneram Maria?",
+  "Como funciona a confissão?",
+  "O que é a Eucaristia?",
+];
+
+function Page() {
+  const [input, setInput] = useState("");
+  const { messages, sendMessage, status } = useChat({
+    transport: new DefaultChatTransport({ api: "/api/chat" }),
+  });
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const isLoading = status === "submitted" || status === "streaming";
+
+  useEffect(() => {
+    scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
+  }, [messages]);
+
+  function submit(text: string) {
+    if (!text.trim() || isLoading) return;
+    sendMessage({ text: text.trim() });
+    setInput("");
+  }
+
+  return (
+    <div className="max-w-4xl mx-auto px-6 py-12 md:py-16">
+      <div className="text-center mb-10">
+        <Sparkles className="size-8 text-gold mx-auto mb-4" />
+        <p className="text-[10px] tracking-[0.35em] uppercase text-gold mb-3">Sophia · IA Católica</p>
+        <h1 className="font-display text-4xl md:text-5xl text-foreground">
+          Pergunte sobre a Fé Católica
+        </h1>
+        <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
+          Respostas fundamentadas na Bíblia, no Catecismo e nos documentos oficiais da Igreja.
+        </p>
+      </div>
+
+      <div className="border border-gold/25 bg-card flex flex-col h-[60vh]">
+        <div ref={scrollRef} className="flex-1 overflow-y-auto p-6 space-y-6">
+          {messages.length === 0 ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {SUGESTOES.map((s) => (
+                <button
+                  key={s}
+                  onClick={() => submit(s)}
+                  className="text-left p-4 border border-gold/20 hover:border-gold/60 text-sm text-foreground transition-colors"
+                >
+                  {s}
+                </button>
+              ))}
+            </div>
+          ) : (
+            messages.map((m) => {
+              const text = m.parts.map((p) => (p.type === "text" ? p.text : "")).join("");
+              return (
+                <div
+                  key={m.id}
+                  className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}
+                >
+                  <div
+                    className={`max-w-[85%] px-4 py-3 text-sm leading-relaxed ${
+                      m.role === "user"
+                        ? "bg-gold text-deep"
+                        : "bg-background border border-gold/20 text-foreground"
+                    }`}
+                  >
+                    <div className="prose prose-sm prose-invert max-w-none [&_p]:my-2 [&_strong]:text-gold">
+                      <ReactMarkdown>{text}</ReactMarkdown>
+                    </div>
+                  </div>
+                </div>
+              );
+            })
+          )}
+          {isLoading ? (
+            <div className="text-xs text-gold/70 tracking-wider uppercase">Sophia está respondendo…</div>
+          ) : null}
+        </div>
+
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            submit(input);
+          }}
+          className="border-t border-gold/20 p-4 flex gap-3"
+        >
+          <input
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            placeholder="Sua pergunta sobre a fé..."
+            className="flex-1 bg-background border border-gold/20 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-gold"
+            disabled={isLoading}
+          />
+          <button
+            type="submit"
+            disabled={isLoading || !input.trim()}
+            className="px-5 bg-gold text-deep disabled:opacity-40 hover:bg-paper transition-colors"
+          >
+            <Send className="size-4" />
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+}
