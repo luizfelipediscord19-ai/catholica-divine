@@ -5,7 +5,7 @@ import manuscrito from "../assets/manuscrito.jpg";
 import { useState } from "react";
 import { Search } from "lucide-react";
 
-export const Route = createFileRoute("/biblia")({
+export const Route = createFileRoute("/biblia/")({
   head: () => ({
     meta: [
       { title: "Bíblia Sagrada — 73 Livros — Portal Católico" },
