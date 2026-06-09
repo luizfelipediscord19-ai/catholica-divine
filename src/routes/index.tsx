@@ -3,6 +3,7 @@ import { BookOpen, Heart, Sparkles, Church, Crown, ScrollText, Compass, Calendar
 import hero from "../assets/hero-catedral.jpg";
 import maria from "../assets/maria.jpg";
 import cristo from "../assets/cristo.jpg";
+import { versoDoDia, evangelhoDoDia, santoDoDia } from "../lib/data/hoje";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -52,7 +53,43 @@ const DAILY = [
   },
 ];
 
+function refTexto(r: { nome: string; capitulo: number; vi?: number; vf?: number }) {
+  if (r.vi && r.vf && r.vi !== r.vf) return `${r.nome} ${r.capitulo}, ${r.vi}-${r.vf}`;
+  if (r.vi) return `${r.nome} ${r.capitulo}, ${r.vi}`;
+  return `${r.nome} ${r.capitulo}`;
+}
+
 function Home() {
+  const verso = versoDoDia();
+  const evangelho = evangelhoDoDia();
+  const santo = santoDoDia();
+  const DAILY: { kicker: string; text: string; ref: string; link?: { to: "/biblia/$livro/$capitulo"; params: { livro: string; capitulo: string }; search: Record<string, string> } }[] = [
+    {
+      kicker: "Versículo do dia",
+      text: `“${verso.texto}”`,
+      ref: refTexto(verso),
+      link: {
+        to: "/biblia/$livro/$capitulo",
+        params: { livro: verso.livro, capitulo: String(verso.capitulo) },
+        search: verso.vi ? { vi: String(verso.vi), ...(verso.vf ? { vf: String(verso.vf) } : {}) } : {},
+      },
+    },
+    {
+      kicker: "Santo do dia",
+      text: `${santo.nome} — ${santo.resumo}`,
+      ref: `Memória — ${santo.data}`,
+    },
+    {
+      kicker: "Evangelho do dia",
+      text: `${evangelho.titulo} — “${evangelho.texto}”`,
+      ref: refTexto(evangelho),
+      link: {
+        to: "/biblia/$livro/$capitulo",
+        params: { livro: evangelho.livro, capitulo: String(evangelho.capitulo) },
+        search: evangelho.vi ? { vi: String(evangelho.vi), ...(evangelho.vf ? { vf: String(evangelho.vf) } : {}) } : {},
+      },
+    },
+  ];
   return (
     <div>
       {/* Hero */}
@@ -95,13 +132,22 @@ function Home() {
       {/* Daily */}
       <section className="border-y border-gold/20 bg-card">
         <div className="max-w-6xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gold/15">
-          {DAILY.map((d) => (
-            <div key={d.kicker} className="px-2 md:px-8 py-6 md:py-2">
-              <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-3">{d.kicker}</p>
-              <p className="font-display italic text-lg text-foreground leading-snug">{d.text}</p>
-              <p className="mt-3 text-xs text-muted-foreground tracking-wider uppercase">{d.ref}</p>
-            </div>
-          ))}
+          {DAILY.map((d) => {
+            const inner = (
+              <>
+                <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-3">{d.kicker}</p>
+                <p className="font-display italic text-lg text-foreground leading-snug">{d.text}</p>
+                <p className="mt-3 text-xs text-muted-foreground tracking-wider uppercase">{d.ref}</p>
+              </>
+            );
+            return d.link ? (
+              <Link key={d.kicker} to={d.link.to} params={d.link.params} search={d.link.search} className="px-2 md:px-8 py-6 md:py-2 block hover:bg-background/40 transition-colors">
+                {inner}
+              </Link>
+            ) : (
+              <div key={d.kicker} className="px-2 md:px-8 py-6 md:py-2">{inner}</div>
+            );
+          })}
         </div>
       </section>
 
