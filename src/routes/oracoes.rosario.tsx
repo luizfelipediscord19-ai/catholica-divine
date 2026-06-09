@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { PageHero, Section } from "../components/PageShell";
 import { CONJUNTOS, ORACOES_BASE, conjuntoDoDia, type ConjuntoMisterios } from "../lib/data/devocoes/rosario";
 
@@ -17,16 +17,71 @@ export const Route = createFileRoute("/oracoes/rosario")({
 
 type Etapa = { titulo: string; subtitle?: string; texto: string; repeticao?: number; misterioIdx?: number };
 
+const STORAGE_KEY = "rosario:progresso:v1";
+type Saved = {
+  conjuntoSlug: ConjuntoMisterios["slug"];
+  etapaIdx: number;
+  contagem: number;
+  elapsed: number;
+  secPerBead: number;
+  savedAt: number;
+};
+
 function Page() {
   const sugestao = useMemo(() => conjuntoDoDia(), []);
   const [conjunto, setConjunto] = useState<ConjuntoMisterios>(sugestao);
   const etapas = useMemo(() => buildEtapas(conjunto), [conjunto]);
 
   const [etapaIdx, setEtapaIdx] = useState(0);
-  const [contagem, setContagem] = useState(0); // 0..repeticao
+  const [contagem, setContagem] = useState(0);
   const [playing, setPlaying] = useState(false);
   const [secPerBead, setSecPerBead] = useState(12);
-  const [elapsed, setElapsed] = useState(0); // seconds
+  const [elapsed, setElapsed] = useState(0);
+  const [restored, setRestored] = useState<Saved | null>(null);
+  const [hydrated, setHydrated] = useState(false);
+
+  // Restaurar progresso ao montar
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (raw) {
+        const s = JSON.parse(raw) as Saved;
+        const c = CONJUNTOS.find((x) => x.slug === s.conjuntoSlug);
+        if (c) {
+          setConjunto(c);
+          setEtapaIdx(s.etapaIdx);
+          setContagem(s.contagem);
+          setElapsed(s.elapsed);
+          setSecPerBead(s.secPerBead);
+          setRestored(s);
+        }
+      }
+    } catch {
+      // localStorage indisponível — segue sem restaurar
+    }
+    setHydrated(true);
+  }, []);
+
+  // Salvamento automático (após hidratar, com debounce simples)
+  useEffect(() => {
+    if (!hydrated) return;
+    const id = setTimeout(() => {
+      try {
+        const payload: Saved = {
+          conjuntoSlug: conjunto.slug,
+          etapaIdx,
+          contagem,
+          elapsed,
+          secPerBead,
+          savedAt: Date.now(),
+        };
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+      } catch {
+        // sem espaço / modo privado — ignora
+      }
+    }, 400);
+    return () => clearTimeout(id);
+  }, [hydrated, conjunto.slug, etapaIdx, contagem, elapsed, secPerBead]);
 
   const atual = etapas[etapaIdx];
   const total = atual.repeticao ?? 1;
