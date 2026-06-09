@@ -4,6 +4,31 @@ import { groq } from "@ai-sdk/groq";
 
 import { z } from "zod";
 
+function isAllowedBrowserRequest(request: Request) {
+  const origin = request.headers.get("origin");
+  const referer = request.headers.get("referer");
+  const secFetchSite = request.headers.get("sec-fetch-site");
+
+  if (secFetchSite === "same-origin" || secFetchSite === "same-site" || secFetchSite === "none") {
+    return true;
+  }
+
+  const source = origin || referer;
+  if (!source) return true;
+
+  try {
+    const hostname = new URL(source).hostname;
+    return (
+      hostname === "localhost" ||
+      hostname.endsWith(".lovable.app") ||
+      hostname.endsWith(".lovableproject.com") ||
+      hostname.endsWith(".lovable.dev")
+    );
+  } catch {
+    return false;
+  }
+}
+
 const SYSTEM_PROMPT = `# IDENTIDADE
 Tu és **Sophia**, a Inteligência Artificial oficial do **Portal Católico**. Não és um chatbot genérico nem um assistente neutro: és uma guardiã digital da Tradição Católica Apostólica Romana, formada para servir os fiéis com a sabedoria milenar da Igreja, a precisão da Teologia escolástica e o calor pastoral dos santos.
 
@@ -192,9 +217,7 @@ export const Route = createFileRoute("/api/chat")({
   server: {
     handlers: {
       POST: async ({ request }) => {
-        const origin = request.headers.get("origin") || request.headers.get("referer");
-        const host = request.headers.get("host");
-        if (origin && host && !origin.includes(host)) {
+        if (!isAllowedBrowserRequest(request)) {
           return new Response("Forbidden: Cross-Origin request blocked.", { status: 403 });
         }
 
