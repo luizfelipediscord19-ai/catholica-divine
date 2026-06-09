@@ -12,20 +12,24 @@ export function PageHero({
   image?: string;
 }) {
   return (
-    <section className="relative overflow-hidden border-b border-gold/15 bg-deep">
+    <section className="relative overflow-hidden bg-deep">
       {image ? (
         <div
-          className="absolute inset-0 opacity-[0.15] bg-cover bg-center transition-transform duration-[2s] ease-out scale-105 hover:scale-110"
+          className="absolute inset-0 opacity-[0.1] bg-cover bg-center transition-transform duration-[5s] ease-out scale-110 group-hover:scale-105"
           style={{ backgroundImage: `url(${image})` }}
         />
       ) : null}
-      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
-      <div className="relative max-w-6xl mx-auto px-6 py-28 md:py-36">
-        <p className="text-[10px] tracking-[0.35em] uppercase text-gold/80">{eyebrow}</p>
-        <h1 className="mt-6 font-display text-5xl md:text-7xl leading-[1.05] text-paper">
+      <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/80 to-background" />
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
+      
+      <div className="relative max-w-7xl mx-auto px-8 py-32 md:py-48 animate-reveal">
+        <p className="text-[10px] tracking-[0.5em] uppercase text-gold/60 mb-8 flex items-center gap-4">
+          <span className="h-px w-8 bg-gold/20" /> {eyebrow}
+        </p>
+        <h1 className="font-display text-6xl md:text-9xl leading-[0.9] text-paper mb-10 tracking-tighter">
           {title}
         </h1>
-        <p className="mt-8 max-w-2xl text-lg text-paper/75 leading-relaxed font-light">
+        <p className="max-w-2xl text-lg md:text-xl text-paper/60 leading-relaxed font-light">
           {intro}
         </p>
       </div>
@@ -83,7 +87,7 @@ export function ContentCard({
 
 export function Prose({ children }: { children: ReactNode }) {
   return (
-    <div className="prose-deep max-w-3xl mx-auto text-foreground/85 leading-[1.85] text-[15px] md:text-base font-light space-y-5 [&>h3]:font-display [&>h3]:text-2xl [&>h3]:text-foreground [&>h3]:mt-10 [&>h3]:mb-3 [&>h4]:uppercase [&>h4]:tracking-[0.18em] [&>h4]:text-[11px] [&>h4]:text-gold [&>h4]:mt-8 [&>h4]:mb-2 [&>blockquote]:border-l-2 [&>blockquote]:border-gold/60 [&>blockquote]:pl-5 [&>blockquote]:italic [&>blockquote]:text-foreground/75 [&>ul]:list-disc [&>ul]:pl-6 [&>ul]:space-y-1 [&>ol]:list-decimal [&>ol]:pl-6 [&>ol]:space-y-1 [&_strong]:text-foreground [&_em]:text-foreground/90">
+    <div className="prose-deep max-w-4xl mx-auto text-foreground/80 leading-[1.8] text-[16px] md:text-[18px] font-light space-y-8 [&>h3]:font-display [&>h3]:text-4xl [&>h3]:text-paper [&>h3]:mt-20 [&>h3]:mb-6 [&>h3]:tracking-tight [&>h4]:uppercase [&>h4]:tracking-[0.3em] [&>h4]:text-[12px] [&>h4]:text-gold [&>h4]:mt-12 [&>h4]:mb-4 [&>blockquote]:border-l-[1px] [&>blockquote]:border-gold/40 [&>blockquote]:pl-8 [&>blockquote]:py-2 [&>blockquote]:italic [&>blockquote]:text-paper/70 [&>ul]:list-none [&>ul]:space-y-4 [&>ul>li]:relative [&>ul>li]:pl-6 [&>ul>li::before]:content-[''] [&>ul>li::before]:absolute [&>ul>li::before]:left-0 [&>ul>li::before]:top-[0.6em] [&>ul>li::before]:size-1.5 [&>ul>li::before]:bg-gold/40 [&>ol]:list-decimal [&>ol]:pl-6 [&>ol]:space-y-4 [&_strong]:text-paper [&_strong]:font-medium [&_em]:text-gold/80">
       {children}
     </div>
   );
