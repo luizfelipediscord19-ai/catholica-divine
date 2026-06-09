@@ -19,6 +19,7 @@ export function SophiaChat({
   height?: string;
 }) {
   const [input, setInput] = useState("");
+  const [hasError, setHasError] = useState(false);
   const { messages, sendMessage, status } = useChat({
     transport: new DefaultChatTransport({
       api: "/api/chat",
@@ -26,11 +27,24 @@ export function SophiaChat({
     }),
     onError: (err) => {
       console.error("[SophiaChat] error:", err);
+      setHasError(true);
       toast.error("Sophia não conseguiu responder. Tente novamente em instantes.");
     },
   });
   const scrollRef = useRef<HTMLDivElement>(null);
   const isLoading = status === "submitted" || status === "streaming";
+
+  const statusLabel = hasError
+    ? "Erro"
+    : isLoading
+      ? "Carregando"
+      : "Conectado";
+  const StatusIcon = hasError ? AlertCircle : isLoading ? Loader2 : CheckCircle2;
+  const statusColor = hasError
+    ? "text-red-400 bg-red-400/10 border-red-400/20"
+    : isLoading
+      ? "text-gold bg-gold/10 border-gold/20"
+      : "text-emerald-400 bg-emerald-400/10 border-emerald-400/20";
 
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
