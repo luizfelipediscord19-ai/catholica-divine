@@ -3,6 +3,7 @@ import { useState } from "react";
 import { PageHero, Prose, Pullquote, CardGrid, ContentCard } from "../components/PageShell";
 import { ReadingMode, FnRef } from "../components/ReadingMode";
 import { HORAS, FONTES_OFICIAIS } from "../lib/data/devocoes/horas";
+import { BuscaHoras } from "../components/BuscaHoras";
 
 export const Route = createFileRoute("/oracoes/liturgia-das-horas")({
   head: () => ({
@@ -33,6 +34,7 @@ const TOC = [
   { id: "vesperas", label: "V. Vésperas" },
   { id: "saltério", label: "VI. O Saltério" },
   { id: "como-rezar", label: "VII. Como rezar" },
+  { id: "buscador", label: "VIII. Buscar salmos e leituras" },
   { id: "fontes", label: "Fontes oficiais" },
   { id: "notas", label: "Notas e referências" },
 ];
