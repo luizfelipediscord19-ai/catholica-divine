@@ -44,7 +44,7 @@ export const SophiaChat = memo(({
   };
 
   if (hasError && error) {
-    toast.error(error);
+    toast.error(typeof error === 'string' ? error : error.message || "Erro desconhecido");
   }
 
   return (
