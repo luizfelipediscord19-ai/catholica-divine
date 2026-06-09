@@ -24,6 +24,10 @@ export function SophiaChat({
       api: "/api/chat",
       body: { mode },
     }),
+    onError: (err) => {
+      console.error("[SophiaChat] error:", err);
+      toast.error("Sophia não conseguiu responder. Tente novamente em instantes.");
+    },
   });
   const scrollRef = useRef<HTMLDivElement>(null);
   const isLoading = status === "submitted" || status === "streaming";
