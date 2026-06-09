@@ -4,6 +4,8 @@ import hero from "../assets/hero-catedral.jpg";
 import maria from "../assets/maria.jpg";
 import cristo from "../assets/cristo.jpg";
 import { versoDoDia, evangelhoDoDia, santoDoDia } from "../lib/data/hoje";
+import { ScrollReveal } from "../components/ScrollReveal";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -123,14 +125,14 @@ function Home() {
             <div className="flex flex-wrap gap-6">
               <Link
                 to="/biblia"
-                className="group relative inline-flex items-center gap-4 px-12 py-6 bg-gold text-deep text-[11px] uppercase tracking-[0.4em] font-bold overflow-hidden transition-premium hover:shadow-[0_0_40px_rgba(212,175,55,0.3)]"
+                className="group relative inline-flex items-center gap-4 px-12 py-6 bg-gold text-deep text-[11px] uppercase tracking-[0.4em] font-bold overflow-hidden transition-premium hover:shadow-[0_0_40px_rgba(212,175,55,0.3)] button-hover-effect"
               >
                 <span className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
                 <BookOpen className="size-4 relative z-10" /> <span className="relative z-10">Começar a estudar</span>
               </Link>
               <Link
                 to="/assistente"
-                className="inline-flex items-center gap-3 px-8 py-6 border border-gold/30 text-paper text-[11px] uppercase tracking-[0.3em] font-medium hover:border-gold hover:bg-gold/5 transition-premium"
+                className="inline-flex items-center gap-3 px-8 py-6 border border-gold/30 text-paper text-[11px] uppercase tracking-[0.3em] font-medium hover:border-gold hover:bg-gold/5 transition-premium button-hover-effect"
               >
                 <Sparkles className="size-4 text-gold" /> Falar com a IA Católica
               </Link>
@@ -162,10 +164,10 @@ function Home() {
                 </div>
               );
               return (
-                <div 
+                <ScrollReveal 
                   key={d.kicker} 
-                  className="animate-reveal"
-                  style={{ animationDelay: `${i * 150}ms` }}
+                  delay={i * 150}
+                  threshold={0.05}
                 >
                   {d.link ? (
                     <Link to={d.link.to} params={d.link.params} search={d.link.search} className="block h-full">
@@ -174,7 +176,7 @@ function Home() {
                   ) : (
                     <div className="h-full">{inner}</div>
                   )}
-                </div>
+                </ScrollReveal>
               );
             })}
           </div>
@@ -184,27 +186,30 @@ function Home() {
       {/* Pillars - Bento Grid Style */}
       <section className="max-w-7xl mx-auto px-8 py-32">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
-          <div className="max-w-2xl animate-reveal">
+          <ScrollReveal className="max-w-2xl">
             <p className="text-[10px] tracking-[0.4em] uppercase text-gold mb-4">Os pilares da verdade</p>
             <h2 className="font-display text-5xl md:text-7xl text-foreground leading-[1.1]">
               Toda a fé católica, organizada <br/> <span className="text-gold/50">para o seu estudo.</span>
             </h2>
-          </div>
-          <p className="text-muted-foreground max-w-sm text-sm leading-relaxed mb-2 animate-reveal stagger-1">
-            Explore séculos de tradição, magistério e espiritualidade através de uma interface desenhada para a contemplação.
-          </p>
+          </ScrollReveal>
+          <ScrollReveal delay={200} className="max-w-sm">
+            <p className="text-muted-foreground text-sm leading-relaxed mb-2 font-light">
+              Explore séculos de tradição, magistério e espiritualidade através de uma interface desenhada para a contemplação.
+            </p>
+          </ScrollReveal>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {PILLARS.map((p, i) => (
-            <Link
+            <ScrollReveal
               key={p.to}
-              to={p.to}
-              className={`group glass p-10 flex flex-col gap-8 transition-premium hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] animate-reveal ${
-                i === 0 || i === 5 ? "md:col-span-2" : ""
-              }`}
-              style={{ animationDelay: `${i * 100}ms` }}
+              delay={i * 100}
+              className={`${i === 0 || i === 5 ? "md:col-span-2" : ""}`}
             >
+              <Link
+                to={p.to}
+                className="group glass p-10 flex flex-col gap-8 card-premium-hover h-full"
+              >
               <div className="size-14 rounded-full bg-gold/5 border border-gold/10 flex items-center justify-center group-hover:bg-gold/15 group-hover:border-gold/30 transition-premium">
                 <p.icon className="size-6 text-gold group-hover:scale-110 transition-premium" />
               </div>
@@ -221,6 +226,7 @@ function Home() {
                 </div>
               </div>
             </Link>
+          </ScrollReveal>
           ))}
         </div>
       </section>
@@ -229,7 +235,7 @@ function Home() {
       <section className="bg-muted/30 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
         <div className="max-w-7xl mx-auto px-8 py-32 md:py-48 grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-          <div className="relative animate-reveal">
+          <ScrollReveal direction="left" className="relative">
             <div className="absolute -inset-4 border border-gold/10 -z-10 translate-x-4 translate-y-4" />
             <div
               className="aspect-[4/5] bg-cover bg-center grayscale hover:grayscale-0 transition-all duration-1000 shadow-[0_30px_60px_rgba(0,0,0,0.5)]"
@@ -238,8 +244,8 @@ function Home() {
             <div className="absolute bottom-8 right-8 bg-background/80 backdrop-blur-md px-6 py-4 border border-gold/20">
               <p className="text-[9px] tracking-[0.4em] uppercase text-gold">Regina Caeli</p>
             </div>
-          </div>
-          <div className="animate-reveal stagger-1">
+          </ScrollReveal>
+          <ScrollReveal direction="right" delay={200}>
             <p className="text-[10px] tracking-[0.4em] uppercase text-gold mb-6 flex items-center gap-4">
               <span className="h-px w-6 bg-gold/40" /> Maria, Mater Ecclesiae
             </p>
@@ -257,7 +263,7 @@ function Home() {
               <span>Estudar Mariologia</span>
               <span className="group-hover:translate-x-2 transition-transform">→</span>
             </Link>
-          </div>
+          </ScrollReveal>
         </div>
         <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
       </section>
@@ -270,7 +276,7 @@ function Home() {
         />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#050505_80%)]" />
         
-        <div className="relative max-w-5xl mx-auto px-8 py-40 md:py-60 text-center animate-reveal">
+        <ScrollReveal className="relative max-w-5xl mx-auto px-8 py-40 md:py-60 text-center">
           <div className="relative inline-block mb-12">
             <div className="absolute inset-0 bg-gold/20 blur-3xl rounded-full" />
             <div className="relative size-24 rounded-full glass border border-gold/30 flex items-center justify-center shadow-[0_0_50px_rgba(212,175,55,0.15)]">
@@ -293,7 +299,7 @@ function Home() {
             <Sparkles className="size-4 group-hover:rotate-12 transition-transform" /> 
             <span>Conversar agora</span>
           </Link>
-        </div>
+        </ScrollReveal>
       </section>
     </div>
   );
