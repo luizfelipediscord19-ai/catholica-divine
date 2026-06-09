@@ -168,17 +168,22 @@ function Home() {
         <h2 className="font-display text-4xl md:text-5xl text-foreground mb-12 max-w-3xl">
           Toda a fé católica, organizada para o seu estudo.
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-gold/15">
-          {PILLARS.map((p) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-gold/5 border border-gold/10">
+          {PILLARS.map((p, i) => (
             <Link
               key={p.to}
               to={p.to}
-              className="group bg-background hover:bg-card transition-colors p-7 flex flex-col gap-4"
+              className="group bg-background hover:bg-card/80 transition-smooth p-10 flex flex-col gap-6 animate-content-fade"
+              style={{ animationDelay: `${i * 100}ms` }}
             >
-              <p.icon className="size-7 text-gold" />
-              <h3 className="font-display text-xl text-foreground">{p.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
-              <span className="mt-auto text-[10px] tracking-[0.3em] uppercase text-gold/70 group-hover:text-gold">
+              <div className="size-12 rounded-full bg-gold/5 flex items-center justify-center group-hover:bg-gold/10 transition-smooth">
+                <p.icon className="size-6 text-gold group-hover:scale-110 transition-smooth" />
+              </div>
+              <div>
+                <h3 className="font-display text-2xl text-foreground mb-3 group-hover:text-gold transition-smooth">{p.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed font-light">{p.desc}</p>
+              </div>
+              <span className="mt-auto text-[9px] tracking-[0.4em] uppercase text-gold/50 group-hover:text-gold group-hover:translate-x-2 transition-smooth">
                 Explorar →
               </span>
             </Link>
