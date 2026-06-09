@@ -299,7 +299,7 @@ function Home() {
             <Sparkles className="size-4 group-hover:rotate-12 transition-transform" /> 
             <span>Conversar agora</span>
           </Link>
-        </div>
+        </ScrollReveal>
       </section>
     </div>
   );
