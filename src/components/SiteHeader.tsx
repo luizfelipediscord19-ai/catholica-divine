@@ -7,6 +7,7 @@ const NAV = [
   { to: "/biblia", label: "Bíblia" },
   { to: "/catecismo", label: "Catecismo" },
   { to: "/sacramentos", label: "Sacramentos" },
+  { to: "/coroinhas", label: "Coroinhas" },
   { to: "/santos", label: "Santos" },
   { to: "/maria", label: "Maria" },
   { to: "/oracoes", label: "Orações" },
