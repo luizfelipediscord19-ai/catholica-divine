@@ -70,7 +70,7 @@ function Page() {
             Tradução · Almeida (domínio público)
           </p>
           <div className="space-y-3 font-display text-lg leading-relaxed text-foreground/95">
-            {versos.map((v) => (
+            {versos.map((v: Verso) => (
               <p key={v.v} id={`v${v.v}`} className="group">
                 <a
                   href={`#v${v.v}`}
