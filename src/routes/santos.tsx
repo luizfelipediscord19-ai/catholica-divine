@@ -1,5 +1,6 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero, Section, CardGrid, ContentCard } from "../components/PageShell";
+import { SANTOS_LISTA } from "@/lib/santos-lista";
 
 export const Route = createFileRoute("/santos")({
   head: () => ({
@@ -13,114 +14,30 @@ export const Route = createFileRoute("/santos")({
   component: Page,
 });
 
-const SANTOS = [
-  { nome: "São Pedro", data: "29 de junho", body: "Príncipe dos Apóstolos, primeiro Papa, mártir em Roma sob Nero." },
-  { nome: "São Paulo", data: "29 de junho", body: "Apóstolo dos gentios, autor de treze epístolas, mártir em Roma." },
-  { nome: "Santo André", data: "30 de novembro", body: "Apóstolo, irmão de Pedro, evangelizador da Grécia, crucificado em cruz em X." },
-  { nome: "São Tiago Maior", data: "25 de julho", body: "Apóstolo, filho de Zebedeu, primeiro mártir entre os Doze, padroeiro de Compostela." },
-  { nome: "São João Evangelista", data: "27 de dezembro", body: "Apóstolo amado, autor do quarto Evangelho, do Apocalipse e das três epístolas." },
-  { nome: "São Felipe", data: "3 de maio", body: "Apóstolo, evangelizador da Frígia, mártir em Hierápolis." },
-  { nome: "São Bartolomeu", data: "24 de agosto", body: "Apóstolo, identificado com Natanael, esfolado vivo na Armênia." },
-  { nome: "São Tomé", data: "3 de julho", body: "Apóstolo que tocou as chagas do Ressuscitado, evangelizou a Índia, mártir em Mailapur." },
-  { nome: "São Mateus", data: "21 de setembro", body: "Apóstolo e evangelista, publicano convertido, autor do primeiro Evangelho." },
-  { nome: "São Tiago Menor", data: "3 de maio", body: "Apóstolo, primeiro bispo de Jerusalém, autor de uma epístola católica." },
-  { nome: "São Judas Tadeu", data: "28 de outubro", body: "Apóstolo, padroeiro das causas difíceis e desesperadas." },
-  { nome: "São Simão Zelote", data: "28 de outubro", body: "Apóstolo, evangelizador da Pérsia, mártir junto com Judas Tadeu." },
-  { nome: "São Matias", data: "14 de maio", body: "Eleito apóstolo no lugar de Judas Iscariotes, mártir na Etiópia." },
-  { nome: "São Marcos Evangelista", data: "25 de abril", body: "Discípulo de Pedro, autor do segundo Evangelho, fundador da Igreja de Alexandria." },
-  { nome: "São Lucas Evangelista", data: "18 de outubro", body: "Médico, discípulo de Paulo, autor do terceiro Evangelho e dos Atos." },
-  { nome: "São Estêvão", data: "26 de dezembro", body: "Protomártir cristão, primeiro dos sete diáconos, apedrejado em Jerusalém." },
-  { nome: "São José", data: "19 de março", body: "Esposo de Maria, pai virginal de Jesus, padroeiro da Igreja universal e dos trabalhadores." },
-  { nome: "São João Batista", data: "24 de junho", body: "Precursor do Messias, batizou Cristo no Jordão, decapitado por Herodes." },
-  { nome: "Santa Ana", data: "26 de julho", body: "Mãe da Virgem Maria, padroeira das avós e das mulheres em trabalho de parto." },
-  { nome: "São Joaquim", data: "26 de julho", body: "Pai da Virgem Maria, modelo de fidelidade conjugal e paterna." },
-  { nome: "Santa Maria Madalena", data: "22 de julho", body: "Discípula amada do Senhor, primeira testemunha da Ressurreição, ‘apóstola dos apóstolos’." },
-  { nome: "Santa Marta", data: "29 de julho", body: "Irmã de Lázaro e Maria de Betânia, modelo de serviço hospitaleiro a Cristo." },
-  { nome: "Santo Inácio de Antioquia", data: "17 de outubro", body: "Bispo apostólico, mártir em Roma c. 107, autor de sete cartas fundamentais." },
-  { nome: "São Policarpo", data: "23 de fevereiro", body: "Bispo de Esmirna, discípulo de São João, mártir aos 86 anos." },
-  { nome: "São Justino", data: "1º de junho", body: "Filósofo e mártir, primeiro grande apologista cristão do séc. II." },
-  { nome: "São Cipriano de Cartago", data: "16 de setembro", body: "Bispo e mártir africano, mestre da eclesiologia: ‘Fora da Igreja não há salvação’." },
-  { nome: "São Lourenço", data: "10 de agosto", body: "Diácono romano, mártir queimado na grelha, célebre pela caridade aos pobres." },
-  { nome: "Santa Cecília", data: "22 de novembro", body: "Virgem e mártir romana, padroeira dos músicos e da música sacra." },
-  { nome: "Santa Águeda", data: "5 de fevereiro", body: "Virgem e mártir siciliana do séc. III, padroeira das mulheres com câncer de mama." },
-  { nome: "Santa Luzia", data: "13 de dezembro", body: "Virgem e mártir de Siracusa, padroeira dos olhos e dos cegos." },
-  { nome: "Santa Inês", data: "21 de janeiro", body: "Virgem romana martirizada aos 12 anos por amor a Cristo." },
-  { nome: "Santo Atanásio", data: "2 de maio", body: "Bispo de Alexandria, defensor da divindade de Cristo contra o arianismo." },
-  { nome: "São Basílio Magno", data: "2 de janeiro", body: "Bispo de Cesareia, Padre Capadócio, pai do monaquismo oriental." },
-  { nome: "São Gregório Nazianzeno", data: "2 de janeiro", body: "‘O Teólogo’, Patriarca de Constantinopla, defensor da Trindade." },
-  { nome: "São Gregório de Nissa", data: "10 de janeiro", body: "Padre Capadócio, místico, irmão de São Basílio." },
-  { nome: "São João Crisóstomo", data: "13 de setembro", body: "Patriarca de Constantinopla, ‘boca de ouro’, mestre da pregação." },
-  { nome: "Santo Ambrósio", data: "7 de dezembro", body: "Bispo de Milão, catequizou Santo Agostinho, mestre da liturgia ambrosiana." },
-  { nome: "Santo Agostinho", data: "28 de agosto", body: "Bispo de Hipona, doutor da graça, autor das Confissões e da Cidade de Deus." },
-  { nome: "São Jerônimo", data: "30 de setembro", body: "Tradutor da Vulgata, doutor máximo nas Escrituras." },
-  { nome: "São Gregório Magno", data: "3 de setembro", body: "Papa, doutor da Igreja, reformador da liturgia (canto gregoriano)." },
-  { nome: "Santa Mônica", data: "27 de agosto", body: "Mãe de Santo Agostinho, modelo de oração perseverante e maternidade espiritual." },
-  { nome: "São Bento de Núrsia", data: "11 de julho", body: "Patriarca do monaquismo ocidental, padroeiro da Europa, ‘Ora et Labora’." },
-  { nome: "São Bonifácio", data: "5 de junho", body: "Apóstolo da Germânia, mártir, derrubou o carvalho de Thor." },
-  { nome: "Santo Anselmo", data: "21 de abril", body: "Arcebispo de Cantuária, ‘pai da escolástica’, autor do Cur Deus Homo." },
-  { nome: "São Bernardo de Claraval", data: "20 de agosto", body: "Doutor Melífluo, reformador cisterciense, devoto da Virgem Maria." },
-  { nome: "Santo Tomás de Aquino", data: "28 de janeiro", body: "Doutor Angélico, autor da Suma Teológica, síntese máxima da teologia escolástica." },
-  { nome: "São Boaventura", data: "15 de julho", body: "Doutor Seráfico, ministro geral franciscano, místico e teólogo." },
-  { nome: "Santo Alberto Magno", data: "15 de novembro", body: "Doutor Universal, mestre de São Tomás de Aquino, naturalista e teólogo." },
-  { nome: "Santo Domingos de Gusmão", data: "8 de agosto", body: "Fundador da Ordem dos Pregadores (Dominicanos), apóstolo do Rosário." },
-  { nome: "São Francisco de Assis", data: "4 de outubro", body: "Pobre de Assis, alter Christus, fundador da Ordem dos Frades Menores." },
-  { nome: "Santa Clara de Assis", data: "11 de agosto", body: "Fundadora das Clarissas, primeira discípula de São Francisco." },
-  { nome: "Santo Antônio de Pádua", data: "13 de junho", body: "Doutor Evangélico franciscano, ‘martelo dos hereges’, padroeiro dos objetos perdidos." },
-  { nome: "Santa Catarina de Sena", data: "29 de abril", body: "Doutora da Igreja, mística, conduziu o Papa de Avinhão de volta a Roma." },
-  { nome: "Santa Brígida da Suécia", data: "23 de julho", body: "Mística, fundadora da Ordem do Santíssimo Salvador, copadroeira da Europa." },
-  { nome: "Santa Joana d'Arc", data: "30 de maio", body: "Donzela de Orléans, libertou a França guiada por vozes celestes, mártir aos 19 anos." },
-  { nome: "São Tomás Morus", data: "22 de junho", body: "Chanceler inglês, mártir da consciência sob Henrique VIII." },
-  { nome: "Santa Teresa de Ávila", data: "15 de outubro", body: "Doutora da Igreja, reformadora do Carmelo, mestra do Castelo Interior." },
-  { nome: "São João da Cruz", data: "14 de dezembro", body: "Doutor Místico, reformador do Carmelo, poeta da Noite Escura." },
-  { nome: "Santo Inácio de Loyola", data: "31 de julho", body: "Fundador da Companhia de Jesus, mestre dos Exercícios Espirituais." },
-  { nome: "São Francisco Xavier", data: "3 de dezembro", body: "Apóstolo das Índias e do Japão, padroeiro das missões." },
-  { nome: "São Filipe Néri", data: "26 de maio", body: "‘Apóstolo de Roma’, fundador do Oratório, mestre da alegria cristã." },
-  { nome: "São Carlos Borromeu", data: "4 de novembro", body: "Arcebispo de Milão, reformador pós-tridentino." },
-  { nome: "São Francisco de Sales", data: "24 de janeiro", body: "Doutor da Igreja, bispo de Genebra, autor da Filotéia." },
-  { nome: "Santa Margarida Maria Alacoque", data: "16 de outubro", body: "Visitandina, recebeu as grandes revelações do Sagrado Coração de Jesus." },
-  { nome: "São Vicente de Paulo", data: "27 de setembro", body: "Apóstolo da caridade, fundador dos Lazaristas e das Filhas da Caridade." },
-  { nome: "São Luís Maria Grignion de Montfort", data: "28 de abril", body: "Pregador da consagração mariana, autor do Tratado da Verdadeira Devoção." },
-  { nome: "Santo Afonso Maria de Ligório", data: "1º de agosto", body: "Doutor da Igreja, fundador dos Redentoristas, mestre da teologia moral." },
-  { nome: "São João Bosco", data: "31 de janeiro", body: "Fundador dos Salesianos, apóstolo dos jovens, educador pelo Sistema Preventivo." },
-  { nome: "São João Maria Vianney", data: "4 de agosto", body: "Cura d’Ars, padroeiro dos párocos, confessor incansável." },
-  { nome: "Santa Bernadette Soubirous", data: "16 de abril", body: "Vidente da Imaculada Conceição em Lourdes (1858)." },
-  { nome: "Santa Teresinha do Menino Jesus", data: "1º de outubro", body: "Doutora da Igreja, mestra do pequeno caminho da infância espiritual." },
-  { nome: "Santa Edith Stein", data: "9 de agosto", body: "Filósofa judia convertida, carmelita, mártir em Auschwitz, copadroeira da Europa." },
-  { nome: "São Maximiliano Maria Kolbe", data: "14 de agosto", body: "Mártir da caridade em Auschwitz, apóstolo da Imaculada." },
-  { nome: "São Padre Pio de Pietrelcina", data: "23 de setembro", body: "Capuchinho estigmatizado, confessor e místico do séc. XX." },
-  { nome: "São João XXIII", data: "11 de outubro", body: "Papa ‘bom’, convocou o Concílio Vaticano II." },
-  { nome: "São Paulo VI", data: "29 de maio", body: "Papa do Concílio, autor da Humanae Vitae e da Populorum Progressio." },
-  { nome: "São João Paulo II", data: "22 de outubro", body: "Papa peregrino, testemunha da liberdade e da dignidade humana." },
-  { nome: "Santa Madre Teresa de Calcutá", data: "5 de setembro", body: "Fundadora das Missionárias da Caridade, apóstola dos mais pobres." },
-  { nome: "São Josemaría Escrivá", data: "26 de junho", body: "Fundador do Opus Dei, mestre da santificação no trabalho ordinário." },
-  { nome: "Santo Óscar Romero", data: "24 de março", body: "Arcebispo de San Salvador, mártir da caridade, voz dos sem-voz." },
-  { nome: "Santa Rita de Cássia", data: "22 de maio", body: "Agostiniana, padroeira das causas impossíveis, estigmatizada na fronte." },
-  { nome: "São Jorge", data: "23 de abril", body: "Mártir cavaleiro do séc. IV, padroeiro da Inglaterra e dos soldados." },
-  { nome: "São Cristóvão", data: "25 de julho", body: "Mártir, padroeiro dos viajantes e motoristas." },
-  { nome: "São Miguel Arcanjo", data: "29 de setembro", body: "Príncipe das milícias celestes, defensor da Igreja contra o demônio." },
-  { nome: "Santa Faustina Kowalska", data: "5 de outubro", body: "Apóstola da Divina Misericórdia, vidente do Senhor Misericordioso." },
-  { nome: "São Charbel Makhlouf", data: "24 de julho", body: "Monge maronita libanês, eremita taumaturgo do séc. XIX." },
-  { nome: "São Frei Galvão", data: "25 de outubro", body: "Primeiro santo nascido no Brasil, franciscano, das ‘pílulas de Frei Galvão’." },
-  { nome: "Santa Paulina do Coração Agonizante", data: "9 de julho", body: "Primeira santa do Brasil, fundadora das Irmãzinhas da Imaculada Conceição." },
-  { nome: "Santa Dulce dos Pobres", data: "13 de agosto", body: "‘Anjo bom da Bahia’, religiosa e fundadora das obras sociais Irmã Dulce." },
-  { nome: "São José de Anchieta", data: "9 de junho", body: "Jesuíta apóstolo do Brasil, evangelizador dos índios, fundador de São Paulo." },
-  { nome: "Bem-Aventurado Carlo Acutis", data: "12 de outubro", body: "Jovem leigo italiano (1991–2006), apóstolo digital da Eucaristia." },
-];
-
 function Page() {
   return (
     <div>
       <PageHero
         eyebrow="Communio Sanctorum"
         title="Os Santos da Igreja"
-        intro="As testemunhas vivas do Evangelho — homens e mulheres que, em todas as épocas, deixaram-se transformar pela graça de Cristo."
+        intro="As testemunhas vivas do Evangelho — homens e mulheres que, em todas as épocas, deixaram-se transformar pela graça de Cristo. Clique em qualquer santo para ler a biografia completa."
       />
       <Section kicker="Galeria dos santos" title="Os amigos de Deus">
         <CardGrid cols={3}>
-          {SANTOS.map((s) => (
-            <ContentCard key={s.nome} title={s.nome} subtitle={`Memória · ${s.data}`}>
-              {s.body}
-            </ContentCard>
+          {SANTOS_LISTA.map((s) => (
+            <Link
+              key={s.slug}
+              to="/santos/$slug"
+              params={{ slug: s.slug }}
+              className="block group"
+            >
+              <ContentCard title={s.nome} subtitle={`Memória · ${s.data}`}>
+                {s.body}
+                <span className="block mt-4 text-xs text-gold/80 group-hover:text-gold tracking-[0.2em] uppercase">
+                  Ler biografia →
+                </span>
+              </ContentCard>
+            </Link>
           ))}
         </CardGrid>
       </Section>
