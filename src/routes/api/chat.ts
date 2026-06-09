@@ -207,10 +207,9 @@ const chatSchema = z.object({
     id: z.string().optional(),
     role: z.enum(["user", "assistant", "system"]),
     parts: z.array(z.object({
-      type: z.enum(["text"]),
-      text: z.string().min(1).max(5000),
-    })),
-  })).min(1),
+      type: z.string(),
+    }).passthrough()).min(1),
+  })).min(1).max(100),
 });
 
 export const Route = createFileRoute("/api/chat")({
