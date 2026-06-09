@@ -1,65 +1,74 @@
+# Plano: Ecossistema Católico com Conteúdo Real
 
-# Plano — Portal Católico (MVP visual + IA)
+Vou implementar em **4 fases**, cada uma entregando valor real. Você aprova fase a fase. Tentar tudo em uma só resposta resulta em build quebrado e conteúdo medíocre — esta é a forma honesta de fazer.
 
-## Escopo desta primeira entrega
+## Fontes oficiais que vou usar
 
-Construir a **fundação cinematográfica** do site e as páginas-modelo que servirão de molde para todo o crescimento futuro. Conteúdo teológico real começa nas seções-chave; o restante recebe estrutura navegável pronta para expansão iterativa.
+- **Bíblia**: API pública da [Bíblia Católica Online](https://www.bibliacatolica.com.br) (tradução Ave-Maria/CNBB) — texto integral dos 73 livros, livre acesso.
+- **Catecismo**: [vatican.va/archive/cathechism_po](https://www.vatican.va/archive/cathechism_po) — texto oficial em português, 2.865 parágrafos.
+- **Liturgia diária**: [liturgia.cancaonova.com](https://liturgia.cancaonova.com) e [vaticannews.va/pt/palavra-do-dia](https://www.vaticannews.va/pt/palavra-do-dia) — leituras, Evangelho e santo do dia.
+- **Documentos pontifícios**: vatican.va/content/[papa]/pt — encíclicas, exortações, cartas apostólicas.
+- **Santos / hagiografia**: vatican.va e [santiebeati.it](https://www.santiebeati.it) (cross-checked).
+- **Liturgia das Horas**: [liturgiadashoras.org](https://liturgiadashoras.org).
 
-### 1. Identidade visual (passo prévio)
-- Gerar **3 direções de design** renderizadas (catedral/vitrais/arte sacra) usando a paleta solicitada: dourado #D4AF37, azul-mariano #1D4E89, vermelho cardinalício #8B0000, branco e preto profundo.
-- Você escolhe uma; só então começa o build em React.
-- Tokens (cores, tipografia serifada refinada, sombras, gradientes "vitral") definidos em `src/styles.css` com modo claro/escuro.
+Tudo via Firecrawl (server-side, cacheado em arquivos `.json` no projeto). Nada inventado.
 
-### 2. Homepage cinematográfica
-- Hero com imagem de catedral, frase de santo, CTA.
-- Cards: Versículo do dia, Santo do dia, Calendário litúrgico (tempo atual), Destaques dos 7 Sacramentos.
-- Seção "Últimos artigos / Estudos em destaque".
-- Busca global no header.
+---
 
-### 3. Navegação e estrutura completa de rotas
-Menu principal com todas as seções pedidas, cada uma como rota TanStack própria com SEO (title/description/og únicos):
-- `/fe-catolica` — A Fé Católica (Igreja, História, Papado, Concílios, Credos)
-- `/biblia` — índice AT/NT + `/biblia/$livro` (página por livro)
-- `/sacramentos` — índice + `/sacramentos/$nome` (7 páginas)
-- `/catecismo` — navegação pelas 4 partes + busca
-- `/santos` — catálogo + `/santos/$slug`
-- `/doutores-da-igreja`
-- `/apologetica` — perguntas/respostas
-- `/maria` — dogmas, aparições, Rosário
-- `/oracoes` — biblioteca com favoritar/imprimir
-- `/calendario-liturgico`
-- `/assistente` — IA católica
+## Fase 1 — Núcleo de conteúdo real (esta entrega)
 
-### 4. Conteúdo real nas páginas-modelo (com IA + fontes oficiais)
-Para garantir profundidade desde já, populamos com **resumos gerados via Lovable AI** (modelo `google/gemini-3-flash-preview`) durante o build, citando sempre fonte oficial (vatican.va, CNBB):
-- **7 Sacramentos**: páginas completas (base bíblica, Catecismo §, história, FAQ).
-- **Maria**: dogmas + Fátima/Aparecida/Lourdes.
-- **Orações fundamentais**: Pai Nosso, Ave Maria, Glória, Salve Rainha, Credo, Rosário completo, Anjo da Guarda.
-- **Bíblia**: estrutura de todos os 73 livros com resumo curto, autor, contexto. Detalhamento profundo nos Evangelhos.
-- **Santos**: ~20 santos populares com biografia completa (Francisco, Agostinho, Teresinha, JPII, Padre Pio, Antônio, etc.). Demais santos como cards expansíveis.
-- **Catecismo**: navegação pelas 4 partes com resumos de cada seção e link para texto integral no Vaticano.
-- **Apologética**: 8–10 perguntas-chave respondidas.
+**Bíblia funcional**
+- Ingerir os 73 livros completos via Firecrawl, salvar em `src/lib/data/biblia/*.json`.
+- Rota `/biblia` → índice navegável.
+- Rota `/biblia/$livro` → lista de capítulos.
+- Rota `/biblia/$livro/$capitulo` → texto integral com versículos numerados, navegação anterior/próximo, link para vatican.va.
+- Busca por palavra-chave (client-side, índice gerado no build).
 
-### 5. Assistente de IA católico (`/assistente`)
-- Interface de chat usando **AI Elements** (conversation, message, prompt-input, shimmer).
-- Backend: server route `src/routes/api/chat.ts` com `streamText` + Lovable AI Gateway.
-- System prompt rigoroso: responder **apenas** com base em Bíblia, Catecismo, Magistério, Concílios, Padres e Doutores; nunca inventar doutrina; sempre citar fonte; redirecionar para sacerdote em questões pastorais sensíveis.
-- Tratamento de erros 429/402 com mensagem clara.
-- Sem login/persistência nesta fase (uma conversa por sessão).
+**Catecismo navegável**
+- Scrape das 4 partes / seções / parágrafos do Catecismo em vatican.va.
+- Rota `/catecismo` → estrutura completa.
+- Rota `/catecismo/$paragrafo` → texto integral do parágrafo, com referências e citações biblicas linkadas.
 
-### 6. Recursos transversais
-- Busca global no header (client-side sobre índice de páginas + santos + orações).
-- Toggle claro/escuro.
-- Animações suaves (fade-in, scale-in já no Tailwind do projeto).
-- Responsividade total + acessibilidade (WCAG AA, semantic HTML, alt texts, contraste validado).
-- SEO: meta tags por rota, `robots.txt`, `sitemap.xml`, `llms.txt`.
-- Imagens hero geradas (catedral, vitrais, Cristo, Maria) e externalizadas via `lovable-assets`.
+**Liturgia do dia (server function)**
+- `getLiturgiaHoje()` server fn que faz scrape diário e cacheia 6h.
+- Aparece na home: leituras, salmo, Evangelho, santo do dia, cor litúrgica.
 
-## Fora desta entrega (próximas iterações)
-- Autenticação, favoritos persistentes, progresso de estudos, dashboard pessoal, quiz.
-- Linha do tempo interativa, mapas de peregrinação/santos.
-- Texto bíblico integral (via API ou import de domínio público).
-- Plano de leitura diária com notificações.
-- Centenas de santos individuais (expansão gradual).
+---
 
-Pode confirmar para eu começar gerando as 3 direções de design?
+## Fase 2 — Devoção e oração real
+
+- **Rosário interativo** (`/oracoes/rosario`): contador de Ave-Marias, troca automática de mistério, meditações para cada mistério (texto de Bento XVI/JP II).
+- **Liturgia das Horas** (`/oracoes/liturgia-das-horas`): Laudes, Vésperas, Completas do dia (via liturgiadashoras.org).
+- **Novenas** completas (`/oracoes/novenas/$slug`): Imaculada, Sagrado Coração, Espírito Santo etc. — texto oficial.
+- **Via-Sacra**, **Terço da Misericórdia**, **Ladainhas** completas.
+
+## Fase 3 — Magistério e formação
+
+- **Documentos pontifícios** (`/documentos`): ingestão de Encíclicas (Rerum Novarum → Fratelli Tutti), Constituições do Vaticano II (Lumen Gentium, Dei Verbum, Gaudium et Spes, Sacrosanctum Concilium), exortações.
+- Cada documento: texto integral, parágrafos numerados, busca interna.
+- **Cursos** (`/estudos/$curso`): trilhas guiadas (Catecismo em 90 dias, Bíblia em 1 ano, Suma Teológica básica).
+- **Linha do tempo** (`/historia`): 2.000 anos da Igreja, marcos com fontes.
+
+## Fase 4 — IA, comunidade e contas
+
+- **Autenticação** (Lovable Cloud): email + Google. Perfil, favoritos, progresso de leitura, marcadores de versículos.
+- **IA Católica avançada**: RAG sobre Bíblia + Catecismo já ingeridos (não só prompt) — respostas com citações `(CIC §1234)` linkadas.
+- **Comunidade**: pedidos de oração, fórum moderado (Lovable Cloud + moderação por IA).
+- **Gamificação**: medalhas (leu Evangelho de João, terminou Catecismo etc.).
+- **PWA + modo offline** para Bíblia/orações.
+
+---
+
+## Decisões técnicas
+
+- **Firecrawl** como conector — preciso que você ative quando eu pedir.
+- **Lovable Cloud** ativado na Fase 4 para autenticação/comunidade.
+- Conteúdo grande (Bíblia ≈ 4MB JSON, Catecismo ≈ 2MB) ficará em `src/lib/data/` versionado, carregado por rota via dynamic import — não vai inchar o bundle.
+- Server functions com cache para liturgia diária.
+
+## Pergunta antes de começar
+
+1. **Aprova começar pela Fase 1?** (Bíblia + Catecismo + liturgia do dia)
+2. **Posso ativar o conector Firecrawl agora?** (precisa para fazer a ingestão real — sem ele eu não tenho como pegar conteúdo oficial automaticamente)
+
+Sem o Firecrawl ativo, só consigo trabalhar com volumes pequenos via `fetch_website` (página por página, muito lento e limitado para textos longos como a Bíblia).
