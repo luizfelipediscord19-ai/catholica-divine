@@ -181,30 +181,45 @@ function Home() {
         </div>
       </section>
 
-      {/* Pillars */}
-      <section className="max-w-6xl mx-auto px-6 py-20 md:py-28">
-        <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-3">Os pilares</p>
-        <h2 className="font-display text-4xl md:text-5xl text-foreground mb-12 max-w-3xl">
-          Toda a fé católica, organizada para o seu estudo.
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-gold/5 border border-gold/10">
+      {/* Pillars - Bento Grid Style */}
+      <section className="max-w-7xl mx-auto px-8 py-32">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
+          <div className="max-w-2xl animate-reveal">
+            <p className="text-[10px] tracking-[0.4em] uppercase text-gold mb-4">Os pilares da verdade</p>
+            <h2 className="font-display text-5xl md:text-7xl text-foreground leading-[1.1]">
+              Toda a fé católica, organizada <br/> <span className="text-gold/50">para o seu estudo.</span>
+            </h2>
+          </div>
+          <p className="text-muted-foreground max-w-sm text-sm leading-relaxed mb-2 animate-reveal stagger-1">
+            Explore séculos de tradição, magistério e espiritualidade através de uma interface desenhada para a contemplação.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {PILLARS.map((p, i) => (
             <Link
               key={p.to}
               to={p.to}
-              className="group bg-background hover:bg-card/80 transition-smooth p-10 flex flex-col gap-6 animate-content-fade"
+              className={`group glass p-10 flex flex-col gap-8 transition-premium hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] animate-reveal ${
+                i === 0 || i === 5 ? "md:col-span-2" : ""
+              }`}
               style={{ animationDelay: `${i * 100}ms` }}
             >
-              <div className="size-12 rounded-full bg-gold/5 flex items-center justify-center group-hover:bg-gold/10 transition-smooth">
-                <p.icon className="size-6 text-gold group-hover:scale-110 transition-smooth" />
+              <div className="size-14 rounded-full bg-gold/5 border border-gold/10 flex items-center justify-center group-hover:bg-gold/15 group-hover:border-gold/30 transition-premium">
+                <p.icon className="size-6 text-gold group-hover:scale-110 transition-premium" />
               </div>
-              <div>
-                <h3 className="font-display text-2xl text-foreground mb-3 group-hover:text-gold transition-smooth">{p.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed font-light">{p.desc}</p>
+              <div className="flex-1">
+                <h3 className="font-display text-3xl text-foreground mb-4 group-hover:text-gold transition-colors">{p.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed font-light line-clamp-2 group-hover:text-foreground/70 transition-colors">{p.desc}</p>
               </div>
-              <span className="mt-auto text-[9px] tracking-[0.4em] uppercase text-gold/50 group-hover:text-gold group-hover:translate-x-2 transition-smooth">
-                Explorar →
-              </span>
+              <div className="flex items-center justify-between pt-6 border-t border-gold/5">
+                <span className="text-[9px] tracking-[0.5em] uppercase text-gold/40 group-hover:text-gold transition-colors">
+                  Explorar
+                </span>
+                <div className="size-8 rounded-full border border-gold/10 flex items-center justify-center group-hover:border-gold/30 transition-premium">
+                  <span className="text-gold text-lg group-hover:translate-x-0.5 transition-transform">→</span>
+                </div>
+              </div>
             </Link>
           ))}
         </div>
