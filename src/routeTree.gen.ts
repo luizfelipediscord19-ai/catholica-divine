@@ -15,6 +15,7 @@ import { Route as OracoesRouteImport } from './routes/oracoes'
 import { Route as MariaRouteImport } from './routes/maria'
 import { Route as FeCatolicaRouteImport } from './routes/fe-catolica'
 import { Route as DoutoresDaIgrejaRouteImport } from './routes/doutores-da-igreja'
+import { Route as CoroinhasRouteImport } from './routes/coroinhas'
 import { Route as CatecismoRouteImport } from './routes/catecismo'
 import { Route as CalendarioLiturgicoRouteImport } from './routes/calendario-liturgico'
 import { Route as BibliaRouteImport } from './routes/biblia'
@@ -64,6 +65,11 @@ const FeCatolicaRoute = FeCatolicaRouteImport.update({
 const DoutoresDaIgrejaRoute = DoutoresDaIgrejaRouteImport.update({
   id: '/doutores-da-igreja',
   path: '/doutores-da-igreja',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CoroinhasRoute = CoroinhasRouteImport.update({
+  id: '/coroinhas',
+  path: '/coroinhas',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CatecismoRoute = CatecismoRouteImport.update({
@@ -175,6 +181,7 @@ export interface FileRoutesByFullPath {
   '/biblia': typeof BibliaRouteWithChildren
   '/calendario-liturgico': typeof CalendarioLiturgicoRoute
   '/catecismo': typeof CatecismoRouteWithChildren
+  '/coroinhas': typeof CoroinhasRoute
   '/doutores-da-igreja': typeof DoutoresDaIgrejaRoute
   '/fe-catolica': typeof FeCatolicaRoute
   '/maria': typeof MariaRoute
@@ -202,6 +209,7 @@ export interface FileRoutesByTo {
   '/assistente': typeof AssistenteRoute
   '/calendario-liturgico': typeof CalendarioLiturgicoRoute
   '/catecismo': typeof CatecismoRouteWithChildren
+  '/coroinhas': typeof CoroinhasRoute
   '/doutores-da-igreja': typeof DoutoresDaIgrejaRoute
   '/fe-catolica': typeof FeCatolicaRoute
   '/maria': typeof MariaRoute
@@ -230,6 +238,7 @@ export interface FileRoutesById {
   '/biblia': typeof BibliaRouteWithChildren
   '/calendario-liturgico': typeof CalendarioLiturgicoRoute
   '/catecismo': typeof CatecismoRouteWithChildren
+  '/coroinhas': typeof CoroinhasRoute
   '/doutores-da-igreja': typeof DoutoresDaIgrejaRoute
   '/fe-catolica': typeof FeCatolicaRoute
   '/maria': typeof MariaRoute
@@ -260,6 +269,7 @@ export interface FileRouteTypes {
     | '/biblia'
     | '/calendario-liturgico'
     | '/catecismo'
+    | '/coroinhas'
     | '/doutores-da-igreja'
     | '/fe-catolica'
     | '/maria'
@@ -287,6 +297,7 @@ export interface FileRouteTypes {
     | '/assistente'
     | '/calendario-liturgico'
     | '/catecismo'
+    | '/coroinhas'
     | '/doutores-da-igreja'
     | '/fe-catolica'
     | '/maria'
@@ -314,6 +325,7 @@ export interface FileRouteTypes {
     | '/biblia'
     | '/calendario-liturgico'
     | '/catecismo'
+    | '/coroinhas'
     | '/doutores-da-igreja'
     | '/fe-catolica'
     | '/maria'
@@ -343,6 +355,7 @@ export interface RootRouteChildren {
   BibliaRoute: typeof BibliaRouteWithChildren
   CalendarioLiturgicoRoute: typeof CalendarioLiturgicoRoute
   CatecismoRoute: typeof CatecismoRouteWithChildren
+  CoroinhasRoute: typeof CoroinhasRoute
   DoutoresDaIgrejaRoute: typeof DoutoresDaIgrejaRoute
   FeCatolicaRoute: typeof FeCatolicaRoute
   MariaRoute: typeof MariaRoute
@@ -394,6 +407,13 @@ declare module '@tanstack/react-router' {
       path: '/doutores-da-igreja'
       fullPath: '/doutores-da-igreja'
       preLoaderRoute: typeof DoutoresDaIgrejaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/coroinhas': {
+      id: '/coroinhas'
+      path: '/coroinhas'
+      fullPath: '/coroinhas'
+      preLoaderRoute: typeof CoroinhasRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/catecismo': {
@@ -629,6 +649,7 @@ const rootRouteChildren: RootRouteChildren = {
   BibliaRoute: BibliaRouteWithChildren,
   CalendarioLiturgicoRoute: CalendarioLiturgicoRoute,
   CatecismoRoute: CatecismoRouteWithChildren,
+  CoroinhasRoute: CoroinhasRoute,
   DoutoresDaIgrejaRoute: DoutoresDaIgrejaRoute,
   FeCatolicaRoute: FeCatolicaRoute,
   MariaRoute: MariaRoute,
