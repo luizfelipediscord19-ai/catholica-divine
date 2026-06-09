@@ -75,12 +75,13 @@ export function ContentCard({
   children?: ReactNode;
 }) {
   return (
-    <article className="group relative border border-gold/10 hover:border-gold/30 bg-card/50 backdrop-blur-sm p-8 transition-smooth hover:-translate-y-1 hover:shadow-2xl hover:shadow-gold/5">
+    <article className="group relative border border-gold/10 hover:border-gold/40 bg-card/40 backdrop-blur-md p-10 transition-premium hover:-translate-y-2 hover:shadow-2xl hover:shadow-gold/10 overflow-hidden">
+      <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-gold/10 transition-premium" />
       {subtitle ? (
-        <p className="text-[10px] tracking-[0.3em] uppercase text-gold/70 mb-2">{subtitle}</p>
+        <p className="text-[11px] tracking-[0.4em] uppercase text-gold/60 mb-4 group-hover:text-gold transition-colors">{subtitle}</p>
       ) : null}
-      <h3 className="font-display text-xl text-foreground mb-3 leading-snug">{title}</h3>
-      {children ? <div className="text-sm text-muted-foreground leading-relaxed">{children}</div> : null}
+      <h3 className="font-display text-2xl text-foreground mb-6 leading-tight group-hover:text-paper transition-colors">{title}</h3>
+      {children ? <div className="text-sm text-muted-foreground leading-relaxed font-light group-hover:text-foreground/80 transition-colors">{children}</div> : null}
     </article>
   );
 }
