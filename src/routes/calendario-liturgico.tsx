@@ -29,6 +29,7 @@ const TOC = [
   { id: "pascoa", label: "VII. Tempo Pascal" },
   { id: "comum-2", label: "VIII. Tempo Comum (II)" },
   { id: "solenidades", label: "Solenidades do Senhor" },
+  { id: "mapa", label: "Mapa do Ano (interativo)" },
   { id: "versiculo", label: "Versículo do dia" },
   { id: "notas", label: "Notas e fontes" },
 ];
