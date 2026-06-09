@@ -108,17 +108,18 @@ function Home() {
 
         <div className="relative max-w-7xl mx-auto px-8 w-full">
           <div className="max-w-4xl animate-reveal">
-            <p className="text-[10px] tracking-[0.5em] uppercase text-gold/80 mb-8 flex items-center gap-4">
-              <span className="h-px w-8 bg-gold/30" /> Una · Sancta · Catholica · Apostolica
+            <p className="text-[11px] tracking-[0.6em] uppercase text-gold/80 mb-10 flex items-center gap-6">
+              <span className="h-px w-12 bg-gold/40" /> 
+              <span>Una · Sancta · Catholica · Apostolica</span>
             </p>
-            <h1 className="font-display text-7xl md:text-9xl lg:text-[11rem] leading-[0.8] text-paper tracking-tighter mb-10">
+            <h1 className="font-display text-7xl md:text-9xl lg:text-[12rem] leading-[0.75] text-paper tracking-tighter mb-12">
               A biblioteca <br/>
               <span className="text-gold italic font-medium relative inline-block">
                 da Fé
-                <span className="absolute -bottom-4 left-0 w-full h-1 bg-gold/20 blur-sm" />
+                <span className="absolute -bottom-6 left-0 w-full h-1 bg-gold/30 blur-md" />
               </span>
             </h1>
-            <p className="max-w-xl text-lg md:text-xl text-paper/70 leading-relaxed font-light mb-12">
+            <p className="max-w-2xl text-lg md:text-2xl text-paper/70 leading-relaxed font-light mb-16 letter-spacing-wide">
               Bíblia, Catecismo, Magistério, santos e orações — em uma experiência
               cinematográfica, fiel à doutrina da Igreja de Cristo.
             </p>

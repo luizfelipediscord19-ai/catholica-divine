@@ -99,18 +99,21 @@
 
 
 :root {
-  --radius: 0.5rem; /* Smoother radius */
+  --radius: 0.5rem;
 
-  /* Brand */
+  /* Brand Tokens — Absolute Luxury */
   --gold: #d4af37;
   --gold-soft: #c5a059;
+  --gold-accent: #f0d58e;
   --marian: #1d4e89;
   --marian-soft: #2c6bb0;
   --cardinal: #8b0000;
-  --deep: #050505; /* Deeper black */
-  --paper: #fcfaf7; /* More elegant paper */
+  --deep: #050505;
+  --paper: #fcfaf7;
+  --glass-bg: rgba(12, 12, 12, 0.75);
+  --glass-border: rgba(212, 175, 55, 0.12);
 
-  /* Default to dark cinematic mode */
+  /* Semantic Palette */
   --background: #050505;
   --foreground: #fcfaf7;
   --card: #0c0c0c;
@@ -130,6 +133,9 @@
   --border: rgba(212, 175, 55, 0.12);
   --input: rgba(212, 175, 55, 0.15);
   --ring: #d4af37;
+
+  /* Spacing System (8pt) */
+  --unit: 8px;
 }
 
 .light {
@@ -152,31 +158,38 @@
   --border: rgba(10, 10, 10, 0.08);
   --input: rgba(10, 10, 10, 0.12);
   --ring: #1d4e89;
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(10, 10, 10, 0.05);
 }
 
 @layer base {
   * {
     border-color: var(--color-border);
+    box-sizing: border-box;
   }
   html {
     scroll-behavior: smooth;
     font-size: 16px;
+    -webkit-tap-highlight-color: transparent;
   }
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     line-height: 1.6;
-    letter-spacing: -0.011em;
+    letter-spacing: -0.01em;
+    text-rendering: optimizeLegibility;
   }
   h1, h2, h3, h4, .font-display {
     font-family: var(--font-display);
     font-weight: 500;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
   }
   ::selection {
-    background-color: rgba(212, 175, 55, 0.25);
+    background-color: rgba(212, 175, 55, 0.3);
     color: var(--color-foreground);
   }
 }
@@ -186,17 +199,19 @@
     text-shadow: 0 0 35px rgba(212, 175, 55, 0.3);
   }
   .glass {
-    background: rgba(12, 12, 12, 0.7);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(212, 175, 55, 0.08);
-  }
-  .glass-light {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(10, 10, 10, 0.05);
+    background: var(--glass-bg);
+    backdrop-filter: blur(24px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
   }
   .transition-premium {
-    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .soft-shadow {
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+  }
+  .inner-glow {
+    box-shadow: inset 0 0 20px rgba(212, 175, 55, 0.05);
   }
 }
 
