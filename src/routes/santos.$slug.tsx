@@ -18,10 +18,15 @@ export const Route = createFileRoute("/santos/$slug")({
       ],
     };
   },
-  loader: ({ params }) => {
-    const basico = getSantoBasicoBySlug(params.slug);
-    if (!basico) throw notFound();
-    return { basico };
+  loader: async ({ params, context: { queryClient } }) => {
+    return queryClient.ensureQueryData({
+      queryKey: ["santo", params.slug],
+      queryFn: () => {
+        const basico = getSantoBasicoBySlug(params.slug);
+        if (!basico) throw notFound();
+        return { basico };
+      },
+    });
   },
   notFoundComponent: () => (
     <div>

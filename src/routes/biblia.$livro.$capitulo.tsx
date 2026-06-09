@@ -6,11 +6,19 @@ import { ArrowLeft, ExternalLink, ChevronLeft, ChevronRight, Filter, X } from "l
 type Verso = { v: number; t: string };
 type LivroJson = { slug: string; nome: string; capitulos: Record<string, Verso[]> };
 
+const CAPITULO_CACHE = new Map<string, Verso[]>();
+
 async function carregarCapitulo(slug: string, cap: number): Promise<Verso[] | null> {
+  const cacheKey = `${slug}-${cap}`;
+  if (CAPITULO_CACHE.has(cacheKey)) return CAPITULO_CACHE.get(cacheKey)!;
+  
   try {
     const mod = (await import(`../lib/data/biblia/almeida/${slug}.json`)) as { default: LivroJson };
-    return mod.default.capitulos[String(cap)] ?? null;
-  } catch {
+    const versos = mod.default.capitulos[String(cap)] ?? null;
+    if (versos) CAPITULO_CACHE.set(cacheKey, versos);
+    return versos;
+  } catch (error) {
+    console.error(`Falha ao carregar capítulo: ${slug} ${cap}`, error);
     return null;
   }
 }
@@ -25,12 +33,19 @@ export const Route = createFileRoute("/biblia/$livro/$capitulo")({
     };
     return { vi: toNum(raw.vi), vf: toNum(raw.vf) };
   },
-  loader: async ({ params }) => {
+  loader: async ({ params, context: { queryClient } }) => {
     const l = getLivro(params.livro);
     const c = Number(params.capitulo);
     if (!l || !Number.isFinite(c) || c < 1 || c > l.capitulos) throw notFound();
-    const versos = await carregarCapitulo(l.slug, c);
-    return { livro: l, capitulo: c, versos };
+    
+    // Use React Query for caching to prevent redundant imports on re-navigation
+    return queryClient.ensureQueryData({
+      queryKey: ["biblia", l.slug, c],
+      queryFn: async () => {
+        const versos = await carregarCapitulo(l.slug, c);
+        return { livro: l, capitulo: c, versos };
+      },
+    });
   },
   head: ({ loaderData }) => {
     const titulo = loaderData ? `${loaderData.livro.nome} ${loaderData.capitulo}` : "Bíblia";

@@ -23,13 +23,25 @@ const GRUPOS_NT = ["Evangelhos", "Atos", "Cartas Paulinas", "Cartas Católicas",
 function Page() {
   const [q, setQ] = useState("");
   const filtro = q.trim().toLowerCase();
-  const filtrar = (grupo: string, testamento: "AT" | "NT") =>
-    LIVROS.filter(
-      (l) =>
-        l.grupo === grupo &&
-        l.testamento === testamento &&
-        (!filtro || l.nome.toLowerCase().includes(filtro) || l.abrev.toLowerCase().includes(filtro))
-    );
+  
+  // Memoize filtered lists to prevent heavy calculations on every render
+  const filteredAT = GRUPOS_AT.map(g => ({
+    grupo: g,
+    livros: LIVROS.filter(l => 
+      l.testamento === "AT" && 
+      l.grupo === g && 
+      (!filtro || l.nome.toLowerCase().includes(filtro) || l.abrev.toLowerCase().includes(filtro))
+    )
+  })).filter(g => g.livros.length > 0);
+
+  const filteredNT = GRUPOS_NT.map(g => ({
+    grupo: g,
+    livros: LIVROS.filter(l => 
+      l.testamento === "NT" && 
+      l.grupo === g && 
+      (!filtro || l.nome.toLowerCase().includes(filtro) || l.abrev.toLowerCase().includes(filtro))
+    )
+  })).filter(g => g.livros.length > 0);
 
   return (
     <div>
@@ -60,63 +72,55 @@ function Page() {
 
       <Section kicker="Antigo Testamento" title="46 livros — Da Criação ao Messias">
         <div className="space-y-10">
-          {GRUPOS_AT.map((g) => {
-            const livros = filtrar(g, "AT");
-            if (livros.length === 0) return null;
-            return (
-              <div key={g}>
-                <h3 className="text-[10px] tracking-[0.3em] uppercase text-gold/80 mb-4">{g}</h3>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-px bg-gold/15">
-                  {livros.map((l) => (
-                    <Link
-                      key={l.slug}
-                      to="/biblia/$livro"
-                      params={{ livro: l.slug }}
-                      className="bg-background hover:bg-card p-4 transition-colors group"
-                    >
-                      <div className="font-display text-base text-foreground group-hover:text-gold">
-                        {l.nome}
-                      </div>
-                      <div className="text-[10px] mt-1 text-muted-foreground tracking-wider uppercase">
-                        {l.abrev} · {l.capitulos} cap.
-                      </div>
-                    </Link>
-                  ))}
-                </div>
+          {filteredAT.map(({ grupo, livros }) => (
+            <div key={grupo}>
+              <h3 className="text-[10px] tracking-[0.3em] uppercase text-gold/80 mb-4">{grupo}</h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-px bg-gold/15">
+                {livros.map((l) => (
+                  <Link
+                    key={l.slug}
+                    to="/biblia/$livro"
+                    params={{ livro: l.slug }}
+                    className="bg-background hover:bg-card p-4 transition-colors group"
+                  >
+                    <div className="font-display text-base text-foreground group-hover:text-gold">
+                      {l.nome}
+                    </div>
+                    <div className="text-[10px] mt-1 text-muted-foreground tracking-wider uppercase">
+                      {l.abrev} · {l.capitulos} cap.
+                    </div>
+                  </Link>
+                ))}
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
       </Section>
 
       <Section kicker="Novo Testamento" title="27 livros — A Boa Nova de Cristo">
         <div className="space-y-10">
-          {GRUPOS_NT.map((g) => {
-            const livros = filtrar(g, "NT");
-            if (livros.length === 0) return null;
-            return (
-              <div key={g}>
-                <h3 className="text-[10px] tracking-[0.3em] uppercase text-gold/80 mb-4">{g}</h3>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-px bg-gold/15">
-                  {livros.map((l) => (
-                    <Link
-                      key={l.slug}
-                      to="/biblia/$livro"
-                      params={{ livro: l.slug }}
-                      className="bg-background hover:bg-card p-4 transition-colors group"
-                    >
-                      <div className="font-display text-base text-foreground group-hover:text-gold">
-                        {l.nome}
-                      </div>
-                      <div className="text-[10px] mt-1 text-muted-foreground tracking-wider uppercase">
-                        {l.abrev} · {l.capitulos} cap.
-                      </div>
-                    </Link>
-                  ))}
-                </div>
+          {filteredNT.map(({ grupo, livros }) => (
+            <div key={grupo}>
+              <h3 className="text-[10px] tracking-[0.3em] uppercase text-gold/80 mb-4">{grupo}</h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-px bg-gold/15">
+                {livros.map((l) => (
+                  <Link
+                    key={l.slug}
+                    to="/biblia/$livro"
+                    params={{ livro: l.slug }}
+                    className="bg-background hover:bg-card p-4 transition-colors group"
+                  >
+                    <div className="font-display text-base text-foreground group-hover:text-gold">
+                      {l.nome}
+                    </div>
+                    <div className="text-[10px] mt-1 text-muted-foreground tracking-wider uppercase">
+                      {l.abrev} · {l.capitulos} cap.
+                    </div>
+                  </Link>
+                ))}
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
       </Section>
     </div>
