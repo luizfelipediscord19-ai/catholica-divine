@@ -91,6 +91,8 @@ function Home() {
         search: evangelho.vi ? { vi: String(evangelho.vi), ...(evangelho.vf ? { vf: String(evangelho.vf) } : {}) } : {},
       },
     },
+  ];
+
   return (
     <div>
       {/* Hero */}
