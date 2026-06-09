@@ -28,6 +28,7 @@ import { Route as OracoesRosarioRouteImport } from './routes/oracoes.rosario'
 import { Route as OracoesNovenasRouteImport } from './routes/oracoes.novenas'
 import { Route as OracoesLiturgiaDasHorasRouteImport } from './routes/oracoes.liturgia-das-horas'
 import { Route as CatecismoParteRouteImport } from './routes/catecismo.$parte'
+import { Route as BibliaLeiturasRouteImport } from './routes/biblia.leituras'
 import { Route as BibliaLivroRouteImport } from './routes/biblia.$livro'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
 import { Route as BibliaLivroIndexRouteImport } from './routes/biblia.$livro.index'
@@ -130,6 +131,11 @@ const CatecismoParteRoute = CatecismoParteRouteImport.update({
   path: '/$parte',
   getParentRoute: () => CatecismoRoute,
 } as any)
+const BibliaLeiturasRoute = BibliaLeiturasRouteImport.update({
+  id: '/leituras',
+  path: '/leituras',
+  getParentRoute: () => BibliaRoute,
+} as any)
 const BibliaLivroRoute = BibliaLivroRouteImport.update({
   id: '/$livro',
   path: '/$livro',
@@ -171,6 +177,7 @@ export interface FileRoutesByFullPath {
   '/santos': typeof SantosRoute
   '/api/chat': typeof ApiChatRoute
   '/biblia/$livro': typeof BibliaLivroRouteWithChildren
+  '/biblia/leituras': typeof BibliaLeiturasRoute
   '/catecismo/$parte': typeof CatecismoParteRoute
   '/oracoes/liturgia-das-horas': typeof OracoesLiturgiaDasHorasRoute
   '/oracoes/novenas': typeof OracoesNovenasRouteWithChildren
@@ -195,6 +202,7 @@ export interface FileRoutesByTo {
   '/sacramentos': typeof SacramentosRoute
   '/santos': typeof SantosRoute
   '/api/chat': typeof ApiChatRoute
+  '/biblia/leituras': typeof BibliaLeiturasRoute
   '/catecismo/$parte': typeof CatecismoParteRoute
   '/oracoes/liturgia-das-horas': typeof OracoesLiturgiaDasHorasRoute
   '/oracoes/novenas': typeof OracoesNovenasRouteWithChildren
@@ -222,6 +230,7 @@ export interface FileRoutesById {
   '/santos': typeof SantosRoute
   '/api/chat': typeof ApiChatRoute
   '/biblia/$livro': typeof BibliaLivroRouteWithChildren
+  '/biblia/leituras': typeof BibliaLeiturasRoute
   '/catecismo/$parte': typeof CatecismoParteRoute
   '/oracoes/liturgia-das-horas': typeof OracoesLiturgiaDasHorasRoute
   '/oracoes/novenas': typeof OracoesNovenasRouteWithChildren
@@ -250,6 +259,7 @@ export interface FileRouteTypes {
     | '/santos'
     | '/api/chat'
     | '/biblia/$livro'
+    | '/biblia/leituras'
     | '/catecismo/$parte'
     | '/oracoes/liturgia-das-horas'
     | '/oracoes/novenas'
@@ -274,6 +284,7 @@ export interface FileRouteTypes {
     | '/sacramentos'
     | '/santos'
     | '/api/chat'
+    | '/biblia/leituras'
     | '/catecismo/$parte'
     | '/oracoes/liturgia-das-horas'
     | '/oracoes/novenas'
@@ -300,6 +311,7 @@ export interface FileRouteTypes {
     | '/santos'
     | '/api/chat'
     | '/biblia/$livro'
+    | '/biblia/leituras'
     | '/catecismo/$parte'
     | '/oracoes/liturgia-das-horas'
     | '/oracoes/novenas'
@@ -463,6 +475,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CatecismoParteRouteImport
       parentRoute: typeof CatecismoRoute
     }
+    '/biblia/leituras': {
+      id: '/biblia/leituras'
+      path: '/leituras'
+      fullPath: '/biblia/leituras'
+      preLoaderRoute: typeof BibliaLeiturasRouteImport
+      parentRoute: typeof BibliaRoute
+    }
     '/biblia/$livro': {
       id: '/biblia/$livro'
       path: '/$livro'
@@ -517,11 +536,13 @@ const BibliaLivroRouteWithChildren = BibliaLivroRoute._addFileChildren(
 
 interface BibliaRouteChildren {
   BibliaLivroRoute: typeof BibliaLivroRouteWithChildren
+  BibliaLeiturasRoute: typeof BibliaLeiturasRoute
   BibliaIndexRoute: typeof BibliaIndexRoute
 }
 
 const BibliaRouteChildren: BibliaRouteChildren = {
   BibliaLivroRoute: BibliaLivroRouteWithChildren,
+  BibliaLeiturasRoute: BibliaLeiturasRoute,
   BibliaIndexRoute: BibliaIndexRoute,
 }
 
@@ -589,13 +610,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
