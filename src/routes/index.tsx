@@ -108,8 +108,8 @@ function Home() {
           <p className="text-[11px] tracking-[0.4em] uppercase text-gold mb-6">
             Una · Sancta · Catholica · Apostolica
           </p>
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl leading-[0.98] text-paper max-w-4xl">
-            A biblioteca digital <em className="text-gold italic">da Fé Católica</em>
+          <h1 className="font-display text-6xl md:text-8xl lg:text-[10rem] leading-[0.85] text-paper max-w-5xl tracking-tighter">
+            A biblioteca <em className="text-gold italic font-medium">da Fé</em>
           </h1>
           <p className="mt-8 max-w-2xl text-lg md:text-xl text-paper/80 leading-relaxed font-light">
             Bíblia, Catecismo, Magistério, santos e orações — em uma única plataforma
@@ -118,7 +118,7 @@ function Home() {
           <div className="mt-12 flex flex-wrap gap-4">
             <Link
               to="/biblia"
-              className="inline-flex items-center gap-2 px-7 py-4 bg-gold text-deep text-[11px] uppercase tracking-[0.25em] font-medium hover:bg-paper transition-colors"
+              className="inline-flex items-center gap-3 px-10 py-5 bg-gold text-deep text-[10px] uppercase tracking-[0.4em] font-bold hover:bg-paper transition-smooth hover:scale-105 active:scale-95 shadow-2xl shadow-gold/20"
             >
               <BookOpen className="size-4" /> Começar a estudar
             </Link>
@@ -200,8 +200,8 @@ function Home() {
           />
           <div>
             <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-4">Maria, Mater Ecclesiae</p>
-            <h2 className="font-display text-4xl md:text-5xl text-foreground leading-tight">
-              “Faça-se em mim segundo a tua palavra.”
+            <h2 className="font-display text-5xl md:text-7xl text-foreground leading-[0.9] tracking-tight">
+              “Faça-se em mim <br/> <span className="text-gold">segundo a tua palavra.</span>”
             </h2>
             <p className="mt-6 text-base text-muted-foreground leading-relaxed">
               A Virgem Maria é o caminho mais seguro a Cristo. Conheça os dogmas marianos,
@@ -210,7 +210,7 @@ function Home() {
             </p>
             <Link
               to="/maria"
-              className="inline-block mt-8 px-6 py-3 border border-gold text-gold text-[11px] uppercase tracking-[0.25em] hover:bg-gold hover:text-deep transition-colors"
+              className="inline-block mt-10 px-10 py-5 border border-gold/30 text-gold text-[10px] uppercase tracking-[0.4em] font-bold hover:bg-gold hover:text-deep transition-smooth hover:scale-105"
             >
               Estudar Mariologia
             </Link>
@@ -225,11 +225,13 @@ function Home() {
           style={{ backgroundImage: `url(${cristo})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/95 to-background/80" />
-        <div className="relative max-w-4xl mx-auto px-6 py-24 md:py-32 text-center">
-          <Sparkles className="size-10 text-gold mx-auto mb-6" />
-          <p className="text-[10px] tracking-[0.35em] uppercase text-gold mb-4">Sophia · IA Católica</p>
-          <h2 className="font-display text-4xl md:text-6xl text-foreground leading-tight">
-            Tire suas dúvidas sobre a Fé com uma IA fiel ao Magistério.
+        <div className="relative max-w-5xl mx-auto px-6 py-32 md:py-48 text-center animate-content-fade">
+          <div className="size-20 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-10 border border-gold/20 shadow-2xl shadow-gold/10">
+            <Sparkles className="size-8 text-gold animate-pulse" />
+          </div>
+          <p className="text-[10px] tracking-[0.5em] uppercase text-gold/60 mb-6">Sophia · Logos</p>
+          <h2 className="font-display text-5xl md:text-8xl text-foreground leading-[0.85] tracking-tighter mb-10">
+            Inteligência Artificial <br/> <em className="text-gold italic font-medium">ao serviço da Verdade</em>
           </h2>
           <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Respostas fundamentadas na Bíblia, no Catecismo e nos documentos oficiais da
