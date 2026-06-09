@@ -1,6 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { PageHero, Section } from "../components/PageShell";
-import { NOVENAS } from "../lib/data/devocoes/novenas";
+import { NOVENAS, type Novena } from "../lib/data/devocoes/novenas";
 
 export const Route = createFileRoute("/oracoes/novenas/$slug")({
   head: ({ params }) => {
@@ -22,7 +22,7 @@ export const Route = createFileRoute("/oracoes/novenas/$slug")({
 });
 
 function Page() {
-  const { n } = Route.useLoaderData();
+  const { n } = Route.useLoaderData() as { n: Novena };
   return (
     <div>
       <PageHero eyebrow="Novena" title={n.titulo} intro={n.ocasiao} />
