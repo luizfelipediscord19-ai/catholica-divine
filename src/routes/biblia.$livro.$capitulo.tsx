@@ -119,7 +119,7 @@ function Page() {
     if (!vi) return versos;
     const start = vi;
     const end = vf && vf >= vi ? vf : vi;
-    return versos.filter((v) => v.v >= start && v.v <= end);
+    return versos.filter((v: Verso) => v.v >= start && v.v <= end);
   })();
 
   const passagemAtiva = !!vi;
