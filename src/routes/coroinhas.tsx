@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Section, CardGrid, ContentCard } from "../components/PageShell";
+import { SophiaChat } from "../components/SophiaChat";
+import { Sparkles } from "lucide-react";
 
 export const Route = createFileRoute("/coroinhas")({
   head: () => ({
