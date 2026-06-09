@@ -1,6 +1,6 @@
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport } from "ai";
-import { SophiaMode } from "../lib/types/chat";
+import { SophiaMode } from "../../lib/types/chat";
 import { useMemo } from "react";
 
 /**
