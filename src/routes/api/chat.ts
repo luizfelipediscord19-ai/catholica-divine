@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { convertToModelMessages, streamText, type UIMessage } from "ai";
-import { groq } from "@ai-sdk/groq";
+import { createLovableAiGatewayProvider } from "@/lib/ai-gateway.server";
 
 import { z } from "zod";
 
@@ -229,15 +229,16 @@ export const Route = createFileRoute("/api/chat")({
           }
 
           const { messages, mode } = parsed.data;
-          const key = process.env.GROQ_API_KEY;
+          const key = process.env.LOVABLE_API_KEY;
           if (!key) {
             return new Response("Configuration Error: Missing AI Credentials", { status: 500 });
           }
 
           const systemPrompt = mode === "coroinhas" ? COROINHAS_PROMPT : SYSTEM_PROMPT;
+          const gateway = createLovableAiGatewayProvider(key);
 
           const result = streamText({
-            model: groq("llama-3.3-70b-versatile"),
+            model: gateway("google/gemini-3-flash-preview"),
             system: systemPrompt,
             messages: await convertToModelMessages(messages as UIMessage[]),
           });
@@ -251,7 +252,10 @@ export const Route = createFileRoute("/api/chat")({
           if (message.includes("429")) {
             return new Response("Muitas requisições. Aguarde um instante e tente novamente.", { status: 429 });
           }
-          return new Response("Erro no processamento da IA", { status: 500 });
+          if (message.includes("402")) {
+            return new Response("Créditos de IA esgotados. Adicione créditos no painel da Lovable.", { status: 402 });
+          }
+          return new Response("Erro no processamento da IA: " + message, { status: 500 });
         }
       },
     },
