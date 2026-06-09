@@ -132,13 +132,22 @@ function Home() {
       {/* Daily */}
       <section className="border-y border-gold/20 bg-card">
         <div className="max-w-6xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gold/15">
-          {DAILY.map((d) => (
-            <div key={d.kicker} className="px-2 md:px-8 py-6 md:py-2">
-              <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-3">{d.kicker}</p>
-              <p className="font-display italic text-lg text-foreground leading-snug">{d.text}</p>
-              <p className="mt-3 text-xs text-muted-foreground tracking-wider uppercase">{d.ref}</p>
-            </div>
-          ))}
+          {DAILY.map((d) => {
+            const inner = (
+              <>
+                <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-3">{d.kicker}</p>
+                <p className="font-display italic text-lg text-foreground leading-snug">{d.text}</p>
+                <p className="mt-3 text-xs text-muted-foreground tracking-wider uppercase">{d.ref}</p>
+              </>
+            );
+            return d.link ? (
+              <Link key={d.kicker} to={d.link.to} params={d.link.params} search={d.link.search} className="px-2 md:px-8 py-6 md:py-2 block hover:bg-background/40 transition-colors">
+                {inner}
+              </Link>
+            ) : (
+              <div key={d.kicker} className="px-2 md:px-8 py-6 md:py-2">{inner}</div>
+            );
+          })}
         </div>
       </section>
 
