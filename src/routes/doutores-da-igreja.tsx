@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { PageHero, Section, CardGrid, ContentCard, Prose, Pullquote } from "../components/PageShell";
+import { PageHero, CardGrid, ContentCard, Prose, Pullquote } from "../components/PageShell";
 import { ReadingMode, FnRef } from "../components/ReadingMode";
 
 export const Route = createFileRoute("/doutores-da-igreja")({
