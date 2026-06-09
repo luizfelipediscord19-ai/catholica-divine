@@ -1,184 +1,35 @@
-@import "tailwindcss" source(none);
-@source "../src";
-@import "tw-animate-css";
-
-@custom-variant dark (&:is(.dark *));
-
-@theme inline {
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-
-  /* Brand tokens — Portal Católico */
-  --color-gold: var(--gold);
-  --color-gold-soft: var(--gold-soft);
-  --color-marian: var(--marian);
-  --color-marian-soft: var(--marian-soft);
-  --color-cardinal: var(--cardinal);
-  --color-deep: var(--deep);
-  --color-paper: var(--paper);
-
-  --font-display: "Playfair Display", "Cormorant Garamond", Georgia, serif;
+@theme {
+  --font-display: "Playfair Display", serif;
   --font-sans: "Inter", system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
-}
-
-:root {
-  --radius: 0.25rem;
-
-  /* Brand */
-  --gold: #d4af37;
-  --gold-soft: #c5a059;
-  --marian: #1d4e89;
-  --marian-soft: #2c6bb0;
-  --cardinal: #8b0000;
-  --deep: #0a0a0a;
-  --paper: #f9f7f2;
-
-  /* Default to dark cinematic mode */
-  --background: #0a0a0a;
-  --foreground: #f9f7f2;
-  --card: #111111;
-  --card-foreground: #f9f7f2;
-  --popover: #111111;
-  --popover-foreground: #f9f7f2;
-  --primary: #d4af37;
-  --primary-foreground: #0a0a0a;
-  --secondary: #1d4e89;
-  --secondary-foreground: #f9f7f2;
-  --muted: #1a1a1a;
-  --muted-foreground: #a09b8e;
-  --accent: #1d4e89;
-  --accent-foreground: #f9f7f2;
-  --destructive: #8b0000;
-  --destructive-foreground: #f9f7f2;
-  --border: rgba(212, 175, 55, 0.22);
-  --input: rgba(212, 175, 55, 0.25);
-  --ring: #d4af37;
-}
-
-.light {
-  --background: #f9f7f2;
-  --foreground: #0a0a0a;
-  --card: #ffffff;
-  --card-foreground: #0a0a0a;
-  --popover: #ffffff;
-  --popover-foreground: #0a0a0a;
-  --primary: #1d4e89;
-  --primary-foreground: #ffffff;
-  --secondary: #d4af37;
-  --secondary-foreground: #0a0a0a;
-  --muted: #eeeae0;
-  --muted-foreground: #4a4538;
-  --accent: #d4af37;
-  --accent-foreground: #0a0a0a;
-  --destructive: #8b0000;
-  --destructive-foreground: #ffffff;
-  --border: rgba(10, 10, 10, 0.12);
-  --input: rgba(10, 10, 10, 0.18);
-  --ring: #1d4e89;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-background: #0a0a0a;
+  --color-foreground: #f9f7f2;
+  --color-gold: #d4af37;
+  --color-gold-soft: #c5a059;
+  --color-deep: #0a0a0a;
+  --color-paper: #f9f7f2;
+  --color-border: rgba(212, 175, 55, 0.22);
+  --color-card: #111111;
+  --color-muted: #1a1a1a;
+  --color-muted-foreground: #a09b8e;
 }
 
 @layer base {
-  * {
-    border-color: var(--color-border);
-  }
-  html {
-    scroll-behavior: smooth;
-  }
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
-    -webkit-font-smoothing: antialiased;
+    letter-spacing: -0.01em;
   }
-  ::selection {
-    background-color: rgba(212, 175, 55, 0.35);
-    color: var(--color-foreground);
-  }
-}
-
-@layer utilities {
-  .font-display {
+  h1, h2, h3, h4 {
     font-family: var(--font-display);
-  }
-  .font-mono {
-    font-family: var(--font-mono);
-  }
-  .text-glow-gold {
-    text-shadow: 0 0 28px rgba(212, 175, 55, 0.35);
-  }
-  .grid-overlay {
-    background-image: linear-gradient(
-      to right,
-      rgba(212, 175, 55, 0.06) 1px,
-      transparent 1px
-    );
-    background-size: calc(100% / 12) 100%;
+    letter-spacing: -0.02em;
   }
 }
 
-@keyframes content-fade {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-content-fade {
-  animation: content-fade 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .animate-content-fade {
-    animation: none;
-    opacity: 1;
-    transform: none;
-  }
-  
-  .transition-smooth {
-    transition: none !important;
-  }
-}
-
-.transition-smooth {
-  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-/* Reading mode — print styles */
-@media print {
-  header, footer, nav, .print\:hidden { display: none !important; }
-  body { background: white !important; color: black !important; }
-  .reading-mode { display: block !important; padding: 0 !important; max-width: 100% !important; }
-  .reading-mode aside { display: none !important; }
-  .reading-mode article { color: black !important; }
-  .reading-mode h1, .reading-mode h2, .reading-mode h3, .reading-mode h4 { color: black !important; page-break-after: avoid; }
-  .reading-mode a { color: black !important; text-decoration: none !important; }
-  .reading-mode sup a { color: #666 !important; }
-  .reading-mode section { page-break-inside: avoid; }
+.card-glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.1);
 }
