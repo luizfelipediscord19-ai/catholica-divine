@@ -96,152 +96,202 @@ function Home() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative overflow-hidden min-h-[88vh] flex items-end">
+      <section className="relative overflow-hidden min-h-[92vh] flex items-center">
         <div
-          className="absolute inset-0 bg-cover bg-center scale-105"
+          className="absolute inset-0 bg-cover bg-center transition-transform duration-[10s] ease-out scale-110 hover:scale-100"
           style={{ backgroundImage: `url(${hero})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-deep/40 via-deep/70 to-background" />
-        <div className="absolute inset-0 bg-gradient-to-r from-deep/80 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-deep/20 via-deep/60 to-background" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(5,5,5,0.4)_100%)]" />
 
-        <div className="relative max-w-6xl mx-auto px-6 py-24 md:py-32">
-          <p className="text-[11px] tracking-[0.4em] uppercase text-gold mb-6">
-            Una · Sancta · Catholica · Apostolica
-          </p>
-          <h1 className="font-display text-6xl md:text-8xl lg:text-[10rem] leading-[0.85] text-paper max-w-5xl tracking-tighter">
-            A biblioteca <em className="text-gold italic font-medium">da Fé</em>
-          </h1>
-          <p className="mt-8 max-w-2xl text-lg md:text-xl text-paper/80 leading-relaxed font-light">
-            Bíblia, Catecismo, Magistério, santos e orações — em uma única plataforma
-            cinematográfica, fiel à doutrina da Igreja de Cristo.
-          </p>
-          <div className="mt-12 flex flex-wrap gap-4">
-            <Link
-              to="/biblia"
-              className="inline-flex items-center gap-3 px-10 py-5 bg-gold text-deep text-[10px] uppercase tracking-[0.4em] font-bold hover:bg-paper transition-smooth hover:scale-105 active:scale-95 shadow-2xl shadow-gold/20"
-            >
-              <BookOpen className="size-4" /> Começar a estudar
-            </Link>
-            <Link
-              to="/assistente"
-              className="inline-flex items-center gap-2 px-7 py-4 border border-gold/50 text-paper text-[11px] uppercase tracking-[0.25em] font-medium hover:border-gold hover:bg-gold/10 transition-colors"
-            >
-              <Sparkles className="size-4 text-gold" /> Falar com a IA Católica
-            </Link>
+        <div className="relative max-w-7xl mx-auto px-8 w-full">
+          <div className="max-w-4xl animate-reveal">
+            <p className="text-[10px] tracking-[0.5em] uppercase text-gold/80 mb-8 flex items-center gap-4">
+              <span className="h-px w-8 bg-gold/30" /> Una · Sancta · Catholica · Apostolica
+            </p>
+            <h1 className="font-display text-7xl md:text-9xl lg:text-[11rem] leading-[0.8] text-paper tracking-tighter mb-10">
+              A biblioteca <br/>
+              <span className="text-gold italic font-medium relative inline-block">
+                da Fé
+                <span className="absolute -bottom-4 left-0 w-full h-1 bg-gold/20 blur-sm" />
+              </span>
+            </h1>
+            <p className="max-w-xl text-lg md:text-xl text-paper/70 leading-relaxed font-light mb-12">
+              Bíblia, Catecismo, Magistério, santos e orações — em uma experiência
+              cinematográfica, fiel à doutrina da Igreja de Cristo.
+            </p>
+            <div className="flex flex-wrap gap-6">
+              <Link
+                to="/biblia"
+                className="group relative inline-flex items-center gap-4 px-12 py-6 bg-gold text-deep text-[11px] uppercase tracking-[0.4em] font-bold overflow-hidden transition-premium hover:shadow-[0_0_40px_rgba(212,175,55,0.3)]"
+              >
+                <span className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+                <BookOpen className="size-4 relative z-10" /> <span className="relative z-10">Começar a estudar</span>
+              </Link>
+              <Link
+                to="/assistente"
+                className="inline-flex items-center gap-3 px-8 py-6 border border-gold/30 text-paper text-[11px] uppercase tracking-[0.3em] font-medium hover:border-gold hover:bg-gold/5 transition-premium"
+              >
+                <Sparkles className="size-4 text-gold" /> Falar com a IA Católica
+              </Link>
+            </div>
           </div>
+        </div>
+        
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 animate-float opacity-50">
+          <span className="text-[9px] uppercase tracking-[0.4em] text-gold">Scroll</span>
+          <div className="w-px h-12 bg-gradient-to-b from-gold/50 to-transparent" />
         </div>
       </section>
 
       {/* Daily */}
-      <section className="border-y border-gold/20 bg-card">
-        <div className="max-w-6xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gold/15">
-          {DAILY_ITEMS.map((d, i) => {
-            const inner = (
-              <>
-                <p className="text-[9px] tracking-[0.4em] uppercase text-gold/60 mb-4">{d.kicker}</p>
-                <p className="font-display italic text-xl text-foreground leading-[1.4] mb-4">{d.text}</p>
-                <p className="text-[10px] text-muted-foreground tracking-[0.2em] uppercase">{d.ref}</p>
-              </>
-            );
-            return (
-              <div 
-                key={d.kicker} 
-                className={`px-8 py-10 transition-smooth ${d.link ? "hover:bg-gold/5 cursor-pointer" : ""}`}
-                style={{ animationDelay: `${i * 150}ms` }}
-              >
-                {d.link ? (
-                  <Link to={d.link.to} params={d.link.params} search={d.link.search} className="block animate-content-fade">
-                    {inner}
-                  </Link>
-                ) : (
-                  <div className="animate-content-fade">{inner}</div>
-                )}
-              </div>
-            );
-          })}
+      <section className="bg-background relative z-10">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-gold/10 border-x border-gold/10">
+            {DAILY_ITEMS.map((d, i) => {
+              const inner = (
+                <div className="group h-full flex flex-col p-10 transition-premium hover:bg-gold/[0.03]">
+                  <p className="text-[9px] tracking-[0.5em] uppercase text-gold/50 mb-6 group-hover:text-gold transition-colors">{d.kicker}</p>
+                  <p className="font-display italic text-2xl text-foreground/90 leading-relaxed mb-8 flex-1">
+                    {d.text}
+                  </p>
+                  <p className="text-[10px] text-muted-foreground tracking-[0.3em] uppercase group-hover:text-gold/80 transition-colors">
+                    {d.ref}
+                  </p>
+                </div>
+              );
+              return (
+                <div 
+                  key={d.kicker} 
+                  className="animate-reveal"
+                  style={{ animationDelay: `${i * 150}ms` }}
+                >
+                  {d.link ? (
+                    <Link to={d.link.to} params={d.link.params} search={d.link.search} className="block h-full">
+                      {inner}
+                    </Link>
+                  ) : (
+                    <div className="h-full">{inner}</div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
         </div>
       </section>
 
-      {/* Pillars */}
-      <section className="max-w-6xl mx-auto px-6 py-20 md:py-28">
-        <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-3">Os pilares</p>
-        <h2 className="font-display text-4xl md:text-5xl text-foreground mb-12 max-w-3xl">
-          Toda a fé católica, organizada para o seu estudo.
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-gold/5 border border-gold/10">
+      {/* Pillars - Bento Grid Style */}
+      <section className="max-w-7xl mx-auto px-8 py-32">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
+          <div className="max-w-2xl animate-reveal">
+            <p className="text-[10px] tracking-[0.4em] uppercase text-gold mb-4">Os pilares da verdade</p>
+            <h2 className="font-display text-5xl md:text-7xl text-foreground leading-[1.1]">
+              Toda a fé católica, organizada <br/> <span className="text-gold/50">para o seu estudo.</span>
+            </h2>
+          </div>
+          <p className="text-muted-foreground max-w-sm text-sm leading-relaxed mb-2 animate-reveal stagger-1">
+            Explore séculos de tradição, magistério e espiritualidade através de uma interface desenhada para a contemplação.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {PILLARS.map((p, i) => (
             <Link
               key={p.to}
               to={p.to}
-              className="group bg-background hover:bg-card/80 transition-smooth p-10 flex flex-col gap-6 animate-content-fade"
+              className={`group glass p-10 flex flex-col gap-8 transition-premium hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] animate-reveal ${
+                i === 0 || i === 5 ? "md:col-span-2" : ""
+              }`}
               style={{ animationDelay: `${i * 100}ms` }}
             >
-              <div className="size-12 rounded-full bg-gold/5 flex items-center justify-center group-hover:bg-gold/10 transition-smooth">
-                <p.icon className="size-6 text-gold group-hover:scale-110 transition-smooth" />
+              <div className="size-14 rounded-full bg-gold/5 border border-gold/10 flex items-center justify-center group-hover:bg-gold/15 group-hover:border-gold/30 transition-premium">
+                <p.icon className="size-6 text-gold group-hover:scale-110 transition-premium" />
               </div>
-              <div>
-                <h3 className="font-display text-2xl text-foreground mb-3 group-hover:text-gold transition-smooth">{p.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed font-light">{p.desc}</p>
+              <div className="flex-1">
+                <h3 className="font-display text-3xl text-foreground mb-4 group-hover:text-gold transition-colors">{p.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed font-light line-clamp-2 group-hover:text-foreground/70 transition-colors">{p.desc}</p>
               </div>
-              <span className="mt-auto text-[9px] tracking-[0.4em] uppercase text-gold/50 group-hover:text-gold group-hover:translate-x-2 transition-smooth">
-                Explorar →
-              </span>
+              <div className="flex items-center justify-between pt-6 border-t border-gold/5">
+                <span className="text-[9px] tracking-[0.5em] uppercase text-gold/40 group-hover:text-gold transition-colors">
+                  Explorar
+                </span>
+                <div className="size-8 rounded-full border border-gold/10 flex items-center justify-center group-hover:border-gold/30 transition-premium">
+                  <span className="text-gold text-lg group-hover:translate-x-0.5 transition-transform">→</span>
+                </div>
+              </div>
             </Link>
           ))}
         </div>
       </section>
 
       {/* Editorial split */}
-      <section className="bg-card border-y border-gold/20">
-        <div className="max-w-6xl mx-auto px-6 py-20 md:py-28 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div
-            className="aspect-[4/5] bg-cover bg-center border border-gold/30"
-            style={{ backgroundImage: `url(${maria})` }}
-          />
-          <div>
-            <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-4">Maria, Mater Ecclesiae</p>
-            <h2 className="font-display text-5xl md:text-7xl text-foreground leading-[0.9] tracking-tight">
-              “Faça-se em mim <br/> <span className="text-gold">segundo a tua palavra.</span>”
+      <section className="bg-muted/30 relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+        <div className="max-w-7xl mx-auto px-8 py-32 md:py-48 grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+          <div className="relative animate-reveal">
+            <div className="absolute -inset-4 border border-gold/10 -z-10 translate-x-4 translate-y-4" />
+            <div
+              className="aspect-[4/5] bg-cover bg-center grayscale hover:grayscale-0 transition-all duration-1000 shadow-[0_30px_60px_rgba(0,0,0,0.5)]"
+              style={{ backgroundImage: `url(${maria})` }}
+            />
+            <div className="absolute bottom-8 right-8 bg-background/80 backdrop-blur-md px-6 py-4 border border-gold/20">
+              <p className="text-[9px] tracking-[0.4em] uppercase text-gold">Regina Caeli</p>
+            </div>
+          </div>
+          <div className="animate-reveal stagger-1">
+            <p className="text-[10px] tracking-[0.4em] uppercase text-gold mb-6 flex items-center gap-4">
+              <span className="h-px w-6 bg-gold/40" /> Maria, Mater Ecclesiae
+            </p>
+            <h2 className="font-display text-6xl md:text-8xl text-foreground leading-[0.9] tracking-tight mb-8">
+              “Faça-se em mim <br/> <span className="text-gold italic">segundo a tua palavra.</span>”
             </h2>
-            <p className="mt-6 text-base text-muted-foreground leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed font-light mb-12 max-w-lg">
               A Virgem Maria é o caminho mais seguro a Cristo. Conheça os dogmas marianos,
-              as aparições aprovadas pela Igreja, as ladainhas, o Rosário e a teologia da
-              Mãe de Deus segundo os Padres e Doutores.
+              as aparições aprovadas pela Igreja e a teologia da Mãe de Deus segundo os Padres e Doutores.
             </p>
             <Link
               to="/maria"
-              className="inline-block mt-10 px-10 py-5 border border-gold/30 text-gold text-[10px] uppercase tracking-[0.4em] font-bold hover:bg-gold hover:text-deep transition-smooth hover:scale-105"
+              className="group inline-flex items-center gap-4 px-10 py-5 border border-gold/30 text-gold text-[10px] uppercase tracking-[0.4em] font-bold hover:bg-gold hover:text-deep transition-premium"
             >
-              Estudar Mariologia
+              <span>Estudar Mariologia</span>
+              <span className="group-hover:translate-x-2 transition-transform">→</span>
             </Link>
           </div>
         </div>
+        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
       </section>
 
       {/* AI feature */}
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden bg-deep">
         <div
-          className="absolute inset-0 opacity-20 bg-cover bg-center"
+          className="absolute inset-0 opacity-[0.07] bg-cover bg-center transition-transform duration-[20s] scale-125 hover:scale-100"
           style={{ backgroundImage: `url(${cristo})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/95 to-background/80" />
-        <div className="relative max-w-5xl mx-auto px-6 py-32 md:py-48 text-center animate-content-fade">
-          <div className="size-20 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-10 border border-gold/20 shadow-2xl shadow-gold/10">
-            <Sparkles className="size-8 text-gold animate-pulse" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#050505_80%)]" />
+        
+        <div className="relative max-w-5xl mx-auto px-8 py-40 md:py-60 text-center animate-reveal">
+          <div className="relative inline-block mb-12">
+            <div className="absolute inset-0 bg-gold/20 blur-3xl rounded-full" />
+            <div className="relative size-24 rounded-full glass border border-gold/30 flex items-center justify-center shadow-[0_0_50px_rgba(212,175,55,0.15)]">
+              <Sparkles className="size-10 text-gold animate-pulse" />
+            </div>
           </div>
-          <p className="text-[10px] tracking-[0.5em] uppercase text-gold/60 mb-6">Sophia · Logos</p>
-          <h2 className="font-display text-5xl md:text-8xl text-foreground leading-[0.85] tracking-tighter mb-10">
+          
+          <p className="text-[10px] tracking-[0.6em] uppercase text-gold/60 mb-8">Sophia · Logos</p>
+          <h2 className="font-display text-6xl md:text-9xl text-foreground leading-[0.85] tracking-tighter mb-12">
             Inteligência Artificial <br/> <em className="text-gold italic font-medium">ao serviço da Verdade</em>
           </h2>
-          <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-light mb-16">
             Respostas fundamentadas na Bíblia, no Catecismo e nos documentos oficiais da
             Igreja — com citações, contexto e referências.
           </p>
           <Link
             to="/assistente"
-            className="inline-flex items-center gap-2 mt-10 px-8 py-4 bg-gold text-deep text-[11px] uppercase tracking-[0.25em] font-medium hover:bg-paper transition-colors"
+            className="group relative inline-flex items-center gap-4 px-12 py-6 bg-paper text-deep text-[11px] uppercase tracking-[0.4em] font-bold transition-premium hover:shadow-[0_0_50px_rgba(252,250,247,0.2)]"
           >
-            <Sparkles className="size-4" /> Conversar agora
+            <Sparkles className="size-4 group-hover:rotate-12 transition-transform" /> 
+            <span>Conversar agora</span>
           </Link>
         </div>
       </section>

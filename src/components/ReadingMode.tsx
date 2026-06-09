@@ -38,42 +38,43 @@ export function ReadingMode({
   }, [toc]);
 
   return (
-    <div className="reading-mode max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-[240px_1fr] gap-12">
+    <div className="reading-mode max-w-[90rem] mx-auto px-8 py-20 grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-20">
       {/* Mobile TOC trigger */}
-      <div className="lg:hidden flex items-center justify-between gap-3 print:hidden">
+      <div className="lg:hidden flex items-center justify-between gap-4 print:hidden mb-8">
         <button
           onClick={() => setOpen((v) => !v)}
-          className="inline-flex items-center gap-2 px-4 py-2 border border-gold/30 text-[10px] uppercase tracking-[0.25em] text-foreground/80 hover:text-gold"
+          className="flex-1 inline-flex items-center justify-center gap-3 px-6 py-4 glass text-[10px] uppercase tracking-[0.3em] text-paper font-bold"
         >
-          <List className="size-3.5" /> Sumário
+          <List className="size-4" /> Sumário
         </button>
         <button
           onClick={() => window.print()}
-          className="inline-flex items-center gap-2 px-4 py-2 bg-gold text-deep text-[10px] uppercase tracking-[0.25em] hover:bg-paper"
+          className="size-14 grid place-items-center bg-gold text-deep hover:bg-paper transition-premium"
         >
-          <Printer className="size-3.5" /> Imprimir
+          <Printer className="size-5" />
         </button>
       </div>
 
       {/* Sidebar TOC */}
       <aside
-        className={`${open ? "block" : "hidden"} lg:block lg:sticky lg:top-24 lg:self-start print:hidden`}
+        className={`${open ? "block" : "hidden"} lg:block lg:sticky lg:top-32 lg:self-start print:hidden`}
       >
-        <div className="border border-gold/15 bg-card/40 backdrop-blur-sm p-5">
-          <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-4">Sumário</p>
+        <div className="p-8 border-l border-gold/10">
+          <p className="text-[10px] tracking-[0.4em] uppercase text-gold/40 mb-8">Navegação</p>
           <nav>
-            <ul className="space-y-2">
+            <ul className="space-y-6">
               {toc.map((t) => (
                 <li key={t.id}>
                   <a
                     href={`#${t.id}`}
                     onClick={() => setOpen(false)}
-                    className={`block text-[12px] leading-snug transition-colors border-l-2 pl-3 -ml-px ${
+                    className={`group block text-[13px] tracking-wide transition-premium ${
                       active === t.id
-                        ? "border-gold text-gold"
-                        : "border-transparent text-muted-foreground hover:text-foreground"
+                        ? "text-gold translate-x-2"
+                        : "text-paper/40 hover:text-paper hover:translate-x-1"
                     }`}
                   >
+                    <span className={`inline-block w-4 h-px mr-3 transition-colors ${active === t.id ? "bg-gold" : "bg-gold/10 group-hover:bg-gold/30"}`} />
                     {t.label}
                   </a>
                 </li>
@@ -82,9 +83,9 @@ export function ReadingMode({
           </nav>
           <button
             onClick={() => window.print()}
-            className="mt-6 w-full inline-flex items-center justify-center gap-2 px-4 py-2 bg-gold text-deep text-[10px] uppercase tracking-[0.25em] hover:bg-paper transition-colors"
+            className="mt-12 w-full inline-flex items-center justify-center gap-3 px-6 py-4 bg-gold text-deep text-[10px] uppercase tracking-[0.3em] font-bold hover:bg-paper transition-premium"
           >
-            <Printer className="size-3.5" /> Imprimir / PDF
+            <Printer className="size-4" /> Imprimir / PDF
           </button>
         </div>
       </aside>

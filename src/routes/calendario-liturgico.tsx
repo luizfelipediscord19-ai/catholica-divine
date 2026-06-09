@@ -52,8 +52,12 @@ function Page() {
     <div>
       <PageHero
         eyebrow="Annus Liturgicus"
-        title="O Ano Litúrgico"
-        intro="A Igreja desdobra ao longo do ano todo o mistério de Cristo, da Encarnação à Páscoa, do Pentecostes à espera escatológica (Sacrosanctum Concilium 102)."
+        title={
+          <>
+            O Ano <br/> <span className="text-gold italic">Litúrgico</span>
+          </>
+        }
+        intro="A Igreja desdobra ao longo do ano todo o mistério de Cristo, da Encarnação à Páscoa, do Pentecostes à espera escatológica."
       />
 
       <ReadingMode title="O Ano Litúrgico" toc={TOC} footnotes={FOOTNOTES}>
