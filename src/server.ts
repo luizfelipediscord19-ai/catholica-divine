@@ -20,6 +20,43 @@ async function getServerEntry(): Promise<ServerEntry> {
 
 // h3 swallows in-handler throws into a normal 500 Response with body
 // {"unhandled":true,"message":"HTTPError"} — try/catch alone never fires for those.
+async function applySecurityHeaders(response: Response): Promise<Response> {
+  const newHeaders = new Headers(response.headers);
+  
+  // Content Security Policy (Strict but allows required fonts and AI gateway)
+  newHeaders.set(
+    "Content-Security-Policy",
+    "default-src 'self'; " +
+    "script-src 'self' 'unsafe-inline' 'unsafe-eval'; " +
+    "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; " +
+    "font-src 'self' data: https://fonts.gstatic.com; " +
+    "img-src 'self' data: https://*; " +
+    "connect-src 'self' https://ai.gateway.lovable.dev https://api.groq.com; " +
+    "frame-ancestors 'none'; " +
+    "upgrade-insecure-requests;"
+  );
+
+  // Prevention of Clickjacking
+  newHeaders.set("X-Frame-Options", "DENY");
+  
+  // Prevent MIME sniffing
+  newHeaders.set("X-Content-Type-Options", "nosniff");
+  
+  // Referrer Policy
+  newHeaders.set("Referrer-Policy", "strict-origin-when-cross-origin");
+  
+  // HSTS (Strict-Transport-Security) - 1 year
+  newHeaders.set("Strict-Transport-Security", "max-age=31536000; includeSubDomains; preload");
+
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers: newHeaders,
+  });
+}
+
+// h3 swallows in-handler throws into a normal 500 Response with body
+// {"unhandled":true,"message":"HTTPError"} — try/catch alone never fires for those.
 async function normalizeCatastrophicSsrResponse(response: Response): Promise<Response> {
   if (response.status < 500) return response;
   const contentType = response.headers.get("content-type") ?? "";
@@ -42,13 +79,15 @@ export default {
     try {
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
-      return await normalizeCatastrophicSsrResponse(response);
+      const normalizedResponse = await normalizeCatastrophicSsrResponse(response);
+      return await applySecurityHeaders(normalizedResponse);
     } catch (error) {
       console.error(error);
-      return new Response(renderErrorPage(), {
+      const errorResponse = new Response(renderErrorPage(), {
         status: 500,
         headers: { "content-type": "text/html; charset=utf-8" },
       });
+      return await applySecurityHeaders(errorResponse);
     }
   },
 };
