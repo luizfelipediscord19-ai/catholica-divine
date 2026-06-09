@@ -34,8 +34,6 @@ export const Route = createFileRoute("/api/chat")({
         try {
           const result = streamText({
             model: groq("llama-3.3-70b-versatile"),
-            maxTokens: 2048,
-            temperature: 0.5,
             system: SYSTEM_PROMPT,
             messages: await convertToModelMessages(messages as UIMessage[]),
           });
