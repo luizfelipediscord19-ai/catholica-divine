@@ -34,8 +34,33 @@ export const SophiaChat = memo(({
 
   const handleSubmit = (text: string) => {
     if (!text.trim() || isLoading) return;
+    
+    // Suporte a comandos de voz via Web Speech API se disponível
+    if (text === "___VOICE___") {
+      startVoiceRecognition();
+      return;
+    }
+
     sendMessage({ text: text.trim() });
     setInput("");
+  };
+
+  const startVoiceRecognition = () => {
+    const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+    if (!SpeechRecognition) {
+      toast.error("Seu navegador não suporta reconhecimento de voz.");
+      return;
+    }
+    const recognition = new SpeechRecognition();
+    recognition.lang = 'pt-BR';
+    recognition.start();
+    toast.info("Ouvindo...");
+    recognition.onresult = (event: any) => {
+      const transcript = event.results[0][0].transcript;
+      setInput(transcript);
+      handleSubmit(transcript);
+    };
+    recognition.onerror = () => toast.error("Erro ao capturar voz.");
   };
 
   const onFormSubmit = (e: React.FormEvent) => {
@@ -100,13 +125,25 @@ export const SophiaChat = memo(({
           autoComplete="off"
           autoCorrect="off"
         />
-        <button
-          type="submit"
-          disabled={isLoading || !input.trim()}
-          className="px-8 bg-gold text-deep disabled:opacity-30 hover:bg-paper transition-premium shadow-lg shadow-gold/5 flex items-center justify-center group"
-        >
-          <Send className="size-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-        </button>
+        <div className="flex gap-2">
+          <button
+            type="button"
+            onClick={() => handleSubmit("___VOICE___")}
+            className="px-4 border border-gold/10 hover:border-gold/40 text-gold/60 hover:text-gold transition-premium bg-white/[0.02]"
+            title="Falar com a IA"
+          >
+            <svg className="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+            </svg>
+          </button>
+          <button
+            type="submit"
+            disabled={isLoading || !input.trim()}
+            className="px-8 bg-gold text-deep disabled:opacity-30 hover:bg-paper transition-premium shadow-lg shadow-gold/5 flex items-center justify-center group"
+          >
+            <Send className="size-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+          </button>
+        </div>
       </form>
     </div>
   );

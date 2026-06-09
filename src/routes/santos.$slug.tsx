@@ -64,6 +64,7 @@ function SantoPage() {
         eyebrow={v.titulo ?? "Vida de santo"}
         title={v.nome}
         intro={v.resumo ?? ""}
+        image={v.imagem}
       />
 
       <Section>

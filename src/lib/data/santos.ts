@@ -9,6 +9,7 @@ export type Santo = {
   biografia: string;
   virtudes: string[];
   frase: string;
+  imagem?: string;
 };
 
 export const SANTOS: Santo[] = [
@@ -24,6 +25,7 @@ export const SANTOS: Santo[] = [
       "Nascido em 1181/82 em Assis, filho do rico comerciante Pietro Bernardone. Após uma juventude mundana e a experiência da guerra, converteu-se radicalmente diante do crucifixo de São Damião que lhe disse: 'Vai, Francisco, repara a minha Igreja'. Renunciou aos bens paternos, abraçou a Senhora Pobreza e fundou a Ordem dos Frades Menores. Recebeu os estigmas no monte Alverne em 1224. Morreu em 1226 cantando o Cântico das Criaturas.",
     virtudes: ["Pobreza radical", "Alegria evangélica", "Amor à criação", "Conformidade com Cristo crucificado"],
     frase: "Senhor, fazei de mim um instrumento da vossa paz.",
+    imagem: "https://images.unsplash.com/photo-1548544149-4835e62ee5b3?q=80&w=2000&auto=format&fit=crop",
   },
   {
     slug: "agostinho-de-hipona",
@@ -37,6 +39,7 @@ export const SANTOS: Santo[] = [
       "Nascido em 354 em Tagaste (atual Argélia), foi maniqueísta e levou vida desregrada antes de se converter em Milão, em 386, sob a influência de Santo Ambrósio e das orações de sua mãe, Santa Mônica. Ordenado sacerdote e depois bispo de Hipona, escreveu obras monumentais como as Confissões, A Cidade de Deus e De Trinitate. Morreu em 430, durante o cerco vândalo.",
     virtudes: ["Busca incansável da verdade", "Humildade na conversão", "Caridade pastoral"],
     frase: "Tarde te amei, Beleza tão antiga e tão nova, tarde te amei.",
+    imagem: "https://images.unsplash.com/photo-1507434965515-61970f2bd7c6?q=80&w=2000&auto=format&fit=crop",
   },
   {
     slug: "teresinha-do-menino-jesus",
@@ -50,6 +53,7 @@ export const SANTOS: Santo[] = [
       "Nascida em 1873 em Alençon, França, entrou no Carmelo de Lisieux aos 15 anos. Em sua breve vida (morreu aos 24, em 1897, de tuberculose) ensinou o 'caminho pequeno' de confiança e abandono filial em Deus. Sua autobiografia 'História de uma alma' tornou-se um dos livros espirituais mais lidos do mundo. Patrona universal das missões.",
     virtudes: ["Confiança total", "Pequenez", "Amor escondido"],
     frase: "Quero passar o meu céu fazendo o bem na terra.",
+    imagem: "https://images.unsplash.com/photo-1490730141103-6cac27aaab94?q=80&w=2000&auto=format&fit=crop",
   },
   {
     slug: "joao-paulo-ii",
@@ -63,6 +67,7 @@ export const SANTOS: Santo[] = [
       "Nascido em 1920 em Wadowice, Polônia. Operário, ator e poeta antes do sacerdócio. Bispo, cardeal e, em 1978, eleito Papa — o primeiro não italiano em 455 anos. Seu pontificado de 27 anos contribuiu para o fim do comunismo no Leste europeu, instituiu a Jornada Mundial da Juventude, canonizou mais santos que todos os predecessores juntos e enriqueceu a Igreja com 14 encíclicas. Morreu em 2 de abril de 2005. Canonizado em 2014.",
     virtudes: ["Coragem profética", "Amor à juventude", "Devoção mariana ('Totus Tuus')"],
     frase: "Não tenhais medo! Abri, escancarai as portas a Cristo!",
+    imagem: "https://images.unsplash.com/photo-1544427928-c49cdfebf194?q=80&w=2000&auto=format&fit=crop",
   },
   {
     slug: "padre-pio",
@@ -76,6 +81,7 @@ export const SANTOS: Santo[] = [
       "Francesco Forgione (1887–1968) recebeu os estigmas em 1918 e os conservou por 50 anos. Confessor por longas horas todos os dias, fundou a Casa Sollievo della Sofferenza em San Giovanni Rotondo. Canonizado em 2002.",
     virtudes: ["Paciência no sofrimento", "Direção espiritual sapiente", "União com a Paixão"],
     frase: "Reza, espera e não te preocupes.",
+    imagem: "https://images.unsplash.com/photo-1519834785169-98be25ec3f8a?q=80&w=2000&auto=format&fit=crop",
   },
   {
     slug: "antonio-de-padua",
@@ -141,6 +147,7 @@ export const SANTOS: Santo[] = [
       "Da estirpe de Davi, carpinteiro de Nazaré, esposo virginal da Bem-Aventurada Virgem Maria e pai legal de Jesus. Modelo de fé silenciosa, de obediência à vontade divina e de trabalho santificado. Proclamado Padroeiro da Igreja Universal por Pio IX em 1870.",
     virtudes: ["Justiça", "Silêncio orante", "Obediência", "Castidade"],
     frase: "Faltam-nos suas palavras, mas não seus exemplos.",
+    imagem: "https://images.unsplash.com/photo-1438232992991-995b7058bbb3?q=80&w=2000&auto=format&fit=crop",
   },
   {
     slug: "rita-de-cassia",
@@ -167,6 +174,7 @@ export const SANTOS: Santo[] = [
       "Nascida em Ávila em 1515, carmelita, reformou a Ordem (Carmelitas Descalços) junto com São João da Cruz. Suas obras 'Castelo Interior' e 'Caminho de Perfeição' são clássicos da mística. Primeira mulher proclamada Doutora da Igreja (1970).",
     virtudes: ["Vida interior", "Coragem reformadora", "Senso de humor"],
     frase: "Nada te perturbe, nada te espante; só Deus basta.",
+    imagem: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=2000&auto=format&fit=crop",
   },
   {
     slug: "joao-da-cruz",
@@ -271,6 +279,7 @@ export const SANTOS: Santo[] = [
       "Em outubro de 1717, três pescadores — Domingos Garcia, João Alves e Felipe Pedroso — encontraram a imagem decapitada de Nossa Senhora da Conceição nas águas do rio Paraíba do Sul. As redes, antes vazias, encheram-se de peixes. A devoção cresceu e, em 1930, Pio XI a proclamou Padroeira do Brasil. Seu Santuário em Aparecida (SP) é o maior templo mariano do mundo.",
     virtudes: ["Humildade", "Maternidade espiritual ao povo brasileiro"],
     frase: "Vinde a mim, vós todos que estais aflitos.",
+    imagem: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2000&auto=format&fit=crop",
   },
 ];
 
