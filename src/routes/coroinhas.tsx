@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Section, CardGrid, ContentCard } from "../components/PageShell";
+import { SophiaChat } from "../components/SophiaChat";
+import { Sparkles } from "lucide-react";
 
 export const Route = createFileRoute("/coroinhas")({
   head: () => ({
@@ -114,6 +116,30 @@ function Page() {
             concede-me a graça de jamais profanar o que é santo. Amém."
           </p>
         </div>
+      </Section>
+
+      <Section kicker="Sophia · Modo Coroinhas" title="Consulta com fontes oficiais">
+        <div className="max-w-3xl mb-8">
+          <div className="flex items-start gap-3 mb-4">
+            <Sparkles className="size-5 text-gold mt-1 shrink-0" />
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Esta é a área dedicada de Sophia para o <strong className="text-gold">Serviço ao Altar</strong>.
+              Toda resposta é fundamentada em documentos oficiais da Igreja — Catecismo, Instrução Geral do
+              Missal Romano (IGMR), Direito Canônico, Redemptionis Sacramentum, Sacrosanctum Concilium e
+              Cerimonial dos Bispos — com a fonte citada em cada resposta.
+            </p>
+          </div>
+        </div>
+        <SophiaChat
+          mode="coroinhas"
+          placeholder="Pergunte sobre rubricas, paramentos, vasos sagrados, posturas..."
+          suggestions={[
+            "Como deve ser a genuflexão diante do Sacrário?",
+            "Qual a função do turiferário na Missa solene?",
+            "Quando se usa a cor rosa nas vestes litúrgicas?",
+            "O que diz a IGMR sobre o manuseio do cálice?",
+          ]}
+        />
       </Section>
     </div>
   );
