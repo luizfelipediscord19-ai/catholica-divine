@@ -89,7 +89,9 @@ function urlOriginal(testamento: string, slug: string, cap: number) {
 }
 
 function Page() {
-  const { livro, capitulo, versos } = Route.useLoaderData();
+  const loaderData = Route.useLoaderData();
+  if (!loaderData) return null;
+  const { livro, capitulo, versos } = loaderData;
   const { vi, vf } = Route.useSearch();
   const navigate = useNavigate();
   const [fonte, setFonte] = useState<FonteId>("almeida");

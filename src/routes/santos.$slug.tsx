@@ -47,7 +47,10 @@ export const Route = createFileRoute("/santos/$slug")({
 
 function SantoPage() {
   const { slug } = Route.useParams();
-  const { basico } = Route.useLoaderData();
+  const loaderData = Route.useLoaderData();
+  
+  if (!loaderData) return null;
+  const { basico } = loaderData;
   const v = buildSantoView(slug, basico);
 
   const irmaos = SANTOS_LISTA
