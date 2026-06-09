@@ -21,7 +21,10 @@ import { Route as BibliaRouteImport } from './routes/biblia'
 import { Route as AssistenteRouteImport } from './routes/assistente'
 import { Route as ApologeticaRouteImport } from './routes/apologetica'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CatecismoParteRouteImport } from './routes/catecismo.$parte'
+import { Route as BibliaLivroRouteImport } from './routes/biblia.$livro'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
+import { Route as BibliaLivroCapituloRouteImport } from './routes/biblia.$livro.$capitulo'
 
 const SantosRoute = SantosRouteImport.update({
   id: '/santos',
@@ -83,19 +86,34 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CatecismoParteRoute = CatecismoParteRouteImport.update({
+  id: '/$parte',
+  path: '/$parte',
+  getParentRoute: () => CatecismoRoute,
+} as any)
+const BibliaLivroRoute = BibliaLivroRouteImport.update({
+  id: '/$livro',
+  path: '/$livro',
+  getParentRoute: () => BibliaRoute,
+} as any)
 const ApiChatRoute = ApiChatRouteImport.update({
   id: '/api/chat',
   path: '/api/chat',
   getParentRoute: () => rootRouteImport,
+} as any)
+const BibliaLivroCapituloRoute = BibliaLivroCapituloRouteImport.update({
+  id: '/$capitulo',
+  path: '/$capitulo',
+  getParentRoute: () => BibliaLivroRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/apologetica': typeof ApologeticaRoute
   '/assistente': typeof AssistenteRoute
-  '/biblia': typeof BibliaRoute
+  '/biblia': typeof BibliaRouteWithChildren
   '/calendario-liturgico': typeof CalendarioLiturgicoRoute
-  '/catecismo': typeof CatecismoRoute
+  '/catecismo': typeof CatecismoRouteWithChildren
   '/doutores-da-igreja': typeof DoutoresDaIgrejaRoute
   '/fe-catolica': typeof FeCatolicaRoute
   '/maria': typeof MariaRoute
@@ -103,14 +121,17 @@ export interface FileRoutesByFullPath {
   '/sacramentos': typeof SacramentosRoute
   '/santos': typeof SantosRoute
   '/api/chat': typeof ApiChatRoute
+  '/biblia/$livro': typeof BibliaLivroRouteWithChildren
+  '/catecismo/$parte': typeof CatecismoParteRoute
+  '/biblia/$livro/$capitulo': typeof BibliaLivroCapituloRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/apologetica': typeof ApologeticaRoute
   '/assistente': typeof AssistenteRoute
-  '/biblia': typeof BibliaRoute
+  '/biblia': typeof BibliaRouteWithChildren
   '/calendario-liturgico': typeof CalendarioLiturgicoRoute
-  '/catecismo': typeof CatecismoRoute
+  '/catecismo': typeof CatecismoRouteWithChildren
   '/doutores-da-igreja': typeof DoutoresDaIgrejaRoute
   '/fe-catolica': typeof FeCatolicaRoute
   '/maria': typeof MariaRoute
@@ -118,15 +139,18 @@ export interface FileRoutesByTo {
   '/sacramentos': typeof SacramentosRoute
   '/santos': typeof SantosRoute
   '/api/chat': typeof ApiChatRoute
+  '/biblia/$livro': typeof BibliaLivroRouteWithChildren
+  '/catecismo/$parte': typeof CatecismoParteRoute
+  '/biblia/$livro/$capitulo': typeof BibliaLivroCapituloRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/apologetica': typeof ApologeticaRoute
   '/assistente': typeof AssistenteRoute
-  '/biblia': typeof BibliaRoute
+  '/biblia': typeof BibliaRouteWithChildren
   '/calendario-liturgico': typeof CalendarioLiturgicoRoute
-  '/catecismo': typeof CatecismoRoute
+  '/catecismo': typeof CatecismoRouteWithChildren
   '/doutores-da-igreja': typeof DoutoresDaIgrejaRoute
   '/fe-catolica': typeof FeCatolicaRoute
   '/maria': typeof MariaRoute
@@ -134,6 +158,9 @@ export interface FileRoutesById {
   '/sacramentos': typeof SacramentosRoute
   '/santos': typeof SantosRoute
   '/api/chat': typeof ApiChatRoute
+  '/biblia/$livro': typeof BibliaLivroRouteWithChildren
+  '/catecismo/$parte': typeof CatecismoParteRoute
+  '/biblia/$livro/$capitulo': typeof BibliaLivroCapituloRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -151,6 +178,9 @@ export interface FileRouteTypes {
     | '/sacramentos'
     | '/santos'
     | '/api/chat'
+    | '/biblia/$livro'
+    | '/catecismo/$parte'
+    | '/biblia/$livro/$capitulo'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -166,6 +196,9 @@ export interface FileRouteTypes {
     | '/sacramentos'
     | '/santos'
     | '/api/chat'
+    | '/biblia/$livro'
+    | '/catecismo/$parte'
+    | '/biblia/$livro/$capitulo'
   id:
     | '__root__'
     | '/'
@@ -181,15 +214,18 @@ export interface FileRouteTypes {
     | '/sacramentos'
     | '/santos'
     | '/api/chat'
+    | '/biblia/$livro'
+    | '/catecismo/$parte'
+    | '/biblia/$livro/$capitulo'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ApologeticaRoute: typeof ApologeticaRoute
   AssistenteRoute: typeof AssistenteRoute
-  BibliaRoute: typeof BibliaRoute
+  BibliaRoute: typeof BibliaRouteWithChildren
   CalendarioLiturgicoRoute: typeof CalendarioLiturgicoRoute
-  CatecismoRoute: typeof CatecismoRoute
+  CatecismoRoute: typeof CatecismoRouteWithChildren
   DoutoresDaIgrejaRoute: typeof DoutoresDaIgrejaRoute
   FeCatolicaRoute: typeof FeCatolicaRoute
   MariaRoute: typeof MariaRoute
@@ -285,6 +321,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/catecismo/$parte': {
+      id: '/catecismo/$parte'
+      path: '/$parte'
+      fullPath: '/catecismo/$parte'
+      preLoaderRoute: typeof CatecismoParteRouteImport
+      parentRoute: typeof CatecismoRoute
+    }
+    '/biblia/$livro': {
+      id: '/biblia/$livro'
+      path: '/$livro'
+      fullPath: '/biblia/$livro'
+      preLoaderRoute: typeof BibliaLivroRouteImport
+      parentRoute: typeof BibliaRoute
+    }
     '/api/chat': {
       id: '/api/chat'
       path: '/api/chat'
@@ -292,16 +342,58 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiChatRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/biblia/$livro/$capitulo': {
+      id: '/biblia/$livro/$capitulo'
+      path: '/$capitulo'
+      fullPath: '/biblia/$livro/$capitulo'
+      preLoaderRoute: typeof BibliaLivroCapituloRouteImport
+      parentRoute: typeof BibliaLivroRoute
+    }
   }
 }
+
+interface BibliaLivroRouteChildren {
+  BibliaLivroCapituloRoute: typeof BibliaLivroCapituloRoute
+}
+
+const BibliaLivroRouteChildren: BibliaLivroRouteChildren = {
+  BibliaLivroCapituloRoute: BibliaLivroCapituloRoute,
+}
+
+const BibliaLivroRouteWithChildren = BibliaLivroRoute._addFileChildren(
+  BibliaLivroRouteChildren,
+)
+
+interface BibliaRouteChildren {
+  BibliaLivroRoute: typeof BibliaLivroRouteWithChildren
+}
+
+const BibliaRouteChildren: BibliaRouteChildren = {
+  BibliaLivroRoute: BibliaLivroRouteWithChildren,
+}
+
+const BibliaRouteWithChildren =
+  BibliaRoute._addFileChildren(BibliaRouteChildren)
+
+interface CatecismoRouteChildren {
+  CatecismoParteRoute: typeof CatecismoParteRoute
+}
+
+const CatecismoRouteChildren: CatecismoRouteChildren = {
+  CatecismoParteRoute: CatecismoParteRoute,
+}
+
+const CatecismoRouteWithChildren = CatecismoRoute._addFileChildren(
+  CatecismoRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ApologeticaRoute: ApologeticaRoute,
   AssistenteRoute: AssistenteRoute,
-  BibliaRoute: BibliaRoute,
+  BibliaRoute: BibliaRouteWithChildren,
   CalendarioLiturgicoRoute: CalendarioLiturgicoRoute,
-  CatecismoRoute: CatecismoRoute,
+  CatecismoRoute: CatecismoRouteWithChildren,
   DoutoresDaIgrejaRoute: DoutoresDaIgrejaRoute,
   FeCatolicaRoute: FeCatolicaRoute,
   MariaRoute: MariaRoute,
@@ -313,3 +405,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
