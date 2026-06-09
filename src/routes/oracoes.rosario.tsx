@@ -135,6 +135,8 @@ function Page() {
     setContagem(0);
     setElapsed(0);
     setPlaying(false);
+    setRestored(null);
+    try { localStorage.removeItem(STORAGE_KEY); } catch { /* ignore */ }
   }
 
   function mmss(s: number) {
@@ -176,6 +178,16 @@ function Page() {
             );
           })}
         </div>
+
+        {restored ? (
+          <div className="border border-gold/40 bg-gold/5 p-4 mb-4 flex items-center justify-between gap-3 text-sm">
+            <span>
+              <span className="text-gold">●</span> Retomado de onde parou — etapa {restored.etapaIdx + 1}, conta {restored.contagem + 1}
+              <span className="text-muted-foreground"> · salvo {tempoAtras(restored.savedAt)}</span>
+            </span>
+            <button onClick={() => setRestored(null)} className="text-xs text-muted-foreground hover:text-foreground">dispensar</button>
+          </div>
+        ) : null}
 
         {/* Controles de cronômetro */}
         <div className="border border-gold/30 bg-card/60 p-4 md:p-5 mb-4 flex flex-wrap items-center gap-4">
