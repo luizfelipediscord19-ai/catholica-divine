@@ -1,7 +1,7 @@
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport } from "ai";
 import { useState, useRef, useEffect } from "react";
-import { Send } from "lucide-react";
+import { Send, Loader2, AlertCircle, CheckCircle2 } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { toast } from "sonner";
 
@@ -19,6 +19,7 @@ export function SophiaChat({
   height?: string;
 }) {
   const [input, setInput] = useState("");
+  const [hasError, setHasError] = useState(false);
   const { messages, sendMessage, status } = useChat({
     transport: new DefaultChatTransport({
       api: "/api/chat",
@@ -26,11 +27,24 @@ export function SophiaChat({
     }),
     onError: (err) => {
       console.error("[SophiaChat] error:", err);
+      setHasError(true);
       toast.error("Sophia não conseguiu responder. Tente novamente em instantes.");
     },
   });
   const scrollRef = useRef<HTMLDivElement>(null);
   const isLoading = status === "submitted" || status === "streaming";
+
+  const statusLabel = hasError
+    ? "Erro"
+    : isLoading
+      ? "Carregando"
+      : "Conectado";
+  const StatusIcon = hasError ? AlertCircle : isLoading ? Loader2 : CheckCircle2;
+  const statusColor = hasError
+    ? "text-red-400 bg-red-400/10 border-red-400/20"
+    : isLoading
+      ? "text-gold bg-gold/10 border-gold/20"
+      : "text-emerald-400 bg-emerald-400/10 border-emerald-400/20";
 
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
@@ -38,12 +52,17 @@ export function SophiaChat({
 
   function submit(text: string) {
     if (!text.trim() || isLoading) return;
+    setHasError(false);
     sendMessage({ text: text.trim() });
     setInput("");
   }
 
   return (
     <div className="border border-gold/25 bg-card flex flex-col" style={{ height }}>
+      <div className={`flex items-center gap-2 px-4 py-2 text-[10px] tracking-wider uppercase border-b ${statusColor}`}>
+        <StatusIcon className={`size-3 ${isLoading ? "animate-spin" : ""}`} />
+        <span>Sophia · {statusLabel}</span>
+      </div>
       <div ref={scrollRef} className="flex-1 overflow-y-auto p-6 space-y-6">
         {messages.length === 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
