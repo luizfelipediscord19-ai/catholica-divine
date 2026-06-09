@@ -44,7 +44,7 @@ function Page() {
       <p className="mt-6 text-lg text-muted-foreground leading-relaxed">{parte.resumo}</p>
 
       <div className="mt-12 space-y-4">
-        {secoes.map((s) => (
+        {secoes.map((s: SecaoCIC) => (
           <div key={s.slug} className="border border-gold/20 bg-card p-6">
             <p className="text-[10px] tracking-[0.3em] uppercase text-gold/70 mb-2">{s.paragrafos}</p>
             <h3 className="font-display text-xl text-foreground">{s.titulo}</h3>
