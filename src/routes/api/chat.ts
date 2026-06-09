@@ -215,48 +215,56 @@ const chatSchema = z.object({
 export const Route = createFileRoute("/api/chat")({
   server: {
     handlers: {
-      POST: async ({ request }) => {
-        if (!isAllowedBrowserRequest(request)) {
-          return new Response("Forbidden: Cross-Origin request blocked.", { status: 403 });
-        }
-
-        try {
-          const body = await request.json();
-          const parsed = chatSchema.safeParse(body);
-          if (!parsed.success) {
-            return new Response("Invalid request structure: " + parsed.error.message, { status: 400 });
-          }
-
-          const { messages, mode } = parsed.data;
-          const key = process.env.LOVABLE_API_KEY;
-          if (!key) {
-            return new Response("Configuration Error: Missing AI Credentials", { status: 500 });
-          }
-
-          const systemPrompt = mode === "coroinhas" ? COROINHAS_PROMPT : SYSTEM_PROMPT;
-          const gateway = createLovableAiGatewayProvider(key);
-
-          const result = streamText({
-            model: gateway("google/gemini-3-flash-preview"),
-            system: systemPrompt,
-            messages: await convertToModelMessages(messages as UIMessage[]),
-          });
-
-          return result.toUIMessageStreamResponse({
-            originalMessages: messages as UIMessage[],
-          });
-        } catch (err) {
-          console.error("[AI_CHAT_ERROR]", err);
-          const message = err instanceof Error ? err.message : "Erro interno no servidor";
-          if (message.includes("429")) {
-            return new Response("Muitas requisições. Aguarde um instante e tente novamente.", { status: 429 });
-          }
-          if (message.includes("402")) {
-            return new Response("Créditos de IA esgotados. Adicione créditos no painel da Lovable.", { status: 402 });
-          }
-          return new Response("Erro no processamento da IA: " + message, { status: 500 });
-        }
-      },
+      POST: handleChatRequest,
     },
   },
 });
+
+async function handleChatRequest({ request }: { request: Request }) {
+  if (!isAllowedBrowserRequest(request)) {
+    return new Response("Forbidden: Cross-Origin request blocked.", { status: 403 });
+  }
+
+  try {
+    const body = await request.json();
+    const parsed = chatSchema.safeParse(body);
+    if (!parsed.success) {
+      return new Response("Invalid request structure: " + parsed.error.message, { status: 400 });
+    }
+
+    const { messages, mode } = parsed.data;
+    const key = process.env.LOVABLE_API_KEY;
+    if (!key) {
+      return new Response("Configuration Error: Missing AI Credentials", { status: 500 });
+    }
+
+    const systemPrompt = mode === "coroinhas" ? COROINHAS_PROMPT : SYSTEM_PROMPT;
+    const gateway = createLovableAiGatewayProvider(key);
+
+    const result = streamText({
+      model: gateway("google/gemini-2.0-flash-exp"), // Usando versão mais estável/recente do Gemini Flash
+      system: systemPrompt,
+      messages: await convertToModelMessages(messages as UIMessage[]),
+    });
+
+    return result.toUIMessageStreamResponse({
+      originalMessages: messages as UIMessage[],
+    });
+  } catch (err) {
+    return handleChatError(err);
+  }
+}
+
+function handleChatError(err: unknown) {
+  console.error("[AI_CHAT_ERROR]", err);
+  const message = err instanceof Error ? err.message : "Erro interno no servidor";
+  
+  if (message.includes("429")) {
+    return new Response("Muitas requisições. Aguarde um instante e tente novamente.", { status: 429 });
+  }
+  if (message.includes("402")) {
+    return new Response("Créditos de IA esgotados. Adicione créditos no painel da Lovable.", { status: 402 });
+  }
+  
+  return new Response("Erro no processamento da IA: " + message, { status: 500 });
+}
