@@ -96,39 +96,52 @@ function Home() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative overflow-hidden min-h-[88vh] flex items-end">
+      <section className="relative overflow-hidden min-h-[92vh] flex items-center">
         <div
-          className="absolute inset-0 bg-cover bg-center scale-105"
+          className="absolute inset-0 bg-cover bg-center transition-transform duration-[10s] ease-out scale-110 hover:scale-100"
           style={{ backgroundImage: `url(${hero})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-deep/40 via-deep/70 to-background" />
-        <div className="absolute inset-0 bg-gradient-to-r from-deep/80 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-deep/20 via-deep/60 to-background" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(5,5,5,0.4)_100%)]" />
 
-        <div className="relative max-w-6xl mx-auto px-6 py-24 md:py-32">
-          <p className="text-[11px] tracking-[0.4em] uppercase text-gold mb-6">
-            Una · Sancta · Catholica · Apostolica
-          </p>
-          <h1 className="font-display text-6xl md:text-8xl lg:text-[10rem] leading-[0.85] text-paper max-w-5xl tracking-tighter">
-            A biblioteca <em className="text-gold italic font-medium">da Fé</em>
-          </h1>
-          <p className="mt-8 max-w-2xl text-lg md:text-xl text-paper/80 leading-relaxed font-light">
-            Bíblia, Catecismo, Magistério, santos e orações — em uma única plataforma
-            cinematográfica, fiel à doutrina da Igreja de Cristo.
-          </p>
-          <div className="mt-12 flex flex-wrap gap-4">
-            <Link
-              to="/biblia"
-              className="inline-flex items-center gap-3 px-10 py-5 bg-gold text-deep text-[10px] uppercase tracking-[0.4em] font-bold hover:bg-paper transition-smooth hover:scale-105 active:scale-95 shadow-2xl shadow-gold/20"
-            >
-              <BookOpen className="size-4" /> Começar a estudar
-            </Link>
-            <Link
-              to="/assistente"
-              className="inline-flex items-center gap-2 px-7 py-4 border border-gold/50 text-paper text-[11px] uppercase tracking-[0.25em] font-medium hover:border-gold hover:bg-gold/10 transition-colors"
-            >
-              <Sparkles className="size-4 text-gold" /> Falar com a IA Católica
-            </Link>
+        <div className="relative max-w-7xl mx-auto px-8 w-full">
+          <div className="max-w-4xl animate-reveal">
+            <p className="text-[10px] tracking-[0.5em] uppercase text-gold/80 mb-8 flex items-center gap-4">
+              <span className="h-px w-8 bg-gold/30" /> Una · Sancta · Catholica · Apostolica
+            </p>
+            <h1 className="font-display text-7xl md:text-9xl lg:text-[11rem] leading-[0.8] text-paper tracking-tighter mb-10">
+              A biblioteca <br/>
+              <span className="text-gold italic font-medium relative inline-block">
+                da Fé
+                <span className="absolute -bottom-4 left-0 w-full h-1 bg-gold/20 blur-sm" />
+              </span>
+            </h1>
+            <p className="max-w-xl text-lg md:text-xl text-paper/70 leading-relaxed font-light mb-12">
+              Bíblia, Catecismo, Magistério, santos e orações — em uma experiência
+              cinematográfica, fiel à doutrina da Igreja de Cristo.
+            </p>
+            <div className="flex flex-wrap gap-6">
+              <Link
+                to="/biblia"
+                className="group relative inline-flex items-center gap-4 px-12 py-6 bg-gold text-deep text-[11px] uppercase tracking-[0.4em] font-bold overflow-hidden transition-premium hover:shadow-[0_0_40px_rgba(212,175,55,0.3)]"
+              >
+                <span className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+                <BookOpen className="size-4 relative z-10" /> <span className="relative z-10">Começar a estudar</span>
+              </Link>
+              <Link
+                to="/assistente"
+                className="inline-flex items-center gap-3 px-8 py-6 border border-gold/30 text-paper text-[11px] uppercase tracking-[0.3em] font-medium hover:border-gold hover:bg-gold/5 transition-premium"
+              >
+                <Sparkles className="size-4 text-gold" /> Falar com a IA Católica
+              </Link>
+            </div>
           </div>
+        </div>
+        
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 animate-float opacity-50">
+          <span className="text-[9px] uppercase tracking-[0.4em] text-gold">Scroll</span>
+          <div className="w-px h-12 bg-gradient-to-b from-gold/50 to-transparent" />
         </div>
       </section>
 
