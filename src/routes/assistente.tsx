@@ -29,6 +29,10 @@ function Page() {
   const [input, setInput] = useState("");
   const { messages, sendMessage, status } = useChat({
     transport: new DefaultChatTransport({ api: "/api/chat" }),
+    onError: (err) => {
+      console.error("[Assistente] error:", err);
+      toast.error("Sophia não conseguiu responder. Tente novamente em instantes.");
+    },
   });
   const scrollRef = useRef<HTMLDivElement>(null);
   const isLoading = status === "submitted" || status === "streaming";
