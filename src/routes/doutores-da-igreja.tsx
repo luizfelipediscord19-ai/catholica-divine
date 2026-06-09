@@ -208,9 +208,6 @@ function Page() {
         </section>
       </ReadingMode>
 
-      <Section>
-        <></>
-      </Section>
     </div>
   );
 }
