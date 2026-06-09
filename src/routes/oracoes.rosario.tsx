@@ -339,3 +339,14 @@ function buildEtapas(c: ConjuntoMisterios): Etapa[] {
 function dayName() {
   return new Date().toLocaleDateString("pt-BR", { weekday: "long" });
 }
+
+function tempoAtras(ts: number) {
+  const diff = Math.max(0, Date.now() - ts);
+  const min = Math.floor(diff / 60000);
+  if (min < 1) return "agora há pouco";
+  if (min < 60) return `há ${min} min`;
+  const h = Math.floor(min / 60);
+  if (h < 24) return `há ${h} h`;
+  const d = Math.floor(h / 24);
+  return `há ${d} d`;
+}
