@@ -3,6 +3,7 @@ import { BookOpen, Heart, Sparkles, Church, Crown, ScrollText, Compass, Calendar
 import hero from "../assets/hero-catedral.jpg";
 import maria from "../assets/maria.jpg";
 import cristo from "../assets/cristo.jpg";
+import { versoDoDia, evangelhoDoDia, santoDoDia } from "../lib/data/hoje";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -52,8 +53,43 @@ const DAILY = [
   },
 ];
 
+function refTexto(r: { nome: string; capitulo: number; vi?: number; vf?: number }) {
+  if (r.vi && r.vf && r.vi !== r.vf) return `${r.nome} ${r.capitulo}, ${r.vi}-${r.vf}`;
+  if (r.vi) return `${r.nome} ${r.capitulo}, ${r.vi}`;
+  return `${r.nome} ${r.capitulo}`;
+}
+
 function Home() {
-  return (
+  const verso = versoDoDia();
+  const evangelho = evangelhoDoDia();
+  const santo = santoDoDia();
+  const DAILY: { kicker: string; text: string; ref: string; link?: { to: "/biblia/$livro/$capitulo"; params: { livro: string; capitulo: string }; search: Record<string, string> } }[] = [
+    {
+      kicker: "Versículo do dia",
+      text: `“${verso.texto}”`,
+      ref: refTexto(verso),
+      link: {
+        to: "/biblia/$livro/$capitulo",
+        params: { livro: verso.livro, capitulo: String(verso.capitulo) },
+        search: verso.vi ? { vi: String(verso.vi), ...(verso.vf ? { vf: String(verso.vf) } : {}) } : {},
+      },
+    },
+    {
+      kicker: "Santo do dia",
+      text: `${santo.nome} — ${santo.resumo}`,
+      ref: `Memória — ${santo.data}`,
+    },
+    {
+      kicker: "Evangelho do dia",
+      text: `${evangelho.titulo} — “${evangelho.texto}”`,
+      ref: refTexto(evangelho),
+      link: {
+        to: "/biblia/$livro/$capitulo",
+        params: { livro: evangelho.livro, capitulo: String(evangelho.capitulo) },
+        search: evangelho.vi ? { vi: String(evangelho.vi), ...(evangelho.vf ? { vf: String(evangelho.vf) } : {}) } : {},
+      },
+    },
+  ];
     <div>
       {/* Hero */}
       <section className="relative overflow-hidden min-h-[88vh] flex items-end">
