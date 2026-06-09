@@ -55,7 +55,48 @@
     0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-10px); }
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+      animation-delay: -1ms !important;
+      animation-duration: 1ms !important;
+      animation-iteration-count: 1 !important;
+      background-attachment: scroll !important;
+      scroll-behavior: auto !important;
+      transition-duration: 0s !important;
+      transition-delay: 0s !important;
+    }
+    .animate-reveal {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
 }
+
+@layer utilities {
+  .button-hover-effect {
+    @apply relative overflow-hidden transition-premium;
+  }
+  .button-hover-effect::after {
+    content: '';
+    @apply absolute inset-0 bg-white/5 opacity-0 transition-opacity duration-300;
+  }
+  .button-hover-effect:hover::after {
+    @apply opacity-100;
+  }
+  .button-hover-effect:active {
+    @apply scale-[0.98];
+  }
+  
+  .card-premium-hover {
+    @apply transition-premium hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] hover:border-gold/30;
+  }
+  
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
 
 :root {
   --radius: 0.5rem; /* Smoother radius */
