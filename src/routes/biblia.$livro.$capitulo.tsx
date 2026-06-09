@@ -1,4 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { useState } from "react";
 import { getLivro, getUrlOficial } from "../lib/data/biblia";
 import { ArrowLeft, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -26,7 +27,7 @@ export const Route = createFileRoute("/biblia/$livro/$capitulo")({
     const titulo = loaderData ? `${loaderData.livro.nome} ${loaderData.capitulo}` : "Bíblia";
     return {
       meta: [
-        { title: `${titulo} — Bíblia (Almeida) — Portal Católico` },
+        { title: `${titulo} — Bíblia — Portal Católico` },
         { name: "description", content: `Leitura de ${titulo}. ${loaderData?.livro.resumo ?? ""}` },
         { property: "og:title", content: `${titulo} — Bíblia` },
         { property: "og:description", content: loaderData?.livro.resumo ?? "" },
@@ -42,10 +43,34 @@ export const Route = createFileRoute("/biblia/$livro/$capitulo")({
   ),
 });
 
+type FonteId = "almeida" | "vulgata" | "novavulgata" | "original";
+
+const FONTES: { id: FonteId; nome: string; lingua: string; dominio: string }[] = [
+  { id: "almeida", nome: "Almeida", lingua: "Português", dominio: "Domínio público" },
+  { id: "vulgata", nome: "Vulgata Clementina", lingua: "Latim", dominio: "Domínio público" },
+  { id: "novavulgata", nome: "Nova Vulgata", lingua: "Latim oficial", dominio: "© Vaticano (leitura)" },
+  { id: "original", nome: "Originais", lingua: "Hebraico / Grego", dominio: "Domínio público" },
+];
+
+function urlVulgata(slug: string, cap: number) {
+  return `https://www.sacred-texts.com/bib/vul/index.htm#${slug}_${cap}`;
+}
+function urlNovaVulgata(testamento: string, slug: string, cap: number) {
+  // vatican.va mantém Nova Vulgata por livro
+  return `https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_${testamento === "AT" ? "vt" : "nt"}_${slug}_lt.html#${cap}`;
+}
+function urlOriginal(testamento: string, slug: string, cap: number) {
+  return testamento === "NT"
+    ? `https://biblehub.com/interlinear/${slug}/${cap}.htm`
+    : `https://mechon-mamre.org/p/pt/pt0.htm`;
+}
+
 function Page() {
   const { livro, capitulo, versos } = Route.useLoaderData();
+  const [fonte, setFonte] = useState<FonteId>("almeida");
   const anterior = capitulo > 1 ? capitulo - 1 : null;
   const proximo = capitulo < livro.capitulos ? capitulo + 1 : null;
+  const fonteAtual = FONTES.find((f) => f.id === fonte)!;
 
   return (
     <div className="max-w-3xl mx-auto px-6 py-12 md:py-16">
@@ -64,10 +89,35 @@ function Page() {
         {livro.abrev} {capitulo} · Capítulo {capitulo} de {livro.capitulos}
       </p>
 
-      {versos ? (
-        <article className="mt-10 border border-gold/25 bg-card p-8 md:p-12">
+      {/* Seletor de fonte */}
+      <div className="mt-8 flex flex-wrap gap-2">
+        {FONTES.map((f) => {
+          const ativo = f.id === fonte;
+          return (
+            <button
+              key={f.id}
+              onClick={() => setFonte(f.id)}
+              className={
+                "px-4 py-2 text-[10px] tracking-[0.25em] uppercase border transition-colors " +
+                (ativo
+                  ? "border-gold bg-gold text-deep"
+                  : "border-gold/30 text-muted-foreground hover:text-gold hover:border-gold/60")
+              }
+            >
+              {f.nome}
+            </button>
+          );
+        })}
+      </div>
+      <p className="mt-2 text-[11px] text-muted-foreground">
+        Fonte: <span className="text-gold">{fonteAtual.nome}</span> — {fonteAtual.lingua} · {fonteAtual.dominio}
+      </p>
+
+      {/* Conteúdo conforme fonte */}
+      {fonte === "almeida" && versos ? (
+        <article className="mt-6 border border-gold/25 bg-card p-8 md:p-12">
           <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-6">
-            Tradução · Almeida (domínio público)
+            Almeida (João Ferreira de Almeida) · Domínio público
           </p>
           <div className="space-y-3 font-display text-lg leading-relaxed text-foreground/95">
             {versos.map((v: Verso) => (
@@ -83,15 +133,27 @@ function Page() {
             ))}
           </div>
           <p className="mt-8 pt-6 border-t border-gold/15 text-[11px] text-muted-foreground leading-relaxed">
-            Texto: João Ferreira de Almeida, edição em domínio público.
             Para comparar com a tradução católica Ave-Maria, consulte a{" "}
             <a className="text-gold underline" target="_blank" rel="noopener" href={getUrlOficial(livro, capitulo)}>
               versão oficial em bibliacatolica.com.br
             </a>.
           </p>
         </article>
-      ) : (
+      ) : fonte === "almeida" ? (
         <FallbackOficial slug={livro.slug} nome={livro.nome} abrev={livro.abrev} capitulo={capitulo} />
+      ) : (
+        <FonteExterna
+          fonte={fonteAtual}
+          url={
+            fonte === "vulgata"
+              ? urlVulgata(livro.slug, capitulo)
+              : fonte === "novavulgata"
+              ? urlNovaVulgata(livro.testamento, livro.slug, capitulo)
+              : urlOriginal(livro.testamento, livro.slug, capitulo)
+          }
+          livro={livro.nome}
+          capitulo={capitulo}
+        />
       )}
 
       <nav className="mt-10 flex items-center justify-between gap-4">
@@ -118,13 +180,45 @@ function Page() {
   );
 }
 
+function FonteExterna({
+  fonte,
+  url,
+  livro,
+  capitulo,
+}: {
+  fonte: { nome: string; lingua: string };
+  url: string;
+  livro: string;
+  capitulo: number;
+}) {
+  return (
+    <article className="mt-6 border border-gold/25 bg-card p-8 md:p-10">
+      <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-4">
+        {fonte.nome} · {fonte.lingua}
+      </p>
+      <p className="text-foreground/90 leading-relaxed">
+        A integração do texto integral de <strong>{fonte.nome}</strong> em <strong>{livro} {capitulo}</strong> está
+        sendo preparada. Por enquanto, consulte diretamente a fonte oficial:
+      </p>
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener"
+        className="mt-6 inline-flex items-center gap-2 px-6 py-3 bg-gold text-deep text-[11px] uppercase tracking-[0.25em] font-medium hover:bg-paper transition-colors"
+      >
+        <ExternalLink className="size-3.5" /> Abrir {fonte.nome}
+      </a>
+    </article>
+  );
+}
+
 function FallbackOficial({ slug, nome, abrev, capitulo }: { slug: string; nome: string; abrev: string; capitulo: number }) {
   const url = `https://www.bibliacatolica.com.br/biblia-ave-maria/${slug}/${capitulo}/`;
   return (
-    <div className="mt-10 border border-gold/25 bg-card p-8 md:p-10">
+    <div className="mt-6 border border-gold/25 bg-card p-8 md:p-10">
       <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-4">Em processamento</p>
       <p className="text-foreground leading-relaxed">
-        O texto de <strong>{nome} {capitulo}</strong> ainda está sendo carregado neste portal.
+        O texto Almeida de <strong>{nome} {capitulo}</strong> ainda está sendo carregado.
         Enquanto isso, leia na fonte oficial Ave-Maria:
       </p>
       <a
