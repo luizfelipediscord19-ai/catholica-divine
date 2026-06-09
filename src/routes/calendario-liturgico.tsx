@@ -252,6 +252,16 @@ function Page() {
           </section>
         </Prose>
 
+        {/* Mapa interativo do Ano Litúrgico */}
+        <section id="mapa" className="scroll-mt-24 mt-16 print:hidden">
+          <h3 className="font-display text-2xl text-foreground mb-2">Mapa do Ano (interativo)</h3>
+          <p className="text-sm text-muted-foreground mb-6 max-w-2xl">
+            Navegue pelos tempos do ano litúrgico — datas do ciclo 2025–2026, cores oficiais, destaques e
+            favoritos salvos no seu dispositivo.
+          </p>
+          <MapaAnoLiturgico />
+        </section>
+
         {/* Versículo do dia */}
         <section id="versiculo" className="scroll-mt-24 mt-16">
           <h3 className="font-display text-2xl text-foreground mb-2">Versículo do dia</h3>
