@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { PARTES, SECOES, VATICAN_URL } from "../lib/data/catecismo";
+import { PARTES, SECOES, VATICAN_URL, type SecaoCIC } from "../lib/data/catecismo";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 
 export const Route = createFileRoute("/catecismo/$parte")({
