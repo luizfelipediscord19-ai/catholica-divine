@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SophiaDiagnosticoRouteImport } from './routes/sophia-diagnostico'
 import { Route as SantosRouteImport } from './routes/santos'
 import { Route as SacramentosRouteImport } from './routes/sacramentos'
 import { Route as OracoesRouteImport } from './routes/oracoes'
@@ -37,6 +38,11 @@ import { Route as BibliaLivroIndexRouteImport } from './routes/biblia.$livro.ind
 import { Route as OracoesNovenasSlugRouteImport } from './routes/oracoes.novenas.$slug'
 import { Route as BibliaLivroCapituloRouteImport } from './routes/biblia.$livro.$capitulo'
 
+const SophiaDiagnosticoRoute = SophiaDiagnosticoRouteImport.update({
+  id: '/sophia-diagnostico',
+  path: '/sophia-diagnostico',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SantosRoute = SantosRouteImport.update({
   id: '/santos',
   path: '/santos',
@@ -188,6 +194,7 @@ export interface FileRoutesByFullPath {
   '/oracoes': typeof OracoesRouteWithChildren
   '/sacramentos': typeof SacramentosRoute
   '/santos': typeof SantosRouteWithChildren
+  '/sophia-diagnostico': typeof SophiaDiagnosticoRoute
   '/api/chat': typeof ApiChatRoute
   '/biblia/$livro': typeof BibliaLivroRouteWithChildren
   '/biblia/leituras': typeof BibliaLeiturasRoute
@@ -216,6 +223,7 @@ export interface FileRoutesByTo {
   '/oracoes': typeof OracoesRouteWithChildren
   '/sacramentos': typeof SacramentosRoute
   '/santos': typeof SantosRouteWithChildren
+  '/sophia-diagnostico': typeof SophiaDiagnosticoRoute
   '/api/chat': typeof ApiChatRoute
   '/biblia/leituras': typeof BibliaLeiturasRoute
   '/catecismo/$parte': typeof CatecismoParteRoute
@@ -245,6 +253,7 @@ export interface FileRoutesById {
   '/oracoes': typeof OracoesRouteWithChildren
   '/sacramentos': typeof SacramentosRoute
   '/santos': typeof SantosRouteWithChildren
+  '/sophia-diagnostico': typeof SophiaDiagnosticoRoute
   '/api/chat': typeof ApiChatRoute
   '/biblia/$livro': typeof BibliaLivroRouteWithChildren
   '/biblia/leituras': typeof BibliaLeiturasRoute
@@ -276,6 +285,7 @@ export interface FileRouteTypes {
     | '/oracoes'
     | '/sacramentos'
     | '/santos'
+    | '/sophia-diagnostico'
     | '/api/chat'
     | '/biblia/$livro'
     | '/biblia/leituras'
@@ -304,6 +314,7 @@ export interface FileRouteTypes {
     | '/oracoes'
     | '/sacramentos'
     | '/santos'
+    | '/sophia-diagnostico'
     | '/api/chat'
     | '/biblia/leituras'
     | '/catecismo/$parte'
@@ -332,6 +343,7 @@ export interface FileRouteTypes {
     | '/oracoes'
     | '/sacramentos'
     | '/santos'
+    | '/sophia-diagnostico'
     | '/api/chat'
     | '/biblia/$livro'
     | '/biblia/leituras'
@@ -362,11 +374,19 @@ export interface RootRouteChildren {
   OracoesRoute: typeof OracoesRouteWithChildren
   SacramentosRoute: typeof SacramentosRoute
   SantosRoute: typeof SantosRouteWithChildren
+  SophiaDiagnosticoRoute: typeof SophiaDiagnosticoRoute
   ApiChatRoute: typeof ApiChatRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sophia-diagnostico': {
+      id: '/sophia-diagnostico'
+      path: '/sophia-diagnostico'
+      fullPath: '/sophia-diagnostico'
+      preLoaderRoute: typeof SophiaDiagnosticoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/santos': {
       id: '/santos'
       path: '/santos'
@@ -656,6 +676,7 @@ const rootRouteChildren: RootRouteChildren = {
   OracoesRoute: OracoesRouteWithChildren,
   SacramentosRoute: SacramentosRoute,
   SantosRoute: SantosRouteWithChildren,
+  SophiaDiagnosticoRoute: SophiaDiagnosticoRoute,
   ApiChatRoute: ApiChatRoute,
 }
 export const routeTree = rootRouteImport

@@ -5,6 +5,8 @@ import { useState, useRef, useEffect } from "react";
 import { Sparkles, Send, Loader2, AlertCircle, CheckCircle2 } from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import { toast } from "sonner";
+import { Link } from "@tanstack/react-router";
+import { SUGESTOES_GERAL } from "../lib/data/sophia-perguntas";
 
 export const Route = createFileRoute("/assistente")({
   head: () => ({
@@ -18,12 +20,7 @@ export const Route = createFileRoute("/assistente")({
   component: Page,
 });
 
-const SUGESTOES = [
-  "O que é a Santíssima Trindade?",
-  "Por que os católicos veneram Maria?",
-  "Como funciona a confissão?",
-  "O que é a Eucaristia?",
-];
+const SUGESTOES = SUGESTOES_GERAL;
 
 function Page() {
   const [input, setInput] = useState("");

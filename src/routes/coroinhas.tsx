@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Section, CardGrid, ContentCard } from "../components/PageShell";
 import { SophiaChat } from "../components/SophiaChat";
 import { Sparkles } from "lucide-react";
+import { SUGESTOES_COROINHAS } from "../lib/data/sophia-perguntas";
 
 export const Route = createFileRoute("/coroinhas")({
   head: () => ({
@@ -133,12 +134,7 @@ function Page() {
         <SophiaChat
           mode="coroinhas"
           placeholder="Pergunte sobre rubricas, paramentos, vasos sagrados, posturas..."
-          suggestions={[
-            "Como deve ser a genuflexão diante do Sacrário?",
-            "Qual a função do turiferário na Missa solene?",
-            "Quando se usa a cor rosa nas vestes litúrgicas?",
-            "O que diz a IGMR sobre o manuseio do cálice?",
-          ]}
+          suggestions={SUGESTOES_COROINHAS}
         />
       </Section>
     </div>
