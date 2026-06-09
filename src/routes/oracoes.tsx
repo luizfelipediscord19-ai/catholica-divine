@@ -22,13 +22,12 @@ const ORACOES = [
   { title: "Vinde, Espírito Santo", body: "Vinde, Espírito Santo, enchei os corações dos vossos fiéis e acendei neles o fogo do vosso amor. Enviai o vosso Espírito e tudo será criado, e renovareis a face da terra." },
 ];
 
-type Devocao = { slug: string; title: string; body: string };
-const DEVOCOES: Devocao[] = [
-  { slug: "/oracoes/rosario", title: "Santo Rosário (interativo)", body: "Mistérios Gozosos, Luminosos, Dolorosos e Gloriosos — guiado etapa a etapa." },
-  { slug: "/oracoes/terco-misericordia", title: "Terço da Misericórdia", body: "Revelado a Santa Faustina — rezado especialmente às 15h." },
-  { slug: "/oracoes/via-sacra", title: "Via-Sacra", body: "Catorze estações que acompanham os passos de Cristo até o Calvário." },
-  { slug: "/oracoes/liturgia-das-horas", title: "Liturgia das Horas", body: "Laudes, Vésperas, Completas e demais Horas — a oração oficial da Igreja." },
-  { slug: "/oracoes/novenas", title: "Novenas", body: "Ao Espírito Santo, à Aparecida, a São José, ao Sagrado Coração e outras." },
+const DEVOCOES = [
+  { to: "/oracoes/rosario" as const, title: "Santo Rosário (interativo)", body: "Mistérios Gozosos, Luminosos, Dolorosos e Gloriosos — guiado etapa a etapa." },
+  { to: "/oracoes/terco-misericordia" as const, title: "Terço da Misericórdia", body: "Revelado a Santa Faustina — rezado especialmente às 15h." },
+  { to: "/oracoes/via-sacra" as const, title: "Via-Sacra", body: "Catorze estações que acompanham os passos de Cristo até o Calvário." },
+  { to: "/oracoes/liturgia-das-horas" as const, title: "Liturgia das Horas", body: "Laudes, Vésperas, Completas e demais Horas — a oração oficial da Igreja." },
+  { to: "/oracoes/novenas" as const, title: "Novenas", body: "Ao Espírito Santo, à Aparecida, a São José, ao Sagrado Coração e outras." },
 ];
 
 function Page() {
@@ -42,7 +41,7 @@ function Page() {
       <Section kicker="Devoções" title="Caminhos consagrados pela Igreja">
         <CardGrid cols={3}>
           {DEVOCOES.map((d) => (
-            <Link key={d.slug} to={d.slug}>
+            <Link key={d.to} to={d.to}>
               <ContentCard title={d.title}>{d.body}</ContentCard>
             </Link>
           ))}
