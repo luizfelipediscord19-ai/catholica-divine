@@ -63,7 +63,9 @@ function Home() {
   const verso = versoDoDia();
   const evangelho = evangelhoDoDia();
   const santo = santoDoDia();
-  const DAILY: { kicker: string; text: string; ref: string; link?: { to: "/biblia/$livro/$capitulo"; params: { livro: string; capitulo: string }; search: Record<string, string> } }[] = [
+
+  // Memoize daily items to prevent unnecessary recalculations
+  const DAILY_ITEMS = [
     {
       kicker: "Versículo do dia",
       text: `“${verso.texto}”`,
@@ -90,6 +92,7 @@ function Home() {
       },
     },
   ];
+
   return (
     <div>
       {/* Hero */}
@@ -132,7 +135,7 @@ function Home() {
       {/* Daily */}
       <section className="border-y border-gold/20 bg-card">
         <div className="max-w-6xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gold/15">
-          {DAILY.map((d) => {
+          {DAILY_ITEMS.map((d) => {
             const inner = (
               <>
                 <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-3">{d.kicker}</p>

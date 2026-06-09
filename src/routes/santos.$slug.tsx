@@ -18,10 +18,15 @@ export const Route = createFileRoute("/santos/$slug")({
       ],
     };
   },
-  loader: ({ params }) => {
-    const basico = getSantoBasicoBySlug(params.slug);
-    if (!basico) throw notFound();
-    return { basico };
+  loader: async ({ params, context: { queryClient } }) => {
+    return queryClient.ensureQueryData({
+      queryKey: ["santo", params.slug],
+      queryFn: () => {
+        const basico = getSantoBasicoBySlug(params.slug);
+        if (!basico) throw notFound();
+        return { basico };
+      },
+    });
   },
   notFoundComponent: () => (
     <div>
@@ -42,7 +47,10 @@ export const Route = createFileRoute("/santos/$slug")({
 
 function SantoPage() {
   const { slug } = Route.useParams();
-  const { basico } = Route.useLoaderData();
+  const loaderData = Route.useLoaderData();
+  
+  if (!loaderData) return null;
+  const { basico } = loaderData;
   const v = buildSantoView(slug, basico);
 
   const irmaos = SANTOS_LISTA
