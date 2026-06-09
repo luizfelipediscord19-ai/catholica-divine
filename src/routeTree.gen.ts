@@ -28,8 +28,8 @@ import { Route as OracoesRosarioRouteImport } from './routes/oracoes.rosario'
 import { Route as OracoesNovenasRouteImport } from './routes/oracoes.novenas'
 import { Route as OracoesLiturgiaDasHorasRouteImport } from './routes/oracoes.liturgia-das-horas'
 import { Route as CatecismoParteRouteImport } from './routes/catecismo.$parte'
-import { Route as BibliaLivroRouteImport } from './routes/biblia.$livro'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
+import { Route as BibliaLivroIndexRouteImport } from './routes/biblia.$livro.index'
 import { Route as OracoesNovenasSlugRouteImport } from './routes/oracoes.novenas.$slug'
 import { Route as BibliaLivroCapituloRouteImport } from './routes/biblia.$livro.$capitulo'
 
@@ -129,15 +129,15 @@ const CatecismoParteRoute = CatecismoParteRouteImport.update({
   path: '/$parte',
   getParentRoute: () => CatecismoRoute,
 } as any)
-const BibliaLivroRoute = BibliaLivroRouteImport.update({
-  id: '/$livro',
-  path: '/$livro',
-  getParentRoute: () => BibliaRoute,
-} as any)
 const ApiChatRoute = ApiChatRouteImport.update({
   id: '/api/chat',
   path: '/api/chat',
   getParentRoute: () => rootRouteImport,
+} as any)
+const BibliaLivroIndexRoute = BibliaLivroIndexRouteImport.update({
+  id: '/$livro/',
+  path: '/$livro/',
+  getParentRoute: () => BibliaRoute,
 } as any)
 const OracoesNovenasSlugRoute = OracoesNovenasSlugRouteImport.update({
   id: '/$slug',
@@ -145,9 +145,9 @@ const OracoesNovenasSlugRoute = OracoesNovenasSlugRouteImport.update({
   getParentRoute: () => OracoesNovenasRoute,
 } as any)
 const BibliaLivroCapituloRoute = BibliaLivroCapituloRouteImport.update({
-  id: '/$capitulo',
-  path: '/$capitulo',
-  getParentRoute: () => BibliaLivroRoute,
+  id: '/$livro/$capitulo',
+  path: '/$livro/$capitulo',
+  getParentRoute: () => BibliaRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
@@ -164,7 +164,6 @@ export interface FileRoutesByFullPath {
   '/sacramentos': typeof SacramentosRoute
   '/santos': typeof SantosRoute
   '/api/chat': typeof ApiChatRoute
-  '/biblia/$livro': typeof BibliaLivroRouteWithChildren
   '/catecismo/$parte': typeof CatecismoParteRoute
   '/oracoes/liturgia-das-horas': typeof OracoesLiturgiaDasHorasRoute
   '/oracoes/novenas': typeof OracoesNovenasRouteWithChildren
@@ -174,6 +173,7 @@ export interface FileRoutesByFullPath {
   '/biblia/': typeof BibliaIndexRoute
   '/biblia/$livro/$capitulo': typeof BibliaLivroCapituloRoute
   '/oracoes/novenas/$slug': typeof OracoesNovenasSlugRoute
+  '/biblia/$livro/': typeof BibliaLivroIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -188,7 +188,6 @@ export interface FileRoutesByTo {
   '/sacramentos': typeof SacramentosRoute
   '/santos': typeof SantosRoute
   '/api/chat': typeof ApiChatRoute
-  '/biblia/$livro': typeof BibliaLivroRouteWithChildren
   '/catecismo/$parte': typeof CatecismoParteRoute
   '/oracoes/liturgia-das-horas': typeof OracoesLiturgiaDasHorasRoute
   '/oracoes/novenas': typeof OracoesNovenasRouteWithChildren
@@ -198,6 +197,7 @@ export interface FileRoutesByTo {
   '/biblia': typeof BibliaIndexRoute
   '/biblia/$livro/$capitulo': typeof BibliaLivroCapituloRoute
   '/oracoes/novenas/$slug': typeof OracoesNovenasSlugRoute
+  '/biblia/$livro': typeof BibliaLivroIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -214,7 +214,6 @@ export interface FileRoutesById {
   '/sacramentos': typeof SacramentosRoute
   '/santos': typeof SantosRoute
   '/api/chat': typeof ApiChatRoute
-  '/biblia/$livro': typeof BibliaLivroRouteWithChildren
   '/catecismo/$parte': typeof CatecismoParteRoute
   '/oracoes/liturgia-das-horas': typeof OracoesLiturgiaDasHorasRoute
   '/oracoes/novenas': typeof OracoesNovenasRouteWithChildren
@@ -224,6 +223,7 @@ export interface FileRoutesById {
   '/biblia/': typeof BibliaIndexRoute
   '/biblia/$livro/$capitulo': typeof BibliaLivroCapituloRoute
   '/oracoes/novenas/$slug': typeof OracoesNovenasSlugRoute
+  '/biblia/$livro/': typeof BibliaLivroIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -241,7 +241,6 @@ export interface FileRouteTypes {
     | '/sacramentos'
     | '/santos'
     | '/api/chat'
-    | '/biblia/$livro'
     | '/catecismo/$parte'
     | '/oracoes/liturgia-das-horas'
     | '/oracoes/novenas'
@@ -251,6 +250,7 @@ export interface FileRouteTypes {
     | '/biblia/'
     | '/biblia/$livro/$capitulo'
     | '/oracoes/novenas/$slug'
+    | '/biblia/$livro/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -265,7 +265,6 @@ export interface FileRouteTypes {
     | '/sacramentos'
     | '/santos'
     | '/api/chat'
-    | '/biblia/$livro'
     | '/catecismo/$parte'
     | '/oracoes/liturgia-das-horas'
     | '/oracoes/novenas'
@@ -275,6 +274,7 @@ export interface FileRouteTypes {
     | '/biblia'
     | '/biblia/$livro/$capitulo'
     | '/oracoes/novenas/$slug'
+    | '/biblia/$livro'
   id:
     | '__root__'
     | '/'
@@ -290,7 +290,6 @@ export interface FileRouteTypes {
     | '/sacramentos'
     | '/santos'
     | '/api/chat'
-    | '/biblia/$livro'
     | '/catecismo/$parte'
     | '/oracoes/liturgia-das-horas'
     | '/oracoes/novenas'
@@ -300,6 +299,7 @@ export interface FileRouteTypes {
     | '/biblia/'
     | '/biblia/$livro/$capitulo'
     | '/oracoes/novenas/$slug'
+    | '/biblia/$livro/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -453,19 +453,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CatecismoParteRouteImport
       parentRoute: typeof CatecismoRoute
     }
-    '/biblia/$livro': {
-      id: '/biblia/$livro'
-      path: '/$livro'
-      fullPath: '/biblia/$livro'
-      preLoaderRoute: typeof BibliaLivroRouteImport
-      parentRoute: typeof BibliaRoute
-    }
     '/api/chat': {
       id: '/api/chat'
       path: '/api/chat'
       fullPath: '/api/chat'
       preLoaderRoute: typeof ApiChatRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/biblia/$livro/': {
+      id: '/biblia/$livro/'
+      path: '/$livro'
+      fullPath: '/biblia/$livro/'
+      preLoaderRoute: typeof BibliaLivroIndexRouteImport
+      parentRoute: typeof BibliaRoute
     }
     '/oracoes/novenas/$slug': {
       id: '/oracoes/novenas/$slug'
@@ -476,34 +476,24 @@ declare module '@tanstack/react-router' {
     }
     '/biblia/$livro/$capitulo': {
       id: '/biblia/$livro/$capitulo'
-      path: '/$capitulo'
+      path: '/$livro/$capitulo'
       fullPath: '/biblia/$livro/$capitulo'
       preLoaderRoute: typeof BibliaLivroCapituloRouteImport
-      parentRoute: typeof BibliaLivroRoute
+      parentRoute: typeof BibliaRoute
     }
   }
 }
 
-interface BibliaLivroRouteChildren {
-  BibliaLivroCapituloRoute: typeof BibliaLivroCapituloRoute
-}
-
-const BibliaLivroRouteChildren: BibliaLivroRouteChildren = {
-  BibliaLivroCapituloRoute: BibliaLivroCapituloRoute,
-}
-
-const BibliaLivroRouteWithChildren = BibliaLivroRoute._addFileChildren(
-  BibliaLivroRouteChildren,
-)
-
 interface BibliaRouteChildren {
-  BibliaLivroRoute: typeof BibliaLivroRouteWithChildren
   BibliaIndexRoute: typeof BibliaIndexRoute
+  BibliaLivroCapituloRoute: typeof BibliaLivroCapituloRoute
+  BibliaLivroIndexRoute: typeof BibliaLivroIndexRoute
 }
 
 const BibliaRouteChildren: BibliaRouteChildren = {
-  BibliaLivroRoute: BibliaLivroRouteWithChildren,
   BibliaIndexRoute: BibliaIndexRoute,
+  BibliaLivroCapituloRoute: BibliaLivroCapituloRoute,
+  BibliaLivroIndexRoute: BibliaLivroIndexRoute,
 }
 
 const BibliaRouteWithChildren =
@@ -570,3 +560,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

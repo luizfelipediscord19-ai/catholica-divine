@@ -2,7 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { getLivro, LIVROS } from "../lib/data/biblia";
 import { ArrowLeft, BookOpen } from "lucide-react";
 
-export const Route = createFileRoute("/biblia/$livro")({
+export const Route = createFileRoute("/biblia/$livro/")({
   loader: ({ params }) => {
     const l = getLivro(params.livro);
     if (!l) throw notFound();
