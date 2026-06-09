@@ -146,32 +146,38 @@ function Home() {
       </section>
 
       {/* Daily */}
-      <section className="border-y border-gold/20 bg-card">
-        <div className="max-w-6xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gold/15">
-          {DAILY_ITEMS.map((d, i) => {
-            const inner = (
-              <>
-                <p className="text-[9px] tracking-[0.4em] uppercase text-gold/60 mb-4">{d.kicker}</p>
-                <p className="font-display italic text-xl text-foreground leading-[1.4] mb-4">{d.text}</p>
-                <p className="text-[10px] text-muted-foreground tracking-[0.2em] uppercase">{d.ref}</p>
-              </>
-            );
-            return (
-              <div 
-                key={d.kicker} 
-                className={`px-8 py-10 transition-smooth ${d.link ? "hover:bg-gold/5 cursor-pointer" : ""}`}
-                style={{ animationDelay: `${i * 150}ms` }}
-              >
-                {d.link ? (
-                  <Link to={d.link.to} params={d.link.params} search={d.link.search} className="block animate-content-fade">
-                    {inner}
-                  </Link>
-                ) : (
-                  <div className="animate-content-fade">{inner}</div>
-                )}
-              </div>
-            );
-          })}
+      <section className="bg-background relative z-10">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-gold/10 border-x border-gold/10">
+            {DAILY_ITEMS.map((d, i) => {
+              const inner = (
+                <div className="group h-full flex flex-col p-10 transition-premium hover:bg-gold/[0.03]">
+                  <p className="text-[9px] tracking-[0.5em] uppercase text-gold/50 mb-6 group-hover:text-gold transition-colors">{d.kicker}</p>
+                  <p className="font-display italic text-2xl text-foreground/90 leading-relaxed mb-8 flex-1">
+                    {d.text}
+                  </p>
+                  <p className="text-[10px] text-muted-foreground tracking-[0.3em] uppercase group-hover:text-gold/80 transition-colors">
+                    {d.ref}
+                  </p>
+                </div>
+              );
+              return (
+                <div 
+                  key={d.kicker} 
+                  className="animate-reveal"
+                  style={{ animationDelay: `${i * 150}ms` }}
+                >
+                  {d.link ? (
+                    <Link to={d.link.to} params={d.link.params} search={d.link.search} className="block h-full">
+                      {inner}
+                    </Link>
+                  ) : (
+                    <div className="h-full">{inner}</div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
         </div>
       </section>
 
