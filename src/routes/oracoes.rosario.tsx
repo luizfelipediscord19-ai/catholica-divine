@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { PageHero, Section } from "../components/PageShell";
 import { CONJUNTOS, ORACOES_BASE, conjuntoDoDia, type ConjuntoMisterios } from "../lib/data/devocoes/rosario";
 
@@ -17,16 +17,71 @@ export const Route = createFileRoute("/oracoes/rosario")({
 
 type Etapa = { titulo: string; subtitle?: string; texto: string; repeticao?: number; misterioIdx?: number };
 
+const STORAGE_KEY = "rosario:progresso:v1";
+type Saved = {
+  conjuntoSlug: ConjuntoMisterios["slug"];
+  etapaIdx: number;
+  contagem: number;
+  elapsed: number;
+  secPerBead: number;
+  savedAt: number;
+};
+
 function Page() {
   const sugestao = useMemo(() => conjuntoDoDia(), []);
   const [conjunto, setConjunto] = useState<ConjuntoMisterios>(sugestao);
   const etapas = useMemo(() => buildEtapas(conjunto), [conjunto]);
 
   const [etapaIdx, setEtapaIdx] = useState(0);
-  const [contagem, setContagem] = useState(0); // 0..repeticao
+  const [contagem, setContagem] = useState(0);
   const [playing, setPlaying] = useState(false);
   const [secPerBead, setSecPerBead] = useState(12);
-  const [elapsed, setElapsed] = useState(0); // seconds
+  const [elapsed, setElapsed] = useState(0);
+  const [restored, setRestored] = useState<Saved | null>(null);
+  const [hydrated, setHydrated] = useState(false);
+
+  // Restaurar progresso ao montar
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (raw) {
+        const s = JSON.parse(raw) as Saved;
+        const c = CONJUNTOS.find((x) => x.slug === s.conjuntoSlug);
+        if (c) {
+          setConjunto(c);
+          setEtapaIdx(s.etapaIdx);
+          setContagem(s.contagem);
+          setElapsed(s.elapsed);
+          setSecPerBead(s.secPerBead);
+          setRestored(s);
+        }
+      }
+    } catch {
+      // localStorage indisponível — segue sem restaurar
+    }
+    setHydrated(true);
+  }, []);
+
+  // Salvamento automático (após hidratar, com debounce simples)
+  useEffect(() => {
+    if (!hydrated) return;
+    const id = setTimeout(() => {
+      try {
+        const payload: Saved = {
+          conjuntoSlug: conjunto.slug,
+          etapaIdx,
+          contagem,
+          elapsed,
+          secPerBead,
+          savedAt: Date.now(),
+        };
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(payload));
+      } catch {
+        // sem espaço / modo privado — ignora
+      }
+    }, 400);
+    return () => clearTimeout(id);
+  }, [hydrated, conjunto.slug, etapaIdx, contagem, elapsed, secPerBead]);
 
   const atual = etapas[etapaIdx];
   const total = atual.repeticao ?? 1;
@@ -80,6 +135,8 @@ function Page() {
     setContagem(0);
     setElapsed(0);
     setPlaying(false);
+    setRestored(null);
+    try { localStorage.removeItem(STORAGE_KEY); } catch { /* ignore */ }
   }
 
   function mmss(s: number) {
@@ -121,6 +178,16 @@ function Page() {
             );
           })}
         </div>
+
+        {restored ? (
+          <div className="border border-gold/40 bg-gold/5 p-4 mb-4 flex items-center justify-between gap-3 text-sm">
+            <span>
+              <span className="text-gold">●</span> Retomado de onde parou — etapa {restored.etapaIdx + 1}, conta {restored.contagem + 1}
+              <span className="text-muted-foreground"> · salvo {tempoAtras(restored.savedAt)}</span>
+            </span>
+            <button onClick={() => setRestored(null)} className="text-xs text-muted-foreground hover:text-foreground">dispensar</button>
+          </div>
+        ) : null}
 
         {/* Controles de cronômetro */}
         <div className="border border-gold/30 bg-card/60 p-4 md:p-5 mb-4 flex flex-wrap items-center gap-4">
@@ -271,4 +338,15 @@ function buildEtapas(c: ConjuntoMisterios): Etapa[] {
 
 function dayName() {
   return new Date().toLocaleDateString("pt-BR", { weekday: "long" });
+}
+
+function tempoAtras(ts: number) {
+  const diff = Math.max(0, Date.now() - ts);
+  const min = Math.floor(diff / 60000);
+  if (min < 1) return "agora há pouco";
+  if (min < 60) return `há ${min} min`;
+  const h = Math.floor(min / 60);
+  if (h < 24) return `há ${h} h`;
+  const d = Math.floor(h / 24);
+  return `há ${d} d`;
 }
