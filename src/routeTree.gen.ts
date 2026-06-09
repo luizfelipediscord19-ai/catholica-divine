@@ -21,9 +21,15 @@ import { Route as BibliaRouteImport } from './routes/biblia'
 import { Route as AssistenteRouteImport } from './routes/assistente'
 import { Route as ApologeticaRouteImport } from './routes/apologetica'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as OracoesViaSacraRouteImport } from './routes/oracoes.via-sacra'
+import { Route as OracoesTercoMisericordiaRouteImport } from './routes/oracoes.terco-misericordia'
+import { Route as OracoesRosarioRouteImport } from './routes/oracoes.rosario'
+import { Route as OracoesNovenasRouteImport } from './routes/oracoes.novenas'
+import { Route as OracoesLiturgiaDasHorasRouteImport } from './routes/oracoes.liturgia-das-horas'
 import { Route as CatecismoParteRouteImport } from './routes/catecismo.$parte'
 import { Route as BibliaLivroRouteImport } from './routes/biblia.$livro'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
+import { Route as OracoesNovenasSlugRouteImport } from './routes/oracoes.novenas.$slug'
 import { Route as BibliaLivroCapituloRouteImport } from './routes/biblia.$livro.$capitulo'
 
 const SantosRoute = SantosRouteImport.update({
@@ -86,6 +92,32 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OracoesViaSacraRoute = OracoesViaSacraRouteImport.update({
+  id: '/via-sacra',
+  path: '/via-sacra',
+  getParentRoute: () => OracoesRoute,
+} as any)
+const OracoesTercoMisericordiaRoute =
+  OracoesTercoMisericordiaRouteImport.update({
+    id: '/terco-misericordia',
+    path: '/terco-misericordia',
+    getParentRoute: () => OracoesRoute,
+  } as any)
+const OracoesRosarioRoute = OracoesRosarioRouteImport.update({
+  id: '/rosario',
+  path: '/rosario',
+  getParentRoute: () => OracoesRoute,
+} as any)
+const OracoesNovenasRoute = OracoesNovenasRouteImport.update({
+  id: '/novenas',
+  path: '/novenas',
+  getParentRoute: () => OracoesRoute,
+} as any)
+const OracoesLiturgiaDasHorasRoute = OracoesLiturgiaDasHorasRouteImport.update({
+  id: '/liturgia-das-horas',
+  path: '/liturgia-das-horas',
+  getParentRoute: () => OracoesRoute,
+} as any)
 const CatecismoParteRoute = CatecismoParteRouteImport.update({
   id: '/$parte',
   path: '/$parte',
@@ -100,6 +132,11 @@ const ApiChatRoute = ApiChatRouteImport.update({
   id: '/api/chat',
   path: '/api/chat',
   getParentRoute: () => rootRouteImport,
+} as any)
+const OracoesNovenasSlugRoute = OracoesNovenasSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => OracoesNovenasRoute,
 } as any)
 const BibliaLivroCapituloRoute = BibliaLivroCapituloRouteImport.update({
   id: '/$capitulo',
@@ -117,13 +154,19 @@ export interface FileRoutesByFullPath {
   '/doutores-da-igreja': typeof DoutoresDaIgrejaRoute
   '/fe-catolica': typeof FeCatolicaRoute
   '/maria': typeof MariaRoute
-  '/oracoes': typeof OracoesRoute
+  '/oracoes': typeof OracoesRouteWithChildren
   '/sacramentos': typeof SacramentosRoute
   '/santos': typeof SantosRoute
   '/api/chat': typeof ApiChatRoute
   '/biblia/$livro': typeof BibliaLivroRouteWithChildren
   '/catecismo/$parte': typeof CatecismoParteRoute
+  '/oracoes/liturgia-das-horas': typeof OracoesLiturgiaDasHorasRoute
+  '/oracoes/novenas': typeof OracoesNovenasRouteWithChildren
+  '/oracoes/rosario': typeof OracoesRosarioRoute
+  '/oracoes/terco-misericordia': typeof OracoesTercoMisericordiaRoute
+  '/oracoes/via-sacra': typeof OracoesViaSacraRoute
   '/biblia/$livro/$capitulo': typeof BibliaLivroCapituloRoute
+  '/oracoes/novenas/$slug': typeof OracoesNovenasSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -135,13 +178,19 @@ export interface FileRoutesByTo {
   '/doutores-da-igreja': typeof DoutoresDaIgrejaRoute
   '/fe-catolica': typeof FeCatolicaRoute
   '/maria': typeof MariaRoute
-  '/oracoes': typeof OracoesRoute
+  '/oracoes': typeof OracoesRouteWithChildren
   '/sacramentos': typeof SacramentosRoute
   '/santos': typeof SantosRoute
   '/api/chat': typeof ApiChatRoute
   '/biblia/$livro': typeof BibliaLivroRouteWithChildren
   '/catecismo/$parte': typeof CatecismoParteRoute
+  '/oracoes/liturgia-das-horas': typeof OracoesLiturgiaDasHorasRoute
+  '/oracoes/novenas': typeof OracoesNovenasRouteWithChildren
+  '/oracoes/rosario': typeof OracoesRosarioRoute
+  '/oracoes/terco-misericordia': typeof OracoesTercoMisericordiaRoute
+  '/oracoes/via-sacra': typeof OracoesViaSacraRoute
   '/biblia/$livro/$capitulo': typeof BibliaLivroCapituloRoute
+  '/oracoes/novenas/$slug': typeof OracoesNovenasSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -154,13 +203,19 @@ export interface FileRoutesById {
   '/doutores-da-igreja': typeof DoutoresDaIgrejaRoute
   '/fe-catolica': typeof FeCatolicaRoute
   '/maria': typeof MariaRoute
-  '/oracoes': typeof OracoesRoute
+  '/oracoes': typeof OracoesRouteWithChildren
   '/sacramentos': typeof SacramentosRoute
   '/santos': typeof SantosRoute
   '/api/chat': typeof ApiChatRoute
   '/biblia/$livro': typeof BibliaLivroRouteWithChildren
   '/catecismo/$parte': typeof CatecismoParteRoute
+  '/oracoes/liturgia-das-horas': typeof OracoesLiturgiaDasHorasRoute
+  '/oracoes/novenas': typeof OracoesNovenasRouteWithChildren
+  '/oracoes/rosario': typeof OracoesRosarioRoute
+  '/oracoes/terco-misericordia': typeof OracoesTercoMisericordiaRoute
+  '/oracoes/via-sacra': typeof OracoesViaSacraRoute
   '/biblia/$livro/$capitulo': typeof BibliaLivroCapituloRoute
+  '/oracoes/novenas/$slug': typeof OracoesNovenasSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -180,7 +235,13 @@ export interface FileRouteTypes {
     | '/api/chat'
     | '/biblia/$livro'
     | '/catecismo/$parte'
+    | '/oracoes/liturgia-das-horas'
+    | '/oracoes/novenas'
+    | '/oracoes/rosario'
+    | '/oracoes/terco-misericordia'
+    | '/oracoes/via-sacra'
     | '/biblia/$livro/$capitulo'
+    | '/oracoes/novenas/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -198,7 +259,13 @@ export interface FileRouteTypes {
     | '/api/chat'
     | '/biblia/$livro'
     | '/catecismo/$parte'
+    | '/oracoes/liturgia-das-horas'
+    | '/oracoes/novenas'
+    | '/oracoes/rosario'
+    | '/oracoes/terco-misericordia'
+    | '/oracoes/via-sacra'
     | '/biblia/$livro/$capitulo'
+    | '/oracoes/novenas/$slug'
   id:
     | '__root__'
     | '/'
@@ -216,7 +283,13 @@ export interface FileRouteTypes {
     | '/api/chat'
     | '/biblia/$livro'
     | '/catecismo/$parte'
+    | '/oracoes/liturgia-das-horas'
+    | '/oracoes/novenas'
+    | '/oracoes/rosario'
+    | '/oracoes/terco-misericordia'
+    | '/oracoes/via-sacra'
     | '/biblia/$livro/$capitulo'
+    | '/oracoes/novenas/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -229,7 +302,7 @@ export interface RootRouteChildren {
   DoutoresDaIgrejaRoute: typeof DoutoresDaIgrejaRoute
   FeCatolicaRoute: typeof FeCatolicaRoute
   MariaRoute: typeof MariaRoute
-  OracoesRoute: typeof OracoesRoute
+  OracoesRoute: typeof OracoesRouteWithChildren
   SacramentosRoute: typeof SacramentosRoute
   SantosRoute: typeof SantosRoute
   ApiChatRoute: typeof ApiChatRoute
@@ -321,6 +394,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/oracoes/via-sacra': {
+      id: '/oracoes/via-sacra'
+      path: '/via-sacra'
+      fullPath: '/oracoes/via-sacra'
+      preLoaderRoute: typeof OracoesViaSacraRouteImport
+      parentRoute: typeof OracoesRoute
+    }
+    '/oracoes/terco-misericordia': {
+      id: '/oracoes/terco-misericordia'
+      path: '/terco-misericordia'
+      fullPath: '/oracoes/terco-misericordia'
+      preLoaderRoute: typeof OracoesTercoMisericordiaRouteImport
+      parentRoute: typeof OracoesRoute
+    }
+    '/oracoes/rosario': {
+      id: '/oracoes/rosario'
+      path: '/rosario'
+      fullPath: '/oracoes/rosario'
+      preLoaderRoute: typeof OracoesRosarioRouteImport
+      parentRoute: typeof OracoesRoute
+    }
+    '/oracoes/novenas': {
+      id: '/oracoes/novenas'
+      path: '/novenas'
+      fullPath: '/oracoes/novenas'
+      preLoaderRoute: typeof OracoesNovenasRouteImport
+      parentRoute: typeof OracoesRoute
+    }
+    '/oracoes/liturgia-das-horas': {
+      id: '/oracoes/liturgia-das-horas'
+      path: '/liturgia-das-horas'
+      fullPath: '/oracoes/liturgia-das-horas'
+      preLoaderRoute: typeof OracoesLiturgiaDasHorasRouteImport
+      parentRoute: typeof OracoesRoute
+    }
     '/catecismo/$parte': {
       id: '/catecismo/$parte'
       path: '/$parte'
@@ -341,6 +449,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/api/chat'
       preLoaderRoute: typeof ApiChatRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/oracoes/novenas/$slug': {
+      id: '/oracoes/novenas/$slug'
+      path: '/$slug'
+      fullPath: '/oracoes/novenas/$slug'
+      preLoaderRoute: typeof OracoesNovenasSlugRouteImport
+      parentRoute: typeof OracoesNovenasRoute
     }
     '/biblia/$livro/$capitulo': {
       id: '/biblia/$livro/$capitulo'
@@ -387,6 +502,37 @@ const CatecismoRouteWithChildren = CatecismoRoute._addFileChildren(
   CatecismoRouteChildren,
 )
 
+interface OracoesNovenasRouteChildren {
+  OracoesNovenasSlugRoute: typeof OracoesNovenasSlugRoute
+}
+
+const OracoesNovenasRouteChildren: OracoesNovenasRouteChildren = {
+  OracoesNovenasSlugRoute: OracoesNovenasSlugRoute,
+}
+
+const OracoesNovenasRouteWithChildren = OracoesNovenasRoute._addFileChildren(
+  OracoesNovenasRouteChildren,
+)
+
+interface OracoesRouteChildren {
+  OracoesLiturgiaDasHorasRoute: typeof OracoesLiturgiaDasHorasRoute
+  OracoesNovenasRoute: typeof OracoesNovenasRouteWithChildren
+  OracoesRosarioRoute: typeof OracoesRosarioRoute
+  OracoesTercoMisericordiaRoute: typeof OracoesTercoMisericordiaRoute
+  OracoesViaSacraRoute: typeof OracoesViaSacraRoute
+}
+
+const OracoesRouteChildren: OracoesRouteChildren = {
+  OracoesLiturgiaDasHorasRoute: OracoesLiturgiaDasHorasRoute,
+  OracoesNovenasRoute: OracoesNovenasRouteWithChildren,
+  OracoesRosarioRoute: OracoesRosarioRoute,
+  OracoesTercoMisericordiaRoute: OracoesTercoMisericordiaRoute,
+  OracoesViaSacraRoute: OracoesViaSacraRoute,
+}
+
+const OracoesRouteWithChildren =
+  OracoesRoute._addFileChildren(OracoesRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ApologeticaRoute: ApologeticaRoute,
@@ -397,7 +543,7 @@ const rootRouteChildren: RootRouteChildren = {
   DoutoresDaIgrejaRoute: DoutoresDaIgrejaRoute,
   FeCatolicaRoute: FeCatolicaRoute,
   MariaRoute: MariaRoute,
-  OracoesRoute: OracoesRoute,
+  OracoesRoute: OracoesRouteWithChildren,
   SacramentosRoute: SacramentosRoute,
   SantosRoute: SantosRoute,
   ApiChatRoute: ApiChatRoute,
