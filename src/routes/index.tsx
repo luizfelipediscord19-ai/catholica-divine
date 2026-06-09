@@ -1,29 +1,186 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { BookOpen, Heart, Sparkles, Church, Crown, ScrollText, Compass, Calendar } from "lucide-react";
+import hero from "../assets/hero-catedral.jpg";
+import maria from "../assets/maria.jpg";
+import cristo from "../assets/cristo.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "Portal Católico — Biblioteca Digital da Fé" },
+      {
+        name: "description",
+        content:
+          "A maior biblioteca digital católica em português: Bíblia, Catecismo, Sacramentos, Santos, Maria, orações, apologética e IA fiel ao Magistério.",
+      },
+      { property: "og:title", content: "Portal Católico — Biblioteca Digital da Fé" },
+      {
+        property: "og:description",
+        content: "Estudo, oração e formação na fé católica — fiel ao Magistério da Igreja.",
+      },
     ],
   }),
-  component: Index,
+  component: Home,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+const PILLARS = [
+  { to: "/biblia", icon: BookOpen, title: "Bíblia Sagrada", desc: "73 livros, comentários patrísticos, mapas e leitura em áudio." },
+  { to: "/catecismo", icon: ScrollText, title: "Catecismo", desc: "Os 2.865 parágrafos da fé católica, comentados e pesquisáveis." },
+  { to: "/sacramentos", icon: Church, title: "Sacramentos", desc: "Os 7 sinais eficazes da graça instituídos por Cristo." },
+  { to: "/santos", icon: Crown, title: "Santos", desc: "Vidas, virtudes e ensinamentos dos amigos de Deus." },
+  { to: "/maria", icon: Heart, title: "Mariologia", desc: "A Mãe de Deus, suas aparições e dogmas marianos." },
+  { to: "/oracoes", icon: Sparkles, title: "Orações", desc: "Rosário, Liturgia das Horas, novenas e ladainhas." },
+  { to: "/apologetica", icon: Compass, title: "Apologética", desc: "Defesa racional da fé contra objeções modernas." },
+  { to: "/calendario-liturgico", icon: Calendar, title: "Calendário", desc: "Tempo litúrgico, festas e memórias dos santos." },
+];
+
+const DAILY = [
+  {
+    kicker: "Versículo do dia",
+    text: "“Eu sou o caminho, a verdade e a vida; ninguém vem ao Pai senão por mim.”",
+    ref: "João 14, 6",
+  },
+  {
+    kicker: "Santo do dia",
+    text: "Santa Teresa de Ávila — doutora da Igreja, reformadora do Carmelo, mestra da oração contemplativa.",
+    ref: "Memória — 15 de Outubro",
+  },
+  {
+    kicker: "Evangelho do dia",
+    text: "“Vinde a mim todos os que estais cansados e oprimidos, e eu vos aliviarei.”",
+    ref: "Mateus 11, 28",
+  },
+];
+
+function Home() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div>
+      {/* Hero */}
+      <section className="relative overflow-hidden min-h-[88vh] flex items-end">
+        <div
+          className="absolute inset-0 bg-cover bg-center scale-105"
+          style={{ backgroundImage: `url(${hero})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-deep/40 via-deep/70 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-r from-deep/80 via-transparent to-transparent" />
+
+        <div className="relative max-w-6xl mx-auto px-6 py-24 md:py-32">
+          <p className="text-[11px] tracking-[0.4em] uppercase text-gold mb-6">
+            Una · Sancta · Catholica · Apostolica
+          </p>
+          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl leading-[0.98] text-paper max-w-4xl">
+            A biblioteca digital <em className="text-gold italic">da Fé Católica</em>
+          </h1>
+          <p className="mt-8 max-w-2xl text-lg md:text-xl text-paper/80 leading-relaxed font-light">
+            Bíblia, Catecismo, Magistério, santos e orações — em uma única plataforma
+            cinematográfica, fiel à doutrina da Igreja de Cristo.
+          </p>
+          <div className="mt-12 flex flex-wrap gap-4">
+            <Link
+              to="/biblia"
+              className="inline-flex items-center gap-2 px-7 py-4 bg-gold text-deep text-[11px] uppercase tracking-[0.25em] font-medium hover:bg-paper transition-colors"
+            >
+              <BookOpen className="size-4" /> Começar a estudar
+            </Link>
+            <Link
+              to="/assistente"
+              className="inline-flex items-center gap-2 px-7 py-4 border border-gold/50 text-paper text-[11px] uppercase tracking-[0.25em] font-medium hover:border-gold hover:bg-gold/10 transition-colors"
+            >
+              <Sparkles className="size-4 text-gold" /> Falar com a IA Católica
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Daily */}
+      <section className="border-y border-gold/20 bg-card">
+        <div className="max-w-6xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gold/15">
+          {DAILY.map((d) => (
+            <div key={d.kicker} className="px-2 md:px-8 py-6 md:py-2">
+              <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-3">{d.kicker}</p>
+              <p className="font-display italic text-lg text-foreground leading-snug">{d.text}</p>
+              <p className="mt-3 text-xs text-muted-foreground tracking-wider uppercase">{d.ref}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Pillars */}
+      <section className="max-w-6xl mx-auto px-6 py-20 md:py-28">
+        <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-3">Os pilares</p>
+        <h2 className="font-display text-4xl md:text-5xl text-foreground mb-12 max-w-3xl">
+          Toda a fé católica, organizada para o seu estudo.
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-gold/15">
+          {PILLARS.map((p) => (
+            <Link
+              key={p.to}
+              to={p.to}
+              className="group bg-background hover:bg-card transition-colors p-7 flex flex-col gap-4"
+            >
+              <p.icon className="size-7 text-gold" />
+              <h3 className="font-display text-xl text-foreground">{p.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
+              <span className="mt-auto text-[10px] tracking-[0.3em] uppercase text-gold/70 group-hover:text-gold">
+                Explorar →
+              </span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* Editorial split */}
+      <section className="bg-card border-y border-gold/20">
+        <div className="max-w-6xl mx-auto px-6 py-20 md:py-28 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div
+            className="aspect-[4/5] bg-cover bg-center border border-gold/30"
+            style={{ backgroundImage: `url(${maria})` }}
+          />
+          <div>
+            <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-4">Maria, Mater Ecclesiae</p>
+            <h2 className="font-display text-4xl md:text-5xl text-foreground leading-tight">
+              “Faça-se em mim segundo a tua palavra.”
+            </h2>
+            <p className="mt-6 text-base text-muted-foreground leading-relaxed">
+              A Virgem Maria é o caminho mais seguro a Cristo. Conheça os dogmas marianos,
+              as aparições aprovadas pela Igreja, as ladainhas, o Rosário e a teologia da
+              Mãe de Deus segundo os Padres e Doutores.
+            </p>
+            <Link
+              to="/maria"
+              className="inline-block mt-8 px-6 py-3 border border-gold text-gold text-[11px] uppercase tracking-[0.25em] hover:bg-gold hover:text-deep transition-colors"
+            >
+              Estudar Mariologia
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* AI feature */}
+      <section className="relative overflow-hidden">
+        <div
+          className="absolute inset-0 opacity-20 bg-cover bg-center"
+          style={{ backgroundImage: `url(${cristo})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/95 to-background/80" />
+        <div className="relative max-w-4xl mx-auto px-6 py-24 md:py-32 text-center">
+          <Sparkles className="size-10 text-gold mx-auto mb-6" />
+          <p className="text-[10px] tracking-[0.35em] uppercase text-gold mb-4">Sophia · IA Católica</p>
+          <h2 className="font-display text-4xl md:text-6xl text-foreground leading-tight">
+            Tire suas dúvidas sobre a Fé com uma IA fiel ao Magistério.
+          </h2>
+          <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            Respostas fundamentadas na Bíblia, no Catecismo e nos documentos oficiais da
+            Igreja — com citações, contexto e referências.
+          </p>
+          <Link
+            to="/assistente"
+            className="inline-flex items-center gap-2 mt-10 px-8 py-4 bg-gold text-deep text-[11px] uppercase tracking-[0.25em] font-medium hover:bg-paper transition-colors"
+          >
+            <Sparkles className="size-4" /> Conversar agora
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }
