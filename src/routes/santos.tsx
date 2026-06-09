@@ -24,16 +24,17 @@ function Page() {
       />
       <Section kicker="Galeria dos santos" title="Os amigos de Deus">
         <CardGrid cols={3}>
-          {SANTOS_LISTA.map((s) => (
+          {SANTOS_LISTA.map((s, i) => (
             <Link
               key={s.slug}
               to="/santos/$slug"
               params={{ slug: s.slug }}
-              className="block group"
+              className="block group animate-content-fade"
+              style={{ animationDelay: `${i * 50}ms` }}
             >
               <ContentCard title={s.nome} subtitle={`Memória · ${s.data}`}>
                 {s.body}
-                <span className="block mt-4 text-xs text-gold/80 group-hover:text-gold tracking-[0.2em] uppercase">
+                <span className="block mt-4 text-xs text-gold/80 group-hover:text-gold tracking-[0.2em] uppercase transition-smooth group-hover:translate-x-1">
                   Ler biografia →
                 </span>
               </ContentCard>
