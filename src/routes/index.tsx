@@ -263,29 +263,35 @@ function Home() {
       </section>
 
       {/* AI feature */}
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden bg-deep">
         <div
-          className="absolute inset-0 opacity-20 bg-cover bg-center"
+          className="absolute inset-0 opacity-[0.07] bg-cover bg-center transition-transform duration-[20s] scale-125 hover:scale-100"
           style={{ backgroundImage: `url(${cristo})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/95 to-background/80" />
-        <div className="relative max-w-5xl mx-auto px-6 py-32 md:py-48 text-center animate-content-fade">
-          <div className="size-20 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-10 border border-gold/20 shadow-2xl shadow-gold/10">
-            <Sparkles className="size-8 text-gold animate-pulse" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#050505_80%)]" />
+        
+        <div className="relative max-w-5xl mx-auto px-8 py-40 md:py-60 text-center animate-reveal">
+          <div className="relative inline-block mb-12">
+            <div className="absolute inset-0 bg-gold/20 blur-3xl rounded-full" />
+            <div className="relative size-24 rounded-full glass border border-gold/30 flex items-center justify-center shadow-[0_0_50px_rgba(212,175,55,0.15)]">
+              <Sparkles className="size-10 text-gold animate-pulse" />
+            </div>
           </div>
-          <p className="text-[10px] tracking-[0.5em] uppercase text-gold/60 mb-6">Sophia · Logos</p>
-          <h2 className="font-display text-5xl md:text-8xl text-foreground leading-[0.85] tracking-tighter mb-10">
+          
+          <p className="text-[10px] tracking-[0.6em] uppercase text-gold/60 mb-8">Sophia · Logos</p>
+          <h2 className="font-display text-6xl md:text-9xl text-foreground leading-[0.85] tracking-tighter mb-12">
             Inteligência Artificial <br/> <em className="text-gold italic font-medium">ao serviço da Verdade</em>
           </h2>
-          <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-light mb-16">
             Respostas fundamentadas na Bíblia, no Catecismo e nos documentos oficiais da
             Igreja — com citações, contexto e referências.
           </p>
           <Link
             to="/assistente"
-            className="inline-flex items-center gap-2 mt-10 px-8 py-4 bg-gold text-deep text-[11px] uppercase tracking-[0.25em] font-medium hover:bg-paper transition-colors"
+            className="group relative inline-flex items-center gap-4 px-12 py-6 bg-paper text-deep text-[11px] uppercase tracking-[0.4em] font-bold transition-premium hover:shadow-[0_0_50px_rgba(252,250,247,0.2)]"
           >
-            <Sparkles className="size-4" /> Conversar agora
+            <Sparkles className="size-4 group-hover:rotate-12 transition-transform" /> 
+            <span>Conversar agora</span>
           </Link>
         </div>
       </section>
