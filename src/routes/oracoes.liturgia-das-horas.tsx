@@ -289,6 +289,9 @@ function Page() {
           </section>
         </Prose>
 
+        <BuscaHoras />
+
+
         <section id="fontes" className="scroll-mt-24 mt-12 print:hidden">
           <h3 className="font-display text-2xl text-foreground mb-6">Fontes oficiais para rezar hoje</h3>
           <div className="grid md:grid-cols-3 gap-4">
