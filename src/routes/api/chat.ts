@@ -23,8 +23,12 @@ Você é a guardiã digital da Tradição.`;
 
 const chatSchema = z.object({
   messages: z.array(z.object({
+    id: z.string().optional(),
     role: z.enum(["user", "assistant", "system"]),
-    content: z.string().min(1).max(5000),
+    parts: z.array(z.object({
+      type: z.enum(["text"]),
+      text: z.string().min(1).max(5000),
+    })),
   })).min(1),
 });
 
