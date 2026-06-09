@@ -1,5 +1,5 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { Search, Sparkles, Menu, X } from "lucide-react";
+import { Search, Sparkles, Menu, X, Church } from "lucide-react";
 import { useState } from "react";
 
 const NAV = [
@@ -20,52 +20,58 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-background/85 backdrop-blur-md border-b border-gold/30">
-      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between gap-4">
-        <Link to="/" className="flex items-center gap-3 shrink-0">
-          <span className="font-display text-xl md:text-2xl tracking-tighter text-gold">
-            PORTAL CATÓLICO
+    <header className="sticky top-0 z-50 glass border-b border-gold/10">
+      <div className="max-w-7xl mx-auto px-8 h-24 flex items-center justify-between gap-8">
+        <Link to="/" className="flex items-center gap-3 shrink-0 group">
+          <div className="size-10 rounded-full border border-gold/30 flex items-center justify-center group-hover:border-gold transition-premium">
+            <Church className="size-5 text-gold" />
+          </div>
+          <span className="font-display text-2xl tracking-[0.05em] text-paper group-hover:text-gold transition-colors">
+            PORTAL <span className="font-light italic text-gold/80">CATÓLICO</span>
           </span>
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-5 text-[11px] uppercase tracking-[0.18em] font-medium text-foreground/65">
+        <nav className="hidden xl:flex items-center gap-6 text-[10px] uppercase tracking-[0.3em] font-medium text-paper/60">
           {NAV.map((item) => {
             const active = pathname.startsWith(item.to);
             return (
               <Link
                 key={item.to}
                 to={item.to}
-                className={`hover:text-gold transition-colors ${
+                className={`relative py-2 hover:text-paper transition-colors ${
                   active ? "text-gold" : ""
                 }`}
               >
                 {item.label}
+                {active && (
+                  <span className="absolute bottom-0 left-0 w-full h-px bg-gold shadow-[0_0_8px_rgba(212,175,55,0.6)]" />
+                )}
               </Link>
             );
           })}
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-4">
           <Link
             to="/assistente"
-            className="hidden sm:inline-flex items-center gap-2 px-3 py-2 text-[10px] uppercase tracking-[0.18em] font-medium text-deep bg-gold hover:bg-paper transition-colors"
+            className="hidden sm:inline-flex items-center gap-2 px-5 py-3 text-[10px] uppercase tracking-[0.25em] font-bold text-deep bg-gold hover:bg-paper transition-premium hover:shadow-[0_0_20px_rgba(212,175,55,0.2)]"
           >
-            <Sparkles className="size-3.5" /> Assistente IA
+            <Sparkles className="size-3.5" /> IA
           </Link>
           <Link
             to="/oracoes"
             aria-label="Buscar"
-            className="hidden md:grid size-10 place-items-center border border-gold/30 hover:border-gold transition-colors"
+            className="hidden lg:grid size-12 place-items-center rounded-full border border-gold/10 hover:border-gold/40 transition-premium text-paper/40 hover:text-gold"
           >
-            <Search className="size-4 text-gold/80" />
+            <Search className="size-4" />
           </Link>
           <button
             type="button"
             aria-label={open ? "Fechar menu" : "Abrir menu"}
             onClick={() => setOpen((v) => !v)}
-            className="lg:hidden grid size-10 place-items-center border border-gold/30 text-gold"
+            className="xl:hidden grid size-12 place-items-center rounded-full border border-gold/10 text-gold hover:bg-gold/5 transition-premium"
           >
-            {open ? <X className="size-4" /> : <Menu className="size-4" />}
+            {open ? <X className="size-5" /> : <Menu className="size-5" />}
           </button>
         </div>
       </div>
