@@ -1,7 +1,7 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { useState } from "react";
+import { createFileRoute, Link, notFound, useNavigate } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import { getLivro, getUrlOficial } from "../lib/data/biblia";
-import { ArrowLeft, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowLeft, ExternalLink, ChevronLeft, ChevronRight, Filter, X } from "lucide-react";
 
 type Verso = { v: number; t: string };
 type LivroJson = { slug: string; nome: string; capitulos: Record<string, Verso[]> };
@@ -15,7 +15,16 @@ async function carregarCapitulo(slug: string, cap: number): Promise<Verso[] | nu
   }
 }
 
+type Search = { vi?: number; vf?: number };
+
 export const Route = createFileRoute("/biblia/$livro/$capitulo")({
+  validateSearch: (raw: Record<string, unknown>): Search => {
+    const toNum = (x: unknown) => {
+      const n = Number(x);
+      return Number.isFinite(n) && n > 0 ? Math.floor(n) : undefined;
+    };
+    return { vi: toNum(raw.vi), vf: toNum(raw.vf) };
+  },
   loader: async ({ params }) => {
     const l = getLivro(params.livro);
     const c = Number(params.capitulo);
@@ -56,7 +65,6 @@ function urlVulgata(slug: string, cap: number) {
   return `https://www.sacred-texts.com/bib/vul/index.htm#${slug}_${cap}`;
 }
 function urlNovaVulgata(testamento: string, slug: string, cap: number) {
-  // vatican.va mantém Nova Vulgata por livro
   return `https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_${testamento === "AT" ? "vt" : "nt"}_${slug}_lt.html#${cap}`;
 }
 function urlOriginal(testamento: string, slug: string, cap: number) {
@@ -67,10 +75,57 @@ function urlOriginal(testamento: string, slug: string, cap: number) {
 
 function Page() {
   const { livro, capitulo, versos } = Route.useLoaderData();
+  const { vi, vf } = Route.useSearch();
+  const navigate = useNavigate();
   const [fonte, setFonte] = useState<FonteId>("almeida");
   const anterior = capitulo > 1 ? capitulo - 1 : null;
   const proximo = capitulo < livro.capitulos ? capitulo + 1 : null;
   const fonteAtual = FONTES.find((f) => f.id === fonte)!;
+
+  // Estado local para o seletor de passagens
+  const [inicio, setInicio] = useState<string>(vi ? String(vi) : "");
+  const [fim, setFim] = useState<string>(vf ? String(vf) : "");
+  useEffect(() => {
+    setInicio(vi ? String(vi) : "");
+    setFim(vf ? String(vf) : "");
+  }, [vi, vf]);
+
+  const aplicarPassagem = (e: React.FormEvent) => {
+    e.preventDefault();
+    const i = Number(inicio);
+    const f = Number(fim);
+    navigate({
+      to: "/biblia/$livro/$capitulo",
+      params: { livro: livro.slug, capitulo: String(capitulo) },
+      search: {
+        vi: Number.isFinite(i) && i > 0 ? i : undefined,
+        vf: Number.isFinite(f) && f > 0 ? f : undefined,
+      },
+    });
+  };
+
+  const limparPassagem = () => {
+    setInicio(""); setFim("");
+    navigate({
+      to: "/biblia/$livro/$capitulo",
+      params: { livro: livro.slug, capitulo: String(capitulo) },
+      search: {},
+    });
+  };
+
+  // Filtragem
+  const versosFiltrados = (() => {
+    if (!versos) return null;
+    if (!vi) return versos;
+    const start = vi;
+    const end = vf && vf >= vi ? vf : vi;
+    return versos.filter((v: Verso) => v.v >= start && v.v <= end);
+  })();
+
+  const passagemAtiva = !!vi;
+  const refPassagem = vi
+    ? `${livro.abrev} ${capitulo}:${vi}${vf && vf !== vi ? `-${vf}` : ""}`
+    : null;
 
   return (
     <div className="max-w-3xl mx-auto px-6 py-12 md:py-16">
@@ -84,13 +139,47 @@ function Page() {
 
       <h1 className="font-display text-5xl md:text-6xl text-foreground">
         {livro.nome} <span className="text-gold">{capitulo}</span>
+        {refPassagem && <span className="text-gold/80 text-3xl md:text-4xl">:{vi}{vf && vf !== vi ? `-${vf}` : ""}</span>}
       </h1>
       <p className="mt-3 text-sm text-muted-foreground tracking-wider uppercase">
         {livro.abrev} {capitulo} · Capítulo {capitulo} de {livro.capitulos}
       </p>
 
+      {/* Seletor de passagens */}
+      <form onSubmit={aplicarPassagem} className="mt-6 flex flex-wrap items-end gap-3 border border-gold/20 bg-card p-4">
+        <div className="flex items-center gap-2 text-[10px] tracking-[0.3em] uppercase text-gold">
+          <Filter className="size-3" /> Passagem
+        </div>
+        <label className="text-[10px] tracking-[0.25em] uppercase text-muted-foreground">
+          Versículo inicial
+          <input
+            type="number" min={1}
+            value={inicio} onChange={(e) => setInicio(e.target.value)}
+            placeholder="ex. 16"
+            className="block mt-1 w-24 bg-background border border-gold/25 px-3 py-2 text-sm text-foreground focus:outline-none focus:border-gold"
+          />
+        </label>
+        <label className="text-[10px] tracking-[0.25em] uppercase text-muted-foreground">
+          Final (opcional)
+          <input
+            type="number" min={1}
+            value={fim} onChange={(e) => setFim(e.target.value)}
+            placeholder="ex. 18"
+            className="block mt-1 w-24 bg-background border border-gold/25 px-3 py-2 text-sm text-foreground focus:outline-none focus:border-gold"
+          />
+        </label>
+        <button type="submit" className="px-5 py-2 bg-gold text-deep text-[10px] uppercase tracking-[0.25em] font-medium hover:bg-paper">
+          Abrir passagem
+        </button>
+        {passagemAtiva && (
+          <button type="button" onClick={limparPassagem} className="inline-flex items-center gap-1 px-3 py-2 text-[10px] uppercase tracking-[0.25em] text-muted-foreground hover:text-gold">
+            <X className="size-3" /> Capítulo inteiro
+          </button>
+        )}
+      </form>
+
       {/* Seletor de fonte */}
-      <div className="mt-8 flex flex-wrap gap-2">
+      <div className="mt-6 flex flex-wrap gap-2">
         {FONTES.map((f) => {
           const ativo = f.id === fonte;
           return (
@@ -114,24 +203,29 @@ function Page() {
       </p>
 
       {/* Conteúdo conforme fonte */}
-      {fonte === "almeida" && versos ? (
+      {fonte === "almeida" && versosFiltrados ? (
         <article className="mt-6 border border-gold/25 bg-card p-8 md:p-12">
           <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-6">
             Almeida (João Ferreira de Almeida) · Domínio público
+            {passagemAtiva && <span className="ml-2 text-gold/70">· passagem {refPassagem}</span>}
           </p>
-          <div className="space-y-3 font-display text-lg leading-relaxed text-foreground/95">
-            {versos.map((v: Verso) => (
-              <p key={v.v} id={`v${v.v}`} className="group">
-                <a
-                  href={`#v${v.v}`}
-                  className="inline-block w-8 text-right pr-3 text-[11px] font-sans align-top text-gold/70 group-hover:text-gold"
-                >
-                  {v.v}
-                </a>
-                <span>{v.t}</span>
-              </p>
-            ))}
-          </div>
+          {versosFiltrados.length === 0 ? (
+            <p className="text-muted-foreground">Nenhum versículo encontrado nesse intervalo.</p>
+          ) : (
+            <div className="space-y-3 font-display text-lg leading-relaxed text-foreground/95">
+              {versosFiltrados.map((v: Verso) => (
+                <p key={v.v} id={`v${v.v}`} className="group">
+                  <a
+                    href={`#v${v.v}`}
+                    className="inline-block w-8 text-right pr-3 text-[11px] font-sans align-top text-gold/70 group-hover:text-gold"
+                  >
+                    {v.v}
+                  </a>
+                  <span>{v.t}</span>
+                </p>
+              ))}
+            </div>
+          )}
           <p className="mt-8 pt-6 border-t border-gold/15 text-[11px] text-muted-foreground leading-relaxed">
             Para comparar com a tradução católica Ave-Maria, consulte a{" "}
             <a className="text-gold underline" target="_blank" rel="noopener" href={getUrlOficial(livro, capitulo)}>
@@ -181,31 +275,17 @@ function Page() {
 }
 
 function FonteExterna({
-  fonte,
-  url,
-  livro,
-  capitulo,
-}: {
-  fonte: { nome: string; lingua: string };
-  url: string;
-  livro: string;
-  capitulo: number;
-}) {
+  fonte, url, livro, capitulo,
+}: { fonte: { nome: string; lingua: string }; url: string; livro: string; capitulo: number }) {
   return (
     <article className="mt-6 border border-gold/25 bg-card p-8 md:p-10">
-      <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-4">
-        {fonte.nome} · {fonte.lingua}
-      </p>
+      <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-4">{fonte.nome} · {fonte.lingua}</p>
       <p className="text-foreground/90 leading-relaxed">
         A integração do texto integral de <strong>{fonte.nome}</strong> em <strong>{livro} {capitulo}</strong> está
         sendo preparada. Por enquanto, consulte diretamente a fonte oficial:
       </p>
-      <a
-        href={url}
-        target="_blank"
-        rel="noopener"
-        className="mt-6 inline-flex items-center gap-2 px-6 py-3 bg-gold text-deep text-[11px] uppercase tracking-[0.25em] font-medium hover:bg-paper transition-colors"
-      >
+      <a href={url} target="_blank" rel="noopener"
+        className="mt-6 inline-flex items-center gap-2 px-6 py-3 bg-gold text-deep text-[11px] uppercase tracking-[0.25em] font-medium hover:bg-paper transition-colors">
         <ExternalLink className="size-3.5" /> Abrir {fonte.nome}
       </a>
     </article>
@@ -221,12 +301,8 @@ function FallbackOficial({ slug, nome, abrev, capitulo }: { slug: string; nome: 
         O texto Almeida de <strong>{nome} {capitulo}</strong> ainda está sendo carregado.
         Enquanto isso, leia na fonte oficial Ave-Maria:
       </p>
-      <a
-        href={url}
-        target="_blank"
-        rel="noopener"
-        className="mt-6 inline-flex items-center gap-2 px-6 py-3 bg-gold text-deep text-[11px] uppercase tracking-[0.25em] font-medium hover:bg-paper transition-colors"
-      >
+      <a href={url} target="_blank" rel="noopener"
+        className="mt-6 inline-flex items-center gap-2 px-6 py-3 bg-gold text-deep text-[11px] uppercase tracking-[0.25em] font-medium hover:bg-paper transition-colors">
         <ExternalLink className="size-3.5" /> Ler {abrev} {capitulo}
       </a>
     </div>
