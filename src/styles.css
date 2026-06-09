@@ -169,3 +169,16 @@
 .transition-smooth {
   transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
+
+/* Reading mode — print styles */
+@media print {
+  header, footer, nav, .print\:hidden { display: none !important; }
+  body { background: white !important; color: black !important; }
+  .reading-mode { display: block !important; padding: 0 !important; max-width: 100% !important; }
+  .reading-mode aside { display: none !important; }
+  .reading-mode article { color: black !important; }
+  .reading-mode h1, .reading-mode h2, .reading-mode h3, .reading-mode h4 { color: black !important; page-break-after: avoid; }
+  .reading-mode a { color: black !important; text-decoration: none !important; }
+  .reading-mode sup a { color: #666 !important; }
+  .reading-mode section { page-break-inside: avoid; }
+}
