@@ -22,6 +22,7 @@ import { Route as AssistenteRouteImport } from './routes/assistente'
 import { Route as ApologeticaRouteImport } from './routes/apologetica'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as OracoesViaSacraRouteImport } from './routes/oracoes.via-sacra'
+import { Route as OracoesTercoMisericordiaRouteImport } from './routes/oracoes.terco-misericordia'
 import { Route as OracoesRosarioRouteImport } from './routes/oracoes.rosario'
 import { Route as OracoesNovenasRouteImport } from './routes/oracoes.novenas'
 import { Route as OracoesLiturgiaDasHorasRouteImport } from './routes/oracoes.liturgia-das-horas'
@@ -96,6 +97,12 @@ const OracoesViaSacraRoute = OracoesViaSacraRouteImport.update({
   path: '/via-sacra',
   getParentRoute: () => OracoesRoute,
 } as any)
+const OracoesTercoMisericordiaRoute =
+  OracoesTercoMisericordiaRouteImport.update({
+    id: '/terco-misericordia',
+    path: '/terco-misericordia',
+    getParentRoute: () => OracoesRoute,
+  } as any)
 const OracoesRosarioRoute = OracoesRosarioRouteImport.update({
   id: '/rosario',
   path: '/rosario',
@@ -156,6 +163,7 @@ export interface FileRoutesByFullPath {
   '/oracoes/liturgia-das-horas': typeof OracoesLiturgiaDasHorasRoute
   '/oracoes/novenas': typeof OracoesNovenasRouteWithChildren
   '/oracoes/rosario': typeof OracoesRosarioRoute
+  '/oracoes/terco-misericordia': typeof OracoesTercoMisericordiaRoute
   '/oracoes/via-sacra': typeof OracoesViaSacraRoute
   '/biblia/$livro/$capitulo': typeof BibliaLivroCapituloRoute
   '/oracoes/novenas/$slug': typeof OracoesNovenasSlugRoute
@@ -179,6 +187,7 @@ export interface FileRoutesByTo {
   '/oracoes/liturgia-das-horas': typeof OracoesLiturgiaDasHorasRoute
   '/oracoes/novenas': typeof OracoesNovenasRouteWithChildren
   '/oracoes/rosario': typeof OracoesRosarioRoute
+  '/oracoes/terco-misericordia': typeof OracoesTercoMisericordiaRoute
   '/oracoes/via-sacra': typeof OracoesViaSacraRoute
   '/biblia/$livro/$capitulo': typeof BibliaLivroCapituloRoute
   '/oracoes/novenas/$slug': typeof OracoesNovenasSlugRoute
@@ -203,6 +212,7 @@ export interface FileRoutesById {
   '/oracoes/liturgia-das-horas': typeof OracoesLiturgiaDasHorasRoute
   '/oracoes/novenas': typeof OracoesNovenasRouteWithChildren
   '/oracoes/rosario': typeof OracoesRosarioRoute
+  '/oracoes/terco-misericordia': typeof OracoesTercoMisericordiaRoute
   '/oracoes/via-sacra': typeof OracoesViaSacraRoute
   '/biblia/$livro/$capitulo': typeof BibliaLivroCapituloRoute
   '/oracoes/novenas/$slug': typeof OracoesNovenasSlugRoute
@@ -228,6 +238,7 @@ export interface FileRouteTypes {
     | '/oracoes/liturgia-das-horas'
     | '/oracoes/novenas'
     | '/oracoes/rosario'
+    | '/oracoes/terco-misericordia'
     | '/oracoes/via-sacra'
     | '/biblia/$livro/$capitulo'
     | '/oracoes/novenas/$slug'
@@ -251,6 +262,7 @@ export interface FileRouteTypes {
     | '/oracoes/liturgia-das-horas'
     | '/oracoes/novenas'
     | '/oracoes/rosario'
+    | '/oracoes/terco-misericordia'
     | '/oracoes/via-sacra'
     | '/biblia/$livro/$capitulo'
     | '/oracoes/novenas/$slug'
@@ -274,6 +286,7 @@ export interface FileRouteTypes {
     | '/oracoes/liturgia-das-horas'
     | '/oracoes/novenas'
     | '/oracoes/rosario'
+    | '/oracoes/terco-misericordia'
     | '/oracoes/via-sacra'
     | '/biblia/$livro/$capitulo'
     | '/oracoes/novenas/$slug'
@@ -388,6 +401,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OracoesViaSacraRouteImport
       parentRoute: typeof OracoesRoute
     }
+    '/oracoes/terco-misericordia': {
+      id: '/oracoes/terco-misericordia'
+      path: '/terco-misericordia'
+      fullPath: '/oracoes/terco-misericordia'
+      preLoaderRoute: typeof OracoesTercoMisericordiaRouteImport
+      parentRoute: typeof OracoesRoute
+    }
     '/oracoes/rosario': {
       id: '/oracoes/rosario'
       path: '/rosario'
@@ -498,6 +518,7 @@ interface OracoesRouteChildren {
   OracoesLiturgiaDasHorasRoute: typeof OracoesLiturgiaDasHorasRoute
   OracoesNovenasRoute: typeof OracoesNovenasRouteWithChildren
   OracoesRosarioRoute: typeof OracoesRosarioRoute
+  OracoesTercoMisericordiaRoute: typeof OracoesTercoMisericordiaRoute
   OracoesViaSacraRoute: typeof OracoesViaSacraRoute
 }
 
@@ -505,6 +526,7 @@ const OracoesRouteChildren: OracoesRouteChildren = {
   OracoesLiturgiaDasHorasRoute: OracoesLiturgiaDasHorasRoute,
   OracoesNovenasRoute: OracoesNovenasRouteWithChildren,
   OracoesRosarioRoute: OracoesRosarioRoute,
+  OracoesTercoMisericordiaRoute: OracoesTercoMisericordiaRoute,
   OracoesViaSacraRoute: OracoesViaSacraRoute,
 }
 
@@ -529,3 +551,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
