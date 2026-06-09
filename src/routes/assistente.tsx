@@ -4,6 +4,7 @@ import { DefaultChatTransport } from "ai";
 import { useState, useRef, useEffect } from "react";
 import { Sparkles, Send } from "lucide-react";
 import ReactMarkdown from "react-markdown";
+import { toast } from "sonner";
 
 export const Route = createFileRoute("/assistente")({
   head: () => ({
@@ -28,6 +29,10 @@ function Page() {
   const [input, setInput] = useState("");
   const { messages, sendMessage, status } = useChat({
     transport: new DefaultChatTransport({ api: "/api/chat" }),
+    onError: (err) => {
+      console.error("[Assistente] error:", err);
+      toast.error("Sophia não conseguiu responder. Tente novamente em instantes.");
+    },
   });
   const scrollRef = useRef<HTMLDivElement>(null);
   const isLoading = status === "submitted" || status === "streaming";
@@ -111,8 +116,11 @@ function Page() {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Sua pergunta sobre a fé..."
-            className="flex-1 bg-background border border-gold/20 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-gold"
+            className="flex-1 bg-background border border-gold/20 px-4 py-3 text-base text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-gold"
+            style={{ fontSize: "16px" }}
             disabled={isLoading}
+            autoComplete="off"
+            autoCorrect="off"
           />
           <button
             type="submit"
