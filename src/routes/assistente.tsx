@@ -57,6 +57,7 @@ function Page() {
 
   function submit(text: string) {
     if (!text.trim() || isLoading) return;
+    setHasError(false);
     sendMessage({ 
       text: text.trim(),
     });
