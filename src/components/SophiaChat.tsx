@@ -59,6 +59,10 @@ export function SophiaChat({
 
   return (
     <div className="border border-gold/25 bg-card flex flex-col" style={{ height }}>
+      <div className={`flex items-center gap-2 px-4 py-2 text-[10px] tracking-wider uppercase border-b ${statusColor}`}>
+        <StatusIcon className={`size-3 ${isLoading ? "animate-spin" : ""}`} />
+        <span>Sophia · {statusLabel}</span>
+      </div>
       <div ref={scrollRef} className="flex-1 overflow-y-auto p-6 space-y-6">
         {messages.length === 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
