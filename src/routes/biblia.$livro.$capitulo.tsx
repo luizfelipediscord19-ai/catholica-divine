@@ -163,7 +163,7 @@ function Page() {
       </p>
 
       {/* Seletor de passagens */}
-      <form onSubmit={aplicarPassagem} className="mt-6 flex flex-wrap items-end gap-3 border border-gold/20 bg-card p-4">
+      <form onSubmit={aplicarPassagem} className="mt-12 flex flex-wrap items-end gap-6 border border-gold/10 bg-card/40 backdrop-blur-sm p-8 transition-smooth hover:border-gold/20">
         <div className="flex items-center gap-2 text-[10px] tracking-[0.3em] uppercase text-gold">
           <Filter className="size-3" /> Passagem
         </div>
@@ -185,7 +185,7 @@ function Page() {
             className="block mt-1 w-24 bg-background border border-gold/25 px-3 py-2 text-sm text-foreground focus:outline-none focus:border-gold"
           />
         </label>
-        <button type="submit" className="px-5 py-2 bg-gold text-deep text-[10px] uppercase tracking-[0.25em] font-medium hover:bg-paper">
+        <button type="submit" className="px-6 py-3 bg-gold text-deep text-[10px] uppercase tracking-[0.3em] font-semibold hover:bg-paper transition-smooth hover:scale-[1.02] active:scale-[0.98]">
           Abrir passagem
         </button>
         {passagemAtiva && (
@@ -221,7 +221,7 @@ function Page() {
 
       {/* Conteúdo conforme fonte */}
       {fonte === "almeida" && versosFiltrados ? (
-        <article className="mt-6 border border-gold/25 bg-card p-8 md:p-12">
+        <article className="mt-12 border border-gold/10 bg-card/30 backdrop-blur-sm p-10 md:p-16 shadow-2xl shadow-gold/5">
           <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-6">
             Almeida (João Ferreira de Almeida) · Domínio público
             {passagemAtiva && <span className="ml-2 text-gold/70">· passagem {refPassagem}</span>}
@@ -229,16 +229,16 @@ function Page() {
           {versosFiltrados.length === 0 ? (
             <p className="text-muted-foreground">Nenhum versículo encontrado nesse intervalo.</p>
           ) : (
-            <div className="space-y-3 font-display text-lg leading-relaxed text-foreground/95">
+            <div className="space-y-6 font-display text-xl leading-[1.8] text-foreground/90 selection:bg-gold/30">
               {versosFiltrados.map((v: Verso) => (
-                <p key={v.v} id={`v${v.v}`} className="group">
+                <p key={v.v} id={`v${v.v}`} className="group relative pl-12 transition-smooth hover:text-foreground">
                   <a
                     href={`#v${v.v}`}
-                    className="inline-block w-8 text-right pr-3 text-[11px] font-sans align-top text-gold/70 group-hover:text-gold"
+                    className="absolute left-0 top-0 w-10 text-right pr-4 text-[10px] font-sans align-top text-gold/30 group-hover:text-gold transition-smooth"
                   >
                     {v.v}
                   </a>
-                  <span>{v.t}</span>
+                  <span className="block animate-content-fade" style={{ animationDelay: `${(v.v % 10) * 50}ms` }}>{v.t}</span>
                 </p>
               ))}
             </div>

@@ -108,8 +108,8 @@ function Home() {
           <p className="text-[11px] tracking-[0.4em] uppercase text-gold mb-6">
             Una · Sancta · Catholica · Apostolica
           </p>
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl leading-[0.98] text-paper max-w-4xl">
-            A biblioteca digital <em className="text-gold italic">da Fé Católica</em>
+          <h1 className="font-display text-6xl md:text-8xl lg:text-[10rem] leading-[0.85] text-paper max-w-5xl tracking-tighter">
+            A biblioteca <em className="text-gold italic font-medium">da Fé</em>
           </h1>
           <p className="mt-8 max-w-2xl text-lg md:text-xl text-paper/80 leading-relaxed font-light">
             Bíblia, Catecismo, Magistério, santos e orações — em uma única plataforma
@@ -118,7 +118,7 @@ function Home() {
           <div className="mt-12 flex flex-wrap gap-4">
             <Link
               to="/biblia"
-              className="inline-flex items-center gap-2 px-7 py-4 bg-gold text-deep text-[11px] uppercase tracking-[0.25em] font-medium hover:bg-paper transition-colors"
+              className="inline-flex items-center gap-3 px-10 py-5 bg-gold text-deep text-[10px] uppercase tracking-[0.4em] font-bold hover:bg-paper transition-smooth hover:scale-105 active:scale-95 shadow-2xl shadow-gold/20"
             >
               <BookOpen className="size-4" /> Começar a estudar
             </Link>
@@ -135,20 +135,28 @@ function Home() {
       {/* Daily */}
       <section className="border-y border-gold/20 bg-card">
         <div className="max-w-6xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gold/15">
-          {DAILY_ITEMS.map((d) => {
+          {DAILY_ITEMS.map((d, i) => {
             const inner = (
               <>
-                <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-3">{d.kicker}</p>
-                <p className="font-display italic text-lg text-foreground leading-snug">{d.text}</p>
-                <p className="mt-3 text-xs text-muted-foreground tracking-wider uppercase">{d.ref}</p>
+                <p className="text-[9px] tracking-[0.4em] uppercase text-gold/60 mb-4">{d.kicker}</p>
+                <p className="font-display italic text-xl text-foreground leading-[1.4] mb-4">{d.text}</p>
+                <p className="text-[10px] text-muted-foreground tracking-[0.2em] uppercase">{d.ref}</p>
               </>
             );
-            return d.link ? (
-              <Link key={d.kicker} to={d.link.to} params={d.link.params} search={d.link.search} className="px-2 md:px-8 py-6 md:py-2 block hover:bg-background/40 transition-colors">
-                {inner}
-              </Link>
-            ) : (
-              <div key={d.kicker} className="px-2 md:px-8 py-6 md:py-2">{inner}</div>
+            return (
+              <div 
+                key={d.kicker} 
+                className={`px-8 py-10 transition-smooth ${d.link ? "hover:bg-gold/5 cursor-pointer" : ""}`}
+                style={{ animationDelay: `${i * 150}ms` }}
+              >
+                {d.link ? (
+                  <Link to={d.link.to} params={d.link.params} search={d.link.search} className="block animate-content-fade">
+                    {inner}
+                  </Link>
+                ) : (
+                  <div className="animate-content-fade">{inner}</div>
+                )}
+              </div>
             );
           })}
         </div>
@@ -160,17 +168,22 @@ function Home() {
         <h2 className="font-display text-4xl md:text-5xl text-foreground mb-12 max-w-3xl">
           Toda a fé católica, organizada para o seu estudo.
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-gold/15">
-          {PILLARS.map((p) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-gold/5 border border-gold/10">
+          {PILLARS.map((p, i) => (
             <Link
               key={p.to}
               to={p.to}
-              className="group bg-background hover:bg-card transition-colors p-7 flex flex-col gap-4"
+              className="group bg-background hover:bg-card/80 transition-smooth p-10 flex flex-col gap-6 animate-content-fade"
+              style={{ animationDelay: `${i * 100}ms` }}
             >
-              <p.icon className="size-7 text-gold" />
-              <h3 className="font-display text-xl text-foreground">{p.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
-              <span className="mt-auto text-[10px] tracking-[0.3em] uppercase text-gold/70 group-hover:text-gold">
+              <div className="size-12 rounded-full bg-gold/5 flex items-center justify-center group-hover:bg-gold/10 transition-smooth">
+                <p.icon className="size-6 text-gold group-hover:scale-110 transition-smooth" />
+              </div>
+              <div>
+                <h3 className="font-display text-2xl text-foreground mb-3 group-hover:text-gold transition-smooth">{p.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed font-light">{p.desc}</p>
+              </div>
+              <span className="mt-auto text-[9px] tracking-[0.4em] uppercase text-gold/50 group-hover:text-gold group-hover:translate-x-2 transition-smooth">
                 Explorar →
               </span>
             </Link>
@@ -187,8 +200,8 @@ function Home() {
           />
           <div>
             <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-4">Maria, Mater Ecclesiae</p>
-            <h2 className="font-display text-4xl md:text-5xl text-foreground leading-tight">
-              “Faça-se em mim segundo a tua palavra.”
+            <h2 className="font-display text-5xl md:text-7xl text-foreground leading-[0.9] tracking-tight">
+              “Faça-se em mim <br/> <span className="text-gold">segundo a tua palavra.</span>”
             </h2>
             <p className="mt-6 text-base text-muted-foreground leading-relaxed">
               A Virgem Maria é o caminho mais seguro a Cristo. Conheça os dogmas marianos,
@@ -197,7 +210,7 @@ function Home() {
             </p>
             <Link
               to="/maria"
-              className="inline-block mt-8 px-6 py-3 border border-gold text-gold text-[11px] uppercase tracking-[0.25em] hover:bg-gold hover:text-deep transition-colors"
+              className="inline-block mt-10 px-10 py-5 border border-gold/30 text-gold text-[10px] uppercase tracking-[0.4em] font-bold hover:bg-gold hover:text-deep transition-smooth hover:scale-105"
             >
               Estudar Mariologia
             </Link>
@@ -212,11 +225,13 @@ function Home() {
           style={{ backgroundImage: `url(${cristo})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/95 to-background/80" />
-        <div className="relative max-w-4xl mx-auto px-6 py-24 md:py-32 text-center">
-          <Sparkles className="size-10 text-gold mx-auto mb-6" />
-          <p className="text-[10px] tracking-[0.35em] uppercase text-gold mb-4">Sophia · IA Católica</p>
-          <h2 className="font-display text-4xl md:text-6xl text-foreground leading-tight">
-            Tire suas dúvidas sobre a Fé com uma IA fiel ao Magistério.
+        <div className="relative max-w-5xl mx-auto px-6 py-32 md:py-48 text-center animate-content-fade">
+          <div className="size-20 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-10 border border-gold/20 shadow-2xl shadow-gold/10">
+            <Sparkles className="size-8 text-gold animate-pulse" />
+          </div>
+          <p className="text-[10px] tracking-[0.5em] uppercase text-gold/60 mb-6">Sophia · Logos</p>
+          <h2 className="font-display text-5xl md:text-8xl text-foreground leading-[0.85] tracking-tighter mb-10">
+            Inteligência Artificial <br/> <em className="text-gold italic font-medium">ao serviço da Verdade</em>
           </h2>
           <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Respostas fundamentadas na Bíblia, no Catecismo e nos documentos oficiais da

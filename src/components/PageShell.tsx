@@ -12,14 +12,14 @@ export function PageHero({
   image?: string;
 }) {
   return (
-    <section className="relative overflow-hidden border-b border-gold/20">
+    <section className="relative overflow-hidden border-b border-gold/15 bg-deep">
       {image ? (
         <div
-          className="absolute inset-0 opacity-25 bg-cover bg-center"
+          className="absolute inset-0 opacity-[0.15] bg-cover bg-center transition-transform duration-[2s] ease-out scale-105 hover:scale-110"
           style={{ backgroundImage: `url(${image})` }}
         />
       ) : null}
-      <div className="absolute inset-0 bg-gradient-to-b from-deep/60 via-deep/85 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
       <div className="relative max-w-6xl mx-auto px-6 py-28 md:py-36">
         <p className="text-[10px] tracking-[0.35em] uppercase text-gold/80">{eyebrow}</p>
         <h1 className="mt-6 font-display text-5xl md:text-7xl leading-[1.05] text-paper">
@@ -71,7 +71,7 @@ export function ContentCard({
   children?: ReactNode;
 }) {
   return (
-    <article className="group border border-gold/20 hover:border-gold/60 transition-colors bg-card p-7">
+    <article className="group relative border border-gold/10 hover:border-gold/30 bg-card/50 backdrop-blur-sm p-8 transition-smooth hover:-translate-y-1 hover:shadow-2xl hover:shadow-gold/5">
       {subtitle ? (
         <p className="text-[10px] tracking-[0.3em] uppercase text-gold/70 mb-2">{subtitle}</p>
       ) : null}
