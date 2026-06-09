@@ -38,7 +38,9 @@ function Page() {
 
   function submit(text: string) {
     if (!text.trim() || isLoading) return;
-    sendMessage({ text: text.trim() });
+    sendMessage({ 
+      text: text.trim(),
+    });
     setInput("");
   }
 
@@ -59,32 +61,33 @@ function Page() {
         <div ref={scrollRef} className="flex-1 overflow-y-auto p-6 space-y-6">
           {messages.length === 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {SUGESTOES.map((s) => (
+              {SUGESTOES.map((s, i) => (
                 <button
                   key={s}
                   onClick={() => submit(s)}
-                  className="text-left p-4 border border-gold/20 hover:border-gold/60 text-sm text-foreground transition-colors"
+                  className="text-left p-4 border border-gold/20 hover:border-gold/60 text-sm text-foreground transition-smooth hover:bg-gold/5 animate-content-fade"
+                  style={{ animationDelay: `${i * 100}ms` }}
                 >
                   {s}
                 </button>
               ))}
             </div>
           ) : (
-            messages.map((m) => {
+            messages.map((m, i) => {
               const text = m.parts.map((p) => (p.type === "text" ? p.text : "")).join("");
               return (
                 <div
                   key={m.id}
-                  className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}
+                  className={`flex animate-content-fade ${m.role === "user" ? "justify-end" : "justify-start"}`}
                 >
                   <div
-                    className={`max-w-[85%] px-4 py-3 text-sm leading-relaxed ${
+                    className={`max-w-[85%] px-5 py-4 text-sm leading-relaxed transition-smooth ${
                       m.role === "user"
-                        ? "bg-gold text-deep"
-                        : "bg-background border border-gold/20 text-foreground"
+                        ? "bg-gold text-deep shadow-lg shadow-gold/20"
+                        : "bg-card border border-gold/15 text-foreground backdrop-blur-sm"
                     }`}
                   >
-                    <div className="prose prose-sm prose-invert max-w-none [&_p]:my-2 [&_strong]:text-gold">
+                    <div className="prose prose-sm prose-invert max-w-none [&_p]:my-2 [&_strong]:text-gold [&_blockquote]:border-gold/30 [&_blockquote]:text-paper/80">
                       <ReactMarkdown>{text}</ReactMarkdown>
                     </div>
                   </div>

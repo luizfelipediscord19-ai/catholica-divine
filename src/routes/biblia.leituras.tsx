@@ -131,24 +131,28 @@ function Page() {
       <section className="mt-14">
         <h3 className="text-[10px] tracking-[0.3em] uppercase text-gold/80 mb-4">Próximos 7 dias</h3>
         <div className="divide-y divide-gold/15 border border-gold/20">
-          {proximos.map(({ data, leitura }) => {
+          {proximos.map(({ data, leitura }, i) => {
             const id = isoDia(data);
             const feita = concluidas.has(id);
             return (
-              <div key={id} className="flex flex-col md:flex-row md:items-center gap-3 p-5 hover:bg-card/60 transition-colors">
+              <div 
+                key={id} 
+                className="flex flex-col md:flex-row md:items-center gap-3 p-5 hover:bg-gold/5 transition-smooth animate-content-fade"
+                style={{ animationDelay: `${i * 100}ms` }}
+              >
                 <button
                   onClick={() => toggle(id)}
                   aria-label={feita ? "Marcar como pendente" : "Marcar como concluído"}
                   className={
-                    "size-7 grid place-items-center border shrink-0 transition-colors " +
-                    (feita ? "bg-gold border-gold text-deep" : "border-gold/40 hover:border-gold")
+                    "size-7 grid place-items-center border shrink-0 transition-smooth " +
+                    (feita ? "bg-gold border-gold text-deep" : "border-gold/40 hover:border-gold hover:bg-gold/5")
                   }
                 >
                   {feita ? <Check className="size-4" /> : null}
                 </button>
                 <Link {...linkParaLeitura(leitura)} className="flex-1 group">
                   <div className="text-[10px] tracking-[0.3em] uppercase text-gold/70">{fmtData(data)}</div>
-                  <div className={"font-display text-lg group-hover:text-gold " + (feita ? "line-through text-muted-foreground" : "text-foreground")}>
+                  <div className={"font-display text-lg group-hover:text-gold transition-smooth " + (feita ? "line-through text-muted-foreground" : "text-foreground")}>
                     {leitura.tema}
                   </div>
                 </Link>

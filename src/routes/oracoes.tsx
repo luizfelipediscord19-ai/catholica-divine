@@ -40,8 +40,13 @@ function Page() {
       />
       <Section kicker="Devoções" title="Caminhos consagrados pela Igreja">
         <CardGrid cols={3}>
-          {DEVOCOES.map((d) => (
-            <Link key={d.to} to={d.to}>
+          {DEVOCOES.map((d, i) => (
+            <Link 
+              key={d.to} 
+              to={d.to} 
+              className="animate-content-fade"
+              style={{ animationDelay: `${i * 100}ms` }}
+            >
               <ContentCard title={d.title}>{d.body}</ContentCard>
             </Link>
           ))}
@@ -49,10 +54,16 @@ function Page() {
       </Section>
       <Section kicker="Orações fundamentais" title="As orações que todo católico conhece">
         <CardGrid cols={2}>
-          {ORACOES.map((o) => (
-            <ContentCard key={o.title} title={o.title}>
-              <p className="italic font-display text-base text-foreground leading-relaxed">{o.body}</p>
-            </ContentCard>
+          {ORACOES.map((o, i) => (
+            <div 
+              key={o.title}
+              className="animate-content-fade"
+              style={{ animationDelay: `${(i + DEVOCOES.length) * 100}ms` }}
+            >
+              <ContentCard title={o.title}>
+                <p className="italic font-display text-base text-foreground leading-relaxed">{o.body}</p>
+              </ContentCard>
+            </div>
           ))}
         </CardGrid>
       </Section>

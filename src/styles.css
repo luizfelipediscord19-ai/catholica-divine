@@ -154,6 +154,18 @@
   animation: content-fade 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .animate-content-fade {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  
+  .transition-smooth {
+    transition: none !important;
+  }
+}
+
 .transition-smooth {
   transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
