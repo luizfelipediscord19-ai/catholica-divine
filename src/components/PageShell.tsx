@@ -7,7 +7,7 @@ export function PageHero({
   image,
 }: {
   eyebrow: string;
-  title: string;
+  title: ReactNode;
   intro: string;
   image?: string;
 }) {
