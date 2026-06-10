@@ -1,12 +1,12 @@
 [build]
   command = "npm run build"
-  publish = "dist/client"
+  publish = "dist"
 
 [build.environment]
   NODE_VERSION = "20"
 
-# Nitro's "netlify" preset emits a Netlify Function at .netlify/functions-internal/server
-# and a _redirects file that routes all non-static requests to it. No extra redirects needed.
+# Nitro's "netlify" preset emits static files in dist and a Netlify Function at
+# .netlify/functions-internal/server. No extra redirects needed.
 
 [functions]
   node_bundler = "esbuild"
