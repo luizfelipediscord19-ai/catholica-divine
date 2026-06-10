@@ -22,24 +22,18 @@ export const Route = createFileRoute("/api/chat")({
           }
 
           const { messages, mode } = parsed.data;
-          const apiKey = process.env.GROQ_API_KEY;
+          const apiKey = process.env.LOVABLE_API_KEY;
 
           if (!apiKey) {
-            return new Response("GROQ_API_KEY não configurada", { status: 500 });
+            return new Response("LOVABLE_API_KEY não configurada", { status: 500 });
           }
 
           const systemPrompt = mode === "coroinhas" ? COROINHAS_PROMPT : SYSTEM_PROMPT;
 
-          const groq = createOpenAICompatible({
-            name: "groq",
-            baseURL: "https://api.groq.com/openai/v1",
-            headers: {
-              Authorization: `Bearer ${apiKey}`,
-            },
-          });
+          const gateway = createLovableAiGatewayProvider(apiKey);
 
           const result = streamText({
-            model: groq("llama-3.3-70b-versatile"),
+            model: gateway("google/gemini-3-flash-preview"),
             system: systemPrompt,
             messages: await convertToModelMessages(messages as UIMessage[]),
             temperature: 0.7,
