@@ -153,6 +153,42 @@ export type Database = {
           },
         ]
       }
+      prayer_journal: {
+        Row: {
+          created_at: string
+          entry_date: string
+          id: string
+          intention: string | null
+          mood: string | null
+          prayer_minutes: number
+          reflection: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          entry_date?: string
+          id?: string
+          intention?: string | null
+          mood?: string | null
+          prayer_minutes?: number
+          reflection?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          entry_date?: string
+          id?: string
+          intention?: string | null
+          mood?: string | null
+          prayer_minutes?: number
+          reflection?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           created_at: string
