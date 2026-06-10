@@ -1,48 +1,66 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { useEffect, useState } from "react";
 import {
-  Sparkles, Flame, Trophy, BookOpen, Crown, Star, Loader2, Check, ChevronRight,
+  Sparkles, Flame, Trophy, BookOpen, Crown, Star, Loader2, Check, ChevronRight, Clock, Heart,
 } from "lucide-react";
 import { toast } from "sonner";
-import { getDashboard, performCheckIn } from "@/lib/dashboard.functions";
+import { getDashboard } from "@/lib/dashboard.functions";
+import { getTodayJournal, saveJournalEntry } from "@/lib/diario.functions";
 import { santoDoDia, evangelhoDoDia, versoDoDia } from "@/lib/data/hoje";
 import { leituraDoDia } from "@/lib/data/biblia/leituras";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
 
 export const Route = createFileRoute("/_authenticated/painel")({
-  head: () => ({
-    meta: [{ title: "Meu Painel — Portal Católico" }],
-  }),
+  head: () => ({ meta: [{ title: "Meu Painel — Portal Católico" }] }),
   component: PainelPage,
 });
 
 function PainelPage() {
   const fetchDashboard = useServerFn(getDashboard);
-  const checkIn = useServerFn(performCheckIn);
+  const fetchJournal = useServerFn(getTodayJournal);
+  const saveJournal = useServerFn(saveJournalEntry);
   const qc = useQueryClient();
 
-  const { data, isLoading } = useQuery({
-    queryKey: ["dashboard"],
-    queryFn: () => fetchDashboard(),
-  });
+  const { data, isLoading } = useQuery({ queryKey: ["dashboard"], queryFn: () => fetchDashboard() });
+  const { data: journal } = useQuery({ queryKey: ["journal-today"], queryFn: () => fetchJournal() });
 
-  const checkInMutation = useMutation({
-    mutationFn: () => checkIn(),
+  const [intention, setIntention] = useState("");
+  const [reflection, setReflection] = useState("");
+  const [minutes, setMinutes] = useState<number | "">("");
+
+  useEffect(() => {
+    if (journal) {
+      setIntention(journal.intention ?? "");
+      setReflection(journal.reflection ?? "");
+      setMinutes(journal.prayer_minutes || "");
+    }
+  }, [journal]);
+
+  const mutation = useMutation({
+    mutationFn: () =>
+      saveJournal({
+        data: {
+          intention,
+          reflection,
+          prayer_minutes: typeof minutes === "number" ? minutes : Number(minutes) || 0,
+        },
+      }),
     onSuccess: (result) => {
-      if (result.already_checked_in) {
-        toast("Você já rezou hoje. Pax tecum.", { icon: "🕊️" });
-      } else {
+      if (result.was_new_today) {
         toast.success(`+${result.xp_gained} XP · Sequência de ${result.new_streak} dia(s)`);
-        if (result.level_up) {
-          toast.success(`Subiu para o nível ${result.new_level}!`, { duration: 5000 });
-        }
-        result.new_achievements.forEach((a) => {
-          toast.success(`Conquista desbloqueada: ${a.title}`, {
-            description: a.description, duration: 6000,
-          });
-        });
+        if (result.level_up) toast.success(`Subiu para o nível ${result.new_level}!`, { duration: 5000 });
+        result.new_achievements.forEach((a) =>
+          toast.success(`Conquista: ${a.title}`, { description: a.description, duration: 6000 }),
+        );
+      } else {
+        toast("Diário atualizado. Pax tecum.", { icon: "🕊️" });
       }
       qc.invalidateQueries({ queryKey: ["dashboard"] });
+      qc.invalidateQueries({ queryKey: ["journal-today"] });
     },
     onError: (err) => toast.error(err instanceof Error ? err.message : "Erro"),
   });
@@ -86,36 +104,82 @@ function PainelPage() {
         </p>
       </header>
 
-      {/* Check-in + Progresso */}
-      <section className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
-        <div className="lg:col-span-2 glass p-8 border border-gold/15">
-          <div className="flex items-start justify-between gap-6 flex-wrap">
+      {/* Diário Espiritual + Conquistas */}
+      <section className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12 items-stretch">
+        <form
+          onSubmit={(e) => { e.preventDefault(); mutation.mutate(); }}
+          className="lg:col-span-2 glass p-8 border border-gold/15 flex flex-col"
+        >
+          <div className="flex items-start justify-between gap-6 flex-wrap mb-6">
             <div>
-              <p className="text-[10px] uppercase tracking-[0.3em] text-gold/60">Check-in diário</p>
-              <h2 className="mt-2 font-display text-2xl text-paper">Já rezei hoje</h2>
+              <p className="text-[10px] uppercase tracking-[0.3em] text-gold/60">Diário espiritual</p>
+              <h2 className="mt-2 font-display text-2xl text-paper">Sua oração de hoje</h2>
               <p className="mt-1 text-sm text-paper/50">
-                Marque sua oração diária para manter a sequência e ganhar XP.
+                Registre intenção, reflexão e tempo de oração. Salvar mantém sua sequência e concede XP.
               </p>
             </div>
-            <button
-              onClick={() => checkInMutation.mutate()}
-              disabled={checkInMutation.isPending || jaRezouHoje}
-              className={`inline-flex items-center gap-2 px-6 py-4 text-[11px] uppercase tracking-[0.3em] font-bold transition-premium ${
-                jaRezouHoje
-                  ? "bg-paper/5 text-paper/40 border border-gold/10"
-                  : "bg-gold text-deep hover:bg-paper"
-              }`}
-            >
-              {checkInMutation.isPending ? (
-                <Loader2 className="size-4 animate-spin" />
-              ) : jaRezouHoje ? (
-                <Check className="size-4" />
-              ) : (
-                <Sparkles className="size-4" />
-              )}
-              {jaRezouHoje ? "Feito hoje" : "Já rezei hoje"}
-            </button>
+            {jaRezouHoje && (
+              <span className="inline-flex items-center gap-2 px-3 py-1.5 text-[10px] uppercase tracking-[0.3em] text-gold border border-gold/30">
+                <Check className="size-3.5" /> Rezou hoje
+              </span>
+            )}
           </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+            <div className="md:col-span-2">
+              <Label htmlFor="intention" className="text-[10px] uppercase tracking-[0.3em] text-paper/50">
+                Intenção do dia
+              </Label>
+              <Input
+                id="intention"
+                value={intention}
+                onChange={(e) => setIntention(e.target.value)}
+                placeholder="Por quem ou por quê você reza hoje?"
+                maxLength={500}
+                className="mt-2 bg-deep/40 border-gold/15 text-paper placeholder:text-paper/30 focus-visible:ring-gold/40"
+              />
+            </div>
+            <div>
+              <Label htmlFor="minutes" className="text-[10px] uppercase tracking-[0.3em] text-paper/50">
+                <Clock className="inline size-3 mr-1 -mt-0.5" /> Minutos de oração
+              </Label>
+              <Input
+                id="minutes"
+                type="number"
+                min={0}
+                max={1440}
+                value={minutes}
+                onChange={(e) => setMinutes(e.target.value === "" ? "" : Math.max(0, Number(e.target.value)))}
+                placeholder="15"
+                className="mt-2 bg-deep/40 border-gold/15 text-paper placeholder:text-paper/30 focus-visible:ring-gold/40"
+              />
+            </div>
+          </div>
+
+          <div className="mb-6">
+            <Label htmlFor="reflection" className="text-[10px] uppercase tracking-[0.3em] text-paper/50">
+              <Heart className="inline size-3 mr-1 -mt-0.5" /> Reflexão curta
+            </Label>
+            <Textarea
+              id="reflection"
+              value={reflection}
+              onChange={(e) => setReflection(e.target.value)}
+              placeholder="Uma palavra do Evangelho que tocou seu coração, uma graça, um pedido…"
+              maxLength={2000}
+              rows={4}
+              className="mt-2 bg-deep/40 border-gold/15 text-paper placeholder:text-paper/30 focus-visible:ring-gold/40 resize-none"
+            />
+            <p className="mt-1 text-[10px] text-paper/30 text-right">{reflection.length}/2000</p>
+          </div>
+
+          <button
+            type="submit"
+            disabled={mutation.isPending}
+            className="self-start inline-flex items-center gap-2 px-6 py-4 text-[11px] uppercase tracking-[0.3em] font-bold transition-premium bg-gold text-deep hover:bg-paper disabled:opacity-60"
+          >
+            {mutation.isPending ? <Loader2 className="size-4 animate-spin" /> : <Sparkles className="size-4" />}
+            {jaRezouHoje ? "Atualizar diário" : "Já rezei hoje"}
+          </button>
 
           <div className="mt-8 grid grid-cols-3 gap-6 pt-6 border-t border-gold/10">
             <Stat icon={Flame} label="Sequência" value={data.progress.current_streak} suffix="dias" />
@@ -132,26 +196,29 @@ function PainelPage() {
               <div className="h-full bg-gold transition-all" style={{ width: `${progressoNivel}%` }} />
             </div>
           </div>
-        </div>
+        </form>
 
         <div className="glass p-8 border border-gold/15 flex flex-col">
           <p className="text-[10px] uppercase tracking-[0.3em] text-gold/60">Conquistas</p>
           <div className="mt-4 flex items-baseline gap-3">
-            <Trophy className="size-8 text-gold" />
-            <span className="font-display text-5xl text-paper">{data.achievements_count}</span>
+            <Trophy className="size-8 text-gold self-center" />
+            <span className="font-display text-5xl text-paper leading-none">{data.achievements_count}</span>
             <span className="text-sm text-paper/40">desbloqueadas</span>
           </div>
-          <p className="mt-2 text-xs text-paper/50">
-            Melhor sequência: {data.progress.best_streak} dia(s) · {data.progress.total_check_ins} check-in(s) totais
+          <p className="mt-3 text-xs text-paper/50 leading-relaxed">
+            Melhor sequência: {data.progress.best_streak} dia(s)
+            <br />
+            {data.progress.total_check_ins} check-in(s) totais
           </p>
-          <p className="mt-auto pt-6 text-xs text-paper/40">
-            Em breve: vitrine de medalhas no perfil.
-          </p>
+          <div className="mt-auto pt-6 border-t border-gold/10">
+            <p className="text-[10px] uppercase tracking-[0.3em] text-gold/60 mb-2">Próxima meta</p>
+            <p className="text-sm text-paper/80 leading-snug">{proximaMeta(data.progress.current_streak)}</p>
+          </div>
         </div>
       </section>
 
       {/* Conteúdo do dia */}
-      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 items-stretch">
         <DailyCard
           kicker="Santo do dia"
           icon={Crown}
@@ -177,9 +244,9 @@ function PainelPage() {
         />
       </section>
 
-      {/* Continue lendo / Próxima meta */}
-      <section className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="glass p-8 border border-gold/15">
+      {/* Continue lendo */}
+      <section className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+        <div className="glass p-8 border border-gold/15 flex flex-col">
           <p className="text-[10px] uppercase tracking-[0.3em] text-gold/60">Continue a leitura</p>
           {data.last_reading ? (
             <>
@@ -191,11 +258,8 @@ function PainelPage() {
               </p>
               <Link
                 to="/biblia/$livro/$capitulo"
-                params={{
-                  livro: data.last_reading.book_slug,
-                  capitulo: String(data.last_reading.chapter + 1),
-                }}
-                className="mt-6 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.3em] text-gold hover:text-paper transition"
+                params={{ livro: data.last_reading.book_slug, capitulo: String(data.last_reading.chapter + 1) }}
+                className="mt-auto pt-6 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.3em] text-gold hover:text-paper transition"
               >
                 Ler capítulo {data.last_reading.chapter + 1} <ChevronRight className="size-4" />
               </Link>
@@ -209,7 +273,7 @@ function PainelPage() {
               <Link
                 to="/biblia/$livro/$capitulo"
                 params={{ livro: leituraHoje.livro, capitulo: String(leituraHoje.capitulo) }}
-                className="mt-6 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.3em] text-gold hover:text-paper transition"
+                className="mt-auto pt-6 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.3em] text-gold hover:text-paper transition"
               >
                 Abrir leitura <ChevronRight className="size-4" />
               </Link>
@@ -217,14 +281,31 @@ function PainelPage() {
           )}
         </div>
 
-        <div className="glass p-8 border border-gold/15">
-          <p className="text-[10px] uppercase tracking-[0.3em] text-gold/60">Próxima meta</p>
-          <h3 className="mt-3 font-display text-2xl text-paper">
-            {proximaMeta(data.progress.current_streak)}
-          </h3>
-          <p className="mt-1 text-sm text-paper/60">
-            Continue rezando todos os dias para desbloquear novas conquistas.
-          </p>
+        <div className="glass p-8 border border-gold/15 flex flex-col">
+          <p className="text-[10px] uppercase tracking-[0.3em] text-gold/60">Última reflexão</p>
+          {journal?.reflection ? (
+            <>
+              <p className="mt-3 text-sm text-paper/80 italic leading-relaxed line-clamp-5">
+                "{journal.reflection}"
+              </p>
+              {journal.intention && (
+                <p className="mt-4 text-xs text-paper/50">
+                  <span className="text-gold/70 uppercase tracking-[0.2em] text-[10px]">Intenção:</span>{" "}
+                  {journal.intention}
+                </p>
+              )}
+              <p className="mt-auto pt-6 text-[10px] uppercase tracking-[0.3em] text-paper/40">
+                {journal.prayer_minutes} min de oração hoje
+              </p>
+            </>
+          ) : (
+            <>
+              <h3 className="mt-3 font-display text-2xl text-paper">Diário vazio</h3>
+              <p className="mt-1 text-sm text-paper/60">
+                Registre acima a primeira reflexão do dia para começar seu diário espiritual.
+              </p>
+            </>
+          )}
         </div>
       </section>
     </div>
@@ -259,7 +340,7 @@ type DailyCardProps = {
 
 function DailyCard({ kicker, icon: Icon, title, subtitle, body, to, params, cta }: DailyCardProps) {
   return (
-    <div className="glass p-7 border border-gold/15 flex flex-col">
+    <div className="glass p-7 border border-gold/15 flex flex-col h-full">
       <div className="flex items-center gap-3 text-gold/60">
         <Icon className="size-4" />
         <span className="text-[10px] uppercase tracking-[0.3em]">{kicker}</span>
@@ -281,9 +362,9 @@ function DailyCard({ kicker, icon: Icon, title, subtitle, body, to, params, cta 
 }
 
 function proximaMeta(streak: number): string {
-  if (streak < 3) return `Alcançar 3 dias seguidos (${streak}/3)`;
-  if (streak < 7) return `Completar uma semana santa (${streak}/7)`;
+  if (streak < 3) return `Três dias seguidos (${streak}/3)`;
+  if (streak < 7) return `Uma semana santa (${streak}/7)`;
   if (streak < 30) return `Mês perseverante (${streak}/30)`;
   if (streak < 100) return `Cêntuplo de graças (${streak}/100)`;
-  return "Você é um exemplo de perseverança.";
+  return "Você é exemplo de perseverança.";
 }
