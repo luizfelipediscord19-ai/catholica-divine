@@ -120,11 +120,16 @@ function AuthPage() {
             <input
               type="password"
               required
-              minLength={6}
+              minLength={mode === "signup" ? 8 : 6}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="mt-2 w-full bg-transparent border-b border-gold/20 py-3 text-paper focus:outline-none focus:border-gold transition"
             />
+            {mode === "signup" && (
+              <p className="mt-2 text-[11px] text-paper/40 leading-relaxed">
+                Use ao menos 8 caracteres com letras e números. Evite senhas comuns (ex.: "123456", "senha123").
+              </p>
+            )}
           </div>
 
           <button
