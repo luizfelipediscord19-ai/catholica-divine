@@ -4,7 +4,7 @@ import { Church, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/use-auth";
-import { traduzirErro } from "@/lib/auth/traduzir-erro";
+import { traduzirErro as traduzirErroAuth } from "@/lib/auth/traduzir-erro";
 
 export const Route = createFileRoute("/auth")({
   head: () => ({
@@ -56,7 +56,7 @@ function AuthPage() {
       }
     } catch (err) {
       console.error("[auth] erro:", err);
-      const { titulo, detalhe } = traduzirErro(err);
+      const { titulo, detalhe } = traduzirErroAuth(err);
       toast.error(titulo, { description: detalhe });
     } finally {
       setLoading(false);
@@ -72,7 +72,7 @@ function AuthPage() {
       redirectTo: `${window.location.origin}/reset-password`,
     });
     if (error) {
-      const { titulo, detalhe } = traduzirErro(error);
+      const { titulo, detalhe } = traduzirErroAuth(error);
       toast.error(titulo, { description: detalhe });
     } else toast.success("Enviamos um e-mail com instruções.");
   }
