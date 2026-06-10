@@ -151,6 +151,7 @@ function RootComponent() {
         </main>
         <SiteFooter />
         <Toaster />
+        <Onboarding />
       </div>
     </QueryClientProvider>
   );
