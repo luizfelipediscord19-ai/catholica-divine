@@ -147,7 +147,9 @@ export const performCheckIn = createServerFn({ method: "POST" })
     const bestStreak = Math.max(current?.best_streak ?? 0, newStreak);
     const totalCheckIns = (current?.total_check_ins ?? 0) + 1;
 
-    await supabase
+    const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+
+    await supabaseAdmin
       .from("user_progress")
       .update({
         xp: newXp,
@@ -160,7 +162,7 @@ export const performCheckIn = createServerFn({ method: "POST" })
       })
       .eq("user_id", userId);
 
-    await supabase.from("xp_events").insert({
+    await supabaseAdmin.from("xp_events").insert({
       user_id: userId,
       kind: "daily_check_in",
       amount: xpGained,
@@ -185,7 +187,7 @@ export const performCheckIn = createServerFn({ method: "POST" })
 
     let newAchievements: CheckInResult["new_achievements"] = [];
     if (toUnlock.length > 0) {
-      await supabase
+      await supabaseAdmin
         .from("user_achievements")
         .insert(toUnlock.map((code) => ({ user_id: userId, achievement_code: code })));
 
