@@ -1,6 +1,10 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { useServerFn } from "@tanstack/react-start";
+import { useQuery } from "@tanstack/react-query";
 import { getLivro, LIVROS } from "../lib/data/biblia";
-import { ArrowLeft, BookOpen } from "lucide-react";
+import { ArrowLeft, BookOpen, Check } from "lucide-react";
+import { useAuth } from "../hooks/use-auth";
+import { getBibleProgress } from "../lib/biblia.functions";
 
 export const Route = createFileRoute("/biblia/$livro/")({
   loader: ({ params }) => {
