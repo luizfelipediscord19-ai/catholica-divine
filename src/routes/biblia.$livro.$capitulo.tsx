@@ -274,6 +274,10 @@ function Page() {
         />
       )}
 
+      <ChapterActions book={livro.slug} chapter={capitulo} bookName={livro.nome} />
+
+
+
       <nav className="mt-10 flex items-center justify-between gap-4">
         {anterior ? (
           <Link
