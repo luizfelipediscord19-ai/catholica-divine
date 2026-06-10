@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Sparkles, Search, BookOpen, UserPlus, X, ArrowRight, ArrowLeft } from "lucide-react";
+import { Sparkles, Search, BookOpen, X, ArrowRight, ArrowLeft } from "lucide-react";
 
 const STORAGE_KEY = "portal-catolico-onboarding-v1";
 
