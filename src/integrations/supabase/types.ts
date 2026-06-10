@@ -41,6 +41,118 @@ export type Database = {
         }
         Relationships: []
       }
+      bible_bookmarks: {
+        Row: {
+          book_slug: string
+          chapter: number
+          created_at: string
+          id: string
+          note: string | null
+          user_id: string
+          verse: number
+          verse_text: string | null
+        }
+        Insert: {
+          book_slug: string
+          chapter: number
+          created_at?: string
+          id?: string
+          note?: string | null
+          user_id: string
+          verse: number
+          verse_text?: string | null
+        }
+        Update: {
+          book_slug?: string
+          chapter?: number
+          created_at?: string
+          id?: string
+          note?: string | null
+          user_id?: string
+          verse?: number
+          verse_text?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "bible_bookmarks_book_slug_fkey"
+            columns: ["book_slug"]
+            isOneToOne: false
+            referencedRelation: "bible_books"
+            referencedColumns: ["slug"]
+          },
+        ]
+      }
+      bible_books: {
+        Row: {
+          abbrev: string
+          api_slug: string | null
+          chapter_count: number
+          is_deuterocanonical: boolean
+          name: string
+          slug: string
+          sort_order: number
+          testament: string
+        }
+        Insert: {
+          abbrev: string
+          api_slug?: string | null
+          chapter_count: number
+          is_deuterocanonical?: boolean
+          name: string
+          slug: string
+          sort_order: number
+          testament: string
+        }
+        Update: {
+          abbrev?: string
+          api_slug?: string | null
+          chapter_count?: number
+          is_deuterocanonical?: boolean
+          name?: string
+          slug?: string
+          sort_order?: number
+          testament?: string
+        }
+        Relationships: []
+      }
+      bible_notes: {
+        Row: {
+          book_slug: string
+          chapter: number
+          content: string
+          created_at: string
+          id: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          book_slug: string
+          chapter: number
+          content?: string
+          created_at?: string
+          id?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          book_slug?: string
+          chapter?: number
+          content?: string
+          created_at?: string
+          id?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "bible_notes_book_slug_fkey"
+            columns: ["book_slug"]
+            isOneToOne: false
+            referencedRelation: "bible_books"
+            referencedColumns: ["slug"]
+          },
+        ]
+      }
       profiles: {
         Row: {
           created_at: string
