@@ -42,7 +42,7 @@ export function ScrollReveal({
   }, [threshold]);
 
   const getDirectionClass = () => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       return "opacity-0";
     }
     switch (direction) {
