@@ -165,10 +165,22 @@ function AuthPage() {
 }
 
 function traduzirErro(msg: string): string {
-  if (msg.includes("Invalid login credentials")) return "E-mail ou senha incorretos.";
-  if (msg.includes("already registered") || msg.includes("already exists"))
+  const m = msg.toLowerCase();
+  if (m.includes("invalid login credentials")) return "E-mail ou senha incorretos.";
+  if (m.includes("already registered") || m.includes("already exists") || m.includes("user already"))
     return "Este e-mail já está cadastrado. Faça login.";
-  if (msg.includes("Email not confirmed")) return "Confirme seu e-mail antes de entrar.";
-  if (msg.includes("Password should be at least")) return "A senha deve ter ao menos 6 caracteres.";
+  if (m.includes("email not confirmed")) return "Confirme seu e-mail antes de entrar.";
+  if (m.includes("weak") || m.includes("pwned"))
+    return "Esta senha é muito comum e já foi vazada em outros sites. Escolha uma senha mais forte (ao menos 8 caracteres, com letras e números).";
+  if (m.includes("password should be at least") || m.includes("password should contain"))
+    return "A senha deve ter ao menos 6 caracteres.";
+  if (m.includes("invalid email") || m.includes("email address") && m.includes("invalid"))
+    return "Endereço de e-mail inválido.";
+  if (m.includes("rate limit") || m.includes("too many"))
+    return "Muitas tentativas. Aguarde alguns instantes e tente novamente.";
+  if (m.includes("signup") && m.includes("disabled"))
+    return "Cadastro temporariamente indisponível. Tente novamente em instantes.";
+  if (m.includes("failed to fetch") || m.includes("network") || m.includes("networkerror"))
+    return "Sem conexão com o servidor. Verifique sua internet e tente novamente.";
   return msg;
 }
