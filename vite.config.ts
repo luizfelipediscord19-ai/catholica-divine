@@ -8,7 +8,7 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 // Inside a Lovable build, the preset is forced to Cloudflare and this override is ignored.
 // Outside (your CI / Netlify), this pins Nitro to the Netlify preset so `npm run build`
-// produces `.netlify/functions-internal/server` + `dist/client` for Netlify to deploy.
+// produces Netlify serverless functions and static files in `dist` for Netlify to deploy.
 export default defineConfig({
   tanstackStart: {
     server: { entry: "server" },
