@@ -136,7 +136,7 @@ export const markChapterRead = createServerFn({ method: "POST" })
     const toUnlock = candidates.filter((c) => !haveSet.has(c));
     let unlockedDetails: MarkReadResult["new_achievements"] = [];
     if (toUnlock.length > 0) {
-      await supabase.from("user_achievements")
+      await supabaseAdmin.from("user_achievements")
         .insert(toUnlock.map((code) => ({ user_id: userId, achievement_code: code })));
       const { data: details } = await supabase.from("achievements")
         .select("code, title, description, tier").in("code", toUnlock);
