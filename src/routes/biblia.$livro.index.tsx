@@ -1,6 +1,10 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { useServerFn } from "@tanstack/react-start";
+import { useQuery } from "@tanstack/react-query";
 import { getLivro, LIVROS } from "../lib/data/biblia";
-import { ArrowLeft, BookOpen } from "lucide-react";
+import { ArrowLeft, BookOpen, Check } from "lucide-react";
+import { useAuth } from "../hooks/use-auth";
+import { getBibleProgress } from "../lib/biblia.functions";
 
 export const Route = createFileRoute("/biblia/$livro/")({
   loader: ({ params }) => {
@@ -35,6 +39,16 @@ function Page() {
   const idx = LIVROS.findIndex((l) => l.slug === livro.slug);
   const anterior = idx > 0 ? LIVROS[idx - 1] : null;
   const proximo = idx < LIVROS.length - 1 ? LIVROS[idx + 1] : null;
+
+  const { user } = useAuth();
+  const fetchProgress = useServerFn(getBibleProgress);
+  const { data: progress } = useQuery({
+    queryKey: ["bible-progress"],
+    queryFn: () => fetchProgress(),
+    enabled: !!user,
+  });
+  const lidos = new Set(progress?.by_book[livro.slug] ?? []);
+  const pct = livro.capitulos > 0 ? (lidos.size / livro.capitulos) * 100 : 0;
 
   return (
     <div>
@@ -74,20 +88,41 @@ function Page() {
       </div>
 
       <section className="max-w-5xl mx-auto px-6 py-16">
-        <h2 className="font-display text-2xl text-foreground mb-6 flex items-center gap-3">
-          <BookOpen className="size-5 text-gold" /> Capítulos
-        </h2>
+        <div className="flex items-end justify-between flex-wrap gap-4 mb-6">
+          <h2 className="font-display text-2xl text-foreground flex items-center gap-3">
+            <BookOpen className="size-5 text-gold" /> Capítulos
+          </h2>
+          {user && (
+            <div className="text-sm text-foreground/80">
+              <span className="font-display text-gold">{lidos.size}</span> de {livro.capitulos} lidos · {pct.toFixed(0)}%
+            </div>
+          )}
+        </div>
+        {user && (
+          <div className="h-1.5 bg-card border border-gold/15 overflow-hidden mb-6">
+            <div className="h-full bg-gold transition-all" style={{ width: `${pct}%` }} />
+          </div>
+        )}
         <div className="grid grid-cols-5 sm:grid-cols-8 md:grid-cols-10 lg:grid-cols-12 gap-2">
-          {Array.from({ length: livro.capitulos }, (_, i) => i + 1).map((c) => (
-            <Link
-              key={c}
-              to="/biblia/$livro/$capitulo"
-              params={{ livro: livro.slug, capitulo: String(c) }}
-              className="aspect-square grid place-items-center border border-gold/25 hover:border-gold hover:bg-gold/10 text-sm font-display text-foreground transition-colors"
-            >
-              {c}
-            </Link>
-          ))}
+          {Array.from({ length: livro.capitulos }, (_, i) => i + 1).map((c) => {
+            const lido = lidos.has(c);
+            return (
+              <Link
+                key={c}
+                to="/biblia/$livro/$capitulo"
+                params={{ livro: livro.slug, capitulo: String(c) }}
+                className={
+                  "aspect-square grid place-items-center border text-sm font-display transition-colors relative " +
+                  (lido
+                    ? "border-gold bg-gold/20 text-gold"
+                    : "border-gold/25 text-foreground hover:border-gold hover:bg-gold/10")
+                }
+              >
+                {c}
+                {lido && <Check className="absolute top-1 right-1 size-3 text-gold" />}
+              </Link>
+            );
+          })}
         </div>
       </section>
 

@@ -4,6 +4,7 @@ import { LIVROS } from "../lib/data/biblia";
 import manuscrito from "../assets/manuscrito.jpg";
 import { useState } from "react";
 import { Search } from "lucide-react";
+import { BibleProgressBar } from "../components/biblia/BibleProgressBar";
 
 export const Route = createFileRoute("/biblia/")({
   head: () => ({
@@ -195,22 +196,25 @@ function Page() {
         />
       </Section>
 
-      <div className="max-w-6xl mx-auto px-6 pt-4 flex flex-wrap items-center gap-4 justify-between">
-        <div className="relative max-w-md w-full">
-          <Search className="absolute left-4 top-1/2 -translate-y-1/2 size-4 text-gold/60" />
-          <input
-            value={q}
-            onChange={(e) => setQ(e.target.value)}
-            placeholder="Buscar livro... (ex: Salmos, Mt)"
-            className="w-full pl-11 pr-4 py-3 bg-card border border-gold/25 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-gold"
-          />
+      <div className="max-w-6xl mx-auto px-6 pt-4 space-y-4">
+        <BibleProgressBar />
+        <div className="flex flex-wrap items-center gap-4 justify-between">
+          <div className="relative max-w-md w-full">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 size-4 text-gold/60" />
+            <input
+              value={q}
+              onChange={(e) => setQ(e.target.value)}
+              placeholder="Buscar livro... (ex: Salmos, Mt)"
+              className="w-full pl-11 pr-4 py-3 bg-card border border-gold/25 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-gold"
+            />
+          </div>
+          <Link
+            to="/biblia/leituras"
+            className="inline-flex items-center gap-2 px-5 py-3 bg-gold text-deep text-[10px] uppercase tracking-[0.25em] font-medium hover:bg-paper transition-colors"
+          >
+            Leituras diárias
+          </Link>
         </div>
-        <Link
-          to="/biblia/leituras"
-          className="inline-flex items-center gap-2 px-5 py-3 bg-gold text-deep text-[10px] uppercase tracking-[0.25em] font-medium hover:bg-paper transition-colors"
-        >
-          Leituras diárias
-        </Link>
       </div>
 
       <Section kicker="Antigo Testamento" title="46 livros — Da Criação ao Messias">
