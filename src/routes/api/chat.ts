@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { convertToModelMessages, streamText, type UIMessage } from "ai";
-import { createOpenAICompatible } from "@ai-sdk/openai-compatible";
 import { ChatRequestSchema } from "../../lib/types/chat";
 import { isAllowedBrowserRequest, handleChatError } from "../../lib/api/chat-utils.server";
 import { SYSTEM_PROMPT, COROINHAS_PROMPT } from "../../lib/prompts/sophia";
+import { createLovableAiGatewayProvider } from "../../lib/ai-gateway.server";
 
 export const Route = createFileRoute("/api/chat")({
   server: {
