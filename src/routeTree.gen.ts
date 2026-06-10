@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as SophiaDiagnosticoRouteImport } from './routes/sophia-diagnostico'
 import { Route as SantosRouteImport } from './routes/santos'
 import { Route as SacramentosRouteImport } from './routes/sacramentos'
+import { Route as ResetPasswordRouteImport } from './routes/reset-password'
 import { Route as OracoesRouteImport } from './routes/oracoes'
 import { Route as MariaRouteImport } from './routes/maria'
 import { Route as FeCatolicaRouteImport } from './routes/fe-catolica'
@@ -20,8 +21,10 @@ import { Route as CoroinhasRouteImport } from './routes/coroinhas'
 import { Route as CatecismoRouteImport } from './routes/catecismo'
 import { Route as CalendarioLiturgicoRouteImport } from './routes/calendario-liturgico'
 import { Route as BibliaRouteImport } from './routes/biblia'
+import { Route as AuthRouteImport } from './routes/auth'
 import { Route as AssistenteRouteImport } from './routes/assistente'
 import { Route as ApologeticaRouteImport } from './routes/apologetica'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BibliaIndexRouteImport } from './routes/biblia.index'
 import { Route as SantosSlugRouteImport } from './routes/santos.$slug'
@@ -34,6 +37,7 @@ import { Route as CatecismoParteRouteImport } from './routes/catecismo.$parte'
 import { Route as BibliaLeiturasRouteImport } from './routes/biblia.leituras'
 import { Route as BibliaLivroRouteImport } from './routes/biblia.$livro'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
+import { Route as AuthenticatedPainelRouteImport } from './routes/_authenticated/painel'
 import { Route as BibliaLivroIndexRouteImport } from './routes/biblia.$livro.index'
 import { Route as OracoesNovenasSlugRouteImport } from './routes/oracoes.novenas.$slug'
 import { Route as BibliaLivroCapituloRouteImport } from './routes/biblia.$livro.$capitulo'
@@ -51,6 +55,11 @@ const SantosRoute = SantosRouteImport.update({
 const SacramentosRoute = SacramentosRouteImport.update({
   id: '/sacramentos',
   path: '/sacramentos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResetPasswordRoute = ResetPasswordRouteImport.update({
+  id: '/reset-password',
+  path: '/reset-password',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OracoesRoute = OracoesRouteImport.update({
@@ -93,6 +102,11 @@ const BibliaRoute = BibliaRouteImport.update({
   path: '/biblia',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AssistenteRoute = AssistenteRouteImport.update({
   id: '/assistente',
   path: '/assistente',
@@ -101,6 +115,10 @@ const AssistenteRoute = AssistenteRouteImport.update({
 const ApologeticaRoute = ApologeticaRouteImport.update({
   id: '/apologetica',
   path: '/apologetica',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -164,6 +182,11 @@ const ApiChatRoute = ApiChatRouteImport.update({
   path: '/api/chat',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedPainelRoute = AuthenticatedPainelRouteImport.update({
+  id: '/painel',
+  path: '/painel',
+  getParentRoute: () => AuthenticatedRouteRoute,
+} as any)
 const BibliaLivroIndexRoute = BibliaLivroIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -184,6 +207,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/apologetica': typeof ApologeticaRoute
   '/assistente': typeof AssistenteRoute
+  '/auth': typeof AuthRoute
   '/biblia': typeof BibliaRouteWithChildren
   '/calendario-liturgico': typeof CalendarioLiturgicoRoute
   '/catecismo': typeof CatecismoRouteWithChildren
@@ -192,9 +216,11 @@ export interface FileRoutesByFullPath {
   '/fe-catolica': typeof FeCatolicaRoute
   '/maria': typeof MariaRoute
   '/oracoes': typeof OracoesRouteWithChildren
+  '/reset-password': typeof ResetPasswordRoute
   '/sacramentos': typeof SacramentosRoute
   '/santos': typeof SantosRouteWithChildren
   '/sophia-diagnostico': typeof SophiaDiagnosticoRoute
+  '/painel': typeof AuthenticatedPainelRoute
   '/api/chat': typeof ApiChatRoute
   '/biblia/$livro': typeof BibliaLivroRouteWithChildren
   '/biblia/leituras': typeof BibliaLeiturasRoute
@@ -214,6 +240,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/apologetica': typeof ApologeticaRoute
   '/assistente': typeof AssistenteRoute
+  '/auth': typeof AuthRoute
   '/calendario-liturgico': typeof CalendarioLiturgicoRoute
   '/catecismo': typeof CatecismoRouteWithChildren
   '/coroinhas': typeof CoroinhasRoute
@@ -221,9 +248,11 @@ export interface FileRoutesByTo {
   '/fe-catolica': typeof FeCatolicaRoute
   '/maria': typeof MariaRoute
   '/oracoes': typeof OracoesRouteWithChildren
+  '/reset-password': typeof ResetPasswordRoute
   '/sacramentos': typeof SacramentosRoute
   '/santos': typeof SantosRouteWithChildren
   '/sophia-diagnostico': typeof SophiaDiagnosticoRoute
+  '/painel': typeof AuthenticatedPainelRoute
   '/api/chat': typeof ApiChatRoute
   '/biblia/leituras': typeof BibliaLeiturasRoute
   '/catecismo/$parte': typeof CatecismoParteRoute
@@ -241,8 +270,10 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/apologetica': typeof ApologeticaRoute
   '/assistente': typeof AssistenteRoute
+  '/auth': typeof AuthRoute
   '/biblia': typeof BibliaRouteWithChildren
   '/calendario-liturgico': typeof CalendarioLiturgicoRoute
   '/catecismo': typeof CatecismoRouteWithChildren
@@ -251,9 +282,11 @@ export interface FileRoutesById {
   '/fe-catolica': typeof FeCatolicaRoute
   '/maria': typeof MariaRoute
   '/oracoes': typeof OracoesRouteWithChildren
+  '/reset-password': typeof ResetPasswordRoute
   '/sacramentos': typeof SacramentosRoute
   '/santos': typeof SantosRouteWithChildren
   '/sophia-diagnostico': typeof SophiaDiagnosticoRoute
+  '/_authenticated/painel': typeof AuthenticatedPainelRoute
   '/api/chat': typeof ApiChatRoute
   '/biblia/$livro': typeof BibliaLivroRouteWithChildren
   '/biblia/leituras': typeof BibliaLeiturasRoute
@@ -275,6 +308,7 @@ export interface FileRouteTypes {
     | '/'
     | '/apologetica'
     | '/assistente'
+    | '/auth'
     | '/biblia'
     | '/calendario-liturgico'
     | '/catecismo'
@@ -283,9 +317,11 @@ export interface FileRouteTypes {
     | '/fe-catolica'
     | '/maria'
     | '/oracoes'
+    | '/reset-password'
     | '/sacramentos'
     | '/santos'
     | '/sophia-diagnostico'
+    | '/painel'
     | '/api/chat'
     | '/biblia/$livro'
     | '/biblia/leituras'
@@ -305,6 +341,7 @@ export interface FileRouteTypes {
     | '/'
     | '/apologetica'
     | '/assistente'
+    | '/auth'
     | '/calendario-liturgico'
     | '/catecismo'
     | '/coroinhas'
@@ -312,9 +349,11 @@ export interface FileRouteTypes {
     | '/fe-catolica'
     | '/maria'
     | '/oracoes'
+    | '/reset-password'
     | '/sacramentos'
     | '/santos'
     | '/sophia-diagnostico'
+    | '/painel'
     | '/api/chat'
     | '/biblia/leituras'
     | '/catecismo/$parte'
@@ -331,8 +370,10 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/_authenticated'
     | '/apologetica'
     | '/assistente'
+    | '/auth'
     | '/biblia'
     | '/calendario-liturgico'
     | '/catecismo'
@@ -341,9 +382,11 @@ export interface FileRouteTypes {
     | '/fe-catolica'
     | '/maria'
     | '/oracoes'
+    | '/reset-password'
     | '/sacramentos'
     | '/santos'
     | '/sophia-diagnostico'
+    | '/_authenticated/painel'
     | '/api/chat'
     | '/biblia/$livro'
     | '/biblia/leituras'
@@ -362,8 +405,10 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   ApologeticaRoute: typeof ApologeticaRoute
   AssistenteRoute: typeof AssistenteRoute
+  AuthRoute: typeof AuthRoute
   BibliaRoute: typeof BibliaRouteWithChildren
   CalendarioLiturgicoRoute: typeof CalendarioLiturgicoRoute
   CatecismoRoute: typeof CatecismoRouteWithChildren
@@ -372,6 +417,7 @@ export interface RootRouteChildren {
   FeCatolicaRoute: typeof FeCatolicaRoute
   MariaRoute: typeof MariaRoute
   OracoesRoute: typeof OracoesRouteWithChildren
+  ResetPasswordRoute: typeof ResetPasswordRoute
   SacramentosRoute: typeof SacramentosRoute
   SantosRoute: typeof SantosRouteWithChildren
   SophiaDiagnosticoRoute: typeof SophiaDiagnosticoRoute
@@ -399,6 +445,13 @@ declare module '@tanstack/react-router' {
       path: '/sacramentos'
       fullPath: '/sacramentos'
       preLoaderRoute: typeof SacramentosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reset-password': {
+      id: '/reset-password'
+      path: '/reset-password'
+      fullPath: '/reset-password'
+      preLoaderRoute: typeof ResetPasswordRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/oracoes': {
@@ -457,6 +510,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BibliaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/assistente': {
       id: '/assistente'
       path: '/assistente'
@@ -469,6 +529,13 @@ declare module '@tanstack/react-router' {
       path: '/apologetica'
       fullPath: '/apologetica'
       preLoaderRoute: typeof ApologeticaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_authenticated': {
+      id: '/_authenticated'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthenticatedRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -555,6 +622,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiChatRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated/painel': {
+      id: '/_authenticated/painel'
+      path: '/painel'
+      fullPath: '/painel'
+      preLoaderRoute: typeof AuthenticatedPainelRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
+    }
     '/biblia/$livro/': {
       id: '/biblia/$livro/'
       path: '/'
@@ -578,6 +652,17 @@ declare module '@tanstack/react-router' {
     }
   }
 }
+
+interface AuthenticatedRouteRouteChildren {
+  AuthenticatedPainelRoute: typeof AuthenticatedPainelRoute
+}
+
+const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedPainelRoute: AuthenticatedPainelRoute,
+}
+
+const AuthenticatedRouteRouteWithChildren =
+  AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
 
 interface BibliaLivroRouteChildren {
   BibliaLivroCapituloRoute: typeof BibliaLivroCapituloRoute
@@ -664,8 +749,10 @@ const SantosRouteWithChildren =
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   ApologeticaRoute: ApologeticaRoute,
   AssistenteRoute: AssistenteRoute,
+  AuthRoute: AuthRoute,
   BibliaRoute: BibliaRouteWithChildren,
   CalendarioLiturgicoRoute: CalendarioLiturgicoRoute,
   CatecismoRoute: CatecismoRouteWithChildren,
@@ -674,6 +761,7 @@ const rootRouteChildren: RootRouteChildren = {
   FeCatolicaRoute: FeCatolicaRoute,
   MariaRoute: MariaRoute,
   OracoesRoute: OracoesRouteWithChildren,
+  ResetPasswordRoute: ResetPasswordRoute,
   SacramentosRoute: SacramentosRoute,
   SantosRoute: SantosRouteWithChildren,
   SophiaDiagnosticoRoute: SophiaDiagnosticoRoute,
