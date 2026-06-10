@@ -14,7 +14,161 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      achievements: {
+        Row: {
+          code: string
+          description: string
+          icon: string | null
+          sort_order: number
+          tier: string
+          title: string
+        }
+        Insert: {
+          code: string
+          description: string
+          icon?: string | null
+          sort_order?: number
+          tier?: string
+          title: string
+        }
+        Update: {
+          code?: string
+          description?: string
+          icon?: string | null
+          sort_order?: number
+          tier?: string
+          title?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          display_name: string | null
+          id: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          display_name?: string | null
+          id: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          display_name?: string | null
+          id?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      reading_progress: {
+        Row: {
+          book_slug: string
+          chapter: number
+          read_at: string
+          user_id: string
+        }
+        Insert: {
+          book_slug: string
+          chapter: number
+          read_at?: string
+          user_id: string
+        }
+        Update: {
+          book_slug?: string
+          chapter?: number
+          read_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      user_achievements: {
+        Row: {
+          achievement_code: string
+          unlocked_at: string
+          user_id: string
+        }
+        Insert: {
+          achievement_code: string
+          unlocked_at?: string
+          user_id: string
+        }
+        Update: {
+          achievement_code?: string
+          unlocked_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "user_achievements_achievement_code_fkey"
+            columns: ["achievement_code"]
+            isOneToOne: false
+            referencedRelation: "achievements"
+            referencedColumns: ["code"]
+          },
+        ]
+      }
+      user_progress: {
+        Row: {
+          best_streak: number
+          current_streak: number
+          last_check_in: string | null
+          level: number
+          total_check_ins: number
+          updated_at: string
+          user_id: string
+          xp: number
+        }
+        Insert: {
+          best_streak?: number
+          current_streak?: number
+          last_check_in?: string | null
+          level?: number
+          total_check_ins?: number
+          updated_at?: string
+          user_id: string
+          xp?: number
+        }
+        Update: {
+          best_streak?: number
+          current_streak?: number
+          last_check_in?: string | null
+          level?: number
+          total_check_ins?: number
+          updated_at?: string
+          user_id?: string
+          xp?: number
+        }
+        Relationships: []
+      }
+      xp_events: {
+        Row: {
+          amount: number
+          created_at: string
+          id: number
+          kind: string
+          metadata: Json | null
+          user_id: string
+        }
+        Insert: {
+          amount: number
+          created_at?: string
+          id?: number
+          kind: string
+          metadata?: Json | null
+          user_id: string
+        }
+        Update: {
+          amount?: number
+          created_at?: string
+          id?: number
+          kind?: string
+          metadata?: Json | null
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
