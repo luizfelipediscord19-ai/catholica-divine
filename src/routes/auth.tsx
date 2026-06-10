@@ -51,12 +51,12 @@ function AuthPage() {
         });
         if (error) throw error;
         toast.success("Conta criada! Verifique seu e-mail para confirmar.");
-        // Se confirmação de email estiver desabilitada, já estará logado
         navigate({ to: "/painel" });
       }
     } catch (err) {
-      const msg = err instanceof Error ? err.message : "Erro desconhecido";
-      toast.error(traduzirErro(msg));
+      console.error("[auth] erro:", err);
+      const { titulo, detalhe } = traduzirErro(err);
+      toast.error(titulo, { description: detalhe });
     } finally {
       setLoading(false);
     }
@@ -70,8 +70,10 @@ function AuthPage() {
     const { error } = await supabase.auth.resetPasswordForEmail(email, {
       redirectTo: `${window.location.origin}/reset-password`,
     });
-    if (error) toast.error(traduzirErro(error.message));
-    else toast.success("Enviamos um e-mail com instruções.");
+    if (error) {
+      const { titulo, detalhe } = traduzirErro(error);
+      toast.error(titulo, { description: detalhe });
+    } else toast.success("Enviamos um e-mail com instruções.");
   }
 
   return (
