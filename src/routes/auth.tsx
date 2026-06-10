@@ -51,12 +51,12 @@ function AuthPage() {
         });
         if (error) throw error;
         toast.success("Conta criada! Verifique seu e-mail para confirmar.");
-        // Se confirmação de email estiver desabilitada, já estará logado
         navigate({ to: "/painel" });
       }
     } catch (err) {
-      const msg = err instanceof Error ? err.message : "Erro desconhecido";
-      toast.error(traduzirErro(msg));
+      console.error("[auth] erro:", err);
+      const { titulo, detalhe } = traduzirErro(err);
+      toast.error(titulo, { description: detalhe });
     } finally {
       setLoading(false);
     }
@@ -70,8 +70,10 @@ function AuthPage() {
     const { error } = await supabase.auth.resetPasswordForEmail(email, {
       redirectTo: `${window.location.origin}/reset-password`,
     });
-    if (error) toast.error(traduzirErro(error.message));
-    else toast.success("Enviamos um e-mail com instruções.");
+    if (error) {
+      const { titulo, detalhe } = traduzirErro(error);
+      toast.error(titulo, { description: detalhe });
+    } else toast.success("Enviamos um e-mail com instruções.");
   }
 
   return (
@@ -169,23 +171,51 @@ function AuthPage() {
   );
 }
 
-function traduzirErro(msg: string): string {
-  const m = msg.toLowerCase();
-  if (m.includes("invalid login credentials")) return "E-mail ou senha incorretos.";
-  if (m.includes("already registered") || m.includes("already exists") || m.includes("user already"))
-    return "Este e-mail já está cadastrado. Faça login.";
-  if (m.includes("email not confirmed")) return "Confirme seu e-mail antes de entrar.";
-  if (m.includes("weak") || m.includes("pwned"))
-    return "Esta senha é muito comum e já foi vazada em outros sites. Escolha uma senha mais forte (ao menos 8 caracteres, com letras e números).";
+function traduzirErro(err: unknown): { titulo: string; detalhe?: string } {
+  const anyErr = err as { message?: string; code?: string; status?: number; name?: string } | null;
+  const rawMsg = (anyErr?.message ?? (typeof err === "string" ? err : "Erro desconhecido")).toString();
+  const code = (anyErr?.code ?? "").toString().toLowerCase();
+  const status = anyErr?.status;
+  const m = rawMsg.toLowerCase();
+  const detalhe = `${code ? `[${code}] ` : status ? `[${status}] ` : ""}${rawMsg}`;
+
+  // Network / fetch failure (browser bloqueou, offline, CORS, DNS)
+  if (
+    anyErr?.name === "AuthRetryableFetchError" ||
+    m.includes("failed to fetch") ||
+    m.includes("networkerror") ||
+    m.includes("network request failed") ||
+    m.includes("load failed")
+  ) {
+    return {
+      titulo: "Não foi possível conectar ao servidor.",
+      detalhe: "Verifique sua internet, desative bloqueadores/VPN e tente de novo. Se persistir, recarregue a página.",
+    };
+  }
+
+  if (code === "invalid_credentials" || m.includes("invalid login credentials"))
+    return { titulo: "E-mail ou senha incorretos." };
+  if (code === "user_already_exists" || m.includes("already registered") || m.includes("already exists") || m.includes("user already"))
+    return { titulo: "Este e-mail já está cadastrado.", detalhe: "Faça login ou use ‘Esqueci a senha’." };
+  if (code === "email_not_confirmed" || m.includes("email not confirmed"))
+    return { titulo: "Confirme seu e-mail antes de entrar.", detalhe: "Procure o link de confirmação na sua caixa de entrada (e em spam)." };
+  if (code === "weak_password" || m.includes("pwned") || m.includes("weak password") || m.includes("compromised"))
+    return {
+      titulo: "Senha muito fraca ou vazada.",
+      detalhe: "Esta senha já apareceu em vazamentos públicos. Use ao menos 8 caracteres misturando letras, números e símbolos.",
+    };
   if (m.includes("password should be at least") || m.includes("password should contain"))
-    return "A senha deve ter ao menos 6 caracteres.";
-  if (m.includes("invalid email") || m.includes("email address") && m.includes("invalid"))
-    return "Endereço de e-mail inválido.";
-  if (m.includes("rate limit") || m.includes("too many"))
-    return "Muitas tentativas. Aguarde alguns instantes e tente novamente.";
-  if (m.includes("signup") && m.includes("disabled"))
-    return "Cadastro temporariamente indisponível. Tente novamente em instantes.";
-  if (m.includes("failed to fetch") || m.includes("network") || m.includes("networkerror"))
-    return "Sem conexão com o servidor. Verifique sua internet e tente novamente.";
-  return msg;
+    return { titulo: "Senha curta demais.", detalhe: "Use ao menos 8 caracteres." };
+  if (code === "validation_failed" || code === "email_address_invalid" || m.includes("invalid email") || (m.includes("email") && m.includes("invalid")))
+    return { titulo: "E-mail inválido.", detalhe: "Confira se digitou corretamente (ex.: nome@dominio.com)." };
+  if (code.includes("rate_limit") || code === "over_email_send_rate_limit" || m.includes("rate limit") || m.includes("too many") || status === 429)
+    return { titulo: "Muitas tentativas seguidas.", detalhe: "Aguarde alguns minutos e tente novamente." };
+  if (code === "signup_disabled" || (m.includes("signup") && m.includes("disabled")))
+    return { titulo: "Cadastro temporariamente indisponível.", detalhe };
+  if (status === 422)
+    return { titulo: "Dados não aceitos pelo servidor.", detalhe };
+  if (status && status >= 500)
+    return { titulo: "Erro no servidor. Tente novamente em instantes.", detalhe };
+
+  return { titulo: "Não foi possível concluir.", detalhe };
 }
