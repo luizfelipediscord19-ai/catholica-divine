@@ -85,13 +85,14 @@ export const markChapterRead = createServerFn({ method: "POST" })
     });
 
     const xp = 5;
+    const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
     const { data: prog } = await supabase.from("user_progress")
       .select("xp").eq("user_id", userId).single();
     const newXp = (prog?.xp ?? 0) + xp;
-    await supabase.from("user_progress")
+    await supabaseAdmin.from("user_progress")
       .update({ xp: newXp, updated_at: new Date().toISOString() })
       .eq("user_id", userId);
-    await supabase.from("xp_events").insert({
+    await supabaseAdmin.from("xp_events").insert({
       user_id: userId, kind: "chapter_read", amount: xp,
       metadata: { book: data.book, chapter: data.chapter },
     });
