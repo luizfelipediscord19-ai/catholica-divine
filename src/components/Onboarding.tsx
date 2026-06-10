@@ -22,7 +22,6 @@ const STEPS = [
     title: "Área de estudos e conta",
     desc: "Crie sua conta para acessar o Painel: Diário de Fé, progresso de leitura bíblica, conquistas (XP) e sequência de oração.",
     cta: { label: "Criar conta grátis", to: "/auth" as const },
-    icon2: UserPlus,
   },
 ];
 
