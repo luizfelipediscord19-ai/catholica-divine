@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero, Section, CardGrid, ContentCard } from "../components/PageShell";
+import { MarcarConcluidoButton } from "../components/MarcarConcluidoButton";
+
 
 export const Route = createFileRoute("/oracoes/terco-misericordia")({
   head: () => ({
@@ -40,8 +42,12 @@ function Page() {
         </div>
       </Section>
       <Section>
-        <Link to="/oracoes" className="px-5 py-3 border border-gold/40 hover:bg-gold/10">← Todas as orações</Link>
+        <div className="flex flex-wrap items-center gap-3">
+          <MarcarConcluidoButton kind="oracao" ref="terco-misericordia" />
+          <Link to="/oracoes" className="px-5 py-3 border border-gold/40 hover:bg-gold/10">← Todas as orações</Link>
+        </div>
       </Section>
+
     </div>
   );
 }
