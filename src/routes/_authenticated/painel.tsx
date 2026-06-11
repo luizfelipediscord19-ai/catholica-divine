@@ -536,3 +536,12 @@ function tierColor(tier: string): string {
   }
 }
 
+
+function XpRule({ label, xp }: { label: string; xp: number }) {
+  return (
+    <li className="flex items-center justify-between border-b border-gold/10 pb-1.5">
+      <span className="text-paper/70">{label}</span>
+      <span className="text-gold font-semibold text-xs">+{xp} XP</span>
+    </li>
+  );
+}
