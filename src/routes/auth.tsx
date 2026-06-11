@@ -5,7 +5,7 @@ import { Church, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/use-auth";
-import { signUpWithEmail } from "@/lib/auth.functions";
+import { signUpWithEmail, signInWithEmail, requestPasswordReset } from "@/lib/auth.functions";
 import { traduzirErro as traduzirErroAuth } from "@/lib/auth/traduzir-erro";
 
 export const Route = createFileRoute("/auth")({
@@ -21,6 +21,8 @@ export const Route = createFileRoute("/auth")({
 function AuthPage() {
   const navigate = useNavigate();
   const signUp = useServerFn(signUpWithEmail);
+  const signIn = useServerFn(signInWithEmail);
+  const resetPwd = useServerFn(requestPasswordReset);
   const { user, loading: authLoading } = useAuth();
   const [mode, setMode] = useState<"login" | "signup">("login");
   const [email, setEmail] = useState("");
@@ -40,8 +42,10 @@ function AuthPage() {
     setLoading(true);
     try {
       if (mode === "login") {
-        const { error } = await supabase.auth.signInWithPassword({ email, password });
-        if (error) throw error;
+        const result = await signIn({ data: { email, password } });
+        // Persist server-issued session into the browser client (localStorage)
+        const { error: setErr } = await supabase.auth.setSession(result.session);
+        if (setErr) throw setErr;
         toast.success("Bem-vindo de volta!");
         navigate({ to: "/painel" });
       } else {
@@ -53,6 +57,10 @@ function AuthPage() {
             redirectTo: `${window.location.origin}/painel`,
           },
         });
+        if (result.session) {
+          const { error: setErr } = await supabase.auth.setSession(result.session);
+          if (setErr) throw setErr;
+        }
         toast.success(
           result.needsEmailConfirmation
             ? "Conta criada! Verifique seu e-mail para confirmar."
@@ -74,13 +82,18 @@ function AuthPage() {
       toast.error("Informe seu e-mail primeiro.");
       return;
     }
-    const { error } = await supabase.auth.resetPasswordForEmail(email, {
-      redirectTo: `${window.location.origin}/reset-password`,
-    });
-    if (error) {
-      const { titulo, detalhe } = traduzirErroAuth(error);
+    try {
+      await resetPwd({
+        data: {
+          email,
+          redirectTo: `${window.location.origin}/reset-password`,
+        },
+      });
+      toast.success("Enviamos um e-mail com instruções.");
+    } catch (err) {
+      const { titulo, detalhe } = traduzirErroAuth(err);
       toast.error(titulo, { description: detalhe });
-    } else toast.success("Enviamos um e-mail com instruções.");
+    }
   }
 
   return (
