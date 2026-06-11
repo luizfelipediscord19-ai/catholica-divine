@@ -1,6 +1,8 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { PageHero, Section } from "../components/PageShell";
 import { NOVENAS, type Novena } from "../lib/data/devocoes/novenas";
+import { MarcarConcluidoButton } from "../components/MarcarConcluidoButton";
+
 
 export const Route = createFileRoute("/oracoes/novenas/$slug")({
   head: ({ params }) => {
