@@ -82,13 +82,18 @@ function AuthPage() {
       toast.error("Informe seu e-mail primeiro.");
       return;
     }
-    const { error } = await supabase.auth.resetPasswordForEmail(email, {
-      redirectTo: `${window.location.origin}/reset-password`,
-    });
-    if (error) {
-      const { titulo, detalhe } = traduzirErroAuth(error);
+    try {
+      await resetPwd({
+        data: {
+          email,
+          redirectTo: `${window.location.origin}/reset-password`,
+        },
+      });
+      toast.success("Enviamos um e-mail com instruções.");
+    } catch (err) {
+      const { titulo, detalhe } = traduzirErroAuth(err);
       toast.error(titulo, { description: detalhe });
-    } else toast.success("Enviamos um e-mail com instruções.");
+    }
   }
 
   return (
