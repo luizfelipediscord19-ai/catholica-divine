@@ -3,8 +3,9 @@ import { useServerFn } from "@tanstack/react-start";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
 import {
-  Sparkles, Flame, Trophy, BookOpen, Crown, Star, Loader2, Check, ChevronRight, Clock, Heart,
+  Sparkles, Flame, Trophy, BookOpen, Crown, Star, Loader2, Check, ChevronRight, Clock, Heart, CalendarDays, Target, Award,
 } from "lucide-react";
+
 import { toast } from "sonner";
 import { getDashboard } from "@/lib/dashboard.functions";
 import { getTodayJournal, saveJournalEntry } from "@/lib/diario.functions";
@@ -103,6 +104,78 @@ function PainelPage() {
             : `Comece o dia com oração. ${data.progress.current_streak > 0 ? `Não quebre sua sequência de ${data.progress.current_streak} dia(s).` : "Faça seu primeiro check-in."}`}
         </p>
       </header>
+
+      {/* Centro Espiritual */}
+      <section className="mb-12">
+        <div className="flex items-end justify-between mb-6">
+          <div>
+            <p className="text-[10px] uppercase tracking-[0.4em] text-gold/60">Centro Espiritual</p>
+            <h2 className="mt-2 font-display text-3xl text-paper">Sua jornada</h2>
+          </div>
+          <p className="text-xs text-paper/40">
+            Membro há {data.member_days} {data.member_days === 1 ? "dia" : "dias"}
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <MetricCard icon={Flame} label="Oração" value={data.progress.current_streak} suffix="dias seguidos" />
+          <MetricCard icon={BookOpen} label="Bíblia" value={data.bible_reading_streak} suffix="dias seguidos" />
+          <MetricCard icon={Star} label="XP" value={xpAtual} suffix={`Nível ${data.progress.level}`} />
+          <MetricCard icon={Trophy} label="Medalhas" value={data.achievements_count} suffix="conquistas" />
+          <MetricCard icon={CalendarDays} label="Capítulos" value={data.bible_chapters_read} suffix="lidos" />
+          <MetricCard icon={Award} label="Melhor sequência" value={data.progress.best_streak} suffix="dias" />
+        </div>
+
+        {/* Meta semanal */}
+        <div className="mt-6 glass p-6 border border-gold/15">
+          <div className="flex items-center justify-between mb-3">
+            <div className="flex items-center gap-2 text-gold/70">
+              <Target className="size-4" />
+              <span className="text-[10px] uppercase tracking-[0.3em]">Meta semanal</span>
+            </div>
+            <span className="text-xs text-paper/60">
+              {data.weekly_check_ins}/{data.weekly_goal} dias
+            </span>
+          </div>
+          <div className="h-2 bg-gold/10 overflow-hidden rounded-full">
+            <div
+              className="h-full bg-gold transition-all"
+              style={{ width: `${Math.min(100, (data.weekly_check_ins / data.weekly_goal) * 100)}%` }}
+            />
+          </div>
+          <p className="mt-3 text-xs text-paper/50">
+            {data.weekly_check_ins >= data.weekly_goal
+              ? "Meta da semana cumprida. Deo gratias."
+              : `Faltam ${data.weekly_goal - data.weekly_check_ins} dia(s) para completar a semana santa.`}
+          </p>
+        </div>
+
+        {/* Medalhas */}
+        {data.achievements.length > 0 && (
+          <div className="mt-6 glass p-6 border border-gold/15">
+            <div className="flex items-center gap-2 text-gold/70 mb-4">
+              <Trophy className="size-4" />
+              <span className="text-[10px] uppercase tracking-[0.3em]">Medalhas conquistadas</span>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+              {data.achievements.slice(0, 8).map((a) => (
+                <div
+                  key={a.code}
+                  className={`p-4 border ${tierBorder(a.tier)} bg-deep/30 flex items-start gap-3`}
+                  title={a.description}
+                >
+                  <div className={`text-2xl leading-none ${tierColor(a.tier)}`}>{a.icon ?? "✦"}</div>
+                  <div className="min-w-0">
+                    <p className="text-sm text-paper truncate">{a.title}</p>
+                    <p className="text-[10px] uppercase tracking-[0.2em] text-paper/40 mt-0.5">{a.tier}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </section>
+
 
       {/* Diário Espiritual + Conquistas */}
       <section className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12 items-stretch">
@@ -368,3 +441,35 @@ function proximaMeta(streak: number): string {
   if (streak < 100) return `Cêntuplo de graças (${streak}/100)`;
   return "Você é exemplo de perseverança.";
 }
+
+function MetricCard({ icon: Icon, label, value, suffix }: { icon: typeof Sparkles; label: string; value: number; suffix?: string }) {
+  return (
+    <div className="glass p-4 border border-gold/15">
+      <div className="flex items-center gap-2 text-gold/60">
+        <Icon className="size-3.5" />
+        <span className="text-[9px] uppercase tracking-[0.25em]">{label}</span>
+      </div>
+      <p className="mt-2 font-display text-2xl text-paper leading-none">{value}</p>
+      {suffix && <p className="mt-1 text-[10px] text-paper/40">{suffix}</p>}
+    </div>
+  );
+}
+
+function tierBorder(tier: string): string {
+  switch (tier) {
+    case "gold": return "border-gold/50";
+    case "silver": return "border-paper/30";
+    case "platinum": return "border-blue-300/40";
+    default: return "border-amber-700/40";
+  }
+}
+
+function tierColor(tier: string): string {
+  switch (tier) {
+    case "gold": return "text-gold";
+    case "silver": return "text-paper/80";
+    case "platinum": return "text-blue-200";
+    default: return "text-amber-500";
+  }
+}
+
