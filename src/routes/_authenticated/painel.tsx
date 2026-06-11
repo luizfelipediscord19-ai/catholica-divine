@@ -44,6 +44,27 @@ function PainelPage() {
     }
   }, [journal]);
 
+  // XP de login diário (idempotente)
+  const fireLogin = useServerFn(awardXp);
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      try {
+        const res = await fireLogin({ data: { kind: "login" } });
+        if (!cancelled && res.awarded) {
+          toast.success(`+${res.xp_gained} XP · Bem-vindo de volta`, {
+            description: res.level_up ? `Subiu para o nível ${res.new_level}!` : undefined,
+          });
+          qc.invalidateQueries({ queryKey: ["dashboard"] });
+        }
+      } catch { /* silencioso */ }
+    })();
+    return () => { cancelled = true; };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+
+
   const mutation = useMutation({
     mutationFn: () =>
       saveJournal({
