@@ -2,6 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import { PageHero, Section } from "../components/PageShell";
 import { CONJUNTOS, ORACOES_BASE, conjuntoDoDia, type ConjuntoMisterios } from "../lib/data/devocoes/rosario";
+import { MarcarConcluidoButton } from "../components/MarcarConcluidoButton";
+
 
 export const Route = createFileRoute("/oracoes/rosario")({
   head: () => ({
