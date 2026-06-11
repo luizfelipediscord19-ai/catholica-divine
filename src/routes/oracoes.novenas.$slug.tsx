@@ -57,8 +57,12 @@ function Page() {
       </Section>
 
       <Section>
-        <Link to="/oracoes/novenas" className="px-5 py-3 border border-gold/40 hover:bg-gold/10">← Outras novenas</Link>
+        <div className="flex flex-wrap items-center gap-3">
+          <MarcarConcluidoButton kind="novena" ref={n.slug} label="Concluí esta novena (+50 XP)" doneLabel="Novena registrada ✓" />
+          <Link to="/oracoes/novenas" className="px-5 py-3 border border-gold/40 hover:bg-gold/10">← Outras novenas</Link>
+        </div>
       </Section>
+
     </div>
   );
 }
