@@ -60,31 +60,101 @@ export const getDashboard = createServerFn({ method: "GET" })
       .from("user_progress")
       .upsert({ user_id: userId }, { onConflict: "user_id", ignoreDuplicates: true });
 
-    const [{ data: profile }, { data: progress }, { data: lastReading }, { count: achCount }] =
-      await Promise.all([
-        supabase.from("profiles").select("display_name, created_at").eq("id", userId).single(),
-        supabase
-          .from("user_progress")
-          .select("xp, level, current_streak, best_streak, last_check_in, total_check_ins")
-          .eq("user_id", userId)
-          .single(),
-        supabase
-          .from("reading_progress")
-          .select("book_slug, chapter, read_at")
-          .eq("user_id", userId)
-          .order("read_at", { ascending: false })
-          .limit(1)
-          .maybeSingle(),
-        supabase
-          .from("user_achievements")
-          .select("achievement_code", { count: "exact", head: true })
-          .eq("user_id", userId),
-      ]);
+    const sevenDaysAgo = new Date();
+    sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 6);
+    const sevenDaysAgoStr = sevenDaysAgo.toISOString().slice(0, 10);
+
+    const [
+      { data: profile },
+      { data: progress },
+      { data: lastReading },
+      { data: userAchievements },
+      { data: weeklyEvents },
+      { data: readingDays },
+      { count: bibleChaptersCount },
+    ] = await Promise.all([
+      supabase.from("profiles").select("display_name, created_at").eq("id", userId).single(),
+      supabase
+        .from("user_progress")
+        .select("xp, level, current_streak, best_streak, last_check_in, total_check_ins")
+        .eq("user_id", userId)
+        .single(),
+      supabase
+        .from("reading_progress")
+        .select("book_slug, chapter, read_at")
+        .eq("user_id", userId)
+        .order("read_at", { ascending: false })
+        .limit(1)
+        .maybeSingle(),
+      supabase
+        .from("user_achievements")
+        .select("achievement_code, unlocked_at, achievements(title, description, tier, icon)")
+        .eq("user_id", userId)
+        .order("unlocked_at", { ascending: false }),
+      supabase
+        .from("xp_events")
+        .select("created_at")
+        .eq("user_id", userId)
+        .eq("kind", "daily_check_in")
+        .gte("created_at", sevenDaysAgo.toISOString()),
+      supabase
+        .from("reading_progress")
+        .select("read_at")
+        .eq("user_id", userId)
+        .order("read_at", { ascending: false })
+        .limit(120),
+      supabase
+        .from("reading_progress")
+        .select("book_slug", { count: "exact", head: true })
+        .eq("user_id", userId),
+    ]);
+
+    // Bible reading streak: dias consecutivos com pelo menos uma leitura, terminando hoje ou ontem
+    const readingDayset = new Set(
+      (readingDays ?? []).map((r) => new Date(r.read_at).toISOString().slice(0, 10)),
+    );
+    let bibleStreak = 0;
+    const cursor = new Date();
+    const todayKey = cursor.toISOString().slice(0, 10);
+    const yest = new Date(); yest.setDate(yest.getDate() - 1);
+    const yestKey = yest.toISOString().slice(0, 10);
+    if (readingDayset.has(todayKey) || readingDayset.has(yestKey)) {
+      if (!readingDayset.has(todayKey)) cursor.setDate(cursor.getDate() - 1);
+      while (readingDayset.has(cursor.toISOString().slice(0, 10))) {
+        bibleStreak++;
+        cursor.setDate(cursor.getDate() - 1);
+      }
+    }
+
+    const achievements = (userAchievements ?? []).map((row) => {
+      const detail = (row as { achievements: { title: string; description: string; tier: string; icon: string | null } | null }).achievements;
+      return {
+        code: row.achievement_code,
+        title: detail?.title ?? row.achievement_code,
+        description: detail?.description ?? "",
+        tier: detail?.tier ?? "bronze",
+        icon: detail?.icon ?? null,
+        unlocked_at: row.unlocked_at,
+      };
+    });
+
+    const createdAt = profile?.created_at ?? new Date().toISOString();
+    const memberDays = Math.max(
+      0,
+      Math.floor((Date.now() - new Date(createdAt).getTime()) / 86400000),
+    );
+
+    // Conta dias únicos com check-in nos últimos 7 dias
+    const weeklyDays = new Set(
+      (weeklyEvents ?? []).map((e) => new Date(e.created_at).toISOString().slice(0, 10)),
+    );
+
+    void sevenDaysAgoStr;
 
     return {
       profile: {
         display_name: profile?.display_name ?? "Irmão(ã)",
-        created_at: profile?.created_at ?? new Date().toISOString(),
+        created_at: createdAt,
       },
       progress: {
         xp: progress?.xp ?? 0,
@@ -97,7 +167,14 @@ export const getDashboard = createServerFn({ method: "GET" })
       last_reading: lastReading
         ? { book_slug: lastReading.book_slug, chapter: lastReading.chapter, read_at: lastReading.read_at }
         : null,
-      achievements_count: achCount ?? 0,
+      achievements_count: achievements.length,
+      achievements,
+      weekly_check_ins: weeklyDays.size,
+      weekly_goal: 7,
+      bible_reading_streak: bibleStreak,
+      bible_chapters_read: bibleChaptersCount ?? 0,
+      member_days: memberDays,
+
     };
   });
 
