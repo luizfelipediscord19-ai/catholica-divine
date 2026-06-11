@@ -303,12 +303,14 @@ function Page() {
 
       <Section kicker="Mais devoções" title="Continue na vida de oração">
         <div className="flex flex-wrap gap-3">
+          <MarcarConcluidoButton kind="oracao" ref="rosario" label="Concluí o Rosário (+10 XP)" doneLabel="Rosário registrado ✓" />
           <Link to="/oracoes" className="px-5 py-3 border border-gold/40 hover:bg-gold/10">← Todas as orações</Link>
           <Link to="/oracoes/via-sacra" className="px-5 py-3 border border-gold/40 hover:bg-gold/10">Via-Sacra</Link>
           <Link to="/oracoes/novenas" className="px-5 py-3 border border-gold/40 hover:bg-gold/10">Novenas</Link>
           <Link to="/oracoes/liturgia-das-horas" className="px-5 py-3 border border-gold/40 hover:bg-gold/10">Liturgia das Horas</Link>
         </div>
       </Section>
+
     </div>
   );
 }
