@@ -9,11 +9,14 @@ import {
 import { toast } from "sonner";
 import { getDashboard } from "@/lib/dashboard.functions";
 import { getTodayJournal, saveJournalEntry } from "@/lib/diario.functions";
+import { awardXp, XP_RULES } from "@/lib/xp.functions";
+import { MarcarConcluidoButton } from "@/components/MarcarConcluidoButton";
 import { santoDoDia, evangelhoDoDia, versoDoDia } from "@/lib/data/hoje";
 import { leituraDoDia } from "@/lib/data/biblia/leituras";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+
 
 export const Route = createFileRoute("/_authenticated/painel")({
   head: () => ({ meta: [{ title: "Meu Painel — Portal Católico" }] }),
