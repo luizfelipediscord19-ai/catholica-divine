@@ -441,3 +441,35 @@ function proximaMeta(streak: number): string {
   if (streak < 100) return `Cêntuplo de graças (${streak}/100)`;
   return "Você é exemplo de perseverança.";
 }
+
+function MetricCard({ icon: Icon, label, value, suffix }: { icon: typeof Sparkles; label: string; value: number; suffix?: string }) {
+  return (
+    <div className="glass p-4 border border-gold/15">
+      <div className="flex items-center gap-2 text-gold/60">
+        <Icon className="size-3.5" />
+        <span className="text-[9px] uppercase tracking-[0.25em]">{label}</span>
+      </div>
+      <p className="mt-2 font-display text-2xl text-paper leading-none">{value}</p>
+      {suffix && <p className="mt-1 text-[10px] text-paper/40">{suffix}</p>}
+    </div>
+  );
+}
+
+function tierBorder(tier: string): string {
+  switch (tier) {
+    case "gold": return "border-gold/50";
+    case "silver": return "border-paper/30";
+    case "platinum": return "border-blue-300/40";
+    default: return "border-amber-700/40";
+  }
+}
+
+function tierColor(tier: string): string {
+  switch (tier) {
+    case "gold": return "text-gold";
+    case "silver": return "text-paper/80";
+    case "platinum": return "text-blue-200";
+    default: return "text-amber-500";
+  }
+}
+
