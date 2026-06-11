@@ -95,8 +95,8 @@ export const getDashboard = createServerFn({ method: "GET" })
         .from("xp_events")
         .select("created_at")
         .eq("user_id", userId)
-        .eq("kind", "daily_check_in")
         .gte("created_at", sevenDaysAgo.toISOString()),
+
       supabase
         .from("reading_progress")
         .select("read_at")
