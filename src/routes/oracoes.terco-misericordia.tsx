@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero, Section, CardGrid, ContentCard } from "../components/PageShell";
+import { MarcarConcluidoButton } from "../components/MarcarConcluidoButton";
+
 
 export const Route = createFileRoute("/oracoes/terco-misericordia")({
   head: () => ({
