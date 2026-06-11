@@ -1,9 +1,11 @@
 import { createFileRoute, Link, useNavigate, useRouterState } from "@tanstack/react-router";
+import { useServerFn } from "@tanstack/react-start";
 import { useEffect, useState } from "react";
 import { Church, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/use-auth";
+import { signUpWithEmail } from "@/lib/auth.functions";
 import { traduzirErro as traduzirErroAuth } from "@/lib/auth/traduzir-erro";
 
 export const Route = createFileRoute("/auth")({
@@ -18,6 +20,7 @@ export const Route = createFileRoute("/auth")({
 
 function AuthPage() {
   const navigate = useNavigate();
+  const signUp = useServerFn(signUpWithEmail);
   const { user, loading: authLoading } = useAuth();
   const [mode, setMode] = useState<"login" | "signup">("login");
   const [email, setEmail] = useState("");
@@ -42,17 +45,20 @@ function AuthPage() {
         toast.success("Bem-vindo de volta!");
         navigate({ to: "/painel" });
       } else {
-        const { error } = await supabase.auth.signUp({
-          email,
-          password,
-          options: {
-            emailRedirectTo: `${window.location.origin}/painel`,
-            data: { display_name: displayName || email.split("@")[0] },
+        const result = await signUp({
+          data: {
+            email,
+            password,
+            displayName,
+            redirectTo: `${window.location.origin}/painel`,
           },
         });
-        if (error) throw error;
-        toast.success("Conta criada! Verifique seu e-mail para confirmar.");
-        navigate({ to: "/painel" });
+        toast.success(
+          result.needsEmailConfirmation
+            ? "Conta criada! Verifique seu e-mail para confirmar."
+            : "Conta criada com sucesso!",
+        );
+        if (!result.needsEmailConfirmation) navigate({ to: "/painel" });
       }
     } catch (err) {
       console.error("[auth] erro:", err);
