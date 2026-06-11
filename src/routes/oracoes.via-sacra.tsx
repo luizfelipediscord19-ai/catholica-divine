@@ -2,6 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { PageHero, Section } from "../components/PageShell";
 import { ESTACOES } from "../lib/data/devocoes/viasacra";
+import { MarcarConcluidoButton } from "../components/MarcarConcluidoButton";
+
 
 export const Route = createFileRoute("/oracoes/via-sacra")({
   head: () => ({
