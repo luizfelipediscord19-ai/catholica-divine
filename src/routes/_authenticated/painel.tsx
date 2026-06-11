@@ -3,8 +3,9 @@ import { useServerFn } from "@tanstack/react-start";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
 import {
-  Sparkles, Flame, Trophy, BookOpen, Crown, Star, Loader2, Check, ChevronRight, Clock, Heart,
+  Sparkles, Flame, Trophy, BookOpen, Crown, Star, Loader2, Check, ChevronRight, Clock, Heart, CalendarDays, Target, Award,
 } from "lucide-react";
+
 import { toast } from "sonner";
 import { getDashboard } from "@/lib/dashboard.functions";
 import { getTodayJournal, saveJournalEntry } from "@/lib/diario.functions";
