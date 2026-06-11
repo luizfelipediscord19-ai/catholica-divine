@@ -36,7 +36,14 @@ export type DashboardData = {
   };
   last_reading: { book_slug: string; chapter: number; read_at: string } | null;
   achievements_count: number;
+  achievements: { code: string; title: string; description: string; tier: string; icon: string | null; unlocked_at: string }[];
+  weekly_check_ins: number;
+  weekly_goal: number;
+  bible_reading_streak: number;
+  bible_chapters_read: number;
+  member_days: number;
 };
+
 
 export const getDashboard = createServerFn({ method: "GET" })
   .middleware([requireSupabaseAuth])
