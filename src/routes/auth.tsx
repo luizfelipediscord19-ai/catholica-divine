@@ -42,8 +42,10 @@ function AuthPage() {
     setLoading(true);
     try {
       if (mode === "login") {
-        const { error } = await supabase.auth.signInWithPassword({ email, password });
-        if (error) throw error;
+        const result = await signIn({ data: { email, password } });
+        // Persist server-issued session into the browser client (localStorage)
+        const { error: setErr } = await supabase.auth.setSession(result.session);
+        if (setErr) throw setErr;
         toast.success("Bem-vindo de volta!");
         navigate({ to: "/painel" });
       } else {
@@ -55,6 +57,10 @@ function AuthPage() {
             redirectTo: `${window.location.origin}/painel`,
           },
         });
+        if (result.session) {
+          const { error: setErr } = await supabase.auth.setSession(result.session);
+          if (setErr) throw setErr;
+        }
         toast.success(
           result.needsEmailConfirmation
             ? "Conta criada! Verifique seu e-mail para confirmar."
