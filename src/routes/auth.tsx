@@ -5,7 +5,7 @@ import { Church, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/use-auth";
-import { signUpWithEmail } from "@/lib/auth.functions";
+import { signUpWithEmail, signInWithEmail, requestPasswordReset } from "@/lib/auth.functions";
 import { traduzirErro as traduzirErroAuth } from "@/lib/auth/traduzir-erro";
 
 export const Route = createFileRoute("/auth")({
