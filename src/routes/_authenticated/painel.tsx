@@ -341,6 +341,45 @@ function PainelPage() {
         />
       </section>
 
+      {/* Ação rápida: Evangelho lido + Regras de XP */}
+      <section className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12 items-stretch">
+        <div className="lg:col-span-2 glass p-7 border border-gold/15 flex flex-col">
+          <p className="text-[10px] uppercase tracking-[0.3em] text-gold/60">Ação do dia</p>
+          <h3 className="mt-2 font-display text-2xl text-paper">Já meditei no Evangelho de hoje</h3>
+          <p className="mt-2 text-sm text-paper/60">
+            {evangelho.nome} {evangelho.capitulo}{evangelho.vi ? `, ${evangelho.vi}-${evangelho.vf}` : ""}. Marque para registrar e ganhar XP.
+          </p>
+          <div className="mt-5 flex flex-wrap gap-3">
+            <MarcarConcluidoButton
+              kind="evangelho_dia"
+              ref={hoje.toISOString().slice(0, 10)}
+              label={`Marcar Evangelho lido (+${XP_RULES.evangelho_dia} XP)`}
+              doneLabel="Evangelho de hoje registrado ✓"
+            />
+            <Link
+              to="/biblia/$livro/$capitulo"
+              params={{ livro: evangelho.livro, capitulo: String(evangelho.capitulo) }}
+              className="inline-flex items-center gap-2 px-5 py-3 text-[11px] uppercase tracking-[0.3em] border border-gold/30 text-gold hover:bg-gold/10 transition"
+            >
+              Abrir na Bíblia <ChevronRight className="size-3.5" />
+            </Link>
+          </div>
+        </div>
+
+        <div className="glass p-7 border border-gold/15">
+          <p className="text-[10px] uppercase tracking-[0.3em] text-gold/60">Como ganhar XP</p>
+          <ul className="mt-4 space-y-2 text-sm text-paper/70">
+            <XpRule label="Login diário" xp={XP_RULES.login} />
+            <XpRule label="Ler artigo" xp={XP_RULES.artigo} />
+            <XpRule label="Evangelho do dia" xp={XP_RULES.evangelho_dia} />
+            <XpRule label="Oração concluída" xp={XP_RULES.oracao} />
+            <XpRule label="Novena concluída" xp={XP_RULES.novena} />
+            <XpRule label="Curso finalizado" xp={XP_RULES.curso} />
+          </ul>
+        </div>
+      </section>
+
+
       {/* Continue lendo */}
       <section className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
         <div className="glass p-8 border border-gold/15 flex flex-col">
