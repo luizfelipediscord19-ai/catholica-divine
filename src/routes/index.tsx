@@ -35,7 +35,7 @@ const PILLARS = [
   { to: "/oracoes", icon: Sparkles, title: "Orações", desc: "Rosário, Liturgia das Horas, novenas e ladainhas." },
   { to: "/apologetica", icon: Compass, title: "Apologética", desc: "Defesa racional da fé contra objeções modernas." },
   { to: "/calendario-liturgico", icon: Calendar, title: "Calendário", desc: "Tempo litúrgico, festas e memórias dos santos." },
-  { to: "/diario", icon: Sparkles, title: "Diário de Fé", desc: "IA-driven journal para reflexão e oração pessoal." },
+  { to: "/assistente", icon: Sparkles, title: "Sophia IA", desc: "Tire dúvidas com respostas fundamentadas no Magistério." },
 ];
 
 const DAILY = [

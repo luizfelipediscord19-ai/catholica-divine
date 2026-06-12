@@ -1,12 +1,6 @@
-import { Link, useRouterState, useNavigate } from "@tanstack/react-router";
-import { Search, Sparkles, Menu, X, Church, User, LogOut, LayoutDashboard } from "lucide-react";
+import { Link, useRouterState } from "@tanstack/react-router";
+import { Search, Sparkles, Menu, X, Church } from "lucide-react";
 import { useState } from "react";
-import { useAuth } from "@/hooks/use-auth";
-import { supabase } from "@/integrations/supabase/client";
-import { toast } from "sonner";
-import {
-  DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 
 const NAV = [
   { to: "/fe-catolica", label: "A Fé" },
@@ -24,18 +18,6 @@ const NAV = [
 export function SiteHeader() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const [open, setOpen] = useState(false);
-  const { user } = useAuth();
-  const navigate = useNavigate();
-
-  async function handleLogout() {
-    await supabase.auth.signOut();
-    toast.success("Até logo.");
-    navigate({ to: "/" });
-  }
-
-  const initial = (user?.user_metadata?.display_name as string | undefined)?.[0]
-    ?? user?.email?.[0]
-    ?? "?";
 
   return (
     <header className="sticky top-0 z-50 glass border-b border-gold/10">
@@ -82,34 +64,6 @@ export function SiteHeader() {
             <Search className="size-4" />
           </Link>
 
-          {user ? (
-            <DropdownMenu>
-              <DropdownMenuTrigger className="size-11 rounded-full border border-gold/30 text-gold font-display text-sm flex items-center justify-center hover:bg-gold/10 transition uppercase">
-                {initial}
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="w-56">
-                <DropdownMenuLabel className="truncate">{user.email}</DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem asChild>
-                  <Link to="/painel" className="cursor-pointer">
-                    <LayoutDashboard className="size-4 mr-2" /> Meu painel
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem onClick={handleLogout} className="cursor-pointer">
-                  <LogOut className="size-4 mr-2" /> Sair
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          ) : (
-            <Link
-              to="/auth"
-              className="hidden sm:inline-flex items-center gap-2 px-4 py-3 text-[10px] uppercase tracking-[0.25em] font-medium text-paper border border-gold/30 hover:border-gold hover:text-gold transition"
-            >
-              <User className="size-3.5" /> Entrar
-            </Link>
-          )}
-
           <button
             type="button"
             aria-label={open ? "Fechar menu" : "Abrir menu"}
@@ -137,15 +91,6 @@ export function SiteHeader() {
             <Link to="/assistente" onClick={() => setOpen(false)} className="py-2 text-gold">
               Assistente IA
             </Link>
-            {user ? (
-              <Link to="/painel" onClick={() => setOpen(false)} className="py-2 text-gold">
-                Meu painel
-              </Link>
-            ) : (
-              <Link to="/auth" onClick={() => setOpen(false)} className="py-2 text-gold">
-                Entrar
-              </Link>
-            )}
           </nav>
         </div>
       ) : null}

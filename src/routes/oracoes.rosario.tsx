@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import { PageHero, Section } from "../components/PageShell";
 import { CONJUNTOS, ORACOES_BASE, conjuntoDoDia, type ConjuntoMisterios } from "../lib/data/devocoes/rosario";
-import { MarcarConcluidoButton } from "../components/MarcarConcluidoButton";
+import { Relacionados } from "../components/Relacionados";
 
 
 export const Route = createFileRoute("/oracoes/rosario")({
@@ -303,12 +303,12 @@ function Page() {
 
       <Section kicker="Mais devoções" title="Continue na vida de oração">
         <div className="flex flex-wrap gap-3">
-          <MarcarConcluidoButton kind="oracao" ref="rosario" label="Concluí o Rosário (+10 XP)" doneLabel="Rosário registrado ✓" />
           <Link to="/oracoes" className="px-5 py-3 border border-gold/40 hover:bg-gold/10">← Todas as orações</Link>
           <Link to="/oracoes/via-sacra" className="px-5 py-3 border border-gold/40 hover:bg-gold/10">Via-Sacra</Link>
           <Link to="/oracoes/novenas" className="px-5 py-3 border border-gold/40 hover:bg-gold/10">Novenas</Link>
           <Link to="/oracoes/liturgia-das-horas" className="px-5 py-3 border border-gold/40 hover:bg-gold/10">Liturgia das Horas</Link>
         </div>
+        <Relacionados topic="rosario" className="mt-8" />
       </Section>
 
     </div>

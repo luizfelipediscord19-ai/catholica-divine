@@ -4,7 +4,7 @@ import { LIVROS } from "../lib/data/biblia";
 import manuscrito from "../assets/manuscrito.jpg";
 import { useState } from "react";
 import { Search } from "lucide-react";
-import { BibleProgressBar } from "../components/biblia/BibleProgressBar";
+
 
 export const Route = createFileRoute("/biblia/")({
   head: () => ({
@@ -197,7 +197,6 @@ function Page() {
       </Section>
 
       <div className="max-w-6xl mx-auto px-6 pt-4 space-y-4">
-        <BibleProgressBar />
         <div className="flex flex-wrap items-center gap-4 justify-between">
           <div className="relative max-w-md w-full">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 size-4 text-gold/60" />
