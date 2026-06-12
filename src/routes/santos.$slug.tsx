@@ -2,6 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { PageHero, Section } from "../components/PageShell";
 import { SANTOS_LISTA, getSantoBasicoBySlug } from "@/lib/santos-lista";
 import { buildSantoView } from "@/lib/santos-helpers";
+import { Relacionados } from "@/components/Relacionados";
 
 export const Route = createFileRoute("/santos/$slug")({
   head: ({ params }) => {
@@ -147,6 +148,8 @@ function SantoPage() {
                 ) : null}
               </dl>
             </div>
+
+            <Relacionados topic={`santo:${slug}`} variant="aside" />
 
             <div>
               <p className="text-[10px] tracking-[0.3em] uppercase text-gold/80 mb-3">

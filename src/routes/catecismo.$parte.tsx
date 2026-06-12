@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { PARTES, SECOES, VATICAN_URL, type SecaoCIC } from "../lib/data/catecismo";
 import { ArrowLeft, ExternalLink } from "lucide-react";
+import { Relacionados } from "../components/Relacionados";
 
 export const Route = createFileRoute("/catecismo/$parte")({
   loader: ({ params }) => {
@@ -52,6 +53,8 @@ function Page() {
           </div>
         ))}
       </div>
+
+      <Relacionados topic={`catecismo:${parte.slug}`} className="mt-10" />
 
       <a
         href={VATICAN_URL}
