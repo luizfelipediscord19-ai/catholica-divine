@@ -68,18 +68,13 @@ export function Relacionados({ topic, className = "", variant = "card" }: Props)
 }
 
 function RefLink({ item }: { item: RefItem }) {
-  // Link aceita params/search opcionais; usamos any-cast leve para evitar
-  // necessidade de discriminar cada rota do tipo de "to".
-  const props = {
-    to: item.to,
-    params: item.params,
-    search: item.search,
-    className:
-      "text-sm text-foreground hover:text-gold transition-colors inline-flex items-center gap-2 group",
-  };
   return (
-    // @ts-expect-error rota dinâmica — tipos validados em runtime pelo router
-    <Link {...props}>
+    <Link
+      to={item.to as never}
+      params={item.params as never}
+      search={item.search as never}
+      className="text-sm text-foreground hover:text-gold transition-colors inline-flex items-center gap-2 group"
+    >
       <span className="text-gold/40 group-hover:text-gold transition-colors">→</span>
       <span>{item.label}</span>
     </Link>
