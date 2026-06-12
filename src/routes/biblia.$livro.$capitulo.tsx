@@ -2,8 +2,7 @@ import { createFileRoute, Link, notFound, useNavigate } from "@tanstack/react-ro
 import { useEffect, useState } from "react";
 import { getLivro, getUrlOficial } from "../lib/data/biblia";
 import { ArrowLeft, ExternalLink, ChevronLeft, ChevronRight, Filter, X } from "lucide-react";
-import { ChapterActions } from "../components/biblia/ChapterActions";
-import { VerseBookmarkButton } from "../components/biblia/VerseBookmarkButton";
+import { Relacionados } from "../components/Relacionados";
 
 type Verso = { v: number; t: string };
 type LivroJson = { slug: string; nome: string; capitulos: Record<string, Verso[]> };
@@ -241,10 +240,7 @@ function Page() {
                     {v.v}
                   </a>
                   <span className="block animate-content-fade" style={{ animationDelay: `${(v.v % 10) * 50}ms` }}>
-                    {v.t}{" "}
-                    <span className="inline-flex align-middle ml-1">
-                      <VerseBookmarkButton book={livro.slug} chapter={capitulo} verse={v.v} verseText={v.t} />
-                    </span>
+                    {v.t}
                   </span>
                 </p>
               ))}
@@ -274,9 +270,7 @@ function Page() {
         />
       )}
 
-      <ChapterActions book={livro.slug} chapter={capitulo} bookName={livro.nome} />
-
-
+      <Relacionados topic={`biblia:${livro.slug}`} className="mt-10" />
 
       <nav className="mt-10 flex items-center justify-between gap-4">
         {anterior ? (

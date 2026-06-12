@@ -1,0 +1,12 @@
+DROP TRIGGER IF EXISTS on_auth_user_created ON auth.users;
+DROP FUNCTION IF EXISTS public.handle_new_user() CASCADE;
+DROP TABLE IF EXISTS public.xp_events CASCADE;
+DROP TABLE IF EXISTS public.user_achievements CASCADE;
+DROP TABLE IF EXISTS public.achievements CASCADE;
+DROP TABLE IF EXISTS public.reading_progress CASCADE;
+DROP TABLE IF EXISTS public.bible_bookmarks CASCADE;
+DROP TABLE IF EXISTS public.bible_notes CASCADE;
+DROP TABLE IF EXISTS public.prayer_journal CASCADE;
+DROP TABLE IF EXISTS public.user_progress CASCADE;
+DROP TABLE IF EXISTS public.profiles CASCADE;
+DROP TABLE IF EXISTS public.bible_books CASCADE;

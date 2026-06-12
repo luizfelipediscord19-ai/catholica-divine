@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { PageHero, Section } from "../components/PageShell";
 import { ESTACOES } from "../lib/data/devocoes/viasacra";
-import { MarcarConcluidoButton } from "../components/MarcarConcluidoButton";
+import { Relacionados } from "../components/Relacionados";
 
 
 export const Route = createFileRoute("/oracoes/via-sacra")({
@@ -53,9 +53,9 @@ function Page() {
 
       <Section>
         <div className="flex flex-wrap items-center gap-3">
-          {i === 13 && <MarcarConcluidoButton kind="oracao" ref="via-sacra" />}
           <Link to="/oracoes" className="px-5 py-3 border border-gold/40 hover:bg-gold/10">← Todas as orações</Link>
         </div>
+        <Relacionados topic="via-sacra" className="mt-8" />
       </Section>
 
     </div>

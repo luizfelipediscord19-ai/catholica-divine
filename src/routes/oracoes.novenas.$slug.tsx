@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { PageHero, Section } from "../components/PageShell";
 import { NOVENAS, type Novena } from "../lib/data/devocoes/novenas";
-import { MarcarConcluidoButton } from "../components/MarcarConcluidoButton";
+
 
 
 export const Route = createFileRoute("/oracoes/novenas/$slug")({
@@ -58,7 +58,6 @@ function Page() {
 
       <Section>
         <div className="flex flex-wrap items-center gap-3">
-          <MarcarConcluidoButton kind="novena" ref={n.slug} label="Concluí esta novena (+50 XP)" doneLabel="Novena registrada ✓" />
           <Link to="/oracoes/novenas" className="px-5 py-3 border border-gold/40 hover:bg-gold/10">← Outras novenas</Link>
         </div>
       </Section>
