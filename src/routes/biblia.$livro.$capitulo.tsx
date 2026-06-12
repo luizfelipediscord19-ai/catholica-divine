@@ -2,6 +2,7 @@ import { createFileRoute, Link, notFound, useNavigate } from "@tanstack/react-ro
 import { useEffect, useState } from "react";
 import { getLivro, getUrlOficial } from "../lib/data/biblia";
 import { ArrowLeft, ExternalLink, ChevronLeft, ChevronRight, Filter, X } from "lucide-react";
+import { Relacionados } from "../components/Relacionados";
 
 type Verso = { v: number; t: string };
 type LivroJson = { slug: string; nome: string; capitulos: Record<string, Verso[]> };
