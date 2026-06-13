@@ -360,8 +360,9 @@ function Home() {
             Inteligência Artificial <br/> <em className="text-gold italic font-medium">ao serviço da Verdade</em>
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-light mb-16">
-            Respostas fundamentadas na Bíblia, no Catecismo e nos documentos oficiais da
-            Igreja — com citações, contexto e referências.
+            Treinada exclusivamente sobre a Bíblia, o Catecismo e os documentos do Magistério.
+            Cada resposta vem com referências verificáveis — Escritura, parágrafos do CIC,
+            concílios e Padres da Igreja. Nada de opinião; só o que a Igreja ensina.
           </p>
           <Link
             to="/assistente"
