@@ -1,5 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { getLivro, LIVROS } from "../lib/data/biblia";
+import { getIntroducao } from "../lib/data/biblia/introducoes";
 import { ArrowLeft, BookOpen } from "lucide-react";
 
 export const Route = createFileRoute("/biblia/$livro/")({
