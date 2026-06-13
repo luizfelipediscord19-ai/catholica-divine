@@ -1,5 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { getLivro, LIVROS } from "../lib/data/biblia";
+import { getIntroducao } from "../lib/data/biblia/introducoes";
 import { ArrowLeft, BookOpen } from "lucide-react";
 
 export const Route = createFileRoute("/biblia/$livro/")({
@@ -32,6 +33,7 @@ export const Route = createFileRoute("/biblia/$livro/")({
 
 function Page() {
   const { livro } = Route.useLoaderData();
+  const intro = getIntroducao(livro.slug);
   const idx = LIVROS.findIndex((l) => l.slug === livro.slug);
   const anterior = idx > 0 ? LIVROS[idx - 1] : null;
   const proximo = idx < LIVROS.length - 1 ? LIVROS[idx + 1] : null;
@@ -73,7 +75,45 @@ function Page() {
         </div>
       </div>
 
+      {intro ? (
+        <section className="max-w-5xl mx-auto px-6 py-16 border-b border-gold/15">
+          <div className="grid md:grid-cols-3 gap-10">
+            <div className="md:col-span-2 space-y-8">
+              <div>
+                <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-3">Introdução</p>
+                <p className="text-base leading-relaxed text-foreground/90">{intro.contexto}</p>
+              </div>
+              <div>
+                <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-3">Passagens-chave</p>
+                <ul className="space-y-2">
+                  {intro.passagens.map((p) => (
+                    <li key={p} className="text-sm text-muted-foreground leading-relaxed border-l-2 border-gold/40 pl-3">
+                      {p}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-3">Sentido cristológico</p>
+                <p className="text-sm italic text-foreground/85 leading-relaxed">{intro.cristo}</p>
+              </div>
+            </div>
+            <aside>
+              <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-3">Temas centrais</p>
+              <ul className="space-y-3">
+                {intro.temas.map((t) => (
+                  <li key={t} className="text-sm text-foreground/90 border border-gold/20 bg-card p-3">
+                    {t}
+                  </li>
+                ))}
+              </ul>
+            </aside>
+          </div>
+        </section>
+      ) : null}
+
       <section className="max-w-5xl mx-auto px-6 py-16">
+
         <div className="flex items-end justify-between flex-wrap gap-4 mb-6">
           <h2 className="font-display text-2xl text-foreground flex items-center gap-3">
             <BookOpen className="size-5 text-gold" /> Capítulos
