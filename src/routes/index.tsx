@@ -10,32 +10,52 @@ import { ScrollReveal } from "../components/ScrollReveal";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Portal Católico — Biblioteca Digital da Fé" },
+      { title: "Portal Católico — Bíblia, Catecismo e a Tradição da Igreja" },
       {
         name: "description",
         content:
-          "A maior biblioteca digital católica em português: Bíblia, Catecismo, Sacramentos, Santos, Maria, orações, apologética e IA fiel ao Magistério.",
+          "Biblioteca digital da fé católica em português: Bíblia comentada, os 2.865 parágrafos do Catecismo, vidas dos santos, mariologia, sacramentos, orações tradicionais e assistente de IA fiel ao Magistério.",
       },
+      { name: "keywords", content: "Bíblia católica, Catecismo da Igreja Católica, santos, Maria, sacramentos, orações católicas, apologética, magistério" },
       { property: "og:title", content: "Portal Católico — Biblioteca Digital da Fé" },
       {
         property: "og:description",
-        content: "Estudo, oração e formação na fé católica — fiel ao Magistério da Igreja.",
+        content: "Estudo, oração e formação na fé católica — fiel ao Magistério da Igreja, de Pedro a Francisco.",
       },
+      { property: "og:type", content: "website" },
     ],
   }),
   component: Home,
 });
 
 const PILLARS = [
-  { to: "/biblia", icon: BookOpen, title: "Bíblia Sagrada", desc: "73 livros, comentários patrísticos, mapas e leitura em áudio." },
-  { to: "/catecismo", icon: ScrollText, title: "Catecismo", desc: "Os 2.865 parágrafos da fé católica, comentados e pesquisáveis." },
-  { to: "/sacramentos", icon: Church, title: "Sacramentos", desc: "Os 7 sinais eficazes da graça instituídos por Cristo." },
-  { to: "/santos", icon: Crown, title: "Santos", desc: "Vidas, virtudes e ensinamentos dos amigos de Deus." },
-  { to: "/maria", icon: Heart, title: "Mariologia", desc: "A Mãe de Deus, suas aparições e dogmas marianos." },
-  { to: "/oracoes", icon: Sparkles, title: "Orações", desc: "Rosário, Liturgia das Horas, novenas e ladainhas." },
-  { to: "/apologetica", icon: Compass, title: "Apologética", desc: "Defesa racional da fé contra objeções modernas." },
-  { to: "/calendario-liturgico", icon: Calendar, title: "Calendário", desc: "Tempo litúrgico, festas e memórias dos santos." },
-  { to: "/assistente", icon: Sparkles, title: "Sophia IA", desc: "Tire dúvidas com respostas fundamentadas no Magistério." },
+  { to: "/biblia", icon: BookOpen, title: "Bíblia Sagrada", desc: "Os 73 livros canônicos com introduções, contexto histórico e leituras litúrgicas do dia." },
+  { to: "/catecismo", icon: ScrollText, title: "Catecismo", desc: "Os 2.865 parágrafos da fé católica, com referências cruzadas à Escritura e aos Padres." },
+  { to: "/sacramentos", icon: Church, title: "Sacramentos", desc: "Os 7 sinais sensíveis e eficazes da graça instituídos por Cristo — matéria, forma e efeitos." },
+  { to: "/santos", icon: Crown, title: "Santos", desc: "Vidas, virtudes heroicas e escritos dos amigos de Deus, de Estêvão até os mártires do séc. XXI." },
+  { to: "/maria", icon: Heart, title: "Mariologia", desc: "Os quatro dogmas marianos, aparições aprovadas e a maternidade espiritual de Maria." },
+  { to: "/oracoes", icon: Sparkles, title: "Orações", desc: "Rosário, Via-Sacra, Liturgia das Horas, novenas, ladainhas e devoções tradicionais." },
+  { to: "/apologetica", icon: Compass, title: "Apologética", desc: "Defesa racional da fé: existência de Deus, autoridade da Igreja, Bíblia e Tradição." },
+  { to: "/calendario-liturgico", icon: Calendar, title: "Calendário", desc: "Tempo litúrgico, festas, solenidades e memórias dos santos celebradas pela Igreja." },
+  { to: "/assistente", icon: Sparkles, title: "Sophia IA", desc: "Assistente que responde com base no Catecismo, na Escritura e nos documentos do Magistério." },
+];
+
+const PADRES = [
+  {
+    quote: "Onde está Pedro, ali está a Igreja.",
+    author: "Santo Ambrósio",
+    ref: "Comentário ao Salmo 40, séc. IV",
+  },
+  {
+    quote: "Tarde te amei, ó beleza tão antiga e tão nova, tarde te amei.",
+    author: "Santo Agostinho",
+    ref: "Confissões X, 27",
+  },
+  {
+    quote: "Recebei o que sois; tornai-vos o que recebeis: o Corpo de Cristo.",
+    author: "Santo Agostinho",
+    ref: "Sermão 272, sobre a Eucaristia",
+  },
 ];
 
 const DAILY = [
@@ -121,8 +141,9 @@ function Home() {
               </span>
             </h1>
             <p className="max-w-2xl text-lg md:text-2xl text-paper/70 leading-relaxed font-light mb-16 letter-spacing-wide">
-              Bíblia, Catecismo, Magistério, santos e orações — em uma experiência
-              cinematográfica, fiel à doutrina da Igreja de Cristo.
+              Escritura, Catecismo, Padres da Igreja, santos e devoções tradicionais —
+              reunidos em uma única referência de estudo, fiel ao Magistério desde
+              Pedro até hoje.
             </p>
             <div className="flex flex-wrap gap-6">
               <Link
@@ -191,12 +212,13 @@ function Home() {
           <ScrollReveal className="max-w-2xl">
             <p className="text-[10px] tracking-[0.4em] uppercase text-gold mb-4">Os pilares da verdade</p>
             <h2 className="font-display text-5xl md:text-7xl text-foreground leading-[1.1]">
-              Toda a fé católica, organizada <br/> <span className="text-gold/50">para o seu estudo.</span>
+              Duas mil anos de fé, <br/> <span className="text-gold/50">em um só lugar.</span>
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={200} className="max-w-sm">
             <p className="text-muted-foreground text-sm leading-relaxed mb-2 font-light">
-              Explore séculos de tradição, magistério e espiritualidade através de uma interface desenhada para a contemplação.
+              Escritura, Tradição e Magistério — os três canais pelos quais a Revelação chega até nós —
+              organizados com referências cruzadas para um estudo sério e contemplativo.
             </p>
           </ScrollReveal>
         </div>
@@ -255,8 +277,9 @@ function Home() {
               “Faça-se em mim <br/> <span className="text-gold italic">segundo a tua palavra.</span>”
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed font-light mb-12 max-w-lg">
-              A Virgem Maria é o caminho mais seguro a Cristo. Conheça os dogmas marianos,
-              as aparições aprovadas pela Igreja e a teologia da Mãe de Deus segundo os Padres e Doutores.
+              "De Maria nunquam satis" — sobre Maria, nunca o suficiente, dizia São Bernardo.
+              Conheça os quatro dogmas marianos, as aparições aprovadas pela Igreja e a
+              teologia da Theotokos segundo os Padres e Doutores.
             </p>
             <Link
               to="/maria"
@@ -268,6 +291,52 @@ function Home() {
           </ScrollReveal>
         </div>
         <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+      </section>
+
+      {/* Padres da Igreja — vozes da Tradição */}
+      <section className="bg-background py-32 md:py-40">
+        <div className="max-w-7xl mx-auto px-8">
+          <ScrollReveal className="max-w-3xl mb-20">
+            <p className="text-[10px] tracking-[0.4em] uppercase text-gold mb-4 flex items-center gap-4">
+              <span className="h-px w-6 bg-gold/40" /> Vox Patrum · A voz dos Padres
+            </p>
+            <h2 className="font-display text-5xl md:text-7xl text-foreground leading-[1.05]">
+              O que recebemos <br/>
+              <span className="text-gold/60 italic">dos primeiros séculos.</span>
+            </h2>
+            <p className="text-muted-foreground text-base leading-relaxed font-light mt-8 max-w-2xl">
+              A fé católica não nasceu ontem. Dos Padres Apostólicos aos Doutores medievais,
+              uma mesma voz atravessa vinte séculos confessando o mesmo Cristo.
+            </p>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-gold/10">
+            {PADRES.map((p, i) => (
+              <ScrollReveal key={p.author + i} delay={i * 120}>
+                <figure className="h-full p-10 md:p-12 bg-background flex flex-col gap-8">
+                  <span className="text-gold/40 font-display text-6xl leading-none">"</span>
+                  <blockquote className="font-display italic text-2xl md:text-[1.7rem] text-foreground/90 leading-snug flex-1">
+                    {p.quote}
+                  </blockquote>
+                  <figcaption className="border-t border-gold/10 pt-6">
+                    <p className="text-sm font-medium text-gold tracking-wide">{p.author}</p>
+                    <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground mt-2">{p.ref}</p>
+                  </figcaption>
+                </figure>
+              </ScrollReveal>
+            ))}
+          </div>
+
+          <ScrollReveal delay={400} className="mt-16 flex justify-center">
+            <Link
+              to="/doutores-da-igreja"
+              className="group inline-flex items-center gap-4 text-[10px] uppercase tracking-[0.4em] text-gold/80 hover:text-gold transition-colors"
+            >
+              <span>Ver os 37 Doutores da Igreja</span>
+              <span className="group-hover:translate-x-2 transition-transform">→</span>
+            </Link>
+          </ScrollReveal>
+        </div>
       </section>
 
       {/* AI feature */}
@@ -291,8 +360,9 @@ function Home() {
             Inteligência Artificial <br/> <em className="text-gold italic font-medium">ao serviço da Verdade</em>
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-light mb-16">
-            Respostas fundamentadas na Bíblia, no Catecismo e nos documentos oficiais da
-            Igreja — com citações, contexto e referências.
+            Treinada exclusivamente sobre a Bíblia, o Catecismo e os documentos do Magistério.
+            Cada resposta vem com referências verificáveis — Escritura, parágrafos do CIC,
+            concílios e Padres da Igreja. Nada de opinião; só o que a Igreja ensina.
           </p>
           <Link
             to="/assistente"
