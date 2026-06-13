@@ -120,13 +120,12 @@ function Page() {
             </p>
           </section>
 
-          <section id="imaculada" className="scroll-mt-24">
-            <h4>III. Imaculada Conceição (Pio IX, 1854)</h4>
+            <h4>III. <Termo termo="imaculada_conceicao">Imaculada Conceição</Termo> (Pio IX, 1854)</h4>
             <p>
               Pelo Papa <strong>Pio IX</strong>, na Bula <em>Ineffabilis Deus</em>, de 8 de dezembro de 1854,
               foi definido que <em>a beatíssima Virgem Maria, no primeiro instante da sua concepção, por
-              singular graça e privilégio de Deus onipotente, em vista dos méritos de Cristo Jesus Salvador do
-              gênero humano, foi preservada imune de toda mancha do pecado original</em><FnRef n="ineffabilis" />.
+              singular <Termo termo="graca">graça</Termo> e privilégio de Deus onipotente, em vista dos méritos de Cristo Jesus Salvador do
+              gênero humano, foi preservada imune de toda mancha do <Termo termo="pecado_original">pecado original</Termo></em><FnRef n="ineffabilis" />.
               É preservação <em>per modum redemptionis</em>: Maria foi salva por Cristo, antecipadamente
               (<em>CIC</em> §§ 490–493).
             </p>
