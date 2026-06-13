@@ -212,12 +212,13 @@ function Home() {
           <ScrollReveal className="max-w-2xl">
             <p className="text-[10px] tracking-[0.4em] uppercase text-gold mb-4">Os pilares da verdade</p>
             <h2 className="font-display text-5xl md:text-7xl text-foreground leading-[1.1]">
-              Toda a fé católica, organizada <br/> <span className="text-gold/50">para o seu estudo.</span>
+              Duas mil anos de fé, <br/> <span className="text-gold/50">em um só lugar.</span>
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={200} className="max-w-sm">
             <p className="text-muted-foreground text-sm leading-relaxed mb-2 font-light">
-              Explore séculos de tradição, magistério e espiritualidade através de uma interface desenhada para a contemplação.
+              Escritura, Tradição e Magistério — os três canais pelos quais a Revelação chega até nós —
+              organizados com referências cruzadas para um estudo sério e contemplativo.
             </p>
           </ScrollReveal>
         </div>
