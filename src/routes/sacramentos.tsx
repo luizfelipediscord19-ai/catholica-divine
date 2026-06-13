@@ -141,7 +141,7 @@ function Page() {
             <h3>1. Batismo</h3>
             <p>
               <em>Porta dos sacramentos</em> (CIC § 1213), <strong>regeneração</strong> pela água e pelo
-              Espírito (Jo 3,5). Apaga o pecado original e todos os pecados pessoais, incorpora a Cristo e à
+              Espírito (Jo 3,5). Apaga o <Termo termo="pecado_original">pecado original</Termo> e todos os pecados pessoais, incorpora a Cristo e à
               Igreja, imprime caráter indelével (<em>CIC</em> §§ 1213–1284).
             </p>
             <ul>
