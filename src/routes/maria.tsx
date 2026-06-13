@@ -120,6 +120,7 @@ function Page() {
             </p>
           </section>
 
+          <section id="imaculada" className="scroll-mt-24">
             <h4>III. <Termo termo="imaculada_conceicao">Imaculada Conceição</Termo> (Pio IX, 1854)</h4>
             <p>
               Pelo Papa <strong>Pio IX</strong>, na Bula <em>Ineffabilis Deus</em>, de 8 de dezembro de 1854,
