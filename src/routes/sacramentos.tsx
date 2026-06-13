@@ -59,7 +59,7 @@ function Page() {
       <PageHero
         eyebrow="Septem Sacramenta"
         title="Os Sete Sacramentos"
-        intro="Sinais eficazes da graça, instituídos por Cristo e confiados à Igreja, pelos quais nos é dispensada a vida divina (CIC § 1131)."
+        intro={<>Sinais eficazes da <Termo termo="graca">graça</Termo>, instituídos por Cristo e confiados à Igreja, pelos quais nos é dispensada a vida divina (CIC § 1131).</>}
       />
 
       <ReadingMode title="Os Sete Sacramentos" toc={TOC} footnotes={FOOTNOTES}>
