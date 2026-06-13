@@ -277,8 +277,9 @@ function Home() {
               “Faça-se em mim <br/> <span className="text-gold italic">segundo a tua palavra.</span>”
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed font-light mb-12 max-w-lg">
-              A Virgem Maria é o caminho mais seguro a Cristo. Conheça os dogmas marianos,
-              as aparições aprovadas pela Igreja e a teologia da Mãe de Deus segundo os Padres e Doutores.
+              "De Maria nunquam satis" — sobre Maria, nunca o suficiente, dizia São Bernardo.
+              Conheça os quatro dogmas marianos, as aparições aprovadas pela Igreja e a
+              teologia da Theotokos segundo os Padres e Doutores.
             </p>
             <Link
               to="/maria"
@@ -290,6 +291,52 @@ function Home() {
           </ScrollReveal>
         </div>
         <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+      </section>
+
+      {/* Padres da Igreja — vozes da Tradição */}
+      <section className="bg-background py-32 md:py-40">
+        <div className="max-w-7xl mx-auto px-8">
+          <ScrollReveal className="max-w-3xl mb-20">
+            <p className="text-[10px] tracking-[0.4em] uppercase text-gold mb-4 flex items-center gap-4">
+              <span className="h-px w-6 bg-gold/40" /> Vox Patrum · A voz dos Padres
+            </p>
+            <h2 className="font-display text-5xl md:text-7xl text-foreground leading-[1.05]">
+              O que recebemos <br/>
+              <span className="text-gold/60 italic">dos primeiros séculos.</span>
+            </h2>
+            <p className="text-muted-foreground text-base leading-relaxed font-light mt-8 max-w-2xl">
+              A fé católica não nasceu ontem. Dos Padres Apostólicos aos Doutores medievais,
+              uma mesma voz atravessa vinte séculos confessando o mesmo Cristo.
+            </p>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-gold/10">
+            {PADRES.map((p, i) => (
+              <ScrollReveal key={p.author + i} delay={i * 120}>
+                <figure className="h-full p-10 md:p-12 bg-background flex flex-col gap-8">
+                  <span className="text-gold/40 font-display text-6xl leading-none">"</span>
+                  <blockquote className="font-display italic text-2xl md:text-[1.7rem] text-foreground/90 leading-snug flex-1">
+                    {p.quote}
+                  </blockquote>
+                  <figcaption className="border-t border-gold/10 pt-6">
+                    <p className="text-sm font-medium text-gold tracking-wide">{p.author}</p>
+                    <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground mt-2">{p.ref}</p>
+                  </figcaption>
+                </figure>
+              </ScrollReveal>
+            ))}
+          </div>
+
+          <ScrollReveal delay={400} className="mt-16 flex justify-center">
+            <Link
+              to="/doutores-da-igreja"
+              className="group inline-flex items-center gap-4 text-[10px] uppercase tracking-[0.4em] text-gold/80 hover:text-gold transition-colors"
+            >
+              <span>Ver os 37 Doutores da Igreja</span>
+              <span className="group-hover:translate-x-2 transition-transform">→</span>
+            </Link>
+          </ScrollReveal>
+        </div>
       </section>
 
       {/* AI feature */}
