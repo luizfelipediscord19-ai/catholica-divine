@@ -29,15 +29,33 @@ export const Route = createFileRoute("/")({
 });
 
 const PILLARS = [
-  { to: "/biblia", icon: BookOpen, title: "Bíblia Sagrada", desc: "73 livros, comentários patrísticos, mapas e leitura em áudio." },
-  { to: "/catecismo", icon: ScrollText, title: "Catecismo", desc: "Os 2.865 parágrafos da fé católica, comentados e pesquisáveis." },
-  { to: "/sacramentos", icon: Church, title: "Sacramentos", desc: "Os 7 sinais eficazes da graça instituídos por Cristo." },
-  { to: "/santos", icon: Crown, title: "Santos", desc: "Vidas, virtudes e ensinamentos dos amigos de Deus." },
-  { to: "/maria", icon: Heart, title: "Mariologia", desc: "A Mãe de Deus, suas aparições e dogmas marianos." },
-  { to: "/oracoes", icon: Sparkles, title: "Orações", desc: "Rosário, Liturgia das Horas, novenas e ladainhas." },
-  { to: "/apologetica", icon: Compass, title: "Apologética", desc: "Defesa racional da fé contra objeções modernas." },
-  { to: "/calendario-liturgico", icon: Calendar, title: "Calendário", desc: "Tempo litúrgico, festas e memórias dos santos." },
-  { to: "/assistente", icon: Sparkles, title: "Sophia IA", desc: "Tire dúvidas com respostas fundamentadas no Magistério." },
+  { to: "/biblia", icon: BookOpen, title: "Bíblia Sagrada", desc: "Os 73 livros canônicos com introduções, contexto histórico e leituras litúrgicas do dia." },
+  { to: "/catecismo", icon: ScrollText, title: "Catecismo", desc: "Os 2.865 parágrafos da fé católica, com referências cruzadas à Escritura e aos Padres." },
+  { to: "/sacramentos", icon: Church, title: "Sacramentos", desc: "Os 7 sinais sensíveis e eficazes da graça instituídos por Cristo — matéria, forma e efeitos." },
+  { to: "/santos", icon: Crown, title: "Santos", desc: "Vidas, virtudes heroicas e escritos dos amigos de Deus, de Estêvão até os mártires do séc. XXI." },
+  { to: "/maria", icon: Heart, title: "Mariologia", desc: "Os quatro dogmas marianos, aparições aprovadas e a maternidade espiritual de Maria." },
+  { to: "/oracoes", icon: Sparkles, title: "Orações", desc: "Rosário, Via-Sacra, Liturgia das Horas, novenas, ladainhas e devoções tradicionais." },
+  { to: "/apologetica", icon: Compass, title: "Apologética", desc: "Defesa racional da fé: existência de Deus, autoridade da Igreja, Bíblia e Tradição." },
+  { to: "/calendario-liturgico", icon: Calendar, title: "Calendário", desc: "Tempo litúrgico, festas, solenidades e memórias dos santos celebradas pela Igreja." },
+  { to: "/assistente", icon: Sparkles, title: "Sophia IA", desc: "Assistente que responde com base no Catecismo, na Escritura e nos documentos do Magistério." },
+];
+
+const PADRES = [
+  {
+    quote: "Onde está Pedro, ali está a Igreja.",
+    author: "Santo Ambrósio",
+    ref: "Comentário ao Salmo 40, séc. IV",
+  },
+  {
+    quote: "Tarde te amei, ó beleza tão antiga e tão nova, tarde te amei.",
+    author: "Santo Agostinho",
+    ref: "Confissões X, 27",
+  },
+  {
+    quote: "Recebei o que sois; tornai-vos o que recebeis: o Corpo de Cristo.",
+    author: "Santo Agostinho",
+    ref: "Sermão 272, sobre a Eucaristia",
+  },
 ];
 
 const DAILY = [
