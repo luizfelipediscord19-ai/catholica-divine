@@ -10,17 +10,19 @@ import { ScrollReveal } from "../components/ScrollReveal";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Portal Católico — Biblioteca Digital da Fé" },
+      { title: "Portal Católico — Bíblia, Catecismo e a Tradição da Igreja" },
       {
         name: "description",
         content:
-          "A maior biblioteca digital católica em português: Bíblia, Catecismo, Sacramentos, Santos, Maria, orações, apologética e IA fiel ao Magistério.",
+          "Biblioteca digital da fé católica em português: Bíblia comentada, os 2.865 parágrafos do Catecismo, vidas dos santos, mariologia, sacramentos, orações tradicionais e assistente de IA fiel ao Magistério.",
       },
+      { name: "keywords", content: "Bíblia católica, Catecismo da Igreja Católica, santos, Maria, sacramentos, orações católicas, apologética, magistério" },
       { property: "og:title", content: "Portal Católico — Biblioteca Digital da Fé" },
       {
         property: "og:description",
-        content: "Estudo, oração e formação na fé católica — fiel ao Magistério da Igreja.",
+        content: "Estudo, oração e formação na fé católica — fiel ao Magistério da Igreja, de Pedro a Francisco.",
       },
+      { property: "og:type", content: "website" },
     ],
   }),
   component: Home,
