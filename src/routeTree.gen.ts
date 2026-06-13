@@ -14,6 +14,7 @@ import { Route as SantosRouteImport } from './routes/santos'
 import { Route as SacramentosRouteImport } from './routes/sacramentos'
 import { Route as OracoesRouteImport } from './routes/oracoes'
 import { Route as MariaRouteImport } from './routes/maria'
+import { Route as GlossarioRouteImport } from './routes/glossario'
 import { Route as FeCatolicaRouteImport } from './routes/fe-catolica'
 import { Route as DoutoresDaIgrejaRouteImport } from './routes/doutores-da-igreja'
 import { Route as CoroinhasRouteImport } from './routes/coroinhas'
@@ -61,6 +62,11 @@ const OracoesRoute = OracoesRouteImport.update({
 const MariaRoute = MariaRouteImport.update({
   id: '/maria',
   path: '/maria',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GlossarioRoute = GlossarioRouteImport.update({
+  id: '/glossario',
+  path: '/glossario',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FeCatolicaRoute = FeCatolicaRouteImport.update({
@@ -190,6 +196,7 @@ export interface FileRoutesByFullPath {
   '/coroinhas': typeof CoroinhasRoute
   '/doutores-da-igreja': typeof DoutoresDaIgrejaRoute
   '/fe-catolica': typeof FeCatolicaRoute
+  '/glossario': typeof GlossarioRoute
   '/maria': typeof MariaRoute
   '/oracoes': typeof OracoesRouteWithChildren
   '/sacramentos': typeof SacramentosRoute
@@ -219,6 +226,7 @@ export interface FileRoutesByTo {
   '/coroinhas': typeof CoroinhasRoute
   '/doutores-da-igreja': typeof DoutoresDaIgrejaRoute
   '/fe-catolica': typeof FeCatolicaRoute
+  '/glossario': typeof GlossarioRoute
   '/maria': typeof MariaRoute
   '/oracoes': typeof OracoesRouteWithChildren
   '/sacramentos': typeof SacramentosRoute
@@ -249,6 +257,7 @@ export interface FileRoutesById {
   '/coroinhas': typeof CoroinhasRoute
   '/doutores-da-igreja': typeof DoutoresDaIgrejaRoute
   '/fe-catolica': typeof FeCatolicaRoute
+  '/glossario': typeof GlossarioRoute
   '/maria': typeof MariaRoute
   '/oracoes': typeof OracoesRouteWithChildren
   '/sacramentos': typeof SacramentosRoute
@@ -281,6 +290,7 @@ export interface FileRouteTypes {
     | '/coroinhas'
     | '/doutores-da-igreja'
     | '/fe-catolica'
+    | '/glossario'
     | '/maria'
     | '/oracoes'
     | '/sacramentos'
@@ -310,6 +320,7 @@ export interface FileRouteTypes {
     | '/coroinhas'
     | '/doutores-da-igreja'
     | '/fe-catolica'
+    | '/glossario'
     | '/maria'
     | '/oracoes'
     | '/sacramentos'
@@ -339,6 +350,7 @@ export interface FileRouteTypes {
     | '/coroinhas'
     | '/doutores-da-igreja'
     | '/fe-catolica'
+    | '/glossario'
     | '/maria'
     | '/oracoes'
     | '/sacramentos'
@@ -370,6 +382,7 @@ export interface RootRouteChildren {
   CoroinhasRoute: typeof CoroinhasRoute
   DoutoresDaIgrejaRoute: typeof DoutoresDaIgrejaRoute
   FeCatolicaRoute: typeof FeCatolicaRoute
+  GlossarioRoute: typeof GlossarioRoute
   MariaRoute: typeof MariaRoute
   OracoesRoute: typeof OracoesRouteWithChildren
   SacramentosRoute: typeof SacramentosRoute
@@ -413,6 +426,13 @@ declare module '@tanstack/react-router' {
       path: '/maria'
       fullPath: '/maria'
       preLoaderRoute: typeof MariaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/glossario': {
+      id: '/glossario'
+      path: '/glossario'
+      fullPath: '/glossario'
+      preLoaderRoute: typeof GlossarioRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/fe-catolica': {
@@ -672,6 +692,7 @@ const rootRouteChildren: RootRouteChildren = {
   CoroinhasRoute: CoroinhasRoute,
   DoutoresDaIgrejaRoute: DoutoresDaIgrejaRoute,
   FeCatolicaRoute: FeCatolicaRoute,
+  GlossarioRoute: GlossarioRoute,
   MariaRoute: MariaRoute,
   OracoesRoute: OracoesRouteWithChildren,
   SacramentosRoute: SacramentosRoute,
