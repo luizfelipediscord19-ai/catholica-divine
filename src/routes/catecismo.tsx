@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero, Section, Prose, Sources, Pullquote } from "../components/PageShell";
+import { Termo } from "../components/Termo";
 import { PARTES, SECOES, VATICAN_URL } from "../lib/data/catecismo";
 import { ExternalLink } from "lucide-react";
 
@@ -29,7 +30,7 @@ function Page() {
           <p>
             O <strong>Catecismo da Igreja Católica</strong> (CIC) é, nas palavras de São João Paulo II, <em>uma
             exposição da fé da Igreja e da doutrina católica, atestadas e iluminadas pela Sagrada Escritura, pela
-            Tradição apostólica e pelo Magistério da Igreja</em>, oferecido <em>como texto de referência seguro e
+            <Termo termo="tradicao"> Tradição</Termo> apostólica e pelo <Termo termo="magisterio">Magistério</Termo> da Igreja</em>, oferecido <em>como texto de referência seguro e
             autêntico para o ensino da doutrina católica</em> (Constituição Apostólica <em>Fidei Depositum</em>, 11
             de outubro de 1992, n. III–IV). Não é um manual privado nem um tratado teológico de autor: é um ato do
             Magistério ordinário universal, dirigido <em>a toda a Igreja</em>.

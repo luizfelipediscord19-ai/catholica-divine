@@ -27,6 +27,7 @@ export function SiteFooter() {
             <li><Link to="/biblia" className="hover:text-gold">Bíblia Sagrada</Link></li>
             <li><Link to="/apologetica" className="hover:text-gold">Apologética</Link></li>
             <li><Link to="/doutores-da-igreja" className="hover:text-gold">Doutores</Link></li>
+            <li><Link to="/glossario" className="hover:text-gold">Glossário</Link></li>
           </ul>
         </div>
 

@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, CardGrid, ContentCard, Prose, Pullquote } from "../components/PageShell";
 import { ReadingMode, FnRef } from "../components/ReadingMode";
+import { Termo } from "../components/Termo";
 import maria from "../assets/maria.jpg";
 
 export const Route = createFileRoute("/maria")({
@@ -99,7 +100,7 @@ function Page() {
             <p>
               Contra Nestório, que distinguia em Cristo duas pessoas (uma humana, outra divina) e queria chamar
               Maria apenas <em>Christotókos</em> (Mãe de Cristo), o Concílio de Éfeso, sob a presidência de São
-              Cirilo de Alexandria, definiu que Maria é verdadeiramente <strong>Theotókos</strong> (<em>Mãe de
+              Cirilo de Alexandria, definiu que Maria é verdadeiramente <strong><Termo termo="theotokos">Theotókos</Termo></strong> (<em>Mãe de
               Deus</em>), pois gerou segundo a carne o Verbo eterno feito carne<FnRef n="efeso" />. O Catecismo
               recolhe: <em>O que ela concebeu como homem do Espírito Santo, esse mesmo é verdadeiramente seu
               Filho segundo a carne. É o Filho do Pai eterno na natureza divina, e o Filho de Maria na natureza
@@ -120,12 +121,12 @@ function Page() {
           </section>
 
           <section id="imaculada" className="scroll-mt-24">
-            <h4>III. Imaculada Conceição (Pio IX, 1854)</h4>
+            <h4>III. <Termo termo="imaculada_conceicao">Imaculada Conceição</Termo> (Pio IX, 1854)</h4>
             <p>
               Pelo Papa <strong>Pio IX</strong>, na Bula <em>Ineffabilis Deus</em>, de 8 de dezembro de 1854,
               foi definido que <em>a beatíssima Virgem Maria, no primeiro instante da sua concepção, por
-              singular graça e privilégio de Deus onipotente, em vista dos méritos de Cristo Jesus Salvador do
-              gênero humano, foi preservada imune de toda mancha do pecado original</em><FnRef n="ineffabilis" />.
+              singular <Termo termo="graca">graça</Termo> e privilégio de Deus onipotente, em vista dos méritos de Cristo Jesus Salvador do
+              gênero humano, foi preservada imune de toda mancha do <Termo termo="pecado_original">pecado original</Termo></em><FnRef n="ineffabilis" />.
               É preservação <em>per modum redemptionis</em>: Maria foi salva por Cristo, antecipadamente
               (<em>CIC</em> §§ 490–493).
             </p>
