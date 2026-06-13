@@ -188,7 +188,7 @@ function Page() {
             <Pullquote cite="Concílio de Trento — Sessão XIII, cap. 4 (DH 1642)">
               Pela consagração do pão e do vinho realiza-se a conversão de toda a substância do pão na
               substância do corpo de Cristo, e de toda a substância do vinho na substância do seu sangue. Esta
-              conversão a Igreja chamou de modo conveniente e próprio <em>transubstanciação</em>.
+              conversão a Igreja chamou de modo conveniente e próprio <Termo termo="transubstanciacao"><em>transubstanciação</em></Termo>.
             </Pullquote>
 
             <ul>
