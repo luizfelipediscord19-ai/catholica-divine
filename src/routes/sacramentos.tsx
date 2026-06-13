@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, CardGrid, ContentCard, Prose, Pullquote } from "../components/PageShell";
 import { ReadingMode, FnRef } from "../components/ReadingMode";
+import { Termo } from "../components/Termo";
 
 export const Route = createFileRoute("/sacramentos")({
   head: () => ({
