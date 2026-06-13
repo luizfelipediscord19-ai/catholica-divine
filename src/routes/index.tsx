@@ -141,8 +141,9 @@ function Home() {
               </span>
             </h1>
             <p className="max-w-2xl text-lg md:text-2xl text-paper/70 leading-relaxed font-light mb-16 letter-spacing-wide">
-              Bíblia, Catecismo, Magistério, santos e orações — em uma experiência
-              cinematográfica, fiel à doutrina da Igreja de Cristo.
+              Escritura, Catecismo, Padres da Igreja, santos e devoções tradicionais —
+              reunidos em uma única referência de estudo, fiel ao Magistério desde
+              Pedro até hoje.
             </p>
             <div className="flex flex-wrap gap-6">
               <Link
