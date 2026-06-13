@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, CardGrid, ContentCard, Prose, Pullquote } from "../components/PageShell";
 import { ReadingMode, FnRef } from "../components/ReadingMode";
+import { Termo } from "../components/Termo";
 
 export const Route = createFileRoute("/sacramentos")({
   head: () => ({
@@ -58,7 +59,7 @@ function Page() {
       <PageHero
         eyebrow="Septem Sacramenta"
         title="Os Sete Sacramentos"
-        intro="Sinais eficazes da graça, instituídos por Cristo e confiados à Igreja, pelos quais nos é dispensada a vida divina (CIC § 1131)."
+        intro={<>Sinais eficazes da <Termo termo="graca">graça</Termo>, instituídos por Cristo e confiados à Igreja, pelos quais nos é dispensada a vida divina (CIC § 1131).</>}
       />
 
       <ReadingMode title="Os Sete Sacramentos" toc={TOC} footnotes={FOOTNOTES}>
@@ -140,7 +141,7 @@ function Page() {
             <h3>1. Batismo</h3>
             <p>
               <em>Porta dos sacramentos</em> (CIC § 1213), <strong>regeneração</strong> pela água e pelo
-              Espírito (Jo 3,5). Apaga o pecado original e todos os pecados pessoais, incorpora a Cristo e à
+              Espírito (Jo 3,5). Apaga o <Termo termo="pecado_original">pecado original</Termo> e todos os pecados pessoais, incorpora a Cristo e à
               Igreja, imprime caráter indelével (<em>CIC</em> §§ 1213–1284).
             </p>
             <ul>
@@ -187,7 +188,7 @@ function Page() {
             <Pullquote cite="Concílio de Trento — Sessão XIII, cap. 4 (DH 1642)">
               Pela consagração do pão e do vinho realiza-se a conversão de toda a substância do pão na
               substância do corpo de Cristo, e de toda a substância do vinho na substância do seu sangue. Esta
-              conversão a Igreja chamou de modo conveniente e próprio <em>transubstanciação</em>.
+              conversão a Igreja chamou de modo conveniente e próprio <Termo termo="transubstanciacao"><em>transubstanciação</em></Termo>.
             </Pullquote>
 
             <ul>

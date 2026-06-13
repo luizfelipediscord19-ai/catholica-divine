@@ -8,7 +8,7 @@ export function PageHero({
 }: {
   eyebrow: string;
   title: ReactNode;
-  intro: string;
+  intro: ReactNode;
   image?: string;
 }) {
   return (
