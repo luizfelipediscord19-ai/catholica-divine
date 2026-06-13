@@ -33,6 +33,7 @@ export const Route = createFileRoute("/biblia/$livro/")({
 
 function Page() {
   const { livro } = Route.useLoaderData();
+  const intro = getIntroducao(livro.slug);
   const idx = LIVROS.findIndex((l) => l.slug === livro.slug);
   const anterior = idx > 0 ? LIVROS[idx - 1] : null;
   const proximo = idx < LIVROS.length - 1 ? LIVROS[idx + 1] : null;
