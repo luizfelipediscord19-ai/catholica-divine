@@ -100,7 +100,7 @@ function Page() {
             <p>
               Contra Nestório, que distinguia em Cristo duas pessoas (uma humana, outra divina) e queria chamar
               Maria apenas <em>Christotókos</em> (Mãe de Cristo), o Concílio de Éfeso, sob a presidência de São
-              Cirilo de Alexandria, definiu que Maria é verdadeiramente <strong>Theotókos</strong> (<em>Mãe de
+              Cirilo de Alexandria, definiu que Maria é verdadeiramente <strong><Termo termo="theotokos">Theotókos</Termo></strong> (<em>Mãe de
               Deus</em>), pois gerou segundo a carne o Verbo eterno feito carne<FnRef n="efeso" />. O Catecismo
               recolhe: <em>O que ela concebeu como homem do Espírito Santo, esse mesmo é verdadeiramente seu
               Filho segundo a carne. É o Filho do Pai eterno na natureza divina, e o Filho de Maria na natureza
