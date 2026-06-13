@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero, Section, Prose, Sources, Pullquote } from "../components/PageShell";
+import { Termo } from "../components/Termo";
 import { PARTES, SECOES, VATICAN_URL } from "../lib/data/catecismo";
 import { ExternalLink } from "lucide-react";
 
