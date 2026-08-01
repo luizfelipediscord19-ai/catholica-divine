@@ -31,7 +31,7 @@ async function applySecurityHeaders(response: Response): Promise<Response> {
     "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; " +
     "font-src 'self' data: https://fonts.gstatic.com; " +
     "img-src 'self' data: https://*; " +
-    "connect-src 'self' https://ai.gateway.lovable.dev https://api.groq.com; " +
+    "connect-src 'self' https://api.groq.com; " +
     "frame-ancestors 'none'; " +
     "upgrade-insecure-requests;"
   );
