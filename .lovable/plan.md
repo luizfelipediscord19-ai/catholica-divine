@@ -1,63 +1,40 @@
-# Plano de entrega faseada
+# Voltar para Groq + remover o backend do código
 
-Cada fase é completa, testável e publicável antes de eu começar a próxima. Você revisa, aprova, sigo.
+## 1. IA volta para a chave antiga (Groq)
 
-## Fase 1 — Fundação (Auth + Dashboard Pessoal)
-- Ativar Lovable Cloud (banco + auth)
-- Login/cadastro por e-mail e senha (`/auth`) + rota `/reset-password`
-- Tabelas: `profiles` (nome, criado_em), `user_progress` (XP, streak, last_check_in), `reading_progress` (livro, capítulo, lido)
-- Rota protegida `/painel`: saudação personalizada, santo do dia, evangelho do dia, "continue lendo" (último livro/capítulo aberto), streak atual, próxima meta
-- Botão **"Já rezei hoje"** (check-in diário → XP + streak)
-- Header passa a mostrar "Entrar" / avatar do usuário
+A `GROQ_API_KEY` continua salva no projeto. Vou reescrever `src/routes/api/chat.ts` para chamar a Groq (`llama-3.3-70b-versatile`) em vez da Lovable AI Gateway, mantendo:
 
-## Fase 2 — Bíblia com Progresso
-- Marcar capítulo como lido (toggle na página do capítulo)
-- Barra de progresso por livro e geral em `/biblia`
-- Favoritar versículos (long-press / botão)
-- Notas pessoais por capítulo (privadas)
-- "Continue lendo" no dashboard puxa daqui
+- o mesmo streaming (o chat da Sophia não muda visualmente)
+- o system prompt atual (identidade, mapa dos serviços do site, modo Diretor Espiritual)
+- a validação de origem e o tratamento de erros (429 / créditos / falha de rede)
 
-## Fase 3 — Diário Espiritual
-- Rota `/diario` (protegida)
-- Tipos de entrada: intenção, graça recebida, reflexão, exame de consciência, meta
-- Lista cronológica, busca, edição, exclusão
-- 100% privado (RLS por `user_id`)
+Também removo o helper `src/lib/ai-gateway.server.ts`, que deixa de ser usado, e retiro `ai.gateway.lovable.dev` do CSP em `src/server.ts` (fica só `api.groq.com`).
 
-## Fase 4 — Gamificação Completa
-- Sistema de XP (check-in, capítulo lido, novena concluída, etc.)
-- Níveis (catequizando → discípulo → apóstolo …)
-- Conquistas/medalhas: primeira oração, primeira novena, primeiro evangelho concluído, 7/30/100 dias seguidos, conhecedor dos sacramentos, etc.
-- Página `/conquistas` + vitrine no perfil
-- Notificações toast ao desbloquear
+## 2. Remover o Cloud do código
 
-## Fase 5 — Plano Espiritual + Biblioteca Inteligente
-- Onboarding: escolha de trilha (Iniciante, Catequizando, Jovem, Casal, Formação avançada)
-- Trilha personalizada gera metas semanais no dashboard
-- **Biblioteca Inteligente**: em cada artigo (ex: Confissão), sidebar com Catecismo / versículos / santos / orações relacionados automaticamente (via tags compartilhadas)
+O site hoje não usa mais banco nem login — só sobraram arquivos órfãos. Vou apagar/limpar:
 
-## Fase 6 — Mapa Católico + Linha do Tempo + Perfil Rico
-- `/mapa`: basílicas, santuários, locais de aparições (Leaflet + dataset curado)
-- `/linha-do-tempo`: timeline interativa (Jesus → Apóstolos → Concílios → Cruzadas → Reforma → moderno)
-- `/perfil`: tempo de membro, atividades recentes, medalhas, estatísticas (capítulos lidos, dias rezados, novenas, etc.)
+- `src/integrations/supabase/*` (client, client.server, auth-attacher, auth-middleware, types)
+- o `attachSupabaseAuth` de `src/start.ts` (fica só o middleware de erro)
+- `src/lib/api/example.functions.ts` se ainda referenciar o backend
+- pasta `supabase/` (config + migrations) e as variáveis do `.env`
+
+Observação: o Cloud fica desativado do ponto de vista do site (nenhuma chamada, nenhuma dependência), mas o vínculo do projeto com o Cloud em si não pode ser desfeito pela Lovable — o que importa é que o app não usa mais nada dele.
+
+Depois disso rodo o build para garantir que nada quebrou.
 
 ---
 
-## Detalhes técnicos (resumo)
+## O que eu acho que vale adicionar de volta
 
-- **Stack**: TanStack Start + Lovable Cloud (Supabase). Sem mudanças de framework.
-- **Auth**: e-mail/senha (sem Google por enquanto, conforme escolhido). Layout `_authenticated/` para rotas protegidas.
-- **Tabelas principais** (criadas conforme fases):
-  - `profiles`, `user_progress`, `user_streaks`
-  - `reading_progress`, `bible_bookmarks`, `bible_notes`
-  - `journal_entries`
-  - `achievements`, `user_achievements`, `xp_events`
-  - `user_plans`, `plan_goals`
-  - `church_locations`, `history_events` (dados curados em migrations)
-- **RLS**: todas as tabelas de usuário com policies `auth.uid() = user_id`.
-- **Server functions** para mutações sensíveis (check-in, XP, conquistas) para evitar fraude no cliente.
+Sem login e sem banco, o foco é enciclopédia + estudo. Na ordem que eu faria:
 
----
+1. **Modo Estudo** — botão em cada capítulo da Bíblia / parte do Catecismo: esconde header e footer, aumenta a fonte, mostra índice lateral. Preferência salva no navegador (localStorage), sem conta.
+2. **Busca global inteligente** — um `Cmd/Ctrl + K` que procura em tudo ao mesmo tempo: versículos, santos, catecismo, orações, glossário. É o que mais aumenta o tempo de navegação.
+3. **Expandir as referências cruzadas** — o sistema já existe em `relacionados.ts`, mas cobre poucas páginas. Encher de ligações (Eucaristia → João 6 → Trento → Tomás de Aquino → Milagres Eucarísticos) transforma o site na "Wikipédia católica" que você descreveu.
+4. **Linha do tempo da Igreja** — Jesus → Apóstolos → Concílios → Cisma → Reforma → Vaticano II, com cada evento linkando para santos/documentos já existentes no site.
+5. **Termos do glossário em mais páginas** — hoje só Maria, Catecismo e Sacramentos têm tooltips; aplicar em Fé Católica, Apologética e Doutores.
 
-## Começo agora pela **Fase 1**
+Também vale considerar (mais adiante): **progresso de leitura da Bíblia salvo só no navegador** — dá a sensação de continuidade ("continue lendo") sem exigir cadastro.
 
-Quando ela estiver pronta e funcional, te aviso, você testa (criar conta, login, ver dashboard, fazer check-in), e eu sigo pra Fase 2.
+Me diga se quer que eu já emende alguma dessas na mesma leva ou se prefere só a parte 1 + 2 agora.
