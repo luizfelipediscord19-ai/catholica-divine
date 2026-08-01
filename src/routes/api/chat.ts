@@ -3,7 +3,7 @@ import { convertToModelMessages, streamText, type UIMessage } from "ai";
 import { ChatRequestSchema } from "../../lib/types/chat";
 import { isAllowedBrowserRequest, handleChatError } from "../../lib/api/chat-utils.server";
 import { SYSTEM_PROMPT, COROINHAS_PROMPT } from "../../lib/prompts/sophia";
-import { createLovableAiGatewayProvider } from "../../lib/ai-gateway.server";
+import { createGroqProvider, GROQ_MODEL } from "../../lib/groq.server";
 
 export const Route = createFileRoute("/api/chat")({
   server: {
@@ -22,18 +22,18 @@ export const Route = createFileRoute("/api/chat")({
           }
 
           const { messages, mode } = parsed.data;
-          const apiKey = process.env.LOVABLE_API_KEY;
+          const apiKey = process.env.GROQ_API_KEY;
 
           if (!apiKey) {
-            return new Response("LOVABLE_API_KEY não configurada", { status: 500 });
+            return new Response("GROQ_API_KEY não configurada", { status: 500 });
           }
 
           const systemPrompt = mode === "coroinhas" ? COROINHAS_PROMPT : SYSTEM_PROMPT;
 
-          const gateway = createLovableAiGatewayProvider(apiKey);
+          const groq = createGroqProvider(apiKey);
 
           const result = streamText({
-            model: gateway("google/gemini-3-flash-preview"),
+            model: groq(GROQ_MODEL),
             system: systemPrompt,
             messages: await convertToModelMessages(messages as UIMessage[]),
             temperature: 0.7,
