@@ -124,7 +124,7 @@ function Home() {
               <span>Una · Sancta · Catholica · Apostolica</span>
             </p>
             <h1 className="font-display text-7xl md:text-9xl lg:text-[12rem] leading-[0.75] text-paper tracking-tighter mb-12">
-              <span className="block">A biblioteca</span>
+              <span className="block">A biblioteca </span>{" "}
               <span className="text-gold italic font-medium relative inline-block">
                 da Fé
                 <span className="absolute -bottom-6 left-0 w-full h-1 bg-gold/30 blur-md" />
