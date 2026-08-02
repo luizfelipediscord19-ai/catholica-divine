@@ -13,6 +13,7 @@ const NAV = [
   { to: "/oracoes", label: "Orações" },
   { to: "/apologetica", label: "Apologética" },
   { to: "/calendario-liturgico", label: "Calendário" },
+  { to: "/liturgia-diaria", label: "Liturgia do dia" },
 ] as const;
 
 export function SiteHeader() {
