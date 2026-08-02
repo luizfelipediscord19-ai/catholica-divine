@@ -1,7 +1,7 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { MessageSquare, Pin, Lock, Plus } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "sonner";
 
 import { PageHero } from "@/components/PageShell";
@@ -105,11 +105,17 @@ function ForumPage() {
           </div>
 
           {abrirForm ? (
-            <NovoTopico
-              secoes={(secoes.data ?? []).map((s) => ({ slug: s.slug, nome: s.nome }))}
-              secaoInicial={secao}
-              onPronto={() => setAbrirForm(false)}
-            />
+            secoes.isPending ? (
+              <Painel>
+                <p className="text-sm text-muted-foreground">Carregando seções…</p>
+              </Painel>
+            ) : (
+              <NovoTopico
+                secoes={(secoes.data ?? []).map((s) => ({ slug: s.slug, nome: s.nome }))}
+                secaoInicial={secao}
+                onPronto={() => setAbrirForm(false)}
+              />
+            )
           ) : null}
 
           {topicos.isPending ? (
@@ -231,7 +237,18 @@ function NovoTopico({
     onError: (erro: Error) => toast.error(erro.message || "Não foi possível publicar."),
   });
 
-  const valido = secaoSlug && titulo.trim().length >= 5 && corpo.trim().length >= 10;
+  useEffect(() => {
+    if (!secaoSlug && secoes.length > 0) setSecaoSlug(secoes[0]!.slug);
+  }, [secaoSlug, secoes]);
+
+  const valido = !!secaoSlug && titulo.trim().length >= 5 && corpo.trim().length >= 10;
+  const motivo = !token
+    ? "Preparando sua identidade anônima…"
+    : titulo.trim().length < 5
+      ? "O título precisa de pelo menos 5 caracteres."
+      : corpo.trim().length < 10
+        ? "A mensagem precisa de pelo menos 10 caracteres."
+        : null;
 
   return (
     <Painel>
@@ -248,10 +265,10 @@ function NovoTopico({
           <select
             value={secaoSlug}
             onChange={(e) => setSecaoSlug(e.target.value)}
-            className={inputClass}
+            className={`${inputClass} appearance-none cursor-pointer bg-card text-foreground`}
           >
             {secoes.map((s) => (
-              <option key={s.slug} value={s.slug}>
+              <option key={s.slug} value={s.slug} className="bg-card text-foreground">
                 {s.nome}
               </option>
             ))}
@@ -278,7 +295,7 @@ function NovoTopico({
             className={inputClass}
           />
         </label>
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center gap-3">
           <button type="submit" disabled={!valido || !token || criar.isPending} className={botaoClass}>
             {criar.isPending ? "Publicando…" : "Publicar"}
           </button>
@@ -290,6 +307,7 @@ function NovoTopico({
               como <span className="text-gold">{identidade.apelido ?? identidade.santoNome}</span>
             </span>
           ) : null}
+          {motivo ? <span className="text-xs text-muted-foreground/80">{motivo}</span> : null}
         </div>
       </form>
     </Painel>
