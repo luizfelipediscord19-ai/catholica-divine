@@ -124,7 +124,7 @@ function Home() {
               <span>Una · Sancta · Catholica · Apostolica</span>
             </p>
             <h1 className="font-display text-7xl md:text-9xl lg:text-[12rem] leading-[0.75] text-paper tracking-tighter mb-12">
-              A biblioteca <br/>
+              <span className="block">A biblioteca</span>
               <span className="text-gold italic font-medium relative inline-block">
                 da Fé
                 <span className="absolute -bottom-6 left-0 w-full h-1 bg-gold/30 blur-md" />
@@ -154,8 +154,8 @@ function Home() {
         </div>
         
         {/* Scroll Indicator */}
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 animate-float opacity-50">
-          <span className="text-[9px] uppercase tracking-[0.4em] text-gold">Scroll</span>
+        <div aria-hidden="true" className="pointer-events-none absolute bottom-8 left-1/2 -translate-x-1/2 hidden sm:flex flex-col items-center gap-3 animate-float">
+          <span className="text-[10px] uppercase tracking-[0.4em] text-gold/90">Rolar</span>
           <div className="w-px h-12 bg-gradient-to-b from-gold/50 to-transparent" />
         </div>
       </section>
@@ -167,7 +167,7 @@ function Home() {
             {DAILY_ITEMS.map((d, i) => {
               const inner = (
                 <div className="group h-full flex flex-col p-10 transition-premium hover:bg-gold/[0.03]">
-                  <p className="text-[9px] tracking-[0.5em] uppercase text-gold/50 mb-6 group-hover:text-gold transition-colors">{d.kicker}</p>
+                  <p className="text-[9px] tracking-[0.5em] uppercase text-gold/80 mb-6 group-hover:text-gold transition-colors">{d.kicker}</p>
                   <p className="font-display italic text-2xl text-foreground/90 leading-relaxed mb-8 flex-1">
                     {d.text}
                   </p>
@@ -202,11 +202,11 @@ function Home() {
           <ScrollReveal className="max-w-2xl">
             <p className="text-[10px] tracking-[0.4em] uppercase text-gold mb-4">Os pilares da verdade</p>
             <h2 className="font-display text-5xl md:text-7xl text-foreground leading-[1.1]">
-              Duas mil anos de fé, <br/> <span className="text-gold/50">em um só lugar.</span>
+              Duas mil anos de fé, <br/> <span className="text-gold/75">em um só lugar.</span>
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={200} className="max-w-sm">
-            <p className="text-muted-foreground text-sm leading-relaxed mb-2 font-light">
+            <p className="text-foreground/70 text-sm leading-relaxed mb-2 font-light">
               Escritura, Tradição e Magistério — os três canais pelos quais a Revelação chega até nós —
               organizados com referências cruzadas para um estudo sério e contemplativo.
             </p>
@@ -229,7 +229,7 @@ function Home() {
               </div>
               <div className="flex-1">
                 <h3 className="font-display text-3xl text-foreground mb-4 group-hover:text-gold transition-colors">{p.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed font-light line-clamp-2 group-hover:text-foreground/70 transition-colors">{p.desc}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed font-light group-hover:text-foreground/70 transition-colors">{p.desc}</p>
               </div>
               <div className="flex items-center justify-between pt-6 border-t border-gold/5">
                 <span className="text-[9px] tracking-[0.5em] uppercase text-gold/40 group-hover:text-gold transition-colors">
@@ -292,7 +292,7 @@ function Home() {
             </p>
             <h2 className="font-display text-5xl md:text-7xl text-foreground leading-[1.05]">
               O que recebemos <br/>
-              <span className="text-gold/60 italic">dos primeiros séculos.</span>
+              <span className="text-gold/85 italic">dos primeiros séculos.</span>
             </h2>
             <p className="text-muted-foreground text-base leading-relaxed font-light mt-8 max-w-2xl">
               A fé católica não nasceu ontem. Dos Padres Apostólicos aos Doutores medievais,
@@ -332,12 +332,12 @@ function Home() {
       {/* AI feature */}
       <section className="relative overflow-hidden bg-deep">
         <div
-          className="absolute inset-0 opacity-[0.07] bg-cover bg-center transition-transform duration-[20s] scale-125 hover:scale-100"
+          className="absolute inset-0 opacity-[0.12] bg-cover bg-center transition-transform duration-[20s] scale-125 hover:scale-100"
           style={{ backgroundImage: `url(${cristo})` }}
         />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#050505_80%)]" />
         
-        <ScrollReveal className="relative max-w-5xl mx-auto px-8 py-40 md:py-60 text-center">
+        <ScrollReveal className="relative max-w-5xl mx-auto px-8 py-24 md:py-36 text-center">
           <div className="relative inline-block mb-12">
             <div className="absolute inset-0 bg-gold/20 blur-3xl rounded-full" />
             <div className="relative size-24 rounded-full glass border border-gold/30 flex items-center justify-center shadow-[0_0_50px_rgba(212,175,55,0.15)]">
@@ -358,7 +358,6 @@ function Home() {
             to="/assistente"
             className="group relative inline-flex items-center gap-4 px-12 py-6 bg-paper text-deep text-[11px] uppercase tracking-[0.4em] font-bold transition-premium hover:shadow-[0_0_50px_rgba(252,250,247,0.2)]"
           >
-            <Sparkles className="size-4 group-hover:rotate-12 transition-transform" /> 
             <span>Conversar agora</span>
           </Link>
         </ScrollReveal>
