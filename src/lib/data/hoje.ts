@@ -15,7 +15,7 @@ export type ItemRef = {
 
 export type VersiculoDia = ItemRef & { texto: string };
 export type EvangelhoDia = ItemRef & { texto: string; titulo: string };
-export type SantoDia = { nome: string; data: string; resumo: string };
+export type SantoDia = { nome: string; data: string; resumo: string; celebradoHoje?: boolean };
 
 const VERSICULOS: VersiculoDia[] = [
   { livro: "joao", nome: "João", capitulo: 14, vi: 6, vf: 6, texto: "Eu sou o caminho, a verdade e a vida; ninguém vem ao Pai senão por mim." },
@@ -114,6 +114,7 @@ export function santoDoDia(d: Date = new Date()): SantoDia {
       nome: s.nome,
       data: `${Number(dd)} de ${MESES[d.getMonth()]}`,
       resumo: s.resumo,
+      celebradoHoje: true,
     };
   }
   return SANTOS_DIA[(dayOfYear(d) - 1 + SANTOS_DIA.length * 1000) % SANTOS_DIA.length];

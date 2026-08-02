@@ -92,7 +92,7 @@ function Home() {
     {
       kicker: "Santo do dia",
       text: `${santo.nome} — ${santo.resumo}`,
-      ref: `Memória — ${santo.data}`,
+      ref: santo.celebradoHoje ? `Memória — ${santo.data}` : `Santo lembrado hoje · Memória em ${santo.data}`,
     },
     {
       kicker: "Evangelho do dia",
