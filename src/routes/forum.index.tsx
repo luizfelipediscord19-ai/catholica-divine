@@ -295,7 +295,7 @@ function NovoTopico({
             className={inputClass}
           />
         </label>
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center gap-3">
           <button type="submit" disabled={!valido || !token || criar.isPending} className={botaoClass}>
             {criar.isPending ? "Publicando…" : "Publicar"}
           </button>
@@ -307,6 +307,7 @@ function NovoTopico({
               como <span className="text-gold">{identidade.apelido ?? identidade.santoNome}</span>
             </span>
           ) : null}
+          {motivo ? <span className="text-xs text-muted-foreground/80">{motivo}</span> : null}
         </div>
       </form>
     </Painel>
