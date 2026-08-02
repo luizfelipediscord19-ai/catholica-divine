@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { BookOpen, Heart, Sparkles, Church, Crown, ScrollText, Compass, Calendar } from "lucide-react";
+import { BookOpen, Heart, Sparkles, Church, Crown, ScrollText, Compass, Calendar, MessageCircle } from "lucide-react";
 import hero from "../assets/hero-catedral.jpg";
 import maria from "../assets/maria.jpg";
 import cristo from "../assets/cristo.jpg";
@@ -358,6 +358,7 @@ function Home() {
             to="/assistente"
             className="group relative inline-flex items-center gap-4 px-12 py-6 bg-paper text-deep text-[11px] uppercase tracking-[0.4em] font-bold transition-premium hover:shadow-[0_0_50px_rgba(252,250,247,0.2)]"
           >
+            <MessageCircle className="size-4" aria-hidden="true" />
             <span>Conversar agora</span>
           </Link>
         </ScrollReveal>
