@@ -218,8 +218,6 @@ function Home() {
                 </ScrollReveal>
               );
 
-                </ScrollReveal>
-              );
             })}
           </div>
         </div>
