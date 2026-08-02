@@ -1,5 +1,5 @@
-import { memo, useState } from "react";
-import { Send, Loader2, AlertCircle, CheckCircle2 } from "lucide-react";
+import { memo, useEffect, useState } from "react";
+import { Send, Loader2, AlertCircle, CheckCircle2, Trash2 } from "lucide-react";
 import { toast } from "sonner";
 import { SophiaMode } from "../lib/types/chat";
 import { useSophiaChat } from "../hooks/api/use-sophia-chat";
@@ -19,7 +19,7 @@ export const SophiaChat = memo(({
   height = "60vh",
 }: SophiaChatProps) => {
   const [input, setInput] = useState("");
-  const { messages, sendMessage, status, error } = useSophiaChat(mode);
+  const { messages, sendMessage, status, error, setMessages, clearError } = useSophiaChat(mode);
 
   const isLoading = status === "submitted" || status === "streaming";
   const hasError = !!error || status === "error";
