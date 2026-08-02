@@ -19,18 +19,47 @@ export const Route = createFileRoute("/santos")({
 const FALLBACK_IMG =
   "https://images.unsplash.com/photo-1438032005730-c779502df39b?q=80&w=2000&auto=format&fit=crop";
 
+const PAGINA = 24;
+
+function normalizar(v: string) {
+  return v
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 function Page() {
   const [selectedSlug, setSelectedSlug] = useState<string | null>(null);
   const [query, setQuery] = useState("");
+  const [limite, setLimite] = useState(PAGINA);
   const detailRef = useRef<HTMLDivElement | null>(null);
 
   const filtered = useMemo(() => {
-    const q = query.trim().toLowerCase();
+    const q = normalizar(query);
     if (!q) return SANTOS_LISTA;
-    return SANTOS_LISTA.filter(
-      (s) => s.nome.toLowerCase().includes(q) || s.body.toLowerCase().includes(q),
-    );
+    const termos = q.split(" ");
+    return SANTOS_LISTA.filter((s) => {
+      const alvo = normalizar(`${s.nome} ${s.body} ${s.data}`);
+      return termos.every((t) => alvo.includes(t));
+    });
   }, [query]);
+
+  const visiveis = useMemo(() => filtered.slice(0, limite), [filtered, limite]);
+
+  useEffect(() => {
+    setLimite(PAGINA);
+  }, [query]);
+
+  useEffect(() => {
+    if (!selectedSlug) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSelectedSlug(null);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [selectedSlug]);
 
   const selected = useMemo(() => {
     if (!selectedSlug) return null;
@@ -63,9 +92,12 @@ function Page() {
           ) : null}
         </div>
 
-        <div className="mb-8 flex items-center gap-3 border border-gold/15 bg-card/30 backdrop-blur-md px-4 py-3">
-          <span className="text-[10px] tracking-[0.3em] uppercase text-gold/70">Buscar</span>
+        <div className="mb-8 flex items-center gap-3 border border-gold/15 bg-card/30 backdrop-blur-md px-4 py-3" role="search">
+          <label htmlFor="busca-santos" className="text-[10px] tracking-[0.3em] uppercase text-gold/90">
+            Buscar
+          </label>
           <input
+            id="busca-santos"
             type="search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
@@ -75,7 +107,8 @@ function Page() {
           {query ? (
             <button
               onClick={() => setQuery("")}
-              className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground hover:text-gold transition-colors"
+              aria-label="Limpar busca de santos"
+              className="min-h-11 px-2 text-[10px] tracking-[0.2em] uppercase text-foreground/70 hover:text-gold transition-colors"
             >
               limpar
             </button>
@@ -83,7 +116,7 @@ function Page() {
         </div>
 
         <CardGrid cols={3}>
-          {filtered.map((s, i) => {
+          {visiveis.map((s, i) => {
             const isActive = s.slug === selectedSlug;
             return (
               <button
@@ -106,6 +139,21 @@ function Page() {
             );
           })}
         </CardGrid>
+
+        {visiveis.length < filtered.length ? (
+          <div className="mt-12 flex flex-col items-center gap-3">
+            <p className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground">
+              Mostrando {visiveis.length} de {filtered.length} santos
+            </p>
+            <button
+              type="button"
+              onClick={() => setLimite((v) => v + PAGINA)}
+              className="min-h-11 px-8 py-3 border border-gold/40 text-[10px] uppercase tracking-[0.3em] text-gold hover:bg-gold hover:text-deep transition-colors"
+            >
+              Carregar mais santos
+            </button>
+          </div>
+        ) : null}
 
         {filtered.length === 0 ? (
           <p className="text-center text-sm text-muted-foreground py-12">
