@@ -36,7 +36,7 @@ export function SiteHeader() {
 
         <nav
           aria-label="Navegação principal"
-          className="hidden xl:flex items-center gap-6 text-[10px] uppercase tracking-[0.3em] font-medium text-paper/80"
+          className="hidden 2xl:flex items-center gap-5 whitespace-nowrap text-[10px] uppercase tracking-[0.3em] font-medium text-paper/80"
         >
           {NAV.map((item) => {
             const active = pathname === item.to || pathname.startsWith(`${item.to}/`);
@@ -77,7 +77,7 @@ export function SiteHeader() {
             aria-expanded={open}
             aria-controls="menu-mobile"
             onClick={() => setOpen((v) => !v)}
-            className="xl:hidden grid size-11 place-items-center rounded-full border border-gold/20 text-gold hover:bg-gold/10 transition-premium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+            className="2xl:hidden grid size-11 place-items-center rounded-full border border-gold/20 text-gold hover:bg-gold/10 transition-premium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
           >
             {open ? <X className="size-5" aria-hidden="true" /> : <Menu className="size-5" aria-hidden="true" />}
           </button>
@@ -85,7 +85,7 @@ export function SiteHeader() {
       </div>
 
       {open ? (
-        <div id="menu-mobile" className="xl:hidden border-t border-gold/20 bg-background">
+        <div id="menu-mobile" className="2xl:hidden border-t border-gold/20 bg-background">
           <nav
             aria-label="Navegação mobile"
             className="max-w-7xl mx-auto px-6 py-4 grid grid-cols-2 gap-x-6 gap-y-1 text-[12px] uppercase tracking-[0.18em] font-medium"
