@@ -1,5 +1,6 @@
-import { memo, useRef, useEffect } from "react";
+import { memo, useRef, useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
+import { Check, Copy } from "lucide-react";
 import { ChatMessage } from "../../lib/types/chat";
 
 interface ChatMessageProps {
@@ -9,13 +10,24 @@ interface ChatMessageProps {
 export const ChatMessageItem = memo(({ message }: ChatMessageProps) => {
   const isUser = message.role === "user";
   const text = message.parts.map((p) => (p.type === "text" ? p.text : "")).join("");
+  const [copiado, setCopiado] = useState(false);
+
+  const copiar = async () => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopiado(true);
+      setTimeout(() => setCopiado(false), 2000);
+    } catch {
+      /* clipboard indisponível */
+    }
+  };
 
   return (
     <div
       className={`flex animate-content-fade ${isUser ? "justify-end" : "justify-start"}`}
     >
       <div
-        className={`max-w-[85%] px-5 py-4 text-sm leading-relaxed transition-smooth ${
+        className={`group relative max-w-[85%] px-5 py-4 text-sm leading-relaxed transition-smooth ${
           isUser
             ? "bg-gold text-deep shadow-lg shadow-gold/20"
             : "bg-card border border-gold/15 text-foreground backdrop-blur-sm"
@@ -24,6 +36,18 @@ export const ChatMessageItem = memo(({ message }: ChatMessageProps) => {
         <div className="prose prose-sm prose-invert max-w-none [&_p]:my-2 [&_strong]:text-gold [&_blockquote]:border-gold/30 [&_blockquote]:text-paper/80 [&_h2]:text-gold [&_h2]:font-display [&_h3]:text-gold/90 [&_em]:text-gold/80">
           <ReactMarkdown>{text}</ReactMarkdown>
         </div>
+        {!isUser && text ? (
+          <button
+            type="button"
+            onClick={copiar}
+            aria-label="Copiar resposta"
+            title="Copiar resposta"
+            className="mt-3 inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-gold/60 hover:text-gold transition-colors"
+          >
+            {copiado ? <Check className="size-3" aria-hidden="true" /> : <Copy className="size-3" aria-hidden="true" />}
+            {copiado ? "Copiado" : "Copiar"}
+          </button>
+        ) : null}
       </div>
     </div>
   );
