@@ -14,7 +14,447 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      conquistas_catalogo: {
+        Row: {
+          created_at: string
+          descricao: string
+          icone: string | null
+          slug: string
+          titulo: string
+          xp: number
+        }
+        Insert: {
+          created_at?: string
+          descricao: string
+          icone?: string | null
+          slug: string
+          titulo: string
+          xp?: number
+        }
+        Update: {
+          created_at?: string
+          descricao?: string
+          icone?: string | null
+          slug?: string
+          titulo?: string
+          xp?: number
+        }
+        Relationships: []
+      }
+      conquistas_usuario: {
+        Row: {
+          conquista_slug: string
+          created_at: string
+          id: string
+          identidade_id: string
+        }
+        Insert: {
+          conquista_slug: string
+          created_at?: string
+          id?: string
+          identidade_id: string
+        }
+        Update: {
+          conquista_slug?: string
+          created_at?: string
+          id?: string
+          identidade_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "conquistas_usuario_conquista_slug_fkey"
+            columns: ["conquista_slug"]
+            isOneToOne: false
+            referencedRelation: "conquistas_catalogo"
+            referencedColumns: ["slug"]
+          },
+          {
+            foreignKeyName: "conquistas_usuario_identidade_id_fkey"
+            columns: ["identidade_id"]
+            isOneToOne: false
+            referencedRelation: "identidades"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      diario_espiritual: {
+        Row: {
+          created_at: string
+          data: string
+          id: string
+          identidade_id: string
+          intencao: string | null
+          minutos: number
+          reflexao: string | null
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          data?: string
+          id?: string
+          identidade_id: string
+          intencao?: string | null
+          minutos?: number
+          reflexao?: string | null
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          data?: string
+          id?: string
+          identidade_id?: string
+          intencao?: string | null
+          minutos?: number
+          reflexao?: string | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "diario_espiritual_identidade_id_fkey"
+            columns: ["identidade_id"]
+            isOneToOne: false
+            referencedRelation: "identidades"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      favoritos: {
+        Row: {
+          capitulo: number
+          created_at: string
+          id: string
+          identidade_id: string
+          livro: string
+          texto: string | null
+          versiculo: number
+        }
+        Insert: {
+          capitulo: number
+          created_at?: string
+          id?: string
+          identidade_id: string
+          livro: string
+          texto?: string | null
+          versiculo: number
+        }
+        Update: {
+          capitulo?: number
+          created_at?: string
+          id?: string
+          identidade_id?: string
+          livro?: string
+          texto?: string | null
+          versiculo?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "favoritos_identidade_id_fkey"
+            columns: ["identidade_id"]
+            isOneToOne: false
+            referencedRelation: "identidades"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      forum_reacoes: {
+        Row: {
+          created_at: string
+          id: string
+          identidade_id: string
+          resposta_id: string | null
+          tipo: string
+          topico_id: string | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          identidade_id: string
+          resposta_id?: string | null
+          tipo?: string
+          topico_id?: string | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          identidade_id?: string
+          resposta_id?: string | null
+          tipo?: string
+          topico_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "forum_reacoes_identidade_id_fkey"
+            columns: ["identidade_id"]
+            isOneToOne: false
+            referencedRelation: "identidades"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "forum_reacoes_resposta_id_fkey"
+            columns: ["resposta_id"]
+            isOneToOne: false
+            referencedRelation: "forum_respostas"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "forum_reacoes_topico_id_fkey"
+            columns: ["topico_id"]
+            isOneToOne: false
+            referencedRelation: "forum_topicos"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      forum_respostas: {
+        Row: {
+          corpo: string
+          created_at: string
+          id: string
+          identidade_id: string
+          topico_id: string
+          updated_at: string
+        }
+        Insert: {
+          corpo: string
+          created_at?: string
+          id?: string
+          identidade_id: string
+          topico_id: string
+          updated_at?: string
+        }
+        Update: {
+          corpo?: string
+          created_at?: string
+          id?: string
+          identidade_id?: string
+          topico_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "forum_respostas_identidade_id_fkey"
+            columns: ["identidade_id"]
+            isOneToOne: false
+            referencedRelation: "identidades"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "forum_respostas_topico_id_fkey"
+            columns: ["topico_id"]
+            isOneToOne: false
+            referencedRelation: "forum_topicos"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      forum_secoes: {
+        Row: {
+          created_at: string
+          descricao: string | null
+          id: string
+          nome: string
+          ordem: number
+          slug: string
+        }
+        Insert: {
+          created_at?: string
+          descricao?: string | null
+          id?: string
+          nome: string
+          ordem?: number
+          slug: string
+        }
+        Update: {
+          created_at?: string
+          descricao?: string | null
+          id?: string
+          nome?: string
+          ordem?: number
+          slug?: string
+        }
+        Relationships: []
+      }
+      forum_topicos: {
+        Row: {
+          corpo: string
+          created_at: string
+          fixado: boolean
+          id: string
+          identidade_id: string
+          respostas_count: number
+          secao_id: string
+          slug: string
+          titulo: string
+          trancado: boolean
+          ultima_atividade: string
+          updated_at: string
+        }
+        Insert: {
+          corpo: string
+          created_at?: string
+          fixado?: boolean
+          id?: string
+          identidade_id: string
+          respostas_count?: number
+          secao_id: string
+          slug: string
+          titulo: string
+          trancado?: boolean
+          ultima_atividade?: string
+          updated_at?: string
+        }
+        Update: {
+          corpo?: string
+          created_at?: string
+          fixado?: boolean
+          id?: string
+          identidade_id?: string
+          respostas_count?: number
+          secao_id?: string
+          slug?: string
+          titulo?: string
+          trancado?: boolean
+          ultima_atividade?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "forum_topicos_identidade_id_fkey"
+            columns: ["identidade_id"]
+            isOneToOne: false
+            referencedRelation: "identidades"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "forum_topicos_secao_id_fkey"
+            columns: ["secao_id"]
+            isOneToOne: false
+            referencedRelation: "forum_secoes"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      identidades: {
+        Row: {
+          apelido: string | null
+          created_at: string
+          id: string
+          melhor_streak: number
+          nivel: number
+          santo_imagem: string | null
+          santo_nome: string
+          santo_slug: string
+          streak: number
+          token: string
+          ultima_oracao: string | null
+          updated_at: string
+          xp: number
+        }
+        Insert: {
+          apelido?: string | null
+          created_at?: string
+          id?: string
+          melhor_streak?: number
+          nivel?: number
+          santo_imagem?: string | null
+          santo_nome: string
+          santo_slug: string
+          streak?: number
+          token?: string
+          ultima_oracao?: string | null
+          updated_at?: string
+          xp?: number
+        }
+        Update: {
+          apelido?: string | null
+          created_at?: string
+          id?: string
+          melhor_streak?: number
+          nivel?: number
+          santo_imagem?: string | null
+          santo_nome?: string
+          santo_slug?: string
+          streak?: number
+          token?: string
+          ultima_oracao?: string | null
+          updated_at?: string
+          xp?: number
+        }
+        Relationships: []
+      }
+      leituras_biblia: {
+        Row: {
+          capitulo: number
+          created_at: string
+          id: string
+          identidade_id: string
+          livro: string
+        }
+        Insert: {
+          capitulo: number
+          created_at?: string
+          id?: string
+          identidade_id: string
+          livro: string
+        }
+        Update: {
+          capitulo?: number
+          created_at?: string
+          id?: string
+          identidade_id?: string
+          livro?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "leituras_biblia_identidade_id_fkey"
+            columns: ["identidade_id"]
+            isOneToOne: false
+            referencedRelation: "identidades"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      notas: {
+        Row: {
+          capitulo: number
+          conteudo: string
+          created_at: string
+          id: string
+          identidade_id: string
+          livro: string
+          updated_at: string
+          versiculo: number | null
+        }
+        Insert: {
+          capitulo: number
+          conteudo: string
+          created_at?: string
+          id?: string
+          identidade_id: string
+          livro: string
+          updated_at?: string
+          versiculo?: number | null
+        }
+        Update: {
+          capitulo?: number
+          conteudo?: string
+          created_at?: string
+          id?: string
+          identidade_id?: string
+          livro?: string
+          updated_at?: string
+          versiculo?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "notas_identidade_id_fkey"
+            columns: ["identidade_id"]
+            isOneToOne: false
+            referencedRelation: "identidades"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
