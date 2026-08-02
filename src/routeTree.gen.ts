@@ -13,6 +13,7 @@ import { Route as SophiaDiagnosticoRouteImport } from './routes/sophia-diagnosti
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SantosRouteImport } from './routes/santos'
 import { Route as SacramentosRouteImport } from './routes/sacramentos'
+import { Route as PainelRouteImport } from './routes/painel'
 import { Route as OracoesRouteImport } from './routes/oracoes'
 import { Route as MariaRouteImport } from './routes/maria'
 import { Route as LiturgiaDiariaRouteImport } from './routes/liturgia-diaria'
@@ -34,6 +35,7 @@ import { Route as OracoesTercoMisericordiaRouteImport } from './routes/oracoes.t
 import { Route as OracoesRosarioRouteImport } from './routes/oracoes.rosario'
 import { Route as OracoesNovenasRouteImport } from './routes/oracoes.novenas'
 import { Route as OracoesLiturgiaDasHorasRouteImport } from './routes/oracoes.liturgia-das-horas'
+import { Route as ForumSlugRouteImport } from './routes/forum.$slug'
 import { Route as CatecismoParteRouteImport } from './routes/catecismo.$parte'
 import { Route as BibliaLeiturasRouteImport } from './routes/biblia.leituras'
 import { Route as BibliaLivroRouteImport } from './routes/biblia.$livro'
@@ -60,6 +62,11 @@ const SantosRoute = SantosRouteImport.update({
 const SacramentosRoute = SacramentosRouteImport.update({
   id: '/sacramentos',
   path: '/sacramentos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PainelRoute = PainelRouteImport.update({
+  id: '/painel',
+  path: '/painel',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OracoesRoute = OracoesRouteImport.update({
@@ -168,6 +175,11 @@ const OracoesLiturgiaDasHorasRoute = OracoesLiturgiaDasHorasRouteImport.update({
   path: '/liturgia-das-horas',
   getParentRoute: () => OracoesRoute,
 } as any)
+const ForumSlugRoute = ForumSlugRouteImport.update({
+  id: '/forum/$slug',
+  path: '/forum/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CatecismoParteRoute = CatecismoParteRouteImport.update({
   id: '/$parte',
   path: '/$parte',
@@ -218,6 +230,7 @@ export interface FileRoutesByFullPath {
   '/liturgia-diaria': typeof LiturgiaDiariaRoute
   '/maria': typeof MariaRoute
   '/oracoes': typeof OracoesRouteWithChildren
+  '/painel': typeof PainelRoute
   '/sacramentos': typeof SacramentosRoute
   '/santos': typeof SantosRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -226,6 +239,7 @@ export interface FileRoutesByFullPath {
   '/biblia/$livro': typeof BibliaLivroRouteWithChildren
   '/biblia/leituras': typeof BibliaLeiturasRoute
   '/catecismo/$parte': typeof CatecismoParteRoute
+  '/forum/$slug': typeof ForumSlugRoute
   '/oracoes/liturgia-das-horas': typeof OracoesLiturgiaDasHorasRoute
   '/oracoes/novenas': typeof OracoesNovenasRouteWithChildren
   '/oracoes/rosario': typeof OracoesRosarioRoute
@@ -251,6 +265,7 @@ export interface FileRoutesByTo {
   '/liturgia-diaria': typeof LiturgiaDiariaRoute
   '/maria': typeof MariaRoute
   '/oracoes': typeof OracoesRouteWithChildren
+  '/painel': typeof PainelRoute
   '/sacramentos': typeof SacramentosRoute
   '/santos': typeof SantosRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -258,6 +273,7 @@ export interface FileRoutesByTo {
   '/api/chat': typeof ApiChatRoute
   '/biblia/leituras': typeof BibliaLeiturasRoute
   '/catecismo/$parte': typeof CatecismoParteRoute
+  '/forum/$slug': typeof ForumSlugRoute
   '/oracoes/liturgia-das-horas': typeof OracoesLiturgiaDasHorasRoute
   '/oracoes/novenas': typeof OracoesNovenasRouteWithChildren
   '/oracoes/rosario': typeof OracoesRosarioRoute
@@ -285,6 +301,7 @@ export interface FileRoutesById {
   '/liturgia-diaria': typeof LiturgiaDiariaRoute
   '/maria': typeof MariaRoute
   '/oracoes': typeof OracoesRouteWithChildren
+  '/painel': typeof PainelRoute
   '/sacramentos': typeof SacramentosRoute
   '/santos': typeof SantosRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -293,6 +310,7 @@ export interface FileRoutesById {
   '/biblia/$livro': typeof BibliaLivroRouteWithChildren
   '/biblia/leituras': typeof BibliaLeiturasRoute
   '/catecismo/$parte': typeof CatecismoParteRoute
+  '/forum/$slug': typeof ForumSlugRoute
   '/oracoes/liturgia-das-horas': typeof OracoesLiturgiaDasHorasRoute
   '/oracoes/novenas': typeof OracoesNovenasRouteWithChildren
   '/oracoes/rosario': typeof OracoesRosarioRoute
@@ -321,6 +339,7 @@ export interface FileRouteTypes {
     | '/liturgia-diaria'
     | '/maria'
     | '/oracoes'
+    | '/painel'
     | '/sacramentos'
     | '/santos'
     | '/sitemap.xml'
@@ -329,6 +348,7 @@ export interface FileRouteTypes {
     | '/biblia/$livro'
     | '/biblia/leituras'
     | '/catecismo/$parte'
+    | '/forum/$slug'
     | '/oracoes/liturgia-das-horas'
     | '/oracoes/novenas'
     | '/oracoes/rosario'
@@ -354,6 +374,7 @@ export interface FileRouteTypes {
     | '/liturgia-diaria'
     | '/maria'
     | '/oracoes'
+    | '/painel'
     | '/sacramentos'
     | '/santos'
     | '/sitemap.xml'
@@ -361,6 +382,7 @@ export interface FileRouteTypes {
     | '/api/chat'
     | '/biblia/leituras'
     | '/catecismo/$parte'
+    | '/forum/$slug'
     | '/oracoes/liturgia-das-horas'
     | '/oracoes/novenas'
     | '/oracoes/rosario'
@@ -387,6 +409,7 @@ export interface FileRouteTypes {
     | '/liturgia-diaria'
     | '/maria'
     | '/oracoes'
+    | '/painel'
     | '/sacramentos'
     | '/santos'
     | '/sitemap.xml'
@@ -395,6 +418,7 @@ export interface FileRouteTypes {
     | '/biblia/$livro'
     | '/biblia/leituras'
     | '/catecismo/$parte'
+    | '/forum/$slug'
     | '/oracoes/liturgia-das-horas'
     | '/oracoes/novenas'
     | '/oracoes/rosario'
@@ -422,11 +446,13 @@ export interface RootRouteChildren {
   LiturgiaDiariaRoute: typeof LiturgiaDiariaRoute
   MariaRoute: typeof MariaRoute
   OracoesRoute: typeof OracoesRouteWithChildren
+  PainelRoute: typeof PainelRoute
   SacramentosRoute: typeof SacramentosRoute
   SantosRoute: typeof SantosRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SophiaDiagnosticoRoute: typeof SophiaDiagnosticoRoute
   ApiChatRoute: typeof ApiChatRoute
+  ForumSlugRoute: typeof ForumSlugRoute
   ForumIndexRoute: typeof ForumIndexRoute
 }
 
@@ -458,6 +484,13 @@ declare module '@tanstack/react-router' {
       path: '/sacramentos'
       fullPath: '/sacramentos'
       preLoaderRoute: typeof SacramentosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/painel': {
+      id: '/painel'
+      path: '/painel'
+      fullPath: '/painel'
+      preLoaderRoute: typeof PainelRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/oracoes': {
@@ -606,6 +639,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/oracoes/liturgia-das-horas'
       preLoaderRoute: typeof OracoesLiturgiaDasHorasRouteImport
       parentRoute: typeof OracoesRoute
+    }
+    '/forum/$slug': {
+      id: '/forum/$slug'
+      path: '/forum/$slug'
+      fullPath: '/forum/$slug'
+      preLoaderRoute: typeof ForumSlugRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/catecismo/$parte': {
       id: '/catecismo/$parte'
@@ -756,11 +796,13 @@ const rootRouteChildren: RootRouteChildren = {
   LiturgiaDiariaRoute: LiturgiaDiariaRoute,
   MariaRoute: MariaRoute,
   OracoesRoute: OracoesRouteWithChildren,
+  PainelRoute: PainelRoute,
   SacramentosRoute: SacramentosRoute,
   SantosRoute: SantosRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SophiaDiagnosticoRoute: SophiaDiagnosticoRoute,
   ApiChatRoute: ApiChatRoute,
+  ForumSlugRoute: ForumSlugRoute,
   ForumIndexRoute: ForumIndexRoute,
 }
 export const routeTree = rootRouteImport
