@@ -1,16 +1,33 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useSuspenseQuery } from "@tanstack/react-query";
 import { BookOpen, Heart, Sparkles, Church, Crown, ScrollText, Compass, Calendar, MessageCircle } from "lucide-react";
 import hero from "../assets/hero-catedral.jpg";
 import maria from "../assets/maria.jpg";
 import cristo from "../assets/cristo.jpg";
-import { versoDoDia, evangelhoDoDia, santoDoDia } from "../lib/data/hoje";
+import { santoDoDia } from "../lib/data/hoje";
+import { liturgiaQueryOptions } from "../lib/liturgia/query";
+import { COR_CLASSE } from "../lib/liturgia/calendario";
 import { ScrollReveal } from "../components/ScrollReveal";
+
 
 
 const SITE_URL = "https://portalcatolico.netlify.app";
 
 export const Route = createFileRoute("/")({
+  loader: ({ context }) => context.queryClient.ensureQueryData(liturgiaQueryOptions()),
+  errorComponent: ({ error }) => (
+    <div className="max-w-2xl mx-auto px-6 py-32 text-center" role="alert">
+      <p className="text-gold">Não foi possível carregar o conteúdo do dia.</p>
+      <p className="mt-2 text-sm text-muted-foreground">{error.message}</p>
+    </div>
+  ),
+  notFoundComponent: () => (
+    <div className="max-w-2xl mx-auto px-6 py-32 text-center">
+      <p className="text-gold">Página não encontrada.</p>
+    </div>
+  ),
   head: () => ({
+
     meta: [
       { title: "Portal Católico — Bíblia, Catecismo e a Tradição da Igreja" },
       {
@@ -66,45 +83,67 @@ const PADRES = [
 ];
 
 
-function refTexto(r: { nome: string; capitulo: number; vi?: number; vf?: number }) {
-  if (r.vi && r.vf && r.vi !== r.vf) return `${r.nome} ${r.capitulo}, ${r.vi}-${r.vf}`;
-  if (r.vi) return `${r.nome} ${r.capitulo}, ${r.vi}`;
-  return `${r.nome} ${r.capitulo}`;
+function primeiraFrase(texto: string, max = 220): string {
+  const limpo = texto
+    .replace(/(^|[\s“‘"(])\d+(?=\p{L})/gu, "$1")
+    .replace(/\s+/g, " ")
+    .trim();
+  if (limpo.length <= max) return limpo;
+  const corte = limpo.slice(0, max);
+  const fim = Math.max(corte.lastIndexOf(". "), corte.lastIndexOf("; "));
+  return (fim > 80 ? corte.slice(0, fim + 1) : `${corte.trimEnd()}…`);
+}
+
+/** A celebração é uma memória de santo (e não apenas o dia da semana/domingo)? */
+function ehMemoriaDeSanto(celebracao: string): boolean {
+  return !/(domingo|feira|sábado|sabado|semana)/i.test(celebracao);
 }
 
 function Home() {
-  const verso = versoDoDia();
-  const evangelho = evangelhoDoDia();
+  const { data: lit } = useSuspenseQuery(liturgiaQueryOptions());
   const santo = santoDoDia();
 
-  // Memoize daily items to prevent unnecessary recalculations
-  const DAILY_ITEMS = [
+  const salmo = lit.salmo[0];
+  const evangelho = lit.evangelho[0];
+  const memoriaOficial = ehMemoriaDeSanto(lit.celebracao) ? lit.celebracao : null;
+
+  const DAILY_ITEMS: {
+    kicker: string;
+    text: string;
+    ref: string;
+    linkTo?: "/liturgia-diaria" | "/santos";
+  }[] = [
     {
       kicker: "Versículo do dia",
-      text: `“${verso.texto}”`,
-      ref: refTexto(verso),
-      link: {
-        to: "/biblia/$livro/$capitulo",
-        params: { livro: verso.livro, capitulo: String(verso.capitulo) },
-        search: verso.vi ? { vi: String(verso.vi), ...(verso.vf ? { vf: String(verso.vf) } : {}) } : {},
-      },
+      text: `“${salmo?.refrao ?? primeiraFrase(salmo?.texto ?? lit.celebracao)}”`,
+      ref: salmo?.referencia ? `Salmo responsorial — ${salmo.referencia}` : lit.tempoNome,
+      linkTo: "/liturgia-diaria",
     },
-    {
-      kicker: "Santo do dia",
-      text: `${santo.nome} — ${santo.resumo}`,
-      ref: santo.celebradoHoje ? `Memória — ${santo.data}` : `Santo lembrado hoje · Memória em ${santo.data}`,
-    },
+    memoriaOficial
+      ? {
+          kicker: "Santo do dia",
+          text: memoriaOficial,
+          ref: `Celebração de hoje · ${lit.tempoNome}`,
+          linkTo: "/santos" as const,
+        }
+      : {
+          kicker: "Santo do dia",
+          text: `${santo.nome} — ${santo.resumo}`,
+          ref: santo.celebradoHoje
+            ? `Memória — ${santo.data}`
+            : `Santo lembrado hoje · Memória em ${santo.data}`,
+          linkTo: "/santos" as const,
+        },
+
     {
       kicker: "Evangelho do dia",
-      text: `${evangelho.titulo} — “${evangelho.texto}”`,
-      ref: refTexto(evangelho),
-      link: {
-        to: "/biblia/$livro/$capitulo",
-        params: { livro: evangelho.livro, capitulo: String(evangelho.capitulo) },
-        search: evangelho.vi ? { vi: String(evangelho.vi), ...(evangelho.vf ? { vf: String(evangelho.vf) } : {}) } : {},
-      },
+      text: evangelho ? `“${primeiraFrase(evangelho.texto)}”` : lit.celebracao,
+      ref: evangelho?.referencia ? `${evangelho.referencia} · Ano ${lit.anoLiturgico}` : `Ano ${lit.anoLiturgico}`,
+      linkTo: "/liturgia-diaria",
     },
   ];
+
+
 
   return (
     <div>
@@ -160,6 +199,25 @@ function Home() {
         </div>
       </section>
 
+      {/* Tempo litúrgico em tempo real */}
+      <section className="bg-background relative z-10 border-y border-gold/10">
+        <div className="max-w-7xl mx-auto px-8 py-5 flex flex-wrap items-center justify-between gap-4">
+          <p className="flex flex-wrap items-center gap-3 text-[10px] tracking-[0.3em] uppercase text-muted-foreground">
+            <span className={`inline-flex items-center gap-2 border px-3 py-1.5 ${COR_CLASSE[lit.cor]}`}>
+              <span className="size-2 rounded-full bg-current" aria-hidden="true" /> {lit.corNome}
+            </span>
+            <span className="text-foreground/90">{lit.celebracao}</span>
+            <span className="text-gold/70">Ano {lit.anoLiturgico}</span>
+          </p>
+          <Link
+            to="/liturgia-diaria"
+            className="text-[10px] tracking-[0.3em] uppercase text-gold hover:text-paper transition-colors"
+          >
+            Liturgia diária →
+          </Link>
+        </div>
+      </section>
+
       {/* Daily */}
       <section className="bg-background relative z-10">
         <div className="max-w-7xl mx-auto px-8">
@@ -182,8 +240,8 @@ function Home() {
                   delay={i * 150}
                   threshold={0.05}
                 >
-                  {d.link ? (
-                    <Link to={d.link.to} params={d.link.params} search={d.link.search} className="block h-full">
+                  {d.linkTo ? (
+                    <Link to={d.linkTo} className="block h-full">
                       {inner}
                     </Link>
                   ) : (
@@ -191,6 +249,7 @@ function Home() {
                   )}
                 </ScrollReveal>
               );
+
             })}
           </div>
         </div>
