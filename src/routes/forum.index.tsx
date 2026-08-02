@@ -237,7 +237,18 @@ function NovoTopico({
     onError: (erro: Error) => toast.error(erro.message || "Não foi possível publicar."),
   });
 
-  const valido = secaoSlug && titulo.trim().length >= 5 && corpo.trim().length >= 10;
+  useEffect(() => {
+    if (!secaoSlug && secoes.length > 0) setSecaoSlug(secoes[0]!.slug);
+  }, [secaoSlug, secoes]);
+
+  const valido = !!secaoSlug && titulo.trim().length >= 5 && corpo.trim().length >= 10;
+  const motivo = !token
+    ? "Preparando sua identidade anônima…"
+    : titulo.trim().length < 5
+      ? "O título precisa de pelo menos 5 caracteres."
+      : corpo.trim().length < 10
+        ? "A mensagem precisa de pelo menos 10 caracteres."
+        : null;
 
   return (
     <Painel>
@@ -254,10 +265,10 @@ function NovoTopico({
           <select
             value={secaoSlug}
             onChange={(e) => setSecaoSlug(e.target.value)}
-            className={inputClass}
+            className={`${inputClass} appearance-none cursor-pointer bg-card text-foreground`}
           >
             {secoes.map((s) => (
-              <option key={s.slug} value={s.slug}>
+              <option key={s.slug} value={s.slug} className="bg-card text-foreground">
                 {s.nome}
               </option>
             ))}
