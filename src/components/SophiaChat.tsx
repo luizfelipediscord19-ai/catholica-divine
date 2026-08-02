@@ -1,5 +1,5 @@
-import { memo, useState } from "react";
-import { Send, Loader2, AlertCircle, CheckCircle2 } from "lucide-react";
+import { memo, useEffect, useState } from "react";
+import { Send, Loader2, AlertCircle, CheckCircle2, Trash2 } from "lucide-react";
 import { toast } from "sonner";
 import { SophiaMode } from "../lib/types/chat";
 import { useSophiaChat } from "../hooks/api/use-sophia-chat";
@@ -19,7 +19,7 @@ export const SophiaChat = memo(({
   height = "60vh",
 }: SophiaChatProps) => {
   const [input, setInput] = useState("");
-  const { messages, sendMessage, status, error } = useSophiaChat(mode);
+  const { messages, sendMessage, status, error, setMessages, clearError } = useSophiaChat(mode);
 
   const isLoading = status === "submitted" || status === "streaming";
   const hasError = !!error || status === "error";
@@ -68,27 +68,46 @@ export const SophiaChat = memo(({
     handleSubmit(input);
   };
 
-  if (hasError && error) {
-    toast.error(typeof error === 'string' ? error : error.message || "Erro desconhecido");
-  }
+  useEffect(() => {
+    if (!error) return;
+    toast.error(typeof error === "string" ? error : error.message || "Erro desconhecido");
+  }, [error]);
+
+  const limparHistorico = () => {
+    setMessages([]);
+    clearError?.();
+    setInput("");
+  };
 
   return (
     <div className="border border-gold/20 bg-card/80 backdrop-blur-xl flex flex-col shadow-2xl shadow-black/50 overflow-hidden" style={{ height }}>
       <div className={`flex items-center justify-between px-6 py-4 text-[11px] tracking-[0.2em] uppercase border-b border-gold/10 ${statusColor}`}>
         <div className="flex items-center gap-3">
           <div className="relative">
-            <StatusIcon className={`size-3.5 ${isLoading ? "animate-spin" : ""}`} />
+            <StatusIcon className={`size-3.5 ${isLoading ? "animate-spin" : ""}`} aria-hidden="true" />
             {!isLoading && !hasError && (
               <span className="absolute inset-0 bg-emerald-400 blur-sm opacity-50" />
             )}
           </div>
           <span className="font-bold">Sophia · {statusLabel}</span>
         </div>
-        <div className="flex items-center gap-2 text-gold/50">
-          <span className="size-1 rounded-full bg-gold/40" />
-          <span>v2.0 Flash</span>
+        <div className="flex items-center gap-4 text-gold/50">
+          {messages.length > 0 ? (
+            <button
+              type="button"
+              onClick={limparHistorico}
+              className="inline-flex items-center gap-2 text-gold/60 hover:text-gold transition-colors"
+              aria-label="Limpar histórico da conversa"
+              title="Limpar histórico"
+            >
+              <Trash2 className="size-3.5" aria-hidden="true" />
+              <span className="hidden sm:inline">Limpar</span>
+            </button>
+          ) : null}
+          <span className="hidden sm:inline">v2.0</span>
         </div>
       </div>
+
 
       {messages.length === 0 ? (
         <div className="flex-1 overflow-y-auto p-6 flex flex-col gap-6 py-4">

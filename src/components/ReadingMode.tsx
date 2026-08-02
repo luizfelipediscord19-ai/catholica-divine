@@ -1,8 +1,11 @@
-import { useEffect, useState, type ReactNode } from "react";
+import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 import { Printer, List } from "lucide-react";
 
 export type TocItem = { id: string; label: string };
 export type Footnote = { id: string; label: string; ref?: string };
+
+/** Maps footnote ids to their 1-based position so <FnRef> can show a number. */
+const FootnoteIndex = createContext<Record<string, number>>({});
 
 /** Wraps a long article with a sticky table of contents, print button,
  * and a footnotes block. Use <FnRef n="..."/> inline to cite. */
@@ -37,7 +40,13 @@ export function ReadingMode({
     return () => obs.disconnect();
   }, [toc]);
 
+  const indice = useMemo(
+    () => Object.fromEntries(footnotes.map((f, i) => [f.id, i + 1])),
+    [footnotes],
+  );
+
   return (
+    <FootnoteIndex.Provider value={indice}>
     <div className="reading-mode max-w-[90rem] mx-auto px-8 py-20 grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-20">
       {/* Mobile TOC trigger */}
       <div className="lg:hidden flex items-center justify-between gap-4 print:hidden mb-8">
@@ -118,19 +127,23 @@ export function ReadingMode({
         ) : null}
       </article>
     </div>
+    </FootnoteIndex.Provider>
   );
 }
 
-/** Inline footnote reference: <FnRef n="dv" />. Renders a superscript link
- * to the matching footnote in the ReadingMode footer. */
+/** Inline footnote reference: <FnRef n="dv" />. Renders a numbered superscript
+ * link to the matching footnote in the ReadingMode footer. */
 export function FnRef({ n }: { n: string }) {
+  const indice = useContext(FootnoteIndex);
+  const numero = indice[n];
   return (
     <sup id={`fnref-${n}`} className="ml-0.5">
       <a
         href={`#fn-${n}`}
+        aria-label={`Ver nota ${numero ?? n}`}
         className="text-gold/90 hover:text-gold no-underline text-[10px] font-medium align-super"
       >
-        [{n}]
+        {numero ?? "•"}
       </a>
     </sup>
   );
