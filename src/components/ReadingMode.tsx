@@ -1,8 +1,11 @@
-import { useEffect, useState, type ReactNode } from "react";
+import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 import { Printer, List } from "lucide-react";
 
 export type TocItem = { id: string; label: string };
 export type Footnote = { id: string; label: string; ref?: string };
+
+/** Maps footnote ids to their 1-based position so <FnRef> can show a number. */
+const FootnoteIndex = createContext<Record<string, number>>({});
 
 /** Wraps a long article with a sticky table of contents, print button,
  * and a footnotes block. Use <FnRef n="..."/> inline to cite. */
