@@ -26,6 +26,7 @@ import { Route as BibliaRouteImport } from './routes/biblia'
 import { Route as AssistenteRouteImport } from './routes/assistente'
 import { Route as ApologeticaRouteImport } from './routes/apologetica'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ForumIndexRouteImport } from './routes/forum.index'
 import { Route as BibliaIndexRouteImport } from './routes/biblia.index'
 import { Route as SantosSlugRouteImport } from './routes/santos.$slug'
 import { Route as OracoesViaSacraRouteImport } from './routes/oracoes.via-sacra'
@@ -124,6 +125,11 @@ const ApologeticaRoute = ApologeticaRouteImport.update({
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForumIndexRoute = ForumIndexRouteImport.update({
+  id: '/forum/',
+  path: '/forum/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BibliaIndexRoute = BibliaIndexRouteImport.update({
@@ -227,6 +233,7 @@ export interface FileRoutesByFullPath {
   '/oracoes/via-sacra': typeof OracoesViaSacraRoute
   '/santos/$slug': typeof SantosSlugRoute
   '/biblia/': typeof BibliaIndexRoute
+  '/forum/': typeof ForumIndexRoute
   '/biblia/$livro/$capitulo': typeof BibliaLivroCapituloRoute
   '/oracoes/novenas/$slug': typeof OracoesNovenasSlugRoute
   '/biblia/$livro/': typeof BibliaLivroIndexRoute
@@ -258,6 +265,7 @@ export interface FileRoutesByTo {
   '/oracoes/via-sacra': typeof OracoesViaSacraRoute
   '/santos/$slug': typeof SantosSlugRoute
   '/biblia': typeof BibliaIndexRoute
+  '/forum': typeof ForumIndexRoute
   '/biblia/$livro/$capitulo': typeof BibliaLivroCapituloRoute
   '/oracoes/novenas/$slug': typeof OracoesNovenasSlugRoute
   '/biblia/$livro': typeof BibliaLivroIndexRoute
@@ -292,6 +300,7 @@ export interface FileRoutesById {
   '/oracoes/via-sacra': typeof OracoesViaSacraRoute
   '/santos/$slug': typeof SantosSlugRoute
   '/biblia/': typeof BibliaIndexRoute
+  '/forum/': typeof ForumIndexRoute
   '/biblia/$livro/$capitulo': typeof BibliaLivroCapituloRoute
   '/oracoes/novenas/$slug': typeof OracoesNovenasSlugRoute
   '/biblia/$livro/': typeof BibliaLivroIndexRoute
@@ -327,6 +336,7 @@ export interface FileRouteTypes {
     | '/oracoes/via-sacra'
     | '/santos/$slug'
     | '/biblia/'
+    | '/forum/'
     | '/biblia/$livro/$capitulo'
     | '/oracoes/novenas/$slug'
     | '/biblia/$livro/'
@@ -358,6 +368,7 @@ export interface FileRouteTypes {
     | '/oracoes/via-sacra'
     | '/santos/$slug'
     | '/biblia'
+    | '/forum'
     | '/biblia/$livro/$capitulo'
     | '/oracoes/novenas/$slug'
     | '/biblia/$livro'
@@ -391,6 +402,7 @@ export interface FileRouteTypes {
     | '/oracoes/via-sacra'
     | '/santos/$slug'
     | '/biblia/'
+    | '/forum/'
     | '/biblia/$livro/$capitulo'
     | '/oracoes/novenas/$slug'
     | '/biblia/$livro/'
@@ -415,6 +427,7 @@ export interface RootRouteChildren {
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SophiaDiagnosticoRoute: typeof SophiaDiagnosticoRoute
   ApiChatRoute: typeof ApiChatRoute
+  ForumIndexRoute: typeof ForumIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -536,6 +549,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/forum/': {
+      id: '/forum/'
+      path: '/forum'
+      fullPath: '/forum/'
+      preLoaderRoute: typeof ForumIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/biblia/': {
@@ -741,17 +761,8 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SophiaDiagnosticoRoute: SophiaDiagnosticoRoute,
   ApiChatRoute: ApiChatRoute,
+  ForumIndexRoute: ForumIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
