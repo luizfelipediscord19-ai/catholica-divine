@@ -70,45 +70,48 @@ const PADRES = [
 ];
 
 
-function refTexto(r: { nome: string; capitulo: number; vi?: number; vf?: number }) {
-  if (r.vi && r.vf && r.vi !== r.vf) return `${r.nome} ${r.capitulo}, ${r.vi}-${r.vf}`;
-  if (r.vi) return `${r.nome} ${r.capitulo}, ${r.vi}`;
-  return `${r.nome} ${r.capitulo}`;
+function primeiraFrase(texto: string, max = 220): string {
+  const limpo = texto.replace(/\s*\d+(?=[A-ZÁÉÍÓÚÂÊÔÃÕÇ“‘])/g, " ").replace(/\s+/g, " ").trim();
+  if (limpo.length <= max) return limpo;
+  const corte = limpo.slice(0, max);
+  const fim = Math.max(corte.lastIndexOf(". "), corte.lastIndexOf("; "));
+  return (fim > 80 ? corte.slice(0, fim + 1) : `${corte.trimEnd()}…`);
 }
 
 function Home() {
-  const verso = versoDoDia();
-  const evangelho = evangelhoDoDia();
+  const { data: lit } = useSuspenseQuery(liturgiaQueryOptions());
   const santo = santoDoDia();
 
-  // Memoize daily items to prevent unnecessary recalculations
-  const DAILY_ITEMS = [
+  const salmo = lit.salmo[0];
+  const evangelho = lit.evangelho[0];
+
+  const DAILY_ITEMS: {
+    kicker: string;
+    text: string;
+    ref: string;
+    linkTo?: "/liturgia-diaria" | "/santos";
+  }[] = [
     {
       kicker: "Versículo do dia",
-      text: `“${verso.texto}”`,
-      ref: refTexto(verso),
-      link: {
-        to: "/biblia/$livro/$capitulo",
-        params: { livro: verso.livro, capitulo: String(verso.capitulo) },
-        search: verso.vi ? { vi: String(verso.vi), ...(verso.vf ? { vf: String(verso.vf) } : {}) } : {},
-      },
+      text: `“${salmo?.refrao ?? primeiraFrase(salmo?.texto ?? lit.celebracao)}”`,
+      ref: salmo?.referencia ? `Salmo responsorial — ${salmo.referencia}` : lit.tempoNome,
+      linkTo: "/liturgia-diaria",
     },
     {
       kicker: "Santo do dia",
       text: `${santo.nome} — ${santo.resumo}`,
       ref: santo.celebradoHoje ? `Memória — ${santo.data}` : `Santo lembrado hoje · Memória em ${santo.data}`,
+      linkTo: "/santos",
     },
     {
       kicker: "Evangelho do dia",
-      text: `${evangelho.titulo} — “${evangelho.texto}”`,
-      ref: refTexto(evangelho),
-      link: {
-        to: "/biblia/$livro/$capitulo",
-        params: { livro: evangelho.livro, capitulo: String(evangelho.capitulo) },
-        search: evangelho.vi ? { vi: String(evangelho.vi), ...(evangelho.vf ? { vf: String(evangelho.vf) } : {}) } : {},
-      },
+      text: evangelho ? `“${primeiraFrase(evangelho.texto)}”` : lit.celebracao,
+      ref: evangelho?.referencia ? `${evangelho.referencia} · Ano ${lit.anoLiturgico}` : `Ano ${lit.anoLiturgico}`,
+      linkTo: "/liturgia-diaria",
     },
   ];
+
+
 
   return (
     <div>
