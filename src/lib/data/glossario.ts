@@ -152,11 +152,11 @@ export const GLOSSARIO: Record<string, EntradaGlossario> = {
       "União espiritual entre os fiéis da Igreja peregrina (na terra), padecente (no purgatório) e triunfante (no céu), nos bens espirituais.",
     ref: "CIC §§ 946-962",
   },
-  pecado_original: {
-    termo: "Pecado Original",
+  concupiscencia: {
+    termo: "Concupiscência",
     definicao:
-      "Estado de privação da santidade original transmitido a toda a humanidade pela queda de Adão; não é um ato pessoal, mas uma condição herdada, apagada pelo Batismo.",
-    ref: "CIC §§ 396-412",
+      "Inclinação desordenada ao pecado que permanece no batizado como consequência do pecado original, sem ser ela mesma pecado.",
+    ref: "CIC §§ 405, 1264",
   },
   pecado_mortal: {
     termo: "Pecado Mortal",
