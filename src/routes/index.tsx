@@ -167,6 +167,25 @@ function Home() {
         </div>
       </section>
 
+      {/* Tempo litúrgico em tempo real */}
+      <section className="bg-background relative z-10 border-y border-gold/10">
+        <div className="max-w-7xl mx-auto px-8 py-5 flex flex-wrap items-center justify-between gap-4">
+          <p className="flex flex-wrap items-center gap-3 text-[10px] tracking-[0.3em] uppercase text-muted-foreground">
+            <span className={`inline-flex items-center gap-2 border px-3 py-1.5 ${COR_CLASSE[lit.cor]}`}>
+              <span className="size-2 rounded-full bg-current" aria-hidden="true" /> {lit.corNome}
+            </span>
+            <span className="text-foreground/90">{lit.celebracao}</span>
+            <span className="text-gold/70">Ano {lit.anoLiturgico}</span>
+          </p>
+          <Link
+            to="/liturgia-diaria"
+            className="text-[10px] tracking-[0.3em] uppercase text-gold hover:text-paper transition-colors"
+          >
+            Liturgia diária →
+          </Link>
+        </div>
+      </section>
+
       {/* Daily */}
       <section className="bg-background relative z-10">
         <div className="max-w-7xl mx-auto px-8">
@@ -189,13 +208,16 @@ function Home() {
                   delay={i * 150}
                   threshold={0.05}
                 >
-                  {d.link ? (
-                    <Link to={d.link.to} params={d.link.params} search={d.link.search} className="block h-full">
+                  {d.linkTo ? (
+                    <Link to={d.linkTo} className="block h-full">
                       {inner}
                     </Link>
                   ) : (
                     <div className="h-full">{inner}</div>
                   )}
+                </ScrollReveal>
+              );
+
                 </ScrollReveal>
               );
             })}
