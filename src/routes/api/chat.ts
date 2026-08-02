@@ -44,7 +44,7 @@ export const Route = createFileRoute("/api/chat")({
             system: systemPrompt,
             messages: await convertToModelMessages(messages as UIMessage[]),
             temperature: 0.7,
-            maxOutputTokens: 1500,
+            maxOutputTokens: 3000,
           });
 
           return result.toUIMessageStreamResponse({
