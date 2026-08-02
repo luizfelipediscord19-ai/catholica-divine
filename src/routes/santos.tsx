@@ -179,9 +179,13 @@ function SantoDetail({
         <div className="relative aspect-[4/5] md:aspect-auto md:min-h-[420px] bg-deep overflow-hidden">
           <img
             src={img}
-            alt={view.nome}
+            alt={`Representação de ${view.nome}`}
             loading="lazy"
             decoding="async"
+            onError={(e) => {
+              const el = e.currentTarget;
+              if (el.src !== FALLBACK_IMG) el.src = FALLBACK_IMG;
+            }}
             className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1.6s] ease-out hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent md:bg-gradient-to-r" />
