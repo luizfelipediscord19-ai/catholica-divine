@@ -158,7 +158,6 @@ export function diaLiturgico(date: Date = new Date()): DiaLiturgico {
   const inicioAno = hoje >= adventoEste ? adventoEste : primeiroDomingoAdvento(anoCivil - 1);
   const anoFinal = inicioAno.getUTCFullYear() + 1;
 
-  const f = festasMoveis(anoFinal <= anoCivil + 1 ? anoFinal : anoCivil);
   const fPascal = festasMoveis(anoFinal);
   const batismo = batismoDoSenhor(anoFinal);
   const natal = d(inicioAno.getUTCFullYear(), 12, 25);
@@ -223,7 +222,6 @@ export function diaLiturgico(date: Date = new Date()): DiaLiturgico {
     cinzas: toIso(fPascal.cinzas),
     pentecostes: toIso(fPascal.pentecostes),
     advento: toIso(inicioAno),
-    ...(f ? {} : {}),
   };
 }
 
