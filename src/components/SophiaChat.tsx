@@ -130,18 +130,21 @@ export const SophiaChat = memo(({
             type="button"
             onClick={() => handleSubmit("___VOICE___")}
             className="px-4 border border-gold/10 hover:border-gold/40 text-gold/60 hover:text-gold transition-premium bg-white/[0.02]"
+            aria-label="Ditar pergunta por voz"
             title="Falar com a IA"
           >
-            <svg className="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" focusable="false">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
             </svg>
           </button>
           <button
             type="submit"
             disabled={isLoading || !input.trim()}
+            aria-label="Enviar pergunta"
+            title="Enviar pergunta"
             className="px-8 bg-gold text-deep disabled:opacity-30 hover:bg-paper transition-premium shadow-lg shadow-gold/5 flex items-center justify-center group"
           >
-            <Send className="size-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+            <Send className="size-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" aria-hidden="true" />
           </button>
         </div>
       </form>
