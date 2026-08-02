@@ -3,6 +3,7 @@
 // muda à meia-noite local.
 
 import { PLANO, dayOfYear, type Leitura } from "./biblia/leituras";
+import { SANTOS } from "./santos";
 
 export type ItemRef = {
   livro: string;
@@ -93,7 +94,28 @@ export function versoDoDia(d: Date = new Date()): VersiculoDia {
 export function evangelhoDoDia(d: Date = new Date()): EvangelhoDia {
   return EVANGELHOS[(dayOfYear(d) - 1 + EVANGELHOS.length * 1000) % EVANGELHOS.length];
 }
+const MESES = [
+  "janeiro", "fevereiro", "março", "abril", "maio", "junho",
+  "julho", "agosto", "setembro", "outubro", "novembro", "dezembro",
+];
+
+/**
+ * Santo do dia: prioriza o santo cuja memória litúrgica cai na data de hoje
+ * (campo `data` em dd/mm da base de santos). Se nenhum santo do acervo
+ * celebra hoje, cai na rotação cíclica.
+ */
 export function santoDoDia(d: Date = new Date()): SantoDia {
+  const dd = String(d.getDate()).padStart(2, "0");
+  const mm = String(d.getMonth() + 1).padStart(2, "0");
+  const doDia = SANTOS.filter((s) => s.data === `${dd}/${mm}`);
+  if (doDia.length > 0) {
+    const s = doDia[dayOfYear(d) % doDia.length];
+    return {
+      nome: s.nome,
+      data: `${Number(dd)} de ${MESES[d.getMonth()]}`,
+      resumo: s.resumo,
+    };
+  }
   return SANTOS_DIA[(dayOfYear(d) - 1 + SANTOS_DIA.length * 1000) % SANTOS_DIA.length];
 }
 
