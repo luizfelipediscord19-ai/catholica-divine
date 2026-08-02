@@ -84,11 +84,19 @@ const PADRES = [
 
 
 function primeiraFrase(texto: string, max = 220): string {
-  const limpo = texto.replace(/\s*\d+(?=[A-ZÁÉÍÓÚÂÊÔÃÕÇ“‘])/g, " ").replace(/\s+/g, " ").trim();
+  const limpo = texto
+    .replace(/(^|[\s“‘"(])\d+(?=\p{L})/gu, "$1")
+    .replace(/\s+/g, " ")
+    .trim();
   if (limpo.length <= max) return limpo;
   const corte = limpo.slice(0, max);
   const fim = Math.max(corte.lastIndexOf(". "), corte.lastIndexOf("; "));
   return (fim > 80 ? corte.slice(0, fim + 1) : `${corte.trimEnd()}…`);
+}
+
+/** A celebração é uma memória de santo (e não apenas o dia da semana/domingo)? */
+function ehMemoriaDeSanto(celebracao: string): boolean {
+  return !/(domingo|feira|sábado|sabado|semana)/i.test(celebracao);
 }
 
 function Home() {
@@ -97,6 +105,7 @@ function Home() {
 
   const salmo = lit.salmo[0];
   const evangelho = lit.evangelho[0];
+  const memoriaOficial = ehMemoriaDeSanto(lit.celebracao) ? lit.celebracao : null;
 
   const DAILY_ITEMS: {
     kicker: string;
@@ -110,12 +119,22 @@ function Home() {
       ref: salmo?.referencia ? `Salmo responsorial — ${salmo.referencia}` : lit.tempoNome,
       linkTo: "/liturgia-diaria",
     },
-    {
-      kicker: "Santo do dia",
-      text: `${santo.nome} — ${santo.resumo}`,
-      ref: santo.celebradoHoje ? `Memória — ${santo.data}` : `Santo lembrado hoje · Memória em ${santo.data}`,
-      linkTo: "/santos",
-    },
+    memoriaOficial
+      ? {
+          kicker: "Santo do dia",
+          text: memoriaOficial,
+          ref: `Celebração de hoje · ${lit.tempoNome}`,
+          linkTo: "/santos" as const,
+        }
+      : {
+          kicker: "Santo do dia",
+          text: `${santo.nome} — ${santo.resumo}`,
+          ref: santo.celebradoHoje
+            ? `Memória — ${santo.data}`
+            : `Santo lembrado hoje · Memória em ${santo.data}`,
+          linkTo: "/santos" as const,
+        },
+
     {
       kicker: "Evangelho do dia",
       text: evangelho ? `“${primeiraFrase(evangelho.texto)}”` : lit.celebracao,
