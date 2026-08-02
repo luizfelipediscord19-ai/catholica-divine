@@ -16,4 +16,12 @@ export default defineConfig({
   nitro: {
     preset: "netlify",
   },
+  vite: {
+    // seroval 1.6 reads `import.meta.env.PROD`; keeping it in Vite's SSR graph
+    // ensures that value exists on the server (otherwise every RPC payload
+    // parse crashes with "Cannot read properties of undefined (reading 'PROD')").
+    ssr: {
+      noExternal: ["seroval", "seroval-plugins"],
+    },
+  },
 });
