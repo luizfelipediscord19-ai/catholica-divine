@@ -92,7 +92,7 @@ function Home() {
     {
       kicker: "Santo do dia",
       text: `${santo.nome} — ${santo.resumo}`,
-      ref: `Memória — ${santo.data}`,
+      ref: santo.celebradoHoje ? `Memória — ${santo.data}` : `Santo lembrado hoje · Memória em ${santo.data}`,
     },
     {
       kicker: "Evangelho do dia",
@@ -123,11 +123,11 @@ function Home() {
               <span className="h-px w-12 bg-gold/40" /> 
               <span>Una · Sancta · Catholica · Apostolica</span>
             </p>
-            <h1 className="font-display text-7xl md:text-9xl lg:text-[12rem] leading-[0.75] text-paper tracking-tighter mb-12">
-              <span className="block">A biblioteca </span>{" "}
-              <span className="text-gold italic font-medium relative inline-block">
+            <h1 className="font-display text-6xl sm:text-7xl md:text-8xl lg:text-[7rem] leading-[0.85] text-paper tracking-tight mb-12 text-balance">
+              A biblioteca{" "}
+              <span className="text-gold italic font-medium relative inline-block whitespace-nowrap">
                 da Fé
-                <span className="absolute -bottom-6 left-0 w-full h-1 bg-gold/30 blur-md" />
+                <span className="absolute -bottom-4 left-0 w-full h-1 bg-gold/30 blur-md" />
               </span>
             </h1>
             <p className="max-w-2xl text-lg md:text-2xl text-paper/70 leading-relaxed font-light mb-16 letter-spacing-wide">
