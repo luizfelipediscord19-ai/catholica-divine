@@ -78,7 +78,5 @@ export function useInvalidarProgresso() {
   return useCallback(() => {
     void queryClient.invalidateQueries({ queryKey: ["painel"] });
     void queryClient.invalidateQueries({ queryKey: ["identidade"] });
-  }, [queryClient]);
 }
 
-export { useMutation };
