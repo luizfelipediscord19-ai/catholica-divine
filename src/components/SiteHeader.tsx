@@ -21,24 +21,31 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 glass border-b border-gold/10">
-      <div className="max-w-7xl mx-auto px-8 h-24 flex items-center justify-between gap-8">
-        <Link to="/" className="flex items-center gap-3 shrink-0 group">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 h-20 md:h-24 flex items-center justify-between gap-6">
+        <Link
+          to="/"
+          className="flex items-center gap-3 shrink-0 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+        >
           <div className="size-10 rounded-full border border-gold/30 flex items-center justify-center group-hover:border-gold transition-premium">
-            <Church className="size-5 text-gold" />
+            <Church className="size-5 text-gold" aria-hidden="true" />
           </div>
-          <span className="font-display text-2xl tracking-[0.05em] text-paper group-hover:text-gold transition-colors">
-            PORTAL <span className="font-light italic text-gold/80">CATÓLICO</span>
+          <span className="font-display text-xl sm:text-2xl tracking-[0.05em] text-paper group-hover:text-gold transition-colors">
+            PORTAL <span className="font-light italic text-gold/90">CATÓLICO</span>
           </span>
         </Link>
 
-        <nav className="hidden xl:flex items-center gap-6 text-[10px] uppercase tracking-[0.3em] font-medium text-paper/60">
+        <nav
+          aria-label="Navegação principal"
+          className="hidden 2xl:flex items-center gap-5 whitespace-nowrap text-[10px] uppercase tracking-[0.3em] font-medium text-paper/80"
+        >
           {NAV.map((item) => {
-            const active = pathname.startsWith(item.to);
+            const active = pathname === item.to || pathname.startsWith(`${item.to}/`);
             return (
               <Link
                 key={item.to}
                 to={item.to}
-                className={`relative py-2 hover:text-paper transition-colors ${active ? "text-gold" : ""}`}
+                aria-current={active ? "page" : undefined}
+                className={`relative py-3 hover:text-paper focus-visible:text-paper focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold transition-colors ${active ? "text-gold" : ""}`}
               >
                 {item.label}
                 {active && (
@@ -52,44 +59,64 @@ export function SiteHeader() {
         <div className="flex items-center gap-3">
           <Link
             to="/assistente"
-            className="hidden sm:inline-flex items-center gap-2 px-5 py-3 text-[10px] uppercase tracking-[0.25em] font-bold text-deep bg-gold hover:bg-paper transition-premium hover:shadow-[0_0_20px_rgba(212,175,55,0.2)]"
+            className="hidden sm:inline-flex items-center gap-2 min-h-11 px-5 py-3 text-[10px] uppercase tracking-[0.25em] font-bold text-deep bg-gold hover:bg-paper focus-visible:bg-paper transition-premium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-paper"
           >
-            <Sparkles className="size-3.5" /> IA
+            <Sparkles className="size-3.5" aria-hidden="true" /> Sophia IA
           </Link>
           <Link
-            to="/oracoes"
-            aria-label="Buscar"
-            className="hidden lg:grid size-12 place-items-center rounded-full border border-gold/10 hover:border-gold/40 transition-premium text-paper/40 hover:text-gold"
+            to="/glossario"
+            aria-label="Buscar termos no glossário católico"
+            className="hidden lg:grid size-11 place-items-center rounded-full border border-gold/20 hover:border-gold/60 focus-visible:border-gold transition-premium text-paper/70 hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
           >
-            <Search className="size-4" />
+            <Search className="size-4" aria-hidden="true" />
           </Link>
 
           <button
             type="button"
-            aria-label={open ? "Fechar menu" : "Abrir menu"}
+            aria-label={open ? "Fechar menu de navegação" : "Abrir menu de navegação"}
+            aria-expanded={open}
+            aria-controls="menu-mobile"
             onClick={() => setOpen((v) => !v)}
-            className="xl:hidden grid size-12 place-items-center rounded-full border border-gold/10 text-gold hover:bg-gold/5 transition-premium"
+            className="2xl:hidden grid size-11 place-items-center rounded-full border border-gold/20 text-gold hover:bg-gold/10 transition-premium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
           >
-            {open ? <X className="size-5" /> : <Menu className="size-5" />}
+            {open ? <X className="size-5" aria-hidden="true" /> : <Menu className="size-5" aria-hidden="true" />}
           </button>
         </div>
       </div>
 
       {open ? (
-        <div className="lg:hidden border-t border-gold/20 bg-background">
-          <nav className="max-w-7xl mx-auto px-6 py-4 grid grid-cols-2 gap-x-6 gap-y-3 text-[11px] uppercase tracking-[0.18em] font-medium">
-            {NAV.map((item) => (
-              <Link
-                key={item.to}
-                to={item.to}
-                onClick={() => setOpen(false)}
-                className="py-2 text-foreground/75 hover:text-gold"
-              >
-                {item.label}
-              </Link>
-            ))}
-            <Link to="/assistente" onClick={() => setOpen(false)} className="py-2 text-gold">
-              Assistente IA
+        <div id="menu-mobile" className="2xl:hidden border-t border-gold/20 bg-background">
+          <nav
+            aria-label="Navegação mobile"
+            className="max-w-7xl mx-auto px-6 py-4 grid grid-cols-2 gap-x-6 gap-y-1 text-[12px] uppercase tracking-[0.18em] font-medium"
+          >
+            {NAV.map((item) => {
+              const active = pathname === item.to || pathname.startsWith(`${item.to}/`);
+              return (
+                <Link
+                  key={item.to}
+                  to={item.to}
+                  onClick={() => setOpen(false)}
+                  aria-current={active ? "page" : undefined}
+                  className={`flex min-h-11 items-center py-2 hover:text-gold focus-visible:text-gold focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold ${active ? "text-gold" : "text-foreground/85"}`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
+            <Link
+              to="/assistente"
+              onClick={() => setOpen(false)}
+              className="flex min-h-11 items-center py-2 text-gold"
+            >
+              Sophia IA
+            </Link>
+            <Link
+              to="/glossario"
+              onClick={() => setOpen(false)}
+              className="flex min-h-11 items-center py-2 text-foreground/85 hover:text-gold"
+            >
+              Glossário
             </Link>
           </nav>
         </div>

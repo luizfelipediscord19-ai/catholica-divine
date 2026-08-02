@@ -194,6 +194,19 @@
     line-height: 1.6;
     letter-spacing: -0.01em;
     text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+  /* Visible keyboard focus for every interactive element */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible,
+  summary:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 2px;
+    border-radius: 2px;
   }
   h1, h2, h3, h4, .font-display {
     font-family: var(--font-display);
@@ -206,6 +219,20 @@
     color: var(--color-foreground);
   }
 }
+
+/* Legibilidade em telas pequenas: sobe o corpo de texto no mobile */
+@media (max-width: 640px) {
+  html {
+    font-size: 17px;
+  }
+  .text-\[9px\] {
+    font-size: 10px;
+  }
+  .text-\[10px\] {
+    font-size: 11px;
+  }
+}
+
 
 @layer utilities {
   .text-glow-gold {

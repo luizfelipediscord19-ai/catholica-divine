@@ -14,6 +14,7 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteHeader } from "../components/SiteHeader";
 import { SiteFooter } from "../components/SiteFooter";
 import { Toaster } from "../components/ui/sonner";
+import { ScrollToTop } from "../components/ScrollToTop";
 
 function NotFoundComponent() {
   return (
@@ -73,6 +74,8 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
+const SITE_URL = "https://portalcatolico.netlify.app";
+
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
@@ -85,13 +88,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Biblioteca completa da fé católica: Bíblia, Catecismo, Sacramentos, Santos, Maria, orações, apologética e assistente de IA fiel ao Magistério.",
       },
       { name: "author", content: "Portal Católico" },
+      { name: "robots", content: "index, follow, max-image-preview:large" },
       { name: "theme-color", content: "#0a0a0a" },
-      { property: "og:title", content: "Portal Católico — Biblioteca digital da Fé" },
-      {
-        property: "og:description",
-        content:
-          "Estudo, evangelização e formação na fé católica — fiel ao Magistério.",
-      },
+      { property: "og:site_name", content: "Portal Católico" },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "pt_BR" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -104,7 +103,37 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap",
       },
-      { rel: "canonical", href: "/" },
+      { rel: "icon", type: "image/png", href: "/favicon.png" },
+      { rel: "apple-touch-icon", href: "/favicon.png" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "WebSite",
+              "@id": `${SITE_URL}/#website`,
+              url: SITE_URL,
+              name: "Portal Católico",
+              inLanguage: "pt-BR",
+              description:
+                "Biblioteca digital da fé católica: Bíblia, Catecismo, santos, sacramentos, orações e apologética.",
+              publisher: { "@id": `${SITE_URL}/#organization` },
+            },
+            {
+              "@type": "ReligiousOrganization",
+              "@id": `${SITE_URL}/#organization`,
+              name: "Portal Católico",
+              url: SITE_URL,
+              logo: `${SITE_URL}/favicon.png`,
+              description:
+                "Portal de formação católica fiel ao Magistério da Igreja.",
+            },
+          ],
+        }),
+      },
     ],
   }),
   shellComponent: RootShell,
@@ -132,14 +161,22 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="min-h-screen flex flex-col">
+      <div className="min-h-dvh flex flex-col">
+        <a
+          href="#conteudo"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-gold focus:px-5 focus:py-3 focus:text-[11px] focus:uppercase focus:tracking-[0.2em] focus:text-deep"
+        >
+          Pular para o conteúdo principal
+        </a>
         <SiteHeader />
-        <main className="flex-1">
+        <main id="conteudo" className="flex-1">
           <Outlet />
         </main>
         <SiteFooter />
+        <ScrollToTop />
         <Toaster />
       </div>
     </QueryClientProvider>
   );
 }
+
