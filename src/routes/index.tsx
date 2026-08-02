@@ -14,7 +14,20 @@ import { ScrollReveal } from "../components/ScrollReveal";
 const SITE_URL = "https://portalcatolico.netlify.app";
 
 export const Route = createFileRoute("/")({
+  loader: ({ context }) => context.queryClient.ensureQueryData(liturgiaQueryOptions()),
+  errorComponent: ({ error }) => (
+    <div className="max-w-2xl mx-auto px-6 py-32 text-center" role="alert">
+      <p className="text-gold">Não foi possível carregar o conteúdo do dia.</p>
+      <p className="mt-2 text-sm text-muted-foreground">{error.message}</p>
+    </div>
+  ),
+  notFoundComponent: () => (
+    <div className="max-w-2xl mx-auto px-6 py-32 text-center">
+      <p className="text-gold">Página não encontrada.</p>
+    </div>
+  ),
   head: () => ({
+
     meta: [
       { title: "Portal Católico — Bíblia, Catecismo e a Tradição da Igreja" },
       {
