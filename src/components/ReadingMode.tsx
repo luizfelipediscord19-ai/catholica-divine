@@ -121,19 +121,23 @@ export function ReadingMode({
         ) : null}
       </article>
     </div>
+    </FootnoteIndex.Provider>
   );
 }
 
-/** Inline footnote reference: <FnRef n="dv" />. Renders a superscript link
- * to the matching footnote in the ReadingMode footer. */
+/** Inline footnote reference: <FnRef n="dv" />. Renders a numbered superscript
+ * link to the matching footnote in the ReadingMode footer. */
 export function FnRef({ n }: { n: string }) {
+  const indice = useContext(FootnoteIndex);
+  const numero = indice[n];
   return (
     <sup id={`fnref-${n}`} className="ml-0.5">
       <a
         href={`#fn-${n}`}
+        aria-label={`Ver nota ${numero ?? n}`}
         className="text-gold/90 hover:text-gold no-underline text-[10px] font-medium align-super"
       >
-        [{n}]
+        {numero ?? "•"}
       </a>
     </sup>
   );
