@@ -14,6 +14,8 @@ const NAV = [
   { to: "/apologetica", label: "Apologética" },
   { to: "/calendario-liturgico", label: "Calendário" },
   { to: "/liturgia-diaria", label: "Liturgia do dia" },
+  { to: "/forum", label: "Fórum" },
+  { to: "/painel", label: "Meu painel" },
 ] as const;
 
 export function SiteHeader() {

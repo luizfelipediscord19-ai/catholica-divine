@@ -3,6 +3,11 @@ import { useEffect, useState } from "react";
 import { getLivro, getUrlOficial } from "../lib/data/biblia";
 import { ArrowLeft, ExternalLink, ChevronLeft, ChevronRight, Filter, X } from "lucide-react";
 import { Relacionados } from "../components/Relacionados";
+import {
+  BarraLeitura,
+  EstrelaVersiculo,
+  useCapituloPessoal,
+} from "../components/portal/AcoesCapitulo";
 
 type Verso = { v: number; t: string };
 type LivroJson = { slug: string; nome: string; capitulos: Record<string, Verso[]> };
@@ -96,6 +101,7 @@ function Page() {
   const { vi, vf } = Route.useSearch();
   const navigate = useNavigate();
   const [fonte, setFonte] = useState<FonteId>("almeida");
+  const pessoal = useCapituloPessoal(livro.slug, capitulo);
   const anterior = capitulo > 1 ? capitulo - 1 : null;
   const proximo = capitulo < livro.capitulos ? capitulo + 1 : null;
   const fonteAtual = FONTES.find((f) => f.id === fonte)!;
@@ -196,6 +202,15 @@ function Page() {
         )}
       </form>
 
+      <BarraLeitura
+        lido={pessoal.lido}
+        pronto={pessoal.pronto}
+        pendente={pessoal.marcar.isPending}
+        onAlternar={() => pessoal.marcar.mutate(!pessoal.lido)}
+      />
+
+
+
       {/* Seletor de fonte */}
       <div className="mt-6 flex flex-wrap gap-2">
         {FONTES.map((f) => {
@@ -239,6 +254,11 @@ function Page() {
                   >
                     {v.v}
                   </a>
+                  <EstrelaVersiculo
+                    ativa={pessoal.favoritos.includes(v.v)}
+                    disabled={!pessoal.pronto || pessoal.favoritar.isPending}
+                    onClick={() => pessoal.favoritar.mutate({ versiculo: v.v, texto: v.t.slice(0, 900) })}
+                  />
                   <span className="block animate-content-fade" style={{ animationDelay: `${(v.v % 10) * 50}ms` }}>
                     {v.t}
                   </span>

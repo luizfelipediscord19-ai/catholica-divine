@@ -32,6 +32,8 @@ const STATIC_PATHS: SitemapEntry[] = [
   { path: "/glossario", changefreq: "monthly", priority: "0.7" },
   { path: "/calendario-liturgico", changefreq: "weekly", priority: "0.7" },
   { path: "/liturgia-diaria", changefreq: "daily", priority: "0.9" },
+  { path: "/forum", changefreq: "hourly", priority: "0.8" },
+  { path: "/painel", changefreq: "monthly", priority: "0.3" },
   { path: "/assistente", changefreq: "monthly", priority: "0.7" },
 ];
 
