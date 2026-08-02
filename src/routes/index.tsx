@@ -7,6 +7,8 @@ import { versoDoDia, evangelhoDoDia, santoDoDia } from "../lib/data/hoje";
 import { ScrollReveal } from "../components/ScrollReveal";
 
 
+const SITE_URL = "https://portalcatolico.netlify.app";
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -23,10 +25,15 @@ export const Route = createFileRoute("/")({
         content: "Estudo, oração e formação na fé católica — fiel ao Magistério da Igreja, de Pedro a Francisco.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: `${SITE_URL}/` },
+      { property: "og:image", content: `${SITE_URL}/og-image.jpg` },
+      { name: "twitter:image", content: `${SITE_URL}/og-image.jpg` },
     ],
+    links: [{ rel: "canonical", href: `${SITE_URL}/` }],
   }),
   component: Home,
 });
+
 
 const PILLARS = [
   { to: "/biblia", icon: BookOpen, title: "Bíblia Sagrada", desc: "Os 73 livros canônicos com introduções, contexto histórico e leituras litúrgicas do dia." },
@@ -58,23 +65,6 @@ const PADRES = [
   },
 ];
 
-const DAILY = [
-  {
-    kicker: "Versículo do dia",
-    text: "“Eu sou o caminho, a verdade e a vida; ninguém vem ao Pai senão por mim.”",
-    ref: "João 14, 6",
-  },
-  {
-    kicker: "Santo do dia",
-    text: "Santa Teresa de Ávila — doutora da Igreja, reformadora do Carmelo, mestra da oração contemplativa.",
-    ref: "Memória — 15 de Outubro",
-  },
-  {
-    kicker: "Evangelho do dia",
-    text: "“Vinde a mim todos os que estais cansados e oprimidos, e eu vos aliviarei.”",
-    ref: "Mateus 11, 28",
-  },
-];
 
 function refTexto(r: { nome: string; capitulo: number; vi?: number; vf?: number }) {
   if (r.vi && r.vf && r.vi !== r.vf) return `${r.nome} ${r.capitulo}, ${r.vi}-${r.vf}`;
