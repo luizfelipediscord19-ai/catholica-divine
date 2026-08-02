@@ -1,10 +1,14 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useSuspenseQuery } from "@tanstack/react-query";
 import { BookOpen, Heart, Sparkles, Church, Crown, ScrollText, Compass, Calendar, MessageCircle } from "lucide-react";
 import hero from "../assets/hero-catedral.jpg";
 import maria from "../assets/maria.jpg";
 import cristo from "../assets/cristo.jpg";
-import { versoDoDia, evangelhoDoDia, santoDoDia } from "../lib/data/hoje";
+import { santoDoDia } from "../lib/data/hoje";
+import { liturgiaQueryOptions } from "../lib/liturgia/query";
+import { COR_CLASSE } from "../lib/liturgia/calendario";
 import { ScrollReveal } from "../components/ScrollReveal";
+
 
 
 const SITE_URL = "https://portalcatolico.netlify.app";
