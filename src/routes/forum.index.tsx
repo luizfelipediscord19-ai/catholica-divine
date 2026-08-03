@@ -217,19 +217,24 @@ function NovoTopico({
   secaoInicial?: string;
   onPronto: () => void;
 }) {
-  const { token, identidade } = useIdentidade();
+  const { identidade } = useIdentidade();
   const navigate = useNavigate();
   const queryClient = useQueryClient();
-  const [secaoSlug, setSecaoSlug] = useState(secaoInicial ?? secoes[0]?.slug ?? "");
+  const lista = secoes.length > 0 ? secoes : SECOES_FORUM;
+  const [secaoSlug, setSecaoSlug] = useState(secaoInicial ?? lista[0]?.slug ?? SECAO_PADRAO);
   const [titulo, setTitulo] = useState("");
   const [corpo, setCorpo] = useState("");
 
   const criar = useMutation({
-    mutationFn: () =>
-      criarTopicoFn({ data: { token: token!, secaoSlug, titulo, corpo } }),
+    mutationFn: async () => {
+      // A identidade anônima é criada na hora, se ainda não existir.
+      const token = await garantirTokenAgora();
+      return criarTopicoFn({ data: { token, secaoSlug, titulo, corpo } });
+    },
     onSuccess: (res) => {
       void queryClient.invalidateQueries({ queryKey: ["forum"] });
       void queryClient.invalidateQueries({ queryKey: ["painel"] });
+      void queryClient.invalidateQueries({ queryKey: ["identidade"] });
       toast.success("Conversa publicada. +30 XP");
       onPronto();
       void navigate({ to: "/forum/$slug", params: { slug: res.slug } });
@@ -237,14 +242,9 @@ function NovoTopico({
     onError: (erro: Error) => toast.error(erro.message || "Não foi possível publicar."),
   });
 
-  useEffect(() => {
-    if (!secaoSlug && secoes.length > 0) setSecaoSlug(secoes[0]!.slug);
-  }, [secaoSlug, secoes]);
-
-  const valido = !!secaoSlug && titulo.trim().length >= 5 && corpo.trim().length >= 10;
-  const motivo = !token
-    ? "Preparando sua identidade anônima…"
-    : titulo.trim().length < 5
+  const valido = titulo.trim().length >= 5 && corpo.trim().length >= 10;
+  const motivo =
+    titulo.trim().length < 5
       ? "O título precisa de pelo menos 5 caracteres."
       : corpo.trim().length < 10
         ? "A mensagem precisa de pelo menos 10 caracteres."
@@ -254,28 +254,36 @@ function NovoTopico({
     <Painel>
       <Rotulo>Nova conversa</Rotulo>
       <form
-        className="space-y-4"
+        className="space-y-5"
         onSubmit={(e) => {
           e.preventDefault();
-          if (valido && token) criar.mutate();
+          if (valido) criar.mutate();
         }}
       >
-        <label className="block">
-          <span className="sr-only">Seção</span>
-          <select
-            value={secaoSlug}
-            onChange={(e) => setSecaoSlug(e.target.value)}
-            className={`${inputClass} appearance-none cursor-pointer bg-card text-foreground`}
-          >
-            {secoes.map((s) => (
-              <option key={s.slug} value={s.slug} className="bg-card text-foreground">
+        <fieldset className="space-y-3">
+          <legend className="text-[10px] uppercase tracking-[0.25em] text-paper/60 mb-2">
+            Seção
+          </legend>
+          <div className="flex flex-wrap gap-2">
+            {lista.map((s) => (
+              <button
+                key={s.slug}
+                type="button"
+                onClick={() => setSecaoSlug(s.slug)}
+                aria-pressed={secaoSlug === s.slug}
+                className={`px-4 py-2 text-[10px] uppercase tracking-[0.2em] border transition-premium ${
+                  secaoSlug === s.slug
+                    ? "border-gold bg-gold/10 text-gold"
+                    : "border-gold/15 text-paper/60 hover:text-paper hover:border-gold/40"
+                }`}
+              >
                 {s.nome}
-              </option>
+              </button>
             ))}
-          </select>
-        </label>
-        <label className="block">
-          <span className="sr-only">Título</span>
+          </div>
+        </fieldset>
+        <label className="block space-y-2">
+          <span className="text-[10px] uppercase tracking-[0.25em] text-paper/60">Título</span>
           <input
             value={titulo}
             onChange={(e) => setTitulo(e.target.value)}
@@ -284,8 +292,8 @@ function NovoTopico({
             className={inputClass}
           />
         </label>
-        <label className="block">
-          <span className="sr-only">Mensagem</span>
+        <label className="block space-y-2">
+          <span className="text-[10px] uppercase tracking-[0.25em] text-paper/60">Mensagem</span>
           <textarea
             value={corpo}
             onChange={(e) => setCorpo(e.target.value)}
@@ -296,7 +304,7 @@ function NovoTopico({
           />
         </label>
         <div className="flex flex-wrap items-center gap-3">
-          <button type="submit" disabled={!valido || !token || criar.isPending} className={botaoClass}>
+          <button type="submit" disabled={!valido || criar.isPending} className={botaoClass}>
             {criar.isPending ? "Publicando…" : "Publicar"}
           </button>
           <button type="button" onClick={onPronto} className={botaoGhostClass}>
