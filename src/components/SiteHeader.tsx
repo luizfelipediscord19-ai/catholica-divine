@@ -1,6 +1,8 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Search, Sparkles, Menu, X, Church } from "lucide-react";
-import { useState } from "react";
+import { useCallback, useState } from "react";
+
+import { BuscaGlobal, useAtalhoBusca } from "@/components/BuscaGlobal";
 
 const NAV = [
   { to: "/fe-catolica", label: "A Fé" },
@@ -21,6 +23,8 @@ const NAV = [
 export function SiteHeader() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const [open, setOpen] = useState(false);
+  const [busca, setBusca] = useState(false);
+  useAtalhoBusca(useCallback(() => setBusca(true), []));
 
   return (
     <header className="sticky top-0 z-50 glass border-b border-gold/10">
@@ -66,13 +70,15 @@ export function SiteHeader() {
           >
             <Sparkles className="size-3.5" aria-hidden="true" /> Sophia IA
           </Link>
-          <Link
-            to="/glossario"
-            aria-label="Buscar termos no glossário católico"
+          <button
+            type="button"
+            onClick={() => setBusca(true)}
+            aria-label="Buscar no portal (Ctrl + K)"
+            title="Buscar (Ctrl + K)"
             className="hidden lg:grid size-11 place-items-center rounded-full border border-gold/20 hover:border-gold/60 focus-visible:border-gold transition-premium text-paper/70 hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
           >
             <Search className="size-4" aria-hidden="true" />
-          </Link>
+          </button>
 
           <button
             type="button"
@@ -114,6 +120,16 @@ export function SiteHeader() {
             >
               Sophia IA
             </Link>
+            <button
+              type="button"
+              onClick={() => {
+                setOpen(false);
+                setBusca(true);
+              }}
+              className="flex min-h-11 items-center py-2 text-left text-foreground/85 hover:text-gold"
+            >
+              Buscar
+            </button>
             <Link
               to="/glossario"
               onClick={() => setOpen(false)}
@@ -124,6 +140,7 @@ export function SiteHeader() {
           </nav>
         </div>
       ) : null}
+      <BuscaGlobal aberto={busca} onFechar={() => setBusca(false)} />
     </header>
   );
 }
