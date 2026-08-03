@@ -45,11 +45,14 @@ function ForumPage() {
   const [secao, setSecao] = useState<string | undefined>(undefined);
   const [abrirForm, setAbrirForm] = useState(false);
 
-  const secoes = useQuery({
+  const secoesQuery = useQuery({
     queryKey: ["forum", "secoes"],
     queryFn: () => listarSecoesFn(),
     staleTime: 10 * 60 * 1000,
   });
+  // Seções fixas como base: a lista nunca aparece vazia.
+  const secoes =
+    (secoesQuery.data ?? []).length > 0 ? secoesQuery.data! : SECOES_FORUM.map((s) => ({ ...s, id: s.slug }));
 
   const topicos = useQuery({
     queryKey: ["forum", "topicos", secao ?? "todos"],
