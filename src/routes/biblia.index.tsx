@@ -52,6 +52,11 @@ function Page() {
         image={manuscrito}
       />
 
+      <div className="max-w-6xl mx-auto px-6 -mt-6 md:-mt-10">
+        <ContinuarLeitura />
+      </div>
+
+
       <Section kicker="Introdução doutrinária" title="A Palavra de Deus posta por escrito">
         <Prose>
           <p>
