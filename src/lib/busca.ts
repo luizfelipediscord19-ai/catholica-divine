@@ -131,10 +131,13 @@ export function indiceBusca(): ItemBusca[] {
 function referenciaBiblica(consulta: string): ItemBusca | null {
   const match = consulta.match(/^([1-3]?\s*[a-zà-ú]+(?:\s+[a-zà-ú]+)?)\s+(\d{1,3})/i);
   if (!match) return null;
-  const alvo = normalizar(match[1]!.replace(/\s+/g, ""));
+  const bruto = match[1]!.replace(/\s+/g, "").toLowerCase();
+  const alvo = normalizar(bruto);
   const capitulo = Number(match[2]);
 
   const livro =
+    // abreviação com acento (Jo = João, Jó = Jó)
+    LIVROS.find((l) => l.abrev.toLowerCase() === bruto) ??
     LIVROS.find((l) => normalizar(l.abrev) === alvo) ??
     LIVROS.find((l) => normalizar(l.nome).replace(/\s+/g, "") === alvo) ??
     LIVROS.find((l) => normalizar(l.nome).replace(/\s+/g, "").startsWith(alvo) && alvo.length >= 3);
