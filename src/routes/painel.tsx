@@ -164,7 +164,15 @@ function PainelPage() {
       <section className="grid gap-6 lg:grid-cols-2">
 
         <Painel>
-          <Rotulo>Versículos guardados</Rotulo>
+          <div className="flex items-start justify-between gap-4">
+            <Rotulo>Versículos guardados</Rotulo>
+            <Link
+              to="/favoritos"
+              className="text-[10px] uppercase tracking-[0.25em] text-gold hover:text-paper transition-colors"
+            >
+              Ver todos
+            </Link>
+          </div>
           {dados.favoritos.length === 0 ? (
             <p className="text-sm text-muted-foreground font-light">
               Marque versículos com a estrela durante a leitura da{" "}
@@ -192,7 +200,15 @@ function PainelPage() {
         </Painel>
 
         <Painel>
-          <Rotulo>Suas anotações</Rotulo>
+          <div className="flex items-start justify-between gap-4">
+            <Rotulo>Suas anotações</Rotulo>
+            <Link
+              to="/favoritos"
+              className="text-[10px] uppercase tracking-[0.25em] text-gold hover:text-paper transition-colors"
+            >
+              Ver todas
+            </Link>
+          </div>
           {dados.notas.length === 0 ? (
             <p className="text-sm text-muted-foreground font-light">
               Nenhuma anotação ainda. Você pode anotar reflexões nos capítulos da Bíblia.

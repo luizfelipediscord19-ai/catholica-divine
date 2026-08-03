@@ -19,6 +19,7 @@ import { Route as MariaRouteImport } from './routes/maria'
 import { Route as LiturgiaDiariaRouteImport } from './routes/liturgia-diaria'
 import { Route as GlossarioRouteImport } from './routes/glossario'
 import { Route as FeCatolicaRouteImport } from './routes/fe-catolica'
+import { Route as FavoritosRouteImport } from './routes/favoritos'
 import { Route as DoutoresDaIgrejaRouteImport } from './routes/doutores-da-igreja'
 import { Route as CoroinhasRouteImport } from './routes/coroinhas'
 import { Route as CatecismoRouteImport } from './routes/catecismo'
@@ -92,6 +93,11 @@ const GlossarioRoute = GlossarioRouteImport.update({
 const FeCatolicaRoute = FeCatolicaRouteImport.update({
   id: '/fe-catolica',
   path: '/fe-catolica',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FavoritosRoute = FavoritosRouteImport.update({
+  id: '/favoritos',
+  path: '/favoritos',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DoutoresDaIgrejaRoute = DoutoresDaIgrejaRouteImport.update({
@@ -225,6 +231,7 @@ export interface FileRoutesByFullPath {
   '/catecismo': typeof CatecismoRouteWithChildren
   '/coroinhas': typeof CoroinhasRoute
   '/doutores-da-igreja': typeof DoutoresDaIgrejaRoute
+  '/favoritos': typeof FavoritosRoute
   '/fe-catolica': typeof FeCatolicaRoute
   '/glossario': typeof GlossarioRoute
   '/liturgia-diaria': typeof LiturgiaDiariaRoute
@@ -260,6 +267,7 @@ export interface FileRoutesByTo {
   '/catecismo': typeof CatecismoRouteWithChildren
   '/coroinhas': typeof CoroinhasRoute
   '/doutores-da-igreja': typeof DoutoresDaIgrejaRoute
+  '/favoritos': typeof FavoritosRoute
   '/fe-catolica': typeof FeCatolicaRoute
   '/glossario': typeof GlossarioRoute
   '/liturgia-diaria': typeof LiturgiaDiariaRoute
@@ -296,6 +304,7 @@ export interface FileRoutesById {
   '/catecismo': typeof CatecismoRouteWithChildren
   '/coroinhas': typeof CoroinhasRoute
   '/doutores-da-igreja': typeof DoutoresDaIgrejaRoute
+  '/favoritos': typeof FavoritosRoute
   '/fe-catolica': typeof FeCatolicaRoute
   '/glossario': typeof GlossarioRoute
   '/liturgia-diaria': typeof LiturgiaDiariaRoute
@@ -334,6 +343,7 @@ export interface FileRouteTypes {
     | '/catecismo'
     | '/coroinhas'
     | '/doutores-da-igreja'
+    | '/favoritos'
     | '/fe-catolica'
     | '/glossario'
     | '/liturgia-diaria'
@@ -369,6 +379,7 @@ export interface FileRouteTypes {
     | '/catecismo'
     | '/coroinhas'
     | '/doutores-da-igreja'
+    | '/favoritos'
     | '/fe-catolica'
     | '/glossario'
     | '/liturgia-diaria'
@@ -404,6 +415,7 @@ export interface FileRouteTypes {
     | '/catecismo'
     | '/coroinhas'
     | '/doutores-da-igreja'
+    | '/favoritos'
     | '/fe-catolica'
     | '/glossario'
     | '/liturgia-diaria'
@@ -441,6 +453,7 @@ export interface RootRouteChildren {
   CatecismoRoute: typeof CatecismoRouteWithChildren
   CoroinhasRoute: typeof CoroinhasRoute
   DoutoresDaIgrejaRoute: typeof DoutoresDaIgrejaRoute
+  FavoritosRoute: typeof FavoritosRoute
   FeCatolicaRoute: typeof FeCatolicaRoute
   GlossarioRoute: typeof GlossarioRoute
   LiturgiaDiariaRoute: typeof LiturgiaDiariaRoute
@@ -526,6 +539,13 @@ declare module '@tanstack/react-router' {
       path: '/fe-catolica'
       fullPath: '/fe-catolica'
       preLoaderRoute: typeof FeCatolicaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/favoritos': {
+      id: '/favoritos'
+      path: '/favoritos'
+      fullPath: '/favoritos'
+      preLoaderRoute: typeof FavoritosRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/doutores-da-igreja': {
@@ -791,6 +811,7 @@ const rootRouteChildren: RootRouteChildren = {
   CatecismoRoute: CatecismoRouteWithChildren,
   CoroinhasRoute: CoroinhasRoute,
   DoutoresDaIgrejaRoute: DoutoresDaIgrejaRoute,
+  FavoritosRoute: FavoritosRoute,
   FeCatolicaRoute: FeCatolicaRoute,
   GlossarioRoute: GlossarioRoute,
   LiturgiaDiariaRoute: LiturgiaDiariaRoute,

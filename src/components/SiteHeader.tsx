@@ -17,6 +17,7 @@ const NAV = [
   { to: "/calendario-liturgico", label: "Calendário" },
   { to: "/liturgia-diaria", label: "Liturgia do dia" },
   { to: "/forum", label: "Fórum" },
+  { to: "/favoritos", label: "Favoritos" },
   { to: "/painel", label: "Meu painel" },
 ] as const;
 
