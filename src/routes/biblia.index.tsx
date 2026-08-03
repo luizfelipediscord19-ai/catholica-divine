@@ -4,6 +4,7 @@ import { LIVROS } from "../lib/data/biblia";
 import manuscrito from "../assets/manuscrito.jpg";
 import { useState } from "react";
 import { Search } from "lucide-react";
+import { ContinuarLeitura } from "@/components/portal/ContinuarLeitura";
 
 
 export const Route = createFileRoute("/biblia/")({
@@ -51,6 +52,11 @@ function Page() {
         intro="Os 73 livros inspirados pelo Espírito Santo, transmitidos pela Igreja desde os Apóstolos. Palavra de Deus posta por escrito sob a moção do Espírito (CIC §§ 105–108)."
         image={manuscrito}
       />
+
+      <div className="max-w-6xl mx-auto px-6 -mt-6 md:-mt-10">
+        <ContinuarLeitura />
+      </div>
+
 
       <Section kicker="Introdução doutrinária" title="A Palavra de Deus posta por escrito">
         <Prose>

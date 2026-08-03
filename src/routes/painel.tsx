@@ -10,6 +10,10 @@ import {
   botaoClass,
   inputClass,
 } from "@/components/portal/comuns";
+import {
+  ContinuarLeitura,
+  ProgressoPorLivro,
+} from "@/components/portal/ContinuarLeitura";
 import { useIdentidade, usePainel } from "@/hooks/use-identidade";
 import { registrarOracaoFn } from "@/lib/portal.functions";
 
@@ -124,12 +128,41 @@ function PainelPage() {
         />
       </div>
 
+      <ContinuarLeitura />
+
       <DiarioHoje
         rezouHoje={dados.rezouHoje}
         inicial={dados.diarioHoje}
       />
 
       <section className="grid gap-6 lg:grid-cols-2">
+        <Painel>
+          <Rotulo>Progresso na Bíblia</Rotulo>
+          <ProgressoPorLivro leituras={dados.leituras} />
+        </Painel>
+
+        <Painel>
+          <Rotulo>Conquistas recentes</Rotulo>
+          <ul className="space-y-3">
+            {dados.conquistas
+              .filter((c) => c.desbloqueada)
+              .slice(0, 6)
+              .map((c) => (
+                <li key={c.slug} className="text-sm text-foreground/85 font-light">
+                  <span className="text-gold">{c.icone ?? "✦"}</span> {c.titulo}
+                </li>
+              ))}
+            {conquistadas === 0 ? (
+              <li className="text-sm text-muted-foreground font-light">
+                Reze, leia e anote para desbloquear suas primeiras conquistas.
+              </li>
+            ) : null}
+          </ul>
+        </Painel>
+      </section>
+
+      <section className="grid gap-6 lg:grid-cols-2">
+
         <Painel>
           <Rotulo>Versículos guardados</Rotulo>
           {dados.favoritos.length === 0 ? (

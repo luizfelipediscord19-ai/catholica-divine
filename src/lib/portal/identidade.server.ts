@@ -291,7 +291,7 @@ export async function obterPainel(token: string) {
   const id = await identidadePorToken(token);
   const hoje = hojeISO();
 
-  const [leituras, favoritos, notas, conquistas, catalogo, diarioHoje] = await Promise.all([
+  const [leituras, favoritos, notas, conquistas, catalogo, diarioHoje, ultima] = await Promise.all([
     supabaseAdmin
       .from("leituras_biblia")
       .select("livro, capitulo")
@@ -319,6 +319,13 @@ export async function obterPainel(token: string) {
       .eq("identidade_id", id.id)
       .eq("data", hoje)
       .maybeSingle(),
+    supabaseAdmin
+      .from("leituras_biblia")
+      .select("livro, capitulo, created_at")
+      .eq("identidade_id", id.id)
+      .order("created_at", { ascending: false })
+      .limit(1)
+      .maybeSingle(),
   ]);
 
   const desbloqueadas = new Set((conquistas.data ?? []).map((c) => c.conquista_slug));
@@ -328,6 +335,7 @@ export async function obterPainel(token: string) {
     rezouHoje: id.ultima_oracao === hoje,
     diarioHoje: diarioHoje.data ?? null,
     leituras: leituras.data ?? [],
+    ultimaLeitura: ultima.data ?? null,
     favoritos: favoritos.data ?? [],
     notas: notas.data ?? [],
     conquistas: (catalogo.data ?? []).map((c) => ({
