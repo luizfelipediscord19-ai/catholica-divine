@@ -4,6 +4,7 @@ import { LIVROS } from "../lib/data/biblia";
 import manuscrito from "../assets/manuscrito.jpg";
 import { useState } from "react";
 import { Search } from "lucide-react";
+import { ContinuarLeitura } from "@/components/portal/ContinuarLeitura";
 
 
 export const Route = createFileRoute("/biblia/")({
