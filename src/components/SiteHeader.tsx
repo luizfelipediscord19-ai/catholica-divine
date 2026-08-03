@@ -20,6 +20,14 @@ const NAV = [
   { to: "/painel", label: "Meu painel" },
 ] as const;
 
+/** Itens que cabem na barra superior; o restante fica no menu completo. */
+const NAV_PRINCIPAL = NAV.filter((i) =>
+  ["/biblia", "/catecismo", "/santos", "/oracoes", "/liturgia-diaria", "/forum", "/painel"].includes(
+    i.to,
+  ),
+);
+
+
 export function SiteHeader() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
   const [open, setOpen] = useState(false);
