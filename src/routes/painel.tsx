@@ -10,6 +10,10 @@ import {
   botaoClass,
   inputClass,
 } from "@/components/portal/comuns";
+import {
+  ContinuarLeitura,
+  ProgressoPorLivro,
+} from "@/components/portal/ContinuarLeitura";
 import { useIdentidade, usePainel } from "@/hooks/use-identidade";
 import { registrarOracaoFn } from "@/lib/portal.functions";
 
