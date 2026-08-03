@@ -247,7 +247,7 @@ function NotaCard({
   const queryClient = useQueryClient();
 
   const apagar = useMutation({
-    mutationFn: () => apagarNotaFn({ data: { token: token!, notaId: nota.id } }),
+    mutationFn: () => apagarNotaFn({ data: { token: token!, id: nota.id } }),
     onSuccess: () => {
       void queryClient.invalidateQueries({ queryKey: ["painel"] });
       toast.success("Anotação apagada.");
