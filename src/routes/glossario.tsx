@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { BookOpen, ArrowLeft } from "lucide-react";
 import { useMemo, useState } from "react";
 import { listarTermos } from "@/lib/data/glossario";
+import { normalizar } from "@/lib/busca";
 
 export const Route = createFileRoute("/glossario")({
   head: () => ({
@@ -71,7 +72,7 @@ function GlossarioPage() {
 
       <dl className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
         {filtrados.map((t) => (
-          <div key={t.termo} className="border-l-2 border-gold/20 pl-6 hover:border-gold transition-colors">
+          <div id={normalizar(t.termo).replace(/\s+/g, "-")} key={t.termo} className="scroll-mt-32 border-l-2 border-gold/20 pl-6 hover:border-gold transition-colors">
             <dt className="font-display text-2xl text-foreground mb-2">
               {t.termo}
             </dt>

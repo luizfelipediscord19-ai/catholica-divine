@@ -109,7 +109,7 @@ export function indiceBusca(): ItemBusca[] {
       titulo: entrada.termo,
       descricao: entrada.definicao.slice(0, 110),
       categoria: "Glossário",
-      href: `/glossario#${chave}`,
+      href: `/glossario#${normalizar(entrada.termo).replace(/\s+/g, "-")}`,
     });
   }
 
