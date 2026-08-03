@@ -8,6 +8,7 @@ import {
   EstrelaVersiculo,
   useCapituloPessoal,
 } from "../components/portal/AcoesCapitulo";
+import { NotasCapitulo } from "../components/portal/NotasCapitulo";
 
 type Verso = { v: number; t: string };
 type LivroJson = { slug: string; nome: string; capitulos: Record<string, Verso[]> };
@@ -290,7 +291,10 @@ function Page() {
         />
       )}
 
+      <NotasCapitulo livro={livro.slug} capitulo={capitulo} className="mt-10" />
+
       <Relacionados topic={`biblia:${livro.slug}`} className="mt-10" />
+
 
       <nav className="mt-10 flex items-center justify-between gap-4">
         {anterior ? (
