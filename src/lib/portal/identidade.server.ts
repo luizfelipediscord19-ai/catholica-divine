@@ -291,7 +291,7 @@ export async function obterPainel(token: string) {
   const id = await identidadePorToken(token);
   const hoje = hojeISO();
 
-  const [leituras, favoritos, notas, conquistas, catalogo, diarioHoje] = await Promise.all([
+  const [leituras, favoritos, notas, conquistas, catalogo, diarioHoje, ultima] = await Promise.all([
     supabaseAdmin
       .from("leituras_biblia")
       .select("livro, capitulo")
