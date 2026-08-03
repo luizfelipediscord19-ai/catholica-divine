@@ -15,6 +15,23 @@ function lerToken(): string | null {
 }
 
 /**
+ * Garante um token de identidade sob demanda (ex.: no momento de publicar),
+ * sem depender do carregamento em segundo plano.
+ */
+export async function garantirTokenAgora(): Promise<string> {
+  const atual = lerToken();
+  const res = await garantirIdentidadeFn({ data: { token: atual } });
+  if (res.token !== atual) {
+    try {
+      window.localStorage.setItem(CHAVE, res.token);
+    } catch {
+      /* navegação privada */
+    }
+  }
+  return res.token;
+}
+
+/**
  * Identidade anônima do visitante: um santo padroeiro sorteado e um código
  * secreto guardado apenas neste navegador. Sem login, sem e-mail.
  */
