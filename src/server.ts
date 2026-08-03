@@ -1,5 +1,5 @@
 import "./lib/error-capture";
-import "./lib/websocket-polyfill";
+import { garantirWebSocket } from "./lib/websocket-polyfill";
 
 import { consumeLastCapturedError } from "./lib/error-capture";
 import { renderErrorPage } from "./lib/error-page";
@@ -79,6 +79,7 @@ async function normalizeCatastrophicSsrResponse(response: Response): Promise<Res
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     try {
+      await garantirWebSocket();
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
       const normalizedResponse = await normalizeCatastrophicSsrResponse(response);
