@@ -291,7 +291,10 @@ function Page() {
         />
       )}
 
+      <NotasCapitulo livro={livro.slug} capitulo={capitulo} className="mt-10" />
+
       <Relacionados topic={`biblia:${livro.slug}`} className="mt-10" />
+
 
       <nav className="mt-10 flex items-center justify-between gap-4">
         {anterior ? (
