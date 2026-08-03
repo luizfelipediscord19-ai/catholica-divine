@@ -109,17 +109,11 @@ function ForumPage() {
           </div>
 
           {abrirForm ? (
-            secoes.isPending ? (
-              <Painel>
-                <p className="text-sm text-muted-foreground">Carregando seções…</p>
-              </Painel>
-            ) : (
-              <NovoTopico
-                secoes={secoes.map((s) => ({ slug: s.slug, nome: s.nome }))}
-                secaoInicial={secao}
-                onPronto={() => setAbrirForm(false)}
-              />
-            )
+            <NovoTopico
+              secoes={secoes.map((s) => ({ slug: s.slug, nome: s.nome }))}
+              secaoInicial={secao}
+              onPronto={() => setAbrirForm(false)}
+            />
           ) : null}
 
           {topicos.isPending ? (
