@@ -85,7 +85,7 @@ function ForumPage() {
             >
               Todos
             </button>
-            {(secoes.data ?? []).map((s) => (
+            {secoes.map((s) => (
               <button
                 key={s.slug}
                 type="button"
@@ -115,7 +115,7 @@ function ForumPage() {
               </Painel>
             ) : (
               <NovoTopico
-                secoes={(secoes.data ?? []).map((s) => ({ slug: s.slug, nome: s.nome }))}
+                secoes={secoes.map((s) => ({ slug: s.slug, nome: s.nome }))}
                 secaoInicial={secao}
                 onPronto={() => setAbrirForm(false)}
               />
@@ -177,7 +177,7 @@ function ForumPage() {
           <Painel>
             <Rotulo>Seções</Rotulo>
             <ul className="space-y-4">
-              {(secoes.data ?? []).map((s) => (
+              {secoes.map((s) => (
                 <li key={s.id}>
                   <button
                     type="button"
