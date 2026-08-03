@@ -15,7 +15,8 @@ import {
   formatarData,
   inputClass,
 } from "@/components/portal/comuns";
-import { useIdentidade } from "@/hooks/use-identidade";
+import { garantirTokenAgora, useIdentidade } from "@/hooks/use-identidade";
+import { SECAO_PADRAO, SECOES_FORUM } from "@/lib/data/forum-secoes";
 import { criarTopicoFn, listarSecoesFn, listarTopicosFn } from "@/lib/portal.functions";
 
 export const Route = createFileRoute("/forum/")({
