@@ -8,6 +8,7 @@ import {
   EstrelaVersiculo,
   useCapituloPessoal,
 } from "../components/portal/AcoesCapitulo";
+import { NotasCapitulo } from "../components/portal/NotasCapitulo";
 
 type Verso = { v: number; t: string };
 type LivroJson = { slug: string; nome: string; capitulos: Record<string, Verso[]> };
