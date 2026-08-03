@@ -1,6 +1,7 @@
 import { createStart, createMiddleware } from "@tanstack/react-start";
 
 import { renderErrorPage } from "./lib/error-page";
+import { attachSupabaseAuth } from "@/integrations/supabase/auth-attacher";
 // Portal 100% público: não há sessão de usuário, então nenhum middleware de
 // token é registrado. Carregar o cliente Supabase do navegador aqui quebrava
 // o SSR em runtimes Node < 22 (RealtimeClient sem WebSocket nativo).
@@ -22,6 +23,6 @@ const errorMiddleware = createMiddleware().server(async ({ next }) => {
 });
 
 export const startInstance = createStart(() => ({
-  functionMiddleware: [],
+  functionMiddleware: [attachSupabaseAuth],
   requestMiddleware: [errorMiddleware],
 }));
