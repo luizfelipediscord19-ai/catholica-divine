@@ -41,13 +41,13 @@ async function applySecurityHeaders(response: Response): Promise<Response> {
     "font-src 'self' data: https://fonts.gstatic.com; " +
     "img-src 'self' data: https://*; " +
     `connect-src ${conexoes}; ` +
-    "frame-ancestors 'none'; " +
+    "frame-ancestors 'self' https://*.lovable.app https://*.lovable.dev; " +
     "upgrade-insecure-requests;"
   );
 
 
   // Prevention of Clickjacking
-  newHeaders.set("X-Frame-Options", "DENY");
+  newHeaders.set("X-Frame-Options", "SAMEORIGIN");
   
   // Prevent MIME sniffing
   newHeaders.set("X-Content-Type-Options", "nosniff");
