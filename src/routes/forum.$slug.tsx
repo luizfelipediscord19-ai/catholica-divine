@@ -113,11 +113,13 @@ function TopicoPage() {
         <AutorSelo autor={autorDe(t as never)} />
       </header>
 
+      <SeloRevisao status={t.status} />
+
       <div className="border-y border-gold/15 py-8 text-[16px] leading-[1.8] text-foreground/85 font-light whitespace-pre-wrap">
         {t.corpo}
       </div>
 
-      <div className="flex items-center gap-4">
+      <div className="flex flex-wrap items-center gap-4">
         <button
           type="button"
           disabled={!token || reagir.isPending}
@@ -129,7 +131,9 @@ function TopicoPage() {
         <span className="flex items-center gap-2 text-xs text-muted-foreground">
           <MessageSquare className="size-3.5" aria-hidden="true" /> {respostas.length} respostas
         </span>
+        <DenunciarBotao alvo={{ topicoId: t.id }} className="ml-auto" />
       </div>
+
 
       <section className="space-y-6">
         <Rotulo>Respostas</Rotulo>
