@@ -44,23 +44,29 @@ function TopicoPage() {
   const { slug } = Route.useParams();
   const { token } = useIdentidade();
   const queryClient = useQueryClient();
-  const [corpo, setCorpo] = useState("");
+  const rascunho = useRascunho(`forum-resposta-${slug}`, { corpo: "" });
+  const corpo = rascunho.valor.corpo;
 
   const topico = useQuery({
-    queryKey: ["forum", "topico", slug],
-    queryFn: () => obterTopicoFn({ data: { slug } }),
+    queryKey: ["forum", "topico", slug, token ?? "anon"],
+    queryFn: () => obterTopicoFn({ data: { slug, token } }),
   });
 
   const responder = useMutation({
     mutationFn: () => responderTopicoFn({ data: { token: token!, topicoSlug: slug, corpo } }),
-    onSuccess: () => {
-      setCorpo("");
+    onSuccess: (res) => {
+      rascunho.limpar();
       void queryClient.invalidateQueries({ queryKey: ["forum"] });
       void queryClient.invalidateQueries({ queryKey: ["painel"] });
-      toast.success("Resposta publicada. +15 XP");
+      toast.success(
+        res.status === "aprovado"
+          ? "Resposta publicada. +15 XP"
+          : "Resposta enviada para revisão. +15 XP",
+      );
     },
     onError: (erro: Error) => toast.error(erro.message || "Não foi possível responder."),
   });
+
 
   const reagir = useMutation({
     mutationFn: (alvo: { topicoId?: string; respostaId?: string }) =>
