@@ -31,7 +31,7 @@ function sortearSanto() {
   };
 }
 
-function toPublica(row: {
+export function toPublica(row: {
   id: string;
   santo_slug: string;
   santo_nome: string;
@@ -57,7 +57,7 @@ function toPublica(row: {
   };
 }
 
-const COLUNAS =
+export const COLUNAS =
   "id, santo_slug, santo_nome, santo_imagem, apelido, xp, nivel, streak, melhor_streak, ultima_oracao";
 
 /** Devolve a identidade do token; cria uma nova (com santo sorteado) se não existir. */

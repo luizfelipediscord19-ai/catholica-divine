@@ -4,8 +4,9 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { garantirIdentidadeFn, obterPainelFn } from "@/lib/portal.functions";
 
 const CHAVE = "portal-catolico:identidade";
+export const CHAVE_IDENTIDADE = CHAVE;
 
-function lerToken(): string | null {
+export function lerToken(): string | null {
   if (typeof window === "undefined") return null;
   try {
     return window.localStorage.getItem(CHAVE);

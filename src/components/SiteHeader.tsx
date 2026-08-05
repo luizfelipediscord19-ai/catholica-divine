@@ -1,4 +1,5 @@
 import { Link, useRouterState } from "@tanstack/react-router";
+import { useAuth } from "@/hooks/use-auth";
 import { Search, Sparkles, Menu, X, Church } from "lucide-react";
 import { useCallback, useState } from "react";
 
@@ -52,7 +53,7 @@ export function SiteHeader() {
 
         <nav
           aria-label="Navegação principal"
-          className="hidden lg:flex min-w-0 items-center gap-4 xl:gap-5 whitespace-nowrap text-[10px] uppercase tracking-[0.18em] xl:tracking-[0.25em] font-medium text-paper/80"
+          className="hidden xl:flex min-w-0 items-center gap-4 xl:gap-5 whitespace-nowrap text-[10px] uppercase tracking-[0.18em] xl:tracking-[0.25em] font-medium text-paper/80"
         >
           {NAV_PRINCIPAL.map((item) => {
             const active = pathname === item.to || pathname.startsWith(`${item.to}/`);
@@ -73,6 +74,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-3">
+          <ContaBotao />
           <Link
             to="/assistente"
             className="hidden sm:inline-flex items-center gap-2 min-h-11 px-5 py-3 text-[10px] uppercase tracking-[0.25em] font-bold text-deep bg-gold hover:bg-paper focus-visible:bg-paper transition-premium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-paper"
@@ -146,10 +148,39 @@ export function SiteHeader() {
             >
               Glossário
             </Link>
+            <Link
+              to="/auth"
+              onClick={() => setOpen(false)}
+              className="flex min-h-11 items-center py-2 text-foreground/85 hover:text-gold"
+            >
+              Minha conta
+            </Link>
           </nav>
         </div>
       ) : null}
       <BuscaGlobal aberto={busca} onFechar={() => setBusca(false)} />
     </header>
+  );
+}
+
+/** Entrar / sair, sempre refletindo a sessão atual. */
+function ContaBotao() {
+  const { autenticado, carregando, sair } = useAuth();
+  if (carregando) return null;
+  return autenticado ? (
+    <button
+      type="button"
+      onClick={() => void sair()}
+      className="hidden 2xl:inline-flex items-center min-h-11 px-4 py-3 text-[10px] uppercase tracking-[0.25em] border border-gold/30 text-paper/80 hover:text-gold hover:border-gold transition-premium"
+    >
+      Sair
+    </button>
+  ) : (
+    <Link
+      to="/auth"
+      className="hidden 2xl:inline-flex items-center min-h-11 px-4 py-3 text-[10px] uppercase tracking-[0.25em] border border-gold/30 text-paper/80 hover:text-gold hover:border-gold transition-premium"
+    >
+      Entrar
+    </Link>
   );
 }

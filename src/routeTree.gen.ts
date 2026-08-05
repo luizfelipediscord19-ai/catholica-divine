@@ -13,6 +13,7 @@ import { Route as SophiaDiagnosticoRouteImport } from './routes/sophia-diagnosti
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SantosRouteImport } from './routes/santos'
 import { Route as SacramentosRouteImport } from './routes/sacramentos'
+import { Route as RedefinirSenhaRouteImport } from './routes/redefinir-senha'
 import { Route as PainelRouteImport } from './routes/painel'
 import { Route as OracoesRouteImport } from './routes/oracoes'
 import { Route as MariaRouteImport } from './routes/maria'
@@ -25,6 +26,7 @@ import { Route as CoroinhasRouteImport } from './routes/coroinhas'
 import { Route as CatecismoRouteImport } from './routes/catecismo'
 import { Route as CalendarioLiturgicoRouteImport } from './routes/calendario-liturgico'
 import { Route as BibliaRouteImport } from './routes/biblia'
+import { Route as AuthRouteImport } from './routes/auth'
 import { Route as AssistenteRouteImport } from './routes/assistente'
 import { Route as ApologeticaRouteImport } from './routes/apologetica'
 import { Route as IndexRouteImport } from './routes/index'
@@ -63,6 +65,11 @@ const SantosRoute = SantosRouteImport.update({
 const SacramentosRoute = SacramentosRouteImport.update({
   id: '/sacramentos',
   path: '/sacramentos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RedefinirSenhaRoute = RedefinirSenhaRouteImport.update({
+  id: '/redefinir-senha',
+  path: '/redefinir-senha',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PainelRoute = PainelRouteImport.update({
@@ -123,6 +130,11 @@ const CalendarioLiturgicoRoute = CalendarioLiturgicoRouteImport.update({
 const BibliaRoute = BibliaRouteImport.update({
   id: '/biblia',
   path: '/biblia',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AssistenteRoute = AssistenteRouteImport.update({
@@ -226,6 +238,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/apologetica': typeof ApologeticaRoute
   '/assistente': typeof AssistenteRoute
+  '/auth': typeof AuthRoute
   '/biblia': typeof BibliaRouteWithChildren
   '/calendario-liturgico': typeof CalendarioLiturgicoRoute
   '/catecismo': typeof CatecismoRouteWithChildren
@@ -238,6 +251,7 @@ export interface FileRoutesByFullPath {
   '/maria': typeof MariaRoute
   '/oracoes': typeof OracoesRouteWithChildren
   '/painel': typeof PainelRoute
+  '/redefinir-senha': typeof RedefinirSenhaRoute
   '/sacramentos': typeof SacramentosRoute
   '/santos': typeof SantosRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -263,6 +277,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/apologetica': typeof ApologeticaRoute
   '/assistente': typeof AssistenteRoute
+  '/auth': typeof AuthRoute
   '/calendario-liturgico': typeof CalendarioLiturgicoRoute
   '/catecismo': typeof CatecismoRouteWithChildren
   '/coroinhas': typeof CoroinhasRoute
@@ -274,6 +289,7 @@ export interface FileRoutesByTo {
   '/maria': typeof MariaRoute
   '/oracoes': typeof OracoesRouteWithChildren
   '/painel': typeof PainelRoute
+  '/redefinir-senha': typeof RedefinirSenhaRoute
   '/sacramentos': typeof SacramentosRoute
   '/santos': typeof SantosRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -299,6 +315,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/apologetica': typeof ApologeticaRoute
   '/assistente': typeof AssistenteRoute
+  '/auth': typeof AuthRoute
   '/biblia': typeof BibliaRouteWithChildren
   '/calendario-liturgico': typeof CalendarioLiturgicoRoute
   '/catecismo': typeof CatecismoRouteWithChildren
@@ -311,6 +328,7 @@ export interface FileRoutesById {
   '/maria': typeof MariaRoute
   '/oracoes': typeof OracoesRouteWithChildren
   '/painel': typeof PainelRoute
+  '/redefinir-senha': typeof RedefinirSenhaRoute
   '/sacramentos': typeof SacramentosRoute
   '/santos': typeof SantosRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -338,6 +356,7 @@ export interface FileRouteTypes {
     | '/'
     | '/apologetica'
     | '/assistente'
+    | '/auth'
     | '/biblia'
     | '/calendario-liturgico'
     | '/catecismo'
@@ -350,6 +369,7 @@ export interface FileRouteTypes {
     | '/maria'
     | '/oracoes'
     | '/painel'
+    | '/redefinir-senha'
     | '/sacramentos'
     | '/santos'
     | '/sitemap.xml'
@@ -375,6 +395,7 @@ export interface FileRouteTypes {
     | '/'
     | '/apologetica'
     | '/assistente'
+    | '/auth'
     | '/calendario-liturgico'
     | '/catecismo'
     | '/coroinhas'
@@ -386,6 +407,7 @@ export interface FileRouteTypes {
     | '/maria'
     | '/oracoes'
     | '/painel'
+    | '/redefinir-senha'
     | '/sacramentos'
     | '/santos'
     | '/sitemap.xml'
@@ -410,6 +432,7 @@ export interface FileRouteTypes {
     | '/'
     | '/apologetica'
     | '/assistente'
+    | '/auth'
     | '/biblia'
     | '/calendario-liturgico'
     | '/catecismo'
@@ -422,6 +445,7 @@ export interface FileRouteTypes {
     | '/maria'
     | '/oracoes'
     | '/painel'
+    | '/redefinir-senha'
     | '/sacramentos'
     | '/santos'
     | '/sitemap.xml'
@@ -448,6 +472,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ApologeticaRoute: typeof ApologeticaRoute
   AssistenteRoute: typeof AssistenteRoute
+  AuthRoute: typeof AuthRoute
   BibliaRoute: typeof BibliaRouteWithChildren
   CalendarioLiturgicoRoute: typeof CalendarioLiturgicoRoute
   CatecismoRoute: typeof CatecismoRouteWithChildren
@@ -460,6 +485,7 @@ export interface RootRouteChildren {
   MariaRoute: typeof MariaRoute
   OracoesRoute: typeof OracoesRouteWithChildren
   PainelRoute: typeof PainelRoute
+  RedefinirSenhaRoute: typeof RedefinirSenhaRoute
   SacramentosRoute: typeof SacramentosRoute
   SantosRoute: typeof SantosRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
@@ -497,6 +523,13 @@ declare module '@tanstack/react-router' {
       path: '/sacramentos'
       fullPath: '/sacramentos'
       preLoaderRoute: typeof SacramentosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/redefinir-senha': {
+      id: '/redefinir-senha'
+      path: '/redefinir-senha'
+      fullPath: '/redefinir-senha'
+      preLoaderRoute: typeof RedefinirSenhaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/painel': {
@@ -581,6 +614,13 @@ declare module '@tanstack/react-router' {
       path: '/biblia'
       fullPath: '/biblia'
       preLoaderRoute: typeof BibliaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/assistente': {
@@ -806,6 +846,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ApologeticaRoute: ApologeticaRoute,
   AssistenteRoute: AssistenteRoute,
+  AuthRoute: AuthRoute,
   BibliaRoute: BibliaRouteWithChildren,
   CalendarioLiturgicoRoute: CalendarioLiturgicoRoute,
   CatecismoRoute: CatecismoRouteWithChildren,
@@ -818,6 +859,7 @@ const rootRouteChildren: RootRouteChildren = {
   MariaRoute: MariaRoute,
   OracoesRoute: OracoesRouteWithChildren,
   PainelRoute: PainelRoute,
+  RedefinirSenhaRoute: RedefinirSenhaRoute,
   SacramentosRoute: SacramentosRoute,
   SantosRoute: SantosRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
@@ -829,13 +871,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
