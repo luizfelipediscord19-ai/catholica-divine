@@ -24,7 +24,14 @@ async function getServerEntry(): Promise<ServerEntry> {
 // {"unhandled":true,"message":"HTTPError"} — try/catch alone never fires for those.
 async function applySecurityHeaders(response: Response): Promise<Response> {
   const newHeaders = new Headers(response.headers);
-  
+
+  // O navegador precisa falar com o backend (contas, fórum, painel) e com a IA.
+  const backend = process.env["VITE_SUPABASE_URL"] ?? process.env["SUPABASE_URL"] ?? "";
+  const backendWs = backend.replace(/^https:/, "wss:");
+  const conexoes = ["'self'", "https://api.groq.com", backend, backendWs]
+    .filter(Boolean)
+    .join(" ");
+
   // Content Security Policy (Strict but allows required fonts and AI gateway)
   newHeaders.set(
     "Content-Security-Policy",
@@ -33,13 +40,14 @@ async function applySecurityHeaders(response: Response): Promise<Response> {
     "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; " +
     "font-src 'self' data: https://fonts.gstatic.com; " +
     "img-src 'self' data: https://*; " +
-    "connect-src 'self' https://api.groq.com; " +
-    "frame-ancestors 'none'; " +
+    `connect-src ${conexoes}; ` +
+    "frame-ancestors 'self' https://*.lovable.app https://*.lovable.dev; " +
     "upgrade-insecure-requests;"
   );
 
+
   // Prevention of Clickjacking
-  newHeaders.set("X-Frame-Options", "DENY");
+  newHeaders.set("X-Frame-Options", "SAMEORIGIN");
   
   // Prevent MIME sniffing
   newHeaders.set("X-Content-Type-Options", "nosniff");
