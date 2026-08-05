@@ -1,6 +1,7 @@
 // Server-only. Fórum "Agora Ecclesiae" — leitura pública, escrita por identidade anônima.
 import { supabaseAdmin } from "@/integrations/supabase/client.server";
 import { revisarTexto } from "./moderacao.server";
+import { dbLeitura } from "./db.server";
 
 function slugTopico(titulo: string) {
   const base = titulo
@@ -44,7 +45,7 @@ function filtroVisibilidade(identidadeId: string | null) {
 }
 
 export async function listarSecoes() {
-  const { data } = await supabaseAdmin
+  const { data } = await dbLeitura()
     .from("forum_secoes")
     .select("id, slug, nome, descricao, ordem")
     .order("ordem");
@@ -53,7 +54,7 @@ export async function listarSecoes() {
 
 export async function listarTopicos(secaoSlug?: string, token?: string | null, limite = 30) {
   const identidadeId = await identidadeOpcional(token);
-  let query = supabaseAdmin
+  let query = dbLeitura()
     .from("forum_topicos")
     .select(
       `id, slug, titulo, corpo, fixado, trancado, status, respostas_count, ultima_atividade, created_at,
@@ -72,7 +73,7 @@ export async function listarTopicos(secaoSlug?: string, token?: string | null, l
 export async function obterTopico(slug: string, token?: string | null) {
   const identidadeId = await identidadeOpcional(token);
 
-  const { data: topico } = await supabaseAdmin
+  const { data: topico } = await dbLeitura()
     .from("forum_topicos")
     .select(
       `id, slug, titulo, corpo, fixado, trancado, status, identidade_id, respostas_count, created_at,
@@ -85,7 +86,7 @@ export async function obterTopico(slug: string, token?: string | null) {
   // Conteúdo em revisão só é visível para quem escreveu.
   if (topico.status !== "aprovado" && topico.identidade_id !== identidadeId) return null;
 
-  const { data: respostas } = await supabaseAdmin
+  const { data: respostas } = await dbLeitura()
     .from("forum_respostas")
     .select(`id, corpo, status, created_at, ${AUTOR}`)
     .eq("topico_id", topico.id)
