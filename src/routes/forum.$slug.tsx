@@ -14,6 +14,7 @@ import {
   inputClass,
 } from "@/components/portal/comuns";
 import { DenunciarBotao, RegrasForum, SeloRevisao } from "@/components/portal/ForumModeracao";
+import { useAuth } from "@/hooks/use-auth";
 import { useIdentidade } from "@/hooks/use-identidade";
 import { formatarSalvo, useRascunho } from "@/hooks/use-rascunho";
 import { obterTopicoFn, reagirFn, responderTopicoFn } from "@/lib/portal.functions";
@@ -43,6 +44,7 @@ export const Route = createFileRoute("/forum/$slug")({
 function TopicoPage() {
   const { slug } = Route.useParams();
   const { token } = useIdentidade();
+  const { autenticado } = useAuth();
   const queryClient = useQueryClient();
   const rascunho = useRascunho(`forum-resposta-${slug}`, { corpo: "" });
   const corpo = rascunho.valor.corpo;
@@ -53,7 +55,7 @@ function TopicoPage() {
   });
 
   const responder = useMutation({
-    mutationFn: () => responderTopicoFn({ data: { token: token!, topicoSlug: slug, corpo } }),
+    mutationFn: () => responderTopicoFn({ data: { token, topicoSlug: slug, corpo } }),
     onSuccess: (res) => {
       rascunho.limpar();
       void queryClient.invalidateQueries({ queryKey: ["forum"] });
@@ -70,7 +72,7 @@ function TopicoPage() {
 
   const reagir = useMutation({
     mutationFn: (alvo: { topicoId?: string; respostaId?: string }) =>
-      reagirFn({ data: { token: token!, ...alvo } }),
+      reagirFn({ data: { token, ...alvo } }),
     onSuccess: (res) => toast.success(res.reagiu ? "Amém registrado." : "Amém removido."),
   });
 
@@ -122,7 +124,7 @@ function TopicoPage() {
       <div className="flex flex-wrap items-center gap-4">
         <button
           type="button"
-          disabled={!token || reagir.isPending}
+          disabled={!autenticado || reagir.isPending}
           onClick={() => reagir.mutate({ topicoId: t.id })}
           className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] text-paper/70 hover:text-gold transition-colors disabled:opacity-50"
         >
@@ -154,7 +156,7 @@ function TopicoPage() {
                   <div className="flex flex-wrap items-center gap-4">
                     <button
                       type="button"
-                      disabled={!token || reagir.isPending}
+                      disabled={!autenticado || reagir.isPending}
                       onClick={() => reagir.mutate({ respostaId: r.id })}
                       className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] text-paper/60 hover:text-gold transition-colors disabled:opacity-50"
                     >
@@ -184,7 +186,7 @@ function TopicoPage() {
             className="space-y-4"
             onSubmit={(e) => {
               e.preventDefault();
-              if (token && corpo.trim().length >= 2) responder.mutate();
+              if (autenticado && corpo.trim().length >= 2) responder.mutate();
             }}
           >
             <label className="block">
@@ -199,9 +201,14 @@ function TopicoPage() {
               />
             </label>
             <div className="flex flex-wrap items-center gap-3">
+              {!autenticado ? (
+                <Link to="/auth" className={botaoClass}>
+                  Entrar para responder
+                </Link>
+              ) : null}
               <button
                 type="submit"
-                disabled={!token || corpo.trim().length < 2 || responder.isPending}
+                disabled={!autenticado || corpo.trim().length < 2 || responder.isPending}
                 className={botaoClass}
               >
                 {responder.isPending ? "Publicando…" : "Responder"}

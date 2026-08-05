@@ -16,6 +16,7 @@ import {
   inputClass,
 } from "@/components/portal/comuns";
 import { RegrasForum, SeloRevisao } from "@/components/portal/ForumModeracao";
+import { useAuth } from "@/hooks/use-auth";
 import { garantirTokenAgora, useIdentidade } from "@/hooks/use-identidade";
 import { formatarSalvo, useRascunho } from "@/hooks/use-rascunho";
 import { SECAO_PADRAO, SECOES_FORUM } from "@/lib/data/forum-secoes";
@@ -73,7 +74,7 @@ function ForumPage() {
             O fórum <span className="italic font-light text-gold">da comunidade</span>
           </>
         }
-        intro="Um pátio para perguntar, aprender e testemunhar. Você participa com uma identidade anônima e um santo padroeiro sorteado — sem e-mail, sem senha."
+        intro="Um pátio para perguntar, aprender e testemunhar. Para escrever, entre com e-mail e senha; sua identidade pública continua sendo um santo padroeiro sorteado."
       />
 
       <div className="max-w-6xl mx-auto px-6 py-16 grid gap-10 lg:grid-cols-[1fr_280px]">
@@ -200,8 +201,9 @@ function ForumPage() {
           <Painel>
             <Rotulo>Como funciona</Rotulo>
             <p className="text-xs text-muted-foreground leading-relaxed font-light">
-              Ao escrever, o portal sorteia um santo padroeiro para você e guarda um código apenas
-              neste navegador. Todo conteúdo passa por revisão antes de aparecer para os outros. Cada
+              Ler é livre. Para escrever, crie uma conta com e-mail e senha — o portal sorteia um
+              santo padroeiro que será seu nome público, e o e-mail nunca aparece para ninguém. Todo
+              conteúdo passa por revisão antes de aparecer para os outros. Cada
               participação rende XP e conquistas no seu{" "}
               <Link to="/painel" className="text-gold hover:underline">
                 painel espiritual
@@ -226,6 +228,7 @@ function NovoTopico({
   onPronto: () => void;
 }) {
   const { identidade } = useIdentidade();
+  const { autenticado } = useAuth();
   const navigate = useNavigate();
   const queryClient = useQueryClient();
   const lista = secoes.length > 0 ? secoes : SECOES_FORUM;
@@ -261,9 +264,10 @@ function NovoTopico({
     onError: (erro: Error) => toast.error(erro.message || "Não foi possível publicar."),
   });
 
-  const valido = titulo.trim().length >= 5 && corpo.trim().length >= 10;
-  const motivo =
-    titulo.trim().length < 5
+  const valido = autenticado && titulo.trim().length >= 5 && corpo.trim().length >= 10;
+  const motivo = !autenticado
+    ? "Entre com e-mail e senha para publicar no fórum."
+    : titulo.trim().length < 5
       ? "O título precisa de pelo menos 5 caracteres."
       : corpo.trim().length < 10
         ? "A mensagem precisa de pelo menos 10 caracteres."
@@ -345,6 +349,11 @@ function NovoTopico({
             </span>
           ) : null}
           {motivo ? <span className="text-xs text-muted-foreground/80">{motivo}</span> : null}
+          {!autenticado ? (
+            <Link to="/auth" className={botaoGhostClass}>
+              Entrar ou criar conta
+            </Link>
+          ) : null}
         </div>
         {rascunho.restaurado ? (
           <p className="text-xs text-gold/80">

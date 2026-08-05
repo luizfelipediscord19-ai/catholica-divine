@@ -402,6 +402,7 @@ export type Database = {
         Row: {
           apelido: string | null
           created_at: string
+          email: string | null
           id: string
           melhor_streak: number
           nivel: number
@@ -412,11 +413,13 @@ export type Database = {
           token: string
           ultima_oracao: string | null
           updated_at: string
+          user_id: string | null
           xp: number
         }
         Insert: {
           apelido?: string | null
           created_at?: string
+          email?: string | null
           id?: string
           melhor_streak?: number
           nivel?: number
@@ -427,11 +430,13 @@ export type Database = {
           token?: string
           ultima_oracao?: string | null
           updated_at?: string
+          user_id?: string | null
           xp?: number
         }
         Update: {
           apelido?: string | null
           created_at?: string
+          email?: string | null
           id?: string
           melhor_streak?: number
           nivel?: number
@@ -442,6 +447,7 @@ export type Database = {
           token?: string
           ultima_oracao?: string | null
           updated_at?: string
+          user_id?: string | null
           xp?: number
         }
         Relationships: []

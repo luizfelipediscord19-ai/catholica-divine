@@ -1,11 +1,14 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 
+import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
+
 // Camada RPC do portal. Toda a lógica vive em *.server.ts — este arquivo
 // contém apenas declarações de server functions (exigência do splitter).
 
 const Token = z.object({ token: z.string().uuid().nullable() });
 const TokenObrigatorio = z.object({ token: z.string().uuid() });
+const TokenOpcional = z.object({ token: z.string().uuid().nullish() });
 
 export const garantirIdentidadeFn = createServerFn({ method: "POST" })
   .inputValidator(Token)
@@ -124,58 +127,103 @@ export const obterTopicoFn = createServerFn({ method: "POST" })
     return obterTopico(data.slug, data.token ?? null);
   });
 
+// ---------- Ações que exigem conta (e-mail e senha) ----------
+// O `token` recebido é apenas a identidade anônima deste navegador: ela é
+// adotada pela conta no primeiro login. A identidade usada nas escritas vem
+// sempre do usuário autenticado, nunca do que o cliente enviou.
+
+/** Vincula (ou cria) a identidade do portal para a conta autenticada. */
+export const vincularContaFn = createServerFn({ method: "POST" })
+  .middleware([requireSupabaseAuth])
+  .inputValidator(TokenOpcional)
+  .handler(async ({ data, context }) => {
+    const { identidadeDaConta } = await import("./portal/conta.server");
+    return identidadeDaConta(
+      context.userId,
+      (context.claims["email"] as string | undefined) ?? null,
+      data.token ?? null,
+    );
+  });
 
 export const criarTopicoFn = createServerFn({ method: "POST" })
+  .middleware([requireSupabaseAuth])
   .inputValidator(
-    TokenObrigatorio.extend({
+    TokenOpcional.extend({
       secaoSlug: z.string().min(1).max(60),
       titulo: z.string().trim().min(5).max(140),
       corpo: z.string().trim().min(10).max(8000),
     }),
   )
-  .handler(async ({ data }) => {
+  .handler(async ({ data, context }) => {
+    const { tokenDaConta } = await import("./portal/conta.server");
     const { criarTopico } = await import("./portal/forum.server");
-    return criarTopico(data.token, data);
+    const token = await tokenDaConta(
+      context.userId,
+      (context.claims["email"] as string | undefined) ?? null,
+      data.token ?? null,
+    );
+    return criarTopico(token, data);
   });
 
 export const responderTopicoFn = createServerFn({ method: "POST" })
+  .middleware([requireSupabaseAuth])
   .inputValidator(
-    TokenObrigatorio.extend({
+    TokenOpcional.extend({
       topicoSlug: z.string().min(1).max(120),
       corpo: z.string().trim().min(2).max(8000),
     }),
   )
-  .handler(async ({ data }) => {
+  .handler(async ({ data, context }) => {
+    const { tokenDaConta } = await import("./portal/conta.server");
     const { responderTopico } = await import("./portal/forum.server");
-    return responderTopico(data.token, data.topicoSlug, data.corpo);
+    const token = await tokenDaConta(
+      context.userId,
+      (context.claims["email"] as string | undefined) ?? null,
+      data.token ?? null,
+    );
+    return responderTopico(token, data.topicoSlug, data.corpo);
   });
 
 export const reagirFn = createServerFn({ method: "POST" })
+  .middleware([requireSupabaseAuth])
   .inputValidator(
-    TokenObrigatorio.extend({
+    TokenOpcional.extend({
       topicoId: z.string().uuid().optional(),
       respostaId: z.string().uuid().optional(),
       tipo: z.string().max(20).optional(),
     }),
   )
-  .handler(async ({ data }) => {
+  .handler(async ({ data, context }) => {
+    const { tokenDaConta } = await import("./portal/conta.server");
     const { reagir } = await import("./portal/forum.server");
-    return reagir(data.token, { topicoId: data.topicoId, respostaId: data.respostaId }, data.tipo);
+    const token = await tokenDaConta(
+      context.userId,
+      (context.claims["email"] as string | undefined) ?? null,
+      data.token ?? null,
+    );
+    return reagir(token, { topicoId: data.topicoId, respostaId: data.respostaId }, data.tipo);
   });
 
 export const denunciarFn = createServerFn({ method: "POST" })
+  .middleware([requireSupabaseAuth])
   .inputValidator(
-    TokenObrigatorio.extend({
+    TokenOpcional.extend({
       topicoId: z.string().uuid().optional(),
       respostaId: z.string().uuid().optional(),
       motivo: z.string().min(2).max(40),
       comentario: z.string().trim().max(600).optional(),
     }),
   )
-  .handler(async ({ data }) => {
+  .handler(async ({ data, context }) => {
+    const { tokenDaConta } = await import("./portal/conta.server");
     const { denunciar } = await import("./portal/forum.server");
+    const token = await tokenDaConta(
+      context.userId,
+      (context.claims["email"] as string | undefined) ?? null,
+      data.token ?? null,
+    );
     return denunciar(
-      data.token,
+      token,
       { topicoId: data.topicoId, respostaId: data.respostaId },
       data.motivo,
       data.comentario,
