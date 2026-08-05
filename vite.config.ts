@@ -7,14 +7,14 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 // Inside a Lovable build, the preset is forced to Cloudflare and this override is ignored.
-// Outside (your CI / Netlify), this pins Nitro to the Netlify preset so `npm run build`
-// produces Netlify serverless functions and static files in `dist` for Netlify to deploy.
+// Outside (your CI / Vercel), this pins Nitro to the Vercel preset so `npm run build`
+// produces Vercel serverless functions and static assets under `.vercel/output`.
 export default defineConfig({
   tanstackStart: {
     server: { entry: "server" },
   },
   nitro: {
-    preset: "netlify",
+    preset: "vercel",
   },
   vite: {
     // seroval 1.6 reads `import.meta.env.PROD`; keeping it in Vite's SSR graph
