@@ -147,18 +147,23 @@ function TopicoPage() {
               <li key={r.id}>
                 <Painel className="space-y-4">
                   <AutorSelo autor={autorDe(r as never)} data={r.created_at} />
+                  <SeloRevisao status={r.status} />
                   <p className="text-[15px] leading-[1.8] text-foreground/85 font-light whitespace-pre-wrap">
                     {r.corpo}
                   </p>
-                  <button
-                    type="button"
-                    disabled={!token || reagir.isPending}
-                    onClick={() => reagir.mutate({ respostaId: r.id })}
-                    className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] text-paper/60 hover:text-gold transition-colors disabled:opacity-50"
-                  >
-                    <Heart className="size-3" aria-hidden="true" /> Amém
-                  </button>
+                  <div className="flex flex-wrap items-center gap-4">
+                    <button
+                      type="button"
+                      disabled={!token || reagir.isPending}
+                      onClick={() => reagir.mutate({ respostaId: r.id })}
+                      className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] text-paper/60 hover:text-gold transition-colors disabled:opacity-50"
+                    >
+                      <Heart className="size-3" aria-hidden="true" /> Amém
+                    </button>
+                    <DenunciarBotao respostaId={r.id} compacto />
+                  </div>
                 </Painel>
+
               </li>
             ))}
           </ul>
