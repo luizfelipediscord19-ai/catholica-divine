@@ -131,7 +131,7 @@ function TopicoPage() {
         <span className="flex items-center gap-2 text-xs text-muted-foreground">
           <MessageSquare className="size-3.5" aria-hidden="true" /> {respostas.length} respostas
         </span>
-        <DenunciarBotao alvo={{ topicoId: t.id }} className="ml-auto" />
+        <DenunciarBotao topicoId={t.id} />
       </div>
 
 
