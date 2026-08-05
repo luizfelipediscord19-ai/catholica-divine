@@ -1,5 +1,6 @@
 // Server-only. Fórum "Agora Ecclesiae" — leitura pública, escrita por identidade anônima.
 import { supabaseAdmin } from "@/integrations/supabase/client.server";
+import { revisarTexto } from "./moderacao.server";
 
 function slugTopico(titulo: string) {
   const base = titulo
@@ -22,7 +23,25 @@ async function identidadePorToken(token: string) {
   return data.id;
 }
 
+/** Identidade opcional: usada só para o autor enxergar o próprio conteúdo em revisão. */
+async function identidadeOpcional(token?: string | null) {
+  if (!token) return null;
+  const { data } = await supabaseAdmin
+    .from("identidades")
+    .select("id")
+    .eq("token", token)
+    .maybeSingle();
+  return data?.id ?? null;
+}
+
 const AUTOR = "identidades!inner(santo_nome, santo_slug, santo_imagem, nivel, apelido)";
+
+/** Aprovado para todos, ou em revisão apenas para o próprio autor. */
+function filtroVisibilidade(identidadeId: string | null) {
+  return identidadeId
+    ? `status.eq.aprovado,identidade_id.eq.${identidadeId}`
+    : "status.eq.aprovado";
+}
 
 export async function listarSecoes() {
   const { data } = await supabaseAdmin
@@ -32,13 +51,15 @@ export async function listarSecoes() {
   return data ?? [];
 }
 
-export async function listarTopicos(secaoSlug?: string, limite = 30) {
+export async function listarTopicos(secaoSlug?: string, token?: string | null, limite = 30) {
+  const identidadeId = await identidadeOpcional(token);
   let query = supabaseAdmin
     .from("forum_topicos")
     .select(
-      `id, slug, titulo, corpo, fixado, trancado, respostas_count, ultima_atividade, created_at,
+      `id, slug, titulo, corpo, fixado, trancado, status, respostas_count, ultima_atividade, created_at,
        forum_secoes!inner(slug, nome), ${AUTOR}`,
     )
+    .or(filtroVisibilidade(identidadeId))
     .order("fixado", { ascending: false })
     .order("ultima_atividade", { ascending: false })
     .limit(limite);
@@ -48,22 +69,27 @@ export async function listarTopicos(secaoSlug?: string, limite = 30) {
   return data ?? [];
 }
 
-export async function obterTopico(slug: string) {
+export async function obterTopico(slug: string, token?: string | null) {
+  const identidadeId = await identidadeOpcional(token);
+
   const { data: topico } = await supabaseAdmin
     .from("forum_topicos")
     .select(
-      `id, slug, titulo, corpo, fixado, trancado, respostas_count, created_at,
+      `id, slug, titulo, corpo, fixado, trancado, status, identidade_id, respostas_count, created_at,
        forum_secoes!inner(slug, nome), ${AUTOR}`,
     )
     .eq("slug", slug)
     .maybeSingle();
 
   if (!topico) return null;
+  // Conteúdo em revisão só é visível para quem escreveu.
+  if (topico.status !== "aprovado" && topico.identidade_id !== identidadeId) return null;
 
   const { data: respostas } = await supabaseAdmin
     .from("forum_respostas")
-    .select(`id, corpo, created_at, ${AUTOR}`)
+    .select(`id, corpo, status, created_at, ${AUTOR}`)
     .eq("topico_id", topico.id)
+    .or(filtroVisibilidade(identidadeId))
     .order("created_at");
 
   return { topico, respostas: respostas ?? [] };
@@ -81,6 +107,8 @@ export async function criarTopico(
     .maybeSingle();
   if (!secao) throw new Error("Seção não encontrada.");
 
+  const revisao = revisarTexto(entrada.titulo, entrada.corpo);
+
   const { data, error } = await supabaseAdmin
     .from("forum_topicos")
     .insert({
@@ -89,13 +117,14 @@ export async function criarTopico(
       titulo: entrada.titulo,
       slug: slugTopico(entrada.titulo),
       corpo: entrada.corpo,
+      status: revisao.status,
     })
     .select("slug")
     .single();
   if (error || !data) throw new Error("Não foi possível criar o tópico.");
 
   await premiar(identidadeId, 30, ["primeiro-topico"]);
-  return { slug: data.slug };
+  return { slug: data.slug, status: revisao.status, motivo: revisao.motivo };
 }
 
 export async function responderTopico(token: string, topicoSlug: string, corpo: string) {
@@ -108,18 +137,28 @@ export async function responderTopico(token: string, topicoSlug: string, corpo: 
   if (!topico) throw new Error("Tópico não encontrado.");
   if (topico.trancado) throw new Error("Este tópico está trancado.");
 
+  const revisao = revisarTexto(corpo);
+
   const { error } = await supabaseAdmin
     .from("forum_respostas")
-    .insert({ topico_id: topico.id, identidade_id: identidadeId, corpo });
+    .insert({
+      topico_id: topico.id,
+      identidade_id: identidadeId,
+      corpo,
+      status: revisao.status,
+    });
   if (error) throw new Error("Não foi possível publicar a resposta.");
 
-  await supabaseAdmin
-    .from("forum_topicos")
-    .update({
-      respostas_count: topico.respostas_count + 1,
-      ultima_atividade: new Date().toISOString(),
-    })
-    .eq("id", topico.id);
+  // O contador público só cresce quando a resposta já está visível.
+  if (revisao.status === "aprovado") {
+    await supabaseAdmin
+      .from("forum_topicos")
+      .update({
+        respostas_count: topico.respostas_count + 1,
+        ultima_atividade: new Date().toISOString(),
+      })
+      .eq("id", topico.id);
+  }
 
   const { count } = await supabaseAdmin
     .from("forum_respostas")
@@ -127,7 +166,51 @@ export async function responderTopico(token: string, topicoSlug: string, corpo: 
     .eq("identidade_id", identidadeId);
 
   await premiar(identidadeId, 15, (count ?? 0) >= 10 ? ["dez-respostas"] : []);
-  return { ok: true };
+  return { ok: true, status: revisao.status, motivo: revisao.motivo };
+}
+
+export async function denunciar(
+  token: string,
+  alvo: { topicoId?: string; respostaId?: string },
+  motivo: string,
+  comentario?: string,
+) {
+  const identidadeId = await identidadePorToken(token);
+  if (!alvo.topicoId && !alvo.respostaId) throw new Error("Nada para denunciar.");
+
+  const coluna = alvo.topicoId ? ("topico_id" as const) : ("resposta_id" as const);
+  const valor = alvo.topicoId ?? alvo.respostaId!;
+
+  const { data: existente } = await supabaseAdmin
+    .from("forum_denuncias")
+    .select("id")
+    .eq("identidade_id", identidadeId)
+    .eq(coluna, valor)
+    .maybeSingle();
+  if (existente) return { ok: true, repetida: true };
+
+  const { error } = await supabaseAdmin.from("forum_denuncias").insert({
+    identidade_id: identidadeId,
+    topico_id: alvo.topicoId ?? null,
+    resposta_id: alvo.respostaId ?? null,
+    motivo,
+    comentario: comentario ?? null,
+  });
+  if (error) throw new Error("Não foi possível registrar a denúncia.");
+
+  // Três denúncias distintas retiram o conteúdo de circulação até revisão.
+  const { count } = await supabaseAdmin
+    .from("forum_denuncias")
+    .select("id", { count: "exact", head: true })
+    .eq(coluna, valor)
+    .eq("situacao", "pendente");
+
+  if ((count ?? 0) >= 3) {
+    const tabela = alvo.topicoId ? "forum_topicos" : "forum_respostas";
+    await supabaseAdmin.from(tabela).update({ status: "em_revisao" }).eq("id", valor);
+  }
+
+  return { ok: true, repetida: false };
 }
 
 export async function reagir(

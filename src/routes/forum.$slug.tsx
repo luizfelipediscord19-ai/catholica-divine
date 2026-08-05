@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { ArrowLeft, Heart, Lock, MessageSquare } from "lucide-react";
-import { useState } from "react";
 import { toast } from "sonner";
 
 import {
@@ -10,11 +9,15 @@ import {
   Rotulo,
   autorDe,
   botaoClass,
+  botaoGhostClass,
   formatarData,
   inputClass,
 } from "@/components/portal/comuns";
+import { DenunciarBotao, RegrasForum, SeloRevisao } from "@/components/portal/ForumModeracao";
 import { useIdentidade } from "@/hooks/use-identidade";
+import { formatarSalvo, useRascunho } from "@/hooks/use-rascunho";
 import { obterTopicoFn, reagirFn, responderTopicoFn } from "@/lib/portal.functions";
+
 
 export const Route = createFileRoute("/forum/$slug")({
   head: () => ({

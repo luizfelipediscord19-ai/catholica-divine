@@ -1,7 +1,7 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { MessageSquare, Pin, Lock, Plus } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { toast } from "sonner";
 
 import { PageHero } from "@/components/PageShell";
@@ -15,9 +15,12 @@ import {
   formatarData,
   inputClass,
 } from "@/components/portal/comuns";
+import { RegrasForum, SeloRevisao } from "@/components/portal/ForumModeracao";
 import { garantirTokenAgora, useIdentidade } from "@/hooks/use-identidade";
+import { formatarSalvo, useRascunho } from "@/hooks/use-rascunho";
 import { SECAO_PADRAO, SECOES_FORUM } from "@/lib/data/forum-secoes";
 import { criarTopicoFn, listarSecoesFn, listarTopicosFn } from "@/lib/portal.functions";
+
 
 export const Route = createFileRoute("/forum/")({
   head: () => ({
@@ -44,6 +47,7 @@ export const Route = createFileRoute("/forum/")({
 function ForumPage() {
   const [secao, setSecao] = useState<string | undefined>(undefined);
   const [abrirForm, setAbrirForm] = useState(false);
+  const { token } = useIdentidade();
 
   const secoesQuery = useQuery({
     queryKey: ["forum", "secoes"],
@@ -55,8 +59,9 @@ function ForumPage() {
     (secoesQuery.data ?? []).length > 0 ? secoesQuery.data! : SECOES_FORUM.map((s) => ({ ...s, id: s.slug }));
 
   const topicos = useQuery({
-    queryKey: ["forum", "topicos", secao ?? "todos"],
-    queryFn: () => listarTopicosFn({ data: { secaoSlug: secao } }),
+    queryKey: ["forum", "topicos", secao ?? "todos", token ?? "anon"],
+    queryFn: () => listarTopicosFn({ data: { secaoSlug: secao, token } }),
+
   });
 
   return (
@@ -145,7 +150,9 @@ function ForumPage() {
                         <span className="text-muted-foreground/60">
                           · {formatarData(t.ultima_atividade)}
                         </span>
+                        <SeloRevisao status={t.status} />
                       </div>
+
                       <h2 className="font-display text-2xl text-foreground mb-3 leading-tight">
                         {t.titulo}
                       </h2>
@@ -189,11 +196,13 @@ function ForumPage() {
               ))}
             </ul>
           </Painel>
+          <RegrasForum />
           <Painel>
             <Rotulo>Como funciona</Rotulo>
             <p className="text-xs text-muted-foreground leading-relaxed font-light">
               Ao escrever, o portal sorteia um santo padroeiro para você e guarda um código apenas
-              neste navegador. Cada participação rende XP e conquistas no seu{" "}
+              neste navegador. Todo conteúdo passa por revisão antes de aparecer para os outros. Cada
+              participação rende XP e conquistas no seu{" "}
               <Link to="/painel" className="text-gold hover:underline">
                 painel espiritual
               </Link>
@@ -201,6 +210,7 @@ function ForumPage() {
             </p>
           </Painel>
         </aside>
+
       </div>
     </div>
   );
@@ -219,9 +229,15 @@ function NovoTopico({
   const navigate = useNavigate();
   const queryClient = useQueryClient();
   const lista = secoes.length > 0 ? secoes : SECOES_FORUM;
-  const [secaoSlug, setSecaoSlug] = useState(secaoInicial ?? lista[0]?.slug ?? SECAO_PADRAO);
-  const [titulo, setTitulo] = useState("");
-  const [corpo, setCorpo] = useState("");
+
+  // Rascunho automático: o texto sobrevive a fechar a página.
+  const rascunho = useRascunho("forum-nova-conversa", {
+    secaoSlug: secaoInicial ?? lista[0]?.slug ?? SECAO_PADRAO,
+    titulo: "",
+    corpo: "",
+  });
+  const { secaoSlug, titulo, corpo } = rascunho.valor;
+  const setSecaoSlug = (valor: string) => rascunho.atualizar({ secaoSlug: valor });
 
   const criar = useMutation({
     mutationFn: async () => {
@@ -233,7 +249,12 @@ function NovoTopico({
       void queryClient.invalidateQueries({ queryKey: ["forum"] });
       void queryClient.invalidateQueries({ queryKey: ["painel"] });
       void queryClient.invalidateQueries({ queryKey: ["identidade"] });
-      toast.success("Conversa publicada. +30 XP");
+      rascunho.limpar();
+      toast.success(
+        res.status === "aprovado"
+          ? "Conversa publicada. +30 XP"
+          : "Conversa enviada para revisão. Ela aparece para todos após aprovação. +30 XP",
+      );
       onPronto();
       void navigate({ to: "/forum/$slug", params: { slug: res.slug } });
     },
@@ -247,6 +268,7 @@ function NovoTopico({
       : corpo.trim().length < 10
         ? "A mensagem precisa de pelo menos 10 caracteres."
         : null;
+
 
   return (
     <Painel>
@@ -284,7 +306,7 @@ function NovoTopico({
           <span className="text-[10px] uppercase tracking-[0.25em] text-paper/60">Título</span>
           <input
             value={titulo}
-            onChange={(e) => setTitulo(e.target.value)}
+            onChange={(e) => rascunho.atualizar({ titulo: e.target.value })}
             placeholder="Título da sua pergunta ou tema"
             maxLength={140}
             className={inputClass}
@@ -294,13 +316,14 @@ function NovoTopico({
           <span className="text-[10px] uppercase tracking-[0.25em] text-paper/60">Mensagem</span>
           <textarea
             value={corpo}
-            onChange={(e) => setCorpo(e.target.value)}
+            onChange={(e) => rascunho.atualizar({ corpo: e.target.value })}
             rows={6}
             maxLength={8000}
             placeholder="Escreva com caridade e clareza. Cite a Escritura ou o Catecismo quando puder."
             className={inputClass}
           />
         </label>
+
         <div className="flex flex-wrap items-center gap-3">
           <button type="submit" disabled={!valido || criar.isPending} className={botaoClass}>
             {criar.isPending ? "Publicando…" : "Publicar"}
@@ -308,13 +331,27 @@ function NovoTopico({
           <button type="button" onClick={onPronto} className={botaoGhostClass}>
             Cancelar
           </button>
+          <button type="button" onClick={rascunho.limpar} className={botaoGhostClass}>
+            Descartar rascunho
+          </button>
           {identidade ? (
             <span className="text-xs text-muted-foreground">
               como <span className="text-gold">{identidade.apelido ?? identidade.santoNome}</span>
             </span>
           ) : null}
+          {rascunho.salvoEm ? (
+            <span className="text-xs text-muted-foreground/70">
+              Rascunho salvo às {formatarSalvo(rascunho.salvoEm)}
+            </span>
+          ) : null}
           {motivo ? <span className="text-xs text-muted-foreground/80">{motivo}</span> : null}
         </div>
+        {rascunho.restaurado ? (
+          <p className="text-xs text-gold/80">
+            Recuperamos o rascunho que você havia começado neste navegador.
+          </p>
+        ) : null}
+
       </form>
     </Painel>
   );

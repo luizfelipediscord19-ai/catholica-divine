@@ -104,18 +104,26 @@ export const listarSecoesFn = createServerFn({ method: "GET" }).handler(async ()
 });
 
 export const listarTopicosFn = createServerFn({ method: "POST" })
-  .inputValidator(z.object({ secaoSlug: z.string().max(60).optional() }))
+  .inputValidator(
+    z.object({
+      secaoSlug: z.string().max(60).optional(),
+      token: z.string().uuid().nullish(),
+    }),
+  )
   .handler(async ({ data }) => {
     const { listarTopicos } = await import("./portal/forum.server");
-    return listarTopicos(data.secaoSlug);
+    return listarTopicos(data.secaoSlug, data.token ?? null);
   });
 
 export const obterTopicoFn = createServerFn({ method: "POST" })
-  .inputValidator(z.object({ slug: z.string().min(1).max(120) }))
+  .inputValidator(
+    z.object({ slug: z.string().min(1).max(120), token: z.string().uuid().nullish() }),
+  )
   .handler(async ({ data }) => {
     const { obterTopico } = await import("./portal/forum.server");
-    return obterTopico(data.slug);
+    return obterTopico(data.slug, data.token ?? null);
   });
+
 
 export const criarTopicoFn = createServerFn({ method: "POST" })
   .inputValidator(
@@ -153,4 +161,23 @@ export const reagirFn = createServerFn({ method: "POST" })
   .handler(async ({ data }) => {
     const { reagir } = await import("./portal/forum.server");
     return reagir(data.token, { topicoId: data.topicoId, respostaId: data.respostaId }, data.tipo);
+  });
+
+export const denunciarFn = createServerFn({ method: "POST" })
+  .inputValidator(
+    TokenObrigatorio.extend({
+      topicoId: z.string().uuid().optional(),
+      respostaId: z.string().uuid().optional(),
+      motivo: z.string().min(2).max(40),
+      comentario: z.string().trim().max(600).optional(),
+    }),
+  )
+  .handler(async ({ data }) => {
+    const { denunciar } = await import("./portal/forum.server");
+    return denunciar(
+      data.token,
+      { topicoId: data.topicoId, respostaId: data.respostaId },
+      data.motivo,
+      data.comentario,
+    );
   });
