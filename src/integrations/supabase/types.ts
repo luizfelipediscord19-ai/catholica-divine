@@ -156,6 +156,64 @@ export type Database = {
           },
         ]
       }
+      forum_denuncias: {
+        Row: {
+          comentario: string | null
+          created_at: string
+          id: string
+          identidade_id: string | null
+          motivo: string
+          resposta_id: string | null
+          situacao: string
+          topico_id: string | null
+          updated_at: string
+        }
+        Insert: {
+          comentario?: string | null
+          created_at?: string
+          id?: string
+          identidade_id?: string | null
+          motivo: string
+          resposta_id?: string | null
+          situacao?: string
+          topico_id?: string | null
+          updated_at?: string
+        }
+        Update: {
+          comentario?: string | null
+          created_at?: string
+          id?: string
+          identidade_id?: string | null
+          motivo?: string
+          resposta_id?: string | null
+          situacao?: string
+          topico_id?: string | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "forum_denuncias_identidade_id_fkey"
+            columns: ["identidade_id"]
+            isOneToOne: false
+            referencedRelation: "identidades"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "forum_denuncias_resposta_id_fkey"
+            columns: ["resposta_id"]
+            isOneToOne: false
+            referencedRelation: "forum_respostas"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "forum_denuncias_topico_id_fkey"
+            columns: ["topico_id"]
+            isOneToOne: false
+            referencedRelation: "forum_topicos"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       forum_reacoes: {
         Row: {
           created_at: string
@@ -211,6 +269,7 @@ export type Database = {
           created_at: string
           id: string
           identidade_id: string
+          status: string
           topico_id: string
           updated_at: string
         }
@@ -219,6 +278,7 @@ export type Database = {
           created_at?: string
           id?: string
           identidade_id: string
+          status?: string
           topico_id: string
           updated_at?: string
         }
@@ -227,6 +287,7 @@ export type Database = {
           created_at?: string
           id?: string
           identidade_id?: string
+          status?: string
           topico_id?: string
           updated_at?: string
         }
@@ -284,6 +345,7 @@ export type Database = {
           respostas_count: number
           secao_id: string
           slug: string
+          status: string
           titulo: string
           trancado: boolean
           ultima_atividade: string
@@ -298,6 +360,7 @@ export type Database = {
           respostas_count?: number
           secao_id: string
           slug: string
+          status?: string
           titulo: string
           trancado?: boolean
           ultima_atividade?: string
@@ -312,6 +375,7 @@ export type Database = {
           respostas_count?: number
           secao_id?: string
           slug?: string
+          status?: string
           titulo?: string
           trancado?: boolean
           ultima_atividade?: string

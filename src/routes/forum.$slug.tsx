@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { ArrowLeft, Heart, Lock, MessageSquare } from "lucide-react";
-import { useState } from "react";
 import { toast } from "sonner";
 
 import {
@@ -10,11 +9,15 @@ import {
   Rotulo,
   autorDe,
   botaoClass,
+  botaoGhostClass,
   formatarData,
   inputClass,
 } from "@/components/portal/comuns";
+import { DenunciarBotao, RegrasForum, SeloRevisao } from "@/components/portal/ForumModeracao";
 import { useIdentidade } from "@/hooks/use-identidade";
+import { formatarSalvo, useRascunho } from "@/hooks/use-rascunho";
 import { obterTopicoFn, reagirFn, responderTopicoFn } from "@/lib/portal.functions";
+
 
 export const Route = createFileRoute("/forum/$slug")({
   head: () => ({
@@ -41,23 +44,29 @@ function TopicoPage() {
   const { slug } = Route.useParams();
   const { token } = useIdentidade();
   const queryClient = useQueryClient();
-  const [corpo, setCorpo] = useState("");
+  const rascunho = useRascunho(`forum-resposta-${slug}`, { corpo: "" });
+  const corpo = rascunho.valor.corpo;
 
   const topico = useQuery({
-    queryKey: ["forum", "topico", slug],
-    queryFn: () => obterTopicoFn({ data: { slug } }),
+    queryKey: ["forum", "topico", slug, token ?? "anon"],
+    queryFn: () => obterTopicoFn({ data: { slug, token } }),
   });
 
   const responder = useMutation({
     mutationFn: () => responderTopicoFn({ data: { token: token!, topicoSlug: slug, corpo } }),
-    onSuccess: () => {
-      setCorpo("");
+    onSuccess: (res) => {
+      rascunho.limpar();
       void queryClient.invalidateQueries({ queryKey: ["forum"] });
       void queryClient.invalidateQueries({ queryKey: ["painel"] });
-      toast.success("Resposta publicada. +15 XP");
+      toast.success(
+        res.status === "aprovado"
+          ? "Resposta publicada. +15 XP"
+          : "Resposta enviada para revisão. +15 XP",
+      );
     },
     onError: (erro: Error) => toast.error(erro.message || "Não foi possível responder."),
   });
+
 
   const reagir = useMutation({
     mutationFn: (alvo: { topicoId?: string; respostaId?: string }) =>
@@ -104,11 +113,13 @@ function TopicoPage() {
         <AutorSelo autor={autorDe(t as never)} />
       </header>
 
+      <SeloRevisao status={t.status} />
+
       <div className="border-y border-gold/15 py-8 text-[16px] leading-[1.8] text-foreground/85 font-light whitespace-pre-wrap">
         {t.corpo}
       </div>
 
-      <div className="flex items-center gap-4">
+      <div className="flex flex-wrap items-center gap-4">
         <button
           type="button"
           disabled={!token || reagir.isPending}
@@ -120,7 +131,9 @@ function TopicoPage() {
         <span className="flex items-center gap-2 text-xs text-muted-foreground">
           <MessageSquare className="size-3.5" aria-hidden="true" /> {respostas.length} respostas
         </span>
+        <DenunciarBotao topicoId={t.id} />
       </div>
+
 
       <section className="space-y-6">
         <Rotulo>Respostas</Rotulo>
@@ -134,18 +147,23 @@ function TopicoPage() {
               <li key={r.id}>
                 <Painel className="space-y-4">
                   <AutorSelo autor={autorDe(r as never)} data={r.created_at} />
+                  <SeloRevisao status={r.status} />
                   <p className="text-[15px] leading-[1.8] text-foreground/85 font-light whitespace-pre-wrap">
                     {r.corpo}
                   </p>
-                  <button
-                    type="button"
-                    disabled={!token || reagir.isPending}
-                    onClick={() => reagir.mutate({ respostaId: r.id })}
-                    className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] text-paper/60 hover:text-gold transition-colors disabled:opacity-50"
-                  >
-                    <Heart className="size-3" aria-hidden="true" /> Amém
-                  </button>
+                  <div className="flex flex-wrap items-center gap-4">
+                    <button
+                      type="button"
+                      disabled={!token || reagir.isPending}
+                      onClick={() => reagir.mutate({ respostaId: r.id })}
+                      className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] text-paper/60 hover:text-gold transition-colors disabled:opacity-50"
+                    >
+                      <Heart className="size-3" aria-hidden="true" /> Amém
+                    </button>
+                    <DenunciarBotao respostaId={r.id} compacto />
+                  </div>
                 </Painel>
+
               </li>
             ))}
           </ul>
@@ -173,23 +191,36 @@ function TopicoPage() {
               <span className="sr-only">Resposta</span>
               <textarea
                 value={corpo}
-                onChange={(e) => setCorpo(e.target.value)}
+                onChange={(e) => rascunho.atualizar({ corpo: e.target.value })}
                 rows={5}
                 maxLength={8000}
                 placeholder="Responda com caridade, fidelidade à doutrina e, se possível, com referências."
                 className={inputClass}
               />
             </label>
-            <button
-              type="submit"
-              disabled={!token || corpo.trim().length < 2 || responder.isPending}
-              className={botaoClass}
-            >
-              {responder.isPending ? "Publicando…" : "Responder"}
-            </button>
+            <div className="flex flex-wrap items-center gap-3">
+              <button
+                type="submit"
+                disabled={!token || corpo.trim().length < 2 || responder.isPending}
+                className={botaoClass}
+              >
+                {responder.isPending ? "Publicando…" : "Responder"}
+              </button>
+              <button type="button" onClick={rascunho.limpar} className={botaoGhostClass}>
+                Descartar rascunho
+              </button>
+              {rascunho.salvoEm ? (
+                <span className="text-xs text-muted-foreground/70">
+                  Rascunho salvo às {formatarSalvo(rascunho.salvoEm)}
+                </span>
+              ) : null}
+            </div>
           </form>
         </Painel>
       )}
+
+      <RegrasForum />
     </div>
   );
+
 }
