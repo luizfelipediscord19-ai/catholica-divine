@@ -186,23 +186,36 @@ function TopicoPage() {
               <span className="sr-only">Resposta</span>
               <textarea
                 value={corpo}
-                onChange={(e) => setCorpo(e.target.value)}
+                onChange={(e) => rascunho.atualizar({ corpo: e.target.value })}
                 rows={5}
                 maxLength={8000}
                 placeholder="Responda com caridade, fidelidade à doutrina e, se possível, com referências."
                 className={inputClass}
               />
             </label>
-            <button
-              type="submit"
-              disabled={!token || corpo.trim().length < 2 || responder.isPending}
-              className={botaoClass}
-            >
-              {responder.isPending ? "Publicando…" : "Responder"}
-            </button>
+            <div className="flex flex-wrap items-center gap-3">
+              <button
+                type="submit"
+                disabled={!token || corpo.trim().length < 2 || responder.isPending}
+                className={botaoClass}
+              >
+                {responder.isPending ? "Publicando…" : "Responder"}
+              </button>
+              <button type="button" onClick={rascunho.limpar} className={botaoGhostClass}>
+                Descartar rascunho
+              </button>
+              {rascunho.salvoEm ? (
+                <span className="text-xs text-muted-foreground/70">
+                  Rascunho salvo às {formatarSalvo(rascunho.salvoEm)}
+                </span>
+              ) : null}
+            </div>
           </form>
         </Painel>
       )}
+
+      <RegrasForum />
     </div>
   );
+
 }
