@@ -240,6 +240,13 @@ function Page() {
       <p className="mt-2 text-[11px] text-muted-foreground">
         Versão: <span className="text-gold">{versaoAtual.nome}</span> — {versaoAtual.lingua} · {versaoAtual.fonte}
       </p>
+      {livro.slug === "salmos" && (versao === "vulgata" || versao === "grego") ? (
+        <p className="mt-1 text-[11px] text-muted-foreground">
+          Atenção: na Vulgata e na Septuaginta a numeração dos Salmos é deslocada em uma unidade
+          em boa parte do saltério.
+        </p>
+      ) : null}
+
 
       <article className="mt-8 md:mt-12 border border-gold/10 bg-card/30 backdrop-blur-sm p-5 sm:p-10 md:p-16 shadow-2xl shadow-gold/5">
         <p className="text-[10px] tracking-[0.25em] uppercase text-gold mb-6">
