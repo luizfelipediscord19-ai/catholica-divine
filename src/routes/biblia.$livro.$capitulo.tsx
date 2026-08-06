@@ -1,8 +1,12 @@
 import { createFileRoute, Link, notFound, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { getLivro, getUrlOficial } from "../lib/data/biblia";
-import { ArrowLeft, ExternalLink, ChevronLeft, ChevronRight, Filter, X } from "lucide-react";
+import { useQuery } from "@tanstack/react-query";
+import { useServerFn } from "@tanstack/react-start";
+import { getLivro } from "../lib/data/biblia";
+import { ArrowLeft, ChevronLeft, ChevronRight, Filter, X } from "lucide-react";
 import { Relacionados } from "../components/Relacionados";
+import { VERSOES, type VersaoId } from "../lib/biblia/versoes";
+import { obterCapituloVersao } from "../lib/biblia.functions";
 import {
   BarraLeitura,
   EstrelaVersiculo,
@@ -18,14 +22,14 @@ const CAPITULO_CACHE = new Map<string, Verso[]>();
 async function carregarCapitulo(slug: string, cap: number): Promise<Verso[] | null> {
   const cacheKey = `${slug}-${cap}`;
   if (CAPITULO_CACHE.has(cacheKey)) return CAPITULO_CACHE.get(cacheKey)!;
-  
+
   try {
     const mod = (await import(`../lib/data/biblia/almeida/${slug}.json`)) as { default: LivroJson };
     const versos = mod.default.capitulos[String(cap)] ?? null;
     if (versos) CAPITULO_CACHE.set(cacheKey, versos);
     return versos;
-  } catch (error) {
-    console.error(`Falha ao carregar capítulo: ${slug} ${cap}`, error);
+  } catch {
+    // Sem cópia local: o texto vem do servidor do próprio portal.
     return null;
   }
 }
@@ -44,8 +48,7 @@ export const Route = createFileRoute("/biblia/$livro/$capitulo")({
     const l = getLivro(params.livro);
     const c = Number(params.capitulo);
     if (!l || !Number.isFinite(c) || c < 1 || c > l.capitulos) throw notFound();
-    
-    // Use React Query for caching to prevent redundant imports on re-navigation
+
     return queryClient.ensureQueryData({
       queryKey: ["biblia", l.slug, c],
       queryFn: async () => {
@@ -59,41 +62,22 @@ export const Route = createFileRoute("/biblia/$livro/$capitulo")({
     return {
       meta: [
         { title: `${titulo} — Bíblia — Portal Católico` },
-        { name: "description", content: `Leitura de ${titulo}. ${loaderData?.livro.resumo ?? ""}` },
+        { name: "description", content: `Leitura de ${titulo} em português, latim, grego e hebraico. ${loaderData?.livro.resumo ?? ""}`.slice(0, 158) },
         { property: "og:title", content: `${titulo} — Bíblia` },
         { property: "og:description", content: loaderData?.livro.resumo ?? "" },
+        { property: "og:type", content: "article" },
+        { name: "twitter:card", content: "summary" },
       ],
     };
   },
   component: Page,
   notFoundComponent: () => (
-    <div className="max-w-2xl mx-auto px-6 py-32 text-center">
+    <div className="max-w-2xl mx-auto px-4 sm:px-6 py-24 text-center">
       <p className="text-gold">Capítulo não encontrado.</p>
       <Link to="/biblia" className="text-sm underline mt-4 inline-block">← Voltar</Link>
     </div>
   ),
 });
-
-type FonteId = "almeida" | "vulgata" | "novavulgata" | "original";
-
-const FONTES: { id: FonteId; nome: string; lingua: string; dominio: string }[] = [
-  { id: "almeida", nome: "Almeida", lingua: "Português", dominio: "Domínio público" },
-  { id: "vulgata", nome: "Vulgata Clementina", lingua: "Latim", dominio: "Domínio público" },
-  { id: "novavulgata", nome: "Nova Vulgata", lingua: "Latim oficial", dominio: "© Vaticano (leitura)" },
-  { id: "original", nome: "Originais", lingua: "Hebraico / Grego", dominio: "Domínio público" },
-];
-
-function urlVulgata(slug: string, cap: number) {
-  return `https://www.sacred-texts.com/bib/vul/index.htm#${slug}_${cap}`;
-}
-function urlNovaVulgata(testamento: string, slug: string, cap: number) {
-  return `https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_${testamento === "AT" ? "vt" : "nt"}_${slug}_lt.html#${cap}`;
-}
-function urlOriginal(testamento: string, slug: string, cap: number) {
-  return testamento === "NT"
-    ? `https://biblehub.com/interlinear/${slug}/${cap}.htm`
-    : `https://mechon-mamre.org/p/pt/pt0.htm`;
-}
 
 function Page() {
   const loaderData = Route.useLoaderData();
@@ -101,13 +85,24 @@ function Page() {
   const { livro, capitulo, versos } = loaderData;
   const { vi, vf } = Route.useSearch();
   const navigate = useNavigate();
-  const [fonte, setFonte] = useState<FonteId>("almeida");
+  const [versao, setVersao] = useState<VersaoId>("almeida");
   const pessoal = useCapituloPessoal(livro.slug, capitulo);
   const anterior = capitulo > 1 ? capitulo - 1 : null;
   const proximo = capitulo < livro.capitulos ? capitulo + 1 : null;
-  const fonteAtual = FONTES.find((f) => f.id === fonte)!;
+  const versaoAtual = VERSOES.find((v) => v.id === versao)!;
 
-  // Estado local para o seletor de passagens
+  // Texto local (Almeida) quando existe; senão o próprio servidor entrega.
+  const temLocal = versao === "almeida" && !!versos;
+  const buscar = useServerFn(obterCapituloVersao);
+  const remoto = useQuery({
+    queryKey: ["biblia-versao", versao, livro.slug, capitulo],
+    queryFn: () => buscar({ data: { versao, livro: livro.slug, capitulo } }),
+    enabled: !temLocal,
+    staleTime: 1000 * 60 * 60,
+  });
+
+  const textoAtual: Verso[] | null = temLocal ? versos : (remoto.data?.versos ?? null);
+
   const [inicio, setInicio] = useState<string>(vi ? String(vi) : "");
   const [fim, setFim] = useState<string>(vf ? String(vf) : "");
   useEffect(() => {
@@ -138,13 +133,12 @@ function Page() {
     });
   };
 
-  // Filtragem
   const versosFiltrados = (() => {
-    if (!versos) return null;
-    if (!vi) return versos;
+    if (!textoAtual) return null;
+    if (!vi) return textoAtual;
     const start = vi;
     const end = vf && vf >= vi ? vf : vi;
-    return versos.filter((v: Verso) => v.v >= start && v.v <= end);
+    return textoAtual.filter((v) => v.v >= start && v.v <= end);
   })();
 
   const passagemAtiva = !!vi;
@@ -153,54 +147,65 @@ function Page() {
     : null;
 
   return (
-    <div className="max-w-3xl mx-auto px-6 py-12 md:py-16">
+    <div className="max-w-3xl mx-auto px-4 sm:px-6 py-10 md:py-16">
       <Link
         to="/biblia/$livro"
         params={{ livro: livro.slug }}
-        className="inline-flex items-center gap-2 text-[10px] tracking-[0.3em] uppercase text-gold/80 hover:text-gold mb-6"
+        className="inline-flex items-center gap-2 text-[10px] tracking-[0.25em] uppercase text-gold/80 hover:text-gold mb-6"
       >
-        <ArrowLeft className="size-3" /> {livro.nome}
+        <ArrowLeft className="size-3 shrink-0" /> <span className="truncate">{livro.nome}</span>
       </Link>
 
-      <h1 className="font-display text-5xl md:text-6xl text-foreground">
+      <h1 className="font-display text-3xl sm:text-5xl md:text-6xl text-foreground break-words">
         {livro.nome} <span className="text-gold">{capitulo}</span>
-        {refPassagem && <span className="text-gold/80 text-3xl md:text-4xl">:{vi}{vf && vf !== vi ? `-${vf}` : ""}</span>}
+        {refPassagem && (
+          <span className="text-gold/80 text-2xl sm:text-4xl">
+            :{vi}{vf && vf !== vi ? `-${vf}` : ""}
+          </span>
+        )}
       </h1>
-      <p className="mt-3 text-sm text-muted-foreground tracking-wider uppercase">
+      <p className="mt-3 text-xs sm:text-sm text-muted-foreground tracking-wider uppercase">
         {livro.abrev} {capitulo} · Capítulo {capitulo} de {livro.capitulos}
       </p>
 
       {/* Seletor de passagens */}
-      <form onSubmit={aplicarPassagem} className="mt-12 flex flex-wrap items-end gap-6 border border-gold/10 bg-card/40 backdrop-blur-sm p-8 transition-smooth hover:border-gold/20">
+      <form
+        onSubmit={aplicarPassagem}
+        className="mt-8 md:mt-12 grid gap-4 sm:flex sm:flex-wrap sm:items-end sm:gap-6 border border-gold/10 bg-card/40 backdrop-blur-sm p-5 sm:p-8"
+      >
         <div className="flex items-center gap-2 text-[10px] tracking-[0.3em] uppercase text-gold">
-          <Filter className="size-3" /> Passagem
+          <Filter className="size-3 shrink-0" /> Passagem
         </div>
-        <label className="text-[10px] tracking-[0.25em] uppercase text-muted-foreground">
-          Versículo inicial
-          <input
-            type="number" min={1}
-            value={inicio} onChange={(e) => setInicio(e.target.value)}
-            placeholder="ex. 16"
-            className="block mt-1 w-24 bg-background border border-gold/25 px-3 py-2 text-sm text-foreground focus:outline-none focus:border-gold"
-          />
-        </label>
-        <label className="text-[10px] tracking-[0.25em] uppercase text-muted-foreground">
-          Final (opcional)
-          <input
-            type="number" min={1}
-            value={fim} onChange={(e) => setFim(e.target.value)}
-            placeholder="ex. 18"
-            className="block mt-1 w-24 bg-background border border-gold/25 px-3 py-2 text-sm text-foreground focus:outline-none focus:border-gold"
-          />
-        </label>
-        <button type="submit" className="px-6 py-3 bg-gold text-deep text-[10px] uppercase tracking-[0.3em] font-semibold hover:bg-paper transition-smooth hover:scale-[1.02] active:scale-[0.98]">
-          Abrir passagem
-        </button>
-        {passagemAtiva && (
-          <button type="button" onClick={limparPassagem} className="inline-flex items-center gap-1 px-3 py-2 text-[10px] uppercase tracking-[0.25em] text-muted-foreground hover:text-gold">
-            <X className="size-3" /> Capítulo inteiro
+        <div className="grid grid-cols-2 gap-4 sm:flex sm:gap-6">
+          <label className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground">
+            Versículo inicial
+            <input
+              type="number" min={1} inputMode="numeric"
+              value={inicio} onChange={(e) => setInicio(e.target.value)}
+              placeholder="ex. 16"
+              className="block mt-1 w-full sm:w-24 bg-background border border-gold/25 px-3 py-2 text-base sm:text-sm text-foreground focus:outline-none focus:border-gold"
+            />
+          </label>
+          <label className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground">
+            Final (opcional)
+            <input
+              type="number" min={1} inputMode="numeric"
+              value={fim} onChange={(e) => setFim(e.target.value)}
+              placeholder="ex. 18"
+              className="block mt-1 w-full sm:w-24 bg-background border border-gold/25 px-3 py-2 text-base sm:text-sm text-foreground focus:outline-none focus:border-gold"
+            />
+          </label>
+        </div>
+        <div className="flex flex-wrap items-center gap-3">
+          <button type="submit" className="min-h-11 px-5 py-3 bg-gold text-deep text-[10px] uppercase tracking-[0.25em] font-semibold hover:bg-paper transition-smooth">
+            Abrir passagem
           </button>
-        )}
+          {passagemAtiva && (
+            <button type="button" onClick={limparPassagem} className="inline-flex items-center gap-1 min-h-11 px-3 text-[10px] uppercase tracking-[0.2em] text-muted-foreground hover:text-gold">
+              <X className="size-3" /> Capítulo inteiro
+            </button>
+          )}
+        </div>
       </form>
 
       <BarraLeitura
@@ -210,147 +215,101 @@ function Page() {
         onAlternar={() => pessoal.marcar.mutate(!pessoal.lido)}
       />
 
-
-
-      {/* Seletor de fonte */}
-      <div className="mt-6 flex flex-wrap gap-2">
-        {FONTES.map((f) => {
-          const ativo = f.id === fonte;
+      {/* Seletor de versão — todas servidas pelo próprio portal */}
+      <div className="mt-6 -mx-4 px-4 sm:mx-0 sm:px-0 flex gap-2 overflow-x-auto pb-1 sm:flex-wrap sm:overflow-visible">
+        {VERSOES.map((v) => {
+          const ativo = v.id === versao;
           return (
             <button
-              key={f.id}
-              onClick={() => setFonte(f.id)}
+              key={v.id}
+              type="button"
+              onClick={() => setVersao(v.id)}
+              aria-pressed={ativo}
               className={
-                "px-4 py-2 text-[10px] tracking-[0.25em] uppercase border transition-colors " +
+                "shrink-0 min-h-11 px-4 py-2 text-[10px] tracking-[0.2em] uppercase border transition-colors " +
                 (ativo
                   ? "border-gold bg-gold text-deep"
                   : "border-gold/30 text-muted-foreground hover:text-gold hover:border-gold/60")
               }
             >
-              {f.nome}
+              {v.nome}
             </button>
           );
         })}
       </div>
       <p className="mt-2 text-[11px] text-muted-foreground">
-        Fonte: <span className="text-gold">{fonteAtual.nome}</span> — {fonteAtual.lingua} · {fonteAtual.dominio}
+        Versão: <span className="text-gold">{versaoAtual.nome}</span> — {versaoAtual.lingua} · {versaoAtual.fonte}
       </p>
 
-      {/* Conteúdo conforme fonte */}
-      {fonte === "almeida" && versosFiltrados ? (
-        <article className="mt-12 border border-gold/10 bg-card/30 backdrop-blur-sm p-10 md:p-16 shadow-2xl shadow-gold/5">
-          <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-6">
-            Almeida (João Ferreira de Almeida) · Domínio público
-            {passagemAtiva && <span className="ml-2 text-gold/70">· passagem {refPassagem}</span>}
+      <article className="mt-8 md:mt-12 border border-gold/10 bg-card/30 backdrop-blur-sm p-5 sm:p-10 md:p-16 shadow-2xl shadow-gold/5">
+        <p className="text-[10px] tracking-[0.25em] uppercase text-gold mb-6">
+          {versaoAtual.fonte}
+          {passagemAtiva && <span className="ml-2 text-gold/70">· passagem {refPassagem}</span>}
+        </p>
+
+        {!temLocal && remoto.isPending ? (
+          <p className="text-muted-foreground text-sm">Carregando o texto…</p>
+        ) : !versosFiltrados ? (
+          <p className="text-muted-foreground text-sm">
+            Esta edição não contém {livro.nome} {capitulo}. Escolha outra versão acima.
           </p>
-          {versosFiltrados.length === 0 ? (
-            <p className="text-muted-foreground">Nenhum versículo encontrado nesse intervalo.</p>
-          ) : (
-            <div className="space-y-6 font-display text-xl leading-[1.8] text-foreground/90 selection:bg-gold/30">
-              {versosFiltrados.map((v: Verso) => (
-                <p key={v.v} id={`v${v.v}`} className="group relative pl-12 transition-smooth hover:text-foreground">
-                  <a
-                    href={`#v${v.v}`}
-                    className="absolute left-0 top-0 w-10 text-right pr-4 text-[10px] font-sans align-top text-gold/30 group-hover:text-gold transition-smooth"
-                  >
-                    {v.v}
-                  </a>
-                  <EstrelaVersiculo
-                    ativa={pessoal.favoritos.includes(v.v)}
-                    disabled={!pessoal.pronto || pessoal.favoritar.isPending}
-                    onClick={() => pessoal.favoritar.mutate({ versiculo: v.v, texto: v.t.slice(0, 900) })}
-                  />
-                  <span className="block animate-content-fade" style={{ animationDelay: `${(v.v % 10) * 50}ms` }}>
-                    {v.t}
-                  </span>
-                </p>
-              ))}
-            </div>
-          )}
-          <p className="mt-8 pt-6 border-t border-gold/15 text-[11px] text-muted-foreground leading-relaxed">
-            Para comparar com a tradução católica Ave-Maria, consulte a{" "}
-            <a className="text-gold underline" target="_blank" rel="noopener" href={getUrlOficial(livro, capitulo)}>
-              versão oficial em bibliacatolica.com.br
-            </a>.
-          </p>
-        </article>
-      ) : fonte === "almeida" ? (
-        <FallbackOficial slug={livro.slug} nome={livro.nome} abrev={livro.abrev} capitulo={capitulo} />
-      ) : (
-        <FonteExterna
-          fonte={fonteAtual}
-          url={
-            fonte === "vulgata"
-              ? urlVulgata(livro.slug, capitulo)
-              : fonte === "novavulgata"
-              ? urlNovaVulgata(livro.testamento, livro.slug, capitulo)
-              : urlOriginal(livro.testamento, livro.slug, capitulo)
-          }
-          livro={livro.nome}
-          capitulo={capitulo}
-        />
-      )}
+        ) : versosFiltrados.length === 0 ? (
+          <p className="text-muted-foreground text-sm">Nenhum versículo encontrado nesse intervalo.</p>
+        ) : (
+          <div
+            dir={versaoAtual.direcao ?? "ltr"}
+            className={`space-y-5 sm:space-y-6 text-lg sm:text-xl leading-[1.85] text-foreground/90 selection:bg-gold/30 ${versaoAtual.classeTexto ?? "font-display"}`}
+          >
+            {versosFiltrados.map((v) => (
+              <p key={v.v} id={`v${v.v}`} className="group relative pl-9 sm:pl-12">
+                <a
+                  href={`#v${v.v}`}
+                  className="absolute left-0 top-1 w-7 sm:w-10 text-right pr-3 sm:pr-4 text-[10px] font-sans text-gold/40 group-hover:text-gold transition-smooth"
+                  aria-label={`Versículo ${v.v}`}
+                >
+                  {v.v}
+                </a>
+                <EstrelaVersiculo
+                  ativa={pessoal.favoritos.includes(v.v)}
+                  disabled={!pessoal.pronto || pessoal.favoritar.isPending}
+                  onClick={() => pessoal.favoritar.mutate({ versiculo: v.v, texto: v.t.slice(0, 900) })}
+                />
+                <span className="block">{v.t}</span>
+              </p>
+            ))}
+          </div>
+        )}
+
+        <p className="mt-8 pt-6 border-t border-gold/15 text-[11px] text-muted-foreground leading-relaxed">
+          Edições de domínio público hospedadas no próprio portal. Traduções protegidas por
+          direito autoral (Ave-Maria, Nova Vulgata) não são reproduzidas aqui.
+        </p>
+      </article>
 
       <NotasCapitulo livro={livro.slug} capitulo={capitulo} className="mt-10" />
 
       <Relacionados topic={`biblia:${livro.slug}`} className="mt-10" />
-
 
       <nav className="mt-10 flex items-center justify-between gap-4">
         {anterior ? (
           <Link
             to="/biblia/$livro/$capitulo"
             params={{ livro: livro.slug, capitulo: String(anterior) }}
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-gold"
+            className="inline-flex items-center gap-2 min-h-11 text-sm text-muted-foreground hover:text-gold"
           >
-            <ChevronLeft className="size-4" /> {livro.nome} {anterior}
+            <ChevronLeft className="size-4 shrink-0" /> <span className="truncate">{livro.abrev} {anterior}</span>
           </Link>
         ) : <span />}
         {proximo ? (
           <Link
             to="/biblia/$livro/$capitulo"
             params={{ livro: livro.slug, capitulo: String(proximo) }}
-            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-gold ml-auto"
+            className="inline-flex items-center gap-2 min-h-11 text-sm text-muted-foreground hover:text-gold ml-auto"
           >
-            {livro.nome} {proximo} <ChevronRight className="size-4" />
+            <span className="truncate">{livro.abrev} {proximo}</span> <ChevronRight className="size-4 shrink-0" />
           </Link>
         ) : null}
       </nav>
-    </div>
-  );
-}
-
-function FonteExterna({
-  fonte, url, livro, capitulo,
-}: { fonte: { nome: string; lingua: string }; url: string; livro: string; capitulo: number }) {
-  return (
-    <article className="mt-6 border border-gold/25 bg-card p-8 md:p-10">
-      <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-4">{fonte.nome} · {fonte.lingua}</p>
-      <p className="text-foreground/90 leading-relaxed">
-        A integração do texto integral de <strong>{fonte.nome}</strong> em <strong>{livro} {capitulo}</strong> está
-        sendo preparada. Por enquanto, consulte diretamente a fonte oficial:
-      </p>
-      <a href={url} target="_blank" rel="noopener"
-        className="mt-6 inline-flex items-center gap-2 px-6 py-3 bg-gold text-deep text-[11px] uppercase tracking-[0.25em] font-medium hover:bg-paper transition-colors">
-        <ExternalLink className="size-3.5" /> Abrir {fonte.nome}
-      </a>
-    </article>
-  );
-}
-
-function FallbackOficial({ slug, nome, abrev, capitulo }: { slug: string; nome: string; abrev: string; capitulo: number }) {
-  const url = `https://www.bibliacatolica.com.br/biblia-ave-maria/${slug}/${capitulo}/`;
-  return (
-    <div className="mt-6 border border-gold/25 bg-card p-8 md:p-10">
-      <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-4">Em processamento</p>
-      <p className="text-foreground leading-relaxed">
-        O texto Almeida de <strong>{nome} {capitulo}</strong> ainda está sendo carregado.
-        Enquanto isso, leia na fonte oficial Ave-Maria:
-      </p>
-      <a href={url} target="_blank" rel="noopener"
-        className="mt-6 inline-flex items-center gap-2 px-6 py-3 bg-gold text-deep text-[11px] uppercase tracking-[0.25em] font-medium hover:bg-paper transition-colors">
-        <ExternalLink className="size-3.5" /> Ler {abrev} {capitulo}
-      </a>
     </div>
   );
 }
