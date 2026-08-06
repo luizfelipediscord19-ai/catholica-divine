@@ -134,7 +134,7 @@ export async function criarTopico(
   return { slug: data.slug, status: revisao.status, motivo: revisao.motivo };
 }
 
-export async function responderTopico(token: string, topicoSlug: string, corpo: string) {
+export async function responderTopico(token: string, topicoSlug: string, entradaCorpo: string) {
   const identidadeId = await identidadePorToken(token);
   const { data: topico } = await supabaseAdmin
     .from("forum_topicos")
@@ -143,6 +143,9 @@ export async function responderTopico(token: string, topicoSlug: string, corpo: 
     .maybeSingle();
   if (!topico) throw new Error("Tópico não encontrado.");
   if (topico.trancado) throw new Error("Este tópico está trancado.");
+
+  const corpo = sanitizarTexto(entradaCorpo);
+  if (corpo.length < 5) throw new Error("A resposta precisa ter ao menos 5 caracteres.");
 
   const revisao = revisarTexto(corpo);
 
@@ -154,6 +157,7 @@ export async function responderTopico(token: string, topicoSlug: string, corpo: 
       corpo,
       status: revisao.status,
     });
+
   if (error) throw new Error("Não foi possível publicar a resposta.");
 
   // O contador público só cresce quando a resposta já está visível.
