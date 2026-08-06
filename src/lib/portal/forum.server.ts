@@ -1,6 +1,6 @@
 // Server-only. Fórum "Agora Ecclesiae" — leitura pública, escrita por identidade anônima.
 import { supabaseAdmin } from "@/integrations/supabase/client.server";
-import { revisarTexto } from "./moderacao.server";
+import { revisarTexto, sanitizarTexto } from "./moderacao.server";
 import { dbLeitura } from "./db.server";
 
 function slugTopico(titulo: string) {
