@@ -108,18 +108,24 @@ export async function criarTopico(
     .maybeSingle();
   if (!secao) throw new Error("Seção não encontrada.");
 
-  const revisao = revisarTexto(entrada.titulo, entrada.corpo);
+  const titulo = sanitizarTexto(entrada.titulo, 160);
+  const corpo = sanitizarTexto(entrada.corpo);
+  if (titulo.length < 5) throw new Error("O título precisa ter ao menos 5 caracteres.");
+  if (corpo.length < 10) throw new Error("A mensagem precisa ter ao menos 10 caracteres.");
+
+  const revisao = revisarTexto(titulo, corpo);
 
   const { data, error } = await supabaseAdmin
     .from("forum_topicos")
     .insert({
       secao_id: secao.id,
       identidade_id: identidadeId,
-      titulo: entrada.titulo,
-      slug: slugTopico(entrada.titulo),
-      corpo: entrada.corpo,
+      titulo,
+      slug: slugTopico(titulo),
+      corpo,
       status: revisao.status,
     })
+
     .select("slug")
     .single();
   if (error || !data) throw new Error("Não foi possível criar o tópico.");
