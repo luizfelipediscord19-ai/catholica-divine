@@ -74,7 +74,7 @@ export function SiteHeader() {
           })}
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           <ContaBotao />
           <Link
             to="/assistente"
@@ -87,10 +87,11 @@ export function SiteHeader() {
             onClick={() => setBusca(true)}
             aria-label="Buscar no portal (Ctrl + K)"
             title="Buscar (Ctrl + K)"
-            className="hidden lg:grid size-11 place-items-center rounded-full border border-gold/20 hover:border-gold/60 focus-visible:border-gold transition-premium text-paper/70 hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+            className="grid size-11 place-items-center rounded-full border border-gold/20 hover:border-gold/60 focus-visible:border-gold transition-premium text-paper/70 hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
           >
             <Search className="size-4" aria-hidden="true" />
           </button>
+
 
           <button
             type="button"
