@@ -36,11 +36,17 @@ async function applySecurityHeaders(response: Response): Promise<Response> {
   newHeaders.set(
     "Content-Security-Policy",
     "default-src 'self'; " +
+    "base-uri 'self'; " +
+    "object-src 'none'; " +
+    "form-action 'self'; " +
     "script-src 'self' 'unsafe-inline' 'unsafe-eval'; " +
     "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; " +
     "font-src 'self' data: https://fonts.gstatic.com; " +
-    "img-src 'self' data: https://*; " +
+    "img-src 'self' data: https:; " +
     `connect-src ${conexoes}; ` +
+    "frame-src 'none'; " +
+    "worker-src 'self' blob:; " +
+    "manifest-src 'self'; " +
     "frame-ancestors 'self' https://*.lovable.app https://*.lovable.dev; " +
     "upgrade-insecure-requests;"
   );
@@ -48,15 +54,26 @@ async function applySecurityHeaders(response: Response): Promise<Response> {
 
   // Prevention of Clickjacking
   newHeaders.set("X-Frame-Options", "SAMEORIGIN");
-  
+
   // Prevent MIME sniffing
   newHeaders.set("X-Content-Type-Options", "nosniff");
-  
+
   // Referrer Policy
   newHeaders.set("Referrer-Policy", "strict-origin-when-cross-origin");
-  
+
+  // Recursos sensíveis do navegador ficam desligados.
+  newHeaders.set(
+    "Permissions-Policy",
+    "camera=(), microphone=(), geolocation=(), payment=(), usb=(), serial=(), midi=()",
+  );
+  newHeaders.set("Cross-Origin-Opener-Policy", "same-origin");
+  newHeaders.set("Cross-Origin-Resource-Policy", "same-origin");
+  newHeaders.set("X-Permitted-Cross-Domain-Policies", "none");
+  newHeaders.set("Origin-Agent-Cluster", "?1");
+
   // HSTS (Strict-Transport-Security) - 1 year
   newHeaders.set("Strict-Transport-Security", "max-age=31536000; includeSubDomains; preload");
+
 
   return new Response(response.body, {
     status: response.status,

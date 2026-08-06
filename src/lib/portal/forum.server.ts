@@ -1,6 +1,6 @@
 // Server-only. Fórum "Agora Ecclesiae" — leitura pública, escrita por identidade anônima.
 import { supabaseAdmin } from "@/integrations/supabase/client.server";
-import { revisarTexto } from "./moderacao.server";
+import { revisarTexto, sanitizarTexto } from "./moderacao.server";
 import { dbLeitura } from "./db.server";
 
 function slugTopico(titulo: string) {
@@ -108,18 +108,24 @@ export async function criarTopico(
     .maybeSingle();
   if (!secao) throw new Error("Seção não encontrada.");
 
-  const revisao = revisarTexto(entrada.titulo, entrada.corpo);
+  const titulo = sanitizarTexto(entrada.titulo, 160);
+  const corpo = sanitizarTexto(entrada.corpo);
+  if (titulo.length < 5) throw new Error("O título precisa ter ao menos 5 caracteres.");
+  if (corpo.length < 10) throw new Error("A mensagem precisa ter ao menos 10 caracteres.");
+
+  const revisao = revisarTexto(titulo, corpo);
 
   const { data, error } = await supabaseAdmin
     .from("forum_topicos")
     .insert({
       secao_id: secao.id,
       identidade_id: identidadeId,
-      titulo: entrada.titulo,
-      slug: slugTopico(entrada.titulo),
-      corpo: entrada.corpo,
+      titulo,
+      slug: slugTopico(titulo),
+      corpo,
       status: revisao.status,
     })
+
     .select("slug")
     .single();
   if (error || !data) throw new Error("Não foi possível criar o tópico.");
@@ -128,7 +134,7 @@ export async function criarTopico(
   return { slug: data.slug, status: revisao.status, motivo: revisao.motivo };
 }
 
-export async function responderTopico(token: string, topicoSlug: string, corpo: string) {
+export async function responderTopico(token: string, topicoSlug: string, entradaCorpo: string) {
   const identidadeId = await identidadePorToken(token);
   const { data: topico } = await supabaseAdmin
     .from("forum_topicos")
@@ -137,6 +143,9 @@ export async function responderTopico(token: string, topicoSlug: string, corpo: 
     .maybeSingle();
   if (!topico) throw new Error("Tópico não encontrado.");
   if (topico.trancado) throw new Error("Este tópico está trancado.");
+
+  const corpo = sanitizarTexto(entradaCorpo);
+  if (corpo.length < 5) throw new Error("A resposta precisa ter ao menos 5 caracteres.");
 
   const revisao = revisarTexto(corpo);
 
@@ -148,6 +157,7 @@ export async function responderTopico(token: string, topicoSlug: string, corpo: 
       corpo,
       status: revisao.status,
     });
+
   if (error) throw new Error("Não foi possível publicar a resposta.");
 
   // O contador público só cresce quando a resposta já está visível.
