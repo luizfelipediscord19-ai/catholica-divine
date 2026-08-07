@@ -184,6 +184,15 @@ function Page() {
           ]}
         />
       </Section>
+      </Section>
+
+      <Section
+        kicker="Objeção e resposta"
+        title="Banco de objeções"
+        id="objecoes"
+      >
+        <BancoObjecoes />
+      </Section>
     </div>
   );
 }
