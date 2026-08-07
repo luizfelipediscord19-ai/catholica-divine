@@ -115,14 +115,14 @@ const RAW: { nome: string; data: string; body: string }[] = [
   { nome: "São Luís Gonzaga", data: "21 de junho", body: "Jesuíta marquês, morreu aos 23 anos servindo pestilentos em Roma." },
   { nome: "São Tarcísio", data: "15 de agosto", body: "Acólito mártir romano, morreu defendendo a Eucaristia, padroeiro dos coroinhas." },
   { nome: "Santa Rosa de Lima", data: "23 de agosto", body: "Primeira santa das Américas, terciária dominicana peruana." },
-  { nome: "São Martinho de Lima", data: "3 de novembro", body: "Frade mulato dominicano, enfermeiro dos pobres, padroeiro da justiça social." },
+  { nome: "São Martinho de Porres", data: "3 de novembro", body: "Frade mulato dominicano de Lima, enfermeiro dos pobres, padroeiro da justiça social." },
   { nome: "São Juan Diego", data: "9 de dezembro", body: "Indígena vidente de Nossa Senhora de Guadalupe no Tepeyac (1531)." },
   { nome: "São Toribio de Mogrovejo", data: "23 de março", body: "Arcebispo de Lima, evangelizador e defensor dos indígenas do Peru." },
   { nome: "São Pedro Claver", data: "9 de setembro", body: "Jesuíta 'escravo dos escravos negros' em Cartagena das Índias." },
   { nome: "Santa Catarina Labouré", data: "31 de dezembro", body: "Filha da Caridade, vidente da Medalha Milagrosa em Paris (1830)." },
   { nome: "Santos Francisco e Jacinta Marto", data: "20 de fevereiro", body: "Pastorinhos videntes de Fátima (1917), canonizados em 2017." },
-  { nome: "São Miguel Pro", data: "23 de novembro", body: "Jesuíta mexicano, mártir da perseguição religiosa: 'Viva Cristo Rei!'." },
-  { nome: "Santa Joana Beretta Molla", data: "28 de abril", body: "Médica e mãe italiana, deu a vida para salvar a filha ainda no ventre." },
+  { nome: "Bem-Aventurado Miguel Agustín Pro", data: "23 de novembro", body: "Jesuíta mexicano, mártir da perseguição religiosa: 'Viva Cristo Rei!'." },
+  { nome: "Santa Gianna Beretta Molla", data: "28 de abril", body: "Médica e mãe italiana, deu a vida para salvar a filha ainda no ventre." },
 ];
 
 export const SANTOS_LISTA: SantoLista[] = RAW.map((s) => ({
