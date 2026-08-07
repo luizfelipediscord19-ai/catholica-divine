@@ -72,7 +72,7 @@ function PainelPage() {
       </div>
     );
   }
-  const identidade = dados.identidade;
+  
 
 
   const nivel = dados.identidade.nivel;
