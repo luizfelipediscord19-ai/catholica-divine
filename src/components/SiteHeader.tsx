@@ -22,24 +22,19 @@ const NAV = [
   { to: "/painel", label: "Meu painel" },
 ] as const;
 
-/**
- * Itens da barra superior, com revelação progressiva:
- * `sempre` aparece a partir de md, os demais entram em lg / xl.
- */
-const NAV_PRINCIPAL: { to: string; label: string; desde: "md" | "lg" | "xl" }[] = [
-  { to: "/biblia", label: "Bíblia", desde: "md" },
-  { to: "/santos", label: "Santos", desde: "md" },
-  { to: "/oracoes", label: "Orações", desde: "md" },
-  { to: "/catecismo", label: "Catecismo", desde: "lg" },
+const NAV_PRINCIPAL: { to: string; label: string; desde: "lg" | "xl" | "2xl" }[] = [
+  { to: "/biblia", label: "Bíblia", desde: "lg" },
+  { to: "/santos", label: "Santos", desde: "lg" },
+  { to: "/oracoes", label: "Orações", desde: "lg" },
   { to: "/forum", label: "Fórum", desde: "lg" },
-  { to: "/liturgia-diaria", label: "Liturgia do dia", desde: "xl" },
-  { to: "/painel", label: "Meu painel", desde: "xl" },
+  { to: "/catecismo", label: "Catecismo", desde: "xl" },
+  { to: "/liturgia-diaria", label: "Liturgia", desde: "2xl" },
 ];
 
 const VISIVEL_DESDE = {
-  md: "hidden md:inline-flex",
   lg: "hidden lg:inline-flex",
   xl: "hidden xl:inline-flex",
+  "2xl": "hidden 2xl:inline-flex",
 } as const;
 
 
@@ -51,16 +46,16 @@ export function SiteHeader() {
   useAtalhoBusca(useCallback(() => setBusca(true), []));
 
   return (
-    <header className="sticky top-0 z-50 glass border-b border-gold/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 h-16 sm:h-20 md:h-24 flex items-center gap-4 xl:gap-6">
+    <header className="sticky top-0 z-50 border-b border-gold/10 bg-background/95 backdrop-blur-xl">
+      <div className="mx-auto grid h-16 w-full max-w-[1440px] grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 sm:h-20 sm:px-6 lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:gap-5 lg:px-8 xl:gap-7">
         <Link
           to="/"
-          className="flex min-w-0 shrink items-center gap-2 sm:gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+          className="group flex min-w-0 items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold sm:gap-3 lg:shrink-0"
         >
           <div className="size-9 sm:size-10 shrink-0 rounded-full border border-gold/30 flex items-center justify-center group-hover:border-gold transition-premium">
             <Church className="size-4 sm:size-5 text-gold" aria-hidden="true" />
           </div>
-          <span className="truncate font-display text-base sm:text-2xl tracking-[0.05em] text-paper group-hover:text-gold transition-colors">
+          <span className="truncate font-display text-base text-paper transition-colors group-hover:text-gold sm:text-xl xl:text-2xl">
             PORTAL <span className="font-light italic text-gold/90">CATÓLICO</span>
           </span>
         </Link>
@@ -68,7 +63,7 @@ export function SiteHeader() {
 
         <nav
           aria-label="Navegação principal"
-          className="hidden md:flex flex-1 min-w-0 items-center justify-center gap-3 lg:gap-4 xl:gap-5 whitespace-nowrap text-[10px] uppercase tracking-[0.14em] lg:tracking-[0.18em] xl:tracking-[0.22em] font-medium text-paper/80"
+          className="hidden min-w-0 items-center justify-center gap-4 whitespace-nowrap text-[10px] font-medium uppercase text-paper/80 lg:flex xl:gap-5"
         >
           {NAV_PRINCIPAL.map((item) => {
             const active = pathname === item.to || pathname.startsWith(`${item.to}/`);
@@ -89,11 +84,11 @@ export function SiteHeader() {
         </nav>
 
 
-        <div className="ml-auto flex shrink-0 items-center gap-2 sm:gap-3">
+        <div className="flex shrink-0 items-center justify-end gap-2 sm:gap-3">
           <ContaBotao />
           <Link
             to="/assistente"
-            className="hidden sm:inline-flex items-center gap-2 min-h-11 px-5 py-3 text-[10px] uppercase tracking-[0.25em] font-bold text-deep bg-gold hover:bg-paper focus-visible:bg-paper transition-premium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-paper"
+            className="hidden min-h-11 items-center gap-2 bg-gold px-4 py-3 text-[10px] font-bold uppercase text-deep transition-premium hover:bg-paper focus-visible:bg-paper focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-paper sm:inline-flex xl:px-5"
           >
             <Sparkles className="size-3.5" aria-hidden="true" /> Sophia IA
           </Link>
@@ -125,7 +120,7 @@ export function SiteHeader() {
         <div id="menu-mobile" className="border-t border-gold/20 bg-background">
           <nav
             aria-label="Navegação mobile"
-            className="max-w-7xl mx-auto px-6 sm:px-8 py-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-1 text-[12px] uppercase tracking-[0.18em] font-medium"
+            className="mx-auto grid max-w-[1440px] grid-cols-2 gap-x-6 gap-y-1 px-6 py-4 text-[12px] font-medium uppercase sm:grid-cols-3 sm:px-8 lg:grid-cols-4"
           >
             {NAV.map((item) => {
               const active = pathname === item.to || pathname.startsWith(`${item.to}/`);
