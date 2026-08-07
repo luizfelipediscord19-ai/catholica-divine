@@ -22,12 +22,26 @@ const NAV = [
   { to: "/painel", label: "Meu painel" },
 ] as const;
 
-/** Itens que cabem na barra superior; o restante fica no menu completo. */
-const NAV_PRINCIPAL = NAV.filter((i) =>
-  ["/biblia", "/catecismo", "/santos", "/oracoes", "/liturgia-diaria", "/forum", "/painel"].includes(
-    i.to,
-  ),
-);
+/**
+ * Itens da barra superior, com revelação progressiva:
+ * `sempre` aparece a partir de md, os demais entram em lg / xl.
+ */
+const NAV_PRINCIPAL: { to: string; label: string; desde: "md" | "lg" | "xl" }[] = [
+  { to: "/biblia", label: "Bíblia", desde: "md" },
+  { to: "/santos", label: "Santos", desde: "md" },
+  { to: "/oracoes", label: "Orações", desde: "md" },
+  { to: "/catecismo", label: "Catecismo", desde: "lg" },
+  { to: "/forum", label: "Fórum", desde: "lg" },
+  { to: "/liturgia-diaria", label: "Liturgia do dia", desde: "xl" },
+  { to: "/painel", label: "Meu painel", desde: "xl" },
+];
+
+const VISIVEL_DESDE = {
+  md: "hidden md:inline-flex",
+  lg: "hidden lg:inline-flex",
+  xl: "hidden xl:inline-flex",
+} as const;
+
 
 
 export function SiteHeader() {
@@ -54,9 +68,8 @@ export function SiteHeader() {
 
         <nav
           aria-label="Navegação principal"
-          className="hidden xl:flex flex-1 min-w-0 items-center justify-center gap-4 xl:gap-5 whitespace-nowrap text-[10px] uppercase tracking-[0.18em] xl:tracking-[0.22em] font-medium text-paper/80"
+          className="hidden md:flex flex-1 min-w-0 items-center justify-center gap-3 lg:gap-4 xl:gap-5 whitespace-nowrap text-[10px] uppercase tracking-[0.14em] lg:tracking-[0.18em] xl:tracking-[0.22em] font-medium text-paper/80"
         >
-
           {NAV_PRINCIPAL.map((item) => {
             const active = pathname === item.to || pathname.startsWith(`${item.to}/`);
             return (
@@ -64,7 +77,7 @@ export function SiteHeader() {
                 key={item.to}
                 to={item.to}
                 aria-current={active ? "page" : undefined}
-                className={`relative py-3 hover:text-paper focus-visible:text-paper focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold transition-colors ${active ? "text-gold" : ""}`}
+                className={`${VISIVEL_DESDE[item.desde]} relative items-center py-3 hover:text-paper focus-visible:text-paper focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold transition-colors ${active ? "text-gold" : ""}`}
               >
                 {item.label}
                 {active && (
@@ -74,6 +87,7 @@ export function SiteHeader() {
             );
           })}
         </nav>
+
 
         <div className="ml-auto flex shrink-0 items-center gap-2 sm:gap-3">
           <ContaBotao />

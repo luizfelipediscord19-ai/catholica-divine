@@ -3,6 +3,7 @@ import { LIVROS } from "./data/biblia/index";
 import { PARTES, SECOES } from "./data/catecismo/index";
 import { GLOSSARIO } from "./data/glossario";
 import { NOVENAS } from "./data/devocoes/novenas";
+import { ORACOES } from "./data/oracoes";
 import { SANTOS_LISTA } from "./santos-lista";
 
 export type Categoria =
@@ -120,6 +121,16 @@ export function indiceBusca(): ItemBusca[] {
       descricao: novena.ocasiao,
       categoria: "Oração",
       href: `/oracoes/novenas/${novena.slug}`,
+    });
+  }
+
+  for (const oracao of ORACOES) {
+    itens.push({
+      id: `o-${oracao.slug}`,
+      titulo: oracao.titulo,
+      descricao: `${oracao.categoria} · ${oracao.latim ? `${oracao.latim} · ` : ""}${oracao.texto.slice(0, 80)}`,
+      categoria: "Oração",
+      href: `/oracoes#${oracao.slug}`,
     });
   }
 
