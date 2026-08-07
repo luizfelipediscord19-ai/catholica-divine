@@ -11,6 +11,7 @@ const CORES: Record<Categoria, string> = {
   Santo: "text-amber-300/80",
   Glossário: "text-violet-300/80",
   Oração: "text-rose-300/80",
+  Apologética: "text-cyan-300/80",
 };
 
 const SUGESTOES = ["Eucaristia", "Jo 3", "São Bento", "graça", "rosário", "purgatório"];
