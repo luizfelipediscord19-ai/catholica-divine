@@ -753,6 +753,207 @@ export const GLOSSARIO: Record<string, EntradaGlossario> = {
     definicao:
       "Acompanhamento habitual de um fiel por um guia experiente, em ordem ao crescimento na santidade.",
   },
+  trindade: {
+    termo: "Santíssima Trindade",
+    definicao:
+      "Um só Deus em três Pessoas realmente distintas — Pai, Filho e Espírito Santo — consubstanciais, coeternas e coiguais. Mistério central da fé cristã.",
+    ref: "CIC §§ 232-267",
+  },
+  homousios: {
+    termo: "Homoousios (consubstancial)",
+    definicao:
+      "Termo grego definido em Niceia (325) para afirmar que o Filho é da mesma substância do Pai, contra o arianismo.",
+    ref: "Niceia I, 325; CIC § 465",
+  },
+  filioque: {
+    termo: "Filioque",
+    definicao:
+      "Acréscimo latino ao Credo afirmando que o Espírito Santo procede do Pai ‘e do Filho’, como de um único princípio.",
+    ref: "CIC §§ 246-248",
+  },
+  pecadooriginal: {
+    termo: "Pecado original",
+    definicao:
+      "Estado de privação da santidade original transmitido a toda a humanidade pela queda de Adão; contraído, não cometido, por cada um.",
+    ref: "CIC §§ 396-409",
+  },
+  imaculadaconceicao: {
+    termo: "Imaculada Conceição",
+    definicao:
+      "Dogma segundo o qual Maria foi preservada imune de toda mácula de pecado original desde o primeiro instante de sua conceição, por previsão dos méritos de Cristo.",
+    ref: "Ineffabilis Deus, 1854; CIC § 491",
+  },
+  virtudescardinais: {
+    termo: "Virtudes cardinais",
+    definicao:
+      "Prudência, justiça, fortaleza e temperança: virtudes humanas em torno das quais se articula a vida moral.",
+    ref: "CIC §§ 1805-1809",
+  },
+  donsdoespirito: {
+    termo: "Dons do Espírito Santo",
+    definicao:
+      "Sabedoria, entendimento, conselho, fortaleza, ciência, piedade e temor de Deus — disposições permanentes que tornam o fiel dócil às inspirações divinas.",
+    ref: "CIC §§ 1830-1831",
+  },
+  comunhaodossantos: {
+    termo: "Comunhão dos Santos",
+    definicao:
+      "Comunhão de bens espirituais entre os fiéis da terra, as almas do purgatório e os bem-aventurados do céu, num só Corpo de Cristo.",
+    ref: "CIC §§ 946-962",
+  },
+  sucessaoapostolica: {
+    termo: "Sucessão apostólica",
+    definicao:
+      "Transmissão ininterrupta, por imposição das mãos, do múnus apostólico aos bispos, garantindo a continuidade da missão da Igreja.",
+    ref: "CIC §§ 861-862",
+  },
+  presencareal: {
+    termo: "Presença real",
+    definicao:
+      "Presença verdadeira, real e substancial de Cristo — corpo, sangue, alma e divindade — sob as espécies eucarísticas.",
+    ref: "CIC §§ 1373-1381",
+  },
+  sacrificioeucaristico: {
+    termo: "Sacrifício eucarístico",
+    definicao:
+      "A Missa como re-presentação incruenta do único sacrifício da Cruz, oferecido pelo mesmo sacerdote, Cristo, por ministério do presbítero.",
+    ref: "CIC §§ 1362-1372",
+  },
+  sacerdociocomum: {
+    termo: "Sacerdócio comum dos fiéis",
+    definicao:
+      "Participação de todos os batizados no sacerdócio de Cristo pela oferta da própria vida; distingue-se essencialmente do sacerdócio ministerial.",
+    ref: "CIC §§ 1546-1547",
+  },
+  excathedra: {
+    termo: "Ex cathedra",
+    definicao:
+      "Ato pelo qual o Romano Pontífice, como pastor supremo, define uma doutrina de fé ou moral de modo infalível e definitivo.",
+    ref: "Vaticano I, Pastor Aeternus; CIC § 891",
+  },
+  lexorandi: {
+    termo: "Lex orandi, lex credendi",
+    definicao:
+      "Princípio de que a Igreja crê como reza: a liturgia é norma e expressão da fé professada.",
+    ref: "CIC §§ 1124-1125",
+  },
+  exopereoperato: {
+    termo: "Ex opere operato",
+    definicao:
+      "A eficácia do sacramento vem da ação de Cristo, não da santidade do ministro; exige, porém, disposição do que o recebe.",
+    ref: "CIC § 1128",
+  },
+  enciclica: {
+    termo: "Encíclica",
+    definicao:
+      "Carta doutrinal e pastoral do Papa dirigida a toda a Igreja, exercício ordinário do Magistério.",
+  },
+  motuproprio: {
+    termo: "Motu proprio",
+    definicao:
+      "Documento pontifício promulgado por iniciativa própria do Papa, geralmente de caráter jurídico ou disciplinar.",
+  },
+  sensusfidei: {
+    termo: "Sensus fidei",
+    definicao:
+      "Instinto sobrenatural da fé pelo qual o Povo de Deus, sob a guia do Magistério, reconhece e adere à verdade revelada.",
+    ref: "CIC §§ 91-93",
+  },
+  doutordaigreja: {
+    termo: "Doutor da Igreja",
+    definicao:
+      "Título dado a santos cuja doutrina se destaca por eminência, ortodoxia e utilidade para toda a Igreja. São 37 até hoje.",
+  },
+  martirio: {
+    termo: "Martírio",
+    definicao:
+      "Testemunho supremo da verdade da fé, sofrendo a morte por Cristo; suprema prova da caridade.",
+    ref: "CIC §§ 2473-2474",
+  },
+  ecumenismo: {
+    termo: "Ecumenismo",
+    definicao:
+      "Esforço pela restauração da unidade de todos os cristãos, mediante oração, conversão e diálogo na verdade.",
+    ref: "CIC §§ 820-822; Unitatis Redintegratio",
+  },
+  pentecostes: {
+    termo: "Pentecostes",
+    definicao:
+      "Efusão do Espírito Santo sobre os Apóstolos cinquenta dias após a Páscoa; manifestação pública da Igreja.",
+    ref: "At 2; CIC §§ 731-732",
+  },
+  ascensao: {
+    termo: "Ascensão",
+    definicao:
+      "Entrada definitiva da humanidade de Jesus na glória divina, quarenta dias após a Ressurreição.",
+    ref: "CIC §§ 659-667",
+  },
+  transfiguracao: {
+    termo: "Transfiguração",
+    definicao:
+      "Manifestação antecipada da glória de Cristo no Tabor diante de Pedro, Tiago e João, confirmando a fé antes da Paixão.",
+    ref: "CIC §§ 554-556",
+  },
+  kenosis: {
+    termo: "Kénosis",
+    definicao:
+      "Anonadamento do Verbo que, sendo Deus, ‘esvaziou-se’ assumindo a condição de servo até a morte de cruz.",
+    ref: "Fl 2,6-8; CIC § 461",
+  },
+  ressurreicaodacarne: {
+    termo: "Ressurreição da carne",
+    definicao:
+      "Verdade de fé de que todos os mortos ressuscitarão em seus próprios corpos no último dia, para a vida ou para a condenação.",
+    ref: "CIC §§ 988-1019",
+  },
+  juizoparticular: {
+    termo: "Juízo particular",
+    definicao:
+      "Julgamento imediato de cada alma no instante da morte, que a destina ao céu, ao purgatório ou ao inferno.",
+    ref: "CIC § 1022",
+  },
+  beatificavisao: {
+    termo: "Visão beatífica",
+    definicao:
+      "Contemplação imediata de Deus face a face, que constitui a bem-aventurança eterna dos santos.",
+    ref: "CIC §§ 1023-1029",
+  },
+  eclesiologia: {
+    termo: "Eclesiologia",
+    definicao:
+      "Tratado teológico sobre a Igreja: sua natureza sacramental, notas (una, santa, católica, apostólica), estrutura e missão.",
+    ref: "CIC §§ 748-870",
+  },
+  mariologia: {
+    termo: "Mariologia",
+    definicao:
+      "Parte da teologia dedicada à Virgem Maria, seus privilégios e sua cooperação na obra da Redenção.",
+    ref: "CIC §§ 963-975",
+  },
+  evangelizacao: {
+    termo: "Evangelização",
+    definicao:
+      "Anúncio do Evangelho a todos os povos, missão essencial da Igreja em obediência ao mandato missionário de Cristo.",
+    ref: "CIC §§ 849-856",
+  },
+  bemcomum: {
+    termo: "Bem comum",
+    definicao:
+      "Conjunto das condições sociais que permitem a pessoas e grupos alcançar sua perfeição; exige respeito à pessoa, bem-estar social e paz.",
+    ref: "CIC §§ 1905-1912",
+  },
+  destinouniversal: {
+    termo: "Destino universal dos bens",
+    definicao:
+      "Princípio segundo o qual os bens da criação se destinam a todo o gênero humano, condicionando o direito de propriedade privada.",
+    ref: "CIC §§ 2402-2406",
+  },
+  leinatural: {
+    termo: "Lei natural",
+    definicao:
+      "Participação da criatura racional na lei eterna de Deus, inscrita na razão, universal e imutável em seus preceitos fundamentais.",
+    ref: "CIC §§ 1954-1960",
+  },
 };
 
 export function getTermo(chave: string): EntradaGlossario | null {
