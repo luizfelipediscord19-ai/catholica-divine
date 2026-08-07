@@ -38,10 +38,10 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 glass border-b border-gold/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 h-16 sm:h-20 md:h-24 grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 h-16 sm:h-20 md:h-24 flex items-center gap-4 xl:gap-6">
         <Link
           to="/"
-          className="flex min-w-0 items-center gap-2 sm:gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+          className="flex min-w-0 shrink items-center gap-2 sm:gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
         >
           <div className="size-9 sm:size-10 shrink-0 rounded-full border border-gold/30 flex items-center justify-center group-hover:border-gold transition-premium">
             <Church className="size-4 sm:size-5 text-gold" aria-hidden="true" />
@@ -54,8 +54,9 @@ export function SiteHeader() {
 
         <nav
           aria-label="Navegação principal"
-          className="hidden xl:flex min-w-0 items-center gap-4 xl:gap-5 whitespace-nowrap text-[10px] uppercase tracking-[0.18em] xl:tracking-[0.25em] font-medium text-paper/80"
+          className="hidden xl:flex flex-1 min-w-0 items-center justify-center gap-4 xl:gap-5 whitespace-nowrap text-[10px] uppercase tracking-[0.18em] xl:tracking-[0.22em] font-medium text-paper/80"
         >
+
           {NAV_PRINCIPAL.map((item) => {
             const active = pathname === item.to || pathname.startsWith(`${item.to}/`);
             return (
