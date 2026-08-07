@@ -24,8 +24,10 @@ export async function identidadeDaConta(
     "reconciliar_identidade_conta",
     {
       _user_id: userId,
-      _token_anonimo: tokenAnonimo,
-      _email: email,
+      // O tipo gerado trata UUID anulável como obrigatório; UUID zero é um
+      // sentinela seguro e nunca corresponde a uma identidade real.
+      _token_anonimo: tokenAnonimo ?? "00000000-0000-0000-0000-000000000000",
+      ...(email ? { _email: email } : {}),
     },
   );
 
