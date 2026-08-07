@@ -13,7 +13,8 @@ export type Categoria =
   | "Catecismo"
   | "Santo"
   | "Glossário"
-  | "Oração";
+  | "Oração"
+  | "Apologética";
 
 export type ItemBusca = {
   id: string;
