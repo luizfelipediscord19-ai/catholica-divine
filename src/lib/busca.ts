@@ -136,6 +136,16 @@ export function indiceBusca(): ItemBusca[] {
     });
   }
 
+  for (const objecao of OBJECOES) {
+    itens.push({
+      id: `ap-${objecao.slug}`,
+      titulo: objecao.objecao,
+      descricao: `${objecao.categoria} · ${objecao.resposta[0]?.slice(0, 100) ?? ""}`,
+      categoria: "Apologética",
+      href: `/apologetica#objecao-${objecao.slug}`,
+    });
+  }
+
   cache = itens;
   return itens;
 }
