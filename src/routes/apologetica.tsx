@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Section, Prose, Sources, Pullquote } from "../components/PageShell";
+import { BancoObjecoes } from "../components/portal/BancoObjecoes";
 
 export const Route = createFileRoute("/apologetica")({
   head: () => ({
@@ -182,6 +183,14 @@ function Page() {
             { label: "Pontifícia Comissão Bíblica, A Interpretação da Bíblia na Igreja (1993)", ref: "métodos exegéticos" },
           ]}
         />
+      </Section>
+
+      <Section
+        kicker="Objeção e resposta"
+        title="Banco de objeções"
+        id="objecoes"
+      >
+        <BancoObjecoes />
       </Section>
     </div>
   );

@@ -4,6 +4,7 @@ import { PARTES, SECOES } from "./data/catecismo/index";
 import { GLOSSARIO } from "./data/glossario";
 import { NOVENAS } from "./data/devocoes/novenas";
 import { ORACOES } from "./data/oracoes";
+import { OBJECOES } from "./data/apologetica-objecoes";
 import { SANTOS_LISTA } from "./santos-lista";
 
 export type Categoria =
@@ -12,7 +13,8 @@ export type Categoria =
   | "Catecismo"
   | "Santo"
   | "Glossário"
-  | "Oração";
+  | "Oração"
+  | "Apologética";
 
 export type ItemBusca = {
   id: string;
@@ -131,6 +133,16 @@ export function indiceBusca(): ItemBusca[] {
       descricao: `${oracao.categoria} · ${oracao.latim ? `${oracao.latim} · ` : ""}${oracao.texto.slice(0, 80)}`,
       categoria: "Oração",
       href: `/oracoes#${oracao.slug}`,
+    });
+  }
+
+  for (const objecao of OBJECOES) {
+    itens.push({
+      id: `ap-${objecao.slug}`,
+      titulo: objecao.objecao,
+      descricao: `${objecao.categoria} · ${objecao.resposta[0]?.slice(0, 100) ?? ""}`,
+      categoria: "Apologética",
+      href: `/apologetica#objecao-${objecao.slug}`,
     });
   }
 

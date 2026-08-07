@@ -41,13 +41,16 @@ export function Section({
   title,
   kicker,
   children,
+  id,
 }: {
   title?: string;
   kicker?: string;
   children: ReactNode;
+  id?: string;
 }) {
   return (
-    <section className="max-w-6xl mx-auto px-6 py-16 md:py-20">
+    <section id={id} className="max-w-6xl mx-auto px-6 py-16 md:py-20">
+
       {kicker ? (
         <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-3">{kicker}</p>
       ) : null}
