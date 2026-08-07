@@ -9,7 +9,17 @@ import {
 } from "@/lib/portal.functions";
 
 const CHAVE = "portal-catolico:identidade";
+const EVENTO_IDENTIDADE = "portal-catolico:identidade-atualizada";
 export const CHAVE_IDENTIDADE = CHAVE;
+
+function guardarToken(token: string) {
+  try {
+    window.localStorage.setItem(CHAVE, token);
+    window.dispatchEvent(new CustomEvent(EVENTO_IDENTIDADE, { detail: token }));
+  } catch {
+    /* navegação privada */
+  }
+}
 
 export function lerToken(): string | null {
   if (typeof window === "undefined") return null;
@@ -28,11 +38,7 @@ export async function garantirTokenAgora(): Promise<string> {
   const atual = lerToken();
   const res = await garantirIdentidadeFn({ data: { token: atual } });
   if (res.token !== atual) {
-    try {
-      window.localStorage.setItem(CHAVE, res.token);
-    } catch {
-      /* navegação privada */
-    }
+    guardarToken(res.token);
   }
   return res.token;
 }
@@ -48,6 +54,16 @@ export function useIdentidade() {
   useEffect(() => {
     setToken(lerToken());
     setHidratado(true);
+    const sincronizar = (evento: Event) => {
+      const proximo = (evento as CustomEvent<string>).detail ?? lerToken();
+      setToken(proximo);
+    };
+    window.addEventListener(EVENTO_IDENTIDADE, sincronizar);
+    window.addEventListener("storage", sincronizar);
+    return () => {
+      window.removeEventListener(EVENTO_IDENTIDADE, sincronizar);
+      window.removeEventListener("storage", sincronizar);
+    };
   }, []);
 
   const query = useQuery({
@@ -57,11 +73,7 @@ export function useIdentidade() {
     queryFn: async () => {
       const res = await garantirIdentidadeFn({ data: { token } });
       if (res.token !== token) {
-        try {
-          window.localStorage.setItem(CHAVE, res.token);
-        } catch {
-          /* navegação privada: a identidade dura só esta sessão */
-        }
+        guardarToken(res.token);
         setToken(res.token);
       }
       return res;
@@ -112,11 +124,7 @@ export function usePainel() {
         dados = await obterPainelFn({ data: { token: atual } });
       }
       if (dados.tokenAtual && dados.tokenAtual !== atual) {
-        try {
-          window.localStorage.setItem(CHAVE, dados.tokenAtual);
-        } catch {
-          /* navegação privada */
-        }
+        guardarToken(dados.tokenAtual);
       }
       return dados;
     },
