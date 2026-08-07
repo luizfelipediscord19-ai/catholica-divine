@@ -24,6 +24,21 @@ export const obterPainelFn = createServerFn({ method: "POST" })
     return obterPainel(data.token);
   });
 
+/** Painel da conta: a identidade é derivada exclusivamente da sessão validada. */
+export const obterPainelContaFn = createServerFn({ method: "POST" })
+  .middleware([requireSupabaseAuth])
+  .inputValidator(TokenOpcional)
+  .handler(async ({ data, context }) => {
+    const { tokenDaConta } = await import("./portal/conta.server");
+    const { obterPainel } = await import("./portal/identidade.server");
+    const token = await tokenDaConta(
+      context.userId,
+      (context.claims["email"] as string | undefined) ?? null,
+      data.token ?? null,
+    );
+    return obterPainel(token);
+  });
+
 export const registrarOracaoFn = createServerFn({ method: "POST" })
   .inputValidator(
     TokenObrigatorio.extend({
