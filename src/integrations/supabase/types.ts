@@ -531,7 +531,7 @@ export type Database = {
     }
     Functions: {
       reconciliar_identidade_conta: {
-        Args: { _email?: string; _token_anonimo: string }
+        Args: { _email?: string; _token_anonimo: string; _user_id: string }
         Returns: string
       }
     }
