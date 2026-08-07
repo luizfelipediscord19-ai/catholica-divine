@@ -216,8 +216,14 @@ function Page() {
               </h2>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 {grupo.itens.map((o) => (
-                  <CartaoOracao key={o.slug} oracao={o} />
+                  <CartaoOracao
+                    key={o.slug}
+                    oracao={o}
+                    aberto={aberto === o.slug}
+                    onAlternar={() => setAberto(aberto === o.slug ? null : o.slug)}
+                  />
                 ))}
+
               </div>
             </div>
           ))}
