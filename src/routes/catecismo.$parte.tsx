@@ -51,14 +51,45 @@ function Page() {
       <p className="mt-6 text-lg text-muted-foreground leading-relaxed">{parte.resumo}</p>
 
       <div className="mt-12 space-y-4">
-        {secoes.map((s: SecaoCIC) => (
-          <div key={s.slug} className="border border-gold/20 bg-card p-6">
-            <p className="text-[10px] tracking-[0.3em] uppercase text-gold/70 mb-2">{s.paragrafos}</p>
-            <h3 className="font-display text-xl text-foreground">{s.titulo}</h3>
-            <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.resumo}</p>
-          </div>
-        ))}
+        {secoes.map((s: SecaoCIC) => {
+          const capitulos = capitulosDaSecao(s.slug);
+          return (
+            <section key={s.slug} className="border border-gold/20 bg-card p-5 sm:p-6">
+              <p className="text-[10px] tracking-[0.3em] uppercase text-gold/70 mb-2">
+                {s.paragrafos}
+              </p>
+              <h2 className="font-display text-xl sm:text-2xl text-foreground">{s.titulo}</h2>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.resumo}</p>
+
+              {capitulos.length > 0 && (
+                <div className="mt-5 grid gap-4 sm:grid-cols-2">
+                  {capitulos.map((c) => (
+                    <div key={c.titulo} className="border-l-2 border-gold/30 pl-4">
+                      <h3 className="font-display text-base text-foreground leading-snug">
+                        {c.titulo}
+                      </h3>
+                      <p className="text-[10px] tracking-[0.25em] uppercase text-gold/60 mt-1">
+                        {c.paragrafos}
+                      </p>
+                      <ul className="mt-2 space-y-1.5">
+                        {c.itens.map((item) => (
+                          <li
+                            key={item}
+                            className="text-[13px] text-muted-foreground leading-relaxed"
+                          >
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </section>
+          );
+        })}
       </div>
+
 
       <Relacionados topic={`catecismo:${parte.slug}`} className="mt-10" />
 
