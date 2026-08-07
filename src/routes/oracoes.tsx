@@ -148,6 +148,17 @@ function CartaoOracao({
 
 function Page() {
   const [filtro, setFiltro] = useState<CategoriaOracao | "Todas">("Todas");
+  const [aberto, setAberto] = useState<string | null>(null);
+
+  useEffect(() => {
+    const slug = window.location.hash.replace("#", "");
+    if (!slug) return;
+    setAberto(slug);
+    requestAnimationFrame(() => {
+      document.getElementById(slug)?.scrollIntoView({ block: "start" });
+    });
+  }, []);
+
 
   const visiveis = useMemo(
     () => (filtro === "Todas" ? ORACOES : ORACOES.filter((o) => o.categoria === filtro)),
