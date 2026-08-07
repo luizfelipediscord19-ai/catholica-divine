@@ -82,13 +82,27 @@ export function useIdentidade() {
 
 /** Painel espiritual completo (XP, streak, leituras, favoritos, conquistas). */
 export function usePainel() {
-  const { token } = useIdentidade();
+  const { token, carregando } = useIdentidade();
   return useQuery({
     queryKey: ["painel", token],
-    enabled: Boolean(token),
-    queryFn: () => obterPainelFn({ data: { token: token! } }),
+    enabled: !carregando,
+    retry: 1,
+    queryFn: async () => {
+      // Garante um token mesmo que o navegador ainda não tenha nenhum.
+      const atual = token ?? (await garantirTokenAgora());
+      const dados = await obterPainelFn({ data: { token: atual } });
+      if (dados.tokenAtual && dados.tokenAtual !== atual) {
+        try {
+          window.localStorage.setItem(CHAVE, dados.tokenAtual);
+        } catch {
+          /* navegação privada */
+        }
+      }
+      return dados;
+    },
   });
 }
+
 
 /** Invalida painel e identidade após qualquer ação que dê XP. */
 export function useInvalidarProgresso() {
