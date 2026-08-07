@@ -4,6 +4,7 @@ import { PARTES, SECOES } from "./data/catecismo/index";
 import { GLOSSARIO } from "./data/glossario";
 import { NOVENAS } from "./data/devocoes/novenas";
 import { ORACOES } from "./data/oracoes";
+import { OBJECOES } from "./data/apologetica-objecoes";
 import { SANTOS_LISTA } from "./santos-lista";
 
 export type Categoria =
