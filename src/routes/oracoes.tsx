@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { PageHero, Section, CardGrid, ContentCard } from "../components/PageShell";
 import {
   CATEGORIAS_ORACAO,
