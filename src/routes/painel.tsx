@@ -44,7 +44,7 @@ function xpDoNivel(nivel: number) {
 }
 
 function PainelPage() {
-  const { identidade, carregando, esquecer } = useIdentidade();
+  const { carregando, esquecer } = useIdentidade();
   const painel = usePainel();
 
   if (carregando || painel.isPending) {
@@ -56,13 +56,24 @@ function PainelPage() {
   }
 
   const dados = painel.data;
-  if (!identidade || !dados) {
+  if (!dados) {
     return (
-      <p className="max-w-5xl mx-auto px-6 py-32 text-sm text-muted-foreground">
-        Não foi possível carregar seu painel agora. Recarregue a página.
-      </p>
+      <div className="max-w-5xl mx-auto px-6 py-32 space-y-6">
+        <p className="text-sm text-muted-foreground">
+          Não foi possível carregar seu painel agora.
+        </p>
+        <button
+          type="button"
+          onClick={() => void painel.refetch()}
+          className="min-h-11 px-5 text-[10px] uppercase tracking-[0.2em] border border-gold/40 text-foreground/80 hover:text-gold hover:border-gold transition-colors"
+        >
+          Tentar de novo
+        </button>
+      </div>
     );
   }
+  
+
 
   const nivel = dados.identidade.nivel;
   const base = xpDoNivel(nivel);

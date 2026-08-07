@@ -286,10 +286,15 @@ export async function apagarNota(token: string, notaId: string) {
   await supabaseAdmin.from("notas").delete().eq("id", notaId).eq("identidade_id", id.id);
 }
 
-/** Painel: progresso completo da identidade. */
+/** Painel: progresso completo da identidade. Auto-recupera tokens órfãos. */
 export async function obterPainel(token: string) {
-  const id = await identidadePorToken(token);
+  // Se o token guardado no navegador não existir mais no banco, criamos uma
+  // identidade nova em vez de falhar — o painel nunca fica em branco.
+  const { token: tokenAtual, identidade } = await garantirIdentidade(token);
+  const id = await identidadePorToken(tokenAtual);
   const hoje = hojeISO();
+  void identidade;
+
 
   const [leituras, favoritos, notas, conquistas, catalogo, diarioHoje, ultima] = await Promise.all([
     supabaseAdmin
@@ -331,7 +336,9 @@ export async function obterPainel(token: string) {
   const desbloqueadas = new Set((conquistas.data ?? []).map((c) => c.conquista_slug));
 
   return {
+    tokenAtual,
     identidade: toPublica(id),
+
     rezouHoje: id.ultima_oracao === hoje,
     diarioHoje: diarioHoje.data ?? null,
     leituras: leituras.data ?? [],
