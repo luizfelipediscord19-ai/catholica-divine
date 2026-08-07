@@ -46,10 +46,10 @@ function xpDoNivel(nivel: number) {
 
 function PainelPage() {
   const { carregando, esquecer } = useIdentidade();
-  const { autenticado, carregando: carregandoConta } = useAuth();
+  const { autenticado } = useAuth();
   const painel = usePainel();
 
-  if (carregando || carregandoConta || painel.isPending) {
+  if (carregando || painel.isPending) {
     return (
       <p className="max-w-5xl mx-auto px-6 py-32 text-sm text-muted-foreground">
         Preparando seu painel…

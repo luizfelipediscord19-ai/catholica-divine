@@ -3,8 +3,6 @@ import type { Session, User } from "@supabase/supabase-js";
 import { useQueryClient } from "@tanstack/react-query";
 
 import { supabase } from "@/integrations/supabase/client";
-import { vincularContaFn } from "@/lib/portal.functions";
-import { CHAVE_IDENTIDADE, lerToken } from "@/hooks/use-identidade";
 
 /**
  * Sessão de e-mail/senha do portal. A identidade anônima deste navegador é
@@ -18,31 +16,19 @@ export function useAuth() {
   useEffect(() => {
     let vivo = true;
 
-    const vincular = async () => {
-      try {
-        const res = await vincularContaFn({ data: { token: lerToken() } });
-        window.localStorage.setItem(CHAVE_IDENTIDADE, res.token);
-        void queryClient.invalidateQueries({ queryKey: ["identidade"] });
-        void queryClient.invalidateQueries({ queryKey: ["painel"] });
-      } catch {
-        /* silencioso: a próxima ação tenta de novo */
-      }
-    };
-
     const { data: sub } = supabase.auth.onAuthStateChange((evento, nova) => {
       if (!vivo) return;
       setSession(nova);
       setCarregando(false);
-      if (nova && (evento === "SIGNED_IN" || evento === "INITIAL_SESSION")) void vincular();
+      if (evento === "SIGNED_IN" || evento === "SIGNED_OUT" || evento === "USER_UPDATED") {
+        void queryClient.invalidateQueries({ queryKey: ["painel"] });
+      }
     });
 
     void supabase.auth.getSession().then(({ data }) => {
       if (!vivo) return;
       setSession(data.session);
       setCarregando(false);
-      // onAuthStateChange pode ter ocorrido antes da inscrição do componente.
-      // Reconciliar aqui torna o fluxo idempotente e cobre refresh/login antigo.
-      if (data.session) void vincular();
     });
 
     return () => {
