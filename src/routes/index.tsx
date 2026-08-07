@@ -146,7 +146,7 @@ function Home() {
 
 
   return (
-    <div>
+    <div className="overflow-x-hidden">
       {/* Hero */}
       <section className="relative overflow-hidden min-h-[92vh] flex items-center">
         <div
