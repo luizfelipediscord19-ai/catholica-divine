@@ -15,7 +15,7 @@ export const Route = createFileRoute("/oracoes")({
       {
         name: "description",
         content:
-          "Mais de 35 orações católicas com texto completo: Pai-Nosso, Credo, Salve-Rainha, Angelus, Anima Christi, São Miguel e mais. Rosário, novenas e Liturgia das Horas.",
+          "Mais de 60 orações católicas com texto completo: Pai-Nosso, Credo, Salve-Rainha, Angelus, Anima Christi, São Miguel e mais. Rosário, novenas e Liturgia das Horas.",
       },
       { property: "og:title", content: "Orações Católicas Tradicionais" },
       {
