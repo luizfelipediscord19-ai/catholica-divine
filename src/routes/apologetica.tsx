@@ -184,7 +184,6 @@ function Page() {
           ]}
         />
       </Section>
-      </Section>
 
       <Section
         kicker="Objeção e resposta"
