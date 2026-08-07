@@ -58,11 +58,11 @@ function PainelPage() {
   }
 
   const dados = painel.data;
-  if (!dados) {
+  if (!dados || painel.isError) {
     return (
       <div className="max-w-5xl mx-auto px-6 py-32 space-y-6">
         <p className="text-sm text-muted-foreground">
-          Não foi possível carregar seu painel agora.
+          Não foi possível carregar seu painel agora. Vamos tentar sincronizar novamente.
         </p>
         <button
           type="button"

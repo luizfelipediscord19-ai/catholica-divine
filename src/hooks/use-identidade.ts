@@ -91,14 +91,26 @@ export function usePainel() {
   return useQuery({
     queryKey: ["painel", token],
     enabled: !carregando,
-    retry: 1,
+    retry: 2,
     queryFn: async () => {
       // Garante um token mesmo que o navegador ainda não tenha nenhum.
       const atual = token ?? (await garantirTokenAgora());
       const { data: sessao } = await supabase.auth.getSession();
-      const dados = sessao.session
-        ? await obterPainelContaFn({ data: { token: atual } })
-        : await obterPainelFn({ data: { token: atual } });
+      let dados;
+      if (sessao.session) {
+        try {
+          // Esta chamada também reconcilia a identidade anônima antiga com a
+          // conta antes de montar o painel.
+          dados = await obterPainelContaFn({ data: { token: atual } });
+        } catch {
+          // Se a sessão ainda estiver sendo propagada ao backend, o painel
+          // continua funcional com os dados locais e tenta reconciliar de
+          // novo na próxima invalidação/recarregamento.
+          dados = await obterPainelFn({ data: { token: atual } });
+        }
+      } else {
+        dados = await obterPainelFn({ data: { token: atual } });
+      }
       if (dados.tokenAtual && dados.tokenAtual !== atual) {
         try {
           window.localStorage.setItem(CHAVE, dados.tokenAtual);

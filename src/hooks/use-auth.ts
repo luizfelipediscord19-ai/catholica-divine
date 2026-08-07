@@ -40,6 +40,9 @@ export function useAuth() {
       if (!vivo) return;
       setSession(data.session);
       setCarregando(false);
+      // onAuthStateChange pode ter ocorrido antes da inscrição do componente.
+      // Reconciliar aqui torna o fluxo idempotente e cobre refresh/login antigo.
+      if (data.session) void vincular();
     });
 
     return () => {
