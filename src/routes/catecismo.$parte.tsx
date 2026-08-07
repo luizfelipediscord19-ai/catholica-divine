@@ -1,5 +1,11 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { PARTES, SECOES, VATICAN_URL, type SecaoCIC } from "../lib/data/catecismo";
+import {
+  PARTES,
+  SECOES,
+  VATICAN_URL,
+  capitulosDaSecao,
+  type SecaoCIC,
+} from "../lib/data/catecismo";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { Relacionados } from "../components/Relacionados";
 
