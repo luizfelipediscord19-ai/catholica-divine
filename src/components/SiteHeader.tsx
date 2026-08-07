@@ -22,12 +22,26 @@ const NAV = [
   { to: "/painel", label: "Meu painel" },
 ] as const;
 
-/** Itens que cabem na barra superior; o restante fica no menu completo. */
-const NAV_PRINCIPAL = NAV.filter((i) =>
-  ["/biblia", "/catecismo", "/santos", "/oracoes", "/liturgia-diaria", "/forum", "/painel"].includes(
-    i.to,
-  ),
-);
+/**
+ * Itens da barra superior, com revelação progressiva:
+ * `sempre` aparece a partir de md, os demais entram em lg / xl.
+ */
+const NAV_PRINCIPAL: { to: string; label: string; desde: "md" | "lg" | "xl" }[] = [
+  { to: "/biblia", label: "Bíblia", desde: "md" },
+  { to: "/santos", label: "Santos", desde: "md" },
+  { to: "/oracoes", label: "Orações", desde: "md" },
+  { to: "/catecismo", label: "Catecismo", desde: "lg" },
+  { to: "/forum", label: "Fórum", desde: "lg" },
+  { to: "/liturgia-diaria", label: "Liturgia do dia", desde: "xl" },
+  { to: "/painel", label: "Meu painel", desde: "xl" },
+];
+
+const VISIVEL_DESDE = {
+  md: "hidden md:inline-flex",
+  lg: "hidden lg:inline-flex",
+  xl: "hidden xl:inline-flex",
+} as const;
+
 
 
 export function SiteHeader() {
