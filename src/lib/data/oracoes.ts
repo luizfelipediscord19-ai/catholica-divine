@@ -11,6 +11,9 @@ export type CategoriaOracao =
   | "Penitenciais"
   | "Proteção"
   | "Diárias"
+  | "Aos Santos"
+  | "Litanias"
+  | "Ocasiões"
   | "Defuntos";
 
 export type Oracao = {
@@ -20,6 +23,10 @@ export type Oracao = {
   categoria: CategoriaOracao;
   /** Contexto histórico/litúrgico em uma frase. */
   nota?: string;
+  /** Para que serve — finalidade espiritual concreta. */
+  paraQue?: string;
+  /** Quando rezar — momento ou ocasião indicada. */
+  quando?: string;
   texto: string;
 };
 
@@ -31,8 +38,12 @@ export const CATEGORIAS_ORACAO: CategoriaOracao[] = [
   "Penitenciais",
   "Proteção",
   "Diárias",
+  "Aos Santos",
+  "Litanias",
+  "Ocasiões",
   "Defuntos",
 ];
+
 
 export const ORACOES: Oracao[] = [
   // ===== FUNDAMENTAIS =====
