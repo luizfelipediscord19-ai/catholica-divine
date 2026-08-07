@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Section, Prose, Sources, Pullquote } from "../components/PageShell";
+import { BancoObjecoes } from "../components/portal/BancoObjecoes";
 
 export const Route = createFileRoute("/apologetica")({
   head: () => ({
