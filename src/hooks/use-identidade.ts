@@ -9,7 +9,17 @@ import {
 } from "@/lib/portal.functions";
 
 const CHAVE = "portal-catolico:identidade";
+const EVENTO_IDENTIDADE = "portal-catolico:identidade-atualizada";
 export const CHAVE_IDENTIDADE = CHAVE;
+
+function guardarToken(token: string) {
+  try {
+    window.localStorage.setItem(CHAVE, token);
+    window.dispatchEvent(new CustomEvent(EVENTO_IDENTIDADE, { detail: token }));
+  } catch {
+    /* navegação privada */
+  }
+}
 
 export function lerToken(): string | null {
   if (typeof window === "undefined") return null;
@@ -28,11 +38,7 @@ export async function garantirTokenAgora(): Promise<string> {
   const atual = lerToken();
   const res = await garantirIdentidadeFn({ data: { token: atual } });
   if (res.token !== atual) {
-    try {
-      window.localStorage.setItem(CHAVE, res.token);
-    } catch {
-      /* navegação privada */
-    }
+    guardarToken(res.token);
   }
   return res.token;
 }
@@ -48,6 +54,16 @@ export function useIdentidade() {
   useEffect(() => {
     setToken(lerToken());
     setHidratado(true);
+    const sincronizar = (evento: Event) => {
+      const proximo = (evento as CustomEvent<string>).detail ?? lerToken();
+      setToken(proximo);
+    };
+    window.addEventListener(EVENTO_IDENTIDADE, sincronizar);
+    window.addEventListener("storage", sincronizar);
+    return () => {
+      window.removeEventListener(EVENTO_IDENTIDADE, sincronizar);
+      window.removeEventListener("storage", sincronizar);
+    };
   }, []);
 
   const query = useQuery({
@@ -57,11 +73,7 @@ export function useIdentidade() {
     queryFn: async () => {
       const res = await garantirIdentidadeFn({ data: { token } });
       if (res.token !== token) {
-        try {
-          window.localStorage.setItem(CHAVE, res.token);
-        } catch {
-          /* navegação privada: a identidade dura só esta sessão */
-        }
+        guardarToken(res.token);
         setToken(res.token);
       }
       return res;
@@ -91,20 +103,28 @@ export function usePainel() {
   return useQuery({
     queryKey: ["painel", token],
     enabled: !carregando,
-    retry: 1,
+    retry: 2,
     queryFn: async () => {
       // Garante um token mesmo que o navegador ainda não tenha nenhum.
       const atual = token ?? (await garantirTokenAgora());
       const { data: sessao } = await supabase.auth.getSession();
-      const dados = sessao.session
-        ? await obterPainelContaFn({ data: { token: atual } })
-        : await obterPainelFn({ data: { token: atual } });
-      if (dados.tokenAtual && dados.tokenAtual !== atual) {
+      let dados;
+      if (sessao.session) {
         try {
-          window.localStorage.setItem(CHAVE, dados.tokenAtual);
+          // Esta chamada também reconcilia a identidade anônima antiga com a
+          // conta antes de montar o painel.
+          dados = await obterPainelContaFn({ data: { token: atual } });
         } catch {
-          /* navegação privada */
+          // Se a sessão ainda estiver sendo propagada ao backend, o painel
+          // continua funcional com os dados locais e tenta reconciliar de
+          // novo na próxima invalidação/recarregamento.
+          dados = await obterPainelFn({ data: { token: atual } });
         }
+      } else {
+        dados = await obterPainelFn({ data: { token: atual } });
+      }
+      if (dados.tokenAtual && dados.tokenAtual !== atual) {
+        guardarToken(dados.tokenAtual);
       }
       return dados;
     },

@@ -530,7 +530,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      reconciliar_identidade_conta: {
+        Args: { _email?: string; _token_anonimo: string; _user_id: string }
+        Returns: string
+      }
     }
     Enums: {
       [_ in never]: never
