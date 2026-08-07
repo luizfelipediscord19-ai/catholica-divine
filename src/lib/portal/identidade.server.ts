@@ -336,7 +336,9 @@ export async function obterPainel(token: string) {
   const desbloqueadas = new Set((conquistas.data ?? []).map((c) => c.conquista_slug));
 
   return {
+    tokenAtual,
     identidade: toPublica(id),
+
     rezouHoje: id.ultima_oracao === hoje,
     diarioHoje: diarioHoje.data ?? null,
     leituras: leituras.data ?? [],
