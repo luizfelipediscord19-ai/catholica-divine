@@ -75,7 +75,7 @@ export function SiteHeader() {
           })}
         </nav>
 
-        <div className="flex items-center gap-2 sm:gap-3">
+        <div className="ml-auto flex shrink-0 items-center gap-2 sm:gap-3">
           <ContaBotao />
           <Link
             to="/assistente"
