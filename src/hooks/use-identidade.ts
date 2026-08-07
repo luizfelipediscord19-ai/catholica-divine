@@ -1,7 +1,12 @@
 import { useCallback, useEffect, useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
-import { garantirIdentidadeFn, obterPainelFn } from "@/lib/portal.functions";
+import { supabase } from "@/integrations/supabase/client";
+import {
+  garantirIdentidadeFn,
+  obterPainelContaFn,
+  obterPainelFn,
+} from "@/lib/portal.functions";
 
 const CHAVE = "portal-catolico:identidade";
 export const CHAVE_IDENTIDADE = CHAVE;
@@ -90,7 +95,10 @@ export function usePainel() {
     queryFn: async () => {
       // Garante um token mesmo que o navegador ainda não tenha nenhum.
       const atual = token ?? (await garantirTokenAgora());
-      const dados = await obterPainelFn({ data: { token: atual } });
+      const { data: sessao } = await supabase.auth.getSession();
+      const dados = sessao.session
+        ? await obterPainelContaFn({ data: { token: atual } })
+        : await obterPainelFn({ data: { token: atual } });
       if (dados.tokenAtual && dados.tokenAtual !== atual) {
         try {
           window.localStorage.setItem(CHAVE, dados.tokenAtual);

@@ -15,6 +15,7 @@ import {
   ProgressoPorLivro,
 } from "@/components/portal/ContinuarLeitura";
 import { useIdentidade, usePainel } from "@/hooks/use-identidade";
+import { useAuth } from "@/hooks/use-auth";
 import { registrarOracaoFn } from "@/lib/portal.functions";
 
 export const Route = createFileRoute("/painel")({
@@ -45,9 +46,10 @@ function xpDoNivel(nivel: number) {
 
 function PainelPage() {
   const { carregando, esquecer } = useIdentidade();
+  const { autenticado, carregando: carregandoConta } = useAuth();
   const painel = usePainel();
 
-  if (carregando || painel.isPending) {
+  if (carregando || carregandoConta || painel.isPending) {
     return (
       <p className="max-w-5xl mx-auto px-6 py-32 text-sm text-muted-foreground">
         Preparando seu painel…
@@ -268,19 +270,22 @@ function PainelPage() {
 
       <footer className="border-t border-gold/15 pt-8 flex flex-wrap items-center gap-4">
         <p className="text-xs text-muted-foreground max-w-xl font-light">
-          Seu progresso é anônimo: nenhum e-mail, nenhuma senha. O código da sua identidade fica
-          guardado apenas neste navegador — se você limpar os dados do site, ele será perdido.
+          {autenticado
+            ? "Seu progresso está vinculado com segurança à sua conta e acompanha você em outros dispositivos."
+            : "Seu progresso está salvo apenas neste navegador. Entre em sua conta para protegê-lo e acessá-lo em outros dispositivos."}
         </p>
-        <button
-          type="button"
-          onClick={() => {
-            esquecer();
-            toast.success("Identidade esquecida neste navegador.");
-          }}
-          className="ml-auto text-[10px] uppercase tracking-[0.25em] text-paper/60 hover:text-gold transition-colors"
-        >
-          Esquecer identidade
-        </button>
+        {!autenticado ? (
+          <button
+            type="button"
+            onClick={() => {
+              esquecer();
+              toast.success("Identidade esquecida neste navegador.");
+            }}
+            className="ml-auto text-[10px] uppercase tracking-[0.25em] text-paper/60 hover:text-gold transition-colors"
+          >
+            Esquecer identidade
+          </button>
+        ) : null}
       </footer>
     </div>
   );
