@@ -11,6 +11,9 @@ export type CategoriaOracao =
   | "Penitenciais"
   | "Proteção"
   | "Diárias"
+  | "Aos Santos"
+  | "Litanias"
+  | "Ocasiões"
   | "Defuntos";
 
 export type Oracao = {
@@ -20,6 +23,10 @@ export type Oracao = {
   categoria: CategoriaOracao;
   /** Contexto histórico/litúrgico em uma frase. */
   nota?: string;
+  /** Para que serve — finalidade espiritual concreta. */
+  paraQue?: string;
+  /** Quando rezar — momento ou ocasião indicada. */
+  quando?: string;
   texto: string;
 };
 
@@ -31,8 +38,12 @@ export const CATEGORIAS_ORACAO: CategoriaOracao[] = [
   "Penitenciais",
   "Proteção",
   "Diárias",
+  "Aos Santos",
+  "Litanias",
+  "Ocasiões",
   "Defuntos",
 ];
+
 
 export const ORACOES: Oracao[] = [
   // ===== FUNDAMENTAIS =====
@@ -362,7 +373,220 @@ export const ORACOES: Oracao[] = [
     texto:
       "Das profundezas eu clamo a vós, Senhor; escutai a minha voz! Estejam atentos os vossos ouvidos ao clamor da minha prece. Se levardes em conta as nossas faltas, quem haverá de subsistir? Mas em Vós se encontra o perdão, para que sejais temido com respeito. No Senhor ponho a minha esperança, espera a minha alma em sua palavra. A minha alma espera pelo Senhor mais que o vigia pela aurora. Espere Israel pelo Senhor, porque no Senhor se encontra a misericórdia e copiosa redenção. Ele é que redimirá Israel de todas as suas culpas. Amém.",
   },
+  {
+    slug: "oracao-pelos-agonizantes",
+    titulo: "Oração pelos agonizantes",
+    categoria: "Defuntos",
+    paraQue: "Implorar misericórdia e paz para quem está nos últimos momentos da vida.",
+    quando: "Junto ao leito de um enfermo grave ou ao saber de alguém em agonia.",
+    texto:
+      "Ó clementíssimo Jesus, amante das almas, pelas angústias do vosso Coração Sacratíssimo e pelas dores de vossa Mãe Imaculada, lavai no vosso Sangue os pecadores de todo o mundo que agora estão em agonia e que hoje devem morrer. Coração de Jesus, que sofrestes até a morte, tende piedade dos agonizantes. Amém.",
+  },
+  {
+    slug: "eterno-repouso-familiares",
+    titulo: "Oração pelos pais e familiares falecidos",
+    categoria: "Defuntos",
+    paraQue: "Sufragar as almas dos próprios familiares, exercitando a caridade que vence a morte.",
+    quando: "No aniversário de falecimento, em novembro e nas visitas ao cemitério.",
+    texto:
+      "Ó Deus, que nos mandastes honrar pai e mãe, olhai com bondade a alma de meus pais e de meus familiares falecidos: perdoai-lhes os pecados, concedei-lhes ver o vosso rosto na luz eterna e dai-me a graça de reencontrá-los na alegria do vosso Reino. Por Cristo, nosso Senhor. Amém.",
+  },
+
+  // ===== AOS SANTOS =====
+  {
+    slug: "sao-jose-pai-adotivo",
+    titulo: "A São José",
+    latim: "Ad te, beate Ioseph",
+    categoria: "Aos Santos",
+    nota: "Oração de Leão XIII (1889), recomendada especialmente no mês de março e em outubro.",
+    paraQue: "Pedir a proteção do Patrono da Igreja para a família, o trabalho e a boa morte.",
+    quando: "Às quartas-feiras, no mês de março e em qualquer necessidade doméstica ou de emprego.",
+    texto:
+      "A vós, bem-aventurado São José, recorremos em nossa tribulação e, depois de implorar o auxílio de vossa Santíssima Esposa, cheios de confiança solicitamos também o vosso patrocínio. Por esse laço de caridade que vos uniu à Virgem Imaculada, Mãe de Deus, e pelo amor paternal que tivestes ao Menino Jesus, ó pai amantíssimo, defendei-nos e protegei-nos. Amém.",
+  },
+  {
+    slug: "santo-antonio",
+    titulo: "A Santo Antônio de Pádua",
+    categoria: "Aos Santos",
+    paraQue: "Pedir a intercessão do Doutor Evangélico, invocado nas coisas perdidas e nas causas urgentes.",
+    quando: "Às terças-feiras e na festa de 13 de junho.",
+    texto:
+      "Glorioso Santo Antônio, servo fiel e amigo de Jesus Cristo, que recebestes de Deus o poder de operar prodígios e a graça de restituir o que se perdeu: alcançai-me a graça de reencontrar o que perdi — sobretudo a paz, a fé e a caridade. Fazei que, imitando o vosso zelo pela Palavra de Deus, eu una à minha oração a emenda de vida. Amém.",
+  },
+  {
+    slug: "santa-rita",
+    titulo: "A Santa Rita de Cássia",
+    categoria: "Aos Santos",
+    paraQue: "Confiar as causas humanamente impossíveis e as feridas do matrimônio e da família.",
+    quando: "Novena de 13 a 22 de maio e em momentos de aparente desesperança.",
+    texto:
+      "Santa Rita de Cássia, esposa, mãe, viúva e religiosa, que em cada estado de vida glorificastes a Deus pela paciência: obtende-me a graça de perdoar como perdoastes e de perseverar na oração pelas causas que me parecem perdidas. Pela chaga que recebestes da coroa de espinhos, ensinai-me a amar a Cruz de Cristo. Amém.",
+  },
+  {
+    slug: "santa-terezinha",
+    titulo: "A Santa Teresinha do Menino Jesus",
+    categoria: "Aos Santos",
+    paraQue: "Aprender o caminho da confiança e da pequenez, e pedir graças pelas missões.",
+    quando: "Novena de 23 de setembro a 1º de outubro e nos dias de aridez espiritual.",
+    texto:
+      "Ó pequena Teresa do Menino Jesus, que prometestes fazer cair do Céu uma chuva de rosas: alcançai-me a simplicidade do amor confiante, para que eu ofereça a Deus as coisas pequenas do meu dia com grande amor. Rogai por todos os missionários e por aqueles que perderam a esperança. Amém.",
+  },
+  {
+    slug: "sao-judas-tadeu",
+    titulo: "A São Judas Tadeu",
+    categoria: "Aos Santos",
+    paraQue: "Invocar o apóstolo das causas difíceis e desesperadas, sem cair em superstição.",
+    quando: "Todo dia 28 do mês e na festa de 28 de outubro.",
+    texto:
+      "Glorioso Apóstolo São Judas Tadeu, fiel servo e amigo de Jesus, intercedei por mim nesta necessidade que apresento ao Senhor. Alcançai-me fé viva para crer que Deus jamais abandona quem nele espera, e ajudai-me a aceitar com paz a resposta que vier da sua vontade. Amém.",
+  },
+  {
+    slug: "sao-pio-de-pietrelcina",
+    titulo: "A São Pio de Pietrelcina",
+    categoria: "Aos Santos",
+    paraQue: "Pedir amor à Confissão, à Eucaristia e paciência nas provações do corpo.",
+    quando: "Antes ou depois da Confissão e na festa de 23 de setembro.",
+    texto:
+      "São Pio de Pietrelcina, que carregastes no corpo as chagas do Senhor e passastes a vida no confessionário reconciliando pecadores: obtende-me contrição sincera, horror ao pecado e confiança na misericórdia. Ensinai-me o vosso lema: rezar, esperar e não se preocupar. Amém.",
+  },
+
+  // ===== LITANIAS =====
+  {
+    slug: "ladainha-de-loreto",
+    titulo: "Ladainha de Nossa Senhora (excerto)",
+    latim: "Litaniae Lauretanae",
+    categoria: "Litanias",
+    nota: "Rezada em Loreto desde o século XVI; aprovada por Sisto V em 1587.",
+    paraQue: "Louvar Maria em seus títulos e pedir sua intercessão maternal ponto por ponto.",
+    quando: "Ao final do Rosário, especialmente em maio e outubro.",
+    texto:
+      "Senhor, tende piedade de nós. Cristo, tende piedade de nós.\nSanta Maria — rogai por nós. Santa Mãe de Deus — rogai por nós. Santa Virgem das virgens — rogai por nós.\nMãe de Cristo — rogai por nós. Mãe da Igreja — rogai por nós. Mãe da divina graça — rogai por nós. Mãe puríssima — rogai por nós. Mãe do bom conselho — rogai por nós.\nVirgem prudentíssima — rogai por nós. Espelho de justiça — rogai por nós. Sede da sabedoria — rogai por nós. Causa da nossa alegria — rogai por nós.\nTorre de Davi — rogai por nós. Arca da aliança — rogai por nós. Porta do céu — rogai por nós. Estrela da manhã — rogai por nós.\nSaúde dos enfermos — rogai por nós. Refúgio dos pecadores — rogai por nós. Consoladora dos aflitos — rogai por nós. Auxílio dos cristãos — rogai por nós.\nRainha da paz — rogai por nós.\nCordeiro de Deus, que tirais o pecado do mundo, ouvi-nos, Senhor. Rogai por nós, Santa Mãe de Deus, para que sejamos dignos das promessas de Cristo. Amém.",
+  },
+  {
+    slug: "ladainha-do-sagrado-coracao",
+    titulo: "Ladainha do Sagrado Coração de Jesus (excerto)",
+    categoria: "Litanias",
+    paraQue: "Reparar as ofensas ao Coração de Cristo e crescer no amor por Ele.",
+    quando: "Nas primeiras sextas-feiras e no mês de junho.",
+    texto:
+      "Coração de Jesus, Filho do Pai Eterno — tende piedade de nós.\nCoração de Jesus, formado pelo Espírito Santo no seio da Virgem Mãe — tende piedade de nós.\nCoração de Jesus, templo santo de Deus — tende piedade de nós.\nCoração de Jesus, abrasada fornalha de caridade — tende piedade de nós.\nCoração de Jesus, cheio de bondade e amor — tende piedade de nós.\nCoração de Jesus, abismo de todas as virtudes — tende piedade de nós.\nCoração de Jesus, paciente e de muita misericórdia — tende piedade de nós.\nCoração de Jesus, vítima dos pecadores — tende piedade de nós.\nCoração de Jesus, salvação dos que em Vós esperam — tende piedade de nós.\nJesus, manso e humilde de coração, fazei o nosso coração semelhante ao vosso. Amém.",
+  },
+  {
+    slug: "ladainha-de-sao-jose",
+    titulo: "Ladainha de São José (excerto)",
+    categoria: "Litanias",
+    nota: "Aprovada por São Pio X em 1909 e ampliada pelo Papa Francisco em 2021.",
+    paraQue: "Invocar o guardião da Sagrada Família em seus títulos de justo e protetor.",
+    quando: "No mês de março, às quartas-feiras e nas novenas a São José.",
+    texto:
+      "São José — rogai por nós. Ilustre descendente de Davi — rogai por nós. Luz dos patriarcas — rogai por nós. Esposo da Mãe de Deus — rogai por nós. Castíssimo guarda da Virgem — rogai por nós. Sustentáculo das famílias — rogai por nós. José justíssimo — rogai por nós. José castíssimo — rogai por nós. José prudentíssimo — rogai por nós. Modelo dos trabalhadores — rogai por nós. Glória da vida doméstica — rogai por nós. Amparo dos aflitos — rogai por nós. Protetor da Santa Igreja — rogai por nós.\nEle o constituiu senhor de sua casa e chefe de toda a sua família. Amém.",
+  },
+  {
+    slug: "ladainha-do-precioso-sangue",
+    titulo: "Ladainha do Preciosíssimo Sangue (excerto)",
+    categoria: "Litanias",
+    paraQue: "Adorar o Sangue redentor e pedir por pecadores e pela paz do mundo.",
+    quando: "No mês de julho, nas sextas-feiras e na Quaresma.",
+    texto:
+      "Sangue de Cristo, Unigênito do Pai Eterno — salvai-nos.\nSangue de Cristo, Verbo de Deus encarnado — salvai-nos.\nSangue de Cristo, derramado no Getsêmani — salvai-nos.\nSangue de Cristo, brotado na flagelação — salvai-nos.\nSangue de Cristo, vertido na Cruz — salvai-nos.\nSangue de Cristo, preço da nossa salvação — salvai-nos.\nSangue de Cristo, força dos mártires — salvai-nos.\nSangue de Cristo, esperança dos penitentes — salvai-nos.\nSangue de Cristo, alívio dos que trabalham — salvai-nos.\nRemistes-nos, Senhor, com o vosso Sangue e fizestes de nós um reino para o nosso Deus. Amém.",
+  },
+
+  // ===== OCASIÕES =====
+  {
+    slug: "oracao-pelos-enfermos",
+    titulo: "Oração pelos enfermos",
+    categoria: "Ocasiões",
+    paraQue: "Pedir saúde, alívio da dor e sentido cristão para o sofrimento de um doente.",
+    quando: "Ao visitar um enfermo, antes de cirurgias e no tratamento de doenças graves.",
+    texto:
+      "Senhor Jesus, que passastes pelo mundo curando os doentes e consolando os aflitos, olhai com bondade para (nome) que sofre. Aliviai suas dores, fortalecei sua esperança e, se for da vossa vontade, restituí-lhe a saúde. Dai aos que o cuidam paciência e ternura, e a todos nós a certeza de que nenhum sofrimento oferecido a Vós é perdido. Amém.",
+  },
+  {
+    slug: "oracao-pela-familia",
+    titulo: "Oração pela família",
+    categoria: "Ocasiões",
+    paraQue: "Consagrar o lar à Sagrada Família e pedir concórdia entre pais e filhos.",
+    quando: "Na oração em família, à noite, e na festa da Sagrada Família.",
+    texto:
+      "Jesus, Maria e José, em vós contemplamos o esplendor do verdadeiro amor. Fazei da nossa família um lugar de comunhão e de oração, escola do Evangelho e pequena Igreja doméstica. Guardai-nos da divisão e do rancor, ensinai-nos a pedir perdão e a perdoar, e não permitais que a pressa e o egoísmo apaguem entre nós a ternura. Amém.",
+  },
+  {
+    slug: "oracao-pelo-trabalho",
+    titulo: "Oração pelo trabalho e pelo estudo",
+    categoria: "Ocasiões",
+    paraQue: "Santificar as tarefas do dia e pedir luz para decisões, provas e entrevistas.",
+    quando: "Ao começar a jornada de trabalho ou uma sessão de estudo.",
+    texto:
+      "Vinde, Espírito Santo, iluminar a minha inteligência e ordenar as minhas forças. Que eu trabalhe com honestidade, sem ansiedade e sem vaidade, buscando servir e não apenas aparecer. Abençoai o fruto das minhas mãos, dai-me sabedoria nas decisões e humildade para aprender. São José operário, rogai por mim. Amém.",
+  },
+  {
+    slug: "oracao-antes-da-leitura-biblica",
+    titulo: "Oração antes da leitura da Sagrada Escritura",
+    categoria: "Ocasiões",
+    paraQue: "Dispor o coração para escutar a Palavra como Palavra de Deus, e não como texto qualquer.",
+    quando: "Antes da Lectio Divina e de cada leitura bíblica.",
+    texto:
+      "Falai, Senhor, que o vosso servo escuta. Abri o meu coração à vossa Palavra, para que ela seja lâmpada aos meus passos e luz ao meu caminho. Dai-me o Espírito que inspirou os autores sagrados, a fim de que eu compreenda o que devo crer, ame o que compreendo e viva o que amo. Amém.",
+  },
+  {
+    slug: "oracao-em-viagem",
+    titulo: "Oração do viajante",
+    latim: "Itinerarium",
+    categoria: "Ocasiões",
+    paraQue: "Pedir proteção no caminho, tomando o anjo Rafael e Tobias como modelo.",
+    quando: "Ao iniciar uma viagem, ao volante ou antes de um voo.",
+    texto:
+      "Senhor Deus, que conduzistes Abraão e guardastes Tobias no caminho pelas mãos do anjo Rafael: acompanhai-nos nesta viagem. Afastai de nós todo perigo, dai-nos prudência e paciência, e conduzi-nos em segurança ao destino e, no fim da vida, à pátria do Céu. Amém.",
+  },
+  {
+    slug: "oracao-pela-igreja-e-o-papa",
+    titulo: "Oração pela Igreja e pelo Papa",
+    categoria: "Ocasiões",
+    paraQue: "Sustentar com a oração o Sumo Pontífice, os bispos e a unidade da Igreja.",
+    quando: "Nas quintas-feiras, na Missa e nas intenções mensais.",
+    texto:
+      "Senhor, fonte de toda unidade, guardai a vossa Igreja na verdade e na caridade. Abençoai o Papa, os bispos, os sacerdotes e os diáconos; dai-lhes coragem apostólica e coração de pastores. Suscitai vocações santas, curai as feridas causadas pelo pecado dos vossos ministros e fazei de nós pedras vivas do vosso edifício. Amém.",
+  },
+  {
+    slug: "oracao-pela-paz",
+    titulo: "Oração pela paz",
+    categoria: "Ocasiões",
+    paraQue: "Interceder pelos povos em guerra e pedir a conversão dos corações violentos.",
+    quando: "Em tempos de conflito, no dia 1º de janeiro e nas vigílias de oração.",
+    texto:
+      "Senhor Jesus, Príncipe da Paz, que reconciliastes o Céu e a terra pelo sangue da vossa Cruz: dai a paz aos povos em guerra, consolo aos refugiados e conversão aos que semeiam a violência. Fazei de mim instrumento da vossa paz, começando pela minha casa, pelas minhas palavras e pelos meus julgamentos. Amém.",
+  },
+  {
+    slug: "oracao-pelas-vocacoes",
+    titulo: "Oração pelas vocações",
+    categoria: "Ocasiões",
+    paraQue: "Pedir operários para a messe: sacerdotes, religiosos e famílias santas.",
+    quando: "Nas quintas-feiras e no Domingo do Bom Pastor.",
+    texto:
+      "Senhor da messe, a colheita é grande e os trabalhadores são poucos: enviai operários à vossa messe. Chamai jovens generosos ao sacerdócio e à vida consagrada, dai-lhes ouvidos atentos e coração livre, e sustentai as famílias que acolhem esse chamado. Que eu também responda com fidelidade à vocação que me destes. Amém.",
+  },
+  {
+    slug: "oracao-em-tempo-de-tentacao",
+    titulo: "Oração em tempo de tentação",
+    categoria: "Ocasiões",
+    paraQue: "Pedir socorro imediato na hora da luta contra o pecado.",
+    quando: "No instante da tentação, sem esperar que ela passe sozinha.",
+    texto:
+      "Jesus, Maria e José, socorrei-me agora. Coração de Jesus, sede a minha força; Virgem Imaculada, cobri-me com o vosso manto; São Miguel, defendei-me. Não permitais que eu me separe de Vós nem por um instante. Prefiro morrer a ofender-Vos. Amém.",
+  },
+  {
+    slug: "oracao-de-gratidao",
+    titulo: "Oração de gratidão",
+    latim: "Te Deum (excerto)",
+    categoria: "Ocasiões",
+    nota: "Hino de louvor atribuído a Santo Ambrósio e Santo Agostinho; cantado em ações de graças solenes.",
+    paraQue: "Agradecer graças recebidas e reconhecer que todo bem vem de Deus.",
+    quando: "Ao fim do ano, em aniversários e após graças alcançadas.",
+    texto:
+      "A vós, ó Deus, louvamos; a vós, Senhor, confessamos. A vós, Pai eterno, toda a terra venera. A vós todos os anjos, os céus e todas as potestades, os querubins e serafins proclamam sem cessar: Santo, Santo, Santo é o Senhor, Deus do universo! Cheios estão o céu e a terra da majestade da vossa glória. Em vós, Senhor, esperei: não seja confundido eternamente. Amém.",
+  },
 ];
+
 
 export function oracoesPorCategoria(categoria: CategoriaOracao): Oracao[] {
   return ORACOES.filter((o) => o.categoria === categoria);

@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { PageHero, Section, CardGrid, ContentCard } from "../components/PageShell";
 import {
   CATEGORIAS_ORACAO,
@@ -15,7 +15,7 @@ export const Route = createFileRoute("/oracoes")({
       {
         name: "description",
         content:
-          "Mais de 35 orações católicas com texto completo: Pai-Nosso, Credo, Salve-Rainha, Angelus, Anima Christi, São Miguel e mais. Rosário, novenas e Liturgia das Horas.",
+          "Mais de 60 orações católicas com texto completo: Pai-Nosso, Credo, Salve-Rainha, Angelus, Anima Christi, São Miguel e mais. Rosário, novenas e Liturgia das Horas.",
       },
       { property: "og:title", content: "Orações Católicas Tradicionais" },
       {
@@ -37,7 +37,15 @@ const DEVOCOES = [
   { to: "/oracoes/novenas" as const, title: "Novenas", body: "Ao Espírito Santo, à Aparecida, a São José, ao Sagrado Coração e outras." },
 ];
 
-function CartaoOracao({ oracao }: { oracao: Oracao }) {
+function CartaoOracao({
+  oracao,
+  aberto,
+  onAlternar,
+}: {
+  oracao: Oracao;
+  aberto: boolean;
+  onAlternar: () => void;
+}) {
   const [copiado, setCopiado] = useState(false);
 
   async function copiar() {
@@ -53,44 +61,104 @@ function CartaoOracao({ oracao }: { oracao: Oracao }) {
   return (
     <article
       id={oracao.slug}
-      className="scroll-mt-28 border border-border/60 bg-card/40 p-6 sm:p-8"
+      className={`scroll-mt-28 border bg-card/40 transition-colors ${
+        aberto ? "border-gold/50" : "border-border/60 hover:border-gold/40"
+      }`}
     >
-      <header className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-4">
-        <div className="min-w-0">
-          <h3 className="font-display text-lg sm:text-xl text-foreground">{oracao.titulo}</h3>
-          {oracao.latim ? (
-            <p className="mt-1 text-[11px] uppercase tracking-[0.2em] text-gold/80">{oracao.latim}</p>
-          ) : null}
-        </div>
+      <h3>
         <button
           type="button"
-          onClick={() => void copiar()}
-          className="shrink-0 min-h-11 px-4 text-[10px] uppercase tracking-[0.2em] border border-gold/30 text-foreground/70 hover:text-gold hover:border-gold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+          onClick={onAlternar}
+          aria-expanded={aberto}
+          aria-controls={`oracao-${oracao.slug}`}
+          className="w-full grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4 p-6 sm:p-8 text-left group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
         >
-          {copiado ? "Copiado" : "Copiar"}
-        </button>
-      </header>
-
-      {oracao.nota ? (
-        <p className="mt-4 text-xs leading-relaxed text-muted-foreground">{oracao.nota}</p>
-      ) : null}
-
-      <div className="mt-5 space-y-3">
-        {oracao.texto.split("\n").map((linha, i) => (
-          <p
-            key={i}
-            className="font-display italic text-[15px] sm:text-base leading-relaxed text-foreground/90"
+          <span className="min-w-0">
+            <span className="block font-display text-lg sm:text-xl text-foreground group-hover:text-gold transition-colors">
+              {oracao.titulo}
+            </span>
+            {oracao.latim ? (
+              <span className="mt-1 block text-[11px] uppercase tracking-[0.2em] text-gold/80">
+                {oracao.latim}
+              </span>
+            ) : null}
+            {!aberto && (oracao.paraQue ?? oracao.nota) ? (
+              <span className="mt-3 block text-xs leading-relaxed text-muted-foreground line-clamp-2">
+                {oracao.paraQue ?? oracao.nota}
+              </span>
+            ) : null}
+          </span>
+          <span
+            aria-hidden="true"
+            className={`shrink-0 text-xl text-gold transition-transform ${aberto ? "rotate-45" : ""}`}
           >
-            {linha}
-          </p>
-        ))}
-      </div>
+            +
+          </span>
+        </button>
+      </h3>
+
+      {aberto ? (
+        <div id={`oracao-${oracao.slug}`} className="px-6 pb-6 sm:px-8 sm:pb-8 space-y-5">
+          {oracao.paraQue ? (
+            <p className="text-sm leading-relaxed text-foreground/80">
+              <span className="mr-2 text-[10px] uppercase tracking-[0.2em] text-gold">
+                Para que serve
+              </span>
+              {oracao.paraQue}
+            </p>
+          ) : null}
+
+          {oracao.quando ? (
+            <p className="text-sm leading-relaxed text-foreground/80">
+              <span className="mr-2 text-[10px] uppercase tracking-[0.2em] text-gold">
+                Quando rezar
+              </span>
+              {oracao.quando}
+            </p>
+          ) : null}
+
+          {oracao.nota ? (
+            <p className="text-xs leading-relaxed text-muted-foreground">{oracao.nota}</p>
+          ) : null}
+
+          <div className="border-t border-gold/15 pt-5 space-y-3">
+            {oracao.texto.split("\n").map((linha, i) => (
+              <p
+                key={i}
+                className="font-display italic text-[15px] sm:text-base leading-relaxed text-foreground/90"
+              >
+                {linha}
+              </p>
+            ))}
+          </div>
+
+          <button
+            type="button"
+            onClick={() => void copiar()}
+            className="min-h-11 px-4 text-[10px] uppercase tracking-[0.2em] border border-gold/30 text-foreground/70 hover:text-gold hover:border-gold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+          >
+            {copiado ? "Copiado" : "Copiar oração"}
+          </button>
+        </div>
+      ) : null}
     </article>
   );
 }
 
+
 function Page() {
   const [filtro, setFiltro] = useState<CategoriaOracao | "Todas">("Todas");
+  const [aberto, setAberto] = useState<string | null>(null);
+
+  useEffect(() => {
+    const slug = window.location.hash.replace("#", "");
+    if (!slug) return;
+    setAberto(slug);
+    requestAnimationFrame(() => {
+      document.getElementById(slug)?.scrollIntoView({ block: "start" });
+    });
+  }, []);
+
 
   const visiveis = useMemo(
     () => (filtro === "Todas" ? ORACOES : ORACOES.filter((o) => o.categoria === filtro)),
@@ -159,8 +227,14 @@ function Page() {
               </h2>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 {grupo.itens.map((o) => (
-                  <CartaoOracao key={o.slug} oracao={o} />
+                  <CartaoOracao
+                    key={o.slug}
+                    oracao={o}
+                    aberto={aberto === o.slug}
+                    onAlternar={() => setAberto(aberto === o.slug ? null : o.slug)}
+                  />
                 ))}
+
               </div>
             </div>
           ))}
