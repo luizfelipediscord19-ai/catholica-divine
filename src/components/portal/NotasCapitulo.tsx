@@ -3,6 +3,7 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { NotebookPen, Trash2 } from "lucide-react";
 import { toast } from "sonner";
 
+import { useCelebracao } from "@/components/portal/Celebracao";
 import { useIdentidade } from "@/hooks/use-identidade";
 import { apagarNotaFn, obterCapituloFn, salvarNotaFn } from "@/lib/portal.functions";
 
@@ -20,6 +21,7 @@ export function NotasCapitulo({
 }) {
   const { token } = useIdentidade();
   const queryClient = useQueryClient();
+  const { celebrarConquistas } = useCelebracao();
   const chave = ["capitulo-pessoal", token, livro, capitulo];
 
   const [conteudo, setConteudo] = useState("");
@@ -48,11 +50,12 @@ export function NotasCapitulo({
           conteudo: conteudo.trim(),
         },
       }),
-    onSuccess: () => {
+    onSuccess: (res) => {
       setConteudo("");
       setVersiculo("");
       invalidar();
       toast.success("Anotação guardada. +10 XP");
+      celebrarConquistas(res.novasConquistas);
     },
     onError: () => toast.error("Não foi possível guardar a anotação."),
   });

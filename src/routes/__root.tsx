@@ -15,6 +15,8 @@ import { SiteHeader } from "../components/SiteHeader";
 import { SiteFooter } from "../components/SiteFooter";
 import { Toaster } from "../components/ui/sonner";
 import { ScrollToTop } from "../components/ScrollToTop";
+import { CelebracaoProvider } from "../components/portal/Celebracao";
+
 
 function NotFoundComponent() {
   return (
@@ -161,22 +163,25 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="min-h-dvh flex flex-col">
-        <a
-          href="#conteudo"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-gold focus:px-5 focus:py-3 focus:text-[11px] focus:uppercase focus:tracking-[0.2em] focus:text-deep"
-        >
-          Pular para o conteúdo principal
-        </a>
-        <SiteHeader />
-        <main id="conteudo" className="flex-1">
-          <Outlet />
-        </main>
-        <SiteFooter />
-        <ScrollToTop />
-        <Toaster />
-      </div>
+      <CelebracaoProvider>
+        <div className="min-h-dvh flex flex-col">
+          <a
+            href="#conteudo"
+            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-gold focus:px-5 focus:py-3 focus:text-[11px] focus:uppercase focus:tracking-[0.2em] focus:text-deep"
+          >
+            Pular para o conteúdo principal
+          </a>
+          <SiteHeader />
+          <main id="conteudo" className="flex-1">
+            <Outlet />
+          </main>
+          <SiteFooter />
+          <ScrollToTop />
+          <Toaster />
+        </div>
+      </CelebracaoProvider>
     </QueryClientProvider>
+
   );
 }
 

@@ -15,10 +15,12 @@ import {
   ProgressoPorLivro,
 } from "@/components/portal/ContinuarLeitura";
 import { CaminhoDoPadroeiro } from "@/components/portal/CaminhoDoPadroeiro";
+import { useCelebracao } from "@/components/portal/Celebracao";
 import { EscolherSanto } from "@/components/portal/EscolherSanto";
 import { useIdentidade, usePainel } from "@/hooks/use-identidade";
 import { useAuth } from "@/hooks/use-auth";
 import { registrarOracaoFn } from "@/lib/portal.functions";
+
 
 export const Route = createFileRoute("/painel")({
   head: () => ({
@@ -51,6 +53,13 @@ function PainelPage() {
   const { autenticado } = useAuth();
   const painel = usePainel();
   const [trocando, setTrocando] = useState(false);
+  const { celebrarNivel } = useCelebracao();
+
+  const nivelAtual = painel.data?.identidade.nivel;
+  useEffect(() => {
+    if (nivelAtual) celebrarNivel(nivelAtual);
+  }, [nivelAtual, celebrarNivel]);
+
 
   if (carregando || painel.isPending) {
     return (
@@ -366,6 +375,7 @@ function DiarioHoje({
 }) {
   const { token } = useIdentidade();
   const queryClient = useQueryClient();
+  const { celebrarConquistas } = useCelebracao();
   const [intencao, setIntencao] = useState(inicial?.intencao ?? "");
   const [reflexao, setReflexao] = useState(inicial?.reflexao ?? "");
   const [minutos, setMinutos] = useState(inicial?.minutos ?? 10);
@@ -394,10 +404,9 @@ function DiarioHoje({
           ? "Diário de hoje atualizado."
           : `Oração registrada. Sequência: ${res.streak} dia(s).`,
       );
-      if (res.novasConquistas.length > 0) {
-        toast.success(`Nova conquista desbloqueada (${res.novasConquistas.length}).`);
-      }
+      celebrarConquistas(res.novasConquistas);
     },
+
     onError: (erro: Error) => toast.error(erro.message || "Não foi possível registrar."),
   });
 
