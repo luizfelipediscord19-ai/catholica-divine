@@ -53,6 +53,13 @@ function PainelPage() {
   const { autenticado } = useAuth();
   const painel = usePainel();
   const [trocando, setTrocando] = useState(false);
+  const { celebrarNivel } = useCelebracao();
+
+  const nivelAtual = painel.data?.identidade.nivel;
+  useEffect(() => {
+    if (nivelAtual) celebrarNivel(nivelAtual);
+  }, [nivelAtual, celebrarNivel]);
+
 
   if (carregando || painel.isPending) {
     return (
