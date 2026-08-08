@@ -7,10 +7,10 @@ BEGIN;
 
 -- ===== ESTRUTURA, RLS E POLITICAS =====
 
-\restrict bf6osD2kwZFaekkNy39QcfPTTXM2eJdbivXYHUBqda0T7od99BiruU3BDHYn6b1
 
 CREATE FUNCTION public.reconciliar_identidade_conta(_user_id uuid, _token_anonimo uuid, _email text DEFAULT NULL::text) RETURNS uuid
     LANGUAGE plpgsql SECURITY DEFINER
+    SET search_path TO 'public'
     AS $$
 DECLARE
   v_conta public.identidades%ROWTYPE;
@@ -99,6 +99,7 @@ $$;
 
 CREATE FUNCTION public.touch_updated_at() RETURNS trigger
     LANGUAGE plpgsql
+    SET search_path TO 'public'
     AS $$
 BEGIN NEW.updated_at = now(); RETURN NEW; END; $$;
 
@@ -414,7 +415,6 @@ ALTER TABLE public.leituras_biblia ENABLE ROW LEVEL SECURITY;
 
 ALTER TABLE public.notas ENABLE ROW LEVEL SECURITY;
 
-\unrestrict bf6osD2kwZFaekkNy39QcfPTTXM2eJdbivXYHUBqda0T7od99BiruU3BDHYn6b1
 
 -- ===== PERMISSOES DA DATA API =====
 GRANT ALL ON public.identidades TO service_role;
@@ -438,7 +438,6 @@ GRANT EXECUTE ON FUNCTION public.reconciliar_identidade_conta(uuid, uuid, text) 
 
 -- ===== DADOS INICIAIS (secoes do forum e conquistas) =====
 
-\restrict s9e3AUOtzwTFYKuFqEuEXsq3pfGqvacUZLaUPVp5g3knr1je2VS1iWh33hBNMVa
 
 INSERT INTO public.conquistas_catalogo VALUES ('primeira-oracao', 'Primeiro Amém', 'Registrou a primeira oração no diário.', 'sparkles', 20, '2026-08-02 15:02:40.907022+00');
 INSERT INTO public.conquistas_catalogo VALUES ('streak-3', 'Perseverança', 'Três dias consecutivos de oração.', 'flame', 40, '2026-08-02 15:02:40.907022+00');
@@ -459,6 +458,5 @@ INSERT INTO public.forum_secoes VALUES ('c9d85ba7-b4d3-43f3-bd55-a1ff4c47ac7e', 
 INSERT INTO public.forum_secoes VALUES ('1a9ca546-d7fb-473b-bf12-9f1c92f9f0c7', 'santos-e-testemunhos', 'Santos e Testemunhos', 'Vidas dos santos e graças recebidas.', 4, '2026-08-02 15:02:40.907022+00');
 INSERT INTO public.forum_secoes VALUES ('eca5c5e7-8bf7-49a6-89e2-fe6463c89c7b', 'apologetica', 'Apologética', 'Como responder às objeções à fé católica.', 5, '2026-08-02 15:02:40.907022+00');
 
-\unrestrict s9e3AUOtzwTFYKuFqEuEXsq3pfGqvacUZLaUPVp5g3knr1je2VS1iWh33hBNMVa
 
 COMMIT;
