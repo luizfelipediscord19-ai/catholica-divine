@@ -387,7 +387,14 @@ export async function salvarNota(
     conteudo: nota.conteudo,
   });
   await somarXp(id.id, 10);
-  return { novasConquistas: await desbloquear(id.id, ["primeira-nota"]) };
+
+  const totalNotas = await contar("notas", id.id);
+  const alvos = ["primeira-nota"];
+  if (totalNotas >= 5) alvos.push("notas-5");
+  if (totalNotas >= 25) alvos.push("notas-25");
+  alvos.push(...(await conquistasDeAcervo(id.id)));
+  return { novasConquistas: await desbloquear(id.id, alvos) };
+
 }
 
 export async function apagarNota(token: string, notaId: string) {
