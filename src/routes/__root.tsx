@@ -17,6 +17,9 @@ import { Toaster } from "../components/ui/sonner";
 import { ScrollToTop } from "../components/ScrollToTop";
 import { CelebracaoProvider } from "../components/portal/Celebracao";
 import { InstalarApp } from "../components/portal/InstalarApp";
+import { AtualizacaoApp } from "../components/portal/AtualizacaoApp";
+import { TarefasDoDia } from "../components/portal/TarefasDoDia";
+import { NotificacoesProvider } from "../hooks/use-notificacoes";
 
 
 
@@ -173,6 +176,7 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <NotificacoesProvider>
       <CelebracaoProvider>
         <div className="min-h-dvh flex flex-col">
           <a
@@ -188,10 +192,13 @@ function RootComponent() {
           <SiteFooter />
           <ScrollToTop />
           <InstalarApp />
+          <AtualizacaoApp />
+          <TarefasDoDia />
 
           <Toaster />
         </div>
       </CelebracaoProvider>
+      </NotificacoesProvider>
     </QueryClientProvider>
 
   );
