@@ -406,6 +406,7 @@ export type Database = {
           id: string
           melhor_streak: number
           nivel: number
+          santo_escolhido: boolean
           santo_imagem: string | null
           santo_nome: string
           santo_slug: string
@@ -423,6 +424,7 @@ export type Database = {
           id?: string
           melhor_streak?: number
           nivel?: number
+          santo_escolhido?: boolean
           santo_imagem?: string | null
           santo_nome: string
           santo_slug: string
@@ -440,6 +442,7 @@ export type Database = {
           id?: string
           melhor_streak?: number
           nivel?: number
+          santo_escolhido?: boolean
           santo_imagem?: string | null
           santo_nome?: string
           santo_slug?: string
