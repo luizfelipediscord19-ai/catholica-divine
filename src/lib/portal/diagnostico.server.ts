@@ -6,6 +6,28 @@ function mascarar(valor: string | undefined) {
   return `${valor.slice(0, 6)}… (${valor.length} caracteres)`;
 }
 
+/** Lê o "ref" e o "role" de uma chave legada (JWT) sem validar assinatura. */
+function lerChaveJwt(valor: string | undefined): { ref?: string; role?: string } {
+  if (!valor) return {};
+  const partes = valor.split(".");
+  if (partes.length !== 3) return {};
+  try {
+    const json = JSON.parse(
+      typeof atob === "function"
+        ? atob(partes[1].replace(/-/g, "+").replace(/_/g, "/"))
+        : Buffer.from(partes[1], "base64").toString("utf8"),
+    ) as { ref?: string; role?: string };
+    return { ref: json.ref, role: json.role };
+  } catch {
+    return {};
+  }
+}
+
+function refDaUrl(url: string | undefined) {
+  return url?.match(/^https:\/\/([a-z0-9-]+)\.supabase\.co/)?.[1];
+}
+
+
 export async function verificarBackend(): Promise<{
   verificacoes: Verificacao[];
   saudavel: boolean;
@@ -28,14 +50,25 @@ export async function verificarBackend(): Promise<{
     ok: Boolean(publicavel),
     detalhe: mascarar(publicavel),
   });
+  const projeto = refDaUrl(url);
+  const infoServico = lerChaveJwt(servico);
+  const refConfere = !infoServico.ref || !projeto || infoServico.ref === projeto;
+  const papelConfere = !infoServico.role || infoServico.role === "service_role";
   verificacoes.push({
     chave: "servico",
     titulo: "SUPABASE_SERVICE_ROLE_KEY",
-    ok: Boolean(servico),
-    detalhe: servico
-      ? mascarar(servico)
-      : "ausente — o painel espiritual não consegue ler identidade, favoritos e progresso",
+    ok: Boolean(servico) && refConfere && papelConfere,
+    detalhe: !servico
+      ? "ausente — o painel espiritual não consegue ler identidade, favoritos e progresso"
+      : !refConfere
+        ? `chave de outro projeto (${infoServico.ref}) — o backend aqui é ${projeto}. Atualize a variável na hospedagem.`
+        : !papelConfere
+          ? `papel incorreto na chave (${infoServico.role}) — use a chave service_role.`
+          : `${mascarar(servico)}${infoServico.role ? ` • papel ${infoServico.role}` : ""}${
+              infoServico.ref ? ` • projeto ${infoServico.ref}` : ""
+            }`,
   });
+
 
   const podeConsultar = Boolean(url && servico);
 
@@ -59,13 +92,17 @@ export async function verificarBackend(): Promise<{
     try {
       verificacoes.push({ chave, titulo, ok: true, detalhe: await executar() });
     } catch (erro) {
+      const mensagem = erro instanceof Error ? erro.message : "falha desconhecida";
       verificacoes.push({
         chave,
         titulo,
         ok: false,
-        detalhe: erro instanceof Error ? erro.message : "falha desconhecida",
+        detalhe: /invalid api key/i.test(mensagem)
+          ? "Invalid API key — a chave configurada nesta hospedagem foi rotacionada/revogada. Cole a chave service_role atual do projeto e faça um deploy sem cache."
+          : mensagem,
       });
     }
+
   }
 
   await testar("identidade", "Consulta de identidade", async () => {
