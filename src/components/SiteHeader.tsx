@@ -104,6 +104,10 @@ export function SiteHeader() {
             <Search className="size-4" aria-hidden="true" />
           </button>
 
+          <SinoNotificacoes />
+
+
+
 
           <button
             type="button"
