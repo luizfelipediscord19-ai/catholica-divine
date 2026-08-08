@@ -4,11 +4,13 @@ import { toast } from "sonner";
 
 import { useCelebracao } from "@/components/portal/Celebracao";
 import { useIdentidade } from "@/hooks/use-identidade";
+import { notificar } from "@/lib/notificacoes";
 import {
   alternarFavoritoFn,
   marcarCapituloFn,
   obterCapituloFn,
 } from "@/lib/portal.functions";
+
 
 /** Estado pessoal (leitura/favoritos) de um capítulo, para a identidade anônima. */
 export function useCapituloPessoal(livro: string, capitulo: number) {
@@ -35,6 +37,14 @@ export function useCapituloPessoal(livro: string, capitulo: number) {
     onSuccess: (res) => {
       invalidar();
       toast.success(res.lido ? "Capítulo marcado como lido. +10 XP" : "Marcação removida.");
+      if (res.lido) {
+        notificar({
+          tipo: "leitura",
+          titulo: `Leitura concluída: ${livro} ${capitulo}`,
+          mensagem: "+10 XP somados ao seu caminho espiritual.",
+          href: "/painel",
+        });
+      }
       celebrarConquistas(res.novasConquistas);
     },
     onError: () => toast.error("Não foi possível salvar sua leitura."),
@@ -46,8 +56,17 @@ export function useCapituloPessoal(livro: string, capitulo: number) {
     onSuccess: (res) => {
       invalidar();
       toast.success(res.favorito ? "Versículo guardado. +5 XP" : "Versículo removido.");
+      if (res.favorito) {
+        notificar({
+          tipo: "nota",
+          titulo: "Versículo guardado nos favoritos",
+          mensagem: `${livro} ${capitulo} — disponível em Favoritos.`,
+          href: "/favoritos",
+        });
+      }
       celebrarConquistas(res.novasConquistas);
     },
+
     onError: () => toast.error("Não foi possível guardar o versículo."),
   });
 

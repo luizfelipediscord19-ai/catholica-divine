@@ -1,6 +1,8 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useAuth } from "@/hooks/use-auth";
 import { Search, Sparkles, Menu, X, Church } from "lucide-react";
+
+import { SinoNotificacoes } from "@/components/portal/SinoNotificacoes";
 import { useCallback, useState } from "react";
 
 import { BuscaGlobal, useAtalhoBusca } from "@/components/BuscaGlobal";
@@ -101,6 +103,10 @@ export function SiteHeader() {
           >
             <Search className="size-4" aria-hidden="true" />
           </button>
+
+          <SinoNotificacoes />
+
+
 
 
           <button

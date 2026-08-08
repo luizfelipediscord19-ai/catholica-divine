@@ -26,6 +26,8 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
+import { notificar } from "@/lib/notificacoes";
+
 /* -------------------------------------------------------------------------- */
 /*  Tipos                                                                     */
 /* -------------------------------------------------------------------------- */
@@ -409,6 +411,16 @@ export function CelebracaoProvider({ children }: { children: ReactNode }) {
     } catch {
       /* navegação privada */
     }
+    novos.forEach((slug) => {
+      const d = desenhoDaConquista(slug);
+      notificar({
+        tipo: "conquista",
+        titulo: `Conquista: ${d.titulo}`,
+        mensagem: d.frase,
+        href: "/painel",
+        chave: `conquista:${slug}`,
+      });
+    });
     setFila((f) => [...f, ...novos.map((slug) => ({ tipo: "conquista" as const, slug }))]);
   }, []);
 
@@ -430,6 +442,15 @@ export function CelebracaoProvider({ children }: { children: ReactNode }) {
       /* navegação privada */
     }
     if (marcos.length === 0) return;
+    marcos.forEach((n) =>
+      notificar({
+        tipo: "nivel",
+        titulo: `Nível ${n} alcançado`,
+        mensagem: "Sua perseverança na fé foi registrada no painel espiritual.",
+        href: "/painel",
+        chave: `nivel:${n}`,
+      }),
+    );
     setFila((f) => [...f, ...marcos.map((n) => ({ tipo: "nivel" as const, nivel: n }))]);
   }, []);
 

@@ -5,7 +5,9 @@ import { toast } from "sonner";
 
 import { useCelebracao } from "@/components/portal/Celebracao";
 import { useIdentidade } from "@/hooks/use-identidade";
+import { notificar } from "@/lib/notificacoes";
 import { apagarNotaFn, obterCapituloFn, salvarNotaFn } from "@/lib/portal.functions";
+
 
 type Nota = { id: string; versiculo: number | null; conteudo: string; updated_at: string };
 
@@ -55,7 +57,14 @@ export function NotasCapitulo({
       setVersiculo("");
       invalidar();
       toast.success("Anotação guardada. +10 XP");
+      notificar({
+        tipo: "nota",
+        titulo: `Anotação guardada em ${livro} ${capitulo}`,
+        mensagem: "Suas notas de estudo ficam reunidas em Favoritos.",
+        href: "/favoritos",
+      });
       celebrarConquistas(res.novasConquistas);
+
     },
     onError: () => toast.error("Não foi possível guardar a anotação."),
   });
