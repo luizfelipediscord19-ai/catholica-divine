@@ -70,6 +70,7 @@ export function useIdentidade() {
     queryKey: ["identidade", token],
     enabled: hidratado,
     staleTime: 5 * 60 * 1000,
+    retry: false,
     queryFn: async () => {
       const res = await garantirIdentidadeFn({ data: { token } });
       if (res.token !== token) {
@@ -103,7 +104,7 @@ export function usePainel() {
   return useQuery({
     queryKey: ["painel", token],
     enabled: !carregando,
-    retry: 2,
+    retry: false,
     queryFn: async () => {
       // Garante um token mesmo que o navegador ainda não tenha nenhum.
       const atual = token ?? (await garantirTokenAgora());
