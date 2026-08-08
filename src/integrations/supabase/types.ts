@@ -533,25 +533,6 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      portal_escolher_santo: {
-        Args: {
-          _santo_imagem?: string
-          _santo_nome: string
-          _santo_slug: string
-          _token: string
-        }
-        Returns: Json
-      }
-      portal_garantir_identidade: {
-        Args: {
-          _santo_imagem?: string
-          _santo_nome: string
-          _santo_slug: string
-          _token: string
-        }
-        Returns: Json
-      }
-      portal_obter_painel: { Args: { _token: string }; Returns: Json }
       reconciliar_identidade_conta: {
         Args: { _email?: string; _token_anonimo: string; _user_id: string }
         Returns: string
