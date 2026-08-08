@@ -79,8 +79,10 @@ export async function escolherSanto(token: string, slug: string) {
     .select(COLUNAS)
     .maybeSingle();
   if (error || !data) throw new Error("Não foi possível salvar seu padroeiro.");
+  await desbloquear(data.id, ["santo-padroeiro"]);
   return toPublica(data);
 }
+
 
 export const COLUNAS =
   "id, santo_slug, santo_nome, santo_imagem, santo_escolhido, apelido, xp, nivel, streak, melhor_streak, ultima_oracao";
