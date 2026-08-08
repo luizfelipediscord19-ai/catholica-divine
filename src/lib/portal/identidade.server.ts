@@ -3,6 +3,8 @@
 import { supabaseAdmin } from "@/integrations/supabase/client.server";
 import { SANTOS_LISTA } from "../santos-lista";
 import { SANTOS } from "../data/santos";
+import { LIVROS } from "../data/biblia";
+
 
 export type IdentidadePublica = {
   id: string;
