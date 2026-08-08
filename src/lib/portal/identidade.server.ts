@@ -353,7 +353,14 @@ export async function alternarFavorito(
     .from("favoritos")
     .insert({ identidade_id: id.id, livro, capitulo, versiculo, texto: texto ?? null });
   await somarXp(id.id, 5);
-  return { favorito: true, novasConquistas: await desbloquear(id.id, ["primeiro-favorito"]) };
+
+  const totalFavoritos = await contar("favoritos", id.id);
+  const alvos = ["primeiro-favorito"];
+  if (totalFavoritos >= 10) alvos.push("favoritos-10");
+  if (totalFavoritos >= 50) alvos.push("favoritos-50");
+  alvos.push(...(await conquistasDeAcervo(id.id)));
+  return { favorito: true, novasConquistas: await desbloquear(id.id, alvos) };
+
 }
 
 /** Cria ou atualiza uma anotação pessoal. */
