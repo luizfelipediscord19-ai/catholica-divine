@@ -2,6 +2,7 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { Check, Star } from "lucide-react";
 import { toast } from "sonner";
 
+import { useCelebracao } from "@/components/portal/Celebracao";
 import { useIdentidade } from "@/hooks/use-identidade";
 import {
   alternarFavoritoFn,
@@ -13,6 +14,7 @@ import {
 export function useCapituloPessoal(livro: string, capitulo: number) {
   const { token } = useIdentidade();
   const queryClient = useQueryClient();
+  const { celebrarConquistas } = useCelebracao();
   const chave = ["capitulo-pessoal", token, livro, capitulo];
 
   const estado = useQuery({
@@ -33,6 +35,7 @@ export function useCapituloPessoal(livro: string, capitulo: number) {
     onSuccess: (res) => {
       invalidar();
       toast.success(res.lido ? "Capítulo marcado como lido. +10 XP" : "Marcação removida.");
+      celebrarConquistas(res.novasConquistas);
     },
     onError: () => toast.error("Não foi possível salvar sua leitura."),
   });
@@ -43,6 +46,7 @@ export function useCapituloPessoal(livro: string, capitulo: number) {
     onSuccess: (res) => {
       invalidar();
       toast.success(res.favorito ? "Versículo guardado. +5 XP" : "Versículo removido.");
+      celebrarConquistas(res.novasConquistas);
     },
     onError: () => toast.error("Não foi possível guardar o versículo."),
   });
