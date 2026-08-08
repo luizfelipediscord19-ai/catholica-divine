@@ -184,7 +184,12 @@ export async function responderTopico(token: string, topicoSlug: string, entrada
     .select("id", { count: "exact", head: true })
     .eq("identidade_id", identidadeId);
 
-  await premiar(identidadeId, 15, (count ?? 0) >= 10 ? ["dez-respostas"] : []);
+  const totalRespostas = count ?? 0;
+  const conquistasResposta = ["primeira-resposta"];
+  if (totalRespostas >= 10) conquistasResposta.push("dez-respostas");
+  if (totalRespostas >= 50) conquistasResposta.push("cinquenta-respostas");
+  await premiar(identidadeId, 15, conquistasResposta);
+
   return { ok: true, status: revisao.status, motivo: revisao.motivo };
 }
 
