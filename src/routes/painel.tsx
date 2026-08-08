@@ -14,6 +14,7 @@ import {
   ContinuarLeitura,
   ProgressoPorLivro,
 } from "@/components/portal/ContinuarLeitura";
+import { EscolherSanto } from "@/components/portal/EscolherSanto";
 import { useIdentidade, usePainel } from "@/hooks/use-identidade";
 import { useAuth } from "@/hooks/use-auth";
 import { registrarOracaoFn } from "@/lib/portal.functions";
