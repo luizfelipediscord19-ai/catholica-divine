@@ -304,8 +304,24 @@ export async function marcarCapitulo(
     .eq("identidade_id", id.id);
 
   const alvos = ["primeiro-capitulo"];
-  if ((count ?? 0) >= 10) alvos.push("dez-capitulos");
+  const total = count ?? 0;
+  if (total >= 10) alvos.push("dez-capitulos");
+  if (total >= 25) alvos.push("capitulos-25");
+  if (total >= 50) alvos.push("capitulos-50");
+  if (total >= 100) alvos.push("capitulos-100");
+  if (total >= 250) alvos.push("capitulos-250");
+
+  const completos = await livrosConcluidos(id.id);
+  if (completos.size >= 1) alvos.push("livro-completo");
+  if (completos.size >= 5) alvos.push("cinco-livros");
+  if (EVANGELHOS.some((s) => completos.has(s))) alvos.push("evangelho-completo");
+  if (EVANGELHOS.every((s) => completos.has(s))) alvos.push("quatro-evangelhos");
+  if (PENTATEUCO.every((s) => completos.has(s))) alvos.push("pentateuco");
+  if (completos.has("salmos")) alvos.push("salterio");
+  if (NOVO_TESTAMENTO.every((s) => completos.has(s))) alvos.push("novo-testamento");
+  alvos.push(...(await conquistasDeAcervo(id.id)));
   const novasConquistas = await desbloquear(id.id, alvos);
+
 
   return { lido: true, novasConquistas };
 }
