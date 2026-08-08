@@ -16,6 +16,8 @@ import { SiteFooter } from "../components/SiteFooter";
 import { Toaster } from "../components/ui/sonner";
 import { ScrollToTop } from "../components/ScrollToTop";
 import { CelebracaoProvider } from "../components/portal/Celebracao";
+import { InstalarApp } from "../components/portal/InstalarApp";
+
 
 
 function NotFoundComponent() {
@@ -92,6 +94,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "author", content: "Portal Católico" },
       { name: "robots", content: "index, follow, max-image-preview:large" },
       { name: "theme-color", content: "#0a0a0a" },
+      { name: "mobile-web-app-capable", content: "yes" },
+      { name: "apple-mobile-web-app-capable", content: "yes" },
+      { name: "apple-mobile-web-app-status-bar-style", content: "black-translucent" },
+      { name: "apple-mobile-web-app-title", content: "Portal Católico" },
+      { name: "application-name", content: "Portal Católico" },
+
       { property: "og:site_name", content: "Portal Católico" },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "pt_BR" },
@@ -106,7 +114,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap",
       },
       { rel: "icon", type: "image/png", href: "/favicon.png" },
-      { rel: "apple-touch-icon", href: "/favicon.png" },
+      { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
+      { rel: "manifest", href: "/manifest.webmanifest" },
+
     ],
     scripts: [
       {
@@ -177,6 +187,8 @@ function RootComponent() {
           </main>
           <SiteFooter />
           <ScrollToTop />
+          <InstalarApp />
+
           <Toaster />
         </div>
       </CelebracaoProvider>
