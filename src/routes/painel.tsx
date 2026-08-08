@@ -124,7 +124,7 @@ function PainelPage() {
         )}
         <div className="flex-1 space-y-3">
           <p className="text-[10px] uppercase tracking-[0.4em] text-gold/70">
-            Seu padroeiro sorteado
+            {dados.identidade.santoEscolhido ? "Seu padroeiro escolhido" : "Seu padroeiro sorteado"}
           </p>
           <h1 className="font-display text-4xl md:text-5xl text-foreground leading-tight">
             {dados.identidade.apelido ?? dados.identidade.santoNome}
@@ -142,7 +142,15 @@ function PainelPage() {
                 Conhecer o santo
               </Link>
             ) : null}
+            <button
+              type="button"
+              onClick={() => setTrocando((v) => !v)}
+              className="text-gold hover:text-paper transition-colors"
+            >
+              {trocando ? "Fechar escolha" : "Trocar padroeiro"}
+            </button>
           </div>
+
           <div className="h-1 w-full max-w-md bg-gold/10">
             <div className="h-full bg-gold transition-all" style={{ width: `${progresso}%` }} />
           </div>
