@@ -3,6 +3,8 @@
 import { supabaseAdmin } from "@/integrations/supabase/client.server";
 import { SANTOS_LISTA } from "../santos-lista";
 import { SANTOS } from "../data/santos";
+import { LIVROS } from "../data/biblia";
+
 
 export type IdentidadePublica = {
   id: string;
@@ -77,8 +79,10 @@ export async function escolherSanto(token: string, slug: string) {
     .select(COLUNAS)
     .maybeSingle();
   if (error || !data) throw new Error("Não foi possível salvar seu padroeiro.");
+  await desbloquear(data.id, ["santo-padroeiro"]);
   return toPublica(data);
 }
+
 
 export const COLUNAS =
   "id, santo_slug, santo_nome, santo_imagem, santo_escolhido, apelido, xp, nivel, streak, melhor_streak, ultima_oracao";
@@ -163,6 +167,53 @@ function hojeISO() {
   return new Date().toISOString().slice(0, 10);
 }
 
+async function contar(tabela: "diario_espiritual" | "favoritos" | "notas" | "leituras_biblia", identidadeId: string) {
+  const { count } = await supabaseAdmin
+    .from(tabela)
+    .select("id", { count: "exact", head: true })
+    .eq("identidade_id", identidadeId);
+  return count ?? 0;
+}
+
+/** Slugs dos livros da Bíblia já lidos por inteiro pela identidade. */
+async function livrosConcluidos(identidadeId: string): Promise<Set<string>> {
+  const { data } = await supabaseAdmin
+    .from("leituras_biblia")
+    .select("livro, capitulo")
+    .eq("identidade_id", identidadeId);
+
+  const porLivro = new Map<string, Set<number>>();
+  for (const linha of data ?? []) {
+    const atual = porLivro.get(linha.livro) ?? new Set<number>();
+    atual.add(linha.capitulo);
+    porLivro.set(linha.livro, atual);
+  }
+
+  const completos = new Set<string>();
+  for (const livro of LIVROS) {
+    if ((porLivro.get(livro.slug)?.size ?? 0) >= livro.capitulos) completos.add(livro.slug);
+  }
+  return completos;
+}
+
+const EVANGELHOS = ["mateus", "marcos", "lucas", "joao"];
+const PENTATEUCO = LIVROS.filter((l) => l.grupo === "Pentateuco").map((l) => l.slug);
+const NOVO_TESTAMENTO = LIVROS.filter((l) => l.testamento === "NT").map((l) => l.slug);
+
+/** Conquistas transversais: quem já orou, leu, favoritou e anotou. */
+async function conquistasDeAcervo(identidadeId: string) {
+  const [oracoes, leituras, favoritos, notas] = await Promise.all([
+    contar("diario_espiritual", identidadeId),
+    contar("leituras_biblia", identidadeId),
+    contar("favoritos", identidadeId),
+    contar("notas", identidadeId),
+  ]);
+  return oracoes > 0 && leituras > 0 && favoritos > 0 && notas > 0
+    ? ["caminho-completo"]
+    : [];
+}
+
+
 /** Registra a oração do dia (diário espiritual), atualiza streak, XP e conquistas. */
 export async function registrarOracao(
   token: string,
@@ -198,12 +249,26 @@ export async function registrarOracao(
     await somarXp(id.id, 25 + Math.min(entrada.minutos ?? 0, 60));
   }
 
+  const minutos = entrada.minutos ?? 0;
+  const diasRezados = await contar("diario_espiritual", id.id);
+
   const alvos = ["primeira-oracao"];
   if (streak >= 3) alvos.push("streak-3");
   if (streak >= 7) alvos.push("streak-7");
+  if (streak >= 14) alvos.push("streak-14");
   if (streak >= 30) alvos.push("streak-30");
+  if (streak >= 60) alvos.push("streak-60");
   if (streak >= 100) alvos.push("streak-100");
+  if (streak >= 365) alvos.push("streak-365");
+  if (diasRezados >= 10) alvos.push("oracoes-10");
+  if (diasRezados >= 50) alvos.push("oracoes-50");
+  if (diasRezados >= 100) alvos.push("oracoes-100");
+  if (minutos >= 30) alvos.push("oracao-30min");
+  if (minutos >= 60) alvos.push("vigilia");
+  if ((entrada.reflexao ?? "").trim().length >= 280) alvos.push("reflexao-profunda");
+  alvos.push(...(await conquistasDeAcervo(id.id)));
   const novasConquistas = await desbloquear(id.id, alvos);
+
 
   return { streak, novasConquistas, jaRezouHoje };
 }
@@ -241,8 +306,24 @@ export async function marcarCapitulo(
     .eq("identidade_id", id.id);
 
   const alvos = ["primeiro-capitulo"];
-  if ((count ?? 0) >= 10) alvos.push("dez-capitulos");
+  const total = count ?? 0;
+  if (total >= 10) alvos.push("dez-capitulos");
+  if (total >= 25) alvos.push("capitulos-25");
+  if (total >= 50) alvos.push("capitulos-50");
+  if (total >= 100) alvos.push("capitulos-100");
+  if (total >= 250) alvos.push("capitulos-250");
+
+  const completos = await livrosConcluidos(id.id);
+  if (completos.size >= 1) alvos.push("livro-completo");
+  if (completos.size >= 5) alvos.push("cinco-livros");
+  if (EVANGELHOS.some((s) => completos.has(s))) alvos.push("evangelho-completo");
+  if (EVANGELHOS.every((s) => completos.has(s))) alvos.push("quatro-evangelhos");
+  if (PENTATEUCO.every((s) => completos.has(s))) alvos.push("pentateuco");
+  if (completos.has("salmos")) alvos.push("salterio");
+  if (NOVO_TESTAMENTO.every((s) => completos.has(s))) alvos.push("novo-testamento");
+  alvos.push(...(await conquistasDeAcervo(id.id)));
   const novasConquistas = await desbloquear(id.id, alvos);
+
 
   return { lido: true, novasConquistas };
 }
@@ -274,7 +355,14 @@ export async function alternarFavorito(
     .from("favoritos")
     .insert({ identidade_id: id.id, livro, capitulo, versiculo, texto: texto ?? null });
   await somarXp(id.id, 5);
-  return { favorito: true, novasConquistas: await desbloquear(id.id, ["primeiro-favorito"]) };
+
+  const totalFavoritos = await contar("favoritos", id.id);
+  const alvos = ["primeiro-favorito"];
+  if (totalFavoritos >= 10) alvos.push("favoritos-10");
+  if (totalFavoritos >= 50) alvos.push("favoritos-50");
+  alvos.push(...(await conquistasDeAcervo(id.id)));
+  return { favorito: true, novasConquistas: await desbloquear(id.id, alvos) };
+
 }
 
 /** Cria ou atualiza uma anotação pessoal. */
@@ -301,7 +389,14 @@ export async function salvarNota(
     conteudo: nota.conteudo,
   });
   await somarXp(id.id, 10);
-  return { novasConquistas: await desbloquear(id.id, ["primeira-nota"]) };
+
+  const totalNotas = await contar("notas", id.id);
+  const alvos = ["primeira-nota"];
+  if (totalNotas >= 5) alvos.push("notas-5");
+  if (totalNotas >= 25) alvos.push("notas-25");
+  alvos.push(...(await conquistasDeAcervo(id.id)));
+  return { novasConquistas: await desbloquear(id.id, alvos) };
+
 }
 
 export async function apagarNota(token: string, notaId: string) {

@@ -130,7 +130,15 @@ export async function criarTopico(
     .single();
   if (error || !data) throw new Error("Não foi possível criar o tópico.");
 
-  await premiar(identidadeId, 30, ["primeiro-topico"]);
+  const { count: totalTopicos } = await supabaseAdmin
+    .from("forum_topicos")
+    .select("id", { count: "exact", head: true })
+    .eq("identidade_id", identidadeId);
+
+  const conquistas = ["primeiro-topico"];
+  if ((totalTopicos ?? 0) >= 5) conquistas.push("cinco-topicos");
+  await premiar(identidadeId, 30, conquistas);
+
   return { slug: data.slug, status: revisao.status, motivo: revisao.motivo };
 }
 
@@ -176,7 +184,12 @@ export async function responderTopico(token: string, topicoSlug: string, entrada
     .select("id", { count: "exact", head: true })
     .eq("identidade_id", identidadeId);
 
-  await premiar(identidadeId, 15, (count ?? 0) >= 10 ? ["dez-respostas"] : []);
+  const totalRespostas = count ?? 0;
+  const conquistasResposta = ["primeira-resposta"];
+  if (totalRespostas >= 10) conquistasResposta.push("dez-respostas");
+  if (totalRespostas >= 50) conquistasResposta.push("cinquenta-respostas");
+  await premiar(identidadeId, 15, conquistasResposta);
+
   return { ok: true, status: revisao.status, motivo: revisao.motivo };
 }
 
