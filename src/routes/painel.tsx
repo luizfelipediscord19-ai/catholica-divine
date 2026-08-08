@@ -49,6 +49,7 @@ function PainelPage() {
   const { carregando, esquecer } = useIdentidade();
   const { autenticado } = useAuth();
   const painel = usePainel();
+  const [trocando, setTrocando] = useState(false);
 
   if (carregando || painel.isPending) {
     return (
