@@ -12,19 +12,25 @@ import {
   Award,
   BookOpen,
   Bookmark,
+  Clock,
   Crown,
   Flame,
   Gem,
   Heart,
+  Library,
   MessageCircle,
+  Moon,
   Mountain,
+  Music,
   PenLine,
   Scroll,
   Sparkles,
   Sun,
+  Sunrise,
   Users,
   type LucideIcon,
 } from "lucide-react";
+
 
 import { notificar } from "@/lib/notificacoes";
 
