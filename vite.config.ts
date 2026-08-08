@@ -37,8 +37,10 @@ export default defineConfig({
         manifest: false,
         workbox: {
           globPatterns: ["**/*.{js,css,woff,woff2,png,svg,ico,webmanifest}"],
-          navigateFallback: "/",
-          navigateFallbackDenylist: [/^\/~oauth/, /^\/api\//, /^\/_serverFn\//, /^\/sitemap\.xml/],
+          // O HTML vem do servidor (SSR): não existe index.html para servir de
+          // fallback. As páginas já visitadas ficam no cache "paginas" abaixo.
+          navigateFallback: null,
+
           cleanupOutdatedCaches: true,
           clientsClaim: true,
           skipWaiting: true,
