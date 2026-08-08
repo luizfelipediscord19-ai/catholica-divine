@@ -160,6 +160,17 @@ function PainelPage() {
         </div>
       </header>
 
+      {trocando ? (
+        <EscolherSanto
+          atual={dados.identidade.santoSlug}
+          onEscolhido={() => setTrocando(false)}
+          titulo="Trocar seu santo padroeiro"
+          descricao="Escolha outro santo para acompanhar seu caminho. Seu progresso, favoritos e anotações são mantidos."
+        />
+      ) : null}
+
+
+
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         <Metrica icone={Flame} rotulo="Sequência" valor={`${dados.identidade.streak} dias`} />
         <Metrica icone={BookOpen} rotulo="Capítulos lidos" valor={String(dados.leituras.length)} />
