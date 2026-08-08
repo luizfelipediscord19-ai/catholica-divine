@@ -17,6 +17,13 @@ export const garantirIdentidadeFn = createServerFn({ method: "POST" })
     return garantirIdentidade(data.token);
   });
 
+export const escolherSantoFn = createServerFn({ method: "POST" })
+  .inputValidator(TokenObrigatorio.extend({ slug: z.string().trim().min(1).max(120) }))
+  .handler(async ({ data }) => {
+    const { escolherSanto } = await import("./portal/identidade.server");
+    return escolherSanto(data.token, data.slug);
+  });
+
 export const obterPainelFn = createServerFn({ method: "POST" })
   .inputValidator(TokenObrigatorio)
   .handler(async ({ data }) => {
