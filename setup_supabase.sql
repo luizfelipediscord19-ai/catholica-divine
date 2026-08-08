@@ -33,6 +33,7 @@ BEGIN
 
   IF v_conta.id IS NULL AND v_anonima.id IS NOT NULL THEN
     UPDATE public.identidades
+    SET user_id = _user_id, email = COALESCE(_email, email)
     WHERE id = v_anonima.id RETURNING * INTO v_conta;
     RETURN v_conta.token;
   END IF;
@@ -67,6 +68,7 @@ BEGIN
   SELECT v_conta.id, livro, capitulo, versiculo, texto, created_at FROM public.favoritos
   WHERE identidade_id = v_anonima.id
   ON CONFLICT (identidade_id, livro, capitulo, versiculo) DO UPDATE
+    SET texto = COALESCE(NULLIF(public.favoritos.texto, ''), EXCLUDED.texto);
   DELETE FROM public.favoritos WHERE identidade_id = v_anonima.id;
 
   UPDATE public.notas SET identidade_id = v_conta.id WHERE identidade_id = v_anonima.id;
