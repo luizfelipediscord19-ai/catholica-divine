@@ -92,13 +92,17 @@ export async function verificarBackend(): Promise<{
     try {
       verificacoes.push({ chave, titulo, ok: true, detalhe: await executar() });
     } catch (erro) {
+      const mensagem = erro instanceof Error ? erro.message : "falha desconhecida";
       verificacoes.push({
         chave,
         titulo,
         ok: false,
-        detalhe: erro instanceof Error ? erro.message : "falha desconhecida",
+        detalhe: /invalid api key/i.test(mensagem)
+          ? "Invalid API key — a chave configurada nesta hospedagem foi rotacionada/revogada. Cole a chave service_role atual do projeto e faça um deploy sem cache."
+          : mensagem,
       });
     }
+
   }
 
   await testar("identidade", "Consulta de identidade", async () => {
