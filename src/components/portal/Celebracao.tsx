@@ -438,6 +438,15 @@ export function CelebracaoProvider({ children }: { children: ReactNode }) {
     celebrarNivel,
   ]);
 
+  // Auxílio de desenvolvimento: permite pré-visualizar cada modal no preview.
+  useEffect(() => {
+    if (!import.meta.env.DEV) return;
+    (window as unknown as Record<string, unknown>).__celebrar = {
+      conquista: (slug: string) => setFila((f) => [...f, { tipo: "conquista", slug }]),
+      nivel: (nivel: number) => setFila((f) => [...f, { tipo: "nivel", nivel }]),
+    };
+  }, []);
+
   const atual = fila[0] ?? null;
   const fechar = useCallback(() => setFila((f) => f.slice(1)), []);
 
