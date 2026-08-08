@@ -247,12 +247,26 @@ export async function registrarOracao(
     await somarXp(id.id, 25 + Math.min(entrada.minutos ?? 0, 60));
   }
 
+  const minutos = entrada.minutos ?? 0;
+  const diasRezados = await contar("diario_espiritual", id.id);
+
   const alvos = ["primeira-oracao"];
   if (streak >= 3) alvos.push("streak-3");
   if (streak >= 7) alvos.push("streak-7");
+  if (streak >= 14) alvos.push("streak-14");
   if (streak >= 30) alvos.push("streak-30");
+  if (streak >= 60) alvos.push("streak-60");
   if (streak >= 100) alvos.push("streak-100");
+  if (streak >= 365) alvos.push("streak-365");
+  if (diasRezados >= 10) alvos.push("oracoes-10");
+  if (diasRezados >= 50) alvos.push("oracoes-50");
+  if (diasRezados >= 100) alvos.push("oracoes-100");
+  if (minutos >= 30) alvos.push("oracao-30min");
+  if (minutos >= 60) alvos.push("vigilia");
+  if ((entrada.reflexao ?? "").trim().length >= 280) alvos.push("reflexao-profunda");
+  alvos.push(...(await conquistasDeAcervo(id.id)));
   const novasConquistas = await desbloquear(id.id, alvos);
+
 
   return { streak, novasConquistas, jaRezouHoje };
 }
