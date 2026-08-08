@@ -14,6 +14,7 @@ import {
   ContinuarLeitura,
   ProgressoPorLivro,
 } from "@/components/portal/ContinuarLeitura";
+import { CaminhoDoPadroeiro } from "@/components/portal/CaminhoDoPadroeiro";
 import { EscolherSanto } from "@/components/portal/EscolherSanto";
 import { useIdentidade, usePainel } from "@/hooks/use-identidade";
 import { useAuth } from "@/hooks/use-auth";
@@ -169,6 +170,12 @@ function PainelPage() {
         />
       ) : null}
 
+      {!trocando && dados.identidade.santoSlug ? (
+        <CaminhoDoPadroeiro
+          slug={dados.identidade.santoSlug}
+          nome={dados.identidade.santoNome}
+        />
+      ) : null}
 
 
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
