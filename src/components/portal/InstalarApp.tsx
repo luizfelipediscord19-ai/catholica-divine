@@ -109,7 +109,7 @@ export function InstalarApp() {
           alt="Ícone do Portal Católico"
           width={72}
           height={72}
-          className="relative mx-auto h-18 w-18 rounded-2xl border border-gold/30 shadow-lg"
+          className="relative mx-auto rounded-2xl border border-gold/30 shadow-lg"
           style={{ height: 72, width: 72 }}
         />
 
