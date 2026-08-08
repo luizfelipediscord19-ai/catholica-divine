@@ -169,6 +169,12 @@ function PainelPage() {
         />
       ) : null}
 
+      {!trocando && dados.identidade.santoSlug ? (
+        <CaminhoDoPadroeiro
+          slug={dados.identidade.santoSlug}
+          nome={dados.identidade.santoNome}
+        />
+      ) : null}
 
 
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
