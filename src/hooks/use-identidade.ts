@@ -118,10 +118,10 @@ export function usePainel() {
           // Se a sessão ainda estiver sendo propagada ao backend, o painel
           // continua funcional com os dados locais e tenta reconciliar de
           // novo na próxima invalidação/recarregamento.
-          dados = await obterPainelFn({ data: { token: atual } });
+          dados = await obterPainelAnonimoResiliente(atual);
         }
       } else {
-        dados = await obterPainelFn({ data: { token: atual } });
+        dados = await obterPainelAnonimoResiliente(atual);
       }
       if (dados.tokenAtual && dados.tokenAtual !== atual) {
         guardarToken(dados.tokenAtual);
@@ -130,6 +130,28 @@ export function usePainel() {
     },
   });
 }
+
+/**
+ * Se o token guardado no navegador estiver corrompido ou apontar para uma
+ * identidade que não existe mais, descartamos e recomeçamos com um token novo
+ * em vez de deixar o painel na tela de erro.
+ */
+async function obterPainelAnonimoResiliente(token: string) {
+  try {
+    return await obterPainelFn({ data: { token } });
+  } catch (erro) {
+    let novo: string;
+    try {
+      const res = await garantirIdentidadeFn({ data: { token: null } });
+      novo = res.token;
+    } catch {
+      throw erro;
+    }
+    guardarToken(novo);
+    return await obterPainelFn({ data: { token: novo } });
+  }
+}
+
 
 
 /** Invalida painel e identidade após qualquer ação que dê XP. */
