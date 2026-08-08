@@ -1,28 +1,32 @@
 import { useEffect, useState } from "react";
-import { X, Share, Plus, Smartphone } from "lucide-react";
-
-type PromptEvent = Event & { prompt: () => Promise<void>; userChoice?: Promise<{ outcome: string }> };
+import { X, Share, Plus, Smartphone, MoreVertical } from "lucide-react";
+import {
+  ehDispositivoMovel,
+  ehIos,
+  iniciarCapturaInstalacao,
+  jaInstalado,
+  obterPromptInstalacao,
+  ouvirPromptInstalacao,
+  type PromptEvent,
+} from "@/lib/pwa/instalacao";
 
 const CHAVE_DISPENSADO = "portal:pwa-dispensado";
+const DIAS_SILENCIO = 7;
 
-function ehTelefone() {
-  if (typeof window === "undefined") return false;
-  const ua = navigator.userAgent || "";
-  const uaMobile =
-    /Android|iPhone|iPod|webOS|BlackBerry|IEMobile|Opera Mini/i.test(ua) ||
-    (/iPad|Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
-  const toqueGrosso = window.matchMedia("(pointer: coarse)").matches;
-  const telaPequena = Math.min(window.innerWidth, window.innerHeight) <= 820;
-  return uaMobile && toqueGrosso && telaPequena;
-}
+// Começa a escutar antes de qualquer render: o navegador dispara o evento uma única vez.
+iniciarCapturaInstalacao();
 
-function jaInstalado() {
-  if (typeof window === "undefined") return true;
-  return (
-    window.matchMedia("(display-mode: standalone)").matches ||
-    // iOS Safari
-    (navigator as unknown as { standalone?: boolean }).standalone === true
-  );
+function silenciado() {
+  try {
+    const valor = localStorage.getItem(CHAVE_DISPENSADO);
+    if (!valor) return false;
+    if (valor === "instalado") return true;
+    const quando = Number(valor);
+    if (!Number.isFinite(quando)) return false;
+    return Date.now() - quando < DIAS_SILENCIO * 24 * 60 * 60 * 1000;
+  } catch {
+    return false;
+  }
 }
 
 export function InstalarApp() {
@@ -31,31 +35,31 @@ export function InstalarApp() {
   const [ios, setIos] = useState(false);
 
   useEffect(() => {
-    if (jaInstalado() || !ehTelefone()) return;
-    if (localStorage.getItem(CHAVE_DISPENSADO) === "1") return;
+    if (jaInstalado() || !ehDispositivoMovel() || silenciado()) return;
 
-    const ua = navigator.userAgent || "";
-    const eIos = /iPhone|iPod|iPad/i.test(ua) && !/CriOS|FxiOS|EdgiOS/i.test(ua);
-    setIos(eIos);
+    setIos(ehIos());
+    setEvento(obterPromptInstalacao());
+    const parar = ouvirPromptInstalacao((e) => {
+      setEvento(e);
+      if (e) setVisivel(true);
+    });
 
-    const aoPrompt = (e: Event) => {
-      e.preventDefault();
-      setEvento(e as PromptEvent);
-      setVisivel(true);
-    };
-    window.addEventListener("beforeinstallprompt", aoPrompt);
-
-    // iOS não emite beforeinstallprompt: mostramos as instruções manuais.
-    const timer = eIos ? window.setTimeout(() => setVisivel(true), 2500) : undefined;
+    // Mesmo sem `beforeinstallprompt` (iOS, navegadores alternativos, preview em
+    // iframe) mostramos o aviso com as instruções manuais.
+    const timer = window.setTimeout(() => setVisivel(true), 1800);
 
     return () => {
-      window.removeEventListener("beforeinstallprompt", aoPrompt);
-      if (timer) window.clearTimeout(timer);
+      parar();
+      window.clearTimeout(timer);
     };
   }, []);
 
   const dispensar = () => {
-    localStorage.setItem(CHAVE_DISPENSADO, "1");
+    try {
+      localStorage.setItem(CHAVE_DISPENSADO, String(Date.now()));
+    } catch {
+      /* ignora */
+    }
     setVisivel(false);
   };
 
@@ -63,7 +67,13 @@ export function InstalarApp() {
     if (!evento) return;
     await evento.prompt();
     const escolha = await evento.userChoice;
-    if (escolha?.outcome === "accepted") localStorage.setItem(CHAVE_DISPENSADO, "1");
+    if (escolha?.outcome === "accepted") {
+      try {
+        localStorage.setItem(CHAVE_DISPENSADO, "instalado");
+      } catch {
+        /* ignora */
+      }
+    }
     setVisivel(false);
   };
 
@@ -73,7 +83,7 @@ export function InstalarApp() {
     <div
       role="dialog"
       aria-label="Instalar o Portal Católico no telefone"
-      className="fixed inset-x-3 bottom-3 z-[90] border border-gold/30 bg-background/95 backdrop-blur px-4 py-4 shadow-2xl md:hidden"
+      className="fixed inset-x-3 bottom-3 z-[90] border border-gold/30 bg-background/95 backdrop-blur px-4 py-4 shadow-2xl"
     >
       <button
         onClick={dispensar}
@@ -95,15 +105,11 @@ export function InstalarApp() {
         <div className="min-w-0">
           <p className="font-display text-base text-foreground">Instalar no seu telefone</p>
           <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
-            Tenha a Bíblia, a liturgia e o seu painel espiritual num toque, em tela cheia.
+            Tenha a Bíblia, a liturgia e o seu painel espiritual num toque, em tela cheia e também
+            sem internet.
           </p>
 
-          {ios ? (
-            <p className="mt-3 flex flex-wrap items-center gap-1 text-[11px] text-muted-foreground">
-              Toque em <Share className="h-3.5 w-3.5 text-gold" /> Compartilhar e depois
-              <Plus className="h-3.5 w-3.5 text-gold" /> “Adicionar à Tela de Início”.
-            </p>
-          ) : (
+          {evento ? (
             <div className="mt-3 flex items-center gap-2">
               <button
                 onClick={instalar}
@@ -118,6 +124,16 @@ export function InstalarApp() {
                 Agora não
               </button>
             </div>
+          ) : ios ? (
+            <p className="mt-3 flex flex-wrap items-center gap-1 text-[11px] text-muted-foreground">
+              No Safari, toque em <Share className="h-3.5 w-3.5 text-gold" /> Compartilhar e depois
+              em <Plus className="h-3.5 w-3.5 text-gold" /> “Adicionar à Tela de Início”.
+            </p>
+          ) : (
+            <p className="mt-3 flex flex-wrap items-center gap-1 text-[11px] text-muted-foreground">
+              Abra o menu <MoreVertical className="h-3.5 w-3.5 text-gold" /> do navegador e toque em
+              “Instalar aplicativo” ou “Adicionar à tela inicial”.
+            </p>
           )}
         </div>
       </div>
