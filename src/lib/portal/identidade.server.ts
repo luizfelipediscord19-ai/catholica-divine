@@ -9,6 +9,7 @@ export type IdentidadePublica = {
   santoSlug: string;
   santoNome: string;
   santoImagem: string | null;
+  santoEscolhido: boolean;
   apelido: string | null;
   xp: number;
   nivel: number;
