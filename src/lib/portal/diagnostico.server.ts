@@ -6,6 +6,28 @@ function mascarar(valor: string | undefined) {
   return `${valor.slice(0, 6)}… (${valor.length} caracteres)`;
 }
 
+/** Lê o "ref" e o "role" de uma chave legada (JWT) sem validar assinatura. */
+function lerChaveJwt(valor: string | undefined): { ref?: string; role?: string } {
+  if (!valor) return {};
+  const partes = valor.split(".");
+  if (partes.length !== 3) return {};
+  try {
+    const json = JSON.parse(
+      typeof atob === "function"
+        ? atob(partes[1].replace(/-/g, "+").replace(/_/g, "/"))
+        : Buffer.from(partes[1], "base64").toString("utf8"),
+    ) as { ref?: string; role?: string };
+    return { ref: json.ref, role: json.role };
+  } catch {
+    return {};
+  }
+}
+
+function refDaUrl(url: string | undefined) {
+  return url?.match(/^https:\/\/([a-z0-9-]+)\.supabase\.co/)?.[1];
+}
+
+
 export async function verificarBackend(): Promise<{
   verificacoes: Verificacao[];
   saudavel: boolean;
