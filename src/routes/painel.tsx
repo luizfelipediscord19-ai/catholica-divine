@@ -59,21 +59,33 @@ function PainelPage() {
 
   const dados = painel.data;
   if (!dados || painel.isError) {
+    const motivo =
+      painel.error instanceof Error ? painel.error.message : "Falha de comunicação com o servidor.";
     return (
       <div className="max-w-5xl mx-auto px-6 py-32 space-y-6">
         <p className="text-sm text-muted-foreground">
           Não foi possível carregar seu painel agora. Vamos tentar sincronizar novamente.
         </p>
-        <button
-          type="button"
-          onClick={() => void painel.refetch()}
-          className="min-h-11 px-5 text-[10px] uppercase tracking-[0.2em] border border-gold/40 text-foreground/80 hover:text-gold hover:border-gold transition-colors"
-        >
-          Tentar de novo
-        </button>
+        <p className="text-xs text-destructive font-light break-words">{motivo}</p>
+        <div className="flex flex-wrap gap-4">
+          <button
+            type="button"
+            onClick={() => void painel.refetch()}
+            className="min-h-11 px-5 text-[10px] uppercase tracking-[0.2em] border border-gold/40 text-foreground/80 hover:text-gold hover:border-gold transition-colors"
+          >
+            Tentar de novo
+          </button>
+          <Link
+            to="/diagnostico-backend"
+            className="min-h-11 px-5 inline-flex items-center text-[10px] uppercase tracking-[0.2em] border border-border text-muted-foreground hover:text-gold hover:border-gold transition-colors"
+          >
+            Ver diagnóstico
+          </Link>
+        </div>
       </div>
     );
   }
+
   
 
 
