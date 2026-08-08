@@ -68,6 +68,7 @@ BEGIN
   SELECT v_conta.id, livro, capitulo, versiculo, texto, created_at FROM public.favoritos
   WHERE identidade_id = v_anonima.id
   ON CONFLICT (identidade_id, livro, capitulo, versiculo) DO UPDATE
+    SET texto = COALESCE(NULLIF(public.favoritos.texto, ''), EXCLUDED.texto);
   DELETE FROM public.favoritos WHERE identidade_id = v_anonima.id;
 
   UPDATE public.notas SET identidade_id = v_conta.id WHERE identidade_id = v_anonima.id;
