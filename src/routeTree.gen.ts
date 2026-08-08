@@ -22,6 +22,7 @@ import { Route as GlossarioRouteImport } from './routes/glossario'
 import { Route as FeCatolicaRouteImport } from './routes/fe-catolica'
 import { Route as FavoritosRouteImport } from './routes/favoritos'
 import { Route as DoutoresDaIgrejaRouteImport } from './routes/doutores-da-igreja'
+import { Route as DiagnosticoBackendRouteImport } from './routes/diagnostico-backend'
 import { Route as CoroinhasRouteImport } from './routes/coroinhas'
 import { Route as CatecismoRouteImport } from './routes/catecismo'
 import { Route as CalendarioLiturgicoRouteImport } from './routes/calendario-liturgico'
@@ -110,6 +111,11 @@ const FavoritosRoute = FavoritosRouteImport.update({
 const DoutoresDaIgrejaRoute = DoutoresDaIgrejaRouteImport.update({
   id: '/doutores-da-igreja',
   path: '/doutores-da-igreja',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DiagnosticoBackendRoute = DiagnosticoBackendRouteImport.update({
+  id: '/diagnostico-backend',
+  path: '/diagnostico-backend',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CoroinhasRoute = CoroinhasRouteImport.update({
@@ -243,6 +249,7 @@ export interface FileRoutesByFullPath {
   '/calendario-liturgico': typeof CalendarioLiturgicoRoute
   '/catecismo': typeof CatecismoRouteWithChildren
   '/coroinhas': typeof CoroinhasRoute
+  '/diagnostico-backend': typeof DiagnosticoBackendRoute
   '/doutores-da-igreja': typeof DoutoresDaIgrejaRoute
   '/favoritos': typeof FavoritosRoute
   '/fe-catolica': typeof FeCatolicaRoute
@@ -281,6 +288,7 @@ export interface FileRoutesByTo {
   '/calendario-liturgico': typeof CalendarioLiturgicoRoute
   '/catecismo': typeof CatecismoRouteWithChildren
   '/coroinhas': typeof CoroinhasRoute
+  '/diagnostico-backend': typeof DiagnosticoBackendRoute
   '/doutores-da-igreja': typeof DoutoresDaIgrejaRoute
   '/favoritos': typeof FavoritosRoute
   '/fe-catolica': typeof FeCatolicaRoute
@@ -320,6 +328,7 @@ export interface FileRoutesById {
   '/calendario-liturgico': typeof CalendarioLiturgicoRoute
   '/catecismo': typeof CatecismoRouteWithChildren
   '/coroinhas': typeof CoroinhasRoute
+  '/diagnostico-backend': typeof DiagnosticoBackendRoute
   '/doutores-da-igreja': typeof DoutoresDaIgrejaRoute
   '/favoritos': typeof FavoritosRoute
   '/fe-catolica': typeof FeCatolicaRoute
@@ -361,6 +370,7 @@ export interface FileRouteTypes {
     | '/calendario-liturgico'
     | '/catecismo'
     | '/coroinhas'
+    | '/diagnostico-backend'
     | '/doutores-da-igreja'
     | '/favoritos'
     | '/fe-catolica'
@@ -399,6 +409,7 @@ export interface FileRouteTypes {
     | '/calendario-liturgico'
     | '/catecismo'
     | '/coroinhas'
+    | '/diagnostico-backend'
     | '/doutores-da-igreja'
     | '/favoritos'
     | '/fe-catolica'
@@ -437,6 +448,7 @@ export interface FileRouteTypes {
     | '/calendario-liturgico'
     | '/catecismo'
     | '/coroinhas'
+    | '/diagnostico-backend'
     | '/doutores-da-igreja'
     | '/favoritos'
     | '/fe-catolica'
@@ -477,6 +489,7 @@ export interface RootRouteChildren {
   CalendarioLiturgicoRoute: typeof CalendarioLiturgicoRoute
   CatecismoRoute: typeof CatecismoRouteWithChildren
   CoroinhasRoute: typeof CoroinhasRoute
+  DiagnosticoBackendRoute: typeof DiagnosticoBackendRoute
   DoutoresDaIgrejaRoute: typeof DoutoresDaIgrejaRoute
   FavoritosRoute: typeof FavoritosRoute
   FeCatolicaRoute: typeof FeCatolicaRoute
@@ -586,6 +599,13 @@ declare module '@tanstack/react-router' {
       path: '/doutores-da-igreja'
       fullPath: '/doutores-da-igreja'
       preLoaderRoute: typeof DoutoresDaIgrejaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/diagnostico-backend': {
+      id: '/diagnostico-backend'
+      path: '/diagnostico-backend'
+      fullPath: '/diagnostico-backend'
+      preLoaderRoute: typeof DiagnosticoBackendRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/coroinhas': {
@@ -851,6 +871,7 @@ const rootRouteChildren: RootRouteChildren = {
   CalendarioLiturgicoRoute: CalendarioLiturgicoRoute,
   CatecismoRoute: CatecismoRouteWithChildren,
   CoroinhasRoute: CoroinhasRoute,
+  DiagnosticoBackendRoute: DiagnosticoBackendRoute,
   DoutoresDaIgrejaRoute: DoutoresDaIgrejaRoute,
   FavoritosRoute: FavoritosRoute,
   FeCatolicaRoute: FeCatolicaRoute,
