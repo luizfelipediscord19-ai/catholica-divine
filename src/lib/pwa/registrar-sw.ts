@@ -58,11 +58,10 @@ export async function registrarServiceWorker(
       if (!esperando) return;
       onNovaVersao({
         atualizar: () => {
+          // O service worker novo já assume o controle (skipWaiting + clientsClaim);
+          // basta recarregar para a página usar a versão recém-instalada.
           esperando.postMessage({ type: "SKIP_WAITING" });
-          const recarregar = () => window.location.reload();
-          navigator.serviceWorker.addEventListener("controllerchange", recarregar, { once: true });
-          // Rede lenta: recarrega mesmo assim depois de um instante.
-          window.setTimeout(recarregar, 2500);
+          window.location.reload();
         },
       });
     };

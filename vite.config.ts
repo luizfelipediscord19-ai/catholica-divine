@@ -31,6 +31,8 @@ export default defineConfig({
         // O registro acontece apenas no wrapper guardado (src/lib/pwa/registrar-sw.ts).
         injectRegister: null,
         filename: "sw.js",
+        // O build do TanStack Start emite os arquivos públicos em dist/client.
+        outDir: "dist/client",
         devOptions: { enabled: false },
         manifest: false,
         workbox: {
@@ -39,7 +41,7 @@ export default defineConfig({
           navigateFallbackDenylist: [/^\/~oauth/, /^\/api\//, /^\/_serverFn\//, /^\/sitemap\.xml/],
           cleanupOutdatedCaches: true,
           clientsClaim: true,
-          skipWaiting: false,
+          skipWaiting: true,
           runtimeCaching: [
             {
               // Páginas: sempre tenta a rede; usa o cache só quando offline.
