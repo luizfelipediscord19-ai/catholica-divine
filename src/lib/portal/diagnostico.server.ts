@@ -50,14 +50,25 @@ export async function verificarBackend(): Promise<{
     ok: Boolean(publicavel),
     detalhe: mascarar(publicavel),
   });
+  const projeto = refDaUrl(url);
+  const infoServico = lerChaveJwt(servico);
+  const refConfere = !infoServico.ref || !projeto || infoServico.ref === projeto;
+  const papelConfere = !infoServico.role || infoServico.role === "service_role";
   verificacoes.push({
     chave: "servico",
     titulo: "SUPABASE_SERVICE_ROLE_KEY",
-    ok: Boolean(servico),
-    detalhe: servico
-      ? mascarar(servico)
-      : "ausente — o painel espiritual não consegue ler identidade, favoritos e progresso",
+    ok: Boolean(servico) && refConfere && papelConfere,
+    detalhe: !servico
+      ? "ausente — o painel espiritual não consegue ler identidade, favoritos e progresso"
+      : !refConfere
+        ? `chave de outro projeto (${infoServico.ref}) — o backend aqui é ${projeto}. Atualize a variável na hospedagem.`
+        : !papelConfere
+          ? `papel incorreto na chave (${infoServico.role}) — use a chave service_role.`
+          : `${mascarar(servico)}${infoServico.role ? ` • papel ${infoServico.role}` : ""}${
+              infoServico.ref ? ` • projeto ${infoServico.ref}` : ""
+            }`,
   });
+
 
   const podeConsultar = Boolean(url && servico);
 
