@@ -94,6 +94,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "author", content: "Portal Católico" },
       { name: "robots", content: "index, follow, max-image-preview:large" },
       { name: "theme-color", content: "#0a0a0a" },
+      { name: "mobile-web-app-capable", content: "yes" },
+      { name: "apple-mobile-web-app-capable", content: "yes" },
+      { name: "apple-mobile-web-app-status-bar-style", content: "black-translucent" },
+      { name: "apple-mobile-web-app-title", content: "Portal Católico" },
+      { name: "application-name", content: "Portal Católico" },
+
       { property: "og:site_name", content: "Portal Católico" },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "pt_BR" },
@@ -181,6 +187,8 @@ function RootComponent() {
           </main>
           <SiteFooter />
           <ScrollToTop />
+          <InstalarApp />
+
           <Toaster />
         </div>
       </CelebracaoProvider>
