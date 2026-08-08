@@ -32,6 +32,12 @@ async function applySecurityHeaders(response: Response): Promise<Response> {
     .filter(Boolean)
     .join(" ");
 
+  // Em produção não há necessidade de eval: só o HMR do dev precisa dele.
+  const dev = process.env["NODE_ENV"] !== "production";
+  const scripts = dev
+    ? "script-src 'self' 'unsafe-inline' 'unsafe-eval'; "
+    : "script-src 'self' 'unsafe-inline'; ";
+
   // Content Security Policy (Strict but allows required fonts and AI gateway)
   newHeaders.set(
     "Content-Security-Policy",
@@ -39,7 +45,7 @@ async function applySecurityHeaders(response: Response): Promise<Response> {
     "base-uri 'self'; " +
     "object-src 'none'; " +
     "form-action 'self'; " +
-    "script-src 'self' 'unsafe-inline' 'unsafe-eval'; " +
+    scripts +
     "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; " +
     "font-src 'self' data: https://fonts.gstatic.com; " +
     "img-src 'self' data: https:; " +
@@ -70,6 +76,8 @@ async function applySecurityHeaders(response: Response): Promise<Response> {
   newHeaders.set("Cross-Origin-Resource-Policy", "same-origin");
   newHeaders.set("X-Permitted-Cross-Domain-Policies", "none");
   newHeaders.set("Origin-Agent-Cluster", "?1");
+  newHeaders.set("X-DNS-Prefetch-Control", "off");
+  newHeaders.set("X-Download-Options", "noopen");
 
   // HSTS (Strict-Transport-Security) - 1 year
   newHeaders.set("Strict-Transport-Security", "max-age=31536000; includeSubDomains; preload");
