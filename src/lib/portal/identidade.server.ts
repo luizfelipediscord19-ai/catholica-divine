@@ -163,6 +163,53 @@ function hojeISO() {
   return new Date().toISOString().slice(0, 10);
 }
 
+async function contar(tabela: "diario_espiritual" | "favoritos" | "notas" | "leituras_biblia", identidadeId: string) {
+  const { count } = await supabaseAdmin
+    .from(tabela)
+    .select("id", { count: "exact", head: true })
+    .eq("identidade_id", identidadeId);
+  return count ?? 0;
+}
+
+/** Slugs dos livros da Bíblia já lidos por inteiro pela identidade. */
+async function livrosConcluidos(identidadeId: string): Promise<Set<string>> {
+  const { data } = await supabaseAdmin
+    .from("leituras_biblia")
+    .select("livro, capitulo")
+    .eq("identidade_id", identidadeId);
+
+  const porLivro = new Map<string, Set<number>>();
+  for (const linha of data ?? []) {
+    const atual = porLivro.get(linha.livro) ?? new Set<number>();
+    atual.add(linha.capitulo);
+    porLivro.set(linha.livro, atual);
+  }
+
+  const completos = new Set<string>();
+  for (const livro of LIVROS) {
+    if ((porLivro.get(livro.slug)?.size ?? 0) >= livro.capitulos) completos.add(livro.slug);
+  }
+  return completos;
+}
+
+const EVANGELHOS = ["mateus", "marcos", "lucas", "joao"];
+const PENTATEUCO = LIVROS.filter((l) => l.grupo === "Pentateuco").map((l) => l.slug);
+const NOVO_TESTAMENTO = LIVROS.filter((l) => l.testamento === "NT").map((l) => l.slug);
+
+/** Conquistas transversais: quem já orou, leu, favoritou e anotou. */
+async function conquistasDeAcervo(identidadeId: string) {
+  const [oracoes, leituras, favoritos, notas] = await Promise.all([
+    contar("diario_espiritual", identidadeId),
+    contar("leituras_biblia", identidadeId),
+    contar("favoritos", identidadeId),
+    contar("notas", identidadeId),
+  ]);
+  return oracoes > 0 && leituras > 0 && favoritos > 0 && notas > 0
+    ? ["caminho-completo"]
+    : [];
+}
+
+
 /** Registra a oração do dia (diário espiritual), atualiza streak, XP e conquistas. */
 export async function registrarOracao(
   token: string,
