@@ -86,8 +86,16 @@ function PainelPage() {
     );
   }
 
-  
-
+  if (!dados.identidade.santoEscolhido && !trocando) {
+    return (
+      <div className="max-w-6xl mx-auto px-6 py-16 md:py-24 space-y-8">
+        <h1 className="font-display text-4xl md:text-5xl text-foreground leading-tight">
+          Bem-vindo ao seu painel espiritual
+        </h1>
+        <EscolherSanto atual={dados.identidade.santoSlug} />
+      </div>
+    );
+  }
 
   const nivel = dados.identidade.nivel;
   const base = xpDoNivel(nivel);
@@ -96,8 +104,6 @@ function PainelPage() {
     100,
     Math.round(((dados.identidade.xp - base) / Math.max(proximo - base, 1)) * 100),
   );
-  const conquistadas = dados.conquistas.filter((c) => c.desbloqueada).length;
-
   return (
     <div className="max-w-6xl mx-auto px-6 py-16 md:py-24 space-y-12">
       <header className="flex flex-col md:flex-row md:items-center gap-8">
