@@ -15,10 +15,12 @@ import {
   ProgressoPorLivro,
 } from "@/components/portal/ContinuarLeitura";
 import { CaminhoDoPadroeiro } from "@/components/portal/CaminhoDoPadroeiro";
+import { useCelebracao } from "@/components/portal/Celebracao";
 import { EscolherSanto } from "@/components/portal/EscolherSanto";
 import { useIdentidade, usePainel } from "@/hooks/use-identidade";
 import { useAuth } from "@/hooks/use-auth";
 import { registrarOracaoFn } from "@/lib/portal.functions";
+
 
 export const Route = createFileRoute("/painel")({
   head: () => ({
