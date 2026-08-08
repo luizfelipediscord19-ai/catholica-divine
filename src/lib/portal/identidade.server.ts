@@ -9,6 +9,7 @@ export type IdentidadePublica = {
   santoSlug: string;
   santoNome: string;
   santoImagem: string | null;
+  santoEscolhido: boolean;
   apelido: string | null;
   xp: number;
   nivel: number;
@@ -36,6 +37,7 @@ export function toPublica(row: {
   santo_slug: string;
   santo_nome: string;
   santo_imagem: string | null;
+  santo_escolhido?: boolean | null;
   apelido: string | null;
   xp: number;
   nivel: number;
@@ -48,6 +50,7 @@ export function toPublica(row: {
     santoSlug: row.santo_slug,
     santoNome: row.santo_nome,
     santoImagem: row.santo_imagem,
+    santoEscolhido: Boolean(row.santo_escolhido),
     apelido: row.apelido,
     xp: row.xp,
     nivel: row.nivel,
@@ -57,8 +60,28 @@ export function toPublica(row: {
   };
 }
 
+/** Define (ou troca) o santo padroeiro escolhido pelo próprio membro. */
+export async function escolherSanto(token: string, slug: string) {
+  const item = SANTOS_LISTA.find((s) => s.slug === slug);
+  if (!item) throw new Error("Santo não encontrado.");
+  const rico = SANTOS.find((s) => s.slug === slug);
+  const { data, error } = await supabaseAdmin
+    .from("identidades")
+    .update({
+      santo_slug: item.slug,
+      santo_nome: item.nome,
+      santo_imagem: rico?.imagem ?? null,
+      santo_escolhido: true,
+    })
+    .eq("token", token)
+    .select(COLUNAS)
+    .maybeSingle();
+  if (error || !data) throw new Error("Não foi possível salvar seu padroeiro.");
+  return toPublica(data);
+}
+
 export const COLUNAS =
-  "id, santo_slug, santo_nome, santo_imagem, apelido, xp, nivel, streak, melhor_streak, ultima_oracao";
+  "id, santo_slug, santo_nome, santo_imagem, santo_escolhido, apelido, xp, nivel, streak, melhor_streak, ultima_oracao";
 
 /** Devolve a identidade do token; cria uma nova (com santo sorteado) se não existir. */
 export async function garantirIdentidade(

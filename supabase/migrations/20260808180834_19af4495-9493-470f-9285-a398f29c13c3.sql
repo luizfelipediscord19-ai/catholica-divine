@@ -1,0 +1,1 @@
+ALTER TABLE public.identidades ADD COLUMN IF NOT EXISTS santo_escolhido boolean NOT NULL DEFAULT false;

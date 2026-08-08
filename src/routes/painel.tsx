@@ -14,6 +14,7 @@ import {
   ContinuarLeitura,
   ProgressoPorLivro,
 } from "@/components/portal/ContinuarLeitura";
+import { EscolherSanto } from "@/components/portal/EscolherSanto";
 import { useIdentidade, usePainel } from "@/hooks/use-identidade";
 import { useAuth } from "@/hooks/use-auth";
 import { registrarOracaoFn } from "@/lib/portal.functions";
@@ -48,6 +49,7 @@ function PainelPage() {
   const { carregando, esquecer } = useIdentidade();
   const { autenticado } = useAuth();
   const painel = usePainel();
+  const [trocando, setTrocando] = useState(false);
 
   if (carregando || painel.isPending) {
     return (
@@ -86,8 +88,16 @@ function PainelPage() {
     );
   }
 
-  
-
+  if (!dados.identidade.santoEscolhido && !trocando) {
+    return (
+      <div className="max-w-6xl mx-auto px-6 py-16 md:py-24 space-y-8">
+        <h1 className="font-display text-4xl md:text-5xl text-foreground leading-tight">
+          Bem-vindo ao seu painel espiritual
+        </h1>
+        <EscolherSanto atual={dados.identidade.santoSlug} />
+      </div>
+    );
+  }
 
   const nivel = dados.identidade.nivel;
   const base = xpDoNivel(nivel);
@@ -114,7 +124,7 @@ function PainelPage() {
         )}
         <div className="flex-1 space-y-3">
           <p className="text-[10px] uppercase tracking-[0.4em] text-gold/70">
-            Seu padroeiro sorteado
+            {dados.identidade.santoEscolhido ? "Seu padroeiro escolhido" : "Seu padroeiro sorteado"}
           </p>
           <h1 className="font-display text-4xl md:text-5xl text-foreground leading-tight">
             {dados.identidade.apelido ?? dados.identidade.santoNome}
@@ -132,7 +142,15 @@ function PainelPage() {
                 Conhecer o santo
               </Link>
             ) : null}
+            <button
+              type="button"
+              onClick={() => setTrocando((v) => !v)}
+              className="text-gold hover:text-paper transition-colors"
+            >
+              {trocando ? "Fechar escolha" : "Trocar padroeiro"}
+            </button>
           </div>
+
           <div className="h-1 w-full max-w-md bg-gold/10">
             <div className="h-full bg-gold transition-all" style={{ width: `${progresso}%` }} />
           </div>
@@ -141,6 +159,17 @@ function PainelPage() {
           </p>
         </div>
       </header>
+
+      {trocando ? (
+        <EscolherSanto
+          atual={dados.identidade.santoSlug}
+          onEscolhido={() => setTrocando(false)}
+          titulo="Trocar seu santo padroeiro"
+          descricao="Escolha outro santo para acompanhar seu caminho. Seu progresso, favoritos e anotações são mantidos."
+        />
+      ) : null}
+
+
 
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         <Metrica icone={Flame} rotulo="Sequência" valor={`${dados.identidade.streak} dias`} />
