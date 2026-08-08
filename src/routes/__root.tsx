@@ -15,6 +15,8 @@ import { SiteHeader } from "../components/SiteHeader";
 import { SiteFooter } from "../components/SiteFooter";
 import { Toaster } from "../components/ui/sonner";
 import { ScrollToTop } from "../components/ScrollToTop";
+import { CelebracaoProvider } from "../components/portal/Celebracao";
+
 
 function NotFoundComponent() {
   return (
