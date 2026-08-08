@@ -33,6 +33,7 @@ BEGIN
 
   IF v_conta.id IS NULL AND v_anonima.id IS NOT NULL THEN
     UPDATE public.identidades
+    SET user_id = _user_id, email = COALESCE(_email, email)
     WHERE id = v_anonima.id RETURNING * INTO v_conta;
     RETURN v_conta.token;
   END IF;
