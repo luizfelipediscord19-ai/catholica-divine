@@ -130,7 +130,15 @@ export async function criarTopico(
     .single();
   if (error || !data) throw new Error("Não foi possível criar o tópico.");
 
-  await premiar(identidadeId, 30, ["primeiro-topico"]);
+  const { count: totalTopicos } = await supabaseAdmin
+    .from("forum_topicos")
+    .select("id", { count: "exact", head: true })
+    .eq("identidade_id", identidadeId);
+
+  const conquistas = ["primeiro-topico"];
+  if ((totalTopicos ?? 0) >= 5) conquistas.push("cinco-topicos");
+  await premiar(identidadeId, 30, conquistas);
+
   return { slug: data.slug, status: revisao.status, motivo: revisao.motivo };
 }
 
