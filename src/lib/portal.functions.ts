@@ -14,12 +14,16 @@ export const garantirIdentidadeFn = createServerFn({ method: "POST" })
   .inputValidator(Token)
   .handler(async ({ data }) => {
     const { garantirIdentidade } = await import("./portal/identidade.server");
+    const { limitarAbuso } = await import("./seguranca/guarda.server");
+    limitarAbuso("identidade", 30, 60_000);
     return garantirIdentidade(data.token);
   });
 
 export const escolherSantoFn = createServerFn({ method: "POST" })
   .inputValidator(TokenObrigatorio.extend({ slug: z.string().trim().min(1).max(120) }))
   .handler(async ({ data }) => {
+    const { limitarAbuso } = await import("./seguranca/guarda.server");
+    limitarAbuso("escolher-santo", 10, 60_000);
     const { escolherSanto } = await import("./portal/identidade.server");
     return escolherSanto(data.token, data.slug);
   });
@@ -55,6 +59,8 @@ export const registrarOracaoFn = createServerFn({ method: "POST" })
     }),
   )
   .handler(async ({ data }) => {
+    const { limitarAbuso } = await import("./seguranca/guarda.server");
+    limitarAbuso("registrar-oracao", 20, 60_000);
     const { registrarOracao } = await import("./portal/identidade.server");
     return registrarOracao(data.token, data);
   });
@@ -109,6 +115,8 @@ export const salvarNotaFn = createServerFn({ method: "POST" })
     }),
   )
   .handler(async ({ data }) => {
+    const { limitarAbuso } = await import("./seguranca/guarda.server");
+    limitarAbuso("salvar-nota", 30, 60_000);
     const { salvarNota } = await import("./portal/identidade.server");
     return salvarNota(data.token, data);
   });
@@ -178,6 +186,8 @@ export const criarTopicoFn = createServerFn({ method: "POST" })
   )
   .handler(async ({ data, context }) => {
     const { tokenDaConta } = await import("./portal/conta.server");
+    const { limitarAbuso } = await import("./seguranca/guarda.server");
+    limitarAbuso("criar-topico", 5, 300_000);
     const { criarTopico } = await import("./portal/forum.server");
     const token = await tokenDaConta(
       context.userId,
@@ -197,6 +207,8 @@ export const responderTopicoFn = createServerFn({ method: "POST" })
   )
   .handler(async ({ data, context }) => {
     const { tokenDaConta } = await import("./portal/conta.server");
+    const { limitarAbuso } = await import("./seguranca/guarda.server");
+    limitarAbuso("responder-topico", 15, 300_000);
     const { responderTopico } = await import("./portal/forum.server");
     const token = await tokenDaConta(
       context.userId,
@@ -217,6 +229,8 @@ export const reagirFn = createServerFn({ method: "POST" })
   )
   .handler(async ({ data, context }) => {
     const { tokenDaConta } = await import("./portal/conta.server");
+    const { limitarAbuso } = await import("./seguranca/guarda.server");
+    limitarAbuso("reagir", 60, 60_000);
     const { reagir } = await import("./portal/forum.server");
     const token = await tokenDaConta(
       context.userId,
@@ -238,6 +252,8 @@ export const denunciarFn = createServerFn({ method: "POST" })
   )
   .handler(async ({ data, context }) => {
     const { tokenDaConta } = await import("./portal/conta.server");
+    const { limitarAbuso } = await import("./seguranca/guarda.server");
+    limitarAbuso("denunciar", 10, 300_000);
     const { denunciar } = await import("./portal/forum.server");
     const token = await tokenDaConta(
       context.userId,
