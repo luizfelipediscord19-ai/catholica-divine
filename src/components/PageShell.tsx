@@ -72,22 +72,28 @@ export function ContentCard({
   title,
   subtitle,
   children,
+  media,
 }: {
   title: string;
   subtitle?: string;
   children?: ReactNode;
+  media?: ReactNode;
 }) {
   return (
-    <article className="group relative border border-gold/10 hover:border-gold/40 bg-card/40 backdrop-blur-md p-10 transition-premium hover:-translate-y-2 hover:shadow-2xl hover:shadow-gold/10 overflow-hidden">
+    <article className="group relative border border-gold/10 hover:border-gold/40 bg-card/40 backdrop-blur-md transition-premium hover:-translate-y-2 hover:shadow-2xl hover:shadow-gold/10 overflow-hidden">
       <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-gold/10 transition-premium" />
-      {subtitle ? (
-        <p className="text-[11px] tracking-[0.4em] uppercase text-gold/60 mb-4 group-hover:text-gold transition-colors">{subtitle}</p>
-      ) : null}
-      <h3 className="font-display text-2xl text-foreground mb-6 leading-tight group-hover:text-paper transition-colors">{title}</h3>
-      {children ? <div className="text-sm text-muted-foreground leading-relaxed font-light group-hover:text-foreground/80 transition-colors">{children}</div> : null}
+      {media ? <div className="relative">{media}</div> : null}
+      <div className="relative p-10">
+        {subtitle ? (
+          <p className="text-[11px] tracking-[0.4em] uppercase text-gold/60 mb-4 group-hover:text-gold transition-colors">{subtitle}</p>
+        ) : null}
+        <h3 className="font-display text-2xl text-foreground mb-6 leading-tight group-hover:text-paper transition-colors">{title}</h3>
+        {children ? <div className="text-sm text-muted-foreground leading-relaxed font-light group-hover:text-foreground/80 transition-colors">{children}</div> : null}
+      </div>
     </article>
   );
 }
+
 
 export function Prose({ children }: { children: ReactNode }) {
   return (
