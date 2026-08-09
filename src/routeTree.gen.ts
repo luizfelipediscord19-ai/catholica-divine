@@ -50,6 +50,7 @@ import { Route as ApiChatRouteImport } from './routes/api/chat'
 import { Route as BibliaLivroIndexRouteImport } from './routes/biblia.$livro.index'
 import { Route as OracoesNovenasSlugRouteImport } from './routes/oracoes.novenas.$slug'
 import { Route as BibliaLivroCapituloRouteImport } from './routes/biblia.$livro.$capitulo'
+import { Route as ApiPublicCspReportRouteImport } from './routes/api/public/csp-report'
 
 const SophiaDiagnosticoRoute = SophiaDiagnosticoRouteImport.update({
   id: '/sophia-diagnostico',
@@ -257,6 +258,11 @@ const BibliaLivroCapituloRoute = BibliaLivroCapituloRouteImport.update({
   path: '/$capitulo',
   getParentRoute: () => BibliaLivroRoute,
 } as any)
+const ApiPublicCspReportRoute = ApiPublicCspReportRouteImport.update({
+  id: '/api/public/csp-report',
+  path: '/api/public/csp-report',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -297,6 +303,7 @@ export interface FileRoutesByFullPath {
   '/biblia/': typeof BibliaIndexRoute
   '/forum/': typeof ForumIndexRoute
   '/santos/': typeof SantosIndexRoute
+  '/api/public/csp-report': typeof ApiPublicCspReportRoute
   '/biblia/$livro/$capitulo': typeof BibliaLivroCapituloRoute
   '/oracoes/novenas/$slug': typeof OracoesNovenasSlugRoute
   '/biblia/$livro/': typeof BibliaLivroIndexRoute
@@ -337,6 +344,7 @@ export interface FileRoutesByTo {
   '/biblia': typeof BibliaIndexRoute
   '/forum': typeof ForumIndexRoute
   '/santos': typeof SantosIndexRoute
+  '/api/public/csp-report': typeof ApiPublicCspReportRoute
   '/biblia/$livro/$capitulo': typeof BibliaLivroCapituloRoute
   '/oracoes/novenas/$slug': typeof OracoesNovenasSlugRoute
   '/biblia/$livro': typeof BibliaLivroIndexRoute
@@ -381,6 +389,7 @@ export interface FileRoutesById {
   '/biblia/': typeof BibliaIndexRoute
   '/forum/': typeof ForumIndexRoute
   '/santos/': typeof SantosIndexRoute
+  '/api/public/csp-report': typeof ApiPublicCspReportRoute
   '/biblia/$livro/$capitulo': typeof BibliaLivroCapituloRoute
   '/oracoes/novenas/$slug': typeof OracoesNovenasSlugRoute
   '/biblia/$livro/': typeof BibliaLivroIndexRoute
@@ -426,6 +435,7 @@ export interface FileRouteTypes {
     | '/biblia/'
     | '/forum/'
     | '/santos/'
+    | '/api/public/csp-report'
     | '/biblia/$livro/$capitulo'
     | '/oracoes/novenas/$slug'
     | '/biblia/$livro/'
@@ -466,6 +476,7 @@ export interface FileRouteTypes {
     | '/biblia'
     | '/forum'
     | '/santos'
+    | '/api/public/csp-report'
     | '/biblia/$livro/$capitulo'
     | '/oracoes/novenas/$slug'
     | '/biblia/$livro'
@@ -509,6 +520,7 @@ export interface FileRouteTypes {
     | '/biblia/'
     | '/forum/'
     | '/santos/'
+    | '/api/public/csp-report'
     | '/biblia/$livro/$capitulo'
     | '/oracoes/novenas/$slug'
     | '/biblia/$livro/'
@@ -542,6 +554,7 @@ export interface RootRouteChildren {
   ApiChatRoute: typeof ApiChatRoute
   ForumSlugRoute: typeof ForumSlugRoute
   ForumIndexRoute: typeof ForumIndexRoute
+  ApiPublicCspReportRoute: typeof ApiPublicCspReportRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -833,6 +846,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BibliaLivroCapituloRouteImport
       parentRoute: typeof BibliaLivroRoute
     }
+    '/api/public/csp-report': {
+      id: '/api/public/csp-report'
+      path: '/api/public/csp-report'
+      fullPath: '/api/public/csp-report'
+      preLoaderRoute: typeof ApiPublicCspReportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -949,6 +969,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiChatRoute: ApiChatRoute,
   ForumSlugRoute: ForumSlugRoute,
   ForumIndexRoute: ForumIndexRoute,
+  ApiPublicCspReportRoute: ApiPublicCspReportRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
