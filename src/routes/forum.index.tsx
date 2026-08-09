@@ -265,7 +265,13 @@ function NovoTopico({
       onPronto();
       void navigate({ to: "/forum/$slug", params: { slug: res.slug } });
     },
-    onError: (erro: Error) => toast.error(traduzirErroAuth(erro) || "Não foi possível publicar."),
+    onError: (erro: Error) =>
+      avisarErroDeConta(
+        erro,
+        (modo) => void navigate({ to: "/auth", search: modo ? { modo } : undefined }),
+        "Não foi possível publicar.",
+      ),
+
   });
 
   const valido = autenticado && titulo.trim().length >= 5 && corpo.trim().length >= 10;
