@@ -4,6 +4,7 @@ import { LIVROS } from "@/lib/data/biblia/index";
 import { SANTOS_LISTA } from "@/lib/santos-lista";
 import { PARTES } from "@/lib/data/catecismo/index";
 import { NOVENAS } from "@/lib/data/devocoes/novenas";
+import { SECOES_FORUM } from "@/lib/data/forum-secoes";
 
 const BASE_URL = "https://catholica-divine.lovable.app";
 
@@ -35,7 +36,6 @@ const STATIC_PATHS: SitemapEntry[] = [
   { path: "/calendario-liturgico", changefreq: "weekly", priority: "0.7" },
   { path: "/liturgia-diaria", changefreq: "daily", priority: "0.9" },
   { path: "/forum", changefreq: "hourly", priority: "0.8" },
-  { path: "/painel", changefreq: "monthly", priority: "0.3" },
   { path: "/assistente", changefreq: "monthly", priority: "0.7" },
   { path: "/busca", changefreq: "monthly", priority: "0.7" },
   { path: "/sobre", changefreq: "monthly", priority: "0.6" },
@@ -67,6 +67,11 @@ export const Route = createFileRoute("/sitemap.xml")({
           ...NOVENAS.map((n) => ({
             path: `/oracoes/novenas/${n.slug}`,
             changefreq: "monthly" as const,
+            priority: "0.6",
+          })),
+          ...SECOES_FORUM.map((s) => ({
+            path: `/forum/${s.slug}`,
+            changefreq: "daily" as const,
             priority: "0.6",
           })),
           ...SANTOS_LISTA.map((s) => ({
