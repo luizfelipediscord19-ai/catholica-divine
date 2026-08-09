@@ -216,10 +216,20 @@ function TopicoPage() {
             </label>
             <div className="flex flex-wrap items-center gap-3">
               {!autenticado ? (
-                <Link to="/auth" className={botaoClass}>
-                  Entrar para responder
-                </Link>
+                <>
+                  <Link to="/auth" search={{ modo: "entrar" }} className={botaoClass}>
+                    Entrar para responder
+                  </Link>
+                  <Link
+                    to="/auth"
+                    search={{ modo: "recuperar" }}
+                    className="text-xs text-muted-foreground underline decoration-gold/40 underline-offset-4 hover:text-gold"
+                  >
+                    Esqueci a senha
+                  </Link>
+                </>
               ) : null}
+
               <button
                 type="submit"
                 disabled={!autenticado || corpo.trim().length < 2 || responder.isPending}
