@@ -45,7 +45,7 @@ export const Route = createFileRoute("/biblia/$livro/$capitulo")({
     return queryClient.ensureQueryData({
       queryKey: ["biblia", l.slug, c],
       queryFn: async () => {
-        const versos = await carregarCapitulo(l.slug, c);
+        const versos = await carregarCapitulo("almeida", l.slug, c);
         return { livro: l, capitulo: c, versos };
       },
     });
@@ -78,23 +78,35 @@ function Page() {
   const { livro, capitulo, versos } = loaderData;
   const { vi, vf } = Route.useSearch();
   const navigate = useNavigate();
-  const [versao, setVersao] = useState<VersaoId>("almeida");
+  // Livros deuterocanônicos não existem na Almeida (edição protestante de
+  // domínio público): abrimos direto na Vulgata Clementina.
+  const almeidaTemLivro = temTextoLocal("almeida", livro.slug);
+  const [versao, setVersao] = useState<VersaoId>(almeidaTemLivro ? "almeida" : "vulgata");
   const pessoal = useCapituloPessoal(livro.slug, capitulo);
   const anterior = capitulo > 1 ? capitulo - 1 : null;
   const proximo = capitulo < livro.capitulos ? capitulo + 1 : null;
   const versaoAtual = VERSOES.find((v) => v.id === versao)!;
 
-  // Texto local (Almeida) quando existe; senão o próprio servidor entrega.
+  // Texto local hospedado no portal; senão o próprio servidor entrega.
   const temLocal = versao === "almeida" && !!versos;
+  const localOutra = useQuery({
+    queryKey: ["biblia-local", versao, livro.slug, capitulo],
+    queryFn: () => carregarCapitulo(versao, livro.slug, capitulo),
+    enabled: !temLocal && temTextoLocal(versao, livro.slug),
+    staleTime: Infinity,
+  });
   const buscar = useServerFn(obterCapituloVersao);
   const remoto = useQuery({
     queryKey: ["biblia-versao", versao, livro.slug, capitulo],
     queryFn: () => buscar({ data: { versao, livro: livro.slug, capitulo } }),
-    enabled: !temLocal,
+    enabled: !temLocal && !temTextoLocal(versao, livro.slug),
     staleTime: 1000 * 60 * 60,
   });
 
-  const textoAtual: Verso[] | null = temLocal ? versos : (remoto.data?.versos ?? null);
+  const textoAtual: Verso[] | null = temLocal
+    ? versos
+    : (localOutra.data ?? remoto.data?.versos ?? null);
+  const carregando = !temLocal && (localOutra.isPending || remoto.isPending);
 
   const [inicio, setInicio] = useState<string>(vi ? String(vi) : "");
   const [fim, setFim] = useState<string>(vf ? String(vf) : "");
@@ -233,6 +245,13 @@ function Page() {
       <p className="mt-2 text-[11px] text-muted-foreground">
         Versão: <span className="text-gold">{versaoAtual.nome}</span> — {versaoAtual.lingua} · {versaoAtual.fonte}
       </p>
+      {!almeidaTemLivro && (
+        <p className="mt-1 text-[11px] text-muted-foreground leading-relaxed">
+          Livro deuterocanônico: reconhecido pela Igreja Católica (Concílio de Trento,
+          1546) e ausente das edições protestantes de domínio público. Por isso o texto
+          é servido aqui na Vulgata Clementina (latim) e na Douay-Rheims (inglês).
+        </p>
+      )}
       {livro.slug === "salmos" && (versao === "vulgata" || versao === "grego") ? (
         <p className="mt-1 text-[11px] text-muted-foreground">
           Atenção: na Vulgata e na Septuaginta a numeração dos Salmos é deslocada em uma unidade
@@ -247,7 +266,7 @@ function Page() {
           {passagemAtiva && <span className="ml-2 text-gold/70">· passagem {refPassagem}</span>}
         </p>
 
-        {!temLocal && remoto.isPending ? (
+        {carregando ? (
           <p className="text-muted-foreground text-sm">Carregando o texto…</p>
         ) : !versosFiltrados ? (
           <p className="text-muted-foreground text-sm">
