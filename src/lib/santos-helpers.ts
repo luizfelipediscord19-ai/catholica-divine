@@ -1,4 +1,5 @@
 import { SANTOS as RICOS, type Santo as SantoRico } from "@/lib/data/santos";
+import { imagemSanto } from "@/lib/data/santos-imagens";
 
 export type SantoBasico = {
   nome: string;
@@ -44,6 +45,7 @@ export function findRico(slugUrl: string): SantoRico | undefined {
 
 export function buildSantoView(slugUrl: string, basico?: SantoBasico) {
   const rico = findRico(slugUrl);
+  const propria = imagemSanto(slugUrl) ?? (rico ? imagemSanto(rico.slug) : undefined);
   return {
     nome: rico?.nome ?? basico?.nome ?? "Santo",
     titulo: rico?.titulo,
@@ -54,7 +56,8 @@ export function buildSantoView(slugUrl: string, basico?: SantoBasico) {
     biografia: rico?.biografia ?? basico?.body,
     virtudes: rico?.virtudes,
     frase: rico?.frase,
-    imagem: rico?.imagem,
+    imagem: rico?.imagem ?? propria?.url,
+    creditoImagem: propria?.credito,
     temRico: Boolean(rico),
   };
 }
