@@ -50,8 +50,9 @@ export const Route = createFileRoute("/biblia/$livro/$capitulo")({
       },
     });
   },
-  head: ({ loaderData }) => {
+  head: ({ params, loaderData }) => {
     const titulo = loaderData ? `${loaderData.livro.nome} ${loaderData.capitulo}` : "Bíblia";
+    const url = `https://catholica-divine.lovable.app/biblia/${params.livro}/${params.capitulo}`;
     return {
       meta: [
         { title: `${titulo} — Bíblia — Portal Católico` },
@@ -59,10 +60,26 @@ export const Route = createFileRoute("/biblia/$livro/$capitulo")({
         { property: "og:title", content: `${titulo} — Bíblia` },
         { property: "og:description", content: loaderData?.livro.resumo ?? "" },
         { property: "og:type", content: "article" },
+        { property: "og:url", content: url },
         { name: "twitter:card", content: "summary" },
+      ],
+      links: [{ rel: "canonical", href: url }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Chapter",
+            name: titulo,
+            inLanguage: "pt-BR",
+            url,
+            isPartOf: { "@type": "Book", name: loaderData?.livro.nome ?? "Bíblia" },
+          }),
+        },
       ],
     };
   },
+
   component: Page,
   notFoundComponent: () => (
     <div className="max-w-2xl mx-auto px-4 sm:px-6 py-24 text-center">
