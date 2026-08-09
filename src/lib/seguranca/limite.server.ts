@@ -45,3 +45,29 @@ export function dentroDoLimite(
   atual.contagem += 1;
   return atual.contagem <= limite;
 }
+
+/**
+ * Igual a `dentroDoLimite`, mas contando no banco: o teto vale para todas as
+ * instâncias do servidor e sobrevive a reinícios. Se o banco falhar, cai no
+ * limite em memória para não derrubar o recurso.
+ */
+export async function dentroDoLimitePersistido(
+  escopo: string,
+  chave: string,
+  limite: number,
+  janelaMs: number,
+): Promise<boolean> {
+  try {
+    const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+    const janela = new Date(Math.floor(Date.now() / janelaMs) * janelaMs).toISOString();
+    const { data, error } = await supabaseAdmin.rpc("registrar_uso_ia", {
+      _chave: `${escopo}:${chave}`,
+      _janela: janela,
+    });
+    if (error) throw error;
+    return (data ?? 0) <= limite;
+  } catch {
+    return dentroDoLimite(escopo, chave, limite, janelaMs);
+  }
+}
+
