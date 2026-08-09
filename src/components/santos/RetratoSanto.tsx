@@ -2,11 +2,14 @@ import { useState } from "react";
 
 /**
  * Retrato de santo com carregamento otimizado: lazy por padrão, dimensões
- * declaradas (sem salto de layout) e um marcador sóbrio quando não há imagem
- * ou quando ela falha — assim nenhuma página fica com espaço quebrado.
+ * declaradas (sem salto de layout), reserva na fonte pública de domínio
+ * público quando a cópia do CDN não está disponível (hospedagens fora da
+ * Lovable) e, só em último caso, um marcador sóbrio — assim nenhuma página
+ * fica com espaço quebrado.
  */
 export function RetratoSanto({
   url,
+  reserva,
   nome,
   className = "",
   prioridade = false,
@@ -15,6 +18,7 @@ export function RetratoSanto({
   altura = 875,
 }: {
   url?: string;
+  reserva?: string;
   nome: string;
   className?: string;
   prioridade?: boolean;
@@ -22,9 +26,11 @@ export function RetratoSanto({
   largura?: number;
   altura?: number;
 }) {
-  const [falhou, setFalhou] = useState(false);
+  const [tentativa, setTentativa] = useState(0);
+  const fontes = [url, reserva].filter((f): f is string => Boolean(f));
+  const atual = fontes[tentativa];
 
-  if (!url || falhou) {
+  if (!atual) {
     return (
       <div
         className={`grid place-items-center bg-gradient-to-br from-deep via-deep to-background ${className}`}
