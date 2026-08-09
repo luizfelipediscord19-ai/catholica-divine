@@ -271,7 +271,7 @@ Object.assign(RELACIONADOS, {
     catecismo: [cat("credo", "Os anjos na vida da Igreja", "§§ 328–336"), cat("liturgia", "Matrimônio e oração dos esposos")],
     sacramentos: [sacramento("Matrimônio (Tb 8,4-9)")],
     biblia: [bib("tobias", 12, 6, 15, "Tb 12 — Rafael revela sua missão"), bib("tobias", 8, 4, 9, "Tb 8,4-9 — Oração dos noivos")],
-    santos: [santo("sao-rafael", "São Rafael Arcanjo")],
+    santos: [santo("sao-rafael-arcanjo", "São Rafael Arcanjo")],
     oracoes: [oracao("/oracoes", "Oração ao Anjo da Guarda")],
   },
   "biblia:judite": {
