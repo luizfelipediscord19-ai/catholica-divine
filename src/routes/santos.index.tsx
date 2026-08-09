@@ -121,42 +121,17 @@ function Page() {
         </div>
 
         <CardGrid cols={3}>
-          {visiveis.map((s, i) => {
-            const isActive = s.slug === selectedSlug;
-            return (
-              <button
-                key={s.slug}
-                type="button"
-                onClick={() => setSelectedSlug(isActive ? null : s.slug)}
-                aria-expanded={isActive}
-                className={`text-left block group animate-content-fade focus:outline-none focus-visible:ring-1 focus-visible:ring-gold/60 ${
-                  isActive ? "ring-1 ring-gold/50" : ""
-                }`}
-                style={{ animationDelay: `${Math.min(i, 12) * 40}ms` }}
-              >
-                <ContentCard
-                  title={s.nome}
-                  subtitle={`Memória · ${s.data}`}
-                  media={
-                    <RetratoSanto
-                      url={imagemSanto(s.slug)?.url}
-                      nome={s.nome}
-                      prioridade={i < 3}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1280px) 33vw, 380px"
-                      className="h-44 w-full object-cover object-top opacity-90 group-hover:opacity-100 transition-opacity"
-                    />
-                  }
-                >
-                  {s.body}
-                  <span className="block mt-4 text-xs text-gold/80 group-hover:text-gold tracking-[0.2em] uppercase transition-smooth group-hover:translate-x-1">
-                    {isActive ? "Fechar ↑" : "Ler biografia →"}
-                  </span>
-                </ContentCard>
-
-              </button>
-            );
-          })}
+          {visiveis.map((s, i) => (
+            <CartaoSanto
+              key={s.slug}
+              santo={s}
+              indice={i}
+              ativo={s.slug === selectedSlug}
+              onSelect={() => setSelectedSlug(s.slug === selectedSlug ? null : s.slug)}
+            />
+          ))}
         </CardGrid>
+
 
         {visiveis.length < filtered.length ? (
           <div className="mt-12 flex flex-col items-center gap-3">
