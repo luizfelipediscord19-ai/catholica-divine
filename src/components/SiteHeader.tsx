@@ -23,6 +23,8 @@ const NAV = [
   { to: "/forum", label: "Fórum" },
   { to: "/favoritos", label: "Favoritos" },
   { to: "/painel", label: "Meu painel" },
+  { to: "/busca", label: "Busca avançada" },
+  { to: "/sobre", label: "Sobre o Portal" },
 ] as const;
 
 const NAV_PRINCIPAL: { to: string; label: string; desde: "lg" | "xl" | "2xl" }[] = [
