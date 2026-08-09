@@ -199,6 +199,7 @@ function CartaoSanto({
         media={
           <RetratoSanto
             url={imagemSanto(santo.slug)?.url}
+            reserva={imagemSanto(santo.slug)?.remoto}
             nome={santo.nome}
             prioridade={indice < 3}
             sizes="(max-width: 768px) 100vw, (max-width: 1280px) 33vw, 380px"
@@ -229,6 +230,7 @@ function SantoDetail({
         <div className="relative aspect-[4/5] md:aspect-auto md:min-h-[420px] bg-deep overflow-hidden">
           <RetratoSanto
             url={img}
+            reserva={view.imagemReserva}
             nome={view.nome}
             prioridade
             sizes="(max-width: 768px) 100vw, 480px"

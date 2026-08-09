@@ -57,6 +57,7 @@ export function buildSantoView(slugUrl: string, basico?: SantoBasico) {
     virtudes: rico?.virtudes,
     frase: rico?.frase,
     imagem: rico?.imagem || propria?.url,
+    imagemReserva: propria?.remoto,
     creditoImagem: propria?.credito,
     temRico: Boolean(rico),
   };
