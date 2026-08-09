@@ -14,25 +14,18 @@ import {
 } from "../components/portal/AcoesCapitulo";
 import { NotasCapitulo } from "../components/portal/NotasCapitulo";
 
+import { capituloLocal, temTextoLocal } from "../lib/biblia/local";
+
 type Verso = { v: number; t: string };
-type LivroJson = { slug: string; nome: string; capitulos: Record<string, Verso[]> };
 
-const CAPITULO_CACHE = new Map<string, Verso[]>();
-
-async function carregarCapitulo(slug: string, cap: number): Promise<Verso[] | null> {
-  const cacheKey = `${slug}-${cap}`;
-  if (CAPITULO_CACHE.has(cacheKey)) return CAPITULO_CACHE.get(cacheKey)!;
-
-  try {
-    const mod = (await import(`../lib/data/biblia/almeida/${slug}.json`)) as { default: LivroJson };
-    const versos = mod.default.capitulos[String(cap)] ?? null;
-    if (versos) CAPITULO_CACHE.set(cacheKey, versos);
-    return versos;
-  } catch {
-    // Sem cópia local: o texto vem do servidor do próprio portal.
-    return null;
-  }
+async function carregarCapitulo(
+  versao: string,
+  slug: string,
+  cap: number,
+): Promise<Verso[] | null> {
+  return capituloLocal(versao, slug, cap);
 }
+
 
 type Search = { vi?: number; vf?: number };
 
