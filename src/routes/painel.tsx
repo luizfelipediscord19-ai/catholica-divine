@@ -15,6 +15,8 @@ import {
   ProgressoPorLivro,
 } from "@/components/portal/ContinuarLeitura";
 import { CaminhoDoPadroeiro } from "@/components/portal/CaminhoDoPadroeiro";
+import { HorariosTarefas } from "@/components/portal/HorariosTarefas";
+
 import { useCelebracao } from "@/components/portal/Celebracao";
 import { EscolherSanto } from "@/components/portal/EscolherSanto";
 import { useIdentidade, usePainel } from "@/hooks/use-identidade";
@@ -362,6 +364,10 @@ function PainelPage() {
           })}
         </div>
       </section>
+
+      <HorariosTarefas />
+
+
 
 
       <footer className="border-t border-gold/15 pt-8 flex flex-wrap items-center gap-4">
