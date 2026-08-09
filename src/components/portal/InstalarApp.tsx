@@ -9,25 +9,15 @@ import {
   ouvirPromptInstalacao,
   type PromptEvent,
 } from "@/lib/pwa/instalacao";
-
-const CHAVE_DISPENSADO = "portal:pwa-dispensado";
-const DIAS_SILENCIO = 7;
+import {
+  ATRASO_MS,
+  conviteSilenciado,
+  registrarInstalado,
+  registrarRecusa,
+} from "@/lib/pwa/preferencias-instalacao";
 
 // Começa a escutar antes de qualquer render: o navegador dispara o evento uma única vez.
 iniciarCapturaInstalacao();
-
-function silenciado() {
-  try {
-    const valor = localStorage.getItem(CHAVE_DISPENSADO);
-    if (!valor) return false;
-    if (valor === "instalado") return true;
-    const quando = Number(valor);
-    if (!Number.isFinite(quando)) return false;
-    return Date.now() - quando < DIAS_SILENCIO * 24 * 60 * 60 * 1000;
-  } catch {
-    return false;
-  }
-}
 
 export function InstalarApp() {
   const [visivel, setVisivel] = useState(false);
@@ -35,18 +25,20 @@ export function InstalarApp() {
   const [ios, setIos] = useState(false);
 
   useEffect(() => {
-    if (jaInstalado() || !ehDispositivoMovel() || silenciado()) return;
+    if (jaInstalado() || !ehDispositivoMovel() || conviteSilenciado()) return;
 
     setIos(ehIos());
     setEvento(obterPromptInstalacao());
     const parar = ouvirPromptInstalacao((e) => {
       setEvento(e);
-      if (e) setVisivel(true);
+      if (e && !conviteSilenciado()) setVisivel(true);
     });
 
     // Mesmo sem `beforeinstallprompt` (iOS, navegadores alternativos, preview em
     // iframe) mostramos o aviso com as instruções manuais.
-    const timer = window.setTimeout(() => setVisivel(true), 1800);
+    const timer = window.setTimeout(() => {
+      if (!conviteSilenciado()) setVisivel(true);
+    }, ATRASO_MS);
 
     return () => {
       parar();
@@ -55,11 +47,7 @@ export function InstalarApp() {
   }, []);
 
   const dispensar = () => {
-    try {
-      localStorage.setItem(CHAVE_DISPENSADO, String(Date.now()));
-    } catch {
-      /* ignora */
-    }
+    registrarRecusa();
     setVisivel(false);
   };
 
@@ -67,15 +55,11 @@ export function InstalarApp() {
     if (!evento) return;
     await evento.prompt();
     const escolha = await evento.userChoice;
-    if (escolha?.outcome === "accepted") {
-      try {
-        localStorage.setItem(CHAVE_DISPENSADO, "instalado");
-      } catch {
-        /* ignora */
-      }
-    }
+    if (escolha?.outcome === "accepted") registrarInstalado();
+    else registrarRecusa();
     setVisivel(false);
   };
+
 
   if (!visivel) return null;
 
