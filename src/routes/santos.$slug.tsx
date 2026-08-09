@@ -187,6 +187,7 @@ function SantoPage() {
             <figure className="border border-gold/20 bg-deep overflow-hidden">
               <RetratoSanto
                 url={v.imagem}
+                reserva={v.imagemReserva}
                 nome={v.nome}
                 prioridade
                 sizes="(max-width: 768px) 100vw, 280px"
