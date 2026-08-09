@@ -9,18 +9,11 @@ import { anexarTokenDaConta } from "./lib/auth/anexar-token";
 
 
 
-const errorMiddleware = createMiddleware().server(async ({ next, request }) => {
+const errorMiddleware = createMiddleware().server(async ({ next }) => {
   try {
     return await next();
   } catch (error) {
     if (error != null && typeof error === "object" && "statusCode" in error) {
-      throw error;
-    }
-    // Chamadas de server function precisam receber o erro serializado, e não a
-    // página HTML de falha: só assim a interface mostra a mensagem real
-    // (ex.: "Sua sessão expirou. Entre novamente.") em vez de um erro genérico.
-    const url = request?.url ?? "";
-    if (url.includes("createServerFn") || url.includes("_serverFn")) {
       throw error;
     }
     console.error(error);
@@ -30,6 +23,7 @@ const errorMiddleware = createMiddleware().server(async ({ next, request }) => {
     });
   }
 });
+
 
 
 export const startInstance = createStart(() => ({
