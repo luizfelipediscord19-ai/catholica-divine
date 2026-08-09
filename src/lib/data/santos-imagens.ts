@@ -149,6 +149,8 @@ export const IMAGENS_SANTOS: Record<string, ImagemSanto> = {
   "sao-toribio-de-mogrovejo": { url: "/__l5e/assets-v1/27f0210b-d5c1-447b-85ab-8ea674e21591/sao-toribio-de-mogrovejo.jpg", remoto: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Santo_Toribio_Alfonso_de_Mogrovejo%2C_Arzobispo_de_Lima.jpg/960px-Santo_Toribio_Alfonso_de_Mogrovejo%2C_Arzobispo_de_Lima.jpg", credito: "pt.wikipedia:Toríbio de Mongrovejo" },
   "sao-vicente-de-paulo": { url: "/__l5e/assets-v1/3e9eed95-a68e-400e-a2bc-f97ea3d102f6/sao-vicente-de-paulo.jpg", remoto: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Vincent_de_Paul.PNG", credito: "pt.wikipedia:Vicente de Paulo" },
   "sao-vicente-ferrer": { url: "/__l5e/assets-v1/33590f7b-d040-4f13-b1ee-0ca5b455bab8/sao-vicente-ferrer.jpg", remoto: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Cromolitogravura_de_S%C3%A3o_Vincente_Ferrer%2C_aproximadamente_de_1919.png/960px-Cromolitogravura_de_S%C3%A3o_Vincente_Ferrer%2C_aproximadamente_de_1919.png", credito: "pt.wikipedia:Vicente Ferrer" },
+  "santa-maria-goretti": { url: "https://upload.wikimedia.org/wikipedia/commons/5/5f/Photograph_of_Saint_Maria_Goretti%2C_1902.jpg", credito: "pt.wikipedia:Maria Goretti" },
+  "ns-aparecida": { url: "https://upload.wikimedia.org/wikipedia/commons/8/8a/NS_Aparecida.png", credito: "pt.wikipedia:Nossa Senhora Aparecida" },
 };
 
 /** Imagem própria do santo, quando existe. */
