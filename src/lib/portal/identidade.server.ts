@@ -149,19 +149,19 @@ async function desbloquear(identidadeId: string, slugs: string[]): Promise<strin
   return novos;
 }
 
+/**
+ * Soma XP e recalcula o nível numa única operação no banco, para que duas
+ * ações simultâneas (oração + leitura, por exemplo) não sobrescrevam o total.
+ */
 async function somarXp(identidadeId: string, xp: number) {
-  const { data } = await supabaseAdmin
-    .from("identidades")
-    .select("xp")
-    .eq("id", identidadeId)
-    .single();
-  const novoXp = (data?.xp ?? 0) + xp;
-  await supabaseAdmin
-    .from("identidades")
-    .update({ xp: novoXp, nivel: nivelDoXp(novoXp) })
-    .eq("id", identidadeId);
-  return novoXp;
+  const { data, error } = await supabaseAdmin.rpc("somar_xp", {
+    _identidade_id: identidadeId,
+    _delta: xp,
+  });
+  if (error) throw new Error("Não foi possível registrar seus pontos.");
+  return data ?? 0;
 }
+
 
 function hojeISO() {
   return new Date().toISOString().slice(0, 10);
