@@ -53,6 +53,8 @@ export function DenunciarBotao({
   compacto?: boolean;
 }) {
   const [aberto, setAberto] = useState(false);
+  const navigate = useNavigate();
+
   const [motivo, setMotivo] = useState<string>(MOTIVOS_DENUNCIA[0].valor);
   const [comentario, setComentario] = useState("");
 
