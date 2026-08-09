@@ -133,12 +133,25 @@ function Page() {
                 }`}
                 style={{ animationDelay: `${Math.min(i, 12) * 40}ms` }}
               >
-                <ContentCard title={s.nome} subtitle={`Memória · ${s.data}`}>
+                <ContentCard
+                  title={s.nome}
+                  subtitle={`Memória · ${s.data}`}
+                  media={
+                    <RetratoSanto
+                      url={imagemSanto(s.slug)?.url}
+                      nome={s.nome}
+                      prioridade={i < 3}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1280px) 33vw, 380px"
+                      className="h-44 w-full object-cover object-top opacity-90 group-hover:opacity-100 transition-opacity"
+                    />
+                  }
+                >
                   {s.body}
                   <span className="block mt-4 text-xs text-gold/80 group-hover:text-gold tracking-[0.2em] uppercase transition-smooth group-hover:translate-x-1">
                     {isActive ? "Fechar ↑" : "Ler biografia →"}
                   </span>
                 </ContentCard>
+
               </button>
             );
           })}
