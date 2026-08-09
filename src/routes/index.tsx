@@ -11,7 +11,7 @@ import { ScrollReveal } from "../components/ScrollReveal";
 
 
 
-const SITE_URL = "https://portalcatolico.netlify.app";
+const SITE_URL = "https://catholica-divine.lovable.app";
 
 export const Route = createFileRoute("/")({
   loader: ({ context }) => context.queryClient.ensureQueryData(liturgiaQueryOptions()),
