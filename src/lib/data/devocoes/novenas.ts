@@ -197,4 +197,73 @@ export const NOVENAS: Novena[] = [
     ],
     fonte: "CIC §§ 1030-1032; Trento, Sessão XXV (DH 1820)",
   },
+  {
+    slug: "nossa-senhora-de-fatima",
+    titulo: "Novena a Nossa Senhora de Fátima",
+    ocasiao: "Aparições de Fátima (1917) — 13 de maio e 13 de outubro",
+    resumo:
+      "Nove dias em memória das aparições de Nossa Senhora aos três pastorinhos em Fátima, pedindo conversão, penitência e paz para o mundo.",
+    oracaoInicial:
+      "Ó Nossa Senhora do Rosário de Fátima, que viestes do Céu para chamar os homens à conversão, à penitência e à oração do Rosário, escutai a nossa súplica confiante nesta novena.",
+    oracaoFinal:
+      "Ó meu Jesus, perdoai-nos, livrai-nos do fogo do Inferno, levai as almas todas para o Céu, e socorrei principalmente as que mais precisarem, por intercessão de Nossa Senhora de Fátima. Amém.",
+    dias: [
+      { dia: 1, titulo: "A aparição na Cova da Iria", meditacao: "Em 13 de maio de 1917, uma Senhora vestida de branco apareceu a três crianças pastoras em Fátima, dizendo vir do Céu. Peçamos hoje a simplicidade de coração dos pastorinhos para acolher a mensagem de Deus. Que não desprezemos os sinais que o Senhor nos envia." },
+      { dia: 2, titulo: "O chamado à conversão", meditacao: "Nossa Senhora pediu insistentemente que os homens deixassem de ofender a Deus, já tão ofendido. Examinemos hoje nossa própria vida e os pecados que ainda nos afastam do Senhor. Que este exame nos leve a um propósito sincero de mudança." },
+      { dia: 3, titulo: "A oração do terço", meditacao: "Em todas as aparições, Maria pediu a reza diária do Rosário pela paz do mundo. Comprometamo-nos hoje a rezar o terço com mais fervor e constância. Essa oração simples é arma poderosa contra o mal." },
+      { dia: 4, titulo: "A penitência pelos pecadores", meditacao: "Os pastorinhos ofereceram pequenos sacrifícios pela conversão dos pecadores, unindo-os à Paixão de Cristo. Ofereçamos hoje também alguma renúncia concreta por quem está longe de Deus. Nenhum sacrifício feito com amor é inútil." },
+      { dia: 5, titulo: "A visão do inferno", meditacao: "Aos pastorinhos foi mostrada a realidade terrível da perdição eterna, para que rezassem pela salvação das almas. Que essa verdade nos desperte do adormecimento espiritual. Rezemos hoje especialmente pelos que vivem indiferentes a Deus." },
+      { dia: 6, titulo: "A consagração ao Imaculado Coração", meditacao: "Nossa Senhora pediu a consagração do mundo e de cada família ao seu Imaculado Coração como caminho de paz. Renovemos hoje nossa própria consagração pessoal a Maria. Que Ela nos conduza sempre a Jesus." },
+      { dia: 7, titulo: "O milagre do sol", meditacao: "Em 13 de outubro de 1917, diante de setenta mil pessoas, ocorreu o prodígio solar que confirmou publicamente a veracidade das aparições. Agradeçamos a Deus por confirmar a fé dos simples com sinais visíveis. Que a nossa fé não dependa de milagres, mas se fortaleça neles." },
+      { dia: 8, titulo: "O testemunho dos pastorinhos", meditacao: "Francisco, Jacinta e Lúcia viveram com heroica fidelidade a missão recebida, e os dois primeiros foram canonizados por São João Paulo II. Peçamos a graça de sermos fiéis, como eles, à vontade de Deus em nossa vida. Que a santidade infantil nos inspire." },
+      { dia: 9, titulo: "A paz prometida por Maria", meditacao: "Nossa Senhora prometeu que, ao final, o seu Imaculado Coração triunfaria e seria concedido um tempo de paz à humanidade. Confiemos ao seu Coração maternal as guerras e sofrimentos do mundo atual. Nossa Senhora de Fátima, rogai por nós." },
+    ],
+    fonte: "Memórias da Irmã Lúcia de Jesus; Mensagem de Fátima (Santa Sé, 2000)",
+  },
+  {
+    slug: "sao-miguel-arcanjo",
+    titulo: "Novena a São Miguel Arcanjo",
+    ocasiao: "Príncipe da Milícia Celeste — 29 de setembro",
+    resumo:
+      "Novena de proteção espiritual invocando São Miguel Arcanjo contra as ciladas e a malícia do demônio, conforme a oração composta por Leão XIII.",
+    oracaoInicial:
+      "São Miguel Arcanjo, defendei-nos no combate; sede o nosso refúgio contra as maldades e ciladas do demônio. Que Deus vos exorte, instantemente o pedimos, e vós, príncipe da milícia celeste, pela virtude divina, precipitai no inferno a satanás e aos outros espíritos malignos.",
+    oracaoFinal:
+      "Glorioso Arcanjo São Miguel, ficai sempre a nosso lado nesta vida e assisti-nos na hora da morte, para que, com a vossa ajuda, alcancemos a glória do Paraíso. Amém.",
+    dias: [
+      { dia: 1, titulo: "Quem como Deus?", meditacao: "O próprio nome Miguel significa 'Quem como Deus?', grito de fidelidade lançado contra a rebelião de Lúcifer no Céu. Peçamos hoje a graça de rejeitar todo orgulho que nos afaste de Deus. Que sua humildade seja também a nossa arma." },
+      { dia: 2, titulo: "Príncipe da milícia celeste", meditacao: "A Escritura o apresenta liderando os anjos fiéis na batalha contra o dragão (Ap 12,7-9). Confiemos-lhe hoje as batalhas espirituais que travamos silenciosamente. Nenhuma luta interior escapa ao seu auxílio." },
+      { dia: 3, titulo: "Defensor do povo de Deus", meditacao: "No livro de Daniel, Miguel é chamado 'o grande príncipe, que se levanta em defesa dos filhos do teu povo' (Dn 12,1). Peçamos sua proteção sobre a Igreja e sobre nossas famílias. Que ele nos defenda das ciladas visíveis e invisíveis." },
+      { dia: 4, titulo: "Guardião das almas na hora da morte", meditacao: "A tradição cristã invoca São Miguel como aquele que conduz as almas dos justos à presença de Deus. Peçamos hoje sua assistência para nossa própria hora final. Que ele nos ajude a perseverar até o fim." },
+      { dia: 5, titulo: "Vigilância contra o mal", meditacao: "São Miguel nos ensina que o combate espiritual exige vigilância constante, não apenas oração ocasional. Examinemos hoje as áreas de nossa vida mais expostas à tentação. Peçamos discernimento para reconhecer as astúcias do inimigo." },
+      { dia: 6, titulo: "Proteção da Igreja", meditacao: "Desde a Idade Média, São Miguel é invocado como protetor especial da Igreja em tempos de crise e perseguição. Rezemos hoje pela Igreja em todo o mundo, especialmente onde é perseguida. Que ele a defenda das divisões internas e dos ataques externos." },
+      { dia: 7, titulo: "A oração de Leão XIII", meditacao: "Impressionado por uma visão da luta futura contra a Igreja, o Papa Leão XIII compôs a célebre oração a São Miguel, rezada por décadas ao final da Missa. Façamos hoje dessa oração nossa arma diária. Que jamais a abandonemos por comodismo." },
+      { dia: 8, titulo: "Modelo de obediência", meditacao: "Miguel não age por si mesmo, mas como servo fiel da vontade divina, sempre em nome de Deus. Peçamos a graça de agir com essa mesma submissão humilde ao Senhor. Que nossa vontade se conforme sempre à d'Ele." },
+      { dia: 9, titulo: "Vitória final do bem", meditacao: "O Apocalipse revela que, apesar da fúria do dragão, a vitória de Miguel e dos anjos fiéis é certa e definitiva. Confiemos que, unidos a Cristo, também nós participaremos dessa vitória final. São Miguel Arcanjo, defendei-nos sempre no combate." },
+    ],
+    fonte: "Ap 12,7-9; Dn 12,1; Oração de Leão XIII (1886)",
+  },
+  {
+    slug: "santa-rita-de-cassia",
+    titulo: "Novena a Santa Rita de Cássia",
+    ocasiao: "Padroeira das causas impossíveis — 22 de maio",
+    resumo:
+      "Nove dias confiando a Santa Rita de Cássia, esposa, mãe, viúva e religiosa agostiniana, as causas mais difíceis e aparentemente impossíveis.",
+    oracaoInicial:
+      "Ó gloriosa Santa Rita, que participastes de modo tão admirável dos sofrimentos de Nosso Senhor Jesus Cristo, alcançai-me a graça de suportar com paciência as provações desta vida e de confiar sempre na Providência de Deus.",
+    oracaoFinal:
+      "Santa Rita, advogada dos impossíveis, alcançai-me de Deus a graça que humildemente vos peço, se ela for para o bem da minha alma e para a glória de Deus. Amém.",
+    dias: [
+      { dia: 1, titulo: "O casamento difícil", meditacao: "Rita foi dada em casamento a um homem violento e suportou, com paciência e oração, anos de sofrimento conjugal. Peçamos hoje a graça da paciência para quem atravessa dificuldades no matrimônio. Que a conversão, e não o desespero, seja sempre buscada primeiro." },
+      { dia: 2, titulo: "A conversão do esposo", meditacao: "Com sua doçura e orações constantes, Rita conseguiu, ao fim, a conversão do marido antes de sua morte violenta. Confiemos hoje à sua intercessão a conversão de pessoas endurecidas que amamos. Nenhum coração está fora do alcance da graça." },
+      { dia: 3, titulo: "A dor de mãe", meditacao: "Após perder o esposo, Rita viu seus dois filhos desejarem vingar a morte do pai, e rezou para que Deus os levasse antes de cometerem tal pecado. Confiemos-lhe hoje as intenções dos pais que sofrem pelos filhos. Que ela interceda por famílias marcadas pela violência e pelo luto." },
+      { dia: 4, titulo: "A vocação tardia", meditacao: "Viúva e sem família, Rita buscou entrar no convento agostiniano por três vezes, sendo aceita apenas depois de muita insistência. Peçamos perseverança para quem busca uma vocação e encontra portas fechadas. Deus abre caminho para quem confia e persiste." },
+      { dia: 5, titulo: "A espinha na fronte", meditacao: "Rita recebeu, em resposta à sua oração diante do crucifixo, uma chaga na testa semelhante à ferida da coroa de espinhos de Cristo, que carregou até a morte. Peçamos a graça de aceitar com fé os sofrimentos que Deus permite em nossa vida. Que saibamos uni-los à Paixão do Senhor." },
+      { dia: 6, titulo: "Advogada dos casos impossíveis", meditacao: "Por sua vida marcada por situações humanamente sem solução, Rita tornou-se padroeira de todas as causas tidas por impossíveis. Apresentemos hoje, com confiança, a necessidade que nos trouxe a esta novena. Nada é impossível ao poder de Deus." },
+      { dia: 7, titulo: "A rosa do milagre", meditacao: "Conta a tradição que, já enferma, Rita pediu uma rosa fora de época e a recebeu floresceu em pleno inverno, sinal do poder de Deus manifestado por sua intercessão. Confiemos que os sinais de Deus chegam no tempo certo, ainda que pareça impossível. Que aprendamos a esperar com fé." },
+      { dia: 8, titulo: "A paciência nas provações finais", meditacao: "Rita suportou anos de doença e sofrimento físico antes de sua morte, sem jamais perder a paz interior. Peçamos essa mesma serenidade diante das provações da saúde e da velhice. Que o sofrimento não nos afaste, mas nos aproxime de Deus." },
+      { dia: 9, titulo: "Modelo para todos os estados de vida", meditacao: "Rita viveu como esposa, mãe, viúva e religiosa, santificando cada etapa de sua vida com fidelidade a Deus. Que ela nos ensine a buscar a santidade no estado de vida em que hoje nos encontramos. Santa Rita de Cássia, advogada dos impossíveis, rogai por nós." },
+    ],
+    fonte: "Processo de canonização (Leão XIII, 1900); tradição agostiniana",
+  },
 ];
