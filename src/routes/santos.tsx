@@ -3,6 +3,8 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { PageHero, Section, CardGrid, ContentCard } from "../components/PageShell";
 import { SANTOS_LISTA } from "@/lib/santos-lista";
 import { buildSantoView } from "@/lib/santos-helpers";
+import { imagemSanto } from "@/lib/data/santos-imagens";
+import { RetratoSanto } from "@/components/santos/RetratoSanto";
 
 export const Route = createFileRoute("/santos")({
   head: () => ({
@@ -11,15 +13,17 @@ export const Route = createFileRoute("/santos")({
       { name: "description", content: "Vidas e ensinamentos dos santos: testemunhas da fé e amigos de Deus." },
       { property: "og:title", content: "Os Santos da Igreja" },
       { property: "og:description", content: "Vidas, virtudes e ensinamentos dos santos católicos." },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://catholica-divine.lovable.app/santos" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "https://catholica-divine.lovable.app/santos" }],
   }),
   component: Page,
 });
 
-const FALLBACK_IMG =
-  "https://images.unsplash.com/photo-1438032005730-c779502df39b?q=80&w=2000&auto=format&fit=crop";
-
 const PAGINA = 24;
+
 
 function normalizar(v: string) {
   return v
