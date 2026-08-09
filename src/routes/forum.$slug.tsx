@@ -1,7 +1,10 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { ArrowLeft, Heart, Lock, MessageSquare } from "lucide-react";
 import { toast } from "sonner";
+
+import { avisarErroDeConta } from "@/lib/auth/aviso-sessao";
+
 
 import {
   AutorSelo,
