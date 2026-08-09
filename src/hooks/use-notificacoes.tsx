@@ -14,6 +14,8 @@ import {
   type Notificacao,
   type NovaNotificacao,
 } from "@/lib/notificacoes";
+import { mostrarNoDispositivo } from "@/lib/notificacoes-dispositivo";
+
 
 const CHAVE = "portal-catolico:notificacoes";
 const LIMITE = 60;
