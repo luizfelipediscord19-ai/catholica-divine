@@ -363,6 +363,10 @@ function PainelPage() {
         </div>
       </section>
 
+      <HorariosTarefas />
+
+
+
 
       <footer className="border-t border-gold/15 pt-8 flex flex-wrap items-center gap-4">
         <p className="text-xs text-muted-foreground max-w-xl font-light">
