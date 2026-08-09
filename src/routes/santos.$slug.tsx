@@ -4,6 +4,7 @@ import { SANTOS_LISTA, getSantoBasicoBySlug } from "@/lib/santos-lista";
 import { buildSantoView } from "@/lib/santos-helpers";
 import { Relacionados } from "@/components/Relacionados";
 import { RetratoSanto } from "@/components/santos/RetratoSanto";
+import { usePrefetchSanto } from "@/lib/santos/prefetch";
 
 const SITE = "https://catholica-divine.lovable.app";
 
@@ -238,15 +239,7 @@ function SantoPage() {
               </p>
               <ul className="space-y-2">
                 {irmaos.map((s) => (
-                  <li key={s.slug}>
-                    <Link
-                      to="/santos/$slug"
-                      params={{ slug: s.slug }}
-                      className="text-foreground hover:text-gold transition-colors"
-                    >
-                      {s.nome}
-                    </Link>
-                  </li>
+                  <LinkSantoPrefetch key={s.slug} slug={s.slug} nome={s.nome} />
                 ))}
               </ul>
             </div>
@@ -254,5 +247,22 @@ function SantoPage() {
         </div>
       </Section>
     </div>
+  );
+}
+
+/** Link para outro santo que se pré-carrega ao aparecer na tela. */
+function LinkSantoPrefetch({ slug, nome }: { slug: string; nome: string }) {
+  const ref = usePrefetchSanto<HTMLLIElement>(slug, "300px");
+  return (
+    <li ref={ref}>
+      <Link
+        to="/santos/$slug"
+        params={{ slug }}
+        preload="intent"
+        className="text-foreground hover:text-gold transition-colors"
+      >
+        {nome}
+      </Link>
+    </li>
   );
 }
