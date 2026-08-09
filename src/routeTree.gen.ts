@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SophiaDiagnosticoRouteImport } from './routes/sophia-diagnostico'
+import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SantosRouteImport } from './routes/santos'
 import { Route as SacramentosRouteImport } from './routes/sacramentos'
@@ -53,6 +54,11 @@ import { Route as BibliaLivroCapituloRouteImport } from './routes/biblia.$livro.
 const SophiaDiagnosticoRoute = SophiaDiagnosticoRouteImport.update({
   id: '/sophia-diagnostico',
   path: '/sophia-diagnostico',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SobreRoute = SobreRouteImport.update({
+  id: '/sobre',
+  path: '/sobre',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -275,6 +281,7 @@ export interface FileRoutesByFullPath {
   '/sacramentos': typeof SacramentosRoute
   '/santos': typeof SantosRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/sobre': typeof SobreRoute
   '/sophia-diagnostico': typeof SophiaDiagnosticoRoute
   '/api/chat': typeof ApiChatRoute
   '/biblia/$livro': typeof BibliaLivroRouteWithChildren
@@ -315,6 +322,7 @@ export interface FileRoutesByTo {
   '/redefinir-senha': typeof RedefinirSenhaRoute
   '/sacramentos': typeof SacramentosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/sobre': typeof SobreRoute
   '/sophia-diagnostico': typeof SophiaDiagnosticoRoute
   '/api/chat': typeof ApiChatRoute
   '/biblia/leituras': typeof BibliaLeiturasRoute
@@ -357,6 +365,7 @@ export interface FileRoutesById {
   '/sacramentos': typeof SacramentosRoute
   '/santos': typeof SantosRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/sobre': typeof SobreRoute
   '/sophia-diagnostico': typeof SophiaDiagnosticoRoute
   '/api/chat': typeof ApiChatRoute
   '/biblia/$livro': typeof BibliaLivroRouteWithChildren
@@ -401,6 +410,7 @@ export interface FileRouteTypes {
     | '/sacramentos'
     | '/santos'
     | '/sitemap.xml'
+    | '/sobre'
     | '/sophia-diagnostico'
     | '/api/chat'
     | '/biblia/$livro'
@@ -441,6 +451,7 @@ export interface FileRouteTypes {
     | '/redefinir-senha'
     | '/sacramentos'
     | '/sitemap.xml'
+    | '/sobre'
     | '/sophia-diagnostico'
     | '/api/chat'
     | '/biblia/leituras'
@@ -482,6 +493,7 @@ export interface FileRouteTypes {
     | '/sacramentos'
     | '/santos'
     | '/sitemap.xml'
+    | '/sobre'
     | '/sophia-diagnostico'
     | '/api/chat'
     | '/biblia/$livro'
@@ -525,6 +537,7 @@ export interface RootRouteChildren {
   SacramentosRoute: typeof SacramentosRoute
   SantosRoute: typeof SantosRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  SobreRoute: typeof SobreRoute
   SophiaDiagnosticoRoute: typeof SophiaDiagnosticoRoute
   ApiChatRoute: typeof ApiChatRoute
   ForumSlugRoute: typeof ForumSlugRoute
@@ -538,6 +551,13 @@ declare module '@tanstack/react-router' {
       path: '/sophia-diagnostico'
       fullPath: '/sophia-diagnostico'
       preLoaderRoute: typeof SophiaDiagnosticoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sobre': {
+      id: '/sobre'
+      path: '/sobre'
+      fullPath: '/sobre'
+      preLoaderRoute: typeof SobreRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sitemap.xml': {
@@ -924,6 +944,7 @@ const rootRouteChildren: RootRouteChildren = {
   SacramentosRoute: SacramentosRoute,
   SantosRoute: SantosRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  SobreRoute: SobreRoute,
   SophiaDiagnosticoRoute: SophiaDiagnosticoRoute,
   ApiChatRoute: ApiChatRoute,
   ForumSlugRoute: ForumSlugRoute,
