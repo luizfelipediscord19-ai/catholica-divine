@@ -2,6 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 import { LIVROS } from "@/lib/data/biblia/index";
 import { SANTOS_LISTA } from "@/lib/santos-lista";
+import { PARTES } from "@/lib/data/catecismo/index";
+import { NOVENAS } from "@/lib/data/devocoes/novenas";
 
 const BASE_URL = "https://catholica-divine.lovable.app";
 
@@ -45,6 +47,23 @@ export const Route = createFileRoute("/sitemap.xml")({
           ...STATIC_PATHS,
           ...LIVROS.map((l) => ({
             path: `/biblia/${l.slug}`,
+            changefreq: "monthly" as const,
+            priority: "0.6",
+          })),
+          ...LIVROS.flatMap((l) =>
+            Array.from({ length: l.capitulos }, (_, i) => ({
+              path: `/biblia/${l.slug}/${i + 1}`,
+              changefreq: "yearly" as const,
+              priority: "0.5",
+            })),
+          ),
+          ...PARTES.map((parte) => ({
+            path: `/catecismo/${parte.slug}`,
+            changefreq: "monthly" as const,
+            priority: "0.7",
+          })),
+          ...NOVENAS.map((n) => ({
+            path: `/oracoes/novenas/${n.slug}`,
             changefreq: "monthly" as const,
             priority: "0.6",
           })),
