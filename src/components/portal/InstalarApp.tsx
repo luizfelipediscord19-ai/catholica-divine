@@ -119,10 +119,10 @@ export function InstalarApp() {
           com notificações e funcionando até sem internet.
         </p>
 
-        {evento ? (
+        {evento || ios ? (
           <div className="mt-6 flex flex-col gap-2">
             <button
-              onClick={instalar}
+              onClick={ios ? instalarIos : instalar}
               className="inline-flex items-center justify-center gap-2 bg-gold px-4 py-3 text-[11px] font-medium uppercase tracking-[0.18em] text-deep transition-colors hover:bg-paper"
             >
               <Smartphone className="h-4 w-4" /> Instalar agora
@@ -137,17 +137,10 @@ export function InstalarApp() {
         ) : (
           <div className="mt-6">
             <div className="border border-border/60 bg-background/60 px-4 py-3 text-left text-[11px] leading-relaxed text-muted-foreground">
-              {ios ? (
-                <span className="flex flex-wrap items-center gap-1">
-                  No Safari, toque em <Share className="h-3.5 w-3.5 text-gold" /> Compartilhar e
-                  depois em <Plus className="h-3.5 w-3.5 text-gold" /> “Adicionar à Tela de Início”.
-                </span>
-              ) : (
-                <span className="flex flex-wrap items-center gap-1">
-                  Abra o menu <MoreVertical className="h-3.5 w-3.5 text-gold" /> do navegador e
-                  toque em “Instalar aplicativo” ou “Adicionar à tela inicial”.
-                </span>
-              )}
+              <span className="flex flex-wrap items-center gap-1">
+                Abra o menu <MoreVertical className="h-3.5 w-3.5 text-gold" /> do navegador e
+                toque em “Instalar aplicativo” ou “Adicionar à tela inicial”.
+              </span>
             </div>
             <button
               onClick={dispensar}
