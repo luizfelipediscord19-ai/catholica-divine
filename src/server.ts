@@ -71,7 +71,7 @@ async function applySecurityHeaders(response: Response, nonce?: string): Promise
   const nonceRelatorio = nonce ? ` 'nonce-${nonce}' 'strict-dynamic'` : "";
   newHeaders.set(
     "Content-Security-Policy-Report-Only",
-    comuns +
+    comuns.replace("upgrade-insecure-requests;", "") +
       ` script-src 'self'${nonceRelatorio}; ` +
       "style-src 'self' https://fonts.googleapis.com; " +
       "style-src-attr 'unsafe-inline'; " +
