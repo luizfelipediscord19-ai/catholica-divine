@@ -20,6 +20,11 @@ import { EscolherSanto } from "@/components/portal/EscolherSanto";
 import { useIdentidade, usePainel } from "@/hooks/use-identidade";
 import { useAuth } from "@/hooks/use-auth";
 import { registrarOracaoFn } from "@/lib/portal.functions";
+import {
+  metaDaConquista,
+  textoRestante,
+  type Totais,
+} from "@/lib/portal/metas-conquistas";
 
 
 export const Route = createFileRoute("/painel")({
@@ -117,6 +122,12 @@ function PainelPage() {
     Math.round(((dados.identidade.xp - base) / Math.max(proximo - base, 1)) * 100),
   );
   const conquistadas = dados.conquistas.filter((c) => c.desbloqueada).length;
+  const totais: Totais = {
+    ...dados.totais,
+    streak: dados.identidade.streak,
+    melhorStreak: dados.identidade.melhorStreak,
+    santoEscolhido: Boolean(dados.identidade.santoEscolhido),
+  };
 
   return (
     <div className="max-w-6xl mx-auto px-6 py-16 md:py-24 space-y-12">
