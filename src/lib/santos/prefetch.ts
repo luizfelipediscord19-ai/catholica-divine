@@ -26,7 +26,7 @@ function agendar(fn: () => void) {
   else window.setTimeout(fn, 200);
 }
 
-type RouterLike = { preloadRoute: (opts: unknown) => Promise<unknown> };
+type RouterLike = Pick<ReturnType<typeof useRouter>, "preloadRoute">;
 
 export function prefetchSanto(router: RouterLike | null, slug: string) {
   if (typeof window === "undefined" || jaFeitos.has(slug) || conexaoRuim()) return;
