@@ -304,26 +304,54 @@ function PainelPage() {
       <section className="space-y-6">
         <Rotulo>Conquistas</Rotulo>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {dados.conquistas.map((c) => (
-            <div
-              key={c.slug}
-              className={`border p-6 transition-premium ${
-                c.desbloqueada
-                  ? "border-gold/40 bg-gold/5"
-                  : "border-gold/10 bg-card/30 opacity-60"
-              }`}
-            >
-              <p className="text-[10px] uppercase tracking-[0.2em] text-gold/70 mb-2">
-                {c.xp} XP
-              </p>
-              <h3 className="font-display text-xl text-foreground mb-2">{c.titulo}</h3>
-              <p className="text-xs text-muted-foreground font-light leading-relaxed">
-                {c.descricao}
-              </p>
-            </div>
-          ))}
+          {dados.conquistas.map((c) => {
+            const meta = metaDaConquista(c.slug, totais);
+            const percentual = meta ? Math.round((meta.atual / Math.max(meta.alvo, 1)) * 100) : 0;
+            return (
+              <div
+                key={c.slug}
+                className={`border p-6 transition-premium ${
+                  c.desbloqueada
+                    ? "border-gold/40 bg-gold/5"
+                    : "border-gold/10 bg-card/30 opacity-80"
+                }`}
+              >
+                <p className="text-[10px] uppercase tracking-[0.2em] text-gold/70 mb-2">
+                  {c.xp} XP
+                </p>
+                <h3 className="font-display text-xl text-foreground mb-2">{c.titulo}</h3>
+                <p className="text-xs text-muted-foreground font-light leading-relaxed">
+                  {c.descricao}
+                </p>
+
+                {meta ? (
+                  <div className="mt-4 space-y-2">
+                    <div
+                      className="h-1 w-full bg-gold/10"
+                      role="progressbar"
+                      aria-valuenow={percentual}
+                      aria-valuemin={0}
+                      aria-valuemax={100}
+                      aria-label={`Progresso de ${c.titulo}`}
+                    >
+                      <div
+                        className={`h-full transition-all ${c.desbloqueada ? "bg-gold" : "bg-gold/60"}`}
+                        style={{ width: `${c.desbloqueada ? 100 : percentual}%` }}
+                      />
+                    </div>
+                    <p className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+                      {c.desbloqueada
+                        ? "Concluída"
+                        : `${meta.atual}/${meta.alvo} — ${textoRestante(meta)}`}
+                    </p>
+                  </div>
+                ) : null}
+              </div>
+            );
+          })}
         </div>
       </section>
+
 
       <footer className="border-t border-gold/15 pt-8 flex flex-wrap items-center gap-4">
         <p className="text-xs text-muted-foreground max-w-xl font-light">
