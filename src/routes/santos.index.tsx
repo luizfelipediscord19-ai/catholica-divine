@@ -165,6 +165,56 @@ function Page() {
   );
 }
 
+/**
+ * Cartão da galeria: observa a própria posição e pré-carrega a imagem e a rota
+ * do santo pouco antes de entrar na tela, para a abertura ser imediata.
+ */
+function CartaoSanto({
+  santo,
+  indice,
+  ativo,
+  onSelect,
+}: {
+  santo: (typeof SANTOS_LISTA)[number];
+  indice: number;
+  ativo: boolean;
+  onSelect: () => void;
+}) {
+  const ref = usePrefetchSanto<HTMLButtonElement>(santo.slug);
+
+  return (
+    <button
+      ref={ref}
+      type="button"
+      onClick={onSelect}
+      aria-expanded={ativo}
+      className={`text-left block group animate-content-fade focus:outline-none focus-visible:ring-1 focus-visible:ring-gold/60 ${
+        ativo ? "ring-1 ring-gold/50" : ""
+      }`}
+      style={{ animationDelay: `${Math.min(indice, 12) * 40}ms` }}
+    >
+      <ContentCard
+        title={santo.nome}
+        subtitle={`Memória · ${santo.data}`}
+        media={
+          <RetratoSanto
+            url={imagemSanto(santo.slug)?.url}
+            nome={santo.nome}
+            prioridade={indice < 3}
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 33vw, 380px"
+            className="h-44 w-full object-cover object-top opacity-90 group-hover:opacity-100 transition-opacity"
+          />
+        }
+      >
+        {santo.body}
+        <span className="block mt-4 text-xs text-gold/80 group-hover:text-gold tracking-[0.2em] uppercase transition-smooth group-hover:translate-x-1">
+          {ativo ? "Fechar ↑" : "Ler biografia →"}
+        </span>
+      </ContentCard>
+    </button>
+  );
+}
+
 function SantoDetail({
   view,
   onClose,
