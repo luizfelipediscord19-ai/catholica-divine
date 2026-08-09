@@ -259,6 +259,16 @@
 .light .text-glow-gold {
   text-shadow: none;
 }
+.light .text-gold\/60,
+.light .text-gold\/70,
+.light .text-gold\/80 {
+  color: var(--gold-soft);
+}
+.light .text-paper\/60,
+.light .text-paper\/70,
+.light .text-paper\/75 {
+  color: rgba(23, 21, 18, 0.78);
+}
 .light .prose-deep {
   color: rgba(23, 21, 18, 0.9);
 }
