@@ -116,39 +116,45 @@
   --radius: 0.5rem;
 
   /* Brand Tokens — Absolute Luxury */
-  --gold: #d4af37;
-  --gold-soft: #c5a059;
-  --gold-accent: #f0d58e;
-  --marian: #1d4e89;
-  --marian-soft: #2c6bb0;
+  --gold: #d8b449;
+  --gold-soft: #bfa063;
+  --gold-accent: #f3dc9d;
+  --marian: #23568f;
+  --marian-soft: #3a76bd;
   --cardinal: #8b0000;
-  --deep: #050505;
-  --paper: #fcfaf7;
-  --glass-bg: rgba(12, 12, 12, 0.75);
-  --glass-border: rgba(212, 175, 55, 0.12);
+  --deep: #060606;
+  --paper: #fbf8f3;
+  --glass-bg: rgba(14, 13, 12, 0.72);
+  --glass-border: rgba(216, 180, 73, 0.16);
 
   /* Semantic Palette */
-  --background: #050505;
-  --foreground: #fcfaf7;
-  --card: #0c0c0c;
-  --card-foreground: #fcfaf7;
-  --popover: #0c0c0c;
-  --popover-foreground: #fcfaf7;
-  --primary: #d4af37;
-  --primary-foreground: #050505;
-  --secondary: #1d4e89;
-  --secondary-foreground: #fcfaf7;
-  --muted: #111111;
-  --muted-foreground: #8e8a7e;
-  --accent: #1d4e89;
-  --accent-foreground: #fcfaf7;
+  --background: #070706;
+  --foreground: #f6f2ea;
+  --card: #0e0d0c;
+  --card-foreground: #f6f2ea;
+  --popover: #0e0d0c;
+  --popover-foreground: #f6f2ea;
+  --primary: #d8b449;
+  --primary-foreground: #070706;
+  --secondary: #23568f;
+  --secondary-foreground: #f6f2ea;
+  --muted: #141312;
+  --muted-foreground: #a09a8c;
+  --accent: #23568f;
+  --accent-foreground: #f6f2ea;
   --destructive: #8b0000;
   --destructive-foreground: #fcfaf7;
   /* Vermelho legível como TEXTO sobre fundo escuro (WCAG AA). */
-  --destructive-text: #f08a80;
-  --border: rgba(212, 175, 55, 0.12);
-  --input: rgba(212, 175, 55, 0.15);
-  --ring: #d4af37;
+  --destructive-text: #f2938a;
+  --border: rgba(216, 180, 73, 0.14);
+  --input: rgba(216, 180, 73, 0.18);
+  --ring: #d8b449;
+
+  /* Superfícies e realces reutilizáveis */
+  --gradient-gold: linear-gradient(135deg, var(--gold-accent), var(--gold) 45%, var(--gold-soft));
+  --gradient-surface: linear-gradient(180deg, color-mix(in oklab, var(--card) 96%, var(--gold) 4%), var(--background));
+  --shadow-elegant: 0 24px 60px -24px rgba(0, 0, 0, 0.72);
+  --hairline: color-mix(in oklab, var(--gold) 18%, transparent);
 
   /* Spacing System (8pt) */
   --unit: 8px;
@@ -157,37 +163,41 @@
 .light {
   /* Remapeia os tokens de marca: superfícies "deep" ficam claras e a tinta
      "paper" fica escura, para todo o portal funcionar no tema claro. */
-  --deep: #f6f2ea;
-  --paper: #171512;
+  --deep: #f7f3ea;
+  --paper: #191713;
   --gold: #8a6a1c;
-  --gold-soft: #6f5516;
-  --gold-accent: #a5822c;
+  --gold-soft: #6d5314;
+  --gold-accent: #a8842a;
   --marian: #17406f;
   --marian-soft: #1d4e89;
 
-  --background: #fcfaf7;
-  --foreground: #050505;
+  --background: #fdfbf6;
+  --foreground: #17150f;
   --card: #ffffff;
-  --card-foreground: #050505;
+  --card-foreground: #17150f;
   --popover: #ffffff;
-  --popover-foreground: #050505;
-  --primary: #1d4e89;
+  --popover-foreground: #17150f;
+  --primary: #17406f;
   --primary-foreground: #ffffff;
-  --secondary: #d4af37;
-  --secondary-foreground: #050505;
-  --muted: #f2efe4;
-  --muted-foreground: #4a463c;
-  --accent: #d4af37;
-  --accent-foreground: #050505;
+  --secondary: #8a6a1c;
+  --secondary-foreground: #ffffff;
+  --muted: #f3efe3;
+  --muted-foreground: #4c473b;
+  --accent: #8a6a1c;
+  --accent-foreground: #ffffff;
   --destructive: #8b0000;
   --destructive-foreground: #ffffff;
   --destructive-text: #8b0000;
-  --border: rgba(10, 10, 10, 0.08);
-  --input: rgba(10, 10, 10, 0.2);
+  --border: rgba(24, 20, 12, 0.1);
+  --input: rgba(24, 20, 12, 0.22);
   --ring: #17406f;
-  --glass-bg: rgba(255, 255, 255, 0.8);
-  --glass-border: rgba(10, 10, 10, 0.05);
+  --glass-bg: rgba(255, 255, 255, 0.82);
+  --glass-border: rgba(24, 20, 12, 0.07);
+  --gradient-surface: linear-gradient(180deg, #ffffff, var(--background));
+  --shadow-elegant: 0 20px 50px -22px rgba(24, 20, 12, 0.22);
+  --hairline: color-mix(in oklab, var(--gold) 22%, transparent);
 }
+
 
 @layer base {
   * {
