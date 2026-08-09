@@ -3,6 +3,9 @@ import { PageHero, Section } from "../components/PageShell";
 import { SANTOS_LISTA, getSantoBasicoBySlug } from "@/lib/santos-lista";
 import { buildSantoView } from "@/lib/santos-helpers";
 import { Relacionados } from "@/components/Relacionados";
+import { RetratoSanto } from "@/components/santos/RetratoSanto";
+
+const SITE = "https://catholica-divine.lovable.app";
 
 export const Route = createFileRoute("/santos/$slug")({
   head: ({ params }) => {
@@ -10,15 +13,78 @@ export const Route = createFileRoute("/santos/$slug")({
     const view = buildSantoView(params.slug, basico);
     const title = `${view.nome} — Portal Católico`;
     const desc = (view.resumo ?? "Vida, virtudes e ensinamentos do santo.").slice(0, 160);
+    const url = `${SITE}/santos/${params.slug}`;
+    const imagem = view.imagem ? `${SITE}${view.imagem}` : undefined;
+
+    const pessoa: Record<string, unknown> = {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      name: view.nome,
+      url,
+      description: desc,
+      honorificPrefix: view.titulo,
+      jobTitle: view.titulo,
+      knowsAbout: "Fé católica",
+      subjectOf: {
+        "@type": "WebPage",
+        url,
+        name: title,
+        inLanguage: "pt-BR",
+      },
+    };
+    if (imagem) pessoa.image = imagem;
+    if (view.padroeiro) pessoa.description = `${desc} Padroeiro de ${view.padroeiro}.`.slice(0, 300);
+
+    const trilha = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Início", item: SITE },
+        { "@type": "ListItem", position: 2, name: "Santos", item: `${SITE}/santos` },
+        { "@type": "ListItem", position: 3, name: view.nome, item: url },
+      ],
+    };
+
+    const artigo: Record<string, unknown> = {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: title,
+      description: desc,
+      inLanguage: "pt-BR",
+      mainEntityOfPage: url,
+      about: { "@type": "Person", name: view.nome },
+      isPartOf: { "@type": "WebSite", name: "Portal Católico", url: SITE },
+    };
+    if (imagem) artigo.image = imagem;
+
     return {
       meta: [
         { title },
         { name: "description", content: desc },
         { property: "og:title", content: view.nome },
         { property: "og:description", content: desc },
+        { property: "og:type", content: "article" },
+        { property: "og:url", content: url },
+        { name: "twitter:card", content: "summary_large_image" },
+        ...(imagem
+          ? [
+              { property: "og:image", content: imagem },
+              { name: "twitter:image", content: imagem },
+            ]
+          : []),
+      ],
+      links: [
+        { rel: "canonical", href: url },
+        ...(imagem ? [{ rel: "preload", as: "image", href: view.imagem! }] : []),
+      ],
+      scripts: [
+        { type: "application/ld+json", children: JSON.stringify(pessoa) },
+        { type: "application/ld+json", children: JSON.stringify(artigo) },
+        { type: "application/ld+json", children: JSON.stringify(trilha) },
       ],
     };
   },
+
   loader: async ({ params, context: { queryClient } }) => {
     return queryClient.ensureQueryData({
       queryKey: ["santo", params.slug],
