@@ -124,7 +124,7 @@ function construirCorpus(): Documento[] {
       id: `glo-${slug}`,
       escopo: "magisterio",
       titulo: termo.termo,
-      referencia: termo.referencia ?? "Glossário doutrinal",
+      referencia: termo.ref ?? "Glossário doutrinal",
       texto: `${termo.termo}. ${termo.definicao}`,
       href: `/glossario#${slug}`,
       peso: 1.3,
@@ -148,10 +148,8 @@ function construirCorpus(): Documento[] {
       id: `san-${santo.slug}`,
       escopo: "santos",
       titulo: santo.nome,
-      referencia: [santo.titulo, santo.festa].filter(Boolean).join(" · "),
-      texto: [santo.nome, santo.titulo, santo.resumo, santo.patronato]
-        .filter(Boolean)
-        .join(" "),
+      referencia: santo.data,
+      texto: `${santo.nome} ${santo.data} ${santo.body}`,
       href: `/santos/${santo.slug}`,
       peso: 1.1,
     });
@@ -162,8 +160,8 @@ function construirCorpus(): Documento[] {
       id: `ora-${oracao.slug}`,
       escopo: "oracoes",
       titulo: oracao.titulo,
-      referencia: oracao.categoria ?? "Oração",
-      texto: `${oracao.titulo} ${Array.isArray(oracao.texto) ? oracao.texto.join(" ") : String(oracao.texto ?? "")}`,
+      referencia: [oracao.categoria, oracao.nota].filter(Boolean).join(" · "),
+      texto: `${oracao.titulo} ${oracao.paraQue ?? ""} ${oracao.texto}`,
       href: `/oracoes#${oracao.slug}`,
       peso: 1,
     });
@@ -172,7 +170,12 @@ function construirCorpus(): Documento[] {
   for (const livro of LIVROS) {
     const intro = INTRODUCOES[livro.slug];
     if (!intro) continue;
-    const partesIntro = [intro.resumo, intro.autor, intro.tema, intro.contexto]
+    const partesIntro = [
+      intro.contexto,
+      intro.temas.join(" "),
+      intro.passagens.join(" "),
+      intro.cristo,
+    ]
       .filter(Boolean)
       .join(" ");
     docs.push({
