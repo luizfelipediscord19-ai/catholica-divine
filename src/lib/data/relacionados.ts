@@ -265,8 +265,90 @@ export const RELACIONADOS: Record<string, RelatedSet> = {
   },
 };
 
+// ============ BÍBLIA — DEUTEROCANÔNICOS E OUTROS LIVROS ============
+Object.assign(RELACIONADOS, {
+  "biblia:tobias": {
+    catecismo: [cat("credo", "Os anjos na vida da Igreja", "§§ 328–336"), cat("liturgia", "Matrimônio e oração dos esposos")],
+    sacramentos: [sacramento("Matrimônio (Tb 8,4-9)")],
+    biblia: [bib("tobias", 12, 6, 15, "Tb 12 — Rafael revela sua missão"), bib("tobias", 8, 4, 9, "Tb 8,4-9 — Oração dos noivos")],
+    santos: [santo("sao-rafael-arcanjo", "São Rafael Arcanjo")],
+    oracoes: [oracao("/oracoes", "Oração ao Anjo da Guarda")],
+  },
+  "biblia:judite": {
+    catecismo: [cat("credo", "Maria, nova Judite — a mulher forte")],
+    sacramentos: [],
+    biblia: [bib("judite", 13, 1, 20, "Jt 13 — A vitória de Judite"), bib("lucas", 1, 42, 45, "Lc 1,42 — “Bendita sois vós”")],
+    santos: [santo("santa-joana-darc", "Santa Joana d'Arc")],
+    oracoes: [oracao("/oracoes/rosario", "Santo Rosário")],
+  },
+  "biblia:sabedoria": {
+    catecismo: [cat("credo", "A imortalidade da alma", "§§ 362–368"), cat("oracao", "A Sabedoria que se dá a conhecer")],
+    sacramentos: [],
+    biblia: [bib("sabedoria", 2, 12, 24, "Sb 2,12-24 — O justo perseguido"), bib("sabedoria", 7, 22, 30, "Sb 7,22-30 — Hino à Sabedoria")],
+    santos: [santo("santo-tomas-de-aquino", "São Tomás de Aquino")],
+    oracoes: [],
+  },
+  "biblia:eclesiastico": {
+    catecismo: [cat("vida-em-cristo", "Honrar pai e mãe — 4º mandamento", "§§ 2196–2257")],
+    sacramentos: [sacramento("Unção dos Enfermos (Eclo 38,9-14)")],
+    biblia: [bib("eclesiastico", 3, 1, 16, "Eclo 3,1-16 — Honra aos pais"), bib("eclesiastico", 44, 1, 15, "Eclo 44 — Elogio dos antepassados")],
+    santos: [],
+    oracoes: [oracao("/oracoes", "Orações pela família")],
+  },
+  "biblia:baruc": {
+    catecismo: [cat("credo", "A Sabedoria e a Lei como caminho de vida")],
+    sacramentos: [],
+    biblia: [bib("baruc", 3, 9, 38, "Br 3,9-38 — Israel e a Sabedoria"), bib("baruc", 6, 1, 72, "Br 6 — Contra a idolatria")],
+    santos: [],
+    oracoes: [],
+  },
+  "biblia:1macabeus": {
+    catecismo: [cat("vida-em-cristo", "O martírio e a fidelidade à fé", "§§ 2473–2474")],
+    sacramentos: [],
+    biblia: [bib("1macabeus", 2, 15, 28, "1Mc 2 — A revolta de Matatias"), bib("1macabeus", 4, 36, 61, "1Mc 4 — Purificação do Templo")],
+    santos: [],
+    oracoes: [],
+  },
+  "biblia:2macabeus": {
+    catecismo: [cat("credo", "Oração pelos defuntos e purgatório", "§§ 1030–1032")],
+    sacramentos: [sacramento("Eucaristia (sufrágio pelos mortos)")],
+    biblia: [bib("2macabeus", 7, 1, 42, "2Mc 7 — Os sete irmãos mártires"), bib("2macabeus", 12, 38, 46, "2Mc 12,46 — Orar pelos mortos")],
+    santos: [],
+    oracoes: [oracao("/oracoes", "Oração pelos fiéis defuntos")],
+  },
+  "biblia:isaias": {
+    catecismo: [cat("credo", "As profecias messiânicas", "§§ 522–524")],
+    sacramentos: [sacramento("Confirmação (Is 11,2-3)")],
+    biblia: [bib("isaias", 7, 10, 16, "Is 7,14 — O Emanuel"), bib("isaias", 53, 1, 12, "Is 53 — O Servo Sofredor")],
+    santos: [],
+    oracoes: [oracao("/oracoes", "Sanctus — Is 6,3")],
+  },
+  "biblia:atos": {
+    catecismo: [cat("credo", "A Igreja apostólica", "§§ 857–865")],
+    sacramentos: [sacramento("Batismo (At 2,38)"), sacramento("Confirmação (At 8,14-17)"), sacramento("Ordem (At 6,6)")],
+    biblia: [bib("atos", 2, 1, 13, "At 2 — Pentecostes"), bib("atos", 15, 1, 29, "At 15 — Concílio de Jerusalém")],
+    santos: [santo("sao-pedro-apostolo", "São Pedro"), santo("sao-paulo", "São Paulo")],
+    oracoes: [oracao("/oracoes", "Vinde, Espírito Santo")],
+  },
+  "biblia:romanos": {
+    catecismo: [cat("vida-em-cristo", "Graça e justificação", "§§ 1987–2029")],
+    sacramentos: [sacramento("Batismo (Rm 6,3-11)")],
+    biblia: [bib("romanos", 5, 1, 11, "Rm 5 — Reconciliados por Cristo"), bib("romanos", 8, 28, 39, "Rm 8 — Nada nos separará")],
+    santos: [santo("santo-agostinho", "Santo Agostinho")],
+    oracoes: [],
+  },
+  "biblia:hebreus": {
+    catecismo: [cat("liturgia", "O sacerdócio de Cristo", "§§ 1544–1545")],
+    sacramentos: [sacramento("Ordem"), sacramento("Eucaristia")],
+    biblia: [bib("hebreus", 9, 11, 28, "Hb 9 — O sacrifício definitivo"), bib("hebreus", 11, 1, 40, "Hb 11 — A fé dos antigos")],
+    santos: [],
+    oracoes: [],
+  },
+} satisfies Record<string, RelatedSet>);
+
 // Aliases
 RELACIONADOS.penitencia = RELACIONADOS.confissao;
+
 
 export function getRelacionados(topic: string): RelatedSet | null {
   return RELACIONADOS[topic] ?? null;
