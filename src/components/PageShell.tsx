@@ -80,7 +80,7 @@ export function ContentCard({
   media?: ReactNode;
 }) {
   return (
-    <article className="group relative border border-gold/10 hover:border-gold/40 bg-card/40 backdrop-blur-md transition-premium hover:-translate-y-2 hover:shadow-2xl hover:shadow-gold/10 overflow-hidden">
+    <article className="group relative border border-gold/10 hover:border-gold/40 bg-card/40 backdrop-blur-md transition-premium hover:-translate-y-2 hover:shadow-2xl hover:shadow-gold/10 overflow-hidden [content-visibility:auto] [contain-intrinsic-size:auto_420px]">
       <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-gold/10 transition-premium" />
       {media ? <div className="relative">{media}</div> : null}
       <div className="relative p-10">
