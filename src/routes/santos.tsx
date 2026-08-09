@@ -189,22 +189,19 @@ function SantoDetail({
   view: ReturnType<typeof buildSantoView>;
   onClose: () => void;
 }) {
-  const img = view.imagem ?? FALLBACK_IMG;
+  const img = view.imagem;
   return (
     <article className="mb-12 border border-gold/20 bg-card/40 backdrop-blur-xl overflow-hidden animate-content-fade shadow-2xl shadow-gold/5">
       <div className="grid md:grid-cols-[minmax(0,1fr)_1.2fr] gap-0">
         <div className="relative aspect-[4/5] md:aspect-auto md:min-h-[420px] bg-deep overflow-hidden">
-          <img
-            src={img}
-            alt={`Representação de ${view.nome}`}
-            loading="lazy"
-            decoding="async"
-            onError={(e) => {
-              const el = e.currentTarget;
-              if (el.src !== FALLBACK_IMG) el.src = FALLBACK_IMG;
-            }}
+          <RetratoSanto
+            url={img}
+            nome={view.nome}
+            prioridade
+            sizes="(max-width: 768px) 100vw, 480px"
             className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1.6s] ease-out hover:scale-105"
           />
+
           <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent md:bg-gradient-to-r" />
           <div className="absolute bottom-0 left-0 p-6 md:hidden">
             {view.titulo ? (
