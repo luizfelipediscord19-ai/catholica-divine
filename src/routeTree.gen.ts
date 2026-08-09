@@ -12,6 +12,10 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as SophiaDiagnosticoRouteImport } from './routes/sophia-diagnostico'
 import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as SitemapSantosDotxmlRouteImport } from './routes/sitemap-santos[.]xml'
+import { Route as SitemapPaginasDotxmlRouteImport } from './routes/sitemap-paginas[.]xml'
+import { Route as SitemapBibliaLivrosDotxmlRouteImport } from './routes/sitemap-biblia-livros[.]xml'
+import { Route as SitemapBibliaCapitulosDotxmlRouteImport } from './routes/sitemap-biblia-capitulos[.]xml'
 import { Route as SantosRouteImport } from './routes/santos'
 import { Route as SacramentosRouteImport } from './routes/sacramentos'
 import { Route as RedefinirSenhaRouteImport } from './routes/redefinir-senha'
@@ -68,6 +72,28 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SitemapSantosDotxmlRoute = SitemapSantosDotxmlRouteImport.update({
+  id: '/sitemap-santos.xml',
+  path: '/sitemap-santos.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapPaginasDotxmlRoute = SitemapPaginasDotxmlRouteImport.update({
+  id: '/sitemap-paginas.xml',
+  path: '/sitemap-paginas.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapBibliaLivrosDotxmlRoute =
+  SitemapBibliaLivrosDotxmlRouteImport.update({
+    id: '/sitemap-biblia-livros.xml',
+    path: '/sitemap-biblia-livros.xml',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const SitemapBibliaCapitulosDotxmlRoute =
+  SitemapBibliaCapitulosDotxmlRouteImport.update({
+    id: '/sitemap-biblia-capitulos.xml',
+    path: '/sitemap-biblia-capitulos.xml',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const SantosRoute = SantosRouteImport.update({
   id: '/santos',
   path: '/santos',
@@ -293,6 +319,10 @@ export interface FileRoutesByFullPath {
   '/redefinir-senha': typeof RedefinirSenhaRoute
   '/sacramentos': typeof SacramentosRoute
   '/santos': typeof SantosRouteWithChildren
+  '/sitemap-biblia-capitulos.xml': typeof SitemapBibliaCapitulosDotxmlRoute
+  '/sitemap-biblia-livros.xml': typeof SitemapBibliaLivrosDotxmlRoute
+  '/sitemap-paginas.xml': typeof SitemapPaginasDotxmlRoute
+  '/sitemap-santos.xml': typeof SitemapSantosDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/sophia-diagnostico': typeof SophiaDiagnosticoRoute
@@ -336,6 +366,10 @@ export interface FileRoutesByTo {
   '/painel': typeof PainelRoute
   '/redefinir-senha': typeof RedefinirSenhaRoute
   '/sacramentos': typeof SacramentosRoute
+  '/sitemap-biblia-capitulos.xml': typeof SitemapBibliaCapitulosDotxmlRoute
+  '/sitemap-biblia-livros.xml': typeof SitemapBibliaLivrosDotxmlRoute
+  '/sitemap-paginas.xml': typeof SitemapPaginasDotxmlRoute
+  '/sitemap-santos.xml': typeof SitemapSantosDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/sophia-diagnostico': typeof SophiaDiagnosticoRoute
@@ -381,6 +415,10 @@ export interface FileRoutesById {
   '/redefinir-senha': typeof RedefinirSenhaRoute
   '/sacramentos': typeof SacramentosRoute
   '/santos': typeof SantosRouteWithChildren
+  '/sitemap-biblia-capitulos.xml': typeof SitemapBibliaCapitulosDotxmlRoute
+  '/sitemap-biblia-livros.xml': typeof SitemapBibliaLivrosDotxmlRoute
+  '/sitemap-paginas.xml': typeof SitemapPaginasDotxmlRoute
+  '/sitemap-santos.xml': typeof SitemapSantosDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/sophia-diagnostico': typeof SophiaDiagnosticoRoute
@@ -428,6 +466,10 @@ export interface FileRouteTypes {
     | '/redefinir-senha'
     | '/sacramentos'
     | '/santos'
+    | '/sitemap-biblia-capitulos.xml'
+    | '/sitemap-biblia-livros.xml'
+    | '/sitemap-paginas.xml'
+    | '/sitemap-santos.xml'
     | '/sitemap.xml'
     | '/sobre'
     | '/sophia-diagnostico'
@@ -471,6 +513,10 @@ export interface FileRouteTypes {
     | '/painel'
     | '/redefinir-senha'
     | '/sacramentos'
+    | '/sitemap-biblia-capitulos.xml'
+    | '/sitemap-biblia-livros.xml'
+    | '/sitemap-paginas.xml'
+    | '/sitemap-santos.xml'
     | '/sitemap.xml'
     | '/sobre'
     | '/sophia-diagnostico'
@@ -515,6 +561,10 @@ export interface FileRouteTypes {
     | '/redefinir-senha'
     | '/sacramentos'
     | '/santos'
+    | '/sitemap-biblia-capitulos.xml'
+    | '/sitemap-biblia-livros.xml'
+    | '/sitemap-paginas.xml'
+    | '/sitemap-santos.xml'
     | '/sitemap.xml'
     | '/sobre'
     | '/sophia-diagnostico'
@@ -561,6 +611,10 @@ export interface RootRouteChildren {
   RedefinirSenhaRoute: typeof RedefinirSenhaRoute
   SacramentosRoute: typeof SacramentosRoute
   SantosRoute: typeof SantosRouteWithChildren
+  SitemapBibliaCapitulosDotxmlRoute: typeof SitemapBibliaCapitulosDotxmlRoute
+  SitemapBibliaLivrosDotxmlRoute: typeof SitemapBibliaLivrosDotxmlRoute
+  SitemapPaginasDotxmlRoute: typeof SitemapPaginasDotxmlRoute
+  SitemapSantosDotxmlRoute: typeof SitemapSantosDotxmlRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SobreRoute: typeof SobreRoute
   SophiaDiagnosticoRoute: typeof SophiaDiagnosticoRoute
@@ -591,6 +645,34 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap-santos.xml': {
+      id: '/sitemap-santos.xml'
+      path: '/sitemap-santos.xml'
+      fullPath: '/sitemap-santos.xml'
+      preLoaderRoute: typeof SitemapSantosDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap-paginas.xml': {
+      id: '/sitemap-paginas.xml'
+      path: '/sitemap-paginas.xml'
+      fullPath: '/sitemap-paginas.xml'
+      preLoaderRoute: typeof SitemapPaginasDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap-biblia-livros.xml': {
+      id: '/sitemap-biblia-livros.xml'
+      path: '/sitemap-biblia-livros.xml'
+      fullPath: '/sitemap-biblia-livros.xml'
+      preLoaderRoute: typeof SitemapBibliaLivrosDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap-biblia-capitulos.xml': {
+      id: '/sitemap-biblia-capitulos.xml'
+      path: '/sitemap-biblia-capitulos.xml'
+      fullPath: '/sitemap-biblia-capitulos.xml'
+      preLoaderRoute: typeof SitemapBibliaCapitulosDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/santos': {
@@ -984,6 +1066,10 @@ const rootRouteChildren: RootRouteChildren = {
   RedefinirSenhaRoute: RedefinirSenhaRoute,
   SacramentosRoute: SacramentosRoute,
   SantosRoute: SantosRouteWithChildren,
+  SitemapBibliaCapitulosDotxmlRoute: SitemapBibliaCapitulosDotxmlRoute,
+  SitemapBibliaLivrosDotxmlRoute: SitemapBibliaLivrosDotxmlRoute,
+  SitemapPaginasDotxmlRoute: SitemapPaginasDotxmlRoute,
+  SitemapSantosDotxmlRoute: SitemapSantosDotxmlRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SobreRoute: SobreRoute,
   SophiaDiagnosticoRoute: SophiaDiagnosticoRoute,
