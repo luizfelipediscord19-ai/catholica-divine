@@ -11,7 +11,7 @@ export const Route = createFileRoute("/redefinir-senha")({
   head: () => ({
     meta: [
       { title: "Criar nova senha — Portal Católico" },
-      { property: "og:url", content: "https://catholica-divine.lovable.app/redefinir-senha" },
+      { property: "og:url", content: "https://portalcatolico.vercel.app/redefinir-senha" },
       { name: "robots", content: "noindex, nofollow" },
       {
         name: "description",

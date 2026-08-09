@@ -3,7 +3,7 @@ import { Sparkles } from "lucide-react";
 import { SUGESTOES_GERAL } from "../lib/data/sophia-perguntas";
 import { SophiaChat } from "../components/SophiaChat";
 
-const URL_PAGINA = "https://catholica-divine.lovable.app/assistente";
+const URL_PAGINA = "https://portalcatolico.vercel.app/assistente";
 const TITULO = "Sophia — Assistente de IA Católica fiel ao Magistério";
 const DESCRICAO =
   "Sophia é a IA católica do Portal Católico: responde dúvidas de fé, doutrina, liturgia e Escritura citando a Bíblia, o Catecismo e documentos do Magistério.";

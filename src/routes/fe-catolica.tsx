@@ -6,12 +6,12 @@ export const Route = createFileRoute("/fe-catolica")({
   head: () => ({
     meta: [
       { title: "A Fé Católica — Credo, Sacramentos, Mandamentos e Oração" },
-      { property: "og:url", content: "https://catholica-divine.lovable.app/fe-catolica" },
+      { property: "og:url", content: "https://portalcatolico.vercel.app/fe-catolica" },
       { name: "description", content: "Tratado aprofundado sobre a fé católica: a Revelação, a Tradição, o Magistério, o Credo Niceno-Constantinopolitano, os quatro pilares do Catecismo e as notas da Igreja, com citações do CIC, Dei Verbum e Lumen Gentium." },
       { property: "og:title", content: "A Fé Católica — Portal Católico" },
       { property: "og:description", content: "Exposição completa e fundamentada da fé católica segundo o Magistério da Igreja." },
     ],
-    links: [{ rel: "canonical", href: "https://catholica-divine.lovable.app/fe-catolica" }],
+    links: [{ rel: "canonical", href: "https://portalcatolico.vercel.app/fe-catolica" }],
   }),
   component: Page,
 });

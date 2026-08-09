@@ -9,7 +9,7 @@ export const Route = createFileRoute("/oracoes/liturgia-das-horas")({
   head: () => ({
     meta: [
       { title: "Liturgia das Horas — Officium Divinum | Portal Católico" },
-      { property: "og:url", content: "https://catholica-divine.lovable.app/oracoes/liturgia-das-horas" },
+      { property: "og:url", content: "https://portalcatolico.vercel.app/oracoes/liturgia-das-horas" },
       {
         name: "description",
         content:
@@ -22,7 +22,7 @@ export const Route = createFileRoute("/oracoes/liturgia-das-horas")({
           "Estrutura completa do Ofício Divino com fontes oficiais e modo de leitura otimizado para impressão.",
       },
     ],
-    links: [{ rel: "canonical", href: "https://catholica-divine.lovable.app/oracoes/liturgia-das-horas" }],
+    links: [{ rel: "canonical", href: "https://portalcatolico.vercel.app/oracoes/liturgia-das-horas" }],
   }),
   component: Page,
 });

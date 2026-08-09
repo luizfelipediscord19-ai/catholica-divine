@@ -39,11 +39,11 @@ export const Route = createFileRoute("/busca")({
           "Motor de busca indexado que cruza Bíblia, Catecismo e Magistério em uma única consulta.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://catholica-divine.lovable.app/busca" },
+      { property: "og:url", content: "https://portalcatolico.vercel.app/busca" },
       { name: "robots", content: "noindex, nofollow" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "https://catholica-divine.lovable.app/busca" }],
+    links: [{ rel: "canonical", href: "https://portalcatolico.vercel.app/busca" }],
   }),
   component: BuscaAvancadaPage,
 });

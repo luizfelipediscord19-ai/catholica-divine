@@ -12,7 +12,7 @@ export const Route = createFileRoute("/oracoes")({
   head: () => ({
     meta: [
       { title: "Orações Católicas Tradicionais — Portal Católico" },
-      { property: "og:url", content: "https://catholica-divine.lovable.app/oracoes" },
+      { property: "og:url", content: "https://portalcatolico.vercel.app/oracoes" },
       {
         name: "description",
         content:
@@ -26,7 +26,7 @@ export const Route = createFileRoute("/oracoes")({
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "https://catholica-divine.lovable.app/oracoes" }],
+    links: [{ rel: "canonical", href: "https://portalcatolico.vercel.app/oracoes" }],
   }),
   component: Page,
 });

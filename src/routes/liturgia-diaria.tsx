@@ -5,14 +5,14 @@ import { liturgiaQueryOptions } from "../lib/liturgia/query";
 import { COR_CLASSE } from "../lib/liturgia/calendario";
 import type { LeituraLiturgica } from "../lib/liturgia.functions";
 
-const SITE_URL = "https://catholica-divine.lovable.app";
+const SITE_URL = "https://portalcatolico.vercel.app";
 
 export const Route = createFileRoute("/liturgia-diaria")({
   loader: ({ context }) => context.queryClient.ensureQueryData(liturgiaQueryOptions()),
   head: () => ({
     meta: [
       { title: "Liturgia Diária — Leituras e Evangelho do Dia" },
-      { property: "og:url", content: "https://catholica-divine.lovable.app/liturgia-diaria" },
+      { property: "og:url", content: "https://portalcatolico.vercel.app/liturgia-diaria" },
       {
         name: "description",
         content:
