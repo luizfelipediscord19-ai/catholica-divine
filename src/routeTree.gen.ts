@@ -31,6 +31,7 @@ import { Route as AuthRouteImport } from './routes/auth'
 import { Route as AssistenteRouteImport } from './routes/assistente'
 import { Route as ApologeticaRouteImport } from './routes/apologetica'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as SantosIndexRouteImport } from './routes/santos.index'
 import { Route as ForumIndexRouteImport } from './routes/forum.index'
 import { Route as BibliaIndexRouteImport } from './routes/biblia.index'
 import { Route as SantosSlugRouteImport } from './routes/santos.$slug'
@@ -158,6 +159,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SantosIndexRoute = SantosIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => SantosRoute,
+} as any)
 const ForumIndexRoute = ForumIndexRouteImport.update({
   id: '/forum/',
   path: '/forum/',
@@ -276,6 +282,7 @@ export interface FileRoutesByFullPath {
   '/santos/$slug': typeof SantosSlugRoute
   '/biblia/': typeof BibliaIndexRoute
   '/forum/': typeof ForumIndexRoute
+  '/santos/': typeof SantosIndexRoute
   '/biblia/$livro/$capitulo': typeof BibliaLivroCapituloRoute
   '/oracoes/novenas/$slug': typeof OracoesNovenasSlugRoute
   '/biblia/$livro/': typeof BibliaLivroIndexRoute
@@ -299,7 +306,6 @@ export interface FileRoutesByTo {
   '/painel': typeof PainelRoute
   '/redefinir-senha': typeof RedefinirSenhaRoute
   '/sacramentos': typeof SacramentosRoute
-  '/santos': typeof SantosRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sophia-diagnostico': typeof SophiaDiagnosticoRoute
   '/api/chat': typeof ApiChatRoute
@@ -314,6 +320,7 @@ export interface FileRoutesByTo {
   '/santos/$slug': typeof SantosSlugRoute
   '/biblia': typeof BibliaIndexRoute
   '/forum': typeof ForumIndexRoute
+  '/santos': typeof SantosIndexRoute
   '/biblia/$livro/$capitulo': typeof BibliaLivroCapituloRoute
   '/oracoes/novenas/$slug': typeof OracoesNovenasSlugRoute
   '/biblia/$livro': typeof BibliaLivroIndexRoute
@@ -355,6 +362,7 @@ export interface FileRoutesById {
   '/santos/$slug': typeof SantosSlugRoute
   '/biblia/': typeof BibliaIndexRoute
   '/forum/': typeof ForumIndexRoute
+  '/santos/': typeof SantosIndexRoute
   '/biblia/$livro/$capitulo': typeof BibliaLivroCapituloRoute
   '/oracoes/novenas/$slug': typeof OracoesNovenasSlugRoute
   '/biblia/$livro/': typeof BibliaLivroIndexRoute
@@ -397,6 +405,7 @@ export interface FileRouteTypes {
     | '/santos/$slug'
     | '/biblia/'
     | '/forum/'
+    | '/santos/'
     | '/biblia/$livro/$capitulo'
     | '/oracoes/novenas/$slug'
     | '/biblia/$livro/'
@@ -420,7 +429,6 @@ export interface FileRouteTypes {
     | '/painel'
     | '/redefinir-senha'
     | '/sacramentos'
-    | '/santos'
     | '/sitemap.xml'
     | '/sophia-diagnostico'
     | '/api/chat'
@@ -435,6 +443,7 @@ export interface FileRouteTypes {
     | '/santos/$slug'
     | '/biblia'
     | '/forum'
+    | '/santos'
     | '/biblia/$livro/$capitulo'
     | '/oracoes/novenas/$slug'
     | '/biblia/$livro'
@@ -475,6 +484,7 @@ export interface FileRouteTypes {
     | '/santos/$slug'
     | '/biblia/'
     | '/forum/'
+    | '/santos/'
     | '/biblia/$livro/$capitulo'
     | '/oracoes/novenas/$slug'
     | '/biblia/$livro/'
@@ -663,6 +673,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/santos/': {
+      id: '/santos/'
+      path: '/'
+      fullPath: '/santos/'
+      preLoaderRoute: typeof SantosIndexRouteImport
+      parentRoute: typeof SantosRoute
     }
     '/forum/': {
       id: '/forum/'
@@ -853,10 +870,12 @@ const OracoesRouteWithChildren =
 
 interface SantosRouteChildren {
   SantosSlugRoute: typeof SantosSlugRoute
+  SantosIndexRoute: typeof SantosIndexRoute
 }
 
 const SantosRouteChildren: SantosRouteChildren = {
   SantosSlugRoute: SantosSlugRoute,
+  SantosIndexRoute: SantosIndexRoute,
 }
 
 const SantosRouteWithChildren =
@@ -892,13 +911,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
