@@ -9,7 +9,6 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as TesteHorariosRouteImport } from './routes/teste-horarios'
 import { Route as SophiaDiagnosticoRouteImport } from './routes/sophia-diagnostico'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SantosRouteImport } from './routes/santos'
@@ -49,11 +48,6 @@ import { Route as BibliaLivroIndexRouteImport } from './routes/biblia.$livro.ind
 import { Route as OracoesNovenasSlugRouteImport } from './routes/oracoes.novenas.$slug'
 import { Route as BibliaLivroCapituloRouteImport } from './routes/biblia.$livro.$capitulo'
 
-const TesteHorariosRoute = TesteHorariosRouteImport.update({
-  id: '/teste-horarios',
-  path: '/teste-horarios',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const SophiaDiagnosticoRoute = SophiaDiagnosticoRouteImport.update({
   id: '/sophia-diagnostico',
   path: '/sophia-diagnostico',
@@ -269,7 +263,6 @@ export interface FileRoutesByFullPath {
   '/santos': typeof SantosRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sophia-diagnostico': typeof SophiaDiagnosticoRoute
-  '/teste-horarios': typeof TesteHorariosRoute
   '/api/chat': typeof ApiChatRoute
   '/biblia/$livro': typeof BibliaLivroRouteWithChildren
   '/biblia/leituras': typeof BibliaLeiturasRoute
@@ -309,7 +302,6 @@ export interface FileRoutesByTo {
   '/santos': typeof SantosRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sophia-diagnostico': typeof SophiaDiagnosticoRoute
-  '/teste-horarios': typeof TesteHorariosRoute
   '/api/chat': typeof ApiChatRoute
   '/biblia/leituras': typeof BibliaLeiturasRoute
   '/catecismo/$parte': typeof CatecismoParteRoute
@@ -350,7 +342,6 @@ export interface FileRoutesById {
   '/santos': typeof SantosRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sophia-diagnostico': typeof SophiaDiagnosticoRoute
-  '/teste-horarios': typeof TesteHorariosRoute
   '/api/chat': typeof ApiChatRoute
   '/biblia/$livro': typeof BibliaLivroRouteWithChildren
   '/biblia/leituras': typeof BibliaLeiturasRoute
@@ -393,7 +384,6 @@ export interface FileRouteTypes {
     | '/santos'
     | '/sitemap.xml'
     | '/sophia-diagnostico'
-    | '/teste-horarios'
     | '/api/chat'
     | '/biblia/$livro'
     | '/biblia/leituras'
@@ -433,7 +423,6 @@ export interface FileRouteTypes {
     | '/santos'
     | '/sitemap.xml'
     | '/sophia-diagnostico'
-    | '/teste-horarios'
     | '/api/chat'
     | '/biblia/leituras'
     | '/catecismo/$parte'
@@ -473,7 +462,6 @@ export interface FileRouteTypes {
     | '/santos'
     | '/sitemap.xml'
     | '/sophia-diagnostico'
-    | '/teste-horarios'
     | '/api/chat'
     | '/biblia/$livro'
     | '/biblia/leituras'
@@ -515,7 +503,6 @@ export interface RootRouteChildren {
   SantosRoute: typeof SantosRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SophiaDiagnosticoRoute: typeof SophiaDiagnosticoRoute
-  TesteHorariosRoute: typeof TesteHorariosRoute
   ApiChatRoute: typeof ApiChatRoute
   ForumSlugRoute: typeof ForumSlugRoute
   ForumIndexRoute: typeof ForumIndexRoute
@@ -523,13 +510,6 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/teste-horarios': {
-      id: '/teste-horarios'
-      path: '/teste-horarios'
-      fullPath: '/teste-horarios'
-      preLoaderRoute: typeof TesteHorariosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/sophia-diagnostico': {
       id: '/sophia-diagnostico'
       path: '/sophia-diagnostico'
@@ -905,7 +885,6 @@ const rootRouteChildren: RootRouteChildren = {
   SantosRoute: SantosRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SophiaDiagnosticoRoute: SophiaDiagnosticoRoute,
-  TesteHorariosRoute: TesteHorariosRoute,
   ApiChatRoute: ApiChatRoute,
   ForumSlugRoute: ForumSlugRoute,
   ForumIndexRoute: ForumIndexRoute,
