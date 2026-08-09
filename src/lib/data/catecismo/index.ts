@@ -43,18 +43,18 @@ export const PARTES = [
 
 export const SECOES: SecaoCIC[] = [
   // Parte I
-  { slug: "credo-1", parte: 1, titulo: "Eu creio em Deus Pai", paragrafos: "§§ 198–421", resumo: "Deus único; o Pai todo-poderoso; criador do céu e da terra; o homem; a queda." },
-  { slug: "credo-2", parte: 1, titulo: "Eu creio em Jesus Cristo", paragrafos: "§§ 422–682", resumo: "O Filho único de Deus, concebido pelo Espírito Santo, nasceu de Maria Virgem; padeceu, morreu, ressuscitou, subiu aos céus." },
-  { slug: "credo-3", parte: 1, titulo: "Eu creio no Espírito Santo", paragrafos: "§§ 683–1065", resumo: "O Espírito Santo, a Igreja, a comunhão dos santos, a remissão dos pecados, a ressurreição da carne e a vida eterna." },
+  { slug: "credo-1", parte: 1, titulo: "Eu creio em Deus Pai", paragrafos: "§§ 198–421", resumo: "A fé professa um só Deus, Pai todo-poderoso, revelado plenamente em Cristo como comunhão de três Pessoas. Ele é o Criador do céu e da terra, autor de toda a realidade visível e invisível, que faz do homem, criado à sua imagem, o cume da criação visível. A seção conclui com o mistério da queda original, que introduziu o pecado e o mal no mundo sem frustrar o desígnio salvífico de Deus." },
+  { slug: "credo-2", parte: 1, titulo: "Eu creio em Jesus Cristo", paragrafos: "§§ 422–682", resumo: "O Filho único de Deus assumiu a natureza humana na Encarnação, concebido pelo Espírito Santo e nascido da Virgem Maria, verdadeiro Deus e verdadeiro homem em uma só Pessoa. Sua vida terrena — oculta e pública — culmina no mistério pascal: paixão, morte na cruz, ressurreição ao terceiro dia e ascensão gloriosa ao céu. A seção conclui afirmando que Ele há de voltar em glória para julgar vivos e mortos." },
+  { slug: "credo-3", parte: 1, titulo: "Eu creio no Espírito Santo", paragrafos: "§§ 683–1065", resumo: "O Espírito Santo, terceira Pessoa da Trindade, é enviado no Pentecostes para santificar a Igreja e conduzi-la à verdade plena, agindo nos sacramentos e na vida de cada fiel. Nele professamos a Igreja una, santa, católica e apostólica, a comunhão dos santos e o perdão dos pecados obtido em Cristo. A profissão de fé encerra-se com a esperança da ressurreição da carne e da vida eterna, meta última da existência cristã." },
   // Parte II
-  { slug: "liturgia-1", parte: 2, titulo: "A Economia Sacramental", paragrafos: "§§ 1076–1209", resumo: "A liturgia, obra da Trindade. Mistério pascal celebrado na liturgia da Igreja." },
-  { slug: "liturgia-2", parte: 2, titulo: "Os Sete Sacramentos", paragrafos: "§§ 1210–1690", resumo: "Iniciação cristã (Batismo, Confirmação, Eucaristia); Cura (Penitência, Unção); Serviço (Ordem, Matrimônio)." },
+  { slug: "liturgia-1", parte: 2, titulo: "A Economia Sacramental", paragrafos: "§§ 1076–1209", resumo: "A liturgia é obra da Santíssima Trindade: o Pai que a fonte, o Filho que a realiza pelo seu mistério pascal e o Espírito que a atualiza na Igreja de hoje. Nela, o mistério de Cristo torna-se presente e operante através de sinais sensíveis — os sacramentos — que comunicam a graça da salvação. A seção trata ainda de quem celebra, como e quando, respeitando a legítima diversidade de ritos dentro da unidade do mistério celebrado." },
+  { slug: "liturgia-2", parte: 2, titulo: "Os Sete Sacramentos", paragrafos: "§§ 1210–1690", resumo: "Os sete sacramentos, instituídos por Cristo e confiados à Igreja, organizam-se em três grupos segundo sua função na vida cristã. Os sacramentos da iniciação — Batismo, Confirmação e Eucaristia — fundam e alimentam a vida nova em Cristo; os da cura — Penitência e Unção dos Enfermos — restauram a saúde da alma e do corpo; os do serviço da comunhão — Ordem e Matrimônio — ordenam a missão e a família em vista da edificação do Povo de Deus." },
   // Parte III
-  { slug: "vida-1", parte: 3, titulo: "A Vocação do Homem", paragrafos: "§§ 1699–2051", resumo: "Dignidade da pessoa humana; comunidade humana; salvação de Deus: a Lei e a Graça." },
-  { slug: "vida-2", parte: 3, titulo: "Os Dez Mandamentos", paragrafos: "§§ 2052–2557", resumo: "Comentário ao Decálogo: Amarás a Deus sobre todas as coisas; Amarás o próximo como a ti mesmo." },
+  { slug: "vida-1", parte: 3, titulo: "A Vocação do Homem", paragrafos: "§§ 1699–2051", resumo: "O homem é chamado à bem-aventurança pela participação na natureza divina, exercendo sua liberdade responsável através de atos moralmente qualificados por objeto, intenção e circunstâncias. Vive essa vocação em comunidade, ordenada pela lei natural e aperfeiçoada pela Lei nova do Evangelho. A seção culmina na doutrina da graça e da justificação, dom gratuito que capacita o homem a viver segundo o Espírito e a alcançar a santidade." },
+  { slug: "vida-2", parte: 3, titulo: "Os Dez Mandamentos", paragrafos: "§§ 2052–2557", resumo: "O Catecismo comenta o Decálogo recebido por Moisés e confirmado por Cristo como caminho de vida e de liberdade para o povo de Deus. Os três primeiros mandamentos ordenam o amor a Deus sobre todas as coisas; os sete seguintes, o amor ao próximo como a si mesmo, abrangendo família, vida, castidade, justiça, verdade e retidão do coração. Juntos, formam uma unidade orgânica que expressa em preceitos concretos o duplo mandamento da caridade." },
   // Parte IV
-  { slug: "oracao-1", parte: 4, titulo: "A Oração na Vida Cristã", paragrafos: "§§ 2566–2758", resumo: "A revelação da oração; a tradição da oração; a vida de oração." },
-  { slug: "oracao-2", parte: 4, titulo: "A Oração do Senhor: Pai-Nosso", paragrafos: "§§ 2759–2865", resumo: "Comentário ao Pai-Nosso, ‘resumo de todo o Evangelho’ (Tertuliano)." },
+  { slug: "oracao-1", parte: 4, titulo: "A Oração na Vida Cristã", paragrafos: "§§ 2566–2758", resumo: "A oração é definida como elevação da alma a Deus, revelada progressivamente ao longo da história da salvação e plenamente ensinada por Jesus, mestre e modelo de oração. A Igreja recebe e transmite essa tradição orante através das Escrituras, dos Padres, dos mestres espirituais e da liturgia. A seção descreve ainda as três expressões da vida de oração — vocal, meditação e contemplação — e o combate espiritual que a acompanha." },
+  { slug: "oracao-2", parte: 4, titulo: "A Oração do Senhor: Pai-Nosso", paragrafos: "§§ 2759–2865", resumo: "O Pai-Nosso, ensinado pelo próprio Jesus, é chamado por Tertuliano ‘resumo de todo o Evangelho’, pois contém em síntese toda a Boa Nova. As três primeiras petições voltam-se à glória do Pai — seu nome, seu Reino e sua vontade —, enquanto as quatro últimas apresentam ao Pai as necessidades humanas: o pão, o perdão, a proteção na tentação e a libertação do mal. O Catecismo encerra com o ‘Amém’ que sela nossa confiança filial em Deus." },
 ];
 
 /** Capítulos e artigos de cada seção — estrutura factual do CIC. */
@@ -268,6 +268,36 @@ export const CAPITULOS: CapituloCIC[] = [
       "O pão de cada dia; perdoa-nos; não nos deixes cair em tentação; livra-nos do mal (§§ 2828-2865)",
     ],
   },
+{
+    secao: "liturgia-1",
+    titulo: "Os sinais sacramentais e a diversidade litúrgica",
+    paragrafos: "§§ 1145-1155",
+    itens: [
+      "Os sinais sensíveis da nova Aliança: palavras e ações (§§ 1145-1152)",
+      "Sinais assumidos por Cristo: água, óleo, pão e vinho (§§ 1150-1152)",
+      "Palavra e liturgia; ritos orientais e ocidentais (§§ 1153-1155)",
+    ],
+  },
+  {
+    secao: "vida-2",
+    titulo: "Preceitos gerais e caráter permanente do Decálogo",
+    paragrafos: "§§ 2064-2082",
+    itens: [
+      "O Decálogo na Sagrada Escritura (§§ 2056-2063)",
+      "O Decálogo e a Lei natural; sua obrigatoriedade e unidade orgânica (§§ 2064-2069)",
+    ],
+  },
+  {
+    secao: "oracao-2",
+    titulo: "‘Ó Pai’: a confiança filial",
+    paragrafos: "§§ 2765-2776",
+    itens: [
+      "Uma audácia filial (§§ 2777-2778)",
+      "‘Pai nosso’: o Deus de todos e a comunhão eclesial (§§ 2786-2793)",
+      "‘Que estás nos céus’: sentido bíblico da expressão (§§ 2794-2796)",
+    ],
+  },
+
 ];
 
 export function capitulosDaSecao(secaoSlug: string): CapituloCIC[] {

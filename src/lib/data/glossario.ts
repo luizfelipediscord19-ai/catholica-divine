@@ -954,6 +954,299 @@ export const GLOSSARIO: Record<string, EntradaGlossario> = {
       "Participação da criatura racional na lei eterna de Deus, inscrita na razão, universal e imutável em seus preceitos fundamentais.",
     ref: "CIC §§ 1954-1960",
   },
+  apocatastase: {
+    termo: "Apocatástase (doutrina refutada)",
+    definicao:
+      "Tese, associada a Orígenes e condenada pela Igreja, segundo a qual todas as criaturas racionais, incluindo os demônios, seriam finalmente restauradas e salvas. A Igreja mantém a possibilidade real da condenação eterna, embora nutra esperança e ore pela salvação de todos.",
+    ref: "CIC §§ 1037, 1058; Const. dos Três Capítulos, 553",
+  },
+  circuncisao_espiritual: {
+    termo: "Circuncisão Espiritual",
+    definicao:
+      "Figurada pela circuncisão carnal do Antigo Testamento, é a purificação interior do coração operada pelo Batismo e pela graça, tornando o fiel membro da nova Aliança sem necessidade do rito mosaico.",
+    ref: "Rm 2,29; Cl 2,11-12; CIC § 527",
+  },
+  hipostase: {
+    termo: "Hipóstase",
+    definicao:
+      "Termo grego que designa a subsistência individual e concreta de uma natureza; na teologia trinitária, cada uma das três Pessoas divinas é uma hipóstase da única substância divina.",
+    ref: "CIC §§ 251-252; Concílio de Calcedônia, 451",
+  },
+  opus_operatum: {
+    termo: "Opus Operatum",
+    definicao:
+      "Expressão latina que designa a eficácia objetiva do sacramento, realizada pela própria ação sacramental de Cristo, distinta do 'opus operantis' (mérito ou disposição subjetiva do ministro ou do sujeito).",
+    ref: "CIC § 1128; Trento, sess. VII",
+  },
+  perigorese: {
+    termo: "Perícorese (Circumincessão)",
+    definicao:
+      "Compenetração mútua e eterna das três Pessoas divinas, que habitam uma na outra em unidade de essência sem confusão de Pessoas.",
+    ref: "CIC § 255; São João Damasceno",
+  },
+  monofisismo: {
+    termo: "Monofisismo",
+    definicao:
+      "Heresia cristológica que afirma existir em Cristo uma só natureza, absorvida a humana pela divindade, negando a integridade da natureza humana de Jesus. Condenada em Calcedônia (451).",
+    ref: "CIC § 467; Calcedônia, 451",
+  },
+  nestorianismo: {
+    termo: "Nestorianismo",
+    definicao:
+      "Heresia que separava em Cristo duas pessoas — a divina e a humana — negando a unidade da Pessoa do Verbo encarnado e, por consequência, a maternidade divina de Maria. Condenada em Éfeso (431).",
+    ref: "CIC §§ 466, 495; Éfeso, 431",
+  },
+  arianismo: {
+    termo: "Arianismo",
+    definicao:
+      "Heresia do presbítero Ário, que negava a divindade plena do Filho, considerando-o a primeira e mais excelsa criatura, não consubstancial ao Pai. Condenada no Concílio de Niceia (325).",
+    ref: "CIC § 465; Niceia, 325",
+  },
+  pelagianismo: {
+    termo: "Pelagianismo",
+    definicao:
+      "Erro atribuído a Pelágio que negava a necessidade da graça para a salvação, sustentando que o homem poderia, por seu próprio esforço natural, evitar o pecado e alcançar a santidade.",
+    ref: "CIC §§ 406, 2001-2002; Concílio de Cartago, 418",
+  },
+  jansenismo: {
+    termo: "Jansenismo",
+    definicao:
+      "Corrente rigorista do séc. XVII que, exagerando a doutrina agostiniana da graça, propunha visão pessimista da natureza humana e restringia excessivamente o acesso à Eucaristia, sendo condenada pela Igreja.",
+    ref: "Cum Occasione, Inocêncio X, 1653",
+  },
+  modernismo: {
+    termo: "Modernismo",
+    definicao:
+      "Conjunto de correntes do início do séc. XX que subordinavam o dogma à evolução subjetiva da consciência religiosa, minando a objetividade da Revelação; condenado por São Pio X.",
+    ref: "Pascendi Dominici Gregis, 1907",
+  },
+  relativismo_moral: {
+    termo: "Relativismo Moral",
+    definicao:
+      "Postura que nega a existência de verdades morais objetivas e universais, reduzindo o bem e o mal a convenções culturais ou preferências subjetivas; contraposta à lei natural e à verdade sobre o bem.",
+    ref: "Veritatis Splendor 84-101",
+  },
+  proporcionalismo: {
+    termo: "Proporcionalismo",
+    definicao:
+      "Teoria ética que julga a moralidade do ato unicamente pelo balanço proporcional entre bens e males, negando a existência de atos intrinsecamente maus; rejeitada pelo Magistério.",
+    ref: "Veritatis Splendor 75-77",
+  },
+  ato_intrinsecamente_mau: {
+    termo: "Ato Intrinsecamente Mau",
+    definicao:
+      "Ato cuja espécie moral é má em si mesma, independentemente da intenção do agente ou das circunstâncias, não podendo jamais ser justificado por um fim bom.",
+    ref: "CIC §§ 1755-1756; Veritatis Splendor 80",
+  },
+  principio_dupla_efeito: {
+    termo: "Princípio do Duplo Efeito",
+    definicao:
+      "Critério moral clássico que permite um ato bom com efeito colateral mau não pretendido, desde que o ato em si seja bom ou indiferente, a intenção seja reta, o efeito mau não seja o meio para o bom e haja razão proporcionada.",
+    ref: "Santo Tomás, Suma Teológica II-II, q.64, a.7",
+  },
+  restricao_mental: {
+    termo: "Restrição Mental",
+    definicao:
+      "Reserva não manifestada que altera o sentido de uma afirmação; distingue-se a restrição estritamente mental (ilícita, equivale à mentira) da ampla (admissível em certas condições, por não induzir realmente ao erro).",
+    ref: "CIC § 2483",
+  },
+  epieikeia: {
+    termo: "Epiqueia",
+    definicao:
+      "Virtude que interpreta a lei segundo a intenção do legislador em casos particulares não previstos pela letra, evitando a injustiça de uma aplicação rígida e literal.",
+    ref: "Aristóteles; Santo Tomás, Suma Teológica II-II, q.120",
+  },
+  economia_salvifica: {
+    termo: "Economia da Salvação",
+    definicao:
+      "Plano divino de salvação realizado na história, culminando na Encarnação, morte e Ressurreição de Cristo, e continuado sacramentalmente pela Igreja.",
+    ref: "CIC §§ 1-4, 1076",
+  },
+  protoevangelho: {
+    termo: "Protoevangelho",
+    definicao:
+      "Primeiro anúncio da salvação após a queda (Gn 3,15), que promete a vitória da descendência da mulher sobre a serpente, lido pela Tradição como prefiguração de Cristo e de Maria.",
+    ref: "CIC §§ 410-411",
+  },
+  alianca: {
+    termo: "Aliança",
+    definicao:
+      "Vínculo estabelecido por Deus livremente com a humanidade em etapas sucessivas (Noé, Abraão, Moisés) até a Nova e Eterna Aliança selada no sangue de Cristo.",
+    ref: "CIC §§ 56-73",
+  },
+  circumincessao_ver: {
+    termo: "Missões Divinas",
+    definicao:
+      "Envio temporal do Filho e do Espírito Santo ao mundo, que manifesta e prolonga no tempo as processões eternas intratrinitárias.",
+    ref: "CIC §§ 257-260",
+  },
+  processoes_trinitarias: {
+    termo: "Processões Trinitárias",
+    definicao:
+      "Geração eterna do Filho pelo Pai e espiração do Espírito Santo pelo Pai e pelo Filho, que constituem as relações pessoais na única substância divina.",
+    ref: "CIC §§ 245-248",
+  },
+  apropriacao: {
+    termo: "Apropriação (teologia trinitária)",
+    definicao:
+      "Atribuição, na linguagem teológica, de certas operações comuns às três Pessoas divinas a uma delas em particular, por conveniência com suas propriedades pessoais (ex.: a criação ao Pai).",
+    ref: "CIC § 258",
+  },
+  analogia_fidei: {
+    termo: "Analogia da Fé",
+    definicao:
+      "Princípio hermenêutico segundo o qual cada passagem da Escritura deve ser lida em coerência com o conjunto do plano de Deus e das verdades da fé.",
+    ref: "CIC § 114; Dei Verbum 12",
+  },
+  magisterio_ordinario: {
+    termo: "Magistério Ordinário e Universal",
+    definicao:
+      "Ensino constante e concorde do Papa e dos bispos dispersos pelo mundo sobre uma verdade de fé ou moral a ser definitivamente sustentada, ainda que não proclamado em ato solene.",
+    ref: "CIC § 892; Lumen Gentium 25",
+  },
+  fides_et_ratio: {
+    termo: "Fé e Razão",
+    definicao:
+      "Relação de complementaridade entre a fé, que acolhe a Revelação, e a razão natural, capaz de conhecer verdades sobre Deus; 'duas asas com as quais o espírito humano se eleva' (João Paulo II).",
+    ref: "CIC §§ 35-38; Fides et Ratio",
+  },
+  preambulos_fe: {
+    termo: "Preâmbulos da Fé",
+    definicao:
+      "Verdades sobre Deus (sua existência, por exemplo) que a razão humana pode conhecer por si mesma, ainda que a fé as confirme e as eleve.",
+    ref: "CIC §§ 35-36",
+  },
+  virtude_religiao: {
+    termo: "Virtude da Religião",
+    definicao:
+      "Virtude moral, parte da justiça, pela qual o homem rende a Deus o culto e a honra que Lhe são devidos como Criador e Senhor.",
+    ref: "CIC §§ 2095-2096",
+  },
+  sacrilegio: {
+    termo: "Sacrilégio",
+    definicao:
+      "Profanação ou tratamento indigno de pessoas, coisas ou lugares consagrados a Deus, especialmente dos sacramentos; pecado grave contra a virtude da religião.",
+    ref: "CIC § 2120",
+  },
+  superstição_ver: {
+    termo: "Superstição",
+    definicao:
+      "Desvio do sentimento religioso que atribui importância excessiva a práticas exteriores em detrimento da disposição interior devida a Deus, ou dirige o culto a realidades que não O merecem.",
+    ref: "CIC §§ 2110-2111",
+  },
+  idolatria: {
+    termo: "Idolatria",
+    definicao:
+      "Pecado que consiste em divinizar o que não é Deus, prestando culto de adoração a criaturas, poder, dinheiro ou ideologias no lugar do Deus único e verdadeiro.",
+    ref: "CIC §§ 2112-2114",
+  },
+  ateismo: {
+    termo: "Ateísmo",
+    definicao:
+      "Negação da existência de Deus; a Igreja o julga com frequência como pecado grave contra a virtude da religião, embora reconheça circunstâncias atenuantes de responsabilidade em certos casos.",
+    ref: "CIC §§ 2123-2126",
+  },
+  agnosticismo: {
+    termo: "Agnosticismo",
+    definicao:
+      "Postura que declara impossível ou indecidível o conhecimento sobre a existência de Deus, frequentemente confundindo-se, na prática, com uma forma de ateísmo prático.",
+    ref: "CIC §§ 2127-2128",
+  },
+  angelologia: {
+    termo: "Angelologia",
+    definicao:
+      "Tratado teológico sobre os anjos, criaturas espirituais e pessoais dotadas de inteligência e vontade, criadas por Deus para Lhe servir e glorificar.",
+    ref: "CIC §§ 328-336",
+  },
+  demonologia: {
+    termo: "Demônios (queda angélica)",
+    definicao:
+      "Anjos que, por escolha livre e irrevogável, recusaram servir a Deus e se tornaram espíritos maus, tentadores da humanidade; sua ação é permitida por Deus mas limitada por sua Providência.",
+    ref: "CIC §§ 391-395",
+  },
+  exorcismo: {
+    termo: "Exorcismo",
+    definicao:
+      "Rito pelo qual a Igreja pede publicamente, em nome de Cristo, que uma pessoa ou objeto seja protegido ou libertado do poder do Maligno; reservado, na forma solene, ao bispo ou seu delegado.",
+    ref: "CIC §§ 1673",
+  },
+  batismo_desejo: {
+    termo: "Batismo de Desejo",
+    definicao:
+      "Salvação concedida por Deus a quem, ignorando sem culpa o Evangelho ou a Igreja, busca sinceramente a Deus e procura cumprir sua vontade, unindo-se assim implicitamente ao desejo do Batismo.",
+    ref: "CIC §§ 1258-1260",
+  },
+  batismo_sangue: {
+    termo: "Batismo de Sangue",
+    definicao:
+      "Efeito de graça equivalente ao Batismo de água concedido ao catecúmeno que sofre o martírio pela fé antes de poder ser batizado sacramentalmente.",
+    ref: "CIC § 1258",
+  },
+  extra_ecclesiam: {
+    termo: "Extra Ecclesiam Nulla Salus",
+    definicao:
+      "Axioma patrístico ('fora da Igreja não há salvação') que afirma a necessidade da Igreja para a salvação, entendido pelo Magistério não como exclusão dos que, sem culpa, a ignoram, mas como afirmação de que toda salvação vem por Cristo e seu Corpo.",
+    ref: "CIC §§ 846-848; Lumen Gentium 16",
+  },
+  votos_religiosos: {
+    termo: "Votos Religiosos (Conselhos Evangélicos)",
+    definicao:
+      "Promessas públicas e estáveis de castidade, pobreza e obediência, professadas por religiosos como resposta radical ao chamado de Cristo à perfeição da caridade.",
+    ref: "CIC §§ 914-933",
+  },
+  vida_consagrada: {
+    termo: "Vida Consagrada",
+    definicao:
+      "Estado de vida reconhecido pela Igreja em que o fiel professa os conselhos evangélicos, consagrando-se totalmente a Deus em institutos religiosos, seculares ou outras formas aprovadas.",
+    ref: "CIC §§ 914-945",
+  },
+  clausura: {
+    termo: "Clausura",
+    definicao:
+      "Disciplina de separação do mundo observada por religiosos contemplativos, especialmente monjas, como expressão de sua total consagração à oração e ao silêncio.",
+  },
+  primazia_consciencia_ver: {
+    termo: "Formação da Consciência",
+    definicao:
+      "Dever de educar continuamente o juízo moral à luz da razão reta e da Palavra de Deus, submetendo-o ao ensinamento autorizado da Igreja para evitar erros de julgamento.",
+    ref: "CIC §§ 1783-1785",
+  },
+  cooperacao_mal: {
+    termo: "Cooperação ao Mal",
+    definicao:
+      "Participação, formal (compartilhando a intenção má) ou material (apenas concorrendo externamente ao ato), no pecado de outrem; a cooperação formal é sempre ilícita.",
+    ref: "CIC § 1868",
+  },
+  escandalo: {
+    termo: "Escândalo",
+    definicao:
+      "Atitude ou comportamento que leva outrem a praticar o mal, constituindo falta grave quando feito deliberadamente, sobretudo por quem tem autoridade ou influência.",
+    ref: "CIC §§ 2284-2287",
+  },
+  restituicao: {
+    termo: "Restituição",
+    definicao:
+      "Obrigação de justiça de reparar o dano causado injustamente a outrem, devolvendo o bem usurpado ou compensando o prejuízo antes de obter a plena remissão do pecado.",
+    ref: "CIC §§ 2412-2413",
+  },
+  usura: {
+    termo: "Usura",
+    definicao:
+      "Cobrança de juros excessivos ou injustos sobre empréstimos, condenada pela tradição moral da Igreja como violação da justiça e da caridade para com o necessitado.",
+    ref: "CIC § 2269",
+  },
+  guerra_justa: {
+    termo: "Guerra Justa (doutrina da)",
+    definicao:
+      "Conjunto de condições morais rigorosas — dano duradouro e grave, esgotamento de outros meios, sérias probabilidades de êxito, ausência de males maiores — que devem ser todas satisfeitas para que o recurso à força armada seja moralmente legítimo.",
+    ref: "CIC §§ 2307-2317",
+  },
+  objecao_consciencia: {
+    termo: "Objeção de Consciência",
+    definicao:
+      "Recusa legítima de cumprir uma lei ou ordem civil que contrarie a lei moral e os direitos fundamentais da pessoa, sobretudo quando envolve cooperação com o mal.",
+    ref: "CIC § 2242",
+  },
 };
 
 export function getTermo(chave: string): EntradaGlossario | null {

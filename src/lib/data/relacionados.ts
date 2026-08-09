@@ -57,8 +57,8 @@ export const RELACIONADOS: Record<string, RelatedSet> = {
       bib("lucas", 22, 14, 20, "Lc 22,14-20 — Instituição"),
     ],
     santos: [
-      santo("tomas-aquino", "São Tomás de Aquino — Pange Lingua"),
-      santo("joao-paulo-ii", "São João Paulo II — Ecclesia de Eucharistia"),
+      santo("santo-tomas-de-aquino", "São Tomás de Aquino — Pange Lingua"),
+      santo("sao-joao-paulo-ii", "São João Paulo II — Ecclesia de Eucharistia"),
     ],
     oracoes: [
       oracao("/oracoes", "Anima Christi"),
@@ -76,8 +76,8 @@ export const RELACIONADOS: Record<string, RelatedSet> = {
       bib("lucas", 15, 11, 32, "Lc 15 — Filho pródigo"),
     ],
     santos: [
-      santo("joao-maria-vianney", "São João Maria Vianney"),
-      santo("padre-pio", "São Pio de Pietrelcina"),
+      santo("sao-joao-maria-vianney", "São João Maria Vianney"),
+      santo("sao-padre-pio-de-pietrelcina", "São Pio de Pietrelcina"),
     ],
     oracoes: [oracao("/oracoes", "Ato de Contrição"), oracao("/oracoes/terco-misericordia", "Terço da Misericórdia")],
   },
@@ -92,7 +92,7 @@ export const RELACIONADOS: Record<string, RelatedSet> = {
       bib("atos", 2, 38, 41, "At 2,38 — Pregação de Pedro"),
       bib("romanos", 6, 3, 11, "Rm 6,3-11 — Batizados em sua morte"),
     ],
-    santos: [santo("joao-batista", "São João Batista")],
+    santos: [santo("sao-joao-batista", "São João Batista")],
     oracoes: [oracao("/oracoes", "Renovação das promessas batismais")],
   },
 
@@ -116,7 +116,7 @@ export const RELACIONADOS: Record<string, RelatedSet> = {
       bib("mateus", 19, 3, 12, "Mt 19,6 — Não separe o homem"),
       bib("efesios", 5, 21, 33, "Ef 5,21-33 — Cristo e a Igreja"),
     ],
-    santos: [santo("luiz-zelia", "Luís e Zélia Martin"), santo("joao-paulo-ii", "São João Paulo II")],
+    santos: [santo("sao-joao-paulo-ii", "São João Paulo II — Familiaris Consortio")],
     oracoes: [],
   },
 
@@ -128,7 +128,7 @@ export const RELACIONADOS: Record<string, RelatedSet> = {
       bib("1timoteo", 4, 14, undefined, "1Tm 4,14 — Imposição das mãos"),
       bib("hebreus", 5, 1, 10, "Hb 5,1-10 — Sumo Sacerdote"),
     ],
-    santos: [santo("joao-maria-vianney", "Cura d'Ars"), santo("paulo", "São Paulo")],
+    santos: [santo("sao-joao-maria-vianney", "Cura d'Ars"), santo("sao-paulo", "São Paulo")],
     oracoes: [oracao("/oracoes", "Oração pelos sacerdotes")],
   },
 
@@ -139,7 +139,7 @@ export const RELACIONADOS: Record<string, RelatedSet> = {
       bib("tiago", 5, 13, 16, "Tg 5,14-15 — Unção com óleo"),
       bib("marcos", 6, 7, 13, "Mc 6,13 — Os Doze ungiam"),
     ],
-    santos: [santo("camilo-lelis", "São Camilo de Lélis")],
+    santos: [santo("sao-camilo-de-lellis", "São Camilo de Lélis")],
     oracoes: [],
   },
 
@@ -154,9 +154,9 @@ export const RELACIONADOS: Record<string, RelatedSet> = {
       bib("joao", 2, 1, 11, "Jo 2,1-11 — Caná"),
     ],
     santos: [
-      santo("domingos-gusmao", "São Domingos de Gusmão"),
-      santo("joao-paulo-ii", "São João Paulo II — Rosarium Virginis Mariae"),
-      santo("padre-pio", "São Pio de Pietrelcina"),
+      santo("santo-domingos-de-gusmao", "São Domingos de Gusmão"),
+      santo("sao-joao-paulo-ii", "São João Paulo II — Rosarium Virginis Mariae"),
+      santo("sao-padre-pio-de-pietrelcina", "São Pio de Pietrelcina"),
     ],
     oracoes: [
       oracao("/oracoes/novenas", "Novenas marianas"),
@@ -174,8 +174,8 @@ export const RELACIONADOS: Record<string, RelatedSet> = {
       bib("joao", 19, 16, 37, "Jo 19 — Aos pés da Cruz"),
     ],
     santos: [
-      santo("francisco-assis", "São Francisco de Assis"),
-      santo("leonardo-porto-mauricio", "São Leonardo de Porto Maurício"),
+      santo("sao-francisco-de-assis", "São Francisco de Assis"),
+      santo("sao-francisco-de-sales", "São Francisco de Sales"),
     ],
     oracoes: [oracao("/oracoes/rosario", "Mistérios Dolorosos")],
   },
@@ -188,7 +188,7 @@ export const RELACIONADOS: Record<string, RelatedSet> = {
       bib("joao", 20, 19, 23, "Jo 20,19-23 — Domingo da Misericórdia"),
       bib("salmos", 51, 1, 19, "Sl 51 — Miserere"),
     ],
-    santos: [santo("faustina", "Santa Faustina Kowalska"), santo("joao-paulo-ii", "São João Paulo II")],
+    santos: [santo("santa-faustina-kowalska", "Santa Faustina Kowalska"), santo("sao-joao-paulo-ii", "São João Paulo II")],
     oracoes: [oracao("/oracoes/rosario", "Santo Rosário")],
   },
 
@@ -196,19 +196,19 @@ export const RELACIONADOS: Record<string, RelatedSet> = {
   "biblia:joao": {
     catecismo: [cat("credo", "Encarnação do Verbo — Jo 1"), cat("liturgia", "Discurso eucarístico — Jo 6")],
     sacramentos: [sacramento("Eucaristia (Jo 6)"), sacramento("Batismo (Jo 3)"), sacramento("Confissão (Jo 20)")],
-    santos: [santo("joao-evangelista", "São João Evangelista"), santo("agostinho", "Santo Agostinho — Comentário ao Evangelho de João")],
+    santos: [santo("sao-joao-evangelista", "São João Evangelista"), santo("santo-agostinho", "Santo Agostinho — Comentário ao Evangelho de João")],
     oracoes: [],
   },
   "biblia:mateus": {
     catecismo: [cat("vida-em-cristo", "Sermão da Montanha"), cat("oracao", "Pai-Nosso — Mt 6,9-13")],
     sacramentos: [sacramento("Batismo (Mt 28,19)"), sacramento("Eucaristia (Mt 26)")],
-    santos: [santo("mateus", "São Mateus Evangelista")],
+    santos: [santo("sao-mateus", "São Mateus Evangelista")],
     oracoes: [oracao("/oracoes", "Pai-Nosso")],
   },
   "biblia:salmos": {
     catecismo: [cat("oracao", "Os Salmos na oração da Igreja", "§§ 2585–2589")],
     sacramentos: [],
-    santos: [santo("davi", "Rei Davi"), santo("agostinho", "Santo Agostinho — Enarrationes")],
+    santos: [santo("santo-agostinho", "Santo Agostinho — Enarrationes in Psalmos")],
     oracoes: [oracao("/oracoes/liturgia-das-horas", "Liturgia das Horas")],
   },
   "biblia:genesis": {
@@ -220,7 +220,7 @@ export const RELACIONADOS: Record<string, RelatedSet> = {
   "biblia:apocalipse": {
     catecismo: [cat("credo", "Cristo, Senhor da história"), cat("liturgia", "Liturgia celestial")],
     sacramentos: [sacramento("Eucaristia (Cordeiro imolado)")],
-    santos: [santo("joao-evangelista", "São João Evangelista")],
+    santos: [santo("sao-joao-evangelista", "São João Evangelista")],
     oracoes: [],
   },
 
@@ -242,7 +242,7 @@ export const RELACIONADOS: Record<string, RelatedSet> = {
   "catecismo:credo": {
     biblia: [bib("joao", 1, 1, 18, "Jo 1,1-18 — Prólogo"), bib("mateus", 16, 13, 20, "Mt 16,13-20 — Pedro confessa Cristo")],
     sacramentos: [sacramento("Batismo (profissão de fé)")],
-    santos: [santo("agostinho", "Santo Agostinho"), santo("atanasio", "Santo Atanásio")],
+    santos: [santo("santo-agostinho", "Santo Agostinho"), santo("santo-atanasio", "Santo Atanásio")],
     oracoes: [oracao("/oracoes", "Credo Apostólico"), oracao("/oracoes", "Credo Niceno-Constantinopolitano")],
   },
   "catecismo:liturgia": {
@@ -260,7 +260,7 @@ export const RELACIONADOS: Record<string, RelatedSet> = {
   "catecismo:oracao": {
     biblia: [bib("mateus", 6, 5, 15, "Mt 6,5-15 — Pai-Nosso"), bib("salmos", 1, 1, 6, "Sl 1")],
     sacramentos: [sacramento("Eucaristia")],
-    santos: [santo("teresa-avila", "Santa Teresa de Ávila"), santo("joao-cruz", "São João da Cruz")],
+    santos: [santo("santa-teresa-de-avila", "Santa Teresa de Ávila"), santo("sao-joao-da-cruz", "São João da Cruz")],
     oracoes: [oracao("/oracoes/rosario", "Santo Rosário"), oracao("/oracoes/liturgia-das-horas", "Liturgia das Horas")],
   },
 };
