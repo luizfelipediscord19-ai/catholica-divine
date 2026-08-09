@@ -65,9 +65,11 @@ export function NotificacoesProvider({ children }: { children: ReactNode }) {
       const proxima = [item, ...atual].slice(0, LIMITE);
       gravar(proxima);
       toast(item.titulo, { description: item.mensagem });
+      void mostrarNoDispositivo(item);
       return proxima;
     });
   }, []);
+
 
   // Ponte para o utilitário global `notificar()`.
   useEffect(() => {
