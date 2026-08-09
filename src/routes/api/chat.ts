@@ -14,11 +14,11 @@ export const Route = createFileRoute("/api/chat")({
           return new Response("Forbidden", { status: 403 });
         }
 
-        const { chaveCliente, dentroDoLimite } = await import(
+        const { chaveCliente, dentroDoLimitePersistido } = await import(
           "../../lib/seguranca/limite.server"
         );
-        // 20 mensagens por minuto por origem.
-        if (!dentroDoLimite("chat", chaveCliente(request), 20, 60_000)) {
+        // 20 mensagens por minuto por origem (contagem no banco).
+        if (!(await dentroDoLimitePersistido("chat", chaveCliente(request), 20, 60_000))) {
           return new Response(
             "Muitas perguntas em pouco tempo. Aguarde um instante e tente de novo.",
             { status: 429, headers: { "retry-after": "30" } },
