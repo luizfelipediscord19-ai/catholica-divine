@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { X, Share, Plus, Smartphone, MoreVertical } from "lucide-react";
+import { X, Smartphone, MoreVertical } from "lucide-react";
 import {
   ehDispositivoMovel,
   ehIos,
