@@ -9,7 +9,7 @@ export const Route = createFileRoute("/biblia/$livro/")({
     if (!l) throw notFound();
     return { livro: l };
   },
-  head: ({ loaderData }) => ({
+  head: ({ params, loaderData }) => ({
     meta: [
       { title: `${loaderData?.livro.nome ?? "Livro"} — Bíblia — Portal Católico` },
       {
@@ -18,8 +18,26 @@ export const Route = createFileRoute("/biblia/$livro/")({
       },
       { property: "og:title", content: `${loaderData?.livro.nome ?? "Livro"} — Bíblia Católica` },
       { property: "og:description", content: loaderData?.livro.resumo ?? "" },
+      { property: "og:type", content: "article" },
+      { property: "og:url", content: `https://catholica-divine.lovable.app/biblia/${params.livro}` },
+    ],
+    links: [{ rel: "canonical", href: `https://catholica-divine.lovable.app/biblia/${params.livro}` }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Book",
+          name: loaderData?.livro.nome,
+          isPartOf: { "@type": "Book", name: "Bíblia Sagrada Católica" },
+          inLanguage: "pt-BR",
+          url: `https://catholica-divine.lovable.app/biblia/${params.livro}`,
+          description: loaderData?.livro.resumo ?? undefined,
+        }),
+      },
     ],
   }),
+
   component: Page,
   notFoundComponent: () => (
     <div className="max-w-2xl mx-auto px-6 py-32 text-center">

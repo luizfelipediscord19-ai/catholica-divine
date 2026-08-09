@@ -6,8 +6,10 @@ export const Route = createFileRoute("/oracoes/novenas")({
   head: () => ({
     meta: [
       { title: "Novenas Católicas — Portal Católico" },
+      { property: "og:url", content: "https://catholica-divine.lovable.app/oracoes/novenas" },
       { name: "description", content: "Novena ao Espírito Santo, Nossa Senhora Aparecida, São José, Sagrado Coração e outras." },
     ],
+    links: [{ rel: "canonical", href: "https://catholica-divine.lovable.app/oracoes/novenas" }],
   }),
   component: Page,
 });

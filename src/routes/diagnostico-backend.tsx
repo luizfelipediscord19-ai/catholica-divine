@@ -9,6 +9,7 @@ export const Route = createFileRoute("/diagnostico-backend")({
   head: () => ({
     meta: [
       { title: "Diagnóstico do backend — Portal Católico" },
+      { property: "og:url", content: "https://catholica-divine.lovable.app/diagnostico-backend" },
       {
         name: "description",
         content:

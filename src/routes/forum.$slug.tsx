@@ -21,7 +21,7 @@ import { obterTopicoFn, reagirFn, responderTopicoFn } from "@/lib/portal.functio
 
 
 export const Route = createFileRoute("/forum/$slug")({
-  head: () => ({
+  head: ({ params }) => ({
     meta: [
       { title: "Conversa no fórum — Agora Ecclesiae" },
       {
@@ -35,9 +35,12 @@ export const Route = createFileRoute("/forum/$slug")({
         content: "Participe da conversa no fórum católico do Portal Católico.",
       },
       { property: "og:type", content: "article" },
+      { property: "og:url", content: `https://catholica-divine.lovable.app/forum/${params.slug}` },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: `https://catholica-divine.lovable.app/forum/${params.slug}` }],
   }),
+
   component: TopicoPage,
 });
 

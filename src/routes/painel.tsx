@@ -33,6 +33,8 @@ export const Route = createFileRoute("/painel")({
   head: () => ({
     meta: [
       { title: "Meu Painel Espiritual — Portal Católico" },
+      { property: "og:url", content: "https://catholica-divine.lovable.app/painel" },
+      { name: "robots", content: "noindex, nofollow" },
       {
         name: "description",
         content:

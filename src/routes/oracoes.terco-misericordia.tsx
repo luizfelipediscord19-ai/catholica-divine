@@ -7,8 +7,10 @@ export const Route = createFileRoute("/oracoes/terco-misericordia")({
   head: () => ({
     meta: [
       { title: "Terço da Misericórdia — Portal Católico" },
+      { property: "og:url", content: "https://catholica-divine.lovable.app/oracoes/terco-misericordia" },
       { name: "description", content: "Como rezar o Terço da Divina Misericórdia revelado a Santa Faustina." },
     ],
+    links: [{ rel: "canonical", href: "https://catholica-divine.lovable.app/oracoes/terco-misericordia" }],
   }),
   component: Page,
 });

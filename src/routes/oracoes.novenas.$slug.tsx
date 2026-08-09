@@ -7,13 +7,20 @@ import { NOVENAS, type Novena } from "../lib/data/devocoes/novenas";
 export const Route = createFileRoute("/oracoes/novenas/$slug")({
   head: ({ params }) => {
     const n = NOVENAS.find((x) => x.slug === params.slug);
+    const url = `https://catholica-divine.lovable.app/oracoes/novenas/${params.slug}`;
     return {
       meta: [
         { title: `${n?.titulo ?? "Novena"} — Portal Católico` },
         { name: "description", content: n?.resumo ?? "Novena católica" },
+        { property: "og:title", content: `${n?.titulo ?? "Novena"} — Novena Católica` },
+        { property: "og:description", content: n?.resumo ?? "Novena católica" },
+        { property: "og:type", content: "article" },
+        { property: "og:url", content: url },
       ],
+      links: [{ rel: "canonical", href: url }],
     };
   },
+
   loader: ({ params }) => {
     const n = NOVENAS.find((x) => x.slug === params.slug);
     if (!n) throw notFound();
