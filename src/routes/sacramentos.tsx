@@ -7,10 +7,12 @@ export const Route = createFileRoute("/sacramentos")({
   head: () => ({
     meta: [
       { title: "Os Sete Sacramentos — Doutrina, matéria, forma e ministro" },
+      { property: "og:url", content: "https://catholica-divine.lovable.app/sacramentos" },
       { name: "description", content: "Os sete sacramentos da Igreja Católica em profundidade: definição, matéria, forma, ministro, sujeito e efeitos — segundo o CIC, Trento, Sacrosanctum Concilium e os rituais oficiais." },
       { property: "og:title", content: "Os Sete Sacramentos da Igreja Católica" },
       { property: "og:description", content: "Iniciação, Cura e Serviço — exposição doutrinária completa com fontes magisteriais." },
     ],
+    links: [{ rel: "canonical", href: "https://catholica-divine.lovable.app/sacramentos" }],
   }),
   component: Page,
 });

@@ -10,6 +10,8 @@ export const Route = createFileRoute("/email-confirmado")({
   head: () => ({
     meta: [
       { title: "E-mail confirmado — Portal Católico" },
+      { property: "og:url", content: "https://catholica-divine.lovable.app/email-confirmado" },
+      { name: "robots", content: "noindex, nofollow" },
       {
         name: "description",
         content:

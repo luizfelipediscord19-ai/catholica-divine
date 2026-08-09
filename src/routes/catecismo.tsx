@@ -8,10 +8,12 @@ export const Route = createFileRoute("/catecismo")({
   head: () => ({
     meta: [
       { title: "Catecismo da Igreja Católica — Exposição orgânica da fé" },
+      { property: "og:url", content: "https://catholica-divine.lovable.app/catecismo" },
       { name: "description", content: "Catecismo da Igreja Católica: história, estrutura, autoridade magisterial, as quatro partes (Credo, Sacramentos, Vida em Cristo, Oração) e fontes oficiais (Fidei Depositum, Laetamur Magnopere)." },
       { property: "og:title", content: "Catecismo da Igreja Católica" },
       { property: "og:description", content: "Os 2.865 parágrafos da fé católica, organizados em quatro partes — promulgado por São João Paulo II." },
     ],
+    links: [{ rel: "canonical", href: "https://catholica-divine.lovable.app/catecismo" }],
   }),
   component: Page,
 });

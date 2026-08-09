@@ -8,10 +8,12 @@ export const Route = createFileRoute("/assistente")({
   head: () => ({
     meta: [
       { title: "Assistente IA Católica — Portal Católico" },
+      { property: "og:url", content: "https://catholica-divine.lovable.app/assistente" },
       { name: "description", content: "Sophia, IA fiel ao Magistério: tire suas dúvidas sobre a fé católica com base na Bíblia, Catecismo e documentos oficiais." },
       { property: "og:title", content: "Assistente IA Católica" },
       { property: "og:description", content: "IA católica baseada na Bíblia, Catecismo e documentos oficiais." },
     ],
+    links: [{ rel: "canonical", href: "https://catholica-divine.lovable.app/assistente" }],
   }),
   component: Page,
 });

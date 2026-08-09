@@ -11,6 +11,8 @@ export const Route = createFileRoute("/redefinir-senha")({
   head: () => ({
     meta: [
       { title: "Criar nova senha — Portal Católico" },
+      { property: "og:url", content: "https://catholica-divine.lovable.app/redefinir-senha" },
+      { name: "robots", content: "noindex, nofollow" },
       {
         name: "description",
         content: "Defina uma nova senha para a sua conta do Portal Católico.",

@@ -9,8 +9,10 @@ export const Route = createFileRoute("/oracoes/via-sacra")({
   head: () => ({
     meta: [
       { title: "Via-Sacra — Portal Católico" },
+      { property: "og:url", content: "https://catholica-divine.lovable.app/oracoes/via-sacra" },
       { name: "description", content: "As catorze estações da Via-Sacra com meditações e referências bíblicas." },
     ],
+    links: [{ rel: "canonical", href: "https://catholica-divine.lovable.app/oracoes/via-sacra" }],
   }),
   component: Page,
 });

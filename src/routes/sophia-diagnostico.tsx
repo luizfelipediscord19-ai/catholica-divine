@@ -18,6 +18,8 @@ export const Route = createFileRoute("/sophia-diagnostico")({
   head: () => ({
     meta: [
       { title: "Diagnóstico Sophia — Checklist automático" },
+      { property: "og:url", content: "https://catholica-divine.lovable.app/sophia-diagnostico" },
+      { name: "robots", content: "noindex, nofollow" },
       {
         name: "description",
         content:

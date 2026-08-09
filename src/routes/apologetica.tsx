@@ -6,10 +6,12 @@ export const Route = createFileRoute("/apologetica")({
   head: () => ({
     meta: [
       { title: "Apologética Católica — Razões para crer com fundamento" },
+      { property: "og:url", content: "https://catholica-divine.lovable.app/apologetica" },
       { name: "description", content: "Defesa racional da fé católica: existência de Deus, divindade e ressurreição de Cristo, autoridade da Igreja, Tradição, Eucaristia, Papado, Maria — fundamentada em Escritura, Padres, concílios e Magistério." },
       { property: "og:title", content: "Apologética Católica" },
       { property: "og:description", content: "Defesa racional da fé católica com fontes magisteriais." },
     ],
+    links: [{ rel: "canonical", href: "https://catholica-divine.lovable.app/apologetica" }],
   }),
   component: Page,
 });

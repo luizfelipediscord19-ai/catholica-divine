@@ -13,6 +13,8 @@ export const Route = createFileRoute("/auth")({
   head: () => ({
     meta: [
       { title: "Entrar ou criar conta — Portal Católico" },
+      { property: "og:url", content: "https://catholica-divine.lovable.app/auth" },
+      { name: "robots", content: "noindex, nofollow" },
       {
         name: "description",
         content:

@@ -9,10 +9,12 @@ export const Route = createFileRoute("/oracoes/rosario")({
   head: () => ({
     meta: [
       { title: "Santo Rosário Interativo — Portal Católico" },
+      { property: "og:url", content: "https://catholica-divine.lovable.app/oracoes/rosario" },
       { name: "description", content: "Reze o Santo Rosário guiado com contagem automática, cronômetro e marcação de progresso." },
       { property: "og:title", content: "Santo Rosário Interativo" },
       { property: "og:description", content: "Mistérios Gozosos, Luminosos, Dolorosos e Gloriosos." },
     ],
+    links: [{ rel: "canonical", href: "https://catholica-divine.lovable.app/oracoes/rosario" }],
   }),
   component: Page,
 });

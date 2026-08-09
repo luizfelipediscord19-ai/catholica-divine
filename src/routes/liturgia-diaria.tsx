@@ -12,6 +12,7 @@ export const Route = createFileRoute("/liturgia-diaria")({
   head: () => ({
     meta: [
       { title: "Liturgia Diária — Leituras e Evangelho do Dia" },
+      { property: "og:url", content: "https://catholica-divine.lovable.app/liturgia-diaria" },
       {
         name: "description",
         content:

@@ -40,6 +40,7 @@ export const Route = createFileRoute("/busca")({
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://catholica-divine.lovable.app/busca" },
+      { name: "robots", content: "noindex, nofollow" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "https://catholica-divine.lovable.app/busca" }],
