@@ -398,6 +398,33 @@ export type Database = {
           },
         ]
       }
+      ia_uso: {
+        Row: {
+          chave: string
+          contagem: number
+          created_at: string
+          id: string
+          janela: string
+          updated_at: string
+        }
+        Insert: {
+          chave: string
+          contagem?: number
+          created_at?: string
+          id?: string
+          janela: string
+          updated_at?: string
+        }
+        Update: {
+          chave?: string
+          contagem?: number
+          created_at?: string
+          id?: string
+          janela?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       identidades: {
         Row: {
           apelido: string | null
@@ -536,6 +563,14 @@ export type Database = {
       reconciliar_identidade_conta: {
         Args: { _email?: string; _token_anonimo: string; _user_id: string }
         Returns: string
+      }
+      registrar_uso_ia: {
+        Args: { _chave: string; _janela: string }
+        Returns: number
+      }
+      somar_xp: {
+        Args: { _delta: number; _identidade_id: string }
+        Returns: number
       }
     }
     Enums: {
