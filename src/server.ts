@@ -68,7 +68,7 @@ async function applySecurityHeaders(response: Response, nonce?: string): Promise
   // Modo report-only: política mais rígida (sem 'unsafe-inline' em estilos e
   // sem 'unsafe-eval') apenas monitorada, para medirmos o que ainda quebraria
   // antes de aplicá-la de verdade.
-  const nonceRelatorio = nonce ? `'nonce-${nonce}' 'strict-dynamic'` : "'self'";
+  const nonceRelatorio = nonce ? ` 'nonce-${nonce}' 'strict-dynamic'` : "";
   newHeaders.set(
     "Content-Security-Policy-Report-Only",
     comuns +
