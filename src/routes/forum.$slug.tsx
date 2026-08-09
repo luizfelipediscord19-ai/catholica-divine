@@ -1,7 +1,10 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { ArrowLeft, Heart, Lock, MessageSquare } from "lucide-react";
 import { toast } from "sonner";
+
+import { avisarErroDeConta } from "@/lib/auth/aviso-sessao";
+
 
 import {
   AutorSelo,
@@ -49,9 +52,12 @@ function TopicoPage() {
   const { slug } = Route.useParams();
   const { token } = useIdentidade();
   const { autenticado } = useAuth();
+  const navigate = useNavigate();
   const queryClient = useQueryClient();
   const rascunho = useRascunho(`forum-resposta-${slug}`, { corpo: "" });
   const corpo = rascunho.valor.corpo;
+  const irParaConta = (modo?: "entrar" | "criar" | "recuperar") =>
+    void navigate({ to: "/auth", search: modo ? { modo } : {} });
 
   const topico = useQuery({
     queryKey: ["forum", "topico", slug, token ?? "anon"],
@@ -70,7 +76,8 @@ function TopicoPage() {
           : "Resposta enviada para revisão. +15 XP",
       );
     },
-    onError: (erro: Error) => toast.error(traduzirErroAuth(erro) || "Não foi possível responder."),
+    onError: (erro: Error) =>
+      avisarErroDeConta(erro, irParaConta, "Não foi possível responder."),
   });
 
 
@@ -78,7 +85,10 @@ function TopicoPage() {
     mutationFn: (alvo: { topicoId?: string; respostaId?: string }) =>
       reagirFn({ data: { token, ...alvo } }),
     onSuccess: (res) => toast.success(res.reagiu ? "Amém registrado." : "Amém removido."),
+    onError: (erro: Error) =>
+      avisarErroDeConta(erro, irParaConta, "Não foi possível registrar o amém."),
   });
+
 
   if (topico.isPending) {
     return <p className="max-w-3xl mx-auto px-6 py-24 text-sm text-muted-foreground">Carregando…</p>;
@@ -206,10 +216,20 @@ function TopicoPage() {
             </label>
             <div className="flex flex-wrap items-center gap-3">
               {!autenticado ? (
-                <Link to="/auth" className={botaoClass}>
-                  Entrar para responder
-                </Link>
+                <>
+                  <Link to="/auth" search={{ modo: "entrar" }} className={botaoClass}>
+                    Entrar para responder
+                  </Link>
+                  <Link
+                    to="/auth"
+                    search={{ modo: "recuperar" }}
+                    className="text-xs text-muted-foreground underline decoration-gold/40 underline-offset-4 hover:text-gold"
+                  >
+                    Esqueci a senha
+                  </Link>
+                </>
               ) : null}
+
               <button
                 type="submit"
                 disabled={!autenticado || corpo.trim().length < 2 || responder.isPending}

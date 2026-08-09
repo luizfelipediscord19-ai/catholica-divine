@@ -43,7 +43,9 @@ function fetchComApiKey(chave: string): typeof fetch {
   };
 }
 
-export const exigirConta = createMiddleware({ type: "function" }).server(async ({ next }) => {
+const SEM_SESSAO = "Você precisa estar logado na sua conta para participar do fórum.";
+
+export const exigirConta = createMiddleware({ type: "function" }).server(async ({ next, context }) => {
   const SUPABASE_URL = ambiente("SUPABASE_URL", "VITE_SUPABASE_URL");
   const SUPABASE_KEY = ambiente(
     "SUPABASE_PUBLISHABLE_KEY",
@@ -65,10 +67,18 @@ export const exigirConta = createMiddleware({ type: "function" }).server(async (
     cabecalho = null;
   }
 
-  const token = cabecalho?.startsWith("Bearer ") ? cabecalho.slice(7).trim() : "";
+  // Caminho principal: cabeçalho Authorization. Caminho alternativo: token
+  // enviado pelo contexto do middleware do cliente — usado quando o cabeçalho
+  // não chega ao servidor (proxies de hospedagem). Ambos são validados igual.
+  const doCabecalho = cabecalho?.startsWith("Bearer ") ? cabecalho.slice(7).trim() : "";
+  const contexto = context as unknown as { tokenConta?: unknown } | undefined;
+  const doContexto =
+    typeof contexto?.tokenConta === "string" ? contexto.tokenConta.trim() : "";
+
+  const token = doCabecalho || doContexto;
 
   if (!token || token.split(".").length !== 3) {
-    throw new Error("Sua sessão expirou. Entre novamente para continuar.");
+    throw new Error(SEM_SESSAO);
   }
 
   const supabase = createClient<Database>(SUPABASE_URL, SUPABASE_KEY, {
@@ -81,8 +91,9 @@ export const exigirConta = createMiddleware({ type: "function" }).server(async (
 
   const { data, error } = await supabase.auth.getUser(token);
   if (error || !data?.user?.id) {
-    throw new Error("Sua sessão expirou. Entre novamente para continuar.");
+    throw new Error("Sua sessão expirou. Entre novamente na sua conta para continuar.");
   }
+
 
   return next({
     context: {

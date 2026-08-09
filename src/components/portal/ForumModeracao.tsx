@@ -1,12 +1,15 @@
 import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
+import { useNavigate } from "@tanstack/react-router";
 import { Flag, ShieldCheck, Clock } from "lucide-react";
 import { toast } from "sonner";
 
 import { Painel, Rotulo, botaoClass, botaoGhostClass, inputClass } from "@/components/portal/comuns";
 import { garantirTokenAgora } from "@/hooks/use-identidade";
+import { avisarErroDeConta } from "@/lib/auth/aviso-sessao";
 import { MOTIVOS_DENUNCIA, REGRAS_FORUM } from "@/lib/data/forum-regras";
 import { denunciarFn } from "@/lib/portal.functions";
+
 
 /** Regras de conduta do fórum. */
 export function RegrasForum() {
@@ -50,6 +53,8 @@ export function DenunciarBotao({
   compacto?: boolean;
 }) {
   const [aberto, setAberto] = useState(false);
+  const navigate = useNavigate();
+
   const [motivo, setMotivo] = useState<string>(MOTIVOS_DENUNCIA[0].valor);
   const [comentario, setComentario] = useState("");
 
@@ -69,7 +74,13 @@ export function DenunciarBotao({
           : "Denúncia registrada. A moderação vai revisar.",
       );
     },
-    onError: () => toast.error("Não foi possível registrar a denúncia."),
+    onError: (erro: Error) =>
+      avisarErroDeConta(
+        erro,
+        (modo) => void navigate({ to: "/auth", search: modo ? { modo } : {} }),
+        "Não foi possível registrar a denúncia.",
+      ),
+
   });
 
   return (

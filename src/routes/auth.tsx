@@ -10,6 +10,13 @@ import { baseParaEmails } from "@/lib/auth/site-url";
 import { traduzirErroAuth } from "@/lib/auth/traduzir-erro";
 
 export const Route = createFileRoute("/auth")({
+  validateSearch: (busca: Record<string, unknown>): { modo?: "entrar" | "criar" | "recuperar" } => {
+    const valor = busca["modo"];
+    return valor === "criar" || valor === "recuperar" || valor === "entrar"
+      ? { modo: valor }
+      : {};
+  },
+
   head: () => ({
     meta: [
       { title: "Entrar ou criar conta — Portal Católico" },
@@ -35,7 +42,9 @@ export const Route = createFileRoute("/auth")({
 type Modo = "entrar" | "criar" | "recuperar";
 
 function AuthPage() {
-  const [modo, setModo] = useState<Modo>("entrar");
+  const { modo: modoInicial } = Route.useSearch();
+  const [modo, setModo] = useState<Modo>(modoInicial ?? "entrar");
+
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [erro, setErro] = useState<string | null>(null);
