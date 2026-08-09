@@ -3,7 +3,9 @@
 // `remoto` guarda a origem pública — usada como reserva quando o CDN não está
 // disponível (por exemplo, em hospedagens fora da Lovable). Nenhuma repetição.
 
-export type ImagemSanto = { url: string; remoto?: string; credito: string };
+export type ImagemSanto = { url: string; remoto?: string; credito: string   "santa-maria-goretti": { url: "https://upload.wikimedia.org/wikipedia/commons/5/5f/Photograph_of_Saint_Maria_Goretti%2C_1902.jpg", credito: "pt.wikipedia:Maria Goretti" },
+  "ns-aparecida": { url: "https://upload.wikimedia.org/wikipedia/commons/8/8a/NS_Aparecida.png", credito: "pt.wikipedia:Nossa Senhora Aparecida" },
+};
 
 export const IMAGENS_SANTOS: Record<string, ImagemSanto> = {
   "bem-aventurado-carlo-acutis": { url: "/__l5e/assets-v1/9e1cd1e2-2f40-43e8-ad7f-25d412553ea9/bem-aventurado-carlo-acutis.jpg", remoto: "https://upload.wikimedia.org/wikipedia/pt/7/78/Carlo_Acutis.jpg", credito: "pt.wikipedia:Carlo Acutis" },
