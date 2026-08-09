@@ -6,6 +6,7 @@ import { PageHero } from "@/components/PageShell";
 import { Painel, Rotulo, botaoClass, botaoGhostClass, inputClass } from "@/components/portal/comuns";
 import { useAuth } from "@/hooks/use-auth";
 import { supabase } from "@/integrations/supabase/client";
+import { baseParaEmails } from "@/lib/auth/site-url";
 import { traduzirErroAuth } from "@/lib/auth/traduzir-erro";
 
 export const Route = createFileRoute("/auth")({
@@ -54,7 +55,7 @@ function AuthPage() {
     try {
       if (modo === "recuperar") {
         const { error } = await supabase.auth.resetPasswordForEmail(email.trim(), {
-          redirectTo: `${window.location.origin}/redefinir-senha`,
+          redirectTo: `${baseParaEmails()}/redefinir-senha`,
         });
         if (error) throw error;
         setAviso(
@@ -64,7 +65,7 @@ function AuthPage() {
         const { data, error } = await supabase.auth.signUp({
           email: email.trim(),
           password: senha,
-          options: { emailRedirectTo: window.location.origin },
+          options: { emailRedirectTo: `${baseParaEmails()}/email-confirmado` },
         });
         if (error) throw error;
         if (data.session) {

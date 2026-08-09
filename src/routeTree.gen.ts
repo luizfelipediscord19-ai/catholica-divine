@@ -22,6 +22,7 @@ import { Route as LiturgiaDiariaRouteImport } from './routes/liturgia-diaria'
 import { Route as GlossarioRouteImport } from './routes/glossario'
 import { Route as FeCatolicaRouteImport } from './routes/fe-catolica'
 import { Route as FavoritosRouteImport } from './routes/favoritos'
+import { Route as EmailConfirmadoRouteImport } from './routes/email-confirmado'
 import { Route as DoutoresDaIgrejaRouteImport } from './routes/doutores-da-igreja'
 import { Route as DiagnosticoBackendRouteImport } from './routes/diagnostico-backend'
 import { Route as CoroinhasRouteImport } from './routes/coroinhas'
@@ -115,6 +116,11 @@ const FeCatolicaRoute = FeCatolicaRouteImport.update({
 const FavoritosRoute = FavoritosRouteImport.update({
   id: '/favoritos',
   path: '/favoritos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EmailConfirmadoRoute = EmailConfirmadoRouteImport.update({
+  id: '/email-confirmado',
+  path: '/email-confirmado',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DoutoresDaIgrejaRoute = DoutoresDaIgrejaRouteImport.update({
@@ -276,6 +282,7 @@ export interface FileRoutesByFullPath {
   '/coroinhas': typeof CoroinhasRoute
   '/diagnostico-backend': typeof DiagnosticoBackendRoute
   '/doutores-da-igreja': typeof DoutoresDaIgrejaRoute
+  '/email-confirmado': typeof EmailConfirmadoRoute
   '/favoritos': typeof FavoritosRoute
   '/fe-catolica': typeof FeCatolicaRoute
   '/glossario': typeof GlossarioRoute
@@ -319,6 +326,7 @@ export interface FileRoutesByTo {
   '/coroinhas': typeof CoroinhasRoute
   '/diagnostico-backend': typeof DiagnosticoBackendRoute
   '/doutores-da-igreja': typeof DoutoresDaIgrejaRoute
+  '/email-confirmado': typeof EmailConfirmadoRoute
   '/favoritos': typeof FavoritosRoute
   '/fe-catolica': typeof FeCatolicaRoute
   '/glossario': typeof GlossarioRoute
@@ -362,6 +370,7 @@ export interface FileRoutesById {
   '/coroinhas': typeof CoroinhasRoute
   '/diagnostico-backend': typeof DiagnosticoBackendRoute
   '/doutores-da-igreja': typeof DoutoresDaIgrejaRoute
+  '/email-confirmado': typeof EmailConfirmadoRoute
   '/favoritos': typeof FavoritosRoute
   '/fe-catolica': typeof FeCatolicaRoute
   '/glossario': typeof GlossarioRoute
@@ -408,6 +417,7 @@ export interface FileRouteTypes {
     | '/coroinhas'
     | '/diagnostico-backend'
     | '/doutores-da-igreja'
+    | '/email-confirmado'
     | '/favoritos'
     | '/fe-catolica'
     | '/glossario'
@@ -451,6 +461,7 @@ export interface FileRouteTypes {
     | '/coroinhas'
     | '/diagnostico-backend'
     | '/doutores-da-igreja'
+    | '/email-confirmado'
     | '/favoritos'
     | '/fe-catolica'
     | '/glossario'
@@ -493,6 +504,7 @@ export interface FileRouteTypes {
     | '/coroinhas'
     | '/diagnostico-backend'
     | '/doutores-da-igreja'
+    | '/email-confirmado'
     | '/favoritos'
     | '/fe-catolica'
     | '/glossario'
@@ -538,6 +550,7 @@ export interface RootRouteChildren {
   CoroinhasRoute: typeof CoroinhasRoute
   DiagnosticoBackendRoute: typeof DiagnosticoBackendRoute
   DoutoresDaIgrejaRoute: typeof DoutoresDaIgrejaRoute
+  EmailConfirmadoRoute: typeof EmailConfirmadoRoute
   FavoritosRoute: typeof FavoritosRoute
   FeCatolicaRoute: typeof FeCatolicaRoute
   GlossarioRoute: typeof GlossarioRoute
@@ -648,6 +661,13 @@ declare module '@tanstack/react-router' {
       path: '/favoritos'
       fullPath: '/favoritos'
       preLoaderRoute: typeof FavoritosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/email-confirmado': {
+      id: '/email-confirmado'
+      path: '/email-confirmado'
+      fullPath: '/email-confirmado'
+      preLoaderRoute: typeof EmailConfirmadoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/doutores-da-igreja': {
@@ -953,6 +973,7 @@ const rootRouteChildren: RootRouteChildren = {
   CoroinhasRoute: CoroinhasRoute,
   DiagnosticoBackendRoute: DiagnosticoBackendRoute,
   DoutoresDaIgrejaRoute: DoutoresDaIgrejaRoute,
+  EmailConfirmadoRoute: EmailConfirmadoRoute,
   FavoritosRoute: FavoritosRoute,
   FeCatolicaRoute: FeCatolicaRoute,
   GlossarioRoute: GlossarioRoute,
@@ -974,13 +995,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
