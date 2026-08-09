@@ -42,15 +42,11 @@ async function applySecurityHeaders(response: Response, nonce?: string): Promise
       ? `script-src 'self' 'nonce-${nonce}' 'strict-dynamic'; `
       : "script-src 'self'; ";
 
-  // Content Security Policy (Strict but allows required fonts and AI gateway)
-  newHeaders.set(
-    "Content-Security-Policy",
+  const comuns =
     "default-src 'self'; " +
     "base-uri 'self'; " +
     "object-src 'none'; " +
     "form-action 'self'; " +
-    scripts +
-    "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; " +
     "font-src 'self' data: https://fonts.gstatic.com; " +
     "img-src 'self' data: https:; " +
     `connect-src ${conexoes}; ` +
@@ -58,8 +54,36 @@ async function applySecurityHeaders(response: Response, nonce?: string): Promise
     "worker-src 'self' blob:; " +
     "manifest-src 'self'; " +
     "frame-ancestors 'self' https://*.lovable.app https://*.lovable.dev; " +
-    "upgrade-insecure-requests;"
+    "upgrade-insecure-requests;";
+
+  // Content Security Policy (Strict but allows required fonts and AI gateway)
+  newHeaders.set(
+    "Content-Security-Policy",
+    comuns +
+      " " +
+      scripts +
+      "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;",
   );
+
+  // Modo report-only: política mais rígida (sem 'unsafe-inline' em estilos e
+  // sem 'unsafe-eval') apenas monitorada, para medirmos o que ainda quebraria
+  // antes de aplicá-la de verdade.
+  const nonceRelatorio = nonce ? `'nonce-${nonce}' 'strict-dynamic'` : "'self'";
+  newHeaders.set(
+    "Content-Security-Policy-Report-Only",
+    comuns +
+      ` script-src 'self' ${nonceRelatorio}; ` +
+      "style-src 'self' https://fonts.googleapis.com; " +
+      "style-src-attr 'unsafe-inline'; " +
+      "require-trusted-types-for 'script'; " +
+      "report-uri /api/public/csp-report; " +
+      "report-to csp-endpoint;",
+  );
+  newHeaders.set(
+    "Reporting-Endpoints",
+    'csp-endpoint="/api/public/csp-report"',
+  );
+
 
 
 
