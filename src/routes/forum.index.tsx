@@ -360,10 +360,23 @@ function NovoTopico({
           ) : null}
           {motivo ? <span className="text-xs text-muted-foreground/80">{motivo}</span> : null}
           {!autenticado ? (
-            <Link to="/auth" className={botaoGhostClass}>
-              Entrar ou criar conta
-            </Link>
+            <span className="flex flex-wrap items-center gap-3">
+              <Link to="/auth" search={{ modo: "entrar" }} className={botaoGhostClass}>
+                Entrar
+              </Link>
+              <Link to="/auth" search={{ modo: "criar" }} className={botaoGhostClass}>
+                Criar conta
+              </Link>
+              <Link
+                to="/auth"
+                search={{ modo: "recuperar" }}
+                className="text-xs text-muted-foreground underline decoration-gold/40 underline-offset-4 hover:text-gold"
+              >
+                Esqueci a senha
+              </Link>
+            </span>
           ) : null}
+
         </div>
         {rascunho.restaurado ? (
           <p className="text-xs text-gold/80">
