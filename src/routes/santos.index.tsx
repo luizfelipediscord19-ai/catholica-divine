@@ -53,6 +53,13 @@ function Page() {
 
   const visiveis = useMemo(() => filtered.slice(0, limite), [filtered, limite]);
 
+  // Prepara em segundo plano os primeiros santos da próxima página
+  const proximos = useMemo(
+    () => filtered.slice(limite, limite + 8).map((s) => s.slug),
+    [filtered, limite]
+  );
+  usePrefetchLote(proximos);
+
   useEffect(() => {
     setLimite(PAGINA);
   }, [query]);
