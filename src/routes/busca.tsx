@@ -154,7 +154,7 @@ function BuscaAvancadaPage() {
       >
         <div className="flex flex-col gap-3 sm:flex-row">
           <label className="sr-only" htmlFor="busca-termo">
-            Termo de busca
+            Termo pesquisado no acervo
           </label>
           <input
             id="busca-termo"
