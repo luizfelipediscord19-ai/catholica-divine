@@ -114,21 +114,54 @@ async function normalizeCatastrophicSsrResponse(response: Response): Promise<Res
   });
 }
 
+/** Nonce aleatório por requisição (base64 curto). */
+function gerarNonce(): string {
+  const bytes = crypto.getRandomValues(new Uint8Array(16));
+  let bin = "";
+  for (const b of bytes) bin += String.fromCharCode(b);
+  return btoa(bin).replace(/=+$/, "");
+}
+
+/**
+ * Aplica o nonce a todo <script> do documento HTML. Assim o CSP de produção
+ * dispensa 'unsafe-inline' em script-src: só executa o que este servidor marcou.
+ */
+async function aplicarNonceNoHtml(
+  response: Response,
+  nonce: string,
+): Promise<Response> {
+  const tipo = response.headers.get("content-type") ?? "";
+  if (!tipo.includes("text/html")) return response;
+
+  const html = await response.text();
+  const marcado = html.replace(/<script(?![^>]*\snonce=)/gi, `<script nonce="${nonce}"`);
+  const headers = new Headers(response.headers);
+  headers.delete("content-length");
+  return new Response(marcado, { status: response.status, statusText: response.statusText, headers });
+}
+
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
+    const dev = process.env["NODE_ENV"] !== "production";
+    const nonce = dev ? undefined : gerarNonce();
     try {
       await garantirWebSocket();
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
       const normalizedResponse = await normalizeCatastrophicSsrResponse(response);
-      return await applySecurityHeaders(normalizedResponse);
+      const comNonce = nonce
+        ? await aplicarNonceNoHtml(normalizedResponse, nonce)
+        : normalizedResponse;
+      return await applySecurityHeaders(comNonce, nonce);
     } catch (error) {
       console.error(error);
       const errorResponse = new Response(renderErrorPage(), {
         status: 500,
         headers: { "content-type": "text/html; charset=utf-8" },
       });
-      return await applySecurityHeaders(errorResponse);
+      const comNonce = nonce ? await aplicarNonceNoHtml(errorResponse, nonce) : errorResponse;
+      return await applySecurityHeaders(comNonce, nonce);
     }
   },
+
 };
