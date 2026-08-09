@@ -230,6 +230,7 @@ function SantoDetail({
         <div className="relative aspect-[4/5] md:aspect-auto md:min-h-[420px] bg-deep overflow-hidden">
           <RetratoSanto
             url={img}
+            reserva={view.imagemReserva}
             nome={view.nome}
             prioridade
             sizes="(max-width: 768px) 100vw, 480px"
