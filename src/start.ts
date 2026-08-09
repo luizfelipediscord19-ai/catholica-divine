@@ -2,6 +2,7 @@ import { createStart, createMiddleware } from "@tanstack/react-start";
 
 import { renderErrorPage } from "./lib/error-page";
 import { anexarTokenDaConta } from "./lib/auth/anexar-token";
+import { attachSupabaseAuth } from "@/integrations/supabase/auth-attacher";
 // O portal é público para leitura, mas o fórum e o painel podem ser usados com
 // conta de e-mail/senha. Por isso registramos o middleware que anexa o token da
 // sessão às chamadas de servidor — sem ele, as funções protegidas responderiam
@@ -27,6 +28,6 @@ const errorMiddleware = createMiddleware().server(async ({ next }) => {
 
 
 export const startInstance = createStart(() => ({
-  functionMiddleware: [anexarTokenDaConta],
+  functionMiddleware: [attachSupabaseAuth, anexarTokenDaConta],
   requestMiddleware: [errorMiddleware],
 }));
