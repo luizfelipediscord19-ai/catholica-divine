@@ -6,7 +6,7 @@ import { Relacionados } from "@/components/Relacionados";
 import { RetratoSanto } from "@/components/santos/RetratoSanto";
 import { usePrefetchSanto } from "@/lib/santos/prefetch";
 
-const SITE = "https://catholica-divine.lovable.app";
+const SITE = "https://portalcatolico.vercel.app";
 
 export const Route = createFileRoute("/santos/$slug")({
   head: ({ params }) => {

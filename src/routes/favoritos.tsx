@@ -13,7 +13,7 @@ export const Route = createFileRoute("/favoritos")({
   head: () => ({
     meta: [
       { title: "Meus Favoritos e Anotações — Portal Católico" },
-      { property: "og:url", content: "https://catholica-divine.lovable.app/favoritos" },
+      { property: "og:url", content: "https://portalcatolico.vercel.app/favoritos" },
       { name: "robots", content: "noindex, nofollow" },
       {
         name: "description",

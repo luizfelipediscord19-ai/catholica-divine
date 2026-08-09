@@ -3,7 +3,7 @@
  * conta e redefinição de senha) precisam apontar sempre para o site — nunca
  * para o editor ou para uma pré-visualização temporária.
  */
-export const SITE_URL = "https://catholica-divine.lovable.app";
+export const SITE_URL = "https://portalcatolico.vercel.app";
 
 /** Base a usar nos links de e-mail do Supabase Auth. */
 export function baseParaEmails(): string {

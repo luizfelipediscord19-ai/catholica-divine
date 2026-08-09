@@ -6,7 +6,7 @@ import { PARTES } from "@/lib/data/catecismo/index";
 import { NOVENAS } from "@/lib/data/devocoes/novenas";
 import { SECOES_FORUM } from "@/lib/data/forum-secoes";
 
-const BASE_URL = "https://catholica-divine.lovable.app";
+const BASE_URL = "https://portalcatolico.vercel.app";
 
 interface SitemapEntry {
   path: string;

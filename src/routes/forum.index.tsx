@@ -27,7 +27,7 @@ export const Route = createFileRoute("/forum/")({
   head: () => ({
     meta: [
       { title: "Agora Ecclesiae — Fórum Católico do Portal" },
-      { property: "og:url", content: "https://catholica-divine.lovable.app/forum" },
+      { property: "og:url", content: "https://portalcatolico.vercel.app/forum" },
       {
         name: "description",
         content:
@@ -42,7 +42,7 @@ export const Route = createFileRoute("/forum/")({
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "https://catholica-divine.lovable.app/forum" }],
+    links: [{ rel: "canonical", href: "https://portalcatolico.vercel.app/forum" }],
   }),
   component: ForumPage,
 });

@@ -52,7 +52,7 @@ export const Route = createFileRoute("/biblia/$livro/$capitulo")({
   },
   head: ({ params, loaderData }) => {
     const titulo = loaderData ? `${loaderData.livro.nome} ${loaderData.capitulo}` : "Bíblia";
-    const url = `https://catholica-divine.lovable.app/biblia/${params.livro}/${params.capitulo}`;
+    const url = `https://portalcatolico.vercel.app/biblia/${params.livro}/${params.capitulo}`;
     return {
       meta: [
         { title: `${titulo} — Bíblia — Portal Católico` },

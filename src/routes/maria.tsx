@@ -8,12 +8,12 @@ export const Route = createFileRoute("/maria")({
   head: () => ({
     meta: [
       { title: "Maria, Mãe de Deus — Mariologia católica completa" },
-      { property: "og:url", content: "https://catholica-divine.lovable.app/maria" },
+      { property: "og:url", content: "https://portalcatolico.vercel.app/maria" },
       { name: "description", content: "Mariologia católica: quatro dogmas marianos, títulos, aparições aprovadas, devoções e o lugar de Maria na economia da salvação, com fontes magisteriais oficiais." },
       { property: "og:title", content: "Maria, Mãe de Deus" },
       { property: "og:description", content: "Dogmas marianos, aparições aprovadas e devoções segundo o Magistério." },
     ],
-    links: [{ rel: "canonical", href: "https://catholica-divine.lovable.app/maria" }],
+    links: [{ rel: "canonical", href: "https://portalcatolico.vercel.app/maria" }],
   }),
   component: Page,
 });

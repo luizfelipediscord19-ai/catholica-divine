@@ -6,12 +6,12 @@ export const Route = createFileRoute("/doutores-da-igreja")({
   head: () => ({
     meta: [
       { title: "Doutores da Igreja — Os 37 mestres da fé católica" },
-      { property: "og:url", content: "https://catholica-divine.lovable.app/doutores-da-igreja" },
+      { property: "og:url", content: "https://portalcatolico.vercel.app/doutores-da-igreja" },
       { name: "description", content: "Doutores da Igreja: critérios canônicos, história das proclamações de 1295 a 2022, e síntese da obra dos 37, com notas e fontes magisteriais." },
       { property: "og:title", content: "Doutores da Igreja Católica" },
       { property: "og:description", content: "Os 37 santos reconhecidos pela eminência de doutrina e santidade." },
     ],
-    links: [{ rel: "canonical", href: "https://catholica-divine.lovable.app/doutores-da-igreja" }],
+    links: [{ rel: "canonical", href: "https://portalcatolico.vercel.app/doutores-da-igreja" }],
   }),
   component: Page,
 });

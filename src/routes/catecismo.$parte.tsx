@@ -22,9 +22,9 @@ export const Route = createFileRoute("/catecismo/$parte")({
       { property: "og:title", content: `${loaderData?.parte.titulo ?? "Catecismo"} — CIC` },
       { property: "og:description", content: loaderData?.parte.resumo ?? "" },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: `https://catholica-divine.lovable.app/catecismo/${params.parte}` },
+      { property: "og:url", content: `https://portalcatolico.vercel.app/catecismo/${params.parte}` },
     ],
-    links: [{ rel: "canonical", href: `https://catholica-divine.lovable.app/catecismo/${params.parte}` }],
+    links: [{ rel: "canonical", href: `https://portalcatolico.vercel.app/catecismo/${params.parte}` }],
   }),
 
   component: Page,

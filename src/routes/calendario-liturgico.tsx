@@ -8,12 +8,12 @@ export const Route = createFileRoute("/calendario-liturgico")({
   head: () => ({
     meta: [
       { title: "Calendário Litúrgico — Tempos do Ano da Igreja Católica" },
-      { property: "og:url", content: "https://catholica-divine.lovable.app/calendario-liturgico" },
+      { property: "og:url", content: "https://portalcatolico.vercel.app/calendario-liturgico" },
       { name: "description", content: "O Ano Litúrgico católico em profundidade: Advento, Natal, Quaresma, Tríduo, Páscoa, Pentecostes e Tempo Comum, com cores litúrgicas, datas, espiritualidade e fontes oficiais (SC, Normas Universais, Missal Romano)." },
       { property: "og:title", content: "Calendário Litúrgico Católico" },
       { property: "og:description", content: "Os tempos do Ano Litúrgico segundo a Igreja, com fontes magisteriais." },
     ],
-    links: [{ rel: "canonical", href: "https://catholica-divine.lovable.app/calendario-liturgico" }],
+    links: [{ rel: "canonical", href: "https://portalcatolico.vercel.app/calendario-liturgico" }],
   }),
   component: Page,
 });

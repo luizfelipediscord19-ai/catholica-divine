@@ -11,12 +11,12 @@ export const Route = createFileRoute("/biblia/")({
   head: () => ({
     meta: [
       { title: "Bíblia Sagrada — 73 Livros Inspirados — Portal Católico" },
-      { property: "og:url", content: "https://catholica-divine.lovable.app/biblia" },
+      { property: "og:url", content: "https://portalcatolico.vercel.app/biblia" },
       { name: "description", content: "Os 73 livros da Bíblia Católica com introdução teológica completa: inspiração, cânon, Tradição, Magistério, exegese segundo o Catecismo, Dei Verbum e a Bíblia de Jerusalém." },
       { property: "og:title", content: "Bíblia Sagrada Católica — 73 livros inspirados" },
       { property: "og:description", content: "Antigo e Novo Testamento navegáveis, com introdução doutrinária baseada em Dei Verbum, Catecismo e Bíblia de Jerusalém." },
     ],
-    links: [{ rel: "canonical", href: "https://catholica-divine.lovable.app/biblia" }],
+    links: [{ rel: "canonical", href: "https://portalcatolico.vercel.app/biblia" }],
   }),
   component: Page,
 });

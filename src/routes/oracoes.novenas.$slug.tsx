@@ -7,7 +7,7 @@ import { NOVENAS, type Novena } from "../lib/data/devocoes/novenas";
 export const Route = createFileRoute("/oracoes/novenas/$slug")({
   head: ({ params }) => {
     const n = NOVENAS.find((x) => x.slug === params.slug);
-    const url = `https://catholica-divine.lovable.app/oracoes/novenas/${params.slug}`;
+    const url = `https://portalcatolico.vercel.app/oracoes/novenas/${params.slug}`;
     return {
       meta: [
         { title: `${n?.titulo ?? "Novena"} — Portal Católico` },

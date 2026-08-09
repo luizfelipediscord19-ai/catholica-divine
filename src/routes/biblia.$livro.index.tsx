@@ -19,9 +19,9 @@ export const Route = createFileRoute("/biblia/$livro/")({
       { property: "og:title", content: `${loaderData?.livro.nome ?? "Livro"} — Bíblia Católica` },
       { property: "og:description", content: loaderData?.livro.resumo ?? "" },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: `https://catholica-divine.lovable.app/biblia/${params.livro}` },
+      { property: "og:url", content: `https://portalcatolico.vercel.app/biblia/${params.livro}` },
     ],
-    links: [{ rel: "canonical", href: `https://catholica-divine.lovable.app/biblia/${params.livro}` }],
+    links: [{ rel: "canonical", href: `https://portalcatolico.vercel.app/biblia/${params.livro}` }],
     scripts: [
       {
         type: "application/ld+json",
@@ -31,7 +31,7 @@ export const Route = createFileRoute("/biblia/$livro/")({
           name: loaderData?.livro.nome,
           isPartOf: { "@type": "Book", name: "Bíblia Sagrada Católica" },
           inLanguage: "pt-BR",
-          url: `https://catholica-divine.lovable.app/biblia/${params.livro}`,
+          url: `https://portalcatolico.vercel.app/biblia/${params.livro}`,
           description: loaderData?.livro.resumo ?? undefined,
         }),
       },

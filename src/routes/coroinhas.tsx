@@ -8,12 +8,12 @@ export const Route = createFileRoute("/coroinhas")({
   head: () => ({
     meta: [
       { title: "Coroinhas — Serviço ao Altar | Portal Católico" },
-      { property: "og:url", content: "https://catholica-divine.lovable.app/coroinhas" },
+      { property: "og:url", content: "https://portalcatolico.vercel.app/coroinhas" },
       { name: "description", content: "Formação completa para Coroinhas e Acólitos: espiritualidade, postura, paramentos, vasos sagrados e o ministério do Serviço ao Altar." },
       { property: "og:title", content: "Coroinhas — O Serviço ao Altar" },
       { property: "og:description", content: "Guia de formação para servir ao altar com reverência, conhecimento litúrgico e zelo pela Casa de Deus." },
     ],
-    links: [{ rel: "canonical", href: "https://catholica-divine.lovable.app/coroinhas" }],
+    links: [{ rel: "canonical", href: "https://portalcatolico.vercel.app/coroinhas" }],
   }),
   component: Page,
 });

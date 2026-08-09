@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, ScrollText, ShieldCheck, BookMarked, Users } from "lucide-react";
 
-const BASE = "https://catholica-divine.lovable.app";
+const BASE = "https://portalcatolico.vercel.app";
 
 export const Route = createFileRoute("/sobre")({
   head: () => ({

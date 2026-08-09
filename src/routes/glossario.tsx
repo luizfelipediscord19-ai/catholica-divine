@@ -8,7 +8,7 @@ export const Route = createFileRoute("/glossario")({
   head: () => ({
     meta: [
       { title: "Glossário Católico — Termos Doutrinais Explicados" },
-      { property: "og:url", content: "https://catholica-divine.lovable.app/glossario" },
+      { property: "og:url", content: "https://portalcatolico.vercel.app/glossario" },
       {
         name: "description",
         content:
@@ -21,7 +21,7 @@ export const Route = createFileRoute("/glossario")({
           "Definições breves e fiéis dos principais termos doutrinais da Igreja Católica, com referências ao Catecismo.",
       },
     ],
-    links: [{ rel: "canonical", href: "https://catholica-divine.lovable.app/glossario" }],
+    links: [{ rel: "canonical", href: "https://portalcatolico.vercel.app/glossario" }],
   }),
   component: GlossarioPage,
 });

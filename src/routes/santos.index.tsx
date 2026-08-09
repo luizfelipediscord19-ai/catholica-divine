@@ -15,10 +15,10 @@ export const Route = createFileRoute("/santos/")({
       { property: "og:title", content: "Os Santos da Igreja" },
       { property: "og:description", content: "Vidas, virtudes e ensinamentos dos santos católicos." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://catholica-divine.lovable.app/santos" },
+      { property: "og:url", content: "https://portalcatolico.vercel.app/santos" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "https://catholica-divine.lovable.app/santos" }],
+    links: [{ rel: "canonical", href: "https://portalcatolico.vercel.app/santos" }],
   }),
   component: Page,
 });

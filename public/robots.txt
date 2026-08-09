@@ -9,4 +9,4 @@ Disallow: /diagnostico-backend
 Disallow: /sophia-diagnostico
 Disallow: /api/
 
-Sitemap: https://catholica-divine.lovable.app/sitemap.xml
+Sitemap: https://portalcatolico.vercel.app/sitemap.xml
