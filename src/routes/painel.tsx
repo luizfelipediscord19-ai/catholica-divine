@@ -15,6 +15,8 @@ import {
   ProgressoPorLivro,
 } from "@/components/portal/ContinuarLeitura";
 import { CaminhoDoPadroeiro } from "@/components/portal/CaminhoDoPadroeiro";
+import { HorariosTarefas } from "@/components/portal/HorariosTarefas";
+
 import { useCelebracao } from "@/components/portal/Celebracao";
 import { EscolherSanto } from "@/components/portal/EscolherSanto";
 import { useIdentidade, usePainel } from "@/hooks/use-identidade";
