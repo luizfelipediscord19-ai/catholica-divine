@@ -72,7 +72,7 @@ async function applySecurityHeaders(response: Response, nonce?: string): Promise
   newHeaders.set(
     "Content-Security-Policy-Report-Only",
     comuns +
-      ` script-src 'self' ${nonceRelatorio}; ` +
+      ` script-src 'self'${nonceRelatorio}; ` +
       "style-src 'self' https://fonts.googleapis.com; " +
       "style-src-attr 'unsafe-inline'; " +
       "require-trusted-types-for 'script'; " +
