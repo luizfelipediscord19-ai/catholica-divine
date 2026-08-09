@@ -3,7 +3,7 @@ import type {} from "@tanstack/react-start";
 import { LIVROS } from "@/lib/data/biblia/index";
 import { SANTOS_LISTA } from "@/lib/santos-lista";
 
-const BASE_URL = "https://portalcatolico.netlify.app";
+const BASE_URL = "https://catholica-divine.lovable.app";
 
 interface SitemapEntry {
   path: string;

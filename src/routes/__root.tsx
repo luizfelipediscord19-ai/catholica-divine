@@ -20,6 +20,7 @@ import { InstalarApp } from "../components/portal/InstalarApp";
 import { AtualizacaoApp } from "../components/portal/AtualizacaoApp";
 import { TarefasDoDia } from "../components/portal/TarefasDoDia";
 import { NotificacoesProvider } from "../hooks/use-notificacoes";
+import { SCRIPT_TEMA } from "../lib/tema";
 
 
 
@@ -81,7 +82,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
-const SITE_URL = "https://portalcatolico.netlify.app";
+const SITE_URL = "https://catholica-divine.lovable.app";
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
@@ -159,9 +160,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="pt-BR">
+    <html lang="pt-BR" suppressHydrationWarning>
       <head>
         <HeadContent />
+        <script dangerouslySetInnerHTML={{ __html: SCRIPT_TEMA }} />
       </head>
       <body>
         {children}

@@ -5,7 +5,7 @@ import { liturgiaQueryOptions } from "../lib/liturgia/query";
 import { COR_CLASSE } from "../lib/liturgia/calendario";
 import type { LeituraLiturgica } from "../lib/liturgia.functions";
 
-const SITE_URL = "https://portalcatolico.netlify.app";
+const SITE_URL = "https://catholica-divine.lovable.app";
 
 export const Route = createFileRoute("/liturgia-diaria")({
   loader: ({ context }) => context.queryClient.ensureQueryData(liturgiaQueryOptions()),

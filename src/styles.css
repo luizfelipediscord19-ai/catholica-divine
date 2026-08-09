@@ -152,6 +152,16 @@
 }
 
 .light {
+  /* Remapeia os tokens de marca: superfícies "deep" ficam claras e a tinta
+     "paper" fica escura, para todo o portal funcionar no tema claro. */
+  --deep: #f6f2ea;
+  --paper: #171512;
+  --gold: #8a6a1c;
+  --gold-soft: #6f5516;
+  --gold-accent: #a5822c;
+  --marian: #17406f;
+  --marian-soft: #1d4e89;
+
   --background: #fcfaf7;
   --foreground: #050505;
   --card: #ffffff;
@@ -163,14 +173,14 @@
   --secondary: #d4af37;
   --secondary-foreground: #050505;
   --muted: #f2efe4;
-  --muted-foreground: #5a564a;
+  --muted-foreground: #4a463c;
   --accent: #d4af37;
   --accent-foreground: #050505;
   --destructive: #8b0000;
   --destructive-foreground: #ffffff;
   --border: rgba(10, 10, 10, 0.08);
-  --input: rgba(10, 10, 10, 0.12);
-  --ring: #1d4e89;
+  --input: rgba(10, 10, 10, 0.2);
+  --ring: #17406f;
   --glass-bg: rgba(255, 255, 255, 0.8);
   --glass-border: rgba(10, 10, 10, 0.05);
 }
@@ -191,8 +201,8 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    line-height: 1.6;
-    letter-spacing: -0.01em;
+    line-height: 1.7;
+    letter-spacing: -0.005em;
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
   }
@@ -214,6 +224,12 @@
     letter-spacing: -0.04em;
     line-height: 1.1;
   }
+  p, li {
+    text-wrap: pretty;
+  }
+  h1, h2, h3 {
+    text-wrap: balance;
+  }
   ::selection {
     background-color: rgba(212, 175, 55, 0.3);
     color: var(--color-foreground);
@@ -233,6 +249,29 @@
   }
 }
 
+
+.light .glass {
+  box-shadow: 0 8px 32px 0 rgba(10, 10, 10, 0.08);
+}
+.light .soft-shadow {
+  box-shadow: 0 10px 40px -10px rgba(10, 10, 10, 0.18);
+}
+.light .text-glow-gold {
+  text-shadow: none;
+}
+.light .text-gold\/60,
+.light .text-gold\/70,
+.light .text-gold\/80 {
+  color: var(--gold-soft);
+}
+.light .text-paper\/60,
+.light .text-paper\/70,
+.light .text-paper\/75 {
+  color: rgba(23, 21, 18, 0.78);
+}
+.light .prose-deep {
+  color: rgba(23, 21, 18, 0.9);
+}
 
 @layer utilities {
   .text-glow-gold {
