@@ -92,6 +92,8 @@ const RAW: { nome: string; data: string; body: string }[] = [
   { nome: "São Jorge", data: "23 de abril", body: "Mártir cavaleiro do séc. IV, padroeiro da Inglaterra e dos soldados." },
   { nome: "São Cristóvão", data: "25 de julho", body: "Mártir, padroeiro dos viajantes e motoristas." },
   { nome: "São Miguel Arcanjo", data: "29 de setembro", body: "Príncipe das milícias celestes, defensor da Igreja contra o demônio." },
+  { nome: "São Gabriel Arcanjo", data: "29 de setembro", body: "Mensageiro da Encarnação, anunciou a Zacarias e a Maria o plano de Deus (Lc 1)." },
+  { nome: "São Rafael Arcanjo", data: "29 de setembro", body: "‘Medicina de Deus’, guia de Tobias e protetor dos viajantes e dos enfermos (Tb 12)." },
   { nome: "Santa Faustina Kowalska", data: "5 de outubro", body: "Apóstola da Divina Misericórdia, vidente do Senhor Misericordioso." },
   { nome: "São Charbel Makhlouf", data: "24 de julho", body: "Monge maronita libanês, eremita taumaturgo do séc. XIX." },
   { nome: "São Frei Galvão", data: "25 de outubro", body: "Primeiro santo nascido no Brasil, franciscano, das ‘pílulas de Frei Galvão’." },
