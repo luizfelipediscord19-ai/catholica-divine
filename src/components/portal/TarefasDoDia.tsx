@@ -1,58 +1,90 @@
 import { useEffect } from "react";
 
 import { notificar } from "@/lib/notificacoes";
+import {
+  EVENTO_HORARIOS,
+  TAREFAS_DIARIAS,
+  emMinutos,
+  lerConfigTarefas,
+  rotuloDoPeriodo,
+} from "@/lib/tarefas-horarios";
 
-const CHAVE_DIA = "portal-catolico:tarefas-do-dia";
+const CHAVE_DISPAROS = "portal-catolico:tarefas-disparadas";
 
-const TAREFAS: { id: string; titulo: string; mensagem: string; href: string }[] = [
-  {
-    id: "evangelho",
-    titulo: "Evangelho do dia",
-    mensagem: "Reserve um instante para a liturgia de hoje.",
-    href: "/liturgia-diaria",
-  },
-  {
-    id: "leitura",
-    titulo: "Continuar a leitura bíblica",
-    mensagem: "Retome o capítulo onde parou e marque como lido.",
-    href: "/biblia",
-  },
-  {
-    id: "oracao",
-    titulo: "Oração do dia",
-    mensagem: "Registre sua oração no painel espiritual e mantenha a sequência.",
-    href: "/painel",
-  },
-];
+type Disparos = { data: string; ids: string[] };
 
-/** Cria as tarefas espirituais do dia uma única vez por data. */
+function hojeISO() {
+  return new Date().toISOString().slice(0, 10);
+}
+
+function lerDisparos(): Disparos {
+  const vazio = { data: hojeISO(), ids: [] as string[] };
+  try {
+    const bruto = window.localStorage.getItem(CHAVE_DISPAROS);
+    if (!bruto) return vazio;
+    const salvo = JSON.parse(bruto) as Disparos;
+    if (salvo?.data !== vazio.data || !Array.isArray(salvo.ids)) return vazio;
+    return salvo;
+  } catch {
+    return vazio;
+  }
+}
+
+function salvarDisparos(d: Disparos) {
+  try {
+    window.localStorage.setItem(CHAVE_DISPAROS, JSON.stringify(d));
+  } catch {
+    /* navegação privada */
+  }
+}
+
+/** Dispara os lembretes das tarefas espirituais no horário escolhido pelo membro. */
 export function TarefasDoDia() {
   useEffect(() => {
-    const hoje = new Date().toISOString().slice(0, 10);
-    let ultima: string | null = null;
-    try {
-      ultima = window.localStorage.getItem(CHAVE_DIA);
-    } catch {
-      ultima = null;
-    }
-    if (ultima === hoje) return;
-    try {
-      window.localStorage.setItem(CHAVE_DIA, hoje);
-    } catch {
-      /* navegação privada */
-    }
+    let ativo = true;
 
-    TAREFAS.forEach((t, i) => {
-      window.setTimeout(() => {
+    const verificar = () => {
+      if (!ativo) return;
+      const config = lerConfigTarefas();
+      const agora = new Date();
+      const minutosAgora = agora.getHours() * 60 + agora.getMinutes();
+      const disparos = lerDisparos();
+      const feitos = new Set(disparos.ids);
+      let mudou = false;
+
+      for (const tarefa of TAREFAS_DIARIAS) {
+        const item = config[tarefa.id];
+        if (!item.ativa) continue;
+        if (feitos.has(tarefa.id)) continue;
+        if (minutosAgora < emMinutos(item.hora)) continue;
+
         notificar({
           tipo: "tarefa",
-          titulo: t.titulo,
-          mensagem: t.mensagem,
-          href: t.href,
-          chave: `tarefa:${hoje}:${t.id}`,
+          titulo: tarefa.titulo,
+          mensagem: `${tarefa.mensagem} (lembrete da ${rotuloDoPeriodo(item.hora)}, ${item.hora})`,
+          href: tarefa.href,
+          chave: `tarefa:${disparos.data}:${tarefa.id}`,
         });
-      }, 1200 + i * 900);
-    });
+        feitos.add(tarefa.id);
+        mudou = true;
+      }
+
+      if (mudou) salvarDisparos({ data: disparos.data, ids: [...feitos] });
+    };
+
+    const inicial = window.setTimeout(verificar, 1500);
+    const intervalo = window.setInterval(verificar, 30_000);
+    const aoVoltar = () => document.visibilityState === "visible" && verificar();
+    document.addEventListener("visibilitychange", aoVoltar);
+    window.addEventListener(EVENTO_HORARIOS, verificar);
+
+    return () => {
+      ativo = false;
+      window.clearTimeout(inicial);
+      window.clearInterval(intervalo);
+      document.removeEventListener("visibilitychange", aoVoltar);
+      window.removeEventListener(EVENTO_HORARIOS, verificar);
+    };
   }, []);
 
   return null;
