@@ -1,7 +1,7 @@
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 
-import { requireSupabaseAuth } from "@/integrations/supabase/auth-middleware";
+import { exigirConta } from "./auth/exigir-conta";
 
 // Camada RPC do portal. Toda a lógica vive em *.server.ts — este arquivo
 // contém apenas declarações de server functions (exigência do splitter).
@@ -37,7 +37,7 @@ export const obterPainelFn = createServerFn({ method: "POST" })
 
 /** Painel da conta: a identidade é derivada exclusivamente da sessão validada. */
 export const obterPainelContaFn = createServerFn({ method: "POST" })
-  .middleware([requireSupabaseAuth])
+  .middleware([exigirConta])
   .inputValidator(TokenOpcional)
   .handler(async ({ data, context }) => {
     const { tokenDaConta } = await import("./portal/conta.server");
@@ -164,7 +164,7 @@ export const obterTopicoFn = createServerFn({ method: "POST" })
 
 /** Vincula (ou cria) a identidade do portal para a conta autenticada. */
 export const vincularContaFn = createServerFn({ method: "POST" })
-  .middleware([requireSupabaseAuth])
+  .middleware([exigirConta])
   .inputValidator(TokenOpcional)
   .handler(async ({ data, context }) => {
     const { identidadeDaConta } = await import("./portal/conta.server");
@@ -176,7 +176,7 @@ export const vincularContaFn = createServerFn({ method: "POST" })
   });
 
 export const criarTopicoFn = createServerFn({ method: "POST" })
-  .middleware([requireSupabaseAuth])
+  .middleware([exigirConta])
   .inputValidator(
     TokenOpcional.extend({
       secaoSlug: z.string().min(1).max(60),
@@ -198,7 +198,7 @@ export const criarTopicoFn = createServerFn({ method: "POST" })
   });
 
 export const responderTopicoFn = createServerFn({ method: "POST" })
-  .middleware([requireSupabaseAuth])
+  .middleware([exigirConta])
   .inputValidator(
     TokenOpcional.extend({
       topicoSlug: z.string().min(1).max(120),
@@ -219,7 +219,7 @@ export const responderTopicoFn = createServerFn({ method: "POST" })
   });
 
 export const reagirFn = createServerFn({ method: "POST" })
-  .middleware([requireSupabaseAuth])
+  .middleware([exigirConta])
   .inputValidator(
     TokenOpcional.extend({
       topicoId: z.string().uuid().optional(),
@@ -241,7 +241,7 @@ export const reagirFn = createServerFn({ method: "POST" })
   });
 
 export const denunciarFn = createServerFn({ method: "POST" })
-  .middleware([requireSupabaseAuth])
+  .middleware([exigirConta])
   .inputValidator(
     TokenOpcional.extend({
       topicoId: z.string().uuid().optional(),

@@ -4,6 +4,8 @@ import { MessageSquare, Pin, Lock, Plus } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 
+import { traduzirErroAuth } from "@/lib/auth/traduzir-erro";
+
 import { PageHero } from "@/components/PageShell";
 import {
   AutorSelo,
@@ -263,7 +265,7 @@ function NovoTopico({
       onPronto();
       void navigate({ to: "/forum/$slug", params: { slug: res.slug } });
     },
-    onError: (erro: Error) => toast.error(erro.message || "Não foi possível publicar."),
+    onError: (erro: Error) => toast.error(traduzirErroAuth(erro) || "Não foi possível publicar."),
   });
 
   const valido = autenticado && titulo.trim().length >= 5 && corpo.trim().length >= 10;
