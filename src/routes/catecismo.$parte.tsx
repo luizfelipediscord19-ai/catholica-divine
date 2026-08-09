@@ -15,14 +15,18 @@ export const Route = createFileRoute("/catecismo/$parte")({
     if (!p) throw notFound();
     return { parte: p, secoes: SECOES.filter((s) => s.parte === p.num) };
   },
-  head: ({ loaderData }) => ({
+  head: ({ params, loaderData }) => ({
     meta: [
       { title: `${loaderData?.parte.titulo ?? "Catecismo"} — Catecismo — Portal Católico` },
       { name: "description", content: loaderData?.parte.resumo ?? "" },
       { property: "og:title", content: `${loaderData?.parte.titulo ?? "Catecismo"} — CIC` },
       { property: "og:description", content: loaderData?.parte.resumo ?? "" },
+      { property: "og:type", content: "article" },
+      { property: "og:url", content: `https://catholica-divine.lovable.app/catecismo/${params.parte}` },
     ],
+    links: [{ rel: "canonical", href: `https://catholica-divine.lovable.app/catecismo/${params.parte}` }],
   }),
+
   component: Page,
   notFoundComponent: () => (
     <div className="max-w-2xl mx-auto px-6 py-32 text-center">
