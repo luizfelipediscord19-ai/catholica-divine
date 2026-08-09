@@ -32,11 +32,10 @@ export const anexarTokenDaConta = createMiddleware({ type: "function" }).client(
       token = undefined;
     }
 
-    if (!token) return next();
-
     return next({
-      headers: { Authorization: `Bearer ${token}` },
-      sendContext: { tokenConta: token },
+      headers: token ? { Authorization: `Bearer ${token}` } : {},
+      sendContext: { tokenConta: token ?? "" },
     });
+
   },
 );
