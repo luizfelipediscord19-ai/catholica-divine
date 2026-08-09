@@ -50,12 +50,6 @@ export const GLOSSARIO: Record<string, EntradaGlossario> = {
       "Manifestação livre que Deus faz de si mesmo e do seu plano de salvação, cuja plenitude se dá em Cristo. Encerrada com a morte do último Apóstolo.",
     ref: "CIC §§ 50-67",
   },
-  santissima_trindade: {
-    termo: "Santíssima Trindade",
-    definicao:
-      "Mistério central da fé: um só Deus em três Pessoas distintas — Pai, Filho e Espírito Santo — consubstanciais.",
-    ref: "CIC §§ 232-260",
-  },
   encarnacao: {
     termo: "Encarnação",
     definicao:
@@ -240,12 +234,6 @@ export const GLOSSARIO: Record<string, EntradaGlossario> = {
     definicao:
       "Prudência, justiça, fortaleza e temperança — hábitos adquiridos que ordenam as potências humanas ao bem.",
     ref: "CIC §§ 1805-1809",
-  },
-  dons_espirito: {
-    termo: "Dons do Espírito Santo",
-    definicao:
-      "Sabedoria, entendimento, conselho, fortaleza, ciência, piedade e temor de Deus; disposições permanentes que tornam o fiel dócil às inspirações divinas.",
-    ref: "CIC §§ 1830-1831",
   },
   caridade: {
     termo: "Caridade",
@@ -534,11 +522,6 @@ export const GLOSSARIO: Record<string, EntradaGlossario> = {
       "Conjunto dos escritos dos Padres da Igreja (séc. I-VIII), testemunhas privilegiadas da Tradição.",
     ref: "CIC § 78",
   },
-  doutor_igreja: {
-    termo: "Doutor da Igreja",
-    definicao:
-      "Título dado pela Igreja a santos cuja doutrina, eminente e segura, beneficiou toda a cristandade.",
-  },
   concilio: {
     termo: "Concílio Ecumênico",
     definicao:
@@ -570,12 +553,6 @@ export const GLOSSARIO: Record<string, EntradaGlossario> = {
     termo: "Conclave",
     definicao:
       "Reunião fechada dos cardeais eleitores na Capela Sistina para a eleição do Romano Pontífice.",
-  },
-  ex_cathedra: {
-    termo: "Ex cathedra",
-    definicao:
-      "Modo solene em que o Papa, como pastor supremo, define uma doutrina de fé ou moral, com infalibilidade.",
-    ref: "Vaticano I, Pastor Aeternus",
   },
   depositum_fidei: {
     termo: "Depósito da Fé",
@@ -777,12 +754,6 @@ export const GLOSSARIO: Record<string, EntradaGlossario> = {
       "Estado de privação da santidade original transmitido a toda a humanidade pela queda de Adão; contraído, não cometido, por cada um.",
     ref: "CIC §§ 396-409",
   },
-  imaculadaconceicao: {
-    termo: "Imaculada Conceição",
-    definicao:
-      "Dogma segundo o qual Maria foi preservada imune de toda mácula de pecado original desde o primeiro instante de sua conceição, por previsão dos méritos de Cristo.",
-    ref: "Ineffabilis Deus, 1854; CIC § 491",
-  },
   virtudescardinais: {
     termo: "Virtudes cardinais",
     definicao:
@@ -794,12 +765,6 @@ export const GLOSSARIO: Record<string, EntradaGlossario> = {
     definicao:
       "Sabedoria, entendimento, conselho, fortaleza, ciência, piedade e temor de Deus — disposições permanentes que tornam o fiel dócil às inspirações divinas.",
     ref: "CIC §§ 1830-1831",
-  },
-  comunhaodossantos: {
-    termo: "Comunhão dos Santos",
-    definicao:
-      "Comunhão de bens espirituais entre os fiéis da terra, as almas do purgatório e os bem-aventurados do céu, num só Corpo de Cristo.",
-    ref: "CIC §§ 946-962",
   },
   sucessaoapostolica: {
     termo: "Sucessão apostólica",
@@ -836,12 +801,6 @@ export const GLOSSARIO: Record<string, EntradaGlossario> = {
     definicao:
       "Princípio de que a Igreja crê como reza: a liturgia é norma e expressão da fé professada.",
     ref: "CIC §§ 1124-1125",
-  },
-  exopereoperato: {
-    termo: "Ex opere operato",
-    definicao:
-      "A eficácia do sacramento vem da ação de Cristo, não da santidade do ministro; exige, porém, disposição do que o recebe.",
-    ref: "CIC § 1128",
   },
   enciclica: {
     termo: "Encíclica",

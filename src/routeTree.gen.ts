@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SophiaDiagnosticoRouteImport } from './routes/sophia-diagnostico'
+import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SantosRouteImport } from './routes/santos'
 import { Route as SacramentosRouteImport } from './routes/sacramentos'
@@ -26,6 +27,7 @@ import { Route as DiagnosticoBackendRouteImport } from './routes/diagnostico-bac
 import { Route as CoroinhasRouteImport } from './routes/coroinhas'
 import { Route as CatecismoRouteImport } from './routes/catecismo'
 import { Route as CalendarioLiturgicoRouteImport } from './routes/calendario-liturgico'
+import { Route as BuscaRouteImport } from './routes/busca'
 import { Route as BibliaRouteImport } from './routes/biblia'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as AssistenteRouteImport } from './routes/assistente'
@@ -52,6 +54,11 @@ import { Route as BibliaLivroCapituloRouteImport } from './routes/biblia.$livro.
 const SophiaDiagnosticoRoute = SophiaDiagnosticoRouteImport.update({
   id: '/sophia-diagnostico',
   path: '/sophia-diagnostico',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SobreRoute = SobreRouteImport.update({
+  id: '/sobre',
+  path: '/sobre',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -132,6 +139,11 @@ const CatecismoRoute = CatecismoRouteImport.update({
 const CalendarioLiturgicoRoute = CalendarioLiturgicoRouteImport.update({
   id: '/calendario-liturgico',
   path: '/calendario-liturgico',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BuscaRoute = BuscaRouteImport.update({
+  id: '/busca',
+  path: '/busca',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BibliaRoute = BibliaRouteImport.update({
@@ -252,6 +264,7 @@ export interface FileRoutesByFullPath {
   '/assistente': typeof AssistenteRoute
   '/auth': typeof AuthRoute
   '/biblia': typeof BibliaRouteWithChildren
+  '/busca': typeof BuscaRoute
   '/calendario-liturgico': typeof CalendarioLiturgicoRoute
   '/catecismo': typeof CatecismoRouteWithChildren
   '/coroinhas': typeof CoroinhasRoute
@@ -268,6 +281,7 @@ export interface FileRoutesByFullPath {
   '/sacramentos': typeof SacramentosRoute
   '/santos': typeof SantosRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/sobre': typeof SobreRoute
   '/sophia-diagnostico': typeof SophiaDiagnosticoRoute
   '/api/chat': typeof ApiChatRoute
   '/biblia/$livro': typeof BibliaLivroRouteWithChildren
@@ -292,6 +306,7 @@ export interface FileRoutesByTo {
   '/apologetica': typeof ApologeticaRoute
   '/assistente': typeof AssistenteRoute
   '/auth': typeof AuthRoute
+  '/busca': typeof BuscaRoute
   '/calendario-liturgico': typeof CalendarioLiturgicoRoute
   '/catecismo': typeof CatecismoRouteWithChildren
   '/coroinhas': typeof CoroinhasRoute
@@ -307,6 +322,7 @@ export interface FileRoutesByTo {
   '/redefinir-senha': typeof RedefinirSenhaRoute
   '/sacramentos': typeof SacramentosRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/sobre': typeof SobreRoute
   '/sophia-diagnostico': typeof SophiaDiagnosticoRoute
   '/api/chat': typeof ApiChatRoute
   '/biblia/leituras': typeof BibliaLeiturasRoute
@@ -332,6 +348,7 @@ export interface FileRoutesById {
   '/assistente': typeof AssistenteRoute
   '/auth': typeof AuthRoute
   '/biblia': typeof BibliaRouteWithChildren
+  '/busca': typeof BuscaRoute
   '/calendario-liturgico': typeof CalendarioLiturgicoRoute
   '/catecismo': typeof CatecismoRouteWithChildren
   '/coroinhas': typeof CoroinhasRoute
@@ -348,6 +365,7 @@ export interface FileRoutesById {
   '/sacramentos': typeof SacramentosRoute
   '/santos': typeof SantosRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/sobre': typeof SobreRoute
   '/sophia-diagnostico': typeof SophiaDiagnosticoRoute
   '/api/chat': typeof ApiChatRoute
   '/biblia/$livro': typeof BibliaLivroRouteWithChildren
@@ -375,6 +393,7 @@ export interface FileRouteTypes {
     | '/assistente'
     | '/auth'
     | '/biblia'
+    | '/busca'
     | '/calendario-liturgico'
     | '/catecismo'
     | '/coroinhas'
@@ -391,6 +410,7 @@ export interface FileRouteTypes {
     | '/sacramentos'
     | '/santos'
     | '/sitemap.xml'
+    | '/sobre'
     | '/sophia-diagnostico'
     | '/api/chat'
     | '/biblia/$livro'
@@ -415,6 +435,7 @@ export interface FileRouteTypes {
     | '/apologetica'
     | '/assistente'
     | '/auth'
+    | '/busca'
     | '/calendario-liturgico'
     | '/catecismo'
     | '/coroinhas'
@@ -430,6 +451,7 @@ export interface FileRouteTypes {
     | '/redefinir-senha'
     | '/sacramentos'
     | '/sitemap.xml'
+    | '/sobre'
     | '/sophia-diagnostico'
     | '/api/chat'
     | '/biblia/leituras'
@@ -454,6 +476,7 @@ export interface FileRouteTypes {
     | '/assistente'
     | '/auth'
     | '/biblia'
+    | '/busca'
     | '/calendario-liturgico'
     | '/catecismo'
     | '/coroinhas'
@@ -470,6 +493,7 @@ export interface FileRouteTypes {
     | '/sacramentos'
     | '/santos'
     | '/sitemap.xml'
+    | '/sobre'
     | '/sophia-diagnostico'
     | '/api/chat'
     | '/biblia/$livro'
@@ -496,6 +520,7 @@ export interface RootRouteChildren {
   AssistenteRoute: typeof AssistenteRoute
   AuthRoute: typeof AuthRoute
   BibliaRoute: typeof BibliaRouteWithChildren
+  BuscaRoute: typeof BuscaRoute
   CalendarioLiturgicoRoute: typeof CalendarioLiturgicoRoute
   CatecismoRoute: typeof CatecismoRouteWithChildren
   CoroinhasRoute: typeof CoroinhasRoute
@@ -512,6 +537,7 @@ export interface RootRouteChildren {
   SacramentosRoute: typeof SacramentosRoute
   SantosRoute: typeof SantosRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  SobreRoute: typeof SobreRoute
   SophiaDiagnosticoRoute: typeof SophiaDiagnosticoRoute
   ApiChatRoute: typeof ApiChatRoute
   ForumSlugRoute: typeof ForumSlugRoute
@@ -525,6 +551,13 @@ declare module '@tanstack/react-router' {
       path: '/sophia-diagnostico'
       fullPath: '/sophia-diagnostico'
       preLoaderRoute: typeof SophiaDiagnosticoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sobre': {
+      id: '/sobre'
+      path: '/sobre'
+      fullPath: '/sobre'
+      preLoaderRoute: typeof SobreRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sitemap.xml': {
@@ -637,6 +670,13 @@ declare module '@tanstack/react-router' {
       path: '/calendario-liturgico'
       fullPath: '/calendario-liturgico'
       preLoaderRoute: typeof CalendarioLiturgicoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/busca': {
+      id: '/busca'
+      path: '/busca'
+      fullPath: '/busca'
+      preLoaderRoute: typeof BuscaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/biblia': {
@@ -887,6 +927,7 @@ const rootRouteChildren: RootRouteChildren = {
   AssistenteRoute: AssistenteRoute,
   AuthRoute: AuthRoute,
   BibliaRoute: BibliaRouteWithChildren,
+  BuscaRoute: BuscaRoute,
   CalendarioLiturgicoRoute: CalendarioLiturgicoRoute,
   CatecismoRoute: CatecismoRouteWithChildren,
   CoroinhasRoute: CoroinhasRoute,
@@ -903,6 +944,7 @@ const rootRouteChildren: RootRouteChildren = {
   SacramentosRoute: SacramentosRoute,
   SantosRoute: SantosRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  SobreRoute: SobreRoute,
   SophiaDiagnosticoRoute: SophiaDiagnosticoRoute,
   ApiChatRoute: ApiChatRoute,
   ForumSlugRoute: ForumSlugRoute,

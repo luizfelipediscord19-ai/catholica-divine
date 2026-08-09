@@ -22,7 +22,7 @@ async function getServerEntry(): Promise<ServerEntry> {
 
 // h3 swallows in-handler throws into a normal 500 Response with body
 // {"unhandled":true,"message":"HTTPError"} — try/catch alone never fires for those.
-async function applySecurityHeaders(response: Response): Promise<Response> {
+async function applySecurityHeaders(response: Response, nonce?: string): Promise<Response> {
   const newHeaders = new Headers(response.headers);
 
   // O navegador precisa falar com o backend (contas, fórum, painel) e com a IA.
@@ -32,11 +32,15 @@ async function applySecurityHeaders(response: Response): Promise<Response> {
     .filter(Boolean)
     .join(" ");
 
-  // Em produção não há necessidade de eval: só o HMR do dev precisa dele.
+  // Em produção não há necessidade de eval nem de inline liberado: cada <script>
+  // do documento recebe um nonce por requisição e 'strict-dynamic' cobre os
+  // módulos carregados por eles. O dev server (HMR) ainda precisa do modo antigo.
   const dev = process.env["NODE_ENV"] !== "production";
   const scripts = dev
     ? "script-src 'self' 'unsafe-inline' 'unsafe-eval'; "
-    : "script-src 'self' 'unsafe-inline'; ";
+    : nonce
+      ? `script-src 'self' 'nonce-${nonce}' 'strict-dynamic'; `
+      : "script-src 'self'; ";
 
   // Content Security Policy (Strict but allows required fonts and AI gateway)
   newHeaders.set(
@@ -56,6 +60,7 @@ async function applySecurityHeaders(response: Response): Promise<Response> {
     "frame-ancestors 'self' https://*.lovable.app https://*.lovable.dev; " +
     "upgrade-insecure-requests;"
   );
+
 
 
   // Prevention of Clickjacking
@@ -109,21 +114,54 @@ async function normalizeCatastrophicSsrResponse(response: Response): Promise<Res
   });
 }
 
+/** Nonce aleatório por requisição (base64 curto). */
+function gerarNonce(): string {
+  const bytes = crypto.getRandomValues(new Uint8Array(16));
+  let bin = "";
+  for (const b of bytes) bin += String.fromCharCode(b);
+  return btoa(bin).replace(/=+$/, "");
+}
+
+/**
+ * Aplica o nonce a todo <script> do documento HTML. Assim o CSP de produção
+ * dispensa 'unsafe-inline' em script-src: só executa o que este servidor marcou.
+ */
+async function aplicarNonceNoHtml(
+  response: Response,
+  nonce: string,
+): Promise<Response> {
+  const tipo = response.headers.get("content-type") ?? "";
+  if (!tipo.includes("text/html")) return response;
+
+  const html = await response.text();
+  const marcado = html.replace(/<script(?![^>]*\snonce=)/gi, `<script nonce="${nonce}"`);
+  const headers = new Headers(response.headers);
+  headers.delete("content-length");
+  return new Response(marcado, { status: response.status, statusText: response.statusText, headers });
+}
+
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
+    const dev = process.env["NODE_ENV"] !== "production";
+    const nonce = dev ? undefined : gerarNonce();
     try {
       await garantirWebSocket();
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
       const normalizedResponse = await normalizeCatastrophicSsrResponse(response);
-      return await applySecurityHeaders(normalizedResponse);
+      const comNonce = nonce
+        ? await aplicarNonceNoHtml(normalizedResponse, nonce)
+        : normalizedResponse;
+      return await applySecurityHeaders(comNonce, nonce);
     } catch (error) {
       console.error(error);
       const errorResponse = new Response(renderErrorPage(), {
         status: 500,
         headers: { "content-type": "text/html; charset=utf-8" },
       });
-      return await applySecurityHeaders(errorResponse);
+      const comNonce = nonce ? await aplicarNonceNoHtml(errorResponse, nonce) : errorResponse;
+      return await applySecurityHeaders(comNonce, nonce);
     }
   },
+
 };

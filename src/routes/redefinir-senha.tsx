@@ -94,7 +94,7 @@ function RedefinirSenhaPage() {
                 {enviando ? "Salvando…" : "Salvar senha"}
               </button>
               {erro ? (
-                <p role="alert" className="text-sm text-destructive">
+                <p role="alert" className="text-sm text-destructive-text">
                   {erro}
                 </p>
               ) : null}

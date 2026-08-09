@@ -85,7 +85,7 @@ function PainelPage() {
         <p className="text-sm text-muted-foreground">
           Não foi possível carregar seu painel agora. Vamos tentar sincronizar novamente.
         </p>
-        <p className="text-xs text-destructive font-light break-words">{motivo}</p>
+        <p className="text-xs text-destructive-text font-light break-words">{motivo}</p>
         <div className="flex flex-wrap gap-4">
           <button
             type="button"

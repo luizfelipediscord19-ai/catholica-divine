@@ -1,0 +1,315 @@
+// Motor de busca indexada do portal. Roda só no servidor: varre o texto
+// integral hospedado localmente (Bíblia) e os corpora doutrinais em memória,
+// devolvendo trechos ranqueados com destaque.
+
+import { LIVROS } from "@/lib/data/biblia/index";
+import { INTRODUCOES } from "@/lib/data/biblia/introducoes";
+import { PARTES, SECOES } from "@/lib/data/catecismo/index";
+import { GLOSSARIO } from "@/lib/data/glossario";
+import { OBJECOES } from "@/lib/data/apologetica-objecoes";
+import { ORACOES } from "@/lib/data/oracoes";
+import { SANTOS_LISTA } from "@/lib/santos-lista";
+
+export type EscopoBusca = "biblia" | "catecismo" | "magisterio" | "santos" | "oracoes";
+
+export const ESCOPOS: { id: EscopoBusca; label: string; descricao: string }[] = [
+  { id: "biblia", label: "Bíblia", descricao: "Texto integral dos 73 livros" },
+  { id: "catecismo", label: "Catecismo", descricao: "Partes, seções e sínteses do CIC" },
+  { id: "magisterio", label: "Magistério e doutrina", descricao: "Glossário doutrinal e banco apologético com fontes" },
+  { id: "santos", label: "Santos", descricao: "Vidas, títulos e patronatos" },
+  { id: "oracoes", label: "Orações", descricao: "Textos orantes da tradição" },
+];
+
+export type Resultado = {
+  id: string;
+  escopo: EscopoBusca;
+  titulo: string;
+  referencia: string;
+  trecho: string;
+  href: string;
+  pontos: number;
+};
+
+export type RespostaBusca = {
+  termo: string;
+  total: number;
+  duracaoMs: number;
+  porEscopo: Record<EscopoBusca, number>;
+  resultados: Resultado[];
+};
+
+function normalizar(texto: string): string {
+  return texto
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
+}
+
+function tokens(termo: string): string[] {
+  return normalizar(termo)
+    .split(/[^a-z0-9]+/)
+    .filter((t) => t.length >= 2)
+    .slice(0, 8);
+}
+
+/** Pontuação: todos os tokens precisam aparecer; frase exata vale mais. */
+function pontuar(alvo: string, termoNorm: string, toks: string[]): number {
+  let pontos = 0;
+  for (const tok of toks) {
+    const i = alvo.indexOf(tok);
+    if (i < 0) return 0;
+    pontos += 3;
+    if (i === 0 || !/[a-z0-9]/.test(alvo[i - 1] ?? "")) pontos += 2; // início de palavra
+  }
+  if (toks.length > 1 && alvo.includes(termoNorm)) pontos += 12;
+  return pontos;
+}
+
+/** Recorta ~220 caracteres ao redor da primeira ocorrência. */
+function trechoDe(original: string, alvoNorm: string, toks: string[]): string {
+  const primeiro = toks
+    .map((t) => alvoNorm.indexOf(t))
+    .filter((i) => i >= 0)
+    .sort((a, b) => a - b)[0];
+  if (primeiro === undefined || original.length <= 240) return original;
+  const inicio = Math.max(0, primeiro - 90);
+  const fim = Math.min(original.length, inicio + 240);
+  return `${inicio > 0 ? "… " : ""}${original.slice(inicio, fim).trim()}${fim < original.length ? " …" : ""}`;
+}
+
+// ── Corpus doutrinal (leve, fica em memória) ────────────────────────────────
+
+type Documento = {
+  id: string;
+  escopo: EscopoBusca;
+  titulo: string;
+  referencia: string;
+  texto: string;
+  href: string;
+  peso: number;
+};
+
+let corpus: Documento[] | null = null;
+
+function construirCorpus(): Documento[] {
+  if (corpus) return corpus;
+  const docs: Documento[] = [];
+
+  for (const parte of PARTES) {
+    docs.push({
+      id: `cic-parte-${parte.slug}`,
+      escopo: "catecismo",
+      titulo: `Parte ${parte.num} — ${parte.titulo}`,
+      referencia: parte.paragrafos,
+      texto: parte.resumo,
+      href: `/catecismo/${parte.slug}`,
+      peso: 1.4,
+    });
+  }
+  for (const secao of SECOES) {
+    const parte = PARTES.find((p) => p.num === secao.parte);
+    docs.push({
+      id: `cic-secao-${secao.slug}`,
+      escopo: "catecismo",
+      titulo: secao.titulo,
+      referencia: `CIC ${secao.paragrafos}`,
+      texto: secao.resumo,
+      href: `/catecismo/${parte?.slug ?? "credo"}`,
+      peso: 1.2,
+    });
+  }
+
+  for (const [slug, termo] of Object.entries(GLOSSARIO)) {
+    docs.push({
+      id: `glo-${slug}`,
+      escopo: "magisterio",
+      titulo: termo.termo,
+      referencia: termo.ref ?? "Glossário doutrinal",
+      texto: `${termo.termo}. ${termo.definicao}`,
+      href: `/glossario#${slug}`,
+      peso: 1.3,
+    });
+  }
+
+  for (const obj of OBJECOES) {
+    docs.push({
+      id: `apo-${obj.slug}`,
+      escopo: "magisterio",
+      titulo: obj.objecao,
+      referencia: `${obj.categoria} · ${obj.fontes.slice(0, 2).join(" · ")}`,
+      texto: `${obj.objecao} ${obj.resposta.join(" ")} ${obj.fontes.join(" ")}`,
+      href: `/apologetica#${obj.slug}`,
+      peso: 1.1,
+    });
+  }
+
+  for (const santo of SANTOS_LISTA) {
+    docs.push({
+      id: `san-${santo.slug}`,
+      escopo: "santos",
+      titulo: santo.nome,
+      referencia: santo.data,
+      texto: `${santo.nome} ${santo.data} ${santo.body}`,
+      href: `/santos/${santo.slug}`,
+      peso: 1.1,
+    });
+  }
+
+  for (const oracao of ORACOES) {
+    docs.push({
+      id: `ora-${oracao.slug}`,
+      escopo: "oracoes",
+      titulo: oracao.titulo,
+      referencia: [oracao.categoria, oracao.nota].filter(Boolean).join(" · "),
+      texto: `${oracao.titulo} ${oracao.paraQue ?? ""} ${oracao.texto}`,
+      href: `/oracoes#${oracao.slug}`,
+      peso: 1,
+    });
+  }
+
+  for (const livro of LIVROS) {
+    const intro = INTRODUCOES[livro.slug];
+    if (!intro) continue;
+    const partesIntro = [
+      intro.contexto,
+      intro.temas.join(" "),
+      intro.passagens.join(" "),
+      intro.cristo,
+    ]
+      .filter(Boolean)
+      .join(" ");
+    docs.push({
+      id: `intro-${livro.slug}`,
+      escopo: "biblia",
+      titulo: `Introdução a ${livro.nome}`,
+      referencia: `${livro.abrev} · ${livro.grupo}`,
+      texto: partesIntro,
+      href: `/biblia/${livro.slug}`,
+      peso: 1.2,
+    });
+  }
+
+  corpus = docs;
+  return docs;
+}
+
+// ── Texto bíblico integral (carregado sob demanda por livro) ────────────────
+
+type VersoTexto = { v: number; t: string };
+type LivroJson = { slug: string; nome: string; capitulos: Record<string, VersoTexto[]> };
+
+const BRUTOS = import.meta.glob<{ default: LivroJson }>("../data/biblia/almeida/*.json");
+const ARQUIVOS: Record<string, () => Promise<{ default: LivroJson }>> = {};
+for (const [caminho, carregar] of Object.entries(BRUTOS)) {
+  const slug = caminho.replace(/\.json$/, "").split("/").pop();
+  if (slug) ARQUIVOS[slug] = carregar;
+}
+
+const cacheLivro = new Map<string, LivroJson | null>();
+
+async function carregarLivro(slug: string): Promise<LivroJson | null> {
+  if (cacheLivro.has(slug)) return cacheLivro.get(slug)!;
+  const carregar = ARQUIVOS[slug];
+  if (!carregar) {
+    cacheLivro.set(slug, null);
+    return null;
+  }
+  try {
+    const mod = await carregar();
+    cacheLivro.set(slug, mod.default);
+    return mod.default;
+  } catch {
+    cacheLivro.set(slug, null);
+    return null;
+  }
+}
+
+async function buscarNaBiblia(
+  termoNorm: string,
+  toks: string[],
+  limite: number,
+): Promise<Resultado[]> {
+  const achados: Resultado[] = [];
+
+  for (const livro of LIVROS) {
+    const dados = await carregarLivro(livro.slug);
+    if (!dados) continue;
+    for (const [cap, versos] of Object.entries(dados.capitulos)) {
+      for (const verso of versos) {
+        const alvo = normalizar(verso.t);
+        const pontos = pontuar(alvo, termoNorm, toks);
+        if (!pontos) continue;
+        achados.push({
+          id: `v-${livro.slug}-${cap}-${verso.v}`,
+          escopo: "biblia",
+          titulo: `${livro.nome} ${cap},${verso.v}`,
+          referencia: `${livro.abrev} ${cap},${verso.v} · ${livro.grupo}`,
+          trecho: trechoDe(verso.t, alvo, toks),
+          href: `/biblia/${livro.slug}/${cap}`,
+          pontos: pontos + 2,
+        });
+      }
+    }
+    if (achados.length > limite * 12) break; // já há material suficiente
+  }
+
+  return achados;
+}
+
+export async function buscarIndexado(input: {
+  termo: string;
+  escopos?: EscopoBusca[];
+  limite?: number;
+}): Promise<RespostaBusca> {
+  const inicio = Date.now();
+  const termo = input.termo.trim().slice(0, 120);
+  const limite = Math.min(Math.max(input.limite ?? 40, 5), 80);
+  const escopos = new Set<EscopoBusca>(
+    input.escopos && input.escopos.length ? input.escopos : ESCOPOS.map((e) => e.id),
+  );
+  const toks = tokens(termo);
+  const vazio: RespostaBusca = {
+    termo,
+    total: 0,
+    duracaoMs: 0,
+    porEscopo: { biblia: 0, catecismo: 0, magisterio: 0, santos: 0, oracoes: 0 },
+    resultados: [],
+  };
+  if (!toks.length) return vazio;
+
+  const termoNorm = normalizar(termo);
+  const achados: Resultado[] = [];
+
+  for (const doc of construirCorpus()) {
+    if (!escopos.has(doc.escopo)) continue;
+    const alvo = normalizar(`${doc.titulo} ${doc.referencia} ${doc.texto}`);
+    const pontos = pontuar(alvo, termoNorm, toks);
+    if (!pontos) continue;
+    achados.push({
+      id: doc.id,
+      escopo: doc.escopo,
+      titulo: doc.titulo,
+      referencia: doc.referencia,
+      trecho: trechoDe(doc.texto, normalizar(doc.texto), toks),
+      href: doc.href,
+      pontos: Math.round(pontos * doc.peso),
+    });
+  }
+
+  if (escopos.has("biblia")) {
+    achados.push(...(await buscarNaBiblia(termoNorm, toks, limite)));
+  }
+
+  achados.sort((a, b) => b.pontos - a.pontos || a.titulo.localeCompare(b.titulo, "pt-BR"));
+
+  const porEscopo = { ...vazio.porEscopo };
+  for (const a of achados) porEscopo[a.escopo] += 1;
+
+  return {
+    termo,
+    total: achados.length,
+    duracaoMs: Date.now() - inicio,
+    porEscopo,
+    resultados: achados.slice(0, limite),
+  };
+}

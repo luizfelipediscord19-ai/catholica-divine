@@ -135,6 +135,7 @@ export const SophiaChat = memo(({
         className="border-t border-gold/10 p-6 flex gap-4 bg-black/20"
       >
         <input
+          aria-label="Sua pergunta para a Sophia"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder={placeholder}

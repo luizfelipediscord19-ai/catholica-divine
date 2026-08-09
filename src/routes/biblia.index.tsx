@@ -207,6 +207,7 @@ function Page() {
           <div className="relative max-w-md w-full">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 size-4 text-gold/60" />
             <input
+              aria-label="Buscar livro da Bíblia"
               value={q}
               onChange={(e) => setQ(e.target.value)}
               placeholder="Buscar livro... (ex: Salmos, Mt)"

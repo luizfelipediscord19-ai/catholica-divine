@@ -26,6 +26,7 @@
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
+  --color-destructive-text: var(--destructive-text);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
@@ -143,6 +144,8 @@
   --accent-foreground: #fcfaf7;
   --destructive: #8b0000;
   --destructive-foreground: #fcfaf7;
+  /* Vermelho legível como TEXTO sobre fundo escuro (WCAG AA). */
+  --destructive-text: #f08a80;
   --border: rgba(212, 175, 55, 0.12);
   --input: rgba(212, 175, 55, 0.15);
   --ring: #d4af37;
@@ -178,6 +181,7 @@
   --accent-foreground: #050505;
   --destructive: #8b0000;
   --destructive-foreground: #ffffff;
+  --destructive-text: #8b0000;
   --border: rgba(10, 10, 10, 0.08);
   --input: rgba(10, 10, 10, 0.2);
   --ring: #17406f;

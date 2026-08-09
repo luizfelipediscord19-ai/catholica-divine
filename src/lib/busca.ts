@@ -55,6 +55,8 @@ const PAGINAS: ItemBusca[] = [
   { id: "p-glossario", titulo: "Glossário Católico", descricao: "Termos doutrinais explicados", categoria: "Página", href: "/glossario" },
   { id: "p-forum", titulo: "Fórum Agora Ecclesiae", descricao: "Conversas da comunidade", categoria: "Página", href: "/forum" },
   { id: "p-painel", titulo: "Meu Painel", descricao: "Progresso espiritual, diário e conquistas", categoria: "Página", href: "/painel" },
+  { id: "p-busca", titulo: "Busca Avançada", descricao: "Cruze Bíblia, Catecismo e Magistério em uma consulta", categoria: "Página", href: "/busca" },
+  { id: "p-sobre", titulo: "Sobre o Portal", descricao: "Critérios teológicos, fontes e processo de revisão editorial", categoria: "Página", href: "/sobre" },
   { id: "p-sophia", titulo: "Sophia IA", descricao: "Assistente católico para suas dúvidas", categoria: "Página", href: "/assistente" },
 ];
 
