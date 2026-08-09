@@ -93,6 +93,9 @@ export function SinoNotificacoes() {
             ) : null}
           </div>
 
+          <AvisosNoAparelho />
+
+
           {notificacoes.length === 0 ? (
             <p className="px-4 py-8 text-center text-xs text-muted-foreground">
               Nenhuma notificação por aqui. Suas conquistas, leituras e tarefas aparecerão neste
