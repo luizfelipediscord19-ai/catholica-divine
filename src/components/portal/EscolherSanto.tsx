@@ -7,10 +7,14 @@ import { Rotulo, botaoClass, inputClass } from "@/components/portal/comuns";
 import { garantirTokenAgora } from "@/hooks/use-identidade";
 import { SANTOS_LISTA } from "@/lib/santos-lista";
 import { SANTOS } from "@/lib/data/santos";
+import { imagemSanto } from "@/lib/data/santos-imagens";
 import { escolherSantoFn } from "@/lib/portal.functions";
 
-function imagemDe(slug: string): string | null {
-  return SANTOS.find((s) => s.slug === slug)?.imagem ?? null;
+function imagemDe(slug: string): { url: string; remoto?: string } | null {
+  const propria = imagemSanto(slug);
+  if (propria) return { url: propria.url, remoto: propria.remoto };
+  const rico = SANTOS.find((s) => s.slug === slug)?.imagem;
+  return rico ? { url: rico } : null;
 }
 
 function normalizar(s: string) {
