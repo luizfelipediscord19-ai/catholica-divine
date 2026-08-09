@@ -6,7 +6,7 @@ import { buildSantoView } from "@/lib/santos-helpers";
 import { imagemSanto } from "@/lib/data/santos-imagens";
 import { RetratoSanto } from "@/components/santos/RetratoSanto";
 
-export const Route = createFileRoute("/santos")({
+export const Route = createFileRoute("/santos/")({
   head: () => ({
     meta: [
       { title: "Santos — Portal Católico" },
