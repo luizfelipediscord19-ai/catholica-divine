@@ -60,6 +60,21 @@ export function InstalarApp() {
     setVisivel(false);
   };
 
+  // iOS não possui API de instalação: abrir a folha de compartilhamento do
+  // Safari deixa "Adicionar à Tela de Início" a um toque, sem passo a passo.
+  const instalarIos = async () => {
+    try {
+      await navigator.share?.({
+        title: "Portal Católico",
+        url: window.location.origin,
+      });
+    } catch {
+      /* usuário cancelou */
+    }
+    registrarRecusa();
+    setVisivel(false);
+  };
+
 
   if (!visivel) return null;
 
