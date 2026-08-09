@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SophiaDiagnosticoRouteImport } from './routes/sophia-diagnostico'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as SantosRouteImport } from './routes/santos'
 import { Route as SacramentosRouteImport } from './routes/sacramentos'
 import { Route as RedefinirSenhaRouteImport } from './routes/redefinir-senha'
 import { Route as PainelRouteImport } from './routes/painel'
@@ -56,6 +57,11 @@ const SophiaDiagnosticoRoute = SophiaDiagnosticoRouteImport.update({
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SantosRoute = SantosRouteImport.update({
+  id: '/santos',
+  path: '/santos',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SacramentosRoute = SacramentosRouteImport.update({
@@ -154,9 +160,9 @@ const IndexRoute = IndexRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const SantosIndexRoute = SantosIndexRouteImport.update({
-  id: '/santos/',
-  path: '/santos/',
-  getParentRoute: () => rootRouteImport,
+  id: '/',
+  path: '/',
+  getParentRoute: () => SantosRoute,
 } as any)
 const ForumIndexRoute = ForumIndexRouteImport.update({
   id: '/forum/',
@@ -169,9 +175,9 @@ const BibliaIndexRoute = BibliaIndexRouteImport.update({
   getParentRoute: () => BibliaRoute,
 } as any)
 const SantosSlugRoute = SantosSlugRouteImport.update({
-  id: '/santos/$slug',
-  path: '/santos/$slug',
-  getParentRoute: () => rootRouteImport,
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => SantosRoute,
 } as any)
 const OracoesViaSacraRoute = OracoesViaSacraRouteImport.update({
   id: '/via-sacra',
@@ -260,6 +266,7 @@ export interface FileRoutesByFullPath {
   '/painel': typeof PainelRoute
   '/redefinir-senha': typeof RedefinirSenhaRoute
   '/sacramentos': typeof SacramentosRoute
+  '/santos': typeof SantosRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sophia-diagnostico': typeof SophiaDiagnosticoRoute
   '/api/chat': typeof ApiChatRoute
@@ -339,6 +346,7 @@ export interface FileRoutesById {
   '/painel': typeof PainelRoute
   '/redefinir-senha': typeof RedefinirSenhaRoute
   '/sacramentos': typeof SacramentosRoute
+  '/santos': typeof SantosRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sophia-diagnostico': typeof SophiaDiagnosticoRoute
   '/api/chat': typeof ApiChatRoute
@@ -381,6 +389,7 @@ export interface FileRouteTypes {
     | '/painel'
     | '/redefinir-senha'
     | '/sacramentos'
+    | '/santos'
     | '/sitemap.xml'
     | '/sophia-diagnostico'
     | '/api/chat'
@@ -459,6 +468,7 @@ export interface FileRouteTypes {
     | '/painel'
     | '/redefinir-senha'
     | '/sacramentos'
+    | '/santos'
     | '/sitemap.xml'
     | '/sophia-diagnostico'
     | '/api/chat'
@@ -500,13 +510,12 @@ export interface RootRouteChildren {
   PainelRoute: typeof PainelRoute
   RedefinirSenhaRoute: typeof RedefinirSenhaRoute
   SacramentosRoute: typeof SacramentosRoute
+  SantosRoute: typeof SantosRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SophiaDiagnosticoRoute: typeof SophiaDiagnosticoRoute
   ApiChatRoute: typeof ApiChatRoute
   ForumSlugRoute: typeof ForumSlugRoute
-  SantosSlugRoute: typeof SantosSlugRoute
   ForumIndexRoute: typeof ForumIndexRoute
-  SantosIndexRoute: typeof SantosIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -523,6 +532,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/santos': {
+      id: '/santos'
+      path: '/santos'
+      fullPath: '/santos'
+      preLoaderRoute: typeof SantosRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sacramentos': {
@@ -660,10 +676,10 @@ declare module '@tanstack/react-router' {
     }
     '/santos/': {
       id: '/santos/'
-      path: '/santos'
+      path: '/'
       fullPath: '/santos/'
       preLoaderRoute: typeof SantosIndexRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof SantosRoute
     }
     '/forum/': {
       id: '/forum/'
@@ -681,10 +697,10 @@ declare module '@tanstack/react-router' {
     }
     '/santos/$slug': {
       id: '/santos/$slug'
-      path: '/santos/$slug'
+      path: '/$slug'
       fullPath: '/santos/$slug'
       preLoaderRoute: typeof SantosSlugRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof SantosRoute
     }
     '/oracoes/via-sacra': {
       id: '/oracoes/via-sacra'
@@ -852,6 +868,19 @@ const OracoesRouteChildren: OracoesRouteChildren = {
 const OracoesRouteWithChildren =
   OracoesRoute._addFileChildren(OracoesRouteChildren)
 
+interface SantosRouteChildren {
+  SantosSlugRoute: typeof SantosSlugRoute
+  SantosIndexRoute: typeof SantosIndexRoute
+}
+
+const SantosRouteChildren: SantosRouteChildren = {
+  SantosSlugRoute: SantosSlugRoute,
+  SantosIndexRoute: SantosIndexRoute,
+}
+
+const SantosRouteWithChildren =
+  SantosRoute._addFileChildren(SantosRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ApologeticaRoute: ApologeticaRoute,
@@ -872,14 +901,23 @@ const rootRouteChildren: RootRouteChildren = {
   PainelRoute: PainelRoute,
   RedefinirSenhaRoute: RedefinirSenhaRoute,
   SacramentosRoute: SacramentosRoute,
+  SantosRoute: SantosRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SophiaDiagnosticoRoute: SophiaDiagnosticoRoute,
   ApiChatRoute: ApiChatRoute,
   ForumSlugRoute: ForumSlugRoute,
-  SantosSlugRoute: SantosSlugRoute,
   ForumIndexRoute: ForumIndexRoute,
-  SantosIndexRoute: SantosIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
