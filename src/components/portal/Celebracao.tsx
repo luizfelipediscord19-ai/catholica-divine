@@ -94,7 +94,7 @@ const CONQUISTAS: Record<string, Desenho> = {
     Icone: Flame,
     aro: "border-destructive/40",
     brilho: "from-destructive/25",
-    texto: "text-destructive",
+    texto: "text-destructive-text",
     fundo: "bg-card",
   },
   "streak-7": {
@@ -228,7 +228,7 @@ const CONQUISTAS: Record<string, Desenho> = {
     Icone: Flame,
     aro: "border-destructive/40",
     brilho: "from-destructive/20",
-    texto: "text-destructive",
+    texto: "text-destructive-text",
     fundo: "bg-card",
   },
   "streak-60": {
@@ -618,7 +618,7 @@ const MARCOS: Record<number, Desenho> = {
     Icone: Flame,
     aro: "border-destructive/40",
     brilho: "from-destructive/25",
-    texto: "text-destructive",
+    texto: "text-destructive-text",
     fundo: "bg-card",
   },
   40: {

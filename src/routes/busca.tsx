@@ -232,7 +232,7 @@ function BuscaAvancadaPage() {
         ) : null}
 
         {mutation.isError ? (
-          <p role="alert" className="text-sm text-destructive">
+          <p role="alert" className="text-sm text-destructive-text">
             Não foi possível concluir a busca agora. Tente novamente em instantes.
           </p>
         ) : null}

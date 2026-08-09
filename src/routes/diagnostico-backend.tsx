@@ -53,7 +53,7 @@ function DiagnosticoBackendPage() {
           {check.isPending ? (
             <p className="text-sm text-muted-foreground font-light">Executando verificações…</p>
           ) : check.isError || !check.data ? (
-            <p className="text-sm text-destructive">
+            <p className="text-sm text-destructive-text">
               O servidor não respondeu ao diagnóstico:{" "}
               {check.error instanceof Error ? check.error.message : "erro desconhecido"}
             </p>
@@ -61,7 +61,7 @@ function DiagnosticoBackendPage() {
             <div className="space-y-6">
               <p
                 className={`text-[10px] uppercase tracking-[0.25em] ${
-                  check.data.saudavel ? "text-gold" : "text-destructive"
+                  check.data.saudavel ? "text-gold" : "text-destructive-text"
                 }`}
               >
                 {check.data.saudavel

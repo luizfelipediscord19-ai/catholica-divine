@@ -213,7 +213,7 @@ function AuthPage() {
               </div>
 
               {erro ? (
-                <p role="alert" className="text-sm text-destructive">
+                <p role="alert" className="text-sm text-destructive-text">
                   {erro}
                 </p>
               ) : null}
