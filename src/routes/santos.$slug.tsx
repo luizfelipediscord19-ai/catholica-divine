@@ -183,6 +183,21 @@ function SantoPage() {
           </article>
 
           <aside className="space-y-6 text-sm">
+            <figure className="border border-gold/20 bg-deep overflow-hidden">
+              <RetratoSanto
+                url={v.imagem}
+                nome={v.nome}
+                prioridade
+                sizes="(max-width: 768px) 100vw, 280px"
+                className="h-72 w-full object-cover object-top"
+              />
+              {v.creditoImagem ? (
+                <figcaption className="px-3 py-2 text-[10px] tracking-[0.1em] uppercase text-muted-foreground/70">
+                  Imagem: domínio público · {v.creditoImagem}
+                </figcaption>
+              ) : null}
+            </figure>
+
             <div className="border border-gold/20 bg-card p-5">
               <p className="text-[10px] tracking-[0.3em] uppercase text-gold/80 mb-3">
                 Ficha
