@@ -43,7 +43,8 @@ export function RetratoSanto({
 
   return (
     <img
-      src={url}
+      key={atual}
+      src={atual}
       alt={`Representação de ${nome}`}
       width={largura}
       height={altura}
@@ -51,7 +52,8 @@ export function RetratoSanto({
       loading={prioridade ? "eager" : "lazy"}
       fetchPriority={prioridade ? "high" : "low"}
       decoding="async"
-      onError={() => setFalhou(true)}
+      referrerPolicy="no-referrer"
+      onError={() => setTentativa((t) => t + 1)}
       className={className}
     />
   );
