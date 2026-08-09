@@ -274,6 +274,7 @@ function Page() {
         </div>
         <div className="flex flex-col sm:flex-row gap-2">
           <input
+            aria-label="Pergunta de teste"
             value={perguntaHumana}
             onChange={(e) => setPerguntaHumana(e.target.value)}
             placeholder="Escreva uma pergunta livre para testar a Sophia…"

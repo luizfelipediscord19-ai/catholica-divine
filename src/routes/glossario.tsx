@@ -62,6 +62,7 @@ function GlossarioPage() {
 
       <div className="mb-12">
         <input
+          aria-label="Buscar termo no glossário"
           type="search"
           value={busca}
           onChange={(e) => setBusca(e.target.value)}

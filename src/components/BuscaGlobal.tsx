@@ -92,6 +92,7 @@ export function BuscaGlobal({ aberto, onFechar }: { aberto: boolean; onFechar: (
         <div className="flex items-center gap-3 border-b border-gold/15 px-5">
           <Search className="size-4 shrink-0 text-gold" aria-hidden="true" />
           <input
+            aria-label="Buscar no portal"
             ref={inputRef}
             value={consulta}
             onChange={(e) => setConsulta(e.target.value)}

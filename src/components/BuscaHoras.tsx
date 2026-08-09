@@ -50,6 +50,7 @@ export function BuscaHoras() {
         <div className="mt-6">
           <div className="relative">
             <input
+              aria-label="Buscar na Liturgia das Horas"
               type="search"
               value={q}
               onChange={(e) => setQ(e.target.value)}
