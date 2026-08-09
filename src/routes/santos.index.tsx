@@ -199,6 +199,7 @@ function CartaoSanto({
         media={
           <RetratoSanto
             url={imagemSanto(santo.slug)?.url}
+            reserva={imagemSanto(santo.slug)?.remoto}
             nome={santo.nome}
             prioridade={indice < 3}
             sizes="(max-width: 768px) 100vw, (max-width: 1280px) 33vw, 380px"
