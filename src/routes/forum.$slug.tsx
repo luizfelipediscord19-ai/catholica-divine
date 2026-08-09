@@ -18,6 +18,7 @@ import { useAuth } from "@/hooks/use-auth";
 import { useIdentidade } from "@/hooks/use-identidade";
 import { formatarSalvo, useRascunho } from "@/hooks/use-rascunho";
 import { obterTopicoFn, reagirFn, responderTopicoFn } from "@/lib/portal.functions";
+import { traduzirErroAuth } from "@/lib/auth/traduzir-erro";
 
 
 export const Route = createFileRoute("/forum/$slug")({
@@ -69,7 +70,7 @@ function TopicoPage() {
           : "Resposta enviada para revisão. +15 XP",
       );
     },
-    onError: (erro: Error) => toast.error(erro.message || "Não foi possível responder."),
+    onError: (erro: Error) => toast.error(traduzirErroAuth(erro) || "Não foi possível responder."),
   });
 
 
