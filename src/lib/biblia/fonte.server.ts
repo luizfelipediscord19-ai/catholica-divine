@@ -1,6 +1,7 @@
 // Server-only. Busca capítulos das edições de domínio público e serve o texto
 // DENTRO do portal (nenhum redirecionamento para fontes externas).
 import { NUMERO_LIVRO, getVersao, type Versao } from "@/lib/biblia/versoes";
+import { capituloLocal } from "@/lib/biblia/local";
 
 export type VersoTexto = { v: number; t: string };
 
@@ -26,6 +27,10 @@ export async function buscarCapitulo(
   const numero = NUMERO_LIVRO[slug];
   if (!versao || !numero) return null;
 
+  // 1) Cópia hospedada no portal (funciona offline e sem depender de terceiros).
+  const local = await capituloLocal(versaoId, slug, capitulo);
+  if (local && local.length > 0) return local;
+
   const codigo = codigoPara(versao, numero);
   const chave = `${codigo}:${numero}:${capitulo}`;
   const agora = Date.now();
@@ -37,7 +42,10 @@ export async function buscarCapitulo(
     const t = setTimeout(() => controlador.abort(), 12000);
     const resposta = await fetch(`${BASE}/${codigo}/${numero}/${capitulo}.json`, {
       signal: controlador.signal,
-      headers: { accept: "application/json" },
+      headers: {
+        accept: "application/json",
+        "user-agent": "Mozilla/5.0 (compatible; PortalCatolico/1.0)",
+      },
     });
     clearTimeout(t);
     if (!resposta.ok) return null;
