@@ -26,6 +26,7 @@ import { Route as DiagnosticoBackendRouteImport } from './routes/diagnostico-bac
 import { Route as CoroinhasRouteImport } from './routes/coroinhas'
 import { Route as CatecismoRouteImport } from './routes/catecismo'
 import { Route as CalendarioLiturgicoRouteImport } from './routes/calendario-liturgico'
+import { Route as BuscaRouteImport } from './routes/busca'
 import { Route as BibliaRouteImport } from './routes/biblia'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as AssistenteRouteImport } from './routes/assistente'
@@ -132,6 +133,11 @@ const CatecismoRoute = CatecismoRouteImport.update({
 const CalendarioLiturgicoRoute = CalendarioLiturgicoRouteImport.update({
   id: '/calendario-liturgico',
   path: '/calendario-liturgico',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BuscaRoute = BuscaRouteImport.update({
+  id: '/busca',
+  path: '/busca',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BibliaRoute = BibliaRouteImport.update({
@@ -252,6 +258,7 @@ export interface FileRoutesByFullPath {
   '/assistente': typeof AssistenteRoute
   '/auth': typeof AuthRoute
   '/biblia': typeof BibliaRouteWithChildren
+  '/busca': typeof BuscaRoute
   '/calendario-liturgico': typeof CalendarioLiturgicoRoute
   '/catecismo': typeof CatecismoRouteWithChildren
   '/coroinhas': typeof CoroinhasRoute
@@ -292,6 +299,7 @@ export interface FileRoutesByTo {
   '/apologetica': typeof ApologeticaRoute
   '/assistente': typeof AssistenteRoute
   '/auth': typeof AuthRoute
+  '/busca': typeof BuscaRoute
   '/calendario-liturgico': typeof CalendarioLiturgicoRoute
   '/catecismo': typeof CatecismoRouteWithChildren
   '/coroinhas': typeof CoroinhasRoute
@@ -332,6 +340,7 @@ export interface FileRoutesById {
   '/assistente': typeof AssistenteRoute
   '/auth': typeof AuthRoute
   '/biblia': typeof BibliaRouteWithChildren
+  '/busca': typeof BuscaRoute
   '/calendario-liturgico': typeof CalendarioLiturgicoRoute
   '/catecismo': typeof CatecismoRouteWithChildren
   '/coroinhas': typeof CoroinhasRoute
@@ -375,6 +384,7 @@ export interface FileRouteTypes {
     | '/assistente'
     | '/auth'
     | '/biblia'
+    | '/busca'
     | '/calendario-liturgico'
     | '/catecismo'
     | '/coroinhas'
@@ -415,6 +425,7 @@ export interface FileRouteTypes {
     | '/apologetica'
     | '/assistente'
     | '/auth'
+    | '/busca'
     | '/calendario-liturgico'
     | '/catecismo'
     | '/coroinhas'
@@ -454,6 +465,7 @@ export interface FileRouteTypes {
     | '/assistente'
     | '/auth'
     | '/biblia'
+    | '/busca'
     | '/calendario-liturgico'
     | '/catecismo'
     | '/coroinhas'
@@ -496,6 +508,7 @@ export interface RootRouteChildren {
   AssistenteRoute: typeof AssistenteRoute
   AuthRoute: typeof AuthRoute
   BibliaRoute: typeof BibliaRouteWithChildren
+  BuscaRoute: typeof BuscaRoute
   CalendarioLiturgicoRoute: typeof CalendarioLiturgicoRoute
   CatecismoRoute: typeof CatecismoRouteWithChildren
   CoroinhasRoute: typeof CoroinhasRoute
@@ -637,6 +650,13 @@ declare module '@tanstack/react-router' {
       path: '/calendario-liturgico'
       fullPath: '/calendario-liturgico'
       preLoaderRoute: typeof CalendarioLiturgicoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/busca': {
+      id: '/busca'
+      path: '/busca'
+      fullPath: '/busca'
+      preLoaderRoute: typeof BuscaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/biblia': {
@@ -887,6 +907,7 @@ const rootRouteChildren: RootRouteChildren = {
   AssistenteRoute: AssistenteRoute,
   AuthRoute: AuthRoute,
   BibliaRoute: BibliaRouteWithChildren,
+  BuscaRoute: BuscaRoute,
   CalendarioLiturgicoRoute: CalendarioLiturgicoRoute,
   CatecismoRoute: CatecismoRouteWithChildren,
   CoroinhasRoute: CoroinhasRoute,
