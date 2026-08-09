@@ -77,7 +77,6 @@ export function EscolherSanto({
           aria-hidden="true"
         />
         <input
-          aria-label="Buscar entre os santos"
           value={busca}
           onChange={(e) => setBusca(e.target.value)}
           placeholder="Buscar entre os santos…"
