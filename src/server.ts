@@ -22,7 +22,7 @@ async function getServerEntry(): Promise<ServerEntry> {
 
 // h3 swallows in-handler throws into a normal 500 Response with body
 // {"unhandled":true,"message":"HTTPError"} — try/catch alone never fires for those.
-async function applySecurityHeaders(response: Response): Promise<Response> {
+async function applySecurityHeaders(response: Response, nonce?: string): Promise<Response> {
   const newHeaders = new Headers(response.headers);
 
   // O navegador precisa falar com o backend (contas, fórum, painel) e com a IA.
@@ -32,11 +32,15 @@ async function applySecurityHeaders(response: Response): Promise<Response> {
     .filter(Boolean)
     .join(" ");
 
-  // Em produção não há necessidade de eval: só o HMR do dev precisa dele.
+  // Em produção não há necessidade de eval nem de inline liberado: cada <script>
+  // do documento recebe um nonce por requisição e 'strict-dynamic' cobre os
+  // módulos carregados por eles. O dev server (HMR) ainda precisa do modo antigo.
   const dev = process.env["NODE_ENV"] !== "production";
   const scripts = dev
     ? "script-src 'self' 'unsafe-inline' 'unsafe-eval'; "
-    : "script-src 'self' 'unsafe-inline'; ";
+    : nonce
+      ? `script-src 'self' 'nonce-${nonce}' 'strict-dynamic'; `
+      : "script-src 'self'; ";
 
   // Content Security Policy (Strict but allows required fonts and AI gateway)
   newHeaders.set(
@@ -56,6 +60,7 @@ async function applySecurityHeaders(response: Response): Promise<Response> {
     "frame-ancestors 'self' https://*.lovable.app https://*.lovable.dev; " +
     "upgrade-insecure-requests;"
   );
+
 
 
   // Prevention of Clickjacking
