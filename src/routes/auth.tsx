@@ -42,7 +42,9 @@ export const Route = createFileRoute("/auth")({
 type Modo = "entrar" | "criar" | "recuperar";
 
 function AuthPage() {
-  const [modo, setModo] = useState<Modo>("entrar");
+  const { modo: modoInicial } = Route.useSearch();
+  const [modo, setModo] = useState<Modo>(modoInicial ?? "entrar");
+
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [erro, setErro] = useState<string | null>(null);
