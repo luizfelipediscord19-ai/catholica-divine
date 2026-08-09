@@ -108,9 +108,14 @@ export function EscolherSanto({
                 >
                   {imagem ? (
                     <img
-                      src={imagem}
+                      src={imagem.url}
                       alt=""
                       loading="lazy"
+                      referrerPolicy="no-referrer"
+                      onError={(e) => {
+                        const el = e.currentTarget;
+                        if (imagem.remoto && el.src !== imagem.remoto) el.src = imagem.remoto;
+                      }}
                       className="size-10 rounded-full object-cover border border-gold/30 shrink-0"
                     />
                   ) : (
