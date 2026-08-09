@@ -6,6 +6,7 @@ import { SinoNotificacoes } from "@/components/portal/SinoNotificacoes";
 import { useCallback, useState } from "react";
 
 import { BuscaGlobal, useAtalhoBusca } from "@/components/BuscaGlobal";
+import { TemaToggle } from "@/components/TemaToggle";
 
 const NAV = [
   { to: "/fe-catolica", label: "A Fé" },
@@ -103,6 +104,8 @@ export function SiteHeader() {
           >
             <Search className="size-4" aria-hidden="true" />
           </button>
+
+          <TemaToggle />
 
           <SinoNotificacoes />
 
