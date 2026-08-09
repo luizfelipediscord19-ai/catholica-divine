@@ -4,7 +4,7 @@ import { MessageSquare, Pin, Lock, Plus } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 
-import { traduzirErroAuth } from "@/lib/auth/traduzir-erro";
+import { avisarErroDeConta } from "@/lib/auth/aviso-sessao";
 
 import { PageHero } from "@/components/PageShell";
 import {
