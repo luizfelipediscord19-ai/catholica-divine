@@ -18,9 +18,10 @@ export const Route = createFileRoute("/api/public/csp-report")({
             | { "csp-report"?: Record<string, unknown> }
             | Array<{ body?: Record<string, unknown> }>;
 
-          const relatorios = Array.isArray(dados)
-            ? dados.map((r) => r.body ?? r)
-            : [dados["csp-report"] ?? dados];
+          const relatorios: Array<Record<string, unknown>> = Array.isArray(dados)
+            ? dados.map((r) => r.body ?? (r as Record<string, unknown>))
+            : [dados["csp-report"] ?? (dados as Record<string, unknown>)];
+
 
           for (const r of relatorios) {
             if (!r) continue;
