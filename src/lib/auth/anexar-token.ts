@@ -4,9 +4,14 @@ import { supabase } from "@/integrations/supabase/client";
 
 /**
  * Anexa o token da sessão às chamadas de servidor. Diferente do anexador
- * gerado, renova a sessão quando o token está perto de expirar — era essa
- * janela que fazia o fórum responder "não autorizado" depois de algum tempo
- * com a aba aberta.
+ * gerado, faz duas coisas a mais:
+ * 1. renova a sessão quando o token está perto de expirar — era essa janela
+ *    que fazia o fórum responder "não autorizado" depois de algum tempo com a
+ *    aba aberta;
+ * 2. envia o mesmo token também pelo contexto (`sendContext`), porque em alguns
+ *    ambientes de hospedagem o cabeçalho `Authorization` não chega ao servidor.
+ *    O servidor valida o token de qualquer forma, então o caminho alternativo
+ *    não afrouxa a segurança.
  */
 export const anexarTokenDaConta = createMiddleware({ type: "function" }).client(
   async ({ next }) => {
@@ -15,7 +20,7 @@ export const anexarTokenDaConta = createMiddleware({ type: "function" }).client(
       const { data } = await supabase.auth.getSession();
       const sessao = data.session;
       const expiraEm = sessao?.expires_at ? sessao.expires_at * 1000 : 0;
-      const faltaPouco = expiraEm > 0 && expiraEm - Date.now() < 60_000;
+      const faltaPouco = expiraEm > 0 && expiraEm - Date.now() < 120_000;
 
       if (sessao && faltaPouco) {
         const { data: renovada } = await supabase.auth.refreshSession();
@@ -27,6 +32,11 @@ export const anexarTokenDaConta = createMiddleware({ type: "function" }).client(
       token = undefined;
     }
 
-    return next({ headers: token ? { Authorization: `Bearer ${token}` } : {} });
+    if (!token) return next();
+
+    return next({
+      headers: { Authorization: `Bearer ${token}` },
+      sendContext: { tokenConta: token },
+    });
   },
 );
