@@ -69,7 +69,13 @@ export function DenunciarBotao({
           : "Denúncia registrada. A moderação vai revisar.",
       );
     },
-    onError: () => toast.error("Não foi possível registrar a denúncia."),
+    onError: (erro: Error) =>
+      avisarErroDeConta(
+        erro,
+        (modo) => void navigate({ to: "/auth", search: modo ? { modo } : {} }),
+        "Não foi possível registrar a denúncia.",
+      ),
+
   });
 
   return (
