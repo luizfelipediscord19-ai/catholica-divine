@@ -1,4 +1,12 @@
 User-agent: *
 Allow: /
+Disallow: /painel
+Disallow: /favoritos
+Disallow: /auth
+Disallow: /redefinir-senha
+Disallow: /email-confirmado
+Disallow: /diagnostico-backend
+Disallow: /sophia-diagnostico
+Disallow: /api/
 
 Sitemap: https://catholica-divine.lovable.app/sitemap.xml
