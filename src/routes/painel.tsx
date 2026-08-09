@@ -20,6 +20,11 @@ import { EscolherSanto } from "@/components/portal/EscolherSanto";
 import { useIdentidade, usePainel } from "@/hooks/use-identidade";
 import { useAuth } from "@/hooks/use-auth";
 import { registrarOracaoFn } from "@/lib/portal.functions";
+import {
+  metaDaConquista,
+  textoRestante,
+  type Totais,
+} from "@/lib/portal/metas-conquistas";
 
 
 export const Route = createFileRoute("/painel")({
@@ -117,6 +122,12 @@ function PainelPage() {
     Math.round(((dados.identidade.xp - base) / Math.max(proximo - base, 1)) * 100),
   );
   const conquistadas = dados.conquistas.filter((c) => c.desbloqueada).length;
+  const totais: Totais = {
+    ...dados.totais,
+    streak: dados.identidade.streak,
+    melhorStreak: dados.identidade.melhorStreak,
+    santoEscolhido: Boolean(dados.identidade.santoEscolhido),
+  };
 
   return (
     <div className="max-w-6xl mx-auto px-6 py-16 md:py-24 space-y-12">
@@ -304,26 +315,54 @@ function PainelPage() {
       <section className="space-y-6">
         <Rotulo>Conquistas</Rotulo>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {dados.conquistas.map((c) => (
-            <div
-              key={c.slug}
-              className={`border p-6 transition-premium ${
-                c.desbloqueada
-                  ? "border-gold/40 bg-gold/5"
-                  : "border-gold/10 bg-card/30 opacity-60"
-              }`}
-            >
-              <p className="text-[10px] uppercase tracking-[0.2em] text-gold/70 mb-2">
-                {c.xp} XP
-              </p>
-              <h3 className="font-display text-xl text-foreground mb-2">{c.titulo}</h3>
-              <p className="text-xs text-muted-foreground font-light leading-relaxed">
-                {c.descricao}
-              </p>
-            </div>
-          ))}
+          {dados.conquistas.map((c) => {
+            const meta = metaDaConquista(c.slug, totais);
+            const percentual = meta ? Math.round((meta.atual / Math.max(meta.alvo, 1)) * 100) : 0;
+            return (
+              <div
+                key={c.slug}
+                className={`border p-6 transition-premium ${
+                  c.desbloqueada
+                    ? "border-gold/40 bg-gold/5"
+                    : "border-gold/10 bg-card/30 opacity-80"
+                }`}
+              >
+                <p className="text-[10px] uppercase tracking-[0.2em] text-gold/70 mb-2">
+                  {c.xp} XP
+                </p>
+                <h3 className="font-display text-xl text-foreground mb-2">{c.titulo}</h3>
+                <p className="text-xs text-muted-foreground font-light leading-relaxed">
+                  {c.descricao}
+                </p>
+
+                {meta ? (
+                  <div className="mt-4 space-y-2">
+                    <div
+                      className="h-1 w-full bg-gold/10"
+                      role="progressbar"
+                      aria-valuenow={percentual}
+                      aria-valuemin={0}
+                      aria-valuemax={100}
+                      aria-label={`Progresso de ${c.titulo}`}
+                    >
+                      <div
+                        className={`h-full transition-all ${c.desbloqueada ? "bg-gold" : "bg-gold/60"}`}
+                        style={{ width: `${c.desbloqueada ? 100 : percentual}%` }}
+                      />
+                    </div>
+                    <p className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">
+                      {c.desbloqueada
+                        ? "Concluída"
+                        : `${meta.atual}/${meta.alvo} — ${textoRestante(meta)}`}
+                    </p>
+                  </div>
+                ) : null}
+              </div>
+            );
+          })}
         </div>
       </section>
+
 
       <footer className="border-t border-gold/15 pt-8 flex flex-wrap items-center gap-4">
         <p className="text-xs text-muted-foreground max-w-xl font-light">

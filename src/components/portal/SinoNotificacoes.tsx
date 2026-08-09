@@ -3,6 +3,8 @@ import { useEffect, useRef, useState } from "react";
 import {
   Award,
   Bell,
+  BellOff,
+  BellRing,
   BookOpen,
   Crown,
   Flame,
@@ -16,6 +18,12 @@ import {
 
 import { useNotificacoes } from "@/hooks/use-notificacoes";
 import type { TipoNotificacao } from "@/lib/notificacoes";
+import {
+  ativarNotificacoesDispositivo,
+  desativarNotificacoesDispositivo,
+  estadoNotificacoesDispositivo,
+  type SuporteNotificacao,
+} from "@/lib/notificacoes-dispositivo";
 
 const ICONES: Record<TipoNotificacao, LucideIcon> = {
   conquista: Award,
@@ -93,6 +101,9 @@ export function SinoNotificacoes() {
             ) : null}
           </div>
 
+          <AvisosNoAparelho />
+
+
           {notificacoes.length === 0 ? (
             <p className="px-4 py-8 text-center text-xs text-muted-foreground">
               Nenhuma notificação por aqui. Suas conquistas, leituras e tarefas aparecerão neste
@@ -143,6 +154,53 @@ export function SinoNotificacoes() {
           )}
         </div>
       ) : null}
+    </div>
+  );
+}
+
+/** Permite receber os avisos do portal também no aparelho (telefone/desktop). */
+function AvisosNoAparelho() {
+  const [estado, setEstado] = useState<SuporteNotificacao>("indisponivel");
+
+  useEffect(() => setEstado(estadoNotificacoesDispositivo()), []);
+
+  if (estado === "indisponivel") return null;
+
+  return (
+    <div className="border-b border-gold/10 bg-gold/[0.03] px-4 py-3">
+      {estado === "liberado" ? (
+        <div className="flex items-center justify-between gap-3">
+          <p className="text-[11px] leading-relaxed text-muted-foreground">
+            Avisos no aparelho <span className="text-gold">ativados</span>.
+          </p>
+          <button
+            onClick={() => {
+              desativarNotificacoesDispositivo();
+              setEstado("pendente");
+            }}
+            className="inline-flex items-center gap-1 text-[10px] uppercase tracking-[0.16em] text-muted-foreground hover:text-foreground"
+          >
+            <BellOff className="size-3" aria-hidden="true" /> Desligar
+          </button>
+        </div>
+      ) : estado === "bloqueado" ? (
+        <p className="text-[11px] leading-relaxed text-muted-foreground">
+          As notificações estão bloqueadas nas configurações do navegador. Libere o site para
+          receber avisos no telefone.
+        </p>
+      ) : (
+        <div className="space-y-2">
+          <p className="text-[11px] leading-relaxed text-muted-foreground">
+            Receba orações, leituras e conquistas direto no seu telefone.
+          </p>
+          <button
+            onClick={async () => setEstado(await ativarNotificacoesDispositivo())}
+            className="inline-flex items-center gap-2 bg-gold px-3 py-2 text-[10px] font-medium uppercase tracking-[0.16em] text-deep hover:bg-paper"
+          >
+            <BellRing className="size-3" aria-hidden="true" /> Ativar no aparelho
+          </button>
+        </div>
+      )}
     </div>
   );
 }

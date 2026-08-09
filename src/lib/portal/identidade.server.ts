@@ -453,6 +453,24 @@ export async function obterPainel(token: string) {
 
   const desbloqueadas = new Set((conquistas.data ?? []).map((c) => c.conquista_slug));
 
+  // Totais usados pelas barras de progresso das conquistas.
+  const [diario, completos, topicos, respostas, favoritosTotal, notasTotal] = await Promise.all([
+    supabaseAdmin.from("diario_espiritual").select("minutos").eq("identidade_id", id.id),
+    livrosConcluidos(id.id),
+    supabaseAdmin
+      .from("forum_topicos")
+      .select("id", { count: "exact", head: true })
+      .eq("identidade_id", id.id),
+    supabaseAdmin
+      .from("forum_respostas")
+      .select("id", { count: "exact", head: true })
+      .eq("identidade_id", id.id),
+    contar("favoritos", id.id),
+    contar("notas", id.id),
+  ]);
+
+  const linhasDiario = diario.data ?? [];
+
   return {
     tokenAtual,
     identidade: toPublica(id),
@@ -463,11 +481,22 @@ export async function obterPainel(token: string) {
     ultimaLeitura: ultima.data ?? null,
     favoritos: favoritos.data ?? [],
     notas: notas.data ?? [],
+    totais: {
+      oracoes: linhasDiario.length,
+      leituras: (leituras.data ?? []).length,
+      favoritos: favoritosTotal,
+      notas: notasTotal,
+      livrosCompletos: completos.size,
+      topicos: topicos.count ?? 0,
+      respostas: respostas.count ?? 0,
+      minutosMaximos: linhasDiario.reduce((m, l) => Math.max(m, l.minutos ?? 0), 0),
+    },
     conquistas: (catalogo.data ?? []).map((c) => ({
       ...c,
       desbloqueada: desbloqueadas.has(c.slug),
     })),
   };
+
 }
 
 /** Estado de leitura/favoritos/notas de um capítulo específico. */
