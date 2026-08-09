@@ -106,7 +106,10 @@ function Page() {
   const textoAtual: Verso[] | null = temLocal
     ? versos
     : (localOutra.data ?? remoto.data?.versos ?? null);
-  const carregando = !temLocal && (localOutra.isPending || remoto.isPending);
+  const carregando =
+    !temLocal &&
+    !textoAtual &&
+    (temTextoLocal(versao, livro.slug) ? !localOutra.isFetched : !remoto.isFetched);
 
   const [inicio, setInicio] = useState<string>(vi ? String(vi) : "");
   const [fim, setFim] = useState<string>(vf ? String(vf) : "");
