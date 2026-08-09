@@ -585,6 +585,252 @@ export const ORACOES: Oracao[] = [
     texto:
       "A vós, ó Deus, louvamos; a vós, Senhor, confessamos. A vós, Pai eterno, toda a terra venera. A vós todos os anjos, os céus e todas as potestades, os querubins e serafins proclamam sem cessar: Santo, Santo, Santo é o Senhor, Deus do universo! Cheios estão o céu e a terra da majestade da vossa glória. Em vós, Senhor, esperei: não seja confundido eternamente. Amém.",
   },
+  // ===== NOVAS: LITANIAS =====
+  {
+    slug: "ladainha-dos-santos",
+    titulo: "Ladainha de Todos os Santos (excerto)",
+    latim: "Litaniae Sanctorum",
+    categoria: "Litanias",
+    nota: "Uma das ladainhas mais antigas da liturgia romana, cantada nas Vigílias Pascais e ordenações.",
+    paraQue: "Invocar a intercessão coletiva de toda a Igreja triunfante.",
+    quando: "Na Vigília Pascal, em ordenações, consagrações e procissões solenes.",
+    texto:
+      "Senhor, tende piedade de nós. Cristo, tende piedade de nós.\nSanta Maria — rogai por nós. São Miguel — rogai por nós. Santo André — rogai por nós. São João Batista — rogai por nós. São José — rogai por nós. São Pedro e São Paulo — rogai por nós. Santa Maria Madalena — rogai por nós. Santo Estêvão — rogai por nós. Santo Agostinho — rogai por nós. São Francisco e São Domingos — rogai por nós. Santa Teresa d'Ávila — rogai por nós. Todos os santos e santas de Deus — rogai por nós.\nSede propício, livrai-nos, Senhor. De todo mal, livrai-nos, Senhor. Nós, pecadores, vos rogamos, ouvi-nos. Amém.",
+  },
+  {
+    slug: "ladainha-de-defuntos",
+    titulo: "Ladainha pelos falecidos (excerto)",
+    categoria: "Litanias",
+    paraQue: "Sufragar as almas dos fiéis defuntos invocando a misericórdia divina.",
+    quando: "No Dia de Finados, em velórios e nos aniversários de falecimento.",
+    texto:
+      "Senhor, tende piedade deles. Cristo, tende piedade deles.\nSanta Maria — rogai por eles. São Miguel Arcanjo — rogai por eles. Todos os anjos e arcanjos — rogai por eles. Todos os santos e santas de Deus — rogai por eles.\nSede propício, perdoai-lhes, Senhor. Do fogo eterno, livrai-os, Senhor. Pela vossa Cruz e Paixão, livrai-os, Senhor. Nós, pecadores, vos rogamos: dai-lhes o descanso eterno. Cordeiro de Deus, que tirais o pecado do mundo, dai-lhes o descanso eterno. Amém.",
+  },
+  {
+    slug: "ladainha-da-divina-misericordia",
+    titulo: "Ladainha da Divina Misericórdia (excerto)",
+    categoria: "Litanias",
+    nota: "Inspirada nas revelações a Santa Faustina Kowalska, aprovada pela devoção universal em 2000.",
+    paraQue: "Confiar na misericórdia de Deus para si e para o mundo inteiro.",
+    quando: "No Domingo da Divina Misericórdia e às 15h, hora da misericórdia.",
+    texto:
+      "Misericórdia de Deus, brotada do seio do Pai — eu confio em Vós. Misericórdia de Deus, maior que todas as nossas culpas — eu confio em Vós. Misericórdia de Deus, revelada no Coração de Jesus — eu confio em Vós. Misericórdia de Deus, fonte de milagres e prodígios — eu confio em Vós. Misericórdia de Deus, esperança das almas desesperadas — eu confio em Vós. Jesus, em Vós eu confio. Amém.",
+  },
+
+  // ===== NOVAS: DEFUNTOS =====
+  {
+    slug: "oracao-pelos-fieis-defuntos",
+    titulo: "Oração pelos fiéis defuntos",
+    categoria: "Defuntos",
+    paraQue: "Sufragar todas as almas do purgatório, especialmente as mais abandonadas.",
+    quando: "No mês de novembro e em qualquer visita ao cemitério.",
+    texto:
+      "Senhor Jesus Cristo, Rei da glória, livrai as almas de todos os fiéis defuntos das penas do inferno e do abismo profundo. Livrai-as da boca do leão, para que o inferno não as devore, nem sejam lançadas nas trevas. Oferecei-lhes, Senhor, o sacrifício e as orações de louvor: recebei-as por elas, Senhor, e concedei-lhes o descanso eterno. Amém.",
+  },
+  {
+    slug: "oracao-por-um-falecido-recente",
+    titulo: "Oração por um falecido recente",
+    categoria: "Defuntos",
+    paraQue: "Confiar a Deus, logo após a morte, a alma de quem partiu.",
+    quando: "No momento do óbito, no velório e nos primeiros dias de luto.",
+    texto:
+      "Ó Deus, que sois a ressurreição e a vida, recebei em vossa paz a alma de (nome), que hoje deixou este mundo. Perdoai-lhe as faltas, purificai-a de toda mancha e concedei-lhe a alegria eterna com os vossos santos. Consolai os que choram esta partida e dai-lhes a certeza de que a morte não tem a última palavra. Por Cristo, nosso Senhor. Amém.",
+  },
+  {
+    slug: "oracao-do-luto",
+    titulo: "Oração no luto",
+    categoria: "Defuntos",
+    paraQue: "Pedir consolo e esperança para quem sofre a perda de um ente querido.",
+    quando: "Nos dias e meses seguintes a um falecimento.",
+    texto:
+      "Senhor, Vós que chorastes diante do túmulo de Lázaro, olhai para a minha dor. Não me deixeis sucumbir à tristeza sem esperança, mas ensinai-me a acreditar que a vida é transformada, não destruída. Guardai comigo a lembrança de quem parti amando, e concedei-me a paz de sabê-lo em vossas mãos. Amém.",
+  },
+  {
+    slug: "oracao-pelas-almas-esquecidas",
+    titulo: "Oração pelas almas mais abandonadas do Purgatório",
+    categoria: "Defuntos",
+    paraQue: "Interceder por aquelas almas que já não têm quem reze por elas.",
+    quando: "Às segundas-feiras e no mês de novembro.",
+    texto:
+      "Ó meu Jesus, por vosso amor infinito, tende piedade das almas do Purgatório e, de modo especial, daquelas que ninguém mais recorda. Aplicai-lhes os méritos infinitos da vossa Paixão e concedei-lhes, quanto antes, a visão beatífica. Amém.",
+  },
+
+  // ===== NOVAS: OCASIÕES =====
+  {
+    slug: "oracao-antes-de-exame",
+    titulo: "Oração antes de um exame ou prova",
+    categoria: "Ocasiões",
+    paraQue: "Pedir serenidade, memória e clareza mental diante de uma avaliação.",
+    quando: "Antes de provas escolares, concursos e exames médicos.",
+    texto:
+      "Senhor, acalmai o meu coração e clareai a minha mente. Ajudai-me a lembrar o que estudei e a responder com serenidade, sem o peso do medo. Que o resultado, seja qual for, não abale a minha confiança em Vós, que cuidais de todos os meus passos. Amém.",
+  },
+  {
+    slug: "oracao-antes-de-cirurgia",
+    titulo: "Oração antes de uma cirurgia",
+    categoria: "Ocasiões",
+    paraQue: "Confiar a Deus o próprio corpo e a equipe médica antes de um procedimento.",
+    quando: "Na véspera ou no dia de uma intervenção cirúrgica.",
+    texto:
+      "Senhor Jesus, médico das almas e dos corpos, ponho em vossas mãos esta cirurgia. Guiai as mãos dos médicos e enfermeiros, afastai de mim todo o temor e concedei que tudo corra segundo a vossa vontade. Nossa Senhora da Saúde, acompanhai-me nesta hora. Amém.",
+  },
+  {
+    slug: "oracao-na-gestacao",
+    titulo: "Oração pela mãe e o filho que vem",
+    categoria: "Ocasiões",
+    paraQue: "Confiar a Deus a gravidez, a saúde da mãe e a vida que se forma.",
+    quando: "Ao longo da gestação e antes do parto.",
+    texto:
+      "Senhor da vida, que tecestes cada um de nós no seio materno, abençoai esta gestação. Protegei a saúde de (nome) e a vida que cresce dentro dela; afastai todo temor e toda complicação. Fazei desta criança um filho da luz, e concedei aos pais sabedoria para acolhê-la e educá-la no vosso amor. Amém.",
+  },
+  {
+    slug: "oracao-pela-vida-nova-emprego",
+    titulo: "Oração ao começar um novo trabalho",
+    categoria: "Ocasiões",
+    paraQue: "Pedir bênção sobre uma nova etapa profissional.",
+    quando: "No primeiro dia de um novo emprego ou projeto.",
+    texto:
+      "São José operário, que trabalhastes com as próprias mãos para sustentar a Sagrada Família: abençoai este novo trabalho que começo. Dai-me competência, honestidade e espírito de serviço, e fazei que eu encontre nele ocasião de crescer e de servir ao próximo. Amém.",
+  },
+  {
+    slug: "oracao-por-doenca-grave",
+    titulo: "Oração diante de uma doença grave",
+    categoria: "Ocasiões",
+    paraQue: "Pedir fortaleza e sentido cristão diante de um diagnóstico difícil.",
+    quando: "Ao receber uma notícia de doença séria, para si ou para alguém amado.",
+    texto:
+      "Senhor, diante desta notícia que me abala, recorro a Vós. Não me deixeis cair no desespero, mas dai-me fé para unir este sofrimento à vossa Cruz redentora. Concedei cura, se for para o meu bem; e, se não for, dai-me a graça de suportar com paciência e esperança inabaláveis. Amém.",
+  },
+  {
+    slug: "oracao-antes-do-trabalho-pesado",
+    titulo: "Oração antes de uma decisão importante",
+    categoria: "Ocasiões",
+    paraQue: "Pedir discernimento diante de uma escolha decisiva de vida.",
+    quando: "Antes de decisões sobre vocação, mudança de cidade ou compromissos definitivos.",
+    texto:
+      "Espírito Santo, luz que tudo esclarece, iluminai a minha inteligência para que eu conheça o que Deus quer de mim. Livrai-me do medo e da precipitação; dai-me paz interior para reconhecer a vossa voz e coragem para segui-la, ainda que custe. Amém.",
+  },
+
+  // ===== NOVAS: EUCARÍSTICAS =====
+  {
+    slug: "oracao-antes-da-comunhao",
+    titulo: "Oração antes da Comunhão",
+    categoria: "Eucarísticas",
+    nota: "Inspirada nas orações de preparação de São Tomás de Aquino para a Missa.",
+    paraQue: "Preparar o coração para receber dignamente o Corpo de Cristo.",
+    quando: "Nos instantes antes de comungar, durante a fila da comunhão.",
+    texto:
+      "Senhor, não sou digno de que entreis em minha morada, mas dizei uma palavra e serei salvo. Purificai meu coração de todo apego desordenado, para que eu vos receba com fé viva, esperança firme e amor ardente. Vinde, Jesus, e fazei de mim um só convosco. Amém.",
+  },
+  {
+    slug: "oracao-depois-da-comunhao",
+    titulo: "Oração depois da Comunhão",
+    categoria: "Eucarísticas",
+    paraQue: "Prolongar a ação de graças após receber a Eucaristia.",
+    quando: "Logo após comungar, em silêncio ou de joelhos.",
+    texto:
+      "Fiquei convosco, Senhor, dentro de mim mesmo. Obrigado por vos dardes tão generosamente a este pecador. Fazei que esta Comunhão me transforme cada vez mais em Vós, que apague meus defeitos e acenda em mim o fogo da caridade. Que eu leve Cristo a todos os que hoje encontrar. Amém.",
+  },
+  {
+    slug: "oracao-visita-ao-santissimo",
+    titulo: "Oração de visita ao Santíssimo Sacramento",
+    categoria: "Eucarísticas",
+    nota: "Prática recomendada por Santo Afonso Maria de Ligório em suas 'Visitas ao Santíssimo Sacramento'.",
+    paraQue: "Adorar Jesus realmente presente no Sacrário fora da Missa.",
+    quando: "Em qualquer visita à igreja e nas horas de Adoração Eucarística.",
+    texto:
+      "Meu Senhor Jesus Cristo, aqui prostrado diante de Vós, presente no Santíssimo Sacramento, eu vos adoro com todo o meu ser. Agradeço-vos por permanecerdes conosco até o fim dos tempos. Ensinai-me a amar o silêncio da vossa presença mais do que o ruído do mundo. Amém.",
+  },
+  {
+    slug: "oracao-de-santo-tomas-antes-da-missa",
+    titulo: "Oração de Santo Tomás de Aquino antes da Missa",
+    categoria: "Eucarísticas",
+    nota: "Composta por Santo Tomás de Aquino para sua própria preparação antes de celebrar.",
+    paraQue: "Pedir as virtudes necessárias para participar frutuosamente da Santa Missa.",
+    quando: "Antes da Missa, sobretudo aos domingos.",
+    texto:
+      "Concedei-me, ó Deus de bondade, aproximar-me com pureza de coração deste admirável Sacramento, para que dele receba o remédio de salvação. Dai-me fé viva, esperança firme e caridade sincera, para que Cristo se torne a força da minha alma e o alimento no caminho para a pátria eterna. Amém.",
+  },
+
+  // ===== NOVAS: PENITENCIAIS =====
+  {
+    slug: "salmo-51-miserere",
+    titulo: "Salmo 50/51 — Miserere",
+    latim: "Miserere mei, Deus",
+    categoria: "Penitenciais",
+    nota: "O maior dos salmos penitenciais, atribuído a Davi após seu pecado com Betsabé (2Sm 11-12).",
+    paraQue: "Suplicar perdão com contrição profunda diante de um pecado grave.",
+    quando: "Na Quaresma, antes da Confissão e às sextas-feiras.",
+    texto:
+      "Tende piedade de mim, ó Deus, segundo a vossa grande misericórdia; conforme a imensidão de vossas graças, apagai a minha transgressão. Lavai-me completamente da minha culpa e purificai-me do meu pecado. Reconheço a minha transgressão e o meu pecado está sempre diante de mim. Criai em mim, ó Deus, um coração puro e renovai em mim um espírito firme. Não me expulseis da vossa face nem retireis de mim vosso Espírito Santo. Devolvei-me a alegria da vossa salvação e sustentai-me com espírito generoso. Amém.",
+  },
+  {
+    slug: "salmos-penitenciais-sintese",
+    titulo: "Síntese dos Sete Salmos Penitenciais",
+    categoria: "Penitenciais",
+    nota: "Tradição de rezar os Salmos 6, 31, 37, 50, 101, 129 e 142 juntos, muito usada na Idade Média.",
+    paraQue: "Percorrer, em síntese, o itinerário bíblico do arrependimento e da confiança em Deus.",
+    quando: "Na Quaresma e em retiros espirituais de penitência.",
+    texto:
+      "Senhor, não me repreendais na vossa ira (Sl 6). Bem-aventurado aquele cuja culpa é perdoada (Sl 31). Não me abandoneis no dia da vossa indignação (Sl 37). Tende piedade de mim, ó Deus (Sl 50). Ouvi, Senhor, a minha oração e chegue a Vós o meu clamor (Sl 101). Das profundezas clamo a Vós, Senhor (Sl 129). Ouvi depressa, Senhor, pois meu espírito desfalece (Sl 142). Em todos eles, uma só súplica: misericórdia e vida nova. Amém.",
+  },
+  {
+    slug: "exame-de-consciencia",
+    titulo: "Oração para o exame de consciência",
+    categoria: "Penitenciais",
+    paraQue: "Preparar-se seriamente para uma boa Confissão sacramental.",
+    quando: "Antes de se confessar, de preferência na véspera.",
+    texto:
+      "Vinde, Espírito Santo, e iluminai minha consciência. Mostrai-me a verdade sobre mim mesmo, sem excessivo rigor nem falsa complacência. Ajudai-me a reconhecer meus pecados de pensamento, palavra, ação e omissão, para que eu os confesse com sinceridade e firme propósito de emenda. Amém.",
+  },
+
+  // ===== NOVAS: AOS SANTOS =====
+  {
+    slug: "sao-joao-paulo-ii",
+    titulo: "A São João Paulo II",
+    categoria: "Aos Santos",
+    paraQue: "Pedir a intercessão do papa da Misericórdia Divina e da Juventude.",
+    quando: "Na festa de 22 de outubro e para famílias e jovens.",
+    texto:
+      "São João Paulo II, que nos ensinastes a não ter medo de abrir as portas a Cristo: intercedei por nossas famílias, pelos jovens e pela Igreja inteira. Alcançai-nos a coragem da santidade no dia a dia e o amor à Virgem Maria, Totus Tuus, como foi o vosso. Amém.",
+  },
+  {
+    slug: "santa-teresa-de-calcuta",
+    titulo: "A Santa Teresa de Calcutá",
+    categoria: "Aos Santos",
+    paraQue: "Pedir amor concreto aos pobres e caridade nas pequenas ações do dia.",
+    quando: "Na festa de 5 de setembro e ao servir os mais necessitados.",
+    texto:
+      "Santa Teresa de Calcutá, que reconhecestes o rosto de Cristo nos mais pobres entre os pobres: ensinai-me a servir sem esperar recompensa, a fazer pequenas coisas com grande amor e a nunca desviar o olhar de quem sofre. Amém.",
+  },
+  {
+    slug: "santa-terezinha-oracao-simplicidade",
+    titulo: "A Santa Teresinha (Caminhinho de confiança)",
+    categoria: "Aos Santos",
+    paraQue: "Aprender a espiritualidade da infância espiritual e da confiança total em Deus.",
+    quando: "Nos dias de desânimo espiritual e escrúpulo.",
+    texto:
+      "Ó Santa Teresinha do Menino Jesus, que descobristes o pequeno caminho da confiança e do amor: ensinai-me a não me apoiar em minhas próprias forças, mas a lançar-me, como criança, nos braços de Deus, certo de que Ele suprirá o que me falta. Amém.",
+  },
+  {
+    slug: "santo-expedito",
+    titulo: "A Santo Expedito",
+    categoria: "Aos Santos",
+    paraQue: "Invocar o patrono das causas urgentes, sem substituir a paciência cristã pela pressa.",
+    quando: "Diante de necessidades imediatas e prazos apertados.",
+    texto:
+      "Santo Expedito, mártir e soldado de Cristo, que sempre respondestes prontamente ao chamado da fé: intercedei por esta minha necessidade urgente. Alcançai-me também a virtude de nunca adiar o bem que devo fazer hoje. Amém.",
+  },
+  {
+    slug: "sao-francisco-de-assis-a",
+    titulo: "A São Francisco de Assis",
+    categoria: "Aos Santos",
+    paraQue: "Pedir simplicidade, amor à criação e desapego dos bens materiais.",
+    quando: "Na festa de 4 de outubro e no cuidado com a Casa Comum.",
+    texto:
+      "São Francisco de Assis, que abraçastes a Dama Pobreza e louvastes a Deus em todas as criaturas: ensinai-me a viver com simplicidade, a cuidar da criação como irmã e a encontrar em Cristo pobre e crucificado toda a minha riqueza. Amém.",
+  },
+
 ];
 
 
