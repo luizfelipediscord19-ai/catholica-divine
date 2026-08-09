@@ -5,6 +5,7 @@ import { SANTOS_LISTA } from "@/lib/santos-lista";
 import { buildSantoView } from "@/lib/santos-helpers";
 import { imagemSanto } from "@/lib/data/santos-imagens";
 import { RetratoSanto } from "@/components/santos/RetratoSanto";
+import { usePrefetchSanto, usePrefetchLote } from "@/lib/santos/prefetch";
 
 export const Route = createFileRoute("/santos/")({
   head: () => ({
@@ -51,6 +52,13 @@ function Page() {
   }, [query]);
 
   const visiveis = useMemo(() => filtered.slice(0, limite), [filtered, limite]);
+
+  // Prepara em segundo plano os primeiros santos da próxima página
+  const proximos = useMemo(
+    () => filtered.slice(limite, limite + 8).map((s) => s.slug),
+    [filtered, limite]
+  );
+  usePrefetchLote(proximos);
 
   useEffect(() => {
     setLimite(PAGINA);
@@ -120,42 +128,17 @@ function Page() {
         </div>
 
         <CardGrid cols={3}>
-          {visiveis.map((s, i) => {
-            const isActive = s.slug === selectedSlug;
-            return (
-              <button
-                key={s.slug}
-                type="button"
-                onClick={() => setSelectedSlug(isActive ? null : s.slug)}
-                aria-expanded={isActive}
-                className={`text-left block group animate-content-fade focus:outline-none focus-visible:ring-1 focus-visible:ring-gold/60 ${
-                  isActive ? "ring-1 ring-gold/50" : ""
-                }`}
-                style={{ animationDelay: `${Math.min(i, 12) * 40}ms` }}
-              >
-                <ContentCard
-                  title={s.nome}
-                  subtitle={`Memória · ${s.data}`}
-                  media={
-                    <RetratoSanto
-                      url={imagemSanto(s.slug)?.url}
-                      nome={s.nome}
-                      prioridade={i < 3}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1280px) 33vw, 380px"
-                      className="h-44 w-full object-cover object-top opacity-90 group-hover:opacity-100 transition-opacity"
-                    />
-                  }
-                >
-                  {s.body}
-                  <span className="block mt-4 text-xs text-gold/80 group-hover:text-gold tracking-[0.2em] uppercase transition-smooth group-hover:translate-x-1">
-                    {isActive ? "Fechar ↑" : "Ler biografia →"}
-                  </span>
-                </ContentCard>
-
-              </button>
-            );
-          })}
+          {visiveis.map((s, i) => (
+            <CartaoSanto
+              key={s.slug}
+              santo={s}
+              indice={i}
+              ativo={s.slug === selectedSlug}
+              onSelect={() => setSelectedSlug(s.slug === selectedSlug ? null : s.slug)}
+            />
+          ))}
         </CardGrid>
+
 
         {visiveis.length < filtered.length ? (
           <div className="mt-12 flex flex-col items-center gap-3">
@@ -179,6 +162,56 @@ function Page() {
         ) : null}
       </Section>
     </div>
+  );
+}
+
+/**
+ * Cartão da galeria: observa a própria posição e pré-carrega a imagem e a rota
+ * do santo pouco antes de entrar na tela, para a abertura ser imediata.
+ */
+function CartaoSanto({
+  santo,
+  indice,
+  ativo,
+  onSelect,
+}: {
+  santo: (typeof SANTOS_LISTA)[number];
+  indice: number;
+  ativo: boolean;
+  onSelect: () => void;
+}) {
+  const ref = usePrefetchSanto<HTMLButtonElement>(santo.slug);
+
+  return (
+    <button
+      ref={ref}
+      type="button"
+      onClick={onSelect}
+      aria-expanded={ativo}
+      className={`text-left block group animate-content-fade focus:outline-none focus-visible:ring-1 focus-visible:ring-gold/60 ${
+        ativo ? "ring-1 ring-gold/50" : ""
+      }`}
+      style={{ animationDelay: `${Math.min(indice, 12) * 40}ms` }}
+    >
+      <ContentCard
+        title={santo.nome}
+        subtitle={`Memória · ${santo.data}`}
+        media={
+          <RetratoSanto
+            url={imagemSanto(santo.slug)?.url}
+            nome={santo.nome}
+            prioridade={indice < 3}
+            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 33vw, 380px"
+            className="h-44 w-full object-cover object-top opacity-90 group-hover:opacity-100 transition-opacity"
+          />
+        }
+      >
+        {santo.body}
+        <span className="block mt-4 text-xs text-gold/80 group-hover:text-gold tracking-[0.2em] uppercase transition-smooth group-hover:translate-x-1">
+          {ativo ? "Fechar ↑" : "Ler biografia →"}
+        </span>
+      </ContentCard>
+    </button>
   );
 }
 
