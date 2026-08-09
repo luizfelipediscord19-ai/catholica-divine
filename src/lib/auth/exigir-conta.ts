@@ -71,10 +71,10 @@ export const exigirConta = createMiddleware({ type: "function" }).server(async (
   // enviado pelo contexto do middleware do cliente — usado quando o cabeçalho
   // não chega ao servidor (proxies de hospedagem). Ambos são validados igual.
   const doCabecalho = cabecalho?.startsWith("Bearer ") ? cabecalho.slice(7).trim() : "";
+  const contexto = context as unknown as { tokenConta?: unknown } | undefined;
   const doContexto =
-    typeof (context as { tokenConta?: unknown })?.tokenConta === "string"
-      ? ((context as { tokenConta?: string }).tokenConta ?? "").trim()
-      : "";
+    typeof contexto?.tokenConta === "string" ? contexto.tokenConta.trim() : "";
+
   const token = doCabecalho || doContexto;
 
   if (!token || token.split(".").length !== 3) {
