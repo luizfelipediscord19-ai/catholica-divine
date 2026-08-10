@@ -33,7 +33,7 @@ export function RetratoSanto({
   if (!atual) {
     return (
       <div
-        className={`grid place-items-center bg-gradient-to-br from-deep via-deep to-background ${className}`}
+        className={`grid place-items-center bg-linear-to-br from-deep via-deep to-background ${className}`}
         aria-hidden="true"
       >
         <span className="font-display text-4xl text-gold/30">✝</span>

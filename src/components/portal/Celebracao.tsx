@@ -895,7 +895,7 @@ function ModalCelebracao({
         className={`relative w-full max-w-lg border ${desenho.aro} ${desenho.fundo} animate-in fade-in zoom-in-95 duration-500`}
       >
         <div
-          className={`pointer-events-none absolute inset-x-0 -top-24 h-48 bg-gradient-to-b ${desenho.brilho} to-transparent blur-2xl`}
+          className={`pointer-events-none absolute inset-x-0 -top-24 h-48 bg-linear-to-b ${desenho.brilho} to-transparent blur-2xl`}
           aria-hidden="true"
         />
         <Ornamento desenho={desenho} />
@@ -961,7 +961,7 @@ function Ornamento({ desenho }: { desenho: Desenho }) {
     case "chama":
       return (
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 overflow-hidden" aria-hidden="true">
-          <div className={`mx-auto size-40 -mb-28 rounded-full bg-gradient-to-t ${desenho.brilho} to-transparent blur-2xl animate-float`} />
+          <div className={`mx-auto size-40 -mb-28 rounded-full bg-linear-to-t ${desenho.brilho} to-transparent blur-2xl animate-float`} />
         </div>
       );
     case "pergaminho":
@@ -982,8 +982,8 @@ function Ornamento({ desenho }: { desenho: Desenho }) {
     case "aurora":
       return (
         <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-          <div className={`absolute -left-16 top-8 h-56 w-56 rounded-full bg-gradient-to-br ${desenho.brilho} to-transparent blur-3xl animate-float`} />
-          <div className={`absolute -right-10 bottom-0 h-40 w-40 rounded-full bg-gradient-to-tl ${desenho.brilho} to-transparent blur-3xl`} />
+          <div className={`absolute -left-16 top-8 h-56 w-56 rounded-full bg-linear-to-br ${desenho.brilho} to-transparent blur-3xl animate-float`} />
+          <div className={`absolute -right-10 bottom-0 h-40 w-40 rounded-full bg-linear-to-tl ${desenho.brilho} to-transparent blur-3xl`} />
         </div>
       );
     case "relicario":

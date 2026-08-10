@@ -101,7 +101,7 @@ export function InstalarApp() {
           <X className="h-4 w-4" />
         </button>
 
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-gold/15 to-transparent" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-linear-to-b from-gold/15 to-transparent" />
 
         <img
           src="/pwa-192.png"

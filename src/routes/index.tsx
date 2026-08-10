@@ -153,7 +153,7 @@ function Home() {
           className="absolute inset-0 bg-cover bg-center transition-transform duration-[10s] ease-out scale-110 hover:scale-100"
           style={{ backgroundImage: `url(${hero})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-deep/20 via-deep/60 to-background" />
+        <div className="absolute inset-0 bg-linear-to-b from-deep/20 via-deep/60 to-background" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(5,5,5,0.4)_100%)]" />
 
         <div className="relative max-w-7xl mx-auto px-8 w-full">
@@ -195,7 +195,7 @@ function Home() {
         {/* Scroll Indicator */}
         <div aria-hidden="true" className="pointer-events-none absolute bottom-8 left-1/2 -translate-x-1/2 hidden sm:flex flex-col items-center gap-3 animate-float">
           <span className="text-[10px] uppercase tracking-[0.4em] text-gold/90">Rolar</span>
-          <div className="w-px h-12 bg-gradient-to-b from-gold/50 to-transparent" />
+          <div className="w-px h-12 bg-linear-to-b from-gold/50 to-transparent" />
         </div>
       </section>
 
@@ -306,7 +306,7 @@ function Home() {
 
       {/* Editorial split */}
       <section className="bg-muted/30 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+        <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-gold/30 to-transparent" />
         <div className="max-w-7xl mx-auto px-8 py-32 md:py-48 grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
           <ScrollReveal direction="left" className="relative">
             <div className="absolute -inset-4 border border-gold/10 -z-10 translate-x-4 translate-y-4" />
@@ -339,7 +339,7 @@ function Home() {
             </Link>
           </ScrollReveal>
         </div>
-        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+        <div className="absolute bottom-0 left-0 w-full h-px bg-linear-to-r from-transparent via-gold/30 to-transparent" />
       </section>
 
       {/* Padres da Igreja — vozes da Tradição */}

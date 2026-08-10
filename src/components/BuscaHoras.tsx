@@ -127,7 +127,7 @@ export function BuscaHoras() {
         </p>
 
         {/* Resultados */}
-        <div className="mt-5 space-y-3 max-h-[520px] overflow-y-auto pr-1">
+        <div className="mt-5 space-y-3 max-h-[min(65dvh,520px)] overflow-y-auto overscroll-contain pr-1">
           {filtrados.length === 0 && (
             <div className="border border-dashed border-gold/20 p-6 text-center text-sm text-muted-foreground">
               Nenhum item corresponde aos filtros. Tente outra palavra-chave.

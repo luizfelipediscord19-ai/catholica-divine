@@ -78,7 +78,8 @@ export function Rotulo({ children }: { children: ReactNode }) {
 }
 
 export const inputClass =
-  "w-full bg-background/60 border border-gold/20 focus:border-gold/60 focus:outline-none focus-visible:ring-1 focus-visible:ring-gold px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/60";
+  "w-full min-h-11 rounded-md bg-background/60 border border-gold/20 focus:border-gold/60 focus:outline-none focus-visible:ring-1 focus-visible:ring-gold px-4 py-3 text-base sm:text-sm text-foreground placeholder:text-muted-foreground/60";
+
 
 export const botaoClass =
   "inline-flex items-center justify-center gap-2 min-h-11 px-6 py-3 text-[10px] uppercase tracking-[0.25em] font-bold text-deep bg-gold hover:bg-paper transition-premium disabled:opacity-50 disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-paper";
