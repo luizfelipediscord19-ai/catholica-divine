@@ -555,6 +555,48 @@ export type Database = {
           },
         ]
       }
+      push_dispositivos: {
+        Row: {
+          ativo: boolean
+          auth: string
+          created_at: string
+          endpoint: string
+          falhas: number
+          fuso_offset: number
+          horarios: Json
+          id: string
+          p256dh: string
+          ultimo_envio: Json
+          updated_at: string
+        }
+        Insert: {
+          ativo?: boolean
+          auth: string
+          created_at?: string
+          endpoint: string
+          falhas?: number
+          fuso_offset?: number
+          horarios?: Json
+          id?: string
+          p256dh: string
+          ultimo_envio?: Json
+          updated_at?: string
+        }
+        Update: {
+          ativo?: boolean
+          auth?: string
+          created_at?: string
+          endpoint?: string
+          falhas?: number
+          fuso_offset?: number
+          horarios?: Json
+          id?: string
+          p256dh?: string
+          ultimo_envio?: Json
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
