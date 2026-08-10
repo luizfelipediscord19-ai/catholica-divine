@@ -48,44 +48,47 @@ export function ReadingMode({
 
   return (
     <FootnoteIndex.Provider value={indice}>
-    <div className="shell py-block reading-mode grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-[var(--space-lg)]">
+    <div className="shell py-block reading-mode grid grid-cols-1 items-start lg:grid-cols-[minmax(0,260px)_minmax(0,1fr)] gap-x-[var(--space-lg)] gap-y-[var(--space-sm)]">
       {/* Mobile TOC trigger */}
-      <div className="lg:hidden flex items-center justify-between gap-4 print:hidden mb-8">
+      <div className="lg:hidden flex items-stretch gap-3 print:hidden mb-[var(--space-sm)]">
         <button
           onClick={() => setOpen((v) => !v)}
-          className="flex-1 inline-flex items-center justify-center gap-3 px-6 py-4 glass text-[10px] uppercase tracking-[0.3em] text-paper font-bold"
+          aria-expanded={open}
+          className="btn-base btn-outline-gold flex-1 min-w-0 gap-3 text-[10px] uppercase tracking-[0.3em] font-bold"
         >
-          <List className="size-4" /> Sumário
+          <List className="size-4 shrink-0" /> Sumário
         </button>
         <button
           onClick={() => window.print()}
-          className="size-14 grid place-items-center bg-gold text-deep hover:bg-paper transition-premium"
+          aria-label="Imprimir ou salvar em PDF"
+          className="btn-base btn-gold w-12 shrink-0 px-0"
         >
-          <Printer className="size-5" />
+          <Printer className="size-4" />
         </button>
       </div>
 
       {/* Sidebar TOC */}
       <aside
-        className={`${open ? "block" : "hidden"} lg:block lg:sticky lg:top-32 lg:self-start print:hidden`}
+        className={`${open ? "block" : "hidden"} min-w-0 lg:block lg:sticky lg:top-28 lg:self-start print:hidden`}
       >
-        <div className="p-8 border-l border-gold/10">
-          <p className="text-[10px] tracking-[0.4em] uppercase text-gold/40 mb-8">Navegação</p>
+        <div className="border-l border-gold/20 pl-[var(--space-sm)] py-[var(--space-2xs)]">
+          <p className="text-[10px] tracking-[0.3em] uppercase text-gold/70 mb-[var(--space-sm)]">Navegação</p>
           <nav>
-            <ul className="space-y-6">
+            <ul className="space-y-1">
               {toc.map((t) => (
                 <li key={t.id}>
                   <a
                     href={`#${t.id}`}
                     onClick={() => setOpen(false)}
-                    className={`group block text-[13px] tracking-wide transition-premium ${
+                    aria-current={active === t.id ? "true" : undefined}
+                    className={`group flex items-center gap-3 rounded-[var(--radius-btn)] py-2 pr-2 text-[13px] leading-snug transition-premium ${
                       active === t.id
-                        ? "text-gold translate-x-2"
-                        : "text-paper/40 hover:text-paper hover:translate-x-1"
+                        ? "text-gold"
+                        : "text-muted-foreground hover:text-foreground"
                     }`}
                   >
-                    <span className={`inline-block w-4 h-px mr-3 transition-colors ${active === t.id ? "bg-gold" : "bg-gold/10 group-hover:bg-gold/30"}`} />
-                    {t.label}
+                    <span className={`inline-block h-px shrink-0 transition-all ${active === t.id ? "w-6 bg-gold" : "w-3 bg-gold/30 group-hover:w-5 group-hover:bg-gold/60"}`} />
+                    <span className="min-w-0">{t.label}</span>
                   </a>
                 </li>
               ))}
@@ -93,12 +96,13 @@ export function ReadingMode({
           </nav>
           <button
             onClick={() => window.print()}
-            className="mt-12 w-full inline-flex items-center justify-center gap-3 px-6 py-4 bg-gold text-deep text-[10px] uppercase tracking-[0.3em] font-bold hover:bg-paper transition-premium"
+            className="btn-base btn-gold mt-[var(--space-md)] w-full gap-3 text-[10px] uppercase tracking-[0.2em] font-bold whitespace-nowrap"
           >
-            <Printer className="size-4" /> Imprimir / PDF
+            <Printer className="size-4 shrink-0" /> Imprimir / PDF
           </button>
         </div>
       </aside>
+
 
       {/* Article */}
       <article className="min-w-0">
