@@ -122,7 +122,7 @@ export function Prose({ children }: { children: ReactNode }) {
 
 export function Sources({ items }: { items: { label: string; ref: string }[] }) {
   return (
-    <aside className="max-w-3xl mx-auto mt-12 border-t border-gold/20 pt-6">
+    <aside className="measure mx-auto mt-[var(--space-lg)] border-t border-gold/20 pt-[var(--space-sm)]">
       <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-4">Fontes consultadas</p>
       <ol className="space-y-2 text-xs text-muted-foreground leading-relaxed list-decimal pl-5">
         {items.map((s) => (
@@ -138,7 +138,7 @@ export function Sources({ items }: { items: { label: string; ref: string }[] }) 
 
 export function Pullquote({ children, cite }: { children: ReactNode; cite?: string }) {
   return (
-    <figure className="shell-narrow my-[var(--space-lg)] border-y border-gold/25 py-[var(--space-sm)] text-center">
+    <figure className="my-[var(--space-lg)] w-full border-y border-gold/25 py-[var(--space-sm)] text-center">
       <blockquote className="font-display italic leading-snug text-foreground text-[length:var(--step-2)]">
         “{children}”
       </blockquote>
