@@ -9,7 +9,14 @@ import { createFileRoute } from "@tanstack/react-router";
 export const Route = createFileRoute("/api/public/lembretes")({
   server: {
     handlers: {
-      POST: async ({ request }) => {
+      GET: async ({ request }) => despachar(request),
+      POST: async ({ request }) => despachar(request),
+    },
+  },
+});
+
+async function despachar(request: Request) {
+  {
         const segredo = process.env["CRON_SECRET"];
         const enviado =
           request.headers.get("x-cron-secret") ??
@@ -26,8 +33,5 @@ export const Route = createFileRoute("/api/public/lembretes")({
         } catch (erro) {
           console.error("[lembretes]", erro);
           return Response.json({ ok: false }, { status: 500 });
-        }
-      },
-    },
-  },
-});
+  }
+}
