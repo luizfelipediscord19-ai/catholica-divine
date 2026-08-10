@@ -134,20 +134,23 @@ function PainelPage() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-6 py-16 md:py-24 space-y-12">
-      <header className="flex flex-col md:flex-row md:items-center gap-8">
+    <div className="mx-auto w-full max-w-6xl px-gutter py-[var(--space-lg)] space-y-[var(--space-md)]">
+      <header className="flex flex-col gap-[var(--space-sm)] md:flex-row md:items-center">
         {dados.identidade.santoImagem ? (
           <img
             src={dados.identidade.santoImagem}
             alt={`Imagem de ${dados.identidade.santoNome}`}
-            className="size-24 rounded-full object-cover border border-gold/30"
+            width={96}
+            height={96}
+            loading="lazy"
+            className="size-24 shrink-0 rounded-full object-cover border border-gold/30"
           />
         ) : (
-          <span className="size-24 rounded-full border border-gold/30 grid place-items-center font-display text-3xl text-gold">
+          <span className="size-24 shrink-0 rounded-full border border-gold/30 grid place-items-center font-display text-3xl text-gold">
             {dados.identidade.santoNome.slice(0, 1)}
           </span>
         )}
-        <div className="flex-1 space-y-3">
+        <div className="min-w-0 flex-1 space-y-3">
           <p className="text-[10px] uppercase tracking-[0.4em] text-gold/70">
             {dados.identidade.santoEscolhido ? "Seu padroeiro escolhido" : "Seu padroeiro sorteado"}
           </p>
