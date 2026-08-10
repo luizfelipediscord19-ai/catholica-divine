@@ -206,6 +206,11 @@
 
   /* Padding lateral padrão de todo o portal */
   --gutter: clamp(1rem, 0.6rem + 2.2vw, 2rem);
+  /* Larguras de container padronizadas */
+  --shell-narrow: 46rem;
+  --shell-mid: 64rem;
+  --shell: 72rem;
+  --shell-wide: 90rem;
   /* Comprimento de linha confortável para leitura */
   --measure: 68ch;
 
