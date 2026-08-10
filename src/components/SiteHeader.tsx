@@ -31,13 +31,12 @@ const NAV = [
 
 const NAV_PRINCIPAL: { to: string; label: string; desde: "lg" | "xl" | "2xl" }[] = [
   { to: "/estudar", label: "Estudar", desde: "lg" },
-  { to: "/trilhas", label: "Trilhas", desde: "xl" },
   { to: "/biblia", label: "Bíblia", desde: "lg" },
   { to: "/santos", label: "Santos", desde: "lg" },
-  { to: "/oracoes", label: "Orações", desde: "lg" },
-  { to: "/forum", label: "Fórum", desde: "lg" },
-  { to: "/catecismo", label: "Catecismo", desde: "xl" },
-  { to: "/liturgia-diaria", label: "Liturgia", desde: "2xl" },
+  { to: "/oracoes", label: "Orações", desde: "xl" },
+  { to: "/forum", label: "Fórum", desde: "xl" },
+  { to: "/trilhas", label: "Trilhas", desde: "2xl" },
+  { to: "/catecismo", label: "Catecismo", desde: "2xl" },
 ];
 
 const VISIVEL_DESDE = {
@@ -64,7 +63,7 @@ export function SiteHeader() {
           <div className="size-9 sm:size-10 shrink-0 rounded-full border border-gold/30 flex items-center justify-center group-hover:border-gold transition-premium">
             <Church className="size-4 sm:size-5 text-gold" aria-hidden="true" />
           </div>
-          <span className="truncate font-display text-base text-paper transition-colors group-hover:text-gold sm:text-xl xl:text-2xl">
+          <span className="truncate font-display text-base text-paper transition-colors group-hover:text-gold sm:text-lg xl:text-xl">
             PORTAL <span className="font-light italic text-gold/90">CATÓLICO</span>
           </span>
         </Link>
@@ -72,7 +71,7 @@ export function SiteHeader() {
 
         <nav
           aria-label="Navegação principal"
-          className="hidden min-w-0 items-center justify-center gap-4 whitespace-nowrap text-[10px] font-medium uppercase text-paper/80 lg:flex xl:gap-5"
+          className="hidden min-w-0 items-center justify-center gap-3 overflow-hidden whitespace-nowrap text-[10px] font-medium uppercase text-paper/80 lg:flex xl:gap-5"
         >
           {NAV_PRINCIPAL.map((item) => {
             const active = pathname === item.to || pathname.startsWith(`${item.to}/`);
@@ -93,11 +92,11 @@ export function SiteHeader() {
         </nav>
 
 
-        <div className="flex shrink-0 items-center justify-end gap-2 sm:gap-3">
+        <div className="flex shrink-0 items-center justify-end gap-1.5 sm:gap-3">
           <ContaBotao />
           <Link
             to="/assistente"
-            className="hidden min-h-11 items-center gap-2 bg-gold px-4 py-3 text-[10px] font-bold uppercase text-deep transition-premium hover:bg-paper focus-visible:bg-paper focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-paper sm:inline-flex xl:px-5"
+            className="hidden min-h-11 items-center gap-2 bg-gold px-4 py-3 text-[10px] font-bold uppercase text-deep transition-premium hover:bg-paper focus-visible:bg-paper focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-paper lg:inline-flex xl:px-5"
           >
             <Sparkles className="size-3.5" aria-hidden="true" /> Sophia IA
           </Link>
@@ -106,7 +105,7 @@ export function SiteHeader() {
             onClick={() => setBusca(true)}
             aria-label="Buscar no portal (Ctrl + K)"
             title="Buscar (Ctrl + K)"
-            className="grid size-11 place-items-center rounded-full border border-gold/20 hover:border-gold/60 focus-visible:border-gold transition-premium text-paper/70 hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+            className="hidden size-11 place-items-center rounded-full border border-gold/20 hover:border-gold/60 focus-visible:border-gold transition-premium text-paper/70 hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold sm:grid"
           >
             <Search className="size-4" aria-hidden="true" />
           </button>
@@ -114,6 +113,7 @@ export function SiteHeader() {
           <TemaToggle />
 
           <SinoNotificacoes />
+
 
 
 

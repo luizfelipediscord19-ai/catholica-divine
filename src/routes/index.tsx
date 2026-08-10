@@ -149,7 +149,7 @@ function Home() {
   return (
     <div className="overflow-x-hidden">
       {/* Hero */}
-      <section className="relative overflow-hidden min-h-[78vh] sm:min-h-[86vh] flex items-center py-section">
+      <section className="relative overflow-hidden min-h-[68vh] sm:min-h-[82vh] flex items-center py-section">
         <div
           className="absolute inset-0 bg-cover bg-center transition-transform duration-[10s] ease-out scale-110 hover:scale-100"
           style={{ backgroundImage: `url(${hero})` }}
@@ -159,9 +159,9 @@ function Home() {
 
         <div className="shell relative w-full">
           <div className="max-w-3xl animate-reveal">
-            <p className="flex items-center gap-3 sm:gap-4 text-[11px] uppercase text-gold/80 tracking-[0.28em] sm:tracking-[0.4em] mb-5 sm:mb-7">
-              <span className="h-px w-8 sm:w-12 shrink-0 bg-gold/40" />
-              <span>Una · Sancta · Catholica · Apostolica</span>
+            <p className="flex items-center gap-3 sm:gap-4 text-[10px] sm:text-[11px] uppercase leading-relaxed text-gold/80 tracking-[0.14em] sm:tracking-[0.34em] mb-4 sm:mb-7">
+              <span className="hidden h-px w-8 shrink-0 bg-gold/40 sm:block sm:w-12" />
+              <span className="min-w-0">Una · Sancta · Catholica · Apostolica</span>
             </p>
             <h1
               className="font-display text-paper text-balance tracking-tight leading-[0.92] sm:leading-[0.88] mb-5 sm:mb-7"
@@ -208,7 +208,7 @@ function Home() {
 
       {/* Tempo litúrgico em tempo real */}
       <section className="bg-background relative z-10 border-y border-gold/10">
-        <div className="shell py-block-sm flex flex-wrap items-center justify-between gap-4">
+        <div className="shell py-block-sm flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:gap-4">
           <p className="flex flex-wrap items-center gap-3 text-[10px] tracking-[0.3em] uppercase text-muted-foreground">
             <span className={`inline-flex items-center gap-2 border px-3 py-1.5 ${COR_CLASSE[lit.cor]}`}>
               <span className="size-2 rounded-full bg-current" aria-hidden="true" /> {lit.corNome}
@@ -241,12 +241,12 @@ function Home() {
           </div>
         </div>
         <div className="shell">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-gold/10 border-x border-gold/10">
+          <div className="grid grid-cols-1 gap-px bg-gold/10 md:grid-cols-3 sm:border-x sm:border-gold/10">
             {DAILY_ITEMS.map((d, i) => {
               const inner = (
-                <div className="group h-full flex flex-col p-10 transition-premium hover:bg-gold/[0.03]">
+                <div className="group h-full flex flex-col py-[var(--space-sm)] sm:p-card transition-premium hover:bg-gold/[0.03]">
                   <p className="text-[9px] tracking-[0.5em] uppercase text-gold/80 mb-6 group-hover:text-gold transition-colors">{d.kicker}</p>
-                  <p className="font-display italic text-2xl text-foreground/90 leading-relaxed mb-8 flex-1">
+                  <p className="font-display italic text-[length:var(--step-1)] text-foreground/90 leading-relaxed mb-6 flex-1">
                     {d.text}
                   </p>
                   <p className="text-[10px] text-muted-foreground tracking-[0.3em] uppercase group-hover:text-gold/80 transition-colors">
@@ -289,11 +289,11 @@ function Home() {
 
       {/* Pillars - Bento Grid Style */}
       <section className="shell py-section">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-[var(--space-lg)] gap-[var(--space-sm)]">
           <ScrollReveal className="max-w-2xl">
             <p className="text-[10px] tracking-[0.4em] uppercase text-gold mb-4">Os pilares da verdade</p>
-            <h2 className="font-display text-5xl md:text-7xl text-foreground leading-[1.1]">
-              Duas mil anos de fé, <br/> <span className="text-gold/75">em um só lugar.</span>
+            <h2 className="font-display text-[length:var(--step-4)] text-foreground leading-[1.08] text-balance">
+              Duas mil anos de fé, <span className="text-gold/75">em um só lugar.</span>
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={200} className="max-w-sm">
@@ -304,22 +304,22 @@ function Home() {
           </ScrollReveal>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[var(--space-sm)]">
           {PILLARS.map((p, i) => (
             <ScrollReveal
               key={p.to}
               delay={i * 100}
-              className={`${i === 0 || i === 5 ? "md:col-span-2" : ""}`}
+              className={`${i === 0 || i === 5 ? "lg:col-span-2" : ""}`}
             >
               <Link
                 to={p.to}
-                className="group glass p-10 flex flex-col gap-8 card-premium-hover h-full"
+                className="group glass p-card flex flex-col gap-[var(--space-sm)] card-premium-hover h-full"
               >
               <div className="size-14 rounded-full bg-gold/5 border border-gold/10 flex items-center justify-center group-hover:bg-gold/15 group-hover:border-gold/30 transition-premium">
                 <p.icon className="size-6 text-gold group-hover:scale-110 transition-premium" />
               </div>
               <div className="flex-1">
-                <h3 className="font-display text-3xl text-foreground mb-4 group-hover:text-gold transition-colors">{p.title}</h3>
+                <h3 className="font-display text-[length:var(--step-2)] text-foreground mb-3 group-hover:text-gold transition-colors">{p.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed font-light group-hover:text-foreground/70 transition-colors">{p.desc}</p>
               </div>
               <div className="flex items-center justify-between pt-6 border-t border-gold/5">
@@ -354,17 +354,17 @@ function Home() {
             <p className="text-[10px] tracking-[0.4em] uppercase text-gold mb-6 flex items-center gap-4">
               <span className="h-px w-6 bg-gold/40" /> Maria, Mater Ecclesiae
             </p>
-            <h2 className="font-display text-6xl md:text-8xl text-foreground leading-[0.9] tracking-tight mb-8">
-              “Faça-se em mim <br/> <span className="text-gold italic">segundo a tua palavra.</span>”
+            <h2 className="font-display text-[length:var(--step-4)] text-foreground leading-[0.98] tracking-tight text-balance mb-6">
+              “Faça-se em mim <span className="text-gold italic">segundo a tua palavra.</span>”
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed font-light mb-12 max-w-lg">
+            <p className="measure text-[length:var(--step-0)] text-muted-foreground leading-relaxed font-light mb-[var(--space-md)]">
               "De Maria nunquam satis" — sobre Maria, nunca o suficiente, dizia São Bernardo.
               Conheça os quatro dogmas marianos, as aparições aprovadas pela Igreja e a
               teologia da Theotokos segundo os Padres e Doutores.
             </p>
             <Link
               to="/maria"
-              className="group inline-flex items-center gap-4 px-10 py-5 border border-gold/30 text-gold text-[10px] uppercase tracking-[0.4em] font-bold hover:bg-gold hover:text-deep transition-premium"
+              className="group inline-flex items-center gap-4 px-7 py-4 min-h-12 border border-gold/30 text-gold text-[10px] uppercase tracking-[0.4em] font-bold hover:bg-gold hover:text-deep transition-premium"
             >
               <span>Estudar Mariologia</span>
               <span className="group-hover:translate-x-2 transition-transform">→</span>
@@ -375,17 +375,17 @@ function Home() {
       </section>
 
       {/* Padres da Igreja — vozes da Tradição */}
-      <section className="bg-background py-32 md:py-40">
+      <section className="bg-background py-section">
         <div className="shell">
-          <ScrollReveal className="max-w-3xl mb-20">
+          <ScrollReveal className="max-w-3xl mb-[var(--space-lg)]">
             <p className="text-[10px] tracking-[0.4em] uppercase text-gold mb-4 flex items-center gap-4">
               <span className="h-px w-6 bg-gold/40" /> Vox Patrum · A voz dos Padres
             </p>
-            <h2 className="font-display text-5xl md:text-7xl text-foreground leading-[1.05]">
-              O que recebemos <br/>
+            <h2 className="font-display text-[length:var(--step-4)] text-foreground leading-[1.08] text-balance">
+              O que recebemos{" "}
               <span className="text-gold/85 italic">dos primeiros séculos.</span>
             </h2>
-            <p className="text-muted-foreground text-base leading-relaxed font-light mt-8 max-w-2xl">
+            <p className="measure text-[length:var(--step-0)] text-muted-foreground leading-relaxed font-light mt-6">
               A fé católica não nasceu ontem. Dos Padres Apostólicos aos Doutores medievais,
               uma mesma voz atravessa vinte séculos confessando o mesmo Cristo.
             </p>
@@ -394,9 +394,9 @@ function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-gold/10">
             {PADRES.map((p, i) => (
               <ScrollReveal key={p.author + i} delay={i * 120}>
-                <figure className="h-full p-10 md:p-12 bg-background flex flex-col gap-8">
+                <figure className="h-full p-card bg-background flex flex-col gap-[var(--space-sm)]">
                   <span className="text-gold/40 font-display text-6xl leading-none">"</span>
-                  <blockquote className="font-display italic text-2xl md:text-[1.7rem] text-foreground/90 leading-snug flex-1">
+                  <blockquote className="font-display italic text-[length:var(--step-2)] text-foreground/90 leading-snug flex-1">
                     {p.quote}
                   </blockquote>
                   <figcaption className="border-t border-gold/10 pt-6">
@@ -408,7 +408,7 @@ function Home() {
             ))}
           </div>
 
-          <ScrollReveal delay={400} className="mt-16 flex justify-center">
+          <ScrollReveal delay={400} className="mt-[var(--space-md)] flex justify-center">
             <Link
               to="/doutores-da-igreja"
               className="group inline-flex items-center gap-4 text-[10px] uppercase tracking-[0.4em] text-gold/80 hover:text-gold transition-colors"
@@ -429,25 +429,25 @@ function Home() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#050505_80%)]" />
         
         <ScrollReveal className="shell py-section relative text-center">
-          <div className="relative inline-block mb-12">
+          <div className="relative inline-block mb-[var(--space-md)]">
             <div className="absolute inset-0 bg-gold/20 blur-3xl rounded-full" />
             <div className="relative size-24 rounded-full glass border border-gold/30 flex items-center justify-center shadow-[0_0_50px_rgba(212,175,55,0.15)]">
               <Sparkles className="size-10 text-gold animate-pulse" />
             </div>
           </div>
           
-          <p className="text-[10px] tracking-[0.6em] uppercase text-gold/60 mb-8">Sophia · Logos</p>
-          <h2 className="font-display text-6xl md:text-9xl text-foreground leading-[0.85] tracking-tighter mb-12">
-            Inteligência Artificial <br/> <em className="text-gold italic font-medium">ao serviço da Verdade</em>
+          <p className="text-[10px] tracking-[0.4em] uppercase text-gold/60 mb-6">Sophia · Logos</p>
+          <h2 className="font-display text-[length:var(--step-5)] text-foreground leading-[0.95] tracking-tight text-balance mb-[var(--space-md)]">
+            Inteligência Artificial <em className="text-gold italic font-medium">ao serviço da Verdade</em>
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-light mb-16">
+          <p className="measure mx-auto text-[length:var(--step-0)] text-muted-foreground leading-relaxed font-light mb-[var(--space-md)]">
             Treinada exclusivamente sobre a Bíblia, o Catecismo e os documentos do Magistério.
             Cada resposta vem com referências verificáveis — Escritura, parágrafos do CIC,
             concílios e Padres da Igreja. Nada de opinião; só o que a Igreja ensina.
           </p>
           <Link
             to="/assistente"
-            className="group relative inline-flex items-center gap-4 px-12 py-6 bg-paper text-deep text-[11px] uppercase tracking-[0.4em] font-bold transition-premium hover:shadow-[0_0_50px_rgba(252,250,247,0.2)]"
+            className="group relative inline-flex items-center gap-4 px-8 py-4 min-h-12 bg-paper text-deep text-[10px] sm:text-[11px] uppercase tracking-[0.3em] font-bold transition-premium hover:shadow-[0_0_50px_rgba(252,250,247,0.2)]"
           >
             <MessageCircle className="size-4" aria-hidden="true" />
             <span>Conversar agora</span>

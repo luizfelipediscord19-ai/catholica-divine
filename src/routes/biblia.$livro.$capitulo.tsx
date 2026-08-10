@@ -182,7 +182,7 @@ function Page() {
         <ArrowLeft className="size-3 shrink-0" /> <span className="truncate">{livro.nome}</span>
       </Link>
 
-      <h1 className="font-display text-3xl sm:text-5xl md:text-6xl text-foreground break-words">
+      <h1 className="font-display text-[length:var(--step-4)] text-foreground break-words">
         {livro.nome} <span className="text-gold">{capitulo}</span>
         {refPassagem && (
           <span className="text-gold/80 text-2xl sm:text-4xl">
