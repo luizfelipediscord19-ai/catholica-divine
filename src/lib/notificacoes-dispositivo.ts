@@ -52,9 +52,14 @@ export async function ativarNotificacoesDispositivo(): Promise<SuporteNotificaca
   if (permissao !== "granted") return permissao === "denied" ? "bloqueado" : "pendente";
 
   definirAtivado(true);
+  // Inscreve o aparelho nos avisos enviados pelo servidor: é o que faz o
+  // lembrete chegar no telefone mesmo com o site fechado.
+  const noServidor = await inscreverAvisosServidor();
   await mostrarNoDispositivo({
     titulo: "Notificações ativadas",
-    mensagem: "Você será avisado sobre orações, leituras e conquistas.",
+    mensagem: noServidor
+      ? "Os lembretes chegarão no seu aparelho mesmo com o site fechado."
+      : "Você será avisado sobre orações, leituras e conquistas.",
     tipo: "sistema",
   });
   return "liberado";
@@ -62,6 +67,7 @@ export async function ativarNotificacoesDispositivo(): Promise<SuporteNotificaca
 
 export function desativarNotificacoesDispositivo() {
   definirAtivado(false);
+  void cancelarAvisosServidor();
 }
 
 /** Exibe uma notificação no aparelho, se o usuário autorizou. */
