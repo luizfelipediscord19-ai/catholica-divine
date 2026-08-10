@@ -539,3 +539,8 @@ html[data-leitura="on"] .prose-deep :is(section, ul, ol) + :is(h2, h3) {
   padding-top: var(--space-2xs);
   border-top: 1px solid var(--hairline);
 }
+
+/* Avisos e notificações flutuantes não interrompem a leitura */
+html[data-leitura="on"] [data-sonner-toaster] {
+  display: none !important;
+}
