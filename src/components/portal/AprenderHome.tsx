@@ -86,11 +86,12 @@ export function BuscaAprender() {
 
 const CAMINHOS = [
   {
-    to: "/trilhas/primeiros-passos",
+    to: "/trilhas",
     icon: Sprout,
     titulo: "Sou novo na fé",
     desc: "Aprenda os fundamentos do catolicismo, passo a passo.",
   },
+
   {
     to: "/biblia",
     icon: BookOpen,
