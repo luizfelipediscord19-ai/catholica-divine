@@ -86,7 +86,7 @@ export function ContentCard({
       {media ? <div className="relative">{media}</div> : null}
       <div className="relative min-w-0 p-card">
         {subtitle ? (
-          <p className="mb-4 kicker group-hover:text-gold transition-colors">
+          <p className="mb-xs kicker group-hover:text-gold transition-colors">
             {subtitle}
           </p>
         ) : null}
@@ -94,7 +94,7 @@ export function ContentCard({
           {title}
         </h3>
         {children ? (
-          <div className="text-muted-foreground font-light leading-relaxed text-[length:var(--step--1)] group-hover:text-foreground/80 transition-colors">
+          <div className="body-sm group-hover:text-foreground/80 transition-colors">
             {children}
           </div>
         ) : null}
