@@ -422,6 +422,15 @@
 
   /* Spacing System (8pt) */
   --unit: 8px;
+
+  /* Status semântico — feedback consistente em todo o portal (tema escuro) */
+  --success: #2f7d4f;
+  --success-foreground: #eafaf0;
+  --warning: #a67c00;
+  --warning-foreground: #fff8e6;
+  --info: #23568f;
+  --info-foreground: #eef4fb;
+
 }
 
 
