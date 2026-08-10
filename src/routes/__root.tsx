@@ -193,12 +193,14 @@ function RootComponent() {
             <Outlet />
           </main>
           <SiteFooter />
-          <div className="h-14 lg:hidden" aria-hidden="true" />
+          <div data-chrome="site" className="h-14 lg:hidden" aria-hidden="true" />
           <NavInferiorMobile />
           <ScrollToTop />
           <InstalarApp />
           <AtualizacaoApp />
-          <TarefasDoDia />
+          <div data-leitura-oculto>
+            <TarefasDoDia />
+          </div>
 
           <Toaster />
         </div>

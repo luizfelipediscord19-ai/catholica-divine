@@ -55,7 +55,7 @@ export function SiteHeader() {
   useAtalhoBusca(useCallback(() => setBusca(true), []));
 
   return (
-    <header className="sticky top-0 z-50 border-b border-gold/10 bg-background/95 backdrop-blur-xl">
+    <header data-chrome="site" className="sticky top-0 z-50 border-b border-gold/10 bg-background/95 backdrop-blur-xl">
       <div className="shell grid h-16 w-full grid-cols-[minmax(0,1fr)_auto] items-center gap-3 sm:h-20 lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:gap-5 xl:gap-7">
         <Link
           to="/"

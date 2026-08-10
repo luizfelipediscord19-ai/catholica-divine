@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useServerFn } from "@tanstack/react-start";
 import { getLivro } from "../lib/data/biblia";
+import { BotaoModoLeitura } from "../components/BotaoModoLeitura";
 import { ArrowLeft, ChevronLeft, ChevronRight, Filter, X } from "lucide-react";
 import { Relacionados } from "../components/Relacionados";
 import { VERSOES, type VersaoId } from "../lib/biblia/versoes";
@@ -195,6 +196,7 @@ function Page() {
 
       {/* Seletor de passagens */}
       <form
+        data-leitura-oculto
         onSubmit={aplicarPassagem}
         className="mt-8 md:mt-12 grid gap-4 sm:flex sm:flex-wrap sm:items-end sm:gap-6 border border-gold/10 bg-card/40 backdrop-blur-sm p-5 sm:p-8"
       >
@@ -233,15 +235,17 @@ function Page() {
         </div>
       </form>
 
+      <div data-leitura-oculto>
       <BarraLeitura
         lido={pessoal.lido}
         pronto={pessoal.pronto}
         pendente={pessoal.marcar.isPending}
         onAlternar={() => pessoal.marcar.mutate(!pessoal.lido)}
       />
+      </div>
 
       {/* Seletor de versão — todas servidas pelo próprio portal */}
-      <div className="mt-6 -mx-4 px-4 sm:mx-0 sm:px-0 flex gap-2 overflow-x-auto pb-1 sm:flex-wrap sm:overflow-visible">
+      <div data-leitura-oculto className="mt-6 -mx-4 px-4 sm:mx-0 sm:px-0 flex gap-2 overflow-x-auto pb-1 sm:flex-wrap sm:overflow-visible">
         {VERSOES.map((v) => {
           const ativo = v.id === versao;
           return (
@@ -297,6 +301,7 @@ function Page() {
         ) : (
           <div
             dir={versaoAtual.direcao ?? "ltr"}
+            data-leitura-texto
             className={`space-y-5 sm:space-y-6 text-lg sm:text-xl leading-[1.85] text-foreground/90 selection:bg-gold/30 ${versaoAtual.classeTexto ?? "font-display"}`}
           >
             {versosFiltrados.map((v) => (
@@ -325,9 +330,10 @@ function Page() {
         </p>
       </article>
 
-      <NotasCapitulo livro={livro.slug} capitulo={capitulo} className="mt-10" />
-
-      <Relacionados topic={`biblia:${livro.slug}`} className="mt-10" />
+      <div data-leitura-oculto>
+        <NotasCapitulo livro={livro.slug} capitulo={capitulo} className="mt-10" />
+        <Relacionados topic={`biblia:${livro.slug}`} className="mt-10" />
+      </div>
 
       <nav className="mt-10 flex items-center justify-between gap-4">
         {anterior ? (
@@ -349,6 +355,7 @@ function Page() {
           </Link>
         ) : null}
       </nav>
+      <BotaoModoLeitura />
     </div>
   );
 }

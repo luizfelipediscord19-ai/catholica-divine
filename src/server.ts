@@ -53,8 +53,13 @@ async function applySecurityHeaders(response: Response, nonce?: string): Promise
     "frame-src 'none'; " +
     "worker-src 'self' blob:; " +
     "manifest-src 'self'; " +
-    "frame-ancestors 'self' https://*.lovable.app https://*.lovable.dev; " +
+    // Leitores externos (ChatGPT, Bing/Copilot, pré-visualizações do Lovable)
+    // precisam abrir o portal dentro do próprio painel deles.
+    "frame-ancestors 'self' https://*.lovable.app https://*.lovable.dev " +
+    "https://chatgpt.com https://*.chatgpt.com https://*.openai.com " +
+    "https://*.bing.com https://copilot.microsoft.com; " +
     "upgrade-insecure-requests;";
+
 
   // Content Security Policy (Strict but allows required fonts and AI gateway)
   newHeaders.set(
@@ -87,8 +92,10 @@ async function applySecurityHeaders(response: Response, nonce?: string): Promise
 
 
 
-  // Prevention of Clickjacking
-  newHeaders.set("X-Frame-Options", "SAMEORIGIN");
+  // Anti-clickjacking fica a cargo do CSP (frame-ancestors), que aceita lista de
+  // origens. X-Frame-Options: SAMEORIGIN bloquearia leitores externos como o
+  // navegador do ChatGPT, que abre a página em um painel próprio.
+  newHeaders.delete("X-Frame-Options");
 
   // Prevent MIME sniffing
   newHeaders.set("X-Content-Type-Options", "nosniff");
@@ -101,8 +108,10 @@ async function applySecurityHeaders(response: Response, nonce?: string): Promise
     "Permissions-Policy",
     "camera=(), microphone=(), geolocation=(), payment=(), usb=(), serial=(), midi=()",
   );
-  newHeaders.set("Cross-Origin-Opener-Policy", "same-origin");
-  newHeaders.set("Cross-Origin-Resource-Policy", "same-origin");
+  newHeaders.set("Cross-Origin-Opener-Policy", "same-origin-allow-popups");
+  // "same-origin" faz agentes/leitores externos (ChatGPT, Copilot) descartarem a
+  // resposta. "cross-origin" mantém a leitura pública possível.
+  newHeaders.set("Cross-Origin-Resource-Policy", "cross-origin");
   newHeaders.set("X-Permitted-Cross-Domain-Policies", "none");
   newHeaders.set("Origin-Agent-Cluster", "?1");
   newHeaders.set("X-DNS-Prefetch-Control", "off");

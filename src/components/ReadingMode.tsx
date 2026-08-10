@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 import { Printer, List } from "lucide-react";
+import { BotaoModoLeitura } from "./BotaoModoLeitura";
 
 export type TocItem = { id: string; label: string };
 export type Footnote = { id: string; label: string; ref?: string };
@@ -126,6 +127,7 @@ export function ReadingMode({
           </section>
         ) : null}
       </article>
+      <BotaoModoLeitura />
     </div>
     </FootnoteIndex.Provider>
   );

@@ -452,3 +452,95 @@
 }
 ::-webkit-scrollbar-thumb:hover { background: var(--color-gold-soft); }
 
+
+/* ============================================================
+   MODO LEITURA — largura confortável, mais respiro, sem distrações.
+   Ativado por <html data-leitura="on"> (useModoLeitura).
+   Mantém título, referências e notas de rodapé.
+   ============================================================ */
+html[data-leitura="on"] {
+  --measure: 62ch;
+  scroll-behavior: smooth;
+}
+
+/* Esconde a moldura do site e blocos marcados como distração */
+html[data-leitura="on"] [data-chrome="site"],
+html[data-leitura="on"] [data-leitura-oculto] {
+  display: none !important;
+}
+
+/* Texto de leitura: maior, mais espaçado e centralizado */
+html[data-leitura="on"] .prose-deep {
+  font-size: clamp(1.0625rem, 1rem + 0.4vw, 1.25rem);
+  line-height: 1.95;
+  letter-spacing: 0.005em;
+  color: color-mix(in oklab, var(--foreground) 92%, transparent);
+}
+
+html[data-leitura="on"] .prose-deep > * + * {
+  margin-top: 1.35em;
+}
+
+html[data-leitura="on"] .reading-mode {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: var(--shell-narrow);
+  padding-block: var(--space-md);
+}
+
+/* O sumário lateral e seus atalhos saem de cena durante a leitura */
+html[data-leitura="on"] .reading-mode > aside,
+html[data-leitura="on"] .reading-mode > div:first-child {
+  display: none !important;
+}
+
+/* O título do artigo passa a abrir a leitura */
+html[data-leitura="on"] .reading-mode article > h1 {
+  display: block !important;
+  font-size: var(--step-4);
+  line-height: 1.15;
+  margin-bottom: var(--space-sm);
+  padding-bottom: var(--space-xs);
+  border-bottom: 1px solid var(--hairline);
+}
+
+/* Versículos e blocos citados ganham respiro extra */
+html[data-leitura="on"] [data-leitura-texto] {
+  font-size: clamp(1.125rem, 1rem + 0.6vw, 1.4375rem);
+  line-height: 2;
+}
+
+/* No modo leitura os títulos internos das seções também recebem hierarquia
+   (as regras normais do Prose só alcançam filhos diretos). */
+html[data-leitura="on"] .prose-deep section > * + *,
+html[data-leitura="on"] .prose-deep article > * + * {
+  margin-top: 1.35em;
+}
+
+html[data-leitura="on"] .prose-deep :is(h2, h3) {
+  font-family: var(--font-display, inherit);
+  font-size: var(--step-2);
+  line-height: 1.25;
+  color: var(--foreground);
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-2xs);
+  letter-spacing: -0.01em;
+}
+
+html[data-leitura="on"] .prose-deep h4 {
+  font-size: var(--step--1);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--gold);
+  margin-top: var(--space-sm);
+  margin-bottom: var(--space-2xs);
+}
+
+html[data-leitura="on"] .prose-deep :is(section, ul, ol) + :is(h2, h3) {
+  padding-top: var(--space-2xs);
+  border-top: 1px solid var(--hairline);
+}
+
+/* Avisos e notificações flutuantes não interrompem a leitura */
+html[data-leitura="on"] [data-sonner-toaster] {
+  display: none !important;
+}
