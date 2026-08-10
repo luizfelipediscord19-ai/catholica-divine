@@ -133,7 +133,7 @@ export function SiteHeader() {
         <div id="menu-mobile" className="border-t border-gold/20 bg-background">
           <nav
             aria-label="Navegação mobile"
-            className="shell py-block grid grid-cols-2 gap-x-6 gap-y-1 text-[12px] font-medium uppercase sm:grid-cols-3 lg:grid-cols-4"
+            className="shell py-block-sm grid grid-cols-2 gap-x-6 gap-y-1 text-[12px] font-medium uppercase sm:grid-cols-3 lg:grid-cols-4"
           >
             {NAV.map((item) => {
               const active = pathname === item.to || pathname.startsWith(`${item.to}/`);

@@ -207,7 +207,7 @@ function Home() {
 
       {/* Tempo litúrgico em tempo real */}
       <section className="bg-background relative z-10 border-y border-gold/10">
-        <div className="shell py-block flex flex-wrap items-center justify-between gap-4">
+        <div className="shell py-block-sm flex flex-wrap items-center justify-between gap-4">
           <p className="flex flex-wrap items-center gap-3 text-[10px] tracking-[0.3em] uppercase text-muted-foreground">
             <span className={`inline-flex items-center gap-2 border px-3 py-1.5 ${COR_CLASSE[lit.cor]}`}>
               <span className="size-2 rounded-full bg-current" aria-hidden="true" /> {lit.corNome}
@@ -262,7 +262,7 @@ function Home() {
       </section>
 
       {/* Pillars - Bento Grid Style */}
-      <section className="shell py-block">
+      <section className="shell py-section">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
           <ScrollReveal className="max-w-2xl">
             <p className="text-[10px] tracking-[0.4em] uppercase text-gold mb-4">Os pilares da verdade</p>
@@ -313,7 +313,7 @@ function Home() {
       {/* Editorial split */}
       <section className="bg-muted/30 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-gold/30 to-transparent" />
-        <div className="shell py-block grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+        <div className="shell py-section grid grid-cols-1 lg:grid-cols-2 gap-[var(--space-lg)] items-center">
           <ScrollReveal direction="left" className="relative">
             <div className="absolute -inset-4 border border-gold/10 -z-10 translate-x-4 translate-y-4" />
             <div
@@ -402,7 +402,7 @@ function Home() {
         />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#050505_80%)]" />
         
-        <ScrollReveal className="shell-mid py-block relative text-center">
+        <ScrollReveal className="shell-mid py-section relative text-center">
           <div className="relative inline-block mb-12">
             <div className="absolute inset-0 bg-gold/20 blur-3xl rounded-full" />
             <div className="relative size-24 rounded-full glass border border-gold/30 flex items-center justify-center shadow-[0_0_50px_rgba(212,175,55,0.15)]">
