@@ -408,7 +408,7 @@ function Metrica({
   valor: string;
 }) {
   return (
-    <div className="border border-gold/15 bg-card/40 backdrop-blur-md p-6">
+    <div className="surface-card backdrop-blur-md p-6">
       <Icone className="size-5 text-gold mb-4" aria-hidden="true" />
       <p className="font-display text-3xl text-foreground">{valor}</p>
       <p className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground mt-1">{rotulo}</p>

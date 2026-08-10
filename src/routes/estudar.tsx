@@ -172,7 +172,7 @@ function EstudarPage() {
             <section
               key={nivel.nome}
               aria-labelledby={`nivel-${nivel.nome}`}
-              className="border border-gold/15 bg-card/30 p-card"
+              className="surface-card p-card"
             >
               <div className="flex flex-wrap items-baseline justify-between gap-3">
                 <h2

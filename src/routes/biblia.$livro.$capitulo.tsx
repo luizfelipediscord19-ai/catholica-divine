@@ -198,7 +198,7 @@ function Page() {
       <form
         data-leitura-oculto
         onSubmit={aplicarPassagem}
-        className="mt-8 md:mt-12 grid gap-4 sm:flex sm:flex-wrap sm:items-end sm:gap-6 border border-gold/10 bg-card/40 backdrop-blur-sm p-5 sm:p-8"
+        className="mt-8 md:mt-12 grid gap-4 sm:flex sm:flex-wrap sm:items-end sm:gap-6 surface-card backdrop-blur-sm p-5 sm:p-8"
       >
         <div className="flex items-center gap-2 text-[10px] tracking-[0.3em] uppercase text-gold">
           <Filter className="size-3 shrink-0" /> Passagem
@@ -284,7 +284,7 @@ function Page() {
       ) : null}
 
 
-      <article className="mt-8 md:mt-12 border border-gold/10 bg-card/30 backdrop-blur-sm p-5 sm:p-10 md:p-16 shadow-2xl shadow-gold/5">
+      <article className="mt-8 md:mt-12 surface-card backdrop-blur-sm p-5 sm:p-10 md:p-16 shadow-2xl shadow-gold/5">
         <p className="text-[10px] tracking-[0.25em] uppercase text-gold mb-6">
           {versaoAtual.fonte}
           {passagemAtiva && <span className="ml-2 text-gold/70">· passagem {refPassagem}</span>}

@@ -151,7 +151,7 @@ export function ComeceAqui() {
             <li key={c.titulo} className="min-w-0">
               <Link
                 to={c.to}
-                className="group flex h-full min-h-11 flex-col gap-3 border border-gold/15 bg-card/40 p-card transition-premium hover:-translate-y-1 hover:border-gold/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+                className="group flex h-full min-h-11 flex-col gap-3 surface-card p-card transition-premium hover:-translate-y-1 hover:border-gold/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
               >
                 <c.icon className="size-6 text-gold" aria-hidden="true" />
                 <h3 className="font-display text-foreground text-[length:var(--step-1)] group-hover:text-gold transition-colors">

@@ -67,7 +67,7 @@ export function EscolherSanto({
   });
 
   return (
-    <section className="border border-gold/15 bg-card/40 backdrop-blur-md p-6 md:p-10 space-y-8">
+    <section className="surface-card backdrop-blur-md p-6 md:p-10 space-y-8">
       <header className="space-y-3">
         <Rotulo>{titulo}</Rotulo>
         <p className="text-sm text-muted-foreground font-light max-w-2xl leading-relaxed">

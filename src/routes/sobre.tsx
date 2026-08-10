@@ -147,7 +147,7 @@ export function Card({
   children: React.ReactNode;
 }) {
   return (
-    <article className="rounded-md border border-gold/15 bg-card/40 p-6">
+    <article className="rounded-md surface-card p-6">
       <h3 className="font-display text-xl text-foreground mb-3 leading-snug">{titulo}</h3>
       <p className="text-sm leading-[1.75] text-muted-foreground">{children}</p>
     </article>
@@ -213,7 +213,7 @@ function SobrePage() {
           {HIERARQUIA.map((h) => (
             <li
               key={h.nivel}
-              className="flex gap-5 rounded-md border border-gold/15 bg-card/40 p-6"
+              className="flex gap-5 rounded-md surface-card p-6"
             >
               <span
                 aria-hidden="true"
@@ -244,7 +244,7 @@ function SobrePage() {
         </p>
         <ol className="space-y-4">
           {REVISAO.map((r, i) => (
-            <li key={r.etapa} className="rounded-md border border-gold/15 bg-card/40 p-6">
+            <li key={r.etapa} className="rounded-md surface-card p-6">
               <p className="text-[10px] uppercase tracking-[0.3em] text-gold/80 mb-2">
                 Etapa {i + 1}
               </p>

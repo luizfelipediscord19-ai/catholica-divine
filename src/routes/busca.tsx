@@ -264,7 +264,7 @@ function BuscaAvancadaPage() {
                 <li key={r.id}>
                   <Link
                     to={r.href}
-                    className="block rounded-md border border-gold/15 bg-card/40 p-5 transition-colors hover:border-gold/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+                    className="block rounded-md surface-card p-5 transition-colors hover:border-gold/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
                   >
                     <p className="mb-2 flex flex-wrap items-center gap-3 text-[10px] uppercase tracking-[0.25em] text-gold/80">
                       <span>{ESCOPOS.find((e) => e.id === r.escopo)?.label}</span>
