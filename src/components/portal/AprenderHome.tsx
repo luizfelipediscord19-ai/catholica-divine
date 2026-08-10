@@ -23,7 +23,7 @@ export function BuscaAprender() {
 
   return (
     <section aria-labelledby="aprender-titulo" className="shell py-block">
-      <div className="measure mx-auto text-center">
+      <div className="measure">
         <p className="text-[10px] uppercase tracking-[0.4em] text-gold/80">Comece pela sua dúvida</p>
         <h2
           id="aprender-titulo"
@@ -40,7 +40,7 @@ export function BuscaAprender() {
           e.preventDefault();
           ir(termo);
         }}
-        className="mx-auto mt-[var(--space-sm)] flex w-full max-w-2xl flex-col gap-3 sm:flex-row"
+        className="mt-[var(--space-sm)] flex w-full max-w-2xl flex-col gap-3 sm:flex-row"
       >
         <label className="sr-only" htmlFor="home-busca">
           Digite uma dúvida sobre a fé
@@ -67,7 +67,7 @@ export function BuscaAprender() {
         </button>
       </form>
 
-      <ul className="mx-auto mt-[var(--space-sm)] flex max-w-3xl flex-wrap justify-center gap-2">
+      <ul className="mt-[var(--space-sm)] flex max-w-3xl flex-wrap gap-2">
         {EXEMPLOS.map((ex) => (
           <li key={ex}>
             <Link
