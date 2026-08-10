@@ -86,17 +86,35 @@ export const Route = createFileRoute("/api/chat")({
 
           const systemPrompt = mode === "coroinhas" ? COROINHAS_PROMPT : SYSTEM_PROMPT;
 
+          // Aterramento local: injeta o acervo real do portal ligado à pergunta.
+          const ultimaPergunta = [...(messages as UIMessage[])]
+            .reverse()
+            .find((m) => m.role === "user");
+          const textoPergunta = (ultimaPergunta?.parts ?? [])
+            .filter((p): p is { type: "text"; text: string } => p.type === "text")
+            .map((p) => p.text)
+            .join(" ");
+
+          let contexto = "";
+          if (textoPergunta.trim().length > 2) {
+            const { contextoDoPortal } = await import("../../lib/prompts/contexto.server");
+            contexto = contextoDoPortal(textoPergunta);
+          }
+
           const model = groqKey
             ? createGroqProvider(groqKey)(GROQ_MODEL)
             : createLovableAiGatewayProvider(gatewayKey!)(GATEWAY_MODEL);
 
           const result = streamText({
             model,
-            system: systemPrompt,
+            system: systemPrompt + contexto,
             messages: await convertToModelMessages(messages as UIMessage[]),
-            temperature: 0.7,
-            maxOutputTokens: 3000,
+            // Menos criatividade, mais fidelidade doutrinal e às citações.
+            temperature: 0.45,
+            topP: 0.9,
+            maxOutputTokens: 3600,
           });
+
 
           return comCors(
             result.toUIMessageStreamResponse({
