@@ -1,6 +1,6 @@
 import type { Trilha } from "./tipos";
 
-export const TEOLOGIA = {
+export const TEOLOGIA: Trilha = {
   slug: "teologia",
   titulo: "Teologia fundamental",
   subtitulo: "As grandes chaves do dogma",
@@ -399,4 +399,4 @@ export const TEOLOGIA = {
       ],
     },
   ],
-} as const satisfies Trilha;
+};

@@ -104,9 +104,9 @@ function AuthPage() {
     }
   }
 
-  const senhaCurta = modo !== "recuperar" && senha.length > 0 && senha.length < 8;
+  const senhaCurta = modo !== "recuperar" && senha.length > 0 && senha.length < 6;
   const valido =
-    /.+@.+\..+/.test(email.trim()) && (modo === "recuperar" || senha.length >= 8);
+    /.+@.+\..+/.test(email.trim()) && (modo === "recuperar" || senha.length >= 6);
 
   return (
     <div>
@@ -191,13 +191,13 @@ function AuthPage() {
                     autoComplete={modo === "criar" ? "new-password" : "current-password"}
                     value={senha}
                     onChange={(e) => setSenha(e.target.value)}
-                    placeholder="Pelo menos 8 caracteres"
+                    placeholder="Pelo menos 6 caracteres"
                     maxLength={72}
                     className={inputClass}
                   />
                   {senhaCurta ? (
                     <span className="block text-xs text-muted-foreground/80">
-                      Use pelo menos 8 caracteres, evitando senhas comuns.
+                      Use pelo menos 6 caracteres.
                     </span>
                   ) : null}
                 </label>
