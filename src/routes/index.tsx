@@ -226,7 +226,20 @@ function Home() {
       </section>
 
       {/* Daily */}
-      <section className="bg-background relative z-10">
+      <section aria-labelledby="hoje-na-igreja" className="bg-background relative z-10">
+        <div className="shell pt-block-sm">
+          <div className="flex flex-wrap items-baseline justify-between gap-3">
+            <h2
+              id="hoje-na-igreja"
+              className="font-display text-foreground text-[length:var(--step-2)]"
+            >
+              Hoje na Igreja
+            </h2>
+            <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
+              {new Date().toLocaleDateString("pt-BR", { day: "2-digit", month: "long", year: "numeric" })}
+            </p>
+          </div>
+        </div>
         <div className="shell">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-gold/10 border-x border-gold/10">
             {DAILY_ITEMS.map((d, i) => {
@@ -259,6 +272,14 @@ function Home() {
 
             })}
           </div>
+        </div>
+        <div className="shell pb-block-sm">
+          <Link
+            to="/liturgia-diaria"
+            className="inline-flex min-h-11 items-center text-[10px] uppercase tracking-[0.3em] text-gold hover:text-paper transition-colors"
+          >
+            Ver liturgia completa →
+          </Link>
         </div>
       </section>
 
