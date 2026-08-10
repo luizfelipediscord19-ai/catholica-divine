@@ -38,6 +38,7 @@ import { Route as AuthRouteImport } from './routes/auth'
 import { Route as AssistenteRouteImport } from './routes/assistente'
 import { Route as ApologeticaRouteImport } from './routes/apologetica'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as TrilhasIndexRouteImport } from './routes/trilhas.index'
 import { Route as SantosIndexRouteImport } from './routes/santos.index'
 import { Route as ForumIndexRouteImport } from './routes/forum.index'
 import { Route as BibliaIndexRouteImport } from './routes/biblia.index'
@@ -205,6 +206,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TrilhasIndexRoute = TrilhasIndexRouteImport.update({
+  id: '/trilhas/',
+  path: '/trilhas/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SantosIndexRoute = SantosIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -346,6 +352,7 @@ export interface FileRoutesByFullPath {
   '/biblia/': typeof BibliaIndexRoute
   '/forum/': typeof ForumIndexRoute
   '/santos/': typeof SantosIndexRoute
+  '/trilhas/': typeof TrilhasIndexRoute
   '/api/public/csp-report': typeof ApiPublicCspReportRoute
   '/api/public/lembretes': typeof ApiPublicLembretesRoute
   '/biblia/$livro/$capitulo': typeof BibliaLivroCapituloRoute
@@ -393,6 +400,7 @@ export interface FileRoutesByTo {
   '/biblia': typeof BibliaIndexRoute
   '/forum': typeof ForumIndexRoute
   '/santos': typeof SantosIndexRoute
+  '/trilhas': typeof TrilhasIndexRoute
   '/api/public/csp-report': typeof ApiPublicCspReportRoute
   '/api/public/lembretes': typeof ApiPublicLembretesRoute
   '/biblia/$livro/$capitulo': typeof BibliaLivroCapituloRoute
@@ -444,6 +452,7 @@ export interface FileRoutesById {
   '/biblia/': typeof BibliaIndexRoute
   '/forum/': typeof ForumIndexRoute
   '/santos/': typeof SantosIndexRoute
+  '/trilhas/': typeof TrilhasIndexRoute
   '/api/public/csp-report': typeof ApiPublicCspReportRoute
   '/api/public/lembretes': typeof ApiPublicLembretesRoute
   '/biblia/$livro/$capitulo': typeof BibliaLivroCapituloRoute
@@ -496,6 +505,7 @@ export interface FileRouteTypes {
     | '/biblia/'
     | '/forum/'
     | '/santos/'
+    | '/trilhas/'
     | '/api/public/csp-report'
     | '/api/public/lembretes'
     | '/biblia/$livro/$capitulo'
@@ -543,6 +553,7 @@ export interface FileRouteTypes {
     | '/biblia'
     | '/forum'
     | '/santos'
+    | '/trilhas'
     | '/api/public/csp-report'
     | '/api/public/lembretes'
     | '/biblia/$livro/$capitulo'
@@ -593,6 +604,7 @@ export interface FileRouteTypes {
     | '/biblia/'
     | '/forum/'
     | '/santos/'
+    | '/trilhas/'
     | '/api/public/csp-report'
     | '/api/public/lembretes'
     | '/biblia/$livro/$capitulo'
@@ -633,6 +645,7 @@ export interface RootRouteChildren {
   ApiChatRoute: typeof ApiChatRoute
   ForumSlugRoute: typeof ForumSlugRoute
   ForumIndexRoute: typeof ForumIndexRoute
+  TrilhasIndexRoute: typeof TrilhasIndexRoute
   ApiPublicCspReportRoute: typeof ApiPublicCspReportRoute
   ApiPublicLembretesRoute: typeof ApiPublicLembretesRoute
 }
@@ -840,6 +853,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/trilhas/': {
+      id: '/trilhas/'
+      path: '/trilhas'
+      fullPath: '/trilhas/'
+      preLoaderRoute: typeof TrilhasIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/santos/': {
@@ -1096,19 +1116,10 @@ const rootRouteChildren: RootRouteChildren = {
   ApiChatRoute: ApiChatRoute,
   ForumSlugRoute: ForumSlugRoute,
   ForumIndexRoute: ForumIndexRoute,
+  TrilhasIndexRoute: TrilhasIndexRoute,
   ApiPublicCspReportRoute: ApiPublicCspReportRoute,
   ApiPublicLembretesRoute: ApiPublicLembretesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
