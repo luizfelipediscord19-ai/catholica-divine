@@ -325,7 +325,7 @@ function Page() {
       <div className="mt-12">
         <Link
           to="/assistente"
-          className="px-5 py-3 border border-gold/40 hover:bg-gold/10 text-xs uppercase tracking-[0.25em]"
+          className="px-5 py-3 btn-base btn-outline-gold text-xs uppercase tracking-[0.25em]"
         >
           ← Voltar para a Sophia
         </Link>

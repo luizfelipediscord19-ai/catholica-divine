@@ -201,7 +201,7 @@ function Page() {
           >
             {playing ? "⏸ Pausar" : "▶ Iniciar"}
           </button>
-          <button onClick={reiniciar} className="px-4 py-2 border border-gold/40 text-sm hover:bg-gold/10">↺ Reiniciar</button>
+          <button onClick={reiniciar} className="px-4 py-2 btn-base btn-outline-gold text-sm">↺ Reiniciar</button>
           <div className="font-mono text-xl text-gold tabular-nums">{mmss(elapsed)}</div>
           <label className="flex items-center gap-2 text-xs text-muted-foreground ml-auto">
             Ritmo por conta:
@@ -235,7 +235,7 @@ function Page() {
               {atual.misterioIdx !== undefined ? (
                 <button
                   onClick={repetirMisterio}
-                  className="px-4 py-2 border border-gold/40 text-sm hover:bg-gold/10"
+                  className="px-4 py-2 btn-base btn-outline-gold text-sm"
                   title="Reinicia este mistério"
                 >
                   ↻ Repetir mistério
@@ -244,14 +244,14 @@ function Page() {
               <button
                 onClick={() => { setEtapaIdx((n) => Math.max(0, n - 1)); setContagem(0); }}
                 disabled={etapaIdx === 0}
-                className="px-4 py-2 border border-gold/40 text-sm hover:bg-gold/10 disabled:opacity-30"
+                className="px-4 py-2 btn-base btn-outline-gold text-sm disabled:opacity-30"
               >
                 ← Anterior
               </button>
               <button
                 onClick={() => { setEtapaIdx((n) => Math.min(etapas.length - 1, n + 1)); setContagem(0); }}
                 disabled={etapaIdx === etapas.length - 1}
-                className="px-4 py-2 border border-gold/40 text-sm hover:bg-gold/10 disabled:opacity-30"
+                className="px-4 py-2 btn-base btn-outline-gold text-sm disabled:opacity-30"
               >
                 Próximo →
               </button>
@@ -272,7 +272,7 @@ function Page() {
                 </span>
                 <button
                   onClick={avancarConta}
-                  className="px-4 py-2 border border-gold/40 text-sm hover:bg-gold/10"
+                  className="px-4 py-2 btn-base btn-outline-gold text-sm"
                 >
                   + 1 conta
                 </button>
@@ -305,10 +305,10 @@ function Page() {
 
       <Section kicker="Mais devoções" title="Continue na vida de oração">
         <div className="flex flex-wrap gap-3">
-          <Link to="/oracoes" className="px-5 py-3 border border-gold/40 hover:bg-gold/10">← Todas as orações</Link>
-          <Link to="/oracoes/via-sacra" className="px-5 py-3 border border-gold/40 hover:bg-gold/10">Via-Sacra</Link>
-          <Link to="/oracoes/novenas" className="px-5 py-3 border border-gold/40 hover:bg-gold/10">Novenas</Link>
-          <Link to="/oracoes/liturgia-das-horas" className="px-5 py-3 border border-gold/40 hover:bg-gold/10">Liturgia das Horas</Link>
+          <Link to="/oracoes" className="px-5 py-3 btn-base btn-outline-gold">← Todas as orações</Link>
+          <Link to="/oracoes/via-sacra" className="px-5 py-3 btn-base btn-outline-gold">Via-Sacra</Link>
+          <Link to="/oracoes/novenas" className="px-5 py-3 btn-base btn-outline-gold">Novenas</Link>
+          <Link to="/oracoes/liturgia-das-horas" className="px-5 py-3 btn-base btn-outline-gold">Liturgia das Horas</Link>
         </div>
         <Relacionados topic="rosario" className="mt-8" />
       </Section>
