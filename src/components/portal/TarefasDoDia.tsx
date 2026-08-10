@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 
 import { notificar } from "@/lib/notificacoes";
+import { ativadoPeloUsuario } from "@/lib/notificacoes-dispositivo";
+import { inscreverAvisosServidor } from "@/lib/push/assinar";
 import {
   EVENTO_HORARIOS,
   TAREFAS_DIARIAS,
@@ -40,6 +42,13 @@ function salvarDisparos(d: Disparos) {
 
 /** Dispara os lembretes das tarefas espirituais no horário escolhido pelo membro. */
 export function TarefasDoDia() {
+  // Reforça a inscrição nos avisos do servidor (o navegador pode expirá-la).
+  useEffect(() => {
+    if (!ativadoPeloUsuario()) return;
+    const t = window.setTimeout(() => void inscreverAvisosServidor(), 2500);
+    return () => window.clearTimeout(t);
+  }, []);
+
   useEffect(() => {
     let ativo = true;
 

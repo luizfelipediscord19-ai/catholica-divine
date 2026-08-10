@@ -55,6 +55,7 @@ import { Route as ApiChatRouteImport } from './routes/api/chat'
 import { Route as BibliaLivroIndexRouteImport } from './routes/biblia.$livro.index'
 import { Route as OracoesNovenasSlugRouteImport } from './routes/oracoes.novenas.$slug'
 import { Route as BibliaLivroCapituloRouteImport } from './routes/biblia.$livro.$capitulo'
+import { Route as ApiPublicLembretesRouteImport } from './routes/api/public/lembretes'
 import { Route as ApiPublicCspReportRouteImport } from './routes/api/public/csp-report'
 
 const SophiaDiagnosticoRoute = SophiaDiagnosticoRouteImport.update({
@@ -290,6 +291,11 @@ const BibliaLivroCapituloRoute = BibliaLivroCapituloRouteImport.update({
   path: '/$capitulo',
   getParentRoute: () => BibliaLivroRoute,
 } as any)
+const ApiPublicLembretesRoute = ApiPublicLembretesRouteImport.update({
+  id: '/api/public/lembretes',
+  path: '/api/public/lembretes',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiPublicCspReportRoute = ApiPublicCspReportRouteImport.update({
   id: '/api/public/csp-report',
   path: '/api/public/csp-report',
@@ -341,6 +347,7 @@ export interface FileRoutesByFullPath {
   '/forum/': typeof ForumIndexRoute
   '/santos/': typeof SantosIndexRoute
   '/api/public/csp-report': typeof ApiPublicCspReportRoute
+  '/api/public/lembretes': typeof ApiPublicLembretesRoute
   '/biblia/$livro/$capitulo': typeof BibliaLivroCapituloRoute
   '/oracoes/novenas/$slug': typeof OracoesNovenasSlugRoute
   '/biblia/$livro/': typeof BibliaLivroIndexRoute
@@ -387,6 +394,7 @@ export interface FileRoutesByTo {
   '/forum': typeof ForumIndexRoute
   '/santos': typeof SantosIndexRoute
   '/api/public/csp-report': typeof ApiPublicCspReportRoute
+  '/api/public/lembretes': typeof ApiPublicLembretesRoute
   '/biblia/$livro/$capitulo': typeof BibliaLivroCapituloRoute
   '/oracoes/novenas/$slug': typeof OracoesNovenasSlugRoute
   '/biblia/$livro': typeof BibliaLivroIndexRoute
@@ -437,6 +445,7 @@ export interface FileRoutesById {
   '/forum/': typeof ForumIndexRoute
   '/santos/': typeof SantosIndexRoute
   '/api/public/csp-report': typeof ApiPublicCspReportRoute
+  '/api/public/lembretes': typeof ApiPublicLembretesRoute
   '/biblia/$livro/$capitulo': typeof BibliaLivroCapituloRoute
   '/oracoes/novenas/$slug': typeof OracoesNovenasSlugRoute
   '/biblia/$livro/': typeof BibliaLivroIndexRoute
@@ -488,6 +497,7 @@ export interface FileRouteTypes {
     | '/forum/'
     | '/santos/'
     | '/api/public/csp-report'
+    | '/api/public/lembretes'
     | '/biblia/$livro/$capitulo'
     | '/oracoes/novenas/$slug'
     | '/biblia/$livro/'
@@ -534,6 +544,7 @@ export interface FileRouteTypes {
     | '/forum'
     | '/santos'
     | '/api/public/csp-report'
+    | '/api/public/lembretes'
     | '/biblia/$livro/$capitulo'
     | '/oracoes/novenas/$slug'
     | '/biblia/$livro'
@@ -583,6 +594,7 @@ export interface FileRouteTypes {
     | '/forum/'
     | '/santos/'
     | '/api/public/csp-report'
+    | '/api/public/lembretes'
     | '/biblia/$livro/$capitulo'
     | '/oracoes/novenas/$slug'
     | '/biblia/$livro/'
@@ -622,6 +634,7 @@ export interface RootRouteChildren {
   ForumSlugRoute: typeof ForumSlugRoute
   ForumIndexRoute: typeof ForumIndexRoute
   ApiPublicCspReportRoute: typeof ApiPublicCspReportRoute
+  ApiPublicLembretesRoute: typeof ApiPublicLembretesRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -948,6 +961,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BibliaLivroCapituloRouteImport
       parentRoute: typeof BibliaLivroRoute
     }
+    '/api/public/lembretes': {
+      id: '/api/public/lembretes'
+      path: '/api/public/lembretes'
+      fullPath: '/api/public/lembretes'
+      preLoaderRoute: typeof ApiPublicLembretesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/public/csp-report': {
       id: '/api/public/csp-report'
       path: '/api/public/csp-report'
@@ -1077,17 +1097,8 @@ const rootRouteChildren: RootRouteChildren = {
   ForumSlugRoute: ForumSlugRoute,
   ForumIndexRoute: ForumIndexRoute,
   ApiPublicCspReportRoute: ApiPublicCspReportRoute,
+  ApiPublicLembretesRoute: ApiPublicLembretesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

@@ -37,6 +37,9 @@ export default defineConfig({
         manifest: false,
         workbox: {
           globPatterns: ["**/*.{js,css,woff,woff2,png,svg,ico,webmanifest}"],
+          // Recebe os avisos enviados pelo servidor (aparecem no telefone
+          // mesmo com o site fechado).
+          importScripts: ["/push-handler.js"],
           // Página estática de reserva: garante que o app abra offline mesmo em
           // endereços que ainda não foram visitados (o HTML normal vem do SSR).
           additionalManifestEntries: [{ url: "/offline.html", revision: `${Date.now()}` }],
