@@ -1222,12 +1222,6 @@ export const GLOSSARIO: Record<string, EntradaGlossario> = {
   },
 
   // ——— Cristologia e Trindade ———
-  uniao_hipostatica: {
-    termo: "União Hipostática",
-    definicao:
-      "Unidade da pessoa (hipóstase) do Verbo em duas naturezas, divina e humana, sem confusão, sem mudança, sem divisão e sem separação — o Verbo assumiu a natureza humana sem deixar de ser Deus.",
-    ref: "Concílio de Calcedônia (451); CIC §§ 464-469",
-  },
   comunicacao_idiomatum: {
     termo: "Communicatio Idiomatum",
     definicao:
@@ -1260,12 +1254,6 @@ export const GLOSSARIO: Record<string, EntradaGlossario> = {
       "Direito à recompensa por obras boas realizadas em estado de graça. Nada merecemos por nós mesmos: todo mérito cristão nasce da graça de Cristo em nós, e por isso Deus, coroando nossos méritos, coroa seus próprios dons.",
     ref: "CIC §§ 2006-2011; S. Agostinho, Ep. 194",
   },
-  duplo_efeito: {
-    termo: "Princípio do Duplo Efeito",
-    definicao:
-      "Critério moral para atos com consequência boa e má simultâneas: o ato deve ser em si lícito, o efeito mau apenas tolerado (nunca pretendido), e deve haver proporção grave entre o bem buscado e o mal permitido.",
-    ref: "CIC §§ 1737, 1750-1756",
-  },
   cooperacao_no_mal: {
     termo: "Cooperação no Mal",
     definicao:
@@ -1278,20 +1266,8 @@ export const GLOSSARIO: Record<string, EntradaGlossario> = {
       "Princípio pastoral segundo o qual a conversão é caminho progressivo, sem que se rebaixe a norma moral. Distingue-se da ‘gradualidade da lei’, que a Igreja rejeita por dissolver o próprio bem proposto.",
     ref: "Familiaris Consortio 34; Veritatis Splendor 103-105",
   },
-  epiqueia: {
-    termo: "Epiqueia",
-    definicao:
-      "Virtude que interpreta a lei humana segundo a intenção do legislador quando a aplicação literal produziria injustiça. Não vale para a lei divina positiva nem para preceitos negativos absolutos.",
-    ref: "S. Tomás, Suma Teológica II-II, q. 120",
-  },
 
   // ——— Sacramentos e liturgia ———
-  carater_sacramental: {
-    termo: "Caráter Sacramental",
-    definicao:
-      "Selo espiritual indelével impresso pelo Batismo, pela Confirmação e pela Ordem, que configura a Cristo e não pode ser repetido nem apagado, mesmo pelo pecado.",
-    ref: "CIC §§ 1121, 1272, 1304, 1582",
-  },
   concomitancia: {
     termo: "Concomitância",
     definicao:
