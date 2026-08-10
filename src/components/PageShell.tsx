@@ -50,13 +50,14 @@ export function Section({
   id?: string;
 }) {
   return (
-    <section id={id} className="max-w-6xl mx-auto px-6 py-16 md:py-20">
-
+    <section id={id} className="mx-auto w-full max-w-6xl px-gutter py-[var(--space-lg)]">
       {kicker ? (
-        <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-3">{kicker}</p>
+        <p className="mb-3 text-[10px] uppercase tracking-[0.3em] text-gold">{kicker}</p>
       ) : null}
       {title ? (
-        <h2 className="font-display text-3xl md:text-4xl text-foreground mb-10">{title}</h2>
+        <h2 className="mb-[var(--space-md)] font-display text-foreground text-[length:var(--step-3)]">
+          {title}
+        </h2>
       ) : null}
       {children}
     </section>
@@ -64,9 +65,15 @@ export function Section({
 }
 
 export function CardGrid({ children, cols = 3 }: { children: ReactNode; cols?: 2 | 3 | 4 }) {
-  const c =
-    cols === 2 ? "md:grid-cols-2" : cols === 4 ? "md:grid-cols-2 lg:grid-cols-4" : "md:grid-cols-3";
-  return <div className={`grid grid-cols-1 ${c} gap-6`}>{children}</div>;
+  const min = cols === 2 ? "22rem" : cols === 4 ? "14rem" : "17rem";
+  return (
+    <div
+      className="grid gap-[var(--space-sm)]"
+      style={{ gridTemplateColumns: `repeat(auto-fit, minmax(min(100%, ${min}), 1fr))` }}
+    >
+      {children}
+    </div>
+  );
 }
 
 export function ContentCard({
@@ -81,19 +88,28 @@ export function ContentCard({
   media?: ReactNode;
 }) {
   return (
-    <article className="group relative border border-gold/10 hover:border-gold/40 bg-card/40 backdrop-blur-md transition-premium hover:-translate-y-2 hover:shadow-2xl hover:shadow-gold/10 overflow-hidden [content-visibility:auto] [contain-intrinsic-size:auto_420px]">
-      <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-gold/10 transition-premium" />
+    <article className="group relative flex min-w-0 flex-col border border-gold/10 hover:border-gold/40 bg-card/40 backdrop-blur-md transition-premium hover:-translate-y-2 hover:shadow-2xl hover:shadow-gold/10 overflow-hidden [content-visibility:auto] [contain-intrinsic-size:auto_420px]">
+      <div className="pointer-events-none absolute top-0 right-0 size-32 -translate-y-1/2 translate-x-1/2 bg-gold/5 blur-3xl group-hover:bg-gold/10 transition-premium" />
       {media ? <div className="relative">{media}</div> : null}
-      <div className="relative p-10">
+      <div className="relative min-w-0 p-card">
         {subtitle ? (
-          <p className="text-[11px] tracking-[0.4em] uppercase text-gold/60 mb-4 group-hover:text-gold transition-colors">{subtitle}</p>
+          <p className="mb-4 text-[11px] uppercase tracking-[0.4em] text-gold/60 group-hover:text-gold transition-colors">
+            {subtitle}
+          </p>
         ) : null}
-        <h3 className="font-display text-2xl text-foreground mb-6 leading-tight group-hover:text-paper transition-colors">{title}</h3>
-        {children ? <div className="text-sm text-muted-foreground leading-relaxed font-light group-hover:text-foreground/80 transition-colors">{children}</div> : null}
+        <h3 className="mb-[var(--space-xs)] font-display leading-tight text-foreground text-[length:var(--step-2)] group-hover:text-paper transition-colors">
+          {title}
+        </h3>
+        {children ? (
+          <div className="text-muted-foreground font-light leading-relaxed text-[length:var(--step--1)] group-hover:text-foreground/80 transition-colors">
+            {children}
+          </div>
+        ) : null}
       </div>
     </article>
   );
 }
+
 
 
 export function Prose({ children }: { children: ReactNode }) {
