@@ -41,7 +41,7 @@ function GlossarioPage() {
   }, [busca, todos]);
 
   return (
-    <div className="max-w-5xl mx-auto px-8 py-20">
+    <div className="shell py-block">
       <Link
         to="/"
         className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.4em] text-gold/70 hover:text-gold mb-12 transition-colors"

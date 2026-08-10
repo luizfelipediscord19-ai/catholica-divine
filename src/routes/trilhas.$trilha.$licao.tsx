@@ -72,7 +72,7 @@ function LicaoPagina() {
 
   if (!achado) {
     return (
-      <div className="mx-auto max-w-3xl px-6 py-24">
+      <div className="shell-narrow py-block">
         <h1 className="font-display text-3xl text-paper">Lição não encontrada</h1>
         <Link to="/trilhas" className="mt-6 inline-block text-gold hover:underline">
           Ver todas as trilhas
@@ -87,7 +87,7 @@ function LicaoPagina() {
   const feita = progresso.concluidas.includes(chaveLicao(trilha.slug, licao.slug));
 
   return (
-    <article className="mx-auto max-w-3xl px-6 py-16">
+    <article className="shell-narrow py-block">
       <Link
         to="/trilhas/$trilha"
         params={{ trilha: trilha.slug }}

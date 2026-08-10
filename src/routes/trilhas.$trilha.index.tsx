@@ -41,7 +41,7 @@ function TrilhaPagina() {
 
   if (!trilha) {
     return (
-      <div className="mx-auto max-w-3xl px-6 py-24">
+      <div className="shell-narrow py-block">
         <h1 className="font-display text-3xl text-paper">Trilha não encontrada</h1>
         <Link to="/trilhas" className="mt-6 inline-block text-gold hover:underline">
           Ver todas as trilhas
@@ -53,7 +53,7 @@ function TrilhaPagina() {
   const pct = percentual(trilha.slug, trilha.licoes, progresso);
 
   return (
-    <div className="mx-auto max-w-3xl px-6 py-16">
+    <div className="shell-narrow py-block">
       <Link to="/trilhas" className="inline-flex items-center gap-2 text-sm text-paper/70 hover:text-gold">
         <ArrowLeft className="size-4" aria-hidden="true" /> Trilhas
       </Link>

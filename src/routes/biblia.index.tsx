@@ -55,7 +55,7 @@ function Page() {
         image={manuscrito}
       />
 
-      <div className="max-w-6xl mx-auto px-6 -mt-6 md:-mt-10">
+      <div className="shell -mt-6 md:-mt-10">
         <ContinuarLeitura />
       </div>
 
@@ -204,7 +204,7 @@ function Page() {
         />
       </Section>
 
-      <div className="max-w-6xl mx-auto px-6 pt-4 space-y-4">
+      <div className="shell pt-4 space-y-4">
         <div className="flex flex-wrap items-center gap-4 justify-between">
           <div className="relative max-w-md w-full">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 size-4 text-gold/60" />

@@ -47,7 +47,7 @@ function DiagnosticoBackendPage() {
         intro="Verifica as variáveis de conexão e executa as consultas mínimas do painel espiritual: identidade, favoritos e progresso de leitura."
       />
 
-      <div className="max-w-3xl mx-auto px-6 py-16 space-y-8">
+      <div className="shell-narrow py-block space-y-8">
         <Painel>
           <Rotulo>Status detalhado</Rotulo>
 

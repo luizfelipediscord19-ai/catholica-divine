@@ -91,12 +91,12 @@ function TopicoPage() {
 
 
   if (topico.isPending) {
-    return <p className="max-w-3xl mx-auto px-6 py-24 text-sm text-muted-foreground">Carregando…</p>;
+    return <p className="shell-narrow py-block text-sm text-muted-foreground">Carregando…</p>;
   }
 
   if (!topico.data) {
     return (
-      <div className="max-w-3xl mx-auto px-6 py-24 space-y-6">
+      <div className="shell-narrow py-block space-y-6">
         <h1 className="font-display text-4xl text-foreground">Conversa não encontrada</h1>
         <Link to="/forum" className="text-gold text-sm hover:underline">
           Voltar ao fórum
@@ -111,7 +111,7 @@ function TopicoPage() {
     : (t.forum_secoes as { nome?: string } | null)?.nome;
 
   return (
-    <div className="max-w-3xl mx-auto px-6 py-16 md:py-24 space-y-10">
+    <div className="shell-narrow py-block space-y-10">
       <Link
         to="/forum"
         className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] text-gold hover:text-paper transition-colors"

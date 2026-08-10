@@ -72,7 +72,7 @@ function PainelPage() {
 
   if (carregando || painel.isPending) {
     return (
-      <p className="max-w-5xl mx-auto px-6 py-32 text-sm text-muted-foreground">
+      <p className="shell py-block text-sm text-muted-foreground">
         Preparando seu painel…
       </p>
     );
@@ -83,7 +83,7 @@ function PainelPage() {
     const motivo =
       painel.error instanceof Error ? painel.error.message : "Falha de comunicação com o servidor.";
     return (
-      <div className="max-w-5xl mx-auto px-6 py-32 space-y-6">
+      <div className="shell py-block space-y-6">
         <p className="text-sm text-muted-foreground">
           Não foi possível carregar seu painel agora. Vamos tentar sincronizar novamente.
         </p>
@@ -109,7 +109,7 @@ function PainelPage() {
 
   if (!dados.identidade.santoEscolhido && !trocando) {
     return (
-      <div className="max-w-6xl mx-auto px-6 py-16 md:py-24 space-y-8">
+      <div className="shell py-block space-y-8">
         <h1 className="font-display text-4xl md:text-5xl text-foreground leading-tight">
           Bem-vindo ao seu painel espiritual
         </h1>
@@ -134,7 +134,7 @@ function PainelPage() {
   };
 
   return (
-    <div className="mx-auto w-full max-w-6xl px-gutter py-[var(--space-lg)] space-y-[var(--space-md)]">
+    <div className="shell w-full py-[var(--space-lg)] space-y-[var(--space-md)]">
       <header className="flex flex-col gap-[var(--space-sm)] md:flex-row md:items-center">
         {dados.identidade.santoImagem ? (
           <img

@@ -54,7 +54,7 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-gold/10 bg-background/95 backdrop-blur-xl">
-      <div className="mx-auto grid h-16 w-full max-w-[1440px] grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 sm:h-20 sm:px-6 lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:gap-5 lg:px-8 xl:gap-7">
+      <div className="shell grid h-16 w-full grid-cols-[minmax(0,1fr)_auto] items-center gap-3 sm:h-20 lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:gap-5 xl:gap-7">
         <Link
           to="/"
           className="group flex min-w-0 items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold sm:gap-3 lg:shrink-0"
@@ -133,7 +133,7 @@ export function SiteHeader() {
         <div id="menu-mobile" className="border-t border-gold/20 bg-background">
           <nav
             aria-label="Navegação mobile"
-            className="mx-auto grid max-w-[1440px] grid-cols-2 gap-x-6 gap-y-1 px-6 py-4 text-[12px] font-medium uppercase sm:grid-cols-3 sm:px-8 lg:grid-cols-4"
+            className="shell py-block-sm grid grid-cols-2 gap-x-6 gap-y-1 text-[12px] font-medium uppercase sm:grid-cols-3 lg:grid-cols-4"
           >
             {NAV.map((item) => {
               const active = pathname === item.to || pathname.startsWith(`${item.to}/`);

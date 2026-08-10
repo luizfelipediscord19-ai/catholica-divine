@@ -40,7 +40,7 @@ export const Route = createFileRoute("/biblia/$livro/")({
 
   component: Page,
   notFoundComponent: () => (
-    <div className="max-w-2xl mx-auto px-6 py-32 text-center">
+    <div className="shell-narrow py-block text-center">
       <p className="text-gold">Livro não encontrado.</p>
       <Link to="/biblia" className="text-sm underline mt-4 inline-block">
         ← Voltar à Bíblia
@@ -59,7 +59,7 @@ function Page() {
   return (
     <div>
       <div className="border-b border-gold/20 bg-card">
-        <div className="max-w-5xl mx-auto px-6 py-[var(--space-lg)]">
+        <div className="shell py-[var(--space-lg)]">
           <Link
             to="/biblia"
             className="inline-flex items-center gap-2 text-[10px] tracking-[0.3em] uppercase text-gold/80 hover:text-gold mb-6"
@@ -94,7 +94,7 @@ function Page() {
       </div>
 
       {intro ? (
-        <section className="max-w-5xl mx-auto px-6 py-16 border-b border-gold/15">
+        <section className="shell py-block border-b border-gold/15">
           <div className="grid md:grid-cols-3 gap-10">
             <div className="md:col-span-2 space-y-8">
               <div>
@@ -130,7 +130,7 @@ function Page() {
         </section>
       ) : null}
 
-      <section className="max-w-5xl mx-auto px-6 py-16">
+      <section className="shell py-block">
 
         <div className="flex items-end justify-between flex-wrap gap-4 mb-6">
           <h2 className="font-display text-2xl text-foreground flex items-center gap-3">
@@ -151,7 +151,7 @@ function Page() {
         </div>
       </section>
 
-      <section className="max-w-5xl mx-auto px-6 pb-20 border-t border-gold/15 pt-10 flex flex-wrap justify-between gap-4">
+      <section className="shell pb-20 border-t border-gold/15 pt-10 flex flex-wrap justify-between gap-4">
         {anterior ? (
           <Link to="/biblia/$livro" params={{ livro: anterior.slug }} className="text-sm text-muted-foreground hover:text-gold">
             ← {anterior.nome}

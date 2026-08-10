@@ -117,9 +117,51 @@
   padding-inline: var(--gutter);
 }
 
+/* Containers padrão do portal: mesma margem lateral em todas as seções */
+@utility shell {
+  width: 100%;
+  margin-inline: auto;
+  max-width: var(--shell);
+  padding-inline: var(--gutter);
+}
+
+/* Container de leitura (artigos, formulários, estados vazios) */
+@utility shell-narrow {
+  width: 100%;
+  margin-inline: auto;
+  max-width: var(--shell-narrow);
+  padding-inline: var(--gutter);
+}
+
+/* Container intermediário (listas, buscas, painéis) */
+@utility shell-mid {
+  width: 100%;
+  margin-inline: auto;
+  max-width: var(--shell-mid);
+  padding-inline: var(--gutter);
+}
+
+/* Container amplo (hero, cabeçalho, modo leitura) */
+@utility shell-wide {
+  width: 100%;
+  margin-inline: auto;
+  max-width: var(--shell-wide);
+  padding-inline: var(--gutter);
+}
+
 /* Ritmo vertical fluido das seções */
 @utility py-section {
   padding-block: var(--space-xl);
+}
+
+/* Ritmo vertical padrão de blocos e páginas */
+@utility py-block {
+  padding-block: var(--space-lg);
+}
+
+/* Ritmo vertical reduzido (barras, sub-blocos) */
+@utility py-block-sm {
+  padding-block: var(--space-sm);
 }
 
 /* Padding interno fluido de cards e painéis */
@@ -164,6 +206,11 @@
 
   /* Padding lateral padrão de todo o portal */
   --gutter: clamp(1rem, 0.6rem + 2.2vw, 2rem);
+  /* Larguras de container padronizadas */
+  --shell-narrow: 46rem;
+  --shell-mid: 64rem;
+  --shell: 72rem;
+  --shell-wide: 90rem;
   /* Comprimento de linha confortável para leitura */
   --measure: 68ch;
 
