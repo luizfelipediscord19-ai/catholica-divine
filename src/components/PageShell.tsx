@@ -138,10 +138,11 @@ export function Sources({ items }: { items: { label: string; ref: string }[] }) 
 
 export function Pullquote({ children, cite }: { children: ReactNode; cite?: string }) {
   return (
-    <figure className="max-w-3xl mx-auto my-12 border-y border-gold/25 py-8 px-2 text-center">
-      <blockquote className="font-display text-2xl md:text-3xl leading-snug text-foreground italic">
+    <figure className="mx-auto my-[var(--space-lg)] max-w-3xl border-y border-gold/25 px-2 py-[var(--space-sm)] text-center">
+      <blockquote className="font-display italic leading-snug text-foreground text-[length:var(--step-2)]">
         “{children}”
       </blockquote>
+
       {cite ? (
         <figcaption className="mt-4 text-[10px] tracking-[0.3em] uppercase text-gold/80">
           {cite}
