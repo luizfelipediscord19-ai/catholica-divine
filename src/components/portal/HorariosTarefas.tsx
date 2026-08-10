@@ -8,6 +8,7 @@ import {
   salvarConfigTarefas,
   type ConfigTarefas,
 } from "@/lib/tarefas-horarios";
+import { sincronizarHorariosServidor } from "@/lib/push/assinar";
 
 /** Deixa o membro escolher o horário de cada lembrete diário. */
 export function HorariosTarefas() {
@@ -20,6 +21,8 @@ export function HorariosTarefas() {
   const atualizar = (proximo: ConfigTarefas) => {
     setConfig(proximo);
     salvarConfigTarefas(proximo);
+    // Mantém os horários também no servidor, que envia os avisos ao aparelho.
+    void sincronizarHorariosServidor();
   };
 
   return (
