@@ -148,7 +148,7 @@ function Home() {
   return (
     <div className="overflow-x-hidden">
       {/* Hero */}
-      <section className="relative overflow-hidden min-h-[92vh] flex items-center">
+      <section className="relative overflow-hidden min-h-[78vh] sm:min-h-[86vh] flex items-center py-section">
         <div
           className="absolute inset-0 bg-cover bg-center transition-transform duration-[10s] ease-out scale-110 hover:scale-100"
           style={{ backgroundImage: `url(${hero})` }}
@@ -156,41 +156,47 @@ function Home() {
         <div className="absolute inset-0 bg-linear-to-b from-deep/20 via-deep/60 to-background" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(5,5,5,0.4)_100%)]" />
 
-        <div className="relative max-w-7xl mx-auto px-8 w-full">
-          <div className="max-w-4xl animate-reveal">
-            <p className="text-[11px] tracking-[0.6em] uppercase text-gold/80 mb-10 flex items-center gap-6">
-              <span className="h-px w-12 bg-gold/40" /> 
+        <div className="relative w-full max-w-7xl mx-auto px-gutter">
+          <div className="max-w-3xl animate-reveal">
+            <p className="flex items-center gap-3 sm:gap-4 text-[11px] uppercase text-gold/80 tracking-[0.28em] sm:tracking-[0.4em] mb-5 sm:mb-7">
+              <span className="h-px w-8 sm:w-12 shrink-0 bg-gold/40" />
               <span>Una · Sancta · Catholica · Apostolica</span>
             </p>
-            <h1 className="font-display text-6xl sm:text-7xl md:text-8xl lg:text-[7rem] leading-[0.85] text-paper tracking-tight mb-12 text-balance">
+            <h1
+              className="font-display text-paper text-balance tracking-tight leading-[0.92] sm:leading-[0.88] mb-5 sm:mb-7"
+              style={{ fontSize: "clamp(2.25rem, 1.2rem + 5.6vw, 5.25rem)" }}
+            >
               A biblioteca{" "}
               <span className="text-gold italic font-medium relative inline-block whitespace-nowrap">
                 da Fé
-                <span className="absolute -bottom-4 left-0 w-full h-1 bg-gold/30 blur-md" />
+                <span aria-hidden="true" className="absolute -bottom-2 left-0 w-full h-1 bg-gold/30 blur-md" />
               </span>
             </h1>
-            <p className="max-w-2xl text-lg md:text-2xl text-paper/70 leading-relaxed font-light mb-16 letter-spacing-wide">
+            <p className="measure text-paper/75 font-light leading-relaxed text-[length:var(--step-1)] mb-8 sm:mb-10">
               Escritura, Catecismo, Padres da Igreja, santos e devoções tradicionais —
               reunidos em uma única referência de estudo, fiel ao Magistério desde
               Pedro até hoje.
             </p>
-            <div className="flex flex-wrap gap-6">
+            <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3 sm:gap-4">
               <Link
                 to="/biblia"
-                className="group relative inline-flex items-center gap-4 px-12 py-6 bg-gold text-deep text-[11px] uppercase tracking-[0.4em] font-bold overflow-hidden transition-premium hover:shadow-[0_0_40px_rgba(212,175,55,0.3)] button-hover-effect"
+                className="group relative inline-flex items-center justify-center gap-3 px-7 py-4 min-h-[3rem] bg-gold text-deep text-[11px] uppercase tracking-[0.22em] font-bold overflow-hidden transition-premium hover:shadow-[0_0_40px_rgba(212,175,55,0.3)] button-hover-effect"
               >
                 <span className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
-                <BookOpen className="size-4 relative z-10" /> <span className="relative z-10">Começar a estudar</span>
+                <BookOpen className="size-4 relative z-10 shrink-0" />
+                <span className="relative z-10 whitespace-nowrap">Começar a estudar</span>
               </Link>
               <Link
                 to="/assistente"
-                className="inline-flex items-center gap-3 px-8 py-6 border border-gold/30 text-paper text-[11px] uppercase tracking-[0.3em] font-medium hover:border-gold hover:bg-gold/5 transition-premium button-hover-effect"
+                className="inline-flex items-center justify-center gap-3 px-7 py-4 min-h-[3rem] border border-gold/30 text-paper text-[11px] uppercase tracking-[0.22em] font-medium hover:border-gold hover:bg-gold/5 transition-premium button-hover-effect"
               >
-                <Sparkles className="size-4 text-gold" /> Falar com a IA Católica
+                <Sparkles className="size-4 text-gold shrink-0" />
+                <span className="whitespace-nowrap">Falar com a IA</span>
               </Link>
             </div>
           </div>
         </div>
+
         
         {/* Scroll Indicator */}
         <div aria-hidden="true" className="pointer-events-none absolute bottom-8 left-1/2 -translate-x-1/2 hidden sm:flex flex-col items-center gap-3 animate-float">
