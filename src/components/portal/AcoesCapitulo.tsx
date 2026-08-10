@@ -91,7 +91,7 @@ export function BarraLeitura({
   onAlternar: () => void;
 }) {
   return (
-    <div className="mt-6 flex flex-wrap items-center gap-4 border border-gold/15 bg-card/40 backdrop-blur-sm px-6 py-4">
+    <div className="mt-6 flex flex-wrap items-center gap-4 surface-card backdrop-blur-sm px-6 py-4">
       <button
         type="button"
         disabled={!pronto || pendente}

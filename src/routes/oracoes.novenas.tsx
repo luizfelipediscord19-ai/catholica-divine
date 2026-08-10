@@ -34,7 +34,7 @@ function Page() {
         </CardGrid>
       </Section>
       <Section>
-        <Link to="/oracoes" className="px-5 py-3 border border-gold/40 hover:bg-gold/10">← Todas as orações</Link>
+        <Link to="/oracoes" className="px-5 py-3 btn-base btn-outline-gold">← Todas as orações</Link>
       </Section>
     </div>
   );

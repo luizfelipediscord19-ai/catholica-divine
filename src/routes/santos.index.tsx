@@ -104,7 +104,7 @@ function Page() {
           ) : null}
         </div>
 
-        <div className="mb-8 flex items-center gap-3 border border-gold/15 bg-card/30 backdrop-blur-md px-4 py-3" role="search">
+        <div className="mb-8 flex items-center gap-3 surface-card backdrop-blur-md px-4 py-3" role="search">
           <label htmlFor="busca-santos" className="text-[10px] tracking-[0.3em] uppercase text-gold/90">
             Buscar
           </label>

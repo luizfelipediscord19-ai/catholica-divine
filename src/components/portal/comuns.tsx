@@ -65,7 +65,7 @@ export function formatarData(iso: string) {
 
 export function Painel({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
-    <div className={`border border-gold/15 bg-card/40 backdrop-blur-md p-6 md:p-8 ${className}`}>
+    <div className={`surface-card p-card backdrop-blur-md ${className}`}>
       {children}
     </div>
   );
@@ -78,11 +78,12 @@ export function Rotulo({ children }: { children: ReactNode }) {
 }
 
 export const inputClass =
-  "w-full min-h-11 rounded-md bg-background/60 border border-gold/20 focus:border-gold/60 focus:outline-none focus-visible:ring-1 focus-visible:ring-gold px-4 py-3 text-base sm:text-sm text-foreground placeholder:text-muted-foreground/60";
+  "w-full min-h-11 rounded-[var(--radius-btn)] bg-background/60 border border-gold/20 transition-premium hover:border-gold/40 focus:border-gold/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold px-4 py-3 text-base sm:text-sm text-foreground placeholder:text-muted-foreground/70";
 
 
 export const botaoClass =
-  "inline-flex items-center justify-center gap-2 min-h-11 px-6 py-3 text-[10px] uppercase tracking-[0.25em] font-bold text-deep bg-gold hover:bg-paper transition-premium disabled:opacity-50 disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-paper";
+  "btn-base btn-gold px-6 py-3 text-[10px] uppercase tracking-[0.25em] font-bold";
 
 export const botaoGhostClass =
-  "inline-flex items-center justify-center gap-2 min-h-11 px-6 py-3 text-[10px] uppercase tracking-[0.25em] font-medium text-paper/80 border border-gold/25 hover:border-gold hover:text-gold transition-premium disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold";
+  "btn-base btn-outline-gold px-6 py-3 text-[10px] uppercase tracking-[0.25em] font-medium";
+

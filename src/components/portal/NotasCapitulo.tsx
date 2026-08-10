@@ -83,7 +83,7 @@ export function NotasCapitulo({
 
   return (
     <section
-      className={`border border-gold/15 bg-card/40 backdrop-blur-sm p-8 md:p-10 space-y-6 ${className}`}
+      className={`surface-card backdrop-blur-sm p-8 md:p-10 space-y-6 ${className}`}
     >
       <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-gold">
         <NotebookPen className="size-3.5" aria-hidden="true" /> Minhas anotações

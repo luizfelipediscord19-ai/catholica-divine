@@ -45,7 +45,7 @@ function Page() {
       </Section>
       <Section>
         <div className="flex flex-wrap items-center gap-3">
-          <Link to="/oracoes" className="px-5 py-3 border border-gold/40 hover:bg-gold/10">← Todas as orações</Link>
+          <Link to="/oracoes" className="px-5 py-3 btn-base btn-outline-gold">← Todas as orações</Link>
         </div>
         <Relacionados topic="misericordia" className="mt-8" />
       </Section>
