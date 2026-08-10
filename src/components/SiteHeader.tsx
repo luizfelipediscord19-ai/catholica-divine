@@ -93,11 +93,11 @@ export function SiteHeader() {
         </nav>
 
 
-        <div className="flex shrink-0 items-center justify-end gap-2 sm:gap-3">
+        <div className="flex shrink-0 items-center justify-end gap-1.5 sm:gap-3">
           <ContaBotao />
           <Link
             to="/assistente"
-            className="hidden min-h-11 items-center gap-2 bg-gold px-4 py-3 text-[10px] font-bold uppercase text-deep transition-premium hover:bg-paper focus-visible:bg-paper focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-paper sm:inline-flex xl:px-5"
+            className="hidden min-h-11 items-center gap-2 bg-gold px-4 py-3 text-[10px] font-bold uppercase text-deep transition-premium hover:bg-paper focus-visible:bg-paper focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-paper lg:inline-flex xl:px-5"
           >
             <Sparkles className="size-3.5" aria-hidden="true" /> Sophia IA
           </Link>
@@ -106,7 +106,7 @@ export function SiteHeader() {
             onClick={() => setBusca(true)}
             aria-label="Buscar no portal (Ctrl + K)"
             title="Buscar (Ctrl + K)"
-            className="grid size-11 place-items-center rounded-full border border-gold/20 hover:border-gold/60 focus-visible:border-gold transition-premium text-paper/70 hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+            className="hidden size-11 place-items-center rounded-full border border-gold/20 hover:border-gold/60 focus-visible:border-gold transition-premium text-paper/70 hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold sm:grid"
           >
             <Search className="size-4" aria-hidden="true" />
           </button>
@@ -114,6 +114,7 @@ export function SiteHeader() {
           <TemaToggle />
 
           <SinoNotificacoes />
+
 
 
 
