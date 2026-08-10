@@ -45,7 +45,7 @@
   "crons": [
     {
       "path": "/api/public/lembretes",
-      "schedule": "*/10 * * * *"
+      "schedule": "0 11 * * *"
     }
   ]
 }
