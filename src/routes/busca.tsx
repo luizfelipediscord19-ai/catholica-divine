@@ -24,6 +24,10 @@ const SUGESTOES = [
 ];
 
 export const Route = createFileRoute("/busca")({
+  validateSearch: (search: Record<string, unknown>): { q?: string } => ({
+    q: typeof search.q === "string" && search.q.trim() ? search.q.trim() : undefined,
+  }),
+
   head: () => ({
     meta: [
       { title: "Busca Avançada — Bíblia, Catecismo e Magistério | Portal Católico" },
