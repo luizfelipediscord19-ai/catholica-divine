@@ -95,7 +95,7 @@ function EmailConfirmadoPage() {
         intro="Obrigado por confirmar seu endereço. Sua conta está pronta para participar do fórum e guardar seu progresso espiritual."
       />
 
-      <div className="max-w-xl mx-auto px-6 py-16">
+      <div className="shell-narrow py-block">
         <Painel>
           {estado === "verificando" ? (
             <p className="text-sm text-muted-foreground">Confirmando seu e-mail…</p>

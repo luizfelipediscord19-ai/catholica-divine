@@ -111,7 +111,7 @@ function Page() {
         <div className="mt-6 flex flex-wrap items-center gap-3">
           <Link
             {...linkParaLeitura(hoje)}
-            className="inline-flex items-center gap-2 px-6 py-3 bg-gold text-deep text-[11px] uppercase tracking-[0.25em] font-medium hover:bg-paper transition-colors"
+            className="btn-base btn-gold gap-2 text-[11px] uppercase tracking-[0.25em]"
           >
             <BookOpen className="size-3.5" /> Ler agora
           </Link>

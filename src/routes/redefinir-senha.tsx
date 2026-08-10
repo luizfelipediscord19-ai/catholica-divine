@@ -72,7 +72,7 @@ function RedefinirSenhaPage() {
         intro="Escolha uma senha forte, com pelo menos 6 caracteres, que você não use em outros sites."
       />
 
-      <div className="max-w-xl mx-auto px-6 py-16">
+      <div className="shell-narrow py-block">
         <Painel>
           <Rotulo>Nova senha</Rotulo>
           {pronto ? (

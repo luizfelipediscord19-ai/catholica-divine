@@ -154,7 +154,7 @@ function EstudarPage() {
           <Link
             to="/trilhas/$trilha/$licao"
             params={{ trilha: trilhaUltima.slug, licao: licaoUltima.slug }}
-            className="mt-5 inline-flex min-h-11 items-center gap-2 bg-gold px-6 py-3 text-[10px] font-bold uppercase tracking-[0.25em] text-deep transition-premium hover:bg-paper"
+            className="btn-base btn-gold mt-5 gap-2 text-[10px] font-bold uppercase tracking-[0.25em]"
           >
             Continuar estudando <ArrowRight className="size-3.5" aria-hidden="true" />
           </Link>

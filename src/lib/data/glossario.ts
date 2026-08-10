@@ -1206,7 +1206,194 @@ export const GLOSSARIO: Record<string, EntradaGlossario> = {
       "Recusa legítima de cumprir uma lei ou ordem civil que contrarie a lei moral e os direitos fundamentais da pessoa, sobretudo quando envolve cooperação com o mal.",
     ref: "CIC § 2242",
   },
+
+  // ——— Teologia fundamental e Revelação ———
+  assentimento_religioso: {
+    termo: "Assentimento Religioso",
+    definicao:
+      "Adesão devida ao ensinamento autêntico do Magistério que não é proposto como definitivo: exige submissão da inteligência e da vontade, distinta do assentimento de fé teologal dado aos dogmas.",
+    ref: "Lumen Gentium 25; cân. 752-753",
+  },
+  nota_teologica: {
+    termo: "Nota Teológica",
+    definicao:
+      "Grau de certeza de uma proposição na doutrina católica: de fide divina et catholica (dogma), doutrina definitiva, doutrina autêntica, sentença teologicamente certa, opinião provável. Serve para não confundir dogma com escola teológica.",
+    ref: "Donum Veritatis 23-24",
+  },
+
+  // ——— Cristologia e Trindade ———
+  uniao_hipostatica: {
+    termo: "União Hipostática",
+    definicao:
+      "Unidade da pessoa (hipóstase) do Verbo em duas naturezas, divina e humana, sem confusão, sem mudança, sem divisão e sem separação — o Verbo assumiu a natureza humana sem deixar de ser Deus.",
+    ref: "Concílio de Calcedônia (451); CIC §§ 464-469",
+  },
+  comunicacao_idiomatum: {
+    termo: "Communicatio Idiomatum",
+    definicao:
+      "Atribuição, à única pessoa de Cristo, das propriedades de ambas as naturezas: por isso se diz com verdade que o Filho de Deus sofreu e que o filho de Maria é adorado.",
+    ref: "Concílio de Éfeso (431); CIC §§ 466-469",
+  },
+  perichorese: {
+    termo: "Perichórese",
+    definicao:
+      "Inabitação mútua das três Pessoas divinas: cada Pessoa está inteiramente nas outras, sem se confundir com elas, porque a essência divina é única e indivisa.",
+    ref: "CIC §§ 253-255; Jo 14,10-11",
+  },
+  processoes_divinas: {
+    termo: "Processões Divinas",
+    definicao:
+      "As duas origens eternas na Trindade: a geração do Filho pelo Pai, por modo de intelecto, e a procissão do Espírito Santo, por modo de vontade e amor. As Pessoas distinguem-se apenas pelas relações de origem.",
+    ref: "S. Tomás, Suma Teológica I, qq. 27-28; CIC §§ 254-256",
+  },
+
+  // ——— Graça, justificação e vida moral ———
+  graca_atual: {
+    termo: "Graça Atual",
+    definicao:
+      "Auxílio divino transitório que ilumina a inteligência e move a vontade para um ato bom concreto — distinta da graça santificante, que é dom habitual permanente na alma.",
+    ref: "CIC §§ 2000, 2024",
+  },
+  merito: {
+    termo: "Mérito",
+    definicao:
+      "Direito à recompensa por obras boas realizadas em estado de graça. Nada merecemos por nós mesmos: todo mérito cristão nasce da graça de Cristo em nós, e por isso Deus, coroando nossos méritos, coroa seus próprios dons.",
+    ref: "CIC §§ 2006-2011; S. Agostinho, Ep. 194",
+  },
+  duplo_efeito: {
+    termo: "Princípio do Duplo Efeito",
+    definicao:
+      "Critério moral para atos com consequência boa e má simultâneas: o ato deve ser em si lícito, o efeito mau apenas tolerado (nunca pretendido), e deve haver proporção grave entre o bem buscado e o mal permitido.",
+    ref: "CIC §§ 1737, 1750-1756",
+  },
+  cooperacao_no_mal: {
+    termo: "Cooperação no Mal",
+    definicao:
+      "Participação na ação pecaminosa de outro. É formal — e sempre ilícita — quando se aprova a intenção má; material, quando apenas se contribui de fato, podendo ser lícita se remota e por razão proporcionada.",
+    ref: "CIC §§ 1868, 2272",
+  },
+  gradualidade: {
+    termo: "Lei da Gradualidade",
+    definicao:
+      "Princípio pastoral segundo o qual a conversão é caminho progressivo, sem que se rebaixe a norma moral. Distingue-se da ‘gradualidade da lei’, que a Igreja rejeita por dissolver o próprio bem proposto.",
+    ref: "Familiaris Consortio 34; Veritatis Splendor 103-105",
+  },
+  epiqueia: {
+    termo: "Epiqueia",
+    definicao:
+      "Virtude que interpreta a lei humana segundo a intenção do legislador quando a aplicação literal produziria injustiça. Não vale para a lei divina positiva nem para preceitos negativos absolutos.",
+    ref: "S. Tomás, Suma Teológica II-II, q. 120",
+  },
+
+  // ——— Sacramentos e liturgia ———
+  carater_sacramental: {
+    termo: "Caráter Sacramental",
+    definicao:
+      "Selo espiritual indelével impresso pelo Batismo, pela Confirmação e pela Ordem, que configura a Cristo e não pode ser repetido nem apagado, mesmo pelo pecado.",
+    ref: "CIC §§ 1121, 1272, 1304, 1582",
+  },
+  concomitancia: {
+    termo: "Concomitância",
+    definicao:
+      "Doutrina segundo a qual Cristo está inteiro — corpo, sangue, alma e divindade — sob cada espécie eucarística e em cada fragmento; por isso comungar apenas sob uma espécie nada subtrai ao dom.",
+    ref: "Concílio de Trento, sessão XIII; CIC § 1377",
+  },
+  reserva_eucaristica: {
+    termo: "Reserva Eucarística",
+    definicao:
+      "Conservação das hóstias consagradas no sacrário, ordenada primeiramente ao viático e, em consequência, à adoração e à comunhão fora da Missa.",
+    ref: "CIC §§ 1379, 1418; cân. 934-944",
+  },
+  concelebracao: {
+    termo: "Concelebração",
+    definicao:
+      "Celebração de uma única Missa por vários sacerdotes que pronunciam juntos a oração eucarística, manifestando a unidade do sacerdócio e do sacrifício.",
+    ref: "Sacrosanctum Concilium 57-58; IGMR 199-251",
+  },
+
+  // ——— Igreja, hierarquia e direito ———
+  subsistit_in: {
+    termo: "Subsistit In",
+    definicao:
+      "Expressão de Lumen Gentium 8: a única Igreja de Cristo subsiste na Igreja Católica governada pelo Sucessor de Pedro, ainda que elementos de santificação e verdade existam fora de suas fronteiras visíveis.",
+    ref: "Lumen Gentium 8; CIC §§ 816, 870",
+  },
+  sensus_ecclesiae: {
+    termo: "Sentir com a Igreja",
+    definicao:
+      "Disposição interior de pensar, julgar e agir em harmonia com a fé e a disciplina da Igreja — critério clássico de discernimento espiritual e eclesial.",
+    ref: "S. Inácio de Loyola, Exercícios Espirituais 352-370",
+  },
+  potestas: {
+    termo: "Potestas Ordinis e Iurisdictionis",
+    definicao:
+      "Distinção entre o poder recebido pela Ordem sacra (santificar) e o poder de governo e jurisdição (ensinar e reger), que exige missão canônica além da ordenação válida.",
+    ref: "cân. 129, 375; CIC §§ 1554-1561",
+  },
+  incardinacao: {
+    termo: "Incardinação",
+    definicao:
+      "Vínculo jurídico permanente de todo clérigo a uma diocese, prelatura ou instituto, que garante missão e sustento e impede o clero acéfalo.",
+    ref: "cân. 265-272",
+  },
+  dispensa: {
+    termo: "Dispensa",
+    definicao:
+      "Relaxamento da lei meramente eclesiástica em caso particular, concedido pela autoridade competente por causa justa. Não se dispensa a lei divina nem os elementos essenciais dos sacramentos.",
+    ref: "cân. 85-93",
+  },
+  excomunhao: {
+    termo: "Excomunhão",
+    definicao:
+      "Censura medicinal que proíbe ao fiel receber sacramentos e exercer ofícios eclesiásticos. Não o expulsa da Igreja: visa à conversão e cessa com o arrependimento e a remissão canônica.",
+    ref: "cân. 1331; CIC § 1463",
+  },
+  latae_sententiae: {
+    termo: "Latae Sententiae",
+    definicao:
+      "Pena canônica que incide automaticamente no momento do delito, sem sentença declaratória — distinta da ferendae sententiae, imposta por decisão da autoridade.",
+    ref: "cân. 1314",
+  },
+
+  // ——— Escatologia e piedade ———
+  indulgencia_plenaria: {
+    termo: "Indulgência Plenária",
+    definicao:
+      "Remissão total da pena temporal devida por pecados já perdoados, obtida sob as condições habituais: confissão sacramental, comunhão eucarística, oração pelas intenções do Papa e total desapego a qualquer pecado.",
+    ref: "CIC §§ 1471-1479; Manual das Indulgências, normas 20-25",
+  },
+  sufragio: {
+    termo: "Sufrágio",
+    definicao:
+      "Oração, esmola, indulgência ou Missa oferecida pelos fiéis defuntos, aplicando-lhes os frutos da comunhão dos santos para a purificação de suas penas.",
+    ref: "CIC §§ 1032, 1479; 2Mc 12,46",
+  },
+  revelacao_privada: {
+    termo: "Revelação Privada",
+    definicao:
+      "Manifestação sobrenatural particular (aparições, locuções) que nada acrescenta ao depósito da fé. Aprovada, é digna de crença humana e pode ajudar a viver o Evangelho; jamais obriga como dogma.",
+    ref: "CIC §§ 66-67",
+  },
+  discernimento_espiritos: {
+    termo: "Discernimento dos Espíritos",
+    definicao:
+      "Arte espiritual de distinguir a moção do bom espírito da do mau, pelos frutos de paz, humildade e caridade, ou de inquietação, orgulho e desespero.",
+    ref: "S. Inácio de Loyola, Exercícios Espirituais 313-336; 1Jo 4,1",
+  },
+  desolacao_espiritual: {
+    termo: "Desolação Espiritual",
+    definicao:
+      "Estado de aridez, escuridão e falta de gosto pelas coisas de Deus. Não é sinal de abandono: pede fidelidade aos exercícios de piedade, paciência e nunca mudança de decisões tomadas na consolação.",
+    ref: "S. Inácio, Exercícios Espirituais 317-320; S. João da Cruz, Noite Escura I",
+  },
+  agere_contra: {
+    termo: "Agere Contra",
+    definicao:
+      "Regra ascética de agir deliberadamente contra a inclinação desordenada — praticando o ato oposto ao vício — para reeducar a vontade e romper o hábito pecaminoso.",
+    ref: "S. Inácio de Loyola, Exercícios Espirituais 13, 16",
+  },
 };
+
 
 export function getTermo(chave: string): EntradaGlossario | null {
   return GLOSSARIO[chave] ?? null;

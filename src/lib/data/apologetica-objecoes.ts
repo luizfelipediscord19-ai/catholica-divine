@@ -564,7 +564,104 @@ export const OBJECOES: Objecao[] = [
     ],
     fontes: ["Jo 4,1-42; Lc 8,1-3; Gl 3,28", "Mulieris Dignitatem (1988)", "CIC §§ 369–372, 2334–2335", "Christifideles Laici 49"],
   },
+  {
+    slug: "confissao-so-a-deus",
+    categoria: "Sacramentos",
+    objecao: "Por que confessar pecados a um homem, se somente Deus perdoa?",
+    resposta: [
+      "Somente Deus perdoa pecados — e é precisamente por isso que a confissão sacramental é necessária: Cristo, que é Deus, confiou esse poder divino aos Apóstolos. 'Recebei o Espírito Santo. Àqueles a quem perdoardes os pecados, serão perdoados; àqueles a quem os retiverdes, serão retidos' (Jo 20,22-23).",
+      "O sacerdote não perdoa por autoridade própria, mas in persona Christi: é instrumento vivo pelo qual o próprio Cristo absolve. A fórmula da absolvição é explícita: 'Eu te absolvo... em nome do Pai, do Filho e do Espírito Santo'.",
+      "São Paulo descreve esse mesmo ministério como reconciliação confiada a homens: 'Deus nos confiou o ministério da reconciliação... em nome de Cristo, deixai-vos reconciliar com Deus' (2Cor 5,18-20). E São Tiago manda: 'confessai vossos pecados uns aos outros' (Tg 5,16).",
+      "A encarnação segue essa lógica: Deus salva por meios visíveis. Assim como o Verbo se fez carne e a água do Batismo lava de fato, também a palavra audível da absolvição dá certeza sensível do perdão — bem mais que um sentimento interior incerto.",
+    ],
+    fontes: ["Jo 20,21-23; 2Cor 5,18-20; Tg 5,14-16", "CIC §§ 1441-1449, 1461-1467", "Concílio de Trento, sessão XIV"],
+  },
+  {
+    slug: "por-que-igreja-tem-tantas-regras",
+    categoria: "Moral e história",
+    objecao: "A Igreja é apenas um conjunto de regras que sufocam a liberdade.",
+    resposta: [
+      "As normas morais não criam o bem: descrevem-no. Como a medicina não inventa a saúde e a gramática não inventa a língua, a moral católica formula aquilo que de fato realiza a pessoa humana criada por amor e para o amor.",
+      "A Igreja distingue com cuidado preceitos divinos imutáveis (Decálogo), leis eclesiásticas disciplinares dispensáveis (jejum, mandamentos da Igreja) e conselhos evangélicos. Confundir esses níveis produz a caricatura de um legalismo que a própria Igreja condena.",
+      "O Catecismo define a liberdade não como ausência de vínculo, mas como 'poder de agir ou de não agir, e assim de realizar por si mesmo ações deliberadas' ordenadas ao bem — quanto mais alguém se enraíza no bem, mais livre se torna.",
+      "Cristo resume toda a Lei em dois mandamentos de amor (Mt 22,37-40) e São Paulo declara que 'a caridade é a plenitude da Lei' (Rm 13,10). A moral católica é, no fim, uma pedagogia da caridade, não um código penal.",
+    ],
+    fontes: ["Mt 22,37-40; Rm 13,10; Gl 5,13", "CIC §§ 1730-1742, 1950-1974", "Veritatis Splendor 34-35"],
+  },
+  {
+    slug: "por-que-existe-o-inferno",
+    categoria: "Deus e razão",
+    objecao: "Um Deus de amor não poderia condenar alguém ao inferno eterno.",
+    resposta: [
+      "A doutrina católica não afirma que Deus lança pessoas no inferno, mas que o inferno é a autoexclusão definitiva e livre da comunhão com Deus: 'morrer em pecado mortal sem se arrepender significa permanecer separado dele para sempre por nossa livre escolha' (CIC § 1033).",
+      "O amor exige liberdade real, e liberdade real inclui a possibilidade de recusa. Um Deus que forçasse a comunhão aboliria a própria dignidade da pessoa que diz amar — o inferno é o preço lógico de haver criaturas capazes de amar de verdade.",
+      "A Igreja jamais declarou que qualquer indivíduo concreto está no inferno, embora tenha canonizado milhares de santos. A esperança da salvação é anunciada universalmente, e Deus 'quer que todos os homens se salvem' (1Tm 2,4).",
+      "Cristo fala do inferno com frequência e gravidade justamente por amor: adverte para que ninguém se perca. Suprimir o aviso seria menos amoroso, não mais — como um médico que oculta o diagnóstico.",
+    ],
+    fontes: ["Mt 25,31-46; 1Tm 2,3-4; 2Pd 3,9", "CIC §§ 1033-1037, 1058", "Spe Salvi 44-48"],
+  },
+  {
+    slug: "biblia-contradiz-se",
+    categoria: "Escritura",
+    objecao: "A Bíblia está cheia de contradições, logo não pode ser palavra de Deus.",
+    resposta: [
+      "A Escritura é uma biblioteca de 73 livros escritos ao longo de mais de mil anos em gêneros diversos — narrativa, poesia, lei, profecia, sapiência, apocalipse, carta. Ler poesia como crônica jornalística cria contradições que o texto não contém.",
+      "A Igreja ensina que o intérprete deve buscar aquilo que o autor humano quis afirmar e que Deus quis manifestar, atendendo aos gêneros literários e aos modos de narrar próprios da época (Dei Verbum 12).",
+      "Diferenças de perspectiva entre os Evangelhos — número de anjos no sepulcro, ordem das tentações — são típicas de testemunhos independentes e reforçam sua credibilidade histórica; testemunhos idênticos em cada detalhe sugeririam combinação prévia.",
+      "A inerrância bíblica refere-se à verdade salvífica que Deus quis revelar, não a precisão científica ou cronológica moderna. Santo Agostinho já advertia contra usar a Escritura como manual de astronomia.",
+    ],
+    fontes: ["Dei Verbum 11-13", "CIC §§ 105-119", "Providentissimus Deus 18-20", "Pontifícia Comissão Bíblica, A interpretação da Bíblia na Igreja (1993)"],
+  },
+  {
+    slug: "papa-infalivel-sempre",
+    categoria: "Igreja e Papado",
+    objecao: "Se o Papa é infalível, então tudo o que ele diz é verdade absoluta.",
+    resposta: [
+      "A infalibilidade papal é estritamente delimitada pelo Vaticano I: aplica-se quando o Romano Pontífice, falando ex cathedra como pastor supremo, define uma doutrina de fé ou de moral a ser sustentada por toda a Igreja.",
+      "Fora dessas condições, o Papa pode errar em política, ciência, estratégia pastoral, prudência de governo ou opinião teológica pessoal — e a história registra tais erros sem que nenhuma definição dogmática tenha sido revogada.",
+      "Definições ex cathedra são raríssimas: a Imaculada Conceição (1854) e a Assunção (1950) são os exemplos clássicos. Não se trata de um poder de inventar doutrinas, mas de um carisma negativo de preservação: impedir o erro na formulação definitiva do que a Igreja recebeu.",
+      "A infalibilidade não implica impecabilidade nem sabedoria universal. Pedro, o primeiro Papa, foi publicamente corrigido por Paulo em Antioquia (Gl 2,11-14) — episódio conservado na Escritura pela própria Igreja.",
+    ],
+    fontes: ["Concílio Vaticano I, Pastor Aeternus 4", "Lumen Gentium 25", "CIC §§ 888-892", "Gl 2,11-14"],
+  },
+  {
+    slug: "maria-corredentora-diminui-cristo",
+    categoria: "Maria e santos",
+    objecao: "Chamar Maria de mediadora diminui a única mediação de Cristo.",
+    resposta: [
+      "A Igreja afirma sem ambiguidade que há 'um só mediador entre Deus e os homens, Cristo Jesus' (1Tm 2,5) e que a função maternal de Maria 'em nada obscurece nem diminui esta única mediação de Cristo, mas manifesta o seu poder'.",
+      "Toda mediação de Maria e dos santos é participada e dependente, como o calor participa do fogo. Quando um cristão intercede por outro (1Tm 2,1-4), não rivaliza com Cristo: age dentro da mediação dele.",
+      "Lumen Gentium 62 usa vários títulos — advogada, auxiliadora, medianeira — mas explica que devem ser entendidos de modo que nada subtraiam à dignidade e à eficácia de Cristo, único Redentor.",
+      "A Igreja nunca definiu dogmaticamente o título de 'corredentora', e teólogos alertam que ele exige cuidado justamente para não sugerir igualdade com Cristo. Isso mostra o esforço católico de proteger, e não de obscurecer, a centralidade do Redentor.",
+    ],
+    fontes: ["1Tm 2,1-5", "Lumen Gentium 60-62", "CIC §§ 969-970, 2673-2675", "Redemptoris Mater 38-41"],
+  },
+  {
+    slug: "religiao-so-para-fracos",
+    categoria: "Deus e razão",
+    objecao: "A fé é uma muleta psicológica para quem não suporta a realidade.",
+    resposta: [
+      "O argumento é genético: explica a origem psicológica de uma crença, não sua verdade ou falsidade. O mesmo raciocínio anularia o ateísmo, que também pode ser descrito como desejo de autonomia sem juízo final.",
+      "A fé católica exige o oposto do conforto fácil: reconhecer-se pecador, perdoar inimigos, restituir bens roubados, aceitar a cruz, sustentar castidade e fidelidade. Como muleta psicológica, seria a mais desconfortável já inventada.",
+      "A tradição católica sempre exigiu fundamentação racional: a existência de Deus é apresentada como conclusão argumentável, e Fides et Ratio afirma que fé e razão são as duas asas pelas quais o espírito se eleva à verdade.",
+      "A história intelectual da fé — Agostinho, Tomás de Aquino, Pascal, Newman, Edith Stein — mostra conversões precedidas de crise intelectual honesta, não de fuga emocional.",
+    ],
+    fontes: ["CIC §§ 31-38, 154-159", "Fides et Ratio, proêmio e nn. 43-48", "1Pd 3,15"],
+  },
+  {
+    slug: "igreja-rica-deveria-vender-tudo",
+    categoria: "Moral e história",
+    objecao: "A Igreja deveria vender o Vaticano e dar tudo aos pobres.",
+    resposta: [
+      "Grande parte do patrimônio artístico eclesial é bem inalienável de valor cultural universal, mantido em custódia para a humanidade — vender a Capela Sistina a um colecionador privado empobreceria os pobres do acesso à beleza, sem resolver a pobreza estrutural.",
+      "A Igreja é hoje a maior rede não estatal de assistência do mundo: milhares de hospitais, dispensários, leprosários, orfanatos, escolas e universidades, mantidos em regiões onde nenhum outro serviço chega.",
+      "O ensino social católico afirma o destino universal dos bens e a opção preferencial pelos pobres, e a própria doutrina condena o luxo eclesiástico escandaloso — a crítica legítima ao mau uso de bens é interna à tradição, não externa a ela.",
+      "A venda única de um acervo produziria alívio momentâneo; a estrutura permanente permite caridade continuada por gerações — princípio que a doutrina social chama de solidariedade ordenada ao bem comum duradouro.",
+    ],
+    fontes: ["CIC §§ 2401-2406, 2443-2449", "Compêndio da Doutrina Social 171-184, 328-329", "Evangelii Gaudium 186-201"],
+  },
 ];
+
 
 export function objecaoPorSlug(slug: string): Objecao | undefined {
   return OBJECOES.find((o) => o.slug === slug);
