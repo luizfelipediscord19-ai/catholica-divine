@@ -1,10 +1,19 @@
 import { PRIMEIROS_PASSOS } from "./primeiros-passos";
 import { CATEQUESE_INTERMEDIARIA } from "./catequese-intermediaria";
+import { APOLOGETICA } from "./apologetica";
+import { VIDA_ESPIRITUAL } from "./vida-espiritual";
+import { TEOLOGIA } from "./teologia";
 import type { Licao, Trilha } from "./tipos";
 
 export * from "./tipos";
 
-export const TRILHAS: Trilha[] = [PRIMEIROS_PASSOS, CATEQUESE_INTERMEDIARIA];
+export const TRILHAS: Trilha[] = [
+  PRIMEIROS_PASSOS,
+  VIDA_ESPIRITUAL,
+  CATEQUESE_INTERMEDIARIA,
+  APOLOGETICA,
+  TEOLOGIA,
+];
 
 export function acharTrilha(slug: string): Trilha | undefined {
   return TRILHAS.find((t) => t.slug === slug);

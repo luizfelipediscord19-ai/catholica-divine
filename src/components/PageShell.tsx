@@ -22,14 +22,14 @@ export function PageHero({
       <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/80 to-background" />
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
       
-      <div className="relative max-w-7xl mx-auto px-8 py-32 md:py-48 animate-reveal">
-        <p className="text-[10px] tracking-[0.5em] uppercase text-gold/60 mb-8 flex items-center gap-4">
-          <span className="h-px w-8 bg-gold/20" /> {eyebrow}
+      <div className="relative max-w-7xl mx-auto px-6 md:px-8 py-14 md:py-20 animate-reveal">
+        <p className="text-[10px] tracking-[0.4em] uppercase text-gold/60 mb-4 flex items-center gap-3">
+          <span className="h-px w-6 bg-gold/20" /> {eyebrow}
         </p>
-        <h1 className="font-display text-6xl md:text-9xl leading-[0.9] text-paper mb-10 tracking-tighter">
+        <h1 className="font-display text-3xl sm:text-4xl md:text-5xl leading-[1.05] text-paper mb-5 tracking-tight">
           {title}
         </h1>
-        <p className="max-w-2xl text-lg md:text-xl text-paper/60 leading-relaxed font-light">
+        <p className="max-w-2xl text-base md:text-lg text-paper/60 leading-relaxed font-light">
           {intro}
         </p>
       </div>

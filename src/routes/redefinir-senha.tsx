@@ -69,7 +69,7 @@ function RedefinirSenhaPage() {
             Criar <span className="italic font-light text-gold">nova senha</span>
           </>
         }
-        intro="Escolha uma senha forte, com pelo menos 8 caracteres, que você não use em outros sites."
+        intro="Escolha uma senha forte, com pelo menos 6 caracteres, que você não use em outros sites."
       />
 
       <div className="max-w-xl mx-auto px-6 py-16">
@@ -90,7 +90,7 @@ function RedefinirSenhaPage() {
               </label>
               <button
                 type="submit"
-                disabled={senha.length < 8 || enviando}
+                disabled={senha.length < 6 || enviando}
                 className={botaoClass}
               >
                 {enviando ? "Salvando…" : "Salvar senha"}
