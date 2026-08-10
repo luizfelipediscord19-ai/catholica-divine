@@ -53,7 +53,9 @@ import { Route as CatecismoParteRouteImport } from './routes/catecismo.$parte'
 import { Route as BibliaLeiturasRouteImport } from './routes/biblia.leituras'
 import { Route as BibliaLivroRouteImport } from './routes/biblia.$livro'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
+import { Route as TrilhasTrilhaIndexRouteImport } from './routes/trilhas.$trilha.index'
 import { Route as BibliaLivroIndexRouteImport } from './routes/biblia.$livro.index'
+import { Route as TrilhasTrilhaLicaoRouteImport } from './routes/trilhas.$trilha.$licao'
 import { Route as OracoesNovenasSlugRouteImport } from './routes/oracoes.novenas.$slug'
 import { Route as BibliaLivroCapituloRouteImport } from './routes/biblia.$livro.$capitulo'
 import { Route as ApiPublicLembretesRouteImport } from './routes/api/public/lembretes'
@@ -282,10 +284,20 @@ const ApiChatRoute = ApiChatRouteImport.update({
   path: '/api/chat',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TrilhasTrilhaIndexRoute = TrilhasTrilhaIndexRouteImport.update({
+  id: '/trilhas/$trilha/',
+  path: '/trilhas/$trilha/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BibliaLivroIndexRoute = BibliaLivroIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => BibliaLivroRoute,
+} as any)
+const TrilhasTrilhaLicaoRoute = TrilhasTrilhaLicaoRouteImport.update({
+  id: '/trilhas/$trilha/$licao',
+  path: '/trilhas/$trilha/$licao',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const OracoesNovenasSlugRoute = OracoesNovenasSlugRouteImport.update({
   id: '/$slug',
@@ -357,7 +369,9 @@ export interface FileRoutesByFullPath {
   '/api/public/lembretes': typeof ApiPublicLembretesRoute
   '/biblia/$livro/$capitulo': typeof BibliaLivroCapituloRoute
   '/oracoes/novenas/$slug': typeof OracoesNovenasSlugRoute
+  '/trilhas/$trilha/$licao': typeof TrilhasTrilhaLicaoRoute
   '/biblia/$livro/': typeof BibliaLivroIndexRoute
+  '/trilhas/$trilha/': typeof TrilhasTrilhaIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -405,7 +419,9 @@ export interface FileRoutesByTo {
   '/api/public/lembretes': typeof ApiPublicLembretesRoute
   '/biblia/$livro/$capitulo': typeof BibliaLivroCapituloRoute
   '/oracoes/novenas/$slug': typeof OracoesNovenasSlugRoute
+  '/trilhas/$trilha/$licao': typeof TrilhasTrilhaLicaoRoute
   '/biblia/$livro': typeof BibliaLivroIndexRoute
+  '/trilhas/$trilha': typeof TrilhasTrilhaIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -457,7 +473,9 @@ export interface FileRoutesById {
   '/api/public/lembretes': typeof ApiPublicLembretesRoute
   '/biblia/$livro/$capitulo': typeof BibliaLivroCapituloRoute
   '/oracoes/novenas/$slug': typeof OracoesNovenasSlugRoute
+  '/trilhas/$trilha/$licao': typeof TrilhasTrilhaLicaoRoute
   '/biblia/$livro/': typeof BibliaLivroIndexRoute
+  '/trilhas/$trilha/': typeof TrilhasTrilhaIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -510,7 +528,9 @@ export interface FileRouteTypes {
     | '/api/public/lembretes'
     | '/biblia/$livro/$capitulo'
     | '/oracoes/novenas/$slug'
+    | '/trilhas/$trilha/$licao'
     | '/biblia/$livro/'
+    | '/trilhas/$trilha/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -558,7 +578,9 @@ export interface FileRouteTypes {
     | '/api/public/lembretes'
     | '/biblia/$livro/$capitulo'
     | '/oracoes/novenas/$slug'
+    | '/trilhas/$trilha/$licao'
     | '/biblia/$livro'
+    | '/trilhas/$trilha'
   id:
     | '__root__'
     | '/'
@@ -609,7 +631,9 @@ export interface FileRouteTypes {
     | '/api/public/lembretes'
     | '/biblia/$livro/$capitulo'
     | '/oracoes/novenas/$slug'
+    | '/trilhas/$trilha/$licao'
     | '/biblia/$livro/'
+    | '/trilhas/$trilha/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -648,6 +672,8 @@ export interface RootRouteChildren {
   TrilhasIndexRoute: typeof TrilhasIndexRoute
   ApiPublicCspReportRoute: typeof ApiPublicCspReportRoute
   ApiPublicLembretesRoute: typeof ApiPublicLembretesRoute
+  TrilhasTrilhaLicaoRoute: typeof TrilhasTrilhaLicaoRoute
+  TrilhasTrilhaIndexRoute: typeof TrilhasTrilhaIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -960,12 +986,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiChatRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/trilhas/$trilha/': {
+      id: '/trilhas/$trilha/'
+      path: '/trilhas/$trilha'
+      fullPath: '/trilhas/$trilha/'
+      preLoaderRoute: typeof TrilhasTrilhaIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/biblia/$livro/': {
       id: '/biblia/$livro/'
       path: '/'
       fullPath: '/biblia/$livro/'
       preLoaderRoute: typeof BibliaLivroIndexRouteImport
       parentRoute: typeof BibliaLivroRoute
+    }
+    '/trilhas/$trilha/$licao': {
+      id: '/trilhas/$trilha/$licao'
+      path: '/trilhas/$trilha/$licao'
+      fullPath: '/trilhas/$trilha/$licao'
+      preLoaderRoute: typeof TrilhasTrilhaLicaoRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/oracoes/novenas/$slug': {
       id: '/oracoes/novenas/$slug'
@@ -1119,6 +1159,8 @@ const rootRouteChildren: RootRouteChildren = {
   TrilhasIndexRoute: TrilhasIndexRoute,
   ApiPublicCspReportRoute: ApiPublicCspReportRoute,
   ApiPublicLembretesRoute: ApiPublicLembretesRoute,
+  TrilhasTrilhaLicaoRoute: TrilhasTrilhaLicaoRoute,
+  TrilhasTrilhaIndexRoute: TrilhasTrilhaIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

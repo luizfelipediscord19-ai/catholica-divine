@@ -9,6 +9,7 @@ import { BuscaGlobal, useAtalhoBusca } from "@/components/BuscaGlobal";
 import { TemaToggle } from "@/components/TemaToggle";
 
 const NAV = [
+  { to: "/trilhas", label: "Trilhas de estudo" },
   { to: "/fe-catolica", label: "A Fé" },
   { to: "/biblia", label: "Bíblia" },
   { to: "/catecismo", label: "Catecismo" },
@@ -28,6 +29,7 @@ const NAV = [
 ] as const;
 
 const NAV_PRINCIPAL: { to: string; label: string; desde: "lg" | "xl" | "2xl" }[] = [
+  { to: "/trilhas", label: "Trilhas", desde: "lg" },
   { to: "/biblia", label: "Bíblia", desde: "lg" },
   { to: "/santos", label: "Santos", desde: "lg" },
   { to: "/oracoes", label: "Orações", desde: "lg" },
