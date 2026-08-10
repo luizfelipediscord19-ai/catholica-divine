@@ -49,7 +49,7 @@ function Page() {
       <p className="text-[10px] tracking-[0.35em] uppercase text-gold mb-4">
         Parte {parte.num} · {parte.paragrafos}
       </p>
-      <h1 className="font-display text-5xl md:text-6xl text-foreground leading-tight">
+      <h1 className="font-display text-[length:var(--step-4)] text-foreground leading-tight">
         {parte.titulo}
       </h1>
       <p className="mt-6 text-lg text-muted-foreground leading-relaxed">{parte.resumo}</p>

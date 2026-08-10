@@ -168,7 +168,7 @@ function SobrePage() {
         <p className="text-[10px] tracking-[0.5em] uppercase text-gold mb-5 flex items-center gap-3">
           <ScrollText className="size-4" aria-hidden="true" /> Ratio Editionis
         </p>
-        <h1 className="font-display text-4xl md:text-6xl text-foreground leading-[1.05] mb-6">
+        <h1 className="font-display text-[length:var(--step-4)] text-foreground leading-[1.05] mb-6">
           Sobre o Portal <span className="text-gold/70 italic">e sua curadoria</span>
         </h1>
         <p className="text-base md:text-lg text-muted-foreground font-light leading-[1.8] max-w-3xl">

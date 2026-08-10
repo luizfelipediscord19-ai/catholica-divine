@@ -29,7 +29,7 @@ function NotFoundComponent() {
   return (
     <div className="flex min-h-[70vh] items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="font-display text-8xl text-gold">404</h1>
+        <h1 className="font-display text-[length:var(--step-5)] text-gold">404</h1>
         <h2 className="mt-4 font-display text-2xl text-foreground">Página não encontrada</h2>
         <p className="mt-3 text-sm text-muted-foreground">
           O caminho que buscas não existe ou foi movido. Que o teu estudo te conduza adiante.
