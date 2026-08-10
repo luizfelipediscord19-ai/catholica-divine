@@ -22,6 +22,7 @@ export function SiteFooter() {
             Doutrina
           </h3>
           <ul className="space-y-1 text-sm text-paper/80">
+            <li><Link to="/trilhas" className="block whitespace-nowrap py-2 hover:text-gold focus-visible:text-gold">Trilhas de Estudo</Link></li>
             <li><Link to="/fe-catolica" className="block whitespace-nowrap py-2 hover:text-gold focus-visible:text-gold">A Fé Católica</Link></li>
             <li><Link to="/catecismo" className="block whitespace-nowrap py-2 hover:text-gold focus-visible:text-gold">Catecismo</Link></li>
             <li><Link to="/biblia" className="block whitespace-nowrap py-2 hover:text-gold focus-visible:text-gold">Bíblia Sagrada</Link></li>

@@ -3,6 +3,7 @@ import { SANTOS_LISTA } from "@/lib/santos-lista";
 import { PARTES } from "@/lib/data/catecismo/index";
 import { NOVENAS } from "@/lib/data/devocoes/novenas";
 import { SECOES_FORUM } from "@/lib/data/forum-secoes";
+import { TRILHAS } from "@/lib/data/trilhas";
 
 export const BASE_URL = "https://portalcatolico.vercel.app";
 
@@ -15,6 +16,7 @@ export interface SitemapEntry {
 /** Páginas institucionais e índices — as mais importantes para o rastreador. */
 export const PAGINAS: SitemapEntry[] = [
   { path: "/", changefreq: "daily", priority: "1.0" },
+  { path: "/trilhas", changefreq: "weekly", priority: "0.9" },
   { path: "/biblia", changefreq: "weekly", priority: "0.9" },
   { path: "/catecismo", changefreq: "monthly", priority: "0.9" },
   { path: "/liturgia-diaria", changefreq: "daily", priority: "0.9" },
@@ -38,6 +40,14 @@ export const PAGINAS: SitemapEntry[] = [
   { path: "/busca", changefreq: "monthly", priority: "0.7" },
   { path: "/coroinhas", changefreq: "monthly", priority: "0.6" },
   { path: "/sobre", changefreq: "monthly", priority: "0.6" },
+  ...TRILHAS.flatMap((t) => [
+    { path: `/trilhas/${t.slug}`, changefreq: "monthly" as const, priority: "0.8" },
+    ...t.licoes.map((l) => ({
+      path: `/trilhas/${t.slug}/${l.slug}`,
+      changefreq: "monthly" as const,
+      priority: "0.7",
+    })),
+  ]),
   ...PARTES.map((parte) => ({
     path: `/catecismo/${parte.slug}`,
     changefreq: "monthly" as const,
