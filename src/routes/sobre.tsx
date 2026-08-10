@@ -159,13 +159,13 @@ function SobrePage() {
     <div className="shell py-block">
       <Link
         to="/"
-        className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.4em] text-gold/70 hover:text-gold mb-10 transition-colors"
+        className="inline-flex items-center gap-2 kicker hover:text-gold mb-10 transition-colors"
       >
         <ArrowLeft className="size-3.5" aria-hidden="true" /> Voltar
       </Link>
 
       <header className="mb-16">
-        <p className="text-[10px] tracking-[0.5em] uppercase text-gold mb-5 flex items-center gap-3">
+        <p className="kicker mb-5 flex items-center gap-3">
           <ScrollText className="size-4" aria-hidden="true" /> Ratio Editionis
         </p>
         <h1 className="font-display text-[length:var(--step-4)] text-foreground leading-[1.05] mb-6">
@@ -245,7 +245,7 @@ function SobrePage() {
         <ol className="space-y-4">
           {REVISAO.map((r, i) => (
             <li key={r.etapa} className="surface-card p-6">
-              <p className="text-[10px] uppercase tracking-[0.3em] text-gold/80 mb-2">
+              <p className="kicker mb-2">
                 Etapa {i + 1}
               </p>
               <h3 className="font-display text-lg text-foreground mb-2">{r.etapa}</h3>

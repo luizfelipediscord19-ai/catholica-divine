@@ -209,35 +209,35 @@ function Page() {
             </div>
 
             <div id={hora === "laudes" ? "laudes" : hora === "vesperas" ? "vesperas" : "oficio-leituras-detalhe"} className="p-6 md:p-10 scroll-mt-24">
-              <p className="text-[10px] tracking-[0.3em] uppercase text-gold/80 mb-2">Hora canônica</p>
+              <p className="kicker mb-2">Hora canônica</p>
               <h3 className="font-display text-3xl text-foreground">{d.nome}</h3>
               <p className="mt-2 text-xs text-muted-foreground">{d.horario}</p>
 
               <div className="mt-8 grid md:grid-cols-2 gap-x-10 gap-y-6 text-sm leading-relaxed">
                 <div>
-                  <h4 className="text-[10px] tracking-[0.25em] uppercase text-gold mb-2">1 · Abertura</h4>
+                  <h4 className="kicker mb-2">1 · Abertura</h4>
                   <p className="text-foreground/85">{d.abertura}</p>
                 </div>
                 <div>
-                  <h4 className="text-[10px] tracking-[0.25em] uppercase text-gold mb-2">2 · Salmodia</h4>
+                  <h4 className="kicker mb-2">2 · Salmodia</h4>
                   <p className="text-foreground/85">{d.salmodia}</p>
                 </div>
                 <div>
-                  <h4 className="text-[10px] tracking-[0.25em] uppercase text-gold mb-2">3 · Cântico evangélico</h4>
+                  <h4 className="kicker mb-2">3 · Cântico evangélico</h4>
                   <p className="text-foreground/85">{d.cantico}</p>
                 </div>
                 <div>
-                  <h4 className="text-[10px] tracking-[0.25em] uppercase text-gold mb-2">4 · Leitura</h4>
+                  <h4 className="kicker mb-2">4 · Leitura</h4>
                   <p className="text-foreground/85">{d.leitura}</p>
                 </div>
                 <div className="md:col-span-2">
-                  <h4 className="text-[10px] tracking-[0.25em] uppercase text-gold mb-2">5 · Preces, oração e conclusão</h4>
+                  <h4 className="kicker mb-2">5 · Preces, oração e conclusão</h4>
                   <p className="text-foreground/85">{d.oracao}</p>
                 </div>
               </div>
 
               <div className="mt-8 border-t border-gold/15 pt-6">
-                <h4 className="text-[10px] tracking-[0.25em] uppercase text-gold mb-2">Espiritualidade da Hora</h4>
+                <h4 className="kicker mb-2">Espiritualidade da Hora</h4>
                 <p className="text-sm text-foreground/85 leading-relaxed italic">{d.espiritualidade}</p>
               </div>
             </div>
@@ -305,7 +305,7 @@ function Page() {
                 rel="noopener noreferrer"
                 className="border border-gold/30 p-6 hover:border-gold hover:bg-gold/5 transition-colors"
               >
-                <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-2">Fonte oficial</p>
+                <p className="kicker mb-2">Fonte oficial</p>
                 <p className="font-display text-lg">{f.nome}</p>
                 <p className="text-xs text-muted-foreground mt-2 break-all">{f.url}</p>
               </a>

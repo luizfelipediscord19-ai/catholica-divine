@@ -40,7 +40,7 @@ function TrilhasIndex() {
 
   return (
     <div className="shell py-block">
-      <p className="text-[11px] uppercase tracking-[0.25em] text-gold">Plataforma de formação</p>
+      <p className="kicker">Plataforma de formação</p>
       <h1 className="mt-3 font-display text-4xl text-paper sm:text-5xl">Trilhas de aprendizado</h1>
       <p className="mt-5 max-w-2xl text-paper/75 leading-relaxed">
         Cada trilha é um caminho ordenado de lições. Toda afirmação doutrinal vem acompanhada da
@@ -54,7 +54,7 @@ function TrilhasIndex() {
           className="mt-10 flex items-center justify-between gap-4 border border-gold/30 bg-gold/5 p-5 transition-colors hover:border-gold"
         >
           <span>
-            <span className="block text-[11px] uppercase tracking-[0.2em] text-gold">
+            <span className="block kicker">
               Continuar estudando
             </span>
             <span className="mt-1 block font-display text-lg text-paper">{licaoUltima.titulo}</span>

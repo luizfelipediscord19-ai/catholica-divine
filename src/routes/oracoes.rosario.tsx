@@ -176,7 +176,7 @@ function Page() {
                 onClick={() => { setConjunto(c); reiniciar(); }}
                 className={`text-left p-4 border transition-colors ${active ? "border-gold bg-gold/10" : "border-gold/20 hover:border-gold/60"}`}
               >
-                <p className="text-[10px] tracking-[0.3em] uppercase text-gold/80">{c.dia}</p>
+                <p className="kicker">{c.dia}</p>
                 <p className="font-display text-lg mt-1">{c.nome}</p>
               </button>
             );
@@ -216,7 +216,7 @@ function Page() {
 
         {/* Progresso de mistérios */}
         <div className="flex items-center gap-2 mb-4">
-          <span className="text-[10px] tracking-[0.3em] uppercase text-gold/70">Mistérios</span>
+          <span className="kicker">Mistérios</span>
           {progressoMisterios.map((st, i) => (
             <span
               key={i}
@@ -228,7 +228,7 @@ function Page() {
 
         <div className="border border-gold/30 bg-card p-8 md:p-12">
           <div className="flex items-center justify-between mb-6 flex-wrap gap-2">
-            <p className="text-[10px] tracking-[0.3em] uppercase text-gold">
+            <p className="kicker">
               Etapa {etapaIdx + 1} de {etapas.length} · {conjunto.nome}
             </p>
             <div className="flex gap-2">

@@ -114,13 +114,13 @@ function TopicoPage() {
     <div className="shell-narrow py-block space-y-10">
       <Link
         to="/forum"
-        className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] text-gold hover:text-paper transition-colors"
+        className="inline-flex items-center gap-2 kicker hover:text-paper transition-colors"
       >
         <ArrowLeft className="size-3.5" aria-hidden="true" /> Agora Ecclesiae
       </Link>
 
       <header className="space-y-5">
-        <p className="text-[10px] uppercase tracking-[0.3em] text-gold/70">
+        <p className="kicker">
           {secaoNome ?? "Fórum"} · {formatarData(t.created_at)}
         </p>
         <h1 className="font-display text-4xl md:text-5xl text-foreground leading-tight">

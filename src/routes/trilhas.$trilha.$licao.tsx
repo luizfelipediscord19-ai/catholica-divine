@@ -96,7 +96,7 @@ function LicaoPagina() {
         <ArrowLeft className="size-4" aria-hidden="true" /> {trilha.titulo}
       </Link>
 
-      <p className="mt-8 text-[11px] uppercase tracking-[0.25em] text-gold">
+      <p className="mt-8 kicker">
         Lição {indice + 1} de {trilha.licoes.length} · {licao.minutos} min
       </p>
       <h1 className="mt-3 font-display text-4xl text-paper">{licao.titulo}</h1>
@@ -105,7 +105,7 @@ function LicaoPagina() {
       <div className="mt-12 space-y-12">
         {licao.blocos.map((bloco, i) => (
           <section key={i}>
-            <p className="text-[11px] uppercase tracking-[0.2em] text-gold">
+            <p className="kicker">
               {ROTULO_BLOCO[bloco.tipo]}
             </p>
             <h2 className="mt-2 font-display text-2xl text-paper">{bloco.titulo}</h2>
@@ -123,7 +123,7 @@ function LicaoPagina() {
                 {bloco.citacoes.map((c, j) => (
                   <li key={j} className="border-l-2 border-gold/40 pl-4">
                     <p className="text-[17px] italic leading-[1.8] text-paper/85">{c.texto}</p>
-                    <p className="mt-1 text-[11px] uppercase tracking-[0.2em] text-gold">{c.ref}</p>
+                    <p className="mt-1 kicker">{c.ref}</p>
                   </li>
                 ))}
               </ul>
@@ -182,7 +182,7 @@ function LicaoPagina() {
 
       {licao.relacionados && licao.relacionados.length > 0 && (
         <section className="mt-10">
-          <h2 className="text-[11px] uppercase tracking-[0.2em] text-gold">Aprofundar</h2>
+          <h2 className="kicker">Aprofundar</h2>
           <ul className="mt-3 space-y-2 text-sm">
             {licao.relacionados.map((r) => (
               <li key={r.to}>

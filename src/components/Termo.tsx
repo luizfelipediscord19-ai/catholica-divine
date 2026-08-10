@@ -39,7 +39,7 @@ export function Termo({
           align="center"
           className="max-w-xs bg-deep border border-gold/30 text-paper px-5 py-4 shadow-2xl"
         >
-          <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-2">
+          <p className="kicker mb-2">
             {entrada.termo}
           </p>
           <p className="text-sm leading-relaxed text-paper/90 font-light">

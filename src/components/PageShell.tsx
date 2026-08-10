@@ -23,7 +23,7 @@ export function PageHero({
       <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-gold/20 to-transparent" />
 
       <div className="shell relative w-full py-[var(--space-lg)] animate-reveal">
-        <p className="mb-4 flex items-center gap-3 text-[10px] uppercase tracking-[0.4em] text-gold/60">
+        <p className="mb-4 flex items-center gap-3 kicker">
           <span className="h-px w-6 shrink-0 bg-gold/20" /> <span className="min-w-0">{eyebrow}</span>
         </p>
         <h1 className="mb-5 font-display leading-[1.05] tracking-tight text-paper text-[length:var(--step-4)]">
@@ -93,7 +93,7 @@ export function ContentCard({
       {media ? <div className="relative">{media}</div> : null}
       <div className="relative min-w-0 p-card">
         {subtitle ? (
-          <p className="mb-4 text-[11px] uppercase tracking-[0.4em] text-gold/60 group-hover:text-gold transition-colors">
+          <p className="mb-4 kicker group-hover:text-gold transition-colors">
             {subtitle}
           </p>
         ) : null}
@@ -145,7 +145,7 @@ export function Prose({ children }: { children: ReactNode }) {
 export function Sources({ items }: { items: { label: string; ref: string }[] }) {
   return (
     <aside className="measure mx-auto mt-[var(--space-lg)] border-t border-gold/20 pt-[var(--space-sm)]">
-      <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-4">Fontes consultadas</p>
+      <p className="kicker mb-4">Fontes consultadas</p>
       <ol className="space-y-2 text-xs text-muted-foreground leading-relaxed list-decimal pl-5">
         {items.map((s) => (
           <li key={s.label}>
@@ -166,7 +166,7 @@ export function Pullquote({ children, cite }: { children: ReactNode; cite?: stri
       </blockquote>
 
       {cite ? (
-        <figcaption className="mt-4 text-[10px] tracking-[0.3em] uppercase text-gold/80">
+        <figcaption className="mt-4 kicker">
           {cite}
         </figcaption>
       ) : null}

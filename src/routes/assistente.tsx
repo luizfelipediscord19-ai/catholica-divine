@@ -85,7 +85,7 @@ function Page() {
     <div className="shell py-[var(--space-md)]">
       <div className="text-center mb-10">
         <Sparkles className="size-8 text-gold mx-auto mb-4" aria-hidden="true" />
-        <p className="text-[10px] tracking-[0.35em] uppercase text-gold mb-3">Sophia · IA Católica</p>
+        <p className="kicker mb-3">Sophia · IA Católica</p>
         <h1 className="font-display text-4xl md:text-5xl text-foreground">
           Assistente de IA Católica
         </h1>
@@ -117,7 +117,7 @@ function Page() {
       </section>
 
       <nav aria-label="Continue o estudo" className="mt-14">
-        <h2 className="text-[10px] tracking-[0.3em] uppercase text-gold mb-4">Continue o estudo</h2>
+        <h2 className="kicker mb-4">Continue o estudo</h2>
         <ul className="flex flex-wrap gap-3 text-sm">
           {[
             { to: "/biblia", label: "Bíblia Sagrada" },

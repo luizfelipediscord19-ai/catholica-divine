@@ -46,7 +46,7 @@ export function AutorSelo({ autor, data }: { autor: Autor; data?: string | null 
       )}
       <div className="leading-tight">
         <p className="text-xs text-paper/90">{autor.nome}</p>
-        <p className="text-[10px] uppercase tracking-[0.2em] text-gold/60">
+        <p className="kicker">
           Nível {autor.nivel}
           {data ? ` · ${formatarData(data)}` : ""}
         </p>
@@ -73,7 +73,7 @@ export function Painel({ children, className = "" }: { children: ReactNode; clas
 
 export function Rotulo({ children }: { children: ReactNode }) {
   return (
-    <p className="text-[10px] tracking-[0.3em] uppercase text-gold/70 mb-3">{children}</p>
+    <p className="kicker mb-3">{children}</p>
   );
 }
 

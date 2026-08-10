@@ -57,7 +57,7 @@ function TrilhaPagina() {
       <Link to="/trilhas" className="inline-flex items-center gap-2 text-sm text-paper/70 hover:text-gold">
         <ArrowLeft className="size-4" aria-hidden="true" /> Trilhas
       </Link>
-      <p className="mt-8 text-[11px] uppercase tracking-[0.25em] text-gold">
+      <p className="mt-8 kicker">
         {trilha.nivel} · {trilha.licoes.length} lições
       </p>
       <h1 className="mt-3 font-display text-4xl text-paper">{trilha.titulo}</h1>

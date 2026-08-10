@@ -112,7 +112,7 @@ export function InstalarApp() {
           style={{ height: 72, width: 72 }}
         />
 
-        <p className="mt-4 text-[10px] uppercase tracking-[0.3em] text-gold">Portal Católico</p>
+        <p className="mt-4 kicker">Portal Católico</p>
         <h2 className="mt-2 font-display text-xl text-foreground">Instale o aplicativo</h2>
         <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
           Tenha a Bíblia, a liturgia do dia e o seu painel espiritual num toque — em tela cheia,

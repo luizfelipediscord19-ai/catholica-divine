@@ -148,7 +148,7 @@ function ForumPage() {
                       params={{ slug: t.slug }}
                       className="block border border-gold/15 hover:border-gold/40 bg-card/40 backdrop-blur-md p-6 transition-premium hover:-translate-y-0.5"
                     >
-                      <div className="flex items-center gap-3 mb-3 text-[10px] uppercase tracking-[0.2em] text-gold/70">
+                      <div className="flex items-center gap-3 mb-3 kicker">
                         {t.fixado ? <Pin className="size-3" aria-hidden="true" /> : null}
                         {t.trancado ? <Lock className="size-3" aria-hidden="true" /> : null}
                         <span>{secaoNome ?? "Fórum"}</span>

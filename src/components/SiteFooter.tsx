@@ -18,7 +18,7 @@ export function SiteFooter() {
         </div>
 
         <nav aria-label="Doutrina">
-          <h3 className="text-[11px] tracking-[0.2em] uppercase text-gold mb-4">
+          <h3 className="kicker mb-4">
             Doutrina
           </h3>
           <ul className="space-y-1 text-sm text-paper/80">
@@ -33,7 +33,7 @@ export function SiteFooter() {
         </nav>
 
         <nav aria-label="Vida espiritual">
-          <h3 className="text-[11px] tracking-[0.2em] uppercase text-gold mb-4">
+          <h3 className="kicker mb-4">
             Vida Espiritual
           </h3>
           <ul className="space-y-1 text-sm text-paper/80">
@@ -44,7 +44,7 @@ export function SiteFooter() {
             <li><Link to="/calendario-liturgico" className="block whitespace-nowrap py-2 hover:text-gold focus-visible:text-gold">Calendário Litúrgico</Link></li>
           </ul>
 
-          <h3 className="text-[11px] tracking-[0.2em] uppercase text-gold mt-8 mb-4">
+          <h3 className="kicker mt-8 mb-4">
             Institucional
           </h3>
           <ul className="space-y-1 text-sm text-paper/80">

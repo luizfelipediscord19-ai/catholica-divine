@@ -62,11 +62,11 @@ function Page() {
         <div className="shell py-[var(--space-lg)]">
           <Link
             to="/biblia"
-            className="inline-flex items-center gap-2 text-[10px] tracking-[0.3em] uppercase text-gold/80 hover:text-gold mb-6"
+            className="inline-flex items-center gap-2 kicker hover:text-gold mb-6"
           >
             <ArrowLeft className="size-3" /> Bíblia
           </Link>
-          <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-3">
+          <p className="kicker mb-3">
             {livro.testamento === "AT" ? "Antigo Testamento" : "Novo Testamento"} · {livro.grupo}
           </p>
           <h1 className="font-display text-[length:var(--step-4)] text-foreground leading-tight">
@@ -78,15 +78,15 @@ function Page() {
           </p>
           <div className="mt-8 grid grid-cols-2 md:grid-cols-3 gap-px bg-gold/15 max-w-2xl">
             <div className="bg-background p-4">
-              <p className="text-[10px] tracking-[0.25em] uppercase text-gold/60 mb-1">Autor</p>
+              <p className="kicker mb-1">Autor</p>
               <p className="text-sm text-foreground">{livro.autor}</p>
             </div>
             <div className="bg-background p-4">
-              <p className="text-[10px] tracking-[0.25em] uppercase text-gold/60 mb-1">Data</p>
+              <p className="kicker mb-1">Data</p>
               <p className="text-sm text-foreground">{livro.data}</p>
             </div>
             <div className="bg-background p-4">
-              <p className="text-[10px] tracking-[0.25em] uppercase text-gold/60 mb-1">Capítulos</p>
+              <p className="kicker mb-1">Capítulos</p>
               <p className="text-sm text-foreground">{livro.capitulos}</p>
             </div>
           </div>
@@ -98,11 +98,11 @@ function Page() {
           <div className="grid md:grid-cols-3 gap-10">
             <div className="md:col-span-2 space-y-8">
               <div>
-                <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-3">Introdução</p>
+                <p className="kicker mb-3">Introdução</p>
                 <p className="text-base leading-relaxed text-foreground/90">{intro.contexto}</p>
               </div>
               <div>
-                <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-3">Passagens-chave</p>
+                <p className="kicker mb-3">Passagens-chave</p>
                 <ul className="space-y-2">
                   {intro.passagens.map((p) => (
                     <li key={p} className="text-sm text-muted-foreground leading-relaxed border-l-2 border-gold/40 pl-3">
@@ -112,12 +112,12 @@ function Page() {
                 </ul>
               </div>
               <div>
-                <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-3">Sentido cristológico</p>
+                <p className="kicker mb-3">Sentido cristológico</p>
                 <p className="text-sm italic text-foreground/85 leading-relaxed">{intro.cristo}</p>
               </div>
             </div>
             <aside>
-              <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-3">Temas centrais</p>
+              <p className="kicker mb-3">Temas centrais</p>
               <ul className="space-y-3">
                 {intro.temas.map((t) => (
                   <li key={t} className="text-sm text-foreground/90 border border-gold/20 bg-card p-3">

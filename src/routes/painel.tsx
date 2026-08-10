@@ -151,7 +151,7 @@ function PainelPage() {
           </span>
         )}
         <div className="min-w-0 flex-1 space-y-3">
-          <p className="text-[10px] uppercase tracking-[0.4em] text-gold/70">
+          <p className="kicker">
             {dados.identidade.santoEscolhido ? "Seu padroeiro escolhido" : "Seu padroeiro sorteado"}
           </p>
           <h1 className="font-display text-4xl md:text-5xl text-foreground leading-tight">
@@ -256,7 +256,7 @@ function PainelPage() {
             <Rotulo>Versículos guardados</Rotulo>
             <Link
               to="/favoritos"
-              className="text-[10px] uppercase tracking-[0.25em] text-gold hover:text-paper transition-colors"
+              className="kicker hover:text-paper transition-colors"
             >
               Ver todos
             </Link>
@@ -273,7 +273,7 @@ function PainelPage() {
             <ul className="space-y-4">
               {dados.favoritos.slice(0, 8).map((f) => (
                 <li key={`${f.livro}-${f.capitulo}-${f.versiculo}`} className="space-y-1">
-                  <p className="text-[10px] uppercase tracking-[0.2em] text-gold/70">
+                  <p className="kicker">
                     {f.livro} {f.capitulo},{f.versiculo}
                   </p>
                   {f.texto ? (
@@ -292,7 +292,7 @@ function PainelPage() {
             <Rotulo>Suas anotações</Rotulo>
             <Link
               to="/favoritos"
-              className="text-[10px] uppercase tracking-[0.25em] text-gold hover:text-paper transition-colors"
+              className="kicker hover:text-paper transition-colors"
             >
               Ver todas
             </Link>
@@ -305,7 +305,7 @@ function PainelPage() {
             <ul className="space-y-4">
               {dados.notas.slice(0, 8).map((n) => (
                 <li key={n.id} className="space-y-1">
-                  <p className="text-[10px] uppercase tracking-[0.2em] text-gold/70">
+                  <p className="kicker">
                     {n.livro} {n.capitulo}
                     {n.versiculo ? `,${n.versiculo}` : ""}
                   </p>
@@ -334,7 +334,7 @@ function PainelPage() {
                     : "border-gold/10 bg-card/30 opacity-80"
                 }`}
               >
-                <p className="text-[10px] uppercase tracking-[0.2em] text-gold/70 mb-2">
+                <p className="kicker mb-2">
                   {c.xp} XP
                 </p>
                 <h3 className="font-display text-xl text-foreground mb-2">{c.titulo}</h3>
@@ -526,7 +526,7 @@ function DiarioHoje({
           </button>
           <Link
             to="/liturgia-diaria"
-            className="text-[10px] uppercase tracking-[0.25em] text-gold hover:text-paper transition-colors"
+            className="kicker hover:text-paper transition-colors"
           >
             Ler a liturgia do dia
           </Link>

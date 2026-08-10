@@ -24,7 +24,7 @@ export function BuscaAprender() {
   return (
     <section aria-labelledby="aprender-titulo" className="shell py-block">
       <div className="measure">
-        <p className="text-[10px] uppercase tracking-[0.4em] text-gold/80">Comece pela sua dúvida</p>
+        <p className="kicker">Comece pela sua dúvida</p>
         <h2
           id="aprender-titulo"
           className="mt-4 font-display leading-tight text-foreground text-[length:var(--step-3)]"
@@ -130,7 +130,7 @@ export function ComeceAqui() {
     <section aria-labelledby="comece-aqui" className="border-y border-gold/10 bg-muted/20">
       <div className="shell py-block">
         <div className="measure">
-          <p className="text-[10px] uppercase tracking-[0.4em] text-gold/80">Comece aqui</p>
+          <p className="kicker">Comece aqui</p>
           <h2
             id="comece-aqui"
             className="mt-4 font-display leading-tight text-foreground text-[length:var(--step-3)]"
@@ -158,7 +158,7 @@ export function ComeceAqui() {
                   {c.titulo}
                 </h3>
                 <p className="text-sm font-light leading-relaxed text-muted-foreground">{c.desc}</p>
-                <span className="mt-auto pt-2 text-[10px] uppercase tracking-[0.3em] text-gold/60 group-hover:text-gold">
+                <span className="mt-auto pt-2 kicker group-hover:text-gold">
                   Começar →
                 </span>
               </Link>

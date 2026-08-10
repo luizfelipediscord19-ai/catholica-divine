@@ -220,7 +220,7 @@ function Page() {
 
   return (
     <div className="shell py-[var(--space-md)]">
-      <p className="text-[10px] tracking-[0.35em] uppercase text-gold mb-3">
+      <p className="kicker mb-3">
         Sophia · Quality Assurance
       </p>
       <h1 className="font-display text-4xl md:text-5xl text-foreground">
@@ -256,7 +256,7 @@ function Page() {
 
       {/* Pergunta humana */}
       <div className="mt-8 border border-gold/20 bg-card/40 p-5">
-        <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-3">
+        <p className="kicker mb-3">
           Teste uma pergunta escrita por humano
         </p>
         <div className="flex flex-wrap gap-2 mb-3">

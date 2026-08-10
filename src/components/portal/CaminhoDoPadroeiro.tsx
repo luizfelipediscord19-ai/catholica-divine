@@ -96,7 +96,7 @@ export function CaminhoDoPadroeiro({
           </ul>
           <Link
             to="/oracoes"
-            className="inline-block mt-5 text-[10px] uppercase tracking-[0.25em] text-gold hover:text-paper transition-colors"
+            className="inline-block mt-5 kicker hover:text-paper transition-colors"
           >
             Ver todas as orações
           </Link>

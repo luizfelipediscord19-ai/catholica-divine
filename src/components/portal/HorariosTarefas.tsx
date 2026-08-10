@@ -29,7 +29,7 @@ export function HorariosTarefas() {
     <section className="border border-gold/20 bg-background/60 p-5 sm:p-6">
       <header className="flex items-center gap-2">
         <Clock className="size-4 text-gold" aria-hidden="true" />
-        <h2 className="text-[11px] uppercase tracking-[0.22em] text-gold">
+        <h2 className="kicker">
           Horários dos lembretes
         </h2>
       </header>

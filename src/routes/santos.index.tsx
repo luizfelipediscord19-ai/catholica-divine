@@ -105,7 +105,7 @@ function Page() {
         </div>
 
         <div className="mb-8 flex items-center gap-3 surface-card backdrop-blur-md px-4 py-3" role="search">
-          <label htmlFor="busca-santos" className="text-[10px] tracking-[0.3em] uppercase text-gold/90">
+          <label htmlFor="busca-santos" className="kicker">
             Buscar
           </label>
           <input
@@ -240,7 +240,7 @@ function SantoDetail({
           <div className="absolute inset-0 bg-linear-to-t from-background/90 via-background/20 to-transparent md:bg-linear-to-r" />
           <div className="absolute bottom-0 left-0 p-6 md:hidden">
             {view.titulo ? (
-              <p className="text-[10px] tracking-[0.4em] uppercase text-gold/80 mb-2">
+              <p className="kicker mb-2">
                 {view.titulo}
               </p>
             ) : null}
@@ -252,7 +252,7 @@ function SantoDetail({
           <div className="flex items-start justify-between gap-4">
             <div className="hidden md:block">
               {view.titulo ? (
-                <p className="text-[10px] tracking-[0.4em] uppercase text-gold/80 mb-3">
+                <p className="kicker mb-3">
                   {view.titulo}
                 </p>
               ) : null}
@@ -297,7 +297,7 @@ function SantoDetail({
 
           {view.virtudes && view.virtudes.length > 0 ? (
             <div>
-              <p className="text-[10px] tracking-[0.3em] uppercase text-gold/70 mb-3">
+              <p className="kicker mb-3">
                 Virtudes
               </p>
               <ul className="flex flex-wrap gap-2">

@@ -72,7 +72,7 @@ export function ReadingMode({
         className={`${open ? "block" : "hidden"} min-w-0 lg:block lg:sticky lg:top-28 lg:self-start print:hidden`}
       >
         <div className="border-l border-gold/20 pl-[var(--space-sm)] py-[var(--space-2xs)]">
-          <p className="text-[10px] tracking-[0.3em] uppercase text-gold/70 mb-[var(--space-sm)]">Navegação</p>
+          <p className="kicker mb-[var(--space-sm)]">Navegação</p>
           <nav>
             <ul className="space-y-1">
               {toc.map((t) => (
