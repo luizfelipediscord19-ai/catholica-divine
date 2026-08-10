@@ -1208,30 +1208,6 @@ export const GLOSSARIO: Record<string, EntradaGlossario> = {
   },
 
   // ——— Teologia fundamental e Revelação ———
-  analogia_entis: {
-    termo: "Analogia do Ser",
-    definicao:
-      "Modo de falar de Deus a partir das criaturas: os nomes divinos (bom, sábio, justo) aplicam-se a Deus nem no mesmo sentido que às criaturas (univocidade), nem em sentido totalmente diverso (equivocidade), mas por proporção — pois toda perfeição criada participa da perfeição incriada.",
-    ref: "S. Tomás, Suma Teológica I, q. 13, a. 5; CIC §§ 39-43",
-  },
-  depositum_fidei: {
-    termo: "Depósito da Fé",
-    definicao:
-      "O conjunto da Revelação confiado por Cristo aos Apóstolos e por eles à Igreja, contido na Escritura e na Tradição. O Magistério não o cria nem o aumenta: guarda-o, interpreta-o e explicita-o fielmente.",
-    ref: "CIC §§ 84-86; Dei Verbum 10",
-  },
-  desenvolvimento_dogmatico: {
-    termo: "Desenvolvimento do Dogma",
-    definicao:
-      "Crescimento na compreensão da mesma verdade revelada, sem mudança de conteúdo: a Igreja aprofunda o que sempre creu — como no caso da Imaculada Conceição — em continuidade orgânica, jamais em contradição com o ensino anterior.",
-    ref: "Dei Verbum 8; S. Vicente de Lérins, Commonitorium 23; CIC § 94",
-  },
-  sensus_fidei: {
-    termo: "Sensus Fidei",
-    definicao:
-      "Instinto sobrenatural pelo qual o fiel, ungido pelo Espírito Santo, reconhece a verdade da fé. Quando difundido em todo o povo de Deus em união com os pastores, chama-se sensus fidelium e é sinal — não fonte independente — da Tradição.",
-    ref: "Lumen Gentium 12; CIC §§ 91-93",
-  },
   assentimento_religioso: {
     termo: "Assentimento Religioso",
     definicao:
@@ -1258,23 +1234,11 @@ export const GLOSSARIO: Record<string, EntradaGlossario> = {
       "Atribuição, à única pessoa de Cristo, das propriedades de ambas as naturezas: por isso se diz com verdade que o Filho de Deus sofreu e que o filho de Maria é adorado.",
     ref: "Concílio de Éfeso (431); CIC §§ 466-469",
   },
-  kenosis: {
-    termo: "Kénosis",
-    definicao:
-      "‘Esvaziamento’ do Verbo que, sendo de condição divina, assumiu a forma de servo até a morte de cruz. Não é perda da divindade, mas ocultamento voluntário da glória no mistério da Encarnação.",
-    ref: "Fl 2,6-11; CIC §§ 461-462",
-  },
   perichorese: {
     termo: "Perichórese",
     definicao:
       "Inabitação mútua das três Pessoas divinas: cada Pessoa está inteiramente nas outras, sem se confundir com elas, porque a essência divina é única e indivisa.",
     ref: "CIC §§ 253-255; Jo 14,10-11",
-  },
-  filioque: {
-    termo: "Filioque",
-    definicao:
-      "Cláusula latina do Credo que confessa o Espírito Santo procedente do Pai e do Filho, como de um único princípio. Expressa a mesma fé que a formulação grega ‘do Pai pelo Filho’.",
-    ref: "CIC §§ 246-248",
   },
   processoes_divinas: {
     termo: "Processões Divinas",
@@ -1295,18 +1259,6 @@ export const GLOSSARIO: Record<string, EntradaGlossario> = {
     definicao:
       "Direito à recompensa por obras boas realizadas em estado de graça. Nada merecemos por nós mesmos: todo mérito cristão nasce da graça de Cristo em nós, e por isso Deus, coroando nossos méritos, coroa seus próprios dons.",
     ref: "CIC §§ 2006-2011; S. Agostinho, Ep. 194",
-  },
-  concupiscencia: {
-    termo: "Concupiscência",
-    definicao:
-      "Inclinação desordenada do apetite sensível, sequela do pecado original que permanece após o Batismo. Não é pecado em si, mas terreno de combate espiritual e ocasião de mérito.",
-    ref: "CIC §§ 405, 1264; Concílio de Trento, Decr. sobre o pecado original 5",
-  },
-  lei_natural: {
-    termo: "Lei Natural",
-    definicao:
-      "Participação da lei eterna na criatura racional: normas morais universais que a razão humana descobre inscritas na própria natureza (fazer o bem, evitar o mal, preservar a vida, buscar a verdade). Fundamenta a moral acessível a todos os povos.",
-    ref: "CIC §§ 1954-1960; S. Tomás, Suma Teológica I-II, q. 94",
   },
   duplo_efeito: {
     termo: "Princípio do Duplo Efeito",
@@ -1334,53 +1286,17 @@ export const GLOSSARIO: Record<string, EntradaGlossario> = {
   },
 
   // ——— Sacramentos e liturgia ———
-  ex_opere_operato: {
-    termo: "Ex Opere Operato",
-    definicao:
-      "‘Pela obra realizada’: o sacramento produz a graça pela ação de Cristo e não pela santidade do ministro. A disposição do fiel, porém, mede o quanto dessa graça é frutuosamente recebido.",
-    ref: "CIC §§ 1127-1128",
-  },
   carater_sacramental: {
     termo: "Caráter Sacramental",
     definicao:
       "Selo espiritual indelével impresso pelo Batismo, pela Confirmação e pela Ordem, que configura a Cristo e não pode ser repetido nem apagado, mesmo pelo pecado.",
     ref: "CIC §§ 1121, 1272, 1304, 1582",
   },
-  materia_forma: {
-    termo: "Matéria e Forma",
-    definicao:
-      "Elementos essenciais de todo sacramento: o sinal sensível (água, pão e vinho, óleo, imposição das mãos) e as palavras que o determinam. Alterá-los substancialmente invalida o sacramento.",
-    ref: "CIC §§ 1131, 1517; cân. 841",
-  },
-  epiclese: {
-    termo: "Epiclese",
-    definicao:
-      "Invocação do Espírito Santo na oração eucarística e nos outros sacramentos, pedindo que santifique os dons e os fiéis. Na tradição latina precede as palavras da consagração.",
-    ref: "CIC §§ 1105, 1353",
-  },
-  anamnese: {
-    termo: "Anamnese",
-    definicao:
-      "Memorial litúrgico que não é simples lembrança psicológica: torna presente e operante o único sacrifício de Cristo, cumprindo o mandato ‘fazei isto em memória de mim’.",
-    ref: "CIC §§ 1103, 1362-1366",
-  },
   concomitancia: {
     termo: "Concomitância",
     definicao:
       "Doutrina segundo a qual Cristo está inteiro — corpo, sangue, alma e divindade — sob cada espécie eucarística e em cada fragmento; por isso comungar apenas sob uma espécie nada subtrai ao dom.",
     ref: "Concílio de Trento, sessão XIII; CIC § 1377",
-  },
-  comunhao_espiritual: {
-    termo: "Comunhão Espiritual",
-    definicao:
-      "Ato de desejo ardente de receber a Eucaristia quando a comunhão sacramental é impossível. Não substitui o sacramento, mas comunica frutos de graça pela caridade e pela fé.",
-    ref: "S. Tomás, Suma Teológica III, q. 80, a. 1; CIC § 1385",
-  },
-  viatico: {
-    termo: "Viático",
-    definicao:
-      "Eucaristia dada ao fiel em perigo de morte, como alimento para a passagem à vida eterna. É direito do enfermo e dever grave dos pastores providenciá-lo.",
-    ref: "CIC §§ 1524-1525; cân. 921-922",
   },
   reserva_eucaristica: {
     termo: "Reserva Eucarística",
@@ -1401,12 +1317,6 @@ export const GLOSSARIO: Record<string, EntradaGlossario> = {
     definicao:
       "Expressão de Lumen Gentium 8: a única Igreja de Cristo subsiste na Igreja Católica governada pelo Sucessor de Pedro, ainda que elementos de santificação e verdade existam fora de suas fronteiras visíveis.",
     ref: "Lumen Gentium 8; CIC §§ 816, 870",
-  },
-  colegialidade: {
-    termo: "Colegialidade",
-    definicao:
-      "Comunhão dos bispos entre si e com o Papa, cabeça do colégio. O colégio episcopal só exerce autoridade suprema com e sob o Romano Pontífice, nunca contra ele.",
-    ref: "Lumen Gentium 22-23; CIC §§ 877, 883",
   },
   sensus_ecclesiae: {
     termo: "Sentir com a Igreja",
@@ -1444,26 +1354,8 @@ export const GLOSSARIO: Record<string, EntradaGlossario> = {
       "Pena canônica que incide automaticamente no momento do delito, sem sentença declaratória — distinta da ferendae sententiae, imposta por decisão da autoridade.",
     ref: "cân. 1314",
   },
-  sede_vacante: {
-    termo: "Sede Vacante",
-    definicao:
-      "Período entre a morte ou renúncia de um Papa (ou bispo) e a posse do sucessor. Nada de substancial pode ser mudado nesse tempo: o governo é apenas ordinário e conservador.",
-    ref: "Universi Dominici Gregis; cân. 416-430",
-  },
 
   // ——— Escatologia e piedade ———
-  juizo_particular: {
-    termo: "Juízo Particular",
-    definicao:
-      "Juízo que cada alma recebe imediatamente após a morte, decidindo sua sorte eterna — distinto do Juízo Final, que revelará publicamente, na ressurreição da carne, a justiça de Deus na história.",
-    ref: "CIC §§ 1021-1022, 1038-1041",
-  },
-  visao_beatifica: {
-    termo: "Visão Beatífica",
-    definicao:
-      "Contemplação imediata da essência divina pelos bem-aventurados, plenitude da felicidade humana. Não é fruto natural do intelecto criado, mas dom da luz da glória.",
-    ref: "CIC §§ 1023-1029; Bento XII, Benedictus Deus (1336)",
-  },
   indulgencia_plenaria: {
     termo: "Indulgência Plenária",
     definicao:
