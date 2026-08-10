@@ -37,8 +37,9 @@ export default defineConfig({
         manifest: false,
         workbox: {
           globPatterns: ["**/*.{js,css,woff,woff2,png,svg,ico,webmanifest}"],
-          // O HTML vem do servidor (SSR): não existe index.html para servir de
-          // fallback. As páginas já visitadas ficam no cache "paginas" abaixo.
+          // Página estática de reserva: garante que o app abra offline mesmo em
+          // endereços que ainda não foram visitados (o HTML normal vem do SSR).
+          additionalManifestEntries: [{ url: "/offline.html", revision: `${Date.now()}` }],
           navigateFallback: null,
 
           cleanupOutdatedCaches: true,
@@ -46,7 +47,8 @@ export default defineConfig({
           skipWaiting: true,
           runtimeCaching: [
             {
-              // Páginas: sempre tenta a rede; usa o cache só quando offline.
+              // Páginas: sempre tenta a rede; usa o cache só quando offline e,
+              // se a página nunca foi aberta, mostra a tela offline do app.
               urlPattern: ({ request, url }) =>
                 request.mode === "navigate" && !url.pathname.startsWith("/~oauth"),
               handler: "NetworkFirst",
@@ -54,6 +56,7 @@ export default defineConfig({
                 cacheName: "paginas",
                 networkTimeoutSeconds: 4,
                 expiration: { maxEntries: 80, maxAgeSeconds: 60 * 60 * 24 * 30 },
+                precacheFallback: { fallbackURL: "/offline.html" },
               },
             },
             {
