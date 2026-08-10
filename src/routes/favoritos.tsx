@@ -85,7 +85,7 @@ function FavoritosPage() {
 
   if (carregando || painel.isPending) {
     return (
-      <p className="max-w-5xl mx-auto px-6 py-32 text-sm text-muted-foreground">
+      <p className="shell-mid py-block text-sm text-muted-foreground">
         Abrindo sua biblioteca pessoal…
       </p>
     );
@@ -93,14 +93,14 @@ function FavoritosPage() {
 
   if (!dados) {
     return (
-      <p className="max-w-5xl mx-auto px-6 py-32 text-sm text-muted-foreground">
+      <p className="shell-mid py-block text-sm text-muted-foreground">
         Não foi possível carregar seus itens agora. Recarregue a página.
       </p>
     );
   }
 
   return (
-    <div className="max-w-5xl mx-auto px-6 py-16 md:py-24 space-y-10">
+    <div className="shell-mid py-block space-y-10">
       <header className="space-y-4">
         <p className="text-[10px] uppercase tracking-[0.4em] text-gold/70">Biblioteca pessoal</p>
         <h1 className="font-display text-4xl md:text-6xl text-foreground leading-tight">

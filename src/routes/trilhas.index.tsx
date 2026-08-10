@@ -39,7 +39,7 @@ function TrilhasIndex() {
   const licaoUltima = trilhaUltima?.licoes.find((l) => l.slug === ultima?.licao);
 
   return (
-    <div className="mx-auto max-w-5xl px-6 py-16">
+    <div className="shell-mid py-block">
       <p className="text-[11px] uppercase tracking-[0.25em] text-gold">Plataforma de formação</p>
       <h1 className="mt-3 font-display text-4xl text-paper sm:text-5xl">Trilhas de aprendizado</h1>
       <p className="mt-5 max-w-2xl text-paper/75 leading-relaxed">

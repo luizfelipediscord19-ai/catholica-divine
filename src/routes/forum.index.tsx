@@ -81,7 +81,7 @@ function ForumPage() {
         intro="Um pátio para perguntar, aprender e testemunhar. Para escrever, entre com e-mail e senha; sua identidade pública continua sendo um santo padroeiro sorteado."
       />
 
-      <div className="max-w-6xl mx-auto px-6 py-16 grid gap-10 lg:grid-cols-[1fr_280px]">
+      <div className="shell py-block grid gap-10 lg:grid-cols-[1fr_280px]">
         <div className="space-y-8">
           <div className="flex flex-wrap items-center gap-3">
             <button

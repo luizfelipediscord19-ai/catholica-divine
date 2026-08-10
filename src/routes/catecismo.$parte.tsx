@@ -29,7 +29,7 @@ export const Route = createFileRoute("/catecismo/$parte")({
 
   component: Page,
   notFoundComponent: () => (
-    <div className="max-w-2xl mx-auto px-6 py-32 text-center">
+    <div className="shell-narrow py-block text-center">
       <p className="text-gold">Parte não encontrada.</p>
       <Link to="/catecismo" className="text-sm underline mt-4 inline-block">← Catecismo</Link>
     </div>
@@ -39,7 +39,7 @@ export const Route = createFileRoute("/catecismo/$parte")({
 function Page() {
   const { parte, secoes } = Route.useLoaderData();
   return (
-    <div className="max-w-4xl mx-auto px-6 py-16">
+    <div className="shell-mid py-block">
       <Link
         to="/catecismo"
         className="inline-flex items-center gap-2 text-[10px] tracking-[0.3em] uppercase text-gold/80 hover:text-gold mb-6"

@@ -27,13 +27,13 @@ export const Route = createFileRoute("/liturgia-diaria")({
   }),
   component: Page,
   errorComponent: ({ error }) => (
-    <div className="max-w-2xl mx-auto px-6 py-32 text-center" role="alert">
+    <div className="shell-narrow py-block text-center" role="alert">
       <p className="text-gold">Não foi possível carregar a liturgia de hoje.</p>
       <p className="mt-2 text-sm text-muted-foreground">{error.message}</p>
     </div>
   ),
   notFoundComponent: () => (
-    <div className="max-w-2xl mx-auto px-6 py-32 text-center">
+    <div className="shell-narrow py-block text-center">
       <p className="text-gold">Liturgia não encontrada para esta data.</p>
     </div>
   ),
@@ -68,7 +68,7 @@ function Page() {
   const { data: lit } = useSuspenseQuery(liturgiaQueryOptions());
 
   return (
-    <div className="max-w-3xl mx-auto px-6 py-16">
+    <div className="shell-narrow py-block">
       <Link
         to="/calendario-liturgico"
         className="inline-flex items-center gap-2 text-[10px] tracking-[0.3em] uppercase text-gold/80 hover:text-gold mb-6"

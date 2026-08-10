@@ -22,7 +22,7 @@ export function PageHero({
       <div className="absolute inset-0 bg-linear-to-b from-background/20 via-background/80 to-background" />
       <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-gold/20 to-transparent" />
 
-      <div className="relative mx-auto w-full max-w-7xl px-gutter py-[var(--space-lg)] animate-reveal">
+      <div className="shell relative w-full py-[var(--space-lg)] animate-reveal">
         <p className="mb-4 flex items-center gap-3 text-[10px] uppercase tracking-[0.4em] text-gold/60">
           <span className="h-px w-6 shrink-0 bg-gold/20" /> <span className="min-w-0">{eyebrow}</span>
         </p>
@@ -50,7 +50,7 @@ export function Section({
   id?: string;
 }) {
   return (
-    <section id={id} className="mx-auto w-full max-w-6xl px-gutter py-[var(--space-lg)]">
+    <section id={id} className="shell w-full py-[var(--space-lg)]">
       {kicker ? (
         <p className="mb-3 text-[10px] uppercase tracking-[0.3em] text-gold">{kicker}</p>
       ) : null}
@@ -138,7 +138,7 @@ export function Sources({ items }: { items: { label: string; ref: string }[] }) 
 
 export function Pullquote({ children, cite }: { children: ReactNode; cite?: string }) {
   return (
-    <figure className="mx-auto my-[var(--space-lg)] max-w-3xl border-y border-gold/25 px-2 py-[var(--space-sm)] text-center">
+    <figure className="shell-narrow my-[var(--space-lg)] border-y border-gold/25 py-[var(--space-sm)] text-center">
       <blockquote className="font-display italic leading-snug text-foreground text-[length:var(--step-2)]">
         “{children}”
       </blockquote>
