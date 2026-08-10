@@ -26,6 +26,7 @@ import { Route as LiturgiaDiariaRouteImport } from './routes/liturgia-diaria'
 import { Route as GlossarioRouteImport } from './routes/glossario'
 import { Route as FeCatolicaRouteImport } from './routes/fe-catolica'
 import { Route as FavoritosRouteImport } from './routes/favoritos'
+import { Route as EstudarRouteImport } from './routes/estudar'
 import { Route as EmailConfirmadoRouteImport } from './routes/email-confirmado'
 import { Route as DoutoresDaIgrejaRouteImport } from './routes/doutores-da-igreja'
 import { Route as DiagnosticoBackendRouteImport } from './routes/diagnostico-backend'
@@ -146,6 +147,11 @@ const FeCatolicaRoute = FeCatolicaRouteImport.update({
 const FavoritosRoute = FavoritosRouteImport.update({
   id: '/favoritos',
   path: '/favoritos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EstudarRoute = EstudarRouteImport.update({
+  id: '/estudar',
+  path: '/estudar',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EmailConfirmadoRoute = EmailConfirmadoRouteImport.update({
@@ -333,6 +339,7 @@ export interface FileRoutesByFullPath {
   '/diagnostico-backend': typeof DiagnosticoBackendRoute
   '/doutores-da-igreja': typeof DoutoresDaIgrejaRoute
   '/email-confirmado': typeof EmailConfirmadoRoute
+  '/estudar': typeof EstudarRoute
   '/favoritos': typeof FavoritosRoute
   '/fe-catolica': typeof FeCatolicaRoute
   '/glossario': typeof GlossarioRoute
@@ -385,6 +392,7 @@ export interface FileRoutesByTo {
   '/diagnostico-backend': typeof DiagnosticoBackendRoute
   '/doutores-da-igreja': typeof DoutoresDaIgrejaRoute
   '/email-confirmado': typeof EmailConfirmadoRoute
+  '/estudar': typeof EstudarRoute
   '/favoritos': typeof FavoritosRoute
   '/fe-catolica': typeof FeCatolicaRoute
   '/glossario': typeof GlossarioRoute
@@ -437,6 +445,7 @@ export interface FileRoutesById {
   '/diagnostico-backend': typeof DiagnosticoBackendRoute
   '/doutores-da-igreja': typeof DoutoresDaIgrejaRoute
   '/email-confirmado': typeof EmailConfirmadoRoute
+  '/estudar': typeof EstudarRoute
   '/favoritos': typeof FavoritosRoute
   '/fe-catolica': typeof FeCatolicaRoute
   '/glossario': typeof GlossarioRoute
@@ -492,6 +501,7 @@ export interface FileRouteTypes {
     | '/diagnostico-backend'
     | '/doutores-da-igreja'
     | '/email-confirmado'
+    | '/estudar'
     | '/favoritos'
     | '/fe-catolica'
     | '/glossario'
@@ -544,6 +554,7 @@ export interface FileRouteTypes {
     | '/diagnostico-backend'
     | '/doutores-da-igreja'
     | '/email-confirmado'
+    | '/estudar'
     | '/favoritos'
     | '/fe-catolica'
     | '/glossario'
@@ -595,6 +606,7 @@ export interface FileRouteTypes {
     | '/diagnostico-backend'
     | '/doutores-da-igreja'
     | '/email-confirmado'
+    | '/estudar'
     | '/favoritos'
     | '/fe-catolica'
     | '/glossario'
@@ -649,6 +661,7 @@ export interface RootRouteChildren {
   DiagnosticoBackendRoute: typeof DiagnosticoBackendRoute
   DoutoresDaIgrejaRoute: typeof DoutoresDaIgrejaRoute
   EmailConfirmadoRoute: typeof EmailConfirmadoRoute
+  EstudarRoute: typeof EstudarRoute
   FavoritosRoute: typeof FavoritosRoute
   FeCatolicaRoute: typeof FeCatolicaRoute
   GlossarioRoute: typeof GlossarioRoute
@@ -795,6 +808,13 @@ declare module '@tanstack/react-router' {
       path: '/favoritos'
       fullPath: '/favoritos'
       preLoaderRoute: typeof FavoritosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/estudar': {
+      id: '/estudar'
+      path: '/estudar'
+      fullPath: '/estudar'
+      preLoaderRoute: typeof EstudarRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/email-confirmado': {
@@ -1136,6 +1156,7 @@ const rootRouteChildren: RootRouteChildren = {
   DiagnosticoBackendRoute: DiagnosticoBackendRoute,
   DoutoresDaIgrejaRoute: DoutoresDaIgrejaRoute,
   EmailConfirmadoRoute: EmailConfirmadoRoute,
+  EstudarRoute: EstudarRoute,
   FavoritosRoute: FavoritosRoute,
   FeCatolicaRoute: FeCatolicaRoute,
   GlossarioRoute: GlossarioRoute,

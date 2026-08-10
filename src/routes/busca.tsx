@@ -24,6 +24,10 @@ const SUGESTOES = [
 ];
 
 export const Route = createFileRoute("/busca")({
+  validateSearch: (search: Record<string, unknown>): { q?: string } => ({
+    q: typeof search.q === "string" && search.q.trim() ? search.q.trim() : undefined,
+  }),
+
   head: () => ({
     meta: [
       { title: "Busca Avançada — Bíblia, Catecismo e Magistério | Portal Católico" },
@@ -97,15 +101,24 @@ function Destaque({ texto, termo }: { texto: string; termo: string }) {
 }
 
 function BuscaAvancadaPage() {
-  const [termo, setTermo] = useState("");
+  const { q } = Route.useSearch();
+  const [termo, setTermo] = useState(q ?? "");
   const [ativos, setAtivos] = useState<EscopoBusca[]>(ESCOPOS.map((e) => e.id));
-  const [consulta, setConsulta] = useState("");
+  const [consulta, setConsulta] = useState(q ?? "");
+
   const buscar = useServerFn(buscarNoPortal);
 
   const mutation = useMutation({
     mutationFn: (dados: { termo: string; escopos: EscopoBusca[] }) =>
       buscar({ data: { ...dados, limite: 60 } }),
   });
+
+  useEffect(() => {
+    if (!q) return;
+    setTermo(q);
+    setConsulta(q);
+  }, [q]);
+
 
   useEffect(() => {
     if (consulta.trim().length < 2) return;

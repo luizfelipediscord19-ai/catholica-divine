@@ -8,6 +8,7 @@ import { santoDoDia } from "../lib/data/hoje";
 import { liturgiaQueryOptions } from "../lib/liturgia/query";
 import { COR_CLASSE } from "../lib/liturgia/calendario";
 import { ScrollReveal } from "../components/ScrollReveal";
+import { BuscaAprender, ComeceAqui } from "../components/portal/AprenderHome";
 
 
 
@@ -179,7 +180,7 @@ function Home() {
             </p>
             <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3 sm:gap-4">
               <Link
-                to="/biblia"
+                to="/estudar"
                 className="group relative inline-flex items-center justify-center gap-3 px-7 py-4 min-h-[3rem] bg-gold text-deep text-[11px] uppercase tracking-[0.22em] font-bold overflow-hidden transition-premium hover:shadow-[0_0_40px_rgba(212,175,55,0.3)] button-hover-effect"
               >
                 <span className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
@@ -225,7 +226,20 @@ function Home() {
       </section>
 
       {/* Daily */}
-      <section className="bg-background relative z-10">
+      <section aria-labelledby="hoje-na-igreja" className="bg-background relative z-10">
+        <div className="shell pt-block-sm">
+          <div className="flex flex-wrap items-baseline justify-between gap-3">
+            <h2
+              id="hoje-na-igreja"
+              className="font-display text-foreground text-[length:var(--step-2)]"
+            >
+              Hoje na Igreja
+            </h2>
+            <p className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
+              {new Date().toLocaleDateString("pt-BR", { day: "2-digit", month: "long", year: "numeric" })}
+            </p>
+          </div>
+        </div>
         <div className="shell">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-gold/10 border-x border-gold/10">
             {DAILY_ITEMS.map((d, i) => {
@@ -259,7 +273,19 @@ function Home() {
             })}
           </div>
         </div>
+        <div className="shell pb-block-sm">
+          <Link
+            to="/liturgia-diaria"
+            className="inline-flex min-h-11 items-center text-[10px] uppercase tracking-[0.3em] text-gold hover:text-paper transition-colors"
+          >
+            Ver liturgia completa →
+          </Link>
+        </div>
       </section>
+
+      <BuscaAprender />
+
+      <ComeceAqui />
 
       {/* Pillars - Bento Grid Style */}
       <section className="shell py-section">
