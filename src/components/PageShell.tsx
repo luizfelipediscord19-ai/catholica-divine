@@ -114,11 +114,33 @@ export function ContentCard({
 
 export function Prose({ children }: { children: ReactNode }) {
   return (
-    <div className="prose-deep measure mx-auto text-foreground/80 leading-[1.8] text-[length:var(--step-0)] font-light space-y-[var(--space-sm)] [&>h3]:font-display [&>h3]:text-[length:var(--step-3)] [&>h3]:text-paper [&>h3]:mt-[var(--space-lg)] [&>h3]:mb-[var(--space-xs)] [&>h3]:tracking-tight [&>h4]:uppercase [&>h4]:tracking-[0.3em] [&>h4]:text-[12px] [&>h4]:text-gold [&>h4]:mt-[var(--space-md)] [&>h4]:mb-[var(--space-2xs)] [&>blockquote]:border-l-[1px] [&>blockquote]:border-gold/40 [&>blockquote]:pl-[var(--space-sm)] [&>blockquote]:py-2 [&>blockquote]:italic [&>blockquote]:text-paper/70 [&>ul]:list-none [&>ul]:space-y-4 [&>ul>li]:relative [&>ul>li]:pl-6 [&>ul>li::before]:content-[''] [&>ul>li::before]:absolute [&>ul>li::before]:left-0 [&>ul>li::before]:top-[0.6em] [&>ul>li::before]:size-1.5 [&>ul>li::before]:bg-gold/40 [&>ol]:list-decimal [&>ol]:pl-6 [&>ol]:space-y-4 [&_strong]:text-paper [&_strong]:font-medium [&_em]:text-gold/80 [&_pre]:scroll-x-contained [&_table]:block [&_table]:scroll-x-contained">
+    <div
+      className={[
+        "prose-deep measure mx-auto text-foreground/80 leading-[1.8] text-[length:var(--step-0)] font-light",
+        // vertical rhythm: works for direct children AND content wrapped in <section>
+        "space-y-[var(--space-sm)] [&_section]:space-y-[var(--space-sm)] [&_section+section]:mt-[var(--space-lg)] [&_section]:scroll-mt-28",
+        "[&_p]:max-w-none",
+        // headings
+        "[&_h2]:font-display [&_h2]:text-[length:var(--step-4)] [&_h2]:text-foreground [&_h2]:tracking-tight [&_h2]:leading-[1.15] [&_h2]:mt-[var(--space-lg)] [&_h2]:mb-[var(--space-xs)]",
+        "[&_h3]:font-display [&_h3]:text-[length:var(--step-3)] [&_h3]:text-foreground [&_h3]:tracking-tight [&_h3]:leading-[1.2] [&_h3]:mt-[var(--space-md)] [&_h3]:mb-[var(--space-xs)] [&_section>h3:first-child]:mt-0",
+        "[&_h4]:uppercase [&_h4]:tracking-[0.28em] [&_h4]:text-[11px] [&_h4]:text-gold [&_h4]:font-semibold [&_h4]:mt-[var(--space-md)] [&_h4]:mb-[var(--space-2xs)]",
+        // quotes (Pullquote keeps its own look via .font-display)
+        "[&_blockquote:not(.font-display)]:border-l [&_blockquote:not(.font-display)]:border-gold/40 [&_blockquote:not(.font-display)]:pl-[var(--space-sm)] [&_blockquote:not(.font-display)]:py-2 [&_blockquote:not(.font-display)]:italic [&_blockquote:not(.font-display)]:text-foreground/70",
+        // lists
+        "[&_ul]:list-none [&_ul]:space-y-3 [&_ul>li]:relative [&_ul>li]:pl-6",
+        "[&_ul>li]:before:content-[''] [&_ul>li]:before:absolute [&_ul>li]:before:left-0 [&_ul>li]:before:top-[0.65em] [&_ul>li]:before:size-1.5 [&_ul>li]:before:rounded-full [&_ul>li]:before:bg-gold/50",
+        "[&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:space-y-3 [&_ol>li]:pl-1",
+        // inline
+        "[&_strong]:text-foreground [&_strong]:font-medium [&_em]:text-gold/80",
+        "[&_hr]:my-[var(--space-lg)] [&_hr]:border-gold/20",
+        "[&_pre]:scroll-x-contained [&_table]:block [&_table]:scroll-x-contained",
+      ].join(" ")}
+    >
       {children}
     </div>
   );
 }
+
 
 export function Sources({ items }: { items: { label: string; ref: string }[] }) {
   return (
