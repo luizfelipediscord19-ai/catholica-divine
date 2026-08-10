@@ -70,9 +70,7 @@
   --spacing-lg: var(--space-lg);
   --spacing-xl: var(--space-xl);
 
-  /* Raios e containers como utilitários */
-  --radius-btn: var(--radius-btn);
-  --radius-card: var(--radius-card);
+  /* Containers como utilitários max-w-shell* */
   --container-shell-narrow: var(--shell-narrow);
   --container-shell-mid: var(--shell-mid);
   --container-shell: var(--shell);
