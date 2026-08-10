@@ -149,7 +149,7 @@ function Home() {
   return (
     <div className="overflow-x-hidden">
       {/* Hero */}
-      <section className="relative overflow-hidden min-h-[78vh] sm:min-h-[86vh] flex items-center py-section">
+      <section className="relative overflow-hidden min-h-[68vh] sm:min-h-[82vh] flex items-center py-section">
         <div
           className="absolute inset-0 bg-cover bg-center transition-transform duration-[10s] ease-out scale-110 hover:scale-100"
           style={{ backgroundImage: `url(${hero})` }}
@@ -159,9 +159,9 @@ function Home() {
 
         <div className="shell relative w-full">
           <div className="max-w-3xl animate-reveal">
-            <p className="flex flex-wrap items-center gap-3 sm:gap-4 text-[10px] sm:text-[11px] uppercase leading-loose text-gold/80 tracking-[0.22em] sm:tracking-[0.38em] mb-5 sm:mb-7">
-              <span className="h-px w-8 sm:w-12 shrink-0 bg-gold/40" />
-              <span>Una · Sancta · Catholica · Apostolica</span>
+            <p className="flex items-center gap-3 sm:gap-4 text-[10px] sm:text-[11px] uppercase leading-relaxed text-gold/80 tracking-[0.14em] sm:tracking-[0.34em] mb-4 sm:mb-7">
+              <span className="hidden h-px w-8 shrink-0 bg-gold/40 sm:block sm:w-12" />
+              <span className="min-w-0">Una · Sancta · Catholica · Apostolica</span>
             </p>
             <h1
               className="font-display text-paper text-balance tracking-tight leading-[0.92] sm:leading-[0.88] mb-5 sm:mb-7"
