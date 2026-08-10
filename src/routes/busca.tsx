@@ -101,9 +101,11 @@ function Destaque({ texto, termo }: { texto: string; termo: string }) {
 }
 
 function BuscaAvancadaPage() {
-  const [termo, setTermo] = useState("");
+  const { q } = Route.useSearch();
+  const [termo, setTermo] = useState(q ?? "");
   const [ativos, setAtivos] = useState<EscopoBusca[]>(ESCOPOS.map((e) => e.id));
-  const [consulta, setConsulta] = useState("");
+  const [consulta, setConsulta] = useState(q ?? "");
+
   const buscar = useServerFn(buscarNoPortal);
 
   const mutation = useMutation({
