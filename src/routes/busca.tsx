@@ -114,6 +114,13 @@ function BuscaAvancadaPage() {
   });
 
   useEffect(() => {
+    if (!q) return;
+    setTermo(q);
+    setConsulta(q);
+  }, [q]);
+
+
+  useEffect(() => {
     if (consulta.trim().length < 2) return;
     mutation.mutate({ termo: consulta, escopos: ativos });
     // eslint-disable-next-line react-hooks/exhaustive-deps
