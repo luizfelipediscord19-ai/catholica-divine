@@ -164,7 +164,7 @@ function Home() {
             </p>
             <h1
               className="font-display text-paper text-balance tracking-tight leading-[0.92] sm:leading-[0.88] mb-5 sm:mb-7"
-              style={{ fontSize: "clamp(2.5rem, 1.4rem + 7vw, 5.5rem)" }}
+              style={{ fontSize: "clamp(2.25rem, 1.2rem + 5.6vw, 5.25rem)" }}
             >
               A biblioteca{" "}
               <span className="text-gold italic font-medium relative inline-block whitespace-nowrap">
