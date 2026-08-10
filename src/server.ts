@@ -53,8 +53,13 @@ async function applySecurityHeaders(response: Response, nonce?: string): Promise
     "frame-src 'none'; " +
     "worker-src 'self' blob:; " +
     "manifest-src 'self'; " +
-    "frame-ancestors 'self' https://*.lovable.app https://*.lovable.dev; " +
+    // Leitores externos (ChatGPT, Bing/Copilot, pré-visualizações do Lovable)
+    // precisam abrir o portal dentro do próprio painel deles.
+    "frame-ancestors 'self' https://*.lovable.app https://*.lovable.dev " +
+    "https://chatgpt.com https://*.chatgpt.com https://*.openai.com " +
+    "https://*.bing.com https://copilot.microsoft.com; " +
     "upgrade-insecure-requests;";
+
 
   // Content Security Policy (Strict but allows required fonts and AI gateway)
   newHeaders.set(
