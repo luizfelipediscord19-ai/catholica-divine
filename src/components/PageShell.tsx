@@ -48,16 +48,11 @@ export function Section({
   id?: string;
 }) {
   return (
-    <section id={id} className="shell w-full py-[var(--space-lg)]">
-      {kicker ? (
-        <p className="mb-3 text-[10px] uppercase tracking-[0.3em] text-gold">{kicker}</p>
-      ) : null}
-      {title ? (
-        <h2 className="mb-[var(--space-md)] title-section">
-          {title}
-        </h2>
-      ) : null}
+    <section id={id} className="shell w-full py-block scroll-mt-28">
+      {kicker ? <p className="mb-2xs kicker">{kicker}</p> : null}
+      {title ? <h2 className="mb-md title-section">{title}</h2> : null}
       {children}
+
     </section>
   );
 }
