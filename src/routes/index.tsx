@@ -208,7 +208,7 @@ function Home() {
 
       {/* Tempo litúrgico em tempo real */}
       <section className="bg-background relative z-10 border-y border-gold/10">
-        <div className="shell py-block-sm flex flex-wrap items-center justify-between gap-4">
+        <div className="shell py-block-sm flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:gap-4">
           <p className="flex flex-wrap items-center gap-3 text-[10px] tracking-[0.3em] uppercase text-muted-foreground">
             <span className={`inline-flex items-center gap-2 border px-3 py-1.5 ${COR_CLASSE[lit.cor]}`}>
               <span className="size-2 rounded-full bg-current" aria-hidden="true" /> {lit.corNome}
@@ -241,10 +241,10 @@ function Home() {
           </div>
         </div>
         <div className="shell">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-gold/10 border-x border-gold/10">
+          <div className="grid grid-cols-1 gap-px bg-gold/10 md:grid-cols-3 sm:border-x sm:border-gold/10">
             {DAILY_ITEMS.map((d, i) => {
               const inner = (
-                <div className="group h-full flex flex-col p-card transition-premium hover:bg-gold/[0.03]">
+                <div className="group h-full flex flex-col py-[var(--space-sm)] sm:p-card transition-premium hover:bg-gold/[0.03]">
                   <p className="text-[9px] tracking-[0.5em] uppercase text-gold/80 mb-6 group-hover:text-gold transition-colors">{d.kicker}</p>
                   <p className="font-display italic text-[length:var(--step-1)] text-foreground/90 leading-relaxed mb-6 flex-1">
                     {d.text}
