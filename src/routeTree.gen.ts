@@ -30,6 +30,7 @@ import { Route as EstudarRouteImport } from './routes/estudar'
 import { Route as EmailConfirmadoRouteImport } from './routes/email-confirmado'
 import { Route as DoutoresDaIgrejaRouteImport } from './routes/doutores-da-igreja'
 import { Route as DiagnosticoBackendRouteImport } from './routes/diagnostico-backend'
+import { Route as DesignSystemRouteImport } from './routes/design-system'
 import { Route as CoroinhasRouteImport } from './routes/coroinhas'
 import { Route as CatecismoRouteImport } from './routes/catecismo'
 import { Route as CalendarioLiturgicoRouteImport } from './routes/calendario-liturgico'
@@ -167,6 +168,11 @@ const DoutoresDaIgrejaRoute = DoutoresDaIgrejaRouteImport.update({
 const DiagnosticoBackendRoute = DiagnosticoBackendRouteImport.update({
   id: '/diagnostico-backend',
   path: '/diagnostico-backend',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DesignSystemRoute = DesignSystemRouteImport.update({
+  id: '/design-system',
+  path: '/design-system',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CoroinhasRoute = CoroinhasRouteImport.update({
@@ -336,6 +342,7 @@ export interface FileRoutesByFullPath {
   '/calendario-liturgico': typeof CalendarioLiturgicoRoute
   '/catecismo': typeof CatecismoRouteWithChildren
   '/coroinhas': typeof CoroinhasRoute
+  '/design-system': typeof DesignSystemRoute
   '/diagnostico-backend': typeof DiagnosticoBackendRoute
   '/doutores-da-igreja': typeof DoutoresDaIgrejaRoute
   '/email-confirmado': typeof EmailConfirmadoRoute
@@ -389,6 +396,7 @@ export interface FileRoutesByTo {
   '/calendario-liturgico': typeof CalendarioLiturgicoRoute
   '/catecismo': typeof CatecismoRouteWithChildren
   '/coroinhas': typeof CoroinhasRoute
+  '/design-system': typeof DesignSystemRoute
   '/diagnostico-backend': typeof DiagnosticoBackendRoute
   '/doutores-da-igreja': typeof DoutoresDaIgrejaRoute
   '/email-confirmado': typeof EmailConfirmadoRoute
@@ -442,6 +450,7 @@ export interface FileRoutesById {
   '/calendario-liturgico': typeof CalendarioLiturgicoRoute
   '/catecismo': typeof CatecismoRouteWithChildren
   '/coroinhas': typeof CoroinhasRoute
+  '/design-system': typeof DesignSystemRoute
   '/diagnostico-backend': typeof DiagnosticoBackendRoute
   '/doutores-da-igreja': typeof DoutoresDaIgrejaRoute
   '/email-confirmado': typeof EmailConfirmadoRoute
@@ -498,6 +507,7 @@ export interface FileRouteTypes {
     | '/calendario-liturgico'
     | '/catecismo'
     | '/coroinhas'
+    | '/design-system'
     | '/diagnostico-backend'
     | '/doutores-da-igreja'
     | '/email-confirmado'
@@ -551,6 +561,7 @@ export interface FileRouteTypes {
     | '/calendario-liturgico'
     | '/catecismo'
     | '/coroinhas'
+    | '/design-system'
     | '/diagnostico-backend'
     | '/doutores-da-igreja'
     | '/email-confirmado'
@@ -603,6 +614,7 @@ export interface FileRouteTypes {
     | '/calendario-liturgico'
     | '/catecismo'
     | '/coroinhas'
+    | '/design-system'
     | '/diagnostico-backend'
     | '/doutores-da-igreja'
     | '/email-confirmado'
@@ -658,6 +670,7 @@ export interface RootRouteChildren {
   CalendarioLiturgicoRoute: typeof CalendarioLiturgicoRoute
   CatecismoRoute: typeof CatecismoRouteWithChildren
   CoroinhasRoute: typeof CoroinhasRoute
+  DesignSystemRoute: typeof DesignSystemRoute
   DiagnosticoBackendRoute: typeof DiagnosticoBackendRoute
   DoutoresDaIgrejaRoute: typeof DoutoresDaIgrejaRoute
   EmailConfirmadoRoute: typeof EmailConfirmadoRoute
@@ -836,6 +849,13 @@ declare module '@tanstack/react-router' {
       path: '/diagnostico-backend'
       fullPath: '/diagnostico-backend'
       preLoaderRoute: typeof DiagnosticoBackendRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/design-system': {
+      id: '/design-system'
+      path: '/design-system'
+      fullPath: '/design-system'
+      preLoaderRoute: typeof DesignSystemRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/coroinhas': {
@@ -1153,6 +1173,7 @@ const rootRouteChildren: RootRouteChildren = {
   CalendarioLiturgicoRoute: CalendarioLiturgicoRoute,
   CatecismoRoute: CatecismoRouteWithChildren,
   CoroinhasRoute: CoroinhasRoute,
+  DesignSystemRoute: DesignSystemRoute,
   DiagnosticoBackendRoute: DiagnosticoBackendRoute,
   DoutoresDaIgrejaRoute: DoutoresDaIgrejaRoute,
   EmailConfirmadoRoute: EmailConfirmadoRoute,
