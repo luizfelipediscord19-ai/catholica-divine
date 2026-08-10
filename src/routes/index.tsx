@@ -402,7 +402,7 @@ function Home() {
         />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#050505_80%)]" />
         
-        <ScrollReveal className="shell-mid py-section relative text-center">
+        <ScrollReveal className="shell py-section relative text-center">
           <div className="relative inline-block mb-12">
             <div className="absolute inset-0 bg-gold/20 blur-3xl rounded-full" />
             <div className="relative size-24 rounded-full glass border border-gold/30 flex items-center justify-center shadow-[0_0_50px_rgba(212,175,55,0.15)]">

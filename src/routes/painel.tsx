@@ -72,7 +72,7 @@ function PainelPage() {
 
   if (carregando || painel.isPending) {
     return (
-      <p className="shell-mid py-block text-sm text-muted-foreground">
+      <p className="shell py-block text-sm text-muted-foreground">
         Preparando seu painel…
       </p>
     );
@@ -83,7 +83,7 @@ function PainelPage() {
     const motivo =
       painel.error instanceof Error ? painel.error.message : "Falha de comunicação com o servidor.";
     return (
-      <div className="shell-mid py-block space-y-6">
+      <div className="shell py-block space-y-6">
         <p className="text-sm text-muted-foreground">
           Não foi possível carregar seu painel agora. Vamos tentar sincronizar novamente.
         </p>

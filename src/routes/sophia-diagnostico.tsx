@@ -219,7 +219,7 @@ function Page() {
   };
 
   return (
-    <div className="shell-mid py-[var(--space-md)]">
+    <div className="shell py-[var(--space-md)]">
       <p className="text-[10px] tracking-[0.35em] uppercase text-gold mb-3">
         Sophia · Quality Assurance
       </p>

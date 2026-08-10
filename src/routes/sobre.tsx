@@ -156,7 +156,7 @@ export function Card({
 
 function SobrePage() {
   return (
-    <div className="shell-mid py-block">
+    <div className="shell py-block">
       <Link
         to="/"
         className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.4em] text-gold/70 hover:text-gold mb-10 transition-colors"

@@ -47,7 +47,7 @@ export function ReadingMode({
 
   return (
     <FootnoteIndex.Provider value={indice}>
-    <div className="shell-wide py-block reading-mode grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-20">
+    <div className="shell py-block reading-mode grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-20">
       {/* Mobile TOC trigger */}
       <div className="lg:hidden flex items-center justify-between gap-4 print:hidden mb-8">
         <button

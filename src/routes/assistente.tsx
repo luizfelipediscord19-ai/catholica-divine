@@ -82,7 +82,7 @@ export const Route = createFileRoute("/assistente")({
 
 function Page() {
   return (
-    <div className="shell-mid py-[var(--space-md)]">
+    <div className="shell py-[var(--space-md)]">
       <div className="text-center mb-10">
         <Sparkles className="size-8 text-gold mx-auto mb-4" aria-hidden="true" />
         <p className="text-[10px] tracking-[0.35em] uppercase text-gold mb-3">Sophia · IA Católica</p>

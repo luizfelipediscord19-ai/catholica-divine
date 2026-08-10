@@ -39,7 +39,7 @@ export const Route = createFileRoute("/catecismo/$parte")({
 function Page() {
   const { parte, secoes } = Route.useLoaderData();
   return (
-    <div className="shell-mid py-block">
+    <div className="shell py-block">
       <Link
         to="/catecismo"
         className="inline-flex items-center gap-2 text-[10px] tracking-[0.3em] uppercase text-gold/80 hover:text-gold mb-6"
