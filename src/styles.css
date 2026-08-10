@@ -40,9 +40,44 @@
   --color-deep: var(--deep);
   --color-paper: var(--paper);
 
+  /* Status semântico (feedback) */
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+
   --font-display: "Playfair Display", "Cormorant Garamond", Georgia, serif;
   --font-sans: "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Escala tipográfica exposta ao Tailwind: text-step--2 … text-step-5 */
+  --text-step--2: var(--step--2);
+  --text-step--1: var(--step--1);
+  --text-step-0: var(--step-0);
+  --text-step-1: var(--step-1);
+  --text-step-2: var(--step-2);
+  --text-step-3: var(--step-3);
+  --text-step-4: var(--step-4);
+  --text-step-5: var(--step-5);
+
+  /* Escala de espaçamento exposta ao Tailwind: p-md, gap-sm, mt-lg … */
+  --spacing-2xs: var(--space-2xs);
+  --spacing-xs: var(--space-xs);
+  --spacing-sm: var(--space-sm);
+  --spacing-md: var(--space-md);
+  --spacing-lg: var(--space-lg);
+  --spacing-xl: var(--space-xl);
+
+  /* Raios e containers como utilitários */
+  --radius-btn: var(--radius-btn);
+  --radius-card: var(--radius-card);
+  --container-shell-narrow: var(--shell-narrow);
+  --container-shell-mid: var(--shell-mid);
+  --container-shell: var(--shell);
+  --container-shell-wide: var(--shell-wide);
+
 
   /* Premium Animations */
   --animate-reveal: reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
