@@ -147,7 +147,7 @@ function BuscaAvancadaPage() {
         <p className="kicker mb-5 flex items-center gap-3">
           <Search className="size-4" aria-hidden="true" /> Quaerite et invenietis
         </p>
-        <h1 className="font-display text-[length:var(--step-4)] text-foreground leading-[1.05] mb-5">
+        <h1 className="title-page text-foreground leading-[1.05] mb-5">
           Busca <span className="text-gold/70 italic">Avançada</span>
         </h1>
         <p className="text-base md:text-lg text-muted-foreground font-light leading-relaxed max-w-2xl">

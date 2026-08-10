@@ -53,7 +53,7 @@ function GlossarioPage() {
         <p className="kicker mb-6 flex items-center gap-4">
           <BookOpen className="size-4" /> Lexicon Fidei
         </p>
-        <h1 className="font-display text-[length:var(--step-4)] text-foreground leading-[1.05] mb-6">
+        <h1 className="title-page text-foreground leading-[1.05] mb-6">
           Glossário <span className="text-gold/60 italic">Católico</span>
         </h1>
         <p className="text-lg text-muted-foreground font-light leading-relaxed max-w-2xl">

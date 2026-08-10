@@ -81,7 +81,7 @@ function Page() {
         <ArrowLeft className="size-3" /> Bíblia
       </Link>
       <p className="kicker mb-3">Lectio Divina · Plano Diário</p>
-      <h1 className="font-display text-[length:var(--step-4)] text-foreground">Leituras Diárias</h1>
+      <h1 className="title-page text-foreground">Leituras Diárias</h1>
       <p className="mt-4 text-muted-foreground max-w-2xl">
         Uma passagem da Sagrada Escritura para cada dia, ligada diretamente ao texto carregado em Almeida.
         Marque como concluído para acompanhar seu progresso.

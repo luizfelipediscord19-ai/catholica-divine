@@ -231,7 +231,7 @@ function Home() {
           <div className="flex flex-wrap items-baseline justify-between gap-3">
             <h2
               id="hoje-na-igreja"
-              className="font-display text-foreground text-[length:var(--step-2)]"
+              className="title-card"
             >
               Hoje na Igreja
             </h2>
@@ -292,7 +292,7 @@ function Home() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-[var(--space-lg)] gap-[var(--space-sm)]">
           <ScrollReveal className="max-w-2xl">
             <p className="kicker mb-4">Os pilares da verdade</p>
-            <h2 className="font-display text-[length:var(--step-4)] text-foreground leading-[1.08] text-balance">
+            <h2 className="title-page text-foreground leading-[1.08] text-balance">
               Duas mil anos de fé, <span className="text-gold/75">em um só lugar.</span>
             </h2>
           </ScrollReveal>
@@ -319,7 +319,7 @@ function Home() {
                 <p.icon className="size-6 text-gold group-hover:scale-110 transition-premium" />
               </div>
               <div className="flex-1">
-                <h3 className="font-display text-[length:var(--step-2)] text-foreground mb-3 group-hover:text-gold transition-colors">{p.title}</h3>
+                <h3 className="title-card text-foreground mb-3 group-hover:text-gold transition-colors">{p.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed font-light group-hover:text-foreground/70 transition-colors">{p.desc}</p>
               </div>
               <div className="flex items-center justify-between pt-6 border-t border-gold/5">
@@ -354,7 +354,7 @@ function Home() {
             <p className="kicker mb-6 flex items-center gap-4">
               <span className="h-px w-6 bg-gold/40" /> Maria, Mater Ecclesiae
             </p>
-            <h2 className="font-display text-[length:var(--step-4)] text-foreground leading-[0.98] tracking-tight text-balance mb-6">
+            <h2 className="title-page text-foreground leading-[0.98] tracking-tight text-balance mb-6">
               “Faça-se em mim <span className="text-gold italic">segundo a tua palavra.</span>”
             </h2>
             <p className="measure text-[length:var(--step-0)] text-muted-foreground leading-relaxed font-light mb-[var(--space-md)]">
@@ -381,7 +381,7 @@ function Home() {
             <p className="kicker mb-4 flex items-center gap-4">
               <span className="h-px w-6 bg-gold/40" /> Vox Patrum · A voz dos Padres
             </p>
-            <h2 className="font-display text-[length:var(--step-4)] text-foreground leading-[1.08] text-balance">
+            <h2 className="title-page text-foreground leading-[1.08] text-balance">
               O que recebemos{" "}
               <span className="text-gold/85 italic">dos primeiros séculos.</span>
             </h2>

@@ -69,7 +69,7 @@ function Page() {
           <p className="kicker mb-3">
             {livro.testamento === "AT" ? "Antigo Testamento" : "Novo Testamento"} · {livro.grupo}
           </p>
-          <h1 className="font-display text-[length:var(--step-4)] text-foreground leading-tight">
+          <h1 className="title-page text-foreground leading-tight">
             {livro.nome}
             <span className="ml-4 text-2xl text-muted-foreground italic">({livro.abrev})</span>
           </h1>

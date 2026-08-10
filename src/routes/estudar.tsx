@@ -141,7 +141,7 @@ function EstudarPage() {
           <p className="kicker">Continue estudando</p>
           <h2
             id="continue-estudando"
-            className="mt-3 font-display text-foreground text-[length:var(--step-2)]"
+            className="mt-3 title-card"
           >
             {trilhaUltima.titulo} — {licaoUltima.titulo}
           </h2>
@@ -177,7 +177,7 @@ function EstudarPage() {
               <div className="flex flex-wrap items-baseline justify-between gap-3">
                 <h2
                   id={`nivel-${nivel.nome}`}
-                  className="font-display text-foreground text-[length:var(--step-2)]"
+                  className="title-card"
                 >
                   <span aria-hidden="true" className="mr-3">
                     {nivel.marcador}

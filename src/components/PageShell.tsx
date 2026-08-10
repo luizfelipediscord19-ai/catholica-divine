@@ -55,7 +55,7 @@ export function Section({
         <p className="mb-3 text-[10px] uppercase tracking-[0.3em] text-gold">{kicker}</p>
       ) : null}
       {title ? (
-        <h2 className="mb-[var(--space-md)] font-display text-foreground text-[length:var(--step-3)]">
+        <h2 className="mb-[var(--space-md)] title-section">
           {title}
         </h2>
       ) : null}
@@ -97,7 +97,7 @@ export function ContentCard({
             {subtitle}
           </p>
         ) : null}
-        <h3 className="mb-[var(--space-xs)] font-display leading-tight text-foreground text-[length:var(--step-2)] group-hover:text-paper transition-colors">
+        <h3 className="mb-[var(--space-xs)] title-card group-hover:text-paper transition-colors">
           {title}
         </h3>
         {children ? (

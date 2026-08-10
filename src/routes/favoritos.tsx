@@ -103,7 +103,7 @@ function FavoritosPage() {
     <div className="shell py-block space-y-10">
       <header className="space-y-4">
         <p className="kicker">Biblioteca pessoal</p>
-        <h1 className="font-display text-[length:var(--step-4)] text-foreground leading-tight">
+        <h1 className="title-page text-foreground leading-tight">
           Favoritos e anotações
         </h1>
         <p className="text-sm md:text-base text-muted-foreground font-light max-w-2xl leading-relaxed">
