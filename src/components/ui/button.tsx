@@ -1,46 +1,95 @@
 import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
+import { Loader2, Check, AlertCircle } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium cursor-pointer transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "btn-base relative inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium tracking-wide [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground shadow hover:bg-primary/90",
-        destructive: "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
-        outline:
-          "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground",
-        secondary: "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
+        default: "btn-gold font-semibold",
+        gold: "btn-gold font-semibold",
+        destructive:
+          "bg-destructive text-destructive-foreground shadow-[var(--shadow-btn)] hover:bg-destructive/90 hover:shadow-[0_8px_22px_-10px_rgba(139,0,0,0.7)] hover:-translate-y-px",
+        outline: "btn-outline-gold",
+        secondary:
+          "bg-secondary text-secondary-foreground shadow-[var(--shadow-btn)] hover:bg-secondary/85 hover:-translate-y-px",
+        ghost: "text-foreground/80 hover:bg-gold/10 hover:text-gold",
+        link: "min-h-0 text-primary underline-offset-4 hover:underline active:scale-100",
       },
       size: {
-        default: "h-9 px-4 py-2",
-        sm: "h-8 rounded-md px-3 text-xs",
-        lg: "h-10 rounded-md px-8",
-        icon: "h-9 w-9",
+        default: "h-11 px-5 text-sm",
+        sm: "h-10 min-h-10 px-4 text-xs",
+        lg: "h-12 px-8 text-sm",
+        icon: "size-11 p-0",
+        "icon-sm": "size-10 min-h-10 p-0",
+      },
+      estado: {
+        idle: "",
+        loading: "cursor-progress",
+        success:
+          "!bg-emerald-600 !text-white !border-transparent shadow-[var(--shadow-btn)] hover:!bg-emerald-600",
+        error:
+          "!bg-destructive !text-destructive-foreground !border-transparent hover:!bg-destructive",
       },
     },
     defaultVariants: {
       variant: "default",
       size: "default",
+      estado: "idle",
     },
   },
 );
 
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
   asChild?: boolean;
+  /** Atalho para o estado de carregamento (equivale a estado="loading"). */
+  loading?: boolean;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
+  (
+    { className, variant, size, estado, asChild = false, loading, children, disabled, ...props },
+    ref,
+  ) => {
     const Comp = asChild ? Slot : "button";
+    const estadoFinal = loading ? "loading" : (estado ?? "idle");
+    const bloqueado = disabled || estadoFinal === "loading";
+
+    if (asChild) {
+      return (
+        <Comp
+          className={cn(buttonVariants({ variant, size, estado: estadoFinal, className }))}
+          ref={ref}
+          {...props}
+        >
+          {children}
+        </Comp>
+      );
+    }
+
     return (
-      <Comp className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props} />
+      <button
+        className={cn(buttonVariants({ variant, size, estado: estadoFinal, className }))}
+        ref={ref}
+        disabled={bloqueado}
+        aria-busy={estadoFinal === "loading" || undefined}
+        {...props}
+      >
+        {estadoFinal === "loading" ? (
+          <Loader2 className="animate-spin" aria-hidden="true" />
+        ) : estadoFinal === "success" ? (
+          <Check aria-hidden="true" />
+        ) : estadoFinal === "error" ? (
+          <AlertCircle aria-hidden="true" />
+        ) : null}
+        {children}
+      </button>
     );
   },
 );
