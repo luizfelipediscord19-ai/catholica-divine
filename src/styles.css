@@ -114,9 +114,13 @@
   justify-content: center;
   gap: 0.5rem;
   min-height: 2.75rem;
+  padding-inline: 1.5rem;
   border-radius: var(--radius-btn);
   text-align: center;
   white-space: nowrap;
+  /* nenhum botão pode estourar a gutter, mesmo com rótulo longo */
+  max-width: 100%;
+
   cursor: pointer;
   user-select: none;
   transition-property: color, background-color, border-color, box-shadow, transform, opacity;
