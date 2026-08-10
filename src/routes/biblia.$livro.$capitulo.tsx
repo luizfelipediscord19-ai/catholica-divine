@@ -224,7 +224,7 @@ function Page() {
           </label>
         </div>
         <div className="flex flex-wrap items-center gap-3">
-          <button type="submit" className="min-h-11 px-5 py-3 bg-gold text-deep text-[10px] uppercase tracking-[0.25em] font-semibold hover:bg-paper transition-smooth">
+          <button type="submit" className="btn-base btn-gold text-[10px] uppercase tracking-[0.25em]">
             Abrir passagem
           </button>
           {passagemAtiva && (
