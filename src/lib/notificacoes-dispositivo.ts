@@ -8,6 +8,7 @@
  */
 
 import type { Notificacao } from "@/lib/notificacoes";
+import { cancelarAvisosServidor, inscreverAvisosServidor } from "@/lib/push/assinar";
 
 const CHAVE = "portal:notificacoes-dispositivo";
 
