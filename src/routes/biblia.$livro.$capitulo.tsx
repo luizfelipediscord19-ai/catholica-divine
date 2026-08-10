@@ -82,7 +82,7 @@ export const Route = createFileRoute("/biblia/$livro/$capitulo")({
 
   component: Page,
   notFoundComponent: () => (
-    <div className="max-w-2xl mx-auto px-4 sm:px-6 py-24 text-center">
+    <div className="max-w-2xl mx-auto px-gutter py-24 text-center">
       <p className="text-gold">Capítulo não encontrado.</p>
       <Link to="/biblia" className="text-sm underline mt-4 inline-block">← Voltar</Link>
     </div>
@@ -172,7 +172,7 @@ function Page() {
     : null;
 
   return (
-    <div className="max-w-3xl mx-auto px-4 sm:px-6 py-10 md:py-16">
+    <div className="max-w-3xl mx-auto px-gutter py-10 md:py-16">
       <Link
         to="/biblia/$livro"
         params={{ livro: livro.slug }}

@@ -219,7 +219,7 @@ function Page() {
   };
 
   return (
-    <div className="max-w-5xl mx-auto px-6 py-12 md:py-16">
+    <div className="max-w-5xl mx-auto px-6 py-[var(--space-md)]">
       <p className="text-[10px] tracking-[0.35em] uppercase text-gold mb-3">
         Sophia · Quality Assurance
       </p>

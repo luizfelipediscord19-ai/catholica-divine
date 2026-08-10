@@ -76,7 +76,7 @@ function Page() {
   const pct = total ? Math.min(100, Math.round((feitas / total) * 100)) : 0;
 
   return (
-    <div className="max-w-5xl mx-auto px-6 py-12 md:py-16">
+    <div className="max-w-5xl mx-auto px-6 py-[var(--space-md)]">
       <Link to="/biblia" className="inline-flex items-center gap-2 text-[10px] tracking-[0.3em] uppercase text-gold/80 hover:text-gold mb-6">
         <ArrowLeft className="size-3" /> Bíblia
       </Link>

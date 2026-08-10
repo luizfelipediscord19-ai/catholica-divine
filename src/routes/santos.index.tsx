@@ -237,7 +237,7 @@ function SantoDetail({
             className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1.6s] ease-out hover:scale-105"
           />
 
-          <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent md:bg-gradient-to-r" />
+          <div className="absolute inset-0 bg-linear-to-t from-background/90 via-background/20 to-transparent md:bg-linear-to-r" />
           <div className="absolute bottom-0 left-0 p-6 md:hidden">
             {view.titulo ? (
               <p className="text-[10px] tracking-[0.4em] uppercase text-gold/80 mb-2">
