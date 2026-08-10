@@ -109,13 +109,13 @@ function Page() {
       <div className="mt-14 pt-8 border-t border-gold/15 flex flex-wrap gap-3">
         <Link
           to="/biblia"
-          className="inline-flex items-center gap-2 px-6 py-3 border border-gold text-gold text-[11px] uppercase tracking-[0.25em] font-medium hover:bg-gold hover:text-deep transition-colors"
+          className="btn-base btn-outline-gold gap-2 text-[11px] uppercase tracking-[0.25em]"
         >
           <BookOpen className="size-3.5" aria-hidden="true" /> Ler a Bíblia
         </Link>
         <Link
           to="/oracoes"
-          className="inline-flex items-center gap-2 px-6 py-3 border border-gold/30 text-foreground text-[11px] uppercase tracking-[0.25em] hover:border-gold hover:text-gold transition-colors"
+          className="btn-base btn-outline-gold gap-2 text-[11px] uppercase tracking-[0.25em]"
         >
           Orações do dia
         </Link>

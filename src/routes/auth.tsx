@@ -120,7 +120,7 @@ function AuthPage() {
         intro="Uma conta simples, com e-mail e senha, para participar do fórum com responsabilidade e guardar seu progresso espiritual em qualquer aparelho."
       />
 
-      <div className="max-w-xl mx-auto px-6 py-16 space-y-8">
+      <div className="shell-narrow py-block space-y-8">
         {carregando ? (
           <Painel>
             <p className="text-sm text-muted-foreground">Verificando sua sessão…</p>

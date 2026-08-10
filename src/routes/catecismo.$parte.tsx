@@ -101,7 +101,7 @@ function Page() {
         href={VATICAN_URL}
         target="_blank"
         rel="noopener"
-        className="mt-10 inline-flex items-center gap-2 px-6 py-3 border border-gold text-gold text-[11px] uppercase tracking-[0.25em] font-medium hover:bg-gold hover:text-deep transition-colors"
+        className="mt-10 btn-base btn-outline-gold gap-2 text-[11px] uppercase tracking-[0.25em]"
       >
         <ExternalLink className="size-3.5" /> Ler o texto integral
       </a>

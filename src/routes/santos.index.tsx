@@ -148,7 +148,7 @@ function Page() {
             <button
               type="button"
               onClick={() => setLimite((v) => v + PAGINA)}
-              className="min-h-11 px-8 py-3 border border-gold/40 text-[10px] uppercase tracking-[0.3em] text-gold hover:bg-gold hover:text-deep transition-colors"
+              className="btn-base btn-outline-gold px-8 text-[10px] uppercase tracking-[0.3em]"
             >
               Carregar mais santos
             </button>
