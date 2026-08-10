@@ -96,7 +96,7 @@ export function VersiculoDoDia() {
   return (
     <div className="border border-gold/25 bg-card/60 backdrop-blur-sm p-6 md:p-10 print:hidden">
       <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
-        <p className="text-[10px] tracking-[0.3em] uppercase text-gold">Versículo do dia</p>
+        <p className="kicker">Versículo do dia</p>
         <label className="inline-flex items-center gap-2 text-xs text-muted-foreground cursor-pointer">
           <CalIcon className="size-3.5 text-gold/70" />
           <input
@@ -114,7 +114,7 @@ export function VersiculoDoDia() {
         “{versiculo.texto}”
       </blockquote>
 
-      <p className="mt-4 text-[10px] tracking-[0.3em] uppercase text-gold/80">— {versiculo.ref}</p>
+      <p className="mt-4 kicker">— {versiculo.ref}</p>
       <p className="mt-1 text-[10px] text-muted-foreground">
         Bíblia Sagrada · tradução <em>Ave-Maria</em> (Editora Ave-Maria)
       </p>
@@ -149,7 +149,7 @@ export function VersiculoDoDia() {
 
       {favs.length > 0 ? (
         <div className="mt-6 pt-5 border-t border-gold/15">
-          <p className="text-[10px] tracking-[0.3em] uppercase text-gold/70 mb-2">Favoritos salvos</p>
+          <p className="kicker mb-2">Favoritos salvos</p>
           <p className="text-xs text-muted-foreground">
             {favs.map((r) => (
               <span key={r} className="inline-block mr-2 text-foreground/80">{r}</span>

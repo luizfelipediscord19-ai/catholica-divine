@@ -80,7 +80,7 @@ function CartaoOracao({
               {oracao.titulo}
             </span>
             {oracao.latim ? (
-              <span className="mt-1 block text-[11px] uppercase tracking-[0.2em] text-gold/80">
+              <span className="mt-1 block kicker">
                 {oracao.latim}
               </span>
             ) : null}
@@ -103,7 +103,7 @@ function CartaoOracao({
         <div id={`oracao-${oracao.slug}`} className="px-6 pb-6 sm:px-8 sm:pb-8 space-y-5">
           {oracao.paraQue ? (
             <p className="text-sm leading-relaxed text-foreground/80">
-              <span className="mr-2 text-[10px] uppercase tracking-[0.2em] text-gold">
+              <span className="mr-2 kicker">
                 Para que serve
               </span>
               {oracao.paraQue}
@@ -112,7 +112,7 @@ function CartaoOracao({
 
           {oracao.quando ? (
             <p className="text-sm leading-relaxed text-foreground/80">
-              <span className="mr-2 text-[10px] uppercase tracking-[0.2em] text-gold">
+              <span className="mr-2 kicker">
                 Quando rezar
               </span>
               {oracao.quando}
@@ -224,7 +224,7 @@ function Page() {
         <div className="space-y-14">
           {grupos.map((grupo) => (
             <div key={grupo.cat}>
-              <h2 className="mb-6 text-[11px] uppercase tracking-[0.3em] text-gold">
+              <h2 className="mb-6 kicker">
                 {grupo.cat}
               </h2>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">

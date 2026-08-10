@@ -201,7 +201,7 @@ function SantoPage() {
             </figure>
 
             <div className="border border-gold/20 bg-card p-5">
-              <p className="text-[10px] tracking-[0.3em] uppercase text-gold/80 mb-3">
+              <p className="kicker mb-3">
                 Ficha
               </p>
               <dl className="space-y-3">
@@ -235,7 +235,7 @@ function SantoPage() {
             <Relacionados topic={`santo:${slug}`} variant="aside" />
 
             <div>
-              <p className="text-[10px] tracking-[0.3em] uppercase text-gold/80 mb-3">
+              <p className="kicker mb-3">
                 Outros santos
               </p>
               <ul className="space-y-2">

@@ -200,7 +200,7 @@ export function MapaAnoLiturgico() {
       <div className="p-6 md:p-8">
         <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
           <div>
-            <p className="text-[10px] tracking-[0.3em] uppercase text-gold/80 mb-2">Tempo litúrgico</p>
+            <p className="kicker mb-2">Tempo litúrgico</p>
             <h3 className="font-display text-3xl text-foreground">{tempo.nome}</h3>
             <div className="mt-3 flex flex-wrap gap-4 text-xs text-muted-foreground">
               <span className="inline-flex items-center gap-1.5">
@@ -228,7 +228,7 @@ export function MapaAnoLiturgico() {
         <p className="text-sm text-foreground/85 leading-relaxed max-w-3xl">{tempo.resumo}</p>
 
         <div className="mt-8">
-          <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-4">Destaques do tempo</p>
+          <p className="kicker mb-4">Destaques do tempo</p>
           <ul className="divide-y divide-gold/10 border-y border-gold/10">
             {tempo.destaques.map((d) => (
               <li key={d.titulo} className="grid grid-cols-[140px_1fr] gap-4 py-3 text-sm">

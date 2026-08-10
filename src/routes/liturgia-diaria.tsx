@@ -71,12 +71,12 @@ function Page() {
     <div className="shell-narrow py-block">
       <Link
         to="/calendario-liturgico"
-        className="inline-flex items-center gap-2 text-[10px] tracking-[0.3em] uppercase text-gold/80 hover:text-gold mb-6"
+        className="inline-flex items-center gap-2 kicker hover:text-gold mb-6"
       >
         <ArrowLeft className="size-3" aria-hidden="true" /> Calendário litúrgico
       </Link>
 
-      <p className="text-[10px] tracking-[0.35em] uppercase text-gold mb-3 capitalize">{lit.dataExtenso}</p>
+      <p className="kicker mb-3 capitalize">{lit.dataExtenso}</p>
       <h1 className="font-display text-4xl md:text-5xl text-foreground leading-tight">{lit.celebracao}</h1>
 
       <div className="mt-6 flex flex-wrap items-center gap-3 text-[10px] tracking-[0.25em] uppercase">

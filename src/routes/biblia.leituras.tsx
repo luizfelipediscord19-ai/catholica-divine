@@ -77,11 +77,11 @@ function Page() {
 
   return (
     <div className="shell py-[var(--space-md)]">
-      <Link to="/biblia" className="inline-flex items-center gap-2 text-[10px] tracking-[0.3em] uppercase text-gold/80 hover:text-gold mb-6">
+      <Link to="/biblia" className="inline-flex items-center gap-2 kicker hover:text-gold mb-6">
         <ArrowLeft className="size-3" /> Bíblia
       </Link>
-      <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-3">Lectio Divina · Plano Diário</p>
-      <h1 className="font-display text-[length:var(--step-4)] text-foreground">Leituras Diárias</h1>
+      <p className="kicker mb-3">Lectio Divina · Plano Diário</p>
+      <h1 className="title-page text-foreground">Leituras Diárias</h1>
       <p className="mt-4 text-muted-foreground max-w-2xl">
         Uma passagem da Sagrada Escritura para cada dia, ligada diretamente ao texto carregado em Almeida.
         Marque como concluído para acompanhar seu progresso.
@@ -90,7 +90,7 @@ function Page() {
       {/* Progresso */}
       <div className="mt-8 border border-gold/20 bg-card p-5">
         <div className="flex items-center justify-between gap-4 mb-3">
-          <p className="text-[10px] tracking-[0.3em] uppercase text-gold/80">Progresso</p>
+          <p className="kicker">Progresso</p>
           <button onClick={reset} className="inline-flex items-center gap-1 text-[10px] uppercase tracking-[0.25em] text-muted-foreground hover:text-gold">
             <RotateCcw className="size-3" /> Reiniciar
           </button>
@@ -103,7 +103,7 @@ function Page() {
 
       {/* Hoje */}
       <article className="mt-10 border border-gold/40 bg-card p-8 md:p-10">
-        <div className="flex items-center gap-2 text-[10px] tracking-[0.3em] uppercase text-gold mb-3">
+        <div className="flex items-center gap-2 kicker mb-3">
           <CalendarDays className="size-3" /> Hoje · {fmtData(new Date())}
         </div>
         <h2 className="font-display text-3xl md:text-4xl text-foreground">{hoje.tema}</h2>
@@ -131,7 +131,7 @@ function Page() {
 
       {/* Próximos dias */}
       <section className="mt-14">
-        <h3 className="text-[10px] tracking-[0.3em] uppercase text-gold/80 mb-4">Próximos 7 dias</h3>
+        <h3 className="kicker mb-4">Próximos 7 dias</h3>
         <div className="divide-y divide-gold/15 border border-gold/20">
           {proximos.map(({ data, leitura }, i) => {
             const id = isoDia(data);
@@ -153,7 +153,7 @@ function Page() {
                   {feita ? <Check className="size-4" /> : null}
                 </button>
                 <Link {...linkParaLeitura(leitura)} className="flex-1 group">
-                  <div className="text-[10px] tracking-[0.3em] uppercase text-gold/70">{fmtData(data)}</div>
+                  <div className="kicker">{fmtData(data)}</div>
                   <div className={"font-display text-lg group-hover:text-gold transition-smooth " + (feita ? "line-through text-muted-foreground" : "text-foreground")}>
                     {leitura.tema}
                   </div>
@@ -167,7 +167,7 @@ function Page() {
 
       {/* Plano completo */}
       <section className="mt-14">
-        <h3 className="text-[10px] tracking-[0.3em] uppercase text-gold/80 mb-4">
+        <h3 className="kicker mb-4">
           Plano completo · ciclo de {PLANO.length} dias
         </h3>
         <div className="grid sm:grid-cols-2 gap-px bg-gold/15">
@@ -189,7 +189,7 @@ function Page() {
                   {feita ? <Check className="size-3" /> : null}
                 </button>
                 <Link {...linkParaLeitura(l)} className="flex-1">
-                  <div className="text-[10px] tracking-[0.25em] uppercase text-gold/70">
+                  <div className="kicker">
                     Dia {i + 1} {ehHoje && <span className="text-gold">· hoje</span>}
                   </div>
                   <div className={"font-display text-base group-hover:text-gold " + (feita ? "line-through text-muted-foreground" : "text-foreground")}>

@@ -85,7 +85,7 @@ export function NotasCapitulo({
     <section
       className={`surface-card backdrop-blur-sm p-8 md:p-10 space-y-6 ${className}`}
     >
-      <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-gold">
+      <div className="flex items-center gap-2 kicker">
         <NotebookPen className="size-3.5" aria-hidden="true" /> Minhas anotações
       </div>
 
@@ -139,7 +139,7 @@ export function NotasCapitulo({
           {notas.map((n) => (
             <li key={n.id} className="border-t border-gold/10 pt-4 flex items-start gap-4">
               <div className="flex-1 space-y-1">
-                <p className="text-[10px] uppercase tracking-[0.25em] text-gold/70">
+                <p className="kicker">
                   {n.versiculo ? `Versículo ${n.versiculo}` : "Capítulo"} ·{" "}
                   {new Date(n.updated_at).toLocaleDateString("pt-BR")}
                 </p>

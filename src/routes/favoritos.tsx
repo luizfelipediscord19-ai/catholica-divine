@@ -102,8 +102,8 @@ function FavoritosPage() {
   return (
     <div className="shell py-block space-y-10">
       <header className="space-y-4">
-        <p className="text-[10px] uppercase tracking-[0.4em] text-gold/70">Biblioteca pessoal</p>
-        <h1 className="font-display text-[length:var(--step-4)] text-foreground leading-tight">
+        <p className="kicker">Biblioteca pessoal</p>
+        <h1 className="title-page text-foreground leading-tight">
           Favoritos e anotações
         </h1>
         <p className="text-sm md:text-base text-muted-foreground font-light max-w-2xl leading-relaxed">
@@ -195,7 +195,7 @@ function FavoritosPage() {
                   <Link
                     to="/biblia/$livro/$capitulo"
                     params={{ livro: f.livro, capitulo: String(f.capitulo) }}
-                    className="text-[10px] uppercase tracking-[0.25em] text-gold hover:text-paper transition-colors"
+                    className="kicker hover:text-paper transition-colors"
                   >
                     Abrir capítulo →
                   </Link>

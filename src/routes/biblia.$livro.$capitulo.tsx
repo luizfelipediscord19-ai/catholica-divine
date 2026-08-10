@@ -177,12 +177,12 @@ function Page() {
       <Link
         to="/biblia/$livro"
         params={{ livro: livro.slug }}
-        className="inline-flex items-center gap-2 text-[10px] tracking-[0.25em] uppercase text-gold/80 hover:text-gold mb-6"
+        className="inline-flex items-center gap-2 kicker hover:text-gold mb-6"
       >
         <ArrowLeft className="size-3 shrink-0" /> <span className="truncate">{livro.nome}</span>
       </Link>
 
-      <h1 className="font-display text-[length:var(--step-4)] text-foreground break-words">
+      <h1 className="title-page text-foreground break-words">
         {livro.nome} <span className="text-gold">{capitulo}</span>
         {refPassagem && (
           <span className="text-gold/80 text-2xl sm:text-4xl">
@@ -200,7 +200,7 @@ function Page() {
         onSubmit={aplicarPassagem}
         className="mt-8 md:mt-12 grid gap-4 sm:flex sm:flex-wrap sm:items-end sm:gap-6 surface-card backdrop-blur-sm p-5 sm:p-8"
       >
-        <div className="flex items-center gap-2 text-[10px] tracking-[0.3em] uppercase text-gold">
+        <div className="flex items-center gap-2 kicker">
           <Filter className="size-3 shrink-0" /> Passagem
         </div>
         <div className="grid grid-cols-2 gap-4 sm:flex sm:gap-6">
@@ -285,7 +285,7 @@ function Page() {
 
 
       <article className="mt-8 md:mt-12 surface-card backdrop-blur-sm p-5 sm:p-10 md:p-16 shadow-2xl shadow-gold/5">
-        <p className="text-[10px] tracking-[0.25em] uppercase text-gold mb-6">
+        <p className="kicker mb-6">
           {versaoAtual.fonte}
           {passagemAtiva && <span className="ml-2 text-gold/70">· passagem {refPassagem}</span>}
         </p>

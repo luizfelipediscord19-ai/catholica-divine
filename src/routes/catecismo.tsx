@@ -148,14 +148,14 @@ function Page() {
               params={{ parte: p.slug }}
               className="group bg-card hover:bg-background p-8 transition-colors"
             >
-              <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-3">
+              <p className="kicker mb-3">
                 Parte {p.num} · {p.paragrafos}
               </p>
               <h3 className="font-display text-2xl text-foreground mb-3 group-hover:text-gold">
                 {p.titulo}
               </h3>
               <p className="text-sm text-muted-foreground leading-relaxed">{p.resumo}</p>
-              <span className="mt-6 inline-block text-[10px] tracking-[0.3em] uppercase text-gold/70 group-hover:text-gold">
+              <span className="mt-6 inline-block kicker group-hover:text-gold">
                 Explorar →
               </span>
             </Link>
@@ -167,7 +167,7 @@ function Page() {
         <div className="space-y-4">
           {SECOES.map((s) => (
             <div key={s.slug} className="border border-gold/20 p-6 bg-card">
-              <p className="text-[10px] tracking-[0.3em] uppercase text-gold/70 mb-2">
+              <p className="kicker mb-2">
                 Parte {s.parte} · {s.paragrafos}
               </p>
               <h4 className="font-display text-xl text-foreground">{s.titulo}</h4>

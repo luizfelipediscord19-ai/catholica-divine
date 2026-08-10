@@ -42,7 +42,7 @@ export const ChatMessageItem = memo(({ message }: ChatMessageProps) => {
             onClick={copiar}
             aria-label="Copiar resposta"
             title="Copiar resposta"
-            className="mt-3 inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-gold/60 hover:text-gold transition-colors"
+            className="mt-3 inline-flex items-center gap-2 kicker hover:text-gold transition-colors"
           >
             {copiado ? <Check className="size-3" aria-hidden="true" /> : <Copy className="size-3" aria-hidden="true" />}
             {copiado ? "Copiado" : "Copiar"}

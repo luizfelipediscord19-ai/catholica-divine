@@ -42,14 +42,14 @@ function Page() {
     <div className="shell py-block">
       <Link
         to="/catecismo"
-        className="inline-flex items-center gap-2 text-[10px] tracking-[0.3em] uppercase text-gold/80 hover:text-gold mb-6"
+        className="inline-flex items-center gap-2 kicker hover:text-gold mb-6"
       >
         <ArrowLeft className="size-3" /> Catecismo
       </Link>
-      <p className="text-[10px] tracking-[0.35em] uppercase text-gold mb-4">
+      <p className="kicker mb-4">
         Parte {parte.num} · {parte.paragrafos}
       </p>
-      <h1 className="font-display text-[length:var(--step-4)] text-foreground leading-tight">
+      <h1 className="title-page text-foreground leading-tight">
         {parte.titulo}
       </h1>
       <p className="mt-6 text-lg text-muted-foreground leading-relaxed">{parte.resumo}</p>
@@ -59,7 +59,7 @@ function Page() {
           const capitulos = capitulosDaSecao(s.slug);
           return (
             <section key={s.slug} className="border border-gold/20 bg-card p-5 sm:p-6">
-              <p className="text-[10px] tracking-[0.3em] uppercase text-gold/70 mb-2">
+              <p className="kicker mb-2">
                 {s.paragrafos}
               </p>
               <h2 className="font-display text-xl sm:text-2xl text-foreground">{s.titulo}</h2>
@@ -72,7 +72,7 @@ function Page() {
                       <h3 className="font-display text-base text-foreground leading-snug">
                         {c.titulo}
                       </h3>
-                      <p className="text-[10px] tracking-[0.25em] uppercase text-gold/60 mt-1">
+                      <p className="kicker mt-1">
                         {c.paragrafos}
                       </p>
                       <ul className="mt-2 space-y-1.5">

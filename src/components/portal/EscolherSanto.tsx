@@ -127,7 +127,7 @@ export function EscolherSanto({
                     <span className="block font-display text-base text-foreground leading-snug">
                       {s.nome}
                     </span>
-                    <span className="block text-[10px] uppercase tracking-[0.2em] text-gold/70 mt-1">
+                    <span className="block kicker mt-1">
                       {s.data}
                     </span>
                   </span>

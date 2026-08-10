@@ -37,7 +37,7 @@ export function BuscaHoras() {
   return (
     <section id="buscador" className="scroll-mt-24 mt-12 print:hidden">
       <div className="border border-gold/20 bg-card/40 backdrop-blur-sm p-6 md:p-8">
-        <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-2">Buscador temático</p>
+        <p className="kicker mb-2">Buscador temático</p>
         <h3 className="font-display text-2xl md:text-3xl text-foreground">
           Encontre salmos, cânticos e leituras
         </h3>

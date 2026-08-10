@@ -138,16 +138,16 @@ function BuscaAvancadaPage() {
     <div className="shell py-block">
       <Link
         to="/"
-        className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.4em] text-gold/70 hover:text-gold mb-10 transition-colors"
+        className="inline-flex items-center gap-2 kicker hover:text-gold mb-10 transition-colors"
       >
         <ArrowLeft className="size-3.5" aria-hidden="true" /> Voltar
       </Link>
 
       <header className="mb-10">
-        <p className="text-[10px] tracking-[0.5em] uppercase text-gold mb-5 flex items-center gap-3">
+        <p className="kicker mb-5 flex items-center gap-3">
           <Search className="size-4" aria-hidden="true" /> Quaerite et invenietis
         </p>
-        <h1 className="font-display text-[length:var(--step-4)] text-foreground leading-[1.05] mb-5">
+        <h1 className="title-page text-foreground leading-[1.05] mb-5">
           Busca <span className="text-gold/70 italic">Avançada</span>
         </h1>
         <p className="text-base md:text-lg text-muted-foreground font-light leading-relaxed max-w-2xl">
@@ -219,7 +219,7 @@ function BuscaAvancadaPage() {
 
       {!consulta ? (
         <div className="mt-12">
-          <p className="text-[10px] uppercase tracking-[0.3em] text-gold/70 mb-4">
+          <p className="kicker mb-4">
             Comece por aqui
           </p>
           <div className="flex flex-wrap gap-2">
@@ -266,7 +266,7 @@ function BuscaAvancadaPage() {
                     to={r.href}
                     className="block surface-card p-5 transition-colors hover:border-gold/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
                   >
-                    <p className="mb-2 flex flex-wrap items-center gap-3 text-[10px] uppercase tracking-[0.25em] text-gold/80">
+                    <p className="mb-2 flex flex-wrap items-center gap-3 kicker">
                       <span>{ESCOPOS.find((e) => e.id === r.escopo)?.label}</span>
                       <span className="text-muted-foreground">{r.referencia}</span>
                     </p>

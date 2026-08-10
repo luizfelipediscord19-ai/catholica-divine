@@ -37,7 +37,7 @@ export function Relacionados({ topic, className = "", variant = "card" }: Props)
         <div className="size-9 rounded-full border border-gold/30 grid place-items-center">
           <LinkIcon className="size-4 text-gold" />
         </div>
-        <p className="text-[10px] tracking-[0.35em] uppercase text-gold">Enciclopédia · ligações</p>
+        <p className="kicker">Enciclopédia · ligações</p>
       </div>
 
       <div className={variant === "aside" ? "space-y-6" : "grid md:grid-cols-2 gap-x-10 gap-y-6"}>
@@ -46,7 +46,7 @@ export function Relacionados({ topic, className = "", variant = "card" }: Props)
           const Icon = s.icon;
           return (
             <div key={s.key}>
-              <p className="flex items-center gap-2 text-[10px] tracking-[0.3em] uppercase text-gold/80 mb-3">
+              <p className="flex items-center gap-2 kicker mb-3">
                 <Icon className="size-3.5" /> {s.label}
               </p>
               <ul className="space-y-2">

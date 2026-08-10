@@ -36,7 +36,7 @@ export function RegrasForum() {
 export function SeloRevisao({ status }: { status?: string | null }) {
   if (status === "aprovado" || !status) return null;
   return (
-    <span className="inline-flex items-center gap-2 border border-gold/30 bg-gold/10 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-gold">
+    <span className="inline-flex items-center gap-2 border border-gold/30 bg-gold/10 px-3 py-1 kicker">
       <Clock className="size-3" aria-hidden="true" /> Em revisão
     </span>
   );

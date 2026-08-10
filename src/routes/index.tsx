@@ -201,7 +201,7 @@ function Home() {
         
         {/* Scroll Indicator */}
         <div aria-hidden="true" className="pointer-events-none absolute bottom-8 left-1/2 -translate-x-1/2 hidden sm:flex flex-col items-center gap-3 animate-float">
-          <span className="text-[10px] uppercase tracking-[0.4em] text-gold/90">Rolar</span>
+          <span className="kicker">Rolar</span>
           <div className="w-px h-12 bg-linear-to-b from-gold/50 to-transparent" />
         </div>
       </section>
@@ -218,7 +218,7 @@ function Home() {
           </p>
           <Link
             to="/liturgia-diaria"
-            className="text-[10px] tracking-[0.3em] uppercase text-gold hover:text-paper transition-colors"
+            className="kicker hover:text-paper transition-colors"
           >
             Liturgia diária →
           </Link>
@@ -231,7 +231,7 @@ function Home() {
           <div className="flex flex-wrap items-baseline justify-between gap-3">
             <h2
               id="hoje-na-igreja"
-              className="font-display text-foreground text-[length:var(--step-2)]"
+              className="title-card"
             >
               Hoje na Igreja
             </h2>
@@ -276,7 +276,7 @@ function Home() {
         <div className="shell pb-block-sm">
           <Link
             to="/liturgia-diaria"
-            className="inline-flex min-h-11 items-center text-[10px] uppercase tracking-[0.3em] text-gold hover:text-paper transition-colors"
+            className="inline-flex min-h-11 items-center kicker hover:text-paper transition-colors"
           >
             Ver liturgia completa →
           </Link>
@@ -291,8 +291,8 @@ function Home() {
       <section className="shell py-section">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-[var(--space-lg)] gap-[var(--space-sm)]">
           <ScrollReveal className="max-w-2xl">
-            <p className="text-[10px] tracking-[0.4em] uppercase text-gold mb-4">Os pilares da verdade</p>
-            <h2 className="font-display text-[length:var(--step-4)] text-foreground leading-[1.08] text-balance">
+            <p className="kicker mb-4">Os pilares da verdade</p>
+            <h2 className="title-page text-foreground leading-[1.08] text-balance">
               Duas mil anos de fé, <span className="text-gold/75">em um só lugar.</span>
             </h2>
           </ScrollReveal>
@@ -319,7 +319,7 @@ function Home() {
                 <p.icon className="size-6 text-gold group-hover:scale-110 transition-premium" />
               </div>
               <div className="flex-1">
-                <h3 className="font-display text-[length:var(--step-2)] text-foreground mb-3 group-hover:text-gold transition-colors">{p.title}</h3>
+                <h3 className="title-card text-foreground mb-3 group-hover:text-gold transition-colors">{p.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed font-light group-hover:text-foreground/70 transition-colors">{p.desc}</p>
               </div>
               <div className="flex items-center justify-between pt-6 border-t border-gold/5">
@@ -351,10 +351,10 @@ function Home() {
             </div>
           </ScrollReveal>
           <ScrollReveal direction="right" delay={200}>
-            <p className="text-[10px] tracking-[0.4em] uppercase text-gold mb-6 flex items-center gap-4">
+            <p className="kicker mb-6 flex items-center gap-4">
               <span className="h-px w-6 bg-gold/40" /> Maria, Mater Ecclesiae
             </p>
-            <h2 className="font-display text-[length:var(--step-4)] text-foreground leading-[0.98] tracking-tight text-balance mb-6">
+            <h2 className="title-page text-foreground leading-[0.98] tracking-tight text-balance mb-6">
               “Faça-se em mim <span className="text-gold italic">segundo a tua palavra.</span>”
             </h2>
             <p className="measure text-[length:var(--step-0)] text-muted-foreground leading-relaxed font-light mb-[var(--space-md)]">
@@ -378,10 +378,10 @@ function Home() {
       <section className="bg-background py-section">
         <div className="shell">
           <ScrollReveal className="max-w-3xl mb-[var(--space-lg)]">
-            <p className="text-[10px] tracking-[0.4em] uppercase text-gold mb-4 flex items-center gap-4">
+            <p className="kicker mb-4 flex items-center gap-4">
               <span className="h-px w-6 bg-gold/40" /> Vox Patrum · A voz dos Padres
             </p>
-            <h2 className="font-display text-[length:var(--step-4)] text-foreground leading-[1.08] text-balance">
+            <h2 className="title-page text-foreground leading-[1.08] text-balance">
               O que recebemos{" "}
               <span className="text-gold/85 italic">dos primeiros séculos.</span>
             </h2>
@@ -411,7 +411,7 @@ function Home() {
           <ScrollReveal delay={400} className="mt-[var(--space-md)] flex justify-center">
             <Link
               to="/doutores-da-igreja"
-              className="group inline-flex items-center gap-4 text-[10px] uppercase tracking-[0.4em] text-gold/80 hover:text-gold transition-colors"
+              className="group inline-flex items-center gap-4 kicker hover:text-gold transition-colors"
             >
               <span>Ver os 37 Doutores da Igreja</span>
               <span className="group-hover:translate-x-2 transition-transform">→</span>
@@ -436,7 +436,7 @@ function Home() {
             </div>
           </div>
           
-          <p className="text-[10px] tracking-[0.4em] uppercase text-gold/60 mb-6">Sophia · Logos</p>
+          <p className="kicker mb-6">Sophia · Logos</p>
           <h2 className="font-display text-[length:var(--step-5)] text-foreground leading-[0.95] tracking-tight text-balance mb-[var(--space-md)]">
             Inteligência Artificial <em className="text-gold italic font-medium">ao serviço da Verdade</em>
           </h2>

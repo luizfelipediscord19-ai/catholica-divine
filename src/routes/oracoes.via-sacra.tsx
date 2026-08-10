@@ -29,7 +29,7 @@ function Page() {
       />
       <Section kicker={`Estação ${e.num} de 14`} title={e.titulo}>
         <div className="border border-gold/30 bg-card p-card">
-          <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-4">Em todas as estações:</p>
+          <p className="kicker mb-4">Em todas as estações:</p>
           <p className="italic text-foreground/80 mb-6">V. Nós Vos adoramos, Senhor Jesus Cristo, e Vos bendizemos. <br />R. Porque pela vossa santa Cruz remistes o mundo.</p>
           {e.referencia ? <p className="text-sm text-gold/80 mb-3">{e.referencia}</p> : null}
           <p className="text-lg leading-relaxed text-foreground/90 font-light">{e.meditacao}</p>

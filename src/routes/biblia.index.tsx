@@ -238,7 +238,7 @@ function Page() {
         <div className="space-y-10 mt-10">
           {filteredAT.map(({ grupo, livros }) => (
             <div key={grupo}>
-              <h3 className="text-[10px] tracking-[0.3em] uppercase text-gold/80 mb-4">{grupo}</h3>
+              <h3 className="kicker mb-4">{grupo}</h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-px bg-gold/15">
                 {livros.map((l) => (
                   <Link
@@ -275,7 +275,7 @@ function Page() {
         <div className="space-y-10 mt-10">
           {filteredNT.map(({ grupo, livros }) => (
             <div key={grupo}>
-              <h3 className="text-[10px] tracking-[0.3em] uppercase text-gold/80 mb-4">{grupo}</h3>
+              <h3 className="kicker mb-4">{grupo}</h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-px bg-gold/15">
                 {livros.map((l) => (
                   <Link

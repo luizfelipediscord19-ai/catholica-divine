@@ -24,10 +24,10 @@ export function BuscaAprender() {
   return (
     <section aria-labelledby="aprender-titulo" className="shell py-block">
       <div className="measure">
-        <p className="text-[10px] uppercase tracking-[0.4em] text-gold/80">Comece pela sua dúvida</p>
+        <p className="kicker">Comece pela sua dúvida</p>
         <h2
           id="aprender-titulo"
-          className="mt-4 font-display leading-tight text-foreground text-[length:var(--step-3)]"
+          className="mt-4 title-section"
         >
           O que você gostaria de aprender?
         </h2>
@@ -130,10 +130,10 @@ export function ComeceAqui() {
     <section aria-labelledby="comece-aqui" className="border-y border-gold/10 bg-muted/20">
       <div className="shell py-block">
         <div className="measure">
-          <p className="text-[10px] uppercase tracking-[0.4em] text-gold/80">Comece aqui</p>
+          <p className="kicker">Comece aqui</p>
           <h2
             id="comece-aqui"
-            className="mt-4 font-display leading-tight text-foreground text-[length:var(--step-3)]"
+            className="mt-4 title-section"
           >
             Não sabe por onde começar?
           </h2>
@@ -154,11 +154,11 @@ export function ComeceAqui() {
                 className="group flex h-full min-h-11 flex-col gap-3 surface-card p-card transition-premium hover:-translate-y-1 hover:border-gold/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
               >
                 <c.icon className="size-6 text-gold" aria-hidden="true" />
-                <h3 className="font-display text-foreground text-[length:var(--step-1)] group-hover:text-gold transition-colors">
+                <h3 className="title-sub group-hover:text-gold transition-colors">
                   {c.titulo}
                 </h3>
                 <p className="text-sm font-light leading-relaxed text-muted-foreground">{c.desc}</p>
-                <span className="mt-auto pt-2 text-[10px] uppercase tracking-[0.3em] text-gold/60 group-hover:text-gold">
+                <span className="mt-auto pt-2 kicker group-hover:text-gold">
                   Começar →
                 </span>
               </Link>

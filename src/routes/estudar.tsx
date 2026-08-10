@@ -121,7 +121,7 @@ function EstudarPage() {
       </nav>
 
       <header className="measure">
-        <p className="flex items-center gap-3 text-[10px] uppercase tracking-[0.4em] text-gold">
+        <p className="flex items-center gap-3 kicker">
           <GraduationCap className="size-4" aria-hidden="true" /> Percursos de formação
         </p>
         <h1 className="mt-4 font-display leading-tight text-paper text-[length:var(--step-4)]">
@@ -138,10 +138,10 @@ function EstudarPage() {
           aria-labelledby="continue-estudando"
           className="border border-gold/25 bg-card/40 p-card"
         >
-          <p className="text-[10px] uppercase tracking-[0.4em] text-gold/80">Continue estudando</p>
+          <p className="kicker">Continue estudando</p>
           <h2
             id="continue-estudando"
-            className="mt-3 font-display text-foreground text-[length:var(--step-2)]"
+            className="mt-3 title-card"
           >
             {trilhaUltima.titulo} — {licaoUltima.titulo}
           </h2>
@@ -177,7 +177,7 @@ function EstudarPage() {
               <div className="flex flex-wrap items-baseline justify-between gap-3">
                 <h2
                   id={`nivel-${nivel.nome}`}
-                  className="font-display text-foreground text-[length:var(--step-2)]"
+                  className="title-card"
                 >
                   <span aria-hidden="true" className="mr-3">
                     {nivel.marcador}
@@ -226,7 +226,7 @@ function EstudarPage() {
                   <Link
                     to="/trilhas/$trilha"
                     params={{ trilha: trilha.slug }}
-                    className="mt-4 inline-flex min-h-11 items-center gap-2 text-[10px] uppercase tracking-[0.25em] text-gold hover:underline"
+                    className="mt-4 inline-flex min-h-11 items-center gap-2 kicker hover:underline"
                   >
                     Ver a trilha completa <ArrowRight className="size-3.5" aria-hidden="true" />
                   </Link>

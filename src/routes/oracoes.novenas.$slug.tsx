@@ -37,7 +37,7 @@ function Page() {
       <PageHero eyebrow="Novena" title={n.titulo} intro={n.ocasiao} />
       <Section kicker="Estrutura" title="Como rezar esta novena">
         <div className="border border-gold/30 bg-card p-8 mb-8">
-          <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-2">Oração inicial — todos os dias</p>
+          <p className="kicker mb-2">Oração inicial — todos os dias</p>
           <p className="italic text-foreground/90 leading-relaxed">{n.oracaoInicial}</p>
         </div>
 
@@ -56,7 +56,7 @@ function Page() {
         </div>
 
         <div className="border border-gold/30 bg-card p-8 mt-8">
-          <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-2">Oração final — todos os dias</p>
+          <p className="kicker mb-2">Oração final — todos os dias</p>
           <p className="italic text-foreground/90 leading-relaxed">{n.oracaoFinal}</p>
         </div>
 

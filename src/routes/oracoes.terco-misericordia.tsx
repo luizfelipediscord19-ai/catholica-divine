@@ -39,7 +39,7 @@ function Page() {
           </ContentCard>
         </CardGrid>
         <div className="mt-8 border border-gold/30 bg-card p-6">
-          <p className="text-[10px] tracking-[0.3em] uppercase text-gold mb-2">Hora da Misericórdia · 15h</p>
+          <p className="kicker mb-2">Hora da Misericórdia · 15h</p>
           <p className="text-foreground/80 italic">"Nesta hora não recusarei nada à alma que Me pedir pela Minha Paixão." (Diário, 1320)</p>
         </div>
       </Section>

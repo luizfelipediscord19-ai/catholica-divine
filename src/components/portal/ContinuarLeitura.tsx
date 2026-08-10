@@ -44,7 +44,7 @@ export function ContinuarLeitura({ className = "" }: { className?: string }) {
     <section
       className={`border border-gold/20 bg-card/40 backdrop-blur-sm p-6 md:p-8 space-y-5 ${className}`}
     >
-      <p className="text-[10px] uppercase tracking-[0.4em] text-gold/70">
+      <p className="kicker">
         {primeiraVez ? "Comece sua leitura" : "Continuar de onde parei"}
       </p>
       <h2 className="font-display text-2xl md:text-3xl text-foreground leading-tight">
@@ -69,7 +69,7 @@ export function ContinuarLeitura({ className = "" }: { className?: string }) {
         </Link>
         <Link
           to="/biblia"
-          className="text-[10px] uppercase tracking-[0.25em] text-gold hover:underline"
+          className="kicker hover:underline"
         >
           Ver todos os livros
         </Link>
