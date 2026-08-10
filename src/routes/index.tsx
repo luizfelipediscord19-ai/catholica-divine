@@ -8,6 +8,7 @@ import { santoDoDia } from "../lib/data/hoje";
 import { liturgiaQueryOptions } from "../lib/liturgia/query";
 import { COR_CLASSE } from "../lib/liturgia/calendario";
 import { ScrollReveal } from "../components/ScrollReveal";
+import { BuscaAprender, ComeceAqui } from "../components/portal/AprenderHome";
 
 
 
@@ -179,7 +180,7 @@ function Home() {
             </p>
             <div className="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3 sm:gap-4">
               <Link
-                to="/biblia"
+                to="/estudar"
                 className="group relative inline-flex items-center justify-center gap-3 px-7 py-4 min-h-[3rem] bg-gold text-deep text-[11px] uppercase tracking-[0.22em] font-bold overflow-hidden transition-premium hover:shadow-[0_0_40px_rgba(212,175,55,0.3)] button-hover-effect"
               >
                 <span className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
@@ -260,6 +261,10 @@ function Home() {
           </div>
         </div>
       </section>
+
+      <BuscaAprender />
+
+      <ComeceAqui />
 
       {/* Pillars - Bento Grid Style */}
       <section className="shell py-section">
