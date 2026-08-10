@@ -452,3 +452,59 @@
 }
 ::-webkit-scrollbar-thumb:hover { background: var(--color-gold-soft); }
 
+
+/* ============================================================
+   MODO LEITURA — largura confortável, mais respiro, sem distrações.
+   Ativado por <html data-leitura="on"> (useModoLeitura).
+   Mantém título, referências e notas de rodapé.
+   ============================================================ */
+html[data-leitura="on"] {
+  --measure: 62ch;
+  scroll-behavior: smooth;
+}
+
+/* Esconde a moldura do site e blocos marcados como distração */
+html[data-leitura="on"] [data-chrome="site"],
+html[data-leitura="on"] [data-leitura-oculto] {
+  display: none !important;
+}
+
+/* Texto de leitura: maior, mais espaçado e centralizado */
+html[data-leitura="on"] .prose-deep {
+  font-size: clamp(1.0625rem, 1rem + 0.4vw, 1.25rem);
+  line-height: 1.95;
+  letter-spacing: 0.005em;
+  color: color-mix(in oklab, var(--foreground) 92%, transparent);
+}
+
+html[data-leitura="on"] .prose-deep > * + * {
+  margin-top: 1.35em;
+}
+
+html[data-leitura="on"] .reading-mode {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: var(--shell-narrow);
+  padding-block: var(--space-md);
+}
+
+/* O sumário lateral e seus atalhos saem de cena durante a leitura */
+html[data-leitura="on"] .reading-mode > aside,
+html[data-leitura="on"] .reading-mode > div:first-child {
+  display: none !important;
+}
+
+/* O título do artigo passa a abrir a leitura */
+html[data-leitura="on"] .reading-mode article > h1 {
+  display: block !important;
+  font-size: var(--step-4);
+  line-height: 1.15;
+  margin-bottom: var(--space-sm);
+  padding-bottom: var(--space-xs);
+  border-bottom: 1px solid var(--hairline);
+}
+
+/* Versículos e blocos citados ganham respiro extra */
+html[data-leitura="on"] [data-leitura-texto] {
+  font-size: clamp(1.125rem, 1rem + 0.6vw, 1.4375rem);
+  line-height: 2;
+}
