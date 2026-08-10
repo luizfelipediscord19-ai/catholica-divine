@@ -12,7 +12,7 @@ export function PageHero({
   image?: string;
 }) {
   return (
-    <section className="relative overflow-hidden bg-deep">
+    <section data-leitura-oculto className="relative overflow-hidden bg-deep">
       {image ? (
         <div
           className="absolute inset-0 opacity-[0.1] bg-cover bg-center transition-transform duration-[5s] ease-out scale-110 group-hover:scale-105"
