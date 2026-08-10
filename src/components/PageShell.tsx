@@ -23,16 +23,14 @@ export function PageHero({
       <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-gold/20 to-transparent" />
 
       <div className="shell relative w-full py-[var(--space-lg)] animate-reveal">
-        <p className="mb-4 flex items-center gap-3 kicker">
-          <span className="h-px w-6 shrink-0 bg-gold/20" /> <span className="min-w-0">{eyebrow}</span>
+        <p className="mb-xs flex items-center gap-2 kicker">
+          <span aria-hidden className="h-px w-6 shrink-0 bg-gold/40" />
+          <span className="min-w-0">{eyebrow}</span>
         </p>
-        <h1 className="mb-5 font-display leading-[1.05] tracking-tight text-paper text-[length:var(--step-4)]">
-          {title}
-        </h1>
-        <p className="measure text-paper/60 font-light leading-relaxed text-[length:var(--step-1)]">
-          {intro}
-        </p>
+        <h1 className="mb-sm title-page text-paper">{title}</h1>
+        <p className="measure body-lead text-paper/70">{intro}</p>
       </div>
+
     </section>
   );
 }
