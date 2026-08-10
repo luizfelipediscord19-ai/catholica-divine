@@ -112,6 +112,35 @@
   perspective: 1000px;
 }
 
+/* Padding lateral fluido, usado por heros, seções e barras */
+@utility px-gutter {
+  padding-inline: var(--gutter);
+}
+
+/* Ritmo vertical fluido das seções */
+@utility py-section {
+  padding-block: var(--space-xl);
+}
+
+/* Padding interno fluido de cards e painéis */
+@utility p-card {
+  padding: var(--space-md);
+}
+
+/* Comprimento de linha confortável para blocos de leitura */
+@utility measure {
+  max-width: var(--measure);
+}
+
+/* Rolagem horizontal contida (tabelas, trilhos de chips) */
+@utility scroll-x-contained {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+
 :root {
   --radius: 0.5rem;
 
