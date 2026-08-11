@@ -13,7 +13,6 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteHeader } from "../components/SiteHeader";
 import { SiteFooter } from "../components/SiteFooter";
-import { NavInferiorMobile } from "../components/NavInferiorMobile";
 import { Toaster } from "../components/ui/sonner";
 import { ScrollToTop } from "../components/ScrollToTop";
 import { CelebracaoProvider } from "../components/portal/Celebracao";
@@ -193,8 +192,6 @@ function RootComponent() {
             <Outlet />
           </main>
           <SiteFooter />
-          <div data-chrome="site" className="h-14 lg:hidden" aria-hidden="true" />
-          <NavInferiorMobile />
           <ScrollToTop />
           <InstalarApp />
           <AtualizacaoApp />
