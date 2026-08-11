@@ -19,6 +19,10 @@ export const SophiaChat = memo(({
   height = "60vh",
 }: SophiaChatProps) => {
   const [input, setInput] = useState("");
+  const [aviso, setAviso] = useState<string | null>(null);
+  const [ultima, setUltima] = useState("");
+
+  const LIMITE = 800;
   const { messages, sendMessage, status, error, setMessages, clearError } = useSophiaChat(mode);
 
   const isLoading = status === "submitted" || status === "streaming";
@@ -33,7 +37,16 @@ export const SophiaChat = memo(({
       : "text-emerald-400 bg-emerald-400/10 border-emerald-400/20";
 
   const handleSubmit = (text: string) => {
-    if (!text.trim() || isLoading) return;
+    if (isLoading) return;
+    if (!text.trim()) {
+      setAviso("Escreva a sua pergunta antes de enviar.");
+      return;
+    }
+    if (text.trim().length > LIMITE) {
+      setAviso(`A pergunta deve ter no máximo ${LIMITE} caracteres.`);
+      return;
+    }
+    setAviso(null);
     
     // Suporte a comandos de voz via Web Speech API se disponível
     if (text === "___VOICE___") {
@@ -41,6 +54,7 @@ export const SophiaChat = memo(({
       return;
     }
 
+    setUltima(text.trim());
     sendMessage({ text: text.trim() });
     setInput("");
   };
@@ -80,7 +94,7 @@ export const SophiaChat = memo(({
   };
 
   return (
-    <div className="border border-gold/20 bg-card/80 backdrop-blur-xl flex flex-col shadow-2xl shadow-black/50 overflow-hidden" style={{ height }}>
+    <div aria-busy={isLoading} className="border border-gold/20 bg-card/80 backdrop-blur-xl flex flex-col shadow-2xl shadow-black/50 overflow-hidden" style={{ height }}>
       <div className={`flex items-center justify-between px-6 py-4 text-[11px] tracking-[0.2em] uppercase border-b border-gold/10 ${statusColor}`}>
         <div className="flex items-center gap-3">
           <div className="relative">
@@ -142,6 +156,8 @@ export const SophiaChat = memo(({
           className="flex-1 bg-white/[0.03] border border-gold/10 px-6 py-4 text-base text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-gold/40 transition-premium focus:bg-white/[0.05]"
           style={{ fontSize: "16px" }}
           disabled={isLoading}
+          maxLength={LIMITE}
+          aria-describedby="sophia-estado"
           autoComplete="off"
           autoCorrect="off"
         />
@@ -168,6 +184,41 @@ export const SophiaChat = memo(({
           </button>
         </div>
       </form>
+
+      <div
+        id="sophia-estado"
+        aria-live="polite"
+        className="border-t border-gold/10 px-6 py-3 bg-black/10 text-xs text-muted-foreground flex flex-wrap items-center gap-x-4 gap-y-2"
+      >
+        {aviso ? <span className="text-destructive-text">{aviso}</span> : null}
+        {isLoading ? <span className="text-gold/80">Enviando…</span> : null}
+        {hasError ? (
+          <span className="flex items-center gap-3">
+            <span className="text-destructive-text">
+              Não foi possível consultar a Sophia agora.
+            </span>
+            {ultima ? (
+              <button
+                type="button"
+                onClick={() => {
+                  clearError?.();
+                  handleSubmit(ultima);
+                }}
+                className="text-gold underline decoration-gold/40 underline-offset-4 hover:decoration-gold"
+              >
+                Tentar novamente
+              </button>
+            ) : null}
+          </span>
+        ) : null}
+        <span className="ml-auto">
+          {input.length}/{LIMITE}
+        </span>
+        <span className="basis-full text-muted-foreground/80 leading-relaxed">
+          A Sophia é um auxílio de estudo fiel ao Magistério: não substitui sacerdote, confissão nem
+          direção espiritual.
+        </span>
+      </div>
     </div>
   );
 });
