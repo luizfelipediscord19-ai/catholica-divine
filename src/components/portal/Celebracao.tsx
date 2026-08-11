@@ -892,7 +892,7 @@ function ModalCelebracao({
       />
 
       <div
-        className={`relative w-full max-w-lg border ${desenho.aro} ${desenho.fundo} animate-in fade-in zoom-in-95 duration-500`}
+        className={`relative w-full max-w-[32rem] border ${desenho.aro} ${desenho.fundo} animate-in fade-in zoom-in-95 duration-500`}
       >
         <div
           className={`pointer-events-none absolute inset-x-0 -top-24 h-48 bg-linear-to-b ${desenho.brilho} to-transparent blur-2xl`}
@@ -923,7 +923,7 @@ function ModalCelebracao({
           <h2 className="font-display text-3xl md:text-4xl text-foreground leading-tight capitalize">
             {desenho.titulo}
           </h2>
-          <p className="text-sm text-foreground/80 font-light leading-relaxed max-w-md mx-auto">
+          <p className="text-sm text-foreground/80 font-light leading-relaxed max-w-[28rem] mx-auto">
             {desenho.frase}
           </p>
           {desenho.citacao ? (

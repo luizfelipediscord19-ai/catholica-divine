@@ -179,7 +179,7 @@ function PainelPage() {
             </button>
           </div>
 
-          <div className="h-1 w-full max-w-md bg-gold/10">
+          <div className="h-1 w-full max-w-[28rem] bg-gold/10">
             <div className="h-full bg-gold transition-all" style={{ width: `${progresso}%` }} />
           </div>
           <p className="text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
@@ -376,7 +376,7 @@ function PainelPage() {
 
 
       <footer className="border-t border-gold/15 pt-8 flex flex-wrap items-center gap-4">
-        <p className="text-xs text-muted-foreground max-w-xl font-light">
+        <p className="text-xs text-muted-foreground max-w-[36rem] font-light">
           {autenticado
             ? "Seu progresso está vinculado com segurança à sua conta e acompanha você em outros dispositivos."
             : "Seu progresso está salvo apenas neste navegador. Entre em sua conta para protegê-lo e acessá-lo em outros dispositivos."}
@@ -506,7 +506,7 @@ function DiarioHoje({
             className={inputClass}
           />
         </label>
-        <label className="block space-y-2 max-w-xs">
+        <label className="block space-y-2 max-w-[20rem]">
           <span className="text-[11px] uppercase tracking-[0.16em] text-paper/60">
             Tempo de oração (minutos)
           </span>

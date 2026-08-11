@@ -285,7 +285,7 @@ function Home() {
               Duas mil anos de fé, <span className="text-gold/75">em um só lugar.</span>
             </h2>
           </ScrollReveal>
-          <ScrollReveal delay={200} className="max-w-sm">
+          <ScrollReveal delay={200} className="max-w-[24rem]">
             <p className="text-foreground/70 text-sm leading-relaxed mb-2 font-light">
               Escritura, Tradição e Magistério — os três canais pelos quais a Revelação chega até nós —
               organizados com referências cruzadas para um estudo sério e contemplativo.
@@ -415,7 +415,7 @@ function Home() {
           className="absolute inset-0 opacity-[0.12] bg-cover bg-center transition-transform duration-[20s] scale-125 hover:scale-100"
           style={{ backgroundImage: `url(${cristo})` }}
         />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#050505_80%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,var(--deep)_80%)]" />
         
         <ScrollReveal className="shell py-section relative text-center">
           <div className="relative inline-block mb-[var(--space-md)]">
@@ -426,10 +426,10 @@ function Home() {
           </div>
           
           <p className="kicker mb-6">Sophia · Logos</p>
-          <h2 className="font-display text-[length:var(--step-5)] text-foreground leading-[0.95] tracking-tight text-balance mb-[var(--space-md)]">
+          <h2 className="font-display text-[length:var(--step-5)] text-paper leading-[0.95] tracking-tight text-balance mb-[var(--space-md)]">
             Inteligência Artificial <em className="text-gold italic font-medium">ao serviço da Verdade</em>
           </h2>
-          <p className="measure mx-auto text-[length:var(--step-0)] text-muted-foreground leading-relaxed font-light mb-[var(--space-md)]">
+          <p className="measure mx-auto text-[length:var(--step-0)] text-paper/75 leading-relaxed font-light mb-[var(--space-md)]">
             Treinada exclusivamente sobre a Bíblia, o Catecismo e os documentos do Magistério.
             Cada resposta vem com referências verificáveis — Escritura, parágrafos do CIC,
             concílios e Padres da Igreja. Nada de opinião; só o que a Igreja ensina.
