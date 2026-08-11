@@ -426,10 +426,10 @@ function Home() {
           </div>
           
           <p className="kicker mb-6">Sophia · Logos</p>
-          <h2 className="font-display text-[length:var(--step-5)] text-foreground leading-[0.95] tracking-tight text-balance mb-[var(--space-md)]">
+          <h2 className="font-display text-[length:var(--step-5)] text-paper leading-[0.95] tracking-tight text-balance mb-[var(--space-md)]">
             Inteligência Artificial <em className="text-gold italic font-medium">ao serviço da Verdade</em>
           </h2>
-          <p className="measure mx-auto text-[length:var(--step-0)] text-muted-foreground leading-relaxed font-light mb-[var(--space-md)]">
+          <p className="measure mx-auto text-[length:var(--step-0)] text-paper/75 leading-relaxed font-light mb-[var(--space-md)]">
             Treinada exclusivamente sobre a Bíblia, o Catecismo e os documentos do Magistério.
             Cada resposta vem com referências verificáveis — Escritura, parágrafos do CIC,
             concílios e Padres da Igreja. Nada de opinião; só o que a Igreja ensina.
