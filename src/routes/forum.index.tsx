@@ -287,6 +287,27 @@ function NovoTopico({
   return (
     <Painel>
       <Rotulo>Nova conversa</Rotulo>
+      {!autenticado ? (
+        <div
+          role="status"
+          className="mb-5 border border-gold/25 bg-gold/5 p-4 text-xs leading-relaxed text-muted-foreground"
+        >
+          <p className="text-gold mb-2">Para publicar é preciso ter conta.</p>
+          <p>
+            A leitura do fórum é pública e livre. Escrever exige entrar com e-mail e senha — o seu
+            e-mail nunca aparece para ninguém. Pode escrever agora: o rascunho fica guardado neste
+            navegador enquanto você cria a conta.
+          </p>
+          <span className="mt-3 flex flex-wrap items-center gap-3">
+            <Link to="/auth" search={{ modo: "entrar" }} className={botaoGhostClass}>
+              Entrar
+            </Link>
+            <Link to="/auth" search={{ modo: "criar" }} className={botaoGhostClass}>
+              Criar conta
+            </Link>
+          </span>
+        </div>
+      ) : null}
       <form
         className="space-y-5"
         onSubmit={(e) => {
