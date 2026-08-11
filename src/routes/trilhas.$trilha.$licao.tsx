@@ -201,7 +201,7 @@ function LicaoPagina() {
           onClick={() => alternarConclusao(trilha.slug, licao.slug)}
           aria-pressed={feita}
           className={`inline-flex min-h-11 items-center justify-center gap-2 px-5 text-[11px] font-bold uppercase tracking-widest transition-colors ${
-            feita ? "border border-gold text-gold" : "bg-gold text-deep hover:bg-paper"
+            feita ? "btn-outline-gold border-gold text-gold" : "btn-gold"
           }`}
         >
           <Check className="size-4" aria-hidden="true" />

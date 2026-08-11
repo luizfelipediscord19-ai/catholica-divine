@@ -120,7 +120,7 @@ function Page() {
               <p className="kicker mb-3">Temas centrais</p>
               <ul className="space-y-3">
                 {intro.temas.map((t) => (
-                  <li key={t} className="text-sm text-foreground/90 border border-gold/20 bg-card p-3">
+                  <li key={t} className="text-sm text-foreground/90 surface-card p-3">
                     {t}
                   </li>
                 ))}

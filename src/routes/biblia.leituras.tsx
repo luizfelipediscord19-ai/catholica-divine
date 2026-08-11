@@ -88,7 +88,7 @@ function Page() {
       </p>
 
       {/* Progresso */}
-      <div className="mt-8 border border-gold/20 bg-card p-5">
+      <div className="mt-8 surface-card p-5">
         <div className="flex items-center justify-between gap-4 mb-3">
           <p className="kicker">Progresso</p>
           <button onClick={reset} className="inline-flex items-center gap-1 text-[10px] uppercase tracking-[0.25em] text-muted-foreground hover:text-gold">
@@ -102,7 +102,7 @@ function Page() {
       </div>
 
       {/* Hoje */}
-      <article className="mt-10 border border-gold/40 bg-card p-8 md:p-10">
+      <article className="mt-10 surface-card p-8 md:p-10">
         <div className="flex items-center gap-2 kicker mb-3">
           <CalendarDays className="size-3" /> Hoje · {fmtData(new Date())}
         </div>

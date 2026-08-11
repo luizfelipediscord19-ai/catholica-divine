@@ -234,7 +234,7 @@ function Page() {
 
       {/* Painel de controle */}
       <div className="mt-8 grid md:grid-cols-[1fr_auto] gap-4 items-stretch">
-        <div className="border border-gold/20 bg-card/40 p-5 flex flex-wrap gap-3 text-xs">
+        <div className="surface-card p-5 flex flex-wrap gap-3 text-xs">
           <Pill icon={<FileText className="size-3" />} label={`${totais.total} testes`} />
           <Pill
             icon={<CheckCircle2 className="size-3" />}
@@ -255,7 +255,7 @@ function Page() {
       </div>
 
       {/* Pergunta humana */}
-      <div className="mt-8 border border-gold/20 bg-card/40 p-5">
+      <div className="mt-8 surface-card p-5">
         <p className="kicker mb-3">
           Teste uma pergunta escrita por humano
         </p>

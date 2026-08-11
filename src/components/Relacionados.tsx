@@ -30,7 +30,7 @@ export function Relacionados({ topic, className = "", variant = "card" }: Props)
 
   return (
     <aside
-      className={`border border-gold/25 bg-card/40 ${variant === "aside" ? "p-5" : "p-6 md:p-8"} ${className}`}
+      className={`surface-card ${variant === "aside" ? "p-5" : "p-6 md:p-8"} ${className}`}
       aria-label="Referências cruzadas"
     >
       <div className="flex items-center gap-3 mb-5">

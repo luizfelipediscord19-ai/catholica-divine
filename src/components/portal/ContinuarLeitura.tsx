@@ -42,7 +42,7 @@ export function ContinuarLeitura({ className = "" }: { className?: string }) {
 
   return (
     <section
-      className={`border border-gold/20 bg-card/40 backdrop-blur-sm p-6 md:p-8 space-y-5 ${className}`}
+      className={`surface-card backdrop-blur-sm p-6 md:p-8 space-y-5 ${className}`}
     >
       <p className="kicker">
         {primeiraVez ? "Comece sua leitura" : "Continuar de onde parei"}
@@ -62,7 +62,7 @@ export function ContinuarLeitura({ className = "" }: { className?: string }) {
         <Link
           to="/biblia/$livro/$capitulo"
           params={{ livro: alvo.livro.slug, capitulo: String(alvo.capitulo) }}
-          className="inline-flex items-center gap-2 min-h-11 px-6 py-2 bg-gold text-deep text-[10px] uppercase tracking-[0.25em] font-bold hover:bg-paper transition-premium"
+          className="btn-base btn-gold px-6 py-2 text-[10px] uppercase tracking-[0.25em] font-bold"
         >
           <BookOpen className="size-3.5" aria-hidden="true" />
           {primeiraVez ? "Começar a ler" : "Continuar leitura"}

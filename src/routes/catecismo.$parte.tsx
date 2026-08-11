@@ -58,7 +58,7 @@ function Page() {
         {secoes.map((s: SecaoCIC) => {
           const capitulos = capitulosDaSecao(s.slug);
           return (
-            <section key={s.slug} className="border border-gold/20 bg-card p-5 sm:p-6">
+            <section key={s.slug} className="surface-card p-5 sm:p-6">
               <p className="kicker mb-2">
                 {s.paragrafos}
               </p>

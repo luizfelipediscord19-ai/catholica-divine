@@ -188,7 +188,7 @@ function Page() {
 
         {/* Seletor de Hora — Laudes / Vésperas / Ofício de Leituras */}
         <section id="oficio-leituras" className="scroll-mt-24 mt-12 print:mt-6">
-          <div className="border border-gold/20 bg-card/40 backdrop-blur-sm">
+          <div className="surface-card backdrop-blur-sm">
             <div className="flex flex-wrap border-b border-gold/15 print:hidden">
               {(["laudes", "vesperas", "oficio-leituras"] as HoraSlug[]).map((s) => {
                 const active = hora === s;

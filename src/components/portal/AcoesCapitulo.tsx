@@ -99,7 +99,7 @@ export function BarraLeitura({
         className={`inline-flex items-center gap-2 min-h-11 px-5 py-2 text-[10px] uppercase tracking-[0.25em] font-bold transition-premium disabled:opacity-50 ${
           lido
             ? "bg-gold/15 text-gold border border-gold/40"
-            : "bg-gold text-deep hover:bg-paper"
+            : "btn-gold"
         }`}
       >
         <Check className="size-3.5" aria-hidden="true" />

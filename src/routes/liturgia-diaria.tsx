@@ -92,7 +92,7 @@ function Page() {
       </div>
 
       {lit.fonte === "local" ? (
-        <p className="mt-6 flex items-start gap-2 text-xs text-muted-foreground border border-gold/20 bg-card/60 p-4">
+        <p className="mt-6 flex items-start gap-2 text-xs text-muted-foreground surface-card p-4">
           <RefreshCw className="size-3.5 text-gold/70 mt-0.5 shrink-0" aria-hidden="true" />
           As leituras completas não puderam ser obtidas agora. O tempo litúrgico, a cor e o ciclo
           acima foram calculados localmente. Tente novamente em instantes.

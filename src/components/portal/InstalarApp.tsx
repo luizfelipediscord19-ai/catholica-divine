@@ -91,7 +91,7 @@ export function InstalarApp() {
         role="dialog"
         aria-modal="true"
         aria-label="Instalar o Portal Católico no telefone"
-        className="relative w-full max-w-sm border border-gold/30 bg-card px-6 pb-6 pt-8 text-center shadow-2xl animate-in fade-in zoom-in-95 duration-300"
+        className="relative w-full max-w-sm surface-card px-6 pb-6 pt-8 text-center shadow-2xl animate-in fade-in zoom-in-95 duration-300"
       >
         <button
           onClick={dispensar}
