@@ -127,7 +127,7 @@ function CartaoOracao({
             {oracao.texto.split("\n").map((linha, i) => (
               <p
                 key={i}
-                className="font-display italic text-[15px] sm:text-base leading-relaxed text-foreground/90"
+                className="font-display italic text-step-0 sm:text-base leading-relaxed text-foreground/90"
               >
                 {linha}
               </p>
@@ -137,7 +137,7 @@ function CartaoOracao({
           <button
             type="button"
             onClick={() => void copiar()}
-            className="min-h-11 px-4 text-[11px] uppercase tracking-[0.16em] border border-gold/30 text-foreground/70 hover:text-gold hover:border-gold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+            className="min-h-11 px-4 label-btn border border-gold/30 text-foreground/70 hover:text-gold hover:border-gold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
           >
             {copiado ? "Copiado" : "Copiar oração"}
           </button>
@@ -209,7 +209,7 @@ function Page() {
                 type="button"
                 aria-pressed={ativo}
                 onClick={() => setFiltro(cat)}
-                className={`min-h-11 px-4 text-[11px] uppercase tracking-[0.16em] border transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold ${
+                className={`min-h-11 px-4 label-btn border transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold ${
                   ativo
                     ? "border-gold bg-gold/10 text-gold"
                     : "border-border/60 text-foreground/70 hover:text-gold hover:border-gold/60"

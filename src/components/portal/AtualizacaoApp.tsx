@@ -41,7 +41,7 @@ export function AtualizacaoApp() {
       {offline ? (
         <div
           role="status"
-          className="fixed left-1/2 top-[4.75rem] z-[85] flex -translate-x-1/2 items-center gap-2 border border-gold/30 bg-background/95 px-3 py-2 text-[11px] text-muted-foreground shadow-lg backdrop-blur"
+          className="fixed left-1/2 top-[4.75rem] z-[85] flex -translate-x-1/2 items-center gap-2 border border-gold/30 bg-background/95 px-3 py-2 text-step--2 text-muted-foreground shadow-lg backdrop-blur"
         >
           <WifiOff className="size-3.5 text-gold" aria-hidden="true" />
           Sem internet — mostrando páginas e textos já lidos.
@@ -71,7 +71,7 @@ export function AtualizacaoApp() {
               controle.atualizar();
             }}
             disabled={atualizando}
-            className="mt-3 inline-flex items-center gap-2 bg-gold px-4 py-2 text-[11px] font-medium uppercase tracking-[0.18em] text-deep transition-colors hover:bg-paper disabled:opacity-70"
+            className="mt-3 inline-flex items-center gap-2 bg-gold px-4 py-2 label-btn text-deep transition-colors hover:bg-paper disabled:opacity-70"
           >
             <RefreshCw
               className={`size-3.5 ${atualizando ? "animate-spin" : ""}`}

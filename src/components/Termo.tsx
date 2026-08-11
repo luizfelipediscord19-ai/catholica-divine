@@ -46,7 +46,7 @@ export function Termo({
             {entrada.definicao}
           </p>
           {entrada.ref ? (
-            <p className="text-[11px] text-gold/60 mt-3 italic">{entrada.ref}</p>
+            <p className="text-step--2 text-gold/60 mt-3 italic">{entrada.ref}</p>
           ) : null}
         </TooltipContent>
       </Tooltip>

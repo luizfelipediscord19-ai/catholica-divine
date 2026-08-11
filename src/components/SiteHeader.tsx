@@ -58,20 +58,17 @@ const GRUPOS: { titulo: string; itens: { to: string; label: string }[] }[] = [
   },
 ];
 
-const NAV_PRINCIPAL: { to: string; label: string; desde: "lg" | "xl" | "2xl" }[] = [
-  { to: "/estudar", label: "Estudar", desde: "lg" },
-  { to: "/biblia", label: "Bíblia", desde: "lg" },
-  { to: "/santos", label: "Santos", desde: "lg" },
+/** Navegação principal: poucos destinos, sempre os mesmos, um só estilo. */
+const NAV_PRINCIPAL: { to: string; label: string }[] = [
+  { to: "/estudar", label: "Estudar" },
+  { to: "/biblia", label: "Bíblia" },
+  { to: "/oracoes", label: "Orações" },
+  { to: "/santos", label: "Santos" },
+  { to: "/forum", label: "Fórum" },
 ];
 
-const VISIVEL_DESDE = {
-  lg: "hidden md:inline-flex",
-  xl: "hidden [@media(min-width:1560px)]:inline-flex",
-  "2xl": "hidden [@media(min-width:1740px)]:inline-flex",
-} as const;
-
 const ICONE_REDONDO =
-  "btn-base grid size-10 shrink-0 place-items-center rounded-full border border-gold/20 bg-transparent p-0 text-paper/70 transition-premium hover:border-gold/60 hover:text-gold";
+  "btn-base btn-icon shrink-0 border border-gold/20 bg-transparent text-foreground/65 transition-premium hover:border-gold/50 hover:text-gold";
 
 export function SiteHeader() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
@@ -107,22 +104,23 @@ export function SiteHeader() {
         rolou ? "border-gold/20 shadow-[var(--shadow-card-hover)]" : "border-gold/10"
       }`}
     >
-      <div className="shell grid h-16 w-full grid-cols-[minmax(0,1fr)_auto] items-center gap-3 sm:h-20 md:grid-cols-[auto_minmax(0,1fr)_auto] md:gap-5 xl:gap-7">
+      <div className="shell grid h-16 w-full grid-cols-[minmax(0,1fr)_auto] items-center gap-3 sm:h-[4.5rem] lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:gap-6">
         <Link
           to="/"
-          className="group flex min-w-0 items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold sm:gap-3 lg:shrink-0"
+          aria-label="Portal Católico — início"
+          className="group flex min-w-0 items-center gap-2.5 rounded-[var(--radius-btn)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold lg:shrink-0"
         >
-          <span className="grid size-9 shrink-0 place-items-center rounded-full border border-gold/30 transition-premium group-hover:border-gold group-hover:bg-gold/10 sm:size-10">
-            <Church className="size-4 text-gold sm:size-5" aria-hidden="true" />
+          <span className="grid size-9 shrink-0 place-items-center rounded-full border border-gold/30 transition-premium group-hover:border-gold group-hover:bg-gold/10">
+            <Church className="size-4 text-gold" aria-hidden="true" />
           </span>
-          <span className="truncate font-display text-base text-paper transition-colors group-hover:text-gold sm:text-lg xl:text-xl">
-            PORTAL <span className="font-light italic text-gold/90">CATÓLICO</span>
+          <span className="truncate font-display text-[1.0625rem] leading-none tracking-tight text-foreground transition-colors group-hover:text-gold sm:text-xl">
+            Portal <span className="italic font-normal text-gold">Católico</span>
           </span>
         </Link>
 
         <nav
           aria-label="Navegação principal"
-          className="hidden min-w-0 items-center gap-4 whitespace-nowrap text-[11px] font-medium uppercase tracking-[0.14em] text-paper/75 md:flex lg:gap-6"
+          className="hidden min-w-0 items-center justify-center gap-1 whitespace-nowrap lg:flex"
         >
           {NAV_PRINCIPAL.map((item) => {
             const active = pathname === item.to || pathname.startsWith(`${item.to}/`);
@@ -131,15 +129,13 @@ export function SiteHeader() {
                 key={item.to}
                 to={item.to}
                 aria-current={active ? "page" : undefined}
-                className={`${VISIVEL_DESDE[item.desde]} relative shrink-0 items-center py-3 transition-colors hover:text-paper focus-visible:text-paper focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold ${
-                  active ? "text-gold" : ""
-                }`}
+                className="nav-link shrink-0"
               >
                 {item.label}
                 {active ? (
                   <span
                     aria-hidden="true"
-                    className="absolute bottom-0 left-0 h-px w-full bg-gold shadow-[0_0_8px_rgba(212,175,55,0.6)]"
+                    className="absolute inset-x-3 bottom-1 h-px bg-gold/70"
                   />
                 ) : null}
               </Link>
@@ -147,25 +143,7 @@ export function SiteHeader() {
           })}
         </nav>
 
-        <div className="flex shrink-0 items-center justify-end gap-1 sm:gap-2 lg:gap-3">
-          <ContaBotao />
-
-          {/* Sophia: botão completo no desktop, ícone no celular. */}
-          <Link
-            to="/assistente"
-            className="btn-base btn-gold hidden px-4 text-[11px] font-bold uppercase tracking-[0.16em] md:inline-flex xl:px-5"
-          >
-            <Sparkles className="size-3.5" aria-hidden="true" /> Sophia IA
-          </Link>
-          <Link
-            to="/assistente"
-            aria-label="Falar com a Sophia IA"
-            title="Sophia IA"
-            className="btn-base grid size-10 shrink-0 place-items-center rounded-full border border-gold/50 bg-gold/10 p-0 text-gold transition-premium hover:bg-gold hover:text-deep md:hidden"
-          >
-            <Sparkles className="size-4" aria-hidden="true" />
-          </Link>
-
+        <div className="flex shrink-0 items-center justify-end gap-1.5 sm:gap-2">
           <button
             type="button"
             onClick={() => setBusca(true)}
@@ -181,13 +159,31 @@ export function SiteHeader() {
             <SinoNotificacoes />
           </span>
 
+          {/* Sophia: rótulo no desktop, ícone no celular. */}
+          <Link
+            to="/assistente"
+            className="btn-base btn-gold btn-sm hidden md:inline-flex"
+          >
+            <Sparkles className="size-3.5" aria-hidden="true" /> Sophia
+          </Link>
+          <Link
+            to="/assistente"
+            aria-label="Falar com a Sophia IA"
+            title="Sophia IA"
+            className="btn-base btn-icon shrink-0 border border-gold/50 bg-gold/10 text-gold transition-premium hover:bg-gold hover:text-deep md:hidden"
+          >
+            <Sparkles className="size-4" aria-hidden="true" />
+          </Link>
+
+          <ContaBotao />
+
           <button
             type="button"
             aria-label={open ? "Fechar menu" : "Abrir menu"}
             aria-expanded={open}
             aria-controls="menu-principal"
             onClick={() => setOpen((v) => !v)}
-            className="btn-base grid size-10 shrink-0 place-items-center rounded-full border border-gold/30 bg-transparent p-0 text-gold transition-premium hover:bg-gold/10"
+            className="btn-base btn-icon shrink-0 border border-gold/30 bg-transparent text-gold transition-premium hover:bg-gold/10"
           >
             {open ? (
               <X className="size-5" aria-hidden="true" />
@@ -201,7 +197,7 @@ export function SiteHeader() {
       {open ? (
         <div
           id="menu-principal"
-          className="max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-gold/20 bg-background sm:max-h-[calc(100dvh-5rem)]"
+          className="max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-gold/20 bg-background sm:max-h-[calc(100dvh-4.5rem)]"
         >
           <nav
             aria-label="Menu completo"
@@ -220,7 +216,7 @@ export function SiteHeader() {
                           to={item.to}
                           onClick={() => setOpen(false)}
                           aria-current={active ? "page" : undefined}
-                          className={`flex min-h-11 items-center gap-2 rounded-[var(--radius-btn)] px-2 text-[13px] transition-premium hover:bg-gold/10 hover:text-gold focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold ${
+                          className={`flex min-h-11 items-center gap-2 rounded-[var(--radius-btn)] px-2 text-step--1 transition-premium hover:bg-gold/10 hover:text-gold focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold ${
                             active ? "bg-gold/10 text-gold" : "text-foreground/85"
                           }`}
                         >
@@ -246,7 +242,7 @@ export function SiteHeader() {
                     setOpen(false);
                     setBusca(true);
                   }}
-                  className="btn-base btn-outline-gold px-4 py-3 text-[11px] font-semibold uppercase tracking-[0.18em]"
+                  className="btn-base btn-outline-gold btn-md"
                 >
                   <Search className="size-3.5" aria-hidden="true" /> Buscar
                 </button>
@@ -274,14 +270,14 @@ function ContaBotao() {
     <button
       type="button"
       onClick={() => void sair()}
-      className="btn-base btn-outline-gold hidden px-4 text-[11px] uppercase tracking-[0.16em] xl:inline-flex"
+      className="btn-base btn-outline-gold btn-sm hidden lg:inline-flex"
     >
       Sair
     </button>
   ) : (
     <Link
       to="/auth"
-      className="btn-base btn-outline-gold hidden px-4 text-[11px] uppercase tracking-[0.16em] xl:inline-flex"
+      className="btn-base btn-outline-gold btn-sm hidden lg:inline-flex"
     >
       Entrar
     </Link>

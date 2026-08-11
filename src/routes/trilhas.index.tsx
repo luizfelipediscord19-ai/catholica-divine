@@ -78,7 +78,7 @@ function TrilhasIndex() {
             >
               <div className="flex items-center gap-3">
                 <GraduationCap className="size-5 text-gold" aria-hidden="true" />
-                <span className="text-[11px] uppercase tracking-[0.16em] text-paper/60">
+                <span className="label-btn text-paper/60">
                   {trilha.nivel} · {trilha.licoes.length} lições
                 </span>
               </div>
@@ -87,7 +87,7 @@ function TrilhasIndex() {
               <div className="mt-4 h-1 w-full bg-paper/10">
                 <div className="h-1 bg-gold" style={{ width: `${pct}%` }} />
               </div>
-              <p className="mt-2 text-[11px] uppercase tracking-[0.16em] text-paper/55">
+              <p className="mt-2 label-btn text-paper/55">
                 {pct}% concluído
               </p>
             </Link>

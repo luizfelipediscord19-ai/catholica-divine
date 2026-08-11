@@ -291,7 +291,7 @@ function SobrePage() {
         </p>
         <Link
           to="/forum"
-          className="inline-flex min-h-11 items-center gap-2 rounded-md border border-gold/40 bg-gold/10 px-6 text-xs uppercase tracking-[0.16em] text-gold transition-colors hover:bg-gold/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+          className="inline-flex min-h-11 items-center gap-2 rounded-md border border-gold/40 bg-gold/10 px-6 label-btn text-gold transition-colors hover:bg-gold/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
         >
           Apontar correção no fórum
         </Link>

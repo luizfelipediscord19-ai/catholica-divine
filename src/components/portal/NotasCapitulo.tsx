@@ -97,7 +97,7 @@ export function NotasCapitulo({
         }}
       >
         <div className="flex flex-wrap items-end gap-4">
-          <label className="text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
+          <label className="label-btn text-muted-foreground">
             Versículo (opcional)
             <input
               type="number"
@@ -109,7 +109,7 @@ export function NotasCapitulo({
             />
           </label>
         </div>
-        <label className="block text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
+        <label className="block label-btn text-muted-foreground">
           Reflexão
           <textarea
             value={conteudo}
@@ -124,11 +124,11 @@ export function NotasCapitulo({
           <button
             type="submit"
             disabled={!podeSalvar}
-            className="btn-base btn-gold px-6 py-2 text-[11px] uppercase tracking-[0.16em] font-bold"
+            className="btn-base btn-gold px-6 py-2 label-btn"
           >
             {salvar.isPending ? "Salvando…" : "Guardar anotação"}
           </button>
-          <p className="text-[11px] text-muted-foreground font-light">
+          <p className="text-step--2 text-muted-foreground font-light">
             Guardado na sua identidade anônima deste navegador. +10 XP por anotação.
           </p>
         </div>

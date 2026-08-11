@@ -123,20 +123,20 @@ export function InstalarApp() {
           <div className="mt-6 flex flex-col gap-2">
             <button
               onClick={ios ? instalarIos : instalar}
-              className="inline-flex items-center justify-center gap-2 bg-gold px-4 py-3 text-[11px] font-medium uppercase tracking-[0.18em] text-deep transition-colors hover:bg-paper"
+              className="inline-flex items-center justify-center gap-2 bg-gold px-4 py-3 label-btn text-deep transition-colors hover:bg-paper"
             >
               <Smartphone className="h-4 w-4" /> Instalar agora
             </button>
             <button
               onClick={dispensar}
-              className="py-2 text-[11px] uppercase tracking-[0.18em] text-muted-foreground hover:text-foreground"
+              className="py-2 label-btn text-muted-foreground hover:text-foreground"
             >
               Agora não
             </button>
           </div>
         ) : (
           <div className="mt-6">
-            <div className="border border-border/60 bg-background/60 px-4 py-3 text-left text-[11px] leading-relaxed text-muted-foreground">
+            <div className="border border-border/60 bg-background/60 px-4 py-3 text-left text-step--2 leading-relaxed text-muted-foreground">
               <span className="flex flex-wrap items-center gap-1">
                 Abra o menu <MoreVertical className="h-3.5 w-3.5 text-gold" /> do navegador e
                 toque em “Instalar aplicativo” ou “Adicionar à tela inicial”.
@@ -144,7 +144,7 @@ export function InstalarApp() {
             </div>
             <button
               onClick={dispensar}
-              className="mt-3 w-full py-2 text-[11px] uppercase tracking-[0.18em] text-muted-foreground hover:text-foreground"
+              className="mt-3 w-full py-2 label-btn text-muted-foreground hover:text-foreground"
             >
               Entendi
             </button>

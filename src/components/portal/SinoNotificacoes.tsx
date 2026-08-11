@@ -77,7 +77,7 @@ export function SinoNotificacoes() {
       >
         <Bell className="size-4" aria-hidden="true" />
         {naoLidas > 0 ? (
-          <span className="absolute -right-0.5 -top-0.5 grid min-w-4 place-items-center rounded-full bg-gold px-1 text-[11px] font-bold leading-4 text-deep">
+          <span className="absolute -right-0.5 -top-0.5 grid min-w-4 place-items-center rounded-full bg-gold px-1 text-step--2 font-bold leading-4 text-deep">
             {naoLidas > 9 ? "9+" : naoLidas}
           </span>
         ) : null}
@@ -94,7 +94,7 @@ export function SinoNotificacoes() {
             {notificacoes.length > 0 ? (
               <button
                 onClick={limpar}
-                className="inline-flex items-center gap-1 text-[11px] uppercase tracking-[0.18em] text-muted-foreground hover:text-foreground"
+                className="inline-flex items-center gap-1 label-btn text-muted-foreground hover:text-foreground"
               >
                 <Trash2 className="size-3" aria-hidden="true" /> Limpar
               </button>
@@ -125,7 +125,7 @@ export function SinoNotificacoes() {
                           {n.mensagem}
                         </p>
                       ) : null}
-                      <p className="mt-1 text-[11px] uppercase tracking-[0.16em] text-muted-foreground/70">
+                      <p className="mt-1 label-btn text-muted-foreground/70">
                         {tempoRelativo(n.criadaEm)}
                       </p>
                     </div>
@@ -170,7 +170,7 @@ function AvisosNoAparelho() {
     <div className="border-b border-gold/10 bg-gold/[0.03] px-4 py-3">
       {estado === "liberado" ? (
         <div className="flex items-center justify-between gap-3">
-          <p className="text-[11px] leading-relaxed text-muted-foreground">
+          <p className="text-step--2 leading-relaxed text-muted-foreground">
             Avisos no aparelho <span className="text-gold">ativados</span>.
           </p>
           <button
@@ -178,24 +178,24 @@ function AvisosNoAparelho() {
               desativarNotificacoesDispositivo();
               setEstado("pendente");
             }}
-            className="inline-flex items-center gap-1 text-[11px] uppercase tracking-[0.16em] text-muted-foreground hover:text-foreground"
+            className="inline-flex items-center gap-1 label-btn text-muted-foreground hover:text-foreground"
           >
             <BellOff className="size-3" aria-hidden="true" /> Desligar
           </button>
         </div>
       ) : estado === "bloqueado" ? (
-        <p className="text-[11px] leading-relaxed text-muted-foreground">
+        <p className="text-step--2 leading-relaxed text-muted-foreground">
           As notificações estão bloqueadas nas configurações do navegador. Libere o site para
           receber avisos no telefone.
         </p>
       ) : (
         <div className="space-y-2">
-          <p className="text-[11px] leading-relaxed text-muted-foreground">
+          <p className="text-step--2 leading-relaxed text-muted-foreground">
             Receba orações, leituras e conquistas direto no seu telefone.
           </p>
           <button
             onClick={async () => setEstado(await ativarNotificacoesDispositivo())}
-            className="inline-flex items-center gap-2 bg-gold px-3 py-2 text-[11px] font-medium uppercase tracking-[0.16em] text-deep hover:bg-paper"
+            className="inline-flex items-center gap-2 bg-gold px-3 py-2 label-btn text-deep hover:bg-paper"
           >
             <BellRing className="size-3" aria-hidden="true" /> Ativar no aparelho
           </button>

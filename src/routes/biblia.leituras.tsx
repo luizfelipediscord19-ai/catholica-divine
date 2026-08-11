@@ -91,14 +91,14 @@ function Page() {
       <div className="mt-8 surface-card p-5">
         <div className="flex items-center justify-between gap-4 mb-3">
           <p className="kicker">Progresso</p>
-          <button onClick={reset} className="inline-flex items-center gap-1 text-[11px] uppercase tracking-[0.16em] text-muted-foreground hover:text-gold">
+          <button onClick={reset} className="inline-flex items-center gap-1 label-btn text-muted-foreground hover:text-gold">
             <RotateCcw className="size-3" /> Reiniciar
           </button>
         </div>
         <div className="h-1.5 bg-gold/10 overflow-hidden">
           <div className="h-full bg-gold transition-all" style={{ width: `${pct}%` }} />
         </div>
-        <p className="mt-2 text-[11px] text-muted-foreground">{feitas} de {total} leituras concluídas ({pct}%)</p>
+        <p className="mt-2 text-step--2 text-muted-foreground">{feitas} de {total} leituras concluídas ({pct}%)</p>
       </div>
 
       {/* Hoje */}
@@ -111,14 +111,14 @@ function Page() {
         <div className="mt-6 flex flex-wrap items-center gap-3">
           <Link
             {...linkParaLeitura(hoje)}
-            className="btn-base btn-gold gap-2 text-[11px] uppercase tracking-[0.16em]"
+            className="btn-base btn-gold gap-2 label-btn"
           >
             <BookOpen className="size-3.5" /> Ler agora
           </Link>
           <button
             onClick={() => toggle(idHoje)}
             className={
-              "inline-flex items-center gap-2 px-5 py-3 border text-[11px] uppercase tracking-[0.16em] transition-colors " +
+              "inline-flex items-center gap-2 px-5 py-3 border label-btn transition-colors " +
               (concluidas.has(idHoje)
                 ? "border-gold bg-gold/10 text-gold"
                 : "border-gold/30 text-muted-foreground hover:text-gold hover:border-gold/60")
@@ -195,7 +195,7 @@ function Page() {
                   <div className={"font-display text-base group-hover:text-gold " + (feita ? "line-through text-muted-foreground" : "text-foreground")}>
                     {l.tema}
                   </div>
-                  <div className="text-[11px] text-muted-foreground mt-1">{refTexto(l)}</div>
+                  <div className="text-step--2 text-muted-foreground mt-1">{refTexto(l)}</div>
                 </Link>
               </div>
             );

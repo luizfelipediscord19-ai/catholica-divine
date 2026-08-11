@@ -12,7 +12,7 @@ export function SiteFooter() {
             Portal Católico — biblioteca digital fiel ao Magistério da Igreja, dedicada ao
             estudo, à evangelização e à formação na fé católica.
           </p>
-          <p className="mt-6 text-[11px] tracking-[0.16em] uppercase text-paper/60">
+          <p className="mt-6 label-btn text-paper/60">
             © MMXXVI Portal Católico • Biblioteca da Fé
           </p>
         </div>
@@ -54,7 +54,7 @@ export function SiteFooter() {
         </nav>
       </div>
       <div className="border-t border-gold/15">
-        <div className="shell py-block-sm text-[11px] tracking-widest uppercase text-paper/55 text-center">
+        <div className="shell py-block-sm text-step--2 tracking-widest uppercase text-paper/55 text-center">
           Fontes oficiais: vatican.va · cnbb.org.br · Catecismo da Igreja Católica
         </div>
       </div>

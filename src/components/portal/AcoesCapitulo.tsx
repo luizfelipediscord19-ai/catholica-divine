@@ -96,7 +96,7 @@ export function BarraLeitura({
         type="button"
         disabled={!pronto || pendente}
         onClick={onAlternar}
-        className={`btn-base px-5 py-2 text-[11px] uppercase tracking-[0.16em] font-bold ${
+        className={`btn-base px-5 py-2 label-btn ${
           lido
             ? "btn-outline-gold border-gold/40 bg-gold/15 text-gold"
             : "btn-gold"
@@ -105,7 +105,7 @@ export function BarraLeitura({
         <Check className="size-3.5" aria-hidden="true" />
         {lido ? "Capítulo lido" : pendente ? "Salvando…" : "Marcar como lido"}
       </button>
-      <p className="text-[11px] text-muted-foreground font-light">
+      <p className="text-step--2 text-muted-foreground font-light">
         Progresso salvo na sua identidade anônima — veja tudo no seu painel espiritual.
       </p>
     </div>

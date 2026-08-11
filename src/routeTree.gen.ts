@@ -54,6 +54,7 @@ import { Route as ForumSlugRouteImport } from './routes/forum.$slug'
 import { Route as CatecismoParteRouteImport } from './routes/catecismo.$parte'
 import { Route as BibliaLeiturasRouteImport } from './routes/biblia.leituras'
 import { Route as BibliaLivroRouteImport } from './routes/biblia.$livro'
+import { Route as ApiTranscreverRouteImport } from './routes/api/transcrever'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
 import { Route as TrilhasTrilhaIndexRouteImport } from './routes/trilhas.$trilha.index'
 import { Route as BibliaLivroIndexRouteImport } from './routes/biblia.$livro.index'
@@ -291,6 +292,11 @@ const BibliaLivroRoute = BibliaLivroRouteImport.update({
   path: '/$livro',
   getParentRoute: () => BibliaRoute,
 } as any)
+const ApiTranscreverRoute = ApiTranscreverRouteImport.update({
+  id: '/api/transcrever',
+  path: '/api/transcrever',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiChatRoute = ApiChatRouteImport.update({
   id: '/api/chat',
   path: '/api/chat',
@@ -365,6 +371,7 @@ export interface FileRoutesByFullPath {
   '/sobre': typeof SobreRoute
   '/sophia-diagnostico': typeof SophiaDiagnosticoRoute
   '/api/chat': typeof ApiChatRoute
+  '/api/transcrever': typeof ApiTranscreverRoute
   '/biblia/$livro': typeof BibliaLivroRouteWithChildren
   '/biblia/leituras': typeof BibliaLeiturasRoute
   '/catecismo/$parte': typeof CatecismoParteRoute
@@ -418,6 +425,7 @@ export interface FileRoutesByTo {
   '/sobre': typeof SobreRoute
   '/sophia-diagnostico': typeof SophiaDiagnosticoRoute
   '/api/chat': typeof ApiChatRoute
+  '/api/transcrever': typeof ApiTranscreverRoute
   '/biblia/leituras': typeof BibliaLeiturasRoute
   '/catecismo/$parte': typeof CatecismoParteRoute
   '/forum/$slug': typeof ForumSlugRoute
@@ -473,6 +481,7 @@ export interface FileRoutesById {
   '/sobre': typeof SobreRoute
   '/sophia-diagnostico': typeof SophiaDiagnosticoRoute
   '/api/chat': typeof ApiChatRoute
+  '/api/transcrever': typeof ApiTranscreverRoute
   '/biblia/$livro': typeof BibliaLivroRouteWithChildren
   '/biblia/leituras': typeof BibliaLeiturasRoute
   '/catecismo/$parte': typeof CatecismoParteRoute
@@ -530,6 +539,7 @@ export interface FileRouteTypes {
     | '/sobre'
     | '/sophia-diagnostico'
     | '/api/chat'
+    | '/api/transcrever'
     | '/biblia/$livro'
     | '/biblia/leituras'
     | '/catecismo/$parte'
@@ -583,6 +593,7 @@ export interface FileRouteTypes {
     | '/sobre'
     | '/sophia-diagnostico'
     | '/api/chat'
+    | '/api/transcrever'
     | '/biblia/leituras'
     | '/catecismo/$parte'
     | '/forum/$slug'
@@ -637,6 +648,7 @@ export interface FileRouteTypes {
     | '/sobre'
     | '/sophia-diagnostico'
     | '/api/chat'
+    | '/api/transcrever'
     | '/biblia/$livro'
     | '/biblia/leituras'
     | '/catecismo/$parte'
@@ -693,6 +705,7 @@ export interface RootRouteChildren {
   SobreRoute: typeof SobreRoute
   SophiaDiagnosticoRoute: typeof SophiaDiagnosticoRoute
   ApiChatRoute: typeof ApiChatRoute
+  ApiTranscreverRoute: typeof ApiTranscreverRoute
   ForumSlugRoute: typeof ForumSlugRoute
   ForumIndexRoute: typeof ForumIndexRoute
   TrilhasIndexRoute: typeof TrilhasIndexRoute
@@ -1019,6 +1032,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BibliaLivroRouteImport
       parentRoute: typeof BibliaRoute
     }
+    '/api/transcrever': {
+      id: '/api/transcrever'
+      path: '/api/transcrever'
+      fullPath: '/api/transcrever'
+      preLoaderRoute: typeof ApiTranscreverRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/chat': {
       id: '/api/chat'
       path: '/api/chat'
@@ -1196,6 +1216,7 @@ const rootRouteChildren: RootRouteChildren = {
   SobreRoute: SobreRoute,
   SophiaDiagnosticoRoute: SophiaDiagnosticoRoute,
   ApiChatRoute: ApiChatRoute,
+  ApiTranscreverRoute: ApiTranscreverRoute,
   ForumSlugRoute: ForumSlugRoute,
   ForumIndexRoute: ForumIndexRoute,
   TrilhasIndexRoute: TrilhasIndexRoute,
@@ -1207,13 +1228,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

@@ -54,7 +54,7 @@ export function ReadingMode({
         <button
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
-          className="btn-base btn-outline-gold flex-1 min-w-0 gap-3 text-[11px] uppercase tracking-[0.16em] font-bold"
+          className="btn-base btn-outline-gold flex-1 min-w-0 gap-3 label-btn"
         >
           <List className="size-4 shrink-0" /> Sumário
         </button>
@@ -81,7 +81,7 @@ export function ReadingMode({
                     href={`#${t.id}`}
                     onClick={() => setOpen(false)}
                     aria-current={active === t.id ? "true" : undefined}
-                    className={`group flex items-center gap-3 rounded-[var(--radius-btn)] py-2 pr-2 text-[13px] leading-snug transition-premium ${
+                    className={`group flex items-center gap-3 rounded-[var(--radius-btn)] py-2 pr-2 text-step--1 leading-snug transition-premium ${
                       active === t.id
                         ? "text-gold"
                         : "text-muted-foreground hover:text-foreground"
@@ -96,7 +96,7 @@ export function ReadingMode({
           </nav>
           <button
             onClick={() => window.print()}
-            className="btn-base btn-gold mt-[var(--space-md)] w-full gap-3 text-[11px] uppercase tracking-[0.16em] font-bold whitespace-nowrap"
+            className="btn-base btn-gold mt-[var(--space-md)] w-full gap-3 label-btn whitespace-nowrap"
           >
             <Printer className="size-4 shrink-0" /> Imprimir / PDF
           </button>
@@ -147,7 +147,7 @@ export function FnRef({ n }: { n: string }) {
       <a
         href={`#fn-${n}`}
         aria-label={`Ver nota ${numero ?? n}`}
-        className="text-gold/90 hover:text-gold no-underline text-[11px] font-medium align-super"
+        className="text-gold/90 hover:text-gold no-underline text-step--2 font-medium align-super"
       >
         {numero ?? "•"}
       </a>

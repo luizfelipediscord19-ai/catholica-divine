@@ -115,14 +115,14 @@ export function VersiculoDoDia() {
       </blockquote>
 
       <p className="mt-4 kicker">— {versiculo.ref}</p>
-      <p className="mt-1 text-[11px] text-muted-foreground">
+      <p className="mt-1 text-step--2 text-muted-foreground">
         Bíblia Sagrada · tradução <em>Ave-Maria</em> (Editora Ave-Maria)
       </p>
 
       <div className="mt-6 flex flex-wrap gap-2">
         <button
           onClick={copy}
-          className="btn-base btn-outline-gold px-4 py-2 text-[11px] uppercase tracking-[0.16em]"
+          className="btn-base btn-outline-gold px-4 py-2 label-btn"
         >
           {copied ? <Check className="size-3.5" /> : <Copy className="size-3.5" />}
           {copied ? "Copiado" : "Copiar"}
@@ -130,7 +130,7 @@ export function VersiculoDoDia() {
         <button
           onClick={toggleFav}
           aria-pressed={isFav}
-          className={`btn-base px-4 py-2 text-[11px] uppercase tracking-[0.16em] ${
+          className={`btn-base px-4 py-2 label-btn ${
             isFav ? "btn-outline-gold border-gold text-gold bg-gold/10" : "btn-outline-gold"
           }`}
         >
@@ -139,7 +139,7 @@ export function VersiculoDoDia() {
         </button>
         <button
           onClick={printVerse}
-          className="btn-base btn-gold px-4 py-2 text-[11px] uppercase tracking-[0.16em] font-semibold"
+          className="btn-base btn-gold px-4 py-2 label-btn"
         >
           <Printer className="size-3.5" /> Imprimir
         </button>

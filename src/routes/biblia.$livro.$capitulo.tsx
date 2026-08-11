@@ -204,7 +204,7 @@ function Page() {
           <Filter className="size-3 shrink-0" /> Passagem
         </div>
         <div className="grid grid-cols-2 gap-4 sm:flex sm:gap-6">
-          <label className="text-[11px] tracking-[0.16em] uppercase text-muted-foreground">
+          <label className="label-btn text-muted-foreground">
             Versículo inicial
             <input
               type="number" min={1} inputMode="numeric"
@@ -213,7 +213,7 @@ function Page() {
               className="field-base mt-1 sm:w-24 text-base sm:text-sm"
             />
           </label>
-          <label className="text-[11px] tracking-[0.16em] uppercase text-muted-foreground">
+          <label className="label-btn text-muted-foreground">
             Final (opcional)
             <input
               type="number" min={1} inputMode="numeric"
@@ -224,11 +224,11 @@ function Page() {
           </label>
         </div>
         <div className="flex flex-wrap items-center gap-3">
-          <button type="submit" className="btn-base btn-gold text-[11px] uppercase tracking-[0.16em]">
+          <button type="submit" className="btn-base btn-gold label-btn">
             Abrir passagem
           </button>
           {passagemAtiva && (
-            <button type="button" onClick={limparPassagem} className="inline-flex items-center gap-1 min-h-11 px-3 text-[11px] uppercase tracking-[0.16em] text-muted-foreground hover:text-gold">
+            <button type="button" onClick={limparPassagem} className="inline-flex items-center gap-1 min-h-11 px-3 label-btn text-muted-foreground hover:text-gold">
               <X className="size-3" /> Capítulo inteiro
             </button>
           )}
@@ -255,7 +255,7 @@ function Page() {
               onClick={() => setVersao(v.id)}
               aria-pressed={ativo}
               className={
-                "shrink-0 min-h-11 px-4 py-2 text-[11px] tracking-[0.16em] uppercase border transition-colors " +
+                "shrink-0 min-h-11 px-4 py-2 label-btn border transition-colors " +
                 (ativo
                   ? "border-gold bg-gold text-deep"
                   : "border-gold/30 text-muted-foreground hover:text-gold hover:border-gold/60")
@@ -266,18 +266,18 @@ function Page() {
           );
         })}
       </div>
-      <p className="mt-2 text-[11px] text-muted-foreground">
+      <p className="mt-2 text-step--2 text-muted-foreground">
         Versão: <span className="text-gold">{versaoAtual.nome}</span> — {versaoAtual.lingua} · {versaoAtual.fonte}
       </p>
       {!almeidaTemLivro && (
-        <p className="mt-1 text-[11px] text-muted-foreground leading-relaxed">
+        <p className="mt-1 text-step--2 text-muted-foreground leading-relaxed">
           Livro deuterocanônico: reconhecido pela Igreja Católica (Concílio de Trento,
           1546) e ausente das edições protestantes de domínio público. Por isso o texto
           é servido aqui na Vulgata Clementina (latim) e na Douay-Rheims (inglês).
         </p>
       )}
       {livro.slug === "salmos" && (versao === "vulgata" || versao === "grego") ? (
-        <p className="mt-1 text-[11px] text-muted-foreground">
+        <p className="mt-1 text-step--2 text-muted-foreground">
           Atenção: na Vulgata e na Septuaginta a numeração dos Salmos é deslocada em uma unidade
           em boa parte do saltério.
         </p>
@@ -308,7 +308,7 @@ function Page() {
               <p key={v.v} id={`v${v.v}`} className="group relative pl-9 sm:pl-12">
                 <a
                   href={`#v${v.v}`}
-                  className="absolute left-0 top-1 w-7 sm:w-10 text-right pr-3 sm:pr-4 text-[11px] font-sans text-gold/40 group-hover:text-gold transition-smooth"
+                  className="absolute left-0 top-1 w-7 sm:w-10 text-right pr-3 sm:pr-4 text-step--2 font-sans text-gold/40 group-hover:text-gold transition-smooth"
                   aria-label={`Versículo ${v.v}`}
                 >
                   {v.v}
@@ -324,7 +324,7 @@ function Page() {
           </div>
         )}
 
-        <p className="mt-8 pt-6 border-t border-gold/15 text-[11px] text-muted-foreground leading-relaxed">
+        <p className="mt-8 pt-6 border-t border-gold/15 text-step--2 text-muted-foreground leading-relaxed">
           Edições de domínio público hospedadas no próprio portal. Traduções protegidas por
           direito autoral (Ave-Maria, Nova Vulgata) não são reproduzidas aqui.
         </p>

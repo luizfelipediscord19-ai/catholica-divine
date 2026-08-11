@@ -62,7 +62,7 @@ export function SourceReferences({
         ))}
       </ul>
       {updatedAt ? (
-        <p className="mt-2 text-[11px] text-muted-foreground/70">Atualizado em {updatedAt}</p>
+        <p className="mt-2 text-step--2 text-muted-foreground/70">Atualizado em {updatedAt}</p>
       ) : null}
     </aside>
   );

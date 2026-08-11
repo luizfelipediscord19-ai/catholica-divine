@@ -108,7 +108,7 @@ function EstudarPage() {
 
   return (
     <div className="shell py-block space-y-[var(--space-lg)]">
-      <nav aria-label="Você está aqui" className="text-[11px] text-muted-foreground">
+      <nav aria-label="Você está aqui" className="text-step--2 text-muted-foreground">
         <ol className="flex flex-wrap items-center gap-2">
           <li>
             <Link to="/" className="hover:text-gold transition-colors">
@@ -154,7 +154,7 @@ function EstudarPage() {
           <Link
             to="/trilhas/$trilha/$licao"
             params={{ trilha: trilhaUltima.slug, licao: licaoUltima.slug }}
-            className="btn-base btn-gold mt-5 gap-2 text-[11px] font-bold uppercase tracking-[0.16em]"
+            className="btn-base btn-gold mt-5 gap-2 label-btn"
           >
             Continuar estudando <ArrowRight className="size-3.5" aria-hidden="true" />
           </Link>
@@ -209,7 +209,7 @@ function EstudarPage() {
                               aria-hidden="true"
                             />
                             <span className="min-w-0 flex-1 truncate">{licao.titulo}</span>
-                            <span className="shrink-0 text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
+                            <span className="shrink-0 label-btn text-muted-foreground">
                               {feita ? "Concluído" : atual ? "Em andamento" : "Estudar"}
                             </span>
                           </Link>

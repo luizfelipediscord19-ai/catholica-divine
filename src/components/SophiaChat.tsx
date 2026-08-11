@@ -1,8 +1,9 @@
-import { memo, useEffect, useState } from "react";
-import { Send, Loader2, AlertCircle, CheckCircle2, Trash2 } from "lucide-react";
+import { memo, useCallback, useEffect, useRef, useState } from "react";
+import { Send, Loader2, AlertCircle, CheckCircle2, Trash2, Mic, Square } from "lucide-react";
 import { toast } from "sonner";
 import { SophiaMode } from "../lib/types/chat";
 import { useSophiaChat } from "../hooks/api/use-sophia-chat";
+import { useDitado } from "../hooks/use-ditado";
 import { MessageList } from "./chat/MessageList";
 
 interface SophiaChatProps {
@@ -47,35 +48,30 @@ export const SophiaChat = memo(({
       return;
     }
     setAviso(null);
-    
-    // Suporte a comandos de voz via Web Speech API se disponível
-    if (text === "___VOICE___") {
-      startVoiceRecognition();
-      return;
-    }
-
     setUltima(text.trim());
     sendMessage({ text: text.trim() });
     setInput("");
   };
 
-  const startVoiceRecognition = () => {
-    const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
-    if (!SpeechRecognition) {
-      toast.error("Seu navegador não suporta reconhecimento de voz.");
-      return;
+  // Ditado por voz: grava o microfone e transcreve no servidor (Whisper).
+  const submitRef = useRef(handleSubmit);
+  submitRef.current = handleSubmit;
+
+  const aoTranscrever = useCallback((texto: string) => {
+    const limpo = texto.slice(0, LIMITE);
+    setInput(limpo);
+    submitRef.current(limpo);
+  }, []);
+
+  const ditado = useDitado(aoTranscrever);
+
+  useEffect(() => {
+    if (ditado.erro) {
+      toast.error(ditado.erro);
+      ditado.limparErro();
     }
-    const recognition = new SpeechRecognition();
-    recognition.lang = 'pt-BR';
-    recognition.start();
-    toast.info("Ouvindo...");
-    recognition.onresult = (event: any) => {
-      const transcript = event.results[0][0].transcript;
-      setInput(transcript);
-      handleSubmit(transcript);
-    };
-    recognition.onerror = () => toast.error("Erro ao capturar voz.");
-  };
+  }, [ditado]);
+
 
   const onFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -95,7 +91,7 @@ export const SophiaChat = memo(({
 
   return (
     <div aria-busy={isLoading} className="surface-card backdrop-blur-xl flex flex-col shadow-2xl shadow-black/50 overflow-hidden" style={{ height }}>
-      <div className={`flex items-center justify-between px-6 py-4 text-[11px] tracking-[0.16em] uppercase border-b border-gold/10 ${statusColor}`}>
+      <div className={`flex items-center justify-between px-6 py-4 label-btn border-b border-gold/10 ${statusColor}`}>
         <div className="flex items-center gap-3">
           <div className="relative">
             <StatusIcon className={`size-3.5 ${isLoading ? "animate-spin" : ""}`} aria-hidden="true" />
@@ -146,44 +142,63 @@ export const SophiaChat = memo(({
 
       <form
         onSubmit={onFormSubmit}
-        className="border-t border-gold/10 p-6 flex gap-4 bg-black/20"
+        className="flex items-center gap-2 border-t border-gold/10 bg-muted/20 p-4 sm:gap-3 sm:p-5"
       >
         <input
           aria-label="Sua pergunta para a Sophia"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder={placeholder}
-          className="field-base flex-1 px-5 py-4 text-base"
+          placeholder={ditado.estado === "gravando" ? "Ouvindo… fale a sua pergunta" : placeholder}
+          className="field-base min-w-0 flex-1 text-step-0"
           style={{ fontSize: "16px" }}
-          disabled={isLoading}
+          disabled={isLoading || ditado.estado !== "inativo"}
           maxLength={LIMITE}
           aria-describedby="sophia-estado"
           autoComplete="off"
           autoCorrect="off"
         />
-        <div className="flex gap-2">
+
+        {ditado.suportado ? (
           <button
             type="button"
-            onClick={() => handleSubmit("___VOICE___")}
-            className="px-4 border border-gold/10 hover:border-gold/40 text-gold/60 hover:text-gold transition-premium bg-white/[0.02]"
-            aria-label="Ditar pergunta por voz"
-            title="Falar com a IA"
+            onClick={ditado.alternar}
+            disabled={isLoading || ditado.estado === "transcrevendo"}
+            aria-label={
+              ditado.estado === "gravando" ? "Parar gravação e enviar" : "Ditar pergunta por voz"
+            }
+            aria-pressed={ditado.estado === "gravando"}
+            title={ditado.estado === "gravando" ? "Parar e transcrever" : "Falar com a Sophia"}
+            className={`btn-base btn-icon shrink-0 border transition-premium ${
+              ditado.estado === "gravando"
+                ? "animate-pulse border-destructive/60 bg-destructive/15 text-destructive-text"
+                : "border-gold/25 bg-transparent text-gold/70 hover:border-gold/60 hover:text-gold"
+            }`}
           >
-            <svg className="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" focusable="false">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
-            </svg>
+            {ditado.estado === "transcrevendo" ? (
+              <Loader2 className="size-4 animate-spin" aria-hidden="true" />
+            ) : ditado.estado === "gravando" ? (
+              <Square className="size-4" aria-hidden="true" />
+            ) : (
+              <Mic className="size-4" aria-hidden="true" />
+            )}
           </button>
-          <button
-            type="submit"
-            disabled={isLoading || !input.trim()}
-            aria-label="Enviar pergunta"
-            title="Enviar pergunta"
-            className="btn-base btn-gold group px-8"
-          >
-            <Send className="size-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" aria-hidden="true" />
-          </button>
-        </div>
+        ) : null}
+
+        <button
+          type="submit"
+          disabled={isLoading || !input.trim()}
+          aria-label="Enviar pergunta"
+          title="Enviar pergunta"
+          className="btn-base btn-gold btn-md group shrink-0"
+        >
+          <Send
+            className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+            aria-hidden="true"
+          />
+          <span className="hidden sm:inline">Enviar</span>
+        </button>
       </form>
+
 
       <div
         id="sophia-estado"

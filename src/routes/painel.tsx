@@ -92,13 +92,13 @@ function PainelPage() {
           <button
             type="button"
             onClick={() => void painel.refetch()}
-            className="min-h-11 px-5 text-[11px] uppercase tracking-[0.16em] border border-gold/40 text-foreground/80 hover:text-gold hover:border-gold transition-colors"
+            className="min-h-11 px-5 label-btn border border-gold/40 text-foreground/80 hover:text-gold hover:border-gold transition-colors"
           >
             Tentar de novo
           </button>
           <Link
             to="/diagnostico-backend"
-            className="min-h-11 px-5 inline-flex items-center text-[11px] uppercase tracking-[0.16em] border border-border text-muted-foreground hover:text-gold hover:border-gold transition-colors"
+            className="min-h-11 px-5 inline-flex items-center label-btn border border-border text-muted-foreground hover:text-gold hover:border-gold transition-colors"
           >
             Ver diagnóstico
           </Link>
@@ -182,7 +182,7 @@ function PainelPage() {
           <div className="h-1 w-full max-w-[28rem] bg-gold/10">
             <div className="h-full bg-gold transition-all" style={{ width: `${progresso}%` }} />
           </div>
-          <p className="text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
+          <p className="label-btn text-muted-foreground">
             {proximo - dados.identidade.xp} XP para o nível {nivel + 1}
           </p>
         </div>
@@ -357,7 +357,7 @@ function PainelPage() {
                         style={{ width: `${c.desbloqueada ? 100 : percentual}%` }}
                       />
                     </div>
-                    <p className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+                    <p className="label-btn text-muted-foreground">
                       {c.desbloqueada
                         ? "Concluída"
                         : `${meta.atual}/${meta.alvo} — ${textoRestante(meta)}`}
@@ -388,7 +388,7 @@ function PainelPage() {
               esquecer();
               toast.success("Identidade esquecida neste navegador.");
             }}
-            className="ml-auto text-[11px] uppercase tracking-[0.16em] text-paper/60 hover:text-gold transition-colors"
+            className="ml-auto label-btn text-paper/60 hover:text-gold transition-colors"
           >
             Esquecer identidade
           </button>
@@ -411,7 +411,7 @@ function Metrica({
     <div className="surface-card backdrop-blur-md p-6">
       <Icone className="size-5 text-gold mb-4" aria-hidden="true" />
       <p className="font-display text-3xl text-foreground">{valor}</p>
-      <p className="text-[11px] uppercase tracking-[0.16em] text-muted-foreground mt-1">{rotulo}</p>
+      <p className="label-btn text-muted-foreground mt-1">{rotulo}</p>
     </div>
   );
 }
@@ -482,7 +482,7 @@ function DiarioHoje({
         }}
       >
         <label className="block space-y-2">
-          <span className="text-[11px] uppercase tracking-[0.16em] text-paper/60">
+          <span className="label-btn text-paper/60">
             Intenção do dia
           </span>
           <input
@@ -494,7 +494,7 @@ function DiarioHoje({
           />
         </label>
         <label className="block space-y-2">
-          <span className="text-[11px] uppercase tracking-[0.16em] text-paper/60">
+          <span className="label-btn text-paper/60">
             Reflexão curta
           </span>
           <textarea
@@ -507,7 +507,7 @@ function DiarioHoje({
           />
         </label>
         <label className="block space-y-2 max-w-[20rem]">
-          <span className="text-[11px] uppercase tracking-[0.16em] text-paper/60">
+          <span className="label-btn text-paper/60">
             Tempo de oração (minutos)
           </span>
           <input

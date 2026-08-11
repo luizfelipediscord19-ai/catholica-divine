@@ -87,7 +87,7 @@ function ForumPage() {
             <button
               type="button"
               onClick={() => setSecao(undefined)}
-              className={`px-4 py-2 text-[11px] uppercase tracking-[0.16em] border transition-premium ${
+              className={`px-4 py-2 label-btn border transition-premium ${
                 secao === undefined
                   ? "border-gold text-gold"
                   : "border-gold/15 text-paper/60 hover:text-paper"
@@ -100,7 +100,7 @@ function ForumPage() {
                 key={s.slug}
                 type="button"
                 onClick={() => setSecao(s.slug)}
-                className={`px-4 py-2 text-[11px] uppercase tracking-[0.16em] border transition-premium ${
+                className={`px-4 py-2 label-btn border transition-premium ${
                   secao === s.slug
                     ? "border-gold text-gold"
                     : "border-gold/15 text-paper/60 hover:text-paper"
@@ -316,7 +316,7 @@ function NovoTopico({
         }}
       >
         <fieldset className="space-y-3">
-          <legend className="text-[11px] uppercase tracking-[0.16em] text-paper/60 mb-2">
+          <legend className="label-btn text-paper/60 mb-2">
             Seção
           </legend>
           <div className="flex flex-wrap gap-2">
@@ -326,7 +326,7 @@ function NovoTopico({
                 type="button"
                 onClick={() => setSecaoSlug(s.slug)}
                 aria-pressed={secaoSlug === s.slug}
-                className={`px-4 py-2 text-[11px] uppercase tracking-[0.16em] border transition-premium ${
+                className={`px-4 py-2 label-btn border transition-premium ${
                   secaoSlug === s.slug
                     ? "border-gold bg-gold/10 text-gold"
                     : "border-gold/15 text-paper/60 hover:text-paper hover:border-gold/40"
@@ -338,7 +338,7 @@ function NovoTopico({
           </div>
         </fieldset>
         <label className="block space-y-2">
-          <span className="text-[11px] uppercase tracking-[0.16em] text-paper/60">Título</span>
+          <span className="label-btn text-paper/60">Título</span>
           <input
             value={titulo}
             onChange={(e) => rascunho.atualizar({ titulo: e.target.value })}
@@ -348,7 +348,7 @@ function NovoTopico({
           />
         </label>
         <label className="block space-y-2">
-          <span className="text-[11px] uppercase tracking-[0.16em] text-paper/60">Mensagem</span>
+          <span className="label-btn text-paper/60">Mensagem</span>
           <textarea
             value={corpo}
             onChange={(e) => rascunho.atualizar({ corpo: e.target.value })}

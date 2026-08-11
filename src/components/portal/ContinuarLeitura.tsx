@@ -62,7 +62,7 @@ export function ContinuarLeitura({ className = "" }: { className?: string }) {
         <Link
           to="/biblia/$livro/$capitulo"
           params={{ livro: alvo.livro.slug, capitulo: String(alvo.capitulo) }}
-          className="btn-base btn-gold px-6 py-2 text-[11px] uppercase tracking-[0.16em] font-bold"
+          className="btn-base btn-gold px-6 py-2 label-btn"
         >
           <BookOpen className="size-3.5" aria-hidden="true" />
           {primeiraVez ? "Começar a ler" : "Continuar leitura"}
