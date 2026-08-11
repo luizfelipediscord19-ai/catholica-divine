@@ -36,6 +36,7 @@ export const ChatMessageItem = memo(({ message }: ChatMessageProps) => {
         <div className="prose prose-sm prose-invert max-w-none [&_p]:my-2 [&_strong]:text-gold [&_blockquote]:border-gold/30 [&_blockquote]:text-paper/80 [&_h2]:text-gold [&_h2]:font-display [&_h3]:text-gold/90 [&_em]:text-gold/80">
           <ReactMarkdown>{text}</ReactMarkdown>
         </div>
+        {!isUser && text ? <SourceReferences references={extrairFontes(text)} /> : null}
         {!isUser && text ? (
           <button
             type="button"
