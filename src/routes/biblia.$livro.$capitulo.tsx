@@ -204,7 +204,7 @@ function Page() {
           <Filter className="size-3 shrink-0" /> Passagem
         </div>
         <div className="grid grid-cols-2 gap-4 sm:flex sm:gap-6">
-          <label className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground">
+          <label className="text-[11px] tracking-[0.16em] uppercase text-muted-foreground">
             Versículo inicial
             <input
               type="number" min={1} inputMode="numeric"
@@ -213,7 +213,7 @@ function Page() {
               className="field-base mt-1 sm:w-24 text-base sm:text-sm"
             />
           </label>
-          <label className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground">
+          <label className="text-[11px] tracking-[0.16em] uppercase text-muted-foreground">
             Final (opcional)
             <input
               type="number" min={1} inputMode="numeric"
@@ -224,11 +224,11 @@ function Page() {
           </label>
         </div>
         <div className="flex flex-wrap items-center gap-3">
-          <button type="submit" className="btn-base btn-gold text-[10px] uppercase tracking-[0.25em]">
+          <button type="submit" className="btn-base btn-gold text-[11px] uppercase tracking-[0.16em]">
             Abrir passagem
           </button>
           {passagemAtiva && (
-            <button type="button" onClick={limparPassagem} className="inline-flex items-center gap-1 min-h-11 px-3 text-[10px] uppercase tracking-[0.2em] text-muted-foreground hover:text-gold">
+            <button type="button" onClick={limparPassagem} className="inline-flex items-center gap-1 min-h-11 px-3 text-[11px] uppercase tracking-[0.16em] text-muted-foreground hover:text-gold">
               <X className="size-3" /> Capítulo inteiro
             </button>
           )}
@@ -255,7 +255,7 @@ function Page() {
               onClick={() => setVersao(v.id)}
               aria-pressed={ativo}
               className={
-                "shrink-0 min-h-11 px-4 py-2 text-[10px] tracking-[0.2em] uppercase border transition-colors " +
+                "shrink-0 min-h-11 px-4 py-2 text-[11px] tracking-[0.16em] uppercase border transition-colors " +
                 (ativo
                   ? "border-gold bg-gold text-deep"
                   : "border-gold/30 text-muted-foreground hover:text-gold hover:border-gold/60")
@@ -308,7 +308,7 @@ function Page() {
               <p key={v.v} id={`v${v.v}`} className="group relative pl-9 sm:pl-12">
                 <a
                   href={`#v${v.v}`}
-                  className="absolute left-0 top-1 w-7 sm:w-10 text-right pr-3 sm:pr-4 text-[10px] font-sans text-gold/40 group-hover:text-gold transition-smooth"
+                  className="absolute left-0 top-1 w-7 sm:w-10 text-right pr-3 sm:pr-4 text-[11px] font-sans text-gold/40 group-hover:text-gold transition-smooth"
                   aria-label={`Versículo ${v.v}`}
                 >
                   {v.v}

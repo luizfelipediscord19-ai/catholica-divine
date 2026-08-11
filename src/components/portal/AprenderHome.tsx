@@ -61,7 +61,7 @@ export function BuscaAprender() {
         </div>
         <button
           type="submit"
-          className="inline-flex min-h-13 items-center justify-center gap-2 bg-gold px-7 text-[11px] font-bold uppercase tracking-[0.22em] text-deep transition-premium hover:bg-paper focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+          className="inline-flex min-h-13 items-center justify-center gap-2 bg-gold px-7 text-[11px] font-bold uppercase tracking-[0.16em] text-deep transition-premium hover:bg-paper focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
         >
           Buscar
         </button>

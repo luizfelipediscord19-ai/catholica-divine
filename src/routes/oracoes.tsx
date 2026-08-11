@@ -137,7 +137,7 @@ function CartaoOracao({
           <button
             type="button"
             onClick={() => void copiar()}
-            className="min-h-11 px-4 text-[10px] uppercase tracking-[0.2em] border border-gold/30 text-foreground/70 hover:text-gold hover:border-gold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+            className="min-h-11 px-4 text-[11px] uppercase tracking-[0.16em] border border-gold/30 text-foreground/70 hover:text-gold hover:border-gold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
           >
             {copiado ? "Copiado" : "Copiar oração"}
           </button>
@@ -209,7 +209,7 @@ function Page() {
                 type="button"
                 aria-pressed={ativo}
                 onClick={() => setFiltro(cat)}
-                className={`min-h-11 px-4 text-[10px] uppercase tracking-[0.2em] border transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold ${
+                className={`min-h-11 px-4 text-[11px] uppercase tracking-[0.16em] border transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold ${
                   ativo
                     ? "border-gold bg-gold/10 text-gold"
                     : "border-border/60 text-foreground/70 hover:text-gold hover:border-gold/60"

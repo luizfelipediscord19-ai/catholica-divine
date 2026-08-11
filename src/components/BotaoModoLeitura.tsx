@@ -15,7 +15,7 @@ export function BotaoModoLeitura({ className = "" }: { className?: string }) {
       aria-pressed={ativo}
       title={ativo ? "Sair do modo leitura (R)" : "Modo leitura (R)"}
       className={
-        "fixed right-4 bottom-[calc(5.25rem+env(safe-area-inset-bottom))] z-[60] inline-flex items-center gap-2 min-h-11 rounded-full px-4 py-3 border text-[10px] uppercase tracking-[0.25em] font-semibold shadow-[var(--shadow-card)] transition-premium print:hidden " +
+        "fixed right-4 bottom-[calc(5.25rem+env(safe-area-inset-bottom))] z-[60] inline-flex items-center gap-2 min-h-11 rounded-full px-4 py-3 border text-[11px] uppercase tracking-[0.16em] font-semibold shadow-[var(--shadow-card)] transition-premium print:hidden " +
         (ativo
           ? "border-gold bg-gold text-deep hover:bg-paper"
           : "border-gold/30 bg-background/90 text-gold backdrop-blur-md hover:border-gold") +

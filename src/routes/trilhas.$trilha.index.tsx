@@ -70,7 +70,7 @@ function TrilhaPagina() {
       <div className="mt-8 h-1 w-full bg-paper/10">
         <div className="h-1 bg-gold" style={{ width: `${pct}%` }} />
       </div>
-      <p className="mt-2 text-[11px] uppercase tracking-[0.2em] text-paper/55">{pct}% concluído</p>
+      <p className="mt-2 text-[11px] uppercase tracking-[0.16em] text-paper/55">{pct}% concluído</p>
 
       <ol className="mt-10 space-y-3">
         {trilha.licoes.map((licao, i) => {
@@ -93,7 +93,7 @@ function TrilhaPagina() {
                 <span className="min-w-0">
                   <span className="block font-display text-lg text-paper">{licao.titulo}</span>
                   <span className="mt-1 block text-sm text-paper/70 leading-relaxed">{licao.resumo}</span>
-                  <span className="mt-1 block text-[11px] uppercase tracking-[0.2em] text-paper/50">
+                  <span className="mt-1 block text-[11px] uppercase tracking-[0.16em] text-paper/50">
                     {licao.minutos} min de leitura
                   </span>
                 </span>

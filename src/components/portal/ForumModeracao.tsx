@@ -89,8 +89,8 @@ export function DenunciarBotao({
         type="button"
         onClick={() => setAberto((v) => !v)}
         aria-expanded={aberto}
-        className={`inline-flex items-center gap-2 uppercase tracking-[0.25em] text-paper/50 hover:text-gold transition-colors ${
-          compacto ? "text-[10px]" : "text-[10px]"
+        className={`inline-flex items-center gap-2 uppercase tracking-[0.16em] text-paper/50 hover:text-gold transition-colors ${
+          compacto ? "text-[11px]" : "text-[11px]"
         }`}
       >
         <Flag className="size-3" aria-hidden="true" /> Denunciar
@@ -105,7 +105,7 @@ export function DenunciarBotao({
           }}
         >
           <fieldset className="space-y-2">
-            <legend className="text-[10px] uppercase tracking-[0.25em] text-paper/60 mb-2">
+            <legend className="text-[11px] uppercase tracking-[0.16em] text-paper/60 mb-2">
               Motivo
             </legend>
             <div className="flex flex-wrap gap-2">
@@ -115,7 +115,7 @@ export function DenunciarBotao({
                   type="button"
                   onClick={() => setMotivo(m.valor)}
                   aria-pressed={motivo === m.valor}
-                  className={`px-3 py-2 text-[10px] uppercase tracking-[0.15em] border transition-premium ${
+                  className={`px-3 py-2 text-[11px] uppercase tracking-[0.15em] border transition-premium ${
                     motivo === m.valor
                       ? "border-gold bg-gold/10 text-gold"
                       : "border-gold/15 text-paper/60 hover:text-paper hover:border-gold/40"
@@ -127,7 +127,7 @@ export function DenunciarBotao({
             </div>
           </fieldset>
           <label className="block space-y-2">
-            <span className="text-[10px] uppercase tracking-[0.25em] text-paper/60">
+            <span className="text-[11px] uppercase tracking-[0.16em] text-paper/60">
               Comentário (opcional)
             </span>
             <textarea

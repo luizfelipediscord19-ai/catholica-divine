@@ -63,19 +63,17 @@ const NAV_PRINCIPAL: { to: string; label: string; desde: "lg" | "xl" | "2xl" }[]
   { to: "/biblia", label: "Bíblia", desde: "lg" },
   { to: "/santos", label: "Santos", desde: "lg" },
   { to: "/oracoes", label: "Orações", desde: "xl" },
-  { to: "/forum", label: "Fórum", desde: "xl" },
-  { to: "/trilhas", label: "Trilhas", desde: "2xl" },
-  { to: "/catecismo", label: "Catecismo", desde: "2xl" },
+  { to: "/forum", label: "Fórum", desde: "2xl" },
 ];
 
 const VISIVEL_DESDE = {
-  lg: "hidden lg:inline-flex",
-  xl: "hidden xl:inline-flex",
-  "2xl": "hidden 2xl:inline-flex",
+  lg: "hidden md:inline-flex",
+  xl: "hidden [@media(min-width:1400px)]:inline-flex",
+  "2xl": "hidden [@media(min-width:1600px)]:inline-flex",
 } as const;
 
 const ICONE_REDONDO =
-  "btn-base grid size-10 shrink-0 place-items-center rounded-full border border-gold/20 bg-transparent p-0 text-paper/70 transition-premium hover:border-gold/60 hover:text-gold sm:size-11";
+  "btn-base grid size-10 shrink-0 place-items-center rounded-full border border-gold/20 bg-transparent p-0 text-paper/70 transition-premium hover:border-gold/60 hover:text-gold";
 
 export function SiteHeader() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
@@ -111,7 +109,7 @@ export function SiteHeader() {
         rolou ? "border-gold/20 shadow-[var(--shadow-card-hover)]" : "border-gold/10"
       }`}
     >
-      <div className="shell grid h-16 w-full grid-cols-[minmax(0,1fr)_auto] items-center gap-3 sm:h-20 lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:gap-5 xl:gap-7">
+      <div className="shell grid h-16 w-full grid-cols-[minmax(0,1fr)_auto] items-center gap-3 sm:h-20 md:grid-cols-[auto_minmax(0,1fr)_auto] md:gap-5 xl:gap-7">
         <Link
           to="/"
           className="group flex min-w-0 items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold sm:gap-3 lg:shrink-0"
@@ -126,7 +124,7 @@ export function SiteHeader() {
 
         <nav
           aria-label="Navegação principal"
-          className="hidden min-w-0 items-center justify-center gap-3 overflow-hidden whitespace-nowrap text-[10px] font-medium uppercase tracking-[0.12em] text-paper/75 lg:flex xl:gap-5"
+          className="hidden min-w-0 items-center gap-4 whitespace-nowrap text-[11px] font-medium uppercase tracking-[0.14em] text-paper/75 md:flex lg:gap-6"
         >
           {NAV_PRINCIPAL.map((item) => {
             const active = pathname === item.to || pathname.startsWith(`${item.to}/`);
@@ -135,7 +133,7 @@ export function SiteHeader() {
                 key={item.to}
                 to={item.to}
                 aria-current={active ? "page" : undefined}
-                className={`${VISIVEL_DESDE[item.desde]} relative items-center py-3 transition-colors hover:text-paper focus-visible:text-paper focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold ${
+                className={`${VISIVEL_DESDE[item.desde]} relative shrink-0 items-center py-3 transition-colors hover:text-paper focus-visible:text-paper focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold ${
                   active ? "text-gold" : ""
                 }`}
               >
@@ -157,7 +155,7 @@ export function SiteHeader() {
           {/* Sophia: botão completo no desktop, ícone no celular. */}
           <Link
             to="/assistente"
-            className="btn-base btn-gold hidden px-4 py-3 text-[10px] font-bold uppercase tracking-[0.18em] lg:inline-flex xl:px-5"
+            className="btn-base btn-gold hidden px-4 text-[11px] font-bold uppercase tracking-[0.16em] md:inline-flex xl:px-5"
           >
             <Sparkles className="size-3.5" aria-hidden="true" /> Sophia IA
           </Link>
@@ -165,7 +163,7 @@ export function SiteHeader() {
             to="/assistente"
             aria-label="Falar com a Sophia IA"
             title="Sophia IA"
-            className="btn-base grid size-10 shrink-0 place-items-center rounded-full border border-gold/50 bg-gold/10 p-0 text-gold transition-premium hover:bg-gold hover:text-deep sm:size-11 lg:hidden"
+            className="btn-base grid size-10 shrink-0 place-items-center rounded-full border border-gold/50 bg-gold/10 p-0 text-gold transition-premium hover:bg-gold hover:text-deep md:hidden"
           >
             <Sparkles className="size-4" aria-hidden="true" />
           </Link>
@@ -191,7 +189,7 @@ export function SiteHeader() {
             aria-expanded={open}
             aria-controls="menu-principal"
             onClick={() => setOpen((v) => !v)}
-            className="btn-base grid size-10 shrink-0 place-items-center rounded-full border border-gold/30 bg-transparent p-0 text-gold transition-premium hover:bg-gold/10 sm:size-11"
+            className="btn-base grid size-10 shrink-0 place-items-center rounded-full border border-gold/30 bg-transparent p-0 text-gold transition-premium hover:bg-gold/10"
           >
             {open ? (
               <X className="size-5" aria-hidden="true" />
@@ -250,7 +248,7 @@ export function SiteHeader() {
                     setOpen(false);
                     setBusca(true);
                   }}
-                  className="btn-base btn-outline-gold px-4 py-3 text-[10px] font-semibold uppercase tracking-[0.18em]"
+                  className="btn-base btn-outline-gold px-4 py-3 text-[11px] font-semibold uppercase tracking-[0.18em]"
                 >
                   <Search className="size-3.5" aria-hidden="true" /> Buscar
                 </button>
@@ -278,14 +276,14 @@ function ContaBotao() {
     <button
       type="button"
       onClick={() => void sair()}
-      className="btn-base btn-outline-gold hidden px-4 py-3 text-[10px] uppercase tracking-[0.2em] 2xl:inline-flex"
+      className="btn-base btn-outline-gold hidden px-4 text-[11px] uppercase tracking-[0.16em] xl:inline-flex"
     >
       Sair
     </button>
   ) : (
     <Link
       to="/auth"
-      className="btn-base btn-outline-gold hidden px-4 py-3 text-[10px] uppercase tracking-[0.2em] 2xl:inline-flex"
+      className="btn-base btn-outline-gold hidden px-4 text-[11px] uppercase tracking-[0.16em] xl:inline-flex"
     >
       Entrar
     </Link>

@@ -91,7 +91,7 @@ function Page() {
       <div className="mt-8 surface-card p-5">
         <div className="flex items-center justify-between gap-4 mb-3">
           <p className="kicker">Progresso</p>
-          <button onClick={reset} className="inline-flex items-center gap-1 text-[10px] uppercase tracking-[0.25em] text-muted-foreground hover:text-gold">
+          <button onClick={reset} className="inline-flex items-center gap-1 text-[11px] uppercase tracking-[0.16em] text-muted-foreground hover:text-gold">
             <RotateCcw className="size-3" /> Reiniciar
           </button>
         </div>
@@ -111,14 +111,14 @@ function Page() {
         <div className="mt-6 flex flex-wrap items-center gap-3">
           <Link
             {...linkParaLeitura(hoje)}
-            className="btn-base btn-gold gap-2 text-[11px] uppercase tracking-[0.25em]"
+            className="btn-base btn-gold gap-2 text-[11px] uppercase tracking-[0.16em]"
           >
             <BookOpen className="size-3.5" /> Ler agora
           </Link>
           <button
             onClick={() => toggle(idHoje)}
             className={
-              "inline-flex items-center gap-2 px-5 py-3 border text-[11px] uppercase tracking-[0.25em] transition-colors " +
+              "inline-flex items-center gap-2 px-5 py-3 border text-[11px] uppercase tracking-[0.16em] transition-colors " +
               (concluidas.has(idHoje)
                 ? "border-gold bg-gold/10 text-gold"
                 : "border-gold/30 text-muted-foreground hover:text-gold hover:border-gold/60")

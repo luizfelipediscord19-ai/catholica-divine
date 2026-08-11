@@ -180,7 +180,7 @@ export function MapaAnoLiturgico() {
             <button
               key={t.slug}
               onClick={() => setAtivo(t.slug)}
-              className={`relative flex items-center gap-2 px-3 py-2 text-[10px] uppercase tracking-[0.2em] transition-colors ${
+              className={`relative flex items-center gap-2 px-3 py-2 text-[11px] uppercase tracking-[0.16em] transition-colors ${
                 active ? "bg-gold/15 text-gold" : "text-foreground/70 hover:text-foreground"
               }`}
             >
@@ -214,7 +214,7 @@ export function MapaAnoLiturgico() {
           <button
             onClick={() => toggleFav(tempo.slug)}
             aria-pressed={isFav}
-            className={`inline-flex items-center gap-2 px-4 py-2 border text-[10px] uppercase tracking-[0.25em] transition-colors ${
+            className={`inline-flex items-center gap-2 px-4 py-2 border text-[11px] uppercase tracking-[0.16em] transition-colors ${
               isFav
                 ? "border-gold bg-gold/15 text-gold"
                 : "border-gold/30 text-foreground/80 hover:border-gold hover:text-gold"
@@ -246,7 +246,7 @@ export function MapaAnoLiturgico() {
 
       {favs.length > 0 ? (
         <div className="border-t border-gold/15 px-6 py-4 text-xs text-muted-foreground">
-          <span className="text-gold/80 uppercase tracking-[0.25em] text-[10px] mr-3">Seus favoritos</span>
+          <span className="text-gold/80 uppercase tracking-[0.16em] text-[11px] mr-3">Seus favoritos</span>
           {favs
             .map((s) => TEMPOS.find((t) => t.slug === s)?.nome)
             .filter(Boolean)

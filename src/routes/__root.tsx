@@ -36,7 +36,7 @@ function NotFoundComponent() {
         <div className="mt-8">
           <Link
             to="/"
-            className="btn-base btn-gold px-6 py-3 text-[11px] uppercase tracking-[0.2em] font-semibold"
+            className="btn-base btn-gold px-6 py-3 text-[11px] uppercase tracking-[0.16em] font-semibold"
           >
             Voltar ao início
           </Link>
@@ -66,13 +66,13 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
               router.invalidate();
               reset();
             }}
-            className="btn-base btn-gold px-5 py-2.5 text-[11px] uppercase tracking-[0.2em] font-semibold"
+            className="btn-base btn-gold px-5 py-2.5 text-[11px] uppercase tracking-[0.16em] font-semibold"
           >
             Tentar de novo
           </button>
           <a
             href="/"
-            className="btn-base btn-outline-gold px-5 py-2.5 text-[11px] uppercase tracking-[0.2em] font-medium"
+            className="btn-base btn-outline-gold px-5 py-2.5 text-[11px] uppercase tracking-[0.16em] font-medium"
           >
             Início
           </a>
@@ -183,7 +183,7 @@ function RootComponent() {
         <div className="min-h-dvh flex flex-col">
           <a
             href="#conteudo"
-            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-gold focus:px-5 focus:py-3 focus:text-[11px] focus:uppercase focus:tracking-[0.2em] focus:text-deep"
+            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-gold focus:px-5 focus:py-3 focus:text-[11px] focus:uppercase focus:tracking-[0.16em] focus:text-deep"
           >
             Pular para o conteúdo principal
           </a>

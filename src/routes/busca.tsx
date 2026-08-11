@@ -180,7 +180,7 @@ function BuscaAvancadaPage() {
           />
           <button
             type="submit"
-            className="inline-flex min-h-11 items-center justify-center gap-2 rounded-md border border-gold/40 bg-gold/10 px-6 text-xs uppercase tracking-[0.3em] text-gold transition-colors hover:bg-gold/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+            className="inline-flex min-h-11 items-center justify-center gap-2 rounded-md border border-gold/40 bg-gold/10 px-6 text-xs uppercase tracking-[0.16em] text-gold transition-colors hover:bg-gold/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
           >
             {mutation.isPending ? (
               <Loader2 className="size-4 animate-spin" aria-hidden="true" />
@@ -201,7 +201,7 @@ function BuscaAvancadaPage() {
                 type="button"
                 aria-pressed={on}
                 onClick={() => alternar(escopo.id)}
-                className={`min-h-9 rounded-full border px-4 py-1.5 text-[11px] uppercase tracking-[0.2em] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold ${
+                className={`min-h-9 rounded-full border px-4 py-1.5 text-[11px] uppercase tracking-[0.16em] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold ${
                   on
                     ? "border-gold/50 bg-gold/15 text-gold"
                     : "border-gold/15 text-muted-foreground hover:text-foreground"

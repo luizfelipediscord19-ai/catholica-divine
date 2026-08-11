@@ -27,7 +27,7 @@ export function TemaToggle() {
       onClick={alternar}
       aria-label={rotulo}
       title={rotulo}
-      className="grid size-11 place-items-center rounded-full border border-gold/20 text-paper/70 transition-premium hover:border-gold/60 hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+      className="grid size-10 place-items-center rounded-full border border-gold/20 text-paper/70 transition-premium hover:border-gold/60 hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
     >
       {montado && tema === "claro" ? (
         <Moon className="size-4" aria-hidden="true" />

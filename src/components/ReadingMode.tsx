@@ -54,7 +54,7 @@ export function ReadingMode({
         <button
           onClick={() => setOpen((v) => !v)}
           aria-expanded={open}
-          className="btn-base btn-outline-gold flex-1 min-w-0 gap-3 text-[10px] uppercase tracking-[0.3em] font-bold"
+          className="btn-base btn-outline-gold flex-1 min-w-0 gap-3 text-[11px] uppercase tracking-[0.16em] font-bold"
         >
           <List className="size-4 shrink-0" /> Sumário
         </button>
@@ -96,7 +96,7 @@ export function ReadingMode({
           </nav>
           <button
             onClick={() => window.print()}
-            className="btn-base btn-gold mt-[var(--space-md)] w-full gap-3 text-[10px] uppercase tracking-[0.2em] font-bold whitespace-nowrap"
+            className="btn-base btn-gold mt-[var(--space-md)] w-full gap-3 text-[11px] uppercase tracking-[0.16em] font-bold whitespace-nowrap"
           >
             <Printer className="size-4 shrink-0" /> Imprimir / PDF
           </button>
@@ -147,7 +147,7 @@ export function FnRef({ n }: { n: string }) {
       <a
         href={`#fn-${n}`}
         aria-label={`Ver nota ${numero ?? n}`}
-        className="text-gold/90 hover:text-gold no-underline text-[10px] font-medium align-super"
+        className="text-gold/90 hover:text-gold no-underline text-[11px] font-medium align-super"
       >
         {numero ?? "•"}
       </a>

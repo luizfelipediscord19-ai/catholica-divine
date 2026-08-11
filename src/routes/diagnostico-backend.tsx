@@ -61,7 +61,7 @@ function DiagnosticoBackendPage() {
           ) : (
             <div className="space-y-6">
               <p
-                className={`text-[10px] uppercase tracking-[0.25em] ${
+                className={`text-[11px] uppercase tracking-[0.16em] ${
                   check.data.saudavel ? "text-gold" : "text-destructive-text"
                 }`}
               >
@@ -96,11 +96,11 @@ function DiagnosticoBackendPage() {
                 <button
                   type="button"
                   onClick={() => void check.refetch()}
-                  className="min-h-11 px-5 text-[10px] uppercase tracking-[0.2em] border border-gold/40 text-foreground/80 hover:text-gold hover:border-gold transition-colors"
+                  className="min-h-11 px-5 text-[11px] uppercase tracking-[0.16em] border border-gold/40 text-foreground/80 hover:text-gold hover:border-gold transition-colors"
                 >
                   Verificar de novo
                 </button>
-                <span className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+                <span className="text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
                   {new Date(check.data.geradoEm).toLocaleString("pt-BR")}
                 </span>
               </div>
