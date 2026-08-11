@@ -58,20 +58,17 @@ const GRUPOS: { titulo: string; itens: { to: string; label: string }[] }[] = [
   },
 ];
 
-const NAV_PRINCIPAL: { to: string; label: string; desde: "lg" | "xl" | "2xl" }[] = [
-  { to: "/estudar", label: "Estudar", desde: "lg" },
-  { to: "/biblia", label: "Bíblia", desde: "lg" },
-  { to: "/santos", label: "Santos", desde: "lg" },
+/** Navegação principal: poucos destinos, sempre os mesmos, um só estilo. */
+const NAV_PRINCIPAL: { to: string; label: string }[] = [
+  { to: "/estudar", label: "Estudar" },
+  { to: "/biblia", label: "Bíblia" },
+  { to: "/oracoes", label: "Orações" },
+  { to: "/santos", label: "Santos" },
+  { to: "/forum", label: "Fórum" },
 ];
 
-const VISIVEL_DESDE = {
-  lg: "hidden md:inline-flex",
-  xl: "hidden [@media(min-width:1560px)]:inline-flex",
-  "2xl": "hidden [@media(min-width:1740px)]:inline-flex",
-} as const;
-
 const ICONE_REDONDO =
-  "btn-base grid size-10 shrink-0 place-items-center rounded-full border border-gold/20 bg-transparent p-0 text-paper/70 transition-premium hover:border-gold/60 hover:text-gold";
+  "btn-base btn-icon shrink-0 border border-gold/20 bg-transparent text-foreground/65 transition-premium hover:border-gold/50 hover:text-gold";
 
 export function SiteHeader() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
