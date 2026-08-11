@@ -247,7 +247,7 @@ function Page() {
         <button
           onClick={rodarTodos}
           disabled={executando}
-          className="btn-base btn-gold px-6 py-3 text-xs uppercase tracking-[0.16em] font-semibold"
+          className="btn-base btn-gold px-6 py-3 label-btn"
         >
           {executando ? <Loader2 className="size-4 animate-spin" /> : <PlayCircle className="size-4" />}
           {executando ? "Executando…" : "Rodar checklist completo"}
@@ -288,7 +288,7 @@ function Page() {
           <button
             onClick={rodarHumano}
             disabled={!perguntaHumana.trim()}
-            className="btn-base btn-outline-gold px-5 py-3 text-xs uppercase tracking-[0.16em]"
+            className="btn-base btn-outline-gold px-5 py-3 label-btn"
           >
             Testar
           </button>
@@ -325,7 +325,7 @@ function Page() {
       <div className="mt-12">
         <Link
           to="/assistente"
-          className="px-5 py-3 btn-base btn-outline-gold text-xs uppercase tracking-[0.16em]"
+          className="px-5 py-3 btn-base btn-outline-gold label-btn"
         >
           ← Voltar para a Sophia
         </Link>

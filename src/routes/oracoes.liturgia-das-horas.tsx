@@ -313,10 +313,10 @@ function Page() {
           </div>
 
           <div className="mt-10 flex justify-between items-center print:hidden">
-            <Link to="/oracoes" className="px-5 py-3 btn-base btn-outline-gold text-xs uppercase tracking-[0.16em]">
+            <Link to="/oracoes" className="px-5 py-3 btn-base btn-outline-gold label-btn">
               ← Todas as orações
             </Link>
-            <Link to="/calendario-liturgico" className="px-5 py-3 btn-base btn-outline-gold text-xs uppercase tracking-[0.16em]">
+            <Link to="/calendario-liturgico" className="px-5 py-3 btn-base btn-outline-gold label-btn">
               Calendário litúrgico →
             </Link>
           </div>
