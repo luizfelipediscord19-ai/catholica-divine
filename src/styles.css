@@ -255,6 +255,116 @@
   }
 }
 
+/* Segundo nível de superfície: card sobre card, com leve destaque */
+@utility surface-card-raised {
+  position: relative;
+  border-radius: var(--radius-card);
+  border: 1px solid color-mix(in oklab, var(--gold) 18%, var(--hairline));
+  background: color-mix(in oklab, var(--card) 100%, transparent);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* Card de destaque: filete de ouro no topo */
+@utility surface-card-featured {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+  border: 1px solid color-mix(in oklab, var(--gold) 26%, transparent);
+  background: color-mix(in oklab, var(--card) 96%, transparent);
+  box-shadow: var(--shadow-card);
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    top: 0;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      color-mix(in oklab, var(--gold) 85%, transparent),
+      transparent
+    );
+  }
+}
+
+/* Estado selecionado/ativo de card ou item de lista */
+@utility surface-card-selected {
+  border-color: color-mix(in oklab, var(--gold) 55%, transparent);
+  background: color-mix(in oklab, var(--gold) 8%, var(--card));
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* Ação discreta: sem contorno, ganha fundo no hover */
+@utility btn-quiet {
+  background: transparent;
+  color: color-mix(in oklab, var(--paper) 80%, transparent);
+  border: 1px solid transparent;
+
+  &:hover:not(:disabled) {
+    color: var(--gold);
+    background: color-mix(in oklab, var(--gold) 10%, transparent);
+    border-color: color-mix(in oklab, var(--gold) 20%, transparent);
+  }
+}
+
+/* Ação em texto, para links de apoio */
+@utility btn-link-gold {
+  background: transparent;
+  border: none;
+  color: var(--gold);
+  min-height: 2.75rem;
+  text-underline-offset: 4px;
+
+  &:hover:not(:disabled) {
+    text-decoration: underline;
+    color: var(--gold-accent);
+  }
+}
+
+/* Moldura de imagem: reserva proporção antes do carregamento (sem "salto") */
+@utility media-frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--hairline);
+  background: color-mix(in oklab, var(--muted) 60%, transparent);
+  isolation: isolate;
+
+  & > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* Vinheta suave sobre retratos, para o texto respirar */
+@utility media-vignette {
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+      to top,
+      color-mix(in oklab, var(--deep) 55%, transparent),
+      transparent 55%
+    );
+  }
+}
+
+/* Entrada suave da imagem quando ela termina de carregar */
+@utility media-fade {
+  opacity: 0;
+  transition: opacity var(--dur-lg) var(--ease-premium);
+
+  &[data-carregada="sim"] {
+    opacity: 1;
+  }
+}
+
+
 @utility perspective-1000 {
   perspective: 1000px;
 }
