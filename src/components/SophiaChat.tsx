@@ -1,8 +1,9 @@
-import { memo, useEffect, useState } from "react";
-import { Send, Loader2, AlertCircle, CheckCircle2, Trash2 } from "lucide-react";
+import { memo, useCallback, useEffect, useRef, useState } from "react";
+import { Send, Loader2, AlertCircle, CheckCircle2, Trash2, Mic, Square } from "lucide-react";
 import { toast } from "sonner";
 import { SophiaMode } from "../lib/types/chat";
 import { useSophiaChat } from "../hooks/api/use-sophia-chat";
+import { useDitado } from "../hooks/use-ditado";
 import { MessageList } from "./chat/MessageList";
 
 interface SophiaChatProps {
