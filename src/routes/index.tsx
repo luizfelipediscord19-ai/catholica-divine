@@ -159,7 +159,7 @@ function Home() {
 
         <div className="shell relative w-full">
           <div className="max-w-3xl animate-reveal">
-            <p className="mb-5 flex items-center gap-3 text-step--2 uppercase leading-relaxed tracking-[0.16em] text-gold/85 sm:gap-4">
+            <p className="mb-5 flex items-center gap-3 kicker text-gold/85 sm:gap-4">
               <span className="hidden h-px w-10 shrink-0 bg-gold/40 sm:block" />
               <span className="min-w-0">Una · Sancta · Catholica · Apostolica</span>
             </p>
@@ -238,7 +238,7 @@ function Home() {
                   <p className="font-display italic text-[length:var(--step-1)] text-foreground/90 leading-relaxed mb-4 flex-1">
                     {d.text}
                   </p>
-                  <p className="text-step--2 text-muted-foreground tracking-[0.16em] uppercase group-hover:text-gold/80 transition-colors">
+                  <p className="kicker text-muted-foreground group-hover:text-gold/80 transition-colors">
                     {d.ref}
                   </p>
                 </div>

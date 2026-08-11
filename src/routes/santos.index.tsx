@@ -208,7 +208,7 @@ function CartaoSanto({
         }
       >
         {santo.body}
-        <span className="block mt-4 text-xs text-gold/80 group-hover:text-gold tracking-[0.16em] uppercase transition-smooth group-hover:translate-x-1">
+        <span className="block mt-4 label-btn text-gold/80 group-hover:text-gold transition-smooth group-hover:translate-x-1">
           {ativo ? "Fechar ↑" : "Ler biografia →"}
         </span>
       </ContentCard>
