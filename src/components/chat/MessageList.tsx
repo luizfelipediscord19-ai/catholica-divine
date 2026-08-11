@@ -2,6 +2,7 @@ import { memo, useRef, useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { Check, Copy } from "lucide-react";
 import { ChatMessage } from "../../lib/types/chat";
+import { SourceReferences, extrairFontes } from "../SourceReferences";
 
 interface ChatMessageProps {
   message: ChatMessage;
@@ -36,6 +37,7 @@ export const ChatMessageItem = memo(({ message }: ChatMessageProps) => {
         <div className="prose prose-sm prose-invert max-w-none [&_p]:my-2 [&_strong]:text-gold [&_blockquote]:border-gold/30 [&_blockquote]:text-paper/80 [&_h2]:text-gold [&_h2]:font-display [&_h3]:text-gold/90 [&_em]:text-gold/80">
           <ReactMarkdown>{text}</ReactMarkdown>
         </div>
+        {!isUser && text ? <SourceReferences references={extrairFontes(text)} /> : null}
         {!isUser && text ? (
           <button
             type="button"
@@ -73,7 +75,14 @@ export const MessageList = memo(({ messages, isLoading }: MessageListProps) => {
   }, [messages, isLoading]);
 
   return (
-    <div ref={scrollRef} className="flex-1 overflow-y-auto p-6 space-y-6 scrollbar-thin scrollbar-thumb-gold/20">
+    <div
+      ref={scrollRef}
+      role="log"
+      aria-label="Conversa com a Sophia"
+      aria-live="polite"
+      aria-busy={isLoading}
+      className="flex-1 overflow-y-auto p-6 space-y-6 scrollbar-thin scrollbar-thumb-gold/20"
+    >
       {messages.map((m) => (
         <ChatMessageItem key={m.id || Math.random().toString()} message={m as ChatMessage} />
       ))}
