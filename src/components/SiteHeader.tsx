@@ -197,7 +197,7 @@ export function SiteHeader() {
       {open ? (
         <div
           id="menu-principal"
-          className="max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-gold/20 bg-background sm:max-h-[calc(100dvh-5rem)]"
+          className="max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-gold/20 bg-background sm:max-h-[calc(100dvh-4.5rem)]"
         >
           <nav
             aria-label="Menu completo"
@@ -242,7 +242,7 @@ export function SiteHeader() {
                     setOpen(false);
                     setBusca(true);
                   }}
-                  className="btn-base btn-outline-gold px-4 py-3 label-btn"
+                  className="btn-base btn-outline-gold btn-md"
                 >
                   <Search className="size-3.5" aria-hidden="true" /> Buscar
                 </button>
@@ -270,14 +270,14 @@ function ContaBotao() {
     <button
       type="button"
       onClick={() => void sair()}
-      className="btn-base btn-outline-gold hidden px-4 label-btn xl:inline-flex"
+      className="btn-base btn-outline-gold btn-sm hidden lg:inline-flex"
     >
       Sair
     </button>
   ) : (
     <Link
       to="/auth"
-      className="btn-base btn-outline-gold hidden px-4 label-btn xl:inline-flex"
+      className="btn-base btn-outline-gold btn-sm hidden lg:inline-flex"
     >
       Entrar
     </Link>
