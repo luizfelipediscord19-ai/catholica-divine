@@ -75,7 +75,14 @@ export const MessageList = memo(({ messages, isLoading }: MessageListProps) => {
   }, [messages, isLoading]);
 
   return (
-    <div ref={scrollRef} className="flex-1 overflow-y-auto p-6 space-y-6 scrollbar-thin scrollbar-thumb-gold/20">
+    <div
+      ref={scrollRef}
+      role="log"
+      aria-label="Conversa com a Sophia"
+      aria-live="polite"
+      aria-busy={isLoading}
+      className="flex-1 overflow-y-auto p-6 space-y-6 scrollbar-thin scrollbar-thumb-gold/20"
+    >
       {messages.map((m) => (
         <ChatMessageItem key={m.id || Math.random().toString()} message={m as ChatMessage} />
       ))}
