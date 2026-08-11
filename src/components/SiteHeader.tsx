@@ -62,7 +62,6 @@ const NAV_PRINCIPAL: { to: string; label: string; desde: "lg" | "xl" | "2xl" }[]
   { to: "/estudar", label: "Estudar", desde: "lg" },
   { to: "/biblia", label: "Bíblia", desde: "lg" },
   { to: "/santos", label: "Santos", desde: "lg" },
-  { to: "/oracoes", label: "Orações", desde: "xl" },
 ];
 
 const VISIVEL_DESDE = {
