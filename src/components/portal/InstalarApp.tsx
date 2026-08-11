@@ -123,13 +123,13 @@ export function InstalarApp() {
           <div className="mt-6 flex flex-col gap-2">
             <button
               onClick={ios ? instalarIos : instalar}
-              className="inline-flex items-center justify-center gap-2 bg-gold px-4 py-3 text-[11px] font-medium uppercase tracking-[0.18em] text-deep transition-colors hover:bg-paper"
+              className="inline-flex items-center justify-center gap-2 bg-gold px-4 py-3 label-btn text-deep transition-colors hover:bg-paper"
             >
               <Smartphone className="h-4 w-4" /> Instalar agora
             </button>
             <button
               onClick={dispensar}
-              className="py-2 text-[11px] uppercase tracking-[0.18em] text-muted-foreground hover:text-foreground"
+              className="py-2 label-btn text-muted-foreground hover:text-foreground"
             >
               Agora não
             </button>
@@ -144,7 +144,7 @@ export function InstalarApp() {
             </div>
             <button
               onClick={dispensar}
-              className="mt-3 w-full py-2 text-[11px] uppercase tracking-[0.18em] text-muted-foreground hover:text-foreground"
+              className="mt-3 w-full py-2 label-btn text-muted-foreground hover:text-foreground"
             >
               Entendi
             </button>

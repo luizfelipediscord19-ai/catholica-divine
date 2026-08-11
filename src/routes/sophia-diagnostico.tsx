@@ -264,7 +264,7 @@ function Page() {
             <button
               key={m.id}
               onClick={() => setModoHumano(m.id)}
-              className={`px-3 py-1.5 text-[11px] uppercase tracking-[0.16em] border transition-colors ${
+              className={`px-3 py-1.5 label-btn border transition-colors ${
                 modoHumano === m.id
                   ? "border-gold bg-gold/15 text-gold"
                   : "border-gold/20 text-foreground/70 hover:border-gold/50"
@@ -303,7 +303,7 @@ function Page() {
             <section key={m.id}>
               <div className="flex items-baseline justify-between mb-4">
                 <h2 className="font-display text-2xl text-foreground">{m.label}</h2>
-                <span className="text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
+                <span className="label-btn text-muted-foreground">
                   {lista.length} {lista.length === 1 ? "pergunta" : "perguntas"}
                 </span>
               </div>
@@ -350,7 +350,7 @@ function Pill({
         ? "text-red-300 border-red-400/30 bg-red-400/10"
         : "text-foreground/70 border-gold/20 bg-background/40";
   return (
-    <span className={`inline-flex items-center gap-2 px-3 py-1.5 border uppercase tracking-[0.16em] text-[11px] ${cls}`}>
+    <span className={`inline-flex items-center gap-2 px-3 py-1.5 border label-btn ${cls}`}>
       {icon}
       {label}
     </span>
@@ -389,11 +389,11 @@ function ItemLinha({ item, onRun }: { item: ItemTeste; onRun: () => void }) {
         <Icon className={`size-5 mt-0.5 shrink-0 ${iconCor}`} />
         <div className="flex-1 min-w-0">
           <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-            <span className="text-[11px] uppercase tracking-[0.16em] px-2 py-0.5 border border-gold/30 text-gold">
+            <span className="label-btn px-2 py-0.5 border border-gold/30 text-gold">
               {item.fonte}
             </span>
             {item.latencia !== undefined && (
-              <span className="text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
+              <span className="label-btn text-muted-foreground">
                 {item.latencia}ms · {item.caracteres ?? 0} chars
               </span>
             )}
@@ -411,7 +411,7 @@ function ItemLinha({ item, onRun }: { item: ItemTeste; onRun: () => void }) {
         <button
           onClick={onRun}
           disabled={item.status === "executando"}
-          className="btn-base btn-outline-gold shrink-0 px-3 text-[11px] uppercase tracking-[0.16em]"
+          className="btn-base btn-outline-gold shrink-0 px-3 label-btn"
         >
           Testar
         </button>

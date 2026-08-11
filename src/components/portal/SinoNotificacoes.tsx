@@ -94,7 +94,7 @@ export function SinoNotificacoes() {
             {notificacoes.length > 0 ? (
               <button
                 onClick={limpar}
-                className="inline-flex items-center gap-1 text-[11px] uppercase tracking-[0.18em] text-muted-foreground hover:text-foreground"
+                className="inline-flex items-center gap-1 label-btn text-muted-foreground hover:text-foreground"
               >
                 <Trash2 className="size-3" aria-hidden="true" /> Limpar
               </button>
@@ -125,7 +125,7 @@ export function SinoNotificacoes() {
                           {n.mensagem}
                         </p>
                       ) : null}
-                      <p className="mt-1 text-[11px] uppercase tracking-[0.16em] text-muted-foreground/70">
+                      <p className="mt-1 label-btn text-muted-foreground/70">
                         {tempoRelativo(n.criadaEm)}
                       </p>
                     </div>
@@ -178,7 +178,7 @@ function AvisosNoAparelho() {
               desativarNotificacoesDispositivo();
               setEstado("pendente");
             }}
-            className="inline-flex items-center gap-1 text-[11px] uppercase tracking-[0.16em] text-muted-foreground hover:text-foreground"
+            className="inline-flex items-center gap-1 label-btn text-muted-foreground hover:text-foreground"
           >
             <BellOff className="size-3" aria-hidden="true" /> Desligar
           </button>
@@ -195,7 +195,7 @@ function AvisosNoAparelho() {
           </p>
           <button
             onClick={async () => setEstado(await ativarNotificacoesDispositivo())}
-            className="inline-flex items-center gap-2 bg-gold px-3 py-2 text-[11px] font-medium uppercase tracking-[0.16em] text-deep hover:bg-paper"
+            className="inline-flex items-center gap-2 bg-gold px-3 py-2 label-btn text-deep hover:bg-paper"
           >
             <BellRing className="size-3" aria-hidden="true" /> Ativar no aparelho
           </button>

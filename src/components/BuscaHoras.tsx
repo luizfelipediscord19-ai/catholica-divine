@@ -77,7 +77,7 @@ export function BuscaHoras() {
               <button
                 key={t.id}
                 onClick={() => setTipo(t.id)}
-                className={`px-3 py-1.5 text-[11px] uppercase tracking-[0.16em] border transition-colors ${
+                className={`px-3 py-1.5 label-btn border transition-colors ${
                   active
                     ? "border-gold bg-gold/15 text-gold"
                     : "border-gold/20 text-foreground/70 hover:border-gold/50 hover:text-foreground"
@@ -120,7 +120,7 @@ export function BuscaHoras() {
         </div>
 
         {/* Contagem */}
-        <p className="mt-5 text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
+        <p className="mt-5 label-btn text-muted-foreground">
           {filtrados.length} {filtrados.length === 1 ? "resultado" : "resultados"}
           {tipo !== "todos" && ` · ${TIPOS.find((x) => x.id === tipo)?.label.toLowerCase()}`}
           {tema && ` · tema: ${tema}`}
@@ -140,7 +140,7 @@ export function BuscaHoras() {
             >
               <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
                 <span
-                  className={`text-[11px] uppercase tracking-[0.16em] px-2 py-0.5 border ${
+                  className={`label-btn px-2 py-0.5 border ${
                     it.tipo === "salmo"
                       ? "border-gold/40 text-gold"
                       : it.tipo === "cantico"
@@ -151,7 +151,7 @@ export function BuscaHoras() {
                   {it.tipo === "salmo" ? "Salmo" : it.tipo === "cantico" ? "Cântico" : "Leitura"}
                 </span>
                 <span className="text-xs text-muted-foreground">{it.ref}</span>
-                <span className="text-[11px] uppercase tracking-[0.16em] text-foreground/40 ml-auto">
+                <span className="label-btn text-foreground/40 ml-auto">
                   {it.hora}
                 </span>
               </div>

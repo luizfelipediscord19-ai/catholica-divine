@@ -131,7 +131,7 @@ function TopicoPage() {
 
       <SeloRevisao status={t.status} />
 
-      <div className="border-y border-gold/15 py-8 text-[16px] leading-[1.8] text-foreground/85 font-light whitespace-pre-wrap">
+      <div className="border-y border-gold/15 py-8 text-step-0 leading-[1.8] text-foreground/85 font-light whitespace-pre-wrap">
         {t.corpo}
       </div>
 
@@ -140,7 +140,7 @@ function TopicoPage() {
           type="button"
           disabled={!autenticado || reagir.isPending}
           onClick={() => reagir.mutate({ topicoId: t.id })}
-          className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.16em] text-paper/70 hover:text-gold transition-colors disabled:opacity-50"
+          className="inline-flex items-center gap-2 label-btn text-paper/70 hover:text-gold transition-colors disabled:opacity-50"
         >
           <Heart className="size-3.5" aria-hidden="true" /> Amém
         </button>
@@ -164,7 +164,7 @@ function TopicoPage() {
                 <Painel className="space-y-4">
                   <AutorSelo autor={autorDe(r as never)} data={r.created_at} />
                   <SeloRevisao status={r.status} />
-                  <p className="text-[15px] leading-[1.8] text-foreground/85 font-light whitespace-pre-wrap">
+                  <p className="text-step-0 leading-[1.8] text-foreground/85 font-light whitespace-pre-wrap">
                     {r.corpo}
                   </p>
                   <div className="flex flex-wrap items-center gap-4">
@@ -172,7 +172,7 @@ function TopicoPage() {
                       type="button"
                       disabled={!autenticado || reagir.isPending}
                       onClick={() => reagir.mutate({ respostaId: r.id })}
-                      className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.16em] text-paper/60 hover:text-gold transition-colors disabled:opacity-50"
+                      className="inline-flex items-center gap-2 label-btn text-paper/60 hover:text-gold transition-colors disabled:opacity-50"
                     >
                       <Heart className="size-3" aria-hidden="true" /> Amém
                     </button>

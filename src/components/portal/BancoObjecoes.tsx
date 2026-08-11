@@ -51,7 +51,7 @@ export function BancoObjecoes() {
                 type="button"
                 onClick={() => setCategoria(c as CategoriaObjecao | "todas")}
                 aria-pressed={ativo}
-                className={`min-h-11 px-4 py-2 text-[11px] uppercase tracking-[0.18em] border transition-premium ${
+                className={`min-h-11 px-4 py-2 label-btn border transition-premium ${
                   ativo
                     ? "border-gold bg-gold/15 text-gold"
                     : "border-gold/20 text-foreground/70 hover:border-gold/50 hover:text-gold"
@@ -81,7 +81,7 @@ export function BancoObjecoes() {
                 className="w-full flex items-start justify-between gap-4 py-3 text-left group"
               >
                 <span className="min-w-0">
-                  <span className="block text-[11px] uppercase tracking-[0.16em] text-gold/70">
+                  <span className="block label-btn text-gold/70">
                     {o.categoria}
                   </span>
                   <span className="block mt-1 font-display text-base sm:text-lg text-foreground group-hover:text-gold transition-colors">

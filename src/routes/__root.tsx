@@ -36,7 +36,7 @@ function NotFoundComponent() {
         <div className="mt-8">
           <Link
             to="/"
-            className="btn-base btn-gold px-6 py-3 text-[11px] uppercase tracking-[0.16em] font-semibold"
+            className="btn-base btn-gold px-6 py-3 label-btn"
           >
             Voltar ao início
           </Link>
@@ -66,13 +66,13 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
               router.invalidate();
               reset();
             }}
-            className="btn-base btn-gold px-5 py-2.5 text-[11px] uppercase tracking-[0.16em] font-semibold"
+            className="btn-base btn-gold px-5 py-2.5 label-btn"
           >
             Tentar de novo
           </button>
           <a
             href="/"
-            className="btn-base btn-outline-gold px-5 py-2.5 text-[11px] uppercase tracking-[0.16em] font-medium"
+            className="btn-base btn-outline-gold px-5 py-2.5 label-btn"
           >
             Início
           </a>

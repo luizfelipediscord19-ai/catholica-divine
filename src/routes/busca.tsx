@@ -201,7 +201,7 @@ function BuscaAvancadaPage() {
                 type="button"
                 aria-pressed={on}
                 onClick={() => alternar(escopo.id)}
-                className={`min-h-9 rounded-full border px-4 py-1.5 text-[11px] uppercase tracking-[0.16em] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold ${
+                className={`min-h-9 rounded-full border px-4 py-1.5 label-btn transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold ${
                   on
                     ? "border-gold/50 bg-gold/15 text-gold"
                     : "border-gold/15 text-muted-foreground hover:text-foreground"

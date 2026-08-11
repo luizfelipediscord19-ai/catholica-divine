@@ -158,7 +158,7 @@ function AuthPage() {
                   type="button"
                   onClick={() => setModo(valor)}
                   aria-pressed={modo === valor}
-                  className={`px-4 py-2 text-[11px] uppercase tracking-[0.16em] border transition-premium ${
+                  className={`px-4 py-2 label-btn border transition-premium ${
                     modo === valor
                       ? "border-gold bg-gold/10 text-gold"
                       : "border-gold/15 text-paper/60 hover:text-paper hover:border-gold/40"
@@ -171,7 +171,7 @@ function AuthPage() {
 
             <form className="space-y-5" onSubmit={enviar} noValidate>
               <label className="block space-y-2">
-                <span className="text-[11px] uppercase tracking-[0.16em] text-paper/60">E-mail</span>
+                <span className="label-btn text-paper/60">E-mail</span>
                 <input
                   type="email"
                   autoComplete="email"
@@ -185,7 +185,7 @@ function AuthPage() {
 
               {modo === "recuperar" ? null : (
                 <label className="block space-y-2">
-                  <span className="text-[11px] uppercase tracking-[0.16em] text-paper/60">Senha</span>
+                  <span className="label-btn text-paper/60">Senha</span>
                   <input
                     type="password"
                     autoComplete={modo === "criar" ? "new-password" : "current-password"}

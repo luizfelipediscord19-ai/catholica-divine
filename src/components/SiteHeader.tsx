@@ -122,7 +122,7 @@ export function SiteHeader() {
 
         <nav
           aria-label="Navegação principal"
-          className="hidden min-w-0 items-center gap-4 whitespace-nowrap text-[11px] font-medium uppercase tracking-[0.14em] text-paper/75 md:flex lg:gap-6"
+          className="hidden min-w-0 items-center gap-4 whitespace-nowrap label-btn text-paper/75 md:flex lg:gap-6"
         >
           {NAV_PRINCIPAL.map((item) => {
             const active = pathname === item.to || pathname.startsWith(`${item.to}/`);
@@ -153,7 +153,7 @@ export function SiteHeader() {
           {/* Sophia: botão completo no desktop, ícone no celular. */}
           <Link
             to="/assistente"
-            className="btn-base btn-gold hidden px-4 text-[11px] font-bold uppercase tracking-[0.16em] md:inline-flex xl:px-5"
+            className="btn-base btn-gold hidden px-4 label-btn md:inline-flex xl:px-5"
           >
             <Sparkles className="size-3.5" aria-hidden="true" /> Sophia IA
           </Link>
@@ -220,7 +220,7 @@ export function SiteHeader() {
                           to={item.to}
                           onClick={() => setOpen(false)}
                           aria-current={active ? "page" : undefined}
-                          className={`flex min-h-11 items-center gap-2 rounded-[var(--radius-btn)] px-2 text-[13px] transition-premium hover:bg-gold/10 hover:text-gold focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold ${
+                          className={`flex min-h-11 items-center gap-2 rounded-[var(--radius-btn)] px-2 text-step--1 transition-premium hover:bg-gold/10 hover:text-gold focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold ${
                             active ? "bg-gold/10 text-gold" : "text-foreground/85"
                           }`}
                         >
@@ -246,7 +246,7 @@ export function SiteHeader() {
                     setOpen(false);
                     setBusca(true);
                   }}
-                  className="btn-base btn-outline-gold px-4 py-3 text-[11px] font-semibold uppercase tracking-[0.18em]"
+                  className="btn-base btn-outline-gold px-4 py-3 label-btn"
                 >
                   <Search className="size-3.5" aria-hidden="true" /> Buscar
                 </button>
@@ -274,14 +274,14 @@ function ContaBotao() {
     <button
       type="button"
       onClick={() => void sair()}
-      className="btn-base btn-outline-gold hidden px-4 text-[11px] uppercase tracking-[0.16em] xl:inline-flex"
+      className="btn-base btn-outline-gold hidden px-4 label-btn xl:inline-flex"
     >
       Sair
     </button>
   ) : (
     <Link
       to="/auth"
-      className="btn-base btn-outline-gold hidden px-4 text-[11px] uppercase tracking-[0.16em] xl:inline-flex"
+      className="btn-base btn-outline-gold hidden px-4 label-btn xl:inline-flex"
     >
       Entrar
     </Link>

@@ -120,7 +120,7 @@ function Page() {
             <button
               onClick={() => setQuery("")}
               aria-label="Limpar busca de santos"
-              className="min-h-11 px-2 text-[11px] tracking-[0.16em] uppercase text-foreground/70 hover:text-gold transition-colors"
+              className="min-h-11 px-2 label-btn text-foreground/70 hover:text-gold transition-colors"
             >
               limpar
             </button>
@@ -142,13 +142,13 @@ function Page() {
 
         {visiveis.length < filtered.length ? (
           <div className="mt-12 flex flex-col items-center gap-3">
-            <p className="text-[11px] tracking-[0.16em] uppercase text-muted-foreground">
+            <p className="label-btn text-muted-foreground">
               Mostrando {visiveis.length} de {filtered.length} santos
             </p>
             <button
               type="button"
               onClick={() => setLimite((v) => v + PAGINA)}
-              className="btn-base btn-outline-gold px-8 text-[11px] uppercase tracking-[0.16em]"
+              className="btn-base btn-outline-gold px-8 label-btn"
             >
               Carregar mais santos
             </button>
@@ -273,19 +273,19 @@ function SantoDetail({
           <dl className="flex flex-wrap gap-x-8 gap-y-2 text-xs text-muted-foreground">
             {view.data ? (
               <div>
-                <dt className="uppercase tracking-[0.16em] text-[11px] text-gold/60">Memória</dt>
+                <dt className="label-btn text-gold/60">Memória</dt>
                 <dd className="text-foreground mt-1">{view.data}</dd>
               </div>
             ) : null}
             {view.seculo ? (
               <div>
-                <dt className="uppercase tracking-[0.16em] text-[11px] text-gold/60">Século</dt>
+                <dt className="label-btn text-gold/60">Século</dt>
                 <dd className="text-foreground mt-1">{view.seculo}</dd>
               </div>
             ) : null}
             {view.padroeiro ? (
               <div>
-                <dt className="uppercase tracking-[0.16em] text-[11px] text-gold/60">Padroeiro</dt>
+                <dt className="label-btn text-gold/60">Padroeiro</dt>
                 <dd className="text-foreground mt-1">{view.padroeiro}</dd>
               </div>
             ) : null}

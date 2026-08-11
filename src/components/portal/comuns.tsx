@@ -82,8 +82,8 @@ export const inputClass =
 
 
 export const botaoClass =
-  "btn-base btn-gold px-6 py-3 text-[11px] uppercase tracking-[0.16em] font-bold";
+  "btn-base btn-gold px-6 py-3 label-btn";
 
 export const botaoGhostClass =
-  "btn-base btn-outline-gold px-6 py-3 text-[11px] uppercase tracking-[0.16em] font-medium";
+  "btn-base btn-outline-gold px-6 py-3 label-btn";
 

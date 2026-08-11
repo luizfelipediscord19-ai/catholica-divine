@@ -50,7 +50,7 @@ export function HorariosTarefas() {
                     {tarefa.mensagem}
                   </p>
                 </div>
-                <label className="flex items-center gap-2 text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
+                <label className="flex items-center gap-2 label-btn text-muted-foreground">
                   <input
                     type="checkbox"
                     checked={item.ativa}
@@ -75,7 +75,7 @@ export function HorariosTarefas() {
                       atualizar({ ...config, [tarefa.id]: { ...item, hora: p.hora } })
                     }
                     aria-pressed={item.hora === p.hora}
-                    className={`px-3 py-1.5 text-[11px] uppercase tracking-[0.16em] transition-colors ${
+                    className={`px-3 py-1.5 label-btn transition-colors ${
                       item.hora === p.hora
                         ? "bg-gold text-deep"
                         : "border border-gold/25 text-muted-foreground hover:border-gold/60 hover:text-foreground"
@@ -84,7 +84,7 @@ export function HorariosTarefas() {
                     {p.rotulo}
                   </button>
                 ))}
-                <label className="ml-auto flex items-center gap-2 text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
+                <label className="ml-auto flex items-center gap-2 label-btn text-muted-foreground">
                   Hora
                   <input
                     type="time"

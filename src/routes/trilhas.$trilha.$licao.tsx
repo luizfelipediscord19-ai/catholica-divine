@@ -111,7 +111,7 @@ function LicaoPagina() {
             <h2 className="mt-2 font-display text-2xl text-paper">{bloco.titulo}</h2>
 
             {bloco.paragrafos && (
-              <div className="mt-4 space-y-4 text-[17px] leading-[1.85] text-paper/80">
+              <div className="mt-4 space-y-4 text-step-0 leading-[1.85] text-paper/80">
                 {bloco.paragrafos.map((p, j) => (
                   <p key={j}>{p}</p>
                 ))}
@@ -122,7 +122,7 @@ function LicaoPagina() {
               <ul className="mt-5 space-y-4">
                 {bloco.citacoes.map((c, j) => (
                   <li key={j} className="border-l-2 border-gold/40 pl-4">
-                    <p className="text-[17px] italic leading-[1.8] text-paper/85">{c.texto}</p>
+                    <p className="text-step-0 italic leading-[1.8] text-paper/85">{c.texto}</p>
                     <p className="mt-1 kicker">{c.ref}</p>
                   </li>
                 ))}
@@ -130,7 +130,7 @@ function LicaoPagina() {
             )}
 
             {bloco.pontos && (
-              <ul className="mt-5 space-y-2 text-[17px] leading-[1.8] text-paper/80">
+              <ul className="mt-5 space-y-2 text-step-0 leading-[1.8] text-paper/80">
                 {bloco.pontos.map((p, j) => (
                   <li key={j} className="flex gap-3">
                     <span className="mt-2 size-1.5 shrink-0 rounded-full bg-gold" aria-hidden="true" />
@@ -145,7 +145,7 @@ function LicaoPagina() {
                 {bloco.duvidas.map((d, j) => (
                   <div key={j} className="border border-gold/15 p-4">
                     <dt className="font-display text-lg text-paper">{d.pergunta}</dt>
-                    <dd className="mt-2 text-[16px] leading-[1.8] text-paper/78">{d.resposta}</dd>
+                    <dd className="mt-2 text-step-0 leading-[1.8] text-paper/78">{d.resposta}</dd>
                   </div>
                 ))}
               </dl>

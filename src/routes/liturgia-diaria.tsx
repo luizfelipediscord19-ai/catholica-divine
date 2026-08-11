@@ -43,12 +43,12 @@ function Bloco({ kicker, itens }: { kicker: string; itens: LeituraLiturgica[] })
   if (itens.length === 0) return null;
   return (
     <section className="border-t border-gold/15 pt-8">
-      <p className="text-[11px] tracking-[0.16em] uppercase text-gold mb-3">{kicker}</p>
+      <p className="label-btn text-gold mb-3">{kicker}</p>
       {itens.map((l, i) => (
         <article key={`${l.referencia}-${i}`} className="mb-8 last:mb-0">
           {l.titulo ? <h2 className="font-display text-2xl text-foreground">{l.titulo}</h2> : null}
           {l.referencia ? (
-            <p className="mt-1 text-[11px] tracking-[0.16em] uppercase text-muted-foreground">{l.referencia}</p>
+            <p className="mt-1 label-btn text-muted-foreground">{l.referencia}</p>
           ) : null}
           {l.refrao ? (
             <p className="mt-4 font-display italic text-lg text-gold/90 border-l-2 border-gold/50 pl-4">
@@ -79,7 +79,7 @@ function Page() {
       <p className="kicker mb-3 capitalize">{lit.dataExtenso}</p>
       <h1 className="font-display text-4xl md:text-5xl text-foreground leading-tight">{lit.celebracao}</h1>
 
-      <div className="mt-6 flex flex-wrap items-center gap-3 text-[11px] tracking-[0.16em] uppercase">
+      <div className="mt-6 flex flex-wrap items-center gap-3 label-btn">
         <span className={`inline-flex items-center gap-2 px-3 py-1.5 border ${COR_CLASSE[lit.cor]}`}>
           <span className="size-2 rounded-full bg-current" aria-hidden="true" /> Cor {lit.corNome}
         </span>
@@ -109,13 +109,13 @@ function Page() {
       <div className="mt-14 pt-8 border-t border-gold/15 flex flex-wrap gap-3">
         <Link
           to="/biblia"
-          className="btn-base btn-outline-gold gap-2 text-[11px] uppercase tracking-[0.16em]"
+          className="btn-base btn-outline-gold gap-2 label-btn"
         >
           <BookOpen className="size-3.5" aria-hidden="true" /> Ler a Bíblia
         </Link>
         <Link
           to="/oracoes"
-          className="btn-base btn-outline-gold gap-2 text-[11px] uppercase tracking-[0.16em]"
+          className="btn-base btn-outline-gold gap-2 label-btn"
         >
           Orações do dia
         </Link>

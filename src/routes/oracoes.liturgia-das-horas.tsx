@@ -198,7 +198,7 @@ function Page() {
                   <button
                     key={s}
                     onClick={() => setHora(s)}
-                    className={`px-5 py-3 text-[11px] uppercase tracking-[0.16em] transition-colors border-r border-gold/10 ${
+                    className={`px-5 py-3 label-btn transition-colors border-r border-gold/10 ${
                       active ? "bg-gold/15 text-gold" : "text-foreground/70 hover:text-foreground"
                     }`}
                   >

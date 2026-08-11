@@ -901,7 +901,7 @@ function ModalCelebracao({
         <Ornamento desenho={desenho} />
 
         <div className="relative px-8 py-10 md:px-12 md:py-12 text-center space-y-6">
-          <p className={`text-[11px] uppercase tracking-[0.16em] ${desenho.texto}`}>
+          <p className={`label-btn ${desenho.texto}`}>
             {desenho.faixa}
           </p>
 
@@ -933,7 +933,7 @@ function ModalCelebracao({
           <button
             type="button"
             onClick={onFechar}
-            className="mx-auto inline-flex min-h-11 items-center justify-center border border-gold/40 px-8 text-[11px] uppercase tracking-[0.16em] text-foreground hover:bg-gold hover:text-deep transition-premium"
+            className="mx-auto inline-flex min-h-11 items-center justify-center border border-gold/40 px-8 label-btn text-foreground hover:bg-gold hover:text-deep transition-premium"
           >
             {restantes > 0 ? `Ver a próxima (${restantes})` : "Deo gratias"}
           </button>

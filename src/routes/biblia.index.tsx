@@ -218,7 +218,7 @@ function Page() {
           </div>
           <Link
             to="/biblia/leituras"
-            className="btn-base btn-gold gap-2 text-[11px] uppercase tracking-[0.16em]"
+            className="btn-base btn-gold gap-2 label-btn"
           >
             Leituras diárias
           </Link>

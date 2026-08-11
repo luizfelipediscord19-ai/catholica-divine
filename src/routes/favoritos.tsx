@@ -119,7 +119,7 @@ function FavoritosPage() {
             type="button"
             onClick={() => setAba(v)}
             aria-pressed={aba === v}
-            className={`inline-flex items-center gap-2 min-h-11 px-6 py-3 text-[11px] uppercase tracking-[0.16em] border transition-premium ${
+            className={`inline-flex items-center gap-2 min-h-11 px-6 py-3 label-btn border transition-premium ${
               aba === v
                 ? "border-gold bg-gold/10 text-gold"
                 : "border-gold/20 text-paper/70 hover:text-gold hover:border-gold/50"
@@ -268,7 +268,7 @@ function NotaCard({
           type="button"
           onClick={() => apagar.mutate()}
           disabled={!token || apagar.isPending}
-          className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.16em] text-paper/60 hover:text-gold transition-colors disabled:opacity-50"
+          className="inline-flex items-center gap-2 label-btn text-paper/60 hover:text-gold transition-colors disabled:opacity-50"
         >
           <Trash2 className="size-3.5" aria-hidden="true" /> Apagar
         </button>
