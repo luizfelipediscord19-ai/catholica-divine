@@ -415,7 +415,7 @@ function Home() {
           className="absolute inset-0 opacity-[0.12] bg-cover bg-center transition-transform duration-[20s] scale-125 hover:scale-100"
           style={{ backgroundImage: `url(${cristo})` }}
         />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#050505_80%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,var(--deep)_80%)]" />
         
         <ScrollReveal className="shell py-section relative text-center">
           <div className="relative inline-block mb-[var(--space-md)]">
