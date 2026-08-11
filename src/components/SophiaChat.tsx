@@ -153,7 +153,7 @@ export const SophiaChat = memo(({
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder={placeholder}
-          className="flex-1 bg-white/[0.03] border border-gold/10 px-6 py-4 text-base text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-gold/40 transition-premium focus:bg-white/[0.05]"
+          className="field-base flex-1 px-5 py-4 text-base"
           style={{ fontSize: "16px" }}
           disabled={isLoading}
           maxLength={LIMITE}

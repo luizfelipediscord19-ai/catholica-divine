@@ -210,7 +210,7 @@ function Page() {
               type="number" min={1} inputMode="numeric"
               value={inicio} onChange={(e) => setInicio(e.target.value)}
               placeholder="ex. 16"
-              className="block mt-1 w-full sm:w-24 bg-background border border-gold/25 px-3 py-2 text-base sm:text-sm text-foreground focus:outline-none focus:border-gold"
+              className="field-base mt-1 sm:w-24 text-base sm:text-sm"
             />
           </label>
           <label className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground">
@@ -219,7 +219,7 @@ function Page() {
               type="number" min={1} inputMode="numeric"
               value={fim} onChange={(e) => setFim(e.target.value)}
               placeholder="ex. 18"
-              className="block mt-1 w-full sm:w-24 bg-background border border-gold/25 px-3 py-2 text-base sm:text-sm text-foreground focus:outline-none focus:border-gold"
+              className="field-base mt-1 sm:w-24 text-base sm:text-sm"
             />
           </label>
         </div>

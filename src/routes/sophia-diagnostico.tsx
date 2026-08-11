@@ -247,7 +247,7 @@ function Page() {
         <button
           onClick={rodarTodos}
           disabled={executando}
-          className="px-6 py-3 bg-gold text-deep text-xs uppercase tracking-[0.25em] flex items-center gap-2 disabled:opacity-40 hover:bg-paper transition-colors"
+          className="btn-base btn-gold px-6 py-3 text-xs uppercase tracking-[0.25em] font-semibold"
         >
           {executando ? <Loader2 className="size-4 animate-spin" /> : <PlayCircle className="size-4" />}
           {executando ? "Executando…" : "Rodar checklist completo"}
@@ -280,7 +280,7 @@ function Page() {
             value={perguntaHumana}
             onChange={(e) => setPerguntaHumana(e.target.value)}
             placeholder="Escreva uma pergunta livre para testar a Sophia…"
-            className="flex-1 bg-background border border-gold/20 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-gold"
+            className="field-base flex-1 text-base sm:text-sm"
             onKeyDown={(e) => {
               if (e.key === "Enter") rodarHumano();
             }}
@@ -288,7 +288,7 @@ function Page() {
           <button
             onClick={rodarHumano}
             disabled={!perguntaHumana.trim()}
-            className="px-5 py-3 border border-gold text-gold text-xs uppercase tracking-[0.25em] hover:bg-gold/10 disabled:opacity-40"
+            className="btn-base btn-outline-gold px-5 py-3 text-xs uppercase tracking-[0.25em]"
           >
             Testar
           </button>
@@ -411,7 +411,7 @@ function ItemLinha({ item, onRun }: { item: ItemTeste; onRun: () => void }) {
         <button
           onClick={onRun}
           disabled={item.status === "executando"}
-          className="text-[10px] uppercase tracking-[0.2em] px-3 py-2 border border-gold/30 text-gold hover:bg-gold/10 disabled:opacity-40 shrink-0"
+          className="btn-base btn-outline-gold shrink-0 px-3 text-[10px] uppercase tracking-[0.2em]"
         >
           Testar
         </button>

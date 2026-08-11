@@ -238,7 +238,7 @@ function EstudarPage() {
                   <li key={d.to + d.label}>
                     <Link
                       to={d.to}
-                      className="inline-flex min-h-9 items-center border border-gold/15 px-4 py-1.5 text-xs text-muted-foreground transition-colors hover:border-gold/40 hover:text-foreground"
+                      className="btn-base btn-outline-gold min-h-10 px-4 text-xs"
                     >
                       {d.label}
                     </Link>

@@ -94,7 +94,7 @@ export function VersiculoDoDia() {
   }
 
   return (
-    <div className="border border-gold/25 bg-card/60 backdrop-blur-sm p-6 md:p-10 print:hidden">
+    <div className="surface-card p-card backdrop-blur-sm print:hidden">
       <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
         <p className="kicker">Versículo do dia</p>
         <label className="inline-flex items-center gap-2 text-xs text-muted-foreground cursor-pointer">
@@ -103,7 +103,7 @@ export function VersiculoDoDia() {
             type="date"
             value={dateIso}
             onChange={(e) => setDateIso(e.target.value)}
-            className="bg-transparent border border-gold/25 px-2 py-1 text-foreground text-xs focus:outline-none focus:border-gold"
+            className="field-base field-sm w-auto text-xs"
           />
         </label>
       </div>
@@ -122,7 +122,7 @@ export function VersiculoDoDia() {
       <div className="mt-6 flex flex-wrap gap-2">
         <button
           onClick={copy}
-          className="inline-flex items-center gap-2 px-4 py-2 border border-gold/30 text-[10px] uppercase tracking-[0.25em] text-foreground hover:border-gold hover:text-gold transition-colors"
+          className="btn-base btn-outline-gold px-4 py-2 text-[10px] uppercase tracking-[0.25em]"
         >
           {copied ? <Check className="size-3.5" /> : <Copy className="size-3.5" />}
           {copied ? "Copiado" : "Copiar"}
@@ -130,10 +130,8 @@ export function VersiculoDoDia() {
         <button
           onClick={toggleFav}
           aria-pressed={isFav}
-          className={`inline-flex items-center gap-2 px-4 py-2 border text-[10px] uppercase tracking-[0.25em] transition-colors ${
-            isFav
-              ? "border-gold text-gold bg-gold/10"
-              : "border-gold/30 text-foreground hover:border-gold hover:text-gold"
+          className={`btn-base px-4 py-2 text-[10px] uppercase tracking-[0.25em] ${
+            isFav ? "btn-outline-gold border-gold text-gold bg-gold/10" : "btn-outline-gold"
           }`}
         >
           <Heart className={`size-3.5 ${isFav ? "fill-gold" : ""}`} />
@@ -141,7 +139,7 @@ export function VersiculoDoDia() {
         </button>
         <button
           onClick={printVerse}
-          className="inline-flex items-center gap-2 px-4 py-2 bg-gold text-deep text-[10px] uppercase tracking-[0.25em] hover:bg-paper transition-colors"
+          className="btn-base btn-gold px-4 py-2 text-[10px] uppercase tracking-[0.25em] font-semibold"
         >
           <Printer className="size-3.5" /> Imprimir
         </button>

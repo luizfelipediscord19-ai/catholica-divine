@@ -38,7 +38,7 @@ function Page() {
             <p className="italic">"Deus Santo, Deus Forte, Deus Imortal, tende piedade de nós e do mundo inteiro."</p>
           </ContentCard>
         </CardGrid>
-        <div className="mt-8 border border-gold/30 bg-card p-6">
+        <div className="surface-card-featured mt-8 p-card">
           <p className="kicker mb-2">Hora da Misericórdia · 15h</p>
           <p className="text-foreground/80 italic">"Nesta hora não recusarei nada à alma que Me pedir pela Minha Paixão." (Diário, 1320)</p>
         </div>
