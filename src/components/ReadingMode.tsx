@@ -147,7 +147,7 @@ export function FnRef({ n }: { n: string }) {
       <a
         href={`#fn-${n}`}
         aria-label={`Ver nota ${numero ?? n}`}
-        className="text-gold/90 hover:text-gold no-underline text-[11px] font-medium align-super"
+        className="text-gold/90 hover:text-gold no-underline text-step--2 font-medium align-super"
       >
         {numero ?? "•"}
       </a>

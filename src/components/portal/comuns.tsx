@@ -40,7 +40,7 @@ export function AutorSelo({ autor, data }: { autor: Autor; data?: string | null 
           className="size-9 rounded-full object-cover border border-gold/30"
         />
       ) : (
-        <span className="size-9 rounded-full border border-gold/30 grid place-items-center text-[11px] text-gold">
+        <span className="size-9 rounded-full border border-gold/30 grid place-items-center text-step--2 text-gold">
           {autor.nome.slice(0, 2).toUpperCase()}
         </span>
       )}

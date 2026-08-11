@@ -98,7 +98,7 @@ function Page() {
         <div className="h-1.5 bg-gold/10 overflow-hidden">
           <div className="h-full bg-gold transition-all" style={{ width: `${pct}%` }} />
         </div>
-        <p className="mt-2 text-[11px] text-muted-foreground">{feitas} de {total} leituras concluídas ({pct}%)</p>
+        <p className="mt-2 text-step--2 text-muted-foreground">{feitas} de {total} leituras concluídas ({pct}%)</p>
       </div>
 
       {/* Hoje */}
@@ -195,7 +195,7 @@ function Page() {
                   <div className={"font-display text-base group-hover:text-gold " + (feita ? "line-through text-muted-foreground" : "text-foreground")}>
                     {l.tema}
                   </div>
-                  <div className="text-[11px] text-muted-foreground mt-1">{refTexto(l)}</div>
+                  <div className="text-step--2 text-muted-foreground mt-1">{refTexto(l)}</div>
                 </Link>
               </div>
             );

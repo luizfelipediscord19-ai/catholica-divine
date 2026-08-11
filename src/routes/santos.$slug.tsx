@@ -194,7 +194,7 @@ function SantoPage() {
                 className="h-72 w-full object-cover object-top"
               />
               {v.creditoImagem ? (
-                <figcaption className="px-3 py-2 text-[11px] tracking-[0.1em] uppercase text-muted-foreground/70">
+                <figcaption className="px-3 py-2 text-step--2 tracking-[0.1em] uppercase text-muted-foreground/70">
                   Imagem: domínio público · {v.creditoImagem}
                 </figcaption>
               ) : null}

@@ -54,7 +54,7 @@ export function Relacionados({ topic, className = "", variant = "card" }: Props)
                   <li key={`${s.key}-${i}`}>
                     <RefLink item={it} />
                     {it.hint ? (
-                      <span className="block text-[11px] text-muted-foreground mt-0.5">{it.hint}</span>
+                      <span className="block text-step--2 text-muted-foreground mt-0.5">{it.hint}</span>
                     ) : null}
                   </li>
                 ))}

@@ -250,7 +250,7 @@ function Page() {
                     <div className="font-display text-base text-foreground group-hover:text-gold">
                       {l.nome}
                     </div>
-                    <div className="text-[11px] mt-1 text-muted-foreground tracking-wider uppercase">
+                    <div className="text-step--2 mt-1 text-muted-foreground tracking-wider uppercase">
                       {l.abrev} · {l.capitulos} cap.
                     </div>
                   </Link>
@@ -287,7 +287,7 @@ function Page() {
                     <div className="font-display text-base text-foreground group-hover:text-gold">
                       {l.nome}
                     </div>
-                    <div className="text-[11px] mt-1 text-muted-foreground tracking-wider uppercase">
+                    <div className="text-step--2 mt-1 text-muted-foreground tracking-wider uppercase">
                       {l.abrev} · {l.capitulos} cap.
                     </div>
                   </Link>

@@ -183,7 +183,7 @@ function RootComponent() {
         <div className="min-h-dvh flex flex-col">
           <a
             href="#conteudo"
-            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-gold focus:px-5 focus:py-3 focus:text-[11px] focus:uppercase focus:tracking-[0.16em] focus:text-deep"
+            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-gold focus:px-5 focus:py-3 focus:text-step--2 focus:uppercase focus:tracking-[0.16em] focus:text-deep"
           >
             Pular para o conteúdo principal
           </a>

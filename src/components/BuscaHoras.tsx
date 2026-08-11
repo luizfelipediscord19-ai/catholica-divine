@@ -93,7 +93,7 @@ export function BuscaHoras() {
         <div className="mt-3 flex flex-wrap gap-2">
           <button
             onClick={() => setTema(null)}
-            className={`px-2.5 py-1 text-[11px] tracking-wide border rounded-full transition-colors ${
+            className={`px-2.5 py-1 text-step--2 tracking-wide border rounded-full transition-colors ${
               !tema
                 ? "border-gold bg-gold/10 text-gold"
                 : "border-foreground/15 text-foreground/60 hover:border-foreground/40"
@@ -107,7 +107,7 @@ export function BuscaHoras() {
               <button
                 key={t}
                 onClick={() => setTema(active ? null : t)}
-                className={`px-2.5 py-1 text-[11px] tracking-wide border rounded-full transition-colors ${
+                className={`px-2.5 py-1 text-step--2 tracking-wide border rounded-full transition-colors ${
                   active
                     ? "border-gold bg-gold/10 text-gold"
                     : "border-foreground/15 text-foreground/60 hover:border-foreground/40"

@@ -136,7 +136,7 @@ export function InstalarApp() {
           </div>
         ) : (
           <div className="mt-6">
-            <div className="border border-border/60 bg-background/60 px-4 py-3 text-left text-[11px] leading-relaxed text-muted-foreground">
+            <div className="border border-border/60 bg-background/60 px-4 py-3 text-left text-step--2 leading-relaxed text-muted-foreground">
               <span className="flex flex-wrap items-center gap-1">
                 Abra o menu <MoreVertical className="h-3.5 w-3.5 text-gold" /> do navegador e
                 toque em “Instalar aplicativo” ou “Adicionar à tela inicial”.

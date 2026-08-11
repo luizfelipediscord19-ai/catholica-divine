@@ -90,7 +90,7 @@ export function DenunciarBotao({
         onClick={() => setAberto((v) => !v)}
         aria-expanded={aberto}
         className={`inline-flex items-center gap-2 uppercase tracking-[0.16em] text-paper/50 hover:text-gold transition-colors ${
-          compacto ? "text-[11px]" : "text-[11px]"
+          compacto ? "text-step--2" : "text-step--2"
         }`}
       >
         <Flag className="size-3" aria-hidden="true" /> Denunciar

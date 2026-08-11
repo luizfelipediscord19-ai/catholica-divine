@@ -121,7 +121,7 @@ function Page() {
         </Link>
       </div>
 
-      <p className="mt-8 text-[11px] text-muted-foreground leading-relaxed">
+      <p className="mt-8 text-step--2 text-muted-foreground leading-relaxed">
         Tempo litúrgico, cor e ciclo do Lecionário calculados segundo as Normas Universais sobre o
         Ano Litúrgico e o Calendário (Paulo VI, <em>Mysterii Paschalis</em>, 1969). Textos das
         leituras conforme a tradução liturgica em uso no Brasil.

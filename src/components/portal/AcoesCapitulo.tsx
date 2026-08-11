@@ -105,7 +105,7 @@ export function BarraLeitura({
         <Check className="size-3.5" aria-hidden="true" />
         {lido ? "Capítulo lido" : pendente ? "Salvando…" : "Marcar como lido"}
       </button>
-      <p className="text-[11px] text-muted-foreground font-light">
+      <p className="text-step--2 text-muted-foreground font-light">
         Progresso salvo na sua identidade anônima — veja tudo no seu painel espiritual.
       </p>
     </div>

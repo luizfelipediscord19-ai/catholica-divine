@@ -41,7 +41,7 @@ export function AtualizacaoApp() {
       {offline ? (
         <div
           role="status"
-          className="fixed left-1/2 top-[4.75rem] z-[85] flex -translate-x-1/2 items-center gap-2 border border-gold/30 bg-background/95 px-3 py-2 text-[11px] text-muted-foreground shadow-lg backdrop-blur"
+          className="fixed left-1/2 top-[4.75rem] z-[85] flex -translate-x-1/2 items-center gap-2 border border-gold/30 bg-background/95 px-3 py-2 text-step--2 text-muted-foreground shadow-lg backdrop-blur"
         >
           <WifiOff className="size-3.5 text-gold" aria-hidden="true" />
           Sem internet — mostrando páginas e textos já lidos.

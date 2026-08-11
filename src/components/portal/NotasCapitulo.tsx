@@ -128,7 +128,7 @@ export function NotasCapitulo({
           >
             {salvar.isPending ? "Salvando…" : "Guardar anotação"}
           </button>
-          <p className="text-[11px] text-muted-foreground font-light">
+          <p className="text-step--2 text-muted-foreground font-light">
             Guardado na sua identidade anônima deste navegador. +10 XP por anotação.
           </p>
         </div>

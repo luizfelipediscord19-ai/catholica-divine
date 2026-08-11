@@ -115,7 +115,7 @@ export function VersiculoDoDia() {
       </blockquote>
 
       <p className="mt-4 kicker">— {versiculo.ref}</p>
-      <p className="mt-1 text-[11px] text-muted-foreground">
+      <p className="mt-1 text-step--2 text-muted-foreground">
         Bíblia Sagrada · tradução <em>Ave-Maria</em> (Editora Ave-Maria)
       </p>
 

@@ -200,7 +200,7 @@ function LicaoPagina() {
           type="button"
           onClick={() => alternarConclusao(trilha.slug, licao.slug)}
           aria-pressed={feita}
-          className={`btn-base px-5 text-[11px] font-bold uppercase tracking-widest ${
+          className={`btn-base px-5 text-step--2 font-bold uppercase tracking-widest ${
             feita ? "btn-outline-gold border-gold text-gold" : "btn-gold"
           }`}
         >

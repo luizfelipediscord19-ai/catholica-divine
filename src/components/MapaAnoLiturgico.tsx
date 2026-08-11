@@ -240,7 +240,7 @@ export function MapaAnoLiturgico() {
               </li>
             ))}
           </ul>
-          <p className="mt-4 text-[11px] text-muted-foreground italic">Fonte: {tempo.fonte}</p>
+          <p className="mt-4 text-step--2 text-muted-foreground italic">Fonte: {tempo.fonte}</p>
         </div>
       </div>
 

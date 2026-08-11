@@ -159,7 +159,7 @@ function Home() {
 
         <div className="shell relative w-full">
           <div className="max-w-3xl animate-reveal">
-            <p className="mb-5 flex items-center gap-3 text-[11px] uppercase leading-relaxed tracking-[0.16em] text-gold/85 sm:gap-4">
+            <p className="mb-5 flex items-center gap-3 text-step--2 uppercase leading-relaxed tracking-[0.16em] text-gold/85 sm:gap-4">
               <span className="hidden h-px w-10 shrink-0 bg-gold/40 sm:block" />
               <span className="min-w-0">Una · Sancta · Catholica · Apostolica</span>
             </p>
@@ -238,7 +238,7 @@ function Home() {
                   <p className="font-display italic text-[length:var(--step-1)] text-foreground/90 leading-relaxed mb-4 flex-1">
                     {d.text}
                   </p>
-                  <p className="text-[11px] text-muted-foreground tracking-[0.16em] uppercase group-hover:text-gold/80 transition-colors">
+                  <p className="text-step--2 text-muted-foreground tracking-[0.16em] uppercase group-hover:text-gold/80 transition-colors">
                     {d.ref}
                   </p>
                 </div>
@@ -436,7 +436,7 @@ function Home() {
           </p>
           <Link
             to="/assistente"
-            className="group relative inline-flex items-center gap-4 px-8 py-4 min-h-12 bg-paper text-deep text-[11px] sm:label-btn transition-premium hover:shadow-[0_0_50px_rgba(252,250,247,0.2)]"
+            className="group relative inline-flex items-center gap-4 px-8 py-4 min-h-12 bg-paper text-deep text-step--2 sm:label-btn transition-premium hover:shadow-[0_0_50px_rgba(252,250,247,0.2)]"
           >
             <MessageCircle className="size-4" aria-hidden="true" />
             <span>Conversar agora</span>

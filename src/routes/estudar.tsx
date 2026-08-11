@@ -108,7 +108,7 @@ function EstudarPage() {
 
   return (
     <div className="shell py-block space-y-[var(--space-lg)]">
-      <nav aria-label="Você está aqui" className="text-[11px] text-muted-foreground">
+      <nav aria-label="Você está aqui" className="text-step--2 text-muted-foreground">
         <ol className="flex flex-wrap items-center gap-2">
           <li>
             <Link to="/" className="hover:text-gold transition-colors">

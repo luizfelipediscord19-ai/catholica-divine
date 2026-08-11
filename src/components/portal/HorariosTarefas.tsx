@@ -46,7 +46,7 @@ export function HorariosTarefas() {
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <div className="min-w-0">
                   <p className="text-sm text-foreground">{tarefa.titulo}</p>
-                  <p className="text-[11px] leading-relaxed text-muted-foreground">
+                  <p className="text-step--2 leading-relaxed text-muted-foreground">
                     {tarefa.mensagem}
                   </p>
                 </div>
