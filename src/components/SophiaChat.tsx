@@ -48,35 +48,30 @@ export const SophiaChat = memo(({
       return;
     }
     setAviso(null);
-    
-    // Suporte a comandos de voz via Web Speech API se disponível
-    if (text === "___VOICE___") {
-      startVoiceRecognition();
-      return;
-    }
-
     setUltima(text.trim());
     sendMessage({ text: text.trim() });
     setInput("");
   };
 
-  const startVoiceRecognition = () => {
-    const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
-    if (!SpeechRecognition) {
-      toast.error("Seu navegador não suporta reconhecimento de voz.");
-      return;
+  // Ditado por voz: grava o microfone e transcreve no servidor (Whisper).
+  const submitRef = useRef(handleSubmit);
+  submitRef.current = handleSubmit;
+
+  const aoTranscrever = useCallback((texto: string) => {
+    const limpo = texto.slice(0, LIMITE);
+    setInput(limpo);
+    submitRef.current(limpo);
+  }, []);
+
+  const ditado = useDitado(aoTranscrever);
+
+  useEffect(() => {
+    if (ditado.erro) {
+      toast.error(ditado.erro);
+      ditado.limparErro();
     }
-    const recognition = new SpeechRecognition();
-    recognition.lang = 'pt-BR';
-    recognition.start();
-    toast.info("Ouvindo...");
-    recognition.onresult = (event: any) => {
-      const transcript = event.results[0][0].transcript;
-      setInput(transcript);
-      handleSubmit(transcript);
-    };
-    recognition.onerror = () => toast.error("Erro ao capturar voz.");
-  };
+  }, [ditado]);
+
 
   const onFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
