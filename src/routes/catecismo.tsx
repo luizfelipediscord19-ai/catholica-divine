@@ -182,7 +182,7 @@ function Page() {
           href={VATICAN_URL}
           target="_blank"
           rel="noopener"
-          className="btn-base btn-gold h-auto min-h-11 max-w-full gap-2 whitespace-normal py-3 text-center text-[11px] uppercase tracking-[0.25em]"
+          className="btn-base btn-gold h-auto min-h-11 max-w-full gap-2 whitespace-normal py-3 text-center text-[11px] uppercase tracking-[0.16em]"
         >
           <ExternalLink className="size-4" /> Texto integral em vatican.va
         </a>

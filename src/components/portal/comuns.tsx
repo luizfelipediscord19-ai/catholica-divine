@@ -40,7 +40,7 @@ export function AutorSelo({ autor, data }: { autor: Autor; data?: string | null 
           className="size-9 rounded-full object-cover border border-gold/30"
         />
       ) : (
-        <span className="size-9 rounded-full border border-gold/30 grid place-items-center text-[10px] text-gold">
+        <span className="size-9 rounded-full border border-gold/30 grid place-items-center text-[11px] text-gold">
           {autor.nome.slice(0, 2).toUpperCase()}
         </span>
       )}
@@ -82,8 +82,8 @@ export const inputClass =
 
 
 export const botaoClass =
-  "btn-base btn-gold px-6 py-3 text-[10px] uppercase tracking-[0.25em] font-bold";
+  "btn-base btn-gold px-6 py-3 text-[11px] uppercase tracking-[0.16em] font-bold";
 
 export const botaoGhostClass =
-  "btn-base btn-outline-gold px-6 py-3 text-[10px] uppercase tracking-[0.25em] font-medium";
+  "btn-base btn-outline-gold px-6 py-3 text-[11px] uppercase tracking-[0.16em] font-medium";
 

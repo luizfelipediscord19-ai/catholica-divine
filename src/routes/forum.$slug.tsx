@@ -140,7 +140,7 @@ function TopicoPage() {
           type="button"
           disabled={!autenticado || reagir.isPending}
           onClick={() => reagir.mutate({ topicoId: t.id })}
-          className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] text-paper/70 hover:text-gold transition-colors disabled:opacity-50"
+          className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.16em] text-paper/70 hover:text-gold transition-colors disabled:opacity-50"
         >
           <Heart className="size-3.5" aria-hidden="true" /> Amém
         </button>
@@ -172,7 +172,7 @@ function TopicoPage() {
                       type="button"
                       disabled={!autenticado || reagir.isPending}
                       onClick={() => reagir.mutate({ respostaId: r.id })}
-                      className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] text-paper/60 hover:text-gold transition-colors disabled:opacity-50"
+                      className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.16em] text-paper/60 hover:text-gold transition-colors disabled:opacity-50"
                     >
                       <Heart className="size-3" aria-hidden="true" /> Amém
                     </button>

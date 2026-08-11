@@ -247,7 +247,7 @@ function Page() {
         <button
           onClick={rodarTodos}
           disabled={executando}
-          className="btn-base btn-gold px-6 py-3 text-xs uppercase tracking-[0.25em] font-semibold"
+          className="btn-base btn-gold px-6 py-3 text-xs uppercase tracking-[0.16em] font-semibold"
         >
           {executando ? <Loader2 className="size-4 animate-spin" /> : <PlayCircle className="size-4" />}
           {executando ? "Executando…" : "Rodar checklist completo"}
@@ -264,7 +264,7 @@ function Page() {
             <button
               key={m.id}
               onClick={() => setModoHumano(m.id)}
-              className={`px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] border transition-colors ${
+              className={`px-3 py-1.5 text-[11px] uppercase tracking-[0.16em] border transition-colors ${
                 modoHumano === m.id
                   ? "border-gold bg-gold/15 text-gold"
                   : "border-gold/20 text-foreground/70 hover:border-gold/50"
@@ -288,7 +288,7 @@ function Page() {
           <button
             onClick={rodarHumano}
             disabled={!perguntaHumana.trim()}
-            className="btn-base btn-outline-gold px-5 py-3 text-xs uppercase tracking-[0.25em]"
+            className="btn-base btn-outline-gold px-5 py-3 text-xs uppercase tracking-[0.16em]"
           >
             Testar
           </button>
@@ -303,7 +303,7 @@ function Page() {
             <section key={m.id}>
               <div className="flex items-baseline justify-between mb-4">
                 <h2 className="font-display text-2xl text-foreground">{m.label}</h2>
-                <span className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
+                <span className="text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
                   {lista.length} {lista.length === 1 ? "pergunta" : "perguntas"}
                 </span>
               </div>
@@ -325,7 +325,7 @@ function Page() {
       <div className="mt-12">
         <Link
           to="/assistente"
-          className="px-5 py-3 btn-base btn-outline-gold text-xs uppercase tracking-[0.25em]"
+          className="px-5 py-3 btn-base btn-outline-gold text-xs uppercase tracking-[0.16em]"
         >
           ← Voltar para a Sophia
         </Link>
@@ -350,7 +350,7 @@ function Pill({
         ? "text-red-300 border-red-400/30 bg-red-400/10"
         : "text-foreground/70 border-gold/20 bg-background/40";
   return (
-    <span className={`inline-flex items-center gap-2 px-3 py-1.5 border uppercase tracking-[0.2em] text-[10px] ${cls}`}>
+    <span className={`inline-flex items-center gap-2 px-3 py-1.5 border uppercase tracking-[0.16em] text-[11px] ${cls}`}>
       {icon}
       {label}
     </span>
@@ -389,11 +389,11 @@ function ItemLinha({ item, onRun }: { item: ItemTeste; onRun: () => void }) {
         <Icon className={`size-5 mt-0.5 shrink-0 ${iconCor}`} />
         <div className="flex-1 min-w-0">
           <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-            <span className="text-[9px] uppercase tracking-[0.25em] px-2 py-0.5 border border-gold/30 text-gold">
+            <span className="text-[11px] uppercase tracking-[0.16em] px-2 py-0.5 border border-gold/30 text-gold">
               {item.fonte}
             </span>
             {item.latencia !== undefined && (
-              <span className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+              <span className="text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
                 {item.latencia}ms · {item.caracteres ?? 0} chars
               </span>
             )}
@@ -411,7 +411,7 @@ function ItemLinha({ item, onRun }: { item: ItemTeste; onRun: () => void }) {
         <button
           onClick={onRun}
           disabled={item.status === "executando"}
-          className="btn-base btn-outline-gold shrink-0 px-3 text-[10px] uppercase tracking-[0.2em]"
+          className="btn-base btn-outline-gold shrink-0 px-3 text-[11px] uppercase tracking-[0.16em]"
         >
           Testar
         </button>

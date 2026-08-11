@@ -78,7 +78,7 @@ function RedefinirSenhaPage() {
           {pronto ? (
             <form className="space-y-5" onSubmit={enviar} noValidate>
               <label className="block space-y-2">
-                <span className="text-[10px] uppercase tracking-[0.25em] text-paper/60">Senha</span>
+                <span className="text-[11px] uppercase tracking-[0.16em] text-paper/60">Senha</span>
                 <input
                   type="password"
                   autoComplete="new-password"

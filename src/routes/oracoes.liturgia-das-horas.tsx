@@ -198,7 +198,7 @@ function Page() {
                   <button
                     key={s}
                     onClick={() => setHora(s)}
-                    className={`px-5 py-3 text-[10px] uppercase tracking-[0.25em] transition-colors border-r border-gold/10 ${
+                    className={`px-5 py-3 text-[11px] uppercase tracking-[0.16em] transition-colors border-r border-gold/10 ${
                       active ? "bg-gold/15 text-gold" : "text-foreground/70 hover:text-foreground"
                     }`}
                   >
@@ -313,10 +313,10 @@ function Page() {
           </div>
 
           <div className="mt-10 flex justify-between items-center print:hidden">
-            <Link to="/oracoes" className="px-5 py-3 btn-base btn-outline-gold text-xs uppercase tracking-[0.25em]">
+            <Link to="/oracoes" className="px-5 py-3 btn-base btn-outline-gold text-xs uppercase tracking-[0.16em]">
               ← Todas as orações
             </Link>
-            <Link to="/calendario-liturgico" className="px-5 py-3 btn-base btn-outline-gold text-xs uppercase tracking-[0.25em]">
+            <Link to="/calendario-liturgico" className="px-5 py-3 btn-base btn-outline-gold text-xs uppercase tracking-[0.16em]">
               Calendário litúrgico →
             </Link>
           </div>

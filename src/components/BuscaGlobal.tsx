@@ -112,7 +112,7 @@ export function BuscaGlobal({ aberto, onFechar }: { aberto: boolean; onFechar: (
         <div className="max-h-[60vh] overflow-y-auto">
           {consulta.trim().length < 2 ? (
             <div className="px-5 py-6">
-              <p className="text-[10px] uppercase tracking-[0.28em] text-foreground/50">Sugestões</p>
+              <p className="text-[11px] uppercase tracking-[0.16em] text-foreground/50">Sugestões</p>
               <div className="mt-3 flex flex-wrap gap-2">
                 {SUGESTOES.map((s) => (
                   <button
@@ -149,7 +149,7 @@ export function BuscaGlobal({ aberto, onFechar }: { aberto: boolean; onFechar: (
                     }`}
                   >
                     <span
-                      className={`mt-0.5 w-24 shrink-0 text-[9px] uppercase tracking-[0.2em] ${CORES[item.categoria]}`}
+                      className={`mt-0.5 w-24 shrink-0 text-[11px] uppercase tracking-[0.16em] ${CORES[item.categoria]}`}
                     >
                       {item.categoria}
                     </span>
@@ -167,7 +167,7 @@ export function BuscaGlobal({ aberto, onFechar }: { aberto: boolean; onFechar: (
           )}
         </div>
 
-        <div className="flex items-center justify-between border-t border-gold/15 px-5 py-2.5 text-[10px] uppercase tracking-[0.2em] text-foreground/45">
+        <div className="flex items-center justify-between border-t border-gold/15 px-5 py-2.5 text-[11px] uppercase tracking-[0.16em] text-foreground/45">
           <span>↑ ↓ navegar · Enter abrir · Esc fechar</span>
           <span className="hidden sm:inline">Ctrl / ⌘ + K</span>
         </div>

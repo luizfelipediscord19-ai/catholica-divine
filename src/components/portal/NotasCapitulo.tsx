@@ -97,7 +97,7 @@ export function NotasCapitulo({
         }}
       >
         <div className="flex flex-wrap items-end gap-4">
-          <label className="text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
+          <label className="text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
             Versículo (opcional)
             <input
               type="number"
@@ -109,7 +109,7 @@ export function NotasCapitulo({
             />
           </label>
         </div>
-        <label className="block text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
+        <label className="block text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
           Reflexão
           <textarea
             value={conteudo}
@@ -124,7 +124,7 @@ export function NotasCapitulo({
           <button
             type="submit"
             disabled={!podeSalvar}
-            className="btn-base btn-gold px-6 py-2 text-[10px] uppercase tracking-[0.25em] font-bold"
+            className="btn-base btn-gold px-6 py-2 text-[11px] uppercase tracking-[0.16em] font-bold"
           >
             {salvar.isPending ? "Salvando…" : "Guardar anotação"}
           </button>

@@ -43,7 +43,7 @@ export function ScrollReveal({
 
   const getDirectionClass = () => {
     if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      return "opacity-0";
+      return "opacity-100";
     }
     switch (direction) {
       case "up": return "opacity-0 translate-y-8";
@@ -61,7 +61,7 @@ export function ScrollReveal({
   return (
     <div
       ref={ref}
-      className={`transition-all duration-1000 cubic-bezier(0.16, 1, 0.3, 1) ${
+      className={`transition-all duration-700 ease-out ${
         isVisible ? getVisibleClass() : getDirectionClass()
       } ${className}`}
       style={{

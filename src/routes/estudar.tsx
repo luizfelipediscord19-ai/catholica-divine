@@ -154,7 +154,7 @@ function EstudarPage() {
           <Link
             to="/trilhas/$trilha/$licao"
             params={{ trilha: trilhaUltima.slug, licao: licaoUltima.slug }}
-            className="btn-base btn-gold mt-5 gap-2 text-[10px] font-bold uppercase tracking-[0.25em]"
+            className="btn-base btn-gold mt-5 gap-2 text-[11px] font-bold uppercase tracking-[0.16em]"
           >
             Continuar estudando <ArrowRight className="size-3.5" aria-hidden="true" />
           </Link>
@@ -175,13 +175,7 @@ function EstudarPage() {
               className="surface-card p-card"
             >
               <div className="flex flex-wrap items-baseline justify-between gap-3">
-                <h2
-                  id={`nivel-${nivel.nome}`}
-                  className="title-card"
-                >
-                  <span aria-hidden="true" className="mr-3">
-                    {nivel.marcador}
-                  </span>
+                <h2 id={`nivel-${nivel.nome}`} className="title-card">
                   {nivel.nome}
                 </h2>
                 {trilha ? (
@@ -215,7 +209,7 @@ function EstudarPage() {
                               aria-hidden="true"
                             />
                             <span className="min-w-0 flex-1 truncate">{licao.titulo}</span>
-                            <span className="shrink-0 text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+                            <span className="shrink-0 text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
                               {feita ? "Concluído" : atual ? "Em andamento" : "Estudar"}
                             </span>
                           </Link>

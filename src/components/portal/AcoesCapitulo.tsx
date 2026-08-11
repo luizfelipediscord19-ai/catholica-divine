@@ -96,7 +96,7 @@ export function BarraLeitura({
         type="button"
         disabled={!pronto || pendente}
         onClick={onAlternar}
-        className={`btn-base px-5 py-2 text-[10px] uppercase tracking-[0.25em] font-bold ${
+        className={`btn-base px-5 py-2 text-[11px] uppercase tracking-[0.16em] font-bold ${
           lido
             ? "btn-outline-gold border-gold/40 bg-gold/15 text-gold"
             : "btn-gold"

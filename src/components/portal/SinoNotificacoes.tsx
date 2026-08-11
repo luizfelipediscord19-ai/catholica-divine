@@ -73,11 +73,11 @@ export function SinoNotificacoes() {
         }}
         aria-label={`Notificações${naoLidas > 0 ? ` (${naoLidas} não lidas)` : ""}`}
         aria-expanded={aberto}
-        className="relative grid size-11 place-items-center rounded-full border border-gold/20 text-paper/70 transition-premium hover:border-gold/60 hover:text-gold focus-visible:border-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+        className="relative grid size-10 place-items-center rounded-full border border-gold/20 text-paper/70 transition-premium hover:border-gold/60 hover:text-gold focus-visible:border-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
       >
         <Bell className="size-4" aria-hidden="true" />
         {naoLidas > 0 ? (
-          <span className="absolute -right-0.5 -top-0.5 grid min-w-4 place-items-center rounded-full bg-gold px-1 text-[9px] font-bold leading-4 text-deep">
+          <span className="absolute -right-0.5 -top-0.5 grid min-w-4 place-items-center rounded-full bg-gold px-1 text-[11px] font-bold leading-4 text-deep">
             {naoLidas > 9 ? "9+" : naoLidas}
           </span>
         ) : null}
@@ -94,7 +94,7 @@ export function SinoNotificacoes() {
             {notificacoes.length > 0 ? (
               <button
                 onClick={limpar}
-                className="inline-flex items-center gap-1 text-[10px] uppercase tracking-[0.18em] text-muted-foreground hover:text-foreground"
+                className="inline-flex items-center gap-1 text-[11px] uppercase tracking-[0.18em] text-muted-foreground hover:text-foreground"
               >
                 <Trash2 className="size-3" aria-hidden="true" /> Limpar
               </button>
@@ -125,7 +125,7 @@ export function SinoNotificacoes() {
                           {n.mensagem}
                         </p>
                       ) : null}
-                      <p className="mt-1 text-[10px] uppercase tracking-[0.16em] text-muted-foreground/70">
+                      <p className="mt-1 text-[11px] uppercase tracking-[0.16em] text-muted-foreground/70">
                         {tempoRelativo(n.criadaEm)}
                       </p>
                     </div>
@@ -178,7 +178,7 @@ function AvisosNoAparelho() {
               desativarNotificacoesDispositivo();
               setEstado("pendente");
             }}
-            className="inline-flex items-center gap-1 text-[10px] uppercase tracking-[0.16em] text-muted-foreground hover:text-foreground"
+            className="inline-flex items-center gap-1 text-[11px] uppercase tracking-[0.16em] text-muted-foreground hover:text-foreground"
           >
             <BellOff className="size-3" aria-hidden="true" /> Desligar
           </button>
@@ -195,7 +195,7 @@ function AvisosNoAparelho() {
           </p>
           <button
             onClick={async () => setEstado(await ativarNotificacoesDispositivo())}
-            className="inline-flex items-center gap-2 bg-gold px-3 py-2 text-[10px] font-medium uppercase tracking-[0.16em] text-deep hover:bg-paper"
+            className="inline-flex items-center gap-2 bg-gold px-3 py-2 text-[11px] font-medium uppercase tracking-[0.16em] text-deep hover:bg-paper"
           >
             <BellRing className="size-3" aria-hidden="true" /> Ativar no aparelho
           </button>
