@@ -68,8 +68,8 @@ const NAV_PRINCIPAL: { to: string; label: string; desde: "lg" | "xl" | "2xl" }[]
 
 const VISIVEL_DESDE = {
   lg: "hidden md:inline-flex",
-  xl: "hidden [@media(min-width:1400px)]:inline-flex",
-  "2xl": "hidden [@media(min-width:1600px)]:inline-flex",
+  xl: "hidden [@media(min-width:1560px)]:inline-flex",
+  "2xl": "hidden [@media(min-width:1740px)]:inline-flex",
 } as const;
 
 const ICONE_REDONDO =
