@@ -613,6 +613,90 @@
   color: var(--color-muted-foreground);
 }
 
+/* Rótulo de botão / etiqueta de ação — o mesmo em todo o portal.
+   Substitui as combinações soltas de text-[11px] + uppercase + tracking. */
+@utility label-btn {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Tamanhos canônicos de botão (usar junto de btn-base) */
+@utility btn-sm {
+  min-height: 2.25rem;
+  padding-inline: 0.875rem;
+  font-size: 0.6875rem;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+@utility btn-md {
+  min-height: 2.75rem;
+  padding-inline: 1.25rem;
+  font-size: 0.6875rem;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+@utility btn-lg {
+  min-height: 3.25rem;
+  padding-inline: 1.75rem;
+  font-size: 0.75rem;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Botão só de ícone: quadrado perfeito, sempre 2.5rem */
+@utility btn-icon {
+  min-height: 2.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border-radius: 9999px;
+}
+
+/* Link de navegação do cabeçalho: um único estilo para todos */
+@utility nav-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  height: 2.5rem;
+  padding-inline: 0.75rem;
+  border-radius: var(--radius-btn);
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: color-mix(in oklab, var(--color-foreground) 76%, transparent);
+  transition-property: color, background-color;
+  transition-duration: var(--dur-md);
+  transition-timing-function: var(--ease-premium);
+
+  &:hover {
+    color: var(--gold);
+    background: color-mix(in oklab, var(--gold) 8%, transparent);
+  }
+
+  &[aria-current="page"] {
+    color: var(--gold);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 2px;
+  }
+}
+
 /* ============================================================
    SUPERFÍCIES E ELEMENTOS AUXILIARES
    ============================================================ */
