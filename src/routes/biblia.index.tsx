@@ -206,7 +206,7 @@ function Page() {
 
       <div className="shell pt-4 space-y-4">
         <div className="flex flex-wrap items-center gap-4 justify-between">
-          <div className="relative max-w-md w-full">
+          <div className="relative max-w-[28rem] w-full">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 size-4 text-gold/60" />
             <input
               aria-label="Buscar livro da Bíblia"

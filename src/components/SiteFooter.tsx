@@ -8,7 +8,7 @@ export function SiteFooter() {
           <h2 className="font-display text-2xl text-gold italic">
             Ad Maiorem Dei Gloriam
           </h2>
-          <p className="mt-4 text-sm text-paper/75 max-w-md leading-relaxed">
+          <p className="mt-4 text-sm text-paper/75 max-w-[28rem] leading-relaxed">
             Portal Católico — biblioteca digital fiel ao Magistério da Igreja, dedicada ao
             estudo, à evangelização e à formação na fé católica.
           </p>

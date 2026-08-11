@@ -27,7 +27,7 @@ import { SCRIPT_TEMA } from "../lib/tema";
 function NotFoundComponent() {
   return (
     <div className="flex min-h-[70vh] items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
+      <div className="max-w-[28rem] text-center">
         <h1 className="font-display text-[length:var(--step-5)] text-gold">404</h1>
         <h2 className="mt-4 font-display text-2xl text-foreground">Página não encontrada</h2>
         <p className="mt-3 text-sm text-muted-foreground">
@@ -55,7 +55,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 
   return (
     <div className="flex min-h-[70vh] items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
+      <div className="max-w-[28rem] text-center">
         <h1 className="font-display text-3xl text-foreground">Esta página não carregou</h1>
         <p className="mt-3 text-sm text-muted-foreground">
           Algo correu mal. Tente recarregar ou regresse ao início.

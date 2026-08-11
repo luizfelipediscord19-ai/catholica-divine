@@ -285,7 +285,7 @@ function Home() {
               Duas mil anos de fé, <span className="text-gold/75">em um só lugar.</span>
             </h2>
           </ScrollReveal>
-          <ScrollReveal delay={200} className="max-w-sm">
+          <ScrollReveal delay={200} className="max-w-[24rem]">
             <p className="text-foreground/70 text-sm leading-relaxed mb-2 font-light">
               Escritura, Tradição e Magistério — os três canais pelos quais a Revelação chega até nós —
               organizados com referências cruzadas para um estudo sério e contemplativo.

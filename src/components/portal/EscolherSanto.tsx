@@ -75,7 +75,7 @@ export function EscolherSanto({
         </p>
       </header>
 
-      <label className="block relative max-w-md">
+      <label className="block relative max-w-[28rem]">
         <Search
           className="size-4 text-gold/70 absolute left-3 top-1/2 -translate-y-1/2"
           aria-hidden="true"

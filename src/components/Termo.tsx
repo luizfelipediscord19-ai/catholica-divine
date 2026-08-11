@@ -37,7 +37,7 @@ export function Termo({
         <TooltipContent
           side="top"
           align="center"
-          className="max-w-xs bg-deep border border-gold/30 text-paper px-5 py-4 shadow-2xl"
+          className="max-w-[20rem] bg-deep border border-gold/30 text-paper px-5 py-4 shadow-2xl"
         >
           <p className="kicker mb-2">
             {entrada.termo}
