@@ -3,9 +3,9 @@ import { useState } from "react";
 /**
  * Retrato de santo com carregamento otimizado: lazy por padrão, dimensões
  * declaradas (sem salto de layout), reserva na fonte pública de domínio
- * público quando a cópia do CDN não está disponível (hospedagens fora da
- * Lovable) e, só em último caso, um marcador sóbrio — assim nenhuma página
- * fica com espaço quebrado.
+ * público quando a cópia do CDN não está disponível, entrada suave quando a
+ * imagem termina de carregar e, só em último caso, um marcador sóbrio com a
+ * inicial do santo — assim nenhuma página fica com espaço quebrado.
  */
 export function RetratoSanto({
   url,
@@ -27,16 +27,21 @@ export function RetratoSanto({
   altura?: number;
 }) {
   const [tentativa, setTentativa] = useState(0);
+  const [carregada, setCarregada] = useState(false);
   const fontes = [url, reserva].filter((f): f is string => Boolean(f));
   const atual = fontes[tentativa];
 
   if (!atual) {
+    const inicial = nome.replace(/^(São|Santo|Santa)\s+/i, "").trim().charAt(0) || "✝";
     return (
       <div
+        role="img"
+        aria-label={`Sem retrato disponível de ${nome}`}
         className={`grid place-items-center bg-linear-to-br from-deep via-deep to-background ${className}`}
-        aria-hidden="true"
       >
-        <span className="font-display text-4xl text-gold/30">✝</span>
+        <span className="grid size-14 place-items-center rounded-full border border-gold/25 font-display text-2xl text-gold/50">
+          {inicial}
+        </span>
       </div>
     );
   }
@@ -53,8 +58,13 @@ export function RetratoSanto({
       fetchPriority={prioridade ? "high" : "low"}
       decoding="async"
       referrerPolicy="no-referrer"
-      onError={() => setTentativa((t) => t + 1)}
-      className={className}
+      data-carregada={carregada || prioridade ? "sim" : "nao"}
+      onLoad={() => setCarregada(true)}
+      onError={() => {
+        setCarregada(false);
+        setTentativa((t) => t + 1);
+      }}
+      className={`media-fade bg-muted/40 ${className}`}
     />
   );
 }
