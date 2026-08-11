@@ -2,6 +2,7 @@ import { memo, useRef, useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { Check, Copy } from "lucide-react";
 import { ChatMessage } from "../../lib/types/chat";
+import { SourceReferences, extrairFontes } from "../SourceReferences";
 
 interface ChatMessageProps {
   message: ChatMessage;
