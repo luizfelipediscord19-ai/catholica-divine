@@ -87,19 +87,27 @@ export const Route = createFileRoute("/api/chat")({
           const systemPrompt = mode === "coroinhas" ? COROINHAS_PROMPT : SYSTEM_PROMPT;
 
           // Aterramento local: injeta o acervo real do portal ligado à pergunta.
-          const ultimaPergunta = [...(messages as UIMessage[])]
-            .reverse()
-            .find((m) => m.role === "user");
-          const textoPergunta = (ultimaPergunta?.parts ?? [])
-            .filter((p): p is { type: "text"; text: string } => p.type === "text")
-            .map((p) => p.text)
-            .join(" ");
+          // Incluímos as últimas mensagens do usuário para que perguntas curtas
+          // de continuação ("e o purgatório?") mantenham o assunto anterior.
+          const perguntasUsuario = (messages as UIMessage[])
+            .filter((m) => m.role === "user")
+            .slice(-3)
+            .map((m) =>
+              (m.parts ?? [])
+                .filter((p): p is { type: "text"; text: string } => p.type === "text")
+                .map((p) => p.text)
+                .join(" "),
+            )
+            .filter((t) => t.trim().length > 0);
+
+          const textoPergunta = perguntasUsuario.join(" \n ");
 
           let contexto = "";
           if (textoPergunta.trim().length > 2) {
             const { contextoDoPortal } = await import("../../lib/prompts/contexto.server");
             contexto = contextoDoPortal(textoPergunta);
           }
+
 
           const model = groqKey
             ? createGroqProvider(groqKey)(GROQ_MODEL)
