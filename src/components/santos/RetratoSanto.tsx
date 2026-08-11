@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 /**
  * Retrato de santo com carregamento otimizado: lazy por padrão, dimensões
@@ -28,6 +28,12 @@ export function RetratoSanto({
 }) {
   const [tentativa, setTentativa] = useState(0);
   const [carregada, setCarregada] = useState(false);
+  const ref = useRef<HTMLImageElement>(null);
+
+  // Imagem vinda do cache pode terminar antes da hidratação: confere no mount.
+  useEffect(() => {
+    if (ref.current?.complete) setCarregada(true);
+  }, [tentativa]);
   const fontes = [url, reserva].filter((f): f is string => Boolean(f));
   const atual = fontes[tentativa];
 
@@ -49,6 +55,7 @@ export function RetratoSanto({
   return (
     <img
       key={atual}
+      ref={ref}
       src={atual}
       alt={`Representação de ${nome}`}
       width={largura}
