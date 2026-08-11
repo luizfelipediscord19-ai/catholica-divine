@@ -136,7 +136,7 @@ function EstudarPage() {
       {licaoUltima && trilhaUltima ? (
         <section
           aria-labelledby="continue-estudando"
-          className="border border-gold/25 bg-card/40 p-card"
+          className="surface-card p-card"
         >
           <p className="kicker">Continue estudando</p>
           <h2
@@ -238,7 +238,7 @@ function EstudarPage() {
                   <li key={d.to + d.label}>
                     <Link
                       to={d.to}
-                      className="inline-flex min-h-9 items-center border border-gold/15 px-4 py-1.5 text-xs text-muted-foreground transition-colors hover:border-gold/40 hover:text-foreground"
+                      className="btn-base btn-outline-gold min-h-10 px-4 text-xs"
                     >
                       {d.label}
                     </Link>

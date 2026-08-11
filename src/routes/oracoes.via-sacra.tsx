@@ -28,7 +28,7 @@ function Page() {
         intro="Acompanhe os passos de Cristo até o Calvário em catorze estações. Tradição firmada por São Leonardo de Porto Maurício no século XVIII."
       />
       <Section kicker={`Estação ${e.num} de 14`} title={e.titulo}>
-        <div className="border border-gold/30 bg-card p-card">
+        <div className="surface-card p-card">
           <p className="kicker mb-4">Em todas as estações:</p>
           <p className="italic text-foreground/80 mb-6">V. Nós Vos adoramos, Senhor Jesus Cristo, e Vos bendizemos. <br />R. Porque pela vossa santa Cruz remistes o mundo.</p>
           {e.referencia ? <p className="text-sm text-gold/80 mb-3">{e.referencia}</p> : null}

@@ -94,7 +94,7 @@ export const SophiaChat = memo(({
   };
 
   return (
-    <div aria-busy={isLoading} className="border border-gold/20 bg-card/80 backdrop-blur-xl flex flex-col shadow-2xl shadow-black/50 overflow-hidden" style={{ height }}>
+    <div aria-busy={isLoading} className="surface-card backdrop-blur-xl flex flex-col shadow-2xl shadow-black/50 overflow-hidden" style={{ height }}>
       <div className={`flex items-center justify-between px-6 py-4 text-[11px] tracking-[0.2em] uppercase border-b border-gold/10 ${statusColor}`}>
         <div className="flex items-center gap-3">
           <div className="relative">
@@ -153,7 +153,7 @@ export const SophiaChat = memo(({
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder={placeholder}
-          className="flex-1 bg-white/[0.03] border border-gold/10 px-6 py-4 text-base text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-gold/40 transition-premium focus:bg-white/[0.05]"
+          className="field-base flex-1 px-5 py-4 text-base"
           style={{ fontSize: "16px" }}
           disabled={isLoading}
           maxLength={LIMITE}
@@ -178,7 +178,7 @@ export const SophiaChat = memo(({
             disabled={isLoading || !input.trim()}
             aria-label="Enviar pergunta"
             title="Enviar pergunta"
-            className="px-8 bg-gold text-deep disabled:opacity-30 hover:bg-paper transition-premium shadow-lg shadow-gold/5 flex items-center justify-center group"
+            className="btn-base btn-gold group px-8"
           >
             <Send className="size-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" aria-hidden="true" />
           </button>

@@ -194,10 +194,10 @@ function Page() {
         ) : null}
 
         {/* Controles de cronômetro */}
-        <div className="border border-gold/30 bg-card/60 p-4 md:p-5 mb-4 flex flex-wrap items-center gap-4">
+        <div className="surface-card p-4 md:p-5 mb-4 flex flex-wrap items-center gap-4">
           <button
             onClick={() => setPlaying((p) => !p)}
-            className="px-5 py-2 bg-gold text-deep font-medium hover:bg-gold/90"
+            className="btn-base btn-gold px-5 py-2 font-semibold"
           >
             {playing ? "⏸ Pausar" : "▶ Iniciar"}
           </button>
@@ -226,7 +226,7 @@ function Page() {
           ))}
         </div>
 
-        <div className="border border-gold/30 bg-card p-8 md:p-12">
+        <div className="surface-card p-8 md:p-12">
           <div className="flex items-center justify-between mb-6 flex-wrap gap-2">
             <p className="kicker">
               Etapa {etapaIdx + 1} de {etapas.length} · {conjunto.nome}

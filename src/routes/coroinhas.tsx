@@ -110,7 +110,7 @@ function Page() {
       </Section>
 
       <Section kicker="Oração" title="Oração do Coroinha antes da Missa">
-        <div className="border border-gold/20 bg-card/40 p-8 md:p-12 max-w-3xl">
+        <div className="surface-card p-8 md:p-12 max-w-3xl">
           <p className="font-display italic text-lg md:text-xl text-paper/90 leading-relaxed">
             "Senhor Jesus Cristo, que te dignaste descer ao altar para te entregares por nós,
             faz que eu te sirva hoje com a pureza dos anjos, a reverência dos santos e o amor

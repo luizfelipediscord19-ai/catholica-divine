@@ -225,7 +225,7 @@ function SantoDetail({
 }) {
   const img = view.imagem;
   return (
-    <article className="mb-12 border border-gold/20 bg-card/40 backdrop-blur-xl overflow-hidden animate-content-fade shadow-2xl shadow-gold/5">
+    <article className="mb-12 surface-card backdrop-blur-xl overflow-hidden animate-content-fade shadow-2xl shadow-gold/5">
       <div className="grid md:grid-cols-[minmax(0,1fr)_1.2fr] gap-0">
         <div className="relative aspect-[4/5] md:aspect-auto md:min-h-[420px] bg-deep overflow-hidden">
           <RetratoSanto

@@ -36,7 +36,7 @@ export function BuscaHoras() {
 
   return (
     <section id="buscador" className="scroll-mt-24 mt-12 print:hidden">
-      <div className="border border-gold/20 bg-card/40 backdrop-blur-sm p-6 md:p-8">
+      <div className="surface-card backdrop-blur-sm p-6 md:p-8">
         <p className="kicker mb-2">Buscador temático</p>
         <h3 className="font-display text-2xl md:text-3xl text-foreground">
           Encontre salmos, cânticos e leituras
@@ -55,7 +55,7 @@ export function BuscaHoras() {
               value={q}
               onChange={(e) => setQ(e.target.value)}
               placeholder="Buscar por palavra, referência ou tema…"
-              className="w-full bg-background/60 border border-gold/30 px-4 py-3 text-sm focus:outline-none focus:border-gold transition-colors"
+              className="field-base text-base sm:text-sm"
             />
             {q && (
               <button
@@ -162,7 +162,7 @@ export function BuscaHoras() {
                   <button
                     key={tg}
                     onClick={() => setTema(tg)}
-                    className="text-[10px] px-2 py-0.5 border border-foreground/15 text-foreground/55 rounded-full hover:border-gold/50 hover:text-gold transition-colors"
+                    className="chip-action"
                   >
                     #{tg}
                   </button>

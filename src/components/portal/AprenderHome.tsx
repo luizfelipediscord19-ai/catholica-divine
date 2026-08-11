@@ -56,7 +56,7 @@ export function BuscaAprender() {
             value={termo}
             onChange={(e) => setTermo(e.target.value)}
             placeholder="Digite uma dúvida sobre a fé..."
-            className="min-h-13 w-full border border-gold/25 bg-card/50 py-4 pl-11 pr-4 text-base text-foreground placeholder:text-muted-foreground focus-visible:border-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+            className="field-base min-h-13 py-4 pl-11 pr-4 text-base"
           />
         </div>
         <button

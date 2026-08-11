@@ -170,7 +170,7 @@ export function MapaAnoLiturgico() {
   const isFav = favs.includes(tempo.slug);
 
   return (
-    <div className="not-prose border border-gold/20 bg-card/40 backdrop-blur-sm">
+    <div className="not-prose surface-card backdrop-blur-sm">
       {/* Navegação por tempo */}
       <div className="flex flex-wrap gap-1 border-b border-gold/15 p-2">
         {TEMPOS.map((t) => {

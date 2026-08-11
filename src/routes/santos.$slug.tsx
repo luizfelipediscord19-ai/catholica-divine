@@ -200,7 +200,7 @@ function SantoPage() {
               ) : null}
             </figure>
 
-            <div className="border border-gold/20 bg-card p-5">
+            <div className="surface-card p-5">
               <p className="kicker mb-3">
                 Ficha
               </p>

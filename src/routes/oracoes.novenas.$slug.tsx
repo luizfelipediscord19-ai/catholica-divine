@@ -36,14 +36,14 @@ function Page() {
     <div>
       <PageHero eyebrow="Novena" title={n.titulo} intro={n.ocasiao} />
       <Section kicker="Estrutura" title="Como rezar esta novena">
-        <div className="border border-gold/30 bg-card p-8 mb-8">
+        <div className="surface-card p-8 mb-8">
           <p className="kicker mb-2">Oração inicial — todos os dias</p>
           <p className="italic text-foreground/90 leading-relaxed">{n.oracaoInicial}</p>
         </div>
 
         <div className="grid gap-4">
           {n.dias.map((d) => (
-            <div key={d.dia} className="border border-gold/20 bg-card p-6">
+            <div key={d.dia} className="surface-card p-6">
               <div className="flex items-baseline gap-4">
                 <span className="font-display text-3xl text-gold">{d.dia}</span>
                 <div>
@@ -55,7 +55,7 @@ function Page() {
           ))}
         </div>
 
-        <div className="border border-gold/30 bg-card p-8 mt-8">
+        <div className="surface-card p-8 mt-8">
           <p className="kicker mb-2">Oração final — todos os dias</p>
           <p className="italic text-foreground/90 leading-relaxed">{n.oracaoFinal}</p>
         </div>

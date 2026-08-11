@@ -124,7 +124,7 @@ export function NotasCapitulo({
           <button
             type="submit"
             disabled={!podeSalvar}
-            className="min-h-11 px-6 py-2 bg-gold text-deep text-[10px] uppercase tracking-[0.25em] font-bold hover:bg-paper transition-premium disabled:opacity-50"
+            className="btn-base btn-gold px-6 py-2 text-[10px] uppercase tracking-[0.25em] font-bold"
           >
             {salvar.isPending ? "Salvando…" : "Guardar anotação"}
           </button>

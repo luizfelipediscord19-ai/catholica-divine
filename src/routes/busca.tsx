@@ -176,7 +176,7 @@ function BuscaAvancadaPage() {
             value={termo}
             onChange={(e) => setTermo(e.target.value)}
             placeholder="Ex.: misericórdia, primado de Pedro, Eucaristia…"
-            className="flex-1 min-h-11 rounded-md border border-gold/25 bg-card/50 px-4 py-3 text-base text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+            className="flex-1 min-h-11 rounded-md surface-card px-4 py-3 text-base text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
           />
           <button
             type="submit"
