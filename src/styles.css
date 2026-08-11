@@ -76,6 +76,16 @@
   --container-shell: var(--shell);
   --container-shell-wide: var(--shell-wide);
 
+  /* Restaura os containers padrão (evita colisão com --spacing-xs…xl) */
+  --container-3xs: 16rem;
+  --container-2xs: 18rem;
+  --container-xs: 20rem;
+  --container-sm: 24rem;
+  --container-md: 28rem;
+  --container-lg: 32rem;
+  --container-xl: 36rem;
+  --container-2xl: 42rem;
+
 
   /* Premium Animations */
   --animate-reveal: reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
