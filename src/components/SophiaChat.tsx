@@ -91,7 +91,7 @@ export const SophiaChat = memo(({
 
   return (
     <div aria-busy={isLoading} className="surface-card backdrop-blur-xl flex flex-col shadow-2xl shadow-black/50 overflow-hidden" style={{ height }}>
-      <div className={`flex items-center justify-between px-6 py-4 label-btn border-b border-gold/10 ${statusColor}`}>
+      <div className={`flex items-center justify-between gap-4 px-4 py-3.5 sm:px-5 label-btn border-b border-gold/10 ${statusColor}`}>
         <div className="flex items-center gap-3">
           <div className="relative">
             <StatusIcon className={`size-3.5 ${isLoading ? "animate-spin" : ""}`} aria-hidden="true" />
