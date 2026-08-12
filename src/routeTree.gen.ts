@@ -18,6 +18,7 @@ import { Route as SitemapBibliaCapitulosDotxmlRouteImport } from './routes/sitem
 import { Route as SantosRouteImport } from './routes/santos'
 import { Route as SacramentosRouteImport } from './routes/sacramentos'
 import { Route as RedefinirSenhaRouteImport } from './routes/redefinir-senha'
+import { Route as PrivacidadeRouteImport } from './routes/privacidade'
 import { Route as PainelRouteImport } from './routes/painel'
 import { Route as OracoesRouteImport } from './routes/oracoes'
 import { Route as MariaRouteImport } from './routes/maria'
@@ -107,6 +108,11 @@ const SacramentosRoute = SacramentosRouteImport.update({
 const RedefinirSenhaRoute = RedefinirSenhaRouteImport.update({
   id: '/redefinir-senha',
   path: '/redefinir-senha',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacidadeRoute = PrivacidadeRouteImport.update({
+  id: '/privacidade',
+  path: '/privacidade',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PainelRoute = PainelRouteImport.update({
@@ -347,6 +353,7 @@ export interface FileRoutesByFullPath {
   '/maria': typeof MariaRoute
   '/oracoes': typeof OracoesRouteWithChildren
   '/painel': typeof PainelRoute
+  '/privacidade': typeof PrivacidadeRoute
   '/redefinir-senha': typeof RedefinirSenhaRoute
   '/sacramentos': typeof SacramentosRoute
   '/santos': typeof SantosRouteWithChildren
@@ -400,6 +407,7 @@ export interface FileRoutesByTo {
   '/maria': typeof MariaRoute
   '/oracoes': typeof OracoesRouteWithChildren
   '/painel': typeof PainelRoute
+  '/privacidade': typeof PrivacidadeRoute
   '/redefinir-senha': typeof RedefinirSenhaRoute
   '/sacramentos': typeof SacramentosRoute
   '/sitemap-biblia-capitulos.xml': typeof SitemapBibliaCapitulosDotxmlRoute
@@ -453,6 +461,7 @@ export interface FileRoutesById {
   '/maria': typeof MariaRoute
   '/oracoes': typeof OracoesRouteWithChildren
   '/painel': typeof PainelRoute
+  '/privacidade': typeof PrivacidadeRoute
   '/redefinir-senha': typeof RedefinirSenhaRoute
   '/sacramentos': typeof SacramentosRoute
   '/santos': typeof SantosRouteWithChildren
@@ -509,6 +518,7 @@ export interface FileRouteTypes {
     | '/maria'
     | '/oracoes'
     | '/painel'
+    | '/privacidade'
     | '/redefinir-senha'
     | '/sacramentos'
     | '/santos'
@@ -562,6 +572,7 @@ export interface FileRouteTypes {
     | '/maria'
     | '/oracoes'
     | '/painel'
+    | '/privacidade'
     | '/redefinir-senha'
     | '/sacramentos'
     | '/sitemap-biblia-capitulos.xml'
@@ -614,6 +625,7 @@ export interface FileRouteTypes {
     | '/maria'
     | '/oracoes'
     | '/painel'
+    | '/privacidade'
     | '/redefinir-senha'
     | '/sacramentos'
     | '/santos'
@@ -669,6 +681,7 @@ export interface RootRouteChildren {
   MariaRoute: typeof MariaRoute
   OracoesRoute: typeof OracoesRouteWithChildren
   PainelRoute: typeof PainelRoute
+  PrivacidadeRoute: typeof PrivacidadeRoute
   RedefinirSenhaRoute: typeof RedefinirSenhaRoute
   SacramentosRoute: typeof SacramentosRoute
   SantosRoute: typeof SantosRouteWithChildren
@@ -752,6 +765,13 @@ declare module '@tanstack/react-router' {
       path: '/redefinir-senha'
       fullPath: '/redefinir-senha'
       preLoaderRoute: typeof RedefinirSenhaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacidade': {
+      id: '/privacidade'
+      path: '/privacidade'
+      fullPath: '/privacidade'
+      preLoaderRoute: typeof PrivacidadeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/painel': {
@@ -1164,6 +1184,7 @@ const rootRouteChildren: RootRouteChildren = {
   MariaRoute: MariaRoute,
   OracoesRoute: OracoesRouteWithChildren,
   PainelRoute: PainelRoute,
+  PrivacidadeRoute: PrivacidadeRoute,
   RedefinirSenhaRoute: RedefinirSenhaRoute,
   SacramentosRoute: SacramentosRoute,
   SantosRoute: SantosRouteWithChildren,
