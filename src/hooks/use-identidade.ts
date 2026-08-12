@@ -30,6 +30,62 @@ export function lerToken(): string | null {
   }
 }
 
+const CHAVE_DESCONECTADO = "portal-catolico:desconectado";
+
+/**
+ * Ao sair da conta, o painel também deve sair: apagamos o token desta aba e
+ * marcamos o navegador como "desconectado" para não criar uma identidade
+ * anônima nova por baixo. Ao entrar de novo, a reconciliação no servidor
+ * devolve todo o progresso guardado na conta.
+ */
+export function desconectarIdentidadeLocal() {
+  try {
+    window.localStorage.removeItem(CHAVE);
+    window.localStorage.setItem(CHAVE_DESCONECTADO, "1");
+    window.dispatchEvent(new CustomEvent(EVENTO_IDENTIDADE, { detail: null }));
+  } catch {
+    /* navegação privada */
+  }
+}
+
+export function reconectarIdentidadeLocal() {
+  try {
+    window.localStorage.removeItem(CHAVE_DESCONECTADO);
+    window.dispatchEvent(new CustomEvent(EVENTO_IDENTIDADE, { detail: null }));
+  } catch {
+    /* navegação privada */
+  }
+}
+
+function lerDesconectado(): boolean {
+  if (typeof window === "undefined") return false;
+  try {
+    return window.localStorage.getItem(CHAVE_DESCONECTADO) === "1";
+  } catch {
+    return false;
+  }
+}
+
+/** Reativo: o painel usa isso para mostrar o convite de entrar na conta. */
+export function useDesconectado() {
+  const [desconectado, setDesconectado] = useState(false);
+  const [hidratado, setHidratado] = useState(false);
+
+  useEffect(() => {
+    const sincronizar = () => setDesconectado(lerDesconectado());
+    sincronizar();
+    setHidratado(true);
+    window.addEventListener(EVENTO_IDENTIDADE, sincronizar);
+    window.addEventListener("storage", sincronizar);
+    return () => {
+      window.removeEventListener(EVENTO_IDENTIDADE, sincronizar);
+      window.removeEventListener("storage", sincronizar);
+    };
+  }, []);
+
+  return { desconectado, hidratado };
+}
+
 /**
  * Garante um token de identidade sob demanda (ex.: no momento de publicar),
  * sem depender do carregamento em segundo plano.
@@ -66,9 +122,14 @@ export function useIdentidade() {
     };
   }, []);
 
+  const { desconectado, hidratado: hidratadoDesconexao } = useDesconectado();
+  // Depois de sair da conta não recriamos identidade anônima automaticamente:
+  // o painel fica desconectado até a pessoa entrar de novo.
+  const pausado = desconectado && !token;
+
   const query = useQuery({
     queryKey: ["identidade", token],
-    enabled: hidratado,
+    enabled: hidratado && hidratadoDesconexao && !pausado,
     staleTime: 5 * 60 * 1000,
     retry: false,
     queryFn: async () => {
@@ -93,18 +154,20 @@ export function useIdentidade() {
   return {
     token: query.data?.token ?? token,
     identidade: query.data?.identidade ?? null,
-    carregando: !hidratado || query.isPending,
+    carregando: !hidratado || !hidratadoDesconexao || (!pausado && query.isPending),
+    desconectado: pausado,
     esquecer,
   };
 }
 
 /** Painel espiritual completo (XP, streak, leituras, favoritos, conquistas). */
 export function usePainel() {
-  const { token, carregando } = useIdentidade();
+  const { token, carregando, desconectado } = useIdentidade();
   return useQuery({
     queryKey: ["painel", token],
-    enabled: !carregando,
+    enabled: !carregando && !desconectado,
     retry: false,
+
     queryFn: async () => {
       // Garante um token mesmo que o navegador ainda não tenha nenhum.
       const atual = token ?? (await garantirTokenAgora());
