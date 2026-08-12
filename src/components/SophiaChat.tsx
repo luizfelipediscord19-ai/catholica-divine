@@ -91,7 +91,7 @@ export const SophiaChat = memo(({
 
   return (
     <div aria-busy={isLoading} className="surface-card backdrop-blur-xl flex flex-col shadow-2xl shadow-black/50 overflow-hidden" style={{ height }}>
-      <div className={`flex items-center justify-between px-6 py-4 label-btn border-b border-gold/10 ${statusColor}`}>
+      <div className={`flex items-center justify-between gap-4 px-4 py-3.5 sm:px-5 label-btn border-b border-gold/10 ${statusColor}`}>
         <div className="flex items-center gap-3">
           <div className="relative">
             <StatusIcon className={`size-3.5 ${isLoading ? "animate-spin" : ""}`} aria-hidden="true" />
@@ -120,18 +120,18 @@ export const SophiaChat = memo(({
 
 
       {messages.length === 0 ? (
-        <div className="flex-1 overflow-y-auto p-6 flex flex-col gap-6 py-4">
-          <p className="kicker text-center mb-2">Sugestões de estudo</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="flex-1 overflow-y-auto p-4 sm:p-5">
+          <p className="kicker mb-3 text-center">Sugestões de estudo</p>
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
             {suggestions.map((s, i) => (
               <button
                 key={s}
                 onClick={() => handleSubmit(s)}
-                className="group text-left p-6 border border-gold/10 hover:border-gold/40 text-sm text-foreground/80 hover:text-foreground transition-premium bg-gold/[0.02] hover:bg-gold/[0.08] animate-content-fade flex items-start gap-4"
+                className="group flex min-w-0 items-start gap-3 border border-gold/10 bg-gold/[0.02] p-4 text-left text-step--1 text-foreground/80 transition-premium animate-content-fade hover:border-gold/40 hover:bg-gold/[0.08] hover:text-foreground"
                 style={{ animationDelay: `${i * 100}ms` }}
               >
-                <span className="text-gold/40 group-hover:text-gold transition-colors mt-1">†</span>
-                {s}
+                <span className="mt-0.5 shrink-0 text-gold/40 transition-colors group-hover:text-gold">†</span>
+                <span className="min-w-0">{s}</span>
               </button>
             ))}
           </div>
@@ -203,36 +203,38 @@ export const SophiaChat = memo(({
       <div
         id="sophia-estado"
         aria-live="polite"
-        className="border-t border-gold/10 px-6 py-3 bg-black/10 text-xs text-muted-foreground flex flex-wrap items-center gap-x-4 gap-y-2"
+        className="grid gap-1.5 border-t border-gold/10 bg-black/10 px-4 py-3 text-xs text-muted-foreground sm:px-5"
       >
-        {aviso ? <span className="text-destructive-text">{aviso}</span> : null}
-        {isLoading ? <span className="text-gold/80">Enviando…</span> : null}
-        {hasError ? (
-          <span className="flex items-center gap-3">
-            <span className="text-destructive-text">
-              Não foi possível consultar a Sophia agora.
+        <div className="flex min-w-0 flex-wrap items-center gap-x-4 gap-y-1.5">
+          {aviso ? <span className="text-destructive-text">{aviso}</span> : null}
+          {isLoading ? <span className="text-gold/80">Enviando…</span> : null}
+          {hasError ? (
+            <span className="flex min-w-0 flex-wrap items-center gap-x-3 gap-y-1">
+              <span className="text-destructive-text">
+                Não foi possível consultar a Sophia agora.
+              </span>
+              {ultima ? (
+                <button
+                  type="button"
+                  onClick={() => {
+                    clearError?.();
+                    handleSubmit(ultima);
+                  }}
+                  className="text-gold underline decoration-gold/40 underline-offset-4 hover:decoration-gold"
+                >
+                  Tentar novamente
+                </button>
+              ) : null}
             </span>
-            {ultima ? (
-              <button
-                type="button"
-                onClick={() => {
-                  clearError?.();
-                  handleSubmit(ultima);
-                }}
-                className="text-gold underline decoration-gold/40 underline-offset-4 hover:decoration-gold"
-              >
-                Tentar novamente
-              </button>
-            ) : null}
+          ) : null}
+          <span className="ml-auto shrink-0 tabular-nums">
+            {input.length}/{LIMITE}
           </span>
-        ) : null}
-        <span className="ml-auto">
-          {input.length}/{LIMITE}
-        </span>
-        <span className="basis-full text-muted-foreground/80 leading-relaxed">
+        </div>
+        <p className="min-w-0 text-muted-foreground/80 leading-relaxed">
           A Sophia é um auxílio de estudo fiel ao Magistério: não substitui sacerdote, confissão nem
           direção espiritual.
-        </span>
+        </p>
       </div>
     </div>
   );
