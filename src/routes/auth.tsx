@@ -195,7 +195,9 @@ function AuthPage() {
                     maxLength={72}
                     className={inputClass}
                   />
-                  {senhaCurta ? (
+                  {modo === "criar" ? (
+                    <ForcaSenha senha={senha} />
+                  ) : senhaCurta ? (
                     <span className="block text-xs text-muted-foreground/80">
                       Use pelo menos 6 caracteres.
                     </span>
