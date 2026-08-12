@@ -19,6 +19,7 @@ import { HorariosTarefas } from "@/components/portal/HorariosTarefas";
 
 import { useCelebracao } from "@/components/portal/Celebracao";
 import { EscolherSanto } from "@/components/portal/EscolherSanto";
+import { EstadoSessao } from "@/components/portal/EstadoSessao";
 import { useIdentidade, usePainel } from "@/hooks/use-identidade";
 import { useAuth } from "@/hooks/use-auth";
 import { registrarOracaoFn } from "@/lib/portal.functions";
@@ -204,6 +205,8 @@ function PainelPage() {
           </p>
         </div>
       </header>
+
+      <EstadoSessao />
 
       {trocando ? (
         <EscolherSanto

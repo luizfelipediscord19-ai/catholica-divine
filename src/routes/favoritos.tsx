@@ -5,6 +5,7 @@ import { useMemo, useState } from "react";
 import { toast } from "sonner";
 
 import { Painel, Rotulo, botaoGhostClass, inputClass } from "@/components/portal/comuns";
+import { EstadoSessao } from "@/components/portal/EstadoSessao";
 import { useAuth } from "@/hooks/use-auth";
 import { useIdentidade, usePainel } from "@/hooks/use-identidade";
 import { LIVROS, getLivro } from "@/lib/data/biblia";
@@ -182,6 +183,9 @@ function FavoritosPage() {
           Pesquise por palavra ou filtre por livro; cada item leva de volta ao capítulo.
         </p>
       </header>
+
+      <EstadoSessao />
+
 
       <div className="flex flex-wrap items-center gap-3">
         {(["favoritos", "notas"] as const).map((v) => (
