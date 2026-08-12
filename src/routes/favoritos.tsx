@@ -183,6 +183,9 @@ function FavoritosPage() {
         </p>
       </header>
 
+      <EstadoSessao />
+
+
       <div className="flex flex-wrap items-center gap-3">
         {(["favoritos", "notas"] as const).map((v) => (
           <button
