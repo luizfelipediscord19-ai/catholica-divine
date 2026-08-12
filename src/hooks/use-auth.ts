@@ -3,6 +3,10 @@ import type { Session, User } from "@supabase/supabase-js";
 import { useQueryClient } from "@tanstack/react-query";
 
 import { supabase } from "@/integrations/supabase/client";
+import {
+  desconectarIdentidadeLocal,
+  reconectarIdentidadeLocal,
+} from "@/hooks/use-identidade";
 
 /**
  * Sessão de e-mail/senha do portal. A identidade anônima deste navegador é
