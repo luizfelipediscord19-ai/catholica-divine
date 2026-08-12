@@ -214,6 +214,13 @@ function Home() {
         </div>
       </section>
 
+      {/* Retomar leitura */}
+      <section className="bg-background relative z-10">
+        <div className="shell pt-block-sm">
+          <RetomarLeitura />
+        </div>
+      </section>
+
       {/* Daily */}
       <section aria-labelledby="hoje-na-igreja" className="bg-background relative z-10">
         <div className="shell pt-block-sm pb-[var(--space-sm)]">
