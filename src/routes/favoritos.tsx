@@ -85,34 +85,88 @@ function FavoritosPage() {
     return LIVROS.filter((l) => slugs.has(l.slug));
   }, [dados]);
 
-  if (desconectado && !autenticado) {
+  if (desconectado) {
     return (
       <div className="shell py-block space-y-6">
         <h1 className="title-page text-foreground leading-tight">Biblioteca desconectada</h1>
         <p className="text-sm text-muted-foreground font-light max-w-[36rem] leading-relaxed">
-          Você saiu da sua conta, então seus favoritos e anotações também foram desconectados
-          deste navegador. Entre de novo com a mesma conta e tudo volta exatamente como estava.
+          {autenticado
+            ? "Sua conta já está ativa, mas esta aba ainda não reconectou a biblioteca. Recarregue a página para trazer de volta favoritos e anotações."
+            : "Você saiu da sua conta, então seus favoritos e anotações também foram desconectados deste navegador. Entre de novo com a mesma conta e tudo volta exatamente como estava."}
         </p>
-        <Link to="/auth" className="btn-base btn-gold px-6 py-3 label-btn inline-flex w-fit">
-          Entrar na minha conta
-        </Link>
+        <div className="flex flex-wrap gap-3">
+          {autenticado ? (
+            <button
+              type="button"
+              onClick={() => window.location.reload()}
+              className="btn-base btn-gold px-6 py-3 label-btn inline-flex w-fit"
+            >
+              Recarregar biblioteca
+            </button>
+          ) : (
+            <Link to="/auth" className="btn-base btn-gold px-6 py-3 label-btn inline-flex w-fit">
+              Entrar na minha conta
+            </Link>
+          )}
+          <Link
+            to="/biblia"
+            className="btn-base btn-outline-gold px-6 py-3 label-btn inline-flex w-fit"
+          >
+            Ler a Bíblia
+          </Link>
+        </div>
       </div>
     );
   }
 
-  if (carregando || painel.isPending) {
+  if (!dados && (carregando || painel.isPending || painel.isFetching)) {
     return (
-      <p className="shell py-block text-sm text-muted-foreground">
-        Abrindo sua biblioteca pessoal…
-      </p>
+      <div className="shell py-block space-y-6" aria-busy="true">
+        <h1 className="title-page text-foreground leading-tight">Favoritos e anotações</h1>
+        <p className="text-sm text-muted-foreground font-light max-w-[36rem] leading-relaxed">
+          Abrindo sua biblioteca pessoal…
+        </p>
+        <div className="grid gap-4 md:grid-cols-2" aria-hidden="true">
+          {[0, 1, 2, 3].map((i) => (
+            <div key={i} className="h-28 animate-pulse rounded-xl border border-gold/15 bg-card/60" />
+          ))}
+        </div>
+        <p className="text-sm text-muted-foreground font-light">
+          Demorando?{" "}
+          <Link to="/biblia" className="text-gold hover:underline">
+            Volte à Bíblia
+          </Link>{" "}
+          ou{" "}
+          <Link to="/auth" className="text-gold hover:underline">
+            entre na sua conta
+          </Link>{" "}
+          para sincronizar seus itens.
+        </p>
+      </div>
     );
   }
 
   if (!dados) {
     return (
-      <p className="shell py-block text-sm text-muted-foreground">
-        Não foi possível carregar seus itens agora. Recarregue a página.
-      </p>
+      <div className="shell py-block space-y-6">
+        <h1 className="title-page text-foreground leading-tight">Biblioteca indisponível</h1>
+        <p className="text-sm text-muted-foreground font-light max-w-[36rem] leading-relaxed">
+          Não conseguimos abrir seus favoritos e anotações agora. Tente novamente; se persistir,
+          entre na sua conta para recuperar tudo o que já foi guardado.
+        </p>
+        <div className="flex flex-wrap gap-3">
+          <button
+            type="button"
+            onClick={() => void painel.refetch()}
+            className="btn-base btn-gold px-6 py-3 label-btn inline-flex w-fit"
+          >
+            Tentar de novo
+          </button>
+          <Link to="/auth" className="btn-base btn-outline-gold px-6 py-3 label-btn inline-flex w-fit">
+            Entrar na minha conta
+          </Link>
+        </div>
+      </div>
     );
   }
 
