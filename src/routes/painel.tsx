@@ -118,13 +118,8 @@ function PainelPage() {
           >
             Tentar de novo
           </button>
-          <Link
-            to="/diagnostico-backend"
-            className="min-h-11 px-5 inline-flex items-center label-btn border border-border text-muted-foreground hover:text-gold hover:border-gold transition-colors"
-          >
-            Ver diagnóstico
-          </Link>
         </div>
+
       </div>
     );
   }
