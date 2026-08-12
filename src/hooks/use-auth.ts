@@ -20,7 +20,15 @@ export function useAuth() {
       if (!vivo) return;
       setSession(nova);
       setCarregando(false);
-      if (evento === "SIGNED_IN" || evento === "SIGNED_OUT" || evento === "USER_UPDATED") {
+      if (evento === "SIGNED_IN" || evento === "USER_UPDATED") {
+        // Ao voltar para a mesma conta, o navegador volta a montar a
+        // identidade — o servidor devolve todo o progresso guardado.
+        reconectarIdentidadeLocal();
+        void queryClient.invalidateQueries({ queryKey: ["identidade"] });
+        void queryClient.invalidateQueries({ queryKey: ["painel"] });
+      }
+      if (evento === "SIGNED_OUT") {
+        desconectarIdentidadeLocal();
         void queryClient.invalidateQueries({ queryKey: ["painel"] });
       }
     });
@@ -41,8 +49,11 @@ export function useAuth() {
     await queryClient.cancelQueries();
     queryClient.clear();
     await supabase.auth.signOut();
+    // O painel espiritual sai junto com a conta: o token desta aba é apagado.
+    desconectarIdentidadeLocal();
     setSession(null);
   }, [queryClient]);
+
 
   const user: User | null = session?.user ?? null;
 
