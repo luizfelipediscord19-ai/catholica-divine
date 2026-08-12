@@ -122,9 +122,14 @@ export function useIdentidade() {
     };
   }, []);
 
+  const { desconectado, hidratado: hidratadoDesconexao } = useDesconectado();
+  // Depois de sair da conta não recriamos identidade anônima automaticamente:
+  // o painel fica desconectado até a pessoa entrar de novo.
+  const pausado = desconectado && !token;
+
   const query = useQuery({
     queryKey: ["identidade", token],
-    enabled: hidratado,
+    enabled: hidratado && hidratadoDesconexao && !pausado,
     staleTime: 5 * 60 * 1000,
     retry: false,
     queryFn: async () => {
@@ -149,18 +154,20 @@ export function useIdentidade() {
   return {
     token: query.data?.token ?? token,
     identidade: query.data?.identidade ?? null,
-    carregando: !hidratado || query.isPending,
+    carregando: !hidratado || !hidratadoDesconexao || (!pausado && query.isPending),
+    desconectado: pausado,
     esquecer,
   };
 }
 
 /** Painel espiritual completo (XP, streak, leituras, favoritos, conquistas). */
 export function usePainel() {
-  const { token, carregando } = useIdentidade();
+  const { token, carregando, desconectado } = useIdentidade();
   return useQuery({
     queryKey: ["painel", token],
-    enabled: !carregando,
+    enabled: !carregando && !desconectado,
     retry: false,
+
     queryFn: async () => {
       // Garante um token mesmo que o navegador ainda não tenha nenhum.
       const atual = token ?? (await garantirTokenAgora());
