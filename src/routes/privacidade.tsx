@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
+import { RegistroConsentimento } from "../components/portal/RegistroConsentimento";
 
 const BASE = "https://portalcatolico.vercel.app";
 
@@ -146,6 +147,8 @@ function PrivacidadePage() {
           </section>
         ))}
       </div>
+
+      <RegistroConsentimento />
 
       <section className="space-y-3">
         <h2 className="font-display text-step-2 text-foreground leading-snug">9. Contato</h2>

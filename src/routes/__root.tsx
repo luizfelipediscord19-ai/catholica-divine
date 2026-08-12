@@ -19,6 +19,7 @@ import { CelebracaoProvider } from "../components/portal/Celebracao";
 import { InstalarApp } from "../components/portal/InstalarApp";
 import { AtualizacaoApp } from "../components/portal/AtualizacaoApp";
 import { TarefasDoDia } from "../components/portal/TarefasDoDia";
+import { ConsentimentoLGPD } from "../components/portal/ConsentimentoLGPD";
 import { NotificacoesProvider } from "../hooks/use-notificacoes";
 import { SCRIPT_TEMA } from "../lib/tema";
 
@@ -198,6 +199,7 @@ function RootComponent() {
           <div data-leitura-oculto>
             <TarefasDoDia />
           </div>
+          <ConsentimentoLGPD />
 
           <Toaster />
         </div>
