@@ -58,7 +58,7 @@ function xpDoNivel(nivel: number) {
 }
 
 function PainelPage() {
-  const { carregando, esquecer } = useIdentidade();
+  const { carregando, esquecer, desconectado } = useIdentidade();
   const { autenticado } = useAuth();
   const painel = usePainel();
   const [trocando, setTrocando] = useState(false);
