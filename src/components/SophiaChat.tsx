@@ -141,6 +141,7 @@ export const SophiaChat = memo(({
       )}
 
       <form
+      <form
         onSubmit={onFormSubmit}
         className="flex items-center gap-2 border-t border-gold/10 bg-muted/20 p-4 sm:gap-3 sm:p-5"
       >
