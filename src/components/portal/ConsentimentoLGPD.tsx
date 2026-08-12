@@ -32,6 +32,17 @@ export function ConsentimentoLGPD() {
     }
   }, [pendente, registro]);
 
+  useEffect(() => {
+    if (!aberto) return;
+    const aoTeclar = (e: KeyboardEvent) => {
+      if (e.key !== "Escape") return;
+      if (registro) setAberto(false);
+      else somenteEssenciais();
+    };
+    window.addEventListener("keydown", aoTeclar);
+    return () => window.removeEventListener("keydown", aoTeclar);
+  }, [aberto, registro, somenteEssenciais]);
+
   if (!aberto) return null;
 
   const decidido = registro !== null;
@@ -44,20 +55,26 @@ export function ConsentimentoLGPD() {
       className="fixed inset-x-0 bottom-0 z-[95] px-3 pb-3 sm:px-5 sm:pb-5 print:hidden"
       data-leitura-oculto
     >
-      <div className="mx-auto w-full max-w-[46rem] rounded-2xl border border-gold/25 bg-card/95 p-4 shadow-2xl backdrop-blur-md sm:p-6">
+      <div className="mx-auto w-full max-w-[46rem] max-h-[80svh] overflow-y-auto overscroll-contain rounded-2xl border border-gold/25 bg-card/95 p-4 shadow-2xl backdrop-blur-md sm:p-6">
         <div className="flex items-start gap-3">
           <ShieldCheck className="mt-0.5 size-5 shrink-0 text-gold" aria-hidden="true" />
           <div className="min-w-0 flex-1 space-y-2">
             <h2
               id="consentimento-titulo"
-              className="font-display text-step-1 leading-snug text-foreground"
+              className="font-display text-step-0 leading-snug text-foreground sm:text-step-1"
             >
               Privacidade e consentimento
             </h2>
             <p className="text-sm font-light leading-relaxed text-muted-foreground">
-              Guardamos no seu aparelho apenas o necessário para o portal funcionar e para devolver
-              seu progresso espiritual. Você escolhe o que permitir, e pode mudar quando quiser.
-              Detalhes na{" "}
+              <span className="hidden sm:inline">
+                Guardamos no seu aparelho apenas o necessário para o portal funcionar e para
+                devolver seu progresso espiritual. Você escolhe o que permitir, e pode mudar quando
+                quiser. Detalhes na{" "}
+              </span>
+              <span className="sm:hidden">
+                Guardamos no seu aparelho só o necessário para o portal funcionar. Você escolhe o
+                que permitir. Detalhes na{" "}
+              </span>
               <Link to="/privacidade" className="text-gold hover:underline">
                 Política de Privacidade
               </Link>{" "}
