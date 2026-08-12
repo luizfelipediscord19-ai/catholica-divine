@@ -5,6 +5,7 @@ import { useMemo, useState } from "react";
 import { toast } from "sonner";
 
 import { Painel, Rotulo, botaoGhostClass, inputClass } from "@/components/portal/comuns";
+import { useAuth } from "@/hooks/use-auth";
 import { useIdentidade, usePainel } from "@/hooks/use-identidade";
 import { LIVROS, getLivro } from "@/lib/data/biblia";
 import { apagarNotaFn } from "@/lib/portal.functions";
@@ -46,7 +47,8 @@ function nomeLivro(slug: string) {
 type Aba = "favoritos" | "notas";
 
 function FavoritosPage() {
-  const { carregando } = useIdentidade();
+  const { carregando, desconectado } = useIdentidade();
+  const { autenticado } = useAuth();
   const painel = usePainel();
   const [aba, setAba] = useState<Aba>("favoritos");
   const [busca, setBusca] = useState("");
@@ -82,6 +84,21 @@ function FavoritosPage() {
     ]);
     return LIVROS.filter((l) => slugs.has(l.slug));
   }, [dados]);
+
+  if (desconectado && !autenticado) {
+    return (
+      <div className="shell py-block space-y-6">
+        <h1 className="title-page text-foreground leading-tight">Biblioteca desconectada</h1>
+        <p className="text-sm text-muted-foreground font-light max-w-[36rem] leading-relaxed">
+          Você saiu da sua conta, então seus favoritos e anotações também foram desconectados
+          deste navegador. Entre de novo com a mesma conta e tudo volta exatamente como estava.
+        </p>
+        <Link to="/auth" className="btn-base btn-gold px-6 py-3 label-btn inline-flex w-fit">
+          Entrar na minha conta
+        </Link>
+      </div>
+    );
+  }
 
   if (carregando || painel.isPending) {
     return (

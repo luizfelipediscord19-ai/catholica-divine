@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TermosRouteImport } from './routes/termos'
 import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SitemapSantosDotxmlRouteImport } from './routes/sitemap-santos[.]xml'
@@ -18,6 +19,7 @@ import { Route as SitemapBibliaCapitulosDotxmlRouteImport } from './routes/sitem
 import { Route as SantosRouteImport } from './routes/santos'
 import { Route as SacramentosRouteImport } from './routes/sacramentos'
 import { Route as RedefinirSenhaRouteImport } from './routes/redefinir-senha'
+import { Route as PrivacidadeRouteImport } from './routes/privacidade'
 import { Route as PainelRouteImport } from './routes/painel'
 import { Route as OracoesRouteImport } from './routes/oracoes'
 import { Route as MariaRouteImport } from './routes/maria'
@@ -62,6 +64,11 @@ import { Route as BibliaLivroCapituloRouteImport } from './routes/biblia.$livro.
 import { Route as ApiPublicLembretesRouteImport } from './routes/api/public/lembretes'
 import { Route as ApiPublicCspReportRouteImport } from './routes/api/public/csp-report'
 
+const TermosRoute = TermosRouteImport.update({
+  id: '/termos',
+  path: '/termos',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SobreRoute = SobreRouteImport.update({
   id: '/sobre',
   path: '/sobre',
@@ -107,6 +114,11 @@ const SacramentosRoute = SacramentosRouteImport.update({
 const RedefinirSenhaRoute = RedefinirSenhaRouteImport.update({
   id: '/redefinir-senha',
   path: '/redefinir-senha',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacidadeRoute = PrivacidadeRouteImport.update({
+  id: '/privacidade',
+  path: '/privacidade',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PainelRoute = PainelRouteImport.update({
@@ -347,6 +359,7 @@ export interface FileRoutesByFullPath {
   '/maria': typeof MariaRoute
   '/oracoes': typeof OracoesRouteWithChildren
   '/painel': typeof PainelRoute
+  '/privacidade': typeof PrivacidadeRoute
   '/redefinir-senha': typeof RedefinirSenhaRoute
   '/sacramentos': typeof SacramentosRoute
   '/santos': typeof SantosRouteWithChildren
@@ -356,6 +369,7 @@ export interface FileRoutesByFullPath {
   '/sitemap-santos.xml': typeof SitemapSantosDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
+  '/termos': typeof TermosRoute
   '/api/chat': typeof ApiChatRoute
   '/api/transcrever': typeof ApiTranscreverRoute
   '/biblia/$livro': typeof BibliaLivroRouteWithChildren
@@ -400,6 +414,7 @@ export interface FileRoutesByTo {
   '/maria': typeof MariaRoute
   '/oracoes': typeof OracoesRouteWithChildren
   '/painel': typeof PainelRoute
+  '/privacidade': typeof PrivacidadeRoute
   '/redefinir-senha': typeof RedefinirSenhaRoute
   '/sacramentos': typeof SacramentosRoute
   '/sitemap-biblia-capitulos.xml': typeof SitemapBibliaCapitulosDotxmlRoute
@@ -408,6 +423,7 @@ export interface FileRoutesByTo {
   '/sitemap-santos.xml': typeof SitemapSantosDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
+  '/termos': typeof TermosRoute
   '/api/chat': typeof ApiChatRoute
   '/api/transcrever': typeof ApiTranscreverRoute
   '/biblia/leituras': typeof BibliaLeiturasRoute
@@ -453,6 +469,7 @@ export interface FileRoutesById {
   '/maria': typeof MariaRoute
   '/oracoes': typeof OracoesRouteWithChildren
   '/painel': typeof PainelRoute
+  '/privacidade': typeof PrivacidadeRoute
   '/redefinir-senha': typeof RedefinirSenhaRoute
   '/sacramentos': typeof SacramentosRoute
   '/santos': typeof SantosRouteWithChildren
@@ -462,6 +479,7 @@ export interface FileRoutesById {
   '/sitemap-santos.xml': typeof SitemapSantosDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
+  '/termos': typeof TermosRoute
   '/api/chat': typeof ApiChatRoute
   '/api/transcrever': typeof ApiTranscreverRoute
   '/biblia/$livro': typeof BibliaLivroRouteWithChildren
@@ -509,6 +527,7 @@ export interface FileRouteTypes {
     | '/maria'
     | '/oracoes'
     | '/painel'
+    | '/privacidade'
     | '/redefinir-senha'
     | '/sacramentos'
     | '/santos'
@@ -518,6 +537,7 @@ export interface FileRouteTypes {
     | '/sitemap-santos.xml'
     | '/sitemap.xml'
     | '/sobre'
+    | '/termos'
     | '/api/chat'
     | '/api/transcrever'
     | '/biblia/$livro'
@@ -562,6 +582,7 @@ export interface FileRouteTypes {
     | '/maria'
     | '/oracoes'
     | '/painel'
+    | '/privacidade'
     | '/redefinir-senha'
     | '/sacramentos'
     | '/sitemap-biblia-capitulos.xml'
@@ -570,6 +591,7 @@ export interface FileRouteTypes {
     | '/sitemap-santos.xml'
     | '/sitemap.xml'
     | '/sobre'
+    | '/termos'
     | '/api/chat'
     | '/api/transcrever'
     | '/biblia/leituras'
@@ -614,6 +636,7 @@ export interface FileRouteTypes {
     | '/maria'
     | '/oracoes'
     | '/painel'
+    | '/privacidade'
     | '/redefinir-senha'
     | '/sacramentos'
     | '/santos'
@@ -623,6 +646,7 @@ export interface FileRouteTypes {
     | '/sitemap-santos.xml'
     | '/sitemap.xml'
     | '/sobre'
+    | '/termos'
     | '/api/chat'
     | '/api/transcrever'
     | '/biblia/$livro'
@@ -669,6 +693,7 @@ export interface RootRouteChildren {
   MariaRoute: typeof MariaRoute
   OracoesRoute: typeof OracoesRouteWithChildren
   PainelRoute: typeof PainelRoute
+  PrivacidadeRoute: typeof PrivacidadeRoute
   RedefinirSenhaRoute: typeof RedefinirSenhaRoute
   SacramentosRoute: typeof SacramentosRoute
   SantosRoute: typeof SantosRouteWithChildren
@@ -678,6 +703,7 @@ export interface RootRouteChildren {
   SitemapSantosDotxmlRoute: typeof SitemapSantosDotxmlRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SobreRoute: typeof SobreRoute
+  TermosRoute: typeof TermosRoute
   ApiChatRoute: typeof ApiChatRoute
   ApiTranscreverRoute: typeof ApiTranscreverRoute
   ForumSlugRoute: typeof ForumSlugRoute
@@ -691,6 +717,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/termos': {
+      id: '/termos'
+      path: '/termos'
+      fullPath: '/termos'
+      preLoaderRoute: typeof TermosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sobre': {
       id: '/sobre'
       path: '/sobre'
@@ -752,6 +785,13 @@ declare module '@tanstack/react-router' {
       path: '/redefinir-senha'
       fullPath: '/redefinir-senha'
       preLoaderRoute: typeof RedefinirSenhaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacidade': {
+      id: '/privacidade'
+      path: '/privacidade'
+      fullPath: '/privacidade'
+      preLoaderRoute: typeof PrivacidadeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/painel': {
@@ -1164,6 +1204,7 @@ const rootRouteChildren: RootRouteChildren = {
   MariaRoute: MariaRoute,
   OracoesRoute: OracoesRouteWithChildren,
   PainelRoute: PainelRoute,
+  PrivacidadeRoute: PrivacidadeRoute,
   RedefinirSenhaRoute: RedefinirSenhaRoute,
   SacramentosRoute: SacramentosRoute,
   SantosRoute: SantosRouteWithChildren,
@@ -1173,6 +1214,7 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapSantosDotxmlRoute: SitemapSantosDotxmlRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SobreRoute: SobreRoute,
+  TermosRoute: TermosRoute,
   ApiChatRoute: ApiChatRoute,
   ApiTranscreverRoute: ApiTranscreverRoute,
   ForumSlugRoute: ForumSlugRoute,
