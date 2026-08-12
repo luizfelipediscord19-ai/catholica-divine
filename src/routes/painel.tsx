@@ -205,6 +205,8 @@ function PainelPage() {
         </div>
       </header>
 
+      <EstadoSessao />
+
       {trocando ? (
         <EscolherSanto
           atual={dados.identidade.santoSlug}
