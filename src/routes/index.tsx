@@ -9,6 +9,7 @@ import { liturgiaQueryOptions } from "../lib/liturgia/query";
 import { COR_CLASSE } from "../lib/liturgia/calendario";
 import { ScrollReveal } from "../components/ScrollReveal";
 import { BuscaAprender, ComeceAqui } from "../components/portal/AprenderHome";
+import { RetomarLeitura } from "../components/portal/RetomarLeitura";
 
 
 

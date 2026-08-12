@@ -5,6 +5,7 @@ import manuscrito from "../assets/manuscrito.jpg";
 import { useState } from "react";
 import { Search } from "lucide-react";
 import { ContinuarLeitura } from "@/components/portal/ContinuarLeitura";
+import { RetomarLeitura } from "@/components/portal/RetomarLeitura";
 
 
 export const Route = createFileRoute("/biblia/")({
@@ -56,6 +57,7 @@ function Page() {
       />
 
       <div className="shell -mt-6 md:-mt-10">
+        <RetomarLeitura className="mb-6" />
         <ContinuarLeitura />
       </div>
 
