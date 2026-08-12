@@ -153,7 +153,17 @@ export const IMAGENS_SANTOS: Record<string, ImagemSanto> = {
   "ns-aparecida": { url: "https://upload.wikimedia.org/wikipedia/commons/8/8a/NS_Aparecida.png", credito: "pt.wikipedia:Nossa Senhora Aparecida" },
 };
 
-/** Imagem própria do santo, quando existe. */
+/**
+ * Imagem própria do santo, quando existe.
+ *
+ * A cópia interna (`/__l5e/...`) só existe no ambiente de pré-visualização da
+ * Lovable; na hospedagem de produção ela devolve 404 e o retrato aparecia
+ * vazio. Por isso a origem pública de domínio público entra como fonte
+ * primária e a cópia interna fica como reserva.
+ */
 export function imagemSanto(slug: string): ImagemSanto | undefined {
-  return IMAGENS_SANTOS[slug];
+  const item = IMAGENS_SANTOS[slug];
+  if (!item) return undefined;
+  if (!item.remoto) return item;
+  return { url: item.remoto, remoto: item.url, credito: item.credito };
 }

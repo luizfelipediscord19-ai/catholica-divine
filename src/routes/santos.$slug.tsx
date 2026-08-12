@@ -15,7 +15,11 @@ export const Route = createFileRoute("/santos/$slug")({
     const title = `${view.nome} — Portal Católico`;
     const desc = (view.resumo ?? "Vida, virtudes e ensinamentos do santo.").slice(0, 160);
     const url = `${SITE}/santos/${params.slug}`;
-    const imagem = view.imagem ? `${SITE}${view.imagem}` : undefined;
+    const imagem = view.imagem
+      ? view.imagem.startsWith("http")
+        ? view.imagem
+        : `${SITE}${view.imagem}`
+      : undefined;
 
     const pessoa: Record<string, unknown> = {
       "@context": "https://schema.org",
