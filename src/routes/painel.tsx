@@ -70,6 +70,27 @@ function PainelPage() {
   }, [nivelAtual, celebrarNivel]);
 
 
+  if (desconectado && !autenticado) {
+    return (
+      <div className="shell py-block space-y-6">
+        <h1 className="font-display text-step-4 text-foreground leading-tight">
+          Painel desconectado
+        </h1>
+        <p className="text-sm text-muted-foreground font-light max-w-[36rem]">
+          Você saiu da sua conta, então seu painel espiritual também foi desconectado deste
+          navegador. Entre novamente com a mesma conta para recuperar sequência de oração,
+          diário, leituras, favoritos e conquistas — tudo continua guardado.
+        </p>
+        <Link
+          to="/auth"
+          className="btn-base btn-gold px-6 py-3 label-btn inline-flex w-fit"
+        >
+          Entrar na minha conta
+        </Link>
+      </div>
+    );
+  }
+
   if (carregando || painel.isPending) {
     return (
       <p className="shell py-block text-sm text-muted-foreground">
@@ -77,6 +98,7 @@ function PainelPage() {
       </p>
     );
   }
+
 
   const dados = painel.data;
   if (!dados || painel.isError) {
