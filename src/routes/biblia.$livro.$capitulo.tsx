@@ -14,6 +14,7 @@ import {
   useCapituloPessoal,
 } from "../components/portal/AcoesCapitulo";
 import { NotasCapitulo } from "../components/portal/NotasCapitulo";
+import { useMarcadorCapitulo } from "../components/portal/RetomarLeitura";
 
 import { capituloLocal, temTextoLocal } from "../lib/biblia/local";
 
@@ -101,6 +102,7 @@ function Page() {
   const almeidaTemLivro = temTextoLocal("almeida", livro.slug);
   const [versao, setVersao] = useState<VersaoId>(almeidaTemLivro ? "almeida" : "vulgata");
   const pessoal = useCapituloPessoal(livro.slug, capitulo);
+  const { versiculoSalvo } = useMarcadorCapitulo(livro.slug, livro.nome, capitulo);
   const anterior = capitulo > 1 ? capitulo - 1 : null;
   const proximo = capitulo < livro.capitulos ? capitulo + 1 : null;
   const versaoAtual = VERSOES.find((v) => v.id === versao)!;
@@ -234,6 +236,16 @@ function Page() {
           )}
         </div>
       </form>
+
+      {versiculoSalvo && !vi && (
+        <a
+          data-leitura-oculto
+          href={`#v${versiculoSalvo}`}
+          className="mt-6 inline-flex items-center gap-2 kicker text-gold hover:underline"
+        >
+          Retomar no versículo {versiculoSalvo}
+        </a>
+      )}
 
       <div data-leitura-oculto>
       <BarraLeitura
