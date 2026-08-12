@@ -30,6 +30,62 @@ export function lerToken(): string | null {
   }
 }
 
+const CHAVE_DESCONECTADO = "portal-catolico:desconectado";
+
+/**
+ * Ao sair da conta, o painel também deve sair: apagamos o token desta aba e
+ * marcamos o navegador como "desconectado" para não criar uma identidade
+ * anônima nova por baixo. Ao entrar de novo, a reconciliação no servidor
+ * devolve todo o progresso guardado na conta.
+ */
+export function desconectarIdentidadeLocal() {
+  try {
+    window.localStorage.removeItem(CHAVE);
+    window.localStorage.setItem(CHAVE_DESCONECTADO, "1");
+    window.dispatchEvent(new CustomEvent(EVENTO_IDENTIDADE, { detail: null }));
+  } catch {
+    /* navegação privada */
+  }
+}
+
+export function reconectarIdentidadeLocal() {
+  try {
+    window.localStorage.removeItem(CHAVE_DESCONECTADO);
+    window.dispatchEvent(new CustomEvent(EVENTO_IDENTIDADE, { detail: null }));
+  } catch {
+    /* navegação privada */
+  }
+}
+
+function lerDesconectado(): boolean {
+  if (typeof window === "undefined") return false;
+  try {
+    return window.localStorage.getItem(CHAVE_DESCONECTADO) === "1";
+  } catch {
+    return false;
+  }
+}
+
+/** Reativo: o painel usa isso para mostrar o convite de entrar na conta. */
+export function useDesconectado() {
+  const [desconectado, setDesconectado] = useState(false);
+  const [hidratado, setHidratado] = useState(false);
+
+  useEffect(() => {
+    const sincronizar = () => setDesconectado(lerDesconectado());
+    sincronizar();
+    setHidratado(true);
+    window.addEventListener(EVENTO_IDENTIDADE, sincronizar);
+    window.addEventListener("storage", sincronizar);
+    return () => {
+      window.removeEventListener(EVENTO_IDENTIDADE, sincronizar);
+      window.removeEventListener("storage", sincronizar);
+    };
+  }, []);
+
+  return { desconectado, hidratado };
+}
+
 /**
  * Garante um token de identidade sob demanda (ex.: no momento de publicar),
  * sem depender do carregamento em segundo plano.
