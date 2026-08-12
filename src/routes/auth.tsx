@@ -244,3 +244,41 @@ function AuthPage() {
     </div>
   );
 }
+
+/** Regras legíveis + medidor de força, sem bloquear o cadastro. */
+function ForcaSenha({ senha }: { senha: string }) {
+  const regras = [
+    { rotulo: "Pelo menos 6 caracteres", ok: senha.length >= 6 },
+    { rotulo: "8 caracteres ou mais", ok: senha.length >= 8 },
+    { rotulo: "Uma letra e um número", ok: /[a-zA-Z]/.test(senha) && /\d/.test(senha) },
+    { rotulo: "Um símbolo (opcional)", ok: /[^a-zA-Z0-9]/.test(senha) },
+  ];
+  const pontos = regras.filter((r) => r.ok).length;
+  const nivel = senha.length === 0 ? 0 : Math.max(pontos, 1);
+  const nome = ["", "Fraca", "Razoável", "Boa", "Forte"][nivel] ?? "";
+
+  return (
+    <div className="space-y-2 pt-1">
+      <div className="flex items-center gap-2" aria-hidden="true">
+        {[1, 2, 3, 4].map((i) => (
+          <span
+            key={i}
+            className={`h-1 flex-1 transition-premium ${
+              i <= nivel ? "bg-gold" : "bg-gold/15"
+            }`}
+          />
+        ))}
+      </div>
+      <p className="text-xs text-muted-foreground/80" aria-live="polite">
+        {senha.length === 0 ? "Escolha uma senha de pelo menos 6 caracteres." : `Força: ${nome}`}
+      </p>
+      <ul className="text-xs text-muted-foreground/80 space-y-1">
+        {regras.map((r) => (
+          <li key={r.rotulo} className={r.ok ? "text-gold/90" : undefined}>
+            {r.ok ? "✓" : "•"} {r.rotulo}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
