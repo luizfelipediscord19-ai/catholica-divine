@@ -203,36 +203,38 @@ export const SophiaChat = memo(({
       <div
         id="sophia-estado"
         aria-live="polite"
-        className="border-t border-gold/10 px-6 py-3 bg-black/10 text-xs text-muted-foreground flex flex-wrap items-center gap-x-4 gap-y-2"
+        className="grid gap-1.5 border-t border-gold/10 bg-black/10 px-4 py-3 text-xs text-muted-foreground sm:px-5"
       >
-        {aviso ? <span className="text-destructive-text">{aviso}</span> : null}
-        {isLoading ? <span className="text-gold/80">Enviando…</span> : null}
-        {hasError ? (
-          <span className="flex items-center gap-3">
-            <span className="text-destructive-text">
-              Não foi possível consultar a Sophia agora.
+        <div className="flex min-w-0 flex-wrap items-center gap-x-4 gap-y-1.5">
+          {aviso ? <span className="text-destructive-text">{aviso}</span> : null}
+          {isLoading ? <span className="text-gold/80">Enviando…</span> : null}
+          {hasError ? (
+            <span className="flex min-w-0 flex-wrap items-center gap-x-3 gap-y-1">
+              <span className="text-destructive-text">
+                Não foi possível consultar a Sophia agora.
+              </span>
+              {ultima ? (
+                <button
+                  type="button"
+                  onClick={() => {
+                    clearError?.();
+                    handleSubmit(ultima);
+                  }}
+                  className="text-gold underline decoration-gold/40 underline-offset-4 hover:decoration-gold"
+                >
+                  Tentar novamente
+                </button>
+              ) : null}
             </span>
-            {ultima ? (
-              <button
-                type="button"
-                onClick={() => {
-                  clearError?.();
-                  handleSubmit(ultima);
-                }}
-                className="text-gold underline decoration-gold/40 underline-offset-4 hover:decoration-gold"
-              >
-                Tentar novamente
-              </button>
-            ) : null}
+          ) : null}
+          <span className="ml-auto shrink-0 tabular-nums">
+            {input.length}/{LIMITE}
           </span>
-        ) : null}
-        <span className="ml-auto">
-          {input.length}/{LIMITE}
-        </span>
-        <span className="basis-full text-muted-foreground/80 leading-relaxed">
+        </div>
+        <p className="min-w-0 text-muted-foreground/80 leading-relaxed">
           A Sophia é um auxílio de estudo fiel ao Magistério: não substitui sacerdote, confissão nem
           direção espiritual.
-        </span>
+        </p>
       </div>
     </div>
   );
