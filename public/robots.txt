@@ -5,8 +5,6 @@ Disallow: /favoritos
 Disallow: /auth
 Disallow: /redefinir-senha
 Disallow: /email-confirmado
-Disallow: /diagnostico-backend
-Disallow: /sophia-diagnostico
 Disallow: /api/
 
 User-agent: GPTBot

@@ -9,7 +9,6 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as SophiaDiagnosticoRouteImport } from './routes/sophia-diagnostico'
 import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SitemapSantosDotxmlRouteImport } from './routes/sitemap-santos[.]xml'
@@ -29,7 +28,6 @@ import { Route as FavoritosRouteImport } from './routes/favoritos'
 import { Route as EstudarRouteImport } from './routes/estudar'
 import { Route as EmailConfirmadoRouteImport } from './routes/email-confirmado'
 import { Route as DoutoresDaIgrejaRouteImport } from './routes/doutores-da-igreja'
-import { Route as DiagnosticoBackendRouteImport } from './routes/diagnostico-backend'
 import { Route as DesignSystemRouteImport } from './routes/design-system'
 import { Route as CoroinhasRouteImport } from './routes/coroinhas'
 import { Route as CatecismoRouteImport } from './routes/catecismo'
@@ -64,11 +62,6 @@ import { Route as BibliaLivroCapituloRouteImport } from './routes/biblia.$livro.
 import { Route as ApiPublicLembretesRouteImport } from './routes/api/public/lembretes'
 import { Route as ApiPublicCspReportRouteImport } from './routes/api/public/csp-report'
 
-const SophiaDiagnosticoRoute = SophiaDiagnosticoRouteImport.update({
-  id: '/sophia-diagnostico',
-  path: '/sophia-diagnostico',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const SobreRoute = SobreRouteImport.update({
   id: '/sobre',
   path: '/sobre',
@@ -164,11 +157,6 @@ const EmailConfirmadoRoute = EmailConfirmadoRouteImport.update({
 const DoutoresDaIgrejaRoute = DoutoresDaIgrejaRouteImport.update({
   id: '/doutores-da-igreja',
   path: '/doutores-da-igreja',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DiagnosticoBackendRoute = DiagnosticoBackendRouteImport.update({
-  id: '/diagnostico-backend',
-  path: '/diagnostico-backend',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DesignSystemRoute = DesignSystemRouteImport.update({
@@ -349,7 +337,6 @@ export interface FileRoutesByFullPath {
   '/catecismo': typeof CatecismoRouteWithChildren
   '/coroinhas': typeof CoroinhasRoute
   '/design-system': typeof DesignSystemRoute
-  '/diagnostico-backend': typeof DiagnosticoBackendRoute
   '/doutores-da-igreja': typeof DoutoresDaIgrejaRoute
   '/email-confirmado': typeof EmailConfirmadoRoute
   '/estudar': typeof EstudarRoute
@@ -369,7 +356,6 @@ export interface FileRoutesByFullPath {
   '/sitemap-santos.xml': typeof SitemapSantosDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
-  '/sophia-diagnostico': typeof SophiaDiagnosticoRoute
   '/api/chat': typeof ApiChatRoute
   '/api/transcrever': typeof ApiTranscreverRoute
   '/biblia/$livro': typeof BibliaLivroRouteWithChildren
@@ -404,7 +390,6 @@ export interface FileRoutesByTo {
   '/catecismo': typeof CatecismoRouteWithChildren
   '/coroinhas': typeof CoroinhasRoute
   '/design-system': typeof DesignSystemRoute
-  '/diagnostico-backend': typeof DiagnosticoBackendRoute
   '/doutores-da-igreja': typeof DoutoresDaIgrejaRoute
   '/email-confirmado': typeof EmailConfirmadoRoute
   '/estudar': typeof EstudarRoute
@@ -423,7 +408,6 @@ export interface FileRoutesByTo {
   '/sitemap-santos.xml': typeof SitemapSantosDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
-  '/sophia-diagnostico': typeof SophiaDiagnosticoRoute
   '/api/chat': typeof ApiChatRoute
   '/api/transcrever': typeof ApiTranscreverRoute
   '/biblia/leituras': typeof BibliaLeiturasRoute
@@ -459,7 +443,6 @@ export interface FileRoutesById {
   '/catecismo': typeof CatecismoRouteWithChildren
   '/coroinhas': typeof CoroinhasRoute
   '/design-system': typeof DesignSystemRoute
-  '/diagnostico-backend': typeof DiagnosticoBackendRoute
   '/doutores-da-igreja': typeof DoutoresDaIgrejaRoute
   '/email-confirmado': typeof EmailConfirmadoRoute
   '/estudar': typeof EstudarRoute
@@ -479,7 +462,6 @@ export interface FileRoutesById {
   '/sitemap-santos.xml': typeof SitemapSantosDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
-  '/sophia-diagnostico': typeof SophiaDiagnosticoRoute
   '/api/chat': typeof ApiChatRoute
   '/api/transcrever': typeof ApiTranscreverRoute
   '/biblia/$livro': typeof BibliaLivroRouteWithChildren
@@ -517,7 +499,6 @@ export interface FileRouteTypes {
     | '/catecismo'
     | '/coroinhas'
     | '/design-system'
-    | '/diagnostico-backend'
     | '/doutores-da-igreja'
     | '/email-confirmado'
     | '/estudar'
@@ -537,7 +518,6 @@ export interface FileRouteTypes {
     | '/sitemap-santos.xml'
     | '/sitemap.xml'
     | '/sobre'
-    | '/sophia-diagnostico'
     | '/api/chat'
     | '/api/transcrever'
     | '/biblia/$livro'
@@ -572,7 +552,6 @@ export interface FileRouteTypes {
     | '/catecismo'
     | '/coroinhas'
     | '/design-system'
-    | '/diagnostico-backend'
     | '/doutores-da-igreja'
     | '/email-confirmado'
     | '/estudar'
@@ -591,7 +570,6 @@ export interface FileRouteTypes {
     | '/sitemap-santos.xml'
     | '/sitemap.xml'
     | '/sobre'
-    | '/sophia-diagnostico'
     | '/api/chat'
     | '/api/transcrever'
     | '/biblia/leituras'
@@ -626,7 +604,6 @@ export interface FileRouteTypes {
     | '/catecismo'
     | '/coroinhas'
     | '/design-system'
-    | '/diagnostico-backend'
     | '/doutores-da-igreja'
     | '/email-confirmado'
     | '/estudar'
@@ -646,7 +623,6 @@ export interface FileRouteTypes {
     | '/sitemap-santos.xml'
     | '/sitemap.xml'
     | '/sobre'
-    | '/sophia-diagnostico'
     | '/api/chat'
     | '/api/transcrever'
     | '/biblia/$livro'
@@ -683,7 +659,6 @@ export interface RootRouteChildren {
   CatecismoRoute: typeof CatecismoRouteWithChildren
   CoroinhasRoute: typeof CoroinhasRoute
   DesignSystemRoute: typeof DesignSystemRoute
-  DiagnosticoBackendRoute: typeof DiagnosticoBackendRoute
   DoutoresDaIgrejaRoute: typeof DoutoresDaIgrejaRoute
   EmailConfirmadoRoute: typeof EmailConfirmadoRoute
   EstudarRoute: typeof EstudarRoute
@@ -703,7 +678,6 @@ export interface RootRouteChildren {
   SitemapSantosDotxmlRoute: typeof SitemapSantosDotxmlRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SobreRoute: typeof SobreRoute
-  SophiaDiagnosticoRoute: typeof SophiaDiagnosticoRoute
   ApiChatRoute: typeof ApiChatRoute
   ApiTranscreverRoute: typeof ApiTranscreverRoute
   ForumSlugRoute: typeof ForumSlugRoute
@@ -717,13 +691,6 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/sophia-diagnostico': {
-      id: '/sophia-diagnostico'
-      path: '/sophia-diagnostico'
-      fullPath: '/sophia-diagnostico'
-      preLoaderRoute: typeof SophiaDiagnosticoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/sobre': {
       id: '/sobre'
       path: '/sobre'
@@ -855,13 +822,6 @@ declare module '@tanstack/react-router' {
       path: '/doutores-da-igreja'
       fullPath: '/doutores-da-igreja'
       preLoaderRoute: typeof DoutoresDaIgrejaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/diagnostico-backend': {
-      id: '/diagnostico-backend'
-      path: '/diagnostico-backend'
-      fullPath: '/diagnostico-backend'
-      preLoaderRoute: typeof DiagnosticoBackendRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/design-system': {
@@ -1194,7 +1154,6 @@ const rootRouteChildren: RootRouteChildren = {
   CatecismoRoute: CatecismoRouteWithChildren,
   CoroinhasRoute: CoroinhasRoute,
   DesignSystemRoute: DesignSystemRoute,
-  DiagnosticoBackendRoute: DiagnosticoBackendRoute,
   DoutoresDaIgrejaRoute: DoutoresDaIgrejaRoute,
   EmailConfirmadoRoute: EmailConfirmadoRoute,
   EstudarRoute: EstudarRoute,
@@ -1214,7 +1173,6 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapSantosDotxmlRoute: SitemapSantosDotxmlRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SobreRoute: SobreRoute,
-  SophiaDiagnosticoRoute: SophiaDiagnosticoRoute,
   ApiChatRoute: ApiChatRoute,
   ApiTranscreverRoute: ApiTranscreverRoute,
   ForumSlugRoute: ForumSlugRoute,
