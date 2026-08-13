@@ -7,26 +7,48 @@
 import { LIVROS } from "./data/biblia/index";
 import { PARTES } from "./data/catecismo/index";
 
-function normalizar(s: string): string {
-  return s
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[^a-z0-9]/gi, "")
-    .toLowerCase();
+/** Mantém acentos: em português "Jo" é João e "Jó" é o livro de Jó. */
+function chaveAcentuada(s: string): string {
+  return s.replace(/[^\p{L}\p{N}]/gu, "").toLowerCase();
 }
 
-/** abreviatura ou nome normalizado -> slug do livro */
-const INDICE_LIVROS: Map<string, { slug: string; nome: string; capitulos: number }> = (() => {
-  const m = new Map<string, { slug: string; nome: string; capitulos: number }>();
-  for (const l of LIVROS) {
-    const alvo = { slug: l.slug, nome: l.nome, capitulos: l.capitulos };
-    for (const chave of [l.abrev, l.nome, l.slug]) {
-      const k = normalizar(chave);
-      if (k && !m.has(k)) m.set(k, alvo);
-    }
+function normalizar(s: string): string {
+  return chaveAcentuada(s.normalize("NFD").replace(/[\u0300-\u036f]/g, ""));
+}
+
+type AlvoLivro = { slug: string; nome: string; capitulos: number };
+
+/** Abreviaturas cujo sentido depende do acento — resolvidas antes de tudo. */
+const ALIASES: Record<string, string> = {
+  jo: "joao",
+  jó: "jo",
+  joao: "joao",
+  joão: "joao",
+};
+
+const INDICE_ACENTUADO = new Map<string, AlvoLivro>();
+const INDICE_LIVROS = new Map<string, AlvoLivro>();
+
+for (const l of LIVROS) {
+  const alvo: AlvoLivro = { slug: l.slug, nome: l.nome, capitulos: l.capitulos };
+  for (const chave of [l.abrev, l.nome, l.slug]) {
+    const ka = chaveAcentuada(chave);
+    if (ka && !INDICE_ACENTUADO.has(ka)) INDICE_ACENTUADO.set(ka, alvo);
+    const k = normalizar(chave);
+    if (k && !INDICE_LIVROS.has(k)) INDICE_LIVROS.set(k, alvo);
   }
-  return m;
-})();
+}
+
+function acharLivro(entrada: string): AlvoLivro | undefined {
+  const ka = chaveAcentuada(entrada);
+  const alias = ALIASES[ka];
+  if (alias) {
+    const porSlug = LIVROS.find((l) => l.slug === alias);
+    if (porSlug)
+      return { slug: porSlug.slug, nome: porSlug.nome, capitulos: porSlug.capitulos };
+  }
+  return INDICE_ACENTUADO.get(ka) ?? INDICE_LIVROS.get(normalizar(entrada));
+}
 
 export type ReferenciaEscritura = {
   tipo: "escritura";
