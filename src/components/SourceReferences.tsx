@@ -8,7 +8,7 @@
 
 import { ExternalLink } from "lucide-react";
 
-import { caminhoEscritura, caminhoCatecismo, encontrarReferencias } from "@/lib/referencias";
+import { encontrarReferencias } from "@/lib/referencias";
 
 export type SourceReference = {
   /** Nome da obra ou documento (ex.: "Catecismo da Igreja Católica"). */
