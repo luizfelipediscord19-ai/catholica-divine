@@ -302,10 +302,12 @@ export async function buscarIndexado(input: {
   const termoNorm = normalizar(termo);
   const achados: Resultado[] = [];
 
+  const equivalentes = expandirTermos(toks);
+
   for (const doc of construirCorpus()) {
     if (!escopos.has(doc.escopo)) continue;
     const alvo = normalizar(`${doc.titulo} ${doc.referencia} ${doc.texto}`);
-    const pontos = pontuar(alvo, termoNorm, toks);
+    const pontos = pontuar(alvo, termoNorm, toks, equivalentes);
     if (!pontos) continue;
     achados.push({
       id: doc.id,
