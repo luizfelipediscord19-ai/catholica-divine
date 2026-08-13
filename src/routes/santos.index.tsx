@@ -6,6 +6,8 @@ import { buildSantoView } from "@/lib/santos-helpers";
 import { imagemSanto } from "@/lib/data/santos-imagens";
 import { RetratoSanto } from "@/components/santos/RetratoSanto";
 import { usePrefetchSanto, usePrefetchLote } from "@/lib/santos/prefetch";
+import { BotaoSalvar } from "@/components/portal/BotaoSalvar";
+
 
 export const Route = createFileRoute("/santos/")({
   head: () => ({
