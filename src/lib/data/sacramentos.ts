@@ -126,7 +126,7 @@ export const SACRAMENTOS: Sacramento[] = [
       { ref: "Tg 5,14-15", texto: "Está alguém doente entre vós? Chame os presbíteros da Igreja, e estes orem sobre ele, ungindo-o com óleo em nome do Senhor." },
       { ref: "Mc 6,13", texto: "Os Doze ungiam com óleo muitos enfermos e os curavam." },
     ],
-    catecismo: "CIC §§1499-1532. Não é apenas sacramento dos moribundos: pode-se receber sempre que um fiel começa a estar em perigo de morte por doença ou velhice. A matéria é o óleo dos enfermos, bento pelo bispo (ou, em necessidade, pelo próprio presbítero); a forma consiste na oração litúrgica que acompanha a unção da fronte e das mãos. O ministro é exclusivamente o bispo ou o presbítero (cf. Tg 5,14).",
+    catecismo: "CIC §§1499-1532. Não é apenas sacramento dos moribundos: pode receber-se sempre que um fiel começa a estar em perigo por doença grave ou pela idade avançada (CIC § 1514; cân. 1004), e pode repetir-se se a doença se agravar ou sobrevier nova enfermidade. Segundo as categorias tradicionais de matéria e forma, o sinal consiste na unção com o óleo dos enfermos — azeite de oliva ou, onde faltar, outro óleo vegetal, bento pelo bispo ou, quando o direito o permite, pelo próprio presbítero — feita na fronte e nas mãos no rito romano, com a oração litúrgica própria. Os ministros são apenas os bispos e os presbíteros (cân. 1003; cf. Tg 5,14).",
     historia:
       "Praticada desde a era apostólica conforme a Carta de Tiago. Conhecida também como 'extrema unção' quando ministrada in articulo mortis.",
     efeitos: [
