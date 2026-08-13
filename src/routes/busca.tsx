@@ -188,8 +188,9 @@ function BuscaAvancadaPage() {
         </h1>
         <p className="text-base md:text-lg text-muted-foreground font-light leading-relaxed max-w-2xl">
           Um só termo cruzando o texto integral da Bíblia (73 livros), o Catecismo,
-          o glossário doutrinal, o banco apologético com fontes, os santos e as orações
-          da tradição. A varredura roda no servidor — nada pesa no seu aparelho.
+          os sete sacramentos, o glossário doutrinal, o banco apologético com fontes,
+          os santos, as orações da tradição e as trilhas de formação. A varredura roda
+          no servidor — nada pesa no seu aparelho.
         </p>
       </header>
 
