@@ -6,6 +6,10 @@
  * Quando não há fonte suficiente, mostra o aviso em vez de silenciar.
  */
 
+import { ExternalLink } from "lucide-react";
+
+import { caminhoEscritura, caminhoCatecismo, encontrarReferencias } from "@/lib/referencias";
+
 export type SourceReference = {
   /** Nome da obra ou documento (ex.: "Catecismo da Igreja Católica"). */
   label: string;
@@ -24,7 +28,7 @@ function externo(href: string): boolean {
 export function SourceReferences({
   references,
   updatedAt,
-  titulo = "Fontes consultadas",
+  titulo = "Fontes utilizadas",
   avisoSemFonte = "Esta resposta não traz fonte citada. Confirme no Catecismo, na Escritura ou com um sacerdote antes de usá-la como referência.",
 }: {
   references: SourceReference[];
@@ -49,11 +53,19 @@ export function SourceReferences({
             <a
               href={r.href}
               {...(externo(r.href) ? { target: "_blank", rel: "noreferrer" } : {})}
-              className="text-gold underline decoration-gold/40 underline-offset-4 hover:decoration-gold"
+              className="inline-flex min-h-9 flex-wrap items-center gap-1.5 text-gold underline decoration-gold/40 underline-offset-4 hover:decoration-gold"
             >
-              {r.label}
-              {r.locator ? <span className="text-gold/70"> · {r.locator}</span> : null}
-              {externo(r.href) ? <span className="sr-only"> (abre em nova aba)</span> : null}
+              <span>
+                {r.label}
+                {r.locator ? <span className="text-gold/70"> · {r.locator}</span> : null}
+              </span>
+              {externo(r.href) ? (
+                <>
+                  <span className="text-gold/60">Ver fonte original</span>
+                  <ExternalLink className="size-3 shrink-0" aria-hidden="true" />
+                  <span className="sr-only">(abre em nova aba)</span>
+                </>
+              ) : null}
             </a>
             {r.excerpt ? (
               <span className="block text-muted-foreground">“{r.excerpt}”</span>
@@ -68,9 +80,44 @@ export function SourceReferences({
   );
 }
 
+/** Documentos do Magistério reconhecidos no texto, com o original no vatican.va. */
+const DOCUMENTOS: { padrao: RegExp; label: string; href: string }[] = [
+  {
+    padrao: /sacrosanctum\s+concilium/i,
+    label: "Concílio Vaticano II — Sacrosanctum Concilium",
+    href: "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19631204_sacrosanctum-concilium_po.html",
+  },
+  {
+    padrao: /lumen\s+gentium/i,
+    label: "Concílio Vaticano II — Lumen Gentium",
+    href: "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19641121_lumen-gentium_po.html",
+  },
+  {
+    padrao: /dei\s+verbum/i,
+    label: "Concílio Vaticano II — Dei Verbum",
+    href: "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651118_dei-verbum_po.html",
+  },
+  {
+    padrao: /gaudium\s+et\s+spes/i,
+    label: "Concílio Vaticano II — Gaudium et Spes",
+    href: "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_const_19651207_gaudium-et-spes_po.html",
+  },
+  {
+    padrao: /conc[ií]lio\s+de\s+trento/i,
+    label: "Concílio de Trento",
+    href: "https://www.vatican.va/content/vatican/it.html",
+  },
+  {
+    padrao: /(direito\s+can[oô]nico|c[aâ]n\.?\s?\d{1,4})/i,
+    label: "Código de Direito Canônico",
+    href: "https://www.vatican.va/archive/cod-iuris-canonici/portuguese/codex-iuris-canonici_po.pdf",
+  },
+];
+
 /**
  * Extrai referências de um texto em Markdown produzido pela Sophia:
- * links explícitos `[rótulo](url)` e citações do Catecismo (§NNNN).
+ * links explícitos, citações do Catecismo (§NNNN), passagens bíblicas
+ * e documentos do Magistério.
  */
 export function extrairFontes(markdown: string): SourceReference[] {
   const encontradas = new Map<string, SourceReference>();
@@ -82,17 +129,35 @@ export function extrairFontes(markdown: string): SourceReference[] {
     if (!encontradas.has(href)) encontradas.set(href, { label, href });
   }
 
-  const catecismo = markdown.matchAll(/(?:CIC|Catecismo)[^\d§]{0,20}§?\s?(\d{1,4})/gi);
-  for (const m of catecismo) {
-    const n = m[1]!;
-    const href = `https://www.vatican.va/archive/cathechism_po/index_new/p1s1c1_po.html`;
-    const chave = `cic-${n}`;
-    if (!encontradas.has(chave)) {
-      encontradas.set(chave, {
-        label: "Catecismo da Igreja Católica",
-        locator: `§${n}`,
-        href,
-      });
+  // Catecismo e Escritura: aponta para a leitura dentro do próprio portal.
+  for (const ref of encontrarReferencias(markdown, 12)) {
+    if (ref.tipo === "catecismo") {
+      const chave = `cic-${ref.paragrafo}`;
+      if (!encontradas.has(chave)) {
+        encontradas.set(chave, {
+          label: "Catecismo da Igreja Católica",
+          locator: `§${ref.paragrafo}`,
+          href: caminhoCatecismo(ref.paragrafo),
+        });
+      }
+    } else {
+      const href = caminhoEscritura(ref.livro, ref.capitulo, ref.versiculo);
+      if (!href) continue;
+      const chave = `bib-${href}`;
+      if (!encontradas.has(chave)) {
+        encontradas.set(chave, {
+          label: "Sagrada Escritura",
+          locator: ref.texto,
+          href,
+        });
+      }
+    }
+  }
+
+  for (const doc of DOCUMENTOS) {
+    if (!doc.padrao.test(markdown)) continue;
+    if (!encontradas.has(doc.href)) {
+      encontradas.set(doc.href, { label: doc.label, href: doc.href });
     }
   }
 
