@@ -512,7 +512,8 @@ export async function obterPainel(token: string) {
   const desbloqueadas = new Set((conquistas.data ?? []).map((c) => c.conquista_slug));
 
   // Totais usados pelas barras de progresso das conquistas.
-  const [diario, completos, topicos, respostas, favoritosTotal, notasTotal] = await Promise.all([
+  const [diario, completos, topicos, respostas, favoritosTotal, notasTotal, estudos] =
+    await Promise.all([
     supabaseAdmin.from("diario_espiritual").select("minutos").eq("identidade_id", id.id),
     livrosConcluidos(id.id),
     supabaseAdmin
@@ -525,6 +526,7 @@ export async function obterPainel(token: string) {
       .eq("identidade_id", id.id),
     contar("favoritos", id.id),
     contar("notas", id.id),
+    totaisDeEstudo(id.id),
   ]);
 
   const linhasDiario = diario.data ?? [];
@@ -548,6 +550,9 @@ export async function obterPainel(token: string) {
       topicos: topicos.count ?? 0,
       respostas: respostas.count ?? 0,
       minutosMaximos: linhasDiario.reduce((m, l) => Math.max(m, l.minutos ?? 0), 0),
+      catecismo: estudos.catecismo,
+      maria: estudos.maria,
+      trilhasAvancadas: estudos.trilhasAvancadas,
     },
     conquistas: (catalogo.data ?? []).map((c) => ({
       ...c,
