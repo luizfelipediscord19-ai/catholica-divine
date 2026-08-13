@@ -1,11 +1,22 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useServerFn } from "@tanstack/react-start";
 import { useMutation } from "@tanstack/react-query";
-import { ArrowLeft, Search, Loader2 } from "lucide-react";
+import {
+  ArrowLeft,
+  Search,
+  Loader2,
+  Sparkles,
+  BookOpen,
+  Library,
+  Landmark,
+  Crown,
+  Heart,
+  type LucideIcon,
+} from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 
 import { buscarNoPortal } from "@/lib/busca/avancada.functions";
-import type { EscopoBusca } from "@/lib/busca/motor.server";
+import type { EscopoBusca, Resultado } from "@/lib/busca/motor.server";
 
 const ESCOPOS: { id: EscopoBusca; label: string }[] = [
   { id: "biblia", label: "Bíblia" },
@@ -14,6 +25,14 @@ const ESCOPOS: { id: EscopoBusca; label: string }[] = [
   { id: "santos", label: "Santos" },
   { id: "oracoes", label: "Orações" },
 ];
+
+const ICONES: Record<EscopoBusca, LucideIcon> = {
+  biblia: BookOpen,
+  catecismo: Library,
+  magisterio: Landmark,
+  santos: Crown,
+  oracoes: Heart,
+};
 
 const SUGESTOES = [
   "misericórdia",
