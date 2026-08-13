@@ -745,8 +745,8 @@ export const GLOSSARIO: Record<string, EntradaGlossario> = {
   filioque: {
     termo: "Filioque",
     definicao:
-      "Acréscimo latino ao Credo afirmando que o Espírito Santo procede do Pai ‘e do Filho’, como de um único princípio.",
-    ref: "CIC §§ 246-248",
+      "Cláusula latina acrescentada ao Credo de Niceia-Constantinopla (381), ausente do texto grego original, ensinando que o Espírito Santo procede do Pai e do Filho como de um único princípio. As Igrejas Orientais preservam a fórmula bíblica ‘procede do Pai’ (Jo 15,26), entendendo-a como comunicada ‘pelo Filho’ — tradição teológica legítima, distinta mas não contraditória.",
+    ref: "CIC §§ 246-248; II Concílio de Lyon (1274); Concílio de Florença (1439)",
   },
   pecadooriginal: {
     termo: "Pecado original",

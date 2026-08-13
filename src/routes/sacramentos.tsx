@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, CardGrid, ContentCard, Prose, Pullquote } from "../components/PageShell";
 import { ReadingMode, FnRef } from "../components/ReadingMode";
 import { Termo } from "../components/Termo";
+import { NotaConfiabilidade } from "../components/SeloConfiabilidade";
 
 export const Route = createFileRoute("/sacramentos")({
   head: () => ({
@@ -99,10 +100,18 @@ function Page() {
               <li><strong>Sujeito</strong> — quem o recebe, com as disposições requeridas.</li>
             </ol>
             <p>
-              Para a validade exige-se a <em>matéria, forma, ministro com intenção mínima de fazer o que a
+              Este esquema de "matéria e forma" é <strong>formulação tradicional da teologia sacramental</strong>,
+              consolidada pela escolástica e recebida pelo Magistério (cf. Trento, DH 1671, sobre matéria e forma
+              da Penitência) — não uma definição dogmática única e fechada para todos os sacramentos, mas
+              instrumento explicativo que a própria Igreja aplica com as devidas nuances a cada caso. Para a
+              validade exige-se a <em>matéria, forma, ministro com intenção mínima de fazer o que a
               Igreja faz, e sujeito capaz</em> (CIC §§ 1127–1128; <em>Código de Direito Canônico</em>, cc.
               840–848<FnRef n="cic-can" />). A frutuosidade depende ainda da fé e da disposição do sujeito.
             </p>
+            <NotaConfiabilidade nivel="teologia">
+              A linguagem "matéria, forma, ministro e sujeito" é categoria teológica tradicional (escolástica),
+              útil para expor a doutrina sacramental — não uma fórmula dogmática definida em si mesma.
+            </NotaConfiabilidade>
 
             <h4>Caráter sacramental</h4>
             <p>
@@ -197,9 +206,25 @@ function Page() {
               <li><strong>Matéria</strong>: pão de trigo ázimo (rito latino) e vinho de uva (CDC, c. 924).</li>
               <li><strong>Forma</strong>: as palavras da consagração: <em>“Isto é o meu Corpo… Este é o cálice do meu Sangue…”</em> (cf. Mt 26,26–28; 1Cor 11,23–25).</li>
               <li><strong>Ministro da consagração</strong>: somente o bispo ou presbítero validamente ordenado (Trento, Sess. XXII, DH 1752; CIC § 1411).</li>
-              <li><strong>Sujeito</strong>: todo batizado em estado de graça, com jejum eucarístico de uma hora (CDC, c. 919).</li>
+              <li><strong>Sujeito</strong>: todo batizado em estado de graça. Quem tem consciência de pecado mortal não deve comungar sem prévia confissão sacramental, salvo grave necessidade sem possibilidade de confessar-se — e, nesse caso, com o propósito de fazê-lo o quanto antes (CIC § 1385; CDC, cân. 916).</li>
+              <li><strong>Jejum eucarístico</strong>: em regra, quem recebe a Sagrada Comunhão observa o jejum de uma hora antes da Comunhão, salvo as exceções previstas pelo Direito Canônico — água e medicamentos não o quebram; idosos, enfermos e quem deles cuida estão dispensados (CDC, cân. 919). Trata-se de <strong>disciplina eclesiástica</strong>, mutável no tempo (já foi jejum da meia-noite), e não de doutrina imutável.</li>
               <li><strong>Magistério recente</strong>: <em>Ecclesia de Eucharistia</em> (2003)<FnRef n="ee" />; <em>Sacramentum Caritatis</em> (2007)<FnRef n="ssc" />.</li>
             </ul>
+
+            <h4>Reserva e adoração eucarística</h4>
+            <p>
+              As espécies consagradas que restam da Missa são reservadas no <em>sacrário</em>, sobretudo para a
+              comunhão dos enfermos e como centro vivo de adoração fora da Missa: já que Cristo permanece
+              realmente presente enquanto subsistirem as espécies eucarísticas, é lícito e recomendável adorá-lo
+              no Santíssimo Sacramento exposto ou reservado (CIC §§ 1378–1379). Diante do sacrário, guarda-se
+              genuflexão como sinal de adoração.
+            </p>
+
+            <NotaConfiabilidade nivel="oficial">
+              A presença real e a transubstanciação são doutrina definida (Trento, Sess. XIII; CIC §§ 1373–1381).
+              Já o jejum eucarístico de uma hora, embora vinculante, é disciplina canônica que a Igreja pode
+              alterar; não deve ser apresentado como preceito absoluto e sem exceções.
+            </NotaConfiabilidade>
           </section>
         </Prose>
 

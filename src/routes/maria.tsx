@@ -4,6 +4,7 @@ import { ReadingMode, FnRef } from "../components/ReadingMode";
 import { Termo } from "../components/Termo";
 import maria from "../assets/maria.jpg";
 import { MarcarEstudo } from "../components/portal/MarcarEstudo";
+import { NotaConfiabilidade } from "../components/SeloConfiabilidade";
 
 export const Route = createFileRoute("/maria")({
   head: () => ({
@@ -23,7 +24,7 @@ const TOC = [
   { id: "introducao", label: "Maria na economia da salvação" },
   { id: "dogmas", label: "Os quatro dogmas marianos" },
   { id: "theotokos", label: "Maternidade Divina (431)" },
-  { id: "virgindade", label: "Virgindade Perpétua (649)" },
+  { id: "virgindade", label: "Virgindade Perpétua (Sínodo de Latrão, 649)" },
   { id: "imaculada", label: "Imaculada Conceição (1854)" },
   { id: "assuncao", label: "Assunção (1950)" },
   { id: "titulos", label: "Títulos marianos" },
@@ -35,7 +36,7 @@ const TOC = [
 
 const FOOTNOTES = [
   { id: "efeso", label: "Concílio de Éfeso (431), Anátemas de Cirilo de Alexandria", ref: "DH 250–264 — definição de Theotókos" },
-  { id: "latrao", label: "Concílio de Latrão I (649), Cân. 3", ref: "DH 503 — virgindade perpétua de Maria" },
+  { id: "latrao", label: "Sínodo de Latrão (649), Cân. 3, sob o Papa São Martinho I", ref: "DH 503 — virgindade perpétua de Maria. Trata-se de um sínodo romano, não do Concílio Ecumênico de Latrão I (1123); a doutrina é constante na Tradição e no magistério ordinário e universal." },
   { id: "ineffabilis", label: "Pio IX, Bula Ineffabilis Deus (08.12.1854)", ref: "DH 2803 — definição da Imaculada Conceição" },
   { id: "munificentissimus", label: "Pio XII, Constituição Apostólica Munificentissimus Deus (01.11.1950)", ref: "DH 3903 — definição da Assunção" },
   { id: "lg8", label: "Concílio Vaticano II, Lumen Gentium (1964), cap. VIII", ref: "nn. 52–69 — “Bem-aventurada Virgem Maria, Mãe de Deus, no mistério de Cristo e da Igreja”" },
@@ -48,16 +49,16 @@ const FOOTNOTES = [
 
 const DOGMAS_CARDS = [
   { title: "Maternidade Divina (Theotókos)", year: "Éfeso, 431", body: "Maria é verdadeiramente Mãe de Deus, pois gerou segundo a carne o Verbo eterno do Pai." },
-  { title: "Virgindade Perpétua", year: "Latrão I, 649", body: "Antes, durante e depois do parto, Maria permaneceu sempre Virgem (ante partum, in partu, post partum)." },
+  { title: "Virgindade Perpétua", year: "Sínodo de Latrão, 649", body: "Antes, durante e depois do parto, Maria permaneceu sempre Virgem (ante partum, in partu, post partum)." },
   { title: "Imaculada Conceição", year: "Pio IX, 1854", body: "Por singular privilégio, preservada de todo pecado original desde o primeiro instante de sua concepção." },
   { title: "Assunção", year: "Pio XII, 1950", body: "Terminado o curso de sua vida terrena, foi assunta de corpo e alma à glória celeste." },
 ];
 
 const APARICOES = [
-  { local: "Guadalupe (México)", ano: "1531", body: "À São Juan Diego: a Virgem morena, imagem milagrosa na tilma. Reconhecida pelos Papas; coroada por Pio X (1910)." },
-  { local: "Rue du Bac (Paris)", ano: "1830", body: "A Santa Catarina Labouré: a Medalha Milagrosa, antecipando o dogma da Imaculada." },
-  { local: "Lourdes (França)", ano: "1858", body: "A Santa Bernadette: ‘Eu sou a Imaculada Conceição.’ Reconhecida pelo bispo de Tarbes em 1862." },
-  { local: "Fátima (Portugal)", ano: "1917", body: "Aos três pastorinhos: oração, penitência e consagração ao Imaculado Coração. Aprovada pelo bispo de Leiria em 1930." },
+  { local: "Guadalupe (México)", ano: "1531", body: "A São Juan Diego: a Virgem morena, imagem impressa na tilma. O culto goza de aprovação e incentivo papal contínuo desde o séc. XVIII (Bento XIV, 1754); Pio X a proclamou Padroeira da América Latina e a coroou canonicamente em 1895/1910. Não há um decreto formal único de 'reconhecimento da sobrenaturalidade' nos moldes modernos, mas séculos de aprovação litúrgica e devocional pela Santa Sé." },
+  { local: "Rue du Bac (Paris)", ano: "1830", body: "A Santa Catarina Labouré: origem da Medalha Milagrosa, que antecipou em linguagem popular o dogma da Imaculada Conceição (1854). O arcebispo de Paris autorizou a cunhagem da medalha em 1832, reconhecendo a devoção; não houve declaração dogmática sobre a aparição em si." },
+  { local: "Lourdes (França)", ano: "1858", body: "A Santa Bernadette Soubirous: ‘Eu sou a Imaculada Conceição.’ O bispo de Tarbes declarou em 1862 que a aparição reveste 'os caracteres da verdade' e autorizou o culto, reconhecimento formal raro entre as aparições marianas." },
+  { local: "Fátima (Portugal)", ano: "1917", body: "Aos três pastorinhos: oração, penitência e consagração ao Imaculado Coração. O bispo de Leiria declarou em 1930 as aparições 'dignas de fé' e aprovou o culto público." },
 ];
 
 function Page() {
@@ -116,14 +117,17 @@ function Page() {
 
           <section id="virgindade" className="scroll-mt-24">
           <MarcarEstudo tipo="maria" chave="virgindade" />
-            <h4>II. Virgindade Perpétua (Latrão I, 649)</h4>
+            <h4>II. Virgindade Perpétua (Sínodo de Latrão, 649)</h4>
             <p>
               A Igreja confessa que Maria foi e permaneceu Virgem <em>antes, durante e depois do parto</em>
-              (<em>ante partum, in partu, post partum</em>). O dogma foi solenemente definido no Sínodo de Latrão
-              de 649 sob o Papa São Martinho I<FnRef n="latrao" />, confirmando uma fé já atestada por Santo
-              Inácio, São Justino, Santo Ireneu e os Concílios de Constantinopla II (553) e III (680–681). O
-              Catecismo trata do tema em <em>CIC</em> §§ 496–507<FnRef n="cic" />, explicando que os “irmãos de
-              Jesus” mencionados pelos Evangelhos são parentes próximos, segundo o uso semítico.
+              (<em>ante partum, in partu, post partum</em>). Essa verdade foi solenemente formulada pelo Sínodo
+              de Latrão de 649, convocado pelo Papa São Martinho I<FnRef n="latrao" /> — um sínodo romano, não o
+              Concílio Ecumênico de Latrão I (1123) —, confirmando uma fé já atestada por Santo Inácio, São
+              Justino, Santo Ireneu e retomada pelos Concílios Ecumênicos de Constantinopla II (553) e III
+              (680–681). A perpétua virgindade de Maria é ensinada de modo constante e unânime pela Tradição e
+              pelo magistério ordinário e universal da Igreja (<em>LG</em> 57; <em>CIC</em> § 499). O Catecismo
+              trata do tema em <em>CIC</em> §§ 496–507<FnRef n="cic" />, explicando que os “irmãos de Jesus”
+              mencionados pelos Evangelhos são parentes próximos, segundo o uso semítico.
             </p>
           </section>
 
@@ -162,6 +166,16 @@ function Page() {
               <em> Mãe da Misericórdia</em>. Todos esses títulos, ensina <em>Lumen Gentium</em> 62,
               <em> nada acrescentam nem subtraem à dignidade e eficácia de Cristo, único Mediador</em>.
             </p>
+            <NotaConfiabilidade nivel="teologia">
+              “Mediadora de todas as graças” é um título devocional e teológico, não um quinto dogma mariano —
+              a Igreja Católica define solenemente apenas quatro dogmas marianos (Maternidade Divina, Virgindade
+              Perpétua, Imaculada Conceição e Assunção). O Concílio Vaticano II, embora reconheça a cooperação
+              singular de Maria na obra da salvação, evitou deliberadamente proclamar essa expressão como
+              definição dogmática, preferindo a linguagem de “mediação materna” sempre subordinada e
+              participada (<em>LG</em> 60-62). Como recorda São Paulo, “há um só Deus e um só mediador entre
+              Deus e os homens, Cristo Jesus” (1Tm 2,5); toda intercessão de Maria e dos santos deriva
+              inteiramente dessa única mediação e nela se apoia.
+            </NotaConfiabilidade>
           </section>
 
           <section id="mediacao" className="scroll-mt-24">
@@ -181,9 +195,20 @@ function Page() {
           <h3 className="font-display text-2xl text-foreground mb-3">Aparições aprovadas pela Igreja</h3>
           <p className="text-sm text-muted-foreground max-w-3xl mb-6 leading-relaxed">
             Diferentemente da Revelação pública (encerrada com a morte do último Apóstolo, <em>DV</em> 4), as
-            <em> revelações privadas</em> não pertencem ao depósito da fé. Quando aprovadas pelo Magistério,
-            podem auxiliar a vivê-lo, segundo as <em>Normas</em> do Dicastério para a Doutrina da Fé<FnRef n="cdf-aparicoes" />.
+            <em> revelações privadas</em> não pertencem ao depósito da fé e não obrigam à fé divina e católica
+            (<em>CIC</em> §§ 66-67). O reconhecimento eclesiástico admite graus distintos — declaração de que
+            "nada obsta" à devoção (<em>nihil obstat</em>), constatação de que a aparição não contradiz a fé e
+            a moral, ou, mais raramente, afirmação de que os fatos revestem "caracteres de verdade" — segundo as
+            <em> Normas</em> do Dicastério para a Doutrina da Fé<FnRef n="cdf-aparicoes" />. Nenhuma aprovação
+            eclesiástica equivale a uma declaração de que a aparição é "comprovadamente sobrenatural"; trata-se
+            sempre de um juízo prudencial e pastoral, ao qual os fiéis podem aderir com fé humana e prudente,
+            nunca com o assentimento devido ao dogma.
           </p>
+          <NotaConfiabilidade nivel="privada" className="mb-6 max-w-3xl">
+            As aparições abaixo têm graus de reconhecimento eclesial diversos, do simples incentivo à devoção
+            até a declaração formal de que os fatos são "dignos de fé". Em nenhum caso a Igreja obriga os fiéis
+            a crer nelas.
+          </NotaConfiabilidade>
           <CardGrid cols={2}>
             {APARICOES.map((a) => (
               <ContentCard key={a.local} title={a.local} subtitle={a.ano}>{a.body}</ContentCard>

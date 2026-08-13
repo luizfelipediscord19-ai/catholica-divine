@@ -97,7 +97,7 @@ export const OBJECOES: Objecao[] = [
     categoria: "Escritura",
     objecao: "Os católicos acrescentaram sete livros à Bíblia.",
     resposta: [
-      "Os deuterocanônicos constavam da Septuaginta, a versão grega usada pelos apóstolos e citada no Novo Testamento.",
+      "Os deuterocanônicos já constavam da Septuaginta, a versão grega que exerceu papel fundamental entre judeus de língua grega e entre os primeiros cristãos, sendo com frequência citada pelo Novo Testamento.",
       "As listas antigas de Hipona (393), Cartago (397) e a carta de Inocêncio I a Exupério (405) já os incluem — mais de mil anos antes de sua remoção nas edições protestantes.",
       "Portanto não houve acréscimo católico, mas subtração posterior.",
     ],

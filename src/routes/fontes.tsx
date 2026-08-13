@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 
 import { PageHero, Section, Prose, CardGrid } from "@/components/PageShell";
+import { LegendaConfiabilidade } from "@/components/SeloConfiabilidade";
 
 const URL_PAGINA = "https://portalcatolico.vercel.app/fontes";
 const TITULO = "Fontes e Metodologia — Como verificamos o conteúdo | Portal Católico";
@@ -93,6 +94,30 @@ function FontesPage() {
           ))}
         </CardGrid>
       </Section>
+
+      <Section
+        kicker="Níveis de autoridade"
+        title="Sistema de confiabilidade"
+      >
+        <Prose>
+          <p>
+            Nem toda informação católica tem o mesmo peso: um dogma não é uma disciplina, e uma
+            tradição hagiográfica não é um fato historicamente documentado. Por isso o portal
+            classifica o conteúdo sensível com estes indicadores:
+          </p>
+        </Prose>
+        <LegendaConfiabilidade className="mt-sm" />
+        <div className="mt-sm"><Prose>
+          <p>
+            Onde a documentação histórica é insuficiente, o portal escreve
+            <em> “segundo a tradição”</em> em vez de afirmar certeza. Revelações privadas —
+            mesmo as reconhecidas pela Igreja — não pertencem ao depósito da fé
+            (Catecismo da Igreja Católica, § 67).
+          </p>
+        </Prose></div>
+
+      </Section>
+
 
       <Section kicker="Como trabalhamos" title="Metodologia editorial">
         <Prose>

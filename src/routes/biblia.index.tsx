@@ -96,21 +96,25 @@ function Page() {
           <p>
             <em>Cânon</em> (do grego <em>kanṓn</em>, “regra”) é a lista oficial dos livros inspirados. A Igreja
             Católica recebe <strong>46 livros</strong> no Antigo Testamento e <strong>27 livros</strong> no Novo
-            Testamento, fixados de modo solene pelo Concílio de Trento na <em>Sessão IV</em>, decreto
-            <em> De Canonicis Scripturis</em> (8 de abril de 1546), e reafirmados pelo Concílio Vaticano I
-            (<em> Dei Filius</em>, 1870) e pelo Vaticano II (<em>DV</em> 11). A lista é exatamente a transmitida
-            pelos concílios africanos do final do séc. IV (Hipona 393, Cartago 397) e pela carta do papa Inocêncio I
-            a Exupério (405).
+            Testamento. Essa lista já circulava como tradição canônica recebida pela Igreja antes de qualquer
+            definição solene: é a mesma transmitida pelos concílios regionais africanos do final do séc. IV
+            (Hipona 393, Cartago 397), pela carta do papa Inocêncio I a Exupério (405) e confirmada pelo Concílio
+            de Florença (1442, <em>Cantate Domino</em>). Diante das controvérsias do séc. XVI sobre o cânon, o
+            Concílio de Trento definiu-a solenemente como dogma de fé na <em>Sessão IV</em>, decreto
+            <em> De Canonicis Scripturis</em> (8 de abril de 1546) — não criando um novo cânon, mas fechando com
+            autoridade infalível o que já era a prática canônica recebida. A definição foi reafirmada pelo
+            Concílio Vaticano I (<em> Dei Filius</em>, 1870) e pelo Vaticano II (<em>DV</em> 11).
           </p>
           <ul>
             <li><strong>Antigo Testamento (46):</strong> Pentateuco (5), Históricos (16, incluindo Tobias, Judite, 1–2 Macabeus), Sapienciais (7, incluindo Sabedoria e Eclesiástico/Sirácida) e Proféticos (18, incluindo Baruc).</li>
-            <li><strong>Novo Testamento (27):</strong> 4 Evangelhos, Atos dos Apóstolos, 14 cartas paulinas (incluindo Hebreus), 7 cartas católicas e o Apocalipse.</li>
+            <li><strong>Novo Testamento (27):</strong> 4 Evangelhos, Atos dos Apóstolos, 14 cartas reunidas sob o nome de Paulo no cânon latino (sendo Hebreus, de autoria anônima, tradicionalmente associada ao círculo paulino), 7 cartas católicas e o Apocalipse.</li>
           </ul>
           <p>
             Os sete livros que a tradição protestante chama de “apócrifos” são, para os católicos, os
             <em> deuterocanônicos</em>: Tobias, Judite, Sabedoria, Eclesiástico, Baruc, 1 e 2 Macabeus — além de
             partes de Ester e Daniel. Foram lidos pela Igreja desde a antiguidade na versão grega dos Setenta
-            (<em>Septuaginta</em>), que era a Bíblia da comunidade apostólica e a citada pelo Novo Testamento.
+            (<em>Septuaginta</em>), que exerceu papel fundamental entre muitos judeus de língua grega e entre os
+            primeiros cristãos, sendo com frequência utilizada e citada pelos autores do Novo Testamento.
           </p>
 
           <h3>3. Escritura e Tradição: uma única fonte da Revelação</h3>
@@ -271,7 +275,8 @@ function Page() {
             Entre todos os livros sagrados, mesmo do Novo Testamento, os <strong>Evangelhos</strong> ocupam um lugar
             único: <em>são o testemunho principal sobre a vida e a doutrina do Verbo encarnado</em> (<em>DV</em> 18;
             <em> CIC</em> § 125). Seguem-se os <strong>Atos dos Apóstolos</strong>, as <strong>Cartas paulinas</strong>
-            (14, incluindo Hebreus), as <strong>Cartas católicas</strong> (7) e o <strong>Apocalipse</strong>.
+            (14 cartas reunidas sob o nome de Paulo no cânon latino, incluindo a anônima Hebreus), as
+            <strong> Cartas católicas</strong> (7) e o <strong>Apocalipse</strong>.
           </p>
         </Prose>
         <div className="space-y-10 mt-10">

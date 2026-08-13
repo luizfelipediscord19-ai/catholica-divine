@@ -332,7 +332,7 @@ export const CATEQUESE_INTERMEDIARIA: Trilha = {
           titulo: "Distinções que evitam confusão",
           paragrafos: [
             "A Igreja distingue adoração (latria), devida somente a Deus; veneração dos santos (dulia); e veneração especial de Maria (hiperdulia). Pedir a intercessão de um santo não é adorá-lo, assim como pedir oração a um amigo vivo não é adorá-lo.",
-            "Os quatro dogmas marianos são: Maternidade divina (Éfeso, 431), Virgindade perpétua, Imaculada Conceição (1854) e Assunção (1950).",
+            "Os quatro dogmas marianos são: Maternidade divina (Éfeso, 431), Virgindade perpétua (ensinada de modo constante pela Tradição e formulada no Sínodo de Latrão, 649), Imaculada Conceição (1854) e Assunção (1950).",
             "Maria é chamada Mediadora subordinada: toda a sua ação é participação na única mediação de Cristo, e nada acrescenta a ela.",
           ],
         },

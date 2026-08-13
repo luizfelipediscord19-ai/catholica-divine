@@ -318,7 +318,7 @@ export const PRIMEIROS_PASSOS: Trilha = {
           paragrafos: [
             "A Revelação divina foi confiada por Cristo aos apóstolos e por eles transmitida de duas formas: por escrito (a Sagrada Escritura) e oralmente, na pregação, na liturgia e na vida da Igreja (a Sagrada Tradição). As duas brotam da mesma fonte divina e formam um único depósito da fé.",
             "O Magistério — o papa e os bispos em comunhão com ele — não está acima da Palavra de Deus, mas a serviço dela: ensina apenas o que foi transmitido, guardando-o e explicando-o com fidelidade.",
-            "O cânon católico tem 73 livros: 46 no Antigo Testamento (incluindo os deuterocanônicos) e 27 no Novo. Foi fixado nos concílios regionais de Hipona (393) e Cartago (397) e definido dogmaticamente em Trento (1546).",
+            "O cânon católico tem 73 livros: 46 no Antigo Testamento (incluindo os deuterocanônicos) e 27 no Novo. Essa lista já era reconhecida pela tradição da Igreja nos concílios regionais de Hipona (393) e Cartago (397), sendo definida solenemente como dogma de fé pelo Concílio de Trento (1546), diante das controvérsias do século XVI sobre o cânon.",
           ],
         },
         {
@@ -381,7 +381,7 @@ export const PRIMEIROS_PASSOS: Trilha = {
             {
               pergunta: "A Igreja acrescentou livros à Bíblia?",
               resposta:
-                "Não. Os deuterocanônicos já constavam na Septuaginta, versão grega usada pelos apóstolos, e foram lidos como Escritura pelos Padres. Foram removidos por outras confissões no século XVI, não acrescentados por Trento.",
+                "Não. Os deuterocanônicos já constavam na Septuaginta, versão grega que teve papel fundamental entre os primeiros cristãos, e foram lidos como Escritura pelos Padres desde a antiguidade. Trento não os criou nem inventou um cânon novo: diante das controvérsias do século XVI, definiu solenemente como dogma de fé a lista canônica já recebida pela tradição da Igreja. Foram outras confissões que os removeram nesse mesmo século.",
             },
             {
               pergunta: "Por que não basta só a Escritura?",
