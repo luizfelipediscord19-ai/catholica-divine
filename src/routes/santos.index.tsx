@@ -87,7 +87,8 @@ function Page() {
 
   useEffect(() => {
     setLimite(PAGINA);
-  }, [query]);
+  }, [query, mes]);
+
 
   useEffect(() => {
     if (!selectedSlug) return;
