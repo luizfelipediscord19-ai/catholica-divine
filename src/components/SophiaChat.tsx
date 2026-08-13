@@ -11,6 +11,8 @@ interface SophiaChatProps {
   suggestions: string[];
   placeholder?: string;
   height?: string;
+  /** Pergunta vinda de um conteúdo (versículo, parágrafo do CIC): já enviada. */
+  perguntaInicial?: string;
 }
 
 export const SophiaChat = memo(({
@@ -18,6 +20,7 @@ export const SophiaChat = memo(({
   suggestions,
   placeholder = "Sua pergunta...",
   height = "60vh",
+  perguntaInicial,
 }: SophiaChatProps) => {
   const [input, setInput] = useState("");
   const [aviso, setAviso] = useState<string | null>(null);
