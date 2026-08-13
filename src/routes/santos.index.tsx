@@ -27,6 +27,20 @@ export const Route = createFileRoute("/santos/")({
 
 const PAGINA = 24;
 
+const MESES = [
+  "janeiro",
+  "fevereiro",
+  "março",
+  "abril",
+  "maio",
+  "junho",
+  "julho",
+  "agosto",
+  "setembro",
+  "outubro",
+  "novembro",
+  "dezembro",
+];
 
 function normalizar(v: string) {
   return v
@@ -37,21 +51,30 @@ function normalizar(v: string) {
     .trim();
 }
 
+/** Extrai o mês da memória litúrgica (“13 de junho” → “junho”). */
+function mesDaMemoria(data: string): string | null {
+  const alvo = normalizar(data);
+  return MESES.find((m) => alvo.includes(normalizar(m))) ?? null;
+}
+
 function Page() {
   const [selectedSlug, setSelectedSlug] = useState<string | null>(null);
   const [query, setQuery] = useState("");
+  const [mes, setMes] = useState<string>("");
   const [limite, setLimite] = useState(PAGINA);
   const detailRef = useRef<HTMLDivElement | null>(null);
 
   const filtered = useMemo(() => {
     const q = normalizar(query);
-    if (!q) return SANTOS_LISTA;
-    const termos = q.split(" ");
+    const termos = q ? q.split(" ") : [];
     return SANTOS_LISTA.filter((s) => {
+      if (mes && mesDaMemoria(s.data) !== mes) return false;
+      if (termos.length === 0) return true;
       const alvo = normalizar(`${s.nome} ${s.body} ${s.data}`);
       return termos.every((t) => alvo.includes(t));
     });
-  }, [query]);
+  }, [query, mes]);
+
 
   const visiveis = useMemo(() => filtered.slice(0, limite), [filtered, limite]);
 
