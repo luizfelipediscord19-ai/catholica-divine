@@ -4,6 +4,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight, Check, Copy, RefreshCw, Share2 } from "lucide-react";
 import { ChatMessage } from "../../lib/types/chat";
 import { SourceReferences, extrairFontes } from "../SourceReferences";
+import { AprofundarLinks } from "./AprofundarLinks";
 import { ReferenciasInternas } from "./ReferenciasInternas";
 
 const APROFUNDAR = [
@@ -67,6 +68,7 @@ export const ChatMessageItem = memo(({ message, onPerguntar, ultimaPergunta, ult
         </div>
         {!isUser && text ? <ReferenciasInternas texto={text} /> : null}
         {!isUser && text ? <SourceReferences references={extrairFontes(text)} /> : null}
+        {!isUser && text ? <AprofundarLinks texto={text} pergunta={ultimaPergunta} /> : null}
         {!isUser && text ? (
           <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-gold/10 pt-3">
             <button
