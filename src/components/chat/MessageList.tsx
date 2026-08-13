@@ -4,6 +4,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight, Check, Copy, Share2 } from "lucide-react";
 import { ChatMessage } from "../../lib/types/chat";
 import { SourceReferences, extrairFontes } from "../SourceReferences";
+import { ReferenciasInternas } from "./ReferenciasInternas";
 
 interface ChatMessageProps {
   message: ChatMessage;
