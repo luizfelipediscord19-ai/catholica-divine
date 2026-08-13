@@ -60,6 +60,15 @@ export const SophiaChat = memo(({
   const submitRef = useRef(handleSubmit);
   submitRef.current = handleSubmit;
 
+  // Pergunta contextual vinda de uma página de conteúdo: envia uma única vez.
+  const inicialEnviada = useRef(false);
+  useEffect(() => {
+    const pergunta = perguntaInicial?.trim();
+    if (!pergunta || inicialEnviada.current) return;
+    inicialEnviada.current = true;
+    submitRef.current(pergunta.slice(0, 800));
+  }, [perguntaInicial]);
+
   const aoTranscrever = useCallback((texto: string) => {
     const limpo = texto.slice(0, LIMITE);
     setInput(limpo);
