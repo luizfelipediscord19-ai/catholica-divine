@@ -1,6 +1,7 @@
 import { memo, useRef, useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
-import { Check, Copy } from "lucide-react";
+import { Link } from "@tanstack/react-router";
+import { ArrowRight, Check, Copy, Share2 } from "lucide-react";
 import { ChatMessage } from "../../lib/types/chat";
 import { SourceReferences, extrairFontes } from "../SourceReferences";
 
@@ -23,6 +24,22 @@ export const ChatMessageItem = memo(({ message }: ChatMessageProps) => {
     }
   };
 
+  const compartilhar = async () => {
+    const dados = { title: "Sophia — Assistente de estudo católico", text };
+    const podeCompartilhar = typeof navigator !== "undefined" && typeof navigator.share === "function";
+    try {
+      if (podeCompartilhar) {
+        await navigator.share(dados);
+        return;
+      }
+      await navigator.clipboard.writeText(text);
+      setCopiado(true);
+      setTimeout(() => setCopiado(false), 2000);
+    } catch {
+      /* usuário cancelou ou API indisponível */
+    }
+  };
+
   return (
     <div
       className={`flex animate-content-fade ${isUser ? "justify-end" : "justify-start"}`}
@@ -39,16 +56,35 @@ export const ChatMessageItem = memo(({ message }: ChatMessageProps) => {
         </div>
         {!isUser && text ? <SourceReferences references={extrairFontes(text)} /> : null}
         {!isUser && text ? (
-          <button
-            type="button"
-            onClick={copiar}
-            aria-label="Copiar resposta"
-            title="Copiar resposta"
-            className="mt-3 inline-flex items-center gap-2 kicker hover:text-gold transition-colors"
-          >
-            {copiado ? <Check className="size-3" aria-hidden="true" /> : <Copy className="size-3" aria-hidden="true" />}
-            {copiado ? "Copiado" : "Copiar"}
-          </button>
+          <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-gold/10 pt-3">
+            <button
+              type="button"
+              onClick={copiar}
+              aria-label="Copiar resposta"
+              className="inline-flex min-h-9 items-center gap-2 kicker transition-colors hover:text-gold"
+            >
+              {copiado ? (
+                <Check className="size-3" aria-hidden="true" />
+              ) : (
+                <Copy className="size-3" aria-hidden="true" />
+              )}
+              {copiado ? "Copiado" : "Copiar"}
+            </button>
+            <button
+              type="button"
+              onClick={compartilhar}
+              aria-label="Compartilhar resposta"
+              className="inline-flex min-h-9 items-center gap-2 kicker transition-colors hover:text-gold"
+            >
+              <Share2 className="size-3" aria-hidden="true" /> Compartilhar
+            </button>
+            <Link
+              to="/estudar"
+              className="inline-flex min-h-9 items-center gap-2 kicker transition-colors hover:text-gold"
+            >
+              Continuar estudando <ArrowRight className="size-3" aria-hidden="true" />
+            </Link>
+          </div>
         ) : null}
       </div>
     </div>

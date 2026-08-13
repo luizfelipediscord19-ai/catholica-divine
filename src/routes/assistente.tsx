@@ -2,39 +2,13 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Sparkles } from "lucide-react";
 import { SUGESTOES_GERAL } from "../lib/data/sophia-perguntas";
 import { SophiaChat } from "../components/SophiaChat";
+import { FAQ_SOPHIA as FAQ } from "../lib/data/sophia-faq";
 
 const URL_PAGINA = "https://portalcatolico.vercel.app/assistente";
 const TITULO = "Sophia — Assistente de IA Católica fiel ao Magistério";
 const DESCRICAO =
   "Sophia é a IA católica do Portal Católico: responde dúvidas de fé, doutrina, liturgia e Escritura citando a Bíblia, o Catecismo e documentos do Magistério.";
 
-const FAQ = [
-  {
-    pergunta: "O que é a Sophia, a IA católica do Portal?",
-    resposta:
-      "Sophia é o assistente de inteligência artificial do Portal Católico. Ela responde perguntas sobre fé, doutrina, liturgia e Sagrada Escritura sempre ancorada em fontes oficiais: Bíblia, Catecismo da Igreja Católica, concílios, Magistério papal e Direito Canônico.",
-  },
-  {
-    pergunta: "As respostas da Sophia substituem um sacerdote?",
-    resposta:
-      "Não. Sophia serve à formação e ao estudo, mas não substitui o acompanhamento de um sacerdote, a confissão sacramental nem a orientação espiritual pessoal. Em matéria de foro íntimo, procure sempre um confessor.",
-  },
-  {
-    pergunta: "Quais fontes a Sophia utiliza para responder?",
-    resposta:
-      "Ela segue a hierarquia das fontes católicas: Sagrada Escritura, Catecismo da Igreja Católica, concílios ecumênicos, encíclicas e exortações papais, o Código de Direito Canônico de 1983 e os Padres e Doutores da Igreja. As referências aparecem citadas nas próprias respostas.",
-  },
-  {
-    pergunta: "Preciso criar conta para usar a Sophia?",
-    resposta:
-      "Não. A conversa com a Sophia é aberta a qualquer visitante. A conta serve apenas para guardar progresso de leitura, favoritos e o diário espiritual do painel.",
-  },
-  {
-    pergunta: "Sophia pode ajudar coroinhas e servidores do altar?",
-    resposta:
-      "Sim. A formação de coroinhas é uma área de especialização do Portal: rubricas, paramentos, vasos sagrados e o modo de servir na Missa. Há também a seção dedicada em /coroinhas.",
-  },
-];
 
 export const Route = createFileRoute("/assistente")({
   head: () => ({

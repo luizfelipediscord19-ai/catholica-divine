@@ -144,12 +144,25 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex shrink-0 items-center justify-end gap-1.5 sm:gap-2">
+          {/* Campo de busca visível no desktop; ícone no celular. */}
           <button
             type="button"
             onClick={() => setBusca(true)}
             aria-label="Buscar no portal (Ctrl + K)"
-            title="Buscar (Ctrl + K)"
-            className={ICONE_REDONDO}
+            className="hidden min-h-10 w-56 items-center gap-2 rounded-[var(--radius-btn)] border border-gold/20 bg-transparent px-3 text-left text-step--1 text-foreground/55 transition-premium hover:border-gold/50 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold lg:flex"
+          >
+            <Search className="size-4 shrink-0 text-gold" aria-hidden="true" />
+            <span className="min-w-0 flex-1 truncate">O que você procura?</span>
+            <span aria-hidden="true" className="label-btn shrink-0 text-foreground/35">
+              ⌘K
+            </span>
+          </button>
+          <button
+            type="button"
+            onClick={() => setBusca(true)}
+            aria-label="Buscar no portal"
+            title="Buscar"
+            className={`${ICONE_REDONDO} lg:hidden`}
           >
             <Search className="size-4" aria-hidden="true" />
           </button>
