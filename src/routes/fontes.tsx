@@ -109,9 +109,18 @@ function FontesPage() {
         <LegendaConfiabilidade className="mt-sm" />
         <div className="mt-sm"><Prose>
           <p>
+            O Portal Católico diferencia ensinamento oficial, tradição da Igreja, contexto histórico e
+            explicação teológica. Informações hagiográficas ou tradicionalmente transmitidas não são
+            apresentadas como fatos históricos comprovados quando as fontes não permitem tal certeza.
+          </p>
+          <p>
+            Quando houver divergência entre tradições históricas, o portal procurará apresentar essa
+            divergência em vez de escolher arbitrariamente uma versão como fato.
+          </p>
+          <p>
             Onde a documentação histórica é insuficiente, o portal escreve
-            <em> “segundo a tradição”</em> em vez de afirmar certeza. Revelações privadas —
-            mesmo as reconhecidas pela Igreja — não pertencem ao depósito da fé
+            <em> “segundo a tradição”</em> ou <em>“segundo a tradição hagiográfica”</em> em vez de afirmar
+            certeza. Revelações privadas — mesmo as reconhecidas pela Igreja — não pertencem ao depósito da fé
             (Catecismo da Igreja Católica, § 67).
           </p>
         </Prose></div>

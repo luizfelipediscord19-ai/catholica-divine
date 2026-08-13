@@ -164,7 +164,7 @@ export const ORACOES: Oracao[] = [
     titulo: "Sob Vossa Proteção",
     latim: "Sub Tuum Praesidium",
     categoria: "Marianas",
-    nota: "A mais antiga oração mariana conhecida (papiro egípcio do séc. III).",
+    nota: "Tida como a mais antiga oração mariana conhecida; o papiro egípcio que a conserva é datado entre os sécs. III e IV, sem consenso entre os especialistas.",
     texto:
       "Sob vossa proteção nos acolhemos, Santa Mãe de Deus; não desprezeis as nossas súplicas em nossas necessidades, mas livrai-nos sempre de todos os perigos, ó Virgem gloriosa e bendita. Amém.",
   },
@@ -280,7 +280,7 @@ export const ORACOES: Oracao[] = [
     slug: "sao-miguel-arcanjo",
     titulo: "Oração a São Miguel Arcanjo",
     categoria: "Proteção",
-    nota: "Composta por Leão XIII em 1886, após uma visão sobre as provações da Igreja.",
+    nota: "Composta por Leão XIII e difundida a partir de 1886; o relato de uma visão papal na origem da oração pertence à tradição piedosa, sem comprovação documental.",
     texto:
       "São Miguel Arcanjo, defendei-nos no combate, sede o nosso refúgio contra as maldades e ciladas do demônio. Ordene-lhe Deus, instantemente o pedimos, e vós, príncipe da milícia celeste, pela virtude divina, precipitai no inferno a Satanás e aos outros espíritos malignos que vagueiam pelo mundo para perder as almas. Amém.",
   },
@@ -610,7 +610,7 @@ export const ORACOES: Oracao[] = [
     slug: "ladainha-da-divina-misericordia",
     titulo: "Ladainha da Divina Misericórdia (excerto)",
     categoria: "Litanias",
-    nota: "Inspirada nas revelações a Santa Faustina Kowalska, aprovada pela devoção universal em 2000.",
+    nota: "Nascida das revelações privadas relatadas por Santa Faustina Kowalska — que não pertencem ao depósito da fé; a devoção difundiu-se na Igreja e em 2000 São João Paulo II instituiu o II Domingo da Páscoa como Domingo da Divina Misericórdia.",
     paraQue: "Confiar na misericórdia de Deus para si e para o mundo inteiro.",
     quando: "No Domingo da Divina Misericórdia e às 15h, hora da misericórdia.",
     texto:
@@ -819,7 +819,7 @@ export const ORACOES: Oracao[] = [
     paraQue: "Invocar o patrono das causas urgentes, sem substituir a paciência cristã pela pressa.",
     quando: "Diante de necessidades imediatas e prazos apertados.",
     texto:
-      "Santo Expedito, mártir e soldado de Cristo, que sempre respondestes prontamente ao chamado da fé: intercedei por esta minha necessidade urgente. Alcançai-me também a virtude de nunca adiar o bem que devo fazer hoje. Amém.",
+      "Santo Expedito, venerado pela tradição popular como mártir e soldado de Cristo, que sempre respondestes prontamente ao chamado da fé: intercedei por esta minha necessidade urgente. Alcançai-me também a virtude de nunca adiar o bem que devo fazer hoje. Amém.",
   },
   {
     slug: "sao-francisco-de-assis-a",

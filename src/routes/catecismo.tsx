@@ -99,9 +99,12 @@ function Page() {
             A primeira edição foi publicada em francês em 1992. Após cinco anos de uso e tradução em diversas
             línguas, foi preparada a <em>editio typica</em> em latim (1997), revisada para garantir uniformidade
             doutrinal e linguística. As principais modificações concentraram-se em precisões teológicas; a
-            mais conhecida é a do § 2267 (pena de morte), atualizado posteriormente em 2018 pelo Papa Francisco
-            (<em>rescriptum</em> da Congregação para a Doutrina da Fé, 1 de agosto de 2018), declarando-a
-            <em> inadmissível</em>.
+            mais conhecida é a do § 2267 (pena de morte). A nova redação desse parágrafo foi aprovada pelo Papa
+            Francisco em 11 de maio de 2018 e promulgada pela autoridade competente da Santa Sé por
+            <em>rescriptum</em> da Congregação para a Doutrina da Fé de 1º de agosto de 2018 — não por
+            iniciativa própria do Dicastério. O texto atual ensina que a pena de morte é
+            <em> inadmissível</em>, porque atenta contra a inviolabilidade e a dignidade da pessoa, e que a
+            Igreja se empenha por sua abolição em todo o mundo.
           </p>
 
           <h3>5. Compêndio e Youcat</h3>
