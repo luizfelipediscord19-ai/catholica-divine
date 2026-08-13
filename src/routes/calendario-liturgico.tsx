@@ -3,6 +3,8 @@ import { PageHero, CardGrid, ContentCard, Prose, Pullquote } from "../components
 import { ReadingMode, FnRef } from "../components/ReadingMode";
 import { VersiculoDoDia } from "../components/VersiculoDoDia";
 import { MapaAnoLiturgico } from "../components/MapaAnoLiturgico";
+import { HojeNaLiturgia } from "../components/HojeNaLiturgia";
+
 
 export const Route = createFileRoute("/calendario-liturgico")({
   head: () => ({
