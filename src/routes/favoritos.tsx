@@ -45,7 +45,7 @@ function nomeLivro(slug: string) {
   return getLivro(slug)?.nome ?? slug;
 }
 
-type Aba = "favoritos" | "notas";
+type Aba = "favoritos" | "notas" | "salvos";
 
 function FavoritosPage() {
   const { carregando, desconectado } = useIdentidade();
