@@ -114,7 +114,8 @@ function FontesPage() {
             mesmo as reconhecidas pela Igreja — não pertencem ao depósito da fé
             (Catecismo da Igreja Católica, § 67).
           </p>
-        </Prose>
+        </Prose></div>
+
       </Section>
 
 
