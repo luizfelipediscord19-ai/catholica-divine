@@ -147,6 +147,17 @@ function BuscaAvancadaPage() {
 
   const dados = mutation.data;
 
+  /** Resultados agrupados por escopo, preservando a ordem de relevância. */
+  const grupos = useMemo(() => {
+    const mapa = new Map<EscopoBusca, Resultado[]>();
+    for (const r of dados?.resultados ?? []) {
+      const lista = mapa.get(r.escopo);
+      if (lista) lista.push(r);
+      else mapa.set(r.escopo, [r]);
+    }
+    return mapa;
+  }, [dados]);
+
   function alternar(id: EscopoBusca) {
     setAtivos((prev) =>
       prev.includes(id) ? (prev.length > 1 ? prev.filter((e) => e !== id) : prev) : [...prev, id],
