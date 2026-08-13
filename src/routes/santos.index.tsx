@@ -6,6 +6,8 @@ import { buildSantoView } from "@/lib/santos-helpers";
 import { imagemSanto } from "@/lib/data/santos-imagens";
 import { RetratoSanto } from "@/components/santos/RetratoSanto";
 import { usePrefetchSanto, usePrefetchLote } from "@/lib/santos/prefetch";
+import { BotaoSalvar } from "@/components/portal/BotaoSalvar";
+
 
 export const Route = createFileRoute("/santos/")({
   head: () => ({
@@ -25,6 +27,20 @@ export const Route = createFileRoute("/santos/")({
 
 const PAGINA = 24;
 
+const MESES = [
+  "janeiro",
+  "fevereiro",
+  "março",
+  "abril",
+  "maio",
+  "junho",
+  "julho",
+  "agosto",
+  "setembro",
+  "outubro",
+  "novembro",
+  "dezembro",
+];
 
 function normalizar(v: string) {
   return v
@@ -35,21 +51,30 @@ function normalizar(v: string) {
     .trim();
 }
 
+/** Extrai o mês da memória litúrgica (“13 de junho” → “junho”). */
+function mesDaMemoria(data: string): string | null {
+  const alvo = normalizar(data);
+  return MESES.find((m) => alvo.includes(normalizar(m))) ?? null;
+}
+
 function Page() {
   const [selectedSlug, setSelectedSlug] = useState<string | null>(null);
   const [query, setQuery] = useState("");
+  const [mes, setMes] = useState<string>("");
   const [limite, setLimite] = useState(PAGINA);
   const detailRef = useRef<HTMLDivElement | null>(null);
 
   const filtered = useMemo(() => {
     const q = normalizar(query);
-    if (!q) return SANTOS_LISTA;
-    const termos = q.split(" ");
+    const termos = q ? q.split(" ") : [];
     return SANTOS_LISTA.filter((s) => {
+      if (mes && mesDaMemoria(s.data) !== mes) return false;
+      if (termos.length === 0) return true;
       const alvo = normalizar(`${s.nome} ${s.body} ${s.data}`);
       return termos.every((t) => alvo.includes(t));
     });
-  }, [query]);
+  }, [query, mes]);
+
 
   const visiveis = useMemo(() => filtered.slice(0, limite), [filtered, limite]);
 
@@ -62,7 +87,8 @@ function Page() {
 
   useEffect(() => {
     setLimite(PAGINA);
-  }, [query]);
+  }, [query, mes]);
+
 
   useEffect(() => {
     if (!selectedSlug) return;
@@ -98,9 +124,11 @@ function Page() {
           {selected ? (
             <SantoDetail
               key={selected.view.nome}
+              slug={selectedSlug!}
               view={selected.view}
               onClose={() => setSelectedSlug(null)}
             />
+
           ) : null}
         </div>
 
@@ -126,6 +154,30 @@ function Page() {
             </button>
           ) : null}
         </div>
+
+        <div className="mb-8 space-y-3">
+          <p className="kicker">Memória por mês</p>
+          <ul className="flex flex-wrap gap-2">
+            {[{ v: "", r: "Todos" }, ...MESES.map((m) => ({ v: m, r: m }))].map((op) => (
+              <li key={op.v || "todos"}>
+                <button
+                  type="button"
+                  onClick={() => setMes(op.v)}
+                  aria-pressed={mes === op.v}
+                  className={`inline-flex min-h-9 items-center rounded-[var(--radius-btn)] border px-3 text-step--1 capitalize transition-premium ${
+                    mes === op.v
+                      ? "border-gold bg-gold/10 text-gold"
+                      : "border-gold/20 text-foreground/70 hover:border-gold/50 hover:text-gold"
+                  }`}
+                >
+                  {op.r}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+
 
         <CardGrid cols={3}>
           {visiveis.map((s, i) => (
@@ -217,12 +269,15 @@ function CartaoSanto({
 }
 
 function SantoDetail({
+  slug,
   view,
   onClose,
 }: {
+  slug: string;
   view: ReturnType<typeof buildSantoView>;
   onClose: () => void;
 }) {
+
   const img = view.imagem;
   return (
     <article className="mb-12 surface-card backdrop-blur-xl overflow-hidden animate-content-fade shadow-2xl shadow-gold/5">
@@ -260,15 +315,26 @@ function SantoDetail({
                 {view.nome}
               </h3>
             </div>
-            <button
-              type="button"
-              onClick={onClose}
-              aria-label="Fechar biografia"
-              className="shrink-0 size-9 grid place-items-center border border-gold/30 text-gold hover:bg-gold hover:text-deep transition-colors"
-            >
-              ×
-            </button>
+            <div className="flex shrink-0 items-center gap-2">
+              <BotaoSalvar
+                tipo="santo"
+                slug={slug}
+                titulo={view.nome}
+                descricao={view.data ? `Memória · ${view.data}` : undefined}
+                href={`/santos/${slug}`}
+                compacto
+              />
+              <button
+                type="button"
+                onClick={onClose}
+                aria-label="Fechar biografia"
+                className="shrink-0 size-9 grid place-items-center border border-gold/30 text-gold hover:bg-gold hover:text-deep transition-colors"
+              >
+                ×
+              </button>
+            </div>
           </div>
+
 
           <dl className="flex flex-wrap gap-x-8 gap-y-2 text-xs text-muted-foreground">
             {view.data ? (

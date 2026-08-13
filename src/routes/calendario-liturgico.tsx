@@ -3,6 +3,8 @@ import { PageHero, CardGrid, ContentCard, Prose, Pullquote } from "../components
 import { ReadingMode, FnRef } from "../components/ReadingMode";
 import { VersiculoDoDia } from "../components/VersiculoDoDia";
 import { MapaAnoLiturgico } from "../components/MapaAnoLiturgico";
+import { HojeNaLiturgia } from "../components/HojeNaLiturgia";
+
 
 export const Route = createFileRoute("/calendario-liturgico")({
   head: () => ({
@@ -63,7 +65,11 @@ function Page() {
       />
 
       <ReadingMode title="O Ano Litúrgico" toc={TOC} footnotes={FOOTNOTES}>
+        <div className="mb-10 print:hidden">
+          <HojeNaLiturgia />
+        </div>
         <Prose>
+
           <section id="introducao" className="scroll-mt-24">
             <h3>O que é o Ano Litúrgico</h3>
             <p>

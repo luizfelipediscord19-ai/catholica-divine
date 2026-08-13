@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { NotebookPen, Search, Star, Trash2 } from "lucide-react";
+import { Bookmark, NotebookPen, Search, Star, Trash2, X } from "lucide-react";
 import { useMemo, useState } from "react";
 import { toast } from "sonner";
 
@@ -8,8 +8,11 @@ import { Painel, Rotulo, botaoGhostClass, inputClass } from "@/components/portal
 import { EstadoSessao } from "@/components/portal/EstadoSessao";
 import { useAuth } from "@/hooks/use-auth";
 import { useIdentidade, usePainel } from "@/hooks/use-identidade";
+import { useSalvos } from "@/hooks/use-salvos";
+import { ROTULO_TIPO } from "@/lib/salvos";
 import { LIVROS, getLivro } from "@/lib/data/biblia";
 import { apagarNotaFn } from "@/lib/portal.functions";
+
 
 export const Route = createFileRoute("/favoritos")({
   head: () => ({
@@ -45,7 +48,7 @@ function nomeLivro(slug: string) {
   return getLivro(slug)?.nome ?? slug;
 }
 
-type Aba = "favoritos" | "notas";
+type Aba = "favoritos" | "notas" | "salvos";
 
 function FavoritosPage() {
   const { carregando, desconectado } = useIdentidade();
@@ -54,6 +57,8 @@ function FavoritosPage() {
   const [aba, setAba] = useState<Aba>("favoritos");
   const [busca, setBusca] = useState("");
   const [livroFiltro, setLivroFiltro] = useState("");
+  const { itens: salvosTodos, remover: removerSalvo } = useSalvos();
+
 
   const dados = painel.data;
 
@@ -77,6 +82,15 @@ function FavoritosPage() {
         (!q || normalizar(`${nomeLivro(n.livro)} ${n.capitulo} ${n.conteudo}`).includes(q)),
     );
   }, [dados?.notas, busca, livroFiltro]);
+
+  const salvos = useMemo(() => {
+    const q = normalizar(busca.trim());
+    if (!q) return salvosTodos;
+    return salvosTodos.filter((i) =>
+      normalizar(`${i.titulo} ${i.descricao ?? ""} ${ROTULO_TIPO[i.tipo]}`).includes(q),
+    );
+  }, [salvosTodos, busca]);
+
 
   const livrosUsados = useMemo(() => {
     const slugs = new Set([
@@ -188,7 +202,13 @@ function FavoritosPage() {
 
 
       <div className="flex flex-wrap items-center gap-3">
-        {(["favoritos", "notas"] as const).map((v) => (
+        {(
+          [
+            { v: "favoritos", rotulo: `Versículos (${favoritos.length})`, Icone: Star },
+            { v: "notas", rotulo: `Anotações (${notas.length})`, Icone: NotebookPen },
+            { v: "salvos", rotulo: `Salvos (${salvos.length})`, Icone: Bookmark },
+          ] as const
+        ).map(({ v, rotulo, Icone }) => (
           <button
             key={v}
             type="button"
@@ -197,18 +217,15 @@ function FavoritosPage() {
             className={`inline-flex items-center gap-2 min-h-11 px-6 py-3 label-btn border transition-premium ${
               aba === v
                 ? "border-gold bg-gold/10 text-gold"
-                : "border-gold/20 text-paper/70 hover:text-gold hover:border-gold/50"
+                : "border-gold/20 text-foreground/70 hover:text-gold hover:border-gold/50"
             }`}
           >
-            {v === "favoritos" ? (
-              <Star className="size-3.5" aria-hidden="true" />
-            ) : (
-              <NotebookPen className="size-3.5" aria-hidden="true" />
-            )}
-            {v === "favoritos" ? `Versículos (${favoritos.length})` : `Anotações (${notas.length})`}
+            <Icone className="size-3.5" aria-hidden="true" />
+            {rotulo}
           </button>
         ))}
       </div>
+
 
       <div className="grid gap-4 sm:grid-cols-[1fr_auto]">
         <label className="relative block">
@@ -224,24 +241,72 @@ function FavoritosPage() {
             className={`${inputClass} pl-11`}
           />
         </label>
-        <label className="block">
-          <span className="sr-only">Filtrar por livro</span>
-          <select
-            value={livroFiltro}
-            onChange={(e) => setLivroFiltro(e.target.value)}
-            className={`${inputClass} bg-background text-foreground`}
-          >
-            <option value="">Todos os livros</option>
-            {livrosUsados.map((l) => (
-              <option key={l.slug} value={l.slug}>
-                {l.nome}
-              </option>
-            ))}
-          </select>
-        </label>
+        {aba !== "salvos" ? (
+          <label className="block">
+            <span className="sr-only">Filtrar por livro</span>
+            <select
+              value={livroFiltro}
+              onChange={(e) => setLivroFiltro(e.target.value)}
+              className={`${inputClass} bg-background text-foreground`}
+            >
+              <option value="">Todos os livros</option>
+              {livrosUsados.map((l) => (
+                <option key={l.slug} value={l.slug}>
+                  {l.nome}
+                </option>
+              ))}
+            </select>
+          </label>
+        ) : null}
       </div>
 
-      {aba === "favoritos" ? (
+      {aba === "salvos" ? (
+        salvos.length === 0 ? (
+          <Vazio>
+            Nada salvo ainda. Use o botão “Salvar” nas páginas de{" "}
+            <Link to="/santos" className="text-gold hover:underline">
+              santos
+            </Link>
+            , orações e trilhas para montar sua biblioteca pessoal.
+          </Vazio>
+        ) : (
+          <ul className="grid gap-4 md:grid-cols-2">
+            {salvos.map((item) => (
+              <li key={`${item.tipo}-${item.slug}`}>
+                <Painel className="h-full flex flex-col gap-3">
+                  <div className="flex items-start justify-between gap-3">
+                    <Rotulo>{ROTULO_TIPO[item.tipo]}</Rotulo>
+                    <button
+                      type="button"
+                      onClick={() => removerSalvo(item.tipo, item.slug)}
+                      aria-label={`Remover ${item.titulo} dos salvos`}
+                      className={`${botaoGhostClass} px-2`}
+                    >
+                      <X className="size-3.5" aria-hidden="true" />
+                    </button>
+                  </div>
+                  <p className="font-display text-lg text-foreground leading-tight">
+                    {item.titulo}
+                  </p>
+                  {item.descricao ? (
+                    <p className="text-sm text-muted-foreground font-light flex-1">
+                      {item.descricao}
+                    </p>
+                  ) : (
+                    <span className="flex-1" />
+                  )}
+                  {item.href ? (
+                    <Link to={item.href} className="kicker hover:text-gold transition-colors">
+                      Abrir →
+                    </Link>
+                  ) : null}
+                </Painel>
+              </li>
+            ))}
+          </ul>
+        )
+      ) : aba === "favoritos" ? (
+
         favoritos.length === 0 ? (
           <Vazio>
             Nenhum versículo encontrado. Toque na estrela ao lado de um versículo na{" "}
