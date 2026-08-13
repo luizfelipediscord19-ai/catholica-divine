@@ -819,7 +819,7 @@ export const ORACOES: Oracao[] = [
     paraQue: "Invocar o patrono das causas urgentes, sem substituir a paciência cristã pela pressa.",
     quando: "Diante de necessidades imediatas e prazos apertados.",
     texto:
-      "Santo Expedito, mártir e soldado de Cristo, que sempre respondestes prontamente ao chamado da fé: intercedei por esta minha necessidade urgente. Alcançai-me também a virtude de nunca adiar o bem que devo fazer hoje. Amém.",
+      "Santo Expedito, venerado pela tradição popular como mártir e soldado de Cristo, que sempre respondestes prontamente ao chamado da fé: intercedei por esta minha necessidade urgente. Alcançai-me também a virtude de nunca adiar o bem que devo fazer hoje. Amém.",
   },
   {
     slug: "sao-francisco-de-assis-a",
