@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { NotebookPen, Search, Star, Trash2 } from "lucide-react";
+import { Bookmark, NotebookPen, Search, Star, Trash2, X } from "lucide-react";
 import { useMemo, useState } from "react";
 import { toast } from "sonner";
 
@@ -8,8 +8,11 @@ import { Painel, Rotulo, botaoGhostClass, inputClass } from "@/components/portal
 import { EstadoSessao } from "@/components/portal/EstadoSessao";
 import { useAuth } from "@/hooks/use-auth";
 import { useIdentidade, usePainel } from "@/hooks/use-identidade";
+import { useSalvos } from "@/hooks/use-salvos";
+import { ROTULO_TIPO } from "@/lib/salvos";
 import { LIVROS, getLivro } from "@/lib/data/biblia";
 import { apagarNotaFn } from "@/lib/portal.functions";
+
 
 export const Route = createFileRoute("/favoritos")({
   head: () => ({
