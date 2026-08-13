@@ -4,6 +4,7 @@ import { ReadingMode, FnRef } from "../components/ReadingMode";
 import { Termo } from "../components/Termo";
 import maria from "../assets/maria.jpg";
 import { MarcarEstudo } from "../components/portal/MarcarEstudo";
+import { NotaConfiabilidade } from "../components/SeloConfiabilidade";
 
 export const Route = createFileRoute("/maria")({
   head: () => ({
@@ -165,6 +166,16 @@ function Page() {
               <em> Mãe da Misericórdia</em>. Todos esses títulos, ensina <em>Lumen Gentium</em> 62,
               <em> nada acrescentam nem subtraem à dignidade e eficácia de Cristo, único Mediador</em>.
             </p>
+            <NotaConfiabilidade nivel="teologia">
+              “Mediadora de todas as graças” é um título devocional e teológico, não um quinto dogma mariano —
+              a Igreja Católica define solenemente apenas quatro dogmas marianos (Maternidade Divina, Virgindade
+              Perpétua, Imaculada Conceição e Assunção). O Concílio Vaticano II, embora reconheça a cooperação
+              singular de Maria na obra da salvação, evitou deliberadamente proclamar essa expressão como
+              definição dogmática, preferindo a linguagem de “mediação materna” sempre subordinada e
+              participada (<em>LG</em> 60-62). Como recorda São Paulo, “há um só Deus e um só mediador entre
+              Deus e os homens, Cristo Jesus” (1Tm 2,5); toda intercessão de Maria e dos santos deriva
+              inteiramente dessa única mediação e nela se apoia.
+            </NotaConfiabilidade>
           </section>
 
           <section id="mediacao" className="scroll-mt-24">
