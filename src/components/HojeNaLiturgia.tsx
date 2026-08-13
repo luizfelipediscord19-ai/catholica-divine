@@ -7,7 +7,7 @@ import { SANTOS_LISTA } from "@/lib/santos-lista";
 const AMOSTRA_COR: Record<CorLiturgica, string> = {
   Roxo: "bg-[#6b3fa0]",
   Branco: "bg-[#f5f1e6]",
-  Verde: "bg-[#2f7d४f]".replace("४", "4"),
+  Verde: "bg-[#2f7d4f]",
   Vermelho: "bg-[#a32a25]",
   Rosa: "bg-[#e3a3b8]",
 };
