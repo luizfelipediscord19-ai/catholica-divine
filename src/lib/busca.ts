@@ -7,6 +7,7 @@ import { ORACOES } from "./data/oracoes";
 import { OBJECOES } from "./data/apologetica-objecoes";
 import { SANTOS_LISTA } from "./santos-lista";
 import { TRILHAS } from "./data/trilhas/index";
+import { expandirTermos, palavrasChave } from "./busca/linguagem";
 
 export type Categoria =
   | "Página"
