@@ -310,15 +310,26 @@ function SantoDetail({
                 {view.nome}
               </h3>
             </div>
-            <button
-              type="button"
-              onClick={onClose}
-              aria-label="Fechar biografia"
-              className="shrink-0 size-9 grid place-items-center border border-gold/30 text-gold hover:bg-gold hover:text-deep transition-colors"
-            >
-              ×
-            </button>
+            <div className="flex shrink-0 items-center gap-2">
+              <BotaoSalvar
+                tipo="santo"
+                slug={slug}
+                titulo={view.nome}
+                descricao={view.data ? `Memória · ${view.data}` : undefined}
+                href={`/santos/${slug}`}
+                compacto
+              />
+              <button
+                type="button"
+                onClick={onClose}
+                aria-label="Fechar biografia"
+                className="shrink-0 size-9 grid place-items-center border border-gold/30 text-gold hover:bg-gold hover:text-deep transition-colors"
+              >
+                ×
+              </button>
+            </div>
           </div>
+
 
           <dl className="flex flex-wrap gap-x-8 gap-y-2 text-xs text-muted-foreground">
             {view.data ? (
