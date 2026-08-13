@@ -241,24 +241,72 @@ function FavoritosPage() {
             className={`${inputClass} pl-11`}
           />
         </label>
-        <label className="block">
-          <span className="sr-only">Filtrar por livro</span>
-          <select
-            value={livroFiltro}
-            onChange={(e) => setLivroFiltro(e.target.value)}
-            className={`${inputClass} bg-background text-foreground`}
-          >
-            <option value="">Todos os livros</option>
-            {livrosUsados.map((l) => (
-              <option key={l.slug} value={l.slug}>
-                {l.nome}
-              </option>
-            ))}
-          </select>
-        </label>
+        {aba !== "salvos" ? (
+          <label className="block">
+            <span className="sr-only">Filtrar por livro</span>
+            <select
+              value={livroFiltro}
+              onChange={(e) => setLivroFiltro(e.target.value)}
+              className={`${inputClass} bg-background text-foreground`}
+            >
+              <option value="">Todos os livros</option>
+              {livrosUsados.map((l) => (
+                <option key={l.slug} value={l.slug}>
+                  {l.nome}
+                </option>
+              ))}
+            </select>
+          </label>
+        ) : null}
       </div>
 
-      {aba === "favoritos" ? (
+      {aba === "salvos" ? (
+        salvos.length === 0 ? (
+          <Vazio>
+            Nada salvo ainda. Use o botão “Salvar” nas páginas de{" "}
+            <Link to="/santos" className="text-gold hover:underline">
+              santos
+            </Link>
+            , orações e trilhas para montar sua biblioteca pessoal.
+          </Vazio>
+        ) : (
+          <ul className="grid gap-4 md:grid-cols-2">
+            {salvos.map((item) => (
+              <li key={`${item.tipo}-${item.slug}`}>
+                <Painel className="h-full flex flex-col gap-3">
+                  <div className="flex items-start justify-between gap-3">
+                    <Rotulo>{ROTULO_TIPO[item.tipo]}</Rotulo>
+                    <button
+                      type="button"
+                      onClick={() => removerSalvo(item.tipo, item.slug)}
+                      aria-label={`Remover ${item.titulo} dos salvos`}
+                      className={`${botaoGhostClass} px-2`}
+                    >
+                      <X className="size-3.5" aria-hidden="true" />
+                    </button>
+                  </div>
+                  <p className="font-display text-lg text-foreground leading-tight">
+                    {item.titulo}
+                  </p>
+                  {item.descricao ? (
+                    <p className="text-sm text-muted-foreground font-light flex-1">
+                      {item.descricao}
+                    </p>
+                  ) : (
+                    <span className="flex-1" />
+                  )}
+                  {item.href ? (
+                    <Link to={item.href} className="kicker hover:text-gold transition-colors">
+                      Abrir →
+                    </Link>
+                  ) : null}
+                </Painel>
+              </li>
+            ))}
+          </ul>
+        )
+      ) : aba === "favoritos" ? (
+
         favoritos.length === 0 ? (
           <Vazio>
             Nenhum versículo encontrado. Toque na estrela ao lado de um versículo na{" "}
