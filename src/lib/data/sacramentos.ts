@@ -76,7 +76,7 @@ export const SACRAMENTOS: Sacramento[] = [
       { ref: "Jo 6,51-56", texto: "Eu sou o pão vivo descido do céu. Quem comer deste pão viverá eternamente." },
       { ref: "1Cor 11,23-29", texto: "Quem come este pão e bebe este cálice indignamente, será réu do Corpo e do Sangue do Senhor." },
     ],
-    catecismo: "CIC §§1322-1419. A Eucaristia é 'fonte e cume de toda a vida cristã' (LG 11). Pela consagração opera-se a transubstanciação: a substância do pão converte-se na do Corpo de Cristo e a do vinho na de seu Sangue. A matéria é o pão de trigo (ázimo no rito latino) e o vinho de uva; a forma, as palavras da Consagração pronunciadas pelo sacerdote in persona Christi. O ministro válido é somente o bispo ou presbítero.",
+    catecismo: "CIC §§1322-1419. A Eucaristia é 'fonte e cume de toda a vida cristã' (LG 11). Pela consagração opera-se a transubstanciação: a substância do pão converte-se na do Corpo de Cristo e a do vinho na de seu Sangue. A matéria é o pão de trigo (ázimo no rito latino) e o vinho de uva; a forma, as palavras da Consagração pronunciadas pelo sacerdote in persona Christi. O ministro válido é somente o bispo ou presbítero. Quem tem consciência de pecado mortal não deve comungar sem antes receber a absolvição sacramental, salvo grave necessidade e impossibilidade de confessar-se, e neste caso com o propósito de fazê-lo o quanto antes (CIC § 1385; cân. 916).",
     historia:
       "Instituída por Cristo na Última Ceia, na noite em que foi entregue. Os cristãos celebram a 'fração do pão' desde o Pentecostes (At 2,42). A doutrina da Presença Real foi solenemente afirmada pelos Concílios de Latrão IV e Trento.",
     efeitos: [
@@ -87,7 +87,7 @@ export const SACRAMENTOS: Sacramento[] = [
     ],
     faq: [
       { q: "O que é transubstanciação?", a: "É a conversão real da substância do pão e do vinho no Corpo e Sangue de Cristo, permanecendo apenas as 'espécies' (aparências) do pão e do vinho. Doutrina solenemente definida pelo Concílio de Trento." },
-      { q: "Quem pode comungar?", a: "Os fiéis católicos em estado de graça, em jejum eucarístico de pelo menos uma hora, conscientes do mistério que recebem." },
+      { q: "Quem pode comungar?", a: "Os fiéis católicos em estado de graça (CIC § 1385; cân. 916), conscientes do mistério que recebem. Em regra, quem recebe a Sagrada Comunhão observa o jejum eucarístico de uma hora antes da Comunhão — disciplina eclesiástica, e não doutrina imutável —, salvo as exceções previstas pelo Direito Canônico (cân. 919: água e medicamentos não o quebram; idosos, enfermos e quem deles cuida estão dispensados)." },
     ],
   },
   {

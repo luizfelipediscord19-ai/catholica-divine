@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Section, CardGrid, ContentCard, Prose, Sources, Pullquote } from "../components/PageShell";
+import { NotaConfiabilidade } from "../components/SeloConfiabilidade";
 import vitral from "../assets/vitral.jpg";
 
 export const Route = createFileRoute("/fe-catolica")({
@@ -100,15 +101,18 @@ function Page() {
       <Section kicker="Símbolo da Fé" title="O Credo Niceno-Constantinopolitano">
         <Prose>
           <p>
-            Proclamado nos Concílios de <strong>Niceia (325)</strong> e <strong>Constantinopla I (381)</strong> contra as heresias arianas e pneumatomáquias, o Credo niceno-constantinopolitano é a regra de fé comum a católicos, ortodoxos e a boa parte das comunidades cristãs do Oriente. É recitado na Liturgia Eucarística aos domingos e solenidades (IGMR 68).
+            Proclamado nos Concílios de <strong>Niceia (325)</strong> e <strong>Constantinopla I (381)</strong> contra as heresias arianas e pneumatomáquias, o Credo niceno-constantinopolitano expressa a fé una compartilhada por católicos, ortodoxos e boa parte das comunidades cristãs do Oriente. É recitado na Liturgia Eucarística aos domingos e solenidades (IGMR 68). O texto grego aprovado em 381 não continha a expressão <em>Filioque</em>; a versão abaixo traz a redação litúrgica latina, hoje usada na Igreja Católica de rito romano.
           </p>
           <blockquote>
             Creio em um só Deus, Pai todo-poderoso, criador do céu e da terra, de todas as coisas visíveis e invisíveis. Creio em um só Senhor, Jesus Cristo, Filho Unigênito de Deus, nascido do Pai antes de todos os séculos: Deus de Deus, luz da luz, Deus verdadeiro de Deus verdadeiro, gerado, não criado, consubstancial ao Pai. Por Ele todas as coisas foram feitas. E por nós, homens, e para nossa salvação, desceu dos céus, e se encarnou pelo Espírito Santo, no seio da Virgem Maria, e se fez homem. Também por nós foi crucificado sob Pôncio Pilatos; padeceu e foi sepultado. Ressuscitou ao terceiro dia, conforme as Escrituras, e subiu aos céus, onde está sentado à direita do Pai. E de novo há de vir, em sua glória, para julgar os vivos e os mortos; e o seu reino não terá fim. Creio no Espírito Santo, Senhor que dá a vida, e procede do Pai e do Filho; e com o Pai e o Filho é adorado e glorificado: Ele que falou pelos profetas. Creio na Igreja, una, santa, católica e apostólica. Professo um só batismo para a remissão dos pecados. E espero a ressurreição dos mortos e a vida do mundo que há de vir. Amém.
           </blockquote>
           <h3>Chave de leitura</h3>
           <p>
-            O Credo está estruturado em <strong>doze artigos</strong>, agrupados em três grandes seções trinitárias — Pai, Filho, Espírito Santo —, refletindo a fórmula batismal de Mt 28,19. A expressão <em>homoousios tô Patrí</em> (“consubstancial ao Pai”) cunhada em Niceia é o termo dogmático que exclui qualquer subordinacionismo do Filho. O <em>Filioque</em> (“procede do Pai e do Filho”) foi acolhido no Ocidente desde os Sínodos hispânicos do séc. VI e confirmado pelo magistério (II Concílio de Lyon, 1274; Florença, 1439).
+            O Credo está estruturado em <strong>doze artigos</strong>, agrupados em três grandes seções trinitárias — Pai, Filho, Espírito Santo —, refletindo a fórmula batismal de Mt 28,19. A expressão <em>homoousios tô Patrí</em> (“consubstancial ao Pai”) cunhada em Niceia é o termo dogmático que exclui qualquer subordinacionismo do Filho.
           </p>
+          <NotaConfiabilidade nivel="historia">
+            O <em>Filioque</em> (“procede do Pai <strong>e do Filho</strong>”) não integrava o texto grego aprovado em Constantinopla I (381), que confessava apenas “procede do Pai” (cf. Jo 15,26). A fórmula foi acolhida progressivamente no Ocidente a partir dos Sínodos hispânicos do séc. VI (Toledo III, 589) como explicitação teológica contra o arianismo residual, difundiu-se na liturgia franco-germânica e foi finalmente incorporada ao Credo romano no início do séc. XI. A Igreja Católica ensina que o Espírito Santo procede eternamente do Pai e do Filho, como de um único princípio (CIC §§ 246-248), e essa doutrina foi reafirmada pelo II Concílio de Lyon (1274) e pelo Concílio de Florença (1439). As Igrejas Orientais mantêm a fórmula bíblica original — o Espírito procede “do Pai” e é comunicado ou manifestado “pelo Filho” (<em>dia tou Hyiou</em>) —, tradição legítima e teologicamente equivalente quando bem entendida. A Congregação para a Doutrina da Fé recorda (1995) que o acréscimo unilateral ao texto conciliar comum, sem consenso ecumênico, foi um gesto disciplinarmente problemático, ainda que a doutrina nele contida seja ortodoxa; por isso a Santa Sé, em ocasiões solenes, tem recitado o Credo em grego sem o Filioque, como sinal de comunhão com o Oriente.
+          </NotaConfiabilidade>
         </Prose>
       </Section>
 
