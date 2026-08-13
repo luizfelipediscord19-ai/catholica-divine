@@ -142,7 +142,21 @@ function SantoPage() {
       <Section>
         <div className="grid md:grid-cols-[1fr_280px] gap-12">
           <article className="space-y-10">
+            <div className="flex flex-wrap items-center gap-3">
+              <BotaoSalvar
+                tipo="santo"
+                slug={slug}
+                titulo={v.nome}
+                descricao={v.data ? `Memória · ${v.data}` : v.titulo}
+                href={`/santos/${slug}`}
+              />
+              <Link to="/favoritos" className="btn-base btn-outline-gold btn-sm inline-flex">
+                Minha biblioteca
+              </Link>
+            </div>
+
             <div>
+
               <h2 className="font-display text-2xl text-foreground mb-4">Biografia</h2>
               <p className="text-base leading-relaxed text-muted-foreground whitespace-pre-line">
                 {v.biografia}
