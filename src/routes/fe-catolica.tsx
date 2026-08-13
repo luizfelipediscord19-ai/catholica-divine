@@ -146,6 +146,8 @@ function Page() {
             { label: "Concílio Vaticano I — Constituição Dogmática Dei Filius (1870)", ref: "Sobre a fé católica e a relação fé-razão" },
             { label: "São João Paulo II — Constituição Apostólica Fidei Depositum (1992)", ref: "Promulgação do CIC" },
             { label: "Concílio de Trento", ref: "Sessões IV (Escritura e Tradição) e VII (Sacramentos)" },
+            { label: "Congregação para a Doutrina da Fé", ref: "Nota sobre o Filioque (1995), sobre a doutrina trinitária e sua expressão originária" },
+            { label: "II Concílio de Lyon (1274) e Concílio de Florença (1439)", ref: "Reafirmação da procedência do Espírito Santo do Pai e do Filho" },
             { label: "São Vicente de Lérins — Commonitorium (séc. V)", ref: "Critério da catolicidade da doutrina" },
             { label: "São Tomás de Aquino — Summa Theologiae", ref: "II-II, qq. 1-16 (tratado da fé)" },
           ]}
