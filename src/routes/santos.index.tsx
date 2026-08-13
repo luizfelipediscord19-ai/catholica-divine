@@ -269,12 +269,15 @@ function CartaoSanto({
 }
 
 function SantoDetail({
+  slug,
   view,
   onClose,
 }: {
+  slug: string;
   view: ReturnType<typeof buildSantoView>;
   onClose: () => void;
 }) {
+
   const img = view.imagem;
   return (
     <article className="mb-12 surface-card backdrop-blur-xl overflow-hidden animate-content-fade shadow-2xl shadow-gold/5">
