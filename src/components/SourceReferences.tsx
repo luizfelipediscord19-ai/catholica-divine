@@ -137,18 +137,16 @@ export function extrairFontes(markdown: string): SourceReference[] {
         encontradas.set(chave, {
           label: "Catecismo da Igreja Católica",
           locator: `§${ref.paragrafo}`,
-          href: caminhoCatecismo(ref.paragrafo),
+          href: ref.caminho,
         });
       }
     } else {
-      const href = caminhoEscritura(ref.livro, ref.capitulo, ref.versiculo);
-      if (!href) continue;
-      const chave = `bib-${href}`;
+      const chave = `bib-${ref.caminho}`;
       if (!encontradas.has(chave)) {
         encontradas.set(chave, {
           label: "Sagrada Escritura",
           locator: ref.texto,
-          href,
+          href: ref.caminho,
         });
       }
     }
