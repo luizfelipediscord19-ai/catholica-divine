@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "@tanstack/react-router";
 import { Search, X, CornerDownLeft } from "lucide-react";
 
-import { buscar, type Categoria, type ItemBusca } from "@/lib/busca";
+import { agrupar, buscar, normalizar, type Categoria, type ItemBusca } from "@/lib/busca";
 
 const CORES: Record<Categoria, string> = {
   Página: "text-gold/80",
@@ -12,18 +12,37 @@ const CORES: Record<Categoria, string> = {
   Glossário: "text-violet-300/80",
   Oração: "text-rose-300/80",
   Apologética: "text-cyan-300/80",
+  Trilha: "text-teal-300/80",
 };
 
 const SUGESTOES = ["Eucaristia", "Jo 3", "São Bento", "graça", "rosário", "purgatório"];
+
+/** Destaca a ocorrência do termo buscado, sem depender de HTML bruto. */
+function Realce({ texto, termo }: { texto: string; termo: string }) {
+  const alvo = normalizar(termo);
+  if (alvo.length < 2) return <>{texto}</>;
+  const inicio = normalizar(texto).indexOf(alvo);
+  if (inicio < 0) return <>{texto}</>;
+  return (
+    <>
+      {texto.slice(0, inicio)}
+      <mark className="bg-gold/25 text-gold">{texto.slice(inicio, inicio + alvo.length)}</mark>
+      {texto.slice(inicio + alvo.length)}
+    </>
+  );
+}
 
 export function BuscaGlobal({ aberto, onFechar }: { aberto: boolean; onFechar: () => void }) {
   const navigate = useNavigate();
   const [consulta, setConsulta] = useState("");
   const [indice, setIndice] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
-  const listaRef = useRef<HTMLUListElement>(null);
+  const listaRef = useRef<HTMLDivElement>(null);
 
   const resultados = useMemo(() => buscar(consulta), [consulta]);
+  const grupos = useMemo(() => agrupar(resultados), [resultados]);
+  // Ordem achatada na mesma sequência em que os grupos são exibidos.
+  const planos = useMemo(() => grupos.flatMap((g) => g.itens), [grupos]);
 
   useEffect(() => {
     if (aberto) {
@@ -46,7 +65,7 @@ export function BuscaGlobal({ aberto, onFechar }: { aberto: boolean; onFechar: (
   useEffect(() => setIndice(0), [consulta]);
 
   useEffect(() => {
-    const item = listaRef.current?.children[indice] as HTMLElement | undefined;
+    const item = listaRef.current?.querySelector(`[data-indice="${indice}"]`) as HTMLElement | null;
     item?.scrollIntoView({ block: "nearest" });
   }, [indice]);
 
@@ -62,7 +81,7 @@ export function BuscaGlobal({ aberto, onFechar }: { aberto: boolean; onFechar: (
       role="dialog"
       aria-modal="true"
       aria-label="Busca global do portal"
-      className="fixed inset-0 z-[100] flex items-start justify-center px-4 pt-20 sm:pt-28"
+      className="fixed inset-0 z-[100] flex items-start justify-center px-3 pt-16 sm:px-4 sm:pt-28"
     >
       <button
         type="button"
@@ -72,46 +91,59 @@ export function BuscaGlobal({ aberto, onFechar }: { aberto: boolean; onFechar: (
       />
 
       <div
-        className="relative w-full max-w-2xl border border-gold/25 bg-background shadow-2xl"
+        className="relative w-full max-w-2xl animate-content-fade border border-gold/25 bg-background shadow-2xl"
         onKeyDown={(e) => {
           if (e.key === "Escape") {
             e.preventDefault();
             onFechar();
           } else if (e.key === "ArrowDown") {
             e.preventDefault();
-            setIndice((i) => (resultados.length ? (i + 1) % resultados.length : 0));
+            setIndice((i) => (planos.length ? (i + 1) % planos.length : 0));
           } else if (e.key === "ArrowUp") {
             e.preventDefault();
-            setIndice((i) => (resultados.length ? (i - 1 + resultados.length) % resultados.length : 0));
-          } else if (e.key === "Enter" && resultados[indice]) {
+            setIndice((i) => (planos.length ? (i - 1 + planos.length) % planos.length : 0));
+          } else if (e.key === "Enter" && planos[indice]) {
             e.preventDefault();
-            abrir(resultados[indice]!);
+            abrir(planos[indice]!);
           }
         }}
       >
-        <div className="flex items-center gap-3 border-b border-gold/15 px-5">
+        <div className="flex items-center gap-3 border-b border-gold/15 px-4 sm:px-5">
           <Search className="size-4 shrink-0 text-gold" aria-hidden="true" />
           <input
             ref={inputRef}
             value={consulta}
             onChange={(e) => setConsulta(e.target.value)}
-            placeholder="Buscar em toda a enciclopédia: santos, versículos, catecismo, termos…"
+            placeholder="O que você procura?"
             aria-label="Termo de busca"
             className="min-h-14 w-full bg-transparent text-base text-foreground placeholder:text-foreground/40 focus:outline-none"
           />
+          {consulta ? (
+            <button
+              type="button"
+              aria-label="Limpar busca"
+              onClick={() => {
+                setConsulta("");
+                inputRef.current?.focus();
+              }}
+              className="shrink-0 label-btn text-foreground/50 transition-colors hover:text-gold focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold"
+            >
+              Limpar
+            </button>
+          ) : null}
           <button
             type="button"
             aria-label="Fechar busca"
             onClick={onFechar}
-            className="grid size-9 shrink-0 place-items-center rounded-full text-foreground/50 hover:text-gold focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold"
+            className="grid size-11 shrink-0 place-items-center rounded-full text-foreground/50 hover:text-gold focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold"
           >
             <X className="size-4" aria-hidden="true" />
           </button>
         </div>
 
-        <div className="max-h-[60vh] overflow-y-auto">
+        <div ref={listaRef} className="max-h-[65vh] overflow-y-auto sm:max-h-[60vh]">
           {consulta.trim().length < 2 ? (
-            <div className="px-5 py-6">
+            <div className="px-4 py-6 sm:px-5">
               <p className="label-btn text-foreground/50">Sugestões</p>
               <div className="mt-3 flex flex-wrap gap-2">
                 {SUGESTOES.map((s) => (
@@ -119,7 +151,7 @@ export function BuscaGlobal({ aberto, onFechar }: { aberto: boolean; onFechar: (
                     key={s}
                     type="button"
                     onClick={() => setConsulta(s)}
-                    className="min-h-9 border border-gold/20 px-3 text-xs text-foreground/80 hover:border-gold/60 hover:text-gold focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold"
+                    className="min-h-11 border border-gold/20 px-3 text-xs text-foreground/80 transition-premium hover:border-gold/60 hover:text-gold focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold"
                   >
                     {s}
                   </button>
@@ -130,45 +162,67 @@ export function BuscaGlobal({ aberto, onFechar }: { aberto: boolean; onFechar: (
                 direto.
               </p>
             </div>
-          ) : resultados.length === 0 ? (
-            <p className="px-5 py-8 text-sm text-foreground/60">
+          ) : planos.length === 0 ? (
+            <p className="px-4 py-8 text-sm text-foreground/60 sm:px-5">
               Nada encontrado para “{consulta}”. Tente outro termo ou pergunte à Sophia IA.
             </p>
           ) : (
-            <ul ref={listaRef} role="listbox" aria-label="Resultados">
-              {resultados.map((item, i) => (
-                <li key={item.id}>
-                  <button
-                    type="button"
-                    role="option"
-                    aria-selected={i === indice}
-                    onMouseEnter={() => setIndice(i)}
-                    onClick={() => abrir(item)}
-                    className={`flex w-full items-start gap-4 px-5 py-3 text-left transition-colors ${
-                      i === indice ? "bg-gold/10" : "hover:bg-gold/5"
+            <div role="listbox" aria-label={`Resultados para ${consulta}`}>
+              {grupos.map((grupo) => (
+                <section key={grupo.categoria} aria-label={grupo.categoria}>
+                  <p
+                    className={`sticky top-0 z-10 border-b border-gold/10 bg-background/95 px-4 py-2 label-btn backdrop-blur sm:px-5 ${
+                      CORES[grupo.categoria]
                     }`}
                   >
-                    <span
-                      className={`mt-0.5 w-24 shrink-0 label-btn ${CORES[item.categoria]}`}
-                    >
-                      {item.categoria}
-                    </span>
-                    <span className="min-w-0">
-                      <span className="block truncate text-sm font-medium text-foreground">{item.titulo}</span>
-                      <span className="block truncate text-xs text-foreground/55">{item.descricao}</span>
-                    </span>
-                    {i === indice ? (
-                      <CornerDownLeft className="ml-auto mt-1 size-3.5 shrink-0 text-gold/70" aria-hidden="true" />
-                    ) : null}
-                  </button>
-                </li>
+                    {grupo.categoria}
+                    <span className="ml-2 text-foreground/35">{grupo.itens.length}</span>
+                  </p>
+                  <ul>
+                    {grupo.itens.map((item) => {
+                      const i = planos.indexOf(item);
+                      const ativo = i === indice;
+                      return (
+                        <li key={item.id}>
+                          <button
+                            type="button"
+                            role="option"
+                            data-indice={i}
+                            aria-selected={ativo}
+                            onMouseEnter={() => setIndice(i)}
+                            onClick={() => abrir(item)}
+                            className={`flex w-full items-start gap-3 px-4 py-3 text-left transition-colors sm:px-5 ${
+                              ativo ? "bg-gold/10" : "hover:bg-gold/5"
+                            }`}
+                          >
+                            <span className="min-w-0 flex-1">
+                              <span className="block truncate text-sm font-medium text-foreground">
+                                <Realce texto={item.titulo} termo={consulta} />
+                              </span>
+                              <span className="block truncate text-xs text-foreground/55">
+                                <Realce texto={item.descricao} termo={consulta} />
+                              </span>
+                            </span>
+                            {ativo ? (
+                              <CornerDownLeft
+                                className="mt-1 size-3.5 shrink-0 text-gold/70"
+                                aria-hidden="true"
+                              />
+                            ) : null}
+                          </button>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </section>
               ))}
-            </ul>
+            </div>
           )}
         </div>
 
-        <div className="flex items-center justify-between border-t border-gold/15 px-5 py-2.5 label-btn text-foreground/45">
-          <span>↑ ↓ navegar · Enter abrir · Esc fechar</span>
+        <div className="flex items-center justify-between border-t border-gold/15 px-4 py-2.5 label-btn text-foreground/45 sm:px-5">
+          <span className="hidden sm:inline">↑ ↓ navegar · Enter abrir · Esc fechar</span>
+          <span className="sm:hidden">Toque para abrir</span>
           <span className="hidden sm:inline">Ctrl / ⌘ + K</span>
         </div>
       </div>
