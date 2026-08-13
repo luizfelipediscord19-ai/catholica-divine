@@ -120,7 +120,7 @@ export function SiteHeader() {
 
         <nav
           aria-label="Navegação principal"
-          className="hidden min-w-0 items-center gap-0.5 whitespace-nowrap lg:flex xl:gap-1"
+          className="hidden min-w-0 items-center gap-0.5 whitespace-nowrap lg:ml-3 lg:flex xl:ml-6 xl:gap-1"
         >
 
           {NAV_PRINCIPAL.map((item) => {
