@@ -330,7 +330,16 @@ function Page() {
                   disabled={!pessoal.pronto || pessoal.favoritar.isPending}
                   onClick={() => pessoal.favoritar.mutate({ versiculo: v.v, texto: v.t.slice(0, 900) })}
                 />
-                <span className="block">{v.t}</span>
+                <span className="block">
+                  {v.t}
+                  <span data-leitura-oculto>
+                    <SophiaVersiculo
+                      livro={livro.nome}
+                      capitulo={capitulo}
+                      versiculo={v.v}
+                    />
+                  </span>
+                </span>
               </p>
             ))}
           </div>
