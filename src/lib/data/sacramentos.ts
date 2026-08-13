@@ -51,7 +51,7 @@ export const SACRAMENTOS: Sacramento[] = [
       { ref: "At 19,5-6", texto: "Quando Paulo lhes impôs as mãos, o Espírito Santo veio sobre eles." },
       { ref: "2Cor 1,21-22", texto: "Deus nos ungiu, nos selou e depositou em nossos corações o penhor do Espírito." },
     ],
-    catecismo: "CIC §§1285-1321. Imprime na alma um sinal indelével, o caráter, marcando-nos como testemunhas de Cristo. A matéria é a unção com o santo crisma na fronte; a forma, ‘Recebe pelo Sinal o Dom do Espírito Santo’, acompanhada da imposição das mãos. O ministro ordinário é o bispo, embora o presbítero possa confirmar em circunstâncias determinadas pelo direito.",
+    catecismo: "CIC §§1285-1321. Imprime na alma um sinal indelével, o caráter, marcando-nos como testemunhas de Cristo. A teologia sacramental tradicional descreve o sinal pelas categorias de matéria e forma: a unção com o santo crisma na fronte, acompanhada da imposição das mãos, e as palavras ‘Recebe pelo Sinal o Dom do Espírito Santo’. O bispo é o ministro ordinário da Confirmação no rito latino (CIC § 1312); em circunstâncias determinadas pelo direito, presbíteros também a administram — por exemplo quando batizam adultos ou recebem alguém na plena comunhão (cân. 883) — e, em perigo de morte, qualquer sacerdote pode conferi-la (cân. 883, § 3; 884). Nas Igrejas Orientais é ordinariamente conferida pelo presbítero junto com o Batismo.",
     historia:
       "Já nos Atos dos Apóstolos vemos a imposição das mãos após o Batismo. A unção com o santo crisma é atestada desde os primeiros séculos. No Oriente, geralmente é conferida junto com o Batismo; no Ocidente, em idade da razão.",
     efeitos: [
