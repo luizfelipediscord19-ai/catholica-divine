@@ -124,9 +124,11 @@ function Page() {
           {selected ? (
             <SantoDetail
               key={selected.view.nome}
+              slug={selectedSlug!}
               view={selected.view}
               onClose={() => setSelectedSlug(null)}
             />
+
           ) : null}
         </div>
 
