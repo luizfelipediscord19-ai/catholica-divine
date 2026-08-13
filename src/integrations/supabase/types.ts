@@ -118,6 +118,38 @@ export type Database = {
           },
         ]
       }
+      estudos_conteudo: {
+        Row: {
+          chave: string
+          created_at: string
+          id: string
+          identidade_id: string
+          tipo: string
+        }
+        Insert: {
+          chave: string
+          created_at?: string
+          id?: string
+          identidade_id: string
+          tipo: string
+        }
+        Update: {
+          chave?: string
+          created_at?: string
+          id?: string
+          identidade_id?: string
+          tipo?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "estudos_conteudo_identidade_id_fkey"
+            columns: ["identidade_id"]
+            isOneToOne: false
+            referencedRelation: "identidades"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       favoritos: {
         Row: {
           capitulo: number
