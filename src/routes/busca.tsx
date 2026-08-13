@@ -11,6 +11,8 @@ import {
   Landmark,
   Crown,
   Heart,
+  Droplets,
+  GraduationCap,
   type LucideIcon,
 } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
@@ -21,17 +23,21 @@ import type { EscopoBusca, Resultado } from "@/lib/busca/motor.server";
 const ESCOPOS: { id: EscopoBusca; label: string }[] = [
   { id: "biblia", label: "Bíblia" },
   { id: "catecismo", label: "Catecismo" },
+  { id: "sacramentos", label: "Sacramentos" },
   { id: "magisterio", label: "Magistério e doutrina" },
   { id: "santos", label: "Santos" },
   { id: "oracoes", label: "Orações" },
+  { id: "formacao", label: "Trilhas de formação" },
 ];
 
 const ICONES: Record<EscopoBusca, LucideIcon> = {
   biblia: BookOpen,
   catecismo: Library,
   magisterio: Landmark,
+  sacramentos: Droplets,
   santos: Crown,
   oracoes: Heart,
+  formacao: GraduationCap,
 };
 
 const SUGESTOES = [
