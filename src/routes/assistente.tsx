@@ -78,6 +78,7 @@ function Page() {
         mode="geral"
         suggestions={SUGESTOES_GERAL}
         placeholder="Sua pergunta sobre a fé..."
+        perguntaInicial={q}
       />
 
       <section aria-labelledby="faq-sophia" className="mt-16">
