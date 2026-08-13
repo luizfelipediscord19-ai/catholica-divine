@@ -13,6 +13,10 @@ export function traduzirErroAuth(erro: unknown): string {
 
   if (!m) return "Não foi possível concluir. Tente novamente em instantes.";
 
+  if (m.includes("legacy api keys") || m.includes("legacy key"))
+    return "A configuração de acesso do site está desatualizada (chave antiga desativada). Atualize as variáveis de ambiente da hospedagem com a chave publicável atual.";
+  if (m.includes("invalid api key") || m.includes("no api key"))
+    return "A configuração de acesso do site está incorreta. Atualize as variáveis de ambiente da hospedagem.";
   if (m.includes("invalid login credentials")) return "E-mail ou senha incorretos.";
   if (m.includes("email not confirmed"))
     return "Confirme seu e-mail antes de entrar. Verifique a caixa de entrada e o spam.";
