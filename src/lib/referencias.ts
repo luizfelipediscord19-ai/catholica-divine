@@ -5,7 +5,7 @@
  * internos do portal, para que o leitor possa conferir a fonte sem sair do site.
  */
 import { LIVROS } from "./data/biblia/index";
-import { PARTES_CIC } from "./data/catecismo/index";
+import { PARTES } from "./data/catecismo/index";
 
 function normalizar(s: string): string {
   return s
@@ -50,7 +50,7 @@ export type ReferenciaCatecismo = {
 export type Referencia = ReferenciaEscritura | ReferenciaCatecismo;
 
 /** Faixas de parágrafos de cada parte do Catecismo, extraídas dos rótulos "§§ a–b". */
-const FAIXAS_CIC: { slug: string; de: number; ate: number }[] = PARTES_CIC.map((p) => {
+const FAIXAS_CIC: { slug: string; de: number; ate: number }[] = PARTES.map((p: { slug: string; paragrafos: string }) => {
   const nums = (p.paragrafos.match(/\d+/g) ?? []).map(Number);
   return { slug: p.slug, de: nums[0] ?? 0, ate: nums[1] ?? Number.MAX_SAFE_INTEGER };
 });
