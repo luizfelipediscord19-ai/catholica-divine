@@ -25,6 +25,7 @@ import { Route as OracoesRouteImport } from './routes/oracoes'
 import { Route as MariaRouteImport } from './routes/maria'
 import { Route as LiturgiaDiariaRouteImport } from './routes/liturgia-diaria'
 import { Route as GlossarioRouteImport } from './routes/glossario'
+import { Route as FontesRouteImport } from './routes/fontes'
 import { Route as FeCatolicaRouteImport } from './routes/fe-catolica'
 import { Route as FavoritosRouteImport } from './routes/favoritos'
 import { Route as ExplorarRouteImport } from './routes/explorar'
@@ -145,6 +146,11 @@ const LiturgiaDiariaRoute = LiturgiaDiariaRouteImport.update({
 const GlossarioRoute = GlossarioRouteImport.update({
   id: '/glossario',
   path: '/glossario',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FontesRoute = FontesRouteImport.update({
+  id: '/fontes',
+  path: '/fontes',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FeCatolicaRoute = FeCatolicaRouteImport.update({
@@ -361,6 +367,7 @@ export interface FileRoutesByFullPath {
   '/explorar': typeof ExplorarRoute
   '/favoritos': typeof FavoritosRoute
   '/fe-catolica': typeof FeCatolicaRoute
+  '/fontes': typeof FontesRoute
   '/glossario': typeof GlossarioRoute
   '/liturgia-diaria': typeof LiturgiaDiariaRoute
   '/maria': typeof MariaRoute
@@ -417,6 +424,7 @@ export interface FileRoutesByTo {
   '/explorar': typeof ExplorarRoute
   '/favoritos': typeof FavoritosRoute
   '/fe-catolica': typeof FeCatolicaRoute
+  '/fontes': typeof FontesRoute
   '/glossario': typeof GlossarioRoute
   '/liturgia-diaria': typeof LiturgiaDiariaRoute
   '/maria': typeof MariaRoute
@@ -473,6 +481,7 @@ export interface FileRoutesById {
   '/explorar': typeof ExplorarRoute
   '/favoritos': typeof FavoritosRoute
   '/fe-catolica': typeof FeCatolicaRoute
+  '/fontes': typeof FontesRoute
   '/glossario': typeof GlossarioRoute
   '/liturgia-diaria': typeof LiturgiaDiariaRoute
   '/maria': typeof MariaRoute
@@ -532,6 +541,7 @@ export interface FileRouteTypes {
     | '/explorar'
     | '/favoritos'
     | '/fe-catolica'
+    | '/fontes'
     | '/glossario'
     | '/liturgia-diaria'
     | '/maria'
@@ -588,6 +598,7 @@ export interface FileRouteTypes {
     | '/explorar'
     | '/favoritos'
     | '/fe-catolica'
+    | '/fontes'
     | '/glossario'
     | '/liturgia-diaria'
     | '/maria'
@@ -643,6 +654,7 @@ export interface FileRouteTypes {
     | '/explorar'
     | '/favoritos'
     | '/fe-catolica'
+    | '/fontes'
     | '/glossario'
     | '/liturgia-diaria'
     | '/maria'
@@ -701,6 +713,7 @@ export interface RootRouteChildren {
   ExplorarRoute: typeof ExplorarRoute
   FavoritosRoute: typeof FavoritosRoute
   FeCatolicaRoute: typeof FeCatolicaRoute
+  FontesRoute: typeof FontesRoute
   GlossarioRoute: typeof GlossarioRoute
   LiturgiaDiariaRoute: typeof LiturgiaDiariaRoute
   MariaRoute: typeof MariaRoute
@@ -840,6 +853,13 @@ declare module '@tanstack/react-router' {
       path: '/glossario'
       fullPath: '/glossario'
       preLoaderRoute: typeof GlossarioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fontes': {
+      id: '/fontes'
+      path: '/fontes'
+      fullPath: '/fontes'
+      preLoaderRoute: typeof FontesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/fe-catolica': {
@@ -1220,6 +1240,7 @@ const rootRouteChildren: RootRouteChildren = {
   ExplorarRoute: ExplorarRoute,
   FavoritosRoute: FavoritosRoute,
   FeCatolicaRoute: FeCatolicaRoute,
+  FontesRoute: FontesRoute,
   GlossarioRoute: GlossarioRoute,
   LiturgiaDiariaRoute: LiturgiaDiariaRoute,
   MariaRoute: MariaRoute,

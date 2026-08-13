@@ -12,10 +12,14 @@ export function SiteFooter() {
             Portal Católico — biblioteca digital fiel ao Magistério da Igreja, dedicada ao
             estudo, à evangelização e à formação na fé católica.
           </p>
+          <p className="mt-4 text-sm text-paper/60 max-w-[28rem] leading-relaxed">
+            Conteúdo desenvolvido para auxiliar no estudo e conhecimento da fé católica.
+          </p>
           <p className="mt-6 label-btn text-paper/60">
             © MMXXVI Portal Católico • Biblioteca da Fé
           </p>
         </div>
+
 
         <nav aria-label="Doutrina" className="min-w-0">
           <h3 className="kicker mb-4">
