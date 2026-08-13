@@ -59,6 +59,7 @@ export const Route = createFileRoute("/assistente")({
 });
 
 function Page() {
+  const { q } = Route.useSearch();
   return (
     <div className="shell py-[var(--space-md)]">
       <div className="text-center mb-10">
