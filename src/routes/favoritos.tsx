@@ -83,6 +83,15 @@ function FavoritosPage() {
     );
   }, [dados?.notas, busca, livroFiltro]);
 
+  const salvos = useMemo(() => {
+    const q = normalizar(busca.trim());
+    if (!q) return salvosTodos;
+    return salvosTodos.filter((i) =>
+      normalizar(`${i.titulo} ${i.descricao ?? ""} ${ROTULO_TIPO[i.tipo]}`).includes(q),
+    );
+  }, [salvosTodos, busca]);
+
+
   const livrosUsados = useMemo(() => {
     const slugs = new Set([
       ...(dados?.favoritos ?? []).map((f) => f.livro),
