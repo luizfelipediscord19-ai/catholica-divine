@@ -15,6 +15,9 @@ export type Totais = {
   melhorStreak: number;
   minutosMaximos: number;
   santoEscolhido: boolean;
+  catecismo: number;
+  maria: number;
+  trilhasAvancadas: number;
 };
 
 export type Meta = { atual: number; alvo: number; unidade: string };
@@ -61,6 +64,16 @@ const META: Record<string, (t: Totais) => Meta> = {
   "cinco-topicos": (t) => ({ atual: t.topicos, alvo: 5, unidade: "tópicos" }),
   "primeira-resposta": (t) => ({ atual: t.respostas, alvo: 1, unidade: "resposta" }),
   "cinquenta-respostas": (t) => ({ atual: t.respostas, alvo: 50, unidade: "respostas" }),
+
+  // Formação doutrinal
+  "catecismo-10": (t) => ({ atual: t.catecismo, alvo: 10, unidade: "seções do Catecismo" }),
+  "conhecedor-catecismo": (t) => ({ atual: t.catecismo, alvo: 14, unidade: "seções do Catecismo" }),
+  "filho-de-maria": (t) => ({ atual: t.maria, alvo: 10, unidade: "conteúdos marianos" }),
+  "caminho-sao-tomas": (t) => ({
+    atual: t.trilhasAvancadas,
+    alvo: 1,
+    unidade: "trilha avançada concluída",
+  }),
 
   // Caminho
   "santo-padroeiro": (t) => ({ atual: t.santoEscolhido ? 1 : 0, alvo: 1, unidade: "padroeiro" }),
