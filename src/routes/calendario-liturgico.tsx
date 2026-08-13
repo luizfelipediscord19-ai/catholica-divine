@@ -65,7 +65,11 @@ function Page() {
       />
 
       <ReadingMode title="O Ano Litúrgico" toc={TOC} footnotes={FOOTNOTES}>
+        <div className="mb-10 print:hidden">
+          <HojeNaLiturgia />
+        </div>
         <Prose>
+
           <section id="introducao" className="scroll-mt-24">
             <h3>O que é o Ano Litúrgico</h3>
             <p>
