@@ -4,6 +4,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight, Check, Copy, Share2 } from "lucide-react";
 import { ChatMessage } from "../../lib/types/chat";
 import { SourceReferences, extrairFontes } from "../SourceReferences";
+import { ReferenciasInternas } from "./ReferenciasInternas";
 
 interface ChatMessageProps {
   message: ChatMessage;
@@ -54,6 +55,7 @@ export const ChatMessageItem = memo(({ message }: ChatMessageProps) => {
         <div className="prose prose-sm prose-invert max-w-none [&_p]:my-2 [&_strong]:text-gold [&_blockquote]:border-gold/30 [&_blockquote]:text-paper/80 [&_h2]:text-gold [&_h2]:font-display [&_h3]:text-gold/90 [&_em]:text-gold/80">
           <ReactMarkdown>{text}</ReactMarkdown>
         </div>
+        {!isUser && text ? <ReferenciasInternas texto={text} /> : null}
         {!isUser && text ? <SourceReferences references={extrairFontes(text)} /> : null}
         {!isUser && text ? (
           <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-gold/10 pt-3">
