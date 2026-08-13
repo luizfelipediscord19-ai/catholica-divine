@@ -137,7 +137,13 @@ export const SophiaChat = memo(({
           </div>
         </div>
       ) : (
-        <MessageList messages={messages as any} isLoading={isLoading} />
+        <MessageList
+          messages={messages as any}
+          isLoading={isLoading}
+          onPerguntar={(t) => handleSubmit(t)}
+          ultimaPergunta={ultima}
+        />
+
       )}
 
       <form

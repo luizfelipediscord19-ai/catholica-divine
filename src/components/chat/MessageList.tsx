@@ -1,16 +1,26 @@
 import { memo, useRef, useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, Check, Copy, Share2 } from "lucide-react";
+import { ArrowRight, Check, Copy, RefreshCw, Share2 } from "lucide-react";
 import { ChatMessage } from "../../lib/types/chat";
 import { SourceReferences, extrairFontes } from "../SourceReferences";
 import { ReferenciasInternas } from "./ReferenciasInternas";
 
+const APROFUNDAR = [
+  "Quais versículos fundamentam isso?",
+  "O que diz o Catecismo sobre esse ponto?",
+  "Como viver isso na prática hoje?",
+  "Qual é o erro mais comum sobre esse tema?",
+];
+
 interface ChatMessageProps {
   message: ChatMessage;
+  onPerguntar?: (texto: string) => void;
+  ultimaPergunta?: string;
+  ultimo?: boolean;
 }
 
-export const ChatMessageItem = memo(({ message }: ChatMessageProps) => {
+export const ChatMessageItem = memo(({ message, onPerguntar, ultimaPergunta, ultimo }: ChatMessageProps) => {
   const isUser = message.role === "user";
   const text = message.parts.map((p) => (p.type === "text" ? p.text : "")).join("");
   const [copiado, setCopiado] = useState(false);
@@ -86,6 +96,34 @@ export const ChatMessageItem = memo(({ message }: ChatMessageProps) => {
             >
               Continuar estudando <ArrowRight className="size-3" aria-hidden="true" />
             </Link>
+            {onPerguntar && ultimaPergunta ? (
+              <button
+                type="button"
+                onClick={() => onPerguntar(ultimaPergunta)}
+                aria-label="Perguntar novamente"
+                className="inline-flex min-h-9 items-center gap-2 kicker transition-colors hover:text-gold"
+              >
+                <RefreshCw className="size-3" aria-hidden="true" /> Perguntar novamente
+              </button>
+            ) : null}
+          </div>
+        ) : null}
+        {!isUser && text && ultimo && onPerguntar ? (
+          <div className="mt-3 border-t border-gold/10 pt-3">
+            <p className="kicker mb-2">Aprofundar</p>
+            <ul className="flex flex-wrap gap-2">
+              {APROFUNDAR.map((a) => (
+                <li key={a}>
+                  <button
+                    type="button"
+                    onClick={() => onPerguntar(a)}
+                    className="min-h-9 border border-gold/20 px-3 py-1.5 text-xs text-foreground/80 transition-colors hover:border-gold/50 hover:text-foreground"
+                  >
+                    {a}
+                  </button>
+                </li>
+              ))}
+            </ul>
           </div>
         ) : null}
       </div>
@@ -98,10 +136,13 @@ ChatMessageItem.displayName = "ChatMessageItem";
 interface MessageListProps {
   messages: ChatMessage[];
   isLoading: boolean;
+  onPerguntar?: (texto: string) => void;
+  ultimaPergunta?: string;
 }
 
-export const MessageList = memo(({ messages, isLoading }: MessageListProps) => {
+export const MessageList = memo(({ messages, isLoading, onPerguntar, ultimaPergunta }: MessageListProps) => {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const ultimoAssistente = [...messages].reverse().find((m) => m.role !== "user");
 
   useEffect(() => {
     if (scrollRef.current) {
@@ -122,12 +163,19 @@ export const MessageList = memo(({ messages, isLoading }: MessageListProps) => {
       className="flex-1 overflow-y-auto p-6 space-y-6 scrollbar-thin scrollbar-thumb-gold/20"
     >
       {messages.map((m) => (
-        <ChatMessageItem key={m.id || Math.random().toString()} message={m as ChatMessage} />
+        <ChatMessageItem
+          key={m.id || Math.random().toString()}
+          message={m as ChatMessage}
+          onPerguntar={onPerguntar}
+          ultimaPergunta={ultimaPergunta}
+          ultimo={!isLoading && m === ultimoAssistente}
+        />
       ))}
       {isLoading && (
         <div className="text-xs text-gold/70 tracking-wider uppercase animate-pulse">
           Sophia está respondendo…
         </div>
+
       )}
     </div>
   );
