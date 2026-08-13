@@ -9,6 +9,7 @@ import { GLOSSARIO } from "@/lib/data/glossario";
 import { OBJECOES } from "@/lib/data/apologetica-objecoes";
 import { ORACOES } from "@/lib/data/oracoes";
 import { SANTOS_LISTA } from "@/lib/santos-lista";
+import { expandirTermos, palavrasChave } from "@/lib/busca/linguagem";
 
 export type EscopoBusca = "biblia" | "catecismo" | "magisterio" | "santos" | "oracoes";
 
