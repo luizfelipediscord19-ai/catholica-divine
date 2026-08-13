@@ -23,7 +23,7 @@ const TOC = [
   { id: "introducao", label: "Maria na economia da salvação" },
   { id: "dogmas", label: "Os quatro dogmas marianos" },
   { id: "theotokos", label: "Maternidade Divina (431)" },
-  { id: "virgindade", label: "Virgindade Perpétua (649)" },
+  { id: "virgindade", label: "Virgindade Perpétua (Sínodo de Latrão, 649)" },
   { id: "imaculada", label: "Imaculada Conceição (1854)" },
   { id: "assuncao", label: "Assunção (1950)" },
   { id: "titulos", label: "Títulos marianos" },
@@ -35,7 +35,7 @@ const TOC = [
 
 const FOOTNOTES = [
   { id: "efeso", label: "Concílio de Éfeso (431), Anátemas de Cirilo de Alexandria", ref: "DH 250–264 — definição de Theotókos" },
-  { id: "latrao", label: "Concílio de Latrão I (649), Cân. 3", ref: "DH 503 — virgindade perpétua de Maria" },
+  { id: "latrao", label: "Sínodo de Latrão (649), Cân. 3, sob o Papa São Martinho I", ref: "DH 503 — virgindade perpétua de Maria. Trata-se de um sínodo romano, não do Concílio Ecumênico de Latrão I (1123); a doutrina é constante na Tradição e no magistério ordinário e universal." },
   { id: "ineffabilis", label: "Pio IX, Bula Ineffabilis Deus (08.12.1854)", ref: "DH 2803 — definição da Imaculada Conceição" },
   { id: "munificentissimus", label: "Pio XII, Constituição Apostólica Munificentissimus Deus (01.11.1950)", ref: "DH 3903 — definição da Assunção" },
   { id: "lg8", label: "Concílio Vaticano II, Lumen Gentium (1964), cap. VIII", ref: "nn. 52–69 — “Bem-aventurada Virgem Maria, Mãe de Deus, no mistério de Cristo e da Igreja”" },
@@ -48,7 +48,7 @@ const FOOTNOTES = [
 
 const DOGMAS_CARDS = [
   { title: "Maternidade Divina (Theotókos)", year: "Éfeso, 431", body: "Maria é verdadeiramente Mãe de Deus, pois gerou segundo a carne o Verbo eterno do Pai." },
-  { title: "Virgindade Perpétua", year: "Latrão I, 649", body: "Antes, durante e depois do parto, Maria permaneceu sempre Virgem (ante partum, in partu, post partum)." },
+  { title: "Virgindade Perpétua", year: "Sínodo de Latrão, 649", body: "Antes, durante e depois do parto, Maria permaneceu sempre Virgem (ante partum, in partu, post partum)." },
   { title: "Imaculada Conceição", year: "Pio IX, 1854", body: "Por singular privilégio, preservada de todo pecado original desde o primeiro instante de sua concepção." },
   { title: "Assunção", year: "Pio XII, 1950", body: "Terminado o curso de sua vida terrena, foi assunta de corpo e alma à glória celeste." },
 ];
@@ -116,14 +116,17 @@ function Page() {
 
           <section id="virgindade" className="scroll-mt-24">
           <MarcarEstudo tipo="maria" chave="virgindade" />
-            <h4>II. Virgindade Perpétua (Latrão I, 649)</h4>
+            <h4>II. Virgindade Perpétua (Sínodo de Latrão, 649)</h4>
             <p>
               A Igreja confessa que Maria foi e permaneceu Virgem <em>antes, durante e depois do parto</em>
-              (<em>ante partum, in partu, post partum</em>). O dogma foi solenemente definido no Sínodo de Latrão
-              de 649 sob o Papa São Martinho I<FnRef n="latrao" />, confirmando uma fé já atestada por Santo
-              Inácio, São Justino, Santo Ireneu e os Concílios de Constantinopla II (553) e III (680–681). O
-              Catecismo trata do tema em <em>CIC</em> §§ 496–507<FnRef n="cic" />, explicando que os “irmãos de
-              Jesus” mencionados pelos Evangelhos são parentes próximos, segundo o uso semítico.
+              (<em>ante partum, in partu, post partum</em>). Essa verdade foi solenemente formulada pelo Sínodo
+              de Latrão de 649, convocado pelo Papa São Martinho I<FnRef n="latrao" /> — um sínodo romano, não o
+              Concílio Ecumênico de Latrão I (1123) —, confirmando uma fé já atestada por Santo Inácio, São
+              Justino, Santo Ireneu e retomada pelos Concílios Ecumênicos de Constantinopla II (553) e III
+              (680–681). A perpétua virgindade de Maria é ensinada de modo constante e unânime pela Tradição e
+              pelo magistério ordinário e universal da Igreja (<em>LG</em> 57; <em>CIC</em> § 499). O Catecismo
+              trata do tema em <em>CIC</em> §§ 496–507<FnRef n="cic" />, explicando que os “irmãos de Jesus”
+              mencionados pelos Evangelhos são parentes próximos, segundo o uso semítico.
             </p>
           </section>
 
