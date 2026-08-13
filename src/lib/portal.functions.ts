@@ -78,6 +78,20 @@ export const marcarCapituloFn = createServerFn({ method: "POST" })
     return marcarCapitulo(data.token, data.livro, data.capitulo, data.lido);
   });
 
+export const registrarEstudoFn = createServerFn({ method: "POST" })
+  .inputValidator(
+    TokenObrigatorio.extend({
+      tipo: z.enum(["catecismo", "maria", "trilha-avancada"]),
+      chave: z.string().trim().min(1).max(120),
+    }),
+  )
+  .handler(async ({ data }) => {
+    const { limitarAbuso } = await import("./seguranca/guarda.server");
+    limitarAbuso("estudo", 60, 60_000);
+    const { registrarEstudo } = await import("./portal/identidade.server");
+    return registrarEstudo(data.token, data.tipo, data.chave);
+  });
+
 export const obterCapituloFn = createServerFn({ method: "POST" })
   .inputValidator(
     TokenObrigatorio.extend({
