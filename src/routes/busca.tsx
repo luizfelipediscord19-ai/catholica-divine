@@ -253,33 +253,60 @@ function BuscaAvancadaPage() {
 
         {dados && !mutation.isPending ? (
           <>
-            <p className="mb-8 text-sm text-muted-foreground">
+            <p className="mb-6 text-sm text-muted-foreground">
               {dados.total === 0
                 ? `Nenhuma ocorrência de “${dados.termo}” nos escopos selecionados.`
                 : `${dados.total} ocorrência${dados.total > 1 ? "s" : ""} de “${dados.termo}” · ${dados.duracaoMs} ms · exibindo ${dados.resultados.length}`}
             </p>
 
-            <ol className="space-y-4">
-              {dados.resultados.map((r) => (
-                <li key={r.id}>
-                  <Link
-                    to={r.href}
-                    className="block surface-card p-5 transition-colors hover:border-gold/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
-                  >
-                    <p className="mb-2 flex flex-wrap items-center gap-3 kicker">
-                      <span>{ESCOPOS.find((e) => e.id === r.escopo)?.label}</span>
-                      <span className="text-muted-foreground">{r.referencia}</span>
-                    </p>
-                    <h2 className="font-display text-xl text-foreground mb-2 leading-snug">
-                      <Destaque texto={r.titulo} termo={dados.termo} />
-                    </h2>
-                    <p className="text-sm leading-[1.7] text-muted-foreground">
-                      <Destaque texto={r.trecho} termo={dados.termo} />
-                    </p>
-                  </Link>
-                </li>
-              ))}
-            </ol>
+            <Link
+              to="/assistente"
+              search={{ q: dados.termo }}
+              className="mb-8 flex items-start gap-3 surface-card p-4 sm:p-5 transition-colors hover:border-gold/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+            >
+              <Sparkles className="mt-0.5 size-4 shrink-0 text-gold" aria-hidden="true" />
+              <span className="min-w-0">
+                <span className="block kicker mb-1">Sophia IA</span>
+                <span className="block text-sm text-foreground">
+                  Perguntar à Sophia sobre “{dados.termo}”
+                </span>
+                <span className="block text-xs text-muted-foreground">
+                  Resposta explicada, com as fontes do Catecismo e da Escritura citadas.
+                </span>
+              </span>
+            </Link>
+
+            {ESCOPOS.filter((e) => grupos.get(e.id)?.length).map((escopo) => {
+              const itens = grupos.get(escopo.id)!;
+              const Icone = ICONES[escopo.id];
+              return (
+                <section key={escopo.id} aria-label={escopo.label} className="mb-10">
+                  <h2 className="mb-3 flex items-center gap-2 kicker">
+                    <Icone className="size-3.5 text-gold" aria-hidden="true" />
+                    {escopo.label}
+                    <span className="text-muted-foreground">{itens.length}</span>
+                  </h2>
+                  <ol className="space-y-3">
+                    {itens.map((r) => (
+                      <li key={r.id}>
+                        <Link
+                          to={r.href}
+                          className="block surface-card p-4 sm:p-5 transition-colors hover:border-gold/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+                        >
+                          <p className="mb-1.5 kicker text-muted-foreground">{r.referencia}</p>
+                          <h3 className="font-display text-lg sm:text-xl text-foreground mb-2 leading-snug">
+                            <Destaque texto={r.titulo} termo={dados.termo} />
+                          </h3>
+                          <p className="text-sm leading-[1.7] text-muted-foreground">
+                            <Destaque texto={r.trecho} termo={dados.termo} />
+                          </p>
+                        </Link>
+                      </li>
+                    ))}
+                  </ol>
+                </section>
+              );
+            })}
           </>
         ) : null}
       </div>
