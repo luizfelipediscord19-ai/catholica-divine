@@ -24,7 +24,7 @@ export const SACRAMENTOS: Sacramento[] = [
       { ref: "Jo 3,5", texto: "Quem não nascer da água e do Espírito não pode entrar no Reino de Deus." },
       { ref: "At 2,38", texto: "Convertei-vos e cada um de vós seja batizado em nome de Jesus Cristo para a remissão dos pecados." },
     ],
-    catecismo: "CIC §§1213-1284. O Batismo é o fundamento de toda a vida cristã, porta da vida no Espírito (vitae spiritualis ianua) e porta que dá acesso aos outros sacramentos. A matéria é a água natural; a forma, a fórmula trinitária pronunciada durante a ablução ou imersão. Confere caráter indelével, razão pela qual jamais se repete, ainda que tenha sido administrado fora da Igreja Católica, desde que válido.",
+    catecismo: "CIC §§1213-1284. O Batismo é o fundamento de toda a vida cristã, porta da vida no Espírito (vitae spiritualis ianua) e porta que dá acesso aos outros sacramentos. Nas categorias tradicionais da teologia sacramental, a matéria é a água natural e a forma é a fórmula trinitária pronunciada durante a ablução ou imersão. Confere caráter indelével, razão pela qual jamais se repete, ainda que tenha sido administrado fora da Igreja Católica, desde que válido.",
     historia:
       "Prefigurado no Antigo Testamento pela travessia do Mar Vermelho e pelo dilúvio, instituído por Cristo no Jordão e mandato após a Ressurreição (Mt 28,19). Os Padres dos primeiros séculos, como Justino e Tertuliano, descrevem a tríplice imersão, a renúncia a Satanás e a unção pós-batismal; o catecumenato antigo estruturou-se em etapas de preparação que hoje inspiram o RICA (Ritual de Iniciação Cristã de Adultos).",
     efeitos: [
@@ -76,7 +76,7 @@ export const SACRAMENTOS: Sacramento[] = [
       { ref: "Jo 6,51-56", texto: "Eu sou o pão vivo descido do céu. Quem comer deste pão viverá eternamente." },
       { ref: "1Cor 11,23-29", texto: "Quem come este pão e bebe este cálice indignamente, será réu do Corpo e do Sangue do Senhor." },
     ],
-    catecismo: "CIC §§1322-1419. A Eucaristia é 'fonte e cume de toda a vida cristã' (LG 11). Pela consagração opera-se a transubstanciação: a substância do pão converte-se na do Corpo de Cristo e a do vinho na de seu Sangue. A matéria é o pão de trigo (ázimo no rito latino) e o vinho de uva; a forma, as palavras da Consagração pronunciadas pelo sacerdote in persona Christi. O ministro válido é somente o bispo ou presbítero. Quem tem consciência de pecado mortal não deve comungar sem antes receber a absolvição sacramental, salvo grave necessidade e impossibilidade de confessar-se, e neste caso com o propósito de fazê-lo o quanto antes (CIC § 1385; cân. 916).",
+    catecismo: "CIC §§1322-1419. A Eucaristia é 'fonte e cume de toda a vida cristã' (LG 11). Pela consagração opera-se a transubstanciação: a substância do pão converte-se na do Corpo de Cristo e a do vinho na de seu Sangue. Nas categorias tradicionais da teologia sacramental, a matéria é o pão de trigo (ázimo no rito latino) e o vinho de uva, e a forma são as palavras da Consagração pronunciadas pelo sacerdote in persona Christi. O ministro válido é somente o bispo ou presbítero. Quem tem consciência de pecado mortal não deve comungar sem antes receber a absolvição sacramental, salvo grave necessidade e impossibilidade de confessar-se, e neste caso com o propósito de fazê-lo o quanto antes (CIC § 1385; cân. 916).",
     historia:
       "Instituída por Cristo na Última Ceia, na noite em que foi entregue. Os cristãos celebram a 'fração do pão' desde o Pentecostes (At 2,42). A doutrina da Presença Real foi solenemente afirmada pelos Concílios de Latrão IV e Trento.",
     efeitos: [
@@ -102,7 +102,7 @@ export const SACRAMENTOS: Sacramento[] = [
       { ref: "Mt 16,19", texto: "Tudo o que ligares na terra será ligado nos céus, e tudo o que desligares na terra será desligado nos céus." },
       { ref: "1Jo 1,9", texto: "Se confessarmos os nossos pecados, Deus é fiel e justo para no-los perdoar." },
     ],
-    catecismo: "CIC §§1422-1498. Comporta quatro atos: contrição, confissão dos pecados, satisfação (penitência) e absolvição do sacerdote. A ‘matéria’ são os próprios atos do penitente; a ‘forma’ é a fórmula de absolvição pronunciada pelo confessor. O ministro é o bispo ou presbítero dotado da faculdade de confessar (jurisdição), agindo como juiz e médico em nome de Cristo.",
+    catecismo: "CIC §§1422-1498. Comporta quatro atos: contrição, confissão dos pecados, satisfação (penitência) e absolvição do sacerdote. A teologia sacramental tradicional descreve como ‘matéria’ os próprios atos do penitente e como ‘forma’ a fórmula de absolvição pronunciada pelo confessor. O ministro é o bispo ou presbítero dotado da faculdade de confessar (jurisdição), agindo como juiz e médico em nome de Cristo.",
     historia:
       "Cristo confiou aos Apóstolos o ministério da reconciliação (Jo 20). Nos primeiros séculos havia a 'penitência canônica' pública para pecados graves; a partir do século VII generalizou-se a forma da confissão auricular individual.",
     efeitos: [
@@ -150,7 +150,7 @@ export const SACRAMENTOS: Sacramento[] = [
       { ref: "1Tm 4,14", texto: "Não negligencies o dom espiritual que está em ti e que te foi conferido por uma profecia, com a imposição das mãos do colégio dos presbíteros." },
       { ref: "Tt 1,5", texto: "Constituas presbíteros nas cidades, como te ordenei." },
     ],
-    catecismo: "CIC §§1536-1600. O ministro do sacramento é o bispo válido. Imprime caráter indelével nos três graus. A matéria é a imposição das mãos do bispo sobre o ordenando; a forma, a oração consecratória própria de cada grau, contida no ritual de ordenação. Só o bispo, sucessor dos Apóstolos, pode conferir validamente este sacramento.",
+    catecismo: "CIC §§1536-1600. O ministro do sacramento é o bispo válido. Imprime caráter indelével nos três graus. Nas categorias tradicionais da teologia sacramental, a matéria é a imposição das mãos do bispo sobre o ordenando e a forma é a oração consecratória própria de cada grau, contida no ritual de ordenação. Só o bispo, sucessor dos Apóstolos, pode conferir validamente este sacramento.",
     historia:
       "A sucessão apostólica é atestada já em Clemente Romano (final do séc. I). A distinção tripartida de bispo, presbítero e diácono está clara em Inácio de Antioquia.",
     efeitos: [
@@ -175,7 +175,7 @@ export const SACRAMENTOS: Sacramento[] = [
       { ref: "Mt 19,6", texto: "Não separe o homem o que Deus uniu." },
       { ref: "Ef 5,31-32", texto: "É grande este mistério: refiro-me a Cristo e à Igreja." },
     ],
-    catecismo: "CIC §§1601-1666. As propriedades essenciais são a unidade e a indissolubilidade, reforçadas no matrimônio cristão pela dignidade sacramental. Os próprios cônjuges são os ministros do sacramento ao trocar o consentimento livre e mútuo; o sacerdote ou diácono assiste em nome da Igreja como testemunha qualificada, exigida para a validade no rito latino (forma canônica).",
+    catecismo: "CIC §§1601-1666. As propriedades essenciais são a unidade e a indissolubilidade, reforçadas no matrimônio cristão pela dignidade sacramental. Na Igreja Latina, os próprios esposos são os ministros do sacramento, pelo consentimento livre e mútuo que manifestam um ao outro — consentimento que faz o matrimônio (cân. 1057). O sacerdote ou diácono não confere o sacramento como nos demais: assiste à celebração em nome da Igreja como testemunha qualificada, exigida, com duas outras testemunhas, para a validade no rito latino (forma canônica, cân. 1108). Nas Igrejas Orientais católicas, a bênção do sacerdote é requerida para a validade.",
     historia:
       "Instituído por Deus na criação, elevado por Cristo a sacramento. A indissolubilidade foi reafirmada pelo Concílio de Trento e por todo o Magistério moderno.",
     efeitos: [
