@@ -202,7 +202,13 @@ function FavoritosPage() {
 
 
       <div className="flex flex-wrap items-center gap-3">
-        {(["favoritos", "notas"] as const).map((v) => (
+        {(
+          [
+            { v: "favoritos", rotulo: `Versículos (${favoritos.length})`, Icone: Star },
+            { v: "notas", rotulo: `Anotações (${notas.length})`, Icone: NotebookPen },
+            { v: "salvos", rotulo: `Salvos (${salvos.length})`, Icone: Bookmark },
+          ] as const
+        ).map(({ v, rotulo, Icone }) => (
           <button
             key={v}
             type="button"
@@ -211,18 +217,15 @@ function FavoritosPage() {
             className={`inline-flex items-center gap-2 min-h-11 px-6 py-3 label-btn border transition-premium ${
               aba === v
                 ? "border-gold bg-gold/10 text-gold"
-                : "border-gold/20 text-paper/70 hover:text-gold hover:border-gold/50"
+                : "border-gold/20 text-foreground/70 hover:text-gold hover:border-gold/50"
             }`}
           >
-            {v === "favoritos" ? (
-              <Star className="size-3.5" aria-hidden="true" />
-            ) : (
-              <NotebookPen className="size-3.5" aria-hidden="true" />
-            )}
-            {v === "favoritos" ? `Versículos (${favoritos.length})` : `Anotações (${notas.length})`}
+            <Icone className="size-3.5" aria-hidden="true" />
+            {rotulo}
           </button>
         ))}
       </div>
+
 
       <div className="grid gap-4 sm:grid-cols-[1fr_auto]">
         <label className="relative block">
