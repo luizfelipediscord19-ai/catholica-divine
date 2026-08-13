@@ -328,6 +328,64 @@ export async function marcarCapitulo(
   return { lido: true, novasConquistas };
 }
 
+/** Tipos de conteúdo estudado fora da Bíblia (Catecismo, Maria, trilhas). */
+export type TipoEstudo = "catecismo" | "maria" | "trilha-avancada";
+
+/** Total de seções do Catecismo consideradas na conquista de conhecedor. */
+export const SECOES_CATECISMO = 14;
+
+/**
+ * Registra que a identidade estudou um conteúdo (uma vez por chave) e
+ * devolve as conquistas de formação desbloqueadas.
+ */
+export async function registrarEstudo(token: string, tipo: TipoEstudo, chave: string) {
+  const id = await identidadePorToken(token);
+  const limpa = chave.trim().slice(0, 120);
+  if (!limpa) return { novasConquistas: [] as string[] };
+
+  const { error } = await supabaseAdmin
+    .from("estudos_conteudo")
+    .upsert(
+      { identidade_id: id.id, tipo, chave: limpa },
+      { onConflict: "identidade_id,tipo,chave", ignoreDuplicates: true },
+    );
+  if (error) return { novasConquistas: [] as string[] };
+
+  const { count } = await supabaseAdmin
+    .from("estudos_conteudo")
+    .select("id", { count: "exact", head: true })
+    .eq("identidade_id", id.id)
+    .eq("tipo", tipo);
+  const total = count ?? 0;
+
+  const alvos: string[] = [];
+  if (tipo === "catecismo") {
+    if (total >= 10) alvos.push("catecismo-10");
+    if (total >= SECOES_CATECISMO) alvos.push("conhecedor-catecismo");
+  } else if (tipo === "maria") {
+    if (total >= 10) alvos.push("filho-de-maria");
+  } else if (tipo === "trilha-avancada") {
+    if (total >= 1) alvos.push("caminho-sao-tomas");
+  }
+
+  const novasConquistas = alvos.length ? await desbloquear(id.id, alvos) : [];
+  return { novasConquistas };
+}
+
+/** Contagens de estudo por tipo, para as barras de progresso do painel. */
+async function totaisDeEstudo(identidadeId: string) {
+  const { data } = await supabaseAdmin
+    .from("estudos_conteudo")
+    .select("tipo")
+    .eq("identidade_id", identidadeId);
+  const linhas = data ?? [];
+  return {
+    catecismo: linhas.filter((l) => l.tipo === "catecismo").length,
+    maria: linhas.filter((l) => l.tipo === "maria").length,
+    trilhasAvancadas: linhas.filter((l) => l.tipo === "trilha-avancada").length,
+  };
+}
+
 /** Alterna um versículo favorito. */
 export async function alternarFavorito(
   token: string,
