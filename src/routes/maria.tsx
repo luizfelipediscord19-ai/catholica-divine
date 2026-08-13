@@ -55,10 +55,10 @@ const DOGMAS_CARDS = [
 ];
 
 const APARICOES = [
-  { local: "Guadalupe (México)", ano: "1531", body: "À São Juan Diego: a Virgem morena, imagem milagrosa na tilma. Reconhecida pelos Papas; coroada por Pio X (1910)." },
-  { local: "Rue du Bac (Paris)", ano: "1830", body: "A Santa Catarina Labouré: a Medalha Milagrosa, antecipando o dogma da Imaculada." },
-  { local: "Lourdes (França)", ano: "1858", body: "A Santa Bernadette: ‘Eu sou a Imaculada Conceição.’ Reconhecida pelo bispo de Tarbes em 1862." },
-  { local: "Fátima (Portugal)", ano: "1917", body: "Aos três pastorinhos: oração, penitência e consagração ao Imaculado Coração. Aprovada pelo bispo de Leiria em 1930." },
+  { local: "Guadalupe (México)", ano: "1531", body: "A São Juan Diego: a Virgem morena, imagem impressa na tilma. O culto goza de aprovação e incentivo papal contínuo desde o séc. XVIII (Bento XIV, 1754); Pio X a proclamou Padroeira da América Latina e a coroou canonicamente em 1895/1910. Não há um decreto formal único de 'reconhecimento da sobrenaturalidade' nos moldes modernos, mas séculos de aprovação litúrgica e devocional pela Santa Sé." },
+  { local: "Rue du Bac (Paris)", ano: "1830", body: "A Santa Catarina Labouré: origem da Medalha Milagrosa, que antecipou em linguagem popular o dogma da Imaculada Conceição (1854). O arcebispo de Paris autorizou a cunhagem da medalha em 1832, reconhecendo a devoção; não houve declaração dogmática sobre a aparição em si." },
+  { local: "Lourdes (França)", ano: "1858", body: "A Santa Bernadette Soubirous: ‘Eu sou a Imaculada Conceição.’ O bispo de Tarbes declarou em 1862 que a aparição reveste 'os caracteres da verdade' e autorizou o culto, reconhecimento formal raro entre as aparições marianas." },
+  { local: "Fátima (Portugal)", ano: "1917", body: "Aos três pastorinhos: oração, penitência e consagração ao Imaculado Coração. O bispo de Leiria declarou em 1930 as aparições 'dignas de fé' e aprovou o culto público." },
 ];
 
 function Page() {
@@ -195,9 +195,20 @@ function Page() {
           <h3 className="font-display text-2xl text-foreground mb-3">Aparições aprovadas pela Igreja</h3>
           <p className="text-sm text-muted-foreground max-w-3xl mb-6 leading-relaxed">
             Diferentemente da Revelação pública (encerrada com a morte do último Apóstolo, <em>DV</em> 4), as
-            <em> revelações privadas</em> não pertencem ao depósito da fé. Quando aprovadas pelo Magistério,
-            podem auxiliar a vivê-lo, segundo as <em>Normas</em> do Dicastério para a Doutrina da Fé<FnRef n="cdf-aparicoes" />.
+            <em> revelações privadas</em> não pertencem ao depósito da fé e não obrigam à fé divina e católica
+            (<em>CIC</em> §§ 66-67). O reconhecimento eclesiástico admite graus distintos — declaração de que
+            "nada obsta" à devoção (<em>nihil obstat</em>), constatação de que a aparição não contradiz a fé e
+            a moral, ou, mais raramente, afirmação de que os fatos revestem "caracteres de verdade" — segundo as
+            <em> Normas</em> do Dicastério para a Doutrina da Fé<FnRef n="cdf-aparicoes" />. Nenhuma aprovação
+            eclesiástica equivale a uma declaração de que a aparição é "comprovadamente sobrenatural"; trata-se
+            sempre de um juízo prudencial e pastoral, ao qual os fiéis podem aderir com fé humana e prudente,
+            nunca com o assentimento devido ao dogma.
           </p>
+          <NotaConfiabilidade nivel="privada" className="mb-6 max-w-3xl">
+            As aparições abaixo têm graus de reconhecimento eclesial diversos, do simples incentivo à devoção
+            até a declaração formal de que os fatos são "dignos de fé". Em nenhum caso a Igreja obriga os fiéis
+            a crer nelas.
+          </NotaConfiabilidade>
           <CardGrid cols={2}>
             {APARICOES.map((a) => (
               <ContentCard key={a.local} title={a.local} subtitle={a.ano}>{a.body}</ContentCard>
