@@ -5,6 +5,8 @@ import { buildSantoView } from "@/lib/santos-helpers";
 import { Relacionados } from "@/components/Relacionados";
 import { RetratoSanto } from "@/components/santos/RetratoSanto";
 import { usePrefetchSanto } from "@/lib/santos/prefetch";
+import { BotaoSalvar } from "@/components/portal/BotaoSalvar";
+
 
 const SITE = "https://portalcatolico.vercel.app";
 
