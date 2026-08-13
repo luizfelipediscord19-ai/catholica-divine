@@ -26,8 +26,9 @@ export const ChatMessageItem = memo(({ message }: ChatMessageProps) => {
 
   const compartilhar = async () => {
     const dados = { title: "Sophia — Assistente de estudo católico", text };
+    const podeCompartilhar = typeof navigator !== "undefined" && typeof navigator.share === "function";
     try {
-      if (typeof navigator !== "undefined" && "share" in navigator) {
+      if (podeCompartilhar) {
         await navigator.share(dados);
         return;
       }
