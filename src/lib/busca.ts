@@ -6,6 +6,7 @@ import { NOVENAS } from "./data/devocoes/novenas";
 import { ORACOES } from "./data/oracoes";
 import { OBJECOES } from "./data/apologetica-objecoes";
 import { SANTOS_LISTA } from "./santos-lista";
+import { TRILHAS } from "./data/trilhas/index";
 
 export type Categoria =
   | "Página"
@@ -14,7 +15,8 @@ export type Categoria =
   | "Santo"
   | "Glossário"
   | "Oração"
-  | "Apologética";
+  | "Apologética"
+  | "Trilha";
 
 export type ItemBusca = {
   id: string;
@@ -148,6 +150,25 @@ export function indiceBusca(): ItemBusca[] {
     });
   }
 
+  for (const trilha of TRILHAS) {
+    itens.push({
+      id: `t-${trilha.slug}`,
+      titulo: trilha.titulo,
+      descricao: `${trilha.nivel} · ${trilha.licoes.length} lições · ${trilha.subtitulo}`,
+      categoria: "Trilha",
+      href: `/trilhas/${trilha.slug}`,
+    });
+    for (const licao of trilha.licoes) {
+      itens.push({
+        id: `t-${trilha.slug}-${licao.slug}`,
+        titulo: licao.titulo,
+        descricao: `${trilha.titulo} · ${licao.resumo.slice(0, 90)}`,
+        categoria: "Trilha",
+        href: `/trilhas/${trilha.slug}/${licao.slug}`,
+      });
+    }
+  }
+
   cache = itens;
   return itens;
 }
@@ -176,6 +197,31 @@ function referenciaBiblica(consulta: string): ItemBusca | null {
     categoria: "Bíblia",
     href: `/biblia/${livro.slug}/${capitulo}`,
   };
+}
+
+export const ORDEM_CATEGORIAS: Categoria[] = [
+  "Bíblia",
+  "Catecismo",
+  "Santo",
+  "Oração",
+  "Trilha",
+  "Apologética",
+  "Glossário",
+  "Página",
+];
+
+/** Agrupa os resultados por categoria, mantendo a ordem editorial do portal. */
+export function agrupar(resultados: ItemBusca[]): { categoria: Categoria; itens: ItemBusca[] }[] {
+  const mapa = new Map<Categoria, ItemBusca[]>();
+  for (const item of resultados) {
+    const lista = mapa.get(item.categoria);
+    if (lista) lista.push(item);
+    else mapa.set(item.categoria, [item]);
+  }
+  return ORDEM_CATEGORIAS.filter((c) => mapa.has(c)).map((categoria) => ({
+    categoria,
+    itens: mapa.get(categoria)!,
+  }));
 }
 
 export function buscar(consulta: string, limite = 24): ItemBusca[] {
