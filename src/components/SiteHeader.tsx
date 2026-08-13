@@ -104,7 +104,7 @@ export function SiteHeader() {
         rolou ? "border-gold/20 shadow-[var(--shadow-card-hover)]" : "border-gold/10"
       }`}
     >
-      <div className="shell grid h-16 w-full grid-cols-[minmax(0,1fr)_auto] items-center gap-3 sm:h-[4.5rem] lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:gap-6">
+      <div className="shell flex h-16 w-full items-center gap-3 sm:h-[4.5rem] lg:gap-5">
         <Link
           to="/"
           aria-label="Portal Católico — início"
@@ -120,8 +120,9 @@ export function SiteHeader() {
 
         <nav
           aria-label="Navegação principal"
-          className="hidden min-w-0 items-center justify-center gap-1 whitespace-nowrap lg:flex"
+          className="hidden min-w-0 items-center gap-0.5 whitespace-nowrap lg:ml-3 lg:flex xl:ml-6 xl:gap-1"
         >
+
           {NAV_PRINCIPAL.map((item) => {
             const active = pathname === item.to || pathname.startsWith(`${item.to}/`);
             return (
@@ -143,13 +144,14 @@ export function SiteHeader() {
           })}
         </nav>
 
-        <div className="flex shrink-0 items-center justify-end gap-1.5 sm:gap-2">
+        <div className="ml-auto flex shrink-0 items-center justify-end gap-1.5 sm:gap-2">
           {/* Campo de busca visível no desktop; ícone no celular. */}
           <button
             type="button"
             onClick={() => setBusca(true)}
             aria-label="Buscar no portal (Ctrl + K)"
-            className="hidden min-h-10 w-56 items-center gap-2 rounded-[var(--radius-btn)] border border-gold/20 bg-transparent px-3 text-left text-step--1 text-foreground/55 transition-premium hover:border-gold/50 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold lg:flex"
+            className="hidden min-h-10 w-44 items-center gap-2 rounded-[var(--radius-btn)] border border-gold/20 bg-transparent px-3 text-left text-step--1 text-foreground/55 transition-premium hover:border-gold/50 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold lg:flex xl:w-56"
+
           >
             <Search className="size-4 shrink-0 text-gold" aria-hidden="true" />
             <span className="min-w-0 flex-1 truncate">O que você procura?</span>
