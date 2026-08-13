@@ -1,16 +1,26 @@
 import { memo, useRef, useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, Check, Copy, Share2 } from "lucide-react";
+import { ArrowRight, Check, Copy, RefreshCw, Share2 } from "lucide-react";
 import { ChatMessage } from "../../lib/types/chat";
 import { SourceReferences, extrairFontes } from "../SourceReferences";
 import { ReferenciasInternas } from "./ReferenciasInternas";
 
+const APROFUNDAR = [
+  "Quais versículos fundamentam isso?",
+  "O que diz o Catecismo sobre esse ponto?",
+  "Como viver isso na prática hoje?",
+  "Qual é o erro mais comum sobre esse tema?",
+];
+
 interface ChatMessageProps {
   message: ChatMessage;
+  onPerguntar?: (texto: string) => void;
+  ultimaPergunta?: string;
+  ultimo?: boolean;
 }
 
-export const ChatMessageItem = memo(({ message }: ChatMessageProps) => {
+export const ChatMessageItem = memo(({ message, onPerguntar, ultimaPergunta, ultimo }: ChatMessageProps) => {
   const isUser = message.role === "user";
   const text = message.parts.map((p) => (p.type === "text" ? p.text : "")).join("");
   const [copiado, setCopiado] = useState(false);
