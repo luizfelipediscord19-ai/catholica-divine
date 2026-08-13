@@ -153,6 +153,30 @@ function Page() {
           ) : null}
         </div>
 
+        <div className="mb-8 space-y-3">
+          <p className="kicker">Memória por mês</p>
+          <ul className="flex flex-wrap gap-2">
+            {[{ v: "", r: "Todos" }, ...MESES.map((m) => ({ v: m, r: m }))].map((op) => (
+              <li key={op.v || "todos"}>
+                <button
+                  type="button"
+                  onClick={() => setMes(op.v)}
+                  aria-pressed={mes === op.v}
+                  className={`inline-flex min-h-9 items-center rounded-[var(--radius-btn)] border px-3 text-step--1 capitalize transition-premium ${
+                    mes === op.v
+                      ? "border-gold bg-gold/10 text-gold"
+                      : "border-gold/20 text-foreground/70 hover:border-gold/50 hover:text-gold"
+                  }`}
+                >
+                  {op.r}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+
+
         <CardGrid cols={3}>
           {visiveis.map((s, i) => (
             <CartaoSanto
