@@ -83,7 +83,7 @@ export function caminhoCatecismo(paragrafo: number): string {
 }
 
 export function caminhoEscritura(livro: string, capitulo: number, versiculo?: number): string | null {
-  const alvo = INDICE_LIVROS.get(normalizar(livro));
+  const alvo = acharLivro(livro);
   if (!alvo) return null;
   if (capitulo < 1 || capitulo > alvo.capitulos) return null;
   return `/biblia/${alvo.slug}/${capitulo}${versiculo ? `#v${versiculo}` : ""}`;
@@ -109,7 +109,7 @@ export function encontrarReferencias(texto: string, limite = 12): Referencia[] {
     const versiculo = Number(m[3]);
     const caminho = caminhoEscritura(livro, capitulo, versiculo);
     if (!caminho) continue;
-    const alvo = INDICE_LIVROS.get(normalizar(livro))!;
+    const alvo = acharLivro(livro)!;
     if (vistas.has(caminho)) continue;
     vistas.add(caminho);
     saida.push({
