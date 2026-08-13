@@ -104,7 +104,7 @@ export function SiteHeader() {
         rolou ? "border-gold/20 shadow-[var(--shadow-card-hover)]" : "border-gold/10"
       }`}
     >
-      <div className="shell grid h-16 w-full grid-cols-[minmax(0,1fr)_auto] items-center gap-3 sm:h-[4.5rem] lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:gap-6">
+      <div className="shell flex h-16 w-full items-center gap-3 sm:h-[4.5rem] lg:gap-5">
         <Link
           to="/"
           aria-label="Portal Católico — início"
