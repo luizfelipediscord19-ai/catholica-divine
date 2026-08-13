@@ -120,8 +120,9 @@ export function SiteHeader() {
 
         <nav
           aria-label="Navegação principal"
-          className="hidden min-w-0 items-center justify-center gap-1 whitespace-nowrap lg:flex"
+          className="hidden min-w-0 items-center gap-0.5 whitespace-nowrap lg:flex xl:gap-1"
         >
+
           {NAV_PRINCIPAL.map((item) => {
             const active = pathname === item.to || pathname.startsWith(`${item.to}/`);
             return (
