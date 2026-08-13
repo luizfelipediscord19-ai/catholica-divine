@@ -256,6 +256,9 @@ async function buscarNaBiblia(
     for (const [cap, versos] of Object.entries(dados.capitulos)) {
       for (const verso of versos) {
         const alvo = normalizar(verso.t);
+        // No texto bíblico mantemos o rigor: o versículo precisa conter todas
+        // as palavras-chave, senão uma pergunta longa devolveria ruído.
+        if (toks.length > 1 && !toks.every((t) => alvo.includes(t))) continue;
         const pontos = pontuar(alvo, termoNorm, toks);
         if (!pontos) continue;
         achados.push({
