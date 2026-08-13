@@ -11,6 +11,10 @@ const DESCRICAO =
 
 
 export const Route = createFileRoute("/assistente")({
+  validateSearch: (raw: Record<string, unknown>): { q?: string } => {
+    const q = typeof raw.q === "string" ? raw.q.trim().slice(0, 400) : "";
+    return q ? { q } : {};
+  },
   head: () => ({
     meta: [
       { title: TITULO },
