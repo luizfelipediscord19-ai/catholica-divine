@@ -14,6 +14,7 @@ import {
   useCapituloPessoal,
 } from "../components/portal/AcoesCapitulo";
 import { NotasCapitulo } from "../components/portal/NotasCapitulo";
+import { EstudarComSophia, SophiaVersiculo } from "../components/portal/PerguntarSophia";
 import { useMarcadorCapitulo } from "../components/portal/RetomarLeitura";
 
 import { capituloLocal, temTextoLocal } from "../lib/biblia/local";
@@ -330,7 +331,16 @@ function Page() {
                   disabled={!pessoal.pronto || pessoal.favoritar.isPending}
                   onClick={() => pessoal.favoritar.mutate({ versiculo: v.v, texto: v.t.slice(0, 900) })}
                 />
-                <span className="block">{v.t}</span>
+                <span className="block">
+                  {v.t}
+                  <span data-leitura-oculto>
+                    <SophiaVersiculo
+                      livro={livro.nome}
+                      capitulo={capitulo}
+                      versiculo={v.v}
+                    />
+                  </span>
+                </span>
               </p>
             ))}
           </div>
@@ -344,6 +354,15 @@ function Page() {
 
       <div data-leitura-oculto>
         <NotasCapitulo livro={livro.slug} capitulo={capitulo} className="mt-10" />
+        <EstudarComSophia
+          titulo={`${livro.nome} ${capitulo}`}
+          perguntas={[
+            `O que ${livro.nome} ${capitulo} ensina? Faça uma síntese com o Catecismo e os Padres da Igreja.`,
+            `Qual é o contexto histórico e literário de ${livro.nome} ${capitulo}?`,
+            `Como viver hoje o que ${livro.nome} ${capitulo} pede de mim?`,
+          ]}
+          className="mt-10"
+        />
         <Relacionados topic={`biblia:${livro.slug}`} className="mt-10" />
       </div>
 

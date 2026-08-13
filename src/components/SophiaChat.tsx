@@ -11,6 +11,8 @@ interface SophiaChatProps {
   suggestions: string[];
   placeholder?: string;
   height?: string;
+  /** Pergunta vinda de um conteúdo (versículo, parágrafo do CIC): já enviada. */
+  perguntaInicial?: string;
 }
 
 export const SophiaChat = memo(({
@@ -18,6 +20,7 @@ export const SophiaChat = memo(({
   suggestions,
   placeholder = "Sua pergunta...",
   height = "60vh",
+  perguntaInicial,
 }: SophiaChatProps) => {
   const [input, setInput] = useState("");
   const [aviso, setAviso] = useState<string | null>(null);
@@ -56,6 +59,15 @@ export const SophiaChat = memo(({
   // Ditado por voz: grava o microfone e transcreve no servidor (Whisper).
   const submitRef = useRef(handleSubmit);
   submitRef.current = handleSubmit;
+
+  // Pergunta contextual vinda de uma página de conteúdo: envia uma única vez.
+  const inicialEnviada = useRef(false);
+  useEffect(() => {
+    const pergunta = perguntaInicial?.trim();
+    if (!pergunta || inicialEnviada.current) return;
+    inicialEnviada.current = true;
+    submitRef.current(pergunta.slice(0, 800));
+  }, [perguntaInicial]);
 
   const aoTranscrever = useCallback((texto: string) => {
     const limpo = texto.slice(0, LIMITE);

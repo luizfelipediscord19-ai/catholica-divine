@@ -9,6 +9,7 @@ import { GLOSSARIO } from "@/lib/data/glossario";
 import { OBJECOES } from "@/lib/data/apologetica-objecoes";
 import { ORACOES } from "@/lib/data/oracoes";
 import { SANTOS_LISTA } from "@/lib/santos-lista";
+import { expandirTermos, palavrasChave } from "@/lib/busca/linguagem";
 
 export type EscopoBusca = "biblia" | "catecismo" | "magisterio" | "santos" | "oracoes";
 
@@ -45,22 +46,40 @@ function normalizar(texto: string): string {
     .toLowerCase();
 }
 
+/** Palavras significativas: aceita perguntas inteiras em linguagem natural. */
 function tokens(termo: string): string[] {
+  const chaves = palavrasChave(termo);
+  if (chaves.length) return chaves;
   return normalizar(termo)
     .split(/[^a-z0-9]+/)
     .filter((t) => t.length >= 2)
     .slice(0, 8);
 }
 
-/** Pontuação: todos os tokens precisam aparecer; frase exata vale mais. */
-function pontuar(alvo: string, termoNorm: string, toks: string[]): number {
+/**
+ * Pontuação tolerante: basta uma palavra-chave aparecer, mas quanto mais
+ * palavras (e sinônimos católicos) o trecho contém, mais alto ele fica.
+ * A frase exata continua valendo muito.
+ */
+function pontuar(alvo: string, termoNorm: string, toks: string[], equivalentes: string[] = []): number {
   let pontos = 0;
+  let achados = 0;
   for (const tok of toks) {
     const i = alvo.indexOf(tok);
-    if (i < 0) return 0;
+    if (i < 0) continue;
+    achados += 1;
     pontos += 3;
     if (i === 0 || !/[a-z0-9]/.test(alvo[i - 1] ?? "")) pontos += 2; // início de palavra
   }
+  if (achados === 0) {
+    // Nenhuma palavra literal: tenta o vocabulário equivalente.
+    let extras = 0;
+    for (const eq of equivalentes) if (alvo.includes(eq)) extras += 1;
+    if (extras === 0) return 0;
+    return Math.min(extras, 4) * 2;
+  }
+  if (achados === toks.length && toks.length > 1) pontos += 6; // cobertura total
+  for (const eq of equivalentes) if (alvo.includes(eq)) pontos += 2;
   if (toks.length > 1 && alvo.includes(termoNorm)) pontos += 12;
   return pontos;
 }
@@ -237,6 +256,9 @@ async function buscarNaBiblia(
     for (const [cap, versos] of Object.entries(dados.capitulos)) {
       for (const verso of versos) {
         const alvo = normalizar(verso.t);
+        // No texto bíblico mantemos o rigor: o versículo precisa conter todas
+        // as palavras-chave, senão uma pergunta longa devolveria ruído.
+        if (toks.length > 1 && !toks.every((t) => alvo.includes(t))) continue;
         const pontos = pontuar(alvo, termoNorm, toks);
         if (!pontos) continue;
         achados.push({
@@ -280,10 +302,12 @@ export async function buscarIndexado(input: {
   const termoNorm = normalizar(termo);
   const achados: Resultado[] = [];
 
+  const equivalentes = expandirTermos(toks);
+
   for (const doc of construirCorpus()) {
     if (!escopos.has(doc.escopo)) continue;
     const alvo = normalizar(`${doc.titulo} ${doc.referencia} ${doc.texto}`);
-    const pontos = pontuar(alvo, termoNorm, toks);
+    const pontos = pontuar(alvo, termoNorm, toks, equivalentes);
     if (!pontos) continue;
     achados.push({
       id: doc.id,

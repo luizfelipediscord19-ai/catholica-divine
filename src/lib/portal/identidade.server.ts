@@ -328,6 +328,64 @@ export async function marcarCapitulo(
   return { lido: true, novasConquistas };
 }
 
+/** Tipos de conteúdo estudado fora da Bíblia (Catecismo, Maria, trilhas). */
+export type TipoEstudo = "catecismo" | "maria" | "trilha-avancada";
+
+/** Total de seções do Catecismo consideradas na conquista de conhecedor. */
+export const SECOES_CATECISMO = 14;
+
+/**
+ * Registra que a identidade estudou um conteúdo (uma vez por chave) e
+ * devolve as conquistas de formação desbloqueadas.
+ */
+export async function registrarEstudo(token: string, tipo: TipoEstudo, chave: string) {
+  const id = await identidadePorToken(token);
+  const limpa = chave.trim().slice(0, 120);
+  if (!limpa) return { novasConquistas: [] as string[] };
+
+  const { error } = await supabaseAdmin
+    .from("estudos_conteudo")
+    .upsert(
+      { identidade_id: id.id, tipo, chave: limpa },
+      { onConflict: "identidade_id,tipo,chave", ignoreDuplicates: true },
+    );
+  if (error) return { novasConquistas: [] as string[] };
+
+  const { count } = await supabaseAdmin
+    .from("estudos_conteudo")
+    .select("id", { count: "exact", head: true })
+    .eq("identidade_id", id.id)
+    .eq("tipo", tipo);
+  const total = count ?? 0;
+
+  const alvos: string[] = [];
+  if (tipo === "catecismo") {
+    if (total >= 10) alvos.push("catecismo-10");
+    if (total >= SECOES_CATECISMO) alvos.push("conhecedor-catecismo");
+  } else if (tipo === "maria") {
+    if (total >= 10) alvos.push("filho-de-maria");
+  } else if (tipo === "trilha-avancada") {
+    if (total >= 1) alvos.push("caminho-sao-tomas");
+  }
+
+  const novasConquistas = alvos.length ? await desbloquear(id.id, alvos) : [];
+  return { novasConquistas };
+}
+
+/** Contagens de estudo por tipo, para as barras de progresso do painel. */
+async function totaisDeEstudo(identidadeId: string) {
+  const { data } = await supabaseAdmin
+    .from("estudos_conteudo")
+    .select("tipo")
+    .eq("identidade_id", identidadeId);
+  const linhas = data ?? [];
+  return {
+    catecismo: linhas.filter((l) => l.tipo === "catecismo").length,
+    maria: linhas.filter((l) => l.tipo === "maria").length,
+    trilhasAvancadas: linhas.filter((l) => l.tipo === "trilha-avancada").length,
+  };
+}
+
 /** Alterna um versículo favorito. */
 export async function alternarFavorito(
   token: string,
@@ -454,7 +512,8 @@ export async function obterPainel(token: string) {
   const desbloqueadas = new Set((conquistas.data ?? []).map((c) => c.conquista_slug));
 
   // Totais usados pelas barras de progresso das conquistas.
-  const [diario, completos, topicos, respostas, favoritosTotal, notasTotal] = await Promise.all([
+  const [diario, completos, topicos, respostas, favoritosTotal, notasTotal, estudos] =
+    await Promise.all([
     supabaseAdmin.from("diario_espiritual").select("minutos").eq("identidade_id", id.id),
     livrosConcluidos(id.id),
     supabaseAdmin
@@ -467,6 +526,7 @@ export async function obterPainel(token: string) {
       .eq("identidade_id", id.id),
     contar("favoritos", id.id),
     contar("notas", id.id),
+    totaisDeEstudo(id.id),
   ]);
 
   const linhasDiario = diario.data ?? [];
@@ -490,6 +550,9 @@ export async function obterPainel(token: string) {
       topicos: topicos.count ?? 0,
       respostas: respostas.count ?? 0,
       minutosMaximos: linhasDiario.reduce((m, l) => Math.max(m, l.minutos ?? 0), 0),
+      catecismo: estudos.catecismo,
+      maria: estudos.maria,
+      trilhasAvancadas: estudos.trilhasAvancadas,
     },
     conquistas: (catalogo.data ?? []).map((c) => ({
       ...c,

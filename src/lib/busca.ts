@@ -7,6 +7,7 @@ import { ORACOES } from "./data/oracoes";
 import { OBJECOES } from "./data/apologetica-objecoes";
 import { SANTOS_LISTA } from "./santos-lista";
 import { TRILHAS } from "./data/trilhas/index";
+import { expandirTermos, palavrasChave } from "./busca/linguagem";
 
 export type Categoria =
   | "Página"
@@ -228,17 +229,46 @@ export function buscar(consulta: string, limite = 24): ItemBusca[] {
   const termo = normalizar(consulta);
   if (termo.length < 2) return [];
 
+  const chaves = palavrasChave(consulta);
+  const sinonimos = expandirTermos(chaves);
   const resultados: { item: ItemBusca; peso: number }[] = [];
   const referencia = referenciaBiblica(consulta);
 
   for (const item of indiceBusca()) {
     const titulo = normalizar(item.titulo);
     const descricao = normalizar(item.descricao);
+    const alvo = `${titulo} ${descricao}`;
+
+    // 1) Correspondência literal da frase inteira (comportamento clássico).
     let peso = -1;
     if (titulo === termo) peso = 0;
     else if (titulo.startsWith(termo)) peso = 1;
     else if (titulo.includes(termo)) peso = 2;
     else if (descricao.includes(termo)) peso = 3;
+
+    if (peso < 0 && chaves.length) {
+      // 2) Pergunta em linguagem natural: pontua por palavras-chave e
+      // sinônimos católicos encontrados no título ou na descrição.
+      let acertos = 0;
+      let noTitulo = 0;
+      for (const chave of chaves) {
+        if (titulo.includes(chave)) {
+          acertos += 1;
+          noTitulo += 1;
+        } else if (descricao.includes(chave)) {
+          acertos += 1;
+        }
+      }
+      let equivalentes = 0;
+      for (const s of sinonimos) if (alvo.includes(s)) equivalentes += 1;
+
+      if (acertos > 0 || equivalentes > 0) {
+        const força = acertos * 3 + noTitulo * 2 + Math.min(equivalentes, 4);
+        // Quanto maior a força, menor o peso (a lista ordena por peso crescente).
+        peso = Math.max(4, 24 - força);
+      }
+    }
+
     if (peso >= 0) resultados.push({ item, peso });
   }
 

@@ -8,6 +8,8 @@ import {
 } from "../lib/data/catecismo";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { Relacionados } from "../components/Relacionados";
+import { MarcarEstudo } from "../components/portal/MarcarEstudo";
+import { PerguntarSophia } from "../components/portal/PerguntarSophia";
 
 export const Route = createFileRoute("/catecismo/$parte")({
   loader: ({ params }) => {
@@ -59,11 +61,18 @@ function Page() {
           const capitulos = capitulosDaSecao(s.slug);
           return (
             <section key={s.slug} className="surface-card p-5 sm:p-6">
+              <MarcarEstudo tipo="catecismo" chave={s.slug} />
               <p className="kicker mb-2">
                 {s.paragrafos}
               </p>
               <h2 className="font-display text-xl sm:text-2xl text-foreground">{s.titulo}</h2>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.resumo}</p>
+
+              <PerguntarSophia
+                pergunta={`Explique a seção "${s.titulo}" do Catecismo (${s.paragrafos}) com citações do próprio Catecismo e da Escritura.`}
+                rotulo="Estudar com a Sophia"
+                className="mt-4"
+              />
 
               {capitulos.length > 0 && (
                 <div className="mt-5 grid gap-4 sm:grid-cols-2">

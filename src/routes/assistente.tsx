@@ -11,6 +11,10 @@ const DESCRICAO =
 
 
 export const Route = createFileRoute("/assistente")({
+  validateSearch: (raw: Record<string, unknown>): { q?: string } => {
+    const q = typeof raw.q === "string" ? raw.q.trim().slice(0, 400) : "";
+    return q ? { q } : {};
+  },
   head: () => ({
     meta: [
       { title: TITULO },
@@ -55,6 +59,7 @@ export const Route = createFileRoute("/assistente")({
 });
 
 function Page() {
+  const { q } = Route.useSearch();
   return (
     <div className="shell py-[var(--space-md)]">
       <div className="text-center mb-10">
@@ -74,6 +79,7 @@ function Page() {
         mode="geral"
         suggestions={SUGESTOES_GERAL}
         placeholder="Sua pergunta sobre a fé..."
+        perguntaInicial={q}
       />
 
       <section aria-labelledby="faq-sophia" className="mt-16">

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { ArrowLeft, Check } from "lucide-react";
 import { acharTrilha } from "@/lib/data/trilhas";
 import { chaveLicao, lerProgresso, percentual, type ProgressoTrilhas } from "@/lib/trilhas/progresso";
+import { useRegistrarEstudo } from "@/hooks/use-estudo";
 
 const BASE = "https://portalcatolico.vercel.app";
 
@@ -39,6 +40,13 @@ function TrilhaPagina() {
     return () => window.removeEventListener("portal:trilhas", ler);
   }, []);
 
+  const pctAtual = trilha ? percentual(trilha.slug, trilha.licoes, progresso) : 0;
+  // Conquista "Caminho de São Tomás": concluir uma trilha de nível avançado.
+  useRegistrarEstudo(
+    "trilha-avancada",
+    trilha && trilha.nivel === "Avançado" && pctAtual >= 100 ? trilha.slug : null,
+  );
+
   if (!trilha) {
     return (
       <div className="shell-narrow py-block">
@@ -50,7 +58,7 @@ function TrilhaPagina() {
     );
   }
 
-  const pct = percentual(trilha.slug, trilha.licoes, progresso);
+  const pct = pctAtual;
 
   return (
     <div className="shell-narrow py-block">

@@ -3,6 +3,7 @@ import { PageHero, CardGrid, ContentCard, Prose, Pullquote } from "../components
 import { ReadingMode, FnRef } from "../components/ReadingMode";
 import { Termo } from "../components/Termo";
 import maria from "../assets/maria.jpg";
+import { MarcarEstudo } from "../components/portal/MarcarEstudo";
 
 export const Route = createFileRoute("/maria")({
   head: () => ({
@@ -72,6 +73,7 @@ function Page() {
       <ReadingMode title="Maria, Mãe de Deus" toc={TOC} footnotes={FOOTNOTES}>
         <Prose>
           <section id="introducao" className="scroll-mt-24">
+          <MarcarEstudo tipo="maria" chave="introducao" />
             <h3>Maria na economia da salvação</h3>
             <p>
               A mariologia católica não é um tratado autônomo, mas um capítulo da cristologia e da eclesiologia.
@@ -89,6 +91,7 @@ function Page() {
           </section>
 
           <section id="dogmas" className="scroll-mt-24">
+          <MarcarEstudo tipo="maria" chave="dogmas" />
             <h3>Os quatro dogmas marianos</h3>
             <p>
               A Igreja Católica define solenemente quatro verdades sobre a Virgem Maria, que devem ser cridas
@@ -98,6 +101,7 @@ function Page() {
           </section>
 
           <section id="theotokos" className="scroll-mt-24">
+          <MarcarEstudo tipo="maria" chave="theotokos" />
             <h4>I. Maternidade Divina — Theotókos (Éfeso, 431)</h4>
             <p>
               Contra Nestório, que distinguia em Cristo duas pessoas (uma humana, outra divina) e queria chamar
@@ -111,6 +115,7 @@ function Page() {
           </section>
 
           <section id="virgindade" className="scroll-mt-24">
+          <MarcarEstudo tipo="maria" chave="virgindade" />
             <h4>II. Virgindade Perpétua (Latrão I, 649)</h4>
             <p>
               A Igreja confessa que Maria foi e permaneceu Virgem <em>antes, durante e depois do parto</em>
@@ -123,6 +128,7 @@ function Page() {
           </section>
 
           <section id="imaculada" className="scroll-mt-24">
+          <MarcarEstudo tipo="maria" chave="imaculada" />
             <h4>III. <Termo termo="imaculada_conceicao">Imaculada Conceição</Termo> (Pio IX, 1854)</h4>
             <p>
               Pelo Papa <strong>Pio IX</strong>, na Bula <em>Ineffabilis Deus</em>, de 8 de dezembro de 1854,
@@ -135,6 +141,7 @@ function Page() {
           </section>
 
           <section id="assuncao" className="scroll-mt-24">
+          <MarcarEstudo tipo="maria" chave="assuncao" />
             <h4>IV. Assunção corporal (Pio XII, 1950)</h4>
             <p>
               Pelo Papa <strong>Pio XII</strong>, na Constituição Apostólica <em>Munificentissimus Deus</em>, de
@@ -146,6 +153,7 @@ function Page() {
           </section>
 
           <section id="titulos" className="scroll-mt-24">
+          <MarcarEstudo tipo="maria" chave="titulos" />
             <h3>Títulos marianos</h3>
             <p>
               A liturgia e o magistério atribuem a Maria, entre muitos, os seguintes títulos: <em>Mãe da Igreja</em>
@@ -157,6 +165,7 @@ function Page() {
           </section>
 
           <section id="mediacao" className="scroll-mt-24">
+          <MarcarEstudo tipo="maria" chave="mediacao" />
             <h3>Mediação e cooperação maternal</h3>
             <p>
               Maria coopera de modo singular na obra da Redenção pela obediência, fé, esperança e ardente
@@ -168,6 +177,7 @@ function Page() {
         </Prose>
 
         <section id="aparicoes" className="scroll-mt-24 mt-12">
+          <MarcarEstudo tipo="maria" chave="aparicoes" />
           <h3 className="font-display text-2xl text-foreground mb-3">Aparições aprovadas pela Igreja</h3>
           <p className="text-sm text-muted-foreground max-w-3xl mb-6 leading-relaxed">
             Diferentemente da Revelação pública (encerrada com a morte do último Apóstolo, <em>DV</em> 4), as
@@ -182,6 +192,7 @@ function Page() {
         </section>
 
         <section id="devocoes" className="scroll-mt-24 mt-12">
+          <MarcarEstudo tipo="maria" chave="devocoes" />
           <h3 className="font-display text-2xl text-foreground mb-3">Devoções marianas recomendadas</h3>
           <CardGrid cols={3}>
             <ContentCard title="Santo Rosário" subtitle="Compêndio do Evangelho">
