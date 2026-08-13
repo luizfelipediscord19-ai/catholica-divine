@@ -9,16 +9,27 @@ import { GLOSSARIO } from "@/lib/data/glossario";
 import { OBJECOES } from "@/lib/data/apologetica-objecoes";
 import { ORACOES } from "@/lib/data/oracoes";
 import { SANTOS_LISTA } from "@/lib/santos-lista";
+import { SACRAMENTOS } from "@/lib/data/sacramentos";
+import { TRILHAS } from "@/lib/data/trilhas/index";
 import { expandirTermos, palavrasChave } from "@/lib/busca/linguagem";
 
-export type EscopoBusca = "biblia" | "catecismo" | "magisterio" | "santos" | "oracoes";
+export type EscopoBusca =
+  | "biblia"
+  | "catecismo"
+  | "sacramentos"
+  | "magisterio"
+  | "santos"
+  | "oracoes"
+  | "formacao";
 
 export const ESCOPOS: { id: EscopoBusca; label: string; descricao: string }[] = [
   { id: "biblia", label: "Bíblia", descricao: "Texto integral dos 73 livros" },
   { id: "catecismo", label: "Catecismo", descricao: "Partes, seções e sínteses do CIC" },
+  { id: "sacramentos", label: "Sacramentos", descricao: "Os sete sacramentos, base bíblica e efeitos" },
   { id: "magisterio", label: "Magistério e doutrina", descricao: "Glossário doutrinal e banco apologético com fontes" },
   { id: "santos", label: "Santos", descricao: "Vidas, títulos e patronatos" },
   { id: "oracoes", label: "Orações", descricao: "Textos orantes da tradição" },
+  { id: "formacao", label: "Trilhas de formação", descricao: "Lições das trilhas de estudo do portal" },
 ];
 
 export type Resultado = {
@@ -186,6 +197,48 @@ function construirCorpus(): Documento[] {
     });
   }
 
+  for (const sacramento of SACRAMENTOS) {
+    docs.push({
+      id: `sac-${sacramento.slug}`,
+      escopo: "sacramentos",
+      titulo: sacramento.nome,
+      referencia: `${sacramento.grupo} · ${sacramento.catecismo.slice(0, 22)}`,
+      texto: [
+        sacramento.resumo,
+        sacramento.catecismo,
+        sacramento.historia,
+        sacramento.efeitos.join(" "),
+        sacramento.baseBiblica.map((b) => `${b.ref} ${b.texto}`).join(" "),
+        sacramento.faq.map((f) => `${f.q} ${f.a}`).join(" "),
+      ].join(" "),
+      href: `/sacramentos#${sacramento.slug}`,
+      peso: 1.4,
+    });
+  }
+
+  for (const trilha of TRILHAS) {
+    docs.push({
+      id: `tri-${trilha.slug}`,
+      escopo: "formacao",
+      titulo: trilha.titulo,
+      referencia: `Trilha ${trilha.nivel} · ${trilha.licoes.length} lições`,
+      texto: `${trilha.subtitulo} ${trilha.licoes.map((l) => `${l.titulo} ${l.resumo}`).join(" ")}`,
+      href: `/trilhas/${trilha.slug}`,
+      peso: 1.2,
+    });
+    for (const licao of trilha.licoes) {
+      docs.push({
+        id: `tri-${trilha.slug}-${licao.slug}`,
+        escopo: "formacao",
+        titulo: licao.titulo,
+        referencia: `${trilha.titulo} · ${trilha.nivel}`,
+        texto: `${licao.titulo} ${licao.resumo}`,
+        href: `/trilhas/${trilha.slug}/${licao.slug}`,
+        peso: 1,
+      });
+    }
+  }
+
   for (const livro of LIVROS) {
     const intro = INTRODUCOES[livro.slug];
     if (!intro) continue;
@@ -294,7 +347,15 @@ export async function buscarIndexado(input: {
     termo,
     total: 0,
     duracaoMs: 0,
-    porEscopo: { biblia: 0, catecismo: 0, magisterio: 0, santos: 0, oracoes: 0 },
+    porEscopo: {
+      biblia: 0,
+      catecismo: 0,
+      sacramentos: 0,
+      magisterio: 0,
+      santos: 0,
+      oracoes: 0,
+      formacao: 0,
+    },
     resultados: [],
   };
   if (!toks.length) return vazio;

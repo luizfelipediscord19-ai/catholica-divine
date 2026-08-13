@@ -11,6 +11,8 @@ import {
   Landmark,
   Crown,
   Heart,
+  Droplets,
+  GraduationCap,
   type LucideIcon,
 } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
@@ -21,17 +23,21 @@ import type { EscopoBusca, Resultado } from "@/lib/busca/motor.server";
 const ESCOPOS: { id: EscopoBusca; label: string }[] = [
   { id: "biblia", label: "Bíblia" },
   { id: "catecismo", label: "Catecismo" },
+  { id: "sacramentos", label: "Sacramentos" },
   { id: "magisterio", label: "Magistério e doutrina" },
   { id: "santos", label: "Santos" },
   { id: "oracoes", label: "Orações" },
+  { id: "formacao", label: "Trilhas de formação" },
 ];
 
 const ICONES: Record<EscopoBusca, LucideIcon> = {
   biblia: BookOpen,
   catecismo: Library,
   magisterio: Landmark,
+  sacramentos: Droplets,
   santos: Crown,
   oracoes: Heart,
+  formacao: GraduationCap,
 };
 
 const SUGESTOES = [
@@ -182,8 +188,9 @@ function BuscaAvancadaPage() {
         </h1>
         <p className="text-base md:text-lg text-muted-foreground font-light leading-relaxed max-w-2xl">
           Um só termo cruzando o texto integral da Bíblia (73 livros), o Catecismo,
-          o glossário doutrinal, o banco apologético com fontes, os santos e as orações
-          da tradição. A varredura roda no servidor — nada pesa no seu aparelho.
+          os sete sacramentos, o glossário doutrinal, o banco apologético com fontes,
+          os santos, as orações da tradição e as trilhas de formação. A varredura roda
+          no servidor — nada pesa no seu aparelho.
         </p>
       </header>
 

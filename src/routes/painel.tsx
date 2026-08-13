@@ -19,6 +19,7 @@ import { HorariosTarefas } from "@/components/portal/HorariosTarefas";
 
 import { useCelebracao } from "@/components/portal/Celebracao";
 import { EscolherSanto } from "@/components/portal/EscolherSanto";
+import { grauDoNivel, proximoGrau } from "@/lib/portal/niveis";
 import { EstadoSessao } from "@/components/portal/EstadoSessao";
 import { useIdentidade, usePainel } from "@/hooks/use-identidade";
 import { useAuth } from "@/hooks/use-auth";
@@ -137,6 +138,8 @@ function PainelPage() {
   }
 
   const nivel = dados.identidade.nivel;
+  const grau = grauDoNivel(nivel);
+  const seguinte = proximoGrau(nivel);
   const base = xpDoNivel(nivel);
   const proximo = xpDoNivel(nivel + 1);
   const progresso = Math.min(
@@ -176,7 +179,9 @@ function PainelPage() {
             {dados.identidade.apelido ?? dados.identidade.santoNome}
           </h1>
           <div className="flex flex-wrap items-center gap-6 text-xs text-muted-foreground">
-            <span className="text-gold">Nível {nivel}</span>
+            <span className="text-gold">
+              {grau.simbolo} Nível {nivel} · {grau.titulo}
+            </span>
             <span>{dados.identidade.xp} XP</span>
             <span>Melhor sequência: {dados.identidade.melhorStreak} dias</span>
             {dados.identidade.santoSlug ? (
@@ -202,7 +207,9 @@ function PainelPage() {
           </div>
           <p className="label-btn text-muted-foreground">
             {proximo - dados.identidade.xp} XP para o nível {nivel + 1}
+            {seguinte ? ` · ${seguinte.titulo} no nível ${seguinte.de}` : ""}
           </p>
+          <p className="text-xs leading-relaxed text-muted-foreground">{grau.descricao}</p>
         </div>
       </header>
 

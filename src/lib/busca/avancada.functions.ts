@@ -4,7 +4,17 @@ import { z } from "zod";
 const esquema = z.object({
   termo: z.string().min(2).max(120),
   escopos: z
-    .array(z.enum(["biblia", "catecismo", "magisterio", "santos", "oracoes"]))
+    .array(
+      z.enum([
+        "biblia",
+        "catecismo",
+        "sacramentos",
+        "magisterio",
+        "santos",
+        "oracoes",
+        "formacao",
+      ]),
+    )
     .optional(),
   limite: z.number().int().optional(),
 });
