@@ -94,6 +94,29 @@ function FontesPage() {
         </CardGrid>
       </Section>
 
+      <Section
+        kicker="Níveis de autoridade"
+        title="Sistema de confiabilidade"
+      >
+        <Prose>
+          <p>
+            Nem toda informação católica tem o mesmo peso: um dogma não é uma disciplina, e uma
+            tradição hagiográfica não é um fato historicamente documentado. Por isso o portal
+            classifica o conteúdo sensível com estes indicadores:
+          </p>
+        </Prose>
+        <LegendaConfiabilidade className="mt-sm" />
+        <Prose className="mt-sm">
+          <p>
+            Onde a documentação histórica é insuficiente, o portal escreve
+            <em> “segundo a tradição”</em> em vez de afirmar certeza. Revelações privadas —
+            mesmo as reconhecidas pela Igreja — não pertencem ao depósito da fé
+            (Catecismo da Igreja Católica, § 67).
+          </p>
+        </Prose>
+      </Section>
+
+
       <Section kicker="Como trabalhamos" title="Metodologia editorial">
         <Prose>
           <ul>
