@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 
 import { PageHero, Section, Prose, CardGrid } from "@/components/PageShell";
+import { LegendaConfiabilidade } from "@/components/SeloConfiabilidade";
 
 const URL_PAGINA = "https://portalcatolico.vercel.app/fontes";
 const TITULO = "Fontes e Metodologia — Como verificamos o conteúdo | Portal Católico";
@@ -106,7 +107,7 @@ function FontesPage() {
           </p>
         </Prose>
         <LegendaConfiabilidade className="mt-sm" />
-        <Prose className="mt-sm">
+        <div className="mt-sm"><Prose>
           <p>
             Onde a documentação histórica é insuficiente, o portal escreve
             <em> “segundo a tradição”</em> em vez de afirmar certeza. Revelações privadas —
