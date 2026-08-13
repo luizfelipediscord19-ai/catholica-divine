@@ -57,6 +57,8 @@ function FavoritosPage() {
   const [aba, setAba] = useState<Aba>("favoritos");
   const [busca, setBusca] = useState("");
   const [livroFiltro, setLivroFiltro] = useState("");
+  const { itens: salvosTodos, remover: removerSalvo } = useSalvos();
+
 
   const dados = painel.data;
 
