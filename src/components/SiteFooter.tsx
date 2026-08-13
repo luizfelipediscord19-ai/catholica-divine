@@ -12,10 +12,14 @@ export function SiteFooter() {
             Portal Católico — biblioteca digital fiel ao Magistério da Igreja, dedicada ao
             estudo, à evangelização e à formação na fé católica.
           </p>
+          <p className="mt-4 text-sm text-paper/60 max-w-[28rem] leading-relaxed">
+            Conteúdo desenvolvido para auxiliar no estudo e conhecimento da fé católica.
+          </p>
           <p className="mt-6 label-btn text-paper/60">
             © MMXXVI Portal Católico • Biblioteca da Fé
           </p>
         </div>
+
 
         <nav aria-label="Doutrina" className="min-w-0">
           <h3 className="kicker mb-4">
@@ -48,7 +52,9 @@ export function SiteFooter() {
             Institucional
           </h3>
           <ul className="space-y-1 text-sm text-paper/80">
+            <li><Link to="/explorar" className="block py-2 hover:text-gold focus-visible:text-gold">Explorar o Portal</Link></li>
             <li><Link to="/sobre" className="block py-2 hover:text-gold focus-visible:text-gold">Sobre o Portal</Link></li>
+            <li><Link to="/fontes" className="block py-2 hover:text-gold focus-visible:text-gold">Fontes e Metodologia</Link></li>
             <li><Link to="/busca" className="block py-2 hover:text-gold focus-visible:text-gold">Busca Avançada</Link></li>
             <li><Link to="/privacidade" className="block py-2 hover:text-gold focus-visible:text-gold">Privacidade</Link></li>
             <li><Link to="/termos" className="block py-2 hover:text-gold focus-visible:text-gold">Termos de Uso</Link></li>
