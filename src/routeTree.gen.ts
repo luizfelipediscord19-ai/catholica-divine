@@ -63,6 +63,7 @@ import { Route as BibliaLivroIndexRouteImport } from './routes/biblia.$livro.ind
 import { Route as TrilhasTrilhaLicaoRouteImport } from './routes/trilhas.$trilha.$licao'
 import { Route as OracoesNovenasSlugRouteImport } from './routes/oracoes.novenas.$slug'
 import { Route as BibliaLivroCapituloRouteImport } from './routes/biblia.$livro.$capitulo'
+import { Route as ApiPublicNoticiasRouteImport } from './routes/api/public/noticias'
 import { Route as ApiPublicLembretesRouteImport } from './routes/api/public/lembretes'
 import { Route as ApiPublicCspReportRouteImport } from './routes/api/public/csp-report'
 
@@ -339,6 +340,11 @@ const BibliaLivroCapituloRoute = BibliaLivroCapituloRouteImport.update({
   path: '/$capitulo',
   getParentRoute: () => BibliaLivroRoute,
 } as any)
+const ApiPublicNoticiasRoute = ApiPublicNoticiasRouteImport.update({
+  id: '/api/public/noticias',
+  path: '/api/public/noticias',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiPublicLembretesRoute = ApiPublicLembretesRouteImport.update({
   id: '/api/public/lembretes',
   path: '/api/public/lembretes',
@@ -402,6 +408,7 @@ export interface FileRoutesByFullPath {
   '/trilhas/': typeof TrilhasIndexRoute
   '/api/public/csp-report': typeof ApiPublicCspReportRoute
   '/api/public/lembretes': typeof ApiPublicLembretesRoute
+  '/api/public/noticias': typeof ApiPublicNoticiasRoute
   '/biblia/$livro/$capitulo': typeof BibliaLivroCapituloRoute
   '/oracoes/novenas/$slug': typeof OracoesNovenasSlugRoute
   '/trilhas/$trilha/$licao': typeof TrilhasTrilhaLicaoRoute
@@ -457,6 +464,7 @@ export interface FileRoutesByTo {
   '/trilhas': typeof TrilhasIndexRoute
   '/api/public/csp-report': typeof ApiPublicCspReportRoute
   '/api/public/lembretes': typeof ApiPublicLembretesRoute
+  '/api/public/noticias': typeof ApiPublicNoticiasRoute
   '/biblia/$livro/$capitulo': typeof BibliaLivroCapituloRoute
   '/oracoes/novenas/$slug': typeof OracoesNovenasSlugRoute
   '/trilhas/$trilha/$licao': typeof TrilhasTrilhaLicaoRoute
@@ -516,6 +524,7 @@ export interface FileRoutesById {
   '/trilhas/': typeof TrilhasIndexRoute
   '/api/public/csp-report': typeof ApiPublicCspReportRoute
   '/api/public/lembretes': typeof ApiPublicLembretesRoute
+  '/api/public/noticias': typeof ApiPublicNoticiasRoute
   '/biblia/$livro/$capitulo': typeof BibliaLivroCapituloRoute
   '/oracoes/novenas/$slug': typeof OracoesNovenasSlugRoute
   '/trilhas/$trilha/$licao': typeof TrilhasTrilhaLicaoRoute
@@ -576,6 +585,7 @@ export interface FileRouteTypes {
     | '/trilhas/'
     | '/api/public/csp-report'
     | '/api/public/lembretes'
+    | '/api/public/noticias'
     | '/biblia/$livro/$capitulo'
     | '/oracoes/novenas/$slug'
     | '/trilhas/$trilha/$licao'
@@ -631,6 +641,7 @@ export interface FileRouteTypes {
     | '/trilhas'
     | '/api/public/csp-report'
     | '/api/public/lembretes'
+    | '/api/public/noticias'
     | '/biblia/$livro/$capitulo'
     | '/oracoes/novenas/$slug'
     | '/trilhas/$trilha/$licao'
@@ -689,6 +700,7 @@ export interface FileRouteTypes {
     | '/trilhas/'
     | '/api/public/csp-report'
     | '/api/public/lembretes'
+    | '/api/public/noticias'
     | '/biblia/$livro/$capitulo'
     | '/oracoes/novenas/$slug'
     | '/trilhas/$trilha/$licao'
@@ -737,6 +749,7 @@ export interface RootRouteChildren {
   TrilhasIndexRoute: typeof TrilhasIndexRoute
   ApiPublicCspReportRoute: typeof ApiPublicCspReportRoute
   ApiPublicLembretesRoute: typeof ApiPublicLembretesRoute
+  ApiPublicNoticiasRoute: typeof ApiPublicNoticiasRoute
   TrilhasTrilhaLicaoRoute: typeof TrilhasTrilhaLicaoRoute
   TrilhasTrilhaIndexRoute: typeof TrilhasTrilhaIndexRoute
 }
@@ -1121,6 +1134,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BibliaLivroCapituloRouteImport
       parentRoute: typeof BibliaLivroRoute
     }
+    '/api/public/noticias': {
+      id: '/api/public/noticias'
+      path: '/api/public/noticias'
+      fullPath: '/api/public/noticias'
+      preLoaderRoute: typeof ApiPublicNoticiasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/public/lembretes': {
       id: '/api/public/lembretes'
       path: '/api/public/lembretes'
@@ -1264,6 +1284,7 @@ const rootRouteChildren: RootRouteChildren = {
   TrilhasIndexRoute: TrilhasIndexRoute,
   ApiPublicCspReportRoute: ApiPublicCspReportRoute,
   ApiPublicLembretesRoute: ApiPublicLembretesRoute,
+  ApiPublicNoticiasRoute: ApiPublicNoticiasRoute,
   TrilhasTrilhaLicaoRoute: TrilhasTrilhaLicaoRoute,
   TrilhasTrilhaIndexRoute: TrilhasTrilhaIndexRoute,
 }
