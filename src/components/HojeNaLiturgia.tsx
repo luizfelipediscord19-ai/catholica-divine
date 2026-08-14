@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useMemo } from "react";
 
 import { dataLonga, situacaoLiturgica, type CorLiturgica } from "@/lib/liturgia/tempo";
+import { dataHoje } from "@/lib/liturgia/hoje";
 import { SANTOS_LISTA } from "@/lib/santos-lista";
 
 const AMOSTRA_COR: Record<CorLiturgica, string> = {
@@ -44,7 +45,7 @@ function santosDoDia(d: Date) {
  */
 export function HojeNaLiturgia() {
   const { hoje, situacao, santos } = useMemo(() => {
-    const agora = new Date();
+    const agora = dataHoje();
     return {
       hoje: agora,
       situacao: situacaoLiturgica(agora),

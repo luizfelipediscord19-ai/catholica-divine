@@ -5,6 +5,7 @@ import hero from "../assets/hero-catedral.jpg";
 import maria from "../assets/maria.jpg";
 import cristo from "../assets/cristo.jpg";
 import { santoDoDia } from "../lib/data/hoje";
+import { dataDoIso } from "../lib/liturgia/hoje";
 import { liturgiaQueryOptions } from "../lib/liturgia/query";
 import { COR_CLASSE } from "../lib/liturgia/calendario";
 import { ScrollReveal } from "../components/ScrollReveal";
@@ -103,7 +104,7 @@ function ehMemoriaDeSanto(celebracao: string): boolean {
 
 function Home() {
   const { data: lit } = useSuspenseQuery(liturgiaQueryOptions());
-  const santo = santoDoDia();
+  const santo = santoDoDia(dataDoIso(lit.iso));
 
   const salmo = lit.salmo[0];
   const evangelho = lit.evangelho[0];
@@ -233,7 +234,7 @@ function Home() {
               Hoje na Igreja
             </h2>
             <p className="label-btn text-muted-foreground">
-              {new Date().toLocaleDateString("pt-BR", { day: "2-digit", month: "long", year: "numeric" })}
+              {dataDoIso(lit.iso).toLocaleDateString("pt-BR", { day: "2-digit", month: "long", year: "numeric", timeZone: "UTC" })}
             </p>
           </div>
         </div>

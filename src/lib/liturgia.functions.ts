@@ -1,5 +1,6 @@
 import { createServerFn } from "@tanstack/react-start";
-import { diaLiturgico, normalizar, toIso } from "./liturgia/calendario";
+import { diaLiturgico } from "./liturgia/calendario";
+import { dataDoIso, isoHoje } from "./liturgia/hoje";
 import type { DiaLiturgico } from "./liturgia/calendario";
 
 export type LeituraLiturgica = {
@@ -67,9 +68,9 @@ export const getLiturgiaDoDia = createServerFn({ method: "GET" })
     iso: typeof input?.iso === "string" && /^\d{4}-\d{2}-\d{2}$/.test(input.iso) ? input.iso : undefined,
   }))
   .handler(async ({ data }): Promise<LiturgiaDoDia> => {
-    const iso = data.iso ?? toIso(normalizar(new Date()));
+    const iso = data.iso ?? isoHoje();
     const [ano, mes, dia] = iso.split("-");
-    const base = diaLiturgico(new Date(Date.UTC(Number(ano), Number(mes) - 1, Number(dia))));
+    const base = diaLiturgico(dataDoIso(iso));
 
     const vazio: LiturgiaDoDia = {
       ...base,
