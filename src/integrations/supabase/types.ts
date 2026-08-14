@@ -587,6 +587,63 @@ export type Database = {
           },
         ]
       }
+      noticias: {
+        Row: {
+          atualizado_em: string
+          autor: string | null
+          categoria: string
+          corpo: string
+          criado_em: string
+          destaque: boolean
+          fonte_nome: string | null
+          fonte_url: string | null
+          id: string
+          imagem_url: string | null
+          publicada: boolean
+          publicado_em: string
+          resumo: string
+          slug: string
+          tags: string[]
+          titulo: string
+        }
+        Insert: {
+          atualizado_em?: string
+          autor?: string | null
+          categoria?: string
+          corpo: string
+          criado_em?: string
+          destaque?: boolean
+          fonte_nome?: string | null
+          fonte_url?: string | null
+          id?: string
+          imagem_url?: string | null
+          publicada?: boolean
+          publicado_em?: string
+          resumo: string
+          slug: string
+          tags?: string[]
+          titulo: string
+        }
+        Update: {
+          atualizado_em?: string
+          autor?: string | null
+          categoria?: string
+          corpo?: string
+          criado_em?: string
+          destaque?: boolean
+          fonte_nome?: string | null
+          fonte_url?: string | null
+          id?: string
+          imagem_url?: string | null
+          publicada?: boolean
+          publicado_em?: string
+          resumo?: string
+          slug?: string
+          tags?: string[]
+          titulo?: string
+        }
+        Relationships: []
+      }
       push_dispositivos: {
         Row: {
           ativo: boolean
