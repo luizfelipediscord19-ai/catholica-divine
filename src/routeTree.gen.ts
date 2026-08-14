@@ -44,6 +44,7 @@ import { Route as ApologeticaRouteImport } from './routes/apologetica'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as TrilhasIndexRouteImport } from './routes/trilhas.index'
 import { Route as SantosIndexRouteImport } from './routes/santos.index'
+import { Route as NoticiasIndexRouteImport } from './routes/noticias.index'
 import { Route as ForumIndexRouteImport } from './routes/forum.index'
 import { Route as BibliaIndexRouteImport } from './routes/biblia.index'
 import { Route as SantosSlugRouteImport } from './routes/santos.$slug'
@@ -52,6 +53,7 @@ import { Route as OracoesTercoMisericordiaRouteImport } from './routes/oracoes.t
 import { Route as OracoesRosarioRouteImport } from './routes/oracoes.rosario'
 import { Route as OracoesNovenasRouteImport } from './routes/oracoes.novenas'
 import { Route as OracoesLiturgiaDasHorasRouteImport } from './routes/oracoes.liturgia-das-horas'
+import { Route as NoticiasSlugRouteImport } from './routes/noticias.$slug'
 import { Route as ForumSlugRouteImport } from './routes/forum.$slug'
 import { Route as CatecismoParteRouteImport } from './routes/catecismo.$parte'
 import { Route as BibliaLeiturasRouteImport } from './routes/biblia.leituras'
@@ -63,6 +65,7 @@ import { Route as BibliaLivroIndexRouteImport } from './routes/biblia.$livro.ind
 import { Route as TrilhasTrilhaLicaoRouteImport } from './routes/trilhas.$trilha.$licao'
 import { Route as OracoesNovenasSlugRouteImport } from './routes/oracoes.novenas.$slug'
 import { Route as BibliaLivroCapituloRouteImport } from './routes/biblia.$livro.$capitulo'
+import { Route as ApiPublicNoticiasRouteImport } from './routes/api/public/noticias'
 import { Route as ApiPublicLembretesRouteImport } from './routes/api/public/lembretes'
 import { Route as ApiPublicCspReportRouteImport } from './routes/api/public/csp-report'
 
@@ -243,6 +246,11 @@ const SantosIndexRoute = SantosIndexRouteImport.update({
   path: '/',
   getParentRoute: () => SantosRoute,
 } as any)
+const NoticiasIndexRoute = NoticiasIndexRouteImport.update({
+  id: '/noticias/',
+  path: '/noticias/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ForumIndexRoute = ForumIndexRouteImport.update({
   id: '/forum/',
   path: '/forum/',
@@ -283,6 +291,11 @@ const OracoesLiturgiaDasHorasRoute = OracoesLiturgiaDasHorasRouteImport.update({
   id: '/liturgia-das-horas',
   path: '/liturgia-das-horas',
   getParentRoute: () => OracoesRoute,
+} as any)
+const NoticiasSlugRoute = NoticiasSlugRouteImport.update({
+  id: '/noticias/$slug',
+  path: '/noticias/$slug',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const ForumSlugRoute = ForumSlugRouteImport.update({
   id: '/forum/$slug',
@@ -339,6 +352,11 @@ const BibliaLivroCapituloRoute = BibliaLivroCapituloRouteImport.update({
   path: '/$capitulo',
   getParentRoute: () => BibliaLivroRoute,
 } as any)
+const ApiPublicNoticiasRoute = ApiPublicNoticiasRouteImport.update({
+  id: '/api/public/noticias',
+  path: '/api/public/noticias',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiPublicLembretesRoute = ApiPublicLembretesRouteImport.update({
   id: '/api/public/lembretes',
   path: '/api/public/lembretes',
@@ -390,6 +408,7 @@ export interface FileRoutesByFullPath {
   '/biblia/leituras': typeof BibliaLeiturasRoute
   '/catecismo/$parte': typeof CatecismoParteRoute
   '/forum/$slug': typeof ForumSlugRoute
+  '/noticias/$slug': typeof NoticiasSlugRoute
   '/oracoes/liturgia-das-horas': typeof OracoesLiturgiaDasHorasRoute
   '/oracoes/novenas': typeof OracoesNovenasRouteWithChildren
   '/oracoes/rosario': typeof OracoesRosarioRoute
@@ -398,10 +417,12 @@ export interface FileRoutesByFullPath {
   '/santos/$slug': typeof SantosSlugRoute
   '/biblia/': typeof BibliaIndexRoute
   '/forum/': typeof ForumIndexRoute
+  '/noticias/': typeof NoticiasIndexRoute
   '/santos/': typeof SantosIndexRoute
   '/trilhas/': typeof TrilhasIndexRoute
   '/api/public/csp-report': typeof ApiPublicCspReportRoute
   '/api/public/lembretes': typeof ApiPublicLembretesRoute
+  '/api/public/noticias': typeof ApiPublicNoticiasRoute
   '/biblia/$livro/$capitulo': typeof BibliaLivroCapituloRoute
   '/oracoes/novenas/$slug': typeof OracoesNovenasSlugRoute
   '/trilhas/$trilha/$licao': typeof TrilhasTrilhaLicaoRoute
@@ -445,6 +466,7 @@ export interface FileRoutesByTo {
   '/biblia/leituras': typeof BibliaLeiturasRoute
   '/catecismo/$parte': typeof CatecismoParteRoute
   '/forum/$slug': typeof ForumSlugRoute
+  '/noticias/$slug': typeof NoticiasSlugRoute
   '/oracoes/liturgia-das-horas': typeof OracoesLiturgiaDasHorasRoute
   '/oracoes/novenas': typeof OracoesNovenasRouteWithChildren
   '/oracoes/rosario': typeof OracoesRosarioRoute
@@ -453,10 +475,12 @@ export interface FileRoutesByTo {
   '/santos/$slug': typeof SantosSlugRoute
   '/biblia': typeof BibliaIndexRoute
   '/forum': typeof ForumIndexRoute
+  '/noticias': typeof NoticiasIndexRoute
   '/santos': typeof SantosIndexRoute
   '/trilhas': typeof TrilhasIndexRoute
   '/api/public/csp-report': typeof ApiPublicCspReportRoute
   '/api/public/lembretes': typeof ApiPublicLembretesRoute
+  '/api/public/noticias': typeof ApiPublicNoticiasRoute
   '/biblia/$livro/$capitulo': typeof BibliaLivroCapituloRoute
   '/oracoes/novenas/$slug': typeof OracoesNovenasSlugRoute
   '/trilhas/$trilha/$licao': typeof TrilhasTrilhaLicaoRoute
@@ -504,6 +528,7 @@ export interface FileRoutesById {
   '/biblia/leituras': typeof BibliaLeiturasRoute
   '/catecismo/$parte': typeof CatecismoParteRoute
   '/forum/$slug': typeof ForumSlugRoute
+  '/noticias/$slug': typeof NoticiasSlugRoute
   '/oracoes/liturgia-das-horas': typeof OracoesLiturgiaDasHorasRoute
   '/oracoes/novenas': typeof OracoesNovenasRouteWithChildren
   '/oracoes/rosario': typeof OracoesRosarioRoute
@@ -512,10 +537,12 @@ export interface FileRoutesById {
   '/santos/$slug': typeof SantosSlugRoute
   '/biblia/': typeof BibliaIndexRoute
   '/forum/': typeof ForumIndexRoute
+  '/noticias/': typeof NoticiasIndexRoute
   '/santos/': typeof SantosIndexRoute
   '/trilhas/': typeof TrilhasIndexRoute
   '/api/public/csp-report': typeof ApiPublicCspReportRoute
   '/api/public/lembretes': typeof ApiPublicLembretesRoute
+  '/api/public/noticias': typeof ApiPublicNoticiasRoute
   '/biblia/$livro/$capitulo': typeof BibliaLivroCapituloRoute
   '/oracoes/novenas/$slug': typeof OracoesNovenasSlugRoute
   '/trilhas/$trilha/$licao': typeof TrilhasTrilhaLicaoRoute
@@ -564,6 +591,7 @@ export interface FileRouteTypes {
     | '/biblia/leituras'
     | '/catecismo/$parte'
     | '/forum/$slug'
+    | '/noticias/$slug'
     | '/oracoes/liturgia-das-horas'
     | '/oracoes/novenas'
     | '/oracoes/rosario'
@@ -572,10 +600,12 @@ export interface FileRouteTypes {
     | '/santos/$slug'
     | '/biblia/'
     | '/forum/'
+    | '/noticias/'
     | '/santos/'
     | '/trilhas/'
     | '/api/public/csp-report'
     | '/api/public/lembretes'
+    | '/api/public/noticias'
     | '/biblia/$livro/$capitulo'
     | '/oracoes/novenas/$slug'
     | '/trilhas/$trilha/$licao'
@@ -619,6 +649,7 @@ export interface FileRouteTypes {
     | '/biblia/leituras'
     | '/catecismo/$parte'
     | '/forum/$slug'
+    | '/noticias/$slug'
     | '/oracoes/liturgia-das-horas'
     | '/oracoes/novenas'
     | '/oracoes/rosario'
@@ -627,10 +658,12 @@ export interface FileRouteTypes {
     | '/santos/$slug'
     | '/biblia'
     | '/forum'
+    | '/noticias'
     | '/santos'
     | '/trilhas'
     | '/api/public/csp-report'
     | '/api/public/lembretes'
+    | '/api/public/noticias'
     | '/biblia/$livro/$capitulo'
     | '/oracoes/novenas/$slug'
     | '/trilhas/$trilha/$licao'
@@ -677,6 +710,7 @@ export interface FileRouteTypes {
     | '/biblia/leituras'
     | '/catecismo/$parte'
     | '/forum/$slug'
+    | '/noticias/$slug'
     | '/oracoes/liturgia-das-horas'
     | '/oracoes/novenas'
     | '/oracoes/rosario'
@@ -685,10 +719,12 @@ export interface FileRouteTypes {
     | '/santos/$slug'
     | '/biblia/'
     | '/forum/'
+    | '/noticias/'
     | '/santos/'
     | '/trilhas/'
     | '/api/public/csp-report'
     | '/api/public/lembretes'
+    | '/api/public/noticias'
     | '/biblia/$livro/$capitulo'
     | '/oracoes/novenas/$slug'
     | '/trilhas/$trilha/$licao'
@@ -733,10 +769,13 @@ export interface RootRouteChildren {
   ApiChatRoute: typeof ApiChatRoute
   ApiTranscreverRoute: typeof ApiTranscreverRoute
   ForumSlugRoute: typeof ForumSlugRoute
+  NoticiasSlugRoute: typeof NoticiasSlugRoute
   ForumIndexRoute: typeof ForumIndexRoute
+  NoticiasIndexRoute: typeof NoticiasIndexRoute
   TrilhasIndexRoute: typeof TrilhasIndexRoute
   ApiPublicCspReportRoute: typeof ApiPublicCspReportRoute
   ApiPublicLembretesRoute: typeof ApiPublicLembretesRoute
+  ApiPublicNoticiasRoute: typeof ApiPublicNoticiasRoute
   TrilhasTrilhaLicaoRoute: typeof TrilhasTrilhaLicaoRoute
   TrilhasTrilhaIndexRoute: typeof TrilhasTrilhaIndexRoute
 }
@@ -988,6 +1027,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SantosIndexRouteImport
       parentRoute: typeof SantosRoute
     }
+    '/noticias/': {
+      id: '/noticias/'
+      path: '/noticias'
+      fullPath: '/noticias/'
+      preLoaderRoute: typeof NoticiasIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/forum/': {
       id: '/forum/'
       path: '/forum'
@@ -1043,6 +1089,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/oracoes/liturgia-das-horas'
       preLoaderRoute: typeof OracoesLiturgiaDasHorasRouteImport
       parentRoute: typeof OracoesRoute
+    }
+    '/noticias/$slug': {
+      id: '/noticias/$slug'
+      path: '/noticias/$slug'
+      fullPath: '/noticias/$slug'
+      preLoaderRoute: typeof NoticiasSlugRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/forum/$slug': {
       id: '/forum/$slug'
@@ -1120,6 +1173,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/biblia/$livro/$capitulo'
       preLoaderRoute: typeof BibliaLivroCapituloRouteImport
       parentRoute: typeof BibliaLivroRoute
+    }
+    '/api/public/noticias': {
+      id: '/api/public/noticias'
+      path: '/api/public/noticias'
+      fullPath: '/api/public/noticias'
+      preLoaderRoute: typeof ApiPublicNoticiasRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/api/public/lembretes': {
       id: '/api/public/lembretes'
@@ -1260,10 +1320,13 @@ const rootRouteChildren: RootRouteChildren = {
   ApiChatRoute: ApiChatRoute,
   ApiTranscreverRoute: ApiTranscreverRoute,
   ForumSlugRoute: ForumSlugRoute,
+  NoticiasSlugRoute: NoticiasSlugRoute,
   ForumIndexRoute: ForumIndexRoute,
+  NoticiasIndexRoute: NoticiasIndexRoute,
   TrilhasIndexRoute: TrilhasIndexRoute,
   ApiPublicCspReportRoute: ApiPublicCspReportRoute,
   ApiPublicLembretesRoute: ApiPublicLembretesRoute,
+  ApiPublicNoticiasRoute: ApiPublicNoticiasRoute,
   TrilhasTrilhaLicaoRoute: TrilhasTrilhaLicaoRoute,
   TrilhasTrilhaIndexRoute: TrilhasTrilhaIndexRoute,
 }
