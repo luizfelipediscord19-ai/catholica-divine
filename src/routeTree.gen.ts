@@ -53,6 +53,7 @@ import { Route as OracoesTercoMisericordiaRouteImport } from './routes/oracoes.t
 import { Route as OracoesRosarioRouteImport } from './routes/oracoes.rosario'
 import { Route as OracoesNovenasRouteImport } from './routes/oracoes.novenas'
 import { Route as OracoesLiturgiaDasHorasRouteImport } from './routes/oracoes.liturgia-das-horas'
+import { Route as NoticiasSlugRouteImport } from './routes/noticias.$slug'
 import { Route as ForumSlugRouteImport } from './routes/forum.$slug'
 import { Route as CatecismoParteRouteImport } from './routes/catecismo.$parte'
 import { Route as BibliaLeiturasRouteImport } from './routes/biblia.leituras'
@@ -291,6 +292,11 @@ const OracoesLiturgiaDasHorasRoute = OracoesLiturgiaDasHorasRouteImport.update({
   path: '/liturgia-das-horas',
   getParentRoute: () => OracoesRoute,
 } as any)
+const NoticiasSlugRoute = NoticiasSlugRouteImport.update({
+  id: '/noticias/$slug',
+  path: '/noticias/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ForumSlugRoute = ForumSlugRouteImport.update({
   id: '/forum/$slug',
   path: '/forum/$slug',
@@ -402,6 +408,7 @@ export interface FileRoutesByFullPath {
   '/biblia/leituras': typeof BibliaLeiturasRoute
   '/catecismo/$parte': typeof CatecismoParteRoute
   '/forum/$slug': typeof ForumSlugRoute
+  '/noticias/$slug': typeof NoticiasSlugRoute
   '/oracoes/liturgia-das-horas': typeof OracoesLiturgiaDasHorasRoute
   '/oracoes/novenas': typeof OracoesNovenasRouteWithChildren
   '/oracoes/rosario': typeof OracoesRosarioRoute
@@ -459,6 +466,7 @@ export interface FileRoutesByTo {
   '/biblia/leituras': typeof BibliaLeiturasRoute
   '/catecismo/$parte': typeof CatecismoParteRoute
   '/forum/$slug': typeof ForumSlugRoute
+  '/noticias/$slug': typeof NoticiasSlugRoute
   '/oracoes/liturgia-das-horas': typeof OracoesLiturgiaDasHorasRoute
   '/oracoes/novenas': typeof OracoesNovenasRouteWithChildren
   '/oracoes/rosario': typeof OracoesRosarioRoute
@@ -520,6 +528,7 @@ export interface FileRoutesById {
   '/biblia/leituras': typeof BibliaLeiturasRoute
   '/catecismo/$parte': typeof CatecismoParteRoute
   '/forum/$slug': typeof ForumSlugRoute
+  '/noticias/$slug': typeof NoticiasSlugRoute
   '/oracoes/liturgia-das-horas': typeof OracoesLiturgiaDasHorasRoute
   '/oracoes/novenas': typeof OracoesNovenasRouteWithChildren
   '/oracoes/rosario': typeof OracoesRosarioRoute
@@ -582,6 +591,7 @@ export interface FileRouteTypes {
     | '/biblia/leituras'
     | '/catecismo/$parte'
     | '/forum/$slug'
+    | '/noticias/$slug'
     | '/oracoes/liturgia-das-horas'
     | '/oracoes/novenas'
     | '/oracoes/rosario'
@@ -639,6 +649,7 @@ export interface FileRouteTypes {
     | '/biblia/leituras'
     | '/catecismo/$parte'
     | '/forum/$slug'
+    | '/noticias/$slug'
     | '/oracoes/liturgia-das-horas'
     | '/oracoes/novenas'
     | '/oracoes/rosario'
@@ -699,6 +710,7 @@ export interface FileRouteTypes {
     | '/biblia/leituras'
     | '/catecismo/$parte'
     | '/forum/$slug'
+    | '/noticias/$slug'
     | '/oracoes/liturgia-das-horas'
     | '/oracoes/novenas'
     | '/oracoes/rosario'
@@ -757,6 +769,7 @@ export interface RootRouteChildren {
   ApiChatRoute: typeof ApiChatRoute
   ApiTranscreverRoute: typeof ApiTranscreverRoute
   ForumSlugRoute: typeof ForumSlugRoute
+  NoticiasSlugRoute: typeof NoticiasSlugRoute
   ForumIndexRoute: typeof ForumIndexRoute
   NoticiasIndexRoute: typeof NoticiasIndexRoute
   TrilhasIndexRoute: typeof TrilhasIndexRoute
@@ -1077,6 +1090,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OracoesLiturgiaDasHorasRouteImport
       parentRoute: typeof OracoesRoute
     }
+    '/noticias/$slug': {
+      id: '/noticias/$slug'
+      path: '/noticias/$slug'
+      fullPath: '/noticias/$slug'
+      preLoaderRoute: typeof NoticiasSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/forum/$slug': {
       id: '/forum/$slug'
       path: '/forum/$slug'
@@ -1300,6 +1320,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiChatRoute: ApiChatRoute,
   ApiTranscreverRoute: ApiTranscreverRoute,
   ForumSlugRoute: ForumSlugRoute,
+  NoticiasSlugRoute: NoticiasSlugRoute,
   ForumIndexRoute: ForumIndexRoute,
   NoticiasIndexRoute: NoticiasIndexRoute,
   TrilhasIndexRoute: TrilhasIndexRoute,

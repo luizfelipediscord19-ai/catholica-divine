@@ -43,6 +43,7 @@ const GRUPOS: { titulo: string; itens: { to: string; label: string }[] }[] = [
     titulo: "Comunidade",
     itens: [
       { to: "/forum", label: "Fórum" },
+      { to: "/noticias", label: "Notícias" },
       { to: "/assistente", label: "Sophia IA" },
       { to: "/sobre", label: "Sobre o Portal" },
     ],
@@ -64,6 +65,7 @@ const NAV_PRINCIPAL: { to: string; label: string }[] = [
   { to: "/biblia", label: "Bíblia" },
   { to: "/oracoes", label: "Orações" },
   { to: "/santos", label: "Santos" },
+  { to: "/noticias", label: "Notícias" },
   { to: "/forum", label: "Fórum" },
 ];
 

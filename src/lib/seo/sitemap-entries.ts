@@ -28,6 +28,7 @@ export const PAGINAS: SitemapEntry[] = [
   { path: "/oracoes", changefreq: "monthly", priority: "0.8" },
   { path: "/apologetica", changefreq: "monthly", priority: "0.8" },
   { path: "/forum", changefreq: "hourly", priority: "0.8" },
+  { path: "/noticias", changefreq: "daily", priority: "0.9" },
   { path: "/oracoes/rosario", changefreq: "monthly", priority: "0.7" },
   { path: "/oracoes/via-sacra", changefreq: "monthly", priority: "0.7" },
   { path: "/oracoes/terco-misericordia", changefreq: "monthly", priority: "0.7" },
