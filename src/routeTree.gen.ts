@@ -44,6 +44,7 @@ import { Route as ApologeticaRouteImport } from './routes/apologetica'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as TrilhasIndexRouteImport } from './routes/trilhas.index'
 import { Route as SantosIndexRouteImport } from './routes/santos.index'
+import { Route as NoticiasIndexRouteImport } from './routes/noticias.index'
 import { Route as ForumIndexRouteImport } from './routes/forum.index'
 import { Route as BibliaIndexRouteImport } from './routes/biblia.index'
 import { Route as SantosSlugRouteImport } from './routes/santos.$slug'
@@ -244,6 +245,11 @@ const SantosIndexRoute = SantosIndexRouteImport.update({
   path: '/',
   getParentRoute: () => SantosRoute,
 } as any)
+const NoticiasIndexRoute = NoticiasIndexRouteImport.update({
+  id: '/noticias/',
+  path: '/noticias/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ForumIndexRoute = ForumIndexRouteImport.update({
   id: '/forum/',
   path: '/forum/',
@@ -404,6 +410,7 @@ export interface FileRoutesByFullPath {
   '/santos/$slug': typeof SantosSlugRoute
   '/biblia/': typeof BibliaIndexRoute
   '/forum/': typeof ForumIndexRoute
+  '/noticias/': typeof NoticiasIndexRoute
   '/santos/': typeof SantosIndexRoute
   '/trilhas/': typeof TrilhasIndexRoute
   '/api/public/csp-report': typeof ApiPublicCspReportRoute
@@ -460,6 +467,7 @@ export interface FileRoutesByTo {
   '/santos/$slug': typeof SantosSlugRoute
   '/biblia': typeof BibliaIndexRoute
   '/forum': typeof ForumIndexRoute
+  '/noticias': typeof NoticiasIndexRoute
   '/santos': typeof SantosIndexRoute
   '/trilhas': typeof TrilhasIndexRoute
   '/api/public/csp-report': typeof ApiPublicCspReportRoute
@@ -520,6 +528,7 @@ export interface FileRoutesById {
   '/santos/$slug': typeof SantosSlugRoute
   '/biblia/': typeof BibliaIndexRoute
   '/forum/': typeof ForumIndexRoute
+  '/noticias/': typeof NoticiasIndexRoute
   '/santos/': typeof SantosIndexRoute
   '/trilhas/': typeof TrilhasIndexRoute
   '/api/public/csp-report': typeof ApiPublicCspReportRoute
@@ -581,6 +590,7 @@ export interface FileRouteTypes {
     | '/santos/$slug'
     | '/biblia/'
     | '/forum/'
+    | '/noticias/'
     | '/santos/'
     | '/trilhas/'
     | '/api/public/csp-report'
@@ -637,6 +647,7 @@ export interface FileRouteTypes {
     | '/santos/$slug'
     | '/biblia'
     | '/forum'
+    | '/noticias'
     | '/santos'
     | '/trilhas'
     | '/api/public/csp-report'
@@ -696,6 +707,7 @@ export interface FileRouteTypes {
     | '/santos/$slug'
     | '/biblia/'
     | '/forum/'
+    | '/noticias/'
     | '/santos/'
     | '/trilhas/'
     | '/api/public/csp-report'
@@ -746,6 +758,7 @@ export interface RootRouteChildren {
   ApiTranscreverRoute: typeof ApiTranscreverRoute
   ForumSlugRoute: typeof ForumSlugRoute
   ForumIndexRoute: typeof ForumIndexRoute
+  NoticiasIndexRoute: typeof NoticiasIndexRoute
   TrilhasIndexRoute: typeof TrilhasIndexRoute
   ApiPublicCspReportRoute: typeof ApiPublicCspReportRoute
   ApiPublicLembretesRoute: typeof ApiPublicLembretesRoute
@@ -1000,6 +1013,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/santos/'
       preLoaderRoute: typeof SantosIndexRouteImport
       parentRoute: typeof SantosRoute
+    }
+    '/noticias/': {
+      id: '/noticias/'
+      path: '/noticias'
+      fullPath: '/noticias/'
+      preLoaderRoute: typeof NoticiasIndexRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/forum/': {
       id: '/forum/'
@@ -1281,6 +1301,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiTranscreverRoute: ApiTranscreverRoute,
   ForumSlugRoute: ForumSlugRoute,
   ForumIndexRoute: ForumIndexRoute,
+  NoticiasIndexRoute: NoticiasIndexRoute,
   TrilhasIndexRoute: TrilhasIndexRoute,
   ApiPublicCspReportRoute: ApiPublicCspReportRoute,
   ApiPublicLembretesRoute: ApiPublicLembretesRoute,
