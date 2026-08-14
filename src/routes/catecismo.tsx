@@ -34,8 +34,9 @@ function Page() {
             exposição da fé da Igreja e da doutrina católica, atestadas e iluminadas pela Sagrada Escritura, pela
             <Termo termo="tradicao"> Tradição</Termo> apostólica e pelo <Termo termo="magisterio">Magistério</Termo> da Igreja</em>, oferecido <em>como texto de referência seguro e
             autêntico para o ensino da doutrina católica</em> (Constituição Apostólica <em>Fidei Depositum</em>, 11
-            de outubro de 1992, n. III–IV). Não é um manual privado nem um tratado teológico de autor: é um ato do
-            Magistério ordinário universal, dirigido <em>a toda a Igreja</em>.
+            de outubro de 1992, n. III–IV). É um <strong>texto oficial de referência para o ensino da doutrina
+            católica</strong>, promulgado pelo Papa São João Paulo II e destinado a apresentar de maneira orgânica e
+            sistemática os conteúdos fundamentais da fé e da moral católicas, sendo dirigido <em>a toda a Igreja</em>.
           </p>
           <p>
             Sua origem remonta ao <strong>Sínodo Extraordinário dos Bispos de 1985</strong>, no vigésimo

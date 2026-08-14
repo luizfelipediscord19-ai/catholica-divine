@@ -112,9 +112,12 @@ function Page() {
           <p>
             Os sete livros que a tradição protestante chama de “apócrifos” são, para os católicos, os
             <em> deuterocanônicos</em>: Tobias, Judite, Sabedoria, Eclesiástico, Baruc, 1 e 2 Macabeus — além de
-            partes de Ester e Daniel. Foram lidos pela Igreja desde a antiguidade na versão grega dos Setenta
-            (<em>Septuaginta</em>), que exerceu papel fundamental entre muitos judeus de língua grega e entre os
-            primeiros cristãos, sendo com frequência utilizada e citada pelos autores do Novo Testamento.
+            partes de Ester e Daniel. Foram lidos pela Igreja desde a antiguidade sobretudo na tradição textual grega conhecida como
+            <em> Septuaginta</em> (versão dos Setenta), de enorme importância no judaísmo de língua grega e de forte
+            influência entre os primeiros cristãos. Diversas citações do Antigo Testamento presentes no Novo
+            Testamento correspondem a essa tradição textual grega — o que não autoriza dizer, de modo simplificado,
+            que a Septuaginta fosse “a Bíblia” única e uniforme da comunidade apostólica: o período conheceu real
+            diversidade de textos, coleções e usos.
           </p>
 
           <h3>3. Escritura e Tradição: uma única fonte da Revelação</h3>
