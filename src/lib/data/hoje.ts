@@ -105,14 +105,14 @@ const MESES = [
  * celebra hoje, cai na rotação cíclica.
  */
 export function santoDoDia(d: Date = new Date()): SantoDia {
-  const dd = String(d.getDate()).padStart(2, "0");
-  const mm = String(d.getMonth() + 1).padStart(2, "0");
+  const dd = String(d.getUTCDate()).padStart(2, "0");
+  const mm = String(d.getUTCMonth() + 1).padStart(2, "0");
   const doDia = SANTOS.filter((s) => s.data === `${dd}/${mm}`);
   if (doDia.length > 0) {
     const s = doDia[dayOfYear(d) % doDia.length];
     return {
       nome: s.nome,
-      data: `${Number(dd)} de ${MESES[d.getMonth()]}`,
+      data: `${Number(dd)} de ${MESES[d.getUTCMonth()]}`,
       resumo: s.resumo,
       celebradoHoje: true,
     };
