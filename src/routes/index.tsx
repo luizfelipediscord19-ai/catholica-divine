@@ -71,6 +71,39 @@ const PILLARS = [
   { to: "/assistente", icon: Sparkles, title: "Sophia IA", desc: "Assistente que responde com base no Catecismo, na Escritura e nos documentos do Magistério." },
 ];
 
+/** Três portas de entrada com imagem — pouca palavra, muito contexto. */
+const PERCURSOS = [
+  {
+    to: "/sacramentos" as const,
+    img: eucaristia,
+    kicker: "Vida sacramental",
+    titulo: "Onde a graça se torna visível",
+    desc:
+      "Os sete sacramentos, um a um: matéria, forma, ministro e efeitos, com o texto do Catecismo e do Direito Canônico ao lado.",
+    nota: "7 sacramentos · CIC §§ 1113–1666",
+  },
+  {
+    to: "/oracoes" as const,
+    img: rosario,
+    kicker: "Vida de oração",
+    titulo: "Rezar com a Igreja de sempre",
+    desc:
+      "Rosário, Via-Sacra, Liturgia das Horas, novenas e ladainhas — com a origem histórica de cada devoção e o modo de rezá-la.",
+    nota: "Rosário · Via-Sacra · Horas · Novenas",
+  },
+  {
+    to: "/catecismo" as const,
+    img: biblioteca,
+    kicker: "Formação doutrinal",
+    titulo: "Estudar com ordem e fontes",
+    desc:
+      "As quatro partes do Catecismo, os Padres da Igreja e os documentos conciliares, sempre com a referência para conferir na fonte.",
+    nota: "2.865 parágrafos · 4 partes",
+  },
+];
+
+
+
 const PADRES = [
   {
     quote: "Onde está Pedro, ali está a Igreja.",
