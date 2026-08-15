@@ -15,7 +15,7 @@ export function PageHero({
     <section data-leitura-oculto className="relative overflow-hidden bg-deep">
       {image ? (
         <div
-          className="absolute inset-0 scale-105 bg-cover bg-center opacity-[0.28]"
+          className="absolute inset-0 scale-105 bg-cover bg-center opacity-40"
           style={{ backgroundImage: `url(${image})` }}
           aria-hidden
         />
@@ -23,13 +23,14 @@ export function PageHero({
       <div
         className={
           image
-            ? "absolute inset-0 bg-linear-to-r from-deep/95 via-deep/80 to-deep/40"
+            ? "absolute inset-0 bg-linear-to-r from-background via-background/88 to-background/45"
             : "absolute inset-0 bg-linear-to-b from-background/20 via-background/80 to-background"
         }
       />
       {image ? (
-        <div className="absolute inset-0 bg-linear-to-t from-background via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-background via-background/25 to-transparent" />
       ) : null}
+
       <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-gold/20 to-transparent" />
 
 
