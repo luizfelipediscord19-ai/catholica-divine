@@ -15,12 +15,24 @@ export function PageHero({
     <section data-leitura-oculto className="relative overflow-hidden bg-deep">
       {image ? (
         <div
-          className="absolute inset-0 opacity-[0.1] bg-cover bg-center transition-transform duration-[5s] ease-out scale-110 group-hover:scale-105"
+          className="absolute inset-0 scale-105 bg-cover bg-center opacity-40"
           style={{ backgroundImage: `url(${image})` }}
+          aria-hidden
         />
       ) : null}
-      <div className="absolute inset-0 bg-linear-to-b from-background/20 via-background/80 to-background" />
+      <div
+        className={
+          image
+            ? "absolute inset-0 bg-linear-to-r from-background via-background/88 to-background/45"
+            : "absolute inset-0 bg-linear-to-b from-background/20 via-background/80 to-background"
+        }
+      />
+      {image ? (
+        <div className="absolute inset-0 bg-linear-to-t from-background via-background/25 to-transparent" />
+      ) : null}
+
       <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-gold/20 to-transparent" />
+
 
       <div className="shell relative w-full py-[var(--space-lg)] animate-reveal">
         <p className="mb-xs flex items-center gap-2 kicker">

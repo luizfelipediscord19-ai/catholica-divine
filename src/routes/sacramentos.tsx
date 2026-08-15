@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import eucaristia from "@/assets/eucaristia.jpg";
 import { PageHero, CardGrid, ContentCard, Prose, Pullquote } from "../components/PageShell";
 import { ReadingMode, FnRef } from "../components/ReadingMode";
 import { Termo } from "../components/Termo";
@@ -63,6 +64,7 @@ function Page() {
         eyebrow="Septem Sacramenta"
         title="Os Sete Sacramentos"
         intro={<>Sinais eficazes da <Termo termo="graca">graça</Termo>, instituídos por Cristo e confiados à Igreja, pelos quais nos é dispensada a vida divina (CIC § 1131).</>}
+      image={eucaristia}
       />
 
       <ReadingMode title="Os Sete Sacramentos" toc={TOC} footnotes={FOOTNOTES}>

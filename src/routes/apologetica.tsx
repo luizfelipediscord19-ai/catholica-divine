@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import biblioteca from "@/assets/biblioteca.jpg";
 import { PageHero, Section, Prose, Sources, Pullquote } from "../components/PageShell";
 import { BancoObjecoes } from "../components/portal/BancoObjecoes";
 
@@ -23,6 +24,7 @@ function Page() {
         eyebrow="Apologia Fidei"
         title="Razões para Crer"
         intro="‘Estai sempre prontos a responder a todo aquele que vos pedir razão da esperança que há em vós’ (1Pd 3,15). A apologética é o serviço da razão à fé."
+      image={biblioteca}
       />
 
       <Section kicker="Fundamento" title="O que é, e o que não é, apologética">

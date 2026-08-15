@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import claustro from "@/assets/claustro.jpg";
 
 import { PageHero, Section, CardGrid } from "@/components/PageShell";
 
@@ -107,6 +108,7 @@ function ExplorarPage() {
         eyebrow="Mapa do portal"
         title="Explorar o Portal"
         intro="Todo o acervo em um único índice: a doutrina que a Igreja ensina, a oração que ela reza e os caminhos de formação para estudar com ordem."
+      image={claustro}
       />
 
       {BLOCOS.map((bloco) => (
