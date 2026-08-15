@@ -65,6 +65,7 @@ import { Route as BibliaLivroIndexRouteImport } from './routes/biblia.$livro.ind
 import { Route as TrilhasTrilhaLicaoRouteImport } from './routes/trilhas.$trilha.$licao'
 import { Route as OracoesNovenasSlugRouteImport } from './routes/oracoes.novenas.$slug'
 import { Route as BibliaLivroCapituloRouteImport } from './routes/biblia.$livro.$capitulo'
+import { Route as ApiPublicNoticiasDiariasRouteImport } from './routes/api/public/noticias-diarias'
 import { Route as ApiPublicNoticiasRouteImport } from './routes/api/public/noticias'
 import { Route as ApiPublicLembretesRouteImport } from './routes/api/public/lembretes'
 import { Route as ApiPublicCspReportRouteImport } from './routes/api/public/csp-report'
@@ -352,6 +353,12 @@ const BibliaLivroCapituloRoute = BibliaLivroCapituloRouteImport.update({
   path: '/$capitulo',
   getParentRoute: () => BibliaLivroRoute,
 } as any)
+const ApiPublicNoticiasDiariasRoute =
+  ApiPublicNoticiasDiariasRouteImport.update({
+    id: '/api/public/noticias-diarias',
+    path: '/api/public/noticias-diarias',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ApiPublicNoticiasRoute = ApiPublicNoticiasRouteImport.update({
   id: '/api/public/noticias',
   path: '/api/public/noticias',
@@ -423,6 +430,7 @@ export interface FileRoutesByFullPath {
   '/api/public/csp-report': typeof ApiPublicCspReportRoute
   '/api/public/lembretes': typeof ApiPublicLembretesRoute
   '/api/public/noticias': typeof ApiPublicNoticiasRoute
+  '/api/public/noticias-diarias': typeof ApiPublicNoticiasDiariasRoute
   '/biblia/$livro/$capitulo': typeof BibliaLivroCapituloRoute
   '/oracoes/novenas/$slug': typeof OracoesNovenasSlugRoute
   '/trilhas/$trilha/$licao': typeof TrilhasTrilhaLicaoRoute
@@ -481,6 +489,7 @@ export interface FileRoutesByTo {
   '/api/public/csp-report': typeof ApiPublicCspReportRoute
   '/api/public/lembretes': typeof ApiPublicLembretesRoute
   '/api/public/noticias': typeof ApiPublicNoticiasRoute
+  '/api/public/noticias-diarias': typeof ApiPublicNoticiasDiariasRoute
   '/biblia/$livro/$capitulo': typeof BibliaLivroCapituloRoute
   '/oracoes/novenas/$slug': typeof OracoesNovenasSlugRoute
   '/trilhas/$trilha/$licao': typeof TrilhasTrilhaLicaoRoute
@@ -543,6 +552,7 @@ export interface FileRoutesById {
   '/api/public/csp-report': typeof ApiPublicCspReportRoute
   '/api/public/lembretes': typeof ApiPublicLembretesRoute
   '/api/public/noticias': typeof ApiPublicNoticiasRoute
+  '/api/public/noticias-diarias': typeof ApiPublicNoticiasDiariasRoute
   '/biblia/$livro/$capitulo': typeof BibliaLivroCapituloRoute
   '/oracoes/novenas/$slug': typeof OracoesNovenasSlugRoute
   '/trilhas/$trilha/$licao': typeof TrilhasTrilhaLicaoRoute
@@ -606,6 +616,7 @@ export interface FileRouteTypes {
     | '/api/public/csp-report'
     | '/api/public/lembretes'
     | '/api/public/noticias'
+    | '/api/public/noticias-diarias'
     | '/biblia/$livro/$capitulo'
     | '/oracoes/novenas/$slug'
     | '/trilhas/$trilha/$licao'
@@ -664,6 +675,7 @@ export interface FileRouteTypes {
     | '/api/public/csp-report'
     | '/api/public/lembretes'
     | '/api/public/noticias'
+    | '/api/public/noticias-diarias'
     | '/biblia/$livro/$capitulo'
     | '/oracoes/novenas/$slug'
     | '/trilhas/$trilha/$licao'
@@ -725,6 +737,7 @@ export interface FileRouteTypes {
     | '/api/public/csp-report'
     | '/api/public/lembretes'
     | '/api/public/noticias'
+    | '/api/public/noticias-diarias'
     | '/biblia/$livro/$capitulo'
     | '/oracoes/novenas/$slug'
     | '/trilhas/$trilha/$licao'
@@ -776,6 +789,7 @@ export interface RootRouteChildren {
   ApiPublicCspReportRoute: typeof ApiPublicCspReportRoute
   ApiPublicLembretesRoute: typeof ApiPublicLembretesRoute
   ApiPublicNoticiasRoute: typeof ApiPublicNoticiasRoute
+  ApiPublicNoticiasDiariasRoute: typeof ApiPublicNoticiasDiariasRoute
   TrilhasTrilhaLicaoRoute: typeof TrilhasTrilhaLicaoRoute
   TrilhasTrilhaIndexRoute: typeof TrilhasTrilhaIndexRoute
 }
@@ -1174,6 +1188,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BibliaLivroCapituloRouteImport
       parentRoute: typeof BibliaLivroRoute
     }
+    '/api/public/noticias-diarias': {
+      id: '/api/public/noticias-diarias'
+      path: '/api/public/noticias-diarias'
+      fullPath: '/api/public/noticias-diarias'
+      preLoaderRoute: typeof ApiPublicNoticiasDiariasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/public/noticias': {
       id: '/api/public/noticias'
       path: '/api/public/noticias'
@@ -1327,6 +1348,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiPublicCspReportRoute: ApiPublicCspReportRoute,
   ApiPublicLembretesRoute: ApiPublicLembretesRoute,
   ApiPublicNoticiasRoute: ApiPublicNoticiasRoute,
+  ApiPublicNoticiasDiariasRoute: ApiPublicNoticiasDiariasRoute,
   TrilhasTrilhaLicaoRoute: TrilhasTrilhaLicaoRoute,
   TrilhasTrilhaIndexRoute: TrilhasTrilhaIndexRoute,
 }
