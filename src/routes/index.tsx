@@ -15,6 +15,8 @@ import { COR_CLASSE } from "../lib/liturgia/calendario";
 import { ScrollReveal } from "../components/ScrollReveal";
 import { BuscaAprender, ComeceAqui } from "../components/portal/AprenderHome";
 import { RetomarLeitura } from "../components/portal/RetomarLeitura";
+import { UltimosArtigos, TrilhasIlustradas } from "../components/portal/DestaquesHome";
+import { ImagemOtimizada } from "../components/ImagemOtimizada";
 
 
 
@@ -189,10 +191,17 @@ function Home() {
     <div className="overflow-x-hidden">
       {/* Hero */}
       <section className="relative flex min-h-[62vh] items-center overflow-hidden py-section sm:min-h-[72vh]">
-        <div
-          className="absolute inset-0 scale-105 bg-cover bg-center"
-          style={{ backgroundImage: `url(${hero})` }}
-        />
+        <div className="absolute inset-0 scale-105" aria-hidden>
+          <ImagemOtimizada
+            src={hero}
+            alt=""
+            width={1920}
+            height={1080}
+            prioridade
+            sizes="100vw"
+            className="size-full object-cover"
+          />
+        </div>
         <div className="absolute inset-0 bg-linear-to-b from-background/75 via-background/60 to-background" />
         <div className="absolute inset-0 bg-background/25" />
 
@@ -343,13 +352,12 @@ function Home() {
                 className="group flex h-full flex-col overflow-hidden border border-gold/10 bg-card/40 transition-premium hover:-translate-y-1 hover:border-gold/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
               >
                 <div className="relative aspect-[16/10] overflow-hidden">
-                  <img
+                  <ImagemOtimizada
                     src={p.img}
                     alt=""
                     width={1536}
                     height={1024}
-                    loading="lazy"
-                    decoding="async"
+                    sizes="(max-width: 768px) 100vw, 33vw"
                     className="size-full object-cover opacity-80 transition-transform duration-[1.2s] ease-out group-hover:scale-105 group-hover:opacity-100"
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-deep/90 via-deep/25 to-transparent" />
@@ -368,6 +376,10 @@ function Home() {
         </div>
       </section>
 
+
+      <UltimosArtigos />
+
+      <TrilhasIlustradas />
 
       {/* Pillars - Bento Grid Style */}
       <section className="shell py-section">
@@ -424,10 +436,16 @@ function Home() {
         <div className="shell py-section grid grid-cols-1 lg:grid-cols-2 gap-[var(--space-lg)] items-center">
           <ScrollReveal direction="left" className="relative">
             <div className="absolute -inset-4 border border-gold/10 -z-10 translate-x-4 translate-y-4" />
-            <div
-              className="aspect-[4/5] bg-cover bg-center grayscale hover:grayscale-0 transition-all duration-1000 shadow-[0_30px_60px_rgba(0,0,0,0.5)]"
-              style={{ backgroundImage: `url(${maria})` }}
-            />
+            <div className="aspect-[4/5] overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000 shadow-[0_30px_60px_rgba(0,0,0,0.5)]">
+              <ImagemOtimizada
+                src={maria}
+                alt="Imagem devocional de Nossa Senhora"
+                width={1024}
+                height={1280}
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="size-full object-cover"
+              />
+            </div>
             <div className="absolute bottom-8 right-8 bg-background/80 backdrop-blur-md px-6 py-4 border border-gold/20">
               <p className="label-btn text-gold">Regina Caeli</p>
             </div>
