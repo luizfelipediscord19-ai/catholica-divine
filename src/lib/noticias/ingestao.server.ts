@@ -38,6 +38,41 @@ interface Redacao {
   tags: string[];
 }
 
+/**
+ * O modelo costuma escrever parágrafos com quebras de linha reais dentro das
+ * strings, o que é JSON inválido. Escapamos as quebras que estão dentro de
+ * strings antes de interpretar.
+ */
+function escaparQuebras(json: string): string {
+  let dentro = false;
+  let escape = false;
+  let saida = "";
+  for (const c of json) {
+    if (escape) {
+      saida += c;
+      escape = false;
+      continue;
+    }
+    if (c === "\\") {
+      saida += c;
+      escape = true;
+      continue;
+    }
+    if (c === '"') {
+      dentro = !dentro;
+      saida += c;
+      continue;
+    }
+    if (dentro && (c === "\n" || c === "\r" || c === "\t")) {
+      saida += c === "\t" ? "\\t" : c === "\r" ? "" : "\\n";
+      continue;
+    }
+    saida += c;
+  }
+  return saida;
+}
+
+
 function extrairJson(texto: string): Redacao | null {
   const limpo = texto.replace(/```json/gi, "").replace(/```/g, "").trim();
   const inicio = limpo.indexOf("{");
