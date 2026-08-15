@@ -4,6 +4,10 @@ import { BookOpen, Heart, Sparkles, Church, Crown, ScrollText, Compass, Calendar
 import hero from "../assets/hero-catedral.jpg";
 import maria from "../assets/maria.jpg";
 import cristo from "../assets/cristo.jpg";
+import eucaristia from "../assets/eucaristia.jpg";
+import rosario from "../assets/rosario.jpg";
+import biblioteca from "../assets/biblioteca.jpg";
+
 import { santoDoDia } from "../lib/data/hoje";
 import { dataDoIso } from "../lib/liturgia/hoje";
 import { liturgiaQueryOptions } from "../lib/liturgia/query";
