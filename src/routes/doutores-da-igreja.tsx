@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import manuscrito from "@/assets/manuscrito.jpg";
 import { PageHero, CardGrid, ContentCard, Prose, Pullquote } from "../components/PageShell";
 import { ReadingMode, FnRef } from "../components/ReadingMode";
 
@@ -98,6 +99,7 @@ function Page() {
         eyebrow="Doctores Ecclesiae"
         title="Os Doutores da Igreja"
         intro="Santos cuja eminente doutrina e cuja santidade de vida foram reconhecidas pela Igreja como guias seguros para todos os fiéis. Hoje são trinta e sete."
+      image={manuscrito}
       />
 
       <ReadingMode title="Os Doutores da Igreja" toc={TOC} footnotes={FOOTNOTES}>

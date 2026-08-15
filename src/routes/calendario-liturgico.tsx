@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import velas from "@/assets/velas.jpg";
 import { PageHero, CardGrid, ContentCard, Prose, Pullquote } from "../components/PageShell";
 import { ReadingMode, FnRef } from "../components/ReadingMode";
 import { VersiculoDoDia } from "../components/VersiculoDoDia";
@@ -62,6 +63,7 @@ function Page() {
           </>
         }
         intro="A Igreja desdobra ao longo do ano todo o mistério de Cristo, da Encarnação à Páscoa, do Pentecostes à espera escatológica."
+      image={velas}
       />
 
       <ReadingMode title="O Ano Litúrgico" toc={TOC} footnotes={FOOTNOTES}>

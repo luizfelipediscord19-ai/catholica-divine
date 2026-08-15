@@ -1,4 +1,5 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import claustro from "@/assets/claustro.jpg";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { MessageSquare, Pin, Lock, Plus } from "lucide-react";
 import { useState } from "react";
@@ -79,6 +80,7 @@ function ForumPage() {
           </>
         }
         intro="Um pátio para perguntar, aprender e testemunhar. Para escrever, entre com e-mail e senha; sua identidade pública continua sendo um santo padroeiro sorteado."
+      image={claustro}
       />
 
       <div className="shell py-block grid gap-10 lg:grid-cols-[1fr_280px]">

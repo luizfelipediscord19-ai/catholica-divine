@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import rosario from "@/assets/rosario.jpg";
 import { useEffect, useMemo, useState } from "react";
 import { PageHero, Section, CardGrid, ContentCard } from "../components/PageShell";
 import {
@@ -180,6 +181,7 @@ function Page() {
         eyebrow="Oratio"
         title="A Vida de Oração"
         intro="A oração é a respiração da alma cristã. Aqui você encontra a tradição orante da Igreja, das fórmulas mais antigas às devoções consagradas pelos séculos."
+      image={rosario}
       />
 
       <Section kicker="Devoções" title="Caminhos consagrados pela Igreja">

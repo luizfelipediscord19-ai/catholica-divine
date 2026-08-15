@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import biblioteca from "@/assets/biblioteca.jpg";
 import { PageHero, Section, Prose, Sources, Pullquote } from "../components/PageShell";
 import { Termo } from "../components/Termo";
 import { PARTES, SECOES, VATICAN_URL } from "../lib/data/catecismo";
@@ -25,6 +26,7 @@ function Page() {
         eyebrow="Catechismus Catholicae Ecclesiae"
         title="O Catecismo"
         intro="Texto de referência seguro e autêntico para o ensino da doutrina católica. Promulgado por São João Paulo II em 1992 (Fidei Depositum) e revisado em 1997 (Laetamur Magnopere)."
+      image={biblioteca}
       />
 
       <Section kicker="Introdução doutrinária" title="O que é o Catecismo da Igreja Católica">
