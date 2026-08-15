@@ -90,10 +90,23 @@ export const Route = createFileRoute("/noticias/$slug")({
       </Link>
     </div>
   ),
-  errorComponent: ({ error }) => (
+  errorComponent: () => (
     <div className="shell-narrow py-block text-center" role="alert">
-      <p className="text-gold">Não foi possível carregar esta notícia.</p>
-      <p className="mt-2 text-sm text-muted-foreground">{error.message}</p>
+      <p className="font-display text-lg text-gold">Notícia indisponível agora</p>
+      <p className="measure mx-auto mt-3 text-sm leading-relaxed text-muted-foreground">
+        Não conseguimos abrir esta notícia neste momento. Tente de novo em instantes.
+      </p>
+      <div className="mt-6 flex flex-wrap justify-center gap-3">
+        <button
+          onClick={() => window.location.reload()}
+          className="btn-base btn-gold px-5 py-2.5 label-btn"
+        >
+          Tentar de novo
+        </button>
+        <Link to="/noticias" className="btn-base btn-outline-gold px-5 py-2.5 label-btn">
+          Ver todas
+        </Link>
+      </div>
     </div>
   ),
   component: NoticiaPage,
