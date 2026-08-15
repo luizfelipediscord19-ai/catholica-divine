@@ -79,6 +79,24 @@ export const Route = createFileRoute("/biblia/$livro/$capitulo")({
             isPartOf: { "@type": "Book", name: loaderData?.livro.nome ?? "Bíblia" },
           }),
         },
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              { "@type": "ListItem", position: 1, name: "Início", item: "https://portalcatolico.vercel.app/" },
+              { "@type": "ListItem", position: 2, name: "Bíblia", item: "https://portalcatolico.vercel.app/biblia" },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: loaderData?.livro.nome ?? "Livro",
+                item: `https://portalcatolico.vercel.app/biblia/${params.livro}`,
+              },
+              { "@type": "ListItem", position: 4, name: titulo, item: url },
+            ],
+          }),
+        },
       ],
     };
   },
