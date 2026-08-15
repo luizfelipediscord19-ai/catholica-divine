@@ -42,6 +42,11 @@
     {
       "path": "/api/public/lembretes",
       "schedule": "0 11 * * *"
+    },
+    {
+      "path": "/api/public/noticias-diarias",
+      "schedule": "0 15 * * *"
     }
   ]
 }
+
