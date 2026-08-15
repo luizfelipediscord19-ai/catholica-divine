@@ -113,11 +113,21 @@ function NoticiasPage() {
         {noticias.length === 0 ? (
           <div className="glass p-card text-center">
             <Newspaper className="mx-auto mb-4 size-8 text-gold/70" aria-hidden="true" />
-            <p className="text-foreground/80">
-              A primeira edição está sendo preparada. Volte ao meio-dia para a atualização de hoje.
+            <p className="measure mx-auto text-foreground/80">
+              A edição de hoje está sendo preparada. Enquanto isso, acompanhe a vida da Igreja pela
+              liturgia do dia e pelo santo celebrado hoje.
             </p>
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
+              <Link to="/liturgia-diaria" className="btn-base btn-gold px-5 py-2.5 label-btn">
+                Liturgia de hoje
+              </Link>
+              <Link to="/santos" className="btn-base btn-outline-gold px-5 py-2.5 label-btn">
+                Santo do dia
+              </Link>
+            </div>
           </div>
         ) : (
+
           <div className="space-y-[var(--space-lg)]">
             <article className="glass p-card">
               <p className="label-btn text-gold/80">

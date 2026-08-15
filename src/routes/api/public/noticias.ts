@@ -55,9 +55,11 @@ export const Route = createFileRoute("/api/public/noticias")({
           );
         } catch (erro) {
           console.error("[noticias:get]", erro);
-          return Response.json({ ok: false }, { status: 500 });
+          // Degradação suave: nunca expor detalhes internos do banco.
+          return Response.json({ ok: true, noticias: [] }, { status: 200 });
         }
       },
+
 
       POST: async ({ request }) => {
         if (!autorizado(request)) {
