@@ -44,7 +44,8 @@ function extrairJson(texto: string): Redacao | null {
   const fim = limpo.lastIndexOf("}");
   if (inicio < 0 || fim <= inicio) return null;
   try {
-    const bruto = JSON.parse(limpo.slice(inicio, fim + 1)) as Partial<Redacao>;
+    const bruto = JSON.parse(escaparQuebras(limpo.slice(inicio, fim + 1))) as Partial<Redacao>;
+
     if (!bruto.titulo || !bruto.resumo || !bruto.corpo) return null;
     return {
       titulo: String(bruto.titulo).slice(0, 190),
