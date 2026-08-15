@@ -39,6 +39,47 @@ export const Route = createFileRoute("/noticias/$slug")({
           : []),
       ],
       links: [{ rel: "canonical", href: url }],
+      scripts: n
+        ? [
+            {
+              type: "application/ld+json",
+              children: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "NewsArticle",
+                headline: n.titulo.slice(0, 110),
+                description: n.resumo,
+                articleSection: n.categoria,
+                inLanguage: "pt-BR",
+                datePublished: n.publicado_em,
+                dateModified: n.publicado_em,
+                mainEntityOfPage: { "@type": "WebPage", "@id": url },
+                url,
+                ...(n.imagem_url ? { image: [n.imagem_url] } : {}),
+                ...(n.autor ? { author: { "@type": "Person", name: n.autor } } : {}),
+                publisher: {
+                  "@type": "Organization",
+                  name: "Portal Católico",
+                  url: SITE_URL,
+                  logo: { "@type": "ImageObject", url: `${SITE_URL}/favicon.png` },
+                },
+                ...(n.tags?.length ? { keywords: n.tags.join(", ") } : {}),
+                ...(n.fonte_url ? { isBasedOn: n.fonte_url } : {}),
+              }),
+            },
+            {
+              type: "application/ld+json",
+              children: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                itemListElement: [
+                  { "@type": "ListItem", position: 1, name: "Início", item: `${SITE_URL}/` },
+                  { "@type": "ListItem", position: 2, name: "Notícias", item: `${SITE_URL}/noticias` },
+                  { "@type": "ListItem", position: 3, name: n.titulo, item: url },
+                ],
+              }),
+            },
+          ]
+        : [],
     };
   },
   notFoundComponent: () => (
