@@ -53,6 +53,37 @@ export const Route = createFileRoute("/noticias/")({
   component: NoticiasPage,
 });
 
+function NoticiasIndisponiveis() {
+  return (
+    <div>
+      <PageHero
+        eyebrow="Acta Ecclesiae · Edição diária"
+        title={
+          <>
+            Notícias <span className="italic font-light text-gold">da Igreja</span>
+          </>
+        }
+        intro="A edição de hoje não pôde ser carregada agora."
+      />
+      <div className="shell py-block">
+        <div className="glass p-card text-center" role="alert">
+          <Newspaper className="mx-auto mb-4 size-8 text-gold/70" aria-hidden="true" />
+          <p className="measure mx-auto text-foreground/80">
+            As notícias não estão acessíveis neste momento. Se estiveres sem internet, verás aqui as
+            edições já lidas; caso contrário, tenta de novo em alguns instantes.
+          </p>
+          <button
+            onClick={() => window.location.reload()}
+            className="btn-base btn-gold mt-6 px-5 py-2.5 label-btn"
+          >
+            Tentar de novo
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function formatar(iso: string) {
   return new Date(iso).toLocaleDateString("pt-BR", {
     day: "2-digit",
