@@ -322,6 +322,53 @@ function Home() {
 
       <ComeceAqui />
 
+      {/* Percursos ilustrados */}
+      <section aria-labelledby="percursos" className="shell py-section">
+        <ScrollReveal className="mb-[var(--space-lg)] max-w-2xl">
+          <p className="kicker mb-4">Três portas de entrada</p>
+          <h2 id="percursos" className="title-page text-balance leading-[1.08] text-foreground">
+            Fé vivida, <span className="text-gold/80 italic">rezada e estudada.</span>
+          </h2>
+          <p className="measure mt-6 font-light leading-relaxed text-muted-foreground">
+            A mesma Revelação chega até nós por três caminhos que se sustentam: os sacramentos que
+            nos dão a graça, a oração que a acolhe e o estudo que a compreende.
+          </p>
+        </ScrollReveal>
+
+        <div className="grid grid-cols-1 gap-[var(--space-sm)] md:grid-cols-3">
+          {PERCURSOS.map((p, i) => (
+            <ScrollReveal key={p.to} delay={i * 120}>
+              <Link
+                to={p.to}
+                className="group flex h-full flex-col overflow-hidden border border-gold/10 bg-card/40 transition-premium hover:-translate-y-1 hover:border-gold/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+              >
+                <div className="relative aspect-[16/10] overflow-hidden">
+                  <img
+                    src={p.img}
+                    alt=""
+                    width={1536}
+                    height={1024}
+                    loading="lazy"
+                    decoding="async"
+                    className="size-full object-cover opacity-80 transition-transform duration-[1.2s] ease-out group-hover:scale-105 group-hover:opacity-100"
+                  />
+                  <div className="absolute inset-0 bg-linear-to-t from-card/90 via-card/20 to-transparent" />
+                  <p className="absolute bottom-4 left-4 kicker text-gold">{p.kicker}</p>
+                </div>
+                <div className="flex flex-1 flex-col gap-3 p-card">
+                  <h3 className="title-card text-foreground transition-colors group-hover:text-gold">
+                    {p.titulo}
+                  </h3>
+                  <p className="text-sm font-light leading-relaxed text-muted-foreground">{p.desc}</p>
+                  <p className="mt-auto border-t border-gold/10 pt-4 kicker">{p.nota}</p>
+                </div>
+              </Link>
+            </ScrollReveal>
+          ))}
+        </div>
+      </section>
+
+
       {/* Pillars - Bento Grid Style */}
       <section className="shell py-section">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-[var(--space-lg)] gap-[var(--space-sm)]">
