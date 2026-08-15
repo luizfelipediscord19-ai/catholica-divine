@@ -352,7 +352,7 @@ function Home() {
                     decoding="async"
                     className="size-full object-cover opacity-80 transition-transform duration-[1.2s] ease-out group-hover:scale-105 group-hover:opacity-100"
                   />
-                  <div className="absolute inset-0 bg-linear-to-t from-card/90 via-card/20 to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-deep/90 via-deep/25 to-transparent" />
                   <p className="absolute bottom-4 left-4 kicker text-gold">{p.kicker}</p>
                 </div>
                 <div className="flex flex-1 flex-col gap-3 p-card">
