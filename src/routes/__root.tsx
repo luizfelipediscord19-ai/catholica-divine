@@ -140,7 +140,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               publisher: { "@id": `${SITE_URL}/#organization` },
             },
             {
-              "@type": "ReligiousOrganization",
+              "@type": ["Organization", "ReligiousOrganization"],
               "@id": `${SITE_URL}/#organization`,
               name: "Portal Católico",
               url: SITE_URL,
