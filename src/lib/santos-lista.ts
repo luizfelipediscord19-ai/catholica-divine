@@ -203,6 +203,7 @@ const RAW: { nome: string; data: string; body: string }[] = [
   { nome: "Santa Rosa Filipina Duchesne", data: "18 de novembro", body: "Religiosa francesa do Sagrado Coração, missionária entre os povos indígenas norte-americanos." },
   { nome: "Santa Teresa dos Andes", data: "13 de julho", body: "Carmelita chilena, primeira santa do Chile, mestra de vida interior aos jovens." },
   { nome: "São Nuno de Santa Maria", data: "6 de novembro", body: "Condestável de Portugal que se tornou frade carmelita, canonizado em 2009." },
+  { nome: "Santa Maria Goretti", data: "6 de julho", body: "Menina italiana morta em 1902 ao resistir a uma agressão; canonizada em 1950 como mártir da pureza e do perdão." },
 ];
 
 export const SANTOS_LISTA: SantoLista[] = RAW.map((s) => ({
