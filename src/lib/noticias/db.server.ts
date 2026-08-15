@@ -110,6 +110,16 @@ export async function obterNoticia(slug: string): Promise<Noticia | null> {
   return (data as unknown as Noticia) ?? null;
 }
 
+/** Quais destes slugs já existem no acervo (para não reescrever com IA de novo). */
+export async function slugsExistentes(slugs: string[]): Promise<Set<string>> {
+  if (slugs.length === 0) return new Set();
+  const { data, error } = await leitura().from("noticias").select("slug").in("slug", slugs);
+  if (error) throw new Error(error.message);
+  return new Set((data ?? []).map((l) => (l as { slug: string }).slug));
+}
+
+
+
 export interface NoticiaEntrada {
   titulo: string;
   resumo: string;
