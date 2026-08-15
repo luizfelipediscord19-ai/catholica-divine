@@ -114,9 +114,7 @@ async function redigir(item: ItemFeed, chave: string): Promise<Redacao | null> {
       temperature: 0.3,
       maxOutputTokens: 1400,
     });
-    const r = extrairJson(text);
-    if (!r) console.error("[noticias:bruto]", JSON.stringify(text).slice(0, 800));
-    return r;
+    return extrairJson(text);
   } catch (erro) {
     console.error("[noticias:redigir]", item.titulo, erro);
     return null;
