@@ -49,12 +49,7 @@ export const Route = createFileRoute("/noticias/")({
       },
     ],
   }),
-  errorComponent: ({ error }) => (
-    <div className="shell-narrow py-block text-center" role="alert">
-      <p className="text-gold">Não foi possível carregar as notícias agora.</p>
-      <p className="mt-2 text-sm text-muted-foreground">{error.message}</p>
-    </div>
-  ),
+  errorComponent: () => <NoticiasIndisponiveis />,
   component: NoticiasPage,
 });
 
