@@ -23,8 +23,8 @@ export interface Noticia {
 const CAMPOS =
   "id, slug, titulo, resumo, corpo, categoria, tags, fonte_nome, fonte_url, imagem_url, autor, publicado_em, destaque";
 
-function cliente(chave: string): SupabaseClient {
-  const url = process.env["SUPABASE_URL"];
+function cliente(chave: string, urlPreferida?: string): SupabaseClient {
+  const url = urlPreferida ?? process.env["SUPABASE_URL"] ?? process.env["VITE_SUPABASE_URL"];
   if (!url) throw new Error("Configuração do backend ausente: SUPABASE_URL.");
 
   return createClient(url, chave, {
@@ -43,10 +43,23 @@ function cliente(chave: string): SupabaseClient {
 }
 
 function leitura(): SupabaseClient {
+  // O par (URL, chave) precisa pertencer ao mesmo projeto. Quando as variáveis
+  // do servidor estão desatualizadas em relação às do site (VITE_*), usamos o
+  // par publicável do site — é ele que a plataforma mantém sincronizado.
+  const urlServidor = process.env["SUPABASE_URL"];
+  const urlSite = process.env["VITE_SUPABASE_URL"];
+  const chaveSite = process.env["VITE_SUPABASE_PUBLISHABLE_KEY"];
+
+  if (urlSite && chaveSite && urlServidor && urlServidor !== urlSite) {
+    return cliente(chaveSite, urlSite);
+  }
+
   const chave =
-    process.env["SUPABASE_SERVICE_ROLE_KEY"] || process.env["SUPABASE_PUBLISHABLE_KEY"];
+    process.env["SUPABASE_SERVICE_ROLE_KEY"] ||
+    process.env["SUPABASE_PUBLISHABLE_KEY"] ||
+    chaveSite;
   if (!chave) throw new Error("Configuração do backend ausente: chave do Supabase.");
-  return cliente(chave);
+  return cliente(chave, urlServidor ?? urlSite);
 }
 
 function escrita(): SupabaseClient {
