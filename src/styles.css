@@ -559,8 +559,8 @@
 @utility title-page {
   font-family: var(--font-display);
   font-size: var(--step-4);
-  line-height: 1.06;
-  letter-spacing: -0.02em;
+  line-height: 1.08;
+  letter-spacing: -0.018em;
   color: var(--color-foreground);
   text-wrap: balance;
 }
@@ -569,8 +569,8 @@
 @utility title-section {
   font-family: var(--font-display);
   font-size: var(--step-3);
-  line-height: 1.15;
-  letter-spacing: -0.015em;
+  line-height: 1.16;
+  letter-spacing: -0.012em;
   color: var(--color-foreground);
   text-wrap: balance;
 }
@@ -579,8 +579,8 @@
 @utility title-card {
   font-family: var(--font-display);
   font-size: var(--step-2);
-  line-height: 1.2;
-  letter-spacing: -0.01em;
+  line-height: 1.22;
+  letter-spacing: -0.008em;
   color: var(--color-foreground);
   text-wrap: balance;
 }
@@ -596,16 +596,16 @@
 /* Parágrafo de abertura / subtítulo */
 @utility body-lead {
   font-size: var(--step-1);
-  line-height: 1.65;
+  line-height: 1.62;
   font-weight: 300;
-  color: color-mix(in oklab, var(--color-foreground) 74%, transparent);
+  color: color-mix(in oklab, var(--color-foreground) 80%, transparent);
 }
 
 /* Texto corrente */
 @utility body-base {
   font-size: var(--step-0);
-  line-height: 1.75;
-  color: color-mix(in oklab, var(--color-foreground) 86%, transparent);
+  line-height: 1.78;
+  color: color-mix(in oklab, var(--color-foreground) 90%, transparent);
 }
 
 /* Texto auxiliar / legenda */
@@ -821,39 +821,39 @@
 
 
   /* Brand Tokens — Sacred Editorial Noir */
-  --gold: #c9a84c;
-  --gold-soft: #a98c3c;
-  --gold-accent: #f0d78c;
+  --gold: #cdac52;
+  --gold-soft: #a4873a;
+  --gold-accent: #f2dc99;
   --marian: #23568f;
   --marian-soft: #3a76bd;
   --cardinal: #8b0000;
-  --deep: #0d0d0d;
-  --paper: #fbf8f3;
-  --glass-bg: rgba(26, 26, 26, 0.74);
-  --glass-border: rgba(201, 168, 76, 0.18);
+  --deep: #0c0b0a;
+  --paper: #faf7f0;
+  --glass-bg: rgba(23, 22, 19, 0.78);
+  --glass-border: rgba(205, 172, 82, 0.2);
 
   /* Semantic Palette */
-  --background: #0d0d0d;
-  --foreground: #f4f1ea;
-  --card: #1a1a1a;
-  --card-foreground: #f4f1ea;
-  --popover: #1a1a1a;
-  --popover-foreground: #f4f1ea;
-  --primary: #c9a84c;
+  --background: #0c0b0a;
+  --foreground: #f3efe6;
+  --card: #171613;
+  --card-foreground: #f3efe6;
+  --popover: #171613;
+  --popover-foreground: #f3efe6;
+  --primary: #cdac52;
   --primary-foreground: #0d0d0d;
   --secondary: #23568f;
   --secondary-foreground: #f4f1ea;
-  --muted: #161616;
-  --muted-foreground: #a5a099;
+  --muted: #141310;
+  --muted-foreground: #b3aca0;
   --accent: #23568f;
   --accent-foreground: #f4f1ea;
   --destructive: #8b0000;
   --destructive-foreground: #fcfaf7;
   /* Vermelho legível como TEXTO sobre fundo escuro (WCAG AA). */
   --destructive-text: #f2938a;
-  --border: rgba(201, 168, 76, 0.16);
-  --input: rgba(201, 168, 76, 0.2);
-  --ring: #c9a84c;
+  --border: rgba(205, 172, 82, 0.2);
+  --input: rgba(205, 172, 82, 0.24);
+  --ring: #cdac52;
 
   /* Superfícies e realces reutilizáveis */
   --gradient-gold: linear-gradient(135deg, var(--gold-accent), var(--gold) 45%, var(--gold-soft));
@@ -914,8 +914,9 @@
     font-optical-sizing: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    line-height: 1.72;
-    letter-spacing: -0.006em;
+    line-height: 1.7;
+    letter-spacing: 0;
+    font-feature-settings: "kern" 1, "liga" 1;
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
   }
@@ -961,16 +962,17 @@
   }
   h1, h2, h3, h4, .font-display {
     font-family: var(--font-display);
-    font-weight: 500;
-    letter-spacing: -0.032em;
-    line-height: 1.12;
+    font-weight: 400;
+    letter-spacing: -0.012em;
+    line-height: 1.16;
+    font-feature-settings: "kern" 1, "liga" 1, "dlig" 1;
   }
   h1 {
-    letter-spacing: -0.042em;
-    line-height: 1.05;
+    letter-spacing: -0.018em;
+    line-height: 1.08;
   }
   h4, h5, h6 {
-    letter-spacing: -0.02em;
+    letter-spacing: -0.006em;
   }
   p, li {
     text-wrap: pretty;
