@@ -114,6 +114,7 @@ export function UltimosArtigos() {
 
 /** Trilhas de estudo com capa ilustrada e número de lições. */
 export function TrilhasIlustradas() {
+  const [destaque, ...restantes] = TRILHAS;
   return (
     <section aria-labelledby="trilhas-estudo" className="bg-muted/20 py-section">
       <div className="shell">
