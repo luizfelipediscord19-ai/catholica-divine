@@ -211,14 +211,24 @@
   }
 }
 
-/* Superfície padrão de card: mesma borda, raio e sombra em todo o portal */
+/* Superfície padrão de card: mesma borda, raio e sombra em todo o portal.
+   O gradiente vertical sutil imita papel iluminado de cima — é o que dá
+   profundidade editorial ao noir sem introduzir novas cores. */
 @utility surface-card {
   position: relative;
+  height: 100%;
   border-radius: var(--radius-card);
   border: 1px solid var(--hairline);
-  background: color-mix(in oklab, var(--card) 92%, transparent);
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in oklab, var(--gold) 3%, transparent),
+      transparent 42%
+    ),
+    color-mix(in oklab, var(--card) 92%, transparent);
   box-shadow: var(--shadow-card);
 }
+
 
 /* Card interativo: elevação discreta no hover e foco visível quando é link */
 @utility surface-card-interactive {
