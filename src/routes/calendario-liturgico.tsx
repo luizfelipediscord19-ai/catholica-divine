@@ -23,6 +23,7 @@ export const Route = createFileRoute("/calendario-liturgico")({
 
 const TOC = [
   { id: "introducao", label: "O Ano Litúrgico" },
+  { id: "domingo", label: "O Domingo e o Mistério Pascal" },
   { id: "cores", label: "Cores litúrgicas" },
   { id: "estrutura", label: "Estrutura do ano" },
   { id: "advento", label: "I. Advento" },
@@ -34,6 +35,10 @@ const TOC = [
   { id: "pascoa", label: "VII. Tempo Pascal" },
   { id: "comum-2", label: "VIII. Tempo Comum (II)" },
   { id: "solenidades", label: "Solenidades do Senhor" },
+  { id: "graus", label: "Graus das celebrações" },
+  { id: "horas", label: "Liturgia das Horas" },
+  { id: "brasil", label: "Calendário próprio do Brasil" },
+
   { id: "mapa", label: "Mapa do Ano (interativo)" },
   { id: "versiculo", label: "Versículo do dia" },
   { id: "notas", label: "Notas e fontes" },
