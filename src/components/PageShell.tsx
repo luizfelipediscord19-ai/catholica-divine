@@ -86,7 +86,12 @@ export function Section({
 }) {
   return (
     <section id={id} className="shell w-full py-block scroll-mt-28">
-      {kicker ? <p className="mb-2xs kicker">{kicker}</p> : null}
+      {kicker ? (
+        <p className="mb-2xs flex items-center gap-2 kicker">
+          <span aria-hidden="true" className="h-px w-6 shrink-0 bg-gold/40" />
+          <span className="min-w-0">{kicker}</span>
+        </p>
+      ) : null}
       {title ? <h2 className="mb-md title-section">{title}</h2> : null}
       {children}
 
@@ -118,8 +123,8 @@ export function ContentCard({
   media?: ReactNode;
 }) {
   return (
-    <article className="group relative flex min-w-0 flex-col border border-gold/10 hover:border-gold/40 bg-card/40 backdrop-blur-md transition-premium hover:-translate-y-2 hover:shadow-2xl hover:shadow-gold/10 overflow-hidden [content-visibility:auto] [contain-intrinsic-size:auto_420px]">
-      <div className="pointer-events-none absolute top-0 right-0 size-32 -translate-y-1/2 translate-x-1/2 bg-gold/5 blur-3xl group-hover:bg-gold/10 transition-premium" />
+    <article className="surface-card surface-card-interactive group flex min-w-0 flex-col overflow-hidden [content-visibility:auto] [contain-intrinsic-size:auto_420px]">
+      <div className="pointer-events-none absolute top-0 right-0 size-32 -translate-y-1/2 translate-x-1/2 bg-gold/5 blur-3xl transition-premium group-hover:bg-gold/10" />
       {media ? <div className="relative">{media}</div> : null}
       <div className="relative min-w-0 p-card">
         {subtitle ? (
