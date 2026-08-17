@@ -78,8 +78,57 @@ function Page() {
           <p>
             Cabe ao Magistério vivo da Igreja — o Papa e os Bispos em comunhão com ele — “interpretar autenticamente a Palavra de Deus, escrita ou transmitida” (DV 10). Esse serviço não é superior à Palavra, mas a serve, ensinando “somente o que foi transmitido” (DV 10). Suas formas vão do Magistério ordinário e universal ao infalível, quando o Romano Pontífice define ex cathedra uma doutrina de fé ou moral (Pastor Aeternus, cap. 4; LG 25; CIC § 891).
           </p>
+          <h3>Fé e razão: dois caminhos, uma verdade</h3>
+          <p>
+            A tradição católica jamais opôs fé e razão. O Concílio Vaticano I definiu que Deus pode ser
+            conhecido <em>com certeza</em> pela luz natural da razão a partir das criaturas (<em>Dei Filius</em>,
+            cap. 2; cân. 1 — DH 3004, 3026), e que, ainda assim, foi conveniente que se revelasse também sobre
+            verdades acessíveis à razão. Ao mesmo tempo declarou que existem mistérios <em>estritamente
+            sobrenaturais</em> — Trindade, Encarnação, graça — que a razão jamais alcançaria por si (DH 3015-3017).
+            São João Paulo II sintetizou esse equilíbrio na encíclica <em>Fides et Ratio</em> (1998, n. 1):
+            <em>“a fé e a razão são como as duas asas pelas quais o espírito humano se eleva à contemplação da
+            verdade”</em>.
+          </p>
+          <p>
+            Daí a distinção clássica entre os <strong>preâmbulos da fé</strong> (existência de Deus, sua unidade,
+            a espiritualidade e imortalidade da alma, a credibilidade dos sinais da Revelação) e os
+            <strong> mistérios da fé</strong> propriamente ditos. Milagres e profecias são apresentados pela
+            teologia fundamental como <em>sinais de credibilidade</em> — motivos que tornam a fé razoável — nunca
+            como demonstrações que a substituam (CIC §§ 156, 159; DV 5).
+          </p>
+
+          <h3>Desenvolvimento homogêneo da doutrina</h3>
+          <p>
+            A Igreja não recebe novas revelações, mas cresce na compreensão do depósito recebido. <em>Dei Verbum</em>
+            8 ensina que <em>“esta Tradição, que vem dos Apóstolos, progride na Igreja sob a assistência do
+            Espírito Santo”</em>, pela contemplação e estudo dos fiéis, pela inteligência espiritual das coisas
+            divinas e pela pregação dos bispos. São Vicente de Lérins já formulara o critério: crescimento
+            <em> in eodem sensu eodemque sententia</em> — no mesmo sentido e no mesmo juízo
+            (<em>Commonitorium</em> XXIII). O beato John Henry Newman, no <em>Ensaio sobre o Desenvolvimento da
+            Doutrina Cristã</em> (1845), propôs sete notas para distinguir desenvolvimento legítimo de corrupção
+            — entre elas a preservação do tipo, a continuidade dos princípios e o poder de assimilação.
+          </p>
         </Prose>
+
+        <NotaConfiabilidade nivel="oficial">
+          As definições citadas nesta seção — a possibilidade do conhecimento natural de Deus, a obediência da fé
+          e a inspiração da Escritura — são ensino magisterial definido (Vaticano I, <em>Dei Filius</em>;
+          Vaticano II, <em>Dei Verbum</em>). As sete notas de Newman, por sua vez, são contribuição teológica
+          recebida com estima, não definição dogmática.
+        </NotaConfiabilidade>
+
+        <Sources
+          items={[
+            { label: "Catecismo da Igreja Católica", ref: "§§ 26-49 (capacidade de Deus), 50-141 (Revelação), 142-184 (a resposta da fé)" },
+            { label: "Concílio Vaticano II, Dei Verbum (18.11.1965)", ref: "nn. 2-10 (Revelação, Tradição, Escritura, Magistério)" },
+            { label: "Concílio Vaticano I, Dei Filius (24.04.1870)", ref: "capp. 2-4; DH 3004-3020, 3026-3043" },
+            { label: "São João Paulo II, Encíclica Fides et Ratio (14.09.1998)", ref: "nn. 1, 9, 43-48 (fé, razão e filosofia)" },
+            { label: "São Vicente de Lérins, Commonitorium (c. 434)", ref: "cap. XXIII (progresso homogêneo da doutrina)" },
+            { label: "J. H. Newman, An Essay on the Development of Christian Doctrine (1845)", ref: "as sete notas do desenvolvimento legítimo" },
+          ]}
+        />
       </Section>
+
 
       <Pullquote cite="São Tomás de Aquino, Summa Theologiae II-II, q.2, a.9">
         Crer é um ato do intelecto que assente à verdade divina por imperativo da vontade movida por Deus mediante a graça.
