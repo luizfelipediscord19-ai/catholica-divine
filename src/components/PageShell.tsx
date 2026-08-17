@@ -195,13 +195,19 @@ export function Sources({ items }: { items: { label: string; ref: string }[] }) 
 
 export function Pullquote({ children, cite }: { children: ReactNode; cite?: string }) {
   return (
-    <figure className="my-[var(--space-lg)] w-full border-y border-gold/25 py-[var(--space-sm)] text-center">
-      <blockquote className="font-display italic leading-snug text-foreground text-[length:var(--step-2)]">
+    <figure className="relative my-[var(--space-lg)] w-full border-y border-gold/25 py-[var(--space-md)] text-center">
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-3 left-1/2 -translate-x-1/2 bg-background px-3 font-display text-[length:var(--step-3)] leading-none text-gold/45"
+      >
+        ❞
+      </span>
+      <blockquote className="measure mx-auto font-display text-[length:var(--step-3)] italic leading-[1.32] tracking-[-0.006em] text-foreground/95">
         “{children}”
       </blockquote>
 
       {cite ? (
-        <figcaption className="mt-4 kicker">
+        <figcaption className="mt-[var(--space-xs)] kicker">
           {cite}
         </figcaption>
       ) : null}
