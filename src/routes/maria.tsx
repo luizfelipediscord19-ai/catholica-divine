@@ -22,6 +22,9 @@ export const Route = createFileRoute("/maria")({
 
 const TOC = [
   { id: "introducao", label: "Maria na economia da salvação" },
+  { id: "escrituras", label: "Maria nas Escrituras" },
+  { id: "patristica", label: "Os Padres: a nova Eva" },
+
   { id: "dogmas", label: "Os quatro dogmas marianos" },
   { id: "theotokos", label: "Maternidade Divina (431)" },
   { id: "virgindade", label: "Virgindade Perpétua (Sínodo de Latrão, 649)" },
