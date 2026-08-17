@@ -98,6 +98,36 @@ function Page() {
             </Pullquote>
           </section>
 
+          <section id="domingo" className="scroll-mt-24">
+            <h3>O Domingo, fundamento e núcleo de todo o ano</h3>
+            <p>
+              <em>“Pela tradição apostólica, que tem origem no próprio dia da Ressurreição de Cristo, a Igreja
+              celebra o Mistério Pascal a cada oitavo dia, que se chama com razão dia do Senhor ou
+              domingo”</em> (<em>Sacrosanctum Concilium</em> 106<FnRef n="sc" />). As <em>Normas Universais</em>
+              precisam que o domingo <em>deve ser tido como a festa primordial</em>, à qual só cedem as
+              solenidades e as festas do Senhor (nn. 4–5)<FnRef n="normas" />. O Catecismo desenvolve o tema em
+              <em> CIC</em> §§ 1166–1167 e 2174–2188<FnRef n="cic" />; São João Paulo II dedicou-lhe a Carta
+              Apostólica <em>Dies Domini</em> (1998)<FnRef n="dies" />, que o descreve como <em>dies Domini</em>
+              (da criação), <em>dies Christi</em> (da Ressurreição), <em>dies Ecclesiae</em> (da assembleia
+              eucarística), <em>dies hominis</em> (da alegria e do descanso) e <em>dies dierum</em>.
+            </p>
+            <p>
+              O que a liturgia celebra não é a lembrança de fatos passados, mas o <strong>memorial</strong>
+              (<em>anámnesis</em>) do único Mistério Pascal, que se torna presente e operante para os fiéis de
+              cada tempo (<em>SC</em> 102; <em>CIC</em> §§ 1104, 1163–1165). Daí a lógica do ano: não um
+              calendário de aniversários, mas a pedagogia pela qual a Igreja conduz os batizados a
+              <em> viverem</em> o que celebram.
+            </p>
+            <p>
+              Junto do <em>tempo</em> (ciclo temporal) corre o <em>santoral</em> (ciclo santoral). Nas memórias
+              dos mártires e santos, ensina o Concílio, a Igreja <em>proclama o Mistério Pascal naqueles que
+              sofreram e foram glorificados com Cristo</em>, propõe os seus exemplos e implora os seus
+              benefícios (<em>SC</em> 104). O culto dos santos é, portanto, cristocêntrico: honra a graça de
+              Deus vencendo neles.
+            </p>
+          </section>
+
+
           <section id="cores" className="scroll-mt-24">
             <h3>Cores litúrgicas</h3>
             <p>
