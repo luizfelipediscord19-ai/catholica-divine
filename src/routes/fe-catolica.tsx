@@ -145,7 +145,17 @@ function Page() {
             </ContentCard>
           ))}
         </CardGrid>
+
+        <Sources
+          items={[
+            { label: "Catecismo da Igreja Católica, Prólogo", ref: "§§ 13-17 (a estrutura quaternária)" },
+            { label: "São João Paulo II, Fidei Depositum (11.10.1992)", ref: "nn. II-IV (plano e autoridade do CIC)" },
+            { label: "Catecismo Romano (1566)", ref: "modelo histórico das quatro partes" },
+            { label: "Bento XVI, Motu proprio de promulgação do Compêndio (28.06.2005)", ref: "síntese em perguntas e respostas" },
+          ]}
+        />
       </Section>
+
 
       <Section kicker="Símbolo da Fé" title="O Credo Niceno-Constantinopolitano">
         <Prose>
