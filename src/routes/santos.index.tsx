@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import vitral from "@/assets/vitral.jpg";
+import gloriaSantos from "@/assets/santos-gloria.jpg";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { PageHero, Section, CardGrid, ContentCard } from "../components/PageShell";
 import { SANTOS_LISTA } from "@/lib/santos-lista";
@@ -118,7 +118,7 @@ function Page() {
         eyebrow="Communio Sanctorum"
         title="Os Santos da Igreja"
         intro="As testemunhas vivas do Evangelho. Clique em qualquer santo para abrir a biografia e a imagem diretamente nesta página, sem recarregamento."
-      image={vitral}
+      image={gloriaSantos}
       />
 
       <Section kicker="Galeria dos santos" title="Os amigos de Deus">
