@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero, Section, CardGrid, ContentCard, Prose, Sources, Pullquote } from "../components/PageShell";
 import { NotaConfiabilidade } from "../components/SeloConfiabilidade";
 import { NOVENAS } from "../lib/data/devocoes/novenas";
+import velas from "@/assets/velas.jpg";
 
 export const Route = createFileRoute("/oracoes/novenas")({
   head: () => ({
@@ -30,6 +31,7 @@ function Page() {
   return (
     <div>
       <PageHero
+        image={velas}
         eyebrow="Novendialia"
         title="Novenas"
         intro="Nove dias de oração perseverante, à imagem do Cenáculo: Maria e os Apóstolos unânimes na oração entre a Ascensão e Pentecostes (At 1,14)."

@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero, Section, CardGrid, ContentCard, Prose, Sources, Pullquote } from "../components/PageShell";
 import { NotaConfiabilidade } from "../components/SeloConfiabilidade";
 import { Relacionados } from "../components/Relacionados";
+import cristo from "@/assets/cristo.jpg";
 
 
 export const Route = createFileRoute("/oracoes/terco-misericordia")({
@@ -36,6 +37,7 @@ function Page() {
   return (
     <div>
       <PageHero
+        image={cristo}
         eyebrow="Misericordia"
         title="Terço da Divina Misericórdia"
         intro="Oração breve, cristocêntrica e reparadora, difundida a partir do Diário de Santa Faustina Kowalska (1905–1938). Reza-se em qualquer hora, e de modo particular às 15h — a Hora da Misericórdia."

@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { PageHero, Section } from "../components/PageShell";
 import { NOVENAS, type Novena } from "../lib/data/devocoes/novenas";
+import velas from "@/assets/velas.jpg";
 
 
 

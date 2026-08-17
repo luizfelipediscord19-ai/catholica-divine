@@ -4,6 +4,7 @@ import { PageHero, Section, Prose, Sources, Pullquote, CardGrid, ContentCard } f
 import { NotaConfiabilidade } from "../components/SeloConfiabilidade";
 import { ESTACOES } from "../lib/data/devocoes/viasacra";
 import { Relacionados } from "../components/Relacionados";
+import cristo from "@/assets/cristo.jpg";
 
 
 export const Route = createFileRoute("/oracoes/via-sacra")({
@@ -45,6 +46,7 @@ function Page() {
   return (
     <div>
       <PageHero
+        image={cristo}
         eyebrow="Crux"
         title="Via-Sacra"
         intro="Acompanhe os passos de Cristo até o Calvário em catorze estações. Tradição firmada por São Leonardo de Porto Maurício no século XVIII."
