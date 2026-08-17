@@ -17,7 +17,7 @@ export function PageHero({
   return (
     <section data-leitura-oculto className="relative overflow-hidden bg-deep">
       {image ? (
-        <div className="absolute inset-0 scale-105 opacity-40" aria-hidden>
+        <div className="absolute inset-0 scale-105 opacity-45" aria-hidden>
           <ImagemOtimizada
             src={image}
             alt=""
@@ -25,7 +25,7 @@ export function PageHero({
             height={1024}
             prioridade
             sizes="100vw"
-            className="size-full object-cover"
+            className="art-plate size-full object-cover"
           />
         </div>
       ) : null}
