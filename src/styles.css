@@ -549,11 +549,13 @@
 @utility kicker {
   display: block;
   font-size: 0.6875rem;
-  line-height: 1.4;
+  line-height: 1.45;
   font-weight: 600;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
+  word-spacing: 0.04em;
   text-transform: uppercase;
-  color: color-mix(in oklab, var(--gold) 82%, transparent);
+  font-variant-numeric: tabular-nums;
+  color: color-mix(in oklab, var(--gold) 86%, transparent);
 }
 
 /* Título de página (H1) */
