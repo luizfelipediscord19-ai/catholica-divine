@@ -156,9 +156,9 @@ export function Prose({ children }: { children: ReactNode }) {
         "space-y-[var(--space-sm)] [&_section]:space-y-[var(--space-sm)] [&_section+section]:mt-[var(--space-lg)] [&_section]:scroll-mt-28",
         "[&_p]:max-w-none",
         // headings
-        "[&_h2]:font-display [&_h2]:text-[length:var(--step-4)] [&_h2]:text-foreground [&_h2]:tracking-tight [&_h2]:leading-[1.15] [&_h2]:mt-[var(--space-lg)] [&_h2]:mb-[var(--space-xs)]",
-        "[&_h3]:font-display [&_h3]:text-[length:var(--step-3)] [&_h3]:text-foreground [&_h3]:tracking-tight [&_h3]:leading-[1.2] [&_h3]:mt-[var(--space-md)] [&_h3]:mb-[var(--space-xs)] [&_section>h3:first-child]:mt-0",
-        "[&_h4]:uppercase [&_h4]:tracking-[0.16em] [&_h4]:text-step--2 [&_h4]:text-gold [&_h4]:font-semibold [&_h4]:mt-[var(--space-md)] [&_h4]:mb-[var(--space-2xs)]",
+        "[&_h2]:font-display [&_h2]:text-[length:var(--step-3)] [&_h2]:text-foreground [&_h2]:tracking-tight [&_h2]:leading-[1.12] [&_h2]:mt-[var(--space-lg)] [&_h2]:mb-[var(--space-xs)]",
+        "[&_h3]:font-display [&_h3]:text-[length:var(--step-2)] [&_h3]:text-foreground [&_h3]:tracking-tight [&_h3]:leading-[1.2] [&_h3]:mt-[var(--space-md)] [&_h3]:mb-[var(--space-xs)] [&_section>h3:first-child]:mt-0",
+        "[&_h4]:uppercase [&_h4]:tracking-[0.18em] [&_h4]:text-step--2 [&_h4]:text-gold [&_h4]:font-semibold [&_h4]:mt-[var(--space-md)] [&_h4]:mb-[var(--space-2xs)]",
         // quotes (Pullquote keeps its own look via .font-display)
         "[&_blockquote:not(.font-display)]:border-l [&_blockquote:not(.font-display)]:border-gold/40 [&_blockquote:not(.font-display)]:pl-[var(--space-sm)] [&_blockquote:not(.font-display)]:py-2 [&_blockquote:not(.font-display)]:italic [&_blockquote:not(.font-display)]:text-foreground/70",
         // lists
@@ -195,13 +195,19 @@ export function Sources({ items }: { items: { label: string; ref: string }[] }) 
 
 export function Pullquote({ children, cite }: { children: ReactNode; cite?: string }) {
   return (
-    <figure className="my-[var(--space-lg)] w-full border-y border-gold/25 py-[var(--space-sm)] text-center">
-      <blockquote className="font-display italic leading-snug text-foreground text-[length:var(--step-2)]">
+    <figure className="relative my-[var(--space-lg)] w-full border-y border-gold/25 py-[var(--space-md)] text-center">
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-3 left-1/2 -translate-x-1/2 bg-background px-3 font-display text-[length:var(--step-3)] leading-none text-gold/45"
+      >
+        ❞
+      </span>
+      <blockquote className="measure mx-auto font-display text-[length:var(--step-3)] italic leading-[1.32] tracking-[-0.006em] text-foreground/95">
         “{children}”
       </blockquote>
 
       {cite ? (
-        <figcaption className="mt-4 kicker">
+        <figcaption className="mt-[var(--space-xs)] kicker">
           {cite}
         </figcaption>
       ) : null}
