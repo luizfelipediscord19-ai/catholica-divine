@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { GraduationCap, ArrowRight } from "lucide-react";
 import { TRILHAS } from "@/lib/data/trilhas";
 import { lerProgresso, percentual, type ProgressoTrilhas } from "@/lib/trilhas/progresso";
+import { PageHero } from "@/components/PageShell";
+import biblioteca from "@/assets/biblioteca.jpg";
 
 const BASE = "https://portalcatolico.vercel.app";
 const TITULO = "Trilhas de Aprendizado — Formação Católica Passo a Passo";
@@ -39,19 +41,21 @@ function TrilhasIndex() {
   const licaoUltima = trilhaUltima?.licoes.find((l) => l.slug === ultima?.licao);
 
   return (
-    <div className="shell py-block">
-      <p className="kicker">Plataforma de formação</p>
-      <h1 className="mt-3 font-display text-4xl text-paper sm:text-5xl">Trilhas de aprendizado</h1>
-      <p className="mt-5 max-w-2xl text-paper/75 leading-relaxed">
-        Cada trilha é um caminho ordenado de lições. Toda afirmação doutrinal vem acompanhada da
-        fonte: Escritura, Catecismo, Padres da Igreja, concílios e documentos pontifícios.
-      </p>
+    <div>
+      <PageHero
+        image={biblioteca}
+        eyebrow="Plataforma de formação"
+        title="Trilhas de aprendizado"
+        intro="Cada trilha é um caminho ordenado de lições. Toda afirmação doutrinal vem acompanhada da fonte: Escritura, Catecismo, Padres da Igreja, concílios e documentos pontifícios."
+      />
+
+      <div className="shell py-block">
 
       {trilhaUltima && licaoUltima && (
         <Link
           to="/trilhas/$trilha/$licao"
           params={{ trilha: trilhaUltima.slug, licao: licaoUltima.slug }}
-          className="mt-10 flex items-center justify-between gap-4 border border-gold/30 bg-gold/5 p-5 transition-colors hover:border-gold"
+          className="surface-card surface-card-interactive flex items-center justify-between gap-4 border border-gold/30 bg-gold/5 p-5 transition-colors hover:border-gold"
         >
           <span>
             <span className="block kicker">
@@ -66,7 +70,7 @@ function TrilhasIndex() {
         </Link>
       )}
 
-      <div className="mt-12 space-y-6">
+      <div className="mt-[var(--space-lg)] grid gap-[var(--space-sm)] md:grid-cols-2">
         {TRILHAS.map((trilha) => {
           const pct = percentual(trilha.slug, trilha.licoes, progresso);
           return (
@@ -74,7 +78,7 @@ function TrilhasIndex() {
               key={trilha.slug}
               to="/trilhas/$trilha"
               params={{ trilha: trilha.slug }}
-              className="block border border-gold/15 p-6 transition-colors hover:border-gold/50"
+              className="surface-card surface-card-interactive flex h-full flex-col p-card"
             >
               <div className="flex items-center gap-3">
                 <GraduationCap className="size-5 text-gold" aria-hidden="true" />
@@ -83,16 +87,20 @@ function TrilhasIndex() {
                 </span>
               </div>
               <h2 className="mt-3 font-display text-2xl text-paper">{trilha.titulo}</h2>
-              <p className="mt-2 text-sm text-paper/75 leading-relaxed">{trilha.descricao}</p>
-              <div className="mt-4 h-1 w-full bg-paper/10">
+              <p className="mt-2 body-sm text-paper/75">{trilha.descricao}</p>
+              <div className="mt-auto pt-6 h-1 h-1 w-full bg-paper/10">
                 <div className="h-1 bg-gold" style={{ width: `${pct}%` }} />
               </div>
-              <p className="mt-2 label-btn text-paper/55">
-                {pct}% concluído
+              <p className="mt-2 flex items-center justify-between label-btn text-paper/55">
+                <span>{pct}% concluído</span>
+                <span className="inline-flex items-center gap-1.5 text-gold">
+                  Abrir trilha <ArrowRight className="size-3.5" aria-hidden="true" />
+                </span>
               </p>
             </Link>
           );
         })}
+      </div>
       </div>
     </div>
   );
