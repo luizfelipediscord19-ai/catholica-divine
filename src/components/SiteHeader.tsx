@@ -6,7 +6,6 @@ import { SinoNotificacoes } from "@/components/portal/SinoNotificacoes";
 import { useCallback, useEffect, useState } from "react";
 
 import { BuscaGlobal, useAtalhoBusca } from "@/components/BuscaGlobal";
-import { TemaToggle } from "@/components/TemaToggle";
 
 /** Menu completo, agrupado por blocos temáticos (usado no painel do menu). */
 const GRUPOS: { titulo: string; itens: { to: string; label: string }[] }[] = [
@@ -60,13 +59,14 @@ const GRUPOS: { titulo: string; itens: { to: string; label: string }[] }[] = [
 ];
 
 /** Navegação principal: poucos destinos, sempre os mesmos, um só estilo. */
-const NAV_PRINCIPAL: { to: string; label: string }[] = [
+const NAV_PRINCIPAL: { to: string; label: string; amplo?: boolean }[] = [
   { to: "/estudar", label: "Estudar" },
   { to: "/biblia", label: "Bíblia" },
   { to: "/oracoes", label: "Orações" },
   { to: "/santos", label: "Santos" },
-  { to: "/noticias", label: "Notícias" },
-  { to: "/forum", label: "Fórum" },
+  // Só aparecem quando há folga real de largura; no menu completo sempre estão.
+  { to: "/noticias", label: "Notícias", amplo: true },
+  { to: "/forum", label: "Fórum", amplo: true },
 ];
 
 const ICONE_REDONDO =
@@ -122,7 +122,7 @@ export function SiteHeader() {
 
         <nav
           aria-label="Navegação principal"
-          className="hidden min-w-0 flex-1 items-center gap-0.5 overflow-hidden whitespace-nowrap lg:ml-3 lg:flex xl:ml-6 xl:gap-1"
+          className="hidden min-w-0 items-center gap-0.5 whitespace-nowrap lg:ml-2 lg:flex xl:ml-5 xl:gap-1"
         >
 
           {NAV_PRINCIPAL.map((item) => {
@@ -132,7 +132,7 @@ export function SiteHeader() {
                 key={item.to}
                 to={item.to}
                 aria-current={active ? "page" : undefined}
-                className="nav-link shrink-0"
+                className={`nav-link shrink-0 ${item.amplo ? "hidden 2xl:inline-flex" : ""}`}
               >
                 {item.label}
                 {active ? (
@@ -172,7 +172,6 @@ export function SiteHeader() {
           </button>
 
           <span className="hidden sm:contents">
-            <TemaToggle />
             <SinoNotificacoes />
           </span>
 
@@ -263,9 +262,6 @@ export function SiteHeader() {
                 >
                   <Search className="size-3.5" aria-hidden="true" /> Buscar
                 </button>
-                <span className="sm:hidden">
-                  <TemaToggle />
-                </span>
                 <span className="sm:hidden">
                   <SinoNotificacoes />
                 </span>
