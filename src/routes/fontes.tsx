@@ -1,6 +1,7 @@
+import trento from "@/assets/concilio-trento.jpg";
 import { createFileRoute, Link } from "@tanstack/react-router";
 
-import { PageHero, Section, Prose, CardGrid } from "@/components/PageShell";
+import { PageHero, Section, Prose, CardGrid, Prancha } from "@/components/PageShell";
 import { LegendaConfiabilidade } from "@/components/SeloConfiabilidade";
 import biblioteca from "@/assets/biblioteca.jpg";
 
@@ -102,6 +103,12 @@ function FontesPage() {
         title="Sistema de confiabilidade"
       >
         <Prose>
+
+        <Prancha
+          image={trento}
+          alt="Bispos reunidos em sessão conciliar no século XVI."
+          legenda="Concílios, encíclicas e catecismos são as fontes verificáveis que sustentam cada página deste portal — sempre com referência ao texto original."
+        />
           <p>
             Nem toda informação católica tem o mesmo peso: um dogma não é uma disciplina, e uma
             tradição hagiográfica não é um fato historicamente documentado. Por isso o portal
