@@ -49,7 +49,7 @@
   --color-info: var(--info);
   --color-info-foreground: var(--info-foreground);
 
-  --font-display: "Libre Baskerville", "Cormorant Garamond", Georgia, serif;
+  --font-display: "EB Garamond", "Libre Baskerville", Georgia, serif;
   --font-sans: "IBM Plex Sans", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
