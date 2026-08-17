@@ -269,6 +269,70 @@ function Page() {
               Niceia (325)<FnRef n="nicea" />, o primeiro domingo após a primeira lua cheia da primavera boreal.
             </p>
           </section>
+
+          <section id="graus" className="scroll-mt-24">
+            <h3>Graus das celebrações: solenidade, festa e memória</h3>
+            <p>
+              As <em>Normas Universais</em> (nn. 10–15)<FnRef n="normas" /> classificam as celebrações em três
+              graus, que determinam textos, leituras e elementos rituais:
+            </p>
+            <ul>
+              <li><strong>Solenidade</strong> — grau máximo; começa nas I Vésperas do dia anterior, tem <em>Glória</em>, <em>Credo</em> e, em regra, três leituras (ex.: Natal, Páscoa, Pentecostes, Imaculada Conceição).</li>
+              <li><strong>Festa</strong> — celebra-se no limite do dia, com <em>Glória</em> mas sem <em>Credo</em> (ex.: Apresentação do Senhor, São Pedro e São Paulo em muitos calendários, Evangelistas).</li>
+              <li><strong>Memória</strong> — <em>obrigatória</em> ou <em>facultativa</em>; integra-se no ofício e na missa do dia sem <em>Glória</em> nem <em>Credo</em> (ex.: São Bento, memória obrigatória; Santa Mônica).</li>
+            </ul>
+            <p>
+              A <strong>tabela dos dias litúrgicos</strong> (Normas Universais, n. 59) fixa a precedência
+              quando duas celebrações coincidem: o Tríduo Pascal e os domingos do Advento, Quaresma e Páscoa
+              precedem qualquer festa; solenidades impedidas são transferidas segundo as regras dos nn. 5 e 60.
+              Além do calendário romano geral, cada nação, diocese e família religiosa possui
+              <em> calendário próprio</em>, aprovado pela Sé Apostólica (nn. 48–55).
+            </p>
+          </section>
+
+          <section id="horas" className="scroll-mt-24">
+            <h3>A Liturgia das Horas: o dia santificado</h3>
+            <p>
+              O Ano Litúrgico desdobra-se também no ritmo do dia. A <em>Liturgia das Horas</em> é
+              <em> a oração pública da Igreja</em>, pela qual <em>o curso inteiro do dia e da noite é
+              consagrado pelo louvor divino</em> (<em>Sacrosanctum Concilium</em> 84<FnRef n="sc" />;
+              <em> CIC</em> §§ 1174–1178). A reforma pós-conciliar reorganizou o Ofício Divino na
+              <em> Liturgia Horarum</em> (1971), com a <em>Instrução Geral sobre a Liturgia das
+              Horas</em><FnRef n="iglh" />:
+            </p>
+            <ul>
+              <li><strong>Ofício de Leituras</strong> — Escritura e um texto patrístico ou hagiográfico; pode ser rezado a qualquer hora.</li>
+              <li><strong>Laudes</strong> e <strong>Vésperas</strong> — as <em>duas horas cardeais</em> do Ofício (IGLH 37), respectivamente a oração da manhã e da tarde.</li>
+              <li><strong>Hora Média</strong> — Terça, Sexta e Noa, para santificar o trabalho do dia.</li>
+              <li><strong>Completas</strong> — última oração da noite, encerrada com uma antífona mariana.</li>
+            </ul>
+            <p>
+              O saltério distribui-se em quatro semanas; os clérigos e religiosos de voto têm obrigação
+              própria (cân. 276 §2, 3.º; cân. 1174), e o Concílio recomenda vivamente que também os leigos a
+              rezem, sozinhos ou em comum (<em>SC</em> 100).
+            </p>
+          </section>
+
+          <section id="brasil" className="scroll-mt-24">
+            <h3>Calendário próprio do Brasil</h3>
+            <p>
+              O calendário romano geral é completado no Brasil pelo calendário próprio aprovado para a
+              Conferência Nacional dos Bispos do Brasil, que inclui celebrações como:
+            </p>
+            <ul>
+              <li><strong>Nossa Senhora Aparecida</strong> — 12 de outubro, solenidade e Padroeira do Brasil (Pio XI, 1930).</li>
+              <li><strong>Santos Mártires do Brasil</strong> — 3 de outubro (André de Soveral, Ambrósio Francisco Ferro e companheiros, canonizados em 2017).</li>
+              <li><strong>São José de Anchieta</strong> — 9 de junho, canonizado equipolentemente por Francisco em 2014.</li>
+              <li><strong>Santa Dulce dos Pobres</strong> — 13 de agosto, canonizada por Francisco em 13 de outubro de 2019.</li>
+              <li><strong>Frei Galvão</strong> — 11 de novembro, primeiro santo nascido no Brasil, canonizado por Bento XVI em 2007.</li>
+            </ul>
+            <p>
+              Em muitas dioceses brasileiras, a <strong>Ascensão</strong> e o <strong>Corpus Christi</strong>
+              observam datas transferidas ou dias de precepto próprios; a norma concreta é sempre a do
+              <em> Diretório Litúrgico anual</em> da CNBB e do calendário diocesano<FnRef n="cnbb-cores" />.
+            </p>
+          </section>
+
         </Prose>
 
         {/* Mapa interativo do Ano Litúrgico */}
