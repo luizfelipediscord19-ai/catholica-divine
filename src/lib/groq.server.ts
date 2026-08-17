@@ -12,4 +12,5 @@ export function createGroqProvider(apiKey: string) {
   });
 }
 
-export const GROQ_MODEL = "llama-3.3-70b-versatile";
+// llama-3.3-70b-versatile foi desativado pela Groq; gpt-oss-120b é o substituto atual.
+export const GROQ_MODEL = "openai/gpt-oss-120b";

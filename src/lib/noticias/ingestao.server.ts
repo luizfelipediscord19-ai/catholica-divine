@@ -106,19 +106,29 @@ async function redigir(item: ItemFeed, chave: string): Promise<Redacao | null> {
     `Conteúdo do feed: ${item.resumo || "(sem resumo; use apenas o título)"}`,
   ].join("\n");
 
-  try {
-    const { text } = await generateText({
-      model: createGroqProvider(chave)(GROQ_MODEL),
-      system: INSTRUCAO,
-      prompt: material,
-      temperature: 0.3,
-      maxOutputTokens: 1400,
-    });
-    return extrairJson(text);
-  } catch (erro) {
-    console.error("[noticias:redigir]", item.titulo, erro);
-    return null;
+  // Duas tentativas: o modelo às vezes devolve JSON truncado ou raciocínio solto.
+  for (let tentativa = 1; tentativa <= 2; tentativa += 1) {
+    try {
+      const { text } = await generateText({
+        model: createGroqProvider(chave)(GROQ_MODEL),
+        system: INSTRUCAO,
+        prompt: material,
+        temperature: tentativa === 1 ? 0.3 : 0.15,
+        maxOutputTokens: 2600,
+      });
+      const redacao = extrairJson(text);
+      if (redacao) return redacao;
+      console.error(
+        "[noticias:redigir] JSON inválido",
+        item.titulo,
+        `tentativa ${tentativa}`,
+        text.slice(0, 300),
+      );
+    } catch (erro) {
+      console.error("[noticias:redigir]", item.titulo, `tentativa ${tentativa}`, erro);
+    }
   }
+  return null;
 }
 
 export interface ResultadoIngestao {
