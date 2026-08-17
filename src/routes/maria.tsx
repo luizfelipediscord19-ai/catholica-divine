@@ -22,6 +22,9 @@ export const Route = createFileRoute("/maria")({
 
 const TOC = [
   { id: "introducao", label: "Maria na economia da salvação" },
+  { id: "escrituras", label: "Maria nas Escrituras" },
+  { id: "patristica", label: "Os Padres: a nova Eva" },
+
   { id: "dogmas", label: "Os quatro dogmas marianos" },
   { id: "theotokos", label: "Maternidade Divina (431)" },
   { id: "virgindade", label: "Virgindade Perpétua (Sínodo de Latrão, 649)" },
@@ -90,6 +93,60 @@ function Page() {
               nascessem na Igreja os fiéis, que são membros daquela Cabeça.
             </Pullquote>
           </section>
+
+          <section id="escrituras" className="scroll-mt-24">
+          <MarcarEstudo tipo="maria" chave="escrituras" />
+            <h3>Maria nas Escrituras</h3>
+            <p>
+              O Novo Testamento fala de Maria com sobriedade, mas em momentos decisivos. Lucas narra a
+              <strong> Anunciação</strong> (Lc 1,26-38), em que o <em>“faça-se em mim segundo a tua palavra”</em>
+              inaugura a obediência da fé; a <strong>Visitação</strong> e o <em>Magnificat</em> (Lc 1,39-56), o
+              cântico dos pobres de Deus; o <strong>Natal</strong> e a apresentação no Templo, com a profecia da
+              espada de Simeão (Lc 2,35). João apresenta-a em <strong>Caná</strong> (Jo 2,1-11), onde intercede e
+              remete os discípulos a Cristo (<em>“fazei tudo o que ele vos disser”</em>), e junto à
+              <strong> Cruz</strong> (Jo 19,25-27), onde é entregue como mãe ao discípulo amado — texto que a
+              Tradição lê como fundamento da maternidade espiritual de Maria sobre a Igreja. Atos 1,14 mostra-a
+              em oração com os Apóstolos à espera do Espírito, e Ap 12 apresenta a <em>Mulher</em> cujo sentido
+              primeiro é eclesial e que a tradição aplica também à Virgem.
+            </p>
+            <p>
+              No Antigo Testamento, a leitura tipológica reconhece prefigurações: o <em>protoevangelho</em> de
+              Gn 3,15, o <em>“eis que a virgem conceberá”</em> de Is 7,14 lido pelo Novo Testamento à luz da
+              tradição grega (Mt 1,22-23), a Arca da Aliança, a Filha de Sião de Sf 3,14-17 e a rainha-mãe
+              (<em>gebirah</em>) da corte davídica (1Rs 2,19). São figuras que iluminam o mistério; não
+              substituem o sentido literal dos textos.
+            </p>
+            <NotaConfiabilidade nivel="teologia">
+              A leitura mariana de Gn 3,15 e de Ap 12 é consagrada na liturgia e no magistério
+              (<em>LG</em> 55; <em>CIC</em> §§ 410-411, 501), mas pertence ao sentido espiritual da Escritura:
+              é interpretação teológica autorizada, não definição dogmática do sentido literal desses versículos.
+            </NotaConfiabilidade>
+          </section>
+
+          <section id="patristica" className="scroll-mt-24">
+          <MarcarEstudo tipo="maria" chave="patristica" />
+            <h3>Os Padres: Maria, a nova Eva</h3>
+            <p>
+              Já no século II, Santo Ireneu de Lião formula o paralelo que atravessará toda a tradição:
+              <em> “o nó da desobediência de Eva foi desfeito pela obediência de Maria”</em>
+              (<em>Adversus Haereses</em> III, 22, 4) — texto retomado por <em>Lumen Gentium</em> 56
+              <FnRef n="lg8" />. São Justino (<em>Diálogo com Trifão</em> 100) desenvolve a mesma antítese
+              Eva/Maria, e Tertuliano insiste na realidade da carne recebida da Virgem, contra o docetismo.
+            </p>
+            <p>
+              O testemunho litúrgico é igualmente antigo: o <em>Sub tuum praesidium</em> (“À vossa proteção
+              recorremos, Santa Mãe de Deus”), conservado num papiro grego habitualmente datado entre os
+              séculos III e IV, atesta que já então se rezava a Maria com o título de <em>Theotókos</em>. Santo
+              Ambrósio a chama <em>tipo da Igreja</em> na fé, na caridade e na perfeita união com Cristo, tema
+              que o Vaticano II recolherá em <em>LG</em> 63-65.
+            </p>
+            <NotaConfiabilidade nivel="historia">
+              A datação do papiro do <em>Sub tuum praesidium</em> é discutida entre especialistas (propostas
+              variam do séc. III ao séc. V). O que é seguro é a antiguidade da invocação da Virgem como Mãe de
+              Deus, anterior ao Concílio de Éfeso (431).
+            </NotaConfiabilidade>
+          </section>
+
 
           <section id="dogmas" className="scroll-mt-24">
           <MarcarEstudo tipo="maria" chave="dogmas" />

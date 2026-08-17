@@ -23,6 +23,7 @@ export const Route = createFileRoute("/calendario-liturgico")({
 
 const TOC = [
   { id: "introducao", label: "O Ano Litúrgico" },
+  { id: "domingo", label: "O Domingo e o Mistério Pascal" },
   { id: "cores", label: "Cores litúrgicas" },
   { id: "estrutura", label: "Estrutura do ano" },
   { id: "advento", label: "I. Advento" },
@@ -34,6 +35,10 @@ const TOC = [
   { id: "pascoa", label: "VII. Tempo Pascal" },
   { id: "comum-2", label: "VIII. Tempo Comum (II)" },
   { id: "solenidades", label: "Solenidades do Senhor" },
+  { id: "graus", label: "Graus das celebrações" },
+  { id: "horas", label: "Liturgia das Horas" },
+  { id: "brasil", label: "Calendário próprio do Brasil" },
+
   { id: "mapa", label: "Mapa do Ano (interativo)" },
   { id: "versiculo", label: "Versículo do dia" },
   { id: "notas", label: "Notas e fontes" },
@@ -49,7 +54,10 @@ const FOOTNOTES = [
   { id: "directorium", label: "Diretório sobre piedade popular e liturgia (Dicastério para o Culto Divino, 2002)", ref: "Princípios e orientações" },
   { id: "cic", label: "Catecismo da Igreja Católica", ref: "§§ 1163–1173 — O Ano Litúrgico" },
   { id: "nicea", label: "Concílio de Niceia (325) — fixação da data da Páscoa", ref: "primeiro domingo após a primeira lua cheia da primavera boreal" },
+  { id: "iglh", label: "Instrução Geral sobre a Liturgia das Horas (Institutio Generalis de Liturgia Horarum, 1971)", ref: "nn. 10–37, 100–109" },
+  { id: "dies", label: "São João Paulo II, Carta Apostólica Dies Domini (31.05.1998)", ref: "sobre a santificação do domingo" },
   { id: "cnbb-cores", label: "CNBB, Manual de Liturgia (orientações pastorais)", ref: "uso das cores no Brasil" },
+
 ];
 
 function Page() {
@@ -92,6 +100,36 @@ function Page() {
               do seu Senhor, de modo a torná-los como que presentes em todo o tempo.
             </Pullquote>
           </section>
+
+          <section id="domingo" className="scroll-mt-24">
+            <h3>O Domingo, fundamento e núcleo de todo o ano</h3>
+            <p>
+              <em>“Pela tradição apostólica, que tem origem no próprio dia da Ressurreição de Cristo, a Igreja
+              celebra o Mistério Pascal a cada oitavo dia, que se chama com razão dia do Senhor ou
+              domingo”</em> (<em>Sacrosanctum Concilium</em> 106<FnRef n="sc" />). As <em>Normas Universais</em>
+              precisam que o domingo <em>deve ser tido como a festa primordial</em>, à qual só cedem as
+              solenidades e as festas do Senhor (nn. 4–5)<FnRef n="normas" />. O Catecismo desenvolve o tema em
+              <em> CIC</em> §§ 1166–1167 e 2174–2188<FnRef n="cic" />; São João Paulo II dedicou-lhe a Carta
+              Apostólica <em>Dies Domini</em> (1998)<FnRef n="dies" />, que o descreve como <em>dies Domini</em>
+              (da criação), <em>dies Christi</em> (da Ressurreição), <em>dies Ecclesiae</em> (da assembleia
+              eucarística), <em>dies hominis</em> (da alegria e do descanso) e <em>dies dierum</em>.
+            </p>
+            <p>
+              O que a liturgia celebra não é a lembrança de fatos passados, mas o <strong>memorial</strong>
+              (<em>anámnesis</em>) do único Mistério Pascal, que se torna presente e operante para os fiéis de
+              cada tempo (<em>SC</em> 102; <em>CIC</em> §§ 1104, 1163–1165). Daí a lógica do ano: não um
+              calendário de aniversários, mas a pedagogia pela qual a Igreja conduz os batizados a
+              <em> viverem</em> o que celebram.
+            </p>
+            <p>
+              Junto do <em>tempo</em> (ciclo temporal) corre o <em>santoral</em> (ciclo santoral). Nas memórias
+              dos mártires e santos, ensina o Concílio, a Igreja <em>proclama o Mistério Pascal naqueles que
+              sofreram e foram glorificados com Cristo</em>, propõe os seus exemplos e implora os seus
+              benefícios (<em>SC</em> 104). O culto dos santos é, portanto, cristocêntrico: honra a graça de
+              Deus vencendo neles.
+            </p>
+          </section>
+
 
           <section id="cores" className="scroll-mt-24">
             <h3>Cores litúrgicas</h3>
@@ -264,6 +302,70 @@ function Page() {
               Niceia (325)<FnRef n="nicea" />, o primeiro domingo após a primeira lua cheia da primavera boreal.
             </p>
           </section>
+
+          <section id="graus" className="scroll-mt-24">
+            <h3>Graus das celebrações: solenidade, festa e memória</h3>
+            <p>
+              As <em>Normas Universais</em> (nn. 10–15)<FnRef n="normas" /> classificam as celebrações em três
+              graus, que determinam textos, leituras e elementos rituais:
+            </p>
+            <ul>
+              <li><strong>Solenidade</strong> — grau máximo; começa nas I Vésperas do dia anterior, tem <em>Glória</em>, <em>Credo</em> e, em regra, três leituras (ex.: Natal, Páscoa, Pentecostes, Imaculada Conceição).</li>
+              <li><strong>Festa</strong> — celebra-se no limite do dia, com <em>Glória</em> mas sem <em>Credo</em> (ex.: Apresentação do Senhor, São Pedro e São Paulo em muitos calendários, Evangelistas).</li>
+              <li><strong>Memória</strong> — <em>obrigatória</em> ou <em>facultativa</em>; integra-se no ofício e na missa do dia sem <em>Glória</em> nem <em>Credo</em> (ex.: São Bento, memória obrigatória; Santa Mônica).</li>
+            </ul>
+            <p>
+              A <strong>tabela dos dias litúrgicos</strong> (Normas Universais, n. 59) fixa a precedência
+              quando duas celebrações coincidem: o Tríduo Pascal e os domingos do Advento, Quaresma e Páscoa
+              precedem qualquer festa; solenidades impedidas são transferidas segundo as regras dos nn. 5 e 60.
+              Além do calendário romano geral, cada nação, diocese e família religiosa possui
+              <em> calendário próprio</em>, aprovado pela Sé Apostólica (nn. 48–55).
+            </p>
+          </section>
+
+          <section id="horas" className="scroll-mt-24">
+            <h3>A Liturgia das Horas: o dia santificado</h3>
+            <p>
+              O Ano Litúrgico desdobra-se também no ritmo do dia. A <em>Liturgia das Horas</em> é
+              <em> a oração pública da Igreja</em>, pela qual <em>o curso inteiro do dia e da noite é
+              consagrado pelo louvor divino</em> (<em>Sacrosanctum Concilium</em> 84<FnRef n="sc" />;
+              <em> CIC</em> §§ 1174–1178). A reforma pós-conciliar reorganizou o Ofício Divino na
+              <em> Liturgia Horarum</em> (1971), com a <em>Instrução Geral sobre a Liturgia das
+              Horas</em><FnRef n="iglh" />:
+            </p>
+            <ul>
+              <li><strong>Ofício de Leituras</strong> — Escritura e um texto patrístico ou hagiográfico; pode ser rezado a qualquer hora.</li>
+              <li><strong>Laudes</strong> e <strong>Vésperas</strong> — as <em>duas horas cardeais</em> do Ofício (IGLH 37), respectivamente a oração da manhã e da tarde.</li>
+              <li><strong>Hora Média</strong> — Terça, Sexta e Noa, para santificar o trabalho do dia.</li>
+              <li><strong>Completas</strong> — última oração da noite, encerrada com uma antífona mariana.</li>
+            </ul>
+            <p>
+              O saltério distribui-se em quatro semanas; os clérigos e religiosos de voto têm obrigação
+              própria (cân. 276 §2, 3.º; cân. 1174), e o Concílio recomenda vivamente que também os leigos a
+              rezem, sozinhos ou em comum (<em>SC</em> 100).
+            </p>
+          </section>
+
+          <section id="brasil" className="scroll-mt-24">
+            <h3>Calendário próprio do Brasil</h3>
+            <p>
+              O calendário romano geral é completado no Brasil pelo calendário próprio aprovado para a
+              Conferência Nacional dos Bispos do Brasil, que inclui celebrações como:
+            </p>
+            <ul>
+              <li><strong>Nossa Senhora Aparecida</strong> — 12 de outubro, solenidade e Padroeira do Brasil (Pio XI, 1930).</li>
+              <li><strong>Santos Mártires do Brasil</strong> — 3 de outubro (André de Soveral, Ambrósio Francisco Ferro e companheiros, canonizados em 2017).</li>
+              <li><strong>São José de Anchieta</strong> — 9 de junho, canonizado equipolentemente por Francisco em 2014.</li>
+              <li><strong>Santa Dulce dos Pobres</strong> — 13 de agosto, canonizada por Francisco em 13 de outubro de 2019.</li>
+              <li><strong>Frei Galvão</strong> — 11 de novembro, primeiro santo nascido no Brasil, canonizado por Bento XVI em 2007.</li>
+            </ul>
+            <p>
+              Em muitas dioceses brasileiras, a <strong>Ascensão</strong> e o <strong>Corpus Christi</strong>
+              observam datas transferidas ou dias de precepto próprios; a norma concreta é sempre a do
+              <em> Diretório Litúrgico anual</em> da CNBB e do calendário diocesano<FnRef n="cnbb-cores" />.
+            </p>
+          </section>
+
         </Prose>
 
         {/* Mapa interativo do Ano Litúrgico */}
