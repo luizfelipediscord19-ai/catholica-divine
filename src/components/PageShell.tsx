@@ -234,7 +234,7 @@ export function Prancha({
     >
       <div
         className={[
-          "relative overflow-hidden",
+          "art-frame relative overflow-hidden",
           formato === "retrato" ? "aspect-4/5 sm:aspect-3/2" : "aspect-16/10 sm:aspect-2/1",
         ].join(" ")}
       >
@@ -244,7 +244,7 @@ export function Prancha({
           width={1600}
           height={900}
           sizes="(max-width: 768px) 100vw, 70vw"
-          className="size-full object-cover"
+          className="art-plate size-full object-cover"
         />
         <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-background/55 via-transparent to-transparent" />
       </div>
