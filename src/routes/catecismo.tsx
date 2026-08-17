@@ -167,7 +167,15 @@ function Page() {
             </Link>
           ))}
         </div>
+
+        <Sources
+          items={[
+            { label: "Catecismo da Igreja Católica", ref: "§§ 13-17 (as quatro partes e sua unidade orgânica)" },
+            { label: "São João Paulo II, Fidei Depositum (11.10.1992)", ref: "n. III (plano do Catecismo)" },
+          ]}
+        />
       </Section>
+
 
       <Section kicker="Seções principais" title="Mapa detalhado">
         <div className="space-y-4">
