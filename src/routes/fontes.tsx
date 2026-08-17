@@ -103,18 +103,19 @@ function FontesPage() {
         title="Sistema de confiabilidade"
       >
         <Prose>
-
-        <Prancha
-          image={trento}
-          alt="Bispos reunidos em sessão conciliar no século XVI."
-          legenda="Concílios, encíclicas e catecismos são as fontes verificáveis que sustentam cada página deste portal — sempre com referência ao texto original."
-        />
           <p>
             Nem toda informação católica tem o mesmo peso: um dogma não é uma disciplina, e uma
             tradição hagiográfica não é um fato historicamente documentado. Por isso o portal
             classifica o conteúdo sensível com estes indicadores:
           </p>
         </Prose>
+
+        <Prancha
+          image={trento}
+          alt="Bispos reunidos em sessão conciliar no século XVI."
+          legenda="Concílios, encíclicas e catecismos são as fontes verificáveis que sustentam cada página deste portal — sempre com referência ao texto original."
+        />
+
         <LegendaConfiabilidade className="mt-sm" />
         <div className="mt-sm"><Prose>
           <p>
