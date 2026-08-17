@@ -34,6 +34,7 @@
   /* Brand tokens — Portal Católico */
   --color-gold: var(--gold);
   --color-gold-soft: var(--gold-soft);
+  --color-gold-accent: var(--gold-accent);
   --color-marian: var(--marian);
   --color-marian-soft: var(--marian-soft);
   --color-cardinal: var(--cardinal);
