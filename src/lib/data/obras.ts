@@ -109,6 +109,49 @@ export const OBRAS: Record<string, Obra> = {
     local: "Capela Sistina, Vaticano",
     fonte: "https://commons.wikimedia.org/wiki/File:Entrega_de_las_llaves_a_San_Pedro_(Perugino).jpg",
   },
+  anunciacao: {
+    titulo: "Anunciação",
+    autor: "Fra Angelico",
+    ano: "c. 1426",
+    local: "Museu do Prado, Madri",
+    fonte: "https://commons.wikimedia.org/wiki/File:Fra_Angelico_069.jpg",
+  },
+  pentecostes: {
+    titulo: "Pentecostes",
+    autor: "El Greco",
+    ano: "c. 1600",
+    local: "Museu do Prado, Madri",
+    fonte: "https://commons.wikimedia.org/wiki/File:Pentecost%C3%A9s_(El_Greco,_c._1600)_Prado.jpg",
+  },
+  emaus: {
+    titulo: "A Ceia em Emaús",
+    autor: "Caravaggio",
+    ano: "1601",
+    local: "National Gallery, Londres",
+    fonte: "https://commons.wikimedia.org/wiki/File:Caravaggio_-_Cena_in_Emmaus.jpg",
+  },
+  "bom-pastor": {
+    titulo: "O Bom Pastor",
+    autor: "Bartolomé Esteban Murillo",
+    ano: "c. 1675–1682",
+    local: "Museu do Prado, Madri",
+    fonte: "https://commons.wikimedia.org/wiki/File:Murillo_-_The_Good_Shepherd,_ca._1675_%E2%80%93_1682.jpg",
+  },
+  batismo: {
+    titulo: "Batismo de Cristo",
+    autor: "Andrea del Verrocchio e Leonardo da Vinci",
+    ano: "c. 1475",
+    local: "Galeria Uffizi, Florença",
+    fonte:
+      "https://commons.wikimedia.org/wiki/File:Andrea_del_Verrocchio,_Leonardo_da_Vinci_-_Baptism_of_Christ_-_Uffizi.jpg",
+  },
+  "concilio-trento": {
+    titulo: "Sessão do Concílio de Trento",
+    autor: "Autor anônimo (escola italiana)",
+    ano: "séc. XVI",
+    local: "Museu do Louvre, Paris",
+    fonte: "https://commons.wikimedia.org/wiki/File:Council_of_Trent.JPG",
+  },
 };
 
 const BASES = Object.keys(OBRAS).sort((a, b) => b.length - a.length);
