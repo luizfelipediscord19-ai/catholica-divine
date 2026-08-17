@@ -98,7 +98,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { name: "author", content: "Portal Católico" },
       { name: "robots", content: "index, follow, max-image-preview:large" },
-      { name: "theme-color", content: "#0a0a0a" },
+      { name: "theme-color", content: "#0d0d0d" },
       { name: "mobile-web-app-capable", content: "yes" },
       { name: "apple-mobile-web-app-capable", content: "yes" },
       { name: "apple-mobile-web-app-status-bar-style", content: "black-translucent" },
