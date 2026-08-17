@@ -282,6 +282,12 @@ function Page() {
             { label: "Concílio Vaticano I, Constituição Dogmática Dei Filius (1870)", ref: "cap. 2" },
             { label: "São João Paulo II, Constituição Apostólica Scripturarum Thesaurus (1979)", ref: "promulgação da Nova Vulgata" },
             { label: "Pontifícia Comissão Bíblica, A Interpretação da Bíblia na Igreja (1993)", ref: "I–IV" },
+            { label: "Pio XII, Encíclica Divino Afflante Spiritu (30.09.1943)", ref: "nn. 15–39 — línguas originais, gêneros literários e crítica textual" },
+            { label: "Bento XVI, Exortação Apostólica Verbum Domini (30.09.2010)", ref: "nn. 86–87 — Lectio Divina" },
+            { label: "Francisco, Motu proprio Aperuit Illis (30.09.2019)", ref: "instituição do Domingo da Palavra de Deus" },
+            { label: "Concílio Vaticano II, Sacrosanctum Concilium (1963)", ref: "n. 51 — abertura dos tesouros bíblicos na liturgia" },
+            { label: "Ordo Lectionum Missae, editio typica altera (1981)", ref: "ciclos dominicais A–B–C e ciclo ferial I–II" },
+
             { label: "Bíblia de Jerusalém, Nova edição revista e ampliada", ref: "Paulus, São Paulo" },
             { label: "São Jerônimo, Commentariorum in Isaiam Prologus", ref: "PL 24, 17" },
             { label: "Santo Agostinho, Quaestiones in Heptateuchum 2, 73", ref: "PL 34, 623" },
