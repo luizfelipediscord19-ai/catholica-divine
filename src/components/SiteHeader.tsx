@@ -166,7 +166,7 @@ export function SiteHeader() {
             onClick={() => setBusca(true)}
             aria-label="Buscar no portal"
             title="Buscar"
-            className={`${ICONE_REDONDO} lg:hidden`}
+            className={`${ICONE_REDONDO} xl:hidden`}
           >
             <Search className="size-4" aria-hidden="true" />
           </button>
