@@ -48,8 +48,8 @@
   --color-info: var(--info);
   --color-info-foreground: var(--info-foreground);
 
-  --font-display: "Playfair Display", "Cormorant Garamond", Georgia, serif;
-  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Libre Baskerville", "Cormorant Garamond", Georgia, serif;
+  --font-sans: "IBM Plex Sans", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
   /* Escala tipográfica exposta ao Tailwind: text-step--2 … text-step-5 */
@@ -810,40 +810,40 @@
   --measure: 68ch;
 
 
-  /* Brand Tokens — Absolute Luxury */
-  --gold: #d8b449;
-  --gold-soft: #bfa063;
-  --gold-accent: #f3dc9d;
+  /* Brand Tokens — Sacred Editorial Noir */
+  --gold: #c9a84c;
+  --gold-soft: #a98c3c;
+  --gold-accent: #f0d78c;
   --marian: #23568f;
   --marian-soft: #3a76bd;
   --cardinal: #8b0000;
-  --deep: #060606;
+  --deep: #0d0d0d;
   --paper: #fbf8f3;
-  --glass-bg: rgba(14, 13, 12, 0.72);
-  --glass-border: rgba(216, 180, 73, 0.16);
+  --glass-bg: rgba(26, 26, 26, 0.74);
+  --glass-border: rgba(201, 168, 76, 0.18);
 
   /* Semantic Palette */
-  --background: #070706;
-  --foreground: #f6f2ea;
-  --card: #0e0d0c;
-  --card-foreground: #f6f2ea;
-  --popover: #0e0d0c;
-  --popover-foreground: #f6f2ea;
-  --primary: #d8b449;
-  --primary-foreground: #070706;
+  --background: #0d0d0d;
+  --foreground: #f4f1ea;
+  --card: #1a1a1a;
+  --card-foreground: #f4f1ea;
+  --popover: #1a1a1a;
+  --popover-foreground: #f4f1ea;
+  --primary: #c9a84c;
+  --primary-foreground: #0d0d0d;
   --secondary: #23568f;
-  --secondary-foreground: #f6f2ea;
-  --muted: #141312;
-  --muted-foreground: #a09a8c;
+  --secondary-foreground: #f4f1ea;
+  --muted: #161616;
+  --muted-foreground: #a5a099;
   --accent: #23568f;
-  --accent-foreground: #f6f2ea;
+  --accent-foreground: #f4f1ea;
   --destructive: #8b0000;
   --destructive-foreground: #fcfaf7;
   /* Vermelho legível como TEXTO sobre fundo escuro (WCAG AA). */
   --destructive-text: #f2938a;
-  --border: rgba(216, 180, 73, 0.14);
-  --input: rgba(216, 180, 73, 0.18);
-  --ring: #d8b449;
+  --border: rgba(201, 168, 76, 0.16);
+  --input: rgba(201, 168, 76, 0.2);
+  --ring: #c9a84c;
 
   /* Superfícies e realces reutilizáveis */
   --gradient-gold: linear-gradient(135deg, var(--gold-accent), var(--gold) 45%, var(--gold-soft));

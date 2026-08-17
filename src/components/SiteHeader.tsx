@@ -122,7 +122,7 @@ export function SiteHeader() {
 
         <nav
           aria-label="Navegação principal"
-          className="hidden min-w-0 items-center gap-0.5 whitespace-nowrap lg:ml-3 lg:flex xl:ml-6 xl:gap-1"
+          className="hidden min-w-0 flex-1 items-center gap-0.5 overflow-hidden whitespace-nowrap lg:ml-3 lg:flex xl:ml-6 xl:gap-1"
         >
 
           {NAV_PRINCIPAL.map((item) => {
@@ -152,7 +152,7 @@ export function SiteHeader() {
             type="button"
             onClick={() => setBusca(true)}
             aria-label="Buscar no portal (Ctrl + K)"
-            className="hidden min-h-10 w-44 items-center gap-2 rounded-[var(--radius-btn)] border border-gold/20 bg-transparent px-3 text-left text-step--1 text-foreground/55 transition-premium hover:border-gold/50 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold lg:flex xl:w-56"
+            className="hidden min-h-10 w-44 items-center gap-2 rounded-[var(--radius-btn)] border border-gold/20 bg-transparent px-3 text-left text-step--1 text-foreground/55 transition-premium hover:border-gold/50 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold xl:flex xl:w-52"
 
           >
             <Search className="size-4 shrink-0 text-gold" aria-hidden="true" />
@@ -166,7 +166,7 @@ export function SiteHeader() {
             onClick={() => setBusca(true)}
             aria-label="Buscar no portal"
             title="Buscar"
-            className={`${ICONE_REDONDO} lg:hidden`}
+            className={`${ICONE_REDONDO} xl:hidden`}
           >
             <Search className="size-4" aria-hidden="true" />
           </button>
