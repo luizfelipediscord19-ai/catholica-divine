@@ -152,7 +152,7 @@ export function SiteHeader() {
             type="button"
             onClick={() => setBusca(true)}
             aria-label="Buscar no portal (Ctrl + K)"
-            className="hidden min-h-10 w-44 items-center gap-2 rounded-[var(--radius-btn)] border border-gold/20 bg-transparent px-3 text-left text-step--1 text-foreground/55 transition-premium hover:border-gold/50 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold lg:flex xl:w-56"
+            className="hidden min-h-10 w-44 items-center gap-2 rounded-[var(--radius-btn)] border border-gold/20 bg-transparent px-3 text-left text-step--1 text-foreground/55 transition-premium hover:border-gold/50 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold xl:flex xl:w-52"
 
           >
             <Search className="size-4 shrink-0 text-gold" aria-hidden="true" />
