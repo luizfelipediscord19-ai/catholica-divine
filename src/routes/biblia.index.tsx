@@ -173,29 +173,105 @@ function Page() {
             <em> verdadeira Palavra de Deus</em> (<em>DV</em> 14; <em>CIC</em> § 121).
           </p>
 
-          <h3>7. Versões oficiais e tradução</h3>
+          <h3>7. Da língua original ao texto que lemos</h3>
           <p>
-            O texto oficial da Igreja latina é a <strong>Nova Vulgata</strong>, promulgada por São João Paulo II
-            em 1979 (<em>Scripturarum Thesaurus</em>). Para o uso litúrgico em português brasileiro, a
-            <em> Conferência Nacional dos Bispos do Brasil (CNBB)</em> aprovou a sua tradução litúrgica
-            (3ª edição, 2023). Para o estudo, as versões católicas mais consagradas em português incluem a
-            <strong> Bíblia de Jerusalém</strong> (Paulus), notável pelas introduções e notas exegéticas; a
-            <strong> Bíblia Ave-Maria</strong>; a <strong>Bíblia do Peregrino</strong> de Luis Alonso Schökel; e
-            a <strong> TEB</strong> (Tradução Ecumênica da Bíblia).
+            Os livros do Antigo Testamento foram escritos em <strong>hebraico</strong>, com seções em
+            <strong> aramaico</strong> (partes de Daniel e Esdras) e alguns livros conservados em
+            <strong> grego</strong> (Sabedoria, 2 Macabeus, entre outros). O Novo Testamento foi escrito em
+            <strong> grego koiné</strong>. Nenhum autógrafo — o manuscrito original saído da mão do
+            hagiógrafo — chegou até nós: o texto é reconstruído pela <em>crítica textual</em> a partir de
+            milhares de testemunhos.
           </p>
+          <ul>
+            <li><strong>Texto Massorético</strong> — tradição hebraica fixada pelos massoretas entre os séculos VI e X (Códice de Alepo; Códice de Leningrado, 1008).</li>
+            <li><strong>Manuscritos de Qumran</strong> — descobertos a partir de 1947, recuam em cerca de mil anos os testemunhos hebraicos e mostram a real pluralidade textual do judaísmo do Segundo Templo.</li>
+            <li><strong>Tradição grega (Septuaginta)</strong> — conjunto de traduções e composições gregas de origens diversas, largamente usadas nas comunidades judaicas helenistas e pelos primeiros cristãos.</li>
+            <li><strong>Grandes códices gregos do Novo Testamento</strong> — Vaticano (<em>B</em>, séc. IV), Sinaítico (<em>ℵ</em>, séc. IV), Alexandrino (<em>A</em>, séc. V), além de papiros anteriores (P<sup>52</sup>, P<sup>66</sup>, P<sup>75</sup>).</li>
+            <li><strong>Vulgata</strong> — tradução latina em grande parte devida a São Jerônimo (a partir de 382), que para o Antigo Testamento recorreu ao hebraico (<em>veritas hebraica</em>).</li>
+          </ul>
           <p>
-            Neste portal, a leitura integral capítulo a capítulo é servida pelo site
-            <em> bibliacatolica.com.br</em>, na tradução Ave-Maria, com link direto a partir de cada livro.
+            A Igreja não canoniza uma família textual, mas o <em>livro</em> inspirado; por isso encoraja o
+            trabalho científico sobre os manuscritos e o recurso às línguas originais na tradução
+            (<em>DV</em> 22; <em>Divino Afflante Spiritu</em>, Pio XII, 1943).
           </p>
 
-          <h3>8. A Bíblia na vida do fiel</h3>
+          <h3>8. Inspiração, verdade e inerrância</h3>
+          <p>
+            A afirmação de que a Escritura ensina <em>sem erro</em> refere-se à <strong>verdade salvífica</strong>
+            que Deus quis consignar (<em>DV</em> 11), não à precisão de um manual de ciências naturais ou de
+            historiografia moderna. Pio XII já advertia que o hagiógrafo escreve segundo os modos de falar
+            do seu tempo, e que os relatos populares e as aproximações da linguagem cotidiana não são erros,
+            mas gêneros (<em>Divino Afflante Spiritu</em> 35–39). Do mesmo modo, os textos que narram
+            violência ou práticas moralmente imperfeitas pertencem à pedagogia divina progressiva: são
+            <em> imperfeitos e provisórios</em> (<em>DV</em> 15) e leem-se à luz de Cristo.
+          </p>
+
+          <h3>9. Tipologia: Cristo como chave de toda a Escritura</h3>
+          <p>
+            A leitura cristã reconhece nas figuras do Antigo Testamento <em>tipos</em> que anunciam Cristo e a
+            Igreja (<em>CIC</em> §§ 128–130): o cordeiro pascal e a Cruz, o dilúvio e o Batismo, o maná e a
+            Eucaristia, Isaac e o Filho entregue, Jonas e os três dias no sepulcro, a serpente de bronze e o
+            Filho do Homem elevado (Jo 3,14-15). A tipologia não anula o sentido literal nem esvazia o valor
+            próprio do Antigo Testamento: <em>as duas Alianças são iluminadas mutuamente</em>.
+          </p>
+
+          <h3>10. Os deuterocanônicos, livro por livro</h3>
+          <ul>
+            <li><strong>Tobias</strong> — piedade familiar, casamento, sepultura dos mortos e providência divina pela mediação angélica.</li>
+            <li><strong>Judite</strong> — a libertação do povo pela mão de uma mulher fiel; narrativa edificante de forte estilização literária.</li>
+            <li><strong>Sabedoria</strong> — composto em grego em Alexandria (séc. I a.C.); afirma explicitamente a imortalidade dos justos (Sb 3,1-4).</li>
+            <li><strong>Eclesiástico (Sirácida)</strong> — ética sapiencial de Ben Sirá, traduzida ao grego pelo neto do autor (prólogo, c. 132 a.C.).</li>
+            <li><strong>Baruc</strong> — inclui a Carta de Jeremias (cap. 6); confissão dos pecados e esperança do retorno do exílio.</li>
+            <li><strong>1 Macabeus</strong> — história da resistência macabeia (167–134 a.C.), fonte histórica de primeira ordem.</li>
+            <li><strong>2 Macabeus</strong> — teologia da ressurreição dos mortos (2Mc 7) e do sufrágio pelos defuntos (2Mc 12,43-46), base escriturística invocada pela Igreja a respeito da oração pelos mortos.</li>
+            <li><strong>Acréscimos</strong> — trechos gregos de Ester e de Daniel (oração de Azarias, cântico dos três jovens, Susana, Bel e o dragão).</li>
+          </ul>
+
+          <h3>11. A Escritura na liturgia: o Lecionário</h3>
+          <p>
+            O lugar primeiro em que a Igreja lê a Bíblia é a liturgia. A reforma conciliar quis que
+            <em> os tesouros da Bíblia fossem abertos com maior largueza</em> (<em>Sacrosanctum Concilium</em> 51),
+            criando o Lecionário em ciclo dominical de três anos — <strong>Ano A</strong> (Mateus),
+            <strong> B</strong> (Marcos), <strong>C</strong> (Lucas), com João distribuído nos tempos fortes —
+            e um ciclo ferial de dois anos (I e II). Assim, a leitura orante pessoal caminha em harmonia com a
+            leitura eclesial: a mesma Palavra proclamada no altar é ruminada no coração.
+          </p>
+
+          <h3>12. Versões oficiais e as edições deste portal</h3>
+          <p>
+            O texto oficial da Igreja latina é a <strong>Nova Vulgata</strong>, promulgada por São João Paulo II
+            em 1979 (<em>Scripturarum Thesaurus</em>). Para o uso litúrgico em português brasileiro vigora a
+            tradução aprovada pela <em>Conferência Nacional dos Bispos do Brasil</em> (3ª edição, 2023). Entre
+            as edições católicas de estudo em português destacam-se a <strong>Bíblia de Jerusalém</strong>
+            (Paulus), a <strong>Bíblia do Peregrino</strong> (Alonso Schökel) e a <strong>TEB</strong>.
+          </p>
+          <p>
+            Neste portal, a leitura capítulo a capítulo é servida <strong>dentro do próprio site</strong>, a
+            partir de edições em <strong>domínio público</strong> — Almeida (português), Douay-Rheims (inglês) e
+            Vulgata latina, esta última cobrindo também os deuterocanônicos. Traduções ainda protegidas por
+            direito autoral (como a Ave-Maria e a Nova Vulgata) não são reproduzidas: quando citadas, remete-se
+            à edição oficial.
+          </p>
+
+          <h3>13. Lectio Divina: quatro degraus</h3>
+          <ol>
+            <li><strong>Lectio</strong> — ler o texto com atenção: o que diz o texto em si?</li>
+            <li><strong>Meditatio</strong> — meditar: o que diz o texto a mim, hoje?</li>
+            <li><strong>Oratio</strong> — responder a Deus com a própria Palavra recebida.</li>
+            <li><strong>Contemplatio</strong> — permanecer em silêncio no olhar de Deus, deixando que a Palavra transforme o modo de ver e de agir (cf. Bento XVI, <em>Verbum Domini</em> 86–87).</li>
+          </ol>
+
+          <h3>14. A Bíblia na vida do fiel</h3>
           <p>
             <em>O desconhecimento das Escrituras é desconhecimento de Cristo</em> (São Jerônimo, <em>Comentário a
             Isaías</em>, Prólogo; citado em <em>DV</em> 25 e <em>CIC</em> § 133). Por isso a Igreja recomenda
             insistentemente a leitura assídua, pessoal e comunitária, sobretudo na forma da <em>Lectio Divina</em>
             — leitura, meditação, oração e contemplação — , e a frequência aos sacramentos, sobretudo à
-            Eucaristia, em que a Palavra encontra a sua plenitude.
+            Eucaristia, em que a Palavra encontra a sua plenitude. Desde 2019, o <em>Domingo da Palavra de
+            Deus</em> (III domingo do Tempo Comum), instituído por Francisco no motu proprio
+            <em> Aperuit Illis</em>, dá a esse convite forma litúrgica anual.
           </p>
+
         </Prose>
 
         <Sources
