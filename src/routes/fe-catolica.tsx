@@ -162,8 +162,43 @@ function Page() {
           <NotaConfiabilidade nivel="historia">
             O <em>Filioque</em> (“procede do Pai <strong>e do Filho</strong>”) não integrava o texto grego aprovado em Constantinopla I (381), que confessava apenas “procede do Pai” (cf. Jo 15,26). A fórmula foi acolhida progressivamente no Ocidente a partir dos Sínodos hispânicos do séc. VI (Toledo III, 589) como explicitação teológica contra o arianismo residual, difundiu-se na liturgia franco-germânica e foi finalmente incorporada ao Credo romano no início do séc. XI. A Igreja Católica ensina que o Espírito Santo procede eternamente do Pai e do Filho, como de um único princípio (CIC §§ 246-248), e essa doutrina foi reafirmada pelo II Concílio de Lyon (1274) e pelo Concílio de Florença (1439). As Igrejas Orientais mantêm a fórmula bíblica original — o Espírito procede “do Pai” e é comunicado ou manifestado “pelo Filho” (<em>dia tou Hyiou</em>) —, tradição legítima e teologicamente equivalente quando bem entendida. A Congregação para a Doutrina da Fé recorda (1995) que o acréscimo unilateral ao texto conciliar comum, sem consenso ecumênico, foi um gesto disciplinarmente problemático, ainda que a doutrina nele contida seja ortodoxa; por isso a Santa Sé, em ocasiões solenes, tem recitado o Credo em grego sem o Filioque, como sinal de comunhão com o Oriente.
           </NotaConfiabilidade>
+          <h3>Os doze artigos e o que cada um exclui</h3>
+          <p>
+            Cada afirmação do Símbolo nasceu para excluir um erro determinado. <em>“Criador do céu e da terra”</em>
+            exclui o dualismo gnóstico e maniqueu, que atribuía a matéria a um princípio mau; <em>“gerado, não
+            criado”</em> exclui o arianismo; <em>“consubstancial ao Pai”</em> exclui o subordinacionismo;
+            <em> “se fez homem”</em> exclui o docetismo, para o qual o corpo de Cristo seria aparente;
+            <em> “padeceu e foi sepultado”</em> afirma a realidade da morte; <em>“ressuscitou ao terceiro dia”</em>
+            afirma um acontecimento e não um símbolo; <em>“Senhor que dá a vida”</em> afirma a divindade do
+            Espírito Santo; <em>“professo um só batismo”</em> exclui a reiteração do sacramento
+            (CIC §§ 194-195, 232-1065).
+          </p>
+          <h3>Símbolo dos Apóstolos e Símbolo de Niceia</h3>
+          <p>
+            O <strong>Símbolo dos Apóstolos</strong> é a antiga profissão batismal da Igreja de Roma, cuja forma
+            recebida é atestada em fórmulas dos sécs. II-IV e fixada na redação atual em torno do séc. VIII; a
+            tradição de atribuir um artigo a cada Apóstolo é lenda medieval piedosa, não dado histórico. O
+            <strong> Niceno-Constantinopolitano</strong> é conciliar e por isso goza de autoridade ecumênica
+            singular: é o único credo comum a católicos, ortodoxos e a boa parte das comunidades reformadas
+            (CIC §§ 193-195).
+          </p>
         </Prose>
+
+        <NotaConfiabilidade nivel="tradicao">
+          O texto e a autoridade conciliar dos dois Símbolos são certos. A atribuição de cada artigo do Credo a um
+          Apóstolo específico é tradição piedosa medieval, sem base documental antiga.
+        </NotaConfiabilidade>
+
+        <Sources
+          items={[
+            { label: "Catecismo da Igreja Católica", ref: "§§ 185-197 (os Símbolos da fé)" },
+            { label: "Concílios de Niceia I (325) e Constantinopla I (381)", ref: "DH 125, 150 (texto do Símbolo)" },
+            { label: "Missal Romano, Ordinário da Missa", ref: "uso litúrgico do Credo aos domingos e solenidades (IGMR 68)" },
+            { label: "Denzinger-Hünermann, Enchiridion Symbolorum", ref: "coleção crítica das profissões de fé" },
+          ]}
+        />
       </Section>
+
 
       <Section kicker="Notas da Igreja" title="As quatro marcas da Igreja de Cristo">
         <p className="max-w-3xl mx-auto text-muted-foreground mb-10 leading-relaxed">
