@@ -71,7 +71,7 @@ export function AtualizacaoApp() {
               controle.atualizar();
             }}
             disabled={atualizando}
-            className="mt-3 inline-flex items-center gap-2 bg-gold px-4 py-2 label-btn text-deep transition-colors hover:bg-paper disabled:opacity-70"
+            className="btn-base btn-sm btn-gold mt-3 gap-2 hover:bg-paper"
           >
             <RefreshCw
               className={`size-3.5 ${atualizando ? "animate-spin" : ""}`}

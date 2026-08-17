@@ -89,7 +89,7 @@ function ForumPage() {
             <button
               type="button"
               onClick={() => setSecao(undefined)}
-              className={`px-4 py-2 label-btn border transition-premium ${
+              className={`btn-base btn-sm border transition-premium ${
                 secao === undefined
                   ? "border-gold text-gold"
                   : "border-gold/15 text-paper/60 hover:text-paper"
@@ -102,7 +102,7 @@ function ForumPage() {
                 key={s.slug}
                 type="button"
                 onClick={() => setSecao(s.slug)}
-                className={`px-4 py-2 label-btn border transition-premium ${
+                className={`btn-base btn-sm border transition-premium ${
                   secao === s.slug
                     ? "border-gold text-gold"
                     : "border-gold/15 text-paper/60 hover:text-paper"
@@ -328,7 +328,7 @@ function NovoTopico({
                 type="button"
                 onClick={() => setSecaoSlug(s.slug)}
                 aria-pressed={secaoSlug === s.slug}
-                className={`px-4 py-2 label-btn border transition-premium ${
+                className={`btn-base btn-sm border transition-premium ${
                   secaoSlug === s.slug
                     ? "border-gold bg-gold/10 text-gold"
                     : "border-gold/15 text-paper/60 hover:text-paper hover:border-gold/40"

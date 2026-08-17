@@ -195,7 +195,7 @@ function AvisosNoAparelho() {
           </p>
           <button
             onClick={async () => setEstado(await ativarNotificacoesDispositivo())}
-            className="inline-flex items-center gap-2 bg-gold px-3 py-2 label-btn text-deep hover:bg-paper"
+            className="btn-base btn-sm btn-gold gap-2 hover:bg-paper"
           >
             <BellRing className="size-3" aria-hidden="true" /> Ativar no aparelho
           </button>

@@ -77,7 +77,7 @@ export function BuscaHoras() {
               <button
                 key={t.id}
                 onClick={() => setTipo(t.id)}
-                className={`px-3 py-1.5 label-btn border transition-colors ${
+                className={`btn-base btn-sm border transition-colors ${
                   active
                     ? "border-gold bg-gold/15 text-gold"
                     : "border-gold/20 text-foreground/70 hover:border-gold/50 hover:text-foreground"
