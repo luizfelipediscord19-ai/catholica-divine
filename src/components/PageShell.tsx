@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { ImagemOtimizada } from "./ImagemOtimizada";
+import { legendaObra, obraDaUrl } from "@/lib/data/obras";
 
 export function PageHero({
   eyebrow,
@@ -12,6 +13,7 @@ export function PageHero({
   intro: ReactNode;
   image?: string;
 }) {
+  const obra = obraDaUrl(image);
   return (
     <section data-leitura-oculto className="relative overflow-hidden bg-deep">
       {image ? (
@@ -48,11 +50,27 @@ export function PageHero({
         </p>
         <h1 className="mb-sm title-page text-paper">{title}</h1>
         <p className="measure body-lead text-paper/70">{intro}</p>
+
+        {obra ? (
+          <p className="mt-md text-step--2 text-paper/45">
+            <span className="text-paper/60">{obra.titulo}</span> — {obra.autor}, {obra.ano}
+            {obra.local ? ` · ${obra.local}` : ""} ·{" "}
+            <a
+              href={obra.fonte}
+              target="_blank"
+              rel="noreferrer"
+              className="underline decoration-gold/40 underline-offset-2 hover:text-gold"
+            >
+              domínio público
+            </a>
+          </p>
+        ) : null}
       </div>
 
     </section>
   );
 }
+
 
 
 export function Section({
