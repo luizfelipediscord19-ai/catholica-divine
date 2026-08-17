@@ -793,6 +793,34 @@
   gap: var(--space-md);
 }
 
+/* ============================================================
+   TRATAMENTO DE IMAGENS (arte sacra)
+   Unifica a "revelação" das reproduções: leve dessaturação para
+   casar com o noir quente, contraste de impressão e vinheta que
+   funde a borda da tela no fundo da página.
+   ============================================================ */
+@utility art-plate {
+  filter: saturate(0.93) contrast(1.06) brightness(0.98);
+}
+
+@utility art-frame {
+  position: relative;
+  isolation: isolate;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(
+      120% 100% at 50% 35%,
+      transparent 42%,
+      color-mix(in oklab, var(--deep) 62%, transparent) 100%
+    );
+    box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--gold) 12%, transparent);
+  }
+}
+
 
 
 
