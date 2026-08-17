@@ -34,6 +34,7 @@
   /* Brand tokens — Portal Católico */
   --color-gold: var(--gold);
   --color-gold-soft: var(--gold-soft);
+  --color-gold-accent: var(--gold-accent);
   --color-marian: var(--marian);
   --color-marian-soft: var(--marian-soft);
   --color-cardinal: var(--cardinal);
@@ -548,11 +549,13 @@
 @utility kicker {
   display: block;
   font-size: 0.6875rem;
-  line-height: 1.4;
+  line-height: 1.45;
   font-weight: 600;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
+  word-spacing: 0.04em;
   text-transform: uppercase;
-  color: color-mix(in oklab, var(--gold) 82%, transparent);
+  font-variant-numeric: tabular-nums;
+  color: color-mix(in oklab, var(--gold) 86%, transparent);
 }
 
 /* Título de página (H1) */
@@ -596,30 +599,35 @@
 /* Parágrafo de abertura / subtítulo */
 @utility body-lead {
   font-size: var(--step-1);
-  line-height: 1.62;
+  line-height: 1.66;
   font-weight: 300;
-  color: color-mix(in oklab, var(--color-foreground) 80%, transparent);
+  letter-spacing: 0.002em;
+  color: color-mix(in oklab, var(--color-foreground) 84%, transparent);
+  text-wrap: pretty;
 }
 
 /* Texto corrente */
 @utility body-base {
   font-size: var(--step-0);
-  line-height: 1.78;
-  color: color-mix(in oklab, var(--color-foreground) 90%, transparent);
+  line-height: 1.8;
+  color: color-mix(in oklab, var(--color-foreground) 92%, transparent);
+  text-wrap: pretty;
 }
 
 /* Texto auxiliar / legenda */
 @utility body-sm {
   font-size: var(--step--1);
-  line-height: 1.65;
+  line-height: 1.68;
   color: var(--color-muted-foreground);
+  text-wrap: pretty;
 }
 
 /* Metadado discreto (datas, contadores, referências) */
 @utility body-meta {
   font-size: var(--step--2);
-  line-height: 1.5;
-  letter-spacing: 0.06em;
+  line-height: 1.55;
+  letter-spacing: 0.07em;
+  font-variant-numeric: tabular-nums;
   color: var(--color-muted-foreground);
 }
 
@@ -785,6 +793,34 @@
   gap: var(--space-md);
 }
 
+/* ============================================================
+   TRATAMENTO DE IMAGENS (arte sacra)
+   Unifica a "revelação" das reproduções: leve dessaturação para
+   casar com o noir quente, contraste de impressão e vinheta que
+   funde a borda da tela no fundo da página.
+   ============================================================ */
+@utility art-plate {
+  filter: saturate(0.93) contrast(1.06) brightness(0.98);
+}
+
+@utility art-frame {
+  position: relative;
+  isolation: isolate;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(
+      120% 100% at 50% 35%,
+      transparent 42%,
+      color-mix(in oklab, var(--deep) 62%, transparent) 100%
+    );
+    box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--gold) 12%, transparent);
+  }
+}
+
 
 
 
@@ -820,46 +856,48 @@
   --measure: 68ch;
 
 
-  /* Brand Tokens — Sacred Editorial Noir */
-  --gold: #cdac52;
-  --gold-soft: #a4873a;
-  --gold-accent: #f2dc99;
-  --marian: #23568f;
-  --marian-soft: #3a76bd;
-  --cardinal: #8b0000;
-  --deep: #0c0b0a;
-  --paper: #faf7f0;
-  --glass-bg: rgba(23, 22, 19, 0.78);
-  --glass-border: rgba(205, 172, 82, 0.2);
+  /* Brand Tokens — Sacred Editorial Noir
+     Ouro em três graus (folha, ouro, bronze) sobre tinta quente de impressão.
+     Cada valor foi calibrado para contraste AA sobre --background. */
+  --gold: #d0b262;
+  --gold-soft: #9c8340;
+  --gold-accent: #f4e2ab;
+  --marian: #2a5f97;
+  --marian-soft: #4a83c6;
+  --cardinal: #8e1c1c;
+  --deep: #0b0a09;
+  --paper: #fbf8f2;
+  --glass-bg: rgba(22, 20, 18, 0.8);
+  --glass-border: rgba(208, 178, 98, 0.22);
 
   /* Semantic Palette */
-  --background: #0c0b0a;
-  --foreground: #f3efe6;
-  --card: #171613;
-  --card-foreground: #f3efe6;
-  --popover: #171613;
-  --popover-foreground: #f3efe6;
-  --primary: #cdac52;
-  --primary-foreground: #0d0d0d;
-  --secondary: #23568f;
-  --secondary-foreground: #f4f1ea;
-  --muted: #141310;
-  --muted-foreground: #b3aca0;
-  --accent: #23568f;
-  --accent-foreground: #f4f1ea;
-  --destructive: #8b0000;
+  --background: #0b0a09;
+  --foreground: #f4f0e8;
+  --card: #181613;
+  --card-foreground: #f4f0e8;
+  --popover: #181613;
+  --popover-foreground: #f4f0e8;
+  --primary: #d0b262;
+  --primary-foreground: #100e0b;
+  --secondary: #2a5f97;
+  --secondary-foreground: #f5f2ec;
+  --muted: #15130f;
+  --muted-foreground: #bcb4a6;
+  --accent: #2a5f97;
+  --accent-foreground: #f5f2ec;
+  --destructive: #8e1c1c;
   --destructive-foreground: #fcfaf7;
   /* Vermelho legível como TEXTO sobre fundo escuro (WCAG AA). */
-  --destructive-text: #f2938a;
-  --border: rgba(205, 172, 82, 0.2);
-  --input: rgba(205, 172, 82, 0.24);
-  --ring: #cdac52;
+  --destructive-text: #f39c93;
+  --border: rgba(208, 178, 98, 0.19);
+  --input: rgba(208, 178, 98, 0.24);
+  --ring: #d0b262;
 
   /* Superfícies e realces reutilizáveis */
-  --gradient-gold: linear-gradient(135deg, var(--gold-accent), var(--gold) 45%, var(--gold-soft));
-  --gradient-surface: linear-gradient(180deg, color-mix(in oklab, var(--card) 96%, var(--gold) 4%), var(--background));
-  --shadow-elegant: 0 24px 60px -24px rgba(0, 0, 0, 0.72);
-  --hairline: color-mix(in oklab, var(--gold) 18%, transparent);
+  --gradient-gold: linear-gradient(135deg, var(--gold-accent), var(--gold) 48%, var(--gold-soft));
+  --gradient-surface: linear-gradient(180deg, color-mix(in oklab, var(--card) 94%, var(--gold) 6%), var(--background) 62%);
+  --shadow-elegant: 0 28px 68px -28px rgba(0, 0, 0, 0.76);
+  --hairline: color-mix(in oklab, var(--gold) 17%, transparent);
 
   /* Interação: um easing e três durações para todo o portal */
   --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
