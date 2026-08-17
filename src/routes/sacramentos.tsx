@@ -34,6 +34,8 @@ const TOC = [
   { id: "ordem", label: "6. Ordem" },
   { id: "matrimonio", label: "7. Matrimônio" },
   { id: "sacramentais", label: "Sacramentais" },
+  { id: "teologia", label: "Teologia sacramental" },
+
   { id: "notas", label: "Notas e fontes" },
 ];
 
