@@ -102,6 +102,7 @@ function NoticiasPage() {
   return (
     <div>
       <PageHero
+        image={claustro}
         eyebrow="Acta Ecclesiae · Edição diária"
         title={
           <>
