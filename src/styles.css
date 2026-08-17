@@ -1006,14 +1006,14 @@
   }
   h1, h2, h3, h4, .font-display {
     font-family: var(--font-display);
-    font-weight: 400;
-    letter-spacing: -0.012em;
-    line-height: 1.16;
+    font-weight: 500;
+    letter-spacing: -0.008em;
+    line-height: 1.14;
     font-feature-settings: "kern" 1, "liga" 1, "dlig" 1;
   }
   h1 {
-    letter-spacing: -0.018em;
-    line-height: 1.08;
+    letter-spacing: -0.014em;
+    line-height: 1.04;
   }
   h4, h5, h6 {
     letter-spacing: -0.006em;
