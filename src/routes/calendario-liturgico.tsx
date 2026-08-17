@@ -54,7 +54,10 @@ const FOOTNOTES = [
   { id: "directorium", label: "Diretório sobre piedade popular e liturgia (Dicastério para o Culto Divino, 2002)", ref: "Princípios e orientações" },
   { id: "cic", label: "Catecismo da Igreja Católica", ref: "§§ 1163–1173 — O Ano Litúrgico" },
   { id: "nicea", label: "Concílio de Niceia (325) — fixação da data da Páscoa", ref: "primeiro domingo após a primeira lua cheia da primavera boreal" },
+  { id: "iglh", label: "Instrução Geral sobre a Liturgia das Horas (Institutio Generalis de Liturgia Horarum, 1971)", ref: "nn. 10–37, 100–109" },
+  { id: "dies", label: "São João Paulo II, Carta Apostólica Dies Domini (31.05.1998)", ref: "sobre a santificação do domingo" },
   { id: "cnbb-cores", label: "CNBB, Manual de Liturgia (orientações pastorais)", ref: "uso das cores no Brasil" },
+
 ];
 
 function Page() {
