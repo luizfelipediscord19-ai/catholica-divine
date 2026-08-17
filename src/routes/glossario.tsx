@@ -3,6 +3,8 @@ import { BookOpen, ArrowLeft } from "lucide-react";
 import { useMemo, useState } from "react";
 import { listarTermos } from "@/lib/data/glossario";
 import { normalizar } from "@/lib/busca";
+import { PageHero } from "@/components/PageShell";
+import manuscrito from "@/assets/manuscrito.jpg";
 
 export const Route = createFileRoute("/glossario")({
   head: () => ({
@@ -41,26 +43,21 @@ function GlossarioPage() {
   }, [busca, todos]);
 
   return (
-    <div className="shell py-block">
+    <div>
+      <PageHero
+        image={manuscrito}
+        eyebrow="Lexicon Fidei"
+        title={<>Glossário <span className="italic text-gold/70">Católico</span></>}
+        intro="Definições breves e fiéis dos termos centrais da fé católica, todas com referência ao Catecismo da Igreja Católica ou ao Magistério."
+      />
+
+      <div className="shell py-block">
       <Link
         to="/"
         className="inline-flex items-center gap-2 kicker hover:text-gold mb-12 transition-colors"
       >
         <ArrowLeft className="size-3.5" /> Voltar
       </Link>
-
-      <header className="mb-16">
-        <p className="kicker mb-6 flex items-center gap-4">
-          <BookOpen className="size-4" /> Lexicon Fidei
-        </p>
-        <h1 className="title-page text-foreground leading-[1.05] mb-6">
-          Glossário <span className="text-gold/60 italic">Católico</span>
-        </h1>
-        <p className="text-lg text-muted-foreground font-light leading-relaxed max-w-2xl">
-          Definições breves e fiéis dos termos centrais da fé católica, todas
-          com referência ao Catecismo da Igreja Católica ou ao Magistério.
-        </p>
-      </header>
 
       <div className="mb-12">
         <input
@@ -96,6 +93,7 @@ function GlossarioPage() {
           Nenhum termo encontrado para "{busca}".
         </p>
       ) : null}
+      </div>
     </div>
   );
 }
