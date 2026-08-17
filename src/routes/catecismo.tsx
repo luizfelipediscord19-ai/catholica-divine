@@ -181,7 +181,74 @@ function Page() {
             </div>
           ))}
         </div>
+
+        <Sources
+          items={[
+            { label: "Catecismo da Igreja Católica (editio typica latina, 1997)", ref: "índice sistemático das quatro partes e seções" },
+            { label: "Compêndio do Catecismo da Igreja Católica (2005)", ref: "correspondência abreviada com as seções do CIC" },
+          ]}
+        />
       </Section>
+
+      <Section kicker="Recepção" title="Hierarquia das verdades e graus de assentimento">
+        <Prose>
+          <p>
+            Nem toda afirmação contida no Catecismo tem o mesmo peso. O próprio Concílio Vaticano II lembra que
+            <em> “existe uma ordem ou ‘hierarquia’ das verdades da doutrina católica”</em>
+            (<em>Unitatis Redintegratio</em> 11) — todas verdadeiras, mas não todas igualmente centrais nem
+            igualmente definidas. Ler o CIC com precisão exige distinguir os graus com que a Igreja propõe o que
+            ensina.
+          </p>
+          <ol>
+            <li>
+              <strong>Dogmas de fé divina e católica</strong> — verdades reveladas propostas como tais pelo
+              Magistério solene ou pelo ordinário e universal. Exigem o assentimento de <em>fé teologal</em>;
+              negá-los é heresia (cân. 750 § 1; CIC § 88).
+            </li>
+            <li>
+              <strong>Doutrinas definitivamente propostas</strong> — verdades necessariamente ligadas à Revelação,
+              declaradas de modo definitivo. Requerem assentimento firme e definitivo (cân. 750 § 2, acrescido por
+              São João Paulo II com o <em>motu proprio</em> <em>Ad Tuendam Fidem</em>, 18.05.1998).
+            </li>
+            <li>
+              <strong>Ensino autêntico não definitivo</strong> — doutrina do Magistério ordinário que pede
+              <em> obsequium religiosum</em>, assentimento religioso da vontade e da inteligência
+              (<em>Lumen Gentium</em> 25; cân. 752).
+            </li>
+            <li>
+              <strong>Disciplina e aplicações prudenciais</strong> — normas canônicas e liturgias, vinculantes
+              enquanto vigentes, mas por natureza mutáveis (por exemplo, a duração do jejum eucarístico).
+            </li>
+          </ol>
+          <p>
+            A Congregação para a Doutrina da Fé explicou essa graduação na Instrução <em>Donum Veritatis</em>
+            (24.05.1990) e na <em>Nota doutrinal ilustrativa da fórmula conclusiva da Professio fidei</em> (1998).
+            Na prática: quando o CIC cita um concílio ecumênico definindo, estamos no primeiro nível; quando expõe
+            uma tradição espiritual ou uma aplicação pastoral, estamos nos últimos. Por isso este portal marca cada
+            bloco com selos de confiabilidade — para que o leitor saiba, em cada linha, se lê ensino definido,
+            tradição, história ou opinião teológica.
+          </p>
+          <h3>O que o Catecismo não é</h3>
+          <p>
+            O CIC não é uma nova Revelação, não é um manual de teologia especulativa, nem substitui os catecismos
+            locais e a catequese viva das dioceses — foi dado precisamente <em>como referência</em> para eles
+            (<em>Fidei Depositum</em>, IV). Também não é um texto neutro de história das religiões: expõe a fé da
+            Igreja com autoridade, remetendo sempre às fontes que a sustentam.
+          </p>
+        </Prose>
+
+        <Sources
+          items={[
+            { label: "Concílio Vaticano II, Unitatis Redintegratio (1964)", ref: "n. 11 (hierarquia das verdades)" },
+            { label: "Concílio Vaticano II, Lumen Gentium (1964)", ref: "n. 25 (Magistério e assentimento)" },
+            { label: "Código de Direito Canônico (1983)", ref: "cân. 750-752 (graus de adesão)" },
+            { label: "São João Paulo II, Motu proprio Ad Tuendam Fidem (18.05.1998)", ref: "acréscimo do cân. 750 § 2" },
+            { label: "Congregação para a Doutrina da Fé, Instrução Donum Veritatis (24.05.1990)", ref: "vocação eclesial do teólogo" },
+            { label: "Congregação para a Doutrina da Fé, Nota doutrinal sobre a Professio fidei (1998)", ref: "explicação dos três graus de assentimento" },
+          ]}
+        />
+      </Section>
+
 
       <Section kicker="Fonte oficial">
         <a
