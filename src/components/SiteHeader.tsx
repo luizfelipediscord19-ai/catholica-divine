@@ -6,7 +6,6 @@ import { SinoNotificacoes } from "@/components/portal/SinoNotificacoes";
 import { useCallback, useEffect, useState } from "react";
 
 import { BuscaGlobal, useAtalhoBusca } from "@/components/BuscaGlobal";
-import { TemaToggle } from "@/components/TemaToggle";
 
 /** Menu completo, agrupado por blocos temáticos (usado no painel do menu). */
 const GRUPOS: { titulo: string; itens: { to: string; label: string }[] }[] = [
@@ -172,7 +171,6 @@ export function SiteHeader() {
           </button>
 
           <span className="hidden sm:contents">
-            <TemaToggle />
             <SinoNotificacoes />
           </span>
 
@@ -263,9 +261,6 @@ export function SiteHeader() {
                 >
                   <Search className="size-3.5" aria-hidden="true" /> Buscar
                 </button>
-                <span className="sm:hidden">
-                  <TemaToggle />
-                </span>
                 <span className="sm:hidden">
                   <SinoNotificacoes />
                 </span>

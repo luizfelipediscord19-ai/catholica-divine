@@ -881,57 +881,7 @@
 }
 
 
-.light {
-  /* Remapeia os tokens de marca: superfícies "deep" ficam claras e a tinta
-     "paper" fica escura, para todo o portal funcionar no tema claro. */
-  --deep: #f7f3ea;
-  --paper: #191713;
-  --gold: #8a6a1c;
-  --gold-soft: #6d5314;
-  --gold-accent: #a8842a;
-  --marian: #17406f;
-  --marian-soft: #1d4e89;
 
-  --background: #fdfbf6;
-  --foreground: #17150f;
-  --card: #ffffff;
-  --card-foreground: #17150f;
-  --popover: #ffffff;
-  --popover-foreground: #17150f;
-  --primary: #17406f;
-  --primary-foreground: #ffffff;
-  --secondary: #8a6a1c;
-  --secondary-foreground: #ffffff;
-  --muted: #f3efe3;
-  --muted-foreground: #4c473b;
-  --accent: #8a6a1c;
-  --accent-foreground: #ffffff;
-  --destructive: #8b0000;
-  --destructive-foreground: #ffffff;
-  --destructive-text: #8b0000;
-  --border: rgba(24, 20, 12, 0.1);
-  --input: rgba(24, 20, 12, 0.22);
-  --ring: #17406f;
-  --glass-bg: rgba(255, 255, 255, 0.82);
-  --glass-border: rgba(24, 20, 12, 0.07);
-  --gradient-surface: linear-gradient(180deg, #ffffff, var(--background));
-  --shadow-elegant: 0 20px 50px -22px rgba(24, 20, 12, 0.22);
-  --hairline: color-mix(in oklab, var(--gold) 22%, transparent);
-  --shadow-btn: 0 1px 2px rgba(24, 20, 12, 0.12);
-  --shadow-btn-hover: 0 8px 22px -10px color-mix(in oklab, var(--gold) 45%, transparent);
-  --shadow-card: 0 1px 2px rgba(24, 20, 12, 0.08);
-  --shadow-card-hover: 0 16px 36px -18px rgba(24, 20, 12, 0.28);
-
-  /* Status semântico no tema claro */
-  --success: #1f6a41;
-  --success-foreground: #ffffff;
-  --warning: #7a5b00;
-  --warning-foreground: #ffffff;
-  --info: #17406f;
-  --info-foreground: #ffffff;
-
-
-}
 
 
 @layer base {
@@ -1040,28 +990,12 @@
 
 
 
-.light .glass {
-  box-shadow: 0 8px 32px 0 rgba(10, 10, 10, 0.08);
-}
-.light .soft-shadow {
-  box-shadow: 0 10px 40px -10px rgba(10, 10, 10, 0.18);
-}
-.light .text-glow-gold {
-  text-shadow: none;
-}
-.light .text-gold\/60,
-.light .text-gold\/70,
-.light .text-gold\/80 {
-  color: var(--gold-soft);
-}
-.light .text-paper\/60,
-.light .text-paper\/70,
-.light .text-paper\/75 {
-  color: rgba(23, 21, 18, 0.78);
-}
-.light .prose-deep {
-  color: rgba(23, 21, 18, 0.9);
-}
+
+
+
+
+
+
 
 @layer utilities {
   .text-glow-gold {
