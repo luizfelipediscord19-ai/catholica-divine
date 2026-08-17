@@ -5,6 +5,7 @@ import { Newspaper, ExternalLink } from "lucide-react";
 
 import { PageHero } from "@/components/PageShell";
 import { listarNoticiasFn } from "@/lib/noticias.functions";
+import claustro from "@/assets/claustro.jpg";
 
 const SITE_URL = "https://portalcatolico.vercel.app";
 
@@ -57,6 +58,7 @@ function NoticiasIndisponiveis() {
   return (
     <div>
       <PageHero
+        image={claustro}
         eyebrow="Acta Ecclesiae · Edição diária"
         title={
           <>

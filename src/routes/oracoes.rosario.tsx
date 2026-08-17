@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import { PageHero, Section } from "../components/PageShell";
 import { CONJUNTOS, ORACOES_BASE, conjuntoDoDia, type ConjuntoMisterios } from "../lib/data/devocoes/rosario";
 import { Relacionados } from "../components/Relacionados";
+import rosario from "@/assets/rosario.jpg";
 
 
 export const Route = createFileRoute("/oracoes/rosario")({
@@ -161,6 +162,7 @@ function Page() {
   return (
     <div>
       <PageHero
+        image={rosario}
         eyebrow="Devotio"
         title="Santo Rosário"
         intro={`Hoje, ${dayName()}: sugestão de ${sugestao.nome.toLowerCase()}. Modo guiado com contagem automática e cronômetro.`}

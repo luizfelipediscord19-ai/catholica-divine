@@ -4,6 +4,8 @@ import { ArrowLeft, BookOpen, Calendar, RefreshCw } from "lucide-react";
 import { liturgiaQueryOptions } from "../lib/liturgia/query";
 import { COR_CLASSE } from "../lib/liturgia/calendario";
 import type { LeituraLiturgica } from "../lib/liturgia.functions";
+import { PageHero } from "@/components/PageShell";
+import velas from "@/assets/velas.jpg";
 
 const SITE_URL = "https://portalcatolico.vercel.app";
 
@@ -68,7 +70,15 @@ function Page() {
   const { data: lit } = useSuspenseQuery(liturgiaQueryOptions());
 
   return (
-    <div className="shell-narrow py-block">
+    <div>
+      <PageHero
+        image={velas}
+        eyebrow={lit.dataExtenso}
+        title={lit.celebracao}
+        intro="As leituras da Missa do dia, o tempo litúrgico e a cor correspondente — para acompanhar a oração da Igreja."
+      />
+
+      <div className="shell-narrow py-block">
       <Link
         to="/calendario-liturgico"
         className="inline-flex items-center gap-2 kicker hover:text-gold mb-6"
@@ -76,10 +86,7 @@ function Page() {
         <ArrowLeft className="size-3" aria-hidden="true" /> Calendário litúrgico
       </Link>
 
-      <p className="kicker mb-3 capitalize">{lit.dataExtenso}</p>
-      <h1 className="font-display text-4xl md:text-5xl text-foreground leading-tight">{lit.celebracao}</h1>
-
-      <div className="mt-6 flex flex-wrap items-center gap-3 label-btn">
+      <div className="mt-2 flex flex-wrap items-center gap-3 label-btn">
         <span className={`inline-flex items-center gap-2 px-3 py-1.5 border ${COR_CLASSE[lit.cor]}`}>
           <span className="size-2 rounded-full bg-current" aria-hidden="true" /> Cor {lit.corNome}
         </span>
@@ -126,6 +133,7 @@ function Page() {
         Ano Litúrgico e o Calendário (Paulo VI, <em>Mysterii Paschalis</em>, 1969). Textos das
         leituras conforme a tradução liturgica em uso no Brasil.
       </p>
+      </div>
     </div>
   );
 }

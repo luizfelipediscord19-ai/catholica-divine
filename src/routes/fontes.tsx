@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 
 import { PageHero, Section, Prose, CardGrid } from "@/components/PageShell";
 import { LegendaConfiabilidade } from "@/components/SeloConfiabilidade";
+import biblioteca from "@/assets/biblioteca.jpg";
 
 const URL_PAGINA = "https://portalcatolico.vercel.app/fontes";
 const TITULO = "Fontes e Metodologia — Como verificamos o conteúdo | Portal Católico";
@@ -76,6 +77,7 @@ function FontesPage() {
   return (
     <>
       <PageHero
+        image={biblioteca}
         eyebrow="Transparência editorial"
         title="Fontes e Metodologia"
         intro="O Portal Católico existe para auxiliar no estudo da fé — e estudo exige fontes. Aqui está o que usamos e como verificamos cada conteúdo publicado."

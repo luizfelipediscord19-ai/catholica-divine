@@ -4,6 +4,7 @@ import { NotaConfiabilidade } from "../components/SeloConfiabilidade";
 import { SophiaChat } from "../components/SophiaChat";
 import { Sparkles } from "lucide-react";
 import { SUGESTOES_COROINHAS } from "../lib/data/sophia-perguntas";
+import sacramentos from "@/assets/sacramentos.jpg";
 
 export const Route = createFileRoute("/coroinhas")({
   head: () => ({
@@ -56,6 +57,7 @@ function Page() {
   return (
     <div>
       <PageHero
+        image={sacramentos}
         eyebrow="Ministerium Altaris"
         title="Coroinhas — O Serviço ao Altar"
         intro="Servir ao altar é participar do ministério dos anjos. Não é função decorativa, mas vocação sagrada de quem cuida das coisas santas com reverência, ciência e amor."

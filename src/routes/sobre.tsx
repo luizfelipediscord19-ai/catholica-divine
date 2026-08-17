@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowLeft, ScrollText, ShieldCheck, BookMarked, Users } from "lucide-react";
+import { PageHero } from "@/components/PageShell";
+import vitralSobre from "@/assets/vitral.jpg";
 
 const BASE = "https://portalcatolico.vercel.app";
 
@@ -156,28 +158,21 @@ export function Card({
 
 function SobrePage() {
   return (
-    <div className="shell py-block">
+    <div>
+      <PageHero
+        image={vitralSobre}
+        eyebrow="Ratio Editionis"
+        title={<>Sobre o Portal <span className="italic text-gold/70">e sua curadoria</span></>}
+        intro="O Portal Católico é um acervo de formação e estudo: Bíblia completa, Catecismo, santos, orações, liturgia e apologética. Esta página descreve abertamente como o conteúdo é escolhido, escrito, conferido e corrigido — para que qualquer leitor possa auditar o que lê aqui."
+      />
+
+      <div className="shell py-block">
       <Link
         to="/"
         className="inline-flex items-center gap-2 kicker hover:text-gold mb-10 transition-colors"
       >
         <ArrowLeft className="size-3.5" aria-hidden="true" /> Voltar
       </Link>
-
-      <header className="mb-16">
-        <p className="kicker mb-5 flex items-center gap-3">
-          <ScrollText className="size-4" aria-hidden="true" /> Ratio Editionis
-        </p>
-        <h1 className="title-page text-foreground leading-[1.05] mb-6">
-          Sobre o Portal <span className="text-gold/70 italic">e sua curadoria</span>
-        </h1>
-        <p className="text-base md:text-lg text-muted-foreground font-light leading-[1.8] max-w-3xl">
-          O Portal Católico é um acervo de formação e estudo: Bíblia completa, Catecismo,
-          santos, orações, liturgia e apologética. Esta página descreve abertamente como o
-          conteúdo é escolhido, escrito, conferido e corrigido — para que qualquer leitor,
-          leigo, seminarista, pesquisador ou pastor, possa auditar o que lê aqui.
-        </p>
-      </header>
 
       <section aria-labelledby="criterios" className="mb-20">
         <h2
@@ -296,6 +291,7 @@ function SobrePage() {
           Apontar correção no fórum
         </Link>
       </section>
+      </div>
     </div>
   );
 }

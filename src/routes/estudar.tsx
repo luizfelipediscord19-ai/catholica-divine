@@ -5,6 +5,8 @@ import { GraduationCap, ArrowRight, Check, Circle, CircleDot } from "lucide-reac
 import { TRILHAS } from "@/lib/data/trilhas";
 import { lerProgresso, percentual, chaveLicao, type ProgressoTrilhas } from "@/lib/trilhas/progresso";
 import { ContinuarLeitura } from "@/components/portal/ContinuarLeitura";
+import { PageHero } from "@/components/PageShell";
+import claustro from "@/assets/claustro.jpg";
 
 const BASE = "https://portalcatolico.vercel.app";
 const TITULO = "Começar a estudar — Percursos de formação católica | Portal Católico";
@@ -107,7 +109,15 @@ function EstudarPage() {
   const licaoUltima = trilhaUltima?.licoes.find((l) => l.slug === ultima?.licao);
 
   return (
-    <div className="shell py-block space-y-[var(--space-lg)]">
+    <div>
+      <PageHero
+        image={claustro}
+        eyebrow="Percursos de formação"
+        title="Começar a estudar"
+        intro="Escolha o nível que corresponde ao seu momento. Cada percurso reúne uma trilha guiada e as seções do Portal ligadas ao tema — com fontes sempre citadas."
+      />
+
+      <div className="shell py-block space-y-[var(--space-lg)]">
       <nav aria-label="Você está aqui" className="text-step--2 text-muted-foreground">
         <ol className="flex flex-wrap items-center gap-2">
           <li>
@@ -120,18 +130,6 @@ function EstudarPage() {
         </ol>
       </nav>
 
-      <header className="measure">
-        <p className="flex items-center gap-3 kicker">
-          <GraduationCap className="size-4" aria-hidden="true" /> Percursos de formação
-        </p>
-        <h1 className="mt-4 font-display leading-tight text-paper text-[length:var(--step-4)]">
-          Começar a estudar
-        </h1>
-        <p className="mt-5 font-light leading-relaxed text-paper/75">
-          Escolha o nível que corresponde ao seu momento. Cada percurso reúne uma trilha guiada e as
-          seções do Portal ligadas ao tema — com fontes sempre citadas.
-        </p>
-      </header>
 
       {licaoUltima && trilhaUltima ? (
         <section
@@ -242,6 +240,7 @@ function EstudarPage() {
             </section>
           );
         })}
+      </div>
       </div>
     </div>
   );

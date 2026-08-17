@@ -4,6 +4,7 @@ import { PageHero, Prose, Pullquote, CardGrid, ContentCard } from "../components
 import { ReadingMode, FnRef } from "../components/ReadingMode";
 import { HORAS, FONTES_OFICIAIS } from "../lib/data/devocoes/horas";
 import { BuscaHoras } from "../components/BuscaHoras";
+import biblioteca from "@/assets/biblioteca.jpg";
 
 export const Route = createFileRoute("/oracoes/liturgia-das-horas")({
   head: () => ({
@@ -124,6 +125,7 @@ function Page() {
   return (
     <div>
       <PageHero
+        image={biblioteca}
         eyebrow="Officium Divinum"
         title="Liturgia das Horas"
         intro="A oração pública e oficial da Igreja, que santifica todas as horas do dia, prolongando o cântico de louvor que o próprio Cristo introduziu no mundo (SC 83)."
