@@ -132,47 +132,54 @@ function NoticiasPage() {
         ) : (
 
           <div className="space-y-[var(--space-lg)]">
-            <article className="glass p-card">
-              <p className="label-btn text-gold/80">
-                {destaque.categoria} · {formatar(destaque.publicado_em)}
+            <p className="kicker">
+              {noticias.length} {noticias.length === 1 ? "notícia" : "notícias"} no acervo
+            </p>
+
+            {/* Destaque: o cartão inteiro é área de toque no celular. */}
+            <Link
+              to="/noticias/$slug"
+              params={{ slug: destaque.slug }}
+              className="glass group block p-card transition-premium active:scale-[0.995] hover:border-gold/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+            >
+              <p className="flex flex-wrap items-center gap-x-2 gap-y-1 label-btn text-gold/80">
+                <span>{destaque.categoria}</span>
+                <span aria-hidden className="size-1 rounded-full bg-gold/40" />
+                <span>{formatar(destaque.publicado_em)}</span>
               </p>
-              <h2 className="mt-3 title-page text-foreground">
-                <Link to="/noticias/$slug" params={{ slug: destaque.slug }} className="hover:text-gold transition-colors">
-                  {destaque.titulo}
-                </Link>
+              <h2 className="mt-3 font-display text-[length:var(--step-2)] leading-[1.18] tracking-tight text-balance text-foreground transition-colors group-hover:text-gold sm:text-[length:var(--step-4)] sm:leading-[1.08]">
+                {destaque.titulo}
               </h2>
-              <p className="measure mt-4 text-[length:var(--step-0)] font-light leading-relaxed text-muted-foreground">
-                {destaque.resumo}
-              </p>
-              <Link
-                to="/noticias/$slug"
-                params={{ slug: destaque.slug }}
-                className="mt-6 inline-flex min-h-11 items-center kicker hover:text-gold transition-colors"
-              >
+              <p className="measure mt-4 body-base text-muted-foreground">{destaque.resumo}</p>
+              <span className="mt-5 inline-flex min-h-11 items-center kicker group-hover:text-gold">
                 Ler a notícia →
-              </Link>
-            </article>
+              </span>
+            </Link>
 
             <div className="grid grid-cols-1 gap-px bg-gold/10 md:grid-cols-2 lg:grid-cols-3">
               {resto.map((n) => (
-                <article key={n.id} className="flex h-full flex-col bg-background p-card">
-                  <p className="label-btn text-gold/80">
-                    {n.categoria} · {formatar(n.publicado_em)}
+                <Link
+                  key={n.id}
+                  to="/noticias/$slug"
+                  params={{ slug: n.slug }}
+                  className="group flex h-full min-h-[6rem] flex-col bg-background p-card transition-premium active:bg-card/60 hover:bg-card/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-inset"
+                >
+                  <p className="flex flex-wrap items-center gap-x-2 gap-y-1 label-btn text-gold/80">
+                    <span>{n.categoria}</span>
+                    <span aria-hidden className="size-1 rounded-full bg-gold/40" />
+                    <span>{formatar(n.publicado_em)}</span>
                   </p>
-                  <h3 className="mt-3 title-card text-foreground">
-                    <Link to="/noticias/$slug" params={{ slug: n.slug }} className="hover:text-gold transition-colors">
-                      {n.titulo}
-                    </Link>
+                  <h3 className="mt-3 title-card text-balance text-foreground transition-colors group-hover:text-gold">
+                    {n.titulo}
                   </h3>
-                  <p className="mt-3 flex-1 text-sm font-light leading-relaxed text-muted-foreground">
-                    {n.resumo}
-                  </p>
+                  <p className="mt-3 line-clamp-4 flex-1 body-sm sm:line-clamp-none">{n.resumo}</p>
                   {n.fonte_nome ? (
-                    <p className="mt-4 flex items-center gap-2 kicker text-muted-foreground">
-                      <ExternalLink className="size-3.5" aria-hidden="true" /> {n.fonte_nome}
+                    <p className="mt-4 flex min-w-0 items-center gap-2 kicker text-muted-foreground">
+                      <ExternalLink className="size-3.5 shrink-0" aria-hidden="true" />
+                      <span className="truncate">{n.fonte_nome}</span>
                     </p>
                   ) : null}
-                </article>
+                </Link>
               ))}
             </div>
           </div>

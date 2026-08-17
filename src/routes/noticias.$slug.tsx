@@ -132,24 +132,26 @@ function NoticiaPage() {
         <ArrowLeft className="size-3.5" aria-hidden="true" /> Notícias
       </Link>
 
-      <p className="mt-8 label-btn text-gold/80">
-        {data.categoria} · {data_pub}
+      <p className="mt-6 flex flex-wrap items-center gap-x-2 gap-y-1 label-btn text-gold/80 sm:mt-8">
+        <span>{data.categoria}</span>
+        <span aria-hidden className="size-1 rounded-full bg-gold/40" />
+        <span>{data_pub}</span>
       </p>
-      <h1 className="mt-3 title-page text-foreground">{data.titulo}</h1>
-      <p className="measure mt-5 text-[length:var(--step-1)] font-light leading-relaxed text-foreground/80">
-        {data.resumo}
-      </p>
+      <h1 className="mt-3 font-display text-[length:var(--step-3)] leading-[1.14] tracking-tight text-balance text-foreground sm:text-[length:var(--step-4)] sm:leading-[1.08]">
+        {data.titulo}
+      </h1>
+      <p className="measure mt-5 body-lead text-foreground/80">{data.resumo}</p>
 
       {data.imagem_url ? (
         <img
           src={data.imagem_url}
           alt={data.titulo}
           loading="lazy"
-          className="mt-[var(--space-md)] w-full border border-gold/10 object-cover"
+          className="art-plate mt-[var(--space-md)] aspect-16/10 w-full border border-gold/10 object-cover sm:aspect-auto"
         />
       ) : null}
 
-      <div className="mt-[var(--space-md)] space-y-[var(--space-sm)] text-[length:var(--step-0)] font-light leading-relaxed text-foreground/85">
+      <div className="measure mt-[var(--space-md)] space-y-[var(--space-sm)] body-base font-light">
         {data.corpo
           .split(/\n{2,}/)
           .map((p) => p.trim())
@@ -170,12 +172,21 @@ function NoticiaPage() {
             rel="noopener noreferrer nofollow"
             className="mt-3 inline-flex min-h-11 items-center gap-2 label-btn text-gold hover:text-gold/80"
           >
-            <ExternalLink className="size-4" aria-hidden="true" />
-            Ver na fonte original{data.fonte_nome ? ` — ${data.fonte_nome}` : ""}
+            <ExternalLink className="size-4 shrink-0" aria-hidden="true" />
+            <span className="min-w-0">
+              Ver na fonte original{data.fonte_nome ? ` — ${data.fonte_nome}` : ""}
+            </span>
           </a>
         ) : data.fonte_nome ? (
           <p className="mt-3 kicker text-muted-foreground">Fonte: {data.fonte_nome}</p>
         ) : null}
+
+        <Link
+          to="/noticias"
+          className="btn-base btn-outline-gold mt-[var(--space-sm)] w-full px-5 py-3 label-btn sm:w-auto"
+        >
+          Ver todas as notícias
+        </Link>
       </footer>
     </article>
   );
