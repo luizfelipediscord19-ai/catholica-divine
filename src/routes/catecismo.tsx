@@ -1,6 +1,7 @@
+import trento from "@/assets/concilio-trento.jpg";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import biblioteca from "@/assets/biblioteca.jpg";
-import { PageHero, Section, Prose, Sources, Pullquote } from "../components/PageShell";
+import { PageHero, Section, Prose, Sources, Pullquote, Prancha } from "../components/PageShell";
 import { Termo } from "../components/Termo";
 import { PARTES, SECOES, VATICAN_URL } from "../lib/data/catecismo";
 import { ExternalLink } from "lucide-react";
@@ -128,6 +129,12 @@ function Page() {
             <em> vatican.va</em> e com a tradução brasileira aprovada pela CNBB (Loyola/Vozes/Paulinas/Paulus, 1999).
           </p>
         </Prose>
+
+        <Prancha
+          image={trento}
+          alt="Sessão do Concílio de Trento reunida na catedral, com bispos e teólogos."
+          legenda="O Concílio de Trento (1545–1563) produziu o Catecismo Romano, antecessor direto do Catecismo de 1992 pedido pelo Sínodo de 1985."
+        />
 
         <Sources
           items={[

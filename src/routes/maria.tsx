@@ -1,5 +1,6 @@
+import anunciacao from "../assets/anunciacao.jpg";
 import { createFileRoute } from "@tanstack/react-router";
-import { PageHero, CardGrid, ContentCard, Prose, Pullquote } from "../components/PageShell";
+import { PageHero, CardGrid, ContentCard, Prose, Pullquote, Prancha } from "../components/PageShell";
 import { ReadingMode, FnRef } from "../components/ReadingMode";
 import { Termo } from "../components/Termo";
 import maria from "../assets/maria.jpg";
@@ -246,6 +247,12 @@ function Page() {
             </p>
           </section>
         </Prose>
+
+        <Prancha
+          image={anunciacao}
+          alt="Anunciação: o anjo Gabriel se inclina diante de Maria sob os arcos de um pórtico."
+          legenda="“Faça-se em mim segundo a tua palavra” (Lc 1,38): o consentimento livre de Maria abre a Encarnação (CIC §§ 484–494)."
+        />
 
         <section id="aparicoes" className="scroll-mt-24 mt-12">
           <MarcarEstudo tipo="maria" chave="aparicoes" />

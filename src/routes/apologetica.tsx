@@ -1,6 +1,7 @@
+import chaves from "@/assets/vitral.jpg";
 import { createFileRoute } from "@tanstack/react-router";
 import biblioteca from "@/assets/biblioteca.jpg";
-import { PageHero, Section, Prose, Sources, Pullquote } from "../components/PageShell";
+import { PageHero, Section, Prose, Sources, Pullquote, Prancha } from "../components/PageShell";
 import { BancoObjecoes } from "../components/portal/BancoObjecoes";
 
 export const Route = createFileRoute("/apologetica")({
@@ -167,6 +168,12 @@ function Page() {
             <em> “A verdade não pode contradizer a verdade”</em> (Leão XIII, <em>Providentissimus Deus</em>, 1893).
           </p>
         </Prose>
+
+        <Prancha
+          image={chaves}
+          alt="Fresco da entrega das chaves a São Pedro diante do templo."
+          legenda="A apologética católica não argumenta a partir de opiniões: apoia-se na autoridade que Cristo confiou a Pedro e aos Apóstolos (Mt 16,18-19; CIC §§ 880–882)."
+        />
 
         <Sources
           items={[

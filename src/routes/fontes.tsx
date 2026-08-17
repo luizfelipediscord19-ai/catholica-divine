@@ -1,6 +1,7 @@
+import trento from "@/assets/concilio-trento.jpg";
 import { createFileRoute, Link } from "@tanstack/react-router";
 
-import { PageHero, Section, Prose, CardGrid } from "@/components/PageShell";
+import { PageHero, Section, Prose, CardGrid, Prancha } from "@/components/PageShell";
 import { LegendaConfiabilidade } from "@/components/SeloConfiabilidade";
 import biblioteca from "@/assets/biblioteca.jpg";
 
@@ -108,6 +109,13 @@ function FontesPage() {
             classifica o conteúdo sensível com estes indicadores:
           </p>
         </Prose>
+
+        <Prancha
+          image={trento}
+          alt="Bispos reunidos em sessão conciliar no século XVI."
+          legenda="Concílios, encíclicas e catecismos são as fontes verificáveis que sustentam cada página deste portal — sempre com referência ao texto original."
+        />
+
         <LegendaConfiabilidade className="mt-sm" />
         <div className="mt-sm"><Prose>
           <p>

@@ -1,5 +1,6 @@
+import emaus from "../assets/emaus.jpg";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { PageHero, Section, Prose, Sources, Pullquote } from "../components/PageShell";
+import { PageHero, Section, Prose, Sources, Pullquote, Prancha } from "../components/PageShell";
 import { LIVROS } from "../lib/data/biblia";
 import manuscrito from "../assets/manuscrito.jpg";
 import { useState } from "react";
@@ -273,6 +274,12 @@ function Page() {
           </p>
 
         </Prose>
+
+        <Prancha
+          image={emaus}
+          alt="A Ceia em Emaús: Cristo abençoa o pão diante de dois discípulos surpresos."
+          legenda="“Não estava ardendo o nosso coração quando ele nos explicava as Escrituras?” (Lc 24,32) — a Escritura se abre plenamente na liturgia e na Eucaristia (CIC § 1346)."
+        />
 
         <Sources
           items={[

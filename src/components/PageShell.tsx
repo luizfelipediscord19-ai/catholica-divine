@@ -208,3 +208,64 @@ export function Pullquote({ children, cite }: { children: ReactNode; cite?: stri
     </figure>
   );
 }
+
+/**
+ * Prancha ilustrada de meio de página: reprodução de arte sacra em domínio
+ * público com legenda documentada (obra, autor, ano, acervo e link para a
+ * fonte). Use dentro de <Prose> ou entre seções de conteúdo.
+ */
+export function Prancha({
+  image,
+  alt,
+  legenda,
+  formato = "largo",
+}: {
+  image: string;
+  alt: string;
+  /** Frase curta que liga a imagem ao texto ao redor. */
+  legenda?: ReactNode;
+  formato?: "largo" | "retrato";
+}) {
+  const obra = obraDaUrl(image);
+  return (
+    <figure
+      data-leitura-oculto
+      className="my-[var(--space-lg)] overflow-hidden rounded-[var(--radius-card)] border border-gold/20 bg-card/40"
+    >
+      <div
+        className={[
+          "relative overflow-hidden",
+          formato === "retrato" ? "aspect-4/5 sm:aspect-3/2" : "aspect-16/10 sm:aspect-2/1",
+        ].join(" ")}
+      >
+        <ImagemOtimizada
+          src={image}
+          alt={alt}
+          width={1600}
+          height={900}
+          sizes="(max-width: 768px) 100vw, 70vw"
+          className="size-full object-cover"
+        />
+        <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-background/55 via-transparent to-transparent" />
+      </div>
+      <figcaption className="space-y-1 border-t border-gold/15 px-[var(--space-sm)] py-[var(--space-xs)]">
+        {legenda ? <p className="body-sm text-foreground/80">{legenda}</p> : null}
+        {obra ? (
+          <p className="body-meta">
+            <span className="text-foreground/70 italic">{obra.titulo}</span> — {obra.autor},{" "}
+            {obra.ano}
+            {obra.local ? ` · ${obra.local}` : ""} ·{" "}
+            <a
+              href={obra.fonte}
+              target="_blank"
+              rel="noreferrer"
+              className="underline decoration-gold/40 underline-offset-2 hover:text-gold"
+            >
+              domínio público
+            </a>
+          </p>
+        ) : null}
+      </figcaption>
+    </figure>
+  );
+}
