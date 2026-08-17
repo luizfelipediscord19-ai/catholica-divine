@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { ImagemOtimizada } from "./ImagemOtimizada";
-import { legendaObra, obraDaUrl } from "@/lib/data/obras";
+import { obraDaUrl } from "@/lib/data/obras";
 
 export function PageHero({
   eyebrow,
