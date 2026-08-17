@@ -57,7 +57,13 @@ const FOOTNOTES = [
   { id: "rp", label: "São João Paulo II, Exortação Reconciliatio et Paenitentia (02.12.1984)", ref: "" },
   { id: "cic-can", label: "Código de Direito Canônico (1983)", ref: "cc. 840–1165 — disciplina sacramental" },
   { id: "rituais", label: "Rituais litúrgicos oficiais (Editio typica latina)", ref: "RICA (1972), Ordo Confirmationis (1971), Ordo Pænitentiæ (1973), Ordo Unctionis Infirmorum (1972), De Ordinatione (1990), Ordo Celebrandi Matrimonium (1991)" },
+  { id: "ur", label: "Concílio Vaticano II, Decreto Unitatis Redintegratio (21.11.1964)", ref: "nn. 3, 22 — batismo válido e diferença quanto à Ordem e à Eucaristia" },
+  { id: "di", label: "Congregação para a Doutrina da Fé, Declaração Dominus Iesus (06.08.2000)", ref: "nn. 20-22 — necessidade da Igreja e vias da graça" },
+  { id: "resp2020", label: "Congregação para a Doutrina da Fé, Responsa ad dubia sobre a validade do Batismo (24.06.2020)", ref: "invalidade da fórmula “nós te batizamos”" },
+  { id: "st62", label: "São Tomás de Aquino, Summa Theologiae", ref: "III, qq. 60-65 — causalidade instrumental e caráter sacramental" },
+  { id: "ecum", label: "Pontifício Conselho para a Unidade dos Cristãos, Diretório Ecumênico (25.03.1993)", ref: "communicatio in sacris; cf. CDC, cân. 844" },
 ];
+
 
 function Page() {
   return (
