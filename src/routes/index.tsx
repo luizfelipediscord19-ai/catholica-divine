@@ -246,7 +246,21 @@ function Home() {
           aria-hidden
           className="absolute bottom-0 right-12 hidden h-64 w-px bg-linear-to-t from-gold to-transparent lg:block"
         />
+
+        {/* Crédito da obra: transparência editorial sobre a arte usada */}
+        <p className="shell absolute inset-x-0 bottom-4 hidden text-step--2 text-foreground/40 md:block">
+          Disputa do Santíssimo Sacramento — Rafael Sanzio, 1509–1510 · Museus Vaticanos ·{" "}
+          <a
+            href="https://commons.wikimedia.org/wiki/File:Raphael%27s_Disputation_of_the_Holy_Sacrament.jpg"
+            target="_blank"
+            rel="noreferrer"
+            className="underline decoration-gold/40 underline-offset-2 hover:text-gold"
+          >
+            domínio público
+          </a>
+        </p>
       </section>
+
 
 
       {/* Tempo litúrgico em tempo real */}
