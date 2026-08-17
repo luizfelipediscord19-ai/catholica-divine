@@ -55,7 +55,7 @@ function TrilhasIndex() {
         <Link
           to="/trilhas/$trilha/$licao"
           params={{ trilha: trilhaUltima.slug, licao: licaoUltima.slug }}
-          className="surface-card surface-card-interactive flex items-center justify-between gap-4 border border-gold/30 bg-gold/5 p-5 transition-colors hover:border-gold"
+          className="surface-card surface-card-interactive mt-[var(--space-sm)] flex items-center justify-between gap-4 border border-gold/30 bg-gold/5 p-5 transition-colors hover:border-gold"
         >
           <span>
             <span className="block kicker">
@@ -88,7 +88,8 @@ function TrilhasIndex() {
               </div>
               <h2 className="mt-3 font-display text-2xl text-paper">{trilha.titulo}</h2>
               <p className="mt-2 body-sm text-paper/75">{trilha.descricao}</p>
-              <div className="mt-auto pt-6 h-1 h-1 w-full bg-paper/10">
+              <div className="mt-auto" aria-hidden="true" />
+              <div className="mt-6 h-1 w-full bg-paper/10">
                 <div className="h-1 bg-gold" style={{ width: `${pct}%` }} />
               </div>
               <p className="mt-2 flex items-center justify-between label-btn text-paper/55">
