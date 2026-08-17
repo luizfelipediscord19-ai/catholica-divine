@@ -158,7 +158,7 @@ function AuthPage() {
                   type="button"
                   onClick={() => setModo(valor)}
                   aria-pressed={modo === valor}
-                  className={`px-4 py-2 label-btn border transition-premium ${
+                  className={`btn-base btn-sm border transition-premium ${
                     modo === valor
                       ? "border-gold bg-gold/10 text-gold"
                       : "border-gold/15 text-paper/60 hover:text-paper hover:border-gold/40"

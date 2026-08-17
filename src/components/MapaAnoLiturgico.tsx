@@ -180,7 +180,7 @@ export function MapaAnoLiturgico() {
             <button
               key={t.slug}
               onClick={() => setAtivo(t.slug)}
-              className={`relative flex items-center gap-2 px-3 py-2 label-btn transition-colors ${
+              className={`btn-base btn-sm relative gap-2 transition-colors ${
                 active ? "bg-gold/15 text-gold" : "text-foreground/70 hover:text-foreground"
               }`}
             >

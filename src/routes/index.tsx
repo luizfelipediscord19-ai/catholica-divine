@@ -484,7 +484,7 @@ function Home() {
             </p>
             <Link
               to="/maria"
-              className="group inline-flex items-center gap-4 px-7 py-4 min-h-12 border border-gold/30 text-gold label-btn hover:bg-gold hover:text-deep transition-premium"
+              className="group btn-base btn-lg w-full sm:w-auto gap-4 border border-gold/30 text-gold hover:bg-gold hover:text-deep transition-premium"
             >
               <span>Estudar Mariologia</span>
               <span className="group-hover:translate-x-2 transition-transform">→</span>

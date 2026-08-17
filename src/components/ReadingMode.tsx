@@ -81,7 +81,7 @@ export function ReadingMode({
                     href={`#${t.id}`}
                     onClick={() => setOpen(false)}
                     aria-current={active === t.id ? "true" : undefined}
-                    className={`group flex items-center gap-3 rounded-[var(--radius-btn)] py-2 pr-2 text-step--1 leading-snug transition-premium ${
+                    className={`group flex min-h-10 items-center gap-3 rounded-[var(--radius-btn)] py-2 pr-2 text-step--1 leading-snug transition-premium ${
                       active === t.id
                         ? "text-gold"
                         : "text-muted-foreground hover:text-foreground"
