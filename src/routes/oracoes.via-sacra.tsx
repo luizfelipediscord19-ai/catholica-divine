@@ -75,9 +75,89 @@ function Page() {
         </div>
       </Section>
 
+      <Section kicker="Fundamento" title="Origem, sentido e indulgências">
+        <Prose>
+          <p>
+            A Via-Sacra é a devoção que percorre, em estações, o caminho de Cristo da condenação ao sepulcro.
+            Não é um espetáculo comemorativo, mas exercício de <em>compaixão</em> — no sentido literal de
+            padecer com Ele — e de conversão: <em>“Se alguém quer vir após mim, renuncie a si mesmo, tome
+            cada dia a sua cruz e siga-me”</em> (Lc 9,23).
+          </p>
+
+          <Pullquote cite="Concílio Vaticano II — Sacrosanctum Concilium 13">
+            Recomendam-se muito os exercícios piedosos do povo cristão, desde que estejam em conformidade com
+            as leis e normas da Igreja… mas devem harmonizar-se com a liturgia, dela derivar e a ela conduzir.
+          </Pullquote>
+
+          <h3>História da devoção</h3>
+          <NotaConfiabilidade nivel="historia">
+            Marcos historicamente documentados. A numeração e os títulos das catorze estações consolidaram-se
+            aos poucos: não são de origem apostólica nem de definição dogmática.
+          </NotaConfiabilidade>
+          <ul>
+            <li><strong>Séculos IV–V, Jerusalém</strong> — os peregrinos percorrem os lugares da Paixão; o diário de <em>Egéria</em> (c. 381–384) descreve as procissões da Semana Santa entre o Getsêmani, o Gólgota e a Anástasis.</li>
+            <li><strong>Séculos XIV–XV</strong> — confiada à custódia dos Lugares Santos (1342), a Ordem Franciscana difunde na Europa a prática de reproduzir o caminho de Jerusalém em capelas e cruzeiros, para quem não podia peregrinar.</li>
+            <li><strong>Séculos XVII–XVIII</strong> — fixa-se o número de <strong>catorze</strong> estações. <strong>São Leonardo de Porto Maurício</strong> († 1751) erige centenas de Via-Sacras, entre elas a do Coliseu, em Roma (1750).</li>
+            <li><strong>Época contemporânea</strong> — a Via-Sacra do Coliseu, presidida pelo Papa na Sexta-feira Santa, tornou-se referência universal; São João Paulo II propôs em 1991 uma <em>Via Crucis bíblica</em>, com todas as estações atestadas nos Evangelhos.</li>
+          </ul>
+
+          <h3>Como rezar bem</h3>
+          <ul>
+            <li>Reza-se em qualquer época, e de modo especial nas <strong>sextas-feiras da Quaresma</strong> e na <strong>Sexta-feira Santa</strong>.</li>
+            <li>Em cada estação: a aclamação <em>“Nós Vos adoramos, Senhor Jesus Cristo…”</em>, leitura ou meditação breve, silêncio, Pai-Nosso, Ave-Maria e Glória.</li>
+            <li>Pode ser feita em igreja, com as imagens das estações, ou privadamente — o essencial é a meditação, não o deslocamento físico.</li>
+            <li>Conclui-se ordinariamente com oração pelas intenções do Santo Padre e um ato de contrição.</li>
+          </ul>
+
+          <h3>Indulgências</h3>
+          <NotaConfiabilidade nivel="oficial">
+            O <em>Enchiridion Indulgentiarum</em> (4ª ed., 1999), concessão n. 13, atribui <strong>indulgência
+            plenária</strong> ao exercício piedoso da Via-Sacra, nas condições habituais: confissão sacramental,
+            comunhão eucarística, oração pelas intenções do Sumo Pontífice e ausência de apego ao pecado, ainda
+            que venial (cf. <em>CIC</em> §§ 1471–1479; CDC, cân. 992–997).
+          </NotaConfiabilidade>
+          <ul>
+            <li>Faz-se diante de estações legitimamente erigidas (ordinariamente catorze cruzes).</li>
+            <li>Exige-se meditação sobre a Paixão, não a recitação de fórmulas determinadas.</li>
+            <li>É preciso mover-se de estação em estação; quando feita publicamente e o deslocamento é difícil, basta que o dirigente se mova.</li>
+            <li>Impedidos legitimamente (doentes, presos) podem lucrar a mesma indulgência dedicando pelo menos meia hora à leitura e meditação da Paixão.</li>
+          </ul>
+        </Prose>
+
+        <Sources
+          items={[
+            { label: "Bíblia Sagrada — Lc 9,23; Jo 19; Mc 15; Mt 27", ref: "narrativas da Paixão" },
+            { label: "Concílio Vaticano II, Sacrosanctum Concilium (1963)", ref: "n. 13" },
+            { label: "Catecismo da Igreja Católica", ref: "§§ 618, 1471–1479, 2669" },
+            { label: "Código de Direito Canônico (1983)", ref: "cân. 992–997 (indulgências)" },
+            { label: "Penitenciaria Apostólica, Enchiridion Indulgentiarum, 4ª ed. (1999)", ref: "concessão n. 13" },
+            { label: "Congregação para o Culto Divino, Diretório sobre Piedade Popular e Liturgia (2002)", ref: "nn. 131–135" },
+            { label: "Itinerarium Egeriae (c. 381–384)", ref: "liturgia estacional de Jerusalém" },
+            { label: "São João Paulo II, Via Crucis bíblica (Sexta-feira Santa de 1991)", ref: "estações com base evangélica" },
+          ]}
+        />
+      </Section>
+
+      <Section kicker="Variante aprovada" title="Via Crucis bíblica (1991)">
+        <Prose>
+          <p>
+            Proposta por São João Paulo II para que cada estação tivesse apoio explícito nos Evangelhos.
+            Convive com a forma tradicional, sem a substituir.
+          </p>
+        </Prose>
+        <div className="mt-md">
+          <CardGrid cols={3}>
+            {VIA_BIBLICA.map((v) => (
+              <ContentCard key={v.title} title={v.title}>{v.body}</ContentCard>
+            ))}
+          </CardGrid>
+        </div>
+      </Section>
+
       <Section>
         <div className="flex flex-wrap items-center gap-3">
           <Link to="/oracoes" className="px-5 py-3 btn-base btn-outline-gold">← Todas as orações</Link>
+          <Link to="/oracoes/terco-misericordia" className="px-5 py-3 btn-base btn-outline-gold">Terço da Misericórdia →</Link>
         </div>
         <Relacionados topic="via-sacra" className="mt-8" />
       </Section>
