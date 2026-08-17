@@ -86,7 +86,7 @@ export function UltimosArtigos() {
                     width={1536}
                     height={1024}
                     sizes={SIZES_CARD}
-                    className="size-full object-cover opacity-75 transition-transform duration-[1.2s] ease-out group-hover:scale-105 group-hover:opacity-100"
+                    className="art-plate size-full object-cover opacity-75 transition-transform duration-[1.2s] ease-out group-hover:scale-105 group-hover:opacity-100"
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-deep/90 via-deep/25 to-transparent" />
                   <p className="absolute bottom-4 left-4 kicker text-gold">{n.categoria}</p>
@@ -152,7 +152,7 @@ export function TrilhasIlustradas() {
                     width={1536}
                     height={1024}
                     sizes="(max-width: 768px) 100vw, 66vw"
-                    className="size-full object-cover opacity-80 transition-transform duration-[1.2s] ease-out group-hover:scale-105 group-hover:opacity-100"
+                    className="art-plate size-full object-cover opacity-80 transition-transform duration-[1.2s] ease-out group-hover:scale-105 group-hover:opacity-100"
                   />
                   <div className="absolute inset-0 bg-linear-to-t from-deep/80 via-deep/15 to-transparent" />
                   <span className="absolute left-4 top-4 border border-gold/30 bg-deep/70 px-3 py-1 kicker text-gold backdrop-blur-md">
@@ -191,7 +191,7 @@ export function TrilhasIlustradas() {
                       width={1536}
                       height={1024}
                       sizes="120px"
-                      className="size-full object-cover opacity-75 transition-transform duration-700 group-hover:scale-110 group-hover:opacity-100"
+                      className="art-plate size-full object-cover opacity-75 transition-transform duration-700 group-hover:scale-110 group-hover:opacity-100"
                     />
                   </div>
                   <div className="min-w-0">
