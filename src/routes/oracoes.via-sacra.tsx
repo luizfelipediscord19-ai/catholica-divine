@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { PageHero, Section } from "../components/PageShell";
+import { PageHero, Section, Prose, Sources, Pullquote, CardGrid, ContentCard } from "../components/PageShell";
+import { NotaConfiabilidade } from "../components/SeloConfiabilidade";
 import { ESTACOES } from "../lib/data/devocoes/viasacra";
 import { Relacionados } from "../components/Relacionados";
 
@@ -8,14 +9,35 @@ import { Relacionados } from "../components/Relacionados";
 export const Route = createFileRoute("/oracoes/via-sacra")({
   head: () => ({
     meta: [
-      { title: "Via-Sacra — Portal Católico" },
+      { title: "Via-Sacra — as 14 estações, história, indulgências e fontes" },
       { property: "og:url", content: "https://portalcatolico.vercel.app/oracoes/via-sacra" },
-      { name: "description", content: "As catorze estações da Via-Sacra com meditações e referências bíblicas." },
+      { name: "description", content: "As catorze estações da Via-Sacra com meditações e referências bíblicas, a história da devoção em Jerusalém e na tradição franciscana, as indulgências e a Via Crucis bíblica." },
+      { property: "og:title", content: "Via-Sacra — Caminho da Cruz" },
+      { property: "og:description", content: "Catorze estações com meditação, história da devoção e fontes magisteriais." },
+      { property: "og:type", content: "article" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "https://portalcatolico.vercel.app/oracoes/via-sacra" }],
   }),
   component: Page,
 });
+
+const VIA_BIBLICA = [
+  { title: "1. Jesus no Horto das Oliveiras", body: "Mt 26,36–41 — a agonia e o “não a minha, mas a vossa vontade”." },
+  { title: "2. Jesus é traído por Judas e preso", body: "Mc 14,43–46 — o beijo da traição." },
+  { title: "3. Jesus é condenado pelo Sanedrim", body: "Mc 14,55–64 — a confissão messiânica diante do sumo sacerdote." },
+  { title: "4. Jesus é negado por Pedro", body: "Mt 26,69–75 — a queda e as lágrimas do primeiro Papa." },
+  { title: "5. Jesus é julgado por Pilatos", body: "Mc 15,1–15 — “Que farei então do rei dos judeus?”." },
+  { title: "6. Jesus é flagelado e coroado de espinhos", body: "Jo 19,1–3 — o Rei escarnecido." },
+  { title: "7. Jesus carrega a cruz", body: "Jo 19,17 — o lenho da Redenção." },
+  { title: "8. Simão de Cirene ajuda Jesus", body: "Mc 15,21 — a cooperação do discípulo." },
+  { title: "9. Jesus encontra as mulheres de Jerusalém", body: "Lc 23,27–31 — “chorai por vós mesmas”." },
+  { title: "10. Jesus é crucificado", body: "Lc 23,33–34 — “Pai, perdoa-lhes”." },
+  { title: "11. Jesus promete o Reino ao bom ladrão", body: "Lc 23,39–43 — a canonização do Calvário." },
+  { title: "12. Jesus na cruz, a Mãe e o discípulo", body: "Jo 19,25–27 — “Eis aí tua mãe”." },
+  { title: "13. Jesus morre na cruz", body: "Lc 23,44–46 — “Está consumado”." },
+  { title: "14. Jesus é sepultado", body: "Mt 27,57–60 — o silêncio do sábado santo." },
+];
 
 function Page() {
   const [i, setI] = useState(0);
