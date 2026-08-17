@@ -190,8 +190,8 @@ function Home() {
   return (
     <div className="overflow-x-hidden">
       {/* Hero */}
-      <section className="relative flex min-h-[62vh] items-center overflow-hidden py-section sm:min-h-[72vh]">
-        <div className="absolute inset-0 scale-105" aria-hidden>
+      <section className="relative flex min-h-[70vh] items-center overflow-hidden py-section sm:min-h-[85vh]">
+        <div className="absolute inset-0" aria-hidden>
           <ImagemOtimizada
             src={hero}
             alt=""
@@ -202,37 +202,37 @@ function Home() {
             className="size-full object-cover"
           />
         </div>
-        <div className="absolute inset-0 bg-linear-to-b from-background/75 via-background/60 to-background" />
-        <div className="absolute inset-0 bg-background/25" />
+        {/* Noir editorial: escurece da esquerda para a direita, preservando a luz da nave */}
+        <div className="absolute inset-0 bg-linear-to-r from-background via-background/85 to-background/10" />
+        <div className="absolute inset-0 bg-background/45" />
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-linear-to-t from-background to-transparent" />
 
         <div className="shell relative w-full">
-          <div className="max-w-3xl animate-reveal">
-            <p className="mb-5 flex items-center gap-3 kicker text-gold/85 sm:gap-4">
-              <span className="hidden h-px w-10 shrink-0 bg-gold/40 sm:block" />
-              <span className="min-w-0">Una · Sancta · Catholica · Apostolica</span>
+          <div className="max-w-2xl animate-reveal">
+            <p className="mb-6 flex items-center gap-3 kicker text-gold sm:gap-4">
+              <span className="hidden h-px w-10 shrink-0 bg-gold/50 sm:block" />
+              <span className="min-w-0 tracking-[0.32em]">Una · Sancta · Catholica · Apostolica</span>
             </p>
-            <h1 className="mb-5 font-display text-[length:var(--step-5)] leading-[1.02] tracking-tight text-balance text-foreground">
+            <h1 className="mb-6 font-display text-[length:var(--step-5)] font-bold leading-[1.08] tracking-tight text-balance text-foreground">
               A biblioteca{" "}
-              <span className="relative inline-block whitespace-nowrap font-medium italic text-gold">
-                da Fé
-              </span>
+              <span className="block font-normal italic text-gold-accent">da Fé</span>
             </h1>
-            <p className="measure mb-8 text-[length:var(--step-1)] font-light leading-relaxed text-foreground/75">
+            <p className="measure mb-10 text-[length:var(--step-1)] font-light leading-relaxed text-foreground/70">
               Escritura, Catecismo, Padres da Igreja, santos e devoções tradicionais —
               reunidos em uma única referência de estudo, fiel ao Magistério desde
               Pedro até hoje.
             </p>
-            <div className="flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+            <div className="flex flex-col items-stretch gap-4 sm:flex-row sm:flex-wrap sm:items-center">
               <Link
                 to="/estudar"
-                className="btn-base btn-gold px-6 label-btn"
+                className="btn-base btn-gold px-8 py-4 label-btn"
               >
                 <BookOpen className="size-4 shrink-0" />
                 <span className="whitespace-nowrap">Começar a estudar</span>
               </Link>
               <Link
                 to="/assistente"
-                className="btn-base btn-outline-gold px-6 label-btn"
+                className="btn-base btn-outline-gold px-8 py-4 label-btn"
               >
                 <Sparkles className="size-4 shrink-0" />
                 <span className="whitespace-nowrap">Falar com a IA</span>
@@ -240,6 +240,12 @@ function Home() {
             </div>
           </div>
         </div>
+
+        {/* Filete de ouro: assinatura vertical do hero */}
+        <div
+          aria-hidden
+          className="absolute bottom-0 right-12 hidden h-64 w-px bg-linear-to-t from-gold to-transparent lg:block"
+        />
       </section>
 
 
