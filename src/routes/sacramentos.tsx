@@ -331,7 +331,68 @@ function Page() {
               <em> ex opere operato</em>, mas dispõem para a recepção dos sacramentos.
             </p>
           </section>
+
+          <section id="teologia" className="scroll-mt-24">
+            <h3>Teologia sacramental aprofundada</h3>
+            <p>
+              A doutrina dos sacramentos organiza-se em torno de algumas distinções técnicas que evitam tanto o
+              magismo quanto o subjetivismo.
+            </p>
+            <h4>Causalidade e <em>ex opere operato</em></h4>
+            <p>
+              Os sacramentos causam a graça que significam. A tradição escolástica fala de
+              <strong> causalidade instrumental</strong>: Cristo é a causa principal, o rito é o instrumento
+              (São Tomás, <em>Summa Theologiae</em> III, q. 62). Por isso Trento definiu que a graça é conferida
+              <em> ex opere operato</em> — pela obra realizada, e não pela santidade do ministro (Sess. VII, cân. 8
+              <FnRef n="trento7" />; CIC §§ 1127-1128). Isso não dispensa a fé: <em>“os frutos dos sacramentos
+              dependem também das disposições de quem os recebe”</em> (CIC § 1128) — o chamado
+              <em> opus operantis</em>. Um sacramento pode ser <strong>válido</strong> e ainda assim
+              <strong> infrutuoso</strong> se recebido sem as devidas disposições; nesse caso, a Igreja fala de
+              graça que <em>revive</em> quando o obstáculo é removido pela conversão.
+            </p>
+            <h4>Validade, licitude e caráter</h4>
+            <ul>
+              <li><strong>Validade</strong> — depende de matéria, forma, ministro capaz e intenção de fazer o que faz a Igreja (CIC § 1256; CDC, cc. 840-848).</li>
+              <li><strong>Licitude</strong> — depende do cumprimento das normas litúrgicas e canônicas: um sacramento pode ser válido, mas ilícito.</li>
+              <li><strong>Caráter sacramental</strong> — Batismo, Confirmação e Ordem imprimem sinal espiritual indelével e por isso jamais se repetem (CIC §§ 1121, 1272, 1582; Trento, Sess. VII, cân. 9).</li>
+              <li><strong>Fórmula fixa</strong> — a Congregação para a Doutrina da Fé, nas <em>Responsa ad dubia</em> de 24.06.2020, declarou inválidos batismos celebrados com a fórmula “nós te batizamos…”, porque o sujeito que batiza é Cristo pelo ministro, não a assembleia.</li>
+            </ul>
+            <h4>Necessidade, desejo e casos-limite</h4>
+            <p>
+              O Batismo é necessário à salvação para quem ouviu o Evangelho e pode pedi-lo (Jo 3,5; CIC § 1257),
+              mas <em>“Deus não está vinculado aos seus sacramentos”</em> (CIC § 1257): a Tradição reconhece o
+              <strong> batismo de sangue</strong> (martírio) e o <strong>batismo de desejo</strong>, explícito ou
+              implícito, na busca sincera da verdade e no cumprimento da vontade de Deus segundo a consciência
+              (CIC §§ 1258-1260; LG 16). Para os catecúmenos e para quem, sem culpa, ignora o Evangelho, a Igreja
+              confia na misericórdia divina — o que nunca autoriza a indiferença missionária (AG 7;
+              <em>Dominus Iesus</em> 20-22).
+            </p>
+            <h4>Sacramentos e outras confissões cristãs</h4>
+            <p>
+              O Batismo válido celebrado fora da Igreja Católica não se repete: constitui vínculo real de comunhão
+              (UR 3, 22; CIC §§ 1271, 818). Já quanto à Eucaristia e à Ordem, o <em>Decreto Unitatis
+              Redintegratio</em> 22 nota a diferença entre as Igrejas orientais, que conservam a sucessão apostólica
+              e sacramentos válidos, e as comunidades eclesiais surgidas da Reforma, nas quais falta o sacramento da
+              Ordem tal como a Igreja o entende. A <em>communicatio in sacris</em> é regulada pelos cân. 844 e pelo
+              <em> Diretório para a Aplicação dos Princípios e Normas do Ecumenismo</em> (1993).
+            </p>
+            <h4>Ano litúrgico e economia sacramental</h4>
+            <p>
+              Os sacramentos não são atos privados: pertencem à <em>economia sacramental</em>, dispensação dos
+              frutos da Páscoa de Cristo na liturgia da Igreja (CIC §§ 1076-1112). A Vigília Pascal é o tempo
+              paradigmático da iniciação cristã; o Domingo, “dia do Senhor”, é o fundamento e o núcleo de todo o ano
+              litúrgico (<em>Sacrosanctum Concilium</em> 106<FnRef n="sc" />).
+            </p>
+
+            <NotaConfiabilidade nivel="oficial">
+              <em>Ex opere operato</em>, caráter indelével, necessidade do Batismo e a exigência de matéria, forma e
+              intenção são doutrina definida (Trento, Sess. VII; CIC). A explicação por “causalidade instrumental” é
+              elaboração teológica escolástica recebida pela Igreja, não um dogma em si; e a disciplina da
+              <em> communicatio in sacris</em> é norma canônica, sujeita a determinação da autoridade.
+            </NotaConfiabilidade>
+          </section>
         </Prose>
+
 
         {/* ============ QUICK REFERENCE CARDS ============ */}
         <section className="mt-16">
