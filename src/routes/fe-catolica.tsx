@@ -1,5 +1,6 @@
+import pentecostes from "../assets/pentecostes.jpg";
 import { createFileRoute } from "@tanstack/react-router";
-import { PageHero, Section, CardGrid, ContentCard, Prose, Sources, Pullquote } from "../components/PageShell";
+import { PageHero, Section, CardGrid, ContentCard, Prose, Sources, Pullquote, Prancha } from "../components/PageShell";
 import { NotaConfiabilidade } from "../components/SeloConfiabilidade";
 import vitral from "../assets/vitral.jpg";
 
@@ -109,6 +110,12 @@ function Page() {
             — entre elas a preservação do tipo, a continuidade dos princípios e o poder de assimilação.
           </p>
         </Prose>
+
+        <Prancha
+          image={pentecostes}
+          alt="Pintura do Pentecostes: línguas de fogo descem sobre Maria e os apóstolos reunidos."
+          legenda="Pentecostes: a fé que os Apóstolos professam é entregue à Igreja pelo Espírito Santo e transmitida sem ruptura (CIC §§ 731–741)."
+        />
 
         <NotaConfiabilidade nivel="oficial">
           As definições citadas nesta seção — a possibilidade do conhecimento natural de Deus, a obediência da fé

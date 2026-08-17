@@ -1,7 +1,8 @@
+import bomPastor from "@/assets/bom-pastor.jpg";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import rosario from "@/assets/rosario.jpg";
 import { useEffect, useMemo, useState } from "react";
-import { PageHero, Section, CardGrid, ContentCard } from "../components/PageShell";
+import { PageHero, Section, CardGrid, ContentCard, Prancha } from "../components/PageShell";
 import {
   CATEGORIAS_ORACAO,
   ORACOES,
@@ -193,6 +194,14 @@ function Page() {
           ))}
         </CardGrid>
       </Section>
+
+      <div className="shell w-full">
+        <Prancha
+          image={bomPastor}
+          alt="O Bom Pastor: o menino Jesus com o cajado, cercado por ovelhas."
+          legenda="Rezar é deixar-se conduzir: “a oração é a elevação da alma a Deus”, resposta viva ao Pastor que chama pelo nome (CIC §§ 2559, 2565)."
+        />
+      </div>
 
       <Section
         kicker="Acervo de orações"

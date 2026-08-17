@@ -1,6 +1,7 @@
+import batismo from "@/assets/batismo.jpg";
 import { createFileRoute } from "@tanstack/react-router";
 import eucaristia from "@/assets/eucaristia.jpg";
-import { PageHero, CardGrid, ContentCard, Prose, Pullquote } from "../components/PageShell";
+import { PageHero, CardGrid, ContentCard, Prose, Pullquote, Prancha } from "../components/PageShell";
 import { ReadingMode, FnRef } from "../components/ReadingMode";
 import { Termo } from "../components/Termo";
 import { NotaConfiabilidade } from "../components/SeloConfiabilidade";
@@ -147,6 +148,13 @@ function Page() {
             </ul>
           </section>
         </Prose>
+
+        <Prancha
+          image={batismo}
+          alt="Batismo de Cristo no Jordão, com João Batista derramando a água e o Espírito em forma de pomba."
+          legenda="No batismo de Cristo no Jordão a Igreja lê a origem do primeiro sacramento: a água santificada e o Espírito manifestado (CIC §§ 1223–1225)."
+          formato="retrato"
+        />
 
         {/* ============ INICIAÇÃO ============ */}
         <section id="iniciacao" className="scroll-mt-24 mt-12">
