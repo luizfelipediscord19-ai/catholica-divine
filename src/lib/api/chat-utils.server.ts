@@ -74,7 +74,11 @@ export function handleChatError(err: unknown): Response {
   // Não devolvemos a mensagem crua do provedor: ela pode revelar detalhes internos.
   let userMessage = "Não foi possível responder agora. Tente novamente em instantes.";
 
-  if (message.includes("429")) {
+  if (/too large|413|context_length|tokens per minute|TPM/i.test(message)) {
+    status = 429;
+    userMessage =
+      "A conversa ficou longa demais para a Sophia responder agora. Comece uma nova conversa ou faça a pergunta de forma mais curta.";
+  } else if (message.includes("429")) {
     status = 429;
     userMessage = "Muitas requisições. Aguarde um instante e tente novamente.";
   } else if (message.includes("402")) {
