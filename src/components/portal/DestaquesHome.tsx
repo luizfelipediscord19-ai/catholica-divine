@@ -9,8 +9,6 @@ import { listarNoticiasFn } from "@/lib/noticias.functions";
 import { TRILHAS } from "@/lib/data/trilhas";
 
 import velas from "@/assets/velas.jpg";
-import claustro from "@/assets/claustro.jpg";
-import cristo from "@/assets/cristo.jpg";
 import sacramentos from "@/assets/sacramentos.jpg";
 import rosario from "@/assets/rosario.jpg";
 import vitral from "@/assets/vitral.jpg";
