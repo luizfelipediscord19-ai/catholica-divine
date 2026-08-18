@@ -1,6 +1,20 @@
 import { useEffect, useRef, useState } from "react";
 
 /**
+ * Miniaturas do Wikimedia Commons aceitam a largura no próprio caminho
+ * (`/1600px-arquivo.jpg`). Quando a fonte é uma dessas URLs, entregamos um
+ * `srcset` de várias larguras: telas comuns baixam o arquivo leve e telas
+ * retina recebem a arte em alta definição, sem recorte nem borrão.
+ */
+const LARGURAS_RETRATO = [480, 800, 1200, 1600, 2000];
+
+function srcSetDe(url: string): string | undefined {
+  if (!/upload\.wikimedia\.org\/.+\/thumb\/.+\/\d+px-/.test(url)) return undefined;
+  return LARGURAS_RETRATO.map((w) => `${url.replace(/\/\d+px-/, `/${w}px-`)} ${w}w`).join(", ");
+}
+
+
+/**
  * Retrato de santo com carregamento otimizado: lazy por padrão, dimensões
  * declaradas (sem salto de layout), reserva na fonte pública de domínio
  * público quando a cópia do CDN não está disponível, entrada suave quando a
