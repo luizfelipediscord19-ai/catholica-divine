@@ -279,21 +279,26 @@ export function SiteHeader() {
 /** Entrar / sair, sempre refletindo a sessão atual. */
 function ContaBotao() {
   const { autenticado, carregando, sair } = useAuth();
-  if (carregando) return null;
+
+  // Reserva o espaço enquanto a sessão carrega: evita o cabeçalho "saltar".
+  if (carregando)
+    return <span aria-hidden="true" className="hidden h-10 w-[5.25rem] lg:block" />;
+
   return autenticado ? (
     <button
       type="button"
       onClick={() => void sair()}
-      className="btn-base btn-outline-gold btn-sm hidden lg:inline-flex"
+      className="btn-base btn-outline-gold btn-sm h-10 hidden w-[5.25rem] justify-center lg:inline-flex"
     >
       Sair
     </button>
   ) : (
     <Link
       to="/auth"
-      className="btn-base btn-outline-gold btn-sm hidden lg:inline-flex"
+      className="btn-base btn-outline-gold btn-sm h-10 hidden w-[5.25rem] justify-center lg:inline-flex"
     >
       Entrar
     </Link>
   );
 }
+
