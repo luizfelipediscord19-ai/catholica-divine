@@ -1,4 +1,4 @@
-import { memo, useRef, useEffect, useState } from "react";
+import { memo, useRef, useEffect, useState, type ReactNode } from "react";
 import ReactMarkdown from "react-markdown";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Check, Copy, RefreshCw, Share2 } from "lucide-react";
