@@ -66,14 +66,14 @@ function Page() {
       <Section kicker="Introdução doutrinária" title="A Palavra de Deus posta por escrito">
         <Prose>
           <p>
-            A Bíblia Sagrada é o conjunto dos <strong>73 livros</strong> que a Igreja Católica reconhece como
-            <em> inspirados pelo Espírito Santo</em> e, por isso, tendo <em>Deus por autor</em> (Concílio Vaticano II,
+            A Bíblia Sagrada é o conjunto dos <strong>73 livros</strong> que a Igreja Católica reconhece como{" "}
+            <em> inspirados pelo Espírito Santo</em> e, por isso, tendo <em>Deus por autor</em> (Concílio Vaticano II,{" "}
             <em> Dei Verbum</em> 11). Não se trata de um livro entre outros, mas do testemunho escrito da única
             Revelação que Deus fez de Si mesmo e do seu desígnio salvífico, cuja plenitude é Jesus Cristo, Verbo
             encarnado (<em>DV</em> 2; <em>CIC</em> §§ 50–67).
           </p>
           <p>
-            A Igreja venera as Escrituras como venera <em>o próprio Corpo do Senhor</em>, recebendo do altar único o
+            A Igreja venera as Escrituras como venera <em>o próprio Corpo do Senhor</em>, recebendo do altar único o{" "}
             <em> Pão da Vida tanto da Palavra de Deus quanto do Corpo de Cristo</em> (<em>DV</em> 21). Por isso o
             Catecismo ensina que <em>a fé cristã não é uma “religião do Livro”</em>; o cristianismo é a religião da
             Palavra de Deus, <em>Palavra não escrita e muda, mas Verbo encarnado e vivo</em> (<em>CIC</em> § 108,
@@ -87,8 +87,8 @@ function Page() {
           <h3>1. Inspiração: Deus autor, o hagiógrafo verdadeiro autor</h3>
           <p>
             Inspiração não é ditado mecânico. Deus escolheu homens e <em>serviu-se deles em posse das suas próprias
-            faculdades e capacidades</em>, agindo neles e por eles, para que escrevessem <em>como verdadeiros autores</em>
-            tudo — e somente — o que Ele quis (<em>DV</em> 11; <em>CIC</em> § 106). Por isso os livros sagrados ensinam
+            faculdades e capacidades</em>, agindo neles e por eles, para que escrevessem <em>como verdadeiros autores</em>{" "}
+            tudo — e somente — o que Ele quis (<em>DV</em> 11; <em>CIC</em> § 106). Por isso os livros sagrados ensinam{" "}
             <em> com firmeza, fidelidade e sem erro a verdade que Deus, em vista da nossa salvação, quis fosse
             consignada nas Sagradas Letras</em> (<em>DV</em> 11; <em>CIC</em> § 107).
           </p>
@@ -101,7 +101,7 @@ function Page() {
             definição solene: é a mesma transmitida pelos concílios regionais africanos do final do séc. IV
             (Hipona 393, Cartago 397), pela carta do papa Inocêncio I a Exupério (405) e confirmada pelo Concílio
             de Florença (1442, <em>Cantate Domino</em>). Diante das controvérsias do séc. XVI sobre o cânon, o
-            Concílio de Trento definiu-a solenemente como dogma de fé na <em>Sessão IV</em>, decreto
+            Concílio de Trento definiu-a solenemente como dogma de fé na <em>Sessão IV</em>, decreto{" "}
             <em> De Canonicis Scripturis</em> (8 de abril de 1546) — não criando um novo cânon, mas fechando com
             autoridade infalível o que já era a prática canônica recebida. A definição foi reafirmada pelo
             Concílio Vaticano I (<em> Dei Filius</em>, 1870) e pelo Vaticano II (<em>DV</em> 11).
@@ -111,9 +111,9 @@ function Page() {
             <li><strong>Novo Testamento (27):</strong> 4 Evangelhos, Atos dos Apóstolos, 14 cartas reunidas sob o nome de Paulo no cânon latino (sendo Hebreus, de autoria anônima, tradicionalmente associada ao círculo paulino), 7 cartas católicas e o Apocalipse.</li>
           </ul>
           <p>
-            Os sete livros que a tradição protestante chama de “apócrifos” são, para os católicos, os
+            Os sete livros que a tradição protestante chama de “apócrifos” são, para os católicos, os{" "}
             <em> deuterocanônicos</em>: Tobias, Judite, Sabedoria, Eclesiástico, Baruc, 1 e 2 Macabeus — além de
-            partes de Ester e Daniel. Foram lidos pela Igreja desde a antiguidade sobretudo na tradição textual grega conhecida como
+            partes de Ester e Daniel. Foram lidos pela Igreja desde a antiguidade sobretudo na tradição textual grega conhecida como{" "}
             <em> Septuaginta</em> (versão dos Setenta), de enorme importância no judaísmo de língua grega e de forte
             influência entre os primeiros cristãos. Diversas citações do Antigo Testamento presentes no Novo
             Testamento correspondem a essa tradição textual grega — o que não autoriza dizer, de modo simplificado,
@@ -124,7 +124,7 @@ function Page() {
           <h3>3. Escritura e Tradição: uma única fonte da Revelação</h3>
           <p>
             A Sagrada Escritura e a Sagrada Tradição <em>constituem um só sagrado depósito da Palavra de Deus
-            confiado à Igreja</em> (<em>DV</em> 10). <em>Manam da mesma fonte divina</em>, formam <em>um só todo</em>
+            confiado à Igreja</em> (<em>DV</em> 10). <em>Manam da mesma fonte divina</em>, formam <em>um só todo</em>{" "}
             e tendem ao mesmo fim (<em>DV</em> 9; <em>CIC</em> §§ 80–82). Interpretar a Escritura à margem da
             Tradição viva é, por isso, mutilá-la.
           </p>
@@ -132,7 +132,7 @@ function Page() {
           <h3>4. O Magistério, servo da Palavra</h3>
           <p>
             <em>O ofício de interpretar autenticamente a Palavra de Deus, escrita ou transmitida, foi confiado
-            unicamente ao Magistério vivo da Igreja, cuja autoridade é exercida em nome de Jesus Cristo</em>
+            unicamente ao Magistério vivo da Igreja, cuja autoridade é exercida em nome de Jesus Cristo</em>{" "}
             (<em>DV</em> 10; <em>CIC</em> § 85). Este Magistério <em>não está acima da Palavra de Deus, mas a serve</em>:
             ensina apenas o que foi transmitido (<em>DV</em> 10; <em>CIC</em> § 86). Escritura, Tradição e Magistério
             estão de tal modo ligados que nenhum subsiste sem os outros (<em>DV</em> 10; <em>CIC</em> § 95).
@@ -157,7 +157,7 @@ function Page() {
             A tradição patrística e medieval distingue, como recolhe o Catecismo (<em>CIC</em> §§ 115–119), dois
             grandes sentidos: o <strong>sentido literal</strong> (o significado das palavras, descoberto pela
             exegese segundo as regras da reta interpretação) e o <strong>sentido espiritual</strong>, que se
-            subdivide em <em>alegórico</em> (Cristo), <em>moral</em> (como agir) e <em>anagógico</em>
+            subdivide em <em>alegórico</em> (Cristo), <em>moral</em> (como agir) e <em>anagógico</em>{" "}
             (realidades eternas), segundo o dístico medieval:
           </p>
           <blockquote>
@@ -168,17 +168,17 @@ function Page() {
 
           <h3>6. Antigo e Novo Testamento: uma só economia</h3>
           <p>
-            <em>O Novo está oculto no Antigo, e o Antigo se torna claro no Novo</em> (Santo Agostinho,
+            <em>O Novo está oculto no Antigo, e o Antigo se torna claro no Novo</em> (Santo Agostinho,{" "}
             <em> Quaestiones in Heptateuchum</em> 2,73; citado em <em>DV</em> 16 e <em>CIC</em> § 129). A Igreja
-            jamais rejeitou o Antigo Testamento, contra a antiga heresia marcionita: ele permanece
+            jamais rejeitou o Antigo Testamento, contra a antiga heresia marcionita: ele permanece{" "}
             <em> verdadeira Palavra de Deus</em> (<em>DV</em> 14; <em>CIC</em> § 121).
           </p>
 
           <h3>7. Da língua original ao texto que lemos</h3>
           <p>
-            Os livros do Antigo Testamento foram escritos em <strong>hebraico</strong>, com seções em
-            <strong> aramaico</strong> (partes de Daniel e Esdras) e alguns livros conservados em
-            <strong> grego</strong> (Sabedoria, 2 Macabeus, entre outros). O Novo Testamento foi escrito em
+            Os livros do Antigo Testamento foram escritos em <strong>hebraico</strong>, com seções em{" "}
+            <strong> aramaico</strong> (partes de Daniel e Esdras) e alguns livros conservados em{" "}
+            <strong> grego</strong> (Sabedoria, 2 Macabeus, entre outros). O Novo Testamento foi escrito em{" "}
             <strong> grego koiné</strong>. Nenhum autógrafo — o manuscrito original saído da mão do
             hagiógrafo — chegou até nós: o texto é reconstruído pela <em>crítica textual</em> a partir de
             milhares de testemunhos.
@@ -198,12 +198,12 @@ function Page() {
 
           <h3>8. Inspiração, verdade e inerrância</h3>
           <p>
-            A afirmação de que a Escritura ensina <em>sem erro</em> refere-se à <strong>verdade salvífica</strong>
+            A afirmação de que a Escritura ensina <em>sem erro</em> refere-se à <strong>verdade salvífica</strong>{" "}
             que Deus quis consignar (<em>DV</em> 11), não à precisão de um manual de ciências naturais ou de
             historiografia moderna. Pio XII já advertia que o hagiógrafo escreve segundo os modos de falar
             do seu tempo, e que os relatos populares e as aproximações da linguagem cotidiana não são erros,
             mas gêneros (<em>Divino Afflante Spiritu</em> 35–39). Do mesmo modo, os textos que narram
-            violência ou práticas moralmente imperfeitas pertencem à pedagogia divina progressiva: são
+            violência ou práticas moralmente imperfeitas pertencem à pedagogia divina progressiva: são{" "}
             <em> imperfeitos e provisórios</em> (<em>DV</em> 15) e leem-se à luz de Cristo.
           </p>
 
@@ -230,9 +230,9 @@ function Page() {
 
           <h3>11. A Escritura na liturgia: o Lecionário</h3>
           <p>
-            O lugar primeiro em que a Igreja lê a Bíblia é a liturgia. A reforma conciliar quis que
+            O lugar primeiro em que a Igreja lê a Bíblia é a liturgia. A reforma conciliar quis que{" "}
             <em> os tesouros da Bíblia fossem abertos com maior largueza</em> (<em>Sacrosanctum Concilium</em> 51),
-            criando o Lecionário em ciclo dominical de três anos — <strong>Ano A</strong> (Mateus),
+            criando o Lecionário em ciclo dominical de três anos — <strong>Ano A</strong> (Mateus),{" "}
             <strong> B</strong> (Marcos), <strong>C</strong> (Lucas), com João distribuído nos tempos fortes —
             e um ciclo ferial de dois anos (I e II). Assim, a leitura orante pessoal caminha em harmonia com a
             leitura eclesial: a mesma Palavra proclamada no altar é ruminada no coração.
@@ -243,7 +243,7 @@ function Page() {
             O texto oficial da Igreja latina é a <strong>Nova Vulgata</strong>, promulgada por São João Paulo II
             em 1979 (<em>Scripturarum Thesaurus</em>). Para o uso litúrgico em português brasileiro vigora a
             tradução aprovada pela <em>Conferência Nacional dos Bispos do Brasil</em> (3ª edição, 2023). Entre
-            as edições católicas de estudo em português destacam-se a <strong>Bíblia de Jerusalém</strong>
+            as edições católicas de estudo em português destacam-se a <strong>Bíblia de Jerusalém</strong>{" "}
             (Paulus), a <strong>Bíblia do Peregrino</strong> (Alonso Schökel) e a <strong>TEB</strong>.
           </p>
           <p>
@@ -269,7 +269,7 @@ function Page() {
             insistentemente a leitura assídua, pessoal e comunitária, sobretudo na forma da <em>Lectio Divina</em>
             — leitura, meditação, oração e contemplação — , e a frequência aos sacramentos, sobretudo à
             Eucaristia, em que a Palavra encontra a sua plenitude. Desde 2019, o <em>Domingo da Palavra de
-            Deus</em> (III domingo do Tempo Comum), instituído por Francisco no motu proprio
+            Deus</em> (III domingo do Tempo Comum), instituído por Francisco no motu proprio{" "}
             <em> Aperuit Illis</em>, dá a esse convite forma litúrgica anual.
           </p>
 
@@ -329,7 +329,7 @@ function Page() {
             O Antigo Testamento é <em>verdadeira Palavra de Deus</em> e parte irrenunciável da Sagrada Escritura
             (<em>DV</em> 14). Recolhe a longa pedagogia divina que prepara e profetiza a vinda de Cristo: a
             criação e a queda, a vocação dos patriarcas, o êxodo, a aliança no Sinai, a monarquia, o exílio, o
-            retorno e a expectativa messiânica. Estruturalmente, agrupa-se em quatro blocos: <strong>Pentateuco</strong>
+            retorno e a expectativa messiânica. Estruturalmente, agrupa-se em quatro blocos: <strong>Pentateuco</strong>{" "}
             (a <em>Torá</em>), <strong>Históricos</strong>, <strong>Sapienciais</strong> e <strong>Proféticos</strong>.
           </p>
         </Prose>
@@ -362,12 +362,12 @@ function Page() {
       <Section kicker="Novo Testamento" title="27 livros — A Boa Nova de Cristo">
         <Prose>
           <p>
-            O Novo Testamento é o <em>coração de todas as Escrituras</em>, porque tem por objeto central
+            O Novo Testamento é o <em>coração de todas as Escrituras</em>, porque tem por objeto central{" "}
             <em> Jesus Cristo, Verbo encarnado, nosso Salvador</em> (<em>CIC</em> § 124, citando <em>DV</em> 17).
             Entre todos os livros sagrados, mesmo do Novo Testamento, os <strong>Evangelhos</strong> ocupam um lugar
-            único: <em>são o testemunho principal sobre a vida e a doutrina do Verbo encarnado</em> (<em>DV</em> 18;
-            <em> CIC</em> § 125). Seguem-se os <strong>Atos dos Apóstolos</strong>, as <strong>Cartas paulinas</strong>
-            (14 cartas reunidas sob o nome de Paulo no cânon latino, incluindo a anônima Hebreus), as
+            único: <em>são o testemunho principal sobre a vida e a doutrina do Verbo encarnado</em> (<em>DV</em> 18;{" "}
+            <em> CIC</em> § 125). Seguem-se os <strong>Atos dos Apóstolos</strong>, as <strong>Cartas paulinas</strong>{" "}
+            (14 cartas reunidas sob o nome de Paulo no cânon latino, incluindo a anônima Hebreus), as{" "}
             <strong> Cartas católicas</strong> (7) e o <strong>Apocalipse</strong>.
           </p>
         </Prose>

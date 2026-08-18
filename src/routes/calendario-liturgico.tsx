@@ -106,19 +106,19 @@ function Page() {
             <p>
               <em>“Pela tradição apostólica, que tem origem no próprio dia da Ressurreição de Cristo, a Igreja
               celebra o Mistério Pascal a cada oitavo dia, que se chama com razão dia do Senhor ou
-              domingo”</em> (<em>Sacrosanctum Concilium</em> 106<FnRef n="sc" />). As <em>Normas Universais</em>
+              domingo”</em> (<em>Sacrosanctum Concilium</em> 106<FnRef n="sc" />). As <em>Normas Universais</em>{" "}
               precisam que o domingo <em>deve ser tido como a festa primordial</em>, à qual só cedem as
-              solenidades e as festas do Senhor (nn. 4–5)<FnRef n="normas" />. O Catecismo desenvolve o tema em
+              solenidades e as festas do Senhor (nn. 4–5)<FnRef n="normas" />. O Catecismo desenvolve o tema em{" "}
               <em> CIC</em> §§ 1166–1167 e 2174–2188<FnRef n="cic" />; São João Paulo II dedicou-lhe a Carta
-              Apostólica <em>Dies Domini</em> (1998)<FnRef n="dies" />, que o descreve como <em>dies Domini</em>
+              Apostólica <em>Dies Domini</em> (1998)<FnRef n="dies" />, que o descreve como <em>dies Domini</em>{" "}
               (da criação), <em>dies Christi</em> (da Ressurreição), <em>dies Ecclesiae</em> (da assembleia
               eucarística), <em>dies hominis</em> (da alegria e do descanso) e <em>dies dierum</em>.
             </p>
             <p>
-              O que a liturgia celebra não é a lembrança de fatos passados, mas o <strong>memorial</strong>
+              O que a liturgia celebra não é a lembrança de fatos passados, mas o <strong>memorial</strong>{" "}
               (<em>anámnesis</em>) do único Mistério Pascal, que se torna presente e operante para os fiéis de
               cada tempo (<em>SC</em> 102; <em>CIC</em> §§ 1104, 1163–1165). Daí a lógica do ano: não um
-              calendário de aniversários, mas a pedagogia pela qual a Igreja conduz os batizados a
+              calendário de aniversários, mas a pedagogia pela qual a Igreja conduz os batizados a{" "}
               <em> viverem</em> o que celebram.
             </p>
             <p>
@@ -186,7 +186,7 @@ function Page() {
             <h3>II. Tempo do Natal</h3>
             <p>
               <em>“Depois da celebração anual do mistério pascal, nada têm a Igreja mais a peito do que recordar
-              o Nascimento do Senhor e as suas primeiras manifestações; é o que se faz no Tempo do Natal”</em>
+              o Nascimento do Senhor e as suas primeiras manifestações; é o que se faz no Tempo do Natal”</em>{" "}
               (<em>Normas Universais</em>, n. 32). Estende-se das I Vésperas do Natal até o Domingo do Batismo
               do Senhor inclusive (n. 33).
             </p>
@@ -203,7 +203,7 @@ function Page() {
             <h3>III. Tempo Comum — primeira parte</h3>
             <p>
               Inicia-se na segunda-feira após o Batismo do Senhor e prossegue até a Quarta-feira de Cinzas
-              exclusivamente (<em>Normas Universais</em>, n. 44). Conta-se em <em>“Semanas do Tempo Comum”</em>
+              exclusivamente (<em>Normas Universais</em>, n. 44). Conta-se em <em>“Semanas do Tempo Comum”</em>{" "}
               (até 34 ao todo). Cor: verde, sinal de esperança e de vida nova.
             </p>
           </section>
@@ -236,7 +236,7 @@ function Page() {
               <li><strong>Missa do Crisma</strong> (Quinta-feira Santa, manhã, na catedral) — bênção dos santos óleos; renovação das promessas sacerdotais.</li>
             </ul>
             <p>
-              A celebração detalhada é normada pela Carta Circular <em>Paschalis Sollemnitatis</em>
+              A celebração detalhada é normada pela Carta Circular <em>Paschalis Sollemnitatis</em>{" "}
               (1988)<FnRef n="paschalis-sollemnitatis" />.
             </p>
           </section>
@@ -246,7 +246,7 @@ function Page() {
             <p>
               <em>“Cristo redimiu a humanidade e deu perfeita glória a Deus principalmente pelo seu Mistério
               Pascal, no qual, morrendo, destruiu a nossa morte e, ressuscitando, restaurou a vida. Por isso, o
-              Tríduo da Paixão e da Ressurreição do Senhor brilha como ápice de todo o Ano Litúrgico”</em>
+              Tríduo da Paixão e da Ressurreição do Senhor brilha como ápice de todo o Ano Litúrgico”</em>{" "}
               (<em>Normas Universais</em>, n. 18). Inicia-se na Missa vespertina <em>in Cena Domini</em>, tem o
               seu centro na Vigília Pascal e encerra-se com as II Vésperas do Domingo da Ressurreição (n. 19).
             </p>
@@ -264,7 +264,7 @@ function Page() {
               <em>“Os cinquenta dias que vão do Domingo da Ressurreição ao Domingo do Pentecostes celebram-se na
               alegria e na exultação como um só dia de festa, como um grande Domingo”</em> (<em>Normas
               Universais</em>, n. 22). Os primeiros oito dias formam a <strong>Oitava da Páscoa</strong>,
-              celebrados como solenidades do Senhor (n. 24). Em todas as missas canta-se o <em>Aleluia</em>
+              celebrados como solenidades do Senhor (n. 24). Em todas as missas canta-se o <em>Aleluia</em>{" "}
               recuperado e o <em>Sequência</em> pascal <em>Victimæ Paschali Laudes</em>.
             </p>
             <ul>
@@ -318,7 +318,7 @@ function Page() {
               A <strong>tabela dos dias litúrgicos</strong> (Normas Universais, n. 59) fixa a precedência
               quando duas celebrações coincidem: o Tríduo Pascal e os domingos do Advento, Quaresma e Páscoa
               precedem qualquer festa; solenidades impedidas são transferidas segundo as regras dos nn. 5 e 60.
-              Além do calendário romano geral, cada nação, diocese e família religiosa possui
+              Além do calendário romano geral, cada nação, diocese e família religiosa possui{" "}
               <em> calendário próprio</em>, aprovado pela Sé Apostólica (nn. 48–55).
             </p>
           </section>
@@ -326,10 +326,10 @@ function Page() {
           <section id="horas" className="scroll-mt-24">
             <h3>A Liturgia das Horas: o dia santificado</h3>
             <p>
-              O Ano Litúrgico desdobra-se também no ritmo do dia. A <em>Liturgia das Horas</em> é
+              O Ano Litúrgico desdobra-se também no ritmo do dia. A <em>Liturgia das Horas</em> é{" "}
               <em> a oração pública da Igreja</em>, pela qual <em>o curso inteiro do dia e da noite é
-              consagrado pelo louvor divino</em> (<em>Sacrosanctum Concilium</em> 84<FnRef n="sc" />;
-              <em> CIC</em> §§ 1174–1178). A reforma pós-conciliar reorganizou o Ofício Divino na
+              consagrado pelo louvor divino</em> (<em>Sacrosanctum Concilium</em> 84<FnRef n="sc" />;{" "}
+              <em> CIC</em> §§ 1174–1178). A reforma pós-conciliar reorganizou o Ofício Divino na{" "}
               <em> Liturgia Horarum</em> (1971), com a <em>Instrução Geral sobre a Liturgia das
               Horas</em><FnRef n="iglh" />:
             </p>
@@ -360,8 +360,8 @@ function Page() {
               <li><strong>Frei Galvão</strong> — 11 de novembro, primeiro santo nascido no Brasil, canonizado por Bento XVI em 2007.</li>
             </ul>
             <p>
-              Em muitas dioceses brasileiras, a <strong>Ascensão</strong> e o <strong>Corpus Christi</strong>
-              observam datas transferidas ou dias de precepto próprios; a norma concreta é sempre a do
+              Em muitas dioceses brasileiras, a <strong>Ascensão</strong> e o <strong>Corpus Christi</strong>{" "}
+              observam datas transferidas ou dias de precepto próprios; a norma concreta é sempre a do{" "}
               <em> Diretório Litúrgico anual</em> da CNBB e do calendário diocesano<FnRef n="cnbb-cores" />.
             </p>
           </section>

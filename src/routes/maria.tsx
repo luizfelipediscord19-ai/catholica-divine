@@ -82,7 +82,7 @@ function Page() {
             <h3>Maria na economia da salvação</h3>
             <p>
               A mariologia católica não é um tratado autônomo, mas um capítulo da cristologia e da eclesiologia.
-              O Concílio Vaticano II quis evidenciá-lo colocando toda a doutrina sobre a Virgem no
+              O Concílio Vaticano II quis evidenciá-lo colocando toda a doutrina sobre a Virgem no{" "}
               <em> capítulo VIII de Lumen Gentium</em>, intitulado <em>“A Bem-aventurada Virgem Maria, Mãe de Deus,
               no mistério de Cristo e da Igreja”</em><FnRef n="lg8" />. A função de Maria <em>nasce e tira a sua
               eficácia da plenitude dos méritos de Cristo, apoia-se neles, depende inteiramente deles, e deles
@@ -99,12 +99,12 @@ function Page() {
           <MarcarEstudo tipo="maria" chave="escrituras" />
             <h3>Maria nas Escrituras</h3>
             <p>
-              O Novo Testamento fala de Maria com sobriedade, mas em momentos decisivos. Lucas narra a
-              <strong> Anunciação</strong> (Lc 1,26-38), em que o <em>“faça-se em mim segundo a tua palavra”</em>
+              O Novo Testamento fala de Maria com sobriedade, mas em momentos decisivos. Lucas narra a{" "}
+              <strong> Anunciação</strong> (Lc 1,26-38), em que o <em>“faça-se em mim segundo a tua palavra”</em>{" "}
               inaugura a obediência da fé; a <strong>Visitação</strong> e o <em>Magnificat</em> (Lc 1,39-56), o
               cântico dos pobres de Deus; o <strong>Natal</strong> e a apresentação no Templo, com a profecia da
               espada de Simeão (Lc 2,35). João apresenta-a em <strong>Caná</strong> (Jo 2,1-11), onde intercede e
-              remete os discípulos a Cristo (<em>“fazei tudo o que ele vos disser”</em>), e junto à
+              remete os discípulos a Cristo (<em>“fazei tudo o que ele vos disser”</em>), e junto à{" "}
               <strong> Cruz</strong> (Jo 19,25-27), onde é entregue como mãe ao discípulo amado — texto que a
               Tradição lê como fundamento da maternidade espiritual de Maria sobre a Igreja. Atos 1,14 mostra-a
               em oração com os Apóstolos à espera do Espírito, e Ap 12 apresenta a <em>Mulher</em> cujo sentido
@@ -128,8 +128,8 @@ function Page() {
           <MarcarEstudo tipo="maria" chave="patristica" />
             <h3>Os Padres: Maria, a nova Eva</h3>
             <p>
-              Já no século II, Santo Ireneu de Lião formula o paralelo que atravessará toda a tradição:
-              <em> “o nó da desobediência de Eva foi desfeito pela obediência de Maria”</em>
+              Já no século II, Santo Ireneu de Lião formula o paralelo que atravessará toda a tradição:{" "}
+              <em> “o nó da desobediência de Eva foi desfeito pela obediência de Maria”</em>{" "}
               (<em>Adversus Haereses</em> III, 22, 4) — texto retomado por <em>Lumen Gentium</em> 56
               <FnRef n="lg8" />. São Justino (<em>Diálogo com Trifão</em> 100) desenvolve a mesma antítese
               Eva/Maria, e Tertuliano insiste na realidade da carne recebida da Virgem, contra o docetismo.
@@ -177,7 +177,7 @@ function Page() {
           <MarcarEstudo tipo="maria" chave="virgindade" />
             <h4>II. Virgindade Perpétua (Sínodo de Latrão, 649)</h4>
             <p>
-              A Igreja confessa que Maria foi e permaneceu Virgem <em>antes, durante e depois do parto</em>
+              A Igreja confessa que Maria foi e permaneceu Virgem <em>antes, durante e depois do parto</em>{" "}
               (<em>ante partum, in partu, post partum</em>). Essa verdade foi solenemente formulada pelo Sínodo
               de Latrão de 649, convocado pelo Papa São Martinho I<FnRef n="latrao" /> — um sínodo romano, não o
               Concílio Ecumênico de Latrão I (1123) —, confirmando uma fé já atestada por Santo Inácio, São
@@ -218,10 +218,10 @@ function Page() {
           <MarcarEstudo tipo="maria" chave="titulos" />
             <h3>Títulos marianos</h3>
             <p>
-              A liturgia e o magistério atribuem a Maria, entre muitos, os seguintes títulos: <em>Mãe da Igreja</em>
+              A liturgia e o magistério atribuem a Maria, entre muitos, os seguintes títulos: <em>Mãe da Igreja</em>{" "}
               (Paulo VI, 1964; memória obrigatória instituída por Francisco em 2018), <em>Mediadora de todas as
-              graças</em>, <em>Auxílio dos cristãos</em>, <em>Causa da nossa alegria</em>, <em>Rainha do Céu</em>,
-              <em> Mãe da Misericórdia</em>. Todos esses títulos, ensina <em>Lumen Gentium</em> 62,
+              graças</em>, <em>Auxílio dos cristãos</em>, <em>Causa da nossa alegria</em>, <em>Rainha do Céu</em>,{" "}
+              <em> Mãe da Misericórdia</em>. Todos esses títulos, ensina <em>Lumen Gentium</em> 62,{" "}
               <em> nada acrescentam nem subtraem à dignidade e eficácia de Cristo, único Mediador</em>.
             </p>
             <NotaConfiabilidade nivel="teologia">
@@ -241,7 +241,7 @@ function Page() {
             <h3>Mediação e cooperação maternal</h3>
             <p>
               Maria coopera de modo singular na obra da Redenção pela obediência, fé, esperança e ardente
-              caridade (<em>LG</em> 61). Sua cooperação não compete com a única mediação de Cristo, mas é
+              caridade (<em>LG</em> 61). Sua cooperação não compete com a única mediação de Cristo, mas é{" "}
               <em> participação</em> dela (<em>LG</em> 62). É o que Paulo VI desenvolveu em <em>Marialis Cultus</em>
               <FnRef n="marialis" /> e São João Paulo II em <em>Redemptoris Mater</em><FnRef n="redmater" />.
             </p>
@@ -258,11 +258,11 @@ function Page() {
           <MarcarEstudo tipo="maria" chave="aparicoes" />
           <h3 className="font-display text-2xl text-foreground mb-3">Aparições aprovadas pela Igreja</h3>
           <p className="text-sm text-muted-foreground max-w-3xl mb-6 leading-relaxed">
-            Diferentemente da Revelação pública (encerrada com a morte do último Apóstolo, <em>DV</em> 4), as
+            Diferentemente da Revelação pública (encerrada com a morte do último Apóstolo, <em>DV</em> 4), as{" "}
             <em> revelações privadas</em> não pertencem ao depósito da fé e não obrigam à fé divina e católica
             (<em>CIC</em> §§ 66-67). O reconhecimento eclesiástico admite graus distintos — declaração de que
             "nada obsta" à devoção (<em>nihil obstat</em>), constatação de que a aparição não contradiz a fé e
-            a moral, ou, mais raramente, afirmação de que os fatos revestem "caracteres de verdade" — segundo as
+            a moral, ou, mais raramente, afirmação de que os fatos revestem "caracteres de verdade" — segundo as{" "}
             <em> Normas</em> do Dicastério para a Doutrina da Fé<FnRef n="cdf-aparicoes" />. Nenhuma aprovação
             eclesiástica equivale a uma declaração de que a aparição é "comprovadamente sobrenatural"; trata-se
             sempre de um juízo prudencial e pastoral, ao qual os fiéis podem aderir com fé humana e prudente,
@@ -292,7 +292,7 @@ function Page() {
               Recitado às 6h, 12h e 18h; substituído pelo <em>Regina Cæli</em> no tempo pascal.
             </ContentCard>
             <ContentCard title="Consagração mariana" subtitle="São Luís Maria Grignion de Montfort">
-              <em>Tratado da Verdadeira Devoção</em>; renovada e proposta por São João Paulo II (lema
+              <em>Tratado da Verdadeira Devoção</em>; renovada e proposta por São João Paulo II (lema{" "}
               <em> Totus Tuus</em>).
             </ContentCard>
             <ContentCard title="Escapulário do Carmo" subtitle="Aparecimento a São Simão Stock (1251)">

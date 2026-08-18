@@ -67,7 +67,7 @@ function Page() {
       <Section kicker="Fundamento" title="O que a Igreja ensina sobre a misericórdia divina">
         <Prose>
           <NotaConfiabilidade nivel="oficial">
-            A misericórdia de Deus é doutrina de fé, ensinada pela Escritura e pelo Catecismo. A
+            A misericórdia de Deus é doutrina de fé, ensinada pela Escritura e pelo Catecismo. A{" "}
             <em> forma</em> desta devoção (terço, coroa, imagem, Hora da Misericórdia) nasce de uma
             revelação privada aprovada — o que é coisa distinta: nenhuma revelação privada acrescenta algo
             ao depósito da fé.

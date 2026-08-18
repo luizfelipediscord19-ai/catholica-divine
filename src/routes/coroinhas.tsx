@@ -67,7 +67,7 @@ function Page() {
         <Prose>
           <p>
             O Serviço ao Altar — <em>ministerium altaris</em> — é a participação dos fiéis leigos no auxílio ao
-            celebrante durante as ações litúrgicas. A Instrução Geral do Missal Romano recorda que
+            celebrante durante as ações litúrgicas. A Instrução Geral do Missal Romano recorda que{" "}
             <em> na celebração todos, ministros e fiéis, devem exercer apenas e integralmente a função que lhes é
             própria</em> (IGMR 91; cf. <em>Sacrosanctum Concilium</em> 28–29). O coroinha não “ajuda por falta de
             gente”: exerce um serviço litúrgico verdadeiro, ainda que não instituído.

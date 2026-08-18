@@ -81,7 +81,7 @@ function Page() {
           <section id="introducao" className="scroll-mt-24">
             <h3>O que é um sacramento</h3>
             <p>
-              O Catecismo da Igreja Católica define, com a tradição escolástica:
+              O Catecismo da Igreja Católica define, com a tradição escolástica:{" "}
               <em> “Os sacramentos são sinais eficazes da graça, instituídos por Cristo e confiados à Igreja,
               pelos quais nos é dispensada a vida divina”</em> (<em>CIC</em> § 1131<FnRef n="cic" />). Três
               elementos compõem essa definição:
@@ -138,7 +138,7 @@ function Page() {
               O número setenário dos sacramentos foi fixado pelo Concílio de Lião II (1274), Concílio de Florença
               (Decreto <em>pro Armeniis</em>, 1439; DH 1310–1313) e definido infalivelmente pelo Concílio de
               Trento na Sessão VII (1547): <em>“Se alguém disser que os sacramentos da Nova Lei não foram todos
-              instituídos por Jesus Cristo Nosso Senhor, ou que são mais ou menos do que sete… seja anátema”</em>
+              instituídos por Jesus Cristo Nosso Senhor, ou que são mais ou menos do que sete… seja anátema”</em>{" "}
               (cân. 1; DH 1601<FnRef n="trento7" />). Agrupam-se classicamente em três blocos (CIC §§ 1210–1211):
             </p>
             <ul>
@@ -193,7 +193,7 @@ function Page() {
             <h3>2. Confirmação</h3>
             <p>
               Aperfeiçoa a graça batismal: <em>une mais perfeitamente à Igreja, enriquece de força especial do
-              Espírito Santo</em> (CIC § 1285). Foi reformada por Paulo VI em <em>Divinæ Consortium Naturæ</em>
+              Espírito Santo</em> (CIC § 1285). Foi reformada por Paulo VI em <em>Divinæ Consortium Naturæ</em>{" "}
               (1971), com o novo <em>Ordo Confirmationis</em><FnRef n="ds" />.
             </p>
             <ul>
@@ -304,7 +304,7 @@ function Page() {
             <h3>6. Ordem</h3>
             <p>
               Sacramento pelo qual a missão confiada por Cristo aos seus Apóstolos continua a ser exercida na
-              Igreja (CIC § 1536). Compreende três graus: <strong>episcopado</strong> (plenitude do sacerdócio),
+              Igreja (CIC § 1536). Compreende três graus: <strong>episcopado</strong> (plenitude do sacerdócio),{" "}
               <strong> presbiterado</strong> e <strong>diaconato</strong>.
             </p>
             <ul>
@@ -343,7 +343,7 @@ function Page() {
               Distintos dos sacramentos, os <strong>sacramentais</strong> são <em>sinais sagrados que, por uma
               certa imitação dos sacramentos, significam efeitos sobretudo espirituais</em> (Sacrosanctum
               Concilium 60<FnRef n="sc" />; CIC §§ 1667–1679). Incluem bênçãos (de pessoas, alimentos, objetos),
-              exorcismos, água benta, escapulários, medalhas, terço, romarias. Não conferem graça
+              exorcismos, água benta, escapulários, medalhas, terço, romarias. Não conferem graça{" "}
               <em> ex opere operato</em>, mas dispõem para a recepção dos sacramentos.
             </p>
           </section>
@@ -356,13 +356,13 @@ function Page() {
             </p>
             <h4>Causalidade e <em>ex opere operato</em></h4>
             <p>
-              Os sacramentos causam a graça que significam. A tradição escolástica fala de
+              Os sacramentos causam a graça que significam. A tradição escolástica fala de{" "}
               <strong> causalidade instrumental</strong>: Cristo é a causa principal, o rito é o instrumento
-              (São Tomás, <em>Summa Theologiae</em> III, q. 62). Por isso Trento definiu que a graça é conferida
+              (São Tomás, <em>Summa Theologiae</em> III, q. 62). Por isso Trento definiu que a graça é conferida{" "}
               <em> ex opere operato</em> — pela obra realizada, e não pela santidade do ministro (Sess. VII, cân. 8
               <FnRef n="trento7" />; CIC §§ 1127-1128). Isso não dispensa a fé: <em>“os frutos dos sacramentos
-              dependem também das disposições de quem os recebe”</em> (CIC § 1128) — o chamado
-              <em> opus operantis</em>. Um sacramento pode ser <strong>válido</strong> e ainda assim
+              dependem também das disposições de quem os recebe”</em> (CIC § 1128) — o chamado{" "}
+              <em> opus operantis</em>. Um sacramento pode ser <strong>válido</strong> e ainda assim{" "}
               <strong> infrutuoso</strong> se recebido sem as devidas disposições; nesse caso, a Igreja fala de
               graça que <em>revive</em> quando o obstáculo é removido pela conversão.
             </p>
@@ -376,11 +376,11 @@ function Page() {
             <h4>Necessidade, desejo e casos-limite</h4>
             <p>
               O Batismo é necessário à salvação para quem ouviu o Evangelho e pode pedi-lo (Jo 3,5; CIC § 1257),
-              mas <em>“Deus não está vinculado aos seus sacramentos”</em> (CIC § 1257): a Tradição reconhece o
+              mas <em>“Deus não está vinculado aos seus sacramentos”</em> (CIC § 1257): a Tradição reconhece o{" "}
               <strong> batismo de sangue</strong> (martírio) e o <strong>batismo de desejo</strong>, explícito ou
               implícito, na busca sincera da verdade e no cumprimento da vontade de Deus segundo a consciência
               (CIC §§ 1258-1260; LG 16). Para os catecúmenos e para quem, sem culpa, ignora o Evangelho, a Igreja
-              confia na misericórdia divina — o que nunca autoriza a indiferença missionária (AG 7;
+              confia na misericórdia divina — o que nunca autoriza a indiferença missionária (AG 7;{" "}
               <em>Dominus Iesus</em> 20-22).
             </p>
             <h4>Sacramentos e outras confissões cristãs</h4>
@@ -389,7 +389,7 @@ function Page() {
               (UR 3, 22; CIC §§ 1271, 818). Já quanto à Eucaristia e à Ordem, o <em>Decreto Unitatis
               Redintegratio</em> 22 nota a diferença entre as Igrejas orientais, que conservam a sucessão apostólica
               e sacramentos válidos, e as comunidades eclesiais surgidas da Reforma, nas quais falta o sacramento da
-              Ordem tal como a Igreja o entende. A <em>communicatio in sacris</em> é regulada pelos cân. 844 e pelo
+              Ordem tal como a Igreja o entende. A <em>communicatio in sacris</em> é regulada pelos cân. 844 e pelo{" "}
               <em> Diretório para a Aplicação dos Princípios e Normas do Ecumenismo</em> (1993).
             </p>
             <h4>Ano litúrgico e economia sacramental</h4>
@@ -403,7 +403,7 @@ function Page() {
             <NotaConfiabilidade nivel="oficial">
               <em>Ex opere operato</em>, caráter indelével, necessidade do Batismo e a exigência de matéria, forma e
               intenção são doutrina definida (Trento, Sess. VII; CIC). A explicação por “causalidade instrumental” é
-              elaboração teológica escolástica recebida pela Igreja, não um dogma em si; e a disciplina da
+              elaboração teológica escolástica recebida pela Igreja, não um dogma em si; e a disciplina da{" "}
               <em> communicatio in sacris</em> é norma canônica, sujeita a determinação da autoridade.
             </NotaConfiabilidade>
           </section>

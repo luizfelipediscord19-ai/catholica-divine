@@ -110,7 +110,7 @@ function Page() {
               O título de <strong>Doutor da Igreja</strong> (<em>Doctor Ecclesiae</em>) é concedido pelo Romano
               Pontífice a santos cuja obra teológica e espiritual constitui patrimônio doutrinal universal. É
               ato do Magistério que propõe esses mestres ao <em>estudo</em> e à <em>imitação</em> de toda a
-              Igreja<FnRef n="cic" />. Distingue-se da canonização (que reconhece a santidade) e da função de
+              Igreja<FnRef n="cic" />. Distingue-se da canonização (que reconhece a santidade) e da função de{" "}
               <em> Padre da Igreja</em> (que se refere à proximidade temporal com a Tradição apostólica).
             </p>
           </section>
@@ -140,7 +140,7 @@ function Page() {
               pela bula <em>Gloriosus Deus</em><FnRef n="bonifacio" />, elevou os quatro grandes Padres ocidentais
               à dignidade de Doutores. Em <strong>1568</strong>, São Pio V incluiu os quatro grandes Padres
               orientais no Breviário<FnRef n="piov" />. Tomás de Aquino foi proclamado por Pio V (1567) e
-              Boaventura por Sisto V (1588). Leão XIII reafirmou Tomás como <em>Doctor Communis</em> em
+              Boaventura por Sisto V (1588). Leão XIII reafirmou Tomás como <em>Doctor Communis</em> em{" "}
               <em> Aeterni Patris</em> (1879)<FnRef n="aeterni" />.
             </p>
             <p>

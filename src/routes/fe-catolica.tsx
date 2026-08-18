@@ -86,13 +86,13 @@ function Page() {
             cap. 2; cân. 1 — DH 3004, 3026), e que, ainda assim, foi conveniente que se revelasse também sobre
             verdades acessíveis à razão. Ao mesmo tempo declarou que existem mistérios <em>estritamente
             sobrenaturais</em> — Trindade, Encarnação, graça — que a razão jamais alcançaria por si (DH 3015-3017).
-            São João Paulo II sintetizou esse equilíbrio na encíclica <em>Fides et Ratio</em> (1998, n. 1):
+            São João Paulo II sintetizou esse equilíbrio na encíclica <em>Fides et Ratio</em> (1998, n. 1):{" "}
             <em>“a fé e a razão são como as duas asas pelas quais o espírito humano se eleva à contemplação da
             verdade”</em>.
           </p>
           <p>
             Daí a distinção clássica entre os <strong>preâmbulos da fé</strong> (existência de Deus, sua unidade,
-            a espiritualidade e imortalidade da alma, a credibilidade dos sinais da Revelação) e os
+            a espiritualidade e imortalidade da alma, a credibilidade dos sinais da Revelação) e os{" "}
             <strong> mistérios da fé</strong> propriamente ditos. Milagres e profecias são apresentados pela
             teologia fundamental como <em>sinais de credibilidade</em> — motivos que tornam a fé razoável — nunca
             como demonstrações que a substituam (CIC §§ 156, 159; DV 5).
@@ -103,7 +103,7 @@ function Page() {
             A Igreja não recebe novas revelações, mas cresce na compreensão do depósito recebido. <em>Dei Verbum</em>
             8 ensina que <em>“esta Tradição, que vem dos Apóstolos, progride na Igreja sob a assistência do
             Espírito Santo”</em>, pela contemplação e estudo dos fiéis, pela inteligência espiritual das coisas
-            divinas e pela pregação dos bispos. São Vicente de Lérins já formulara o critério: crescimento
+            divinas e pela pregação dos bispos. São Vicente de Lérins já formulara o critério: crescimento{" "}
             <em> in eodem sensu eodemque sententia</em> — no mesmo sentido e no mesmo juízo
             (<em>Commonitorium</em> XXIII). O beato John Henry Newman, no <em>Ensaio sobre o Desenvolvimento da
             Doutrina Cristã</em> (1845), propôs sete notas para distinguir desenvolvimento legítimo de corrupção
@@ -181,11 +181,11 @@ function Page() {
           </NotaConfiabilidade>
           <h3>Os doze artigos e o que cada um exclui</h3>
           <p>
-            Cada afirmação do Símbolo nasceu para excluir um erro determinado. <em>“Criador do céu e da terra”</em>
+            Cada afirmação do Símbolo nasceu para excluir um erro determinado. <em>“Criador do céu e da terra”</em>{" "}
             exclui o dualismo gnóstico e maniqueu, que atribuía a matéria a um princípio mau; <em>“gerado, não
-            criado”</em> exclui o arianismo; <em>“consubstancial ao Pai”</em> exclui o subordinacionismo;
-            <em> “se fez homem”</em> exclui o docetismo, para o qual o corpo de Cristo seria aparente;
-            <em> “padeceu e foi sepultado”</em> afirma a realidade da morte; <em>“ressuscitou ao terceiro dia”</em>
+            criado”</em> exclui o arianismo; <em>“consubstancial ao Pai”</em> exclui o subordinacionismo;{" "}
+            <em> “se fez homem”</em> exclui o docetismo, para o qual o corpo de Cristo seria aparente;{" "}
+            <em> “padeceu e foi sepultado”</em> afirma a realidade da morte; <em>“ressuscitou ao terceiro dia”</em>{" "}
             afirma um acontecimento e não um símbolo; <em>“Senhor que dá a vida”</em> afirma a divindade do
             Espírito Santo; <em>“professo um só batismo”</em> exclui a reiteração do sacramento
             (CIC §§ 194-195, 232-1065).
@@ -194,7 +194,7 @@ function Page() {
           <p>
             O <strong>Símbolo dos Apóstolos</strong> é a antiga profissão batismal da Igreja de Roma, cuja forma
             recebida é atestada em fórmulas dos sécs. II-IV e fixada na redação atual em torno do séc. VIII; a
-            tradição de atribuir um artigo a cada Apóstolo é lenda medieval piedosa, não dado histórico. O
+            tradição de atribuir um artigo a cada Apóstolo é lenda medieval piedosa, não dado histórico. O{" "}
             <strong> Niceno-Constantinopolitano</strong> é conciliar e por isso goza de autoridade ecumênica
             singular: é o único credo comum a católicos, ortodoxos e a boa parte das comunidades reformadas
             (CIC §§ 193-195).
@@ -253,7 +253,7 @@ function Page() {
           <p>
             O dogma foi formulado em resposta a crises concretas. Contra o <strong>arianismo</strong>, que negava
             a divindade do Filho, <strong>Niceia I (325)</strong> proclamou o Verbo <em>homooúsios tô Patrí</em> —
-            consubstancial ao Pai (DH 125). Contra os <em>pneumatómacos</em>, que negavam a divindade do Espírito,
+            consubstancial ao Pai (DH 125). Contra os <em>pneumatómacos</em>, que negavam a divindade do Espírito,{" "}
             <strong> Constantinopla I (381)</strong> confessou o Espírito Santo <em>“Senhor que dá a vida”</em>,
             adorado e glorificado com o Pai e o Filho (DH 150). A distinção grega entre <em>ousía</em> (essência,
             o que é comum) e <em>hypóstasis</em> (subsistência, o que é próprio), consolidada pelos Padres
@@ -262,7 +262,7 @@ function Page() {
           </p>
           <h3>Missões, relações e inabitação</h3>
           <p>
-            O Pai é a fonte sem origem; o Filho é gerado eternamente; o Espírito procede. As Pessoas são
+            O Pai é a fonte sem origem; o Filho é gerado eternamente; o Espírito procede. As Pessoas são{" "}
             <em> subsistentes relações</em> (São Tomás, <em>Summa Theologiae</em> I, q. 29, a. 4). Vale o axioma
             patrístico da <em>perichóresis</em> ou circumincessão: cada Pessoa está inteiramente nas outras
             (Jo 14,10-11; CIC § 255). Nas obras <em>ad extra</em>, toda a Trindade age inseparavelmente, ainda que
@@ -273,7 +273,7 @@ function Page() {
           <p>
             O texto grego de 381 diz que o Espírito <em>procede do Pai</em>. A adição latina <em>Filioque</em>
             — “e do Filho” — difundiu-se na Espanha visigótica (Toledo, sécs. VI-VII) e foi inserida no Credo
-            recitado em Roma no século XI. Os concílios de <strong>Lyon II (1274)</strong> e de
+            recitado em Roma no século XI. Os concílios de <strong>Lyon II (1274)</strong> e de{" "}
             <strong> Florença (1439)</strong> a professaram, esclarecendo que o Espírito procede <em>tamquam ab uno
             principio</em> — de um único princípio (DH 850, 1300-1302). O Conselho Pontifício para a Unidade dos
             Cristãos, no esclarecimento de 1995, reconheceu que a fórmula grega <em>“procede do Pai por meio do
@@ -305,7 +305,7 @@ function Page() {
         <Prose>
           <p>
             O centro da fé é uma pessoa: <strong>Jesus de Nazaré, o Verbo eterno feito carne</strong> (Jo 1,14).
-            A fé católica confessa nele <em>uma só Pessoa divina em duas naturezas, divina e humana</em> — a
+            A fé católica confessa nele <em>uma só Pessoa divina em duas naturezas, divina e humana</em> — a{" "}
             <strong> união hipostática</strong>. Esse enunciado é fruto de cinco séculos de precisão dogmática.
           </p>
           <h3>Os concílios cristológicos</h3>
@@ -321,7 +321,7 @@ function Page() {
             Da união hipostática decorre a <em>communicatio idiomatum</em>: pode-se dizer com verdade que o Filho
             de Deus sofreu e morreu, e que o filho de Maria é adorado. Cristo possui verdadeira alma humana,
             inteligência e liberdade humanas (CIC §§ 470-478), foi tentado sem pecado (Hb 4,15) e cresceu em
-            sabedoria segundo sua ciência experimental (Lc 2,52). Sua obra redentora é ao mesmo tempo
+            sabedoria segundo sua ciência experimental (Lc 2,52). Sua obra redentora é ao mesmo tempo{" "}
             <strong> sacrifício, expiação e nova aliança</strong> (CIC §§ 599-618), livremente oferecida
             (Jo 10,18) e coroada pela <strong>Ressurreição</strong>, que não é metáfora nem experiência interior
             dos discípulos, mas acontecimento real e transcendente atestado pelo túmulo vazio e pelas aparições
@@ -349,7 +349,7 @@ function Page() {
       <Section kicker="Graça e salvação" title="Justificação, graça e mérito">
         <Prose>
           <p>
-            <em>“A graça é o auxílio que Deus nos dá para responder ao nosso chamado”</em> (CIC § 1996). Ela é
+            <em>“A graça é o auxílio que Deus nos dá para responder ao nosso chamado”</em> (CIC § 1996). Ela é{" "}
             <strong> absolutamente gratuita</strong>: nada no homem, nem sequer o início da fé, precede o dom
             divino. O <strong>II Concílio de Orange (529)</strong> condenou o semipelagianismo e definiu que até o
             desejo de crer é obra da graça preveniente (DH 373-377).
@@ -376,7 +376,7 @@ function Page() {
             A <em>Declaração Conjunta sobre a Doutrina da Justificação</em> (Igreja Católica e Federação Luterana
             Mundial, Augsburgo, 31.10.1999) reconheceu um consenso sobre verdades fundamentais e afirmou que as
             condenações de Trento não atingem o ensino apresentado na Declaração. Não é uma revogação de Trento:
-            trata-se de documento de diálogo, cuja recepção católica foi acompanhada de um <em>Anexo</em>
+            trata-se de documento de diálogo, cuja recepção católica foi acompanhada de um <em>Anexo</em>{" "}
             esclarecedor. O ensino vinculante permanece o da Sessão VI.
           </p>
         </Prose>
@@ -401,8 +401,8 @@ function Page() {
       <Section kicker="Novíssimos" title="Morte, juízo, céu, purgatório e inferno">
         <Prose>
           <p>
-            A escatologia católica é sóbria e precisa. <strong>Cada homem</strong>, ao morrer, recebe no
-            <em> juízo particular</em> a retribuição eterna (CIC § 1022; Hb 9,27). A constituição
+            A escatologia católica é sóbria e precisa. <strong>Cada homem</strong>, ao morrer, recebe no{" "}
+            <em> juízo particular</em> a retribuição eterna (CIC § 1022; Hb 9,27). A constituição{" "}
             <em> Benedictus Deus</em> de Bento XII (1336) definiu que as almas plenamente purificadas veem a
             essência divina <strong>imediatamente</strong>, antes da ressurreição dos corpos, e que as que morrem
             em pecado mortal descem logo ao inferno (DH 1000-1002).

@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { GraduationCap, ArrowRight } from "lucide-react";
 import { TRILHAS } from "@/lib/data/trilhas";
-import { lerProgresso, percentual, type ProgressoTrilhas } from "@/lib/trilhas/progresso";
+import { concluidasDe, lerProgresso, percentual, resumoGeral, type ProgressoTrilhas } from "@/lib/trilhas/progresso";
 import { PageHero } from "@/components/PageShell";
 import biblioteca from "@/assets/biblioteca.jpg";
 
@@ -36,6 +36,7 @@ function TrilhasIndex() {
     return () => window.removeEventListener("portal:trilhas", ler);
   }, []);
 
+  const geral = resumoGeral(TRILHAS, progresso);
   const ultima = progresso.ultima;
   const trilhaUltima = ultima ? TRILHAS.find((t) => t.slug === ultima.trilha) : undefined;
   const licaoUltima = trilhaUltima?.licoes.find((l) => l.slug === ultima?.licao);
@@ -51,6 +52,25 @@ function TrilhasIndex() {
 
       <div className="shell py-block">
 
+      <div className="surface-card mt-[var(--space-sm)] flex flex-wrap items-center justify-between gap-4 p-5">
+        <div>
+          <p className="kicker">Sua formação</p>
+          <p className="mt-1 font-display text-2xl text-paper">
+            {geral.feitas} de {geral.total} aulas concluídas
+          </p>
+          <p className="mt-1 body-sm text-paper/65">
+            {geral.feitas === 0
+              ? "Escolha uma trilha abaixo e comece pela primeira aula."
+              : `${geral.percentual}% de todo o percurso de formação do portal.`}
+          </p>
+        </div>
+        <div className="w-full max-w-xs">
+          <div className="h-1 w-full bg-paper/10">
+            <div className="h-1 bg-gold" style={{ width: `${geral.percentual}%` }} />
+          </div>
+        </div>
+      </div>
+
       {trilhaUltima && licaoUltima && (
         <Link
           to="/trilhas/$trilha/$licao"
@@ -63,7 +83,8 @@ function TrilhasIndex() {
             </span>
             <span className="mt-1 block font-display text-lg text-paper">{licaoUltima.titulo}</span>
             <span className="text-sm text-paper/65">
-              {trilhaUltima.titulo} · {percentual(trilhaUltima.slug, trilhaUltima.licoes, progresso)}% concluído
+              {trilhaUltima.titulo} · {concluidasDe(trilhaUltima.slug, trilhaUltima.licoes, progresso)}/
+              {trilhaUltima.licoes.length} aulas · {percentual(trilhaUltima.slug, trilhaUltima.licoes, progresso)}%
             </span>
           </span>
           <ArrowRight className="size-5 shrink-0 text-gold" aria-hidden="true" />
@@ -93,7 +114,9 @@ function TrilhasIndex() {
                 <div className="h-1 bg-gold" style={{ width: `${pct}%` }} />
               </div>
               <p className="mt-2 flex items-center justify-between label-btn text-paper/55">
-                <span>{pct}% concluído</span>
+                <span>
+                  {concluidasDe(trilha.slug, trilha.licoes, progresso)}/{trilha.licoes.length} aulas · {pct}%
+                </span>
                 <span className="inline-flex items-center gap-1.5 text-gold">
                   Abrir trilha <ArrowRight className="size-3.5" aria-hidden="true" />
                 </span>
