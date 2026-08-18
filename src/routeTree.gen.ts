@@ -63,6 +63,7 @@ import { Route as BibliaLivroRouteImport } from './routes/biblia.$livro'
 import { Route as ApiTranscreverRouteImport } from './routes/api/transcrever'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
 import { Route as TrilhasTrilhaIndexRouteImport } from './routes/trilhas.$trilha.index'
+import { Route as BibliaPlanosIndexRouteImport } from './routes/biblia.planos.index'
 import { Route as BibliaLivroIndexRouteImport } from './routes/biblia.$livro.index'
 import { Route as TrilhasTrilhaLicaoRouteImport } from './routes/trilhas.$trilha.$licao'
 import { Route as OracoesNovenasSlugRouteImport } from './routes/oracoes.novenas.$slug'
@@ -345,6 +346,11 @@ const TrilhasTrilhaIndexRoute = TrilhasTrilhaIndexRouteImport.update({
   path: '/trilhas/$trilha/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BibliaPlanosIndexRoute = BibliaPlanosIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => BibliaPlanosRoute,
+} as any)
 const BibliaLivroIndexRoute = BibliaLivroIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -426,7 +432,7 @@ export interface FileRoutesByFullPath {
   '/api/transcrever': typeof ApiTranscreverRoute
   '/biblia/$livro': typeof BibliaLivroRouteWithChildren
   '/biblia/leituras': typeof BibliaLeiturasRoute
-  '/biblia/planos': typeof BibliaPlanosRoute
+  '/biblia/planos': typeof BibliaPlanosRouteWithChildren
   '/catecismo/$parte': typeof CatecismoParteRoute
   '/forum/$slug': typeof ForumSlugRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
@@ -449,6 +455,7 @@ export interface FileRoutesByFullPath {
   '/oracoes/novenas/$slug': typeof OracoesNovenasSlugRoute
   '/trilhas/$trilha/$licao': typeof TrilhasTrilhaLicaoRoute
   '/biblia/$livro/': typeof BibliaLivroIndexRoute
+  '/biblia/planos/': typeof BibliaPlanosIndexRoute
   '/trilhas/$trilha/': typeof TrilhasTrilhaIndexRoute
 }
 export interface FileRoutesByTo {
@@ -487,7 +494,6 @@ export interface FileRoutesByTo {
   '/api/chat': typeof ApiChatRoute
   '/api/transcrever': typeof ApiTranscreverRoute
   '/biblia/leituras': typeof BibliaLeiturasRoute
-  '/biblia/planos': typeof BibliaPlanosRoute
   '/catecismo/$parte': typeof CatecismoParteRoute
   '/forum/$slug': typeof ForumSlugRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
@@ -510,6 +516,7 @@ export interface FileRoutesByTo {
   '/oracoes/novenas/$slug': typeof OracoesNovenasSlugRoute
   '/trilhas/$trilha/$licao': typeof TrilhasTrilhaLicaoRoute
   '/biblia/$livro': typeof BibliaLivroIndexRoute
+  '/biblia/planos': typeof BibliaPlanosIndexRoute
   '/trilhas/$trilha': typeof TrilhasTrilhaIndexRoute
 }
 export interface FileRoutesById {
@@ -552,7 +559,7 @@ export interface FileRoutesById {
   '/api/transcrever': typeof ApiTranscreverRoute
   '/biblia/$livro': typeof BibliaLivroRouteWithChildren
   '/biblia/leituras': typeof BibliaLeiturasRoute
-  '/biblia/planos': typeof BibliaPlanosRoute
+  '/biblia/planos': typeof BibliaPlanosRouteWithChildren
   '/catecismo/$parte': typeof CatecismoParteRoute
   '/forum/$slug': typeof ForumSlugRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
@@ -575,6 +582,7 @@ export interface FileRoutesById {
   '/oracoes/novenas/$slug': typeof OracoesNovenasSlugRoute
   '/trilhas/$trilha/$licao': typeof TrilhasTrilhaLicaoRoute
   '/biblia/$livro/': typeof BibliaLivroIndexRoute
+  '/biblia/planos/': typeof BibliaPlanosIndexRoute
   '/trilhas/$trilha/': typeof TrilhasTrilhaIndexRoute
 }
 export interface FileRouteTypes {
@@ -641,6 +649,7 @@ export interface FileRouteTypes {
     | '/oracoes/novenas/$slug'
     | '/trilhas/$trilha/$licao'
     | '/biblia/$livro/'
+    | '/biblia/planos/'
     | '/trilhas/$trilha/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -679,7 +688,6 @@ export interface FileRouteTypes {
     | '/api/chat'
     | '/api/transcrever'
     | '/biblia/leituras'
-    | '/biblia/planos'
     | '/catecismo/$parte'
     | '/forum/$slug'
     | '/noticias/$slug'
@@ -702,6 +710,7 @@ export interface FileRouteTypes {
     | '/oracoes/novenas/$slug'
     | '/trilhas/$trilha/$licao'
     | '/biblia/$livro'
+    | '/biblia/planos'
     | '/trilhas/$trilha'
   id:
     | '__root__'
@@ -766,6 +775,7 @@ export interface FileRouteTypes {
     | '/oracoes/novenas/$slug'
     | '/trilhas/$trilha/$licao'
     | '/biblia/$livro/'
+    | '/biblia/planos/'
     | '/trilhas/$trilha/'
   fileRoutesById: FileRoutesById
 }
@@ -1199,6 +1209,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TrilhasTrilhaIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/biblia/planos/': {
+      id: '/biblia/planos/'
+      path: '/'
+      fullPath: '/biblia/planos/'
+      preLoaderRoute: typeof BibliaPlanosIndexRouteImport
+      parentRoute: typeof BibliaPlanosRoute
+    }
     '/biblia/$livro/': {
       id: '/biblia/$livro/'
       path: '/'
@@ -1272,17 +1289,29 @@ const BibliaLivroRouteWithChildren = BibliaLivroRoute._addFileChildren(
   BibliaLivroRouteChildren,
 )
 
+interface BibliaPlanosRouteChildren {
+  BibliaPlanosIndexRoute: typeof BibliaPlanosIndexRoute
+}
+
+const BibliaPlanosRouteChildren: BibliaPlanosRouteChildren = {
+  BibliaPlanosIndexRoute: BibliaPlanosIndexRoute,
+}
+
+const BibliaPlanosRouteWithChildren = BibliaPlanosRoute._addFileChildren(
+  BibliaPlanosRouteChildren,
+)
+
 interface BibliaRouteChildren {
   BibliaLivroRoute: typeof BibliaLivroRouteWithChildren
   BibliaLeiturasRoute: typeof BibliaLeiturasRoute
-  BibliaPlanosRoute: typeof BibliaPlanosRoute
+  BibliaPlanosRoute: typeof BibliaPlanosRouteWithChildren
   BibliaIndexRoute: typeof BibliaIndexRoute
 }
 
 const BibliaRouteChildren: BibliaRouteChildren = {
   BibliaLivroRoute: BibliaLivroRouteWithChildren,
   BibliaLeiturasRoute: BibliaLeiturasRoute,
-  BibliaPlanosRoute: BibliaPlanosRoute,
+  BibliaPlanosRoute: BibliaPlanosRouteWithChildren,
   BibliaIndexRoute: BibliaIndexRoute,
 }
 
