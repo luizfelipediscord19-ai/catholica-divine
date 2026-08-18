@@ -9,6 +9,50 @@ import {
   salvarMarcador,
   type MarcadorLeitura,
 } from "@/lib/leitura-local";
+import { lerPlanos, proximoDia } from "@/lib/biblia/planos-progresso";
+import { acharPlano } from "@/lib/data/biblia/planos";
+
+/**
+ * Retomada do plano de leitura em andamento — usada quando não há
+ * marcador de capítulo, para que a home sempre ofereça um próximo passo.
+ */
+function RetomarPlano({ className = "" }: { className?: string }) {
+  const [dados, setDados] = useState<{ slug: string; titulo: string; dia: number } | null>(null);
+
+  useEffect(() => {
+    const progresso = lerPlanos();
+    const slug = progresso.ultimo?.plano;
+    if (!slug) return;
+    const plano = acharPlano(slug);
+    if (!plano) return;
+    const dia = proximoDia(plano.slug, plano.dias.length, progresso);
+    if (!dia) return;
+    setDados({ slug: plano.slug, titulo: plano.titulo, dia });
+  }, []);
+
+  if (!dados) return null;
+
+  return (
+    <div
+      className={`surface-card flex flex-wrap items-center justify-between gap-4 p-4 sm:p-5 ${className}`}
+    >
+      <div className="min-w-0">
+        <p className="kicker">Continuar o plano</p>
+        <p className="mt-1 truncate text-sm text-foreground/90">
+          <span className="text-gold">{dados.titulo}</span> — dia {dados.dia}
+        </p>
+      </div>
+      <Link
+        to="/biblia/planos/$slug"
+        params={{ slug: dados.slug }}
+        className="btn-base btn-gold label-btn px-5"
+      >
+        <BookOpen className="size-3.5" aria-hidden="true" />
+        Continuar
+      </Link>
+    </div>
+  );
+}
 
 /** Faixa discreta "Retomar leitura" — só aparece se houver marcador local. */
 export function RetomarLeitura({ className = "" }: { className?: string }) {
@@ -18,7 +62,7 @@ export function RetomarLeitura({ className = "" }: { className?: string }) {
     setMarcador(lerMarcador());
   }, []);
 
-  if (!marcador) return null;
+  if (!marcador) return <RetomarPlano className={className} />;
 
   return (
     <div

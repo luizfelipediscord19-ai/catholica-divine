@@ -1,4 +1,5 @@
 import { LIVROS } from "@/lib/data/biblia/index";
+import { PLANOS } from "@/lib/data/biblia/planos";
 import { SANTOS_LISTA } from "@/lib/santos-lista";
 import { PARTES } from "@/lib/data/catecismo/index";
 import { NOVENAS } from "@/lib/data/devocoes/novenas";
@@ -24,6 +25,8 @@ export const PAGINAS: SitemapEntry[] = [
   { path: "/catecismo", changefreq: "monthly", priority: "0.9" },
   { path: "/liturgia-diaria", changefreq: "daily", priority: "0.9" },
   { path: "/biblia/leituras", changefreq: "daily", priority: "0.8" },
+  { path: "/biblia/planos", changefreq: "monthly", priority: "0.8" },
+  { path: "/confissao", changefreq: "monthly", priority: "0.8" },
   { path: "/fe-catolica", changefreq: "monthly", priority: "0.8" },
   { path: "/sacramentos", changefreq: "monthly", priority: "0.8" },
   { path: "/santos", changefreq: "weekly", priority: "0.8" },
@@ -57,6 +60,11 @@ export const PAGINAS: SitemapEntry[] = [
       priority: "0.7",
     })),
   ]),
+  ...PLANOS.map((p) => ({
+    path: `/biblia/planos/${p.slug}`,
+    changefreq: "monthly" as const,
+    priority: "0.7",
+  })),
   ...PARTES.map((parte) => ({
     path: `/catecismo/${parte.slug}`,
     changefreq: "monthly" as const,

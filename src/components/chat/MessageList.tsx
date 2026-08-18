@@ -1,4 +1,4 @@
-import { memo, useRef, useEffect, useState } from "react";
+import { memo, useRef, useEffect, useState, type ReactNode } from "react";
 import ReactMarkdown from "react-markdown";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Check, Copy, RefreshCw, Share2 } from "lucide-react";
@@ -6,6 +6,19 @@ import { ChatMessage } from "../../lib/types/chat";
 import { SourceReferences, extrairFontes } from "../SourceReferences";
 import { AprofundarLinks } from "./AprofundarLinks";
 import { ReferenciasInternas } from "./ReferenciasInternas";
+import { linkificarNos } from "../CitacoesLinkadas";
+
+/**
+ * Nas respostas da Sophia, as citações escritas no texto ("CIC §1324",
+ * "Jo 6, 51", "LG 60") viram links para a fonte, como no resto do portal.
+ */
+const MARKDOWN_LINKADO = {
+  p: ({ children }: { children?: ReactNode }) => <p>{linkificarNos(children)}</p>,
+  li: ({ children }: { children?: ReactNode }) => <li>{linkificarNos(children)}</li>,
+  blockquote: ({ children }: { children?: ReactNode }) => (
+    <blockquote>{linkificarNos(children)}</blockquote>
+  ),
+};
 
 const APROFUNDAR = [
   "Quais versículos fundamentam isso?",
@@ -64,7 +77,7 @@ export const ChatMessageItem = memo(({ message, onPerguntar, ultimaPergunta, ult
         }`}
       >
         <div className="prose prose-sm prose-invert max-w-none [&_p]:my-2 [&_strong]:text-gold [&_blockquote]:border-gold/30 [&_blockquote]:text-paper/80 [&_h2]:text-gold [&_h2]:font-display [&_h3]:text-gold/90 [&_em]:text-gold/80">
-          <ReactMarkdown>{text}</ReactMarkdown>
+          <ReactMarkdown components={isUser ? undefined : MARKDOWN_LINKADO}>{text}</ReactMarkdown>
         </div>
         {!isUser && text ? <ReferenciasInternas texto={text} /> : null}
         {!isUser && text ? <SourceReferences references={extrairFontes(text)} /> : null}

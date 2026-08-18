@@ -315,12 +315,20 @@ function Page() {
               className="w-full pl-11 pr-4 py-3 bg-card border border-gold/25 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-gold"
             />
           </div>
-          <Link
-            to="/biblia/leituras"
-            className="btn-base btn-gold gap-2 label-btn"
-          >
-            Leituras diárias
-          </Link>
+          <div className="flex flex-wrap items-center gap-3">
+            <Link
+              to="/biblia/planos"
+              className="btn-base gap-2 border border-gold/30 px-5 py-2.5 label-btn text-foreground/85 transition-premium hover:border-gold hover:text-gold"
+            >
+              Planos de leitura
+            </Link>
+            <Link
+              to="/biblia/leituras"
+              className="btn-base btn-gold gap-2 label-btn"
+            >
+              Leituras diárias
+            </Link>
+          </div>
         </div>
       </div>
 

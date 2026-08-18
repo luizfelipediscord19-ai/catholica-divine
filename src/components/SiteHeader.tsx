@@ -24,6 +24,7 @@ const GRUPOS: { titulo: string; itens: { to: string; label: string }[] }[] = [
     titulo: "Escrituras & Liturgia",
     itens: [
       { to: "/biblia", label: "Bíblia" },
+      { to: "/biblia/planos", label: "Planos de leitura" },
       { to: "/liturgia-diaria", label: "Liturgia do dia" },
       { to: "/calendario-liturgico", label: "Calendário litúrgico" },
       { to: "/sacramentos", label: "Sacramentos" },
@@ -34,6 +35,7 @@ const GRUPOS: { titulo: string; itens: { to: string; label: string }[] }[] = [
     titulo: "Devoção",
     itens: [
       { to: "/oracoes", label: "Orações" },
+      { to: "/confissao", label: "Confissão" },
       { to: "/santos", label: "Santos" },
       { to: "/maria", label: "Maria" },
     ],

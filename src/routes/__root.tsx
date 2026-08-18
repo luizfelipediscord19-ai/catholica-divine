@@ -32,8 +32,28 @@ function NotFoundComponent() {
         <h1 className="font-display text-[length:var(--step-5)] text-gold">404</h1>
         <h2 className="mt-4 font-display text-2xl text-foreground">Página não encontrada</h2>
         <p className="mt-3 text-sm text-muted-foreground">
-          O caminho que buscas não existe ou foi movido. Que o teu estudo te conduza adiante.
+          O caminho que buscas não existe ou foi movido. Talvez um destes ajude:
         </p>
+        <ul className="mt-6 flex flex-wrap justify-center gap-2">
+          {[
+            { to: "/biblia", label: "Bíblia" },
+            { to: "/biblia/planos", label: "Planos de leitura" },
+            { to: "/trilhas", label: "Trilhas de formação" },
+            { to: "/santos", label: "Santos" },
+            { to: "/oracoes", label: "Orações" },
+            { to: "/confissao", label: "Confissão" },
+            { to: "/busca", label: "Buscar no portal" },
+          ].map((l) => (
+            <li key={l.to}>
+              <Link
+                to={l.to}
+                className="inline-flex min-h-9 items-center border border-gold/20 px-3 py-1.5 text-xs text-muted-foreground transition-colors hover:border-gold/50 hover:text-foreground"
+              >
+                {l.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
         <div className="mt-8">
           <Link
             to="/"
