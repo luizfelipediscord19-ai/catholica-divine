@@ -669,13 +669,13 @@ export const GLOSSARIO: Record<string, EntradaGlossario> = {
   septuaginta: {
     termo: "Septuaginta",
     definicao:
-      "Tradução grega do Antigo Testamento (séc. III-II a.C.), usada pelos apóstolos e base do canon católico.",
+      "Conjunto de traduções gregas do Antigo Testamento feitas entre os séc. III e I a.C., não uma edição única e fechada. Amplamente usada pelos judeus de língua grega e pelos primeiros cristãos; seus grandes códices (séc. IV-V) transmitem também os livros deuterocanônicos.",
   },
   deuterocanonicos: {
     termo: "Deuterocanônicos",
     definicao:
-      "Sete livros do Antigo Testamento (Tobias, Judite, Sabedoria, Eclesiástico, Baruc, 1-2 Macabeus) reconhecidos como inspirados pela Igreja.",
-    ref: "Trento, sess. IV",
+      "Sete livros do Antigo Testamento (Tobias, Judite, Sabedoria, Eclesiástico, Baruc, 1-2 Macabeus), com acréscimos gregos de Ester e Daniel, recebidos pela Igreja antiga, listados em Hipona (393) e Cartago (397), confirmados em Florença (1442) e definidos como inspirados por Trento (1546). 'Deutero' indica a segunda posição na discussão canônica, não um grau menor de inspiração.",
+    ref: "Trento, sess. IV (DH 1502)",
   },
   canon: {
     termo: "Cânon das Escrituras",

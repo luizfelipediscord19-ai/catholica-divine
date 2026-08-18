@@ -125,6 +125,7 @@ function Page() {
   return (
     <div>
       <PageHero
+        autoridade={["oficial", "tradicao"]}
         image={biblioteca}
         eyebrow="Officium Divinum"
         title="Liturgia das Horas"

@@ -31,6 +31,7 @@ function Page() {
   return (
     <div>
       <PageHero
+        autoridade={["devocao"]}
         image={velas}
         eyebrow="Novendialia"
         title="Novenas"

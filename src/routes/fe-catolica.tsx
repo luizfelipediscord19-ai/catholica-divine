@@ -52,6 +52,7 @@ function Page() {
   return (
     <div>
       <PageHero
+        autoridade={["oficial", "teologia"]}
         eyebrow="Fides Catholica"
         title="A Fé Católica"
         intro="A fé recebida dos Apóstolos, transmitida pela Tradição viva da Igreja e proclamada pelo Magistério — uma, santa, católica e apostólica."

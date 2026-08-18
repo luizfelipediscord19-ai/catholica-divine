@@ -97,11 +97,18 @@ export const OBJECOES: Objecao[] = [
     categoria: "Escritura",
     objecao: "Os católicos acrescentaram sete livros à Bíblia.",
     resposta: [
-      "Os deuterocanônicos já constavam de manuscritos da tradição grega da Septuaginta, de enorme importância no judaísmo de língua grega e de forte influência entre os primeiros cristãos; diversas citações do Antigo Testamento no Novo Testamento correspondem a essa tradição textual grega.",
-      "As listas antigas de Hipona (393), Cartago (397) e a carta de Inocêncio I a Exupério (405) já os incluem — mais de mil anos antes de sua remoção nas edições protestantes.",
-      "Portanto não houve acréscimo católico, mas subtração posterior.",
+      "No judaísmo do Segundo Templo não havia uma lista canônica fechada e única: circulavam coleções diversas em hebraico, aramaico e grego. A ideia de um cânon judaico definido por um 'concílio de Jâmnia' (c. 90 d.C.) foi abandonada pelos historiadores — a fixação da Bíblia hebraica em 24 livros foi um processo gradual, concluído entre os séc. II e III.",
+      "Os livros deuterocanônicos aparecem nos grandes códices da tradição grega (Vaticano, Sinaítico, Alexandrino, séc. IV-V) e circulavam entre judeus de língua grega e entre os cristãos. O Novo Testamento cita o Antigo em geral segundo o texto grego e alude a esses livros (por exemplo Hb 11,35 e 2Mc 7), embora não os cite com fórmula solene de Escritura — argumento que, sozinho, não decide a questão, já que Ester e Cântico dos Cânticos também não são citados.",
+      "A Igreja antiga não foi unânime nos detalhes: São Jerônimo distinguia os livros 'canônicos' dos 'eclesiásticos' e traduziu com reservas alguns deuterocanônicos, enquanto Santo Agostinho e os sínodos africanos os recebiam sem hesitação. Prevaleceu o uso litúrgico e catequético da Igreja, não a opinião de um autor isolado.",
+      "As listas de Hipona (393), Cartago (397) e a carta do papa Inocêncio I a Exupério (405) já os incluem; o Concílio de Florença os reafirma (1442, Cantate Domino) e Trento os define solenemente (Sessão IV, 1546) diante das controvérsias do séc. XVI.",
+      "Do lado da Reforma, Lutero não os suprimiu: agrupou-os em apêndice como 'apócrifos', úteis à leitura mas não normativos. A remoção completa é posterior, sobretudo nas edições das sociedades bíblicas do séc. XIX. Historicamente, portanto, não houve acréscimo católico, mas rebaixamento e depois supressão em parte da tradição protestante.",
     ],
-    fontes: ["Trento, Sessão IV (DH 1502)", "Sínodo de Cartago (397)", "CIC § 120"],
+    fontes: [
+      "Trento, Sessão IV, decreto De Canonicis Scripturis (DH 1502)",
+      "Sínodo de Cartago (397); Inocêncio I, carta a Exupério (405)",
+      "Concílio de Florença, bula Cantate Domino (1442)",
+      "CIC § 120; Dei Verbum 11",
+    ],
   },
   {
     slug: "jesus-nunca-existiu",

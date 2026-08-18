@@ -51,6 +51,6 @@ export const HORAS: Hora[] = [
 
 export const FONTES_OFICIAIS = [
   { nome: "Liturgia das Horas — CNBB / Paulinas", url: "https://www.paulinas.com.br" },
-  { nome: "Liturgia das Horas online (iBreviary)", url: "https://www.ibreviary.org/pt/" },
-  { nome: "Liturgia diária (Vatican News)", url: "https://www.vaticannews.va/pt/igreja/news/liturgia-do-dia.html" },
+  { nome: "Liturgia das Horas online (iBreviary)", url: "https://www.ibreviary.org/" },
+  { nome: "Liturgia diária (Vatican News)", url: "https://www.vaticannews.va/pt/palavra-do-dia.html" },
 ];

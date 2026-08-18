@@ -304,7 +304,7 @@ export function capitulosDaSecao(secaoSlug: string): CapituloCIC[] {
   return CAPITULOS.filter((c) => c.secao === secaoSlug);
 }
 
-export const VATICAN_URL = "https://www.vatican.va/archive/cathechism_po/index_new/prefacio.html";
+export const VATICAN_URL = "https://www.vatican.va/archive/cathechism_po/index_new/prima-pagina-cic_po.html";
 
 export function urlVatican(): string {
   return VATICAN_URL;

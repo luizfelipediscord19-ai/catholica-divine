@@ -22,6 +22,7 @@ function Page() {
   return (
     <div>
       <PageHero
+        autoridade={["oficial", "historia", "teologia"]}
         eyebrow="Apologia Fidei"
         title="Razões para Crer"
         intro="‘Estai sempre prontos a responder a todo aquele que vos pedir razão da esperança que há em vós’ (1Pd 3,15). A apologética é o serviço da razão à fé."

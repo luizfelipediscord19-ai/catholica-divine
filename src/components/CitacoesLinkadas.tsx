@@ -17,7 +17,7 @@ import {
 } from "@/lib/fontes/magisterio";
 
 const RE_CIC =
-  /(?:CIC|Catecismo(?:\s+da\s+Igreja\s+Cat[óo]lica)?)\s*§{1,2}\s?(\d{1,4})(?:\s?[-–]\s?\d{1,4})?/g;
+  /(?:CIC|CCC|Catecismo(?:\s+da\s+Igreja\s+Cat[óo]lica)?)\s*(?:§{1,2}\s?)?(\d{1,4})(?:\s?[-–,]\s?\d{1,4})?/g;
 const RE_CANON = /c[âa]n\.\s?(\d{1,4})(?:\s?,\s?§\s?\d)?/gi;
 const RE_DOC = new RegExp(`\\b(${SIGLAS_MAGISTERIO.join("|")})\\s(\\d{1,3})\\b`, "g");
 const RE_BIBLIA =
@@ -26,7 +26,23 @@ const RE_BIBLIA =
 const CLASSE =
   "underline decoration-gold/40 decoration-dotted underline-offset-[3px] hover:decoration-gold hover:text-gold transition-colors";
 
-type Achado = { inicio: number; fim: number; no: ReactNode };
+/**
+ * Marca visual de "fonte primária clicável" ao lado da citação.
+ * A primeira citação de cada trecho traz o rótulo completo ("→ Abrir");
+ * as seguintes usam apenas a seta, para não poluir a leitura.
+ */
+function Abrir({ interno = false, curto = false }: { interno?: boolean; curto?: boolean }) {
+  return (
+    <span className="ml-0.5 align-baseline text-[0.72em] font-semibold tracking-wide text-gold/80 whitespace-nowrap">
+      <span aria-hidden="true">{curto ? "\u2197" : interno ? "\u2192 Ler" : "\u2192 Abrir"}</span>
+      <span className="sr-only">
+        {interno ? " (abrir no portal)" : " (abrir fonte oficial em nova aba)"}
+      </span>
+    </span>
+  );
+}
+
+type Achado = { inicio: number; fim: number; link: ReactNode; interno?: boolean };
 
 function achados(texto: string): Achado[] {
   const lista: Achado[] = [];
@@ -37,7 +53,7 @@ function achados(texto: string): Achado[] {
     lista.push({
       inicio: m.index!,
       fim: m.index! + m[0].length,
-      no: (
+      link: (
         <a
           href={urlCatecismoOficial(n)}
           target="_blank"
@@ -59,7 +75,7 @@ function achados(texto: string): Achado[] {
     lista.push({
       inicio: m.index!,
       fim: m.index! + m[0].length,
-      no: (
+      link: (
         <a
           href={URL_CDC}
           target="_blank"
@@ -81,7 +97,7 @@ function achados(texto: string): Achado[] {
     lista.push({
       inicio: m.index!,
       fim: m.index! + m[0].length,
-      no: (
+      link: (
         <a
           href={doc.url}
           target="_blank"
@@ -102,7 +118,8 @@ function achados(texto: string): Achado[] {
     lista.push({
       inicio: m.index!,
       fim: m.index! + m[0].length,
-      no: (
+      interno: true,
+      link: (
         <Link to={caminho} title={`Ler ${m[0]} na Bíblia do portal`} className={CLASSE}>
           {m[0]}
         </Link>
@@ -130,7 +147,10 @@ function linkificarTexto(texto: string, chave: string): ReactNode {
   marcas.forEach((m, i) => {
     if (m.inicio > cursor) partes.push(texto.slice(cursor, m.inicio));
     partes.push(
-      <span key={`${chave}-${i}`}>{m.no}</span>,
+      <span key={`${chave}-${i}`} className="whitespace-normal">
+        {m.link}
+        <Abrir interno={m.interno} curto={rotulosUsados++ >= 2} />
+      </span>,
     );
     cursor = m.fim;
   });
@@ -138,11 +158,19 @@ function linkificarTexto(texto: string, chave: string): ReactNode {
   return <>{partes}</>;
 }
 
+/**
+ * Quantos rótulos completos ("→ Abrir") já foram usados na página.
+ * As duas primeiras citações ensinam o leitor que a fonte é clicável;
+ * as seguintes usam apenas a seta, mantendo a leitura limpa.
+ */
+let rotulosUsados = 0;
+
 /** Tags cujo conteúdo nunca deve receber links automáticos. */
 const IGNORAR = new Set(["a", "code", "pre", "h1", "button"]);
 
 /** Aplica os links a todos os nós de texto de uma árvore React. */
 export function linkificarNos(no: ReactNode, chave = "c"): ReactNode {
+  if (chave === "c") rotulosUsados = 0;
   if (typeof no === "string") return linkificarTexto(no, chave);
   if (Array.isArray(no))
     return Children.map(no, (filho, i) => linkificarNos(filho, `${chave}-${i}`));

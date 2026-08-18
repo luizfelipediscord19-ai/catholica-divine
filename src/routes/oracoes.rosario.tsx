@@ -162,6 +162,7 @@ function Page() {
   return (
     <div>
       <PageHero
+        autoridade={["tradicao", "devocao"]}
         image={rosario}
         eyebrow="Devotio"
         title="Santo Rosário"

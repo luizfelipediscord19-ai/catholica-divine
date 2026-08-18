@@ -115,6 +115,7 @@ function Page() {
   return (
     <div>
       <PageHero
+        autoridade={["tradicao", "historia", "devocao"]}
         eyebrow="Communio Sanctorum"
         title="Os Santos da Igreja"
         intro="As testemunhas vivas do Evangelho. Clique em qualquer santo para abrir a biografia e a imagem diretamente nesta página, sem recarregamento."

@@ -24,6 +24,7 @@ function Page() {
   return (
     <div>
       <PageHero
+        autoridade={["oficial"]}
         eyebrow="Catechismus Catholicae Ecclesiae"
         title="O Catecismo"
         intro="Texto de referência seguro e autêntico para o ensino da doutrina católica. Promulgado por São João Paulo II em 1992 (Fidei Depositum) e revisado em 1997 (Laetamur Magnopere)."
