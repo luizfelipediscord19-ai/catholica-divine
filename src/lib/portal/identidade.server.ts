@@ -115,10 +115,11 @@ export async function garantirIdentidade(
     console.error("[identidade] Falha ao criar identidade:", error?.message ?? "sem dados");
     throw new Error(
       process.env["SUPABASE_SERVICE_ROLE_KEY"]
-        ? "Não foi possível criar a identidade agora. Tente novamente em instantes."
+        ? `Não foi possível criar a identidade agora (${motivoSeguro(error?.message)}).`
         : "O painel está temporariamente indisponível: a chave secreta do backend não está configurada nesta hospedagem.",
     );
   }
+
   return { token: data.token as string, identidade: toPublica(data) };
 }
 
