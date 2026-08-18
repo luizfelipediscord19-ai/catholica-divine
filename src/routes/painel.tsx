@@ -25,6 +25,7 @@ import { useIdentidade, usePainel } from "@/hooks/use-identidade";
 import { useAuth } from "@/hooks/use-auth";
 import { registrarOracaoFn } from "@/lib/portal.functions";
 import {
+import { keywordsPara } from "@/lib/seo/palavras-chave";
   metaDaConquista,
   textoRestante,
   type Totais,
@@ -42,6 +43,7 @@ export const Route = createFileRoute("/painel")({
         content:
           "Acompanhe sua sequência de oração, diário espiritual, capítulos lidos da Bíblia, versículos favoritos, anotações e conquistas — sem cadastro.",
       },
+      { name: "keywords", content: keywordsPara(["formacao"]) },
       { property: "og:title", content: "Meu Painel Espiritual" },
       {
         property: "og:description",

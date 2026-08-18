@@ -5,6 +5,7 @@ import { ReadingMode, FnRef } from "../components/ReadingMode";
 import { HORAS, FONTES_OFICIAIS } from "../lib/data/devocoes/horas";
 import { BuscaHoras } from "../components/BuscaHoras";
 import biblioteca from "@/assets/biblioteca.jpg";
+import { keywordsPara } from "@/lib/seo/palavras-chave";
 
 export const Route = createFileRoute("/oracoes/liturgia-das-horas")({
   head: () => ({
@@ -16,6 +17,7 @@ export const Route = createFileRoute("/oracoes/liturgia-das-horas")({
         content:
           "A oração pública e oficial da Igreja: Ofício das Leituras, Laudes, Hora Intermédia, Vésperas e Completas. Estrutura, espiritualidade e fontes magisteriais (SC, Laudis Canticum, IGLH).",
       },
+      { name: "keywords", content: keywordsPara(["oracoes", "liturgia"]) },
       { property: "og:title", content: "Liturgia das Horas — Officium Divinum" },
       {
         property: "og:description",

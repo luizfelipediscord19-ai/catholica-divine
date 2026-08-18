@@ -2,6 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { getLivro, LIVROS } from "../lib/data/biblia";
 import { getIntroducao } from "../lib/data/biblia/introducoes";
 import { ArrowLeft, BookOpen } from "lucide-react";
+import { keywordsPara } from "@/lib/seo/palavras-chave";
 
 export const Route = createFileRoute("/biblia/$livro/")({
   loader: ({ params }) => {
@@ -16,6 +17,7 @@ export const Route = createFileRoute("/biblia/$livro/")({
         name: "description",
         content: loaderData?.livro.resumo ?? "",
       },
+      { name: "keywords", content: keywordsPara(["biblia"]) },
       { property: "og:title", content: `${loaderData?.livro.nome ?? "Livro"} — Bíblia Católica` },
       { property: "og:description", content: loaderData?.livro.resumo ?? "" },
       { property: "og:type", content: "article" },

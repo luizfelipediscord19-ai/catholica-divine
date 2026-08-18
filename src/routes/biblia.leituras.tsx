@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { CalendarDays, BookOpen, ArrowLeft, Check, RotateCcw } from "lucide-react";
 import { leituraDoDia, proximosDias, PLANO, dayOfYear } from "../lib/data/biblia/leituras";
+import { keywordsPara } from "@/lib/seo/palavras-chave";
 
 export const Route = createFileRoute("/biblia/leituras")({
   head: () => ({
@@ -9,6 +10,7 @@ export const Route = createFileRoute("/biblia/leituras")({
       { title: "Leituras Diárias — Bíblia — Portal Católico" },
       { property: "og:url", content: "https://portalcatolico.vercel.app/biblia/leituras" },
       { name: "description", content: "Plano de leitura bíblica diária com passagens e marcação de progresso." },
+      { name: "keywords", content: keywordsPara(["biblia", "liturgia"]) },
       { property: "og:title", content: "Leituras Diárias da Bíblia" },
       { property: "og:description", content: "Um capítulo ou passagem da Sagrada Escritura para cada dia." },
     ],

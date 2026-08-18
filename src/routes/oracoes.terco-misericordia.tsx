@@ -3,6 +3,7 @@ import { PageHero, Section, CardGrid, ContentCard, Prose, Sources, Pullquote } f
 import { NotaConfiabilidade } from "../components/SeloConfiabilidade";
 import { Relacionados } from "../components/Relacionados";
 import cristo from "@/assets/cristo.jpg";
+import { keywordsPara } from "@/lib/seo/palavras-chave";
 
 
 export const Route = createFileRoute("/oracoes/terco-misericordia")({
@@ -11,6 +12,7 @@ export const Route = createFileRoute("/oracoes/terco-misericordia")({
       { title: "Terço da Divina Misericórdia — como rezar, história e fontes" },
       { property: "og:url", content: "https://portalcatolico.vercel.app/oracoes/terco-misericordia" },
       { name: "description", content: "Terço da Divina Misericórdia: modo de rezar passo a passo, a Hora da Misericórdia, a novena, a história de Santa Faustina e o que a Igreja de fato ensina sobre esta devoção." },
+      { name: "keywords", content: keywordsPara(["oracoes"]) },
       { property: "og:title", content: "Terço da Divina Misericórdia" },
       { property: "og:description", content: "Modo de rezar, história, fundamento doutrinal e fontes magisteriais da devoção à Divina Misericórdia." },
       { property: "og:type", content: "article" },

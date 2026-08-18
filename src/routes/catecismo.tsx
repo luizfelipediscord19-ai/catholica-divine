@@ -5,6 +5,7 @@ import { PageHero, Section, Prose, Sources, Pullquote, Prancha } from "../compon
 import { Termo } from "../components/Termo";
 import { PARTES, SECOES, VATICAN_URL } from "../lib/data/catecismo";
 import { ExternalLink } from "lucide-react";
+import { keywordsPara } from "@/lib/seo/palavras-chave";
 
 export const Route = createFileRoute("/catecismo")({
   head: () => ({
@@ -12,6 +13,7 @@ export const Route = createFileRoute("/catecismo")({
       { title: "Catecismo da Igreja Católica — Exposição orgânica da fé" },
       { property: "og:url", content: "https://portalcatolico.vercel.app/catecismo" },
       { name: "description", content: "Catecismo da Igreja Católica: história, estrutura, autoridade magisterial, as quatro partes (Credo, Sacramentos, Vida em Cristo, Oração) e fontes oficiais (Fidei Depositum, Laetamur Magnopere)." },
+      { name: "keywords", content: keywordsPara(["catecismo"]) },
       { property: "og:title", content: "Catecismo da Igreja Católica" },
       { property: "og:description", content: "Os 2.865 parágrafos da fé católica, organizados em quatro partes — promulgado por São João Paulo II." },
     ],

@@ -6,6 +6,7 @@ import { Termo } from "../components/Termo";
 import maria from "../assets/maria.jpg";
 import { MarcarEstudo } from "../components/portal/MarcarEstudo";
 import { NotaConfiabilidade } from "../components/SeloConfiabilidade";
+import { keywordsPara } from "@/lib/seo/palavras-chave";
 
 export const Route = createFileRoute("/maria")({
   head: () => ({
@@ -13,6 +14,7 @@ export const Route = createFileRoute("/maria")({
       { title: "Maria, Mãe de Deus — Mariologia católica completa" },
       { property: "og:url", content: "https://portalcatolico.vercel.app/maria" },
       { name: "description", content: "Mariologia católica: quatro dogmas marianos, títulos, aparições aprovadas, devoções e o lugar de Maria na economia da salvação, com fontes magisteriais oficiais." },
+      { name: "keywords", content: keywordsPara(["maria"]) },
       { property: "og:title", content: "Maria, Mãe de Deus" },
       { property: "og:description", content: "Dogmas marianos, aparições aprovadas e devoções segundo o Magistério." },
     ],

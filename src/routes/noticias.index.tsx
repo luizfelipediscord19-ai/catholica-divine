@@ -12,6 +12,7 @@ import manuscrito from "@/assets/manuscrito.jpg";
 import emaus from "@/assets/emaus.jpg";
 import doutores from "@/assets/doutores.jpg";
 import sacramentosArte from "@/assets/sacramentos.jpg";
+import { keywordsPara } from "@/lib/seo/palavras-chave";
 
 const SITE_URL = "https://portalcatolico.vercel.app";
 /** Só obras em formato paisagem: evitam recortes que decapitam as figuras. */
@@ -40,6 +41,7 @@ export const Route = createFileRoute("/noticias/")({
         content:
           "Notícias da Igreja Católica revisadas e publicadas diariamente ao meio-dia (horário de Brasília): Vaticano, Papa, liturgia, santos e a vida da Igreja no Brasil e no mundo.",
       },
+      { name: "keywords", content: keywordsPara(["formacao", "marca"]) },
       { property: "og:title", content: "Notícias Católicas — Portal Católico" },
       {
         property: "og:description",

@@ -7,6 +7,7 @@ import { useState } from "react";
 import { Search } from "lucide-react";
 import { ContinuarLeitura } from "@/components/portal/ContinuarLeitura";
 import { RetomarLeitura } from "@/components/portal/RetomarLeitura";
+import { keywordsPara } from "@/lib/seo/palavras-chave";
 
 
 export const Route = createFileRoute("/biblia/")({
@@ -15,6 +16,7 @@ export const Route = createFileRoute("/biblia/")({
       { title: "Bíblia Sagrada — 73 Livros Inspirados — Portal Católico" },
       { property: "og:url", content: "https://portalcatolico.vercel.app/biblia" },
       { name: "description", content: "Os 73 livros da Bíblia Católica com introdução teológica completa: inspiração, cânon, Tradição, Magistério, exegese segundo o Catecismo, Dei Verbum e a Bíblia de Jerusalém." },
+      { name: "keywords", content: keywordsPara(["biblia"]) },
       { property: "og:title", content: "Bíblia Sagrada Católica — 73 livros inspirados" },
       { property: "og:description", content: "Antigo e Novo Testamento navegáveis, com introdução doutrinária baseada em Dei Verbum, Catecismo e Bíblia de Jerusalém." },
     ],

@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import claustro from "@/assets/claustro.jpg";
 
 import { PageHero, Section, CardGrid } from "@/components/PageShell";
+import { keywordsPara } from "@/lib/seo/palavras-chave";
 
 const URL_PAGINA = "https://portalcatolico.vercel.app/explorar";
 const TITULO = "Explorar o Portal — Mapa da Biblioteca Católica | Portal Católico";
@@ -96,6 +97,7 @@ export const Route = createFileRoute("/explorar")({
           })),
         }),
       },
+      { name: "keywords", content: keywordsPara(["marca", "formacao"]) },
     ],
   }),
   component: ExplorarPage,

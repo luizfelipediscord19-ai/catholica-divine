@@ -3,6 +3,7 @@ import { PageHero, Section, CardGrid, ContentCard, Prose, Sources, Pullquote } f
 import { NotaConfiabilidade } from "../components/SeloConfiabilidade";
 import { NOVENAS } from "../lib/data/devocoes/novenas";
 import velas from "@/assets/velas.jpg";
+import { keywordsPara } from "@/lib/seo/palavras-chave";
 
 export const Route = createFileRoute("/oracoes/novenas")({
   head: () => ({
@@ -10,6 +11,7 @@ export const Route = createFileRoute("/oracoes/novenas")({
       { title: "Novenas Católicas — origem, sentido e como rezar" },
       { property: "og:url", content: "https://portalcatolico.vercel.app/oracoes/novenas" },
       { name: "description", content: "Novenas ao Espírito Santo, a Nossa Senhora Aparecida, a São José, ao Sagrado Coração e outras: textos, origem histórica no Cenáculo, sentido teológico e critérios de discernimento." },
+      { name: "keywords", content: keywordsPara(["oracoes", "santos"]) },
       { property: "og:title", content: "Novenas Católicas" },
       { property: "og:description", content: "Nove dias de oração perseverante, com textos, origem histórica e fontes magisteriais." },
       { property: "og:type", content: "website" },

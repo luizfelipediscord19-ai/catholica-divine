@@ -3,6 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, Section, CardGrid, ContentCard, Prose, Sources, Pullquote, Prancha } from "../components/PageShell";
 import { NotaConfiabilidade } from "../components/SeloConfiabilidade";
 import vitral from "../assets/vitral.jpg";
+import { keywordsPara } from "@/lib/seo/palavras-chave";
 
 export const Route = createFileRoute("/fe-catolica")({
   head: () => ({
@@ -10,6 +11,7 @@ export const Route = createFileRoute("/fe-catolica")({
       { title: "A Fé Católica — Credo, Sacramentos, Mandamentos e Oração" },
       { property: "og:url", content: "https://portalcatolico.vercel.app/fe-catolica" },
       { name: "description", content: "Tratado aprofundado sobre a fé católica: a Revelação, a Tradição, o Magistério, o Credo Niceno-Constantinopolitano, os quatro pilares do Catecismo e as notas da Igreja, com citações do CIC, Dei Verbum e Lumen Gentium." },
+      { name: "keywords", content: keywordsPara(["catecismo", "marca"]) },
       { property: "og:title", content: "A Fé Católica — Portal Católico" },
       { property: "og:description", content: "Exposição completa e fundamentada da fé católica segundo o Magistério da Igreja." },
     ],

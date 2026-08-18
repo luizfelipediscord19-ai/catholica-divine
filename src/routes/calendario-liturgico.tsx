@@ -5,6 +5,7 @@ import { ReadingMode, FnRef } from "../components/ReadingMode";
 import { VersiculoDoDia } from "../components/VersiculoDoDia";
 import { MapaAnoLiturgico } from "../components/MapaAnoLiturgico";
 import { HojeNaLiturgia } from "../components/HojeNaLiturgia";
+import { keywordsPara } from "@/lib/seo/palavras-chave";
 
 
 export const Route = createFileRoute("/calendario-liturgico")({
@@ -13,6 +14,7 @@ export const Route = createFileRoute("/calendario-liturgico")({
       { title: "Calendário Litúrgico — Tempos do Ano da Igreja Católica" },
       { property: "og:url", content: "https://portalcatolico.vercel.app/calendario-liturgico" },
       { name: "description", content: "O Ano Litúrgico católico em profundidade: Advento, Natal, Quaresma, Tríduo, Páscoa, Pentecostes e Tempo Comum, com cores litúrgicas, datas, espiritualidade e fontes oficiais (SC, Normas Universais, Missal Romano)." },
+      { name: "keywords", content: keywordsPara(["liturgia"]) },
       { property: "og:title", content: "Calendário Litúrgico Católico" },
       { property: "og:description", content: "Os tempos do Ano Litúrgico segundo a Igreja, com fontes magisteriais." },
     ],

@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import doutores from "@/assets/doutores.jpg";
 import { PageHero, CardGrid, ContentCard, Prose, Pullquote } from "../components/PageShell";
 import { ReadingMode, FnRef } from "../components/ReadingMode";
+import { keywordsPara } from "@/lib/seo/palavras-chave";
 
 export const Route = createFileRoute("/doutores-da-igreja")({
   head: () => ({
@@ -9,6 +10,7 @@ export const Route = createFileRoute("/doutores-da-igreja")({
       { title: "Doutores da Igreja — Os 37 mestres da fé católica" },
       { property: "og:url", content: "https://portalcatolico.vercel.app/doutores-da-igreja" },
       { name: "description", content: "Doutores da Igreja: critérios canônicos, história das proclamações de 1295 a 2022, e síntese da obra dos 37, com notas e fontes magisteriais." },
+      { name: "keywords", content: keywordsPara(["santos", "formacao"]) },
       { property: "og:title", content: "Doutores da Igreja Católica" },
       { property: "og:description", content: "Os 37 santos reconhecidos pela eminência de doutrina e santidade." },
     ],

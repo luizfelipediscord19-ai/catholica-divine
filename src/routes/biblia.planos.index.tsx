@@ -10,6 +10,7 @@ import {
   type ProgressoPlanos,
 } from "../lib/biblia/planos-progresso";
 import manuscrito from "../assets/manuscrito.jpg";
+import { keywordsPara } from "@/lib/seo/palavras-chave";
 
 export const Route = createFileRoute("/biblia/planos/")({
   head: () => ({
@@ -20,6 +21,7 @@ export const Route = createFileRoute("/biblia/planos/")({
         content:
           "Planos guiados de leitura da Bíblia Católica: Evangelhos em 30 dias, Salmos em 30 dias, Novo Testamento em 90 dias e a Bíblia inteira em um ano, com progresso salvo.",
       },
+      { name: "keywords", content: keywordsPara(["biblia", "formacao"]) },
       { property: "og:title", content: "Planos de leitura bíblica guiada" },
       {
         property: "og:description",

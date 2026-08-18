@@ -24,6 +24,7 @@ import { garantirTokenAgora, useIdentidade } from "@/hooks/use-identidade";
 import { formatarSalvo, useRascunho } from "@/hooks/use-rascunho";
 import { SECAO_PADRAO, SECOES_FORUM } from "@/lib/data/forum-secoes";
 import { criarTopicoFn, listarSecoesFn, listarTopicosFn } from "@/lib/portal.functions";
+import { keywordsPara } from "@/lib/seo/palavras-chave";
 
 
 export const Route = createFileRoute("/forum/")({
@@ -36,6 +37,7 @@ export const Route = createFileRoute("/forum/")({
         content:
           "Fórum católico para perguntas de fé, doutrina, Escritura, vida de oração e apologética. Participe com sua identidade anônima e um santo padroeiro sorteado.",
       },
+      { name: "keywords", content: keywordsPara(["formacao", "marca"]) },
       { property: "og:title", content: "Agora Ecclesiae — Fórum Católico" },
       {
         property: "og:description",

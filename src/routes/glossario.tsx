@@ -5,6 +5,7 @@ import { listarTermos } from "@/lib/data/glossario";
 import { normalizar } from "@/lib/busca";
 import { PageHero } from "@/components/PageShell";
 import manuscrito from "@/assets/manuscrito.jpg";
+import { keywordsPara } from "@/lib/seo/palavras-chave";
 
 export const Route = createFileRoute("/glossario")({
   head: () => ({
@@ -16,6 +17,7 @@ export const Route = createFileRoute("/glossario")({
         content:
           "Dicionário dos termos centrais da fé católica: graça, dogma, transubstanciação, magistério, Trindade, sacramento e mais — com referências ao Catecismo.",
       },
+      { name: "keywords", content: keywordsPara(["formacao", "catecismo"]) },
       { property: "og:title", content: "Glossário Católico" },
       {
         property: "og:description",

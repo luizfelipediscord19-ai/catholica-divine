@@ -4,6 +4,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero, Section, Prose, CardGrid, Prancha } from "@/components/PageShell";
 import { LegendaConfiabilidade } from "@/components/SeloConfiabilidade";
 import biblioteca from "@/assets/biblioteca.jpg";
+import { keywordsPara } from "@/lib/seo/palavras-chave";
 
 const URL_PAGINA = "https://portalcatolico.vercel.app/fontes";
 const TITULO = "Fontes e Metodologia — Como verificamos o conteúdo | Portal Católico";
@@ -69,6 +70,7 @@ export const Route = createFileRoute("/fontes")({
           description: DESCRICAO,
         }),
       },
+      { name: "keywords", content: keywordsPara(["formacao", "apologetica"]) },
     ],
   }),
   component: FontesPage,
