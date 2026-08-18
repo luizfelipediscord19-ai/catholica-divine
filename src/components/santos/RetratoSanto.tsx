@@ -1,20 +1,24 @@
 import { useEffect, useRef, useState } from "react";
 
 /**
- * Miniaturas do Wikimedia Commons levam a largura no próprio caminho
- * (`/960px-arquivo.jpg`). Quando a fonte é uma dessas URLs, montamos um
- * `srcset` com larguras menores ou iguais à declarada — pedir mais que o
- * original devolve erro 400 e deixaria o retrato vazio. Assim o celular baixa
- * um arquivo leve e o desktop recebe a arte em toda a resolução disponível.
+ * Arte do Wikimedia Commons é servida pela nossa própria origem
+ * (`/api/public/imagem`): entregar direto do Commons era bloqueado por parte
+ * dos navegadores e deixava cartões sem retrato. Pelo proxy também pedimos a
+ * largura ideal de cada tela, então o celular baixa um arquivo leve e o
+ * desktop recebe a pintura em alta definição.
  */
 const LARGURAS_RETRATO = [480, 640, 800, 1024, 1280, 1600];
 
+function pelaNossaOrigem(url: string, largura?: number): string {
+  if (!/^https:\/\/upload\.wikimedia\.org\//.test(url)) return url;
+  const q = new URLSearchParams({ u: url });
+  if (largura) q.set("w", String(largura));
+  return `/api/public/imagem?${q.toString()}`;
+}
+
 function srcSetDe(url: string): string | undefined {
-  const casa = /upload\.wikimedia\.org\/.+\/thumb\/.+\/(\d+)px-/.exec(url);
-  if (!casa) return undefined;
-  const maxima = Number(casa[1]);
-  const larguras = LARGURAS_RETRATO.filter((w) => w < maxima).concat(maxima);
-  return larguras.map((w) => `${url.replace(/\/\d+px-/, `/${w}px-`)} ${w}w`).join(", ");
+  if (!/^https:\/\/upload\.wikimedia\.org\/.+\/thumb\/.+\/\d+px-/.test(url)) return undefined;
+  return LARGURAS_RETRATO.map((w) => `${pelaNossaOrigem(url, w)} ${w}w`).join(", ");
 }
 
 
