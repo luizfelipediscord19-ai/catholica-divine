@@ -35,6 +35,7 @@ const GRUPOS: { titulo: string; itens: { to: string; label: string }[] }[] = [
     titulo: "Devoção",
     itens: [
       { to: "/oracoes", label: "Orações" },
+      { to: "/confissao", label: "Confissão" },
       { to: "/santos", label: "Santos" },
       { to: "/maria", label: "Maria" },
     ],
