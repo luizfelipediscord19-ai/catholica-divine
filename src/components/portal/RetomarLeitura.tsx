@@ -9,6 +9,8 @@ import {
   salvarMarcador,
   type MarcadorLeitura,
 } from "@/lib/leitura-local";
+import { lerPlanos, proximoDia } from "@/lib/biblia/planos-progresso";
+import { acharPlano } from "@/lib/data/biblia/planos";
 
 /**
  * Retomada do plano de leitura em andamento — usada quando não há
