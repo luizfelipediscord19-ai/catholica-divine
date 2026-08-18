@@ -157,7 +157,7 @@ function NoticiasPage() {
             >
               <div className="relative min-h-64 overflow-hidden lg:min-h-full">
                 <ImagemOtimizada
-                  src={imagemPublicavel(destaque.imagem_url) ?? pentecostes}
+                  src={imagemPublicavel(destaque.imagem_url) ?? concilio}
                   alt={`Imagem de abertura: ${destaque.titulo}`}
                   width={1536}
                   height={1024}

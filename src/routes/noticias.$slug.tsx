@@ -23,7 +23,7 @@ function imagemPublicavel(url: string | null): string | null {
 
 function capaEditorial(slug: string): string {
   const indice = Array.from(slug).reduce((total, letra) => total + letra.charCodeAt(0), 0);
-  return CAPAS_EDITORIAIS[indice % CAPAS_EDITORIAIS.length] ?? pentecostes;
+  return CAPAS_EDITORIAIS[indice % CAPAS_EDITORIAIS.length] ?? concilio;
 }
 
 const noticiaQuery = (slug: string) =>

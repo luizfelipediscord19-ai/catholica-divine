@@ -18,7 +18,7 @@ import manuscrito from "@/assets/manuscrito.jpg";
 import biblioteca from "@/assets/biblioteca.jpg";
 
 /** Uma imagem por card; ciclo fixo para que a grade fique estável entre visitas. */
-const CAPAS_NOTICIA = [velas, claustro, cristo];
+const CAPAS_NOTICIA = [velas, manuscrito, sacramentos];
 
 function imagemPublicavel(url: string | null): string | null {
   if (!url || !/^https:\/\//i.test(url)) return null;
