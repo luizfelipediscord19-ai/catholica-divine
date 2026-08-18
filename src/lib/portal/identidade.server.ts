@@ -111,7 +111,10 @@ export async function garantirIdentidade(
     .select(`token, ${COLUNAS}`)
     .single();
 
-  if (error || !data) throw new Error("Não foi possível criar a identidade.");
+  if (error || !data) {
+    console.error("[identidade] Falha ao criar identidade:", error?.message ?? "sem dados");
+    throw new Error("Não foi possível criar a identidade.");
+  }
   return { token: data.token as string, identidade: toPublica(data) };
 }
 

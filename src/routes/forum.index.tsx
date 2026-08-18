@@ -20,7 +20,7 @@ import {
 } from "@/components/portal/comuns";
 import { RegrasForum, SeloRevisao } from "@/components/portal/ForumModeracao";
 import { useAuth } from "@/hooks/use-auth";
-import { garantirTokenAgora, useIdentidade } from "@/hooks/use-identidade";
+import { lerToken, useIdentidade } from "@/hooks/use-identidade";
 import { formatarSalvo, useRascunho } from "@/hooks/use-rascunho";
 import { SECAO_PADRAO, SECOES_FORUM } from "@/lib/data/forum-secoes";
 import { criarTopicoFn, listarSecoesFn, listarTopicosFn } from "@/lib/portal.functions";
@@ -264,8 +264,10 @@ function NovoTopico({
 
   const criar = useMutation({
     mutationFn: async () => {
-      // A identidade anônima é criada na hora, se ainda não existir.
-      const token = await garantirTokenAgora();
+      // O servidor deriva a identidade da conta autenticada (e adota o token
+      // anônimo deste navegador, se houver). Não criamos identidade anônima
+      // aqui: isso falhava e impedia a publicação.
+      const token = lerToken();
       return criarTopicoFn({ data: { token, secaoSlug, titulo, corpo } });
     },
     onSuccess: (res) => {
