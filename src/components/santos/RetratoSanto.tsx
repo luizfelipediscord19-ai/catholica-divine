@@ -16,6 +16,7 @@ export function RetratoSanto({
   sizes = "(max-width: 768px) 100vw, 400px",
   largura = 700,
   altura = 875,
+  posicao = "50% 22%",
 }: {
   url?: string;
   reserva?: string;
@@ -25,6 +26,8 @@ export function RetratoSanto({
   sizes?: string;
   largura?: number;
   altura?: number;
+  /** Ponto focal do recorte: por padrão puxa para o alto, onde está o rosto. */
+  posicao?: string;
 }) {
   const [tentativa, setTentativa] = useState(0);
   const [carregada, setCarregada] = useState(false);
@@ -71,6 +74,7 @@ export function RetratoSanto({
         setCarregada(false);
         setTentativa((t) => t + 1);
       }}
+      style={{ objectPosition: posicao }}
       className={`media-fade bg-muted/40 ${className}`}
     />
   );
