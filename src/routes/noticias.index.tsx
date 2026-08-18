@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { queryOptions } from "@tanstack/react-query";
+import { ImagemOtimizada } from "@/components/ImagemOtimizada";
 import { Newspaper, ExternalLink } from "lucide-react";
 
 import { PageHero } from "@/components/PageShell";
@@ -159,7 +160,7 @@ function NoticiasPage() {
             {/* Editorial Intermezzo News */}
             <section className="relative my-[var(--space-lg)] p-card border border-gold/20 overflow-hidden group">
               <div className="absolute inset-0 z-0">
-                <img src={concilio} alt="" className="size-full object-cover opacity-10 grayscale group-hover:grayscale-0 transition-all duration-1000" />
+                <ImagemOtimizada src={concilio} alt="" width={1536} height={1024} className="size-full object-cover opacity-10 grayscale group-hover:grayscale-0 transition-all duration-1000" />
                 <div className="absolute inset-0 bg-linear-to-r from-background via-background/80 to-transparent" />
               </div>
               <div className="relative z-10 max-w-2xl">

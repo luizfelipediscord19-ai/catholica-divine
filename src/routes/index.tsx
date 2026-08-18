@@ -522,12 +522,12 @@ function Home() {
 
       {/* Padres da Igreja — vozes da Tradição */}
       <section className="bg-background py-section relative overflow-hidden">
-        <div className="shell">
-          <ScrollReveal className="max-w-3xl mb-[var(--space-lg)]">
-            <p className="kicker mb-4 flex items-center gap-4">
         <div className="absolute right-0 top-0 w-1/3 h-full opacity-5 pointer-events-none hidden lg:block">
           <ImagemOtimizada src={doutores} alt="" className="size-full object-cover" />
         </div>
+        <div className="shell">
+          <ScrollReveal className="max-w-3xl mb-[var(--space-lg)]">
+            <p className="kicker mb-4 flex items-center gap-4">
               <span className="h-px w-6 bg-gold/40" /> Vox Patrum · A voz dos Padres
             </p>
             <h2 className="title-page text-foreground leading-[1.08] text-balance">
