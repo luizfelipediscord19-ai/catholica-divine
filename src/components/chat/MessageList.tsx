@@ -6,6 +6,19 @@ import { ChatMessage } from "../../lib/types/chat";
 import { SourceReferences, extrairFontes } from "../SourceReferences";
 import { AprofundarLinks } from "./AprofundarLinks";
 import { ReferenciasInternas } from "./ReferenciasInternas";
+import { linkificarNos } from "../CitacoesLinkadas";
+
+/**
+ * Nas respostas da Sophia, as citações escritas no texto ("CIC §1324",
+ * "Jo 6, 51", "LG 60") viram links para a fonte, como no resto do portal.
+ */
+const MARKDOWN_LINKADO = {
+  p: ({ children }: { children?: ReactNode }) => <p>{linkificarNos(children)}</p>,
+  li: ({ children }: { children?: ReactNode }) => <li>{linkificarNos(children)}</li>,
+  blockquote: ({ children }: { children?: ReactNode }) => (
+    <blockquote>{linkificarNos(children)}</blockquote>
+  ),
+};
 
 const APROFUNDAR = [
   "Quais versículos fundamentam isso?",
