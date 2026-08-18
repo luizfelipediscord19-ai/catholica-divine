@@ -59,6 +59,11 @@ export const PAGINAS: SitemapEntry[] = [
       priority: "0.7",
     })),
   ]),
+  ...PLANOS.map((p) => ({
+    path: `/biblia/planos/${p.slug}`,
+    changefreq: "monthly" as const,
+    priority: "0.7",
+  })),
   ...PARTES.map((parte) => ({
     path: `/catecismo/${parte.slug}`,
     changefreq: "monthly" as const,
