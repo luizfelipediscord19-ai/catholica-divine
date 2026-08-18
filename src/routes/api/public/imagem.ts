@@ -37,27 +37,38 @@ export const Route = createFileRoute("/api/public/imagem")({
           alvo.pathname = alvo.pathname.replace(/\/\d+px-/, `/${largura}px-`);
         }
 
-        let resposta: Response;
-        try {
-          resposta = await fetch(alvo.toString(), {
-            headers: {
-              // O Commons exige identificação do agente para servir arquivos.
-              "user-agent": "PortalCatolico/1.0 (https://portalcatolico.vercel.app)",
-              accept: "image/avif,image/webp,image/jpeg,image/png,*/*",
-            },
-          });
-        } catch {
-          return new Response("Falha ao obter a imagem", { status: 502 });
-        }
+        const buscar = async (endereco: string) => {
+          try {
+            return await fetch(endereco, {
+              headers: {
+                // O Commons exige identificação do agente para servir arquivos.
+                "user-agent": "PortalCatolico/1.0 (https://portalcatolico.vercel.app)",
+                accept: "image/avif,image/webp,image/jpeg,image/png,*/*",
+              },
+            });
+          } catch {
+            return undefined;
+          }
+        };
 
-        // Se a largura pedida for maior que o original, o Commons devolve erro:
-        // nesse caso vale voltar à URL original informada.
-        if (!resposta.ok && alvo.toString() !== bruto) {
-          resposta = await fetch(bruto, {
-            headers: { "user-agent": "PortalCatolico/1.0 (https://portalcatolico.vercel.app)" },
+        // Tentativas em cascata: largura pedida → uma nova tentativa (o Commons
+        // limita rajadas de pedidos) → a URL original informada, caso a largura
+        // pedida seja maior que o arquivo de origem.
+        const candidatos = [alvo.toString(), alvo.toString(), bruto];
+        let resposta: Response | undefined;
+        for (const [indice, candidato] of candidatos.entries()) {
+          if (indice > 0) await new Promise((r) => setTimeout(r, 350));
+          resposta = await buscar(candidato);
+          if (resposta?.ok) break;
+        }
+        if (!resposta) return new Response("Falha ao obter a imagem", { status: 502 });
+        if (!resposta.ok) {
+          return new Response("Imagem indisponível", {
+            status: 404,
+            // Cache curto: evita repetir a falha em rajada sem congelar o erro.
+            headers: { "cache-control": "public, max-age=60" },
           });
         }
-        if (!resposta.ok) return new Response("Imagem indisponível", { status: 404 });
 
         const tipo = resposta.headers.get("content-type") ?? "";
         if (!tipo.startsWith("image/")) return new Response("Conteúdo não é imagem", { status: 415 });
