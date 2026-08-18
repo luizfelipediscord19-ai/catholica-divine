@@ -9,8 +9,6 @@ import { listarNoticiasFn } from "@/lib/noticias.functions";
 import { TRILHAS } from "@/lib/data/trilhas";
 
 import velas from "@/assets/velas.jpg";
-import claustro from "@/assets/claustro.jpg";
-import cristo from "@/assets/cristo.jpg";
 import sacramentos from "@/assets/sacramentos.jpg";
 import rosario from "@/assets/rosario.jpg";
 import vitral from "@/assets/vitral.jpg";
@@ -18,7 +16,7 @@ import manuscrito from "@/assets/manuscrito.jpg";
 import biblioteca from "@/assets/biblioteca.jpg";
 
 /** Uma imagem por card; ciclo fixo para que a grade fique estável entre visitas. */
-const CAPAS_NOTICIA = [velas, claustro, cristo];
+const CAPAS_NOTICIA = [velas, manuscrito, sacramentos];
 
 function imagemPublicavel(url: string | null): string | null {
   if (!url || !/^https:\/\//i.test(url)) return null;

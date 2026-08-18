@@ -56,17 +56,54 @@ export const Route = createFileRoute("/biblia/$livro/$capitulo")({
   head: ({ params, loaderData }) => {
     const titulo = loaderData ? `${loaderData.livro.nome} ${loaderData.capitulo}` : "Bíblia";
     const url = `https://portalcatolico.vercel.app/biblia/${params.livro}/${params.capitulo}`;
+    // Descrição única por capítulo: começa pelo texto real do primeiro
+    // versículo, o que evita descrições repetidas em 1.300+ páginas.
+    const abertura = (loaderData?.versos ?? [])
+      .slice(0, 2)
+      .map((v) => v.t)
+      .join(" ")
+      .replace(/\s+/g, " ")
+      .trim();
+    const descricao = abertura
+      ? `${titulo} — “${abertura}” Leia ${titulo} completo em português, com notas católicas, referências cruzadas e comparação entre versões.`.slice(
+          0,
+          300,
+        )
+      : `Leia ${titulo} da Bíblia Católica em português, latim e grego, com introdução ao livro, referências cruzadas e comparação entre versões.`;
+    const cap = Number(params.capitulo);
+    const total = loaderData?.livro.capitulos ?? 0;
     return {
       meta: [
-        { title: `${titulo} — Bíblia — Portal Católico` },
-        { name: "description", content: `Leitura de ${titulo} em português, latim, grego e hebraico. ${loaderData?.livro.resumo ?? ""}`.slice(0, 158) },
-        { property: "og:title", content: `${titulo} — Bíblia` },
-        { property: "og:description", content: loaderData?.livro.resumo ?? "" },
+        {
+          title: `${titulo} — Bíblia Católica online | Portal Católico`,
+        },
+        { name: "description", content: descricao.slice(0, 300) },
+        { property: "og:title", content: `${titulo} — Bíblia Católica` },
+        { property: "og:description", content: descricao.slice(0, 200) },
         { property: "og:type", content: "article" },
         { property: "og:url", content: url },
         { name: "twitter:card", content: "summary" },
       ],
-      links: [{ rel: "canonical", href: url }],
+      links: [
+        { rel: "canonical", href: url },
+        ...(cap > 1
+          ? [
+              {
+                rel: "prev",
+                href: `https://portalcatolico.vercel.app/biblia/${params.livro}/${cap - 1}`,
+              },
+            ]
+          : []),
+        ...(total && cap < total
+          ? [
+              {
+                rel: "next",
+                href: `https://portalcatolico.vercel.app/biblia/${params.livro}/${cap + 1}`,
+              },
+            ]
+          : []),
+      ],
+
       scripts: [
         {
           type: "application/ld+json",

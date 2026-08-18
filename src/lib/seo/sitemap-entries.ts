@@ -9,9 +9,12 @@ export const BASE_URL = "https://portalcatolico.vercel.app";
 
 export interface SitemapEntry {
   path: string;
+  /** Somente quando existe uma data real de publicação/alteração da página. */
+  lastmod?: string;
   changefreq?: "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never";
   priority?: string;
 }
+
 
 /** Páginas institucionais e índices — as mais importantes para o rastreador. */
 export const PAGINAS: SitemapEntry[] = [
@@ -38,8 +41,9 @@ export const PAGINAS: SitemapEntry[] = [
   { path: "/glossario", changefreq: "monthly", priority: "0.7" },
   { path: "/calendario-liturgico", changefreq: "weekly", priority: "0.7" },
   { path: "/assistente", changefreq: "monthly", priority: "0.7" },
-  { path: "/busca", changefreq: "monthly", priority: "0.7" },
+  { path: "/estudar", changefreq: "monthly", priority: "0.7" },
   { path: "/coroinhas", changefreq: "monthly", priority: "0.6" },
+
   { path: "/explorar", changefreq: "monthly", priority: "0.8" },
   { path: "/sobre", changefreq: "monthly", priority: "0.6" },
   { path: "/fontes", changefreq: "monthly", priority: "0.6" },
@@ -97,6 +101,7 @@ export function respostaSitemap(entries: SitemapEntry[]): Response {
     [
       `  <url>`,
       `    <loc>${BASE_URL}${e.path}</loc>`,
+      e.lastmod ? `    <lastmod>${e.lastmod}</lastmod>` : null,
       e.changefreq ? `    <changefreq>${e.changefreq}</changefreq>` : null,
       e.priority ? `    <priority>${e.priority}</priority>` : null,
       `  </url>`,
@@ -104,6 +109,7 @@ export function respostaSitemap(entries: SitemapEntry[]): Response {
       .filter(Boolean)
       .join("\n"),
   );
+
 
   const xml = [
     `<?xml version="1.0" encoding="UTF-8"?>`,

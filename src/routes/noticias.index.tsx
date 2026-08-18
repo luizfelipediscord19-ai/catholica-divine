@@ -8,13 +8,15 @@ import { PageHero } from "@/components/PageShell";
 import { Button } from "@/components/ui/button";
 import { listarNoticiasFn } from "@/lib/noticias.functions";
 import concilio from "@/assets/concilio-trento.jpg";
-import claustro from "@/assets/claustro.jpg";
-import pentecostes from "@/assets/pentecostes.jpg";
+import manuscrito from "@/assets/manuscrito.jpg";
 import emaus from "@/assets/emaus.jpg";
 import doutores from "@/assets/doutores.jpg";
+import sacramentosArte from "@/assets/sacramentos.jpg";
 
 const SITE_URL = "https://portalcatolico.vercel.app";
-const CAPAS_EDITORIAIS = [pentecostes, concilio, emaus, doutores, claustro];
+/** Só obras em formato paisagem: evitam recortes que decapitam as figuras. */
+const CAPAS_EDITORIAIS = [concilio, emaus, doutores, manuscrito, sacramentosArte];
+
 
 function imagemPublicavel(url: string | null): string | null {
   if (!url || !/^https:\/\//i.test(url)) return null;
@@ -71,7 +73,7 @@ function NoticiasIndisponiveis() {
   return (
     <div>
       <PageHero
-        image={claustro}
+        image={concilio}
         eyebrow="Acta Ecclesiae · Edição diária"
         title={
           <>
@@ -112,7 +114,7 @@ function NoticiasPage() {
   return (
     <div>
       <PageHero
-        image={claustro}
+        image={concilio}
         eyebrow="Acta Ecclesiae · Edição diária"
         title={
           <>
@@ -154,7 +156,7 @@ function NoticiasPage() {
             >
               <div className="relative min-h-64 overflow-hidden lg:min-h-full">
                 <ImagemOtimizada
-                  src={imagemPublicavel(destaque.imagem_url) ?? pentecostes}
+                  src={imagemPublicavel(destaque.imagem_url) ?? concilio}
                   alt={`Imagem de abertura: ${destaque.titulo}`}
                   width={1536}
                   height={1024}
