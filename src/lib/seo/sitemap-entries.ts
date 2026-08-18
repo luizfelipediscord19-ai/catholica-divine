@@ -1,4 +1,5 @@
 import { LIVROS } from "@/lib/data/biblia/index";
+import { PLANOS } from "@/lib/data/biblia/planos";
 import { SANTOS_LISTA } from "@/lib/santos-lista";
 import { PARTES } from "@/lib/data/catecismo/index";
 import { NOVENAS } from "@/lib/data/devocoes/novenas";
