@@ -6,8 +6,10 @@ import { createFileRoute } from "@tanstack/react-router";
  * Fluxo: feeds RSS reais (Vatican News, ACI Digital, CNBB) → Groq redige em
  * português → grava no acervo com o link da fonte original.
  *
- * Chamada pelo agendador (Vercel Cron às 15:00 UTC = 12:00 em Brasília, com
- * `Authorization: Bearer $CRON_SECRET`) ou manualmente com `x-cron-secret`.
+ * Chamada pelo agendador a partir das 14:00 UTC. Em planos com janela de
+ * execução de até uma hora, isso garante a edição disponível até 12:00 em
+ * Brasília, com `Authorization: Bearer $CRON_SECRET`; também aceita disparo
+ * manual com `x-cron-secret`.
  * O `HERMES_TOKEN` também é aceito, para disparo pelo agente.
  */
 function autorizado(request: Request): boolean {
