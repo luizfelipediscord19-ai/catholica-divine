@@ -56,8 +56,11 @@ export function SiteFooter() {
           <ul className="space-y-1 text-sm text-paper/80">
             <li><Link to="/explorar" className="block py-2 hover:text-gold focus-visible:text-gold">Explorar o Portal</Link></li>
             <li><Link to="/sobre" className="block py-2 hover:text-gold focus-visible:text-gold">Sobre o Portal</Link></li>
+            <li><Link to="/testemunhos" className="block py-2 hover:text-gold focus-visible:text-gold">Testemunhos de fé</Link></li>
+            <li><Link to="/contato" className="block py-2 hover:text-gold focus-visible:text-gold">Contato e sugestões</Link></li>
             <li><Link to="/fontes" className="block py-2 hover:text-gold focus-visible:text-gold">Fontes e Metodologia</Link></li>
             <li><Link to="/busca" className="block py-2 hover:text-gold focus-visible:text-gold">Busca Avançada</Link></li>
+
             <li><Link to="/privacidade" className="block py-2 hover:text-gold focus-visible:text-gold">Privacidade</Link></li>
             <li><Link to="/termos" className="block py-2 hover:text-gold focus-visible:text-gold">Termos de Uso</Link></li>
           </ul>
