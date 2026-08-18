@@ -523,7 +523,7 @@ function Home() {
       {/* Padres da Igreja — vozes da Tradição */}
       <section className="bg-background py-section relative overflow-hidden">
         <div className="absolute right-0 top-0 w-1/3 h-full opacity-5 pointer-events-none hidden lg:block">
-          <ImagemOtimizada src={doutores} alt="" className="size-full object-cover" />
+          <ImagemOtimizada src={doutores} alt="" width={1536} height={1024} sizes="33vw" className="size-full object-cover" />
         </div>
         <div className="shell">
           <ScrollReveal className="max-w-3xl mb-[var(--space-lg)]">
