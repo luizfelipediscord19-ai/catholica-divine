@@ -43,6 +43,8 @@ export function SiteFooter() {
           <ul className="space-y-1 text-sm text-paper/80">
             <li><Link to="/oracoes" className="block py-2 hover:text-gold focus-visible:text-gold">Orações</Link></li>
             <li><Link to="/sacramentos" className="block py-2 hover:text-gold focus-visible:text-gold">Sacramentos</Link></li>
+            <li><Link to="/confissao" className="block py-2 hover:text-gold focus-visible:text-gold">Confissão</Link></li>
+            <li><Link to="/biblia/planos" className="block py-2 hover:text-gold focus-visible:text-gold">Planos de leitura</Link></li>
             <li><Link to="/santos" className="block py-2 hover:text-gold focus-visible:text-gold">Santos</Link></li>
             <li><Link to="/maria" className="block py-2 hover:text-gold focus-visible:text-gold">Maria Santíssima</Link></li>
             <li><Link to="/calendario-liturgico" className="block py-2 hover:text-gold focus-visible:text-gold">Calendário Litúrgico</Link></li>
