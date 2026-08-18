@@ -20,6 +20,7 @@ import { BuscaAprender, ComeceAqui } from "../components/portal/AprenderHome";
 import { RetomarLeitura } from "../components/portal/RetomarLeitura";
 import { UltimosArtigos, TrilhasIlustradas } from "../components/portal/DestaquesHome";
 import { ImagemOtimizada } from "../components/ImagemOtimizada";
+import { keywordsPara } from "@/lib/seo/palavras-chave";
 
 
 
@@ -47,7 +48,10 @@ export const Route = createFileRoute("/")({
         content:
           "Biblioteca digital da fé católica em português: Bíblia comentada, os 2.865 parágrafos do Catecismo, vidas dos santos, mariologia, sacramentos, orações tradicionais e assistente de IA fiel ao Magistério.",
       },
-      { name: "keywords", content: "Bíblia católica, Catecismo da Igreja Católica, santos, Maria, sacramentos, orações católicas, apologética, magistério" },
+      {
+        name: "keywords",
+        content: keywordsPara(["marca", "biblia", "catecismo", "santos", "maria", "sacramentos", "oracoes", "liturgia", "apologetica", "formacao"], [], 60),
+      },
       { property: "og:title", content: "Portal Católico — Biblioteca Digital da Fé" },
       {
         property: "og:description",
