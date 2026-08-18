@@ -5,13 +5,15 @@ import { ArrowLeft, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ImagemOtimizada } from "@/components/ImagemOtimizada";
 import { obterNoticiaFn } from "@/lib/noticias.functions";
-import pentecostes from "@/assets/pentecostes.jpg";
+import manuscrito from "@/assets/manuscrito.jpg";
 import concilio from "@/assets/concilio-trento.jpg";
 import emaus from "@/assets/emaus.jpg";
 import doutores from "@/assets/doutores.jpg";
 
 const SITE_URL = "https://portalcatolico.vercel.app";
-const CAPAS_EDITORIAIS = [pentecostes, concilio, emaus, doutores];
+/** Só obras em formato paisagem, para não cortar figuras nas capas 16/10. */
+const CAPAS_EDITORIAIS = [concilio, emaus, doutores, manuscrito];
+
 
 function imagemPublicavel(url: string | null): string | null {
   if (!url || !/^https:\/\//i.test(url)) return null;
