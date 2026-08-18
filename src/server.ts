@@ -1,4 +1,5 @@
 import "./lib/error-capture";
+import { normalizarEnvBackend } from "./lib/config/env-servidor.server";
 import { garantirWebSocket } from "./lib/websocket-polyfill";
 
 import { consumeLastCapturedError } from "./lib/error-capture";
@@ -178,6 +179,7 @@ export default {
     const dev = process.env["NODE_ENV"] !== "production";
     const nonce = dev ? undefined : gerarNonce();
     try {
+      normalizarEnvBackend();
       await garantirWebSocket();
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
