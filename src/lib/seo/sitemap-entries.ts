@@ -9,9 +9,12 @@ export const BASE_URL = "https://portalcatolico.vercel.app";
 
 export interface SitemapEntry {
   path: string;
+  /** Somente quando existe uma data real de publicação/alteração da página. */
+  lastmod?: string;
   changefreq?: "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never";
   priority?: string;
 }
+
 
 /** Páginas institucionais e índices — as mais importantes para o rastreador. */
 export const PAGINAS: SitemapEntry[] = [
