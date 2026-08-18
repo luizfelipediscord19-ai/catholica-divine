@@ -69,6 +69,7 @@ function Page() {
   return (
     <div>
       <PageHero
+        autoridade={["oficial", "tradicao", "devocao"]}
         eyebrow="Beata Maria Virgo"
         title="Maria, Mãe de Deus"
         intro="Filha do Pai, Mãe do Filho, Esposa do Espírito Santo. A primeira discípula, modelo da Igreja, caminho seguro a Cristo."

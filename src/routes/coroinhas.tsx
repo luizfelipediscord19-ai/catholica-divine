@@ -57,6 +57,7 @@ function Page() {
   return (
     <div>
       <PageHero
+        autoridade={["oficial", "tradicao"]}
         image={sacramentos}
         eyebrow="Ministerium Altaris"
         title="Coroinhas — O Serviço ao Altar"

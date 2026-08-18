@@ -45,6 +45,7 @@ function GlossarioPage() {
   return (
     <div>
       <PageHero
+        autoridade={["oficial", "teologia"]}
         image={manuscrito}
         eyebrow="Lexicon Fidei"
         title={<>Glossário <span className="italic text-gold/70">Católico</span></>}

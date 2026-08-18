@@ -64,6 +64,7 @@ function Page() {
   return (
     <div>
       <PageHero
+        autoridade={["oficial"]}
         eyebrow="Annus Liturgicus"
         title={
           <>

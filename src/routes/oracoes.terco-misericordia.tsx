@@ -37,6 +37,7 @@ function Page() {
   return (
     <div>
       <PageHero
+        autoridade={["devocao", "privada"]}
         image={cristo}
         eyebrow="Misericordia"
         title="Terço da Divina Misericórdia"

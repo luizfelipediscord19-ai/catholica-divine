@@ -51,6 +51,7 @@ function Page() {
   return (
     <div>
       <PageHero
+        autoridade={["oficial", "historia"]}
         eyebrow="Sacra Scriptura"
         title="A Bíblia Sagrada"
         intro="Os 73 livros inspirados pelo Espírito Santo, transmitidos pela Igreja desde os Apóstolos. Palavra de Deus posta por escrito sob a moção do Espírito (CIC §§ 105–108)."

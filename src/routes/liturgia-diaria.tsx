@@ -72,6 +72,7 @@ function Page() {
   return (
     <div>
       <PageHero
+        autoridade={["oficial"]}
         image={velas}
         eyebrow={lit.dataExtenso}
         title={lit.celebracao}

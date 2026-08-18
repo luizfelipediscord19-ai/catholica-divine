@@ -179,6 +179,7 @@ function Page() {
   return (
     <div>
       <PageHero
+        autoridade={["tradicao", "devocao"]}
         eyebrow="Oratio"
         title="A Vida de Oração"
         intro="A oração é a respiração da alma cristã. Aqui você encontra a tradição orante da Igreja, das fórmulas mais antigas às devoções consagradas pelos séculos."

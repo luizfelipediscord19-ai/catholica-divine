@@ -96,6 +96,7 @@ function Page() {
   return (
     <div>
       <PageHero
+        autoridade={["oficial", "padres", "teologia"]}
         eyebrow="Doctores Ecclesiae"
         title="Os Doutores da Igreja"
         intro="Santos cuja eminente doutrina e cuja santidade de vida foram reconhecidas pela Igreja como guias seguros para todos os fiéis. Hoje são trinta e sete."

@@ -2,17 +2,23 @@ import type { ReactNode } from "react";
 import { ImagemOtimizada } from "./ImagemOtimizada";
 import { obraDaUrl } from "@/lib/data/obras";
 import { linkificarNos } from "./CitacoesLinkadas";
+import { FaixaAutoridade, type NivelConfiabilidade } from "./SeloConfiabilidade";
 
 export function PageHero({
   eyebrow,
   title,
   intro,
   image,
+  autoridade,
+  notaAutoridade,
 }: {
   eyebrow: string;
   title: ReactNode;
   intro: ReactNode;
   image?: string;
+  /** Níveis de autoridade das fontes que sustentam esta página. */
+  autoridade?: NivelConfiabilidade[];
+  notaAutoridade?: string;
 }) {
   const obra = obraDaUrl(image);
   return (
@@ -53,6 +59,14 @@ export function PageHero({
         </p>
         <h1 className="mb-sm title-page text-paper">{title}</h1>
         <p className="measure body-lead text-paper/70">{intro}</p>
+
+        {autoridade?.length ? (
+          <FaixaAutoridade
+            niveis={autoridade}
+            nota={notaAutoridade}
+            className="mt-md max-w-3xl bg-deep/40"
+          />
+        ) : null}
 
         {obra ? (
           <p className="mt-md text-step--2 text-paper/45">

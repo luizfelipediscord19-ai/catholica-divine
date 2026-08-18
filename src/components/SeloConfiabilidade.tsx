@@ -19,6 +19,7 @@ import { cn } from "@/lib/utils";
 export type NivelConfiabilidade =
   | "oficial"
   | "tradicao"
+  | "padres"
   | "historia"
   | "teologia"
   | "devocao"
@@ -44,11 +45,17 @@ export const CONFIABILIDADE: Record<NivelConfiabilidade, Meta> = {
     nota: "Informação transmitida pela tradição cristã ou hagiográfica, não definida como dogma.",
     classe: "border-sky-600/30 bg-sky-600/10 text-sky-700 dark:text-sky-300",
   },
-  historia: {
+  padres: {
     ponto: "🟣",
+    rotulo: "Padres da Igreja",
+    nota: "Testemunho dos Padres da Igreja: fonte da Tradição, de grande autoridade, embora nem toda opinião patrística seja definição da fé.",
+    classe: "border-violet-600/30 bg-violet-600/10 text-violet-700 dark:text-violet-300",
+  },
+  historia: {
+    ponto: "⚪",
     rotulo: "Contexto histórico",
     nota: "Dado histórico apoiado em fontes; sujeito ao debate próprio da pesquisa histórica.",
-    classe: "border-violet-600/30 bg-violet-600/10 text-violet-700 dark:text-violet-300",
+    classe: "border-border bg-muted/60 text-muted-foreground",
   },
   teologia: {
     ponto: "🟡",
@@ -57,16 +64,16 @@ export const CONFIABILIDADE: Record<NivelConfiabilidade, Meta> = {
     classe: "border-amber-600/30 bg-amber-600/10 text-amber-700 dark:text-amber-300",
   },
   devocao: {
-    ponto: "⚪",
+    ponto: "🟠",
     rotulo: "Devoção",
     nota: "Prática piedosa aprovada ou consagrada pelo uso, de adesão livre aos fiéis.",
-    classe: "border-border bg-muted/60 text-muted-foreground",
+    classe: "border-orange-600/30 bg-orange-600/10 text-orange-700 dark:text-orange-300",
   },
   privada: {
-    ponto: "🟠",
+    ponto: "🔴",
     rotulo: "Revelação privada",
     nota: "Revelações privadas não pertencem ao depósito da fé; a Igreja apenas as reconhece ou não se opõe a elas.",
-    classe: "border-orange-600/30 bg-orange-600/10 text-orange-700 dark:text-orange-300",
+    classe: "border-rose-600/30 bg-rose-600/10 text-rose-700 dark:text-rose-300",
   },
 };
 
@@ -134,5 +141,38 @@ export function LegendaConfiabilidade({ className }: { className?: string }) {
         </li>
       ))}
     </ul>
+  );
+}
+
+/**
+ * Faixa de autoridade — elemento visual fixo no alto de cada conteúdo,
+ * declarando de onde vem o que o leitor vai ler.
+ */
+export function FaixaAutoridade({
+  niveis,
+  nota,
+  className,
+}: {
+  niveis: NivelConfiabilidade[];
+  nota?: string;
+  className?: string;
+}) {
+  if (!niveis.length) return null;
+  return (
+    <div
+      data-sem-fontes
+      className={cn(
+        "flex flex-wrap items-center gap-x-2 gap-y-1.5 rounded-xl border border-gold/15 bg-card/40 px-3 py-2",
+        className,
+      )}
+    >
+      <span className="kicker mr-1 shrink-0">Autoridade</span>
+      {niveis.map((n) => (
+        <SeloConfiabilidade key={n} nivel={n} />
+      ))}
+      {nota ? (
+        <span className="w-full text-step--2 text-muted-foreground sm:w-auto">{nota}</span>
+      ) : null}
+    </div>
   );
 }

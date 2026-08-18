@@ -70,6 +70,7 @@ function Page() {
   return (
     <div>
       <PageHero
+        autoridade={["oficial", "teologia"]}
         eyebrow="Septem Sacramenta"
         title="Os Sete Sacramentos"
         intro={<>Sinais eficazes da <Termo termo="graca">graça</Termo>, instituídos por Cristo e confiados à Igreja, pelos quais nos é dispensada a vida divina (CIC § 1131).</>}

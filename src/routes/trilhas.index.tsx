@@ -44,6 +44,7 @@ function TrilhasIndex() {
   return (
     <div>
       <PageHero
+        autoridade={["oficial", "teologia"]}
         image={biblioteca}
         eyebrow="Plataforma de formação"
         title="Trilhas de aprendizado"
