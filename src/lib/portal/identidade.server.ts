@@ -100,6 +100,19 @@ export async function garantirIdentidade(
     if (data) return { token, identidade: toPublica(data) };
   }
 
+/**
+ * Motivo do erro do backend em texto curto, sem jamais expor chaves:
+ * qualquer trecho parecido com credencial é removido antes de sair do servidor.
+ */
+function motivoSeguro(mensagem?: string) {
+  if (!mensagem) return "sem resposta do backend";
+  return mensagem
+    .replace(/sb_(secret|publishable)_[\w-]+/g, "[chave]")
+    .replace(/eyJ[\w-]+\.[\w-]+\.[\w-]+/g, "[chave]")
+    .slice(0, 140);
+}
+
+
   const santo = sortearSanto();
   const { data, error } = await supabaseAdmin
     .from("identidades")
@@ -115,10 +128,11 @@ export async function garantirIdentidade(
     console.error("[identidade] Falha ao criar identidade:", error?.message ?? "sem dados");
     throw new Error(
       process.env["SUPABASE_SERVICE_ROLE_KEY"]
-        ? "Não foi possível criar a identidade agora. Tente novamente em instantes."
+        ? `Não foi possível criar a identidade agora (${motivoSeguro(error?.message)}).`
         : "O painel está temporariamente indisponível: a chave secreta do backend não está configurada nesta hospedagem.",
     );
   }
+
   return { token: data.token as string, identidade: toPublica(data) };
 }
 
