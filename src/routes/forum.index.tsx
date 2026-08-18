@@ -20,7 +20,7 @@ import {
 } from "@/components/portal/comuns";
 import { RegrasForum, SeloRevisao } from "@/components/portal/ForumModeracao";
 import { useAuth } from "@/hooks/use-auth";
-import { garantirTokenAgora, useIdentidade } from "@/hooks/use-identidade";
+import { lerToken, useIdentidade } from "@/hooks/use-identidade";
 import { formatarSalvo, useRascunho } from "@/hooks/use-rascunho";
 import { SECAO_PADRAO, SECOES_FORUM } from "@/lib/data/forum-secoes";
 import { criarTopicoFn, listarSecoesFn, listarTopicosFn } from "@/lib/portal.functions";
