@@ -11,6 +11,7 @@ const SITEMAPS = [
   "/sitemap-paginas.xml",
   "/sitemap-biblia-livros.xml",
   "/sitemap-santos.xml",
+  "/sitemap-noticias.xml",
   "/sitemap-biblia-capitulos.xml",
 ];
 

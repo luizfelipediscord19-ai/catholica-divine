@@ -6,6 +6,9 @@ Disallow: /auth
 Disallow: /redefinir-senha
 Disallow: /email-confirmado
 Disallow: /api/
+Disallow: /busca
+Disallow: /*?vi=
+Disallow: /*?vf=
 
 User-agent: GPTBot
 Allow: /
@@ -23,3 +26,4 @@ User-agent: ClaudeBot
 Allow: /
 
 Sitemap: https://portalcatolico.vercel.app/sitemap.xml
+
