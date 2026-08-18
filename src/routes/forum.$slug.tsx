@@ -84,10 +84,14 @@ function TopicoPage() {
   const reagir = useMutation({
     mutationFn: (alvo: { topicoId?: string; respostaId?: string }) =>
       reagirFn({ data: { token, ...alvo } }),
-    onSuccess: (res) => toast.success(res.reagiu ? "Amém registrado." : "Amém removido."),
+    onSuccess: (res) => {
+      void queryClient.invalidateQueries({ queryKey: ["forum", "topico", slug] });
+      toast.success(res.reagiu ? "Amém registrado." : "Amém removido.");
+    },
     onError: (erro: Error) =>
       avisarErroDeConta(erro, irParaConta, "Não foi possível registrar o amém."),
   });
+
 
 
   if (topico.isPending) {
@@ -140,15 +144,24 @@ function TopicoPage() {
           type="button"
           disabled={!autenticado || reagir.isPending}
           onClick={() => reagir.mutate({ topicoId: t.id })}
-          className="inline-flex items-center gap-2 label-btn text-paper/70 hover:text-gold transition-colors disabled:opacity-50"
+          aria-pressed={t.reagi}
+          title={autenticado ? "Registrar amém" : "Entre na sua conta para registrar o amém"}
+          className={`inline-flex items-center gap-2 label-btn transition-colors disabled:opacity-50 ${
+            t.reagi ? "text-gold" : "text-paper/70 hover:text-gold"
+          }`}
         >
-          <Heart className="size-3.5" aria-hidden="true" /> Amém
+          <Heart
+            className={`size-3.5 ${t.reagi ? "fill-current" : ""}`}
+            aria-hidden="true"
+          />{" "}
+          Amém {t.amens > 0 ? `· ${t.amens}` : ""}
         </button>
         <span className="flex items-center gap-2 text-xs text-muted-foreground">
           <MessageSquare className="size-3.5" aria-hidden="true" /> {respostas.length} respostas
         </span>
-        <DenunciarBotao topicoId={t.id} />
+        {autenticado ? <DenunciarBotao topicoId={t.id} /> : null}
       </div>
+
 
 
       <section className="space-y-6">
@@ -172,12 +185,23 @@ function TopicoPage() {
                       type="button"
                       disabled={!autenticado || reagir.isPending}
                       onClick={() => reagir.mutate({ respostaId: r.id })}
-                      className="inline-flex items-center gap-2 label-btn text-paper/60 hover:text-gold transition-colors disabled:opacity-50"
+                      aria-pressed={r.reagi}
+                      title={
+                        autenticado ? "Registrar amém" : "Entre na sua conta para registrar o amém"
+                      }
+                      className={`inline-flex items-center gap-2 label-btn transition-colors disabled:opacity-50 ${
+                        r.reagi ? "text-gold" : "text-paper/60 hover:text-gold"
+                      }`}
                     >
-                      <Heart className="size-3" aria-hidden="true" /> Amém
+                      <Heart
+                        className={`size-3 ${r.reagi ? "fill-current" : ""}`}
+                        aria-hidden="true"
+                      />{" "}
+                      Amém {r.amens > 0 ? `· ${r.amens}` : ""}
                     </button>
-                    <DenunciarBotao respostaId={r.id} compacto />
+                    {autenticado ? <DenunciarBotao respostaId={r.id} compacto /> : null}
                   </div>
+
                 </Painel>
 
               </li>
@@ -230,13 +254,16 @@ function TopicoPage() {
                 </>
               ) : null}
 
-              <button
-                type="submit"
-                disabled={!autenticado || corpo.trim().length < 2 || responder.isPending}
-                className={botaoClass}
-              >
-                {responder.isPending ? "Publicando…" : "Responder"}
-              </button>
+              {autenticado ? (
+                <button
+                  type="submit"
+                  disabled={corpo.trim().length < 2 || responder.isPending}
+                  className={botaoClass}
+                >
+                  {responder.isPending ? "Publicando…" : "Responder"}
+                </button>
+              ) : null}
+
               <button type="button" onClick={rascunho.limpar} className={botaoGhostClass}>
                 Descartar rascunho
               </button>

@@ -35,6 +35,31 @@ async function identidadeOpcional(token?: string | null) {
   return data?.id ?? null;
 }
 
+/** Contagem de "Amém" por tópico ou por resposta, em uma só consulta. */
+async function contarAmens(
+  coluna: "topico_id" | "resposta_id",
+  ids: string[],
+  identidadeId: string | null,
+) {
+  const total: Record<string, number> = {};
+  const meus: Record<string, boolean> = {};
+  if (ids.length === 0) return { total, meus };
+
+  const { data } = await dbLeitura()
+    .from("forum_reacoes")
+    .select(`${coluna}, identidade_id`)
+    .in(coluna, ids)
+    .eq("tipo", "amem");
+
+  for (const linha of (data ?? []) as Record<string, string | null>[]) {
+    const alvo = linha[coluna];
+    if (!alvo) continue;
+    total[alvo] = (total[alvo] ?? 0) + 1;
+    if (identidadeId && linha["identidade_id"] === identidadeId) meus[alvo] = true;
+  }
+  return { total, meus };
+}
+
 const AUTOR = "identidades!inner(santo_nome, santo_slug, santo_imagem, nivel, apelido)";
 
 /** Aprovado para todos, ou em revisão apenas para o próprio autor. */
@@ -67,8 +92,19 @@ export async function listarTopicos(secaoSlug?: string, token?: string | null, l
 
   if (secaoSlug) query = query.eq("forum_secoes.slug", secaoSlug);
   const { data } = await query;
-  return data ?? [];
+  const lista = data ?? [];
+  const amens = await contarAmens(
+    "topico_id",
+    lista.map((t) => t.id),
+    identidadeId,
+  );
+  return lista.map((t) => ({
+    ...t,
+    amens: amens.total[t.id] ?? 0,
+    reagi: amens.meus[t.id] ?? false,
+  }));
 }
+
 
 export async function obterTopico(slug: string, token?: string | null) {
   const identidadeId = await identidadeOpcional(token);
@@ -93,8 +129,28 @@ export async function obterTopico(slug: string, token?: string | null) {
     .or(filtroVisibilidade(identidadeId))
     .order("created_at");
 
-  return { topico, respostas: respostas ?? [] };
+  const lista = respostas ?? [];
+  const amensTopico = await contarAmens("topico_id", [topico.id], identidadeId);
+  const amensRespostas = await contarAmens(
+    "resposta_id",
+    lista.map((r) => r.id),
+    identidadeId,
+  );
+
+  return {
+    topico: {
+      ...topico,
+      amens: amensTopico.total[topico.id] ?? 0,
+      reagi: amensTopico.meus[topico.id] ?? false,
+    },
+    respostas: lista.map((r) => ({
+      ...r,
+      amens: amensRespostas.total[r.id] ?? 0,
+      reagi: amensRespostas.meus[r.id] ?? false,
+    })),
+  };
 }
+
 
 export async function criarTopico(
   token: string,
