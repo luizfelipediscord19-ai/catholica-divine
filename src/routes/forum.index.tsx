@@ -264,8 +264,10 @@ function NovoTopico({
 
   const criar = useMutation({
     mutationFn: async () => {
-      // A identidade anônima é criada na hora, se ainda não existir.
-      const token = await garantirTokenAgora();
+      // O servidor deriva a identidade da conta autenticada (e adota o token
+      // anônimo deste navegador, se houver). Não criamos identidade anônima
+      // aqui: isso falhava e impedia a publicação.
+      const token = lerToken();
       return criarTopicoFn({ data: { token, secaoSlug, titulo, corpo } });
     },
     onSuccess: (res) => {
