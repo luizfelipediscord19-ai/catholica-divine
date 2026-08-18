@@ -25,8 +25,10 @@ export function PageHero({
             height={1024}
             prioridade
             sizes="100vw"
+            posicao="50% 22%"
             className="art-plate size-full object-cover"
           />
+
         </div>
       ) : null}
       <div

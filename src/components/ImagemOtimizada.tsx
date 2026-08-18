@@ -12,6 +12,7 @@ export function ImagemOtimizada({
   sizes = "(max-width: 768px) 100vw, 33vw",
   className = "",
   prioridade = false,
+  posicao,
 }: {
   src: string;
   alt: string;
@@ -20,6 +21,8 @@ export function ImagemOtimizada({
   sizes?: string;
   className?: string;
   prioridade?: boolean;
+  /** Ponto focal (object-position). Útil para arte em retrato dentro de caixas largas. */
+  posicao?: string;
 }) {
   const fontes = fontesDe(src);
   return (
@@ -36,7 +39,9 @@ export function ImagemOtimizada({
         fetchPriority={prioridade ? "high" : "low"}
         decoding="async"
         className={className}
+        style={posicao ? { objectPosition: posicao } : undefined}
       />
     </picture>
   );
 }
+
