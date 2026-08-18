@@ -81,7 +81,7 @@ function Page() {
             doutrina da Igreja com a autoridade que cada uma das fontes citadas possui — Escritura, concílios
             ecumênicos, definições dogmáticas, magistério pontifício, Padres, Doutores, liturgias e cânones.
             A Congregação para a Doutrina da Fé esclareceu, em <em>Nota Doutrinal sobre o Catecismo</em> (1992),
-            que o texto deve ser recebido <em>com religioso assentimento da vontade e da inteligência</em>
+            que o texto deve ser recebido <em>com religioso assentimento da vontade e da inteligência</em>{" "}
             (cf. <em>Lumen Gentium</em> 25).
           </p>
 
@@ -104,9 +104,9 @@ function Page() {
             línguas, foi preparada a <em>editio typica</em> em latim (1997), revisada para garantir uniformidade
             doutrinal e linguística. As principais modificações concentraram-se em precisões teológicas; a
             mais conhecida é a do § 2267 (pena de morte). A nova redação desse parágrafo foi aprovada pelo Papa
-            Francisco em 11 de maio de 2018 e promulgada pela autoridade competente da Santa Sé por
+            Francisco em 11 de maio de 2018 e promulgada pela autoridade competente da Santa Sé por{" "}
             <em>rescriptum</em> da Congregação para a Doutrina da Fé de 1º de agosto de 2018 — não por
-            iniciativa própria do Dicastério. O texto atual ensina que a pena de morte é
+            iniciativa própria do Dicastério. O texto atual ensina que a pena de morte é{" "}
             <em> inadmissível</em>, porque atenta contra a inviolabilidade e a dignidade da pessoa, e que a
             Igreja se empenha por sua abolição em todo o mundo.
           </p>
@@ -121,11 +121,11 @@ function Page() {
 
           <h3>6. Como utilizar o Catecismo</h3>
           <p>
-            O próprio prólogo do CIC (§§ 18–22) recomenda uma leitura que respeite a sua estrutura orgânica: os
-            <em> remetimentos marginais</em> (entre parênteses) interligam parágrafos correlatos; os
+            O próprio prólogo do CIC (§§ 18–22) recomenda uma leitura que respeite a sua estrutura orgânica: os{" "}
+            <em> remetimentos marginais</em> (entre parênteses) interligam parágrafos correlatos; os{" "}
             <em> in summa</em> ao final de cada bloco condensam a doutrina; e as citações em itálico, das fontes
             primárias, permitem ao leitor remontar à Escritura, aos Padres e aos documentos magisteriais. Para
-            estudo aprofundado, recomenda-se sempre confrontar o texto com o original em
+            estudo aprofundado, recomenda-se sempre confrontar o texto com o original em{" "}
             <em> vatican.va</em> e com a tradução brasileira aprovada pela CNBB (Loyola/Vozes/Paulinas/Paulus, 1999).
           </p>
         </Prose>
@@ -208,8 +208,8 @@ function Page() {
       <Section kicker="Recepção" title="Hierarquia das verdades e graus de assentimento">
         <Prose>
           <p>
-            Nem toda afirmação contida no Catecismo tem o mesmo peso. O próprio Concílio Vaticano II lembra que
-            <em> “existe uma ordem ou ‘hierarquia’ das verdades da doutrina católica”</em>
+            Nem toda afirmação contida no Catecismo tem o mesmo peso. O próprio Concílio Vaticano II lembra que{" "}
+            <em> “existe uma ordem ou ‘hierarquia’ das verdades da doutrina católica”</em>{" "}
             (<em>Unitatis Redintegratio</em> 11) — todas verdadeiras, mas não todas igualmente centrais nem
             igualmente definidas. Ler o CIC com precisão exige distinguir os graus com que a Igreja propõe o que
             ensina.
@@ -226,7 +226,7 @@ function Page() {
               São João Paulo II com o <em>motu proprio</em> <em>Ad Tuendam Fidem</em>, 18.05.1998).
             </li>
             <li>
-              <strong>Ensino autêntico não definitivo</strong> — doutrina do Magistério ordinário que pede
+              <strong>Ensino autêntico não definitivo</strong> — doutrina do Magistério ordinário que pede{" "}
               <em> obsequium religiosum</em>, assentimento religioso da vontade e da inteligência
               (<em>Lumen Gentium</em> 25; cân. 752).
             </li>
@@ -236,7 +236,7 @@ function Page() {
             </li>
           </ol>
           <p>
-            A Congregação para a Doutrina da Fé explicou essa graduação na Instrução <em>Donum Veritatis</em>
+            A Congregação para a Doutrina da Fé explicou essa graduação na Instrução <em>Donum Veritatis</em>{" "}
             (24.05.1990) e na <em>Nota doutrinal ilustrativa da fórmula conclusiva da Professio fidei</em> (1998).
             Na prática: quando o CIC cita um concílio ecumênico definindo, estamos no primeiro nível; quando expõe
             uma tradição espiritual ou uma aplicação pastoral, estamos nos últimos. Por isso este portal marca cada

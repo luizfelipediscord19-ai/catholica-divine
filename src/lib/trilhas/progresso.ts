@@ -56,3 +56,22 @@ export function percentual(trilhaSlug: string, licoes: { slug: string }[], progr
   const feitas = licoes.filter((l) => progresso.concluidas.includes(chaveLicao(trilhaSlug, l.slug))).length;
   return Math.round((feitas / licoes.length) * 100);
 }
+
+/** Quantidade de lições concluídas de uma trilha. */
+export function concluidasDe(
+  trilhaSlug: string,
+  licoes: { slug: string }[],
+  progresso: ProgressoTrilhas,
+): number {
+  return licoes.filter((l) => progresso.concluidas.includes(chaveLicao(trilhaSlug, l.slug))).length;
+}
+
+/** Total de lições concluídas em todas as trilhas informadas. */
+export function resumoGeral(
+  trilhas: { slug: string; licoes: { slug: string }[] }[],
+  progresso: ProgressoTrilhas,
+): { feitas: number; total: number; percentual: number } {
+  const total = trilhas.reduce((n, t) => n + t.licoes.length, 0);
+  const feitas = trilhas.reduce((n, t) => n + concluidasDe(t.slug, t.licoes, progresso), 0);
+  return { feitas, total, percentual: total ? Math.round((feitas / total) * 100) : 0 };
+}

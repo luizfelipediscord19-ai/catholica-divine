@@ -53,7 +53,7 @@ function Page() {
           <h3>1. A existência de Deus</h3>
           <p>
             A Igreja ensina, com o Concílio Vaticano I, que <em>Deus, princípio e fim de todas as coisas, pode
-            ser conhecido com certeza pela luz natural da razão humana, a partir das coisas criadas</em>
+            ser conhecido com certeza pela luz natural da razão humana, a partir das coisas criadas</em>{" "}
             (<em>Dei Filius</em>, cap. 2; DH 3004; <em>CIC</em> §§ 31–36). Esta verdade é também doutrina bíblica
             (Sb 13,1–9; Rm 1,19–20).
           </p>
@@ -67,8 +67,8 @@ function Page() {
           <p>
             O Concílio Vaticano II afirma, sem equívoco: <em>A Santa Mãe Igreja firmemente sustentou e sustenta
             que os quatro Evangelhos mencionados, cuja historicidade afirma sem hesitação, transmitem fielmente o
-            que Jesus, Filho de Deus, vivendo entre os homens, realmente fez e ensinou para a salvação deles</em>
-            (<em>Dei Verbum</em> 19). A Pontifícia Comissão Bíblica explicitou os critérios histórico-críticos em
+            que Jesus, Filho de Deus, vivendo entre os homens, realmente fez e ensinou para a salvação deles</em>{" "}
+            (<em>Dei Verbum</em> 19). A Pontifícia Comissão Bíblica explicitou os critérios histórico-críticos em{" "}
             <em> Sancta Mater Ecclesia</em> (1964) e em <em>A Interpretação da Bíblia na Igreja</em> (1993).
           </p>
           <p>
@@ -82,8 +82,8 @@ function Page() {
             Jesus reivindicou, em palavras e obras, a condição divina: o título <em>Filho do Homem</em> com
             atribuições divinas (Mt 26,64; Dn 7,13–14); o nome <em>EGO EIMI</em> (“Eu Sou”, Jo 8,58, ecoando Ex 3,14);
             o poder de perdoar pecados (Mc 2,5–10); a recepção da adoração (Jo 20,28; Mt 28,17). O Concílio de
-            Niceia (325) definiu Cristo <em>consubstancial (homoousios) ao Pai</em>, e Calcedônia (451) precisou as
-            <em> duas naturezas, divina e humana, sem confusão, sem mudança, sem divisão, sem separação</em>
+            Niceia (325) definiu Cristo <em>consubstancial (homoousios) ao Pai</em>, e Calcedônia (451) precisou as{" "}
+            <em> duas naturezas, divina e humana, sem confusão, sem mudança, sem divisão, sem separação</em>{" "}
             (DH 125–126, 301–302; <em>CIC</em> §§ 464–469).
           </p>
 
@@ -113,13 +113,13 @@ function Page() {
 
           <h3>6. Escritura e Tradição — contra o <em>sola Scriptura</em></h3>
           <p>
-            A própria Bíblia testemunha que a Palavra de Deus se transmite <em>escrita ou de viva voz</em>:
-            <em> “Mantende firmes as tradições que aprendestes, seja por palavra, seja por carta nossa”</em>
+            A própria Bíblia testemunha que a Palavra de Deus se transmite <em>escrita ou de viva voz</em>:{" "}
+            <em> “Mantende firmes as tradições que aprendestes, seja por palavra, seja por carta nossa”</em>{" "}
             (2Ts 2,15; cf. 1Cor 11,2; 2Tm 2,2). A Igreja é <em>coluna e fundamento da verdade</em> (1Tm 3,15),
             e foi ela quem, sob inspiração do Espírito Santo, discerniu o cânon das Escrituras nos sínodos de
             Hipona (393), Cartago (397) e na carta de Inocêncio I a Exupério (405) — séculos antes de qualquer
             edição protestante. Por isso o Concílio de Trento definiu que a Igreja venera <em>com igual sentimento
-            de piedade e reverência</em> a Sagrada Escritura e a Sagrada Tradição (Sessão IV, 1546; DH 1501;
+            de piedade e reverência</em> a Sagrada Escritura e a Sagrada Tradição (Sessão IV, 1546; DH 1501;{" "}
             <em> Dei Verbum</em> 9; <em>CIC</em> §§ 80–82).
           </p>
 
@@ -136,17 +136,17 @@ function Page() {
             <li><strong>Santo Ambrósio</strong> († 397): <em>De Mysteriis</em> 9, 50–58.</li>
           </ul>
           <p>
-            O Concílio de Trento, na Sessão XIII (1551), definiu solenemente a doutrina da
+            O Concílio de Trento, na Sessão XIII (1551), definiu solenemente a doutrina da{" "}
             <strong> transubstanciação</strong> (DH 1640–1642; <em>CIC</em> §§ 1373–1377).
           </p>
 
           <h3>8. O Papado e o primado de Pedro</h3>
           <p>
             Três textos petrinos fundamentam o primado: <em>“Tu és Pedro, e sobre esta pedra edificarei a minha
-            Igreja… Eu te darei as chaves do Reino dos Céus”</em> (Mt 16,18–19); <em>“Confirma os teus irmãos”</em>
-            (Lc 22,32); <em>“Apascenta as minhas ovelhas”</em> (Jo 21,15–17). O Concílio Vaticano I, em
+            Igreja… Eu te darei as chaves do Reino dos Céus”</em> (Mt 16,18–19); <em>“Confirma os teus irmãos”</em>{" "}
+            (Lc 22,32); <em>“Apascenta as minhas ovelhas”</em> (Jo 21,15–17). O Concílio Vaticano I, em{" "}
             <em> Pastor Aeternus</em> (1870), definiu o primado de jurisdição e a infalibilidade do Romano
-            Pontífice quando, <em>ex cathedra</em>, define doutrina sobre fé ou costumes (DH 3050–3075;
+            Pontífice quando, <em>ex cathedra</em>, define doutrina sobre fé ou costumes (DH 3050–3075;{" "}
             <em> Lumen Gentium</em> 25; <em>CIC</em> §§ 880–892).
           </p>
 
@@ -162,9 +162,9 @@ function Page() {
 
           <h3>10. Fé e ciência</h3>
           <p>
-            A Igreja sustenta a inexistência de conflito real entre fé e ciência (<em>Dei Filius</em>, cap. 4;
+            A Igreja sustenta a inexistência de conflito real entre fé e ciência (<em>Dei Filius</em>, cap. 4;{" "}
             <em> Gaudium et Spes</em> 36; <em>Fides et Ratio</em>, nn. 16–48). São João Paulo II reabilitou
-            publicamente Galileu (Discurso à Pontifícia Academia das Ciências, 31.10.1992) e reafirmou:
+            publicamente Galileu (Discurso à Pontifícia Academia das Ciências, 31.10.1992) e reafirmou:{" "}
             <em> “A verdade não pode contradizer a verdade”</em> (Leão XIII, <em>Providentissimus Deus</em>, 1893).
           </p>
         </Prose>

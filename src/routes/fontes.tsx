@@ -128,7 +128,7 @@ function FontesPage() {
             divergência em vez de escolher arbitrariamente uma versão como fato.
           </p>
           <p>
-            Onde a documentação histórica é insuficiente, o portal escreve
+            Onde a documentação histórica é insuficiente, o portal escreve{" "}
             <em> “segundo a tradição”</em> ou <em>“segundo a tradição hagiográfica”</em> em vez de afirmar
             certeza. Revelações privadas — mesmo as reconhecidas pela Igreja — não pertencem ao depósito da fé
             (Catecismo da Igreja Católica, § 67).

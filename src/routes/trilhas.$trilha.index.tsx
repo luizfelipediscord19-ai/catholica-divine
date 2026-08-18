@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { ArrowLeft, Check } from "lucide-react";
 import { acharTrilha } from "@/lib/data/trilhas";
-import { chaveLicao, lerProgresso, percentual, type ProgressoTrilhas } from "@/lib/trilhas/progresso";
+import { chaveLicao, concluidasDe, lerProgresso, percentual, type ProgressoTrilhas } from "@/lib/trilhas/progresso";
 import { useRegistrarEstudo } from "@/hooks/use-estudo";
 
 const BASE = "https://portalcatolico.vercel.app";
@@ -78,7 +78,12 @@ function TrilhaPagina() {
       <div className="mt-8 h-1 w-full bg-paper/10">
         <div className="h-1 bg-gold" style={{ width: `${pct}%` }} />
       </div>
-      <p className="mt-2 label-btn text-paper/55">{pct}% concluído</p>
+      <p className="mt-2 flex flex-wrap items-center justify-between gap-2 label-btn text-paper/55">
+        <span className="text-gold">
+          {concluidasDe(trilha.slug, trilha.licoes, progresso)}/{trilha.licoes.length} aulas concluídas
+        </span>
+        <span>{pct}% do percurso</span>
+      </p>
 
       <ol className="mt-10 space-y-3">
         {trilha.licoes.map((licao, i) => {

@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { ImagemOtimizada } from "./ImagemOtimizada";
 import { obraDaUrl } from "@/lib/data/obras";
+import { linkificarNos } from "./CitacoesLinkadas";
 
 export function PageHero({
   eyebrow,
@@ -139,7 +140,7 @@ export function ContentCard({
         </h3>
         {children ? (
           <div className="body-sm group-hover:text-foreground/80 transition-colors">
-            {children}
+            {linkificarNos(children)}
           </div>
         ) : null}
       </div>
@@ -173,7 +174,7 @@ export function Prose({ children }: { children: ReactNode }) {
         "[&_pre]:scroll-x-contained [&_table]:block [&_table]:scroll-x-contained",
       ].join(" ")}
     >
-      {children}
+      {linkificarNos(children)}
     </div>
   );
 }
