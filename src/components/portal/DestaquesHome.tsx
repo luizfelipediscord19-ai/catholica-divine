@@ -20,6 +20,12 @@ import biblioteca from "@/assets/biblioteca.jpg";
 /** Uma imagem por card; ciclo fixo para que a grade fique estável entre visitas. */
 const CAPAS_NOTICIA = [velas, claustro, cristo];
 
+function imagemPublicavel(url: string | null): string | null {
+  if (!url || !/^https:\/\//i.test(url)) return null;
+  if (/youtube\.com|youtu\.be|\.svg(?:$|\?)/i.test(url)) return null;
+  return url;
+}
+
 const CAPAS_TRILHA: Record<string, string> = {
   "primeiros-passos": sacramentos,
   "vida-espiritual": rosario,
@@ -81,8 +87,8 @@ export function UltimosArtigos() {
               >
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <ImagemOtimizada
-                    src={CAPAS_NOTICIA[i % CAPAS_NOTICIA.length]!}
-                    alt=""
+                    src={imagemPublicavel(n.imagem_url) ?? CAPAS_NOTICIA[i % CAPAS_NOTICIA.length]!}
+                    alt={`Imagem de abertura: ${n.titulo}`}
                     width={1536}
                     height={1024}
                     sizes={SIZES_CARD}

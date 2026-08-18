@@ -2,9 +2,27 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { useSuspenseQuery, queryOptions } from "@tanstack/react-query";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 
+import { Button } from "@/components/ui/button";
+import { ImagemOtimizada } from "@/components/ImagemOtimizada";
 import { obterNoticiaFn } from "@/lib/noticias.functions";
+import pentecostes from "@/assets/pentecostes.jpg";
+import concilio from "@/assets/concilio-trento.jpg";
+import emaus from "@/assets/emaus.jpg";
+import doutores from "@/assets/doutores.jpg";
 
 const SITE_URL = "https://portalcatolico.vercel.app";
+const CAPAS_EDITORIAIS = [pentecostes, concilio, emaus, doutores];
+
+function imagemPublicavel(url: string | null): string | null {
+  if (!url || !/^https:\/\//i.test(url)) return null;
+  if (/youtube\.com|youtu\.be|\.svg(?:$|\?)/i.test(url)) return null;
+  return url;
+}
+
+function capaEditorial(slug: string): string {
+  const indice = Array.from(slug).reduce((total, letra) => total + letra.charCodeAt(0), 0);
+  return CAPAS_EDITORIAIS[indice % CAPAS_EDITORIAIS.length] ?? pentecostes;
+}
 
 const noticiaQuery = (slug: string) =>
   queryOptions({
@@ -97,12 +115,9 @@ export const Route = createFileRoute("/noticias/$slug")({
         Não conseguimos abrir esta notícia neste momento. Tente de novo em instantes.
       </p>
       <div className="mt-6 flex flex-wrap justify-center gap-3">
-        <button
-          onClick={() => window.location.reload()}
-          className="btn-base btn-gold px-5 py-2.5 label-btn"
-        >
+        <Button onClick={() => window.location.reload()} className="label-btn">
           Tentar de novo
-        </button>
+        </Button>
         <Link to="/noticias" className="btn-base btn-outline-gold px-5 py-2.5 label-btn">
           Ver todas
         </Link>
@@ -142,14 +157,22 @@ function NoticiaPage() {
       </h1>
       <p className="measure mt-5 body-lead text-foreground/80">{data.resumo}</p>
 
-      {data.imagem_url ? (
-        <img
-          src={data.imagem_url}
-          alt={data.titulo}
-          loading="lazy"
-          className="art-plate mt-[var(--space-md)] aspect-16/10 w-full border border-gold/10 object-cover sm:aspect-auto"
-        />
-      ) : null}
+      <figure className="mt-[var(--space-md)]">
+        <div className="aspect-[16/10] overflow-hidden border border-gold/10">
+          <ImagemOtimizada
+            src={imagemPublicavel(data.imagem_url) ?? capaEditorial(data.slug)}
+            alt={`Imagem de abertura da notícia: ${data.titulo}`}
+            width={1536}
+            height={1024}
+            sizes="(max-width: 900px) 100vw, 760px"
+            prioridade
+            className="art-plate size-full object-cover"
+          />
+        </div>
+        <figcaption className="mt-2 text-step--2 leading-relaxed text-muted-foreground">
+          Imagem editorial do acervo do Portal Católico. A fonte jornalística original está indicada ao final do texto.
+        </figcaption>
+      </figure>
 
       <div className="measure mt-[var(--space-md)] space-y-[var(--space-sm)] body-base font-light">
         {data.corpo
