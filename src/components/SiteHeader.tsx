@@ -106,7 +106,7 @@ export function SiteHeader() {
         rolou ? "border-gold/20 shadow-[var(--shadow-card-hover)]" : "border-gold/10"
       }`}
     >
-      <div className="shell flex h-16 w-full items-center gap-3 sm:h-[4.5rem] lg:gap-5">
+      <div className="shell-wide grid h-16 w-full grid-cols-[minmax(0,1fr)_auto] items-center gap-3 sm:h-[4.5rem] lg:flex lg:gap-4 xl:gap-5">
         <Link
           to="/"
           aria-label="Portal Católico — início"
@@ -122,7 +122,7 @@ export function SiteHeader() {
 
         <nav
           aria-label="Navegação principal"
-          className="hidden min-w-0 items-center gap-0.5 whitespace-nowrap lg:ml-2 lg:flex xl:ml-5 xl:gap-1"
+          className="hidden min-w-0 flex-1 items-center gap-0.5 overflow-hidden whitespace-nowrap lg:ml-1 lg:flex xl:ml-3 xl:gap-1"
         >
 
           {NAV_PRINCIPAL.map((item) => {
@@ -146,7 +146,7 @@ export function SiteHeader() {
           })}
         </nav>
 
-        <div className="ml-auto flex shrink-0 items-center justify-end gap-1.5 sm:gap-2">
+        <div className="flex shrink-0 items-center justify-end gap-1.5 sm:gap-2 lg:ml-auto">
           {/* Campo de busca visível no desktop; ícone no celular. */}
           <button
             type="button"
