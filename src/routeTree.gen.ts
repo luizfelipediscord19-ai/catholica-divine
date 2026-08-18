@@ -35,6 +35,7 @@ import { Route as EmailConfirmadoRouteImport } from './routes/email-confirmado'
 import { Route as DoutoresDaIgrejaRouteImport } from './routes/doutores-da-igreja'
 import { Route as DesignSystemRouteImport } from './routes/design-system'
 import { Route as CoroinhasRouteImport } from './routes/coroinhas'
+import { Route as ConfissaoRouteImport } from './routes/confissao'
 import { Route as CatecismoRouteImport } from './routes/catecismo'
 import { Route as CalendarioLiturgicoRouteImport } from './routes/calendario-liturgico'
 import { Route as BuscaRouteImport } from './routes/busca'
@@ -204,6 +205,11 @@ const DesignSystemRoute = DesignSystemRouteImport.update({
 const CoroinhasRoute = CoroinhasRouteImport.update({
   id: '/coroinhas',
   path: '/coroinhas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConfissaoRoute = ConfissaoRouteImport.update({
+  id: '/confissao',
+  path: '/confissao',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CatecismoRoute = CatecismoRouteImport.update({
@@ -408,6 +414,7 @@ export interface FileRoutesByFullPath {
   '/busca': typeof BuscaRoute
   '/calendario-liturgico': typeof CalendarioLiturgicoRoute
   '/catecismo': typeof CatecismoRouteWithChildren
+  '/confissao': typeof ConfissaoRoute
   '/coroinhas': typeof CoroinhasRoute
   '/design-system': typeof DesignSystemRoute
   '/doutores-da-igreja': typeof DoutoresDaIgrejaRoute
@@ -473,6 +480,7 @@ export interface FileRoutesByTo {
   '/busca': typeof BuscaRoute
   '/calendario-liturgico': typeof CalendarioLiturgicoRoute
   '/catecismo': typeof CatecismoRouteWithChildren
+  '/confissao': typeof ConfissaoRoute
   '/coroinhas': typeof CoroinhasRoute
   '/design-system': typeof DesignSystemRoute
   '/doutores-da-igreja': typeof DoutoresDaIgrejaRoute
@@ -537,6 +545,7 @@ export interface FileRoutesById {
   '/busca': typeof BuscaRoute
   '/calendario-liturgico': typeof CalendarioLiturgicoRoute
   '/catecismo': typeof CatecismoRouteWithChildren
+  '/confissao': typeof ConfissaoRoute
   '/coroinhas': typeof CoroinhasRoute
   '/design-system': typeof DesignSystemRoute
   '/doutores-da-igreja': typeof DoutoresDaIgrejaRoute
@@ -605,6 +614,7 @@ export interface FileRouteTypes {
     | '/busca'
     | '/calendario-liturgico'
     | '/catecismo'
+    | '/confissao'
     | '/coroinhas'
     | '/design-system'
     | '/doutores-da-igreja'
@@ -670,6 +680,7 @@ export interface FileRouteTypes {
     | '/busca'
     | '/calendario-liturgico'
     | '/catecismo'
+    | '/confissao'
     | '/coroinhas'
     | '/design-system'
     | '/doutores-da-igreja'
@@ -733,6 +744,7 @@ export interface FileRouteTypes {
     | '/busca'
     | '/calendario-liturgico'
     | '/catecismo'
+    | '/confissao'
     | '/coroinhas'
     | '/design-system'
     | '/doutores-da-igreja'
@@ -800,6 +812,7 @@ export interface RootRouteChildren {
   BuscaRoute: typeof BuscaRoute
   CalendarioLiturgicoRoute: typeof CalendarioLiturgicoRoute
   CatecismoRoute: typeof CatecismoRouteWithChildren
+  ConfissaoRoute: typeof ConfissaoRoute
   CoroinhasRoute: typeof CoroinhasRoute
   DesignSystemRoute: typeof DesignSystemRoute
   DoutoresDaIgrejaRoute: typeof DoutoresDaIgrejaRoute
@@ -1023,6 +1036,13 @@ declare module '@tanstack/react-router' {
       path: '/coroinhas'
       fullPath: '/coroinhas'
       preLoaderRoute: typeof CoroinhasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/confissao': {
+      id: '/confissao'
+      path: '/confissao'
+      fullPath: '/confissao'
+      preLoaderRoute: typeof ConfissaoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/catecismo': {
@@ -1404,6 +1424,7 @@ const rootRouteChildren: RootRouteChildren = {
   BuscaRoute: BuscaRoute,
   CalendarioLiturgicoRoute: CalendarioLiturgicoRoute,
   CatecismoRoute: CatecismoRouteWithChildren,
+  ConfissaoRoute: ConfissaoRoute,
   CoroinhasRoute: CoroinhasRoute,
   DesignSystemRoute: DesignSystemRoute,
   DoutoresDaIgrejaRoute: DoutoresDaIgrejaRoute,
