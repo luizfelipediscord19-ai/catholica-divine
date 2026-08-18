@@ -18,7 +18,7 @@ export function RetomarLeitura({ className = "" }: { className?: string }) {
     setMarcador(lerMarcador());
   }, []);
 
-  if (!marcador) return null;
+  if (!marcador) return <RetomarPlano className={className} />;
 
   return (
     <div
