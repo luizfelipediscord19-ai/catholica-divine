@@ -252,8 +252,10 @@ export function Prancha({
           width={1600}
           height={900}
           sizes="(max-width: 768px) 100vw, 70vw"
+          posicao="50% 25%"
           className="art-plate size-full object-cover"
         />
+
         <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-background/55 via-transparent to-transparent" />
       </div>
       <figcaption className="space-y-1 border-t border-gold/15 px-[var(--space-sm)] py-[var(--space-xs)]">
