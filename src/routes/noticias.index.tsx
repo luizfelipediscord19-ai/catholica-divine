@@ -5,6 +5,7 @@ import { Newspaper, ExternalLink } from "lucide-react";
 
 import { PageHero } from "@/components/PageShell";
 import { listarNoticiasFn } from "@/lib/noticias.functions";
+import concilio from "@/assets/concilio-trento.jpg";
 import claustro from "@/assets/claustro.jpg";
 
 const SITE_URL = "https://portalcatolico.vercel.app";
@@ -155,6 +156,27 @@ function NoticiasPage() {
                 Ler a notícia →
               </span>
             </Link>
+            {/* Editorial Intermezzo News */}
+            <section className="relative my-[var(--space-lg)] p-card border border-gold/20 overflow-hidden group">
+              <div className="absolute inset-0 z-0">
+                <img src={concilio} alt="" className="size-full object-cover opacity-10 grayscale group-hover:grayscale-0 transition-all duration-1000" />
+                <div className="absolute inset-0 bg-linear-to-r from-background via-background/80 to-transparent" />
+              </div>
+              <div className="relative z-10 max-w-2xl">
+                <p className="kicker text-gold mb-3">Magistério e Tradição</p>
+                <h3 className="font-display text-[length:var(--step-2)] text-foreground leading-tight mb-4">
+                  “A Igreja é a coluna e o fundamento da verdade.”
+                </h3>
+                <p className="text-sm font-light text-muted-foreground italic mb-6">
+                  Cada notícia aqui publicada é um fragmento da história da Igreja no tempo, 
+                  sempre iluminada pela luz eterna do Magistério.
+                </p>
+                <Link to="/catecismo" className="inline-flex items-center gap-2 kicker hover:text-gold transition-colors">
+                  Consultar o Catecismo →
+                </Link>
+              </div>
+            </section>
+
 
             <div className="grid grid-cols-1 gap-px bg-gold/10 md:grid-cols-2 lg:grid-cols-3">
               {resto.map((n) => (

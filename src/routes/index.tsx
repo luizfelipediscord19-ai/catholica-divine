@@ -7,6 +7,9 @@ import cristo from "../assets/cristo.jpg";
 import eucaristia from "../assets/eucaristia.jpg";
 import rosario from "../assets/rosario.jpg";
 import biblioteca from "../assets/biblioteca.jpg";
+import emaus from "../assets/emaus.jpg";
+import doutores from "../assets/doutores.jpg";
+import concilio from "../assets/concilio-trento.jpg";
 
 import { santoDoDia } from "../lib/data/hoje";
 import { dataDoIso } from "../lib/liturgia/hoje";
@@ -402,7 +405,7 @@ function Home() {
       <section className="relative h-[60vh] min-h-[400px] overflow-hidden flex items-center justify-center">
         <div className="absolute inset-0">
           <ImagemOtimizada
-            src={require("../assets/emaus.jpg").default}
+            src={emaus}
             alt="Os Discípulos de Emaús"
             width={1920}
             height={1080}
@@ -518,10 +521,13 @@ function Home() {
       </section>
 
       {/* Padres da Igreja — vozes da Tradição */}
-      <section className="bg-background py-section">
+      <section className="bg-background py-section relative overflow-hidden">
         <div className="shell">
           <ScrollReveal className="max-w-3xl mb-[var(--space-lg)]">
             <p className="kicker mb-4 flex items-center gap-4">
+        <div className="absolute right-0 top-0 w-1/3 h-full opacity-5 pointer-events-none hidden lg:block">
+          <ImagemOtimizada src={doutores} alt="" className="size-full object-cover" />
+        </div>
               <span className="h-px w-6 bg-gold/40" /> Vox Patrum · A voz dos Padres
             </p>
             <h2 className="title-page text-foreground leading-[1.08] text-balance">
