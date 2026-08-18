@@ -73,6 +73,7 @@ import { Route as BibliaLivroCapituloRouteImport } from './routes/biblia.$livro.
 import { Route as ApiPublicNoticiasDiariasRouteImport } from './routes/api/public/noticias-diarias'
 import { Route as ApiPublicNoticiasRouteImport } from './routes/api/public/noticias'
 import { Route as ApiPublicLembretesRouteImport } from './routes/api/public/lembretes'
+import { Route as ApiPublicImagemRouteImport } from './routes/api/public/imagem'
 import { Route as ApiPublicCspReportRouteImport } from './routes/api/public/csp-report'
 
 const TermosRoute = TermosRouteImport.update({
@@ -399,6 +400,11 @@ const ApiPublicLembretesRoute = ApiPublicLembretesRouteImport.update({
   path: '/api/public/lembretes',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPublicImagemRoute = ApiPublicImagemRouteImport.update({
+  id: '/api/public/imagem',
+  path: '/api/public/imagem',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiPublicCspReportRoute = ApiPublicCspReportRouteImport.update({
   id: '/api/public/csp-report',
   path: '/api/public/csp-report',
@@ -461,6 +467,7 @@ export interface FileRoutesByFullPath {
   '/santos/': typeof SantosIndexRoute
   '/trilhas/': typeof TrilhasIndexRoute
   '/api/public/csp-report': typeof ApiPublicCspReportRoute
+  '/api/public/imagem': typeof ApiPublicImagemRoute
   '/api/public/lembretes': typeof ApiPublicLembretesRoute
   '/api/public/noticias': typeof ApiPublicNoticiasRoute
   '/api/public/noticias-diarias': typeof ApiPublicNoticiasDiariasRoute
@@ -524,6 +531,7 @@ export interface FileRoutesByTo {
   '/santos': typeof SantosIndexRoute
   '/trilhas': typeof TrilhasIndexRoute
   '/api/public/csp-report': typeof ApiPublicCspReportRoute
+  '/api/public/imagem': typeof ApiPublicImagemRoute
   '/api/public/lembretes': typeof ApiPublicLembretesRoute
   '/api/public/noticias': typeof ApiPublicNoticiasRoute
   '/api/public/noticias-diarias': typeof ApiPublicNoticiasDiariasRoute
@@ -592,6 +600,7 @@ export interface FileRoutesById {
   '/santos/': typeof SantosIndexRoute
   '/trilhas/': typeof TrilhasIndexRoute
   '/api/public/csp-report': typeof ApiPublicCspReportRoute
+  '/api/public/imagem': typeof ApiPublicImagemRoute
   '/api/public/lembretes': typeof ApiPublicLembretesRoute
   '/api/public/noticias': typeof ApiPublicNoticiasRoute
   '/api/public/noticias-diarias': typeof ApiPublicNoticiasDiariasRoute
@@ -661,6 +670,7 @@ export interface FileRouteTypes {
     | '/santos/'
     | '/trilhas/'
     | '/api/public/csp-report'
+    | '/api/public/imagem'
     | '/api/public/lembretes'
     | '/api/public/noticias'
     | '/api/public/noticias-diarias'
@@ -724,6 +734,7 @@ export interface FileRouteTypes {
     | '/santos'
     | '/trilhas'
     | '/api/public/csp-report'
+    | '/api/public/imagem'
     | '/api/public/lembretes'
     | '/api/public/noticias'
     | '/api/public/noticias-diarias'
@@ -791,6 +802,7 @@ export interface FileRouteTypes {
     | '/santos/'
     | '/trilhas/'
     | '/api/public/csp-report'
+    | '/api/public/imagem'
     | '/api/public/lembretes'
     | '/api/public/noticias'
     | '/api/public/noticias-diarias'
@@ -847,6 +859,7 @@ export interface RootRouteChildren {
   NoticiasIndexRoute: typeof NoticiasIndexRoute
   TrilhasIndexRoute: typeof TrilhasIndexRoute
   ApiPublicCspReportRoute: typeof ApiPublicCspReportRoute
+  ApiPublicImagemRoute: typeof ApiPublicImagemRoute
   ApiPublicLembretesRoute: typeof ApiPublicLembretesRoute
   ApiPublicNoticiasRoute: typeof ApiPublicNoticiasRoute
   ApiPublicNoticiasDiariasRoute: typeof ApiPublicNoticiasDiariasRoute
@@ -1304,6 +1317,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiPublicLembretesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/imagem': {
+      id: '/api/public/imagem'
+      path: '/api/public/imagem'
+      fullPath: '/api/public/imagem'
+      preLoaderRoute: typeof ApiPublicImagemRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/public/csp-report': {
       id: '/api/public/csp-report'
       path: '/api/public/csp-report'
@@ -1459,6 +1479,7 @@ const rootRouteChildren: RootRouteChildren = {
   NoticiasIndexRoute: NoticiasIndexRoute,
   TrilhasIndexRoute: TrilhasIndexRoute,
   ApiPublicCspReportRoute: ApiPublicCspReportRoute,
+  ApiPublicImagemRoute: ApiPublicImagemRoute,
   ApiPublicLembretesRoute: ApiPublicLembretesRoute,
   ApiPublicNoticiasRoute: ApiPublicNoticiasRoute,
   ApiPublicNoticiasDiariasRoute: ApiPublicNoticiasDiariasRoute,
