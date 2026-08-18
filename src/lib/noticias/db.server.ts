@@ -43,23 +43,20 @@ function cliente(chave: string, urlPreferida?: string): SupabaseClient {
 }
 
 function leitura(): SupabaseClient {
-  // O par (URL, chave) precisa pertencer ao mesmo projeto. Quando as variáveis
-  // do servidor estão desatualizadas em relação às do site (VITE_*), usamos o
-  // par publicável do site — é ele que a plataforma mantém sincronizado.
-  const urlServidor = process.env["SUPABASE_URL"];
+  // Conteúdo publicado usa sempre a credencial pública sincronizada do site.
+  // Uma service role antiga ou desativada não pode tirar a edição do ar.
   const urlSite = process.env["VITE_SUPABASE_URL"];
   const chaveSite = process.env["VITE_SUPABASE_PUBLISHABLE_KEY"];
-
-  if (urlSite && chaveSite && urlServidor && urlServidor !== urlSite) {
+  if (urlSite && chaveSite) {
     return cliente(chaveSite, urlSite);
   }
 
-  const chave =
-    process.env["SUPABASE_SERVICE_ROLE_KEY"] ||
-    process.env["SUPABASE_PUBLISHABLE_KEY"] ||
-    chaveSite;
-  if (!chave) throw new Error("Configuração do backend ausente: chave do Supabase.");
-  return cliente(chave, urlServidor ?? urlSite);
+  const urlServidor = process.env["SUPABASE_URL"];
+  const chaveServidor = process.env["SUPABASE_PUBLISHABLE_KEY"];
+  if (!urlServidor || !chaveServidor) {
+    throw new Error("Configuração pública do backend ausente para leitura de notícias.");
+  }
+  return cliente(chaveServidor, urlServidor);
 }
 
 function escrita(): SupabaseClient {

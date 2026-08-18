@@ -7,6 +7,9 @@ import cristo from "../assets/cristo.jpg";
 import eucaristia from "../assets/eucaristia.jpg";
 import rosario from "../assets/rosario.jpg";
 import biblioteca from "../assets/biblioteca.jpg";
+import emaus from "../assets/emaus.jpg";
+import doutores from "../assets/doutores.jpg";
+import concilio from "../assets/concilio-trento.jpg";
 
 import { santoDoDia } from "../lib/data/hoje";
 import { dataDoIso } from "../lib/liturgia/hoje";
@@ -398,6 +401,29 @@ function Home() {
 
 
       <UltimosArtigos />
+      {/* Intermezzo Contemplativo */}
+      <section className="relative h-[60vh] min-h-[400px] overflow-hidden flex items-center justify-center">
+        <div className="absolute inset-0">
+          <ImagemOtimizada
+            src={emaus}
+            alt="Os Discípulos de Emaús"
+            width={1920}
+            height={1080}
+            className="size-full object-cover grayscale-[0.2] sepia-[0.1] brightness-[0.4]"
+          />
+          <div className="absolute inset-0 bg-linear-to-b from-background via-transparent to-background" />
+        </div>
+        <div className="shell relative text-center">
+          <ScrollReveal>
+            <p className="kicker text-gold/80 mb-6 tracking-[0.4em]">CONTEMPLATIO</p>
+            <blockquote className="font-display italic text-[length:var(--step-3)] sm:text-[length:var(--step-4)] text-paper leading-tight max-w-3xl mx-auto">
+              “Fica conosco, Senhor, pois a noite vai chegando e o dia já declina.”
+            </blockquote>
+            <cite className="block mt-8 kicker text-gold/60 not-italic">São Lucas 24, 29</cite>
+          </ScrollReveal>
+        </div>
+      </section>
+
 
       <TrilhasIlustradas />
 
@@ -495,7 +521,10 @@ function Home() {
       </section>
 
       {/* Padres da Igreja — vozes da Tradição */}
-      <section className="bg-background py-section">
+      <section className="bg-background py-section relative overflow-hidden">
+        <div className="absolute right-0 top-0 w-1/3 h-full opacity-5 pointer-events-none hidden lg:block">
+          <ImagemOtimizada src={doutores} alt="" width={1536} height={1024} sizes="33vw" className="size-full object-cover" />
+        </div>
         <div className="shell">
           <ScrollReveal className="max-w-3xl mb-[var(--space-lg)]">
             <p className="kicker mb-4 flex items-center gap-4">

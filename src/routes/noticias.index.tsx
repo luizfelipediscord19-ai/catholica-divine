@@ -1,13 +1,26 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { queryOptions } from "@tanstack/react-query";
-import { Newspaper, ExternalLink } from "lucide-react";
+import { ImagemOtimizada } from "@/components/ImagemOtimizada";
+import { Newspaper, ExternalLink, ArrowRight } from "lucide-react";
 
 import { PageHero } from "@/components/PageShell";
+import { Button } from "@/components/ui/button";
 import { listarNoticiasFn } from "@/lib/noticias.functions";
+import concilio from "@/assets/concilio-trento.jpg";
 import claustro from "@/assets/claustro.jpg";
+import pentecostes from "@/assets/pentecostes.jpg";
+import emaus from "@/assets/emaus.jpg";
+import doutores from "@/assets/doutores.jpg";
 
 const SITE_URL = "https://portalcatolico.vercel.app";
+const CAPAS_EDITORIAIS = [pentecostes, concilio, emaus, doutores, claustro];
+
+function imagemPublicavel(url: string | null): string | null {
+  if (!url || !/^https:\/\//i.test(url)) return null;
+  if (/youtube\.com|youtu\.be|\.svg(?:$|\?)/i.test(url)) return null;
+  return url;
+}
 
 const noticiasQuery = queryOptions({
   queryKey: ["noticias", "lista"],
@@ -74,12 +87,9 @@ function NoticiasIndisponiveis() {
             As notícias não estão acessíveis neste momento. Se estiveres sem internet, verás aqui as
             edições já lidas; caso contrário, tenta de novo em alguns instantes.
           </p>
-          <button
-            onClick={() => window.location.reload()}
-            className="btn-base btn-gold mt-6 px-5 py-2.5 label-btn"
-          >
+          <Button onClick={() => window.location.reload()} className="mt-6 label-btn">
             Tentar de novo
-          </button>
+          </Button>
         </div>
       </div>
     </div>
@@ -140,45 +150,90 @@ function NoticiasPage() {
             <Link
               to="/noticias/$slug"
               params={{ slug: destaque.slug }}
-              className="glass group block p-card transition-premium active:scale-[0.995] hover:border-gold/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+              className="glass group grid overflow-hidden transition-premium active:scale-[0.995] hover:border-gold/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold lg:grid-cols-[1.1fr_1fr]"
             >
-              <p className="flex flex-wrap items-center gap-x-2 gap-y-1 label-btn text-gold/80">
-                <span>{destaque.categoria}</span>
-                <span aria-hidden className="size-1 rounded-full bg-gold/40" />
-                <span>{formatar(destaque.publicado_em)}</span>
-              </p>
-              <h2 className="mt-3 font-display text-[length:var(--step-2)] leading-[1.18] tracking-tight text-balance text-foreground transition-colors group-hover:text-gold sm:text-[length:var(--step-4)] sm:leading-[1.08]">
-                {destaque.titulo}
-              </h2>
-              <p className="measure mt-4 body-base text-muted-foreground">{destaque.resumo}</p>
-              <span className="mt-5 inline-flex min-h-11 items-center kicker group-hover:text-gold">
-                Ler a notícia →
-              </span>
+              <div className="relative min-h-64 overflow-hidden lg:min-h-full">
+                <ImagemOtimizada
+                  src={imagemPublicavel(destaque.imagem_url) ?? pentecostes}
+                  alt={`Imagem de abertura: ${destaque.titulo}`}
+                  width={1536}
+                  height={1024}
+                  sizes="(max-width: 1024px) 100vw, 55vw"
+                  className="art-plate absolute inset-0 size-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-[1.03] group-hover:opacity-100"
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-deep/80 via-transparent to-transparent lg:bg-linear-to-r lg:from-transparent lg:to-deep/45" />
+              </div>
+              <div className="flex flex-col justify-center p-card lg:p-[var(--space-md)]">
+                <p className="flex flex-wrap items-center gap-x-2 gap-y-1 label-btn text-gold/80">
+                  <span>{destaque.categoria}</span>
+                  <span aria-hidden className="size-1 rounded-full bg-gold/40" />
+                  <span>{formatar(destaque.publicado_em)}</span>
+                </p>
+                <h2 className="mt-3 font-display text-[length:var(--step-2)] leading-[1.18] text-balance text-foreground transition-colors group-hover:text-gold sm:text-[length:var(--step-4)] sm:leading-[1.08]">
+                  {destaque.titulo}
+                </h2>
+                <p className="measure mt-4 body-base text-muted-foreground">{destaque.resumo}</p>
+                <span className="mt-5 inline-flex min-h-11 items-center gap-2 kicker group-hover:text-gold">
+                  Ler a notícia <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                </span>
+              </div>
             </Link>
+            {/* Editorial Intermezzo News */}
+            <section className="relative my-[var(--space-lg)] p-card border border-gold/20 overflow-hidden group">
+              <div className="absolute inset-0 z-0">
+                <ImagemOtimizada src={concilio} alt="" width={1536} height={1024} className="size-full object-cover opacity-10 grayscale group-hover:grayscale-0 transition-all duration-1000" />
+                <div className="absolute inset-0 bg-linear-to-r from-background via-background/80 to-transparent" />
+              </div>
+              <div className="relative z-10 max-w-2xl">
+                <p className="kicker text-gold mb-3">Magistério e Tradição</p>
+                <h3 className="font-display text-[length:var(--step-2)] text-foreground leading-tight mb-4">
+                  “A Igreja é a coluna e o fundamento da verdade.”
+                </h3>
+                <p className="text-sm font-light text-muted-foreground italic mb-6">
+                  Cada notícia aqui publicada é um fragmento da história da Igreja no tempo, 
+                  sempre iluminada pela luz eterna do Magistério.
+                </p>
+                <Link to="/catecismo" className="inline-flex items-center gap-2 kicker hover:text-gold transition-colors">
+                  Consultar o Catecismo →
+                </Link>
+              </div>
+            </section>
 
-            <div className="grid grid-cols-1 gap-px bg-gold/10 md:grid-cols-2 lg:grid-cols-3">
-              {resto.map((n) => (
+
+            <div className="grid grid-cols-1 gap-[var(--space-sm)] md:grid-cols-2 lg:grid-cols-3">
+              {resto.map((n, index) => (
                 <Link
                   key={n.id}
                   to="/noticias/$slug"
                   params={{ slug: n.slug }}
-                  className="group flex h-full min-h-[6rem] flex-col bg-background p-card transition-premium active:bg-card/60 hover:bg-card/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-inset"
+                  className="surface-card surface-card-interactive group flex h-full min-h-[6rem] flex-col overflow-hidden focus-visible:outline-none"
                 >
-                  <p className="flex flex-wrap items-center gap-x-2 gap-y-1 label-btn text-gold/80">
-                    <span>{n.categoria}</span>
-                    <span aria-hidden className="size-1 rounded-full bg-gold/40" />
-                    <span>{formatar(n.publicado_em)}</span>
-                  </p>
-                  <h3 className="mt-3 title-card text-balance text-foreground transition-colors group-hover:text-gold">
-                    {n.titulo}
-                  </h3>
-                  <p className="mt-3 line-clamp-4 flex-1 body-sm sm:line-clamp-none">{n.resumo}</p>
-                  {n.fonte_nome ? (
-                    <p className="mt-4 flex min-w-0 items-center gap-2 kicker text-muted-foreground">
-                      <ExternalLink className="size-3.5 shrink-0" aria-hidden="true" />
-                      <span className="truncate">{n.fonte_nome}</span>
+                  <div className="relative aspect-[16/9] overflow-hidden">
+                    <ImagemOtimizada
+                      src={imagemPublicavel(n.imagem_url) ?? CAPAS_EDITORIAIS[index % CAPAS_EDITORIAIS.length]!}
+                      alt={`Imagem de abertura: ${n.titulo}`}
+                      width={1536}
+                      height={1024}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="art-plate size-full object-cover opacity-75 transition-transform duration-700 group-hover:scale-105 group-hover:opacity-100"
+                    />
+                    <div className="absolute inset-0 bg-linear-to-t from-deep/75 via-transparent to-transparent" />
+                  </div>
+                  <div className="flex flex-1 flex-col p-card">
+                    <p className="flex flex-wrap items-center gap-x-2 gap-y-1 label-btn text-gold/80">
+                      <span>{n.categoria}</span>
+                      <span aria-hidden className="size-1 rounded-full bg-gold/40" />
+                      <span>{formatar(n.publicado_em)}</span>
                     </p>
-                  ) : null}
+                    <h3 className="mt-3 title-card text-balance text-foreground transition-colors group-hover:text-gold">{n.titulo}</h3>
+                    <p className="mt-3 line-clamp-4 flex-1 body-sm">{n.resumo}</p>
+                    {n.fonte_nome ? (
+                      <p className="mt-4 flex min-w-0 items-center gap-2 border-t border-gold/10 pt-4 kicker text-muted-foreground">
+                        <ExternalLink className="size-3.5 shrink-0" aria-hidden="true" />
+                        <span className="truncate">{n.fonte_nome}</span>
+                      </p>
+                    ) : null}
+                  </div>
                 </Link>
               ))}
             </div>
