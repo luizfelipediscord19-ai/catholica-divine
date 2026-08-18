@@ -41,8 +41,9 @@ export const PAGINAS: SitemapEntry[] = [
   { path: "/glossario", changefreq: "monthly", priority: "0.7" },
   { path: "/calendario-liturgico", changefreq: "weekly", priority: "0.7" },
   { path: "/assistente", changefreq: "monthly", priority: "0.7" },
-  { path: "/busca", changefreq: "monthly", priority: "0.7" },
+  { path: "/estudar", changefreq: "monthly", priority: "0.7" },
   { path: "/coroinhas", changefreq: "monthly", priority: "0.6" },
+
   { path: "/explorar", changefreq: "monthly", priority: "0.8" },
   { path: "/sobre", changefreq: "monthly", priority: "0.6" },
   { path: "/fontes", changefreq: "monthly", priority: "0.6" },
