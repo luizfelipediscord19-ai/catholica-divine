@@ -178,10 +178,11 @@ export function SiteHeader() {
           {/* Sophia: rótulo no desktop, ícone no celular. */}
           <Link
             to="/assistente"
-            className="btn-base btn-gold btn-sm hidden md:inline-flex"
+            className="btn-base btn-gold btn-sm h-10 hidden md:inline-flex"
           >
             <Sparkles className="size-3.5" aria-hidden="true" /> Sophia
           </Link>
+
           <Link
             to="/assistente"
             aria-label="Falar com a Sophia IA"
