@@ -1,7 +1,7 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import claustro from "@/assets/claustro.jpg";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { MessageSquare, Pin, Lock, Plus } from "lucide-react";
+import { Heart, MessageSquare, Pin, Lock, Plus } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
 
@@ -170,11 +170,23 @@ function ForumPage() {
                       </p>
                       <div className="flex items-center justify-between gap-4">
                         <AutorSelo autor={autor} />
-                        <span className="flex items-center gap-2 text-xs text-paper/60">
-                          <MessageSquare className="size-3.5" aria-hidden="true" />
-                          {t.respostas_count}
+                        <span className="flex items-center gap-4 text-xs text-paper/60">
+                          <span className="inline-flex items-center gap-2">
+                            <MessageSquare className="size-3.5" aria-hidden="true" />
+                            {t.respostas_count}
+                          </span>
+                          <span
+                            className={`inline-flex items-center gap-2 ${t.reagi ? "text-gold" : ""}`}
+                          >
+                            <Heart
+                              className={`size-3.5 ${t.reagi ? "fill-current" : ""}`}
+                              aria-hidden="true"
+                            />
+                            {t.amens}
+                          </span>
                         </span>
                       </div>
+
                     </Link>
                   </li>
                 );
