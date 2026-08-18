@@ -53,7 +53,7 @@ function achados(texto: string): Achado[] {
 
   for (const m of texto.matchAll(RE_CANON)) {
     // "Trento, Sess. VII, cân. 9" é cânon conciliar, não do Código de 1983.
-    const antes = texto.slice(Math.max(0, m.index! - 60), m.index!);
+    const antes = texto.slice(Math.max(0, m.index! - 260), m.index!);
     if (/Trento|Sess\.|Nice(ia|ia)|Nicéia|Calced[óo]nia|Latr[ãa]o|Vaticano I\b|Constantinopla|[ÉE]feso|Orange|Trullo|Florença|Li[ãa]o/i.test(antes))
       continue;
     lista.push({
