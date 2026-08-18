@@ -7,7 +7,7 @@ import {
   cabecalhosCors,
   comCors,
 } from "../../lib/api/chat-utils.server";
-import { SYSTEM_PROMPT, COROINHAS_PROMPT } from "../../lib/prompts/sophia";
+import { SYSTEM_PROMPT, SYSTEM_PROMPT_COMPACTO, COROINHAS_PROMPT } from "../../lib/prompts/sophia";
 import { createGroqProvider, GROQ_MODEL } from "../../lib/groq.server";
 import { createLovableAiGatewayProvider, GATEWAY_MODEL } from "../../lib/ai-gateway.server";
 
