@@ -49,7 +49,10 @@ export const PAGINAS: SitemapEntry[] = [
 
   { path: "/explorar", changefreq: "monthly", priority: "0.8" },
   { path: "/sobre", changefreq: "monthly", priority: "0.6" },
+  { path: "/testemunhos", changefreq: "weekly", priority: "0.7" },
+  { path: "/contato", changefreq: "monthly", priority: "0.6" },
   { path: "/fontes", changefreq: "monthly", priority: "0.6" },
+
   { path: "/privacidade", changefreq: "yearly", priority: "0.3" },
   { path: "/termos", changefreq: "yearly", priority: "0.3" },
   ...TRILHAS.flatMap((t) => [

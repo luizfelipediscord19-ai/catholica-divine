@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TestemunhosRouteImport } from './routes/testemunhos'
 import { Route as TermosRouteImport } from './routes/termos'
 import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
@@ -35,6 +36,7 @@ import { Route as EmailConfirmadoRouteImport } from './routes/email-confirmado'
 import { Route as DoutoresDaIgrejaRouteImport } from './routes/doutores-da-igreja'
 import { Route as DesignSystemRouteImport } from './routes/design-system'
 import { Route as CoroinhasRouteImport } from './routes/coroinhas'
+import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as ConfissaoRouteImport } from './routes/confissao'
 import { Route as CatecismoRouteImport } from './routes/catecismo'
 import { Route as CalendarioLiturgicoRouteImport } from './routes/calendario-liturgico'
@@ -76,6 +78,11 @@ import { Route as ApiPublicLembretesRouteImport } from './routes/api/public/lemb
 import { Route as ApiPublicImagemRouteImport } from './routes/api/public/imagem'
 import { Route as ApiPublicCspReportRouteImport } from './routes/api/public/csp-report'
 
+const TestemunhosRoute = TestemunhosRouteImport.update({
+  id: '/testemunhos',
+  path: '/testemunhos',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TermosRoute = TermosRouteImport.update({
   id: '/termos',
   path: '/termos',
@@ -206,6 +213,11 @@ const DesignSystemRoute = DesignSystemRouteImport.update({
 const CoroinhasRoute = CoroinhasRouteImport.update({
   id: '/coroinhas',
   path: '/coroinhas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContatoRoute = ContatoRouteImport.update({
+  id: '/contato',
+  path: '/contato',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ConfissaoRoute = ConfissaoRouteImport.update({
@@ -421,6 +433,7 @@ export interface FileRoutesByFullPath {
   '/calendario-liturgico': typeof CalendarioLiturgicoRoute
   '/catecismo': typeof CatecismoRouteWithChildren
   '/confissao': typeof ConfissaoRoute
+  '/contato': typeof ContatoRoute
   '/coroinhas': typeof CoroinhasRoute
   '/design-system': typeof DesignSystemRoute
   '/doutores-da-igreja': typeof DoutoresDaIgrejaRoute
@@ -447,6 +460,7 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/termos': typeof TermosRoute
+  '/testemunhos': typeof TestemunhosRoute
   '/api/chat': typeof ApiChatRoute
   '/api/transcrever': typeof ApiTranscreverRoute
   '/biblia/$livro': typeof BibliaLivroRouteWithChildren
@@ -488,6 +502,7 @@ export interface FileRoutesByTo {
   '/calendario-liturgico': typeof CalendarioLiturgicoRoute
   '/catecismo': typeof CatecismoRouteWithChildren
   '/confissao': typeof ConfissaoRoute
+  '/contato': typeof ContatoRoute
   '/coroinhas': typeof CoroinhasRoute
   '/design-system': typeof DesignSystemRoute
   '/doutores-da-igreja': typeof DoutoresDaIgrejaRoute
@@ -513,6 +528,7 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/termos': typeof TermosRoute
+  '/testemunhos': typeof TestemunhosRoute
   '/api/chat': typeof ApiChatRoute
   '/api/transcrever': typeof ApiTranscreverRoute
   '/biblia/leituras': typeof BibliaLeiturasRoute
@@ -554,6 +570,7 @@ export interface FileRoutesById {
   '/calendario-liturgico': typeof CalendarioLiturgicoRoute
   '/catecismo': typeof CatecismoRouteWithChildren
   '/confissao': typeof ConfissaoRoute
+  '/contato': typeof ContatoRoute
   '/coroinhas': typeof CoroinhasRoute
   '/design-system': typeof DesignSystemRoute
   '/doutores-da-igreja': typeof DoutoresDaIgrejaRoute
@@ -580,6 +597,7 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/termos': typeof TermosRoute
+  '/testemunhos': typeof TestemunhosRoute
   '/api/chat': typeof ApiChatRoute
   '/api/transcrever': typeof ApiTranscreverRoute
   '/biblia/$livro': typeof BibliaLivroRouteWithChildren
@@ -624,6 +642,7 @@ export interface FileRouteTypes {
     | '/calendario-liturgico'
     | '/catecismo'
     | '/confissao'
+    | '/contato'
     | '/coroinhas'
     | '/design-system'
     | '/doutores-da-igreja'
@@ -650,6 +669,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/sobre'
     | '/termos'
+    | '/testemunhos'
     | '/api/chat'
     | '/api/transcrever'
     | '/biblia/$livro'
@@ -691,6 +711,7 @@ export interface FileRouteTypes {
     | '/calendario-liturgico'
     | '/catecismo'
     | '/confissao'
+    | '/contato'
     | '/coroinhas'
     | '/design-system'
     | '/doutores-da-igreja'
@@ -716,6 +737,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/sobre'
     | '/termos'
+    | '/testemunhos'
     | '/api/chat'
     | '/api/transcrever'
     | '/biblia/leituras'
@@ -756,6 +778,7 @@ export interface FileRouteTypes {
     | '/calendario-liturgico'
     | '/catecismo'
     | '/confissao'
+    | '/contato'
     | '/coroinhas'
     | '/design-system'
     | '/doutores-da-igreja'
@@ -782,6 +805,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/sobre'
     | '/termos'
+    | '/testemunhos'
     | '/api/chat'
     | '/api/transcrever'
     | '/biblia/$livro'
@@ -825,6 +849,7 @@ export interface RootRouteChildren {
   CalendarioLiturgicoRoute: typeof CalendarioLiturgicoRoute
   CatecismoRoute: typeof CatecismoRouteWithChildren
   ConfissaoRoute: typeof ConfissaoRoute
+  ContatoRoute: typeof ContatoRoute
   CoroinhasRoute: typeof CoroinhasRoute
   DesignSystemRoute: typeof DesignSystemRoute
   DoutoresDaIgrejaRoute: typeof DoutoresDaIgrejaRoute
@@ -851,6 +876,7 @@ export interface RootRouteChildren {
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SobreRoute: typeof SobreRoute
   TermosRoute: typeof TermosRoute
+  TestemunhosRoute: typeof TestemunhosRoute
   ApiChatRoute: typeof ApiChatRoute
   ApiTranscreverRoute: typeof ApiTranscreverRoute
   ForumSlugRoute: typeof ForumSlugRoute
@@ -869,6 +895,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/testemunhos': {
+      id: '/testemunhos'
+      path: '/testemunhos'
+      fullPath: '/testemunhos'
+      preLoaderRoute: typeof TestemunhosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/termos': {
       id: '/termos'
       path: '/termos'
@@ -1049,6 +1082,13 @@ declare module '@tanstack/react-router' {
       path: '/coroinhas'
       fullPath: '/coroinhas'
       preLoaderRoute: typeof CoroinhasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contato': {
+      id: '/contato'
+      path: '/contato'
+      fullPath: '/contato'
+      preLoaderRoute: typeof ContatoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/confissao': {
@@ -1445,6 +1485,7 @@ const rootRouteChildren: RootRouteChildren = {
   CalendarioLiturgicoRoute: CalendarioLiturgicoRoute,
   CatecismoRoute: CatecismoRouteWithChildren,
   ConfissaoRoute: ConfissaoRoute,
+  ContatoRoute: ContatoRoute,
   CoroinhasRoute: CoroinhasRoute,
   DesignSystemRoute: DesignSystemRoute,
   DoutoresDaIgrejaRoute: DoutoresDaIgrejaRoute,
@@ -1471,6 +1512,7 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SobreRoute: SobreRoute,
   TermosRoute: TermosRoute,
+  TestemunhosRoute: TestemunhosRoute,
   ApiChatRoute: ApiChatRoute,
   ApiTranscreverRoute: ApiTranscreverRoute,
   ForumSlugRoute: ForumSlugRoute,
