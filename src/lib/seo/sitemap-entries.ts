@@ -24,6 +24,8 @@ export const PAGINAS: SitemapEntry[] = [
   { path: "/catecismo", changefreq: "monthly", priority: "0.9" },
   { path: "/liturgia-diaria", changefreq: "daily", priority: "0.9" },
   { path: "/biblia/leituras", changefreq: "daily", priority: "0.8" },
+  { path: "/biblia/planos", changefreq: "monthly", priority: "0.8" },
+  { path: "/confissao", changefreq: "monthly", priority: "0.8" },
   { path: "/fe-catolica", changefreq: "monthly", priority: "0.8" },
   { path: "/sacramentos", changefreq: "monthly", priority: "0.8" },
   { path: "/santos", changefreq: "weekly", priority: "0.8" },
