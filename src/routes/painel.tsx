@@ -25,13 +25,13 @@ import { useIdentidade, usePainel } from "@/hooks/use-identidade";
 import { useAuth } from "@/hooks/use-auth";
 import { registrarOracaoFn } from "@/lib/portal.functions";
 import {
-import { keywordsPara } from "@/lib/seo/palavras-chave";
   metaDaConquista,
   textoRestante,
   type Totais,
 } from "@/lib/portal/metas-conquistas";
 
 
+import { keywordsPara } from "@/lib/seo/palavras-chave";
 export const Route = createFileRoute("/painel")({
   head: () => ({
     meta: [

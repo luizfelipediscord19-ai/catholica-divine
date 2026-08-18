@@ -4,13 +4,13 @@ import rosario from "@/assets/rosario.jpg";
 import { useEffect, useMemo, useState } from "react";
 import { PageHero, Section, CardGrid, ContentCard, Prancha } from "../components/PageShell";
 import {
-import { keywordsPara } from "@/lib/seo/palavras-chave";
   CATEGORIAS_ORACAO,
   ORACOES,
   type CategoriaOracao,
   type Oracao,
 } from "@/lib/data/oracoes";
 
+import { keywordsPara } from "@/lib/seo/palavras-chave";
 export const Route = createFileRoute("/oracoes")({
   head: () => ({
     meta: [
