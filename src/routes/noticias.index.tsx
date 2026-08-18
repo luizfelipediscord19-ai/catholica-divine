@@ -8,7 +8,6 @@ import { PageHero } from "@/components/PageShell";
 import { Button } from "@/components/ui/button";
 import { listarNoticiasFn } from "@/lib/noticias.functions";
 import concilio from "@/assets/concilio-trento.jpg";
-import claustro from "@/assets/claustro.jpg";
 import manuscrito from "@/assets/manuscrito.jpg";
 import emaus from "@/assets/emaus.jpg";
 import doutores from "@/assets/doutores.jpg";
@@ -74,7 +73,7 @@ function NoticiasIndisponiveis() {
   return (
     <div>
       <PageHero
-        image={claustro}
+        image={concilio}
         eyebrow="Acta Ecclesiae · Edição diária"
         title={
           <>
@@ -115,7 +114,7 @@ function NoticiasPage() {
   return (
     <div>
       <PageHero
-        image={claustro}
+        image={concilio}
         eyebrow="Acta Ecclesiae · Edição diária"
         title={
           <>
