@@ -1,6 +1,28 @@
 import { useEffect, useRef, useState } from "react";
 
 /**
+ * Arte do Wikimedia Commons é servida pela nossa própria origem
+ * (`/api/public/imagem`): entregar direto do Commons era bloqueado por parte
+ * dos navegadores e deixava cartões sem retrato. Pelo proxy também pedimos a
+ * largura ideal de cada tela, então o celular baixa um arquivo leve e o
+ * desktop recebe a pintura em alta definição.
+ */
+const LARGURAS_RETRATO = [480, 640, 800, 1024, 1280, 1600];
+
+function pelaNossaOrigem(url: string, largura?: number): string {
+  if (!/^https:\/\/upload\.wikimedia\.org\//.test(url)) return url;
+  const q = new URLSearchParams({ u: url });
+  if (largura) q.set("w", String(largura));
+  return `/api/public/imagem?${q.toString()}`;
+}
+
+function srcSetDe(url: string): string | undefined {
+  if (!/^https:\/\/upload\.wikimedia\.org\/.+\/thumb\/.+\/\d+px-/.test(url)) return undefined;
+  return LARGURAS_RETRATO.map((w) => `${pelaNossaOrigem(url, w)} ${w}w`).join(", ");
+}
+
+
+/**
  * Retrato de santo com carregamento otimizado: lazy por padrão, dimensões
  * declaradas (sem salto de layout), reserva na fonte pública de domínio
  * público quando a cópia do CDN não está disponível, entrada suave quando a
@@ -59,7 +81,8 @@ export function RetratoSanto({
     <img
       key={atual}
       ref={ref}
-      src={atual}
+      src={pelaNossaOrigem(atual, 1024)}
+      srcSet={srcSetDe(atual)}
       alt={`Representação de ${nome}`}
       width={largura}
       height={altura}

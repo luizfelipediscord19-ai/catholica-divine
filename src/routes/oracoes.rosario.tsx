@@ -4,6 +4,7 @@ import { PageHero, Section } from "../components/PageShell";
 import { CONJUNTOS, ORACOES_BASE, conjuntoDoDia, type ConjuntoMisterios } from "../lib/data/devocoes/rosario";
 import { Relacionados } from "../components/Relacionados";
 import rosario from "@/assets/rosario.jpg";
+import { keywordsPara } from "@/lib/seo/palavras-chave";
 
 
 export const Route = createFileRoute("/oracoes/rosario")({
@@ -12,6 +13,7 @@ export const Route = createFileRoute("/oracoes/rosario")({
       { title: "Santo Rosário Interativo — Portal Católico" },
       { property: "og:url", content: "https://portalcatolico.vercel.app/oracoes/rosario" },
       { name: "description", content: "Reze o Santo Rosário guiado com contagem automática, cronômetro e marcação de progresso." },
+      { name: "keywords", content: keywordsPara(["oracoes", "maria"]) },
       { property: "og:title", content: "Santo Rosário Interativo" },
       { property: "og:description", content: "Mistérios Gozosos, Luminosos, Dolorosos e Gloriosos." },
     ],

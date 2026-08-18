@@ -5,6 +5,7 @@ import { SophiaChat } from "../components/SophiaChat";
 import { Sparkles } from "lucide-react";
 import { SUGESTOES_COROINHAS } from "../lib/data/sophia-perguntas";
 import sacramentos from "@/assets/sacramentos.jpg";
+import { keywordsPara } from "@/lib/seo/palavras-chave";
 
 export const Route = createFileRoute("/coroinhas")({
   head: () => ({
@@ -12,6 +13,7 @@ export const Route = createFileRoute("/coroinhas")({
       { title: "Coroinhas — Serviço ao Altar | Portal Católico" },
       { property: "og:url", content: "https://portalcatolico.vercel.app/coroinhas" },
       { name: "description", content: "Formação completa para Coroinhas e Acólitos: espiritualidade, postura, paramentos, vasos sagrados e o ministério do Serviço ao Altar." },
+      { name: "keywords", content: keywordsPara(["liturgia"]) },
       { property: "og:title", content: "Coroinhas — O Serviço ao Altar" },
       { property: "og:description", content: "Guia de formação para servir ao altar com reverência, conhecimento litúrgico e zelo pela Casa de Deus." },
     ],

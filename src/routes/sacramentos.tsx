@@ -5,6 +5,7 @@ import { PageHero, CardGrid, ContentCard, Prose, Pullquote, Prancha } from "../c
 import { ReadingMode, FnRef } from "../components/ReadingMode";
 import { Termo } from "../components/Termo";
 import { NotaConfiabilidade } from "../components/SeloConfiabilidade";
+import { keywordsPara } from "@/lib/seo/palavras-chave";
 
 export const Route = createFileRoute("/sacramentos")({
   head: () => ({
@@ -12,6 +13,7 @@ export const Route = createFileRoute("/sacramentos")({
       { title: "Os Sete Sacramentos — Doutrina, matéria, forma e ministro" },
       { property: "og:url", content: "https://portalcatolico.vercel.app/sacramentos" },
       { name: "description", content: "Os sete sacramentos da Igreja Católica em profundidade: definição, matéria, forma, ministro, sujeito e efeitos — segundo o CIC, Trento, Sacrosanctum Concilium e os rituais oficiais." },
+      { name: "keywords", content: keywordsPara(["sacramentos"]) },
       { property: "og:title", content: "Os Sete Sacramentos da Igreja Católica" },
       { property: "og:description", content: "Iniciação, Cura e Serviço — exposição doutrinária completa com fontes magisteriais." },
     ],

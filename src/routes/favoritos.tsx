@@ -12,6 +12,7 @@ import { useSalvos } from "@/hooks/use-salvos";
 import { ROTULO_TIPO } from "@/lib/salvos";
 import { LIVROS, getLivro } from "@/lib/data/biblia";
 import { apagarNotaFn } from "@/lib/portal.functions";
+import { keywordsPara } from "@/lib/seo/palavras-chave";
 
 
 export const Route = createFileRoute("/favoritos")({
@@ -25,6 +26,7 @@ export const Route = createFileRoute("/favoritos")({
         content:
           "Biblioteca pessoal do Portal Católico: pesquise seus versículos guardados e suas anotações da Bíblia por livro, capítulo ou palavra — sem cadastro.",
       },
+      { name: "keywords", content: keywordsPara(["formacao"]) },
       { property: "og:title", content: "Meus Favoritos e Anotações" },
       {
         property: "og:description",

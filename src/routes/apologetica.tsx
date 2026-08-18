@@ -3,6 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import biblioteca from "@/assets/biblioteca.jpg";
 import { PageHero, Section, Prose, Sources, Pullquote, Prancha } from "../components/PageShell";
 import { BancoObjecoes } from "../components/portal/BancoObjecoes";
+import { keywordsPara } from "@/lib/seo/palavras-chave";
 
 export const Route = createFileRoute("/apologetica")({
   head: () => ({
@@ -10,6 +11,7 @@ export const Route = createFileRoute("/apologetica")({
       { title: "Apologética Católica — Razões para crer com fundamento" },
       { property: "og:url", content: "https://portalcatolico.vercel.app/apologetica" },
       { name: "description", content: "Defesa racional da fé católica: existência de Deus, divindade e ressurreição de Cristo, autoridade da Igreja, Tradição, Eucaristia, Papado, Maria — fundamentada em Escritura, Padres, concílios e Magistério." },
+      { name: "keywords", content: keywordsPara(["apologetica"]) },
       { property: "og:title", content: "Apologética Católica" },
       { property: "og:description", content: "Defesa racional da fé católica com fontes magisteriais." },
     ],

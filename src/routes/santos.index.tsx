@@ -8,6 +8,7 @@ import { imagemSanto } from "@/lib/data/santos-imagens";
 import { RetratoSanto } from "@/components/santos/RetratoSanto";
 import { usePrefetchSanto, usePrefetchLote } from "@/lib/santos/prefetch";
 import { BotaoSalvar } from "@/components/portal/BotaoSalvar";
+import { keywordsPara } from "@/lib/seo/palavras-chave";
 
 
 export const Route = createFileRoute("/santos/")({
@@ -15,6 +16,7 @@ export const Route = createFileRoute("/santos/")({
     meta: [
       { title: "Santos — Portal Católico" },
       { name: "description", content: "Vidas e ensinamentos dos santos: testemunhas da fé e amigos de Deus." },
+      { name: "keywords", content: keywordsPara(["santos"]) },
       { property: "og:title", content: "Os Santos da Igreja" },
       { property: "og:description", content: "Vidas, virtudes e ensinamentos dos santos católicos." },
       { property: "og:type", content: "website" },

@@ -5,6 +5,7 @@ import { NotaConfiabilidade } from "../components/SeloConfiabilidade";
 import { ESTACOES } from "../lib/data/devocoes/viasacra";
 import { Relacionados } from "../components/Relacionados";
 import cristo from "@/assets/cristo.jpg";
+import { keywordsPara } from "@/lib/seo/palavras-chave";
 
 
 export const Route = createFileRoute("/oracoes/via-sacra")({
@@ -13,6 +14,7 @@ export const Route = createFileRoute("/oracoes/via-sacra")({
       { title: "Via-Sacra — as 14 estações, história, indulgências e fontes" },
       { property: "og:url", content: "https://portalcatolico.vercel.app/oracoes/via-sacra" },
       { name: "description", content: "As catorze estações da Via-Sacra com meditações e referências bíblicas, a história da devoção em Jerusalém e na tradição franciscana, as indulgências e a Via Crucis bíblica." },
+      { name: "keywords", content: keywordsPara(["oracoes", "liturgia"]) },
       { property: "og:title", content: "Via-Sacra — Caminho da Cruz" },
       { property: "og:description", content: "Catorze estações com meditação, história da devoção e fontes magisteriais." },
       { property: "og:type", content: "article" },

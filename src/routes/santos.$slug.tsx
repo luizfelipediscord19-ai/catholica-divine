@@ -6,6 +6,7 @@ import { Relacionados } from "@/components/Relacionados";
 import { RetratoSanto } from "@/components/santos/RetratoSanto";
 import { usePrefetchSanto } from "@/lib/santos/prefetch";
 import { BotaoSalvar } from "@/components/portal/BotaoSalvar";
+import { keywordsPara } from "@/lib/seo/palavras-chave";
 
 
 const SITE = "https://portalcatolico.vercel.app";
@@ -68,6 +69,7 @@ export const Route = createFileRoute("/santos/$slug")({
       meta: [
         { title },
         { name: "description", content: desc },
+        { name: "keywords", content: keywordsPara(["santos"]) },
         { property: "og:title", content: view.nome },
         { property: "og:description", content: desc },
         { property: "og:type", content: "article" },

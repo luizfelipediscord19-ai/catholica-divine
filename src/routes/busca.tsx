@@ -19,6 +19,7 @@ import { useEffect, useMemo, useState } from "react";
 
 import { buscarNoPortal } from "@/lib/busca/avancada.functions";
 import type { EscopoBusca, Resultado } from "@/lib/busca/motor.server";
+import { keywordsPara } from "@/lib/seo/palavras-chave";
 
 const ESCOPOS: { id: EscopoBusca; label: string }[] = [
   { id: "biblia", label: "Bíblia" },
@@ -61,6 +62,7 @@ export const Route = createFileRoute("/busca")({
         content:
           "Pesquise um termo e cruze instantaneamente o texto integral da Bíblia, o Catecismo, o glossário doutrinal, o banco apologético, os santos e as orações da tradição.",
       },
+      { name: "keywords", content: keywordsPara(["marca", "formacao"]) },
       { property: "og:title", content: "Busca Avançada do Portal Católico" },
       {
         property: "og:description",

@@ -6,6 +6,7 @@ import { COR_CLASSE } from "../lib/liturgia/calendario";
 import type { LeituraLiturgica } from "../lib/liturgia.functions";
 import { PageHero } from "@/components/PageShell";
 import velas from "@/assets/velas.jpg";
+import { keywordsPara } from "@/lib/seo/palavras-chave";
 
 const SITE_URL = "https://portalcatolico.vercel.app";
 
@@ -20,6 +21,7 @@ export const Route = createFileRoute("/liturgia-diaria")({
         content:
           "As leituras litúrgicas de hoje: primeira leitura, salmo responsorial, segunda leitura e Evangelho do dia, com tempo litúrgico, cor e ciclo do Lecionário.",
       },
+      { name: "keywords", content: keywordsPara(["liturgia"]) },
       { property: "og:title", content: "Liturgia Diária — Portal Católico" },
       { property: "og:description", content: "Leituras da Missa do dia, salmo responsorial e Evangelho, atualizados diariamente." },
       { property: "og:type", content: "article" },

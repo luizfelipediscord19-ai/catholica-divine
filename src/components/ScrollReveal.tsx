@@ -41,31 +41,32 @@ export function ScrollReveal({
     };
   }, [threshold]);
 
+  /**
+   * A entrada usa deslocamento curto e sempre vertical: transladar na
+   * horizontal empurrava cartões e botões para fora da margem em telas
+   * estreitas, o que aparecia como desalinhamento durante a animação.
+   */
   const getDirectionClass = () => {
     if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       return "opacity-100";
     }
-    switch (direction) {
-      case "up": return "opacity-0 translate-y-8";
-      case "down": return "opacity-0 -translate-y-8";
-      case "left": return "opacity-0 translate-x-8";
-      case "right": return "opacity-0 -translate-x-8";
-      default: return "opacity-0 translate-y-8";
-    }
+    return direction === "down" ? "opacity-0 -translate-y-3" : "opacity-0 translate-y-3";
   };
 
-  const getVisibleClass = () => {
-    return "opacity-100 translate-y-0 translate-x-0";
-  };
+  const getVisibleClass = () => "opacity-100 translate-y-0";
+
+  // Escalonamento discreto: nenhum bloco espera mais de 240 ms para aparecer.
+  const atraso = Math.min(delay, 240);
 
   return (
     <div
       ref={ref}
-      className={`transition-all duration-700 ease-out ${
+      className={`transition-[opacity,transform] duration-500 ease-out ${
         isVisible ? getVisibleClass() : getDirectionClass()
       } ${className}`}
       style={{
-        transitionDelay: isVisible ? `${delay}ms` : "0ms",
+        transitionDelay: isVisible ? `${atraso}ms` : "0ms",
+        willChange: isVisible ? undefined : "opacity, transform",
       }}
     >
       {children}

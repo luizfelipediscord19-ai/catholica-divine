@@ -31,6 +31,7 @@ import {
 } from "@/lib/portal/metas-conquistas";
 
 
+import { keywordsPara } from "@/lib/seo/palavras-chave";
 export const Route = createFileRoute("/painel")({
   head: () => ({
     meta: [
@@ -42,6 +43,7 @@ export const Route = createFileRoute("/painel")({
         content:
           "Acompanhe sua sequência de oração, diário espiritual, capítulos lidos da Bíblia, versículos favoritos, anotações e conquistas — sem cadastro.",
       },
+      { name: "keywords", content: keywordsPara(["formacao"]) },
       { property: "og:title", content: "Meu Painel Espiritual" },
       {
         property: "og:description",

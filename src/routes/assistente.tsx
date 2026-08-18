@@ -3,6 +3,7 @@ import { Sparkles } from "lucide-react";
 import { SUGESTOES_GERAL } from "../lib/data/sophia-perguntas";
 import { SophiaChat } from "../components/SophiaChat";
 import { FAQ_SOPHIA as FAQ } from "../lib/data/sophia-faq";
+import { keywordsPara } from "@/lib/seo/palavras-chave";
 
 const URL_PAGINA = "https://portalcatolico.vercel.app/assistente";
 const TITULO = "Sophia — Assistente de IA Católica fiel ao Magistério";
@@ -53,6 +54,7 @@ export const Route = createFileRoute("/assistente")({
           ],
         }),
       },
+      { name: "keywords", content: keywordsPara(["formacao", "marca"]) },
     ],
   }),
   component: Page,

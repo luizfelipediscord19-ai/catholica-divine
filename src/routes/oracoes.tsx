@@ -10,6 +10,7 @@ import {
   type Oracao,
 } from "@/lib/data/oracoes";
 
+import { keywordsPara } from "@/lib/seo/palavras-chave";
 export const Route = createFileRoute("/oracoes")({
   head: () => ({
     meta: [
@@ -20,6 +21,7 @@ export const Route = createFileRoute("/oracoes")({
         content:
           "Mais de 60 orações católicas com texto completo: Pai-Nosso, Credo, Salve-Rainha, Angelus, Anima Christi, São Miguel e mais. Rosário, novenas e Liturgia das Horas.",
       },
+      { name: "keywords", content: keywordsPara(["oracoes"]) },
       { property: "og:title", content: "Orações Católicas Tradicionais" },
       {
         property: "og:description",

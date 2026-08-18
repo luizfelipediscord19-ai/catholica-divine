@@ -10,6 +10,7 @@ import { ArrowLeft, ExternalLink } from "lucide-react";
 import { Relacionados } from "../components/Relacionados";
 import { MarcarEstudo } from "../components/portal/MarcarEstudo";
 import { PerguntarSophia } from "../components/portal/PerguntarSophia";
+import { keywordsPara } from "@/lib/seo/palavras-chave";
 
 export const Route = createFileRoute("/catecismo/$parte")({
   loader: ({ params }) => {
@@ -21,6 +22,7 @@ export const Route = createFileRoute("/catecismo/$parte")({
     meta: [
       { title: `${loaderData?.parte.titulo ?? "Catecismo"} — Catecismo — Portal Católico` },
       { name: "description", content: loaderData?.parte.resumo ?? "" },
+      { name: "keywords", content: keywordsPara(["catecismo"]) },
       { property: "og:title", content: `${loaderData?.parte.titulo ?? "Catecismo"} — CIC` },
       { property: "og:description", content: loaderData?.parte.resumo ?? "" },
       { property: "og:type", content: "article" },

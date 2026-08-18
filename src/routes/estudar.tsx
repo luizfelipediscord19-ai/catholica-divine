@@ -7,6 +7,7 @@ import { lerProgresso, percentual, chaveLicao, type ProgressoTrilhas } from "@/l
 import { ContinuarLeitura } from "@/components/portal/ContinuarLeitura";
 import { PageHero } from "@/components/PageShell";
 import claustro from "@/assets/claustro.jpg";
+import { keywordsPara } from "@/lib/seo/palavras-chave";
 
 const BASE = "https://portalcatolico.vercel.app";
 const TITULO = "Começar a estudar — Percursos de formação católica | Portal Católico";
@@ -18,6 +19,7 @@ export const Route = createFileRoute("/estudar")({
     meta: [
       { title: TITULO },
       { name: "description", content: DESC },
+      { name: "keywords", content: keywordsPara(["formacao"]) },
       { property: "og:title", content: "Começar a estudar — Portal Católico" },
       { property: "og:description", content: DESC },
       { property: "og:type", content: "website" },

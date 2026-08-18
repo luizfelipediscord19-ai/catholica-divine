@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero, Section, Prose, Pullquote, CardGrid, Sources } from "../components/PageShell";
 import { PerguntarSophia } from "../components/portal/PerguntarSophia";
 import velas from "../assets/velas.jpg";
+import { keywordsPara } from "@/lib/seo/palavras-chave";
 
 export const Route = createFileRoute("/confissao")({
   head: () => ({
@@ -12,6 +13,7 @@ export const Route = createFileRoute("/confissao")({
         content:
           "Guia completo da Confissão sacramental: exame de consciência pelos Dez Mandamentos, passo a passo do rito, Ato de Contrição e dúvidas frequentes, com base no Catecismo (§§1422–1498).",
       },
+      { name: "keywords", content: keywordsPara(["sacramentos", "oracoes"]) },
       { property: "og:title", content: "Confissão — exame de consciência e passo a passo" },
       {
         property: "og:description",
