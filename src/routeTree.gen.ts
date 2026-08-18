@@ -14,6 +14,7 @@ import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SitemapSantosDotxmlRouteImport } from './routes/sitemap-santos[.]xml'
 import { Route as SitemapPaginasDotxmlRouteImport } from './routes/sitemap-paginas[.]xml'
+import { Route as SitemapNoticiasDotxmlRouteImport } from './routes/sitemap-noticias[.]xml'
 import { Route as SitemapBibliaLivrosDotxmlRouteImport } from './routes/sitemap-biblia-livros[.]xml'
 import { Route as SitemapBibliaCapitulosDotxmlRouteImport } from './routes/sitemap-biblia-capitulos[.]xml'
 import { Route as SantosRouteImport } from './routes/santos'
@@ -93,6 +94,11 @@ const SitemapSantosDotxmlRoute = SitemapSantosDotxmlRouteImport.update({
 const SitemapPaginasDotxmlRoute = SitemapPaginasDotxmlRouteImport.update({
   id: '/sitemap-paginas.xml',
   path: '/sitemap-paginas.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapNoticiasDotxmlRoute = SitemapNoticiasDotxmlRouteImport.update({
+  id: '/sitemap-noticias.xml',
+  path: '/sitemap-noticias.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SitemapBibliaLivrosDotxmlRoute =
@@ -404,6 +410,7 @@ export interface FileRoutesByFullPath {
   '/santos': typeof SantosRouteWithChildren
   '/sitemap-biblia-capitulos.xml': typeof SitemapBibliaCapitulosDotxmlRoute
   '/sitemap-biblia-livros.xml': typeof SitemapBibliaLivrosDotxmlRoute
+  '/sitemap-noticias.xml': typeof SitemapNoticiasDotxmlRoute
   '/sitemap-paginas.xml': typeof SitemapPaginasDotxmlRoute
   '/sitemap-santos.xml': typeof SitemapSantosDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -464,6 +471,7 @@ export interface FileRoutesByTo {
   '/sacramentos': typeof SacramentosRoute
   '/sitemap-biblia-capitulos.xml': typeof SitemapBibliaCapitulosDotxmlRoute
   '/sitemap-biblia-livros.xml': typeof SitemapBibliaLivrosDotxmlRoute
+  '/sitemap-noticias.xml': typeof SitemapNoticiasDotxmlRoute
   '/sitemap-paginas.xml': typeof SitemapPaginasDotxmlRoute
   '/sitemap-santos.xml': typeof SitemapSantosDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -526,6 +534,7 @@ export interface FileRoutesById {
   '/santos': typeof SantosRouteWithChildren
   '/sitemap-biblia-capitulos.xml': typeof SitemapBibliaCapitulosDotxmlRoute
   '/sitemap-biblia-livros.xml': typeof SitemapBibliaLivrosDotxmlRoute
+  '/sitemap-noticias.xml': typeof SitemapNoticiasDotxmlRoute
   '/sitemap-paginas.xml': typeof SitemapPaginasDotxmlRoute
   '/sitemap-santos.xml': typeof SitemapSantosDotxmlRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -590,6 +599,7 @@ export interface FileRouteTypes {
     | '/santos'
     | '/sitemap-biblia-capitulos.xml'
     | '/sitemap-biblia-livros.xml'
+    | '/sitemap-noticias.xml'
     | '/sitemap-paginas.xml'
     | '/sitemap-santos.xml'
     | '/sitemap.xml'
@@ -650,6 +660,7 @@ export interface FileRouteTypes {
     | '/sacramentos'
     | '/sitemap-biblia-capitulos.xml'
     | '/sitemap-biblia-livros.xml'
+    | '/sitemap-noticias.xml'
     | '/sitemap-paginas.xml'
     | '/sitemap-santos.xml'
     | '/sitemap.xml'
@@ -711,6 +722,7 @@ export interface FileRouteTypes {
     | '/santos'
     | '/sitemap-biblia-capitulos.xml'
     | '/sitemap-biblia-livros.xml'
+    | '/sitemap-noticias.xml'
     | '/sitemap-paginas.xml'
     | '/sitemap-santos.xml'
     | '/sitemap.xml'
@@ -774,6 +786,7 @@ export interface RootRouteChildren {
   SantosRoute: typeof SantosRouteWithChildren
   SitemapBibliaCapitulosDotxmlRoute: typeof SitemapBibliaCapitulosDotxmlRoute
   SitemapBibliaLivrosDotxmlRoute: typeof SitemapBibliaLivrosDotxmlRoute
+  SitemapNoticiasDotxmlRoute: typeof SitemapNoticiasDotxmlRoute
   SitemapPaginasDotxmlRoute: typeof SitemapPaginasDotxmlRoute
   SitemapSantosDotxmlRoute: typeof SitemapSantosDotxmlRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
@@ -829,6 +842,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap-paginas.xml'
       fullPath: '/sitemap-paginas.xml'
       preLoaderRoute: typeof SitemapPaginasDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap-noticias.xml': {
+      id: '/sitemap-noticias.xml'
+      path: '/sitemap-noticias.xml'
+      fullPath: '/sitemap-noticias.xml'
+      preLoaderRoute: typeof SitemapNoticiasDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sitemap-biblia-livros.xml': {
@@ -1333,6 +1353,7 @@ const rootRouteChildren: RootRouteChildren = {
   SantosRoute: SantosRouteWithChildren,
   SitemapBibliaCapitulosDotxmlRoute: SitemapBibliaCapitulosDotxmlRoute,
   SitemapBibliaLivrosDotxmlRoute: SitemapBibliaLivrosDotxmlRoute,
+  SitemapNoticiasDotxmlRoute: SitemapNoticiasDotxmlRoute,
   SitemapPaginasDotxmlRoute: SitemapPaginasDotxmlRoute,
   SitemapSantosDotxmlRoute: SitemapSantosDotxmlRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,

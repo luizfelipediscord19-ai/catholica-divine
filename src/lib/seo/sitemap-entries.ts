@@ -100,6 +100,7 @@ export function respostaSitemap(entries: SitemapEntry[]): Response {
     [
       `  <url>`,
       `    <loc>${BASE_URL}${e.path}</loc>`,
+      e.lastmod ? `    <lastmod>${e.lastmod}</lastmod>` : null,
       e.changefreq ? `    <changefreq>${e.changefreq}</changefreq>` : null,
       e.priority ? `    <priority>${e.priority}</priority>` : null,
       `  </url>`,
@@ -107,6 +108,7 @@ export function respostaSitemap(entries: SitemapEntry[]): Response {
       .filter(Boolean)
       .join("\n"),
   );
+
 
   const xml = [
     `<?xml version="1.0" encoding="UTF-8"?>`,
