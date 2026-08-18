@@ -149,7 +149,7 @@ function linkificarTexto(texto: string, chave: string): ReactNode {
     partes.push(
       <span key={`${chave}-${i}`} className="whitespace-normal">
         {m.link}
-        <Abrir interno={m.interno} curto={i > 0} />
+        <Abrir interno={m.interno} curto={rotulosUsados++ >= 2} />
       </span>,
     );
     cursor = m.fim;
@@ -158,11 +158,19 @@ function linkificarTexto(texto: string, chave: string): ReactNode {
   return <>{partes}</>;
 }
 
+/**
+ * Quantos rótulos completos ("→ Abrir") já foram usados na página.
+ * As duas primeiras citações ensinam o leitor que a fonte é clicável;
+ * as seguintes usam apenas a seta, mantendo a leitura limpa.
+ */
+let rotulosUsados = 0;
+
 /** Tags cujo conteúdo nunca deve receber links automáticos. */
 const IGNORAR = new Set(["a", "code", "pre", "h1", "button"]);
 
 /** Aplica os links a todos os nós de texto de uma árvore React. */
 export function linkificarNos(no: ReactNode, chave = "c"): ReactNode {
+  if (chave === "c") rotulosUsados = 0;
   if (typeof no === "string") return linkificarTexto(no, chave);
   if (Array.isArray(no))
     return Children.map(no, (filho, i) => linkificarNos(filho, `${chave}-${i}`));
