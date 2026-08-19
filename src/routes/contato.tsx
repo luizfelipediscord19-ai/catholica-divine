@@ -12,7 +12,7 @@ import { keywordsPara } from "@/lib/seo/palavras-chave";
 const URL = "https://portalcatolico.vercel.app/contato";
 
 /** Endereço de contato do Portal. Troque aqui se o e-mail mudar. */
-const EMAIL_CONTATO = "contato@portalcatolico.com";
+const EMAIL_CONTATO = "portalcatolico2026@outlook.com";
 
 const esquema = z.object({
   nome: z.string().trim().min(2, "Diga como podemos te chamar.").max(80, "Nome muito longo."),
