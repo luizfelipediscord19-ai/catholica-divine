@@ -20,6 +20,8 @@ export type LiturgiaDoDia = DiaLiturgico & {
   evangelho: LeituraLiturgica[];
   /** "cnbb" quando vindo da fonte litúrgica externa; "local" no fallback. */
   fonte: "cnbb" | "local";
+  /** ISO da última verificação das leituras junto à fonte oficial. */
+  verificadoEm?: string;
 };
 
 const API = "https://liturgia.up.railway.app/v2/";
@@ -57,11 +59,77 @@ function extenso(iso: string): string {
   return `${semanas[dow]}, ${day} de ${meses[m - 1]} de ${y}`;
 }
 
+/** Cliente do banco com chave publicável (leitura pública do cache). */
+async function clientePublico() {
+  const { createClient } = await import("@supabase/supabase-js");
+  const url = process.env["SUPABASE_URL"];
+  const key = process.env["SUPABASE_PUBLISHABLE_KEY"];
+  if (!url || !key) return null;
+  return createClient(url, key, {
+    auth: { persistSession: false, autoRefreshToken: false },
+    global: {
+      fetch: (input: RequestInfo | URL, init?: RequestInit) => {
+        const h = new Headers(init?.headers);
+        if (key.startsWith("sb_") && h.get("Authorization") === `Bearer ${key}`) h.delete("Authorization");
+        h.set("apikey", key);
+        return fetch(input, { ...init, headers: h });
+      },
+    },
+  });
+}
+
+type CacheLeituras = {
+  primeiraLeitura?: LeituraLiturgica[];
+  salmo?: LeituraLiturgica[];
+  segundaLeitura?: LeituraLiturgica[];
+  evangelho?: LeituraLiturgica[];
+};
+
+async function lerCache(iso: string): Promise<{ celebracao: string; leituras: CacheLeituras; verificado_em: string } | null> {
+  const sb = await clientePublico();
+  if (!sb) return null;
+  const { data, error } = await sb
+    .from("liturgia_dia")
+    .select("celebracao, leituras, verificado_em")
+    .eq("iso", iso)
+    .maybeSingle();
+  if (error || !data) return null;
+  return data as { celebracao: string; leituras: CacheLeituras; verificado_em: string };
+}
+
+async function gravarCache(iso: string, lit: LiturgiaDoDia): Promise<void> {
+  try {
+    const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+    await supabaseAdmin.from("liturgia_dia").upsert(
+      {
+        iso,
+        celebracao: lit.celebracao,
+        tempo: lit.tempo,
+        cor: lit.cor,
+        ano_liturgico: lit.anoLiturgico,
+        leituras: {
+          primeiraLeitura: lit.primeiraLeitura,
+          salmo: lit.salmo,
+          segundaLeitura: lit.segundaLeitura,
+          evangelho: lit.evangelho,
+        },
+        fonte: "cnbb",
+        verificado_em: new Date().toISOString(),
+      },
+      { onConflict: "iso" },
+    );
+  } catch {
+    // Cache é otimização: falha de gravação nunca quebra a página.
+  }
+}
+
 /**
  * Liturgia do dia: busca as leituras oficiais (1ª leitura, salmo responsorial,
- * 2ª leitura e Evangelho) na fonte litúrgica brasileira e complementa com o
- * cálculo local do tempo litúrgico, cor e ciclo A/B/C. Se a fonte externa
- * falhar, devolve o cálculo local — nunca conteúdo fixo desatualizado.
+ * 2ª leitura e Evangelho) na fonte litúrgica brasileira, guarda-as no banco e
+ * complementa com o cálculo local do tempo litúrgico, cor e ciclo A/B/C.
+ *
+ * Ordem: fonte oficial → cache do portal (leituras já verificadas) → cálculo
+ * local sem leituras. Nunca inventa nem repete conteúdo de outro dia.
  */
 export const getLiturgiaDoDia = createServerFn({ method: "GET" })
   .inputValidator((input: { iso?: string } | undefined) => ({
@@ -82,6 +150,21 @@ export const getLiturgiaDoDia = createServerFn({ method: "GET" })
       fonte: "local",
     };
 
+    const doCache = async (): Promise<LiturgiaDoDia> => {
+      const c = await lerCache(iso);
+      if (!c || !c.leituras?.evangelho?.length) return vazio;
+      return {
+        ...vazio,
+        celebracao: c.celebracao || base.celebracao,
+        primeiraLeitura: c.leituras.primeiraLeitura ?? [],
+        salmo: c.leituras.salmo ?? [],
+        segundaLeitura: c.leituras.segundaLeitura ?? [],
+        evangelho: c.leituras.evangelho ?? [],
+        fonte: "cnbb",
+        verificadoEm: c.verificado_em,
+      };
+    };
+
     try {
       const ctrl = new AbortController();
       const timer = setTimeout(() => ctrl.abort(), 8000);
@@ -90,13 +173,13 @@ export const getLiturgiaDoDia = createServerFn({ method: "GET" })
         headers: { accept: "application/json" },
       });
       clearTimeout(timer);
-      if (!res.ok) return vazio;
+      if (!res.ok) return await doCache();
 
       const json = (await res.json()) as ApiResp;
       const evangelho = mapear(json.leituras?.evangelho);
-      if (evangelho.length === 0) return vazio;
+      if (evangelho.length === 0) return await doCache();
 
-      return {
+      const resultado: LiturgiaDoDia = {
         ...vazio,
         celebracao: json.liturgia?.trim() || base.celebracao,
         primeiraLeitura: mapear(json.leituras?.primeiraLeitura),
@@ -104,8 +187,12 @@ export const getLiturgiaDoDia = createServerFn({ method: "GET" })
         segundaLeitura: mapear(json.leituras?.segundaLeitura),
         evangelho,
         fonte: "cnbb",
+        verificadoEm: new Date().toISOString(),
       };
+      await gravarCache(iso, resultado);
+      return resultado;
     } catch {
-      return vazio;
+      return await doCache();
     }
   });
+

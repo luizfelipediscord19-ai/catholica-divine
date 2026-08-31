@@ -143,18 +143,12 @@ function primeiraFrase(texto: string, max = 220): string {
   return (fim > 80 ? corte.slice(0, fim + 1) : `${corte.trimEnd()}…`);
 }
 
-/** A celebração é uma memória de santo (e não apenas o dia da semana/domingo)? */
-function ehMemoriaDeSanto(celebracao: string): boolean {
-  return !/(domingo|feira|sábado|sabado|semana)/i.test(celebracao);
-}
-
 function Home() {
   const { data: lit } = useSuspenseQuery(liturgiaQueryOptions());
   const santo = santoDoDia(dataDoIso(lit.iso));
 
   const salmo = lit.salmo[0];
   const evangelho = lit.evangelho[0];
-  const memoriaOficial = ehMemoriaDeSanto(lit.celebracao) ? lit.celebracao : null;
 
   const DAILY_ITEMS: {
     kicker: string;
@@ -163,33 +157,34 @@ function Home() {
     linkTo?: "/liturgia-diaria" | "/santos";
   }[] = [
     {
-      kicker: "Versículo do dia",
+      kicker: "Versículo para meditar",
       text: `“${salmo?.refrao ?? primeiraFrase(salmo?.texto ?? lit.celebracao)}”`,
-      ref: salmo?.referencia ? `Salmo responsorial — ${salmo.referencia}` : lit.tempoNome,
+      ref: salmo?.referencia
+        ? `Salmo responsorial da Missa — ${salmo.referencia}`
+        : `Seleção do portal · ${lit.tempoNome}`,
       linkTo: "/liturgia-diaria",
     },
-    memoriaOficial
+    santo.celebradoHoje
       ? {
           kicker: "Santo do dia",
-          text: memoriaOficial,
-          ref: `Celebração de hoje · ${lit.tempoNome}`,
+          text: `${santo.nome}${santo.resumo ? ` — ${santo.resumo}` : ""}`,
+          ref: `${santo.grauNome ?? "Memória"}${santo.brasil ? " (Brasil)" : ""} · ${santo.data}`,
           linkTo: "/santos" as const,
         }
       : {
-          kicker: "Santo do dia",
-          text: `${santo.nome} — ${santo.resumo}`,
-          ref: santo.celebradoHoje
-            ? `Memória — ${santo.data}`
-            : `Santo lembrado hoje · Memória em ${santo.data}`,
+          kicker: "Hoje é féria",
+          text: `Sem memória de santo no calendário litúrgico. Próxima celebração: ${santo.nome}.`,
+          ref: `${lit.feria} · memória em ${santo.data}`,
           linkTo: "/santos" as const,
         },
 
     {
-      kicker: "Evangelho do dia",
+      kicker: "Evangelho da Missa",
       text: evangelho ? `“${primeiraFrase(evangelho.texto)}”` : lit.celebracao,
       ref: evangelho?.referencia ? `${evangelho.referencia} · Ano ${lit.anoLiturgico}` : `Ano ${lit.anoLiturgico}`,
       linkTo: "/liturgia-diaria",
     },
+
   ];
 
 

@@ -546,6 +546,45 @@ export type Database = {
           },
         ]
       }
+      liturgia_dia: {
+        Row: {
+          ano_liturgico: string | null
+          celebracao: string
+          cor: string | null
+          created_at: string
+          fonte: string
+          iso: string
+          leituras: Json
+          tempo: string | null
+          updated_at: string
+          verificado_em: string
+        }
+        Insert: {
+          ano_liturgico?: string | null
+          celebracao: string
+          cor?: string | null
+          created_at?: string
+          fonte?: string
+          iso: string
+          leituras?: Json
+          tempo?: string | null
+          updated_at?: string
+          verificado_em?: string
+        }
+        Update: {
+          ano_liturgico?: string | null
+          celebracao?: string
+          cor?: string | null
+          created_at?: string
+          fonte?: string
+          iso?: string
+          leituras?: Json
+          tempo?: string | null
+          updated_at?: string
+          verificado_em?: string
+        }
+        Relationships: []
+      }
       notas: {
         Row: {
           capitulo: number
