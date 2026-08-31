@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { CalendarDays, BookOpen, ArrowLeft, Check, RotateCcw } from "lucide-react";
 import { leituraDoDia, proximosDias, PLANO, dayOfYear } from "../lib/data/biblia/leituras";
 import { keywordsPara } from "@/lib/seo/palavras-chave";
+import { FaixaAutoridade } from "@/components/SeloConfiabilidade";
+
 
 export const Route = createFileRoute("/biblia/leituras")({
   head: () => ({
