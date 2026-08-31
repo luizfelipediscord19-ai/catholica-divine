@@ -2,6 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { ArrowLeft, ArrowRight, BookOpen, Check } from "lucide-react";
 import { acharLicao, ROTULO_BLOCO } from "@/lib/data/trilhas";
+import { FaixaAutoridade } from "@/components/SeloConfiabilidade";
+
 import {
   alternarConclusao,
   chaveLicao,
@@ -101,6 +103,13 @@ function LicaoPagina() {
       </p>
       <h1 className="mt-3 font-display text-4xl text-paper">{licao.titulo}</h1>
       <p className="mt-4 text-lg text-paper/75 leading-relaxed">{licao.resumo}</p>
+
+      <FaixaAutoridade
+        niveis={["oficial", "padres", "teologia"]}
+        nota="Cada bloco desta lição indica sua fonte: Escritura, Catecismo, Padres da Igreja, Magistério ou explicação teológica."
+        className="mt-6 max-w-3xl"
+      />
+
 
       <div className="mt-12 space-y-12">
         {licao.blocos.map((bloco, i) => (

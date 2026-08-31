@@ -141,7 +141,10 @@ function SantoPage() {
         title={v.nome}
         intro={v.resumo ?? ""}
         image={v.imagem}
+        autoridade={["tradicao", "historia", "oficial"]}
+        notaAutoridade="Datas de canonização e culto litúrgico seguem os atos da Santa Sé; episódios da vida podem pertencer à tradição hagiográfica, nem sempre documentada por fontes históricas."
       />
+
 
       <Section>
         <div className="grid md:grid-cols-[1fr_280px] gap-12">

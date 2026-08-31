@@ -1,4 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { FaixaAutoridade } from "@/components/SeloConfiabilidade";
+
 import {
   PARTES,
   SECOES,
@@ -57,6 +59,13 @@ function Page() {
         {parte.titulo}
       </h1>
       <p className="mt-6 text-lg text-muted-foreground leading-relaxed">{parte.resumo}</p>
+
+      <FaixaAutoridade
+        niveis={["oficial"]}
+        nota="Índice e sinopses baseados no Catecismo da Igreja Católica (edição típica latina, 1997). Os textos integrais dos parágrafos estão no site da Santa Sé."
+        className="mt-6 max-w-3xl"
+      />
+
 
       <div className="mt-12 space-y-4">
         {secoes.map((s: SecaoCIC) => {

@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { CalendarDays, BookOpen, ArrowLeft, Check, RotateCcw } from "lucide-react";
 import { leituraDoDia, proximosDias, PLANO, dayOfYear } from "../lib/data/biblia/leituras";
 import { keywordsPara } from "@/lib/seo/palavras-chave";
+import { FaixaAutoridade } from "@/components/SeloConfiabilidade";
+
 
 export const Route = createFileRoute("/biblia/leituras")({
   head: () => ({
@@ -88,6 +90,13 @@ function Page() {
         Uma passagem da Sagrada Escritura para cada dia, ligada diretamente ao texto carregado em Almeida.
         Marque como concluído para acompanhar seu progresso.
       </p>
+
+      <FaixaAutoridade
+        niveis={["oficial", "devocao"]}
+        nota="Seleção devocional do portal para leitura contínua — não são as leituras da Missa. Para o Lecionário do dia, veja a Liturgia Diária."
+        className="mt-6 max-w-3xl"
+      />
+
 
       {/* Progresso */}
       <div className="mt-8 surface-card p-5">

@@ -192,7 +192,7 @@ function Home() {
   return (
     <div className="overflow-x-hidden">
       {/* Hero */}
-      <section className="relative flex min-h-[34rem] items-center overflow-hidden py-section sm:h-[calc(100svh-4.5rem)] sm:max-h-[44rem]">
+      <section className="relative flex min-h-[26rem] items-center overflow-hidden py-block sm:py-section sm:h-[calc(100svh-4.5rem)] sm:max-h-[44rem]">
         <div className="absolute inset-0" aria-hidden>
           <ImagemOtimizada
             src={hero}
@@ -206,7 +206,10 @@ function Home() {
         </div>
         {/* Noir editorial: escurece da esquerda para a direita, preservando a luz da nave */}
         <div className="absolute inset-0 bg-linear-to-r from-background via-background/85 to-background/10" />
+        {/* No celular a arte fica atrás do texto: gradiente vertical garante o contraste */}
+        <div className="absolute inset-0 bg-linear-to-b from-background/85 via-background/70 to-background/90 sm:hidden" />
         <div className="absolute inset-0 bg-background/45" />
+
         <div className="absolute inset-x-0 bottom-0 h-32 bg-linear-to-t from-background to-transparent" />
 
         <div className="shell relative w-full">
@@ -215,11 +218,12 @@ function Home() {
               <span className="hidden h-px w-10 shrink-0 bg-gold/50 sm:block" />
               <span className="min-w-0 tracking-[0.32em]">Una · Sancta · Catholica · Apostolica</span>
             </p>
-            <h1 className="mb-6 font-display text-[length:var(--step-5)] font-bold leading-[1.08] tracking-tight text-balance text-foreground">
+            <h1 className="mb-4 font-display text-[length:var(--step-4)] font-bold leading-[1.08] tracking-tight text-balance text-foreground sm:mb-6 sm:text-[length:var(--step-5)]">
               A biblioteca{" "}
               <span className="block font-normal italic text-gold-accent">da Fé</span>
             </h1>
-            <p className="measure mb-10 text-[length:var(--step-1)] font-light leading-relaxed text-foreground/70">
+            <p className="measure mb-7 text-[length:var(--step-0)] font-light leading-relaxed text-foreground/70 sm:mb-10 sm:text-[length:var(--step-1)]">
+
               Escritura, Catecismo, Padres da Igreja, santos e devoções tradicionais —
               reunidos em uma única referência de estudo, fiel ao Magistério desde
               Pedro até hoje.
@@ -312,13 +316,20 @@ function Home() {
               const inner = (
                 <div className="group h-full flex flex-col py-[var(--space-sm)] sm:p-card transition-premium hover:bg-gold/[0.03]">
                   <p className="label-btn text-gold/80 mb-3 group-hover:text-gold transition-colors">{d.kicker}</p>
-                  <p className="font-display italic text-[length:var(--step-1)] text-foreground/90 leading-relaxed mb-4 flex-1">
+                  {/* Altura e corte uniformes: nenhum cartão parte a frase em altura diferente */}
+                  <p className="font-display italic text-[length:var(--step-1)] text-foreground/90 leading-relaxed mb-4 flex-1 line-clamp-5 sm:min-h-[7.5rem]">
                     {d.text}
                   </p>
-                  <p className="kicker text-muted-foreground group-hover:text-gold/80 transition-colors">
+                  <p className="kicker text-muted-foreground group-hover:text-gold/80 transition-colors line-clamp-2">
                     {d.ref}
                   </p>
+                  {d.linkTo ? (
+                    <span className="mt-3 inline-flex items-center gap-1 text-xs text-gold/70 transition-colors group-hover:text-gold">
+                      Ler mais <span aria-hidden="true">→</span>
+                    </span>
+                  ) : null}
                 </div>
+
               );
               return (
                 <ScrollReveal 
