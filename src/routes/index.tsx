@@ -192,7 +192,7 @@ function Home() {
   return (
     <div className="overflow-x-hidden">
       {/* Hero */}
-      <section className="relative flex min-h-[34rem] items-center overflow-hidden py-section sm:h-[calc(100svh-4.5rem)] sm:max-h-[44rem]">
+      <section className="relative flex min-h-[26rem] items-center overflow-hidden py-block sm:py-section sm:h-[calc(100svh-4.5rem)] sm:max-h-[44rem]">
         <div className="absolute inset-0" aria-hidden>
           <ImagemOtimizada
             src={hero}
