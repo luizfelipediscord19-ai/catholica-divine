@@ -99,15 +99,25 @@ function Page() {
         <span className="inline-flex items-center gap-2 px-3 py-1.5 border border-gold/25 text-muted-foreground">
           Ano {lit.anoLiturgico} · Ciclo ferial {lit.cicloFerial}
         </span>
+        {lit.grauNome && lit.grauNome !== "Féria" ? (
+          <span className="inline-flex items-center gap-2 px-3 py-1.5 border border-gold/25 text-muted-foreground">
+            {lit.grauNome}
+          </span>
+        ) : null}
       </div>
 
       {lit.fonte === "local" ? (
         <p className="mt-6 flex items-start gap-2 text-xs text-muted-foreground surface-card p-4">
           <RefreshCw className="size-3.5 text-gold/70 mt-0.5 shrink-0" aria-hidden="true" />
           As leituras completas não puderam ser obtidas agora. O tempo litúrgico, a cor e o ciclo
-          acima foram calculados localmente. Tente novamente em instantes.
+          acima foram calculados localmente pelo Calendário Romano Geral. Tente novamente em instantes.
         </p>
-      ) : null}
+      ) : (
+        <p className="mt-6 text-xs text-muted-foreground">
+          Leituras conforme o Lecionário romano (edição brasileira){lit.verificadoEm ? ` · verificadas em ${new Date(lit.verificadoEm).toLocaleDateString("pt-BR")}` : ""}.
+        </p>
+      )}
+
 
       <div className="mt-12 space-y-10">
         <Bloco kicker="Primeira leitura" itens={lit.primeiraLeitura} />
