@@ -283,7 +283,16 @@ export function diaLiturgico(date: Date = new Date()): DiaLiturgico {
     }
   }
 
+  // Celebrações móveis do Senhor têm precedência sobre qualquer data fixa.
+  if (movel) {
+    celebracao = movel.nome;
+    grau = movel.grau;
+    cor = movel.cor;
+    substitui = false;
+  }
+
   const facultativas = fixas.filter((c) => c !== principal || !substitui);
+
 
   return {
     iso: toIso(hoje),
