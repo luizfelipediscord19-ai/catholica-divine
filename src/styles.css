@@ -252,6 +252,26 @@
   &:active {
     transform: translateY(-1px) scale(0.995);
   }
+
+  /* Arte sacra dentro do card: zoom mínimo e leve ganho de luz, sem agito */
+  & .art-plate {
+    transition:
+      transform var(--dur-lg) var(--ease-premium),
+      filter var(--dur-lg) var(--ease-premium);
+  }
+
+  &:hover .art-plate {
+    transform: scale(1.035);
+    filter: saturate(1) contrast(1.08) brightness(1.03);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &:hover,
+    &:hover .art-plate {
+      transform: none;
+    }
+  }
+
 }
 
 @utility card-premium-hover {
