@@ -8,6 +8,7 @@ import { useAuth } from "@/hooks/use-auth";
 import { supabase } from "@/integrations/supabase/client";
 import { baseParaEmails } from "@/lib/auth/site-url";
 import { traduzirErroAuth } from "@/lib/auth/traduzir-erro";
+import { criarContaFn } from "@/lib/portal.functions";
 
 export const Route = createFileRoute("/auth")({
   validateSearch: (busca: Record<string, unknown>): { modo?: "entrar" | "criar" | "recuperar" } => {
