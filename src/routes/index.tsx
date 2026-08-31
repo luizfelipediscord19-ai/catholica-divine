@@ -218,11 +218,12 @@ function Home() {
               <span className="hidden h-px w-10 shrink-0 bg-gold/50 sm:block" />
               <span className="min-w-0 tracking-[0.32em]">Una · Sancta · Catholica · Apostolica</span>
             </p>
-            <h1 className="mb-6 font-display text-[length:var(--step-5)] font-bold leading-[1.08] tracking-tight text-balance text-foreground">
+            <h1 className="mb-4 font-display text-[length:var(--step-4)] font-bold leading-[1.08] tracking-tight text-balance text-foreground sm:mb-6 sm:text-[length:var(--step-5)]">
               A biblioteca{" "}
               <span className="block font-normal italic text-gold-accent">da Fé</span>
             </h1>
-            <p className="measure mb-10 text-[length:var(--step-1)] font-light leading-relaxed text-foreground/70">
+            <p className="measure mb-7 text-[length:var(--step-0)] font-light leading-relaxed text-foreground/70 sm:mb-10 sm:text-[length:var(--step-1)]">
+
               Escritura, Catecismo, Padres da Igreja, santos e devoções tradicionais —
               reunidos em uma única referência de estudo, fiel ao Magistério desde
               Pedro até hoje.
