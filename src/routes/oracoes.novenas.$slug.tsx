@@ -35,7 +35,14 @@ function Page() {
   const { n } = Route.useLoaderData() as { n: Novena };
   return (
     <div>
-      <PageHero eyebrow="Novena" title={n.titulo} intro={n.ocasiao} />
+      <PageHero
+        eyebrow="Novena"
+        title={n.titulo}
+        intro={n.ocasiao}
+        autoridade={["devocao", "tradicao"]}
+        notaAutoridade="Novenas são práticas piedosas aprovadas pelo uso na Igreja; a adesão é livre e não constitui obrigação de fé."
+      />
+
       <Section kicker="Estrutura" title="Como rezar esta novena">
         <div className="surface-card p-8 mb-8">
           <p className="kicker mb-2">Oração inicial — todos os dias</p>
