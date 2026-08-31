@@ -206,7 +206,10 @@ function Home() {
         </div>
         {/* Noir editorial: escurece da esquerda para a direita, preservando a luz da nave */}
         <div className="absolute inset-0 bg-linear-to-r from-background via-background/85 to-background/10" />
+        {/* No celular a arte fica atrás do texto: gradiente vertical garante o contraste */}
+        <div className="absolute inset-0 bg-linear-to-b from-background/85 via-background/70 to-background/90 sm:hidden" />
         <div className="absolute inset-0 bg-background/45" />
+
         <div className="absolute inset-x-0 bottom-0 h-32 bg-linear-to-t from-background to-transparent" />
 
         <div className="shell relative w-full">
