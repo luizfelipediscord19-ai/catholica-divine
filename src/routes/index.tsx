@@ -316,13 +316,20 @@ function Home() {
               const inner = (
                 <div className="group h-full flex flex-col py-[var(--space-sm)] sm:p-card transition-premium hover:bg-gold/[0.03]">
                   <p className="label-btn text-gold/80 mb-3 group-hover:text-gold transition-colors">{d.kicker}</p>
-                  <p className="font-display italic text-[length:var(--step-1)] text-foreground/90 leading-relaxed mb-4 flex-1">
+                  {/* Altura e corte uniformes: nenhum cartão parte a frase em altura diferente */}
+                  <p className="font-display italic text-[length:var(--step-1)] text-foreground/90 leading-relaxed mb-4 flex-1 line-clamp-5 sm:min-h-[7.5rem]">
                     {d.text}
                   </p>
-                  <p className="kicker text-muted-foreground group-hover:text-gold/80 transition-colors">
+                  <p className="kicker text-muted-foreground group-hover:text-gold/80 transition-colors line-clamp-2">
                     {d.ref}
                   </p>
+                  {d.linkTo ? (
+                    <span className="mt-3 inline-flex items-center gap-1 text-xs text-gold/70 transition-colors group-hover:text-gold">
+                      Ler mais <span aria-hidden="true">→</span>
+                    </span>
+                  ) : null}
                 </div>
+
               );
               return (
                 <ScrollReveal 
