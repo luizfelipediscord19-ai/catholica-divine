@@ -58,6 +58,13 @@ function Page() {
       </h1>
       <p className="mt-6 text-lg text-muted-foreground leading-relaxed">{parte.resumo}</p>
 
+      <FaixaAutoridade
+        niveis={["oficial"]}
+        nota="Índice e sinopses baseados no Catecismo da Igreja Católica (edição típica latina, 1997). Os textos integrais dos parágrafos estão no site da Santa Sé."
+        className="mt-6 max-w-3xl"
+      />
+
+
       <div className="mt-12 space-y-4">
         {secoes.map((s: SecaoCIC) => {
           const capitulos = capitulosDaSecao(s.slug);
