@@ -73,21 +73,17 @@ function AuthPage() {
           "Se existir uma conta com este e-mail, enviamos um link para criar uma nova senha.",
         );
       } else if (modo === "criar") {
-        const { data, error } = await supabase.auth.signUp({
+        const resultado = await criarContaFn({
+          data: { email: email.trim(), senha },
+        });
+        if (!resultado.ok) throw new Error(resultado.motivo);
+        const { error } = await supabase.auth.signInWithPassword({
           email: email.trim(),
           password: senha,
-          options: { emailRedirectTo: `${baseParaEmails()}/email-confirmado` },
         });
         if (error) throw error;
-        if (data.session) {
-          toast.success("Conta criada. Bem-vindo!");
-          void navigate({ to: "/forum" });
-        } else {
-          setAviso(
-            "Conta criada. Confirme seu e-mail pelo link que enviamos (verifique também o spam) e depois entre.",
-          );
-          setModo("entrar");
-        }
+        toast.success("Conta criada. Bem-vindo!");
+        void navigate({ to: "/forum" });
       } else {
         const { error } = await supabase.auth.signInWithPassword({
           email: email.trim(),
