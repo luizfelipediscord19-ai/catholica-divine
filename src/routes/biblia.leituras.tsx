@@ -91,6 +91,13 @@ function Page() {
         Marque como concluído para acompanhar seu progresso.
       </p>
 
+      <FaixaAutoridade
+        niveis={["oficial", "devocao"]}
+        nota="Seleção devocional do portal para leitura contínua — não são as leituras da Missa. Para o Lecionário do dia, veja a Liturgia Diária."
+        className="mt-6 max-w-3xl"
+      />
+
+
       {/* Progresso */}
       <div className="mt-8 surface-card p-5">
         <div className="flex items-center justify-between gap-4 mb-3">
