@@ -4,6 +4,7 @@
 
 import { PLANO, dayOfYear, type Leitura } from "./biblia/leituras";
 import { SANTOS } from "./santos";
+import { celebracoesFixas, GRAU_NOME, type GrauCelebracao } from "../liturgia/santoral";
 
 export type ItemRef = {
   livro: string;
@@ -15,7 +16,17 @@ export type ItemRef = {
 
 export type VersiculoDia = ItemRef & { texto: string };
 export type EvangelhoDia = ItemRef & { texto: string; titulo: string };
-export type SantoDia = { nome: string; data: string; resumo: string; celebradoHoje?: boolean };
+export type SantoDia = {
+  nome: string;
+  data: string;
+  resumo: string;
+  celebradoHoje?: boolean;
+  grau?: GrauCelebracao | "feria";
+  grauNome?: string;
+  slug?: string;
+  brasil?: boolean;
+  outras?: string[];
+};
 
 const VERSICULOS: VersiculoDia[] = [
   { livro: "joao", nome: "João", capitulo: 14, vi: 6, vf: 6, texto: "Eu sou o caminho, a verdade e a vida; ninguém vem ao Pai senão por mim." },
@@ -52,41 +63,6 @@ const EVANGELHOS: EvangelhoDia[] = [
   { livro: "joao", nome: "João", capitulo: 11, vi: 1, vf: 44, titulo: "A Ressurreição de Lázaro", texto: "‘Eu sou a ressurreição e a vida. Quem crê em mim, ainda que esteja morto, viverá.’" },
 ];
 
-// Lista compacta de santos do dia (rotação cíclica). Cada item leva o nome,
-// a memória litúrgica e um resumo de uma linha.
-const SANTOS_DIA: SantoDia[] = [
-  { nome: "Santa Teresa de Ávila", data: "15 de outubro", resumo: "Doutora da Igreja, reformadora do Carmelo, mestra da oração contemplativa." },
-  { nome: "São Francisco de Assis", data: "4 de outubro", resumo: "Pobrezinho de Assis, fundador dos Franciscanos, alter Christus." },
-  { nome: "Santo Agostinho", data: "28 de agosto", resumo: "Bispo de Hipona, doutor da graça, autor das Confissões." },
-  { nome: "São Tomás de Aquino", data: "28 de janeiro", resumo: "Doutor Angélico, autor da Suma Teológica, mestre da escolástica." },
-  { nome: "Santa Teresinha do Menino Jesus", data: "1º de outubro", resumo: "Doutora da Igreja, mestra do ‘pequeno caminho’ de confiança." },
-  { nome: "São João Paulo II", data: "22 de outubro", resumo: "Papa polonês, ‘o Magno’, peregrino apostólico do século XX." },
-  { nome: "Santa Faustina Kowalska", data: "5 de outubro", resumo: "Apóstola da Divina Misericórdia, mística polonesa." },
-  { nome: "Santo Antônio de Pádua", data: "13 de junho", resumo: "Doutor Evangélico, franciscano, padroeiro dos pobres e dos objetos perdidos." },
-  { nome: "São Pio de Pietrelcina", data: "23 de setembro", resumo: "Capuchinho, estigmatizado, confessor e místico do séc. XX." },
-  { nome: "Santa Catarina de Sena", data: "29 de abril", resumo: "Doutora da Igreja, mística dominicana, conselheira de papas." },
-  { nome: "Santo Inácio de Loyola", data: "31 de julho", resumo: "Fundador da Companhia de Jesus, autor dos Exercícios Espirituais." },
-  { nome: "Santa Mônica", data: "27 de agosto", resumo: "Mãe de Santo Agostinho, modelo de oração perseverante." },
-  { nome: "São Jerônimo", data: "30 de setembro", resumo: "Tradutor da Vulgata, doutor máximo nas Escrituras." },
-  { nome: "São Bento de Núrsia", data: "11 de julho", resumo: "Patriarca dos monges do Ocidente, padroeiro da Europa." },
-  { nome: "Santa Maria Madalena", data: "22 de julho", resumo: "Primeira testemunha da Ressurreição, ‘apóstola dos apóstolos’." },
-  { nome: "São Pedro", data: "29 de junho", resumo: "Príncipe dos Apóstolos, primeiro Papa, mártir em Roma." },
-  { nome: "São Paulo", data: "29 de junho", resumo: "Apóstolo dos gentios, autor de treze epístolas." },
-  { nome: "São José", data: "19 de março", resumo: "Esposo de Maria, pai virginal de Jesus, padroeiro da Igreja universal." },
-  { nome: "São João Batista", data: "24 de junho", resumo: "Precursor do Messias, batizou Cristo no Jordão." },
-  { nome: "São Lourenço", data: "10 de agosto", resumo: "Diácono romano, mártir queimado na grelha." },
-  { nome: "Santa Cecília", data: "22 de novembro", resumo: "Virgem e mártir romana, padroeira dos músicos." },
-  { nome: "Santa Luzia", data: "13 de dezembro", resumo: "Virgem e mártir de Siracusa, padroeira dos olhos." },
-  { nome: "São Maximiliano Kolbe", data: "14 de agosto", resumo: "Franciscano polonês, mártir da caridade em Auschwitz." },
-  { nome: "Santa Edith Stein", data: "9 de agosto", resumo: "Carmelita, filósofa, mártir em Auschwitz, copadroeira da Europa." },
-  { nome: "Madre Teresa de Calcutá", data: "5 de setembro", resumo: "Fundadora das Missionárias da Caridade, apóstola dos mais pobres." },
-  { nome: "São Carlos Borromeu", data: "4 de novembro", resumo: "Cardeal arcebispo de Milão, reformador tridentino." },
-  { nome: "São Vicente de Paulo", data: "27 de setembro", resumo: "Apóstolo da caridade, fundador dos Lazaristas." },
-  { nome: "Santa Joana d’Arc", data: "30 de maio", resumo: "Virgem guerreira, libertadora da França, mártir aos 19 anos." },
-  { nome: "São Domingos de Gusmão", data: "8 de agosto", resumo: "Fundador da Ordem dos Pregadores, apóstolo do Rosário." },
-  { nome: "Santo Estêvão", data: "26 de dezembro", resumo: "Protomártir cristão, primeiro dos sete diáconos." },
-  { nome: "São João Crisóstomo", data: "13 de setembro", resumo: "Patriarca de Constantinopla, ‘boca de ouro’, mestre da pregação." },
-];
 
 export function versoDoDia(d: Date = new Date()): VersiculoDia {
   return VERSICULOS[(dayOfYear(d) - 1 + VERSICULOS.length * 1000) % VERSICULOS.length];
@@ -100,25 +76,68 @@ const MESES = [
 ];
 
 /**
- * Santo do dia: prioriza o santo cuja memória litúrgica cai na data de hoje
- * (campo `data` em dd/mm da base de santos). Se nenhum santo do acervo
- * celebra hoje, cai na rotação cíclica.
+ * Santo do dia — baseado no santoral litúrgico (Calendário Romano Geral e
+ * calendário próprio do Brasil). Nunca inventa uma celebração: quando o dia
+ * é féria, devolve `celebradoHoje: false` e a UI deve dizê-lo com clareza.
  */
 export function santoDoDia(d: Date = new Date()): SantoDia {
   const dd = String(d.getUTCDate()).padStart(2, "0");
   const mm = String(d.getUTCMonth() + 1).padStart(2, "0");
-  const doDia = SANTOS.filter((s) => s.data === `${dd}/${mm}`);
-  if (doDia.length > 0) {
-    const s = doDia[dayOfYear(d) % doDia.length];
+  const porExtenso = `${Number(dd)} de ${MESES[d.getUTCMonth()]}`;
+
+  const fixas = celebracoesFixas(d);
+  if (fixas.length > 0) {
+    const c = fixas[0];
+    const ficha = c.slug ? SANTOS.find((s) => s.slug === c.slug) : undefined;
     return {
-      nome: s.nome,
-      data: `${Number(dd)} de ${MESES[d.getUTCMonth()]}`,
-      resumo: s.resumo,
+      nome: c.nome,
+      data: porExtenso,
+      resumo: ficha?.resumo ?? c.nota ?? `${GRAU_NOME[c.grau]} de hoje no calendário litúrgico.`,
       celebradoHoje: true,
+      grau: c.grau,
+      grauNome: GRAU_NOME[c.grau],
+      slug: c.slug,
+      brasil: c.brasil,
+      outras: fixas.slice(1).map((o) => o.nome),
     };
   }
-  return SANTOS_DIA[(dayOfYear(d) - 1 + SANTOS_DIA.length * 1000) % SANTOS_DIA.length];
+
+  // Féria: nenhum santo é celebrado hoje. Sugere-se um santo do acervo cuja
+  // memória cai nos próximos dias, sempre rotulado como "próxima memória".
+  const proximo = proximaMemoria(d);
+  return {
+    nome: proximo?.nome ?? "Féria",
+    data: proximo?.data ?? porExtenso,
+    resumo:
+      proximo?.resumo ??
+      "Hoje não há memória de santo no calendário litúrgico: é dia de féria.",
+    celebradoHoje: false,
+    grau: "feria",
+    grauNome: "Féria",
+    slug: proximo?.slug,
+    outras: [],
+  };
 }
+
+/** Próxima celebração fixa a partir de amanhã (até 14 dias à frente). */
+function proximaMemoria(
+  d: Date,
+): { nome: string; data: string; resumo: string; slug?: string } | null {
+  for (let i = 1; i <= 14; i++) {
+    const alvo = new Date(d.getTime() + i * 86400000);
+    const c = celebracoesFixas(alvo)[0];
+    if (!c) continue;
+    const ficha = c.slug ? SANTOS.find((s) => s.slug === c.slug) : undefined;
+    return {
+      nome: c.nome,
+      data: `${alvo.getUTCDate()} de ${MESES[alvo.getUTCMonth()]}`,
+      resumo: ficha?.resumo ?? c.nota ?? GRAU_NOME[c.grau],
+      slug: c.slug,
+    };
+  }
+  return null;
+}
+
 
 export function leituraComoRef(l: Leitura): ItemRef {
   return { livro: l.livro, nome: l.nome, capitulo: l.capitulo, vi: l.vi, vf: l.vf };

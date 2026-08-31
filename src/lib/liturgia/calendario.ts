@@ -6,6 +6,15 @@
  * gregoriano da Páscoa (algoritmo de Meeus/Jones/Butcher).
  */
 
+import {
+  celebracoesFixas,
+  GRAU_NOME,
+  GRAU_PESO,
+  type CelebracaoFixa,
+  type GrauCelebracao,
+} from "./santoral";
+
+
 export type TempoLiturgico =
   | "advento"
   | "natal"
@@ -31,6 +40,15 @@ export type DiaLiturgico = {
   semana: number;
   /** Nome calculado da celebração — usado como fallback da API. */
   celebracao: string;
+  /** Nome do dia da semana litúrgico, sem o santoral (ex.: "3ª feira da 22ª Semana do Tempo Comum"). */
+  feria: string;
+  /** Grau da celebração do dia. */
+  grau: GrauCelebracao | "feria";
+  grauNome: string;
+  /** Todas as celebrações de data fixa que caem hoje. */
+  santoral: CelebracaoFixa[];
+  /** Celebrações do dia que não substituem o dia litúrgico (facultativas/comemorações). */
+  memoriasFacultativas: CelebracaoFixa[];
   /** Datas-chave do ano litúrgico corrente. */
   pascoa: string;
   cinzas: string;
@@ -203,10 +221,69 @@ export function diaLiturgico(date: Date = new Date()): DiaLiturgico {
 
   const dow = hoje.getUTCDay();
   const nomeDia = DIAS[dow];
-  const celebracao =
+  const feria =
     dow === 0
-      ? `${ordinal(semana)} Domingo do ${TEMPO_NOME[tempo]}`
-      : `${nomeDia} da ${ordinal(semana)} Semana do ${TEMPO_NOME[tempo]}`;
+      ? `${semana}º Domingo do ${TEMPO_NOME[tempo]}`
+      : `${nomeDia} da ${semana}ª Semana do ${TEMPO_NOME[tempo]}`;
+
+  // ---- Celebrações móveis com nome próprio (têm precedência absoluta) -----
+  const iguais = (a: Date, b: Date) => a.getTime() === b.getTime();
+  const MOVEIS: { data: Date; nome: string; grau: GrauCelebracao; cor: CorLiturgica }[] = [
+    { data: fPascal.cinzas, nome: "Quarta-feira de Cinzas", grau: "festa", cor: "roxo" },
+    { data: fPascal.ramos, nome: "Domingo de Ramos e da Paixão do Senhor", grau: "solenidade", cor: "vermelho" },
+    { data: fPascal.ceia, nome: "Quinta-feira Santa — Ceia do Senhor", grau: "solenidade", cor: "branco" },
+    { data: fPascal.paixao, nome: "Sexta-feira Santa da Paixão do Senhor", grau: "solenidade", cor: "vermelho" },
+    { data: addDays(fPascal.pascoa, -1), nome: "Sábado Santo — Vigília Pascal", grau: "solenidade", cor: "branco" },
+    { data: fPascal.pascoa, nome: "Domingo da Ressurreição do Senhor (Páscoa)", grau: "solenidade", cor: "branco" },
+    { data: addDays(fPascal.pascoa, 7), nome: "2º Domingo da Páscoa — da Divina Misericórdia", grau: "solenidade", cor: "branco" },
+    { data: fPascal.ascensao, nome: "Ascensão do Senhor", grau: "solenidade", cor: "branco" },
+    { data: fPascal.pentecostes, nome: "Pentecostes", grau: "solenidade", cor: "vermelho" },
+    { data: fPascal.trindade, nome: "Santíssima Trindade", grau: "solenidade", cor: "branco" },
+    { data: fPascal.corpusChristi, nome: "Santíssimo Corpo e Sangue de Cristo (Corpus Christi)", grau: "solenidade", cor: "branco" },
+    { data: fPascal.sagradoCoracao, nome: "Sagrado Coração de Jesus", grau: "solenidade", cor: "branco" },
+    { data: fPascal.cristoRei, nome: "Nosso Senhor Jesus Cristo, Rei do Universo", grau: "solenidade", cor: "branco" },
+  ];
+  const movel = MOVEIS.find((m) => iguais(normalizar(m.data), hoje)) ?? null;
+
+  // ---- Santoral (celebrações de data fixa) e regras de precedência --------
+  const fixas = celebracoesFixas(hoje);
+  const principal = fixas[0] ?? null;
+
+  // Tempos "fortes" em que memórias não substituem o dia: Tríduo, Semana Santa,
+  // oitava da Páscoa, feriais do Advento a partir de 17/12 e oitava do Natal.
+  const semanaSanta = hoje >= addDays(fPascal.pascoa, -7) && hoje < fPascal.pascoa;
+  const oitavaPascal = hoje >= fPascal.pascoa && hoje <= addDays(fPascal.pascoa, 7);
+  const adventoTardio = tempo === "advento" && hoje >= d(inicioAno.getUTCFullYear(), 12, 17);
+  const oitavaNatal = tempo === "natal" && hoje <= d(inicioAno.getUTCFullYear() + 1, 1, 1);
+  const tempoForte = tempo === "triduo" || semanaSanta || oitavaPascal || adventoTardio || oitavaNatal;
+
+  let celebracao = feria;
+  let grau: GrauCelebracao | "feria" = "feria";
+  let substitui = false;
+
+
+  if (principal) {
+    const peso = GRAU_PESO[principal.grau];
+    if (tempoForte) {
+      // Só solenidades podem prevalecer; as demais tornam-se comemorações.
+      substitui = peso === 4;
+    } else if (dow === 0) {
+      // No domingo, apenas solenidades prevalecem sobre o domingo.
+      substitui = peso === 4;
+    } else if (tempo === "quaresma") {
+      // Na Quaresma, memórias viram comemorações; festas e solenidades prevalecem.
+      substitui = peso >= 3;
+    } else {
+      substitui = peso >= 2 || fixas.length > 0;
+    }
+    if (substitui) {
+      celebracao = principal.nome;
+      grau = principal.grau;
+      cor = principal.cor as CorLiturgica;
+    }
+  }
+
+  const facultativas = fixas.filter((c) => c !== principal || !substitui);
 
   return {
     iso: toIso(hoje),
@@ -218,12 +295,18 @@ export function diaLiturgico(date: Date = new Date()): DiaLiturgico {
     cicloFerial: anoFinal % 2 === 1 ? "I" : "II",
     semana,
     celebracao,
+    feria,
+    grau,
+    grauNome: grau === "feria" ? "Féria" : GRAU_NOME[grau],
+    santoral: fixas,
+    memoriasFacultativas: facultativas,
     pascoa: toIso(fPascal.pascoa),
     cinzas: toIso(fPascal.cinzas),
     pentecostes: toIso(fPascal.pentecostes),
     advento: toIso(inicioAno),
   };
 }
+
 
 /** Data em português: "domingo, 2 de agosto de 2026". */
 export function dataExtenso(date: Date = new Date()): string {
