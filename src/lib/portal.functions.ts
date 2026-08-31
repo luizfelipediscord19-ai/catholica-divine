@@ -281,3 +281,24 @@ export const denunciarFn = createServerFn({ method: "POST" })
       data.comentario,
     );
   });
+
+/**
+ * Cria a conta pelo servidor, já confirmada.
+ *
+ * O cadastro pelo cliente ficava pendurado no envio do e-mail de confirmação
+ * (tempo esgotado, HTTP 504). Aqui a conta nasce pronta e o cliente só precisa
+ * entrar com a senha em seguida.
+ */
+export const criarContaFn = createServerFn({ method: "POST" })
+  .inputValidator(
+    z.object({
+      email: z.string().trim().email().max(200),
+      senha: z.string().min(6).max(200),
+    }),
+  )
+  .handler(async ({ data }) => {
+    const { limitarAbuso } = await import("./seguranca/guarda.server");
+    limitarAbuso("criar-conta", 5, 600_000);
+    const { criarConta } = await import("./auth/criar-conta.server");
+    return criarConta(data.email.toLowerCase(), data.senha);
+  });
