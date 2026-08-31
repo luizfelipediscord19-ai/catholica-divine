@@ -20,6 +20,8 @@ export type LiturgiaDoDia = DiaLiturgico & {
   evangelho: LeituraLiturgica[];
   /** "cnbb" quando vindo da fonte litúrgica externa; "local" no fallback. */
   fonte: "cnbb" | "local";
+  /** ISO da última verificação das leituras junto à fonte oficial. */
+  verificadoEm?: string;
 };
 
 const API = "https://liturgia.up.railway.app/v2/";
