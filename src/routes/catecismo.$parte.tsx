@@ -1,4 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { FaixaAutoridade } from "@/components/SeloConfiabilidade";
+
 import {
   PARTES,
   SECOES,
