@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Botao } from "@/components/ds";
 import gloriaSantos from "@/assets/santos-gloria.jpg";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { PageHero, Section, CardGrid, ContentCard } from "../components/PageShell";

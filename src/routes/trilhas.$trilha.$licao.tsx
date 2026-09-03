@@ -206,17 +206,16 @@ function LicaoPagina() {
       )}
 
       <div className="mt-12 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <button
-          type="button"
+        <Botao
+          tamanho="lg"
+          variante={feita ? "contorno" : "ouro"}
           onClick={() => alternarConclusao(trilha.slug, licao.slug)}
           aria-pressed={feita}
-          className={`btn-base px-5 text-step--2 font-bold uppercase tracking-widest ${
-            feita ? "btn-outline-gold border-gold text-gold" : "btn-gold"
-          }`}
+          className={feita ? "border-gold text-gold" : ""}
         >
           <Check className="size-4" aria-hidden="true" />
           {feita ? "Concluída" : "Marcar como concluída"}
-        </button>
+        </Botao>
 
         <div className="flex flex-wrap gap-4 text-sm">
           {anterior && (
