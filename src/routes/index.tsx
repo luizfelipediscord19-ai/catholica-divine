@@ -230,20 +230,14 @@ function Home() {
               Pedro até hoje.
             </p>
             <div className="flex flex-col items-stretch gap-4 sm:flex-row sm:flex-wrap sm:items-center">
-              <Link
-                to="/estudar"
-                className="btn-base btn-gold px-8 py-4 label-btn"
-              >
+              <BotaoLink para="/estudar" tamanho="lg" className="w-full sm:w-auto">
                 <BookOpen className="size-4 shrink-0" />
-                <span className="whitespace-nowrap">Começar a estudar</span>
-              </Link>
-              <Link
-                to="/assistente"
-                className="btn-base btn-outline-gold px-8 py-4 label-btn"
-              >
+                Começar a estudar
+              </BotaoLink>
+              <BotaoLink para="/assistente" variante="contorno" tamanho="lg" className="w-full sm:w-auto">
                 <Sparkles className="size-4 shrink-0" />
-                <span className="whitespace-nowrap">Falar com a IA</span>
-              </Link>
+                Falar com a IA
+              </BotaoLink>
             </div>
           </div>
         </div>

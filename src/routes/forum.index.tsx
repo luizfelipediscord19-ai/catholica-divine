@@ -88,39 +88,31 @@ function ForumPage() {
 
       <div className="shell py-block grid gap-10 lg:grid-cols-[1fr_280px]">
         <div className="space-y-8">
-          <div className="flex flex-wrap items-center gap-3">
-            <button
-              type="button"
+          <div className="action-tray">
+            <Botao
+              tamanho="sm"
+              variante="discreto"
+              aria-pressed={secao === undefined}
               onClick={() => setSecao(undefined)}
-              className={`btn-base btn-sm border transition-premium ${
-                secao === undefined
-                  ? "border-gold text-gold"
-                  : "border-gold/15 text-paper/60 hover:text-paper"
-              }`}
+              className={secao === undefined ? "border-gold text-gold" : "border-gold/15 text-paper/60 hover:text-paper"}
             >
               Todos
-            </button>
+            </Botao>
             {secoes.map((s) => (
-              <button
+              <Botao
                 key={s.slug}
-                type="button"
+                tamanho="sm"
+                variante="discreto"
+                aria-pressed={secao === s.slug}
                 onClick={() => setSecao(s.slug)}
-                className={`btn-base btn-sm border transition-premium ${
-                  secao === s.slug
-                    ? "border-gold text-gold"
-                    : "border-gold/15 text-paper/60 hover:text-paper"
-                }`}
+                className={secao === s.slug ? "border-gold text-gold" : "border-gold/15 text-paper/60 hover:text-paper"}
               >
                 {s.nome}
-              </button>
+              </Botao>
             ))}
-            <button
-              type="button"
-              onClick={() => setAbrirForm((v) => !v)}
-              className={`${botaoClass} ml-auto`}
-            >
+            <Botao tamanho="md" onClick={() => setAbrirForm((v) => !v)} className="sm:ml-auto">
               <Plus className="size-3.5" aria-hidden="true" /> Nova conversa
-            </button>
+            </Botao>
           </div>
 
           {abrirForm ? (
@@ -202,18 +194,18 @@ function ForumPage() {
             <ul className="space-y-4">
               {secoes.map((s) => (
                 <li key={s.id}>
-                  <button
-                    type="button"
+                  <Botao
+                    variante="discreto"
+                    tamanho="md"
+                    bloco
                     onClick={() => setSecao(s.slug)}
-                    className="text-left w-full group"
+                    className="group h-auto justify-start text-left normal-case tracking-normal"
                   >
-                    <p className="text-sm text-foreground group-hover:text-gold transition-colors">
-                      {s.nome}
-                    </p>
-                    {s.descricao ? (
-                      <p className="text-xs text-muted-foreground font-light">{s.descricao}</p>
-                    ) : null}
-                  </button>
+                    <span className="grid min-w-0 gap-1 text-left">
+                      <span className="text-sm text-foreground group-hover:text-gold transition-colors">{s.nome}</span>
+                      {s.descricao ? <span className="text-xs font-light text-muted-foreground">{s.descricao}</span> : null}
+                    </span>
+                  </Botao>
                 </li>
               ))}
             </ul>
@@ -318,12 +310,8 @@ function NovoTopico({
             navegador enquanto você cria a conta.
           </p>
           <span className="mt-3 flex flex-wrap items-center gap-3">
-            <Link to="/auth" search={{ modo: "entrar" }} className={botaoGhostClass}>
-              Entrar
-            </Link>
-            <Link to="/auth" search={{ modo: "criar" }} className={botaoGhostClass}>
-              Criar conta
-            </Link>
+            <BotaoLink para="/auth" tamanho="md">Entrar</BotaoLink>
+            <BotaoLink para="/auth" tamanho="md">Criar conta</BotaoLink>
           </span>
         </div>
       ) : null}
@@ -378,16 +366,12 @@ function NovoTopico({
           />
         </label>
 
-        <div className="flex flex-wrap items-center gap-3">
-          <button type="submit" disabled={!valido || criar.isPending} className={botaoClass}>
+        <div className="action-tray">
+          <Botao type="submit" disabled={!valido} carregando={criar.isPending}>
             {criar.isPending ? "Publicando…" : "Publicar"}
-          </button>
-          <button type="button" onClick={onPronto} className={botaoGhostClass}>
-            Cancelar
-          </button>
-          <button type="button" onClick={rascunho.limpar} className={botaoGhostClass}>
-            Descartar rascunho
-          </button>
+          </Botao>
+          <Botao variante="contorno" onClick={onPronto}>Cancelar</Botao>
+          <Botao variante="contorno" onClick={rascunho.limpar}>Descartar rascunho</Botao>
           {identidade ? (
             <span className="text-xs text-muted-foreground">
               como <span className="text-gold">{identidade.apelido ?? identidade.santoNome}</span>
@@ -401,12 +385,8 @@ function NovoTopico({
           {motivo ? <span className="text-xs text-muted-foreground/80">{motivo}</span> : null}
           {!autenticado ? (
             <span className="flex flex-wrap items-center gap-3">
-              <Link to="/auth" search={{ modo: "entrar" }} className={botaoGhostClass}>
-                Entrar
-              </Link>
-              <Link to="/auth" search={{ modo: "criar" }} className={botaoGhostClass}>
-                Criar conta
-              </Link>
+              <BotaoLink para="/auth" tamanho="md">Entrar</BotaoLink>
+              <BotaoLink para="/auth" tamanho="md">Criar conta</BotaoLink>
               <Link
                 to="/auth"
                 search={{ modo: "recuperar" }}
