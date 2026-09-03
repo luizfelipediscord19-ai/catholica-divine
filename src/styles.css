@@ -151,10 +151,10 @@
   min-height: 2.75rem;
   border-radius: var(--radius-btn);
   text-align: center;
-  white-space: nowrap;
+  white-space: normal;
+  overflow-wrap: anywhere;
   /* nenhum botão pode estourar a gutter, mesmo com rótulo longo */
   max-width: 100%;
-
 
   cursor: pointer;
   user-select: none;
@@ -557,6 +557,23 @@
   overscroll-behavior-x: contain;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
+  max-width: 100%;
+}
+
+/* Trilhos de filtros/abas não forçam a largura da página no celular. */
+@utility action-tray {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-xs);
+  min-width: 0;
+}
+
+@media (max-width: 639px) {
+  .action-tray > .btn-base,
+  .action-tray > a.btn-base {
+    flex: 1 1 auto;
+  }
 }
 
 /* ============================================================

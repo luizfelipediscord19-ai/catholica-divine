@@ -8,6 +8,7 @@ import { toast } from "sonner";
 import { avisarErroDeConta } from "@/lib/auth/aviso-sessao";
 
 import { PageHero } from "@/components/PageShell";
+import { Botao, BotaoLink, classesBotao } from "@/components/ds";
 import {
   AutorSelo,
   Painel,

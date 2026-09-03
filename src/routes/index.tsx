@@ -16,6 +16,7 @@ import { dataDoIso } from "../lib/liturgia/hoje";
 import { liturgiaQueryOptions } from "../lib/liturgia/query";
 import { COR_CLASSE } from "../lib/liturgia/calendario";
 import { ScrollReveal } from "../components/ScrollReveal";
+import { BotaoLink } from "../components/ds";
 import { BuscaAprender, ComeceAqui } from "../components/portal/AprenderHome";
 import { RetomarLeitura } from "../components/portal/RetomarLeitura";
 import { UltimosArtigos, TrilhasIlustradas } from "../components/portal/DestaquesHome";
