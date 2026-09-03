@@ -177,14 +177,15 @@ function Page() {
           {CONJUNTOS.map((c) => {
             const active = c.slug === conjunto.slug;
             return (
-              <button
+              <Botao
                 key={c.slug}
+                variante="discreto"
+                tamanho="lg"
                 onClick={() => { setConjunto(c); reiniciar(); }}
-                className={`text-left p-4 border transition-colors ${active ? "border-gold bg-gold/10" : "border-gold/20 hover:border-gold/60"}`}
+                className={`h-auto min-h-0 justify-start p-4 text-left normal-case tracking-normal ${active ? "border-gold bg-gold/10" : "border-gold/20 hover:border-gold/60"}`}
               >
-                <p className="kicker">{c.dia}</p>
-                <p className="font-display text-lg mt-1">{c.nome}</p>
-              </button>
+                <span><span className="kicker block">{c.dia}</span><span className="mt-1 block font-display text-lg">{c.nome}</span></span>
+              </Botao>
             );
           })}
         </div>
@@ -195,19 +196,16 @@ function Page() {
               <span className="text-gold">●</span> Retomado de onde parou — etapa {restored.etapaIdx + 1}, conta {restored.contagem + 1}
               <span className="text-muted-foreground"> · salvo {tempoAtras(restored.savedAt)}</span>
             </span>
-            <button onClick={() => setRestored(null)} className="text-xs text-muted-foreground hover:text-foreground">dispensar</button>
+            <Botao tamanho="sm" variante="discreto" onClick={() => setRestored(null)} className="text-xs font-normal normal-case tracking-normal text-muted-foreground">dispensar</Botao>
           </div>
         ) : null}
 
         {/* Controles de cronômetro */}
         <div className="surface-card p-4 md:p-5 mb-4 flex flex-wrap items-center gap-4">
-          <button
-            onClick={() => setPlaying((p) => !p)}
-            className="btn-base btn-gold px-5 py-2 font-semibold"
-          >
+          <Botao tamanho="md" onClick={() => setPlaying((p) => !p)}>
             {playing ? "⏸ Pausar" : "▶ Iniciar"}
-          </button>
-          <button onClick={reiniciar} className="px-4 py-2 btn-base btn-outline-gold text-sm">↺ Reiniciar</button>
+          </Botao>
+          <Botao tamanho="md" variante="contorno" onClick={reiniciar}>↺ Reiniciar</Botao>
           <div className="font-mono text-xl text-gold tabular-nums">{mmss(elapsed)}</div>
           <label className="flex items-center gap-2 text-xs text-muted-foreground ml-auto">
             Ritmo por conta:
@@ -239,28 +237,16 @@ function Page() {
             </p>
             <div className="flex gap-2">
               {atual.misterioIdx !== undefined ? (
-                <button
-                  onClick={repetirMisterio}
-                  className="px-4 py-2 btn-base btn-outline-gold text-sm"
-                  title="Reinicia este mistério"
-                >
+                <Botao tamanho="md" variante="contorno" onClick={repetirMisterio} title="Reinicia este mistério">
                   ↻ Repetir mistério
-                </button>
+                </Botao>
               ) : null}
-              <button
-                onClick={() => { setEtapaIdx((n) => Math.max(0, n - 1)); setContagem(0); }}
-                disabled={etapaIdx === 0}
-                className="px-4 py-2 btn-base btn-outline-gold text-sm disabled:opacity-30"
-              >
+              <Botao tamanho="md" variante="contorno" onClick={() => { setEtapaIdx((n) => Math.max(0, n - 1)); setContagem(0); }} disabled={etapaIdx === 0}>
                 ← Anterior
-              </button>
-              <button
-                onClick={() => { setEtapaIdx((n) => Math.min(etapas.length - 1, n + 1)); setContagem(0); }}
-                disabled={etapaIdx === etapas.length - 1}
-                className="px-4 py-2 btn-base btn-outline-gold text-sm disabled:opacity-30"
-              >
+              </Botao>
+              <Botao tamanho="md" variante="contorno" onClick={() => { setEtapaIdx((n) => Math.min(etapas.length - 1, n + 1)); setContagem(0); }} disabled={etapaIdx === etapas.length - 1}>
                 Próximo →
-              </button>
+              </Botao>
             </div>
           </div>
 
@@ -276,12 +262,7 @@ function Page() {
                 <span className="text-sm text-muted-foreground">
                   Conta <span className="font-mono text-gold">{contagem + 1}</span> de {atual.repeticao}
                 </span>
-                <button
-                  onClick={avancarConta}
-                  className="px-4 py-2 btn-base btn-outline-gold text-sm"
-                >
-                  + 1 conta
-                </button>
+                <Botao tamanho="md" variante="contorno" onClick={avancarConta}>+ 1 conta</Botao>
               </div>
               <div className="flex gap-2">
                 {Array.from({ length: atual.repeticao }, (_, i) => (
@@ -311,10 +292,10 @@ function Page() {
 
       <Section kicker="Mais devoções" title="Continue na vida de oração">
         <div className="flex flex-wrap gap-3">
-          <Link to="/oracoes" className="px-5 py-3 btn-base btn-outline-gold">← Todas as orações</Link>
-          <Link to="/oracoes/via-sacra" className="px-5 py-3 btn-base btn-outline-gold">Via-Sacra</Link>
-          <Link to="/oracoes/novenas" className="px-5 py-3 btn-base btn-outline-gold">Novenas</Link>
-          <Link to="/oracoes/liturgia-das-horas" className="px-5 py-3 btn-base btn-outline-gold">Liturgia das Horas</Link>
+          <BotaoLink para="/oracoes" variante="contorno" tamanho="lg">← Todas as orações</BotaoLink>
+          <BotaoLink para="/oracoes/via-sacra" variante="contorno" tamanho="lg">Via-Sacra</BotaoLink>
+          <BotaoLink para="/oracoes/novenas" variante="contorno" tamanho="lg">Novenas</BotaoLink>
+          <BotaoLink para="/oracoes/liturgia-das-horas" variante="contorno" tamanho="lg">Liturgia das Horas</BotaoLink>
         </div>
         <Relacionados topic="rosario" className="mt-8" />
       </Section>

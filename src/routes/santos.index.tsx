@@ -203,13 +203,9 @@ function Page() {
             <p className="label-btn text-muted-foreground">
               Mostrando {visiveis.length} de {filtered.length} santos
             </p>
-            <button
-              type="button"
-              onClick={() => setLimite((v) => v + PAGINA)}
-              className="btn-base btn-outline-gold px-8 label-btn"
-            >
+            <Botao variante="contorno" tamanho="lg" onClick={() => setLimite((v) => v + PAGINA)}>
               Carregar mais santos
-            </button>
+            </Botao>
           </div>
         ) : null}
 
