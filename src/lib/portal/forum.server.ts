@@ -125,7 +125,7 @@ export async function obterTopico(slug: string, token?: string | null) {
   // Conteúdo em revisão só é visível para quem escreveu.
   if (topico.status !== "aprovado" && topico.identidade_id !== identidadeId) return null;
 
-  const { data: respostas } = await dbLeitura()
+  const { data: respostas } = await supabaseAdmin
     .from("forum_respostas")
     .select(`id, corpo, status, created_at, ${AUTOR}`)
     .eq("topico_id", topico.id)
