@@ -112,7 +112,7 @@ export async function listarTopicos(secaoSlug?: string, token?: string | null, l
 export async function obterTopico(slug: string, token?: string | null) {
   const identidadeId = await identidadeOpcional(token);
 
-  const { data: topico } = await dbLeitura()
+  const { data: topico } = await supabaseAdmin
     .from("forum_topicos")
     .select(
       `id, slug, titulo, corpo, fixado, trancado, status, identidade_id, respostas_count, created_at,
