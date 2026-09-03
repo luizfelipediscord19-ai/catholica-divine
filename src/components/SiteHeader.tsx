@@ -73,7 +73,7 @@ const NAV_PRINCIPAL: { to: string; label: string; amplo?: boolean }[] = [
 ];
 
 const ICONE_REDONDO =
-  "btn-base btn-icon shrink-0 border border-gold/20 bg-transparent text-foreground/65 transition-premium hover:border-gold/50 hover:text-gold";
+  "shrink-0 border border-gold/20 bg-transparent text-foreground/65 transition-premium hover:border-gold/50 hover:text-gold";
 
 export function SiteHeader() {
   const pathname = useRouterState({ select: (s) => s.location.pathname });
