@@ -569,12 +569,52 @@
   min-width: 0;
 }
 
-@media (max-width: 639px) {
-  .action-tray > .btn-base,
-  .action-tray > a.btn-base {
-    flex: 1 1 auto;
+/* Trilho de filtros: no celular vira uma faixa de rolagem horizontal de uma
+   única linha — evita as “escadinhas” de chips com larguras desiguais. */
+@utility filtro-trilho {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xs);
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-block: 2px;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  & > * {
+    flex: 0 0 auto;
+  }
+
+  @media (min-width: 640px) {
+    flex-wrap: wrap;
+    overflow-x: visible;
+    gap: var(--space-xs);
   }
 }
+
+/* Placeholder de carregamento: mesma superfície dos cards, pulso discreto. */
+@utility esqueleto {
+  border-radius: var(--radius-btn);
+  background: color-mix(in oklab, var(--gold) 8%, transparent);
+  animation: esqueleto-pulso 1.6s var(--ease-premium) infinite;
+}
+
+@keyframes esqueleto-pulso {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
 
 /* ============================================================
    TIPOGRAFIA DO DESIGN SYSTEM
@@ -1005,10 +1045,20 @@
   @media (pointer: coarse) {
     button:not([data-slot]),
     a[role="button"],
+    a.btn-base,
+    .btn-base,
+    .btn-sm,
+    .chip-interactive,
     [role="tab"] {
       min-height: 2.75rem;
     }
+    .btn-icon {
+      min-height: 2.75rem;
+      width: 2.75rem;
+      height: 2.75rem;
+    }
   }
+
 
   /* Microinterações consistentes em qualquer botão do portal */
   button,

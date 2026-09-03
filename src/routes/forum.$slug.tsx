@@ -95,8 +95,16 @@ function TopicoPage() {
 
 
   if (topico.isPending) {
-    return <p className="shell-narrow py-block text-sm text-muted-foreground">Carregando…</p>;
+    return (
+      <div className="shell-narrow py-block space-y-4" aria-busy="true" aria-label="Carregando conversa">
+        <div className="esqueleto h-3 w-24" />
+        <div className="esqueleto h-8 w-3/4" />
+        <div className="esqueleto h-32 w-full" />
+        <div className="esqueleto h-24 w-full" />
+      </div>
+    );
   }
+
 
   if (!topico.data) {
     return (
