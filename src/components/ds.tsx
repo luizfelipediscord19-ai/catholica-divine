@@ -329,7 +329,7 @@ export function BotaoLink({
   bloco?: boolean;
   children?: ReactNode;
   className?: string;
-} & Record<string, unknown>) {
+} & Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "className" | "children" | "href">) {
   const classes = classesBotao({ variante, tamanho, bloco, className });
   if (para) {
     return (
