@@ -332,9 +332,10 @@ export function BotaoLink({
   params?: Record<string, string>;
 } & Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "className" | "children" | "href">) {
   const classes = classesBotao({ variante, tamanho, bloco, className });
+  const { params, ...anchorProps } = resto;
   if (para) {
     return (
-      <Link to={para} className={classes} {...(resto as object)}>
+      <Link to={para} params={params} className={classes} {...(anchorProps as object)}>
         <span className="min-w-0 truncate">{children}</span>
       </Link>
     );
