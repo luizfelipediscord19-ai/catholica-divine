@@ -229,8 +229,8 @@ function Home() {
               reunidos em uma única referência de estudo, fiel ao Magistério desde
               Pedro até hoje.
             </p>
-            <div className="action-tray flex-col items-stretch gap-4 sm:flex-row sm:items-center">
-              <BotaoLink para="/estudar" tamanho="lg" className="w-full sm:w-auto">
+            <div className="action-tray flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:gap-4">
+              <BotaoLink para="/estudar" variante="ouro" tamanho="lg" className="w-full sm:w-auto">
                 <BookOpen className="size-4 shrink-0" />
                 Começar a estudar
               </BotaoLink>
@@ -239,6 +239,7 @@ function Home() {
                 Falar com a IA
               </BotaoLink>
             </div>
+
           </div>
         </div>
 
@@ -266,22 +267,25 @@ function Home() {
 
       {/* Tempo litúrgico em tempo real */}
       <section className="bg-background relative z-10 border-y border-gold/10">
-        <div className="shell flex flex-col gap-2 py-block-sm sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:gap-4">
-          <p className="flex flex-wrap items-center gap-x-3 gap-y-2 label-btn text-muted-foreground">
-            <span className={`chip ${COR_CLASSE[lit.cor]}`}>
+        <div className="shell flex flex-col gap-3 py-block-sm sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:gap-4">
+          <div className="flex min-w-0 flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-3">
+            <span className={`chip w-fit ${COR_CLASSE[lit.cor]}`}>
               <span className="size-2 rounded-full bg-current" aria-hidden="true" /> {lit.corNome}
             </span>
-            <span className="text-foreground/90">{lit.celebracao}</span>
-            <span className="text-gold/70">Ano {lit.anoLiturgico}</span>
-          </p>
+            <p className="min-w-0 text-sm font-light leading-snug text-foreground/90 sm:text-step--1">
+              {lit.celebracao}
+            </p>
+            <span className="label-btn text-gold/70">Ano {lit.anoLiturgico}</span>
+          </div>
           <Link
             to="/liturgia-diaria"
-            className="kicker hover:text-paper transition-colors"
+            className="inline-flex min-h-11 items-center kicker hover:text-paper transition-colors"
           >
             Liturgia diária →
           </Link>
         </div>
       </section>
+
 
       {/* Retomar leitura */}
       <section className="bg-background relative z-10">
@@ -309,7 +313,7 @@ function Home() {
           <div className="grid grid-cols-1 gap-px bg-gold/10 md:grid-cols-3 sm:border-x sm:border-gold/10">
             {DAILY_ITEMS.map((d, i) => {
               const inner = (
-                <div className="group h-full flex flex-col py-[var(--space-sm)] sm:p-card transition-premium hover:bg-gold/[0.03]">
+                <div className="group h-full flex flex-col px-[var(--space-sm)] py-[var(--space-sm)] sm:px-0 sm:p-card transition-premium hover:bg-gold/[0.03]">
                   <p className="label-btn text-gold/80 mb-3 group-hover:text-gold transition-colors">{d.kicker}</p>
                   {/* Altura e corte uniformes: nenhum cartão parte a frase em altura diferente */}
                   <p className="font-display italic text-[length:var(--step-1)] text-foreground/90 leading-relaxed mb-4 flex-1 line-clamp-5 sm:min-h-[7.5rem]">

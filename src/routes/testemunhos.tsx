@@ -92,7 +92,16 @@ function TestemunhosPage() {
 
       <Section kicker="Depoimentos" title="O que a comunidade partilha">
         {testemunhos.isPending ? (
-          <p className="text-sm text-muted-foreground">Carregando testemunhos…</p>
+          <div className="grid gap-4 sm:grid-cols-2" aria-busy="true" aria-label="Carregando testemunhos">
+            {[0, 1, 2, 3].map((i) => (
+              <div key={i} className="border border-gold/10 bg-card/30 p-6">
+                <div className="esqueleto h-3 w-24" />
+                <div className="esqueleto mt-4 h-3 w-full" />
+                <div className="esqueleto mt-2 h-3 w-4/5" />
+              </div>
+            ))}
+          </div>
+
         ) : lista.length === 0 ? (
           <Painel>
             <p className="text-sm text-muted-foreground">

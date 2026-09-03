@@ -97,11 +97,22 @@ function PainelPage() {
 
   if (carregando || painel.isPending) {
     return (
-      <p className="shell py-block text-sm text-muted-foreground">
-        Preparando seu painel…
-      </p>
+      <div className="shell py-block space-y-6" aria-busy="true" aria-label="Preparando seu painel">
+        <div className="esqueleto h-3 w-32" />
+        <div className="esqueleto h-8 w-2/3 max-w-md" />
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {[0, 1, 2, 3].map((i) => (
+            <div key={i} className="border border-gold/10 bg-card/30 p-6">
+              <div className="esqueleto h-3 w-20" />
+              <div className="esqueleto mt-4 h-7 w-16" />
+            </div>
+          ))}
+        </div>
+        <div className="esqueleto h-40 w-full" />
+      </div>
     );
   }
+
 
 
   const dados = painel.data;

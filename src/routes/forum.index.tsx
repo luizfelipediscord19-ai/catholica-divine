@@ -84,31 +84,38 @@ function ForumPage() {
       image={claustro}
       />
 
-      <div className="shell py-block grid gap-10 lg:grid-cols-[1fr_280px]">
-        <div className="space-y-8">
-          <div className="action-tray">
-            <Botao
-              tamanho="sm"
-              variante="discreto"
-              aria-pressed={secao === undefined}
-              onClick={() => setSecao(undefined)}
-              className={secao === undefined ? "border-gold text-gold" : "border-gold/15 text-paper/60 hover:text-paper"}
-            >
-              Todos
-            </Botao>
-            {secoes.map((s) => (
+      <div className="shell py-block grid gap-10 lg:grid-cols-[minmax(0,1fr)_280px]">
+        <div className="min-w-0 space-y-8">
+
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
+            <div className="filtro-trilho" role="group" aria-label="Filtrar por seção">
               <Botao
-                key={s.slug}
                 tamanho="sm"
                 variante="discreto"
-                aria-pressed={secao === s.slug}
-                onClick={() => setSecao(s.slug)}
-                className={secao === s.slug ? "border-gold text-gold" : "border-gold/15 text-paper/60 hover:text-paper"}
+                aria-pressed={secao === undefined}
+                onClick={() => setSecao(undefined)}
+                className={secao === undefined ? "border-gold text-gold" : "border-gold/15 text-paper/60 hover:text-paper"}
               >
-                {s.nome}
+                Todos
               </Botao>
-            ))}
-            <Botao tamanho="md" onClick={() => setAbrirForm((v) => !v)} className="sm:ml-auto">
+              {secoes.map((s) => (
+                <Botao
+                  key={s.slug}
+                  tamanho="sm"
+                  variante="discreto"
+                  aria-pressed={secao === s.slug}
+                  onClick={() => setSecao(s.slug)}
+                  className={secao === s.slug ? "border-gold text-gold" : "border-gold/15 text-paper/60 hover:text-paper"}
+                >
+                  {s.nome}
+                </Botao>
+              ))}
+            </div>
+            <Botao
+              tamanho="md"
+              onClick={() => setAbrirForm((v) => !v)}
+              className="w-full sm:ml-auto sm:w-auto"
+            >
               <Plus className="size-3.5" aria-hidden="true" /> Nova conversa
             </Botao>
           </div>
@@ -122,8 +129,18 @@ function ForumPage() {
           ) : null}
 
           {topicos.isPending ? (
-            <p className="text-sm text-muted-foreground">Carregando conversas…</p>
+            <ul className="space-y-4" aria-busy="true" aria-label="Carregando conversas">
+              {[0, 1, 2].map((i) => (
+                <li key={i} className="border border-gold/10 bg-card/30 p-6">
+                  <div className="esqueleto h-3 w-24" />
+                  <div className="esqueleto mt-4 h-5 w-3/4" />
+                  <div className="esqueleto mt-3 h-3 w-full" />
+                  <div className="esqueleto mt-2 h-3 w-2/3" />
+                </li>
+              ))}
+            </ul>
           ) : (topicos.data ?? []).length === 0 ? (
+
             <Painel>
               <p className="text-sm text-muted-foreground">
                 Nenhuma conversa nesta seção ainda. Seja o primeiro a abrir um tema.

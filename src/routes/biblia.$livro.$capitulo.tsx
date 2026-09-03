@@ -359,7 +359,12 @@ function Page() {
         </p>
 
         {carregando ? (
-          <p className="text-muted-foreground text-sm">Carregando o texto…</p>
+          <div className="space-y-3" aria-busy="true" aria-label="Carregando o texto">
+            {[0, 1, 2, 3, 4, 5].map((i) => (
+              <div key={i} className="esqueleto h-4" style={{ width: `${92 - (i % 3) * 14}%` }} />
+            ))}
+          </div>
+
         ) : !versosFiltrados ? (
           <p className="text-muted-foreground text-sm">
             Esta edição não contém {livro.nome} {capitulo}. Escolha outra versão acima.
