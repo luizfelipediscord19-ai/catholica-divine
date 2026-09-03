@@ -326,19 +326,16 @@ function NovoTopico({
           </legend>
           <div className="flex flex-wrap gap-2">
             {lista.map((s) => (
-              <button
+              <Botao
                 key={s.slug}
-                type="button"
+                tamanho="sm"
+                variante="discreto"
                 onClick={() => setSecaoSlug(s.slug)}
                 aria-pressed={secaoSlug === s.slug}
-                className={`btn-base btn-sm border transition-premium ${
-                  secaoSlug === s.slug
-                    ? "border-gold bg-gold/10 text-gold"
-                    : "border-gold/15 text-paper/60 hover:text-paper hover:border-gold/40"
-                }`}
+                className={secaoSlug === s.slug ? "border-gold bg-gold/10 text-gold" : "border-gold/15 text-paper/60 hover:text-paper hover:border-gold/40"}
               >
                 {s.nome}
-              </button>
+              </Botao>
             ))}
           </div>
         </fieldset>
