@@ -151,13 +151,9 @@ function Page() {
             className="flex-1 bg-transparent outline-none text-sm text-foreground placeholder:text-muted-foreground/60"
           />
           {query ? (
-            <button
-              onClick={() => setQuery("")}
-              aria-label="Limpar busca de santos"
-              className="min-h-11 px-2 label-btn text-foreground/70 hover:text-gold transition-colors"
-            >
+            <Botao tamanho="sm" variante="discreto" onClick={() => setQuery("")} aria-label="Limpar busca de santos" className="px-2 font-normal normal-case tracking-normal">
               limpar
-            </button>
+            </Botao>
           ) : null}
         </div>
 
@@ -166,18 +162,15 @@ function Page() {
           <ul className="flex flex-wrap gap-2">
             {[{ v: "", r: "Todos" }, ...MESES.map((m) => ({ v: m, r: m }))].map((op) => (
               <li key={op.v || "todos"}>
-                <button
-                  type="button"
+                <Botao
+                  tamanho="sm"
+                  variante="discreto"
                   onClick={() => setMes(op.v)}
                   aria-pressed={mes === op.v}
-                  className={`inline-flex min-h-9 items-center rounded-[var(--radius-btn)] border px-3 text-step--1 capitalize transition-premium ${
-                    mes === op.v
-                      ? "border-gold bg-gold/10 text-gold"
-                      : "border-gold/20 text-foreground/70 hover:border-gold/50 hover:text-gold"
-                  }`}
+                  className={`capitalize ${mes === op.v ? "border-gold bg-gold/10 text-gold" : "border-gold/20 text-foreground/70 hover:border-gold/50 hover:text-gold"}`}
                 >
                   {op.r}
-                </button>
+                </Botao>
               </li>
             ))}
           </ul>
@@ -237,12 +230,14 @@ function CartaoSanto({
   const ref = usePrefetchSanto<HTMLButtonElement>(santo.slug);
 
   return (
-    <button
+    <Botao
       ref={ref}
       type="button"
       onClick={onSelect}
       aria-expanded={ativo}
-      className={`text-left block group animate-content-fade focus:outline-none focus-visible:ring-1 focus-visible:ring-gold/60 ${
+      variante="discreto"
+      tamanho="md"
+      className={`h-auto w-full justify-start p-0 text-left normal-case tracking-normal animate-content-fade focus-visible:ring-1 focus-visible:ring-gold/60 ${
         ativo ? "ring-1 ring-gold/50" : ""
       }`}
       style={{ animationDelay: `${Math.min(indice, 12) * 40}ms` }}
@@ -266,7 +261,7 @@ function CartaoSanto({
           {ativo ? "Fechar ↑" : "Ler biografia →"}
         </span>
       </ContentCard>
-    </button>
+    </Botao>
   );
 }
 
@@ -326,14 +321,16 @@ function SantoDetail({
                 href={`/santos/${slug}`}
                 compacto
               />
-              <button
+              <Botao
                 type="button"
                 onClick={onClose}
                 aria-label="Fechar biografia"
-                className="shrink-0 size-9 grid place-items-center border border-gold/30 text-gold hover:bg-gold hover:text-deep transition-colors"
+                variante="discreto"
+                tamanho="icone"
+                className="shrink-0 border border-gold/30 text-gold hover:bg-gold hover:text-deep"
               >
                 ×
-              </button>
+              </Botao>
             </div>
           </div>
 
