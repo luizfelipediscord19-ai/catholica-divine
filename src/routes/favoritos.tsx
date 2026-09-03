@@ -4,6 +4,7 @@ import { Bookmark, NotebookPen, Search, Star, Trash2, X } from "lucide-react";
 import { useMemo, useState } from "react";
 import { toast } from "sonner";
 
+import { Botao, BotaoLink } from "@/components/ds";
 import { Painel, Rotulo, botaoGhostClass, inputClass } from "@/components/portal/comuns";
 import { EstadoSessao } from "@/components/portal/EstadoSessao";
 import { useAuth } from "@/hooks/use-auth";

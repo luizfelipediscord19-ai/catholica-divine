@@ -5,6 +5,7 @@ import { z } from "zod";
 import { Mail, Copy, Send, MessagesSquare } from "lucide-react";
 import claustro from "@/assets/claustro.jpg";
 
+import { Botao, BotaoLink } from "@/components/ds";
 import { PageHero, Section } from "@/components/PageShell";
 import { Painel, Rotulo, botaoClass, botaoGhostClass, inputClass } from "@/components/portal/comuns";
 import { keywordsPara } from "@/lib/seo/palavras-chave";

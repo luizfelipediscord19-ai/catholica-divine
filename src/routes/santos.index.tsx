@@ -6,6 +6,7 @@ import { SANTOS_LISTA } from "@/lib/santos-lista";
 import { buildSantoView } from "@/lib/santos-helpers";
 import { imagemSanto } from "@/lib/data/santos-imagens";
 import { RetratoSanto } from "@/components/santos/RetratoSanto";
+import { Botao } from "@/components/ds";
 import { usePrefetchSanto, usePrefetchLote } from "@/lib/santos/prefetch";
 import { BotaoSalvar } from "@/components/portal/BotaoSalvar";
 import { keywordsPara } from "@/lib/seo/palavras-chave";

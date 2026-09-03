@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { ArrowLeft, ArrowRight, BookOpen, Check } from "lucide-react";
+import { Botao, BotaoLink } from "@/components/ds";
 import { acharLicao, ROTULO_BLOCO } from "@/lib/data/trilhas";
 import { FaixaAutoridade } from "@/components/SeloConfiabilidade";
 
