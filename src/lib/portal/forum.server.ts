@@ -79,7 +79,10 @@ export async function listarSecoes() {
 
 export async function listarTopicos(secaoSlug?: string, token?: string | null, limite = 30) {
   const identidadeId = await identidadeOpcional(token);
-  let query = dbLeitura()
+  // Lê via service role: a tabela identidades não é mais pública (o token é
+  // secreto), então o join de autor não pode passar pela chave publicável.
+  // A visibilidade já é filtrada por status em filtroVisibilidade().
+  let query = supabaseAdmin
     .from("forum_topicos")
     .select(
       `id, slug, titulo, corpo, fixado, trancado, status, respostas_count, ultima_atividade, created_at,
