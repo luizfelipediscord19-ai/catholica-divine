@@ -1,4 +1,5 @@
 import { Link, useRouterState } from "@tanstack/react-router";
+import { Botao, BotaoLink } from "@/components/ds";
 import { useAuth } from "@/hooks/use-auth";
 import { Search, Sparkles, Menu, X, Church } from "lucide-react";
 
@@ -150,66 +151,63 @@ export function SiteHeader() {
 
         <div className="flex shrink-0 items-center justify-end gap-1.5 sm:gap-2 lg:ml-auto">
           {/* Campo de busca visível no desktop; ícone no celular. */}
-          <button
+          <Botao
             type="button"
             onClick={() => setBusca(true)}
             aria-label="Buscar no portal (Ctrl + K)"
-            className="hidden min-h-10 w-44 items-center gap-2 rounded-[var(--radius-btn)] border border-gold/20 bg-transparent px-3 text-left text-step--1 text-foreground/55 transition-premium hover:border-gold/50 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold xl:flex xl:w-52"
-
+            variante="discreto"
+            tamanho="md"
+            className="hidden w-44 justify-start px-3 text-left text-step--1 font-normal normal-case tracking-normal text-foreground/55 xl:flex xl:w-52"
           >
             <Search className="size-4 shrink-0 text-gold" aria-hidden="true" />
             <span className="min-w-0 flex-1 truncate">O que você procura?</span>
-            <span aria-hidden="true" className="label-btn shrink-0 text-foreground/35">
-              ⌘K
-            </span>
-          </button>
-          <button
+            <span aria-hidden="true" className="label-btn shrink-0 text-foreground/35">⌘K</span>
+          </Botao>
+          <Botao
             type="button"
             onClick={() => setBusca(true)}
             aria-label="Buscar no portal"
             title="Buscar"
+            variante="discreto"
+            tamanho="icone"
             className={`${ICONE_REDONDO} xl:hidden`}
           >
             <Search className="size-4" aria-hidden="true" />
-          </button>
+          </Botao>
 
           <span className="hidden sm:contents">
             <SinoNotificacoes />
           </span>
 
           {/* Sophia: rótulo no desktop, ícone no celular. */}
-          <Link
-            to="/assistente"
-            className="btn-base btn-gold btn-sm h-10 hidden md:inline-flex"
-          >
+          <BotaoLink para="/assistente" tamanho="sm" className="hidden md:inline-flex">
             <Sparkles className="size-3.5" aria-hidden="true" /> Sophia
-          </Link>
+          </BotaoLink>
 
-          <Link
-            to="/assistente"
+          <BotaoLink
+            para="/assistente"
             aria-label="Falar com a Sophia IA"
             title="Sophia IA"
-            className="btn-base btn-icon shrink-0 border border-gold/50 bg-gold/10 text-gold transition-premium hover:bg-gold hover:text-deep md:hidden"
+            tamanho="icone"
+            className="shrink-0 border border-gold/50 bg-gold/10 text-gold transition-premium hover:bg-gold hover:text-deep md:hidden"
           >
             <Sparkles className="size-4" aria-hidden="true" />
-          </Link>
+          </BotaoLink>
 
           <ContaBotao />
 
-          <button
+          <Botao
             type="button"
             aria-label={open ? "Fechar menu" : "Abrir menu"}
             aria-expanded={open}
             aria-controls="menu-principal"
             onClick={() => setOpen((v) => !v)}
-            className="btn-base btn-icon shrink-0 border border-gold/30 bg-transparent text-gold transition-premium hover:bg-gold/10"
+            variante="discreto"
+            tamanho="icone"
+            className="shrink-0 border border-gold/30 bg-transparent text-gold transition-premium hover:bg-gold/10"
           >
-            {open ? (
-              <X className="size-5" aria-hidden="true" />
-            ) : (
-              <Menu className="size-5" aria-hidden="true" />
-            )}
-          </button>
+            {open ? <X className="size-5" aria-hidden="true" /> : <Menu className="size-5" aria-hidden="true" />}
+          </Botao>
         </div>
       </div>
 
@@ -255,13 +253,14 @@ export function SiteHeader() {
             <div className="min-w-0 sm:col-span-2 lg:col-span-1">
               <p className="kicker mb-2xs">Atalhos</p>
               <div className="flex flex-wrap items-center gap-2">
-                <button
+                <Botao
                   type="button"
                   onClick={() => {
                     setOpen(false);
                     setBusca(true);
                   }}
-                  className="btn-base btn-outline-gold btn-md"
+                  variante="contorno"
+                  tamanho="md"
                 >
                   <Search className="size-3.5" aria-hidden="true" /> Buscar
                 </button>
@@ -287,20 +286,13 @@ function ContaBotao() {
     return <span aria-hidden="true" className="hidden h-10 w-[5.25rem] lg:block" />;
 
   return autenticado ? (
-    <button
-      type="button"
-      onClick={() => void sair()}
-      className="btn-base btn-outline-gold btn-sm h-10 hidden w-[5.25rem] justify-center lg:inline-flex"
-    >
+    <Botao variante="contorno" tamanho="sm" onClick={() => void sair()} className="hidden w-[5.25rem] lg:inline-flex">
       Sair
-    </button>
+    </Botao>
   ) : (
-    <Link
-      to="/auth"
-      className="btn-base btn-outline-gold btn-sm h-10 hidden w-[5.25rem] justify-center lg:inline-flex"
-    >
+    <BotaoLink para="/auth" variante="contorno" tamanho="sm" className="hidden w-[5.25rem] lg:inline-flex">
       Entrar
-    </Link>
+    </BotaoLink>
   );
 }
 
