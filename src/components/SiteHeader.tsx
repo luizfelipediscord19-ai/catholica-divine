@@ -263,7 +263,7 @@ export function SiteHeader() {
                   tamanho="md"
                 >
                   <Search className="size-3.5" aria-hidden="true" /> Buscar
-                </button>
+                </Botao>
                 <span className="sm:hidden">
                   <SinoNotificacoes />
                 </span>
