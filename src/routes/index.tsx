@@ -16,6 +16,7 @@ import { dataDoIso } from "../lib/liturgia/hoje";
 import { liturgiaQueryOptions } from "../lib/liturgia/query";
 import { COR_CLASSE } from "../lib/liturgia/calendario";
 import { ScrollReveal } from "../components/ScrollReveal";
+import { BotaoLink } from "../components/ds";
 import { BuscaAprender, ComeceAqui } from "../components/portal/AprenderHome";
 import { RetomarLeitura } from "../components/portal/RetomarLeitura";
 import { UltimosArtigos, TrilhasIlustradas } from "../components/portal/DestaquesHome";
@@ -228,21 +229,15 @@ function Home() {
               reunidos em uma única referência de estudo, fiel ao Magistério desde
               Pedro até hoje.
             </p>
-            <div className="flex flex-col items-stretch gap-4 sm:flex-row sm:flex-wrap sm:items-center">
-              <Link
-                to="/estudar"
-                className="btn-base btn-gold px-8 py-4 label-btn"
-              >
+            <div className="action-tray flex-col items-stretch gap-4 sm:flex-row sm:items-center">
+              <BotaoLink para="/estudar" tamanho="lg" className="w-full sm:w-auto">
                 <BookOpen className="size-4 shrink-0" />
-                <span className="whitespace-nowrap">Começar a estudar</span>
-              </Link>
-              <Link
-                to="/assistente"
-                className="btn-base btn-outline-gold px-8 py-4 label-btn"
-              >
+                Começar a estudar
+              </BotaoLink>
+              <BotaoLink para="/assistente" variante="contorno" tamanho="lg" className="w-full sm:w-auto">
                 <Sparkles className="size-4 shrink-0" />
-                <span className="whitespace-nowrap">Falar com a IA</span>
-              </Link>
+                Falar com a IA
+              </BotaoLink>
             </div>
           </div>
         </div>
@@ -518,13 +513,10 @@ function Home() {
               Conheça os quatro dogmas marianos, as aparições aprovadas pela Igreja e a
               teologia da Theotokos segundo os Padres e Doutores.
             </p>
-            <Link
-              to="/maria"
-              className="group btn-base btn-lg w-full sm:w-auto gap-4 border border-gold/30 text-gold hover:bg-gold hover:text-deep transition-premium"
-            >
+            <BotaoLink para="/maria" variante="contorno" tamanho="lg" className="group w-full gap-4 sm:w-auto">
               <span>Estudar Mariologia</span>
               <span className="group-hover:translate-x-2 transition-transform">→</span>
-            </Link>
+            </BotaoLink>
           </ScrollReveal>
         </div>
         <div className="absolute bottom-0 left-0 w-full h-px bg-linear-to-r from-transparent via-gold/30 to-transparent" />

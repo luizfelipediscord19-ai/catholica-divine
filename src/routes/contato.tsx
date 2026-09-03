@@ -5,8 +5,9 @@ import { z } from "zod";
 import { Mail, Copy, Send, MessagesSquare } from "lucide-react";
 import claustro from "@/assets/claustro.jpg";
 
+import { Botao, BotaoLink } from "@/components/ds";
 import { PageHero, Section } from "@/components/PageShell";
-import { Painel, Rotulo, botaoClass, botaoGhostClass, inputClass } from "@/components/portal/comuns";
+import { Painel, Rotulo, inputClass } from "@/components/portal/comuns";
 import { keywordsPara } from "@/lib/seo/palavras-chave";
 
 const URL = "https://portalcatolico.vercel.app/contato";
@@ -154,19 +155,16 @@ function ContatoPage() {
               <span className="kicker">Assunto</span>
               <div className="flex flex-wrap gap-2">
                 {ASSUNTOS.map((a) => (
-                  <button
+                  <Botao
                     key={a.valor}
-                    type="button"
+                    tamanho="sm"
+                    variante="discreto"
                     onClick={() => setAssunto(a.valor)}
                     aria-pressed={assunto === a.valor}
-                    className={`btn-base btn-sm border transition-premium ${
-                      assunto === a.valor
-                        ? "border-gold text-gold"
-                        : "border-gold/15 text-paper/60 hover:text-paper"
-                    }`}
+                    className={assunto === a.valor ? "border-gold text-gold" : "border-gold/15 text-paper/60 hover:text-paper"}
                   >
                     {a.nome}
-                  </button>
+                  </Botao>
                 ))}
               </div>
             </div>
@@ -184,12 +182,12 @@ function ContatoPage() {
             </label>
 
             <div className="flex flex-wrap items-center gap-3">
-              <button type="button" onClick={enviar} className={botaoClass}>
+              <Botao onClick={enviar}>
                 <Send className="size-3.5" aria-hidden="true" /> Enviar por e-mail
-              </button>
-              <button type="button" onClick={copiar} className={botaoGhostClass}>
+              </Botao>
+              <Botao variante="contorno" onClick={copiar}>
                 <Copy className="size-3.5" aria-hidden="true" /> Copiar mensagem
-              </button>
+              </Botao>
             </div>
             <p className="body-meta">
               Não guardamos sua mensagem em nossos servidores: o envio acontece pelo seu próprio
@@ -214,9 +212,9 @@ function ContatoPage() {
             <p className="mb-4 body-sm">
               No fórum Agora Ecclesiae sua pergunta fica visível e outros fiéis podem responder.
             </p>
-            <Link to="/forum" className={botaoGhostClass}>
+            <BotaoLink para="/forum" variante="contorno" tamanho="md">
               <MessagesSquare className="size-3.5" aria-hidden="true" /> Ir ao fórum
-            </Link>
+            </BotaoLink>
           </Painel>
 
           <Painel>

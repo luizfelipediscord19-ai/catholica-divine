@@ -4,7 +4,8 @@ import { Bookmark, NotebookPen, Search, Star, Trash2, X } from "lucide-react";
 import { useMemo, useState } from "react";
 import { toast } from "sonner";
 
-import { Painel, Rotulo, botaoGhostClass, inputClass } from "@/components/portal/comuns";
+import { Botao, BotaoLink } from "@/components/ds";
+import { Painel, Rotulo, inputClass } from "@/components/portal/comuns";
 import { EstadoSessao } from "@/components/portal/EstadoSessao";
 import { useAuth } from "@/hooks/use-auth";
 import { useIdentidade, usePainel } from "@/hooks/use-identidade";
@@ -113,24 +114,13 @@ function FavoritosPage() {
         </p>
         <div className="flex flex-wrap gap-3">
           {autenticado ? (
-            <button
-              type="button"
-              onClick={() => window.location.reload()}
-              className="btn-base btn-gold px-6 py-3 label-btn inline-flex w-fit"
-            >
+            <Botao tamanho="lg" onClick={() => window.location.reload()}>
               Recarregar biblioteca
-            </button>
+            </Botao>
           ) : (
-            <Link to="/auth" className="btn-base btn-gold px-6 py-3 label-btn inline-flex w-fit">
-              Entrar na minha conta
-            </Link>
+            <BotaoLink para="/auth" tamanho="lg">Entrar na minha conta</BotaoLink>
           )}
-          <Link
-            to="/biblia"
-            className="btn-base btn-outline-gold px-6 py-3 label-btn inline-flex w-fit"
-          >
-            Ler a Bíblia
-          </Link>
+          <BotaoLink para="/biblia" variante="contorno" tamanho="lg">Ler a Bíblia</BotaoLink>
         </div>
       </div>
     );
@@ -172,16 +162,8 @@ function FavoritosPage() {
           entre na sua conta para recuperar tudo o que já foi guardado.
         </p>
         <div className="flex flex-wrap gap-3">
-          <button
-            type="button"
-            onClick={() => void painel.refetch()}
-            className="btn-base btn-gold px-6 py-3 label-btn inline-flex w-fit"
-          >
-            Tentar de novo
-          </button>
-          <Link to="/auth" className="btn-base btn-outline-gold px-6 py-3 label-btn inline-flex w-fit">
-            Entrar na minha conta
-          </Link>
+          <Botao tamanho="lg" onClick={() => void painel.refetch()}>Tentar de novo</Botao>
+          <BotaoLink para="/auth" variante="contorno" tamanho="lg">Entrar na minha conta</BotaoLink>
         </div>
       </div>
     );
@@ -211,20 +193,17 @@ function FavoritosPage() {
             { v: "salvos", rotulo: `Salvos (${salvos.length})`, Icone: Bookmark },
           ] as const
         ).map(({ v, rotulo, Icone }) => (
-          <button
+          <Botao
             key={v}
-            type="button"
+            tamanho="md"
+            variante="discreto"
             onClick={() => setAba(v)}
             aria-pressed={aba === v}
-            className={`inline-flex items-center gap-2 min-h-11 px-6 py-3 label-btn border transition-premium ${
-              aba === v
-                ? "border-gold bg-gold/10 text-gold"
-                : "border-gold/20 text-foreground/70 hover:text-gold hover:border-gold/50"
-            }`}
+            className={aba === v ? "border-gold bg-gold/10 text-gold" : "border-gold/20 text-foreground/70 hover:text-gold hover:border-gold/50"}
           >
             <Icone className="size-3.5" aria-hidden="true" />
             {rotulo}
-          </button>
+          </Botao>
         ))}
       </div>
 
@@ -278,14 +257,14 @@ function FavoritosPage() {
                 <Painel className="h-full flex flex-col gap-3">
                   <div className="flex items-start justify-between gap-3">
                     <Rotulo>{ROTULO_TIPO[item.tipo]}</Rotulo>
-                    <button
-                      type="button"
+                    <Botao
+                      tamanho="icone"
+                      variante="discreto"
                       onClick={() => removerSalvo(item.tipo, item.slug)}
                       aria-label={`Remover ${item.titulo} dos salvos`}
-                      className={`${botaoGhostClass} px-2`}
                     >
                       <X className="size-3.5" aria-hidden="true" />
-                    </button>
+                    </Botao>
                   </div>
                   <p className="font-display text-lg text-foreground leading-tight">
                     {item.titulo}
@@ -406,25 +385,27 @@ function NotaCard({
           {nomeLivro(nota.livro)} {nota.capitulo}
           {nota.versiculo ? `,${nota.versiculo}` : ""}
         </Rotulo>
-        <button
-          type="button"
+        <Botao
+          tamanho="sm"
+          variante="discreto"
           onClick={() => apagar.mutate()}
           disabled={!token || apagar.isPending}
-          className="inline-flex items-center gap-2 label-btn text-paper/60 hover:text-gold transition-colors disabled:opacity-50"
         >
           <Trash2 className="size-3.5" aria-hidden="true" /> Apagar
-        </button>
+        </Botao>
       </div>
       <p className="text-sm text-foreground/85 font-light leading-relaxed whitespace-pre-line">
         {nota.conteudo}
       </p>
-      <Link
-        to="/biblia/$livro/$capitulo"
+      <BotaoLink
+        para="/biblia/$livro/$capitulo"
         params={{ livro: nota.livro, capitulo: String(nota.capitulo) }}
-        className={`${botaoGhostClass} self-start`}
+        variante="contorno"
+        tamanho="md"
+        className="self-start"
       >
         Abrir capítulo
-      </Link>
+      </BotaoLink>
     </Painel>
   );
 }

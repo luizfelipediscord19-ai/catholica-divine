@@ -2,8 +2,9 @@ import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 
+import { Botao, BotaoLink } from "@/components/ds";
 import { PageHero } from "@/components/PageShell";
-import { Painel, Rotulo, botaoClass, botaoGhostClass, inputClass } from "@/components/portal/comuns";
+import { Painel, Rotulo, inputClass } from "@/components/portal/comuns";
 import { useAuth } from "@/hooks/use-auth";
 import { supabase } from "@/integrations/supabase/client";
 import { baseParaEmails } from "@/lib/auth/site-url";
@@ -129,15 +130,9 @@ function AuthPage() {
               Conectado como <span className="text-gold">{user?.email}</span>.
             </p>
             <div className="flex flex-wrap gap-3">
-              <Link to="/forum" className={botaoClass}>
-                Ir para o fórum
-              </Link>
-              <Link to="/painel" className={botaoGhostClass}>
-                Painel espiritual
-              </Link>
-              <button type="button" onClick={() => void sair()} className={botaoGhostClass}>
-                Sair
-              </button>
+              <BotaoLink para="/forum">Ir para o fórum</BotaoLink>
+              <BotaoLink para="/painel" variante="contorno">Painel espiritual</BotaoLink>
+              <Botao variante="contorno" onClick={() => void sair()}>Sair</Botao>
             </div>
           </Painel>
         ) : (
@@ -150,19 +145,16 @@ function AuthPage() {
                   ["recuperar", "Esqueci a senha"],
                 ] as [Modo, string][]
               ).map(([valor, rotulo]) => (
-                <button
+                <Botao
                   key={valor}
-                  type="button"
+                  tamanho="sm"
+                  variante="discreto"
                   onClick={() => setModo(valor)}
                   aria-pressed={modo === valor}
-                  className={`btn-base btn-sm border transition-premium ${
-                    modo === valor
-                      ? "border-gold bg-gold/10 text-gold"
-                      : "border-gold/15 text-paper/60 hover:text-paper hover:border-gold/40"
-                  }`}
+                  className={modo === valor ? "border-gold bg-gold/10 text-gold" : "border-gold/15 text-paper/60 hover:text-paper hover:border-gold/40"}
                 >
                   {rotulo}
-                </button>
+                </Botao>
               ))}
             </div>
 
@@ -203,7 +195,7 @@ function AuthPage() {
               )}
 
               <div className="flex flex-wrap items-center gap-3">
-                <button type="submit" disabled={!valido || enviando} className={botaoClass}>
+                <Botao type="submit" disabled={!valido} carregando={enviando}>
                   {enviando
                     ? "Enviando…"
                     : modo === "criar"
@@ -211,15 +203,11 @@ function AuthPage() {
                       : modo === "recuperar"
                         ? "Enviar link"
                         : "Entrar"}
-                </button>
+                </Botao>
                 {modo === "entrar" ? (
-                  <button
-                    type="button"
-                    onClick={() => setModo("recuperar")}
-                    className={botaoGhostClass}
-                  >
+                  <Botao variante="contorno" onClick={() => setModo("recuperar")}>
                     Esqueci a senha
-                  </button>
+                  </Botao>
                 ) : null}
               </div>
 
