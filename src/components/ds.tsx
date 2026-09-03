@@ -6,7 +6,7 @@
  * de classes. Todos os valores vêm dos tokens definidos em `src/styles.css`
  * (cores, escala tipográfica `--step-*`, espaçamentos `--space-*`, raios e sombras).
  */
-import type { ButtonHTMLAttributes, ElementType, ReactNode } from "react";
+import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ElementType, ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { cn } from "@/lib/utils";
 
