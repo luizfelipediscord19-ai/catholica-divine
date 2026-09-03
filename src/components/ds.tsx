@@ -228,8 +228,158 @@ export function Texto({
 }
 
 /* ============================================================
+   AÇÕES (BOTÕES)
+   ============================================================ */
+
+type Variante = "ouro" | "contorno" | "discreto" | "perigo" | "link";
+type Tamanho = "sm" | "md" | "lg" | "icone";
+
+const VARIANTE: Record<Variante, string> = {
+  ouro: "btn-gold",
+  contorno: "btn-outline-gold",
+  discreto: "btn-quiet",
+  perigo: "btn-danger",
+  link: "btn-link-gold",
+};
+
+const TAMANHO: Record<Tamanho, string> = {
+  sm: "btn-sm",
+  md: "btn-md",
+  lg: "btn-lg",
+  icone: "btn-icon",
+};
+
+export function classesBotao({
+  variante = "ouro",
+  tamanho = "md",
+  bloco = false,
+  className,
+}: {
+  variante?: Variante;
+  tamanho?: Tamanho;
+  bloco?: boolean;
+  className?: string;
+} = {}) {
+  return cn(
+    "btn-base",
+    VARIANTE[variante],
+    TAMANHO[tamanho],
+    bloco && "w-full",
+    className,
+  );
+}
+
+type BotaoProps = {
+  variante?: Variante;
+  tamanho?: Tamanho;
+  /** Largura total — recomendado em formulários no celular. */
+  bloco?: boolean;
+  /** Bloqueia o clique e mostra rótulo de espera. */
+  carregando?: boolean;
+  children?: ReactNode;
+  className?: string;
+} & Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "className" | "children">;
+
+/** Botão canônico do portal: altura, tipografia e foco padronizados. */
+export function Botao({
+  variante = "ouro",
+  tamanho = "md",
+  bloco = false,
+  carregando = false,
+  disabled,
+  children,
+  className,
+  type = "button",
+  ...resto
+}: BotaoProps) {
+  return (
+    <button
+      {...resto}
+      type={type}
+      disabled={disabled || carregando}
+      aria-busy={carregando || undefined}
+      className={classesBotao({ variante, tamanho, bloco, className })}
+    >
+      {carregando ? (
+        <span
+          aria-hidden
+          className="size-3.5 shrink-0 animate-spin rounded-full border border-current border-t-transparent"
+        />
+      ) : null}
+      <span className="min-w-0 truncate">{children}</span>
+    </button>
+  );
+}
+
+/** Mesma aparência do `Botao`, mas navegando por rota interna ou link externo. */
+export function BotaoLink({
+  para,
+  href,
+  variante = "contorno",
+  tamanho = "md",
+  bloco = false,
+  children,
+  className,
+  ...resto
+}: {
+  para?: string;
+  href?: string;
+  variante?: Variante;
+  tamanho?: Tamanho;
+  bloco?: boolean;
+  children?: ReactNode;
+  className?: string;
+} & Record<string, unknown>) {
+  const classes = classesBotao({ variante, tamanho, bloco, className });
+  if (para) {
+    return (
+      <Link to={para} className={classes} {...(resto as object)}>
+        <span className="min-w-0 truncate">{children}</span>
+      </Link>
+    );
+  }
+  return (
+    <a
+      href={href}
+      target={href?.startsWith("http") ? "_blank" : undefined}
+      rel={href?.startsWith("http") ? "noopener" : undefined}
+      className={classes}
+      {...(resto as object)}
+    >
+      <span className="min-w-0 truncate">{children}</span>
+    </a>
+  );
+}
+
+/** Barra de ações: alinhamento e alturas iguais; empilha no celular. */
+export function AcoesLinha({
+  className,
+  children,
+  alinhar = "start",
+}: {
+  className?: string;
+  children: ReactNode;
+  alinhar?: "start" | "center" | "end" | "between";
+}) {
+  return (
+    <div
+      className={cn(
+        "flex flex-wrap items-center gap-xs [&>*]:min-w-0",
+        alinhar === "center" && "justify-center",
+        alinhar === "end" && "justify-end",
+        alinhar === "between" && "justify-between",
+        className,
+      )}
+    >
+      {children}
+    </div>
+  );
+}
+
+/* ============================================================
    SUPERFÍCIES
    ============================================================ */
+
 
 /** Painel/card padrão. Use `como="a"`/`para` para versão clicável. */
 export function Painel({
