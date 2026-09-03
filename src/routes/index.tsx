@@ -229,7 +229,7 @@ function Home() {
               reunidos em uma única referência de estudo, fiel ao Magistério desde
               Pedro até hoje.
             </p>
-            <div className="flex flex-col items-stretch gap-4 sm:flex-row sm:flex-wrap sm:items-center">
+            <div className="action-tray flex-col items-stretch gap-4 sm:flex-row sm:items-center">
               <BotaoLink para="/estudar" tamanho="lg" className="w-full sm:w-auto">
                 <BookOpen className="size-4 shrink-0" />
                 Começar a estudar

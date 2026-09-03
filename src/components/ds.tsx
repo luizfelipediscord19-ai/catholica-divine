@@ -364,7 +364,7 @@ export function AcoesLinha({
   return (
     <div
       className={cn(
-        "flex flex-wrap items-center gap-xs [&>*]:min-w-0",
+        "action-tray [&>*]:min-w-0", 
         alinhar === "center" && "justify-center",
         alinhar === "end" && "justify-end",
         alinhar === "between" && "justify-between",
