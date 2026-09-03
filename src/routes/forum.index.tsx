@@ -84,8 +84,9 @@ function ForumPage() {
       image={claustro}
       />
 
-      <div className="shell py-block grid gap-10 lg:grid-cols-[1fr_280px]">
-        <div className="space-y-8">
+      <div className="shell py-block grid gap-10 lg:grid-cols-[minmax(0,1fr)_280px]">
+        <div className="min-w-0 space-y-8">
+
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
             <div className="filtro-trilho" role="group" aria-label="Filtrar por seção">
               <Botao
