@@ -6,7 +6,7 @@
  * de classes. Todos os valores vêm dos tokens definidos em `src/styles.css`
  * (cores, escala tipográfica `--step-*`, espaçamentos `--space-*`, raios e sombras).
  */
-import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ElementType, ReactNode } from "react";
+import { forwardRef, type AnchorHTMLAttributes, type ButtonHTMLAttributes, type ElementType, type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
 import { cn } from "@/lib/utils";
 
@@ -281,20 +281,24 @@ type BotaoProps = {
 } & Omit<ButtonHTMLAttributes<HTMLButtonElement>, "className" | "children">;
 
 /** Botão canônico do portal: altura, tipografia e foco padronizados. */
-export function Botao({
-  variante = "ouro",
-  tamanho = "md",
-  bloco = false,
-  carregando = false,
-  disabled,
-  children,
-  className,
-  type = "button",
-  ...resto
-}: BotaoProps) {
+export const Botao = forwardRef<HTMLButtonElement, BotaoProps>(function Botao(
+  {
+    variante = "ouro",
+    tamanho = "md",
+    bloco = false,
+    carregando = false,
+    disabled,
+    children,
+    className,
+    type = "button",
+    ...resto
+  },
+  ref,
+) {
   return (
     <button
       {...resto}
+      ref={ref}
       type={type}
       disabled={disabled || carregando}
       aria-busy={carregando || undefined}
@@ -309,7 +313,7 @@ export function Botao({
       <span className="min-w-0 truncate">{children}</span>
     </button>
   );
-}
+});
 
 /** Mesma aparência do `Botao`, mas navegando por rota interna ou link externo. */
 export function BotaoLink({
