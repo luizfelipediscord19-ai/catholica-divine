@@ -1045,17 +1045,8 @@
   @media (pointer: coarse) {
     button:not([data-slot]),
     a[role="button"],
-    a.btn-base,
-    .btn-base,
-    .btn-sm,
-    .chip-interactive,
     [role="tab"] {
       min-height: 2.75rem;
-    }
-    .btn-icon {
-      min-height: 2.75rem;
-      width: 2.75rem;
-      height: 2.75rem;
     }
   }
 
