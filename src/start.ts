@@ -7,8 +7,6 @@ import { anexarTokenDaConta } from "./lib/auth/anexar-token";
 // sessão às chamadas de servidor — sem ele, as funções protegidas responderiam
 // 401 e o progresso da conta não seria reconciliado.
 
-
-
 const errorMiddleware = createMiddleware().server(async ({ next }) => {
   try {
     return await next();
@@ -23,8 +21,6 @@ const errorMiddleware = createMiddleware().server(async ({ next }) => {
     });
   }
 });
-
-
 
 export const startInstance = createStart(() => ({
   functionMiddleware: [anexarTokenDaConta],

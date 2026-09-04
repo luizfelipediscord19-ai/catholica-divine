@@ -15,9 +15,7 @@ import { criarContaFn, vincularContaFn } from "@/lib/portal.functions";
 export const Route = createFileRoute("/auth")({
   validateSearch: (busca: Record<string, unknown>): { modo?: "entrar" | "criar" | "recuperar" } => {
     const valor = busca["modo"];
-    return valor === "criar" || valor === "recuperar" || valor === "entrar"
-      ? { modo: valor }
-      : {};
+    return valor === "criar" || valor === "recuperar" || valor === "entrar" ? { modo: valor } : {};
   },
 
   head: () => ({
@@ -106,8 +104,7 @@ function AuthPage() {
   }
 
   const senhaCurta = modo !== "recuperar" && senha.length > 0 && senha.length < 6;
-  const valido =
-    /.+@.+\..+/.test(email.trim()) && (modo === "recuperar" || senha.length >= 6);
+  const valido = /.+@.+\..+/.test(email.trim()) && (modo === "recuperar" || senha.length >= 6);
 
   return (
     <div>
@@ -134,8 +131,12 @@ function AuthPage() {
             </p>
             <div className="flex flex-wrap gap-3">
               <BotaoLink para="/forum">Ir para o fórum</BotaoLink>
-              <BotaoLink para="/painel" variante="contorno">Painel espiritual</BotaoLink>
-              <Botao variante="contorno" onClick={() => void sair()}>Sair</Botao>
+              <BotaoLink para="/painel" variante="contorno">
+                Painel espiritual
+              </BotaoLink>
+              <Botao variante="contorno" onClick={() => void sair()}>
+                Sair
+              </Botao>
             </div>
           </Painel>
         ) : (
@@ -156,7 +157,11 @@ function AuthPage() {
                   role="tab"
                   aria-pressed={modo === valor}
                   aria-selected={modo === valor}
-                  className={modo === valor ? "border-gold bg-gold/10 text-gold" : "border-gold/15 text-paper/60 hover:text-paper hover:border-gold/40"}
+                  className={
+                    modo === valor
+                      ? "border-gold bg-gold/10 text-gold"
+                      : "border-gold/15 text-paper/60 hover:text-paper hover:border-gold/40"
+                  }
                 >
                   {rotulo}
                 </Botao>
@@ -217,11 +222,21 @@ function AuthPage() {
               </div>
 
               {erro ? (
-                <p role="alert" className="border-l-2 border-destructive bg-destructive/5 px-4 py-3 text-sm text-destructive-text">
+                <p
+                  role="alert"
+                  className="border-l-2 border-destructive bg-destructive/5 px-4 py-3 text-sm text-destructive-text"
+                >
                   {erro}
                 </p>
               ) : null}
-              {aviso ? <p role="status" className="border-l-2 border-gold bg-gold/5 px-4 py-3 text-sm text-gold/90">{aviso}</p> : null}
+              {aviso ? (
+                <p
+                  role="status"
+                  className="border-l-2 border-gold bg-gold/5 px-4 py-3 text-sm text-gold/90"
+                >
+                  {aviso}
+                </p>
+              ) : null}
             </form>
 
             <p className="text-xs text-muted-foreground/80 font-light leading-relaxed mt-8">
@@ -253,9 +268,7 @@ function ForcaSenha({ senha }: { senha: string }) {
         {[1, 2, 3, 4].map((i) => (
           <span
             key={i}
-            className={`h-1 flex-1 transition-premium ${
-              i <= nivel ? "bg-gold" : "bg-gold/15"
-            }`}
+            className={`h-1 flex-1 transition-premium ${i <= nivel ? "bg-gold" : "bg-gold/15"}`}
           />
         ))}
       </div>

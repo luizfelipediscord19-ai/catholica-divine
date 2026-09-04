@@ -25,7 +25,6 @@ import { SECAO_PADRAO, SECOES_FORUM } from "@/lib/data/forum-secoes";
 import { criarTopicoFn, listarSecoesFn, listarTopicosFn } from "@/lib/portal.functions";
 import { keywordsPara } from "@/lib/seo/palavras-chave";
 
-
 export const Route = createFileRoute("/forum/")({
   head: () => ({
     meta: [
@@ -63,12 +62,13 @@ function ForumPage() {
   });
   // Seções fixas como base: a lista nunca aparece vazia.
   const secoes =
-    (secoesQuery.data ?? []).length > 0 ? secoesQuery.data! : SECOES_FORUM.map((s) => ({ ...s, id: s.slug }));
+    (secoesQuery.data ?? []).length > 0
+      ? secoesQuery.data!
+      : SECOES_FORUM.map((s) => ({ ...s, id: s.slug }));
 
   const topicos = useQuery({
     queryKey: ["forum", "topicos", secao ?? "todos", token ?? "anon"],
     queryFn: () => listarTopicosFn({ data: { secaoSlug: secao, token } }),
-
   });
 
   return (
@@ -81,12 +81,11 @@ function ForumPage() {
           </>
         }
         intro="Um pátio para perguntar, aprender e testemunhar. Para escrever, entre com e-mail e senha; sua identidade pública continua sendo um santo padroeiro sorteado."
-      image={claustro}
+        image={claustro}
       />
 
       <div className="shell py-block grid gap-10 lg:grid-cols-[minmax(0,1fr)_280px]">
         <div className="min-w-0 space-y-8">
-
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
             <div className="filtro-trilho" role="group" aria-label="Filtrar por seção">
               <Botao
@@ -94,7 +93,11 @@ function ForumPage() {
                 variante="discreto"
                 aria-pressed={secao === undefined}
                 onClick={() => setSecao(undefined)}
-                className={secao === undefined ? "border-gold text-gold" : "border-gold/15 text-paper/60 hover:text-paper"}
+                className={
+                  secao === undefined
+                    ? "border-gold text-gold"
+                    : "border-gold/15 text-paper/60 hover:text-paper"
+                }
               >
                 Todos
               </Botao>
@@ -105,7 +108,11 @@ function ForumPage() {
                   variante="discreto"
                   aria-pressed={secao === s.slug}
                   onClick={() => setSecao(s.slug)}
-                  className={secao === s.slug ? "border-gold text-gold" : "border-gold/15 text-paper/60 hover:text-paper"}
+                  className={
+                    secao === s.slug
+                      ? "border-gold text-gold"
+                      : "border-gold/15 text-paper/60 hover:text-paper"
+                  }
                 >
                   {s.nome}
                 </Botao>
@@ -140,7 +147,6 @@ function ForumPage() {
               ))}
             </ul>
           ) : (topicos.data ?? []).length === 0 ? (
-
             <Painel>
               <p className="text-sm text-muted-foreground">
                 Nenhuma conversa nesta seção ainda. Seja o primeiro a abrir um tema.
@@ -194,7 +200,6 @@ function ForumPage() {
                           </span>
                         </span>
                       </div>
-
                     </Link>
                   </li>
                 );
@@ -217,8 +222,14 @@ function ForumPage() {
                     className="group h-auto justify-start text-left normal-case tracking-normal"
                   >
                     <span className="grid min-w-0 gap-1 text-left">
-                      <span className="text-sm text-foreground group-hover:text-gold transition-colors">{s.nome}</span>
-                      {s.descricao ? <span className="text-xs font-light text-muted-foreground">{s.descricao}</span> : null}
+                      <span className="text-sm text-foreground group-hover:text-gold transition-colors">
+                        {s.nome}
+                      </span>
+                      {s.descricao ? (
+                        <span className="text-xs font-light text-muted-foreground">
+                          {s.descricao}
+                        </span>
+                      ) : null}
                     </span>
                   </Botao>
                 </li>
@@ -231,8 +242,8 @@ function ForumPage() {
             <p className="text-xs text-muted-foreground leading-relaxed font-light">
               Ler é livre. Para escrever, crie uma conta com e-mail e senha — o portal sorteia um
               santo padroeiro que será seu nome público, e o e-mail nunca aparece para ninguém. Todo
-              conteúdo passa por revisão antes de aparecer para os outros. Cada
-              participação rende XP e conquistas no seu{" "}
+              conteúdo passa por revisão antes de aparecer para os outros. Cada participação rende
+              XP e conquistas no seu{" "}
               <Link to="/painel" className="text-gold hover:underline">
                 painel espiritual
               </Link>
@@ -240,7 +251,6 @@ function ForumPage() {
             </p>
           </Painel>
         </aside>
-
       </div>
     </div>
   );
@@ -297,7 +307,6 @@ function NovoTopico({
         (modo) => void navigate({ to: "/auth", search: modo ? { modo } : undefined }),
         "Não foi possível publicar.",
       ),
-
   });
 
   const valido = autenticado && titulo.trim().length >= 5 && corpo.trim().length >= 10;
@@ -308,7 +317,6 @@ function NovoTopico({
       : corpo.trim().length < 10
         ? "A mensagem precisa de pelo menos 10 caracteres."
         : null;
-
 
   return (
     <Painel>
@@ -325,8 +333,12 @@ function NovoTopico({
             navegador enquanto você cria a conta.
           </p>
           <span className="mt-3 flex flex-wrap items-center gap-3">
-            <BotaoLink para="/auth" search={{ modo: "entrar" }} tamanho="md">Entrar</BotaoLink>
-            <BotaoLink para="/auth" search={{ modo: "criar" }} tamanho="md">Criar conta</BotaoLink>
+            <BotaoLink para="/auth" search={{ modo: "entrar" }} tamanho="md">
+              Entrar
+            </BotaoLink>
+            <BotaoLink para="/auth" search={{ modo: "criar" }} tamanho="md">
+              Criar conta
+            </BotaoLink>
           </span>
         </div>
       ) : null}
@@ -338,9 +350,7 @@ function NovoTopico({
         }}
       >
         <fieldset className="space-y-3">
-          <legend className="label-btn text-paper/60 mb-2">
-            Seção
-          </legend>
+          <legend className="label-btn text-paper/60 mb-2">Seção</legend>
           <div className="flex flex-wrap gap-2">
             {lista.map((s) => (
               <Botao
@@ -349,7 +359,11 @@ function NovoTopico({
                 variante="discreto"
                 onClick={() => setSecaoSlug(s.slug)}
                 aria-pressed={secaoSlug === s.slug}
-                className={secaoSlug === s.slug ? "border-gold bg-gold/10 text-gold" : "border-gold/15 text-paper/60 hover:text-paper hover:border-gold/40"}
+                className={
+                  secaoSlug === s.slug
+                    ? "border-gold bg-gold/10 text-gold"
+                    : "border-gold/15 text-paper/60 hover:text-paper hover:border-gold/40"
+                }
               >
                 {s.nome}
               </Botao>
@@ -382,8 +396,12 @@ function NovoTopico({
           <Botao type="submit" disabled={!valido} carregando={criar.isPending}>
             {criar.isPending ? "Publicando…" : "Publicar"}
           </Botao>
-          <Botao variante="contorno" onClick={onPronto}>Cancelar</Botao>
-          <Botao variante="contorno" onClick={rascunho.limpar}>Descartar rascunho</Botao>
+          <Botao variante="contorno" onClick={onPronto}>
+            Cancelar
+          </Botao>
+          <Botao variante="contorno" onClick={rascunho.limpar}>
+            Descartar rascunho
+          </Botao>
           {identidade ? (
             <span className="text-xs text-muted-foreground">
               como <span className="text-gold">{identidade.apelido ?? identidade.santoNome}</span>
@@ -401,7 +419,6 @@ function NovoTopico({
             Recuperamos o rascunho que você havia começado neste navegador.
           </p>
         ) : null}
-
       </form>
     </Painel>
   );
