@@ -6,7 +6,13 @@
  * de classes. Todos os valores vêm dos tokens definidos em `src/styles.css`
  * (cores, escala tipográfica `--step-*`, espaçamentos `--space-*`, raios e sombras).
  */
-import { forwardRef, type AnchorHTMLAttributes, type ButtonHTMLAttributes, type ElementType, type ReactNode } from "react";
+import {
+  forwardRef,
+  type AnchorHTMLAttributes,
+  type ButtonHTMLAttributes,
+  type ElementType,
+  type ReactNode,
+} from "react";
 import { Link } from "@tanstack/react-router";
 import { cn } from "@/lib/utils";
 
@@ -203,7 +209,13 @@ export function Titulo({
 }) {
   const Tag = `h${nivel}` as ElementType;
   const estilo =
-    nivel === 1 ? "title-page" : nivel === 2 ? "title-section" : nivel === 3 ? "title-card" : "title-sub";
+    nivel === 1
+      ? "title-page"
+      : nivel === 2
+        ? "title-section"
+        : nivel === 3
+          ? "title-card"
+          : "title-sub";
   return <Tag className={cn(estilo, className)}>{children}</Tag>;
 }
 
@@ -260,13 +272,7 @@ export function classesBotao({
   bloco?: boolean;
   className?: string;
 } = {}) {
-  return cn(
-    "btn-base",
-    VARIANTE[variante],
-    TAMANHO[tamanho],
-    bloco && "w-full",
-    className,
-  );
+  return cn("btn-base", VARIANTE[variante], TAMANHO[tamanho], bloco && "w-full", className);
 }
 
 type BotaoProps = {
@@ -319,6 +325,7 @@ export const Botao = forwardRef<HTMLButtonElement, BotaoProps>(function Botao(
 export function BotaoLink({
   para,
   href,
+  search,
   variante = "contorno",
   tamanho = "md",
   bloco = false,
@@ -334,12 +341,19 @@ export function BotaoLink({
   children?: ReactNode;
   className?: string;
   params?: Record<string, string>;
+  search?: Record<string, string>;
 } & Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "className" | "children" | "href">) {
   const classes = classesBotao({ variante, tamanho, bloco, className });
   const { params, ...anchorProps } = resto;
   if (para) {
     return (
-      <Link to={para} params={params} className={classes} {...(anchorProps as object)}>
+      <Link
+        to={para}
+        params={params}
+        search={search}
+        className={classes}
+        {...(anchorProps as object)}
+      >
         <span className="min-w-0 truncate">{children}</span>
       </Link>
     );
@@ -370,7 +384,7 @@ export function AcoesLinha({
   return (
     <div
       className={cn(
-        "action-tray [&>*]:min-w-0", 
+        "action-tray [&>*]:min-w-0",
         alinhar === "center" && "justify-center",
         alinhar === "end" && "justify-end",
         alinhar === "between" && "justify-between",
@@ -385,7 +399,6 @@ export function AcoesLinha({
 /* ============================================================
    SUPERFÍCIES
    ============================================================ */
-
 
 /** Painel/card padrão. Use `como="a"`/`para` para versão clicável. */
 export function Painel({

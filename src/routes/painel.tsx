@@ -4,16 +4,8 @@ import { BookOpen, Flame, NotebookPen, Sparkles, Star, Trophy } from "lucide-rea
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 
-import {
-  Painel,
-  Rotulo,
-  botaoClass,
-  inputClass,
-} from "@/components/portal/comuns";
-import {
-  ContinuarLeitura,
-  ProgressoPorLivro,
-} from "@/components/portal/ContinuarLeitura";
+import { Painel, Rotulo, botaoClass, inputClass } from "@/components/portal/comuns";
+import { ContinuarLeitura, ProgressoPorLivro } from "@/components/portal/ContinuarLeitura";
 import { CaminhoDoPadroeiro } from "@/components/portal/CaminhoDoPadroeiro";
 import { HorariosTarefas } from "@/components/portal/HorariosTarefas";
 
@@ -24,12 +16,7 @@ import { EstadoSessao } from "@/components/portal/EstadoSessao";
 import { useIdentidade, usePainel } from "@/hooks/use-identidade";
 import { useAuth } from "@/hooks/use-auth";
 import { registrarOracaoFn } from "@/lib/portal.functions";
-import {
-  metaDaConquista,
-  textoRestante,
-  type Totais,
-} from "@/lib/portal/metas-conquistas";
-
+import { metaDaConquista, textoRestante, type Totais } from "@/lib/portal/metas-conquistas";
 
 import { keywordsPara } from "@/lib/seo/palavras-chave";
 export const Route = createFileRoute("/painel")({
@@ -73,7 +60,6 @@ function PainelPage() {
     if (nivelAtual) celebrarNivel(nivelAtual);
   }, [nivelAtual, celebrarNivel]);
 
-
   if (desconectado && !autenticado) {
     return (
       <div className="shell py-block space-y-6">
@@ -82,13 +68,10 @@ function PainelPage() {
         </h1>
         <p className="text-sm text-muted-foreground font-light max-w-[36rem]">
           Você saiu da sua conta, então seu painel espiritual também foi desconectado deste
-          navegador. Entre novamente com a mesma conta para recuperar sequência de oração,
-          diário, leituras, favoritos e conquistas — tudo continua guardado.
+          navegador. Entre novamente com a mesma conta para recuperar sequência de oração, diário,
+          leituras, favoritos e conquistas — tudo continua guardado.
         </p>
-        <Link
-          to="/auth"
-          className="btn-base btn-gold px-6 py-3 label-btn inline-flex w-fit"
-        >
+        <Link to="/auth" className="btn-base btn-gold px-6 py-3 label-btn inline-flex w-fit">
           Entrar na minha conta
         </Link>
       </div>
@@ -113,8 +96,6 @@ function PainelPage() {
     );
   }
 
-
-
   const dados = painel.data;
   if (!dados || painel.isError) {
     const motivo =
@@ -134,7 +115,6 @@ function PainelPage() {
             Tentar de novo
           </button>
         </div>
-
       </div>
     );
   }
@@ -169,7 +149,7 @@ function PainelPage() {
 
   return (
     <div className="shell w-full py-[var(--space-lg)] space-y-[var(--space-md)]">
-      <header className="flex flex-col gap-[var(--space-sm)] md:flex-row md:items-center">
+      <header className="border-b border-gold/15 pb-[var(--space-md)] flex flex-col gap-[var(--space-sm)] md:flex-row md:items-center">
         {dados.identidade.santoImagem ? (
           <img
             src={dados.identidade.santoImagem}
@@ -238,14 +218,10 @@ function PainelPage() {
       ) : null}
 
       {!trocando && dados.identidade.santoSlug ? (
-        <CaminhoDoPadroeiro
-          slug={dados.identidade.santoSlug}
-          nome={dados.identidade.santoNome}
-        />
+        <CaminhoDoPadroeiro slug={dados.identidade.santoSlug} nome={dados.identidade.santoNome} />
       ) : null}
 
-
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <Metrica icone={Flame} rotulo="Sequência" valor={`${dados.identidade.streak} dias`} />
         <Metrica icone={BookOpen} rotulo="Capítulos lidos" valor={String(dados.leituras.length)} />
         <Metrica icone={Star} rotulo="Favoritos" valor={String(dados.favoritos.length)} />
@@ -258,10 +234,7 @@ function PainelPage() {
 
       <ContinuarLeitura />
 
-      <DiarioHoje
-        rezouHoje={dados.rezouHoje}
-        inicial={dados.diarioHoje}
-      />
+      <DiarioHoje rezouHoje={dados.rezouHoje} inicial={dados.diarioHoje} />
 
       <section className="grid gap-6 lg:grid-cols-2">
         <Painel>
@@ -290,14 +263,10 @@ function PainelPage() {
       </section>
 
       <section className="grid gap-6 lg:grid-cols-2">
-
         <Painel>
           <div className="flex items-start justify-between gap-4">
             <Rotulo>Versículos guardados</Rotulo>
-            <Link
-              to="/favoritos"
-              className="kicker hover:text-paper transition-colors"
-            >
+            <Link to="/favoritos" className="kicker hover:text-paper transition-colors">
               Ver todos
             </Link>
           </div>
@@ -330,10 +299,7 @@ function PainelPage() {
         <Painel>
           <div className="flex items-start justify-between gap-4">
             <Rotulo>Suas anotações</Rotulo>
-            <Link
-              to="/favoritos"
-              className="kicker hover:text-paper transition-colors"
-            >
+            <Link to="/favoritos" className="kicker hover:text-paper transition-colors">
               Ver todas
             </Link>
           </div>
@@ -374,9 +340,7 @@ function PainelPage() {
                     : "border-gold/10 bg-card/30 opacity-80"
                 }`}
               >
-                <p className="kicker mb-2">
-                  {c.xp} XP
-                </p>
+                <p className="kicker mb-2">{c.xp} XP</p>
                 <h3 className="font-display text-xl text-foreground mb-2">{c.titulo}</h3>
                 <p className="text-xs text-muted-foreground font-light leading-relaxed">
                   {c.descricao}
@@ -411,9 +375,6 @@ function PainelPage() {
       </section>
 
       <HorariosTarefas />
-
-
-
 
       <footer className="border-t border-gold/15 pt-8 flex flex-wrap items-center gap-4">
         <p className="text-xs text-muted-foreground max-w-[36rem] font-light">
@@ -522,9 +483,7 @@ function DiarioHoje({
         }}
       >
         <label className="block space-y-2">
-          <span className="label-btn text-paper/60">
-            Intenção do dia
-          </span>
+          <span className="label-btn text-paper/60">Intenção do dia</span>
           <input
             value={intencao}
             onChange={(e) => setIntencao(e.target.value)}
@@ -534,9 +493,7 @@ function DiarioHoje({
           />
         </label>
         <label className="block space-y-2">
-          <span className="label-btn text-paper/60">
-            Reflexão curta
-          </span>
+          <span className="label-btn text-paper/60">Reflexão curta</span>
           <textarea
             value={reflexao}
             onChange={(e) => setReflexao(e.target.value)}
@@ -547,9 +504,7 @@ function DiarioHoje({
           />
         </label>
         <label className="block space-y-2 max-w-[20rem]">
-          <span className="label-btn text-paper/60">
-            Tempo de oração (minutos)
-          </span>
+          <span className="label-btn text-paper/60">Tempo de oração (minutos)</span>
           <input
             type="number"
             min={0}
@@ -564,10 +519,7 @@ function DiarioHoje({
             <NotebookPen className="size-3.5" aria-hidden="true" />
             {registrar.isPending ? "Salvando…" : rezouHoje ? "Atualizar diário" : "Já rezei hoje"}
           </button>
-          <Link
-            to="/liturgia-diaria"
-            className="kicker hover:text-paper transition-colors"
-          >
+          <Link to="/liturgia-diaria" className="kicker hover:text-paper transition-colors">
             Ler a liturgia do dia
           </Link>
         </div>

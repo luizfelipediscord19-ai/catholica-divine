@@ -3,10 +3,7 @@ import type { Session, User } from "@supabase/supabase-js";
 import { useQueryClient } from "@tanstack/react-query";
 
 import { supabase } from "@/integrations/supabase/client";
-import {
-  desconectarIdentidadeLocal,
-  reconectarIdentidadeLocal,
-} from "@/hooks/use-identidade";
+import { desconectarIdentidadeLocal, reconectarIdentidadeLocal } from "@/hooks/use-identidade";
 
 /**
  * Sessão de e-mail/senha do portal. A identidade anônima deste navegador é
@@ -25,8 +22,6 @@ export function useAuth() {
       setSession(nova);
       setCarregando(false);
       if (evento === "SIGNED_IN" || evento === "USER_UPDATED") {
-        // Ao voltar para a mesma conta, o navegador volta a montar a
-        // identidade — o servidor devolve todo o progresso guardado.
         reconectarIdentidadeLocal();
         void queryClient.invalidateQueries({ queryKey: ["identidade"] });
         void queryClient.invalidateQueries({ queryKey: ["painel"] });
@@ -57,7 +52,6 @@ export function useAuth() {
     desconectarIdentidadeLocal();
     setSession(null);
   }, [queryClient]);
-
 
   const user: User | null = session?.user ?? null;
 
