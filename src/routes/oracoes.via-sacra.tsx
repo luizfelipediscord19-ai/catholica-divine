@@ -95,6 +95,12 @@ function Page() {
             as leis e normas da Igreja… mas devem harmonizar-se com a liturgia, dela derivar e a ela conduzir.
           </Pullquote>
 
+          <Prancha
+            image={emaus}
+            alt="A Ceia em Emaús: Cristo ressuscitado reconhecido ao partir o pão."
+            legenda="A Via Sacra não termina no sepulcro: conduz ao Ressuscitado reconhecido ao partir o pão (Lc 24,30-31)."
+          />
+
           <h3>História da devoção</h3>
           <NotaConfiabilidade nivel="historia">
             Marcos historicamente documentados. A numeração e os títulos das catorze estações consolidaram-se

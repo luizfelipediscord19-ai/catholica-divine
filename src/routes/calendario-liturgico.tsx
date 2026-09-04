@@ -103,6 +103,12 @@ function Page() {
               Recordando assim os mistérios da Redenção, abre aos fiéis as riquezas das virtudes e dos méritos
               do seu Senhor, de modo a torná-los como que presentes em todo o tempo.
             </Pullquote>
+
+          <Prancha
+            image={pentecostes}
+            alt="Pentecostes: os Apóstolos e Maria sob as línguas de fogo do Espírito Santo."
+            legenda="Pentecostes fecha o tempo pascal e abre o tempo da Igreja: o ano litúrgico nasce desse dom do Espírito."
+          />
           </section>
 
           <section id="domingo" className="scroll-mt-24">

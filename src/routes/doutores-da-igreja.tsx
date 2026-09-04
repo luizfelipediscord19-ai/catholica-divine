@@ -137,6 +137,12 @@ function Page() {
             </Pullquote>
           </section>
 
+          <Prancha
+            image={manuscrito}
+            alt="São Jerônimo escrevendo à luz de uma vela, em seu gabinete de estudo."
+            legenda="Os Doutores põem o estudo a serviço da oração: São Jerônimo, tradutor da Vulgata, é figura desse trabalho paciente sobre a Palavra."
+          />
+
           <section id="historia" className="scroll-mt-24">
             <h3>História do título</h3>
             <p>
