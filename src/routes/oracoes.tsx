@@ -201,6 +201,7 @@ function Page() {
       <div className="shell w-full">
         <Prancha
           image={bomPastor}
+          formato="retrato"
           alt="O Bom Pastor: o menino Jesus com o cajado, cercado por ovelhas."
           legenda="Rezar é deixar-se conduzir: “a oração é a elevação da alma a Deus”, resposta viva ao Pastor que chama pelo nome (CIC §§ 2559, 2565)."
         />

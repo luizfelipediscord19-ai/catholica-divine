@@ -252,7 +252,7 @@ function CartaoSanto({
             nome={santo.nome}
             prioridade={indice < 3}
             sizes="(max-width: 768px) 100vw, (max-width: 1280px) 33vw, 380px"
-            className="h-44 w-full object-cover object-top opacity-90 group-hover:opacity-100 transition-opacity"
+            className="aspect-4/5 w-full object-cover object-top opacity-90 group-hover:opacity-100 transition-opacity"
           />
         }
       >
