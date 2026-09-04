@@ -148,7 +148,6 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  min-height: 2.75rem;
   border-radius: var(--radius-btn);
   text-align: center;
   white-space: normal;
