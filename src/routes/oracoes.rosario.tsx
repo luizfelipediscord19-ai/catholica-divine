@@ -290,6 +290,17 @@ function Page() {
         </div>
       </Section>
 
+      <div className="shell w-full">
+        <Prancha
+          image={maria}
+          formato="retrato"
+          alt="Imaculada Conceição: Maria envolta em luz, sustentada por anjos."
+          legenda="O Rosário é escola mariana: com Maria contemplamos o rosto de Cristo, mistério por mistério (São João Paulo II, Rosarium Virginis Mariae 3)."
+        />
+      </div>
+
+
+
       <Section kicker="Mais devoções" title="Continue na vida de oração">
         <div className="flex flex-wrap gap-3">
           <BotaoLink para="/oracoes" variante="contorno" tamanho="lg">← Todas as orações</BotaoLink>
