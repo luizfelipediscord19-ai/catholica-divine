@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import velas from "@/assets/velas.jpg";
-import { PageHero, CardGrid, ContentCard, Prose, Pullquote } from "../components/PageShell";
+import pentecostes from "@/assets/pentecostes.jpg";
+import { PageHero, CardGrid, ContentCard, Prose, Pullquote, Prancha } from "../components/PageShell";
 import { ReadingMode, FnRef } from "../components/ReadingMode";
 import { VersiculoDoDia } from "../components/VersiculoDoDia";
 import { MapaAnoLiturgico } from "../components/MapaAnoLiturgico";
@@ -102,6 +103,13 @@ function Page() {
               Recordando assim os mistérios da Redenção, abre aos fiéis as riquezas das virtudes e dos méritos
               do seu Senhor, de modo a torná-los como que presentes em todo o tempo.
             </Pullquote>
+
+          <Prancha
+            image={pentecostes}
+            formato="retrato"
+            alt="Pentecostes: os Apóstolos e Maria sob as línguas de fogo do Espírito Santo."
+            legenda="Pentecostes fecha o tempo pascal e abre o tempo da Igreja: o ano litúrgico nasce desse dom do Espírito."
+          />
           </section>
 
           <section id="domingo" className="scroll-mt-24">

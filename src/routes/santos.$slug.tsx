@@ -216,7 +216,7 @@ function SantoPage() {
                 nome={v.nome}
                 prioridade
                 sizes="(max-width: 768px) 100vw, 280px"
-                className="h-72 w-full object-cover object-top"
+                className="aspect-4/5 w-full object-cover object-top"
               />
               {v.creditoImagem ? (
                 <figcaption className="px-3 py-2 kicker text-muted-foreground/70">

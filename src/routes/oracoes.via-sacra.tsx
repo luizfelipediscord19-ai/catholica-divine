@@ -1,10 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { PageHero, Section, Prose, Sources, Pullquote, CardGrid, ContentCard } from "../components/PageShell";
+import { PageHero, Section, Prose, Sources, Pullquote, CardGrid, ContentCard, Prancha } from "../components/PageShell";
 import { NotaConfiabilidade } from "../components/SeloConfiabilidade";
 import { ESTACOES } from "../lib/data/devocoes/viasacra";
 import { Relacionados } from "../components/Relacionados";
 import cristo from "@/assets/cristo.jpg";
+import emaus from "@/assets/emaus.jpg";
 import { keywordsPara } from "@/lib/seo/palavras-chave";
 
 
@@ -93,6 +94,12 @@ function Page() {
             Recomendam-se muito os exercícios piedosos do povo cristão, desde que estejam em conformidade com
             as leis e normas da Igreja… mas devem harmonizar-se com a liturgia, dela derivar e a ela conduzir.
           </Pullquote>
+
+          <Prancha
+            image={emaus}
+            alt="A Ceia em Emaús: Cristo ressuscitado reconhecido ao partir o pão."
+            legenda="A Via Sacra não termina no sepulcro: conduz ao Ressuscitado reconhecido ao partir o pão (Lc 24,30-31)."
+          />
 
           <h3>História da devoção</h3>
           <NotaConfiabilidade nivel="historia">

@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { PageHero, Section, Prose, Pullquote, CardGrid, Sources } from "../components/PageShell";
+import { PageHero, Section, Prose, Pullquote, CardGrid, Sources, Prancha } from "../components/PageShell";
 import { PerguntarSophia } from "../components/portal/PerguntarSophia";
 import velas from "../assets/velas.jpg";
+import bomPastor from "@/assets/bom-pastor.jpg";
 import { keywordsPara } from "@/lib/seo/palavras-chave";
 
 export const Route = createFileRoute("/confissao")({
@@ -196,6 +197,13 @@ function Page() {
           Toda a força da penitência consiste em nos restituir à graça de Deus e a unir-nos a Ele
           numa grande amizade.
         </Pullquote>
+
+        <Prancha
+          image={bomPastor}
+          alt="O Bom Pastor com o cajado, cercado por ovelhas."
+          formato="retrato"
+          legenda="A confissão é o Pastor que sai à procura da ovelha perdida e a traz de volta sobre os ombros (cf. Lc 15,4-7)."
+        />
       </Section>
 
       <Section kicker="Passo a passo" title="Os cinco atos do penitente" id="rito">

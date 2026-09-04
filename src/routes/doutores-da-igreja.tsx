@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import doutores from "@/assets/doutores.jpg";
-import { PageHero, CardGrid, ContentCard, Prose, Pullquote } from "../components/PageShell";
+import manuscrito from "@/assets/manuscrito.jpg";
+import { PageHero, CardGrid, ContentCard, Prose, Pullquote, Prancha } from "../components/PageShell";
 import { ReadingMode, FnRef } from "../components/ReadingMode";
 import { keywordsPara } from "@/lib/seo/palavras-chave";
 
@@ -135,6 +136,12 @@ function Page() {
               concedido pelo Espírito Santo para o bem de todo o Povo de Deus.
             </Pullquote>
           </section>
+
+          <Prancha
+            image={manuscrito}
+            alt="São Jerônimo escrevendo à luz de uma vela, em seu gabinete de estudo."
+            legenda="Os Doutores põem o estudo a serviço da oração: São Jerônimo, tradutor da Vulgata, é figura desse trabalho paciente sobre a Palavra."
+          />
 
           <section id="historia" className="scroll-mt-24">
             <h3>História do título</h3>

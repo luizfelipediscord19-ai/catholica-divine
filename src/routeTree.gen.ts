@@ -48,6 +48,7 @@ import { Route as ApologeticaRouteImport } from './routes/apologetica'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as TrilhasIndexRouteImport } from './routes/trilhas.index'
 import { Route as SantosIndexRouteImport } from './routes/santos.index'
+import { Route as OracoesIndexRouteImport } from './routes/oracoes.index'
 import { Route as NoticiasIndexRouteImport } from './routes/noticias.index'
 import { Route as ForumIndexRouteImport } from './routes/forum.index'
 import { Route as BibliaIndexRouteImport } from './routes/biblia.index'
@@ -275,6 +276,11 @@ const SantosIndexRoute = SantosIndexRouteImport.update({
   path: '/',
   getParentRoute: () => SantosRoute,
 } as any)
+const OracoesIndexRoute = OracoesIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => OracoesRoute,
+} as any)
 const NoticiasIndexRoute = NoticiasIndexRouteImport.update({
   id: '/noticias/',
   path: '/noticias/',
@@ -478,6 +484,7 @@ export interface FileRoutesByFullPath {
   '/biblia/': typeof BibliaIndexRoute
   '/forum/': typeof ForumIndexRoute
   '/noticias/': typeof NoticiasIndexRoute
+  '/oracoes/': typeof OracoesIndexRoute
   '/santos/': typeof SantosIndexRoute
   '/trilhas/': typeof TrilhasIndexRoute
   '/api/public/csp-report': typeof ApiPublicCspReportRoute
@@ -515,7 +522,6 @@ export interface FileRoutesByTo {
   '/glossario': typeof GlossarioRoute
   '/liturgia-diaria': typeof LiturgiaDiariaRoute
   '/maria': typeof MariaRoute
-  '/oracoes': typeof OracoesRouteWithChildren
   '/painel': typeof PainelRoute
   '/privacidade': typeof PrivacidadeRoute
   '/redefinir-senha': typeof RedefinirSenhaRoute
@@ -544,6 +550,7 @@ export interface FileRoutesByTo {
   '/biblia': typeof BibliaIndexRoute
   '/forum': typeof ForumIndexRoute
   '/noticias': typeof NoticiasIndexRoute
+  '/oracoes': typeof OracoesIndexRoute
   '/santos': typeof SantosIndexRoute
   '/trilhas': typeof TrilhasIndexRoute
   '/api/public/csp-report': typeof ApiPublicCspReportRoute
@@ -615,6 +622,7 @@ export interface FileRoutesById {
   '/biblia/': typeof BibliaIndexRoute
   '/forum/': typeof ForumIndexRoute
   '/noticias/': typeof NoticiasIndexRoute
+  '/oracoes/': typeof OracoesIndexRoute
   '/santos/': typeof SantosIndexRoute
   '/trilhas/': typeof TrilhasIndexRoute
   '/api/public/csp-report': typeof ApiPublicCspReportRoute
@@ -687,6 +695,7 @@ export interface FileRouteTypes {
     | '/biblia/'
     | '/forum/'
     | '/noticias/'
+    | '/oracoes/'
     | '/santos/'
     | '/trilhas/'
     | '/api/public/csp-report'
@@ -724,7 +733,6 @@ export interface FileRouteTypes {
     | '/glossario'
     | '/liturgia-diaria'
     | '/maria'
-    | '/oracoes'
     | '/painel'
     | '/privacidade'
     | '/redefinir-senha'
@@ -753,6 +761,7 @@ export interface FileRouteTypes {
     | '/biblia'
     | '/forum'
     | '/noticias'
+    | '/oracoes'
     | '/santos'
     | '/trilhas'
     | '/api/public/csp-report'
@@ -823,6 +832,7 @@ export interface FileRouteTypes {
     | '/biblia/'
     | '/forum/'
     | '/noticias/'
+    | '/oracoes/'
     | '/santos/'
     | '/trilhas/'
     | '/api/public/csp-report'
@@ -1168,6 +1178,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SantosIndexRouteImport
       parentRoute: typeof SantosRoute
     }
+    '/oracoes/': {
+      id: '/oracoes/'
+      path: '/'
+      fullPath: '/oracoes/'
+      preLoaderRoute: typeof OracoesIndexRouteImport
+      parentRoute: typeof OracoesRoute
+    }
     '/noticias/': {
       id: '/noticias/'
       path: '/noticias'
@@ -1449,6 +1466,7 @@ interface OracoesRouteChildren {
   OracoesRosarioRoute: typeof OracoesRosarioRoute
   OracoesTercoMisericordiaRoute: typeof OracoesTercoMisericordiaRoute
   OracoesViaSacraRoute: typeof OracoesViaSacraRoute
+  OracoesIndexRoute: typeof OracoesIndexRoute
 }
 
 const OracoesRouteChildren: OracoesRouteChildren = {
@@ -1457,6 +1475,7 @@ const OracoesRouteChildren: OracoesRouteChildren = {
   OracoesRosarioRoute: OracoesRosarioRoute,
   OracoesTercoMisericordiaRoute: OracoesTercoMisericordiaRoute,
   OracoesViaSacraRoute: OracoesViaSacraRoute,
+  OracoesIndexRoute: OracoesIndexRoute,
 }
 
 const OracoesRouteWithChildren =
