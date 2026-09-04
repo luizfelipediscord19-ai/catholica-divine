@@ -5,10 +5,8 @@ import { useQueryClient } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import {
   desconectarIdentidadeLocal,
-  lerToken,
   reconectarIdentidadeLocal,
 } from "@/hooks/use-identidade";
-import { vincularContaFn } from "@/lib/portal.functions";
 
 /**
  * Sessão de e-mail/senha do portal. A identidade anônima deste navegador é
@@ -22,27 +20,14 @@ export function useAuth() {
   useEffect(() => {
     let vivo = true;
 
-    const reconciliarConta = () => {
-      reconectarIdentidadeLocal();
-      window.setTimeout(() => {
-        void vincularContaFn({ data: { token: lerToken() } })
-          .then(() => {
-            if (!vivo) return;
-            void queryClient.invalidateQueries({ queryKey: ["identidade"] });
-            void queryClient.invalidateQueries({ queryKey: ["painel"] });
-          })
-          .catch(() => {
-            // A próxima leitura protegida tenta novamente; o login permanece válido.
-          });
-      }, 0);
-    };
-
     const { data: sub } = supabase.auth.onAuthStateChange((evento, nova) => {
       if (!vivo) return;
       setSession(nova);
       setCarregando(false);
       if (evento === "SIGNED_IN" || evento === "USER_UPDATED") {
-        reconciliarConta();
+        reconectarIdentidadeLocal();
+        void queryClient.invalidateQueries({ queryKey: ["identidade"] });
+        void queryClient.invalidateQueries({ queryKey: ["painel"] });
       }
       if (evento === "SIGNED_OUT") {
         desconectarIdentidadeLocal();
@@ -54,7 +39,6 @@ export function useAuth() {
       if (!vivo) return;
       setSession(data.session);
       setCarregando(false);
-      if (data.session) reconciliarConta();
     });
 
     return () => {

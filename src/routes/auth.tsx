@@ -6,10 +6,11 @@ import { Botao, BotaoLink } from "@/components/ds";
 import { PageHero } from "@/components/PageShell";
 import { Painel, Rotulo, inputClass } from "@/components/portal/comuns";
 import { useAuth } from "@/hooks/use-auth";
+import { lerToken } from "@/hooks/use-identidade";
 import { supabase } from "@/integrations/supabase/client";
 import { baseParaEmails } from "@/lib/auth/site-url";
 import { traduzirErroAuth } from "@/lib/auth/traduzir-erro";
-import { criarContaFn } from "@/lib/portal.functions";
+import { criarContaFn, vincularContaFn } from "@/lib/portal.functions";
 
 export const Route = createFileRoute("/auth")({
   validateSearch: (busca: Record<string, unknown>): { modo?: "entrar" | "criar" | "recuperar" } => {
@@ -84,6 +85,7 @@ function AuthPage() {
           password: senha,
         });
         if (error) throw error;
+        await vincularContaFn({ data: { token: lerToken() } });
         toast.success("Conta criada. Bem-vindo!");
         void navigate({ to: "/forum" });
       } else {
@@ -92,6 +94,7 @@ function AuthPage() {
           password: senha,
         });
         if (error) throw error;
+        await vincularContaFn({ data: { token: lerToken() } });
         toast.success("Bem-vindo de volta.");
         void navigate({ to: "/forum" });
       }
