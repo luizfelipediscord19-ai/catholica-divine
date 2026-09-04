@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import doutores from "@/assets/doutores.jpg";
-import { PageHero, CardGrid, ContentCard, Prose, Pullquote } from "../components/PageShell";
+import manuscrito from "@/assets/manuscrito.jpg";
+import { PageHero, CardGrid, ContentCard, Prose, Pullquote, Prancha } from "../components/PageShell";
 import { ReadingMode, FnRef } from "../components/ReadingMode";
 import { keywordsPara } from "@/lib/seo/palavras-chave";
 

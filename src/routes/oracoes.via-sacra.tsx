@@ -1,10 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { PageHero, Section, Prose, Sources, Pullquote, CardGrid, ContentCard } from "../components/PageShell";
+import { PageHero, Section, Prose, Sources, Pullquote, CardGrid, ContentCard, Prancha } from "../components/PageShell";
 import { NotaConfiabilidade } from "../components/SeloConfiabilidade";
 import { ESTACOES } from "../lib/data/devocoes/viasacra";
 import { Relacionados } from "../components/Relacionados";
 import cristo from "@/assets/cristo.jpg";
+import emaus from "@/assets/emaus.jpg";
 import { keywordsPara } from "@/lib/seo/palavras-chave";
 
 

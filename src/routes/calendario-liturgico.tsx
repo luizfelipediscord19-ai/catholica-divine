@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import velas from "@/assets/velas.jpg";
-import { PageHero, CardGrid, ContentCard, Prose, Pullquote } from "../components/PageShell";
+import pentecostes from "@/assets/pentecostes.jpg";
+import { PageHero, CardGrid, ContentCard, Prose, Pullquote, Prancha } from "../components/PageShell";
 import { ReadingMode, FnRef } from "../components/ReadingMode";
 import { VersiculoDoDia } from "../components/VersiculoDoDia";
 import { MapaAnoLiturgico } from "../components/MapaAnoLiturgico";

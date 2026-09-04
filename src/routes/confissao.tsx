@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { PageHero, Section, Prose, Pullquote, CardGrid, Sources } from "../components/PageShell";
+import { PageHero, Section, Prose, Pullquote, CardGrid, Sources, Prancha } from "../components/PageShell";
 import { PerguntarSophia } from "../components/portal/PerguntarSophia";
 import velas from "../assets/velas.jpg";
+import bomPastor from "@/assets/bom-pastor.jpg";
 import { keywordsPara } from "@/lib/seo/palavras-chave";
 
 export const Route = createFileRoute("/confissao")({
