@@ -118,7 +118,7 @@ function AuthPage() {
         intro="Uma conta simples, com e-mail e senha, para participar do fórum com responsabilidade e guardar seu progresso espiritual em qualquer aparelho."
       />
 
-      <div className="shell-narrow py-block space-y-8">
+      <main className="shell-narrow py-block">
         {carregando ? (
           <Painel>
             <p className="text-sm text-muted-foreground">Verificando sua sessão…</p>
@@ -136,8 +136,8 @@ function AuthPage() {
             </div>
           </Painel>
         ) : (
-          <Painel>
-            <div className="flex flex-wrap gap-2 mb-8">
+          <Painel className="mx-auto max-w-[42rem]">
+            <div className="filtro-trilho mb-8" role="tablist" aria-label="Acesso à conta">
               {(
                 [
                   ["entrar", "Entrar"],
@@ -150,7 +150,9 @@ function AuthPage() {
                   tamanho="sm"
                   variante="discreto"
                   onClick={() => setModo(valor)}
+                  role="tab"
                   aria-pressed={modo === valor}
+                  aria-selected={modo === valor}
                   className={modo === valor ? "border-gold bg-gold/10 text-gold" : "border-gold/15 text-paper/60 hover:text-paper hover:border-gold/40"}
                 >
                   {rotulo}
@@ -212,11 +214,11 @@ function AuthPage() {
               </div>
 
               {erro ? (
-                <p role="alert" className="text-sm text-destructive-text">
+                <p role="alert" className="border-l-2 border-destructive bg-destructive/5 px-4 py-3 text-sm text-destructive-text">
                   {erro}
                 </p>
               ) : null}
-              {aviso ? <p className="text-sm text-gold/90">{aviso}</p> : null}
+              {aviso ? <p role="status" className="border-l-2 border-gold bg-gold/5 px-4 py-3 text-sm text-gold/90">{aviso}</p> : null}
             </form>
 
             <p className="text-xs text-muted-foreground/80 font-light leading-relaxed mt-8">
@@ -225,7 +227,7 @@ function AuthPage() {
             </p>
           </Painel>
         )}
-      </div>
+      </main>
     </div>
   );
 }

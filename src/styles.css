@@ -148,10 +148,10 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  min-height: 2.75rem;
   border-radius: var(--radius-btn);
   text-align: center;
-  white-space: normal;
-  overflow-wrap: anywhere;
+  white-space: nowrap;
   /* nenhum botão pode estourar a gutter, mesmo com rótulo longo */
   max-width: 100%;
 
@@ -758,6 +758,7 @@
 /* Botão só de ícone: quadrado perfeito, sempre 2.5rem */
 @utility btn-icon {
   min-height: 2.5rem;
+  min-width: 2.5rem;
   width: 2.5rem;
   height: 2.5rem;
   padding: 0;

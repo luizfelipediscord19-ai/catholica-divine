@@ -21,11 +21,11 @@ const buttonVariants = cva(
         link: "min-h-0 text-primary underline-offset-4 hover:underline active:scale-100",
       },
       size: {
-        default: "h-11 px-5 text-sm",
-        sm: "h-10 min-h-10 px-4 text-xs",
-        lg: "h-12 px-8 text-sm",
-        icon: "size-11 p-0",
-        "icon-sm": "size-10 min-h-10 p-0",
+        default: "btn-md",
+        sm: "btn-sm",
+        lg: "btn-lg",
+        icon: "btn-icon",
+        "icon-sm": "btn-icon",
       },
       estado: {
         idle: "",

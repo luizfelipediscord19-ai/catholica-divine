@@ -169,7 +169,7 @@ function PainelPage() {
 
   return (
     <div className="shell w-full py-[var(--space-lg)] space-y-[var(--space-md)]">
-      <header className="flex flex-col gap-[var(--space-sm)] md:flex-row md:items-center">
+      <header className="border-b border-gold/15 pb-[var(--space-md)] flex flex-col gap-[var(--space-sm)] md:flex-row md:items-center">
         {dados.identidade.santoImagem ? (
           <img
             src={dados.identidade.santoImagem}
@@ -245,7 +245,7 @@ function PainelPage() {
       ) : null}
 
 
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <Metrica icone={Flame} rotulo="Sequência" valor={`${dados.identidade.streak} dias`} />
         <Metrica icone={BookOpen} rotulo="Capítulos lidos" valor={String(dados.leituras.length)} />
         <Metrica icone={Star} rotulo="Favoritos" valor={String(dados.favoritos.length)} />

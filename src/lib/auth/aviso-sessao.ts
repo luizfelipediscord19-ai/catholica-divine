@@ -24,6 +24,7 @@ export function ehErroDeConta(erro: unknown): boolean {
     m.includes("precisa entrar") ||
     m.includes("auth session missing") ||
     m.includes("session_not_found") ||
+    m.includes("sincronizar seu progresso") ||
     m.includes("jwt")
   );
 }

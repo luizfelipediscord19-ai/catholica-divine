@@ -319,6 +319,7 @@ export const Botao = forwardRef<HTMLButtonElement, BotaoProps>(function Botao(
 export function BotaoLink({
   para,
   href,
+  search,
   variante = "contorno",
   tamanho = "md",
   bloco = false,
@@ -334,12 +335,13 @@ export function BotaoLink({
   children?: ReactNode;
   className?: string;
   params?: Record<string, string>;
+  search?: Record<string, string>;
 } & Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "className" | "children" | "href">) {
   const classes = classesBotao({ variante, tamanho, bloco, className });
   const { params, ...anchorProps } = resto;
   if (para) {
     return (
-      <Link to={para} params={params} className={classes} {...(anchorProps as object)}>
+      <Link to={para} params={params} search={search} className={classes} {...(anchorProps as object)}>
         <span className="min-w-0 truncate">{children}</span>
       </Link>
     );

@@ -34,14 +34,14 @@ export const Route = createFileRoute("/forum/")({
       {
         name: "description",
         content:
-          "Fórum católico para perguntas de fé, doutrina, Escritura, vida de oração e apologética. Participe com sua identidade anônima e um santo padroeiro sorteado.",
+          "Fórum católico para perguntas de fé, doutrina, Escritura, vida de oração e apologética. Entre com sua conta e participe com um santo padroeiro como identidade pública.",
       },
       { name: "keywords", content: keywordsPara(["formacao", "marca"]) },
       { property: "og:title", content: "Agora Ecclesiae — Fórum Católico" },
       {
         property: "og:description",
         content:
-          "Perguntas e conversas sobre fé, Escritura, oração, santos e apologética — sem cadastro, com identidade anônima.",
+          "Perguntas e conversas sobre fé, Escritura, oração, santos e apologética, com participação responsável por conta.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -158,7 +158,7 @@ function ForumPage() {
                     <Link
                       to="/forum/$slug"
                       params={{ slug: t.slug }}
-                      className="block border border-gold/15 hover:border-gold/40 bg-card/40 backdrop-blur-md p-6 transition-premium hover:-translate-y-0.5"
+                      className="surface-card surface-card-interactive focus-ring block p-6"
                     >
                       <div className="flex items-center gap-3 mb-3 kicker">
                         {t.fixado ? <Pin className="size-3" aria-hidden="true" /> : null}
@@ -325,8 +325,8 @@ function NovoTopico({
             navegador enquanto você cria a conta.
           </p>
           <span className="mt-3 flex flex-wrap items-center gap-3">
-            <BotaoLink para="/auth" tamanho="md">Entrar</BotaoLink>
-            <BotaoLink para="/auth" tamanho="md">Criar conta</BotaoLink>
+            <BotaoLink para="/auth" search={{ modo: "entrar" }} tamanho="md">Entrar</BotaoLink>
+            <BotaoLink para="/auth" search={{ modo: "criar" }} tamanho="md">Criar conta</BotaoLink>
           </span>
         </div>
       ) : null}
@@ -395,20 +395,6 @@ function NovoTopico({
             </span>
           ) : null}
           {motivo ? <span className="text-xs text-muted-foreground/80">{motivo}</span> : null}
-          {!autenticado ? (
-            <span className="flex flex-wrap items-center gap-3">
-              <BotaoLink para="/auth" tamanho="md">Entrar</BotaoLink>
-              <BotaoLink para="/auth" tamanho="md">Criar conta</BotaoLink>
-              <Link
-                to="/auth"
-                search={{ modo: "recuperar" }}
-                className="text-xs text-muted-foreground underline decoration-gold/40 underline-offset-4 hover:text-gold"
-              >
-                Esqueci a senha
-              </Link>
-            </span>
-          ) : null}
-
         </div>
         {rascunho.restaurado ? (
           <p className="text-xs text-gold/80">
