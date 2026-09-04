@@ -106,6 +106,7 @@ function Page() {
 
           <Prancha
             image={pentecostes}
+            formato="retrato"
             alt="Pentecostes: os Apóstolos e Maria sob as línguas de fogo do Espírito Santo."
             legenda="Pentecostes fecha o tempo pascal e abre o tempo da Igreja: o ano litúrgico nasce desse dom do Espírito."
           />
