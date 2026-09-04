@@ -148,7 +148,6 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  min-height: 2.75rem;
   border-radius: var(--radius-btn);
   text-align: center;
   white-space: normal;
@@ -1045,17 +1044,8 @@
   @media (pointer: coarse) {
     button:not([data-slot]),
     a[role="button"],
-    a.btn-base,
-    .btn-base,
-    .btn-sm,
-    .chip-interactive,
     [role="tab"] {
       min-height: 2.75rem;
-    }
-    .btn-icon {
-      min-height: 2.75rem;
-      width: 2.75rem;
-      height: 2.75rem;
     }
   }
 
