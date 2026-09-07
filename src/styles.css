@@ -1283,3 +1283,122 @@ html[data-leitura="on"] .prose-deep :is(section, ul, ol) + :is(h2, h3) {
 html[data-leitura="on"] [data-sonner-toaster] {
   display: none !important;
 }
+
+/* ============================================================
+   ACABAMENTO EDITORIAL — Noir Dourado
+   Grão de papel, filetes de ouro, capitular e citação de destaque.
+   Só realce: nenhuma destas utilidades muda o formato dos botões.
+   ============================================================ */
+
+/* Textura discreta de papel impresso sobre faixas escuras grandes */
+@utility grao {
+  position: relative;
+  isolation: isolate;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image: var(--grao);
+    background-size: 140px 140px;
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+  }
+}
+
+/* Filete horizontal de ouro: assinatura entre blocos editoriais */
+@utility filete-ouro {
+  height: 1px;
+  border: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in oklab, var(--gold) 55%, transparent) 18%,
+    color-mix(in oklab, var(--gold) 55%, transparent) 82%,
+    transparent
+  );
+}
+
+/* Numeração discreta de seção (01 —, 02 —) */
+@utility num-secao {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+  color: color-mix(in oklab, var(--gold) 85%, transparent);
+
+  &::after {
+    content: "";
+    width: 2.25rem;
+    height: 1px;
+    background: color-mix(in oklab, var(--gold) 45%, transparent);
+  }
+}
+
+/* Letra capitular para o primeiro parágrafo de textos longos */
+@utility capitular {
+  &::first-letter {
+    float: left;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 3.2em;
+    line-height: 0.82;
+    padding-right: 0.09em;
+    margin-top: 0.06em;
+    color: var(--gold);
+  }
+}
+
+/* Citação de destaque com filete lateral dourado */
+@utility citacao-destaque {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--step-2);
+  line-height: 1.32;
+  color: color-mix(in oklab, var(--color-foreground) 94%, transparent);
+  border-left: 2px solid color-mix(in oklab, var(--gold) 55%, transparent);
+  padding-left: var(--space-sm);
+  text-wrap: pretty;
+}
+
+/* Figura editorial: moldura fina, vinheta e legenda alinhada */
+@utility figura-editorial {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--hairline);
+  background: var(--muted);
+  box-shadow: var(--shadow-card-hover);
+
+  & img {
+    filter: saturate(0.93) contrast(1.06);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(
+      120% 100% at 50% 30%,
+      transparent 45%,
+      color-mix(in oklab, var(--deep) 60%, transparent) 100%
+    );
+  }
+}
+
+/* Legenda de imagem com crédito da fonte */
+@utility legenda-figura {
+  margin-top: 0.65rem;
+  font-family: var(--font-sans);
+  font-size: var(--step--2);
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: color-mix(in oklab, var(--color-muted-foreground) 92%, transparent);
+}
