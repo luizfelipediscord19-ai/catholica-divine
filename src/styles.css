@@ -40,6 +40,7 @@
   --color-cardinal: var(--cardinal);
   --color-deep: var(--deep);
   --color-paper: var(--paper);
+  --color-surface-raised: var(--surface-raised);
 
   /* Status semântico (feedback) */
   --color-success: var(--success);
@@ -49,8 +50,8 @@
   --color-info: var(--info);
   --color-info-foreground: var(--info-foreground);
 
-  --font-display: "EB Garamond", "Libre Baskerville", Georgia, serif;
-  --font-sans: "IBM Plex Sans", system-ui, sans-serif;
+  --font-display: "Lora", "Libre Baskerville", Georgia, serif;
+  --font-sans: "Nunito Sans", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
   /* Escala tipográfica exposta ao Tailwind: text-step--2 … text-step-5 */
@@ -77,24 +78,35 @@
   --container-shell: var(--shell);
   --container-shell-wide: var(--shell-wide);
 
-
-
   /* Premium Animations */
   --animate-reveal: reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
   --animate-float: float 6s ease-in-out infinite;
 
   @keyframes reveal {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, ::before, ::after {
+  *,
+  ::before,
+  ::after {
     animation-delay: -1ms !important;
     animation-duration: 1ms !important;
     animation-iteration-count: 1 !important;
@@ -129,7 +141,7 @@
   will-change: transform;
 
   &::after {
-    content: '';
+    content: "";
     @apply pointer-events-none absolute inset-0 bg-white/5 opacity-0 transition-opacity duration-200;
   }
 
@@ -220,15 +232,10 @@
   border-radius: var(--radius-card);
   border: 1px solid var(--hairline);
   background:
-    linear-gradient(
-      180deg,
-      color-mix(in oklab, var(--gold) 3%, transparent),
-      transparent 42%
-    ),
+    linear-gradient(180deg, color-mix(in oklab, var(--gold) 3%, transparent), transparent 42%),
     color-mix(in oklab, var(--card) 92%, transparent);
   box-shadow: var(--shadow-card);
 }
-
 
 /* Card interativo: elevação discreta no hover e foco visível quando é link */
 @utility surface-card-interactive {
@@ -270,7 +277,6 @@
       transform: none;
     }
   }
-
 }
 
 @utility card-premium-hover {
@@ -482,11 +488,9 @@
   }
 }
 
-
 @utility perspective-1000 {
   perspective: 1000px;
 }
-
 
 /* Padding lateral fluido, usado por heros, seções e barras */
 @utility px-gutter {
@@ -620,7 +624,6 @@
   }
 }
 
-
 /* ============================================================
    TIPOGRAFIA DO DESIGN SYSTEM
    Uma classe por papel de texto. Nenhuma página deve repetir
@@ -650,7 +653,10 @@
   letter-spacing: -0.014em;
   color: var(--color-foreground);
   text-wrap: balance;
-  font-feature-settings: "kern" 1, "liga" 1, "dlig" 1;
+  font-feature-settings:
+    "kern" 1,
+    "liga" 1,
+    "dlig" 1;
 }
 
 /* Título de seção (H2) */
@@ -913,9 +919,6 @@
   }
 }
 
-
-
-
 :root {
   --radius: 0.5rem;
 
@@ -947,49 +950,55 @@
   /* Comprimento de linha confortável para leitura */
   --measure: 68ch;
 
-
-  /* Brand Tokens — Sacred Editorial Noir
+  /* Brand Tokens — Noir Dourado Editorial
      Ouro em três graus (folha, ouro, bronze) sobre tinta quente de impressão.
      Cada valor foi calibrado para contraste AA sobre --background. */
-  --gold: #d0b262;
-  --gold-soft: #9c8340;
-  --gold-accent: #f4e2ab;
+  --gold: #cda63a;
+  --gold-soft: #8f7526;
+  --gold-accent: #f0dfa8;
   --marian: #2a5f97;
   --marian-soft: #4a83c6;
   --cardinal: #8e1c1c;
-  --deep: #0b0a09;
-  --paper: #fbf8f2;
-  --glass-bg: rgba(22, 20, 18, 0.8);
-  --glass-border: rgba(208, 178, 98, 0.22);
+  --deep: #0b0a08;
+  --paper: #f2ede3;
+  --glass-bg: rgba(20, 18, 16, 0.82);
+  --glass-border: rgba(205, 166, 58, 0.24);
 
-  /* Semantic Palette */
-  --background: #0b0a09;
-  --foreground: #f4f0e8;
-  --card: #181613;
-  --card-foreground: #f4f0e8;
-  --popover: #181613;
-  --popover-foreground: #f4f0e8;
-  --primary: #d0b262;
-  --primary-foreground: #100e0b;
+  /* Semantic Palette — três camadas de profundidade */
+  --background: #0b0a08;
+  --foreground: #f2ede3;
+  --card: #161311;
+  --card-foreground: #f2ede3;
+  --surface-raised: #1d1917;
+  --popover: #1d1917;
+  --popover-foreground: #f2ede3;
+  --primary: #cda63a;
+  --primary-foreground: #0f0d0a;
   --secondary: #2a5f97;
   --secondary-foreground: #f5f2ec;
-  --muted: #15130f;
-  --muted-foreground: #bcb4a6;
+  --muted: #131110;
+  --muted-foreground: #b8afa0;
   --accent: #2a5f97;
   --accent-foreground: #f5f2ec;
   --destructive: #8e1c1c;
   --destructive-foreground: #fcfaf7;
   /* Vermelho legível como TEXTO sobre fundo escuro (WCAG AA). */
   --destructive-text: #f39c93;
-  --border: rgba(208, 178, 98, 0.19);
-  --input: rgba(208, 178, 98, 0.24);
-  --ring: #d0b262;
+  --border: rgba(205, 166, 58, 0.2);
+  --input: rgba(205, 166, 58, 0.26);
+  --ring: #cda63a;
 
   /* Superfícies e realces reutilizáveis */
   --gradient-gold: linear-gradient(135deg, var(--gold-accent), var(--gold) 48%, var(--gold-soft));
-  --gradient-surface: linear-gradient(180deg, color-mix(in oklab, var(--card) 94%, var(--gold) 6%), var(--background) 62%);
-  --shadow-elegant: 0 28px 68px -28px rgba(0, 0, 0, 0.76);
-  --hairline: color-mix(in oklab, var(--gold) 17%, transparent);
+  --gradient-surface: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--card) 92%, var(--gold) 8%),
+    var(--background) 58%
+  );
+  --shadow-elegant: 0 28px 68px -28px rgba(0, 0, 0, 0.8);
+  --hairline: color-mix(in oklab, var(--gold) 18%, transparent);
+  /* Grão de papel impresso: aplicado só em faixas escuras grandes */
+  --grao: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.45'/%3E%3C/svg%3E");
 
   /* Interação: um easing e três durações para todo o portal */
   --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
@@ -1017,12 +1026,7 @@
   --warning-foreground: #fff8e6;
   --info: #23568f;
   --info-foreground: #eef4fb;
-
 }
-
-
-
-
 
 @layer base {
   * {
@@ -1046,7 +1050,9 @@
     -moz-osx-font-smoothing: grayscale;
     line-height: 1.7;
     letter-spacing: 0;
-    font-feature-settings: "kern" 1, "liga" 1;
+    font-feature-settings:
+      "kern" 1,
+      "liga" 1;
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
   }
@@ -1062,7 +1068,6 @@
       min-height: 2.25rem;
     }
   }
-
 
   /* Microinterações consistentes em qualquer botão do portal */
   button,
@@ -1082,7 +1087,6 @@
     opacity: 0.5;
   }
 
-
   /* Visible keyboard focus for every interactive element */
   a:focus-visible,
   button:focus-visible,
@@ -1095,24 +1099,36 @@
     outline-offset: 2px;
     border-radius: 2px;
   }
-  h1, h2, h3, h4, .font-display {
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-display {
     font-family: var(--font-display);
     font-weight: 500;
     letter-spacing: -0.008em;
     line-height: 1.14;
-    font-feature-settings: "kern" 1, "liga" 1, "dlig" 1;
+    font-feature-settings:
+      "kern" 1,
+      "liga" 1,
+      "dlig" 1;
   }
   h1 {
     letter-spacing: -0.014em;
     line-height: 1.04;
   }
-  h4, h5, h6 {
+  h4,
+  h5,
+  h6 {
     letter-spacing: -0.006em;
   }
-  p, li {
+  p,
+  li {
     text-wrap: pretty;
   }
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     text-wrap: balance;
   }
   hr {
@@ -1122,7 +1138,6 @@
     background-color: color-mix(in oklab, var(--color-gold) 32%, transparent);
     color: var(--color-foreground);
   }
-
 }
 
 /* Legibilidade: micro-rótulos nunca ficam abaixo do mínimo confortável */
@@ -1134,15 +1149,6 @@
 .text-\[12px\] {
   font-size: var(--step--1);
 }
-
-
-
-
-
-
-
-
-
 
 @layer utilities {
   .text-glow-gold {
@@ -1171,22 +1177,34 @@
   }
 }
 
-
-.stagger-1 { animation-delay: 100ms; }
-.stagger-2 { animation-delay: 200ms; }
-.stagger-3 { animation-delay: 300ms; }
-.stagger-4 { animation-delay: 400ms; }
+.stagger-1 {
+  animation-delay: 100ms;
+}
+.stagger-2 {
+  animation-delay: 200ms;
+}
+.stagger-3 {
+  animation-delay: 300ms;
+}
+.stagger-4 {
+  animation-delay: 400ms;
+}
 
 /* Custom Scrollbar */
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: var(--color-background); }
-::-webkit-scrollbar-thumb { 
-  background: var(--color-muted); 
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-muted);
   border-radius: 4px;
   border: 2px solid var(--color-background);
 }
-::-webkit-scrollbar-thumb:hover { background: var(--color-gold-soft); }
-
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold-soft);
+}
 
 /* ============================================================
    MODO LEITURA — largura confortável, mais respiro, sem distrações.
@@ -1278,4 +1296,123 @@ html[data-leitura="on"] .prose-deep :is(section, ul, ol) + :is(h2, h3) {
 /* Avisos e notificações flutuantes não interrompem a leitura */
 html[data-leitura="on"] [data-sonner-toaster] {
   display: none !important;
+}
+
+/* ============================================================
+   ACABAMENTO EDITORIAL — Noir Dourado
+   Grão de papel, filetes de ouro, capitular e citação de destaque.
+   Só realce: nenhuma destas utilidades muda o formato dos botões.
+   ============================================================ */
+
+/* Textura discreta de papel impresso sobre faixas escuras grandes */
+@utility grao {
+  position: relative;
+  isolation: isolate;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image: var(--grao);
+    background-size: 140px 140px;
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+  }
+}
+
+/* Filete horizontal de ouro: assinatura entre blocos editoriais */
+@utility filete-ouro {
+  height: 1px;
+  border: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in oklab, var(--gold) 55%, transparent) 18%,
+    color-mix(in oklab, var(--gold) 55%, transparent) 82%,
+    transparent
+  );
+}
+
+/* Numeração discreta de seção (01 —, 02 —) */
+@utility num-secao {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+  color: color-mix(in oklab, var(--gold) 85%, transparent);
+
+  &::after {
+    content: "";
+    width: 2.25rem;
+    height: 1px;
+    background: color-mix(in oklab, var(--gold) 45%, transparent);
+  }
+}
+
+/* Letra capitular para o primeiro parágrafo de textos longos */
+@utility capitular {
+  &::first-letter {
+    float: left;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 3.2em;
+    line-height: 0.82;
+    padding-right: 0.09em;
+    margin-top: 0.06em;
+    color: var(--gold);
+  }
+}
+
+/* Citação de destaque com filete lateral dourado */
+@utility citacao-destaque {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--step-2);
+  line-height: 1.32;
+  color: color-mix(in oklab, var(--color-foreground) 94%, transparent);
+  border-left: 2px solid color-mix(in oklab, var(--gold) 55%, transparent);
+  padding-left: var(--space-sm);
+  text-wrap: pretty;
+}
+
+/* Figura editorial: moldura fina, vinheta e legenda alinhada */
+@utility figura-editorial {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--hairline);
+  background: var(--muted);
+  box-shadow: var(--shadow-card-hover);
+
+  & img {
+    filter: saturate(0.93) contrast(1.06);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(
+      120% 100% at 50% 30%,
+      transparent 45%,
+      color-mix(in oklab, var(--deep) 60%, transparent) 100%
+    );
+  }
+}
+
+/* Legenda de imagem com crédito da fonte */
+@utility legenda-figura {
+  margin-top: 0.65rem;
+  font-family: var(--font-sans);
+  font-size: var(--step--2);
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: color-mix(in oklab, var(--color-muted-foreground) 92%, transparent);
 }

@@ -1,6 +1,16 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useSuspenseQuery } from "@tanstack/react-query";
-import { BookOpen, Heart, Sparkles, Church, Crown, ScrollText, Compass, Calendar, MessageCircle } from "lucide-react";
+import {
+  BookOpen,
+  Heart,
+  Sparkles,
+  Church,
+  Crown,
+  ScrollText,
+  Compass,
+  Calendar,
+  MessageCircle,
+} from "lucide-react";
 import hero from "../assets/hero-catedral.jpg";
 import maria from "../assets/maria.jpg";
 import cristo from "../assets/cristo.jpg";
@@ -23,8 +33,6 @@ import { UltimosArtigos, TrilhasIlustradas } from "../components/portal/Destaque
 import { ImagemOtimizada } from "../components/ImagemOtimizada";
 import { keywordsPara } from "@/lib/seo/palavras-chave";
 
-
-
 const SITE_URL = "https://portalcatolico.vercel.app";
 
 export const Route = createFileRoute("/")({
@@ -41,7 +49,6 @@ export const Route = createFileRoute("/")({
     </div>
   ),
   head: () => ({
-
     meta: [
       { title: "Portal Católico — Bíblia, Catecismo e a Tradição da Igreja" },
       {
@@ -51,12 +58,28 @@ export const Route = createFileRoute("/")({
       },
       {
         name: "keywords",
-        content: keywordsPara(["marca", "biblia", "catecismo", "santos", "maria", "sacramentos", "oracoes", "liturgia", "apologetica", "formacao"], [], 60),
+        content: keywordsPara(
+          [
+            "marca",
+            "biblia",
+            "catecismo",
+            "santos",
+            "maria",
+            "sacramentos",
+            "oracoes",
+            "liturgia",
+            "apologetica",
+            "formacao",
+          ],
+          [],
+          60,
+        ),
       },
       { property: "og:title", content: "Portal Católico — Biblioteca Digital da Fé" },
       {
         property: "og:description",
-        content: "Estudo, oração e formação na fé católica — fiel ao Magistério da Igreja, de Pedro a Francisco.",
+        content:
+          "Estudo, oração e formação na fé católica — fiel ao Magistério da Igreja, de Pedro a Francisco.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE_URL}/` },
@@ -68,17 +91,61 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
-
 const PILLARS = [
-  { to: "/biblia", icon: BookOpen, title: "Bíblia Sagrada", desc: "Os 73 livros canônicos com introduções, contexto histórico e leituras litúrgicas do dia." },
-  { to: "/catecismo", icon: ScrollText, title: "Catecismo", desc: "Os 2.865 parágrafos da fé católica, com referências cruzadas à Escritura e aos Padres." },
-  { to: "/sacramentos", icon: Church, title: "Sacramentos", desc: "Os 7 sinais sensíveis e eficazes da graça instituídos por Cristo — matéria, forma e efeitos." },
-  { to: "/santos", icon: Crown, title: "Santos", desc: "Vidas, virtudes heroicas e escritos dos amigos de Deus, de Estêvão até os mártires do séc. XXI." },
-  { to: "/maria", icon: Heart, title: "Mariologia", desc: "Os quatro dogmas marianos, aparições aprovadas e a maternidade espiritual de Maria." },
-  { to: "/oracoes", icon: Sparkles, title: "Orações", desc: "Rosário, Via-Sacra, Liturgia das Horas, novenas, ladainhas e devoções tradicionais." },
-  { to: "/apologetica", icon: Compass, title: "Apologética", desc: "Defesa racional da fé: existência de Deus, autoridade da Igreja, Bíblia e Tradição." },
-  { to: "/calendario-liturgico", icon: Calendar, title: "Calendário", desc: "Tempo litúrgico, festas, solenidades e memórias dos santos celebradas pela Igreja." },
-  { to: "/assistente", icon: Sparkles, title: "Sophia IA", desc: "Assistente que responde com base no Catecismo, na Escritura e nos documentos do Magistério." },
+  {
+    to: "/biblia",
+    icon: BookOpen,
+    title: "Bíblia Sagrada",
+    desc: "Os 73 livros canônicos com introduções, contexto histórico e leituras litúrgicas do dia.",
+  },
+  {
+    to: "/catecismo",
+    icon: ScrollText,
+    title: "Catecismo",
+    desc: "Os 2.865 parágrafos da fé católica, com referências cruzadas à Escritura e aos Padres.",
+  },
+  {
+    to: "/sacramentos",
+    icon: Church,
+    title: "Sacramentos",
+    desc: "Os 7 sinais sensíveis e eficazes da graça instituídos por Cristo — matéria, forma e efeitos.",
+  },
+  {
+    to: "/santos",
+    icon: Crown,
+    title: "Santos",
+    desc: "Vidas, virtudes heroicas e escritos dos amigos de Deus, de Estêvão até os mártires do séc. XXI.",
+  },
+  {
+    to: "/maria",
+    icon: Heart,
+    title: "Mariologia",
+    desc: "Os quatro dogmas marianos, aparições aprovadas e a maternidade espiritual de Maria.",
+  },
+  {
+    to: "/oracoes",
+    icon: Sparkles,
+    title: "Orações",
+    desc: "Rosário, Via-Sacra, Liturgia das Horas, novenas, ladainhas e devoções tradicionais.",
+  },
+  {
+    to: "/apologetica",
+    icon: Compass,
+    title: "Apologética",
+    desc: "Defesa racional da fé: existência de Deus, autoridade da Igreja, Bíblia e Tradição.",
+  },
+  {
+    to: "/calendario-liturgico",
+    icon: Calendar,
+    title: "Calendário",
+    desc: "Tempo litúrgico, festas, solenidades e memórias dos santos celebradas pela Igreja.",
+  },
+  {
+    to: "/assistente",
+    icon: Sparkles,
+    title: "Sophia IA",
+    desc: "Assistente que responde com base no Catecismo, na Escritura e nos documentos do Magistério.",
+  },
 ];
 
 /** Três portas de entrada com imagem — pouca palavra, muito contexto. */
@@ -88,8 +155,7 @@ const PERCURSOS = [
     img: eucaristia,
     kicker: "Vida sacramental",
     titulo: "Onde a graça se torna visível",
-    desc:
-      "Os sete sacramentos, um a um: matéria, forma, ministro e efeitos, com o texto do Catecismo e do Direito Canônico ao lado.",
+    desc: "Os sete sacramentos, um a um: matéria, forma, ministro e efeitos, com o texto do Catecismo e do Direito Canônico ao lado.",
     nota: "7 sacramentos · CIC §§ 1113–1666",
   },
   {
@@ -97,8 +163,7 @@ const PERCURSOS = [
     img: rosario,
     kicker: "Vida de oração",
     titulo: "Rezar com a Igreja de sempre",
-    desc:
-      "Rosário, Via-Sacra, Liturgia das Horas, novenas e ladainhas — com a origem histórica de cada devoção e o modo de rezá-la.",
+    desc: "Rosário, Via-Sacra, Liturgia das Horas, novenas e ladainhas — com a origem histórica de cada devoção e o modo de rezá-la.",
     nota: "Rosário · Via-Sacra · Horas · Novenas",
   },
   {
@@ -106,13 +171,10 @@ const PERCURSOS = [
     img: biblioteca,
     kicker: "Formação doutrinal",
     titulo: "Estudar com ordem e fontes",
-    desc:
-      "As quatro partes do Catecismo, os Padres da Igreja e os documentos conciliares, sempre com a referência para conferir na fonte.",
+    desc: "As quatro partes do Catecismo, os Padres da Igreja e os documentos conciliares, sempre com a referência para conferir na fonte.",
     nota: "2.865 parágrafos · 4 partes",
   },
 ];
-
-
 
 const PADRES = [
   {
@@ -132,7 +194,6 @@ const PADRES = [
   },
 ];
 
-
 function primeiraFrase(texto: string, max = 220): string {
   const limpo = texto
     .replace(/(^|[\s“‘"(])\d+(?=\p{L})/gu, "$1")
@@ -141,7 +202,7 @@ function primeiraFrase(texto: string, max = 220): string {
   if (limpo.length <= max) return limpo;
   const corte = limpo.slice(0, max);
   const fim = Math.max(corte.lastIndexOf(". "), corte.lastIndexOf("; "));
-  return (fim > 80 ? corte.slice(0, fim + 1) : `${corte.trimEnd()}…`);
+  return fim > 80 ? corte.slice(0, fim + 1) : `${corte.trimEnd()}…`;
 }
 
 function Home() {
@@ -182,18 +243,17 @@ function Home() {
     {
       kicker: "Evangelho da Missa",
       text: evangelho ? `“${primeiraFrase(evangelho.texto)}”` : lit.celebracao,
-      ref: evangelho?.referencia ? `${evangelho.referencia} · Ano ${lit.anoLiturgico}` : `Ano ${lit.anoLiturgico}`,
+      ref: evangelho?.referencia
+        ? `${evangelho.referencia} · Ano ${lit.anoLiturgico}`
+        : `Ano ${lit.anoLiturgico}`,
       linkTo: "/liturgia-diaria",
     },
-
   ];
-
-
 
   return (
     <div className="overflow-x-hidden">
       {/* Hero */}
-      <section className="relative flex min-h-[26rem] items-center overflow-hidden py-block sm:py-section sm:h-[calc(100svh-4.5rem)] sm:max-h-[44rem]">
+      <section className="grao relative flex min-h-[26rem] items-center overflow-hidden py-block sm:py-section sm:h-[calc(100svh-4.5rem)] sm:max-h-[44rem]">
         <div className="absolute inset-0" aria-hidden>
           <ImagemOtimizada
             src={hero}
@@ -213,33 +273,40 @@ function Home() {
 
         <div className="absolute inset-x-0 bottom-0 h-32 bg-linear-to-t from-background to-transparent" />
 
-        <div className="shell relative w-full">
+        <div className="shell relative z-[1] w-full">
           <div className="max-w-2xl animate-reveal">
             <p className="mb-6 flex items-center gap-3 kicker text-gold sm:gap-4">
               <span className="hidden h-px w-10 shrink-0 bg-gold/50 sm:block" />
-              <span className="min-w-0 tracking-[0.32em]">Una · Sancta · Catholica · Apostolica</span>
+              <span className="min-w-0 tracking-[0.32em]">
+                Una · Sancta · Catholica · Apostolica
+              </span>
             </p>
-            <h1 className="mb-4 font-display text-[length:var(--step-4)] font-bold leading-[1.08] tracking-tight text-balance text-foreground sm:mb-6 sm:text-[length:var(--step-5)]">
+            <h1 className="mb-4 font-display text-[length:var(--step-4)] font-semibold leading-[1.02] tracking-[-0.02em] text-balance text-foreground sm:mb-6 sm:text-[length:var(--step-5)]">
               A biblioteca{" "}
-              <span className="block font-normal italic text-gold-accent">da Fé</span>
+              <span className="block font-normal italic tracking-[-0.01em] text-gold-accent">
+                da Fé
+              </span>
             </h1>
-            <p className="measure mb-7 text-[length:var(--step-0)] font-light leading-relaxed text-foreground/70 sm:mb-10 sm:text-[length:var(--step-1)]">
-
-              Escritura, Catecismo, Padres da Igreja, santos e devoções tradicionais —
-              reunidos em uma única referência de estudo, fiel ao Magistério desde
-              Pedro até hoje.
+            <div aria-hidden className="filete-ouro mb-6 max-w-[9rem] sm:mb-8" />
+            <p className="measure mb-7 text-[length:var(--step-0)] font-light leading-relaxed text-foreground/75 sm:mb-10 sm:text-[length:var(--step-1)]">
+              Escritura, Catecismo, Padres da Igreja, santos e devoções tradicionais — reunidos em
+              uma única referência de estudo, fiel ao Magistério desde Pedro até hoje.
             </p>
             <div className="action-tray flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:gap-4">
               <BotaoLink para="/estudar" variante="ouro" tamanho="lg" className="w-full sm:w-auto">
                 <BookOpen className="size-4 shrink-0" />
                 Começar a estudar
               </BotaoLink>
-              <BotaoLink para="/assistente" variante="contorno" tamanho="lg" className="w-full sm:w-auto">
+              <BotaoLink
+                para="/assistente"
+                variante="contorno"
+                tamanho="lg"
+                className="w-full sm:w-auto"
+              >
                 <Sparkles className="size-4 shrink-0" />
                 Falar com a IA
               </BotaoLink>
             </div>
-
           </div>
         </div>
 
@@ -263,8 +330,6 @@ function Home() {
         </p>
       </section>
 
-
-
       {/* Tempo litúrgico em tempo real */}
       <section className="bg-background relative z-10 border-y border-gold/10">
         <div className="shell flex flex-col gap-3 py-block-sm sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:gap-4">
@@ -286,7 +351,6 @@ function Home() {
         </div>
       </section>
 
-
       {/* Retomar leitura */}
       <section className="bg-background relative z-10">
         <div className="shell pt-block-sm">
@@ -298,14 +362,19 @@ function Home() {
       <section aria-labelledby="hoje-na-igreja" className="bg-background relative z-10">
         <div className="shell pt-block-sm pb-[var(--space-sm)]">
           <div className="flex flex-col gap-1 sm:flex-row sm:flex-wrap sm:items-baseline sm:justify-between sm:gap-4">
-            <h2
-              id="hoje-na-igreja"
-              className="title-card"
-            >
-              Hoje na Igreja
-            </h2>
+            <div className="min-w-0">
+              <p className="num-secao mb-2">01 · Diário</p>
+              <h2 id="hoje-na-igreja" className="title-card">
+                Hoje na Igreja
+              </h2>
+            </div>
             <p className="label-btn text-muted-foreground">
-              {dataDoIso(lit.iso).toLocaleDateString("pt-BR", { day: "2-digit", month: "long", year: "numeric", timeZone: "UTC" })}
+              {dataDoIso(lit.iso).toLocaleDateString("pt-BR", {
+                day: "2-digit",
+                month: "long",
+                year: "numeric",
+                timeZone: "UTC",
+              })}
             </p>
           </div>
         </div>
@@ -314,7 +383,9 @@ function Home() {
             {DAILY_ITEMS.map((d, i) => {
               const inner = (
                 <div className="group h-full flex flex-col px-[var(--space-sm)] py-[var(--space-sm)] sm:px-0 sm:p-card transition-premium hover:bg-gold/[0.03]">
-                  <p className="label-btn text-gold/80 mb-3 group-hover:text-gold transition-colors">{d.kicker}</p>
+                  <p className="label-btn text-gold/80 mb-3 group-hover:text-gold transition-colors">
+                    {d.kicker}
+                  </p>
                   {/* Altura e corte uniformes: nenhum cartão parte a frase em altura diferente */}
                   <p className="font-display italic text-[length:var(--step-1)] text-foreground/90 leading-relaxed mb-4 flex-1 line-clamp-5 sm:min-h-[7.5rem]">
                     {d.text}
@@ -328,14 +399,9 @@ function Home() {
                     </span>
                   ) : null}
                 </div>
-
               );
               return (
-                <ScrollReveal 
-                  key={d.kicker} 
-                  delay={i * 150}
-                  threshold={0.05}
-                >
+                <ScrollReveal key={d.kicker} delay={i * 150} threshold={0.05}>
                   {d.linkTo ? (
                     <Link to={d.linkTo} className="block h-full">
                       {inner}
@@ -345,7 +411,6 @@ function Home() {
                   )}
                 </ScrollReveal>
               );
-
             })}
           </div>
         </div>
@@ -366,7 +431,7 @@ function Home() {
       {/* Percursos ilustrados */}
       <section aria-labelledby="percursos" className="shell py-section">
         <ScrollReveal className="mb-[var(--space-lg)] max-w-2xl">
-          <p className="kicker mb-4">Três portas de entrada</p>
+          <p className="num-secao mb-4">02 · Três portas de entrada</p>
           <h2 id="percursos" className="title-page text-balance leading-[1.08] text-foreground">
             Fé vivida, <span className="text-gold/80 italic">rezada e estudada.</span>
           </h2>
@@ -399,7 +464,9 @@ function Home() {
                   <h3 className="title-card text-foreground transition-colors group-hover:text-gold">
                     {p.titulo}
                   </h3>
-                  <p className="text-sm font-light leading-relaxed text-muted-foreground">{p.desc}</p>
+                  <p className="text-sm font-light leading-relaxed text-muted-foreground">
+                    {p.desc}
+                  </p>
                   <p className="mt-auto border-t border-gold/10 pt-4 kicker">{p.nota}</p>
                 </div>
               </Link>
@@ -407,7 +474,6 @@ function Home() {
           ))}
         </div>
       </section>
-
 
       <UltimosArtigos />
       {/* Intermezzo Contemplativo */}
@@ -433,22 +499,21 @@ function Home() {
         </div>
       </section>
 
-
       <TrilhasIlustradas />
 
       {/* Pillars - Bento Grid Style */}
       <section className="shell py-section">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-[var(--space-lg)] gap-[var(--space-sm)]">
           <ScrollReveal className="max-w-2xl">
-            <p className="kicker mb-4">Os pilares da verdade</p>
+            <p className="num-secao mb-4">03 · Os pilares da verdade</p>
             <h2 className="title-page text-foreground leading-[1.08] text-balance">
               Duas mil anos de fé, <span className="text-gold/75">em um só lugar.</span>
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={200} className="max-w-[24rem]">
             <p className="text-foreground/70 text-sm leading-relaxed mb-2 font-light">
-              Escritura, Tradição e Magistério — os três canais pelos quais a Revelação chega até nós —
-              organizados com referências cruzadas para um estudo sério e contemplativo.
+              Escritura, Tradição e Magistério — os três canais pelos quais a Revelação chega até
+              nós — organizados com referências cruzadas para um estudo sério e contemplativo.
             </p>
           </ScrollReveal>
         </div>
@@ -464,23 +529,29 @@ function Home() {
                 to={p.to}
                 className="group glass p-card flex flex-col gap-[var(--space-sm)] card-premium-hover h-full"
               >
-              <div className="size-14 rounded-full bg-gold/5 border border-gold/10 flex items-center justify-center group-hover:bg-gold/15 group-hover:border-gold/30 transition-premium">
-                <p.icon className="size-6 text-gold group-hover:scale-110 transition-premium" />
-              </div>
-              <div className="flex-1">
-                <h3 className="title-card text-foreground mb-3 group-hover:text-gold transition-colors">{p.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed font-light group-hover:text-foreground/70 transition-colors">{p.desc}</p>
-              </div>
-              <div className="flex items-center justify-between pt-6 border-t border-gold/5">
-                <span className="label-btn text-gold/40 group-hover:text-gold transition-colors">
-                  Explorar
-                </span>
-                <div className="size-8 rounded-full border border-gold/10 flex items-center justify-center group-hover:border-gold/30 transition-premium">
-                  <span className="text-gold text-lg group-hover:translate-x-0.5 transition-transform">→</span>
+                <div className="size-14 rounded-full bg-gold/5 border border-gold/10 flex items-center justify-center group-hover:bg-gold/15 group-hover:border-gold/30 transition-premium">
+                  <p.icon className="size-6 text-gold group-hover:scale-110 transition-premium" />
                 </div>
-              </div>
-            </Link>
-          </ScrollReveal>
+                <div className="flex-1">
+                  <h3 className="title-card text-foreground mb-3 group-hover:text-gold transition-colors">
+                    {p.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed font-light group-hover:text-foreground/70 transition-colors">
+                    {p.desc}
+                  </p>
+                </div>
+                <div className="flex items-center justify-between pt-6 border-t border-gold/5">
+                  <span className="label-btn text-gold/40 group-hover:text-gold transition-colors">
+                    Explorar
+                  </span>
+                  <div className="size-8 rounded-full border border-gold/10 flex items-center justify-center group-hover:border-gold/30 transition-premium">
+                    <span className="text-gold text-lg group-hover:translate-x-0.5 transition-transform">
+                      →
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            </ScrollReveal>
           ))}
         </div>
       </section>
@@ -491,19 +562,24 @@ function Home() {
         <div className="shell py-section grid grid-cols-1 lg:grid-cols-2 gap-[var(--space-lg)] items-center">
           <ScrollReveal direction="left" className="relative">
             <div className="absolute -inset-4 border border-gold/10 -z-10 translate-x-4 translate-y-4" />
-            <div className="aspect-[4/5] overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000 shadow-[0_30px_60px_rgba(0,0,0,0.5)]">
-              <ImagemOtimizada
-                src={maria}
-                alt="Imagem devocional de Nossa Senhora"
-                width={1024}
-                height={1280}
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="size-full object-cover"
-              />
-            </div>
-            <div className="absolute bottom-8 right-8 bg-background/80 backdrop-blur-md px-6 py-4 border border-gold/20">
-              <p className="label-btn text-gold">Regina Caeli</p>
-            </div>
+            <figure className="m-0">
+              <div className="figura-editorial aspect-[4/5]">
+                <ImagemOtimizada
+                  src={maria}
+                  alt="Imagem devocional de Nossa Senhora"
+                  width={1024}
+                  height={1280}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="size-full object-cover transition-transform duration-[1.4s] ease-out hover:scale-[1.03]"
+                />
+                <div className="absolute bottom-6 left-6 z-[1] border border-gold/25 bg-background/80 px-5 py-3 backdrop-blur-md">
+                  <p className="label-btn text-gold">Regina Caeli</p>
+                </div>
+              </div>
+              <figcaption className="legenda-figura">
+                Nossa Senhora, Mãe da Igreja · reprodução de arte sacra em domínio público
+              </figcaption>
+            </figure>
           </ScrollReveal>
           <ScrollReveal direction="right" delay={200}>
             <p className="kicker mb-6 flex items-center gap-4">
@@ -514,10 +590,15 @@ function Home() {
             </h2>
             <p className="measure text-[length:var(--step-0)] text-muted-foreground leading-relaxed font-light mb-[var(--space-md)]">
               "De Maria nunquam satis" — sobre Maria, nunca o suficiente, dizia São Bernardo.
-              Conheça os quatro dogmas marianos, as aparições aprovadas pela Igreja e a
-              teologia da Theotokos segundo os Padres e Doutores.
+              Conheça os quatro dogmas marianos, as aparições aprovadas pela Igreja e a teologia da
+              Theotokos segundo os Padres e Doutores.
             </p>
-            <BotaoLink para="/maria" variante="contorno" tamanho="lg" className="group w-full gap-4 sm:w-auto">
+            <BotaoLink
+              para="/maria"
+              variante="contorno"
+              tamanho="lg"
+              className="group w-full gap-4 sm:w-auto"
+            >
               <span>Estudar Mariologia</span>
               <span className="group-hover:translate-x-2 transition-transform">→</span>
             </BotaoLink>
@@ -529,7 +610,14 @@ function Home() {
       {/* Padres da Igreja — vozes da Tradição */}
       <section className="bg-background py-section relative overflow-hidden">
         <div className="absolute right-0 top-0 w-1/3 h-full opacity-5 pointer-events-none hidden lg:block">
-          <ImagemOtimizada src={doutores} alt="" width={1536} height={1024} sizes="33vw" className="size-full object-cover" />
+          <ImagemOtimizada
+            src={doutores}
+            alt=""
+            width={1536}
+            height={1024}
+            sizes="33vw"
+            className="size-full object-cover"
+          />
         </div>
         <div className="shell">
           <ScrollReveal className="max-w-3xl mb-[var(--space-lg)]">
@@ -537,12 +625,11 @@ function Home() {
               <span className="h-px w-6 bg-gold/40" /> Vox Patrum · A voz dos Padres
             </p>
             <h2 className="title-page text-foreground leading-[1.08] text-balance">
-              O que recebemos{" "}
-              <span className="text-gold/85 italic">dos primeiros séculos.</span>
+              O que recebemos <span className="text-gold/85 italic">dos primeiros séculos.</span>
             </h2>
             <p className="measure text-[length:var(--step-0)] text-muted-foreground leading-relaxed font-light mt-6">
-              A fé católica não nasceu ontem. Dos Padres Apostólicos aos Doutores medievais,
-              uma mesma voz atravessa vinte séculos confessando o mesmo Cristo.
+              A fé católica não nasceu ontem. Dos Padres Apostólicos aos Doutores medievais, uma
+              mesma voz atravessa vinte séculos confessando o mesmo Cristo.
             </p>
           </ScrollReveal>
 
@@ -550,12 +637,12 @@ function Home() {
             {PADRES.map((p, i) => (
               <ScrollReveal key={p.author + i} delay={i * 120}>
                 <figure className="h-full p-card bg-background flex flex-col gap-[var(--space-sm)]">
-                  <span className="text-gold/40 font-display text-6xl leading-none">"</span>
-                  <blockquote className="font-display italic text-[length:var(--step-2)] text-foreground/90 leading-snug flex-1">
-                    {p.quote}
-                  </blockquote>
+                  <span aria-hidden className="text-gold/35 font-display text-6xl leading-none">
+                    “
+                  </span>
+                  <blockquote className="citacao-destaque flex-1">{p.quote}</blockquote>
                   <figcaption className="border-t border-gold/10 pt-6">
-                    <p className="text-sm font-medium text-gold tracking-wide">{p.author}</p>
+                    <p className="text-sm font-semibold text-gold tracking-wide">{p.author}</p>
                     <p className="label-btn text-muted-foreground mt-2">{p.ref}</p>
                   </figcaption>
                 </figure>
@@ -582,7 +669,7 @@ function Home() {
           style={{ backgroundImage: `url(${cristo})` }}
         />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,var(--deep)_80%)]" />
-        
+
         <ScrollReveal className="shell py-section relative text-center">
           <div className="relative inline-block mb-[var(--space-md)]">
             <div className="absolute inset-0 bg-gold/20 blur-3xl rounded-full" />
@@ -590,15 +677,16 @@ function Home() {
               <Sparkles className="size-10 text-gold animate-pulse" />
             </div>
           </div>
-          
+
           <p className="kicker mb-6">Sophia · Logos</p>
           <h2 className="font-display text-[length:var(--step-5)] text-paper leading-[0.95] tracking-tight text-balance mb-[var(--space-md)]">
-            Inteligência Artificial <em className="text-gold italic font-medium">ao serviço da Verdade</em>
+            Inteligência Artificial{" "}
+            <em className="text-gold italic font-medium">ao serviço da Verdade</em>
           </h2>
           <p className="measure mx-auto text-[length:var(--step-0)] text-paper/75 leading-relaxed font-light mb-[var(--space-md)]">
-            Treinada exclusivamente sobre a Bíblia, o Catecismo e os documentos do Magistério.
-            Cada resposta vem com referências verificáveis — Escritura, parágrafos do CIC,
-            concílios e Padres da Igreja. Nada de opinião; só o que a Igreja ensina.
+            Treinada exclusivamente sobre a Bíblia, o Catecismo e os documentos do Magistério. Cada
+            resposta vem com referências verificáveis — Escritura, parágrafos do CIC, concílios e
+            Padres da Igreja. Nada de opinião; só o que a Igreja ensina.
           </p>
           <Link
             to="/assistente"
