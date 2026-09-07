@@ -49,8 +49,8 @@
   --color-info: var(--info);
   --color-info-foreground: var(--info-foreground);
 
-  --font-display: "EB Garamond", "Libre Baskerville", Georgia, serif;
-  --font-sans: "IBM Plex Sans", system-ui, sans-serif;
+  --font-display: "Lora", "Libre Baskerville", Georgia, serif;
+  --font-sans: "Nunito Sans", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
   /* Escala tipográfica exposta ao Tailwind: text-step--2 … text-step-5 */
