@@ -316,7 +316,9 @@ export const Botao = forwardRef<HTMLButtonElement, BotaoProps>(function Botao(
           className="size-3.5 shrink-0 animate-spin rounded-full border border-current border-t-transparent"
         />
       ) : null}
-      <span className="min-w-0 truncate">{children}</span>
+      <span className="inline-flex min-w-0 items-center justify-center gap-2 truncate">
+        {children}
+      </span>
     </button>
   );
 });
@@ -354,7 +356,9 @@ export function BotaoLink({
         className={classes}
         {...(anchorProps as object)}
       >
-        <span className="min-w-0 truncate">{children}</span>
+        <span className="inline-flex min-w-0 items-center justify-center gap-2 truncate">
+          {children}
+        </span>
       </Link>
     );
   }
@@ -366,7 +370,9 @@ export function BotaoLink({
       className={classes}
       {...(resto as object)}
     >
-      <span className="min-w-0 truncate">{children}</span>
+      <span className="inline-flex min-w-0 items-center justify-center gap-2 truncate">
+        {children}
+      </span>
     </a>
   );
 }

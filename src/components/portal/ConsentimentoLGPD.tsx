@@ -103,7 +103,7 @@ export function ConsentimentoLGPD() {
                   somenteEssenciais();
                   setAberto(false);
                 }}
-                className="px-1.5 py-2 text-xs font-light text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline"
+                className="inline-flex min-h-11 items-center px-1.5 py-2 text-xs font-light text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline"
               >
                 Só o essencial
               </button>
@@ -207,7 +207,7 @@ export function ConsentimentoLGPD() {
                   somenteEssenciais();
                   setAberto(false);
                 }}
-                className="px-2 py-2 text-sm font-light text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline"
+                className="inline-flex min-h-11 items-center px-2 py-2 text-sm font-light text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline"
               >
                 Só o essencial
               </button>

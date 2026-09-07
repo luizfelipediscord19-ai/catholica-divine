@@ -146,7 +146,7 @@ function AuthPage() {
                 [
                   ["entrar", "Entrar"],
                   ["criar", "Criar conta"],
-                  ["recuperar", "Esqueci a senha"],
+                  ["recuperar", "Recuperar"],
                 ] as [Modo, string][]
               ).map(([valor, rotulo]) => (
                 <Botao
@@ -204,8 +204,8 @@ function AuthPage() {
                 </label>
               )}
 
-              <div className="flex flex-wrap items-center gap-3">
-                <Botao type="submit" disabled={!valido} carregando={enviando}>
+              <div className="grid grid-cols-1 gap-3 sm:flex sm:flex-wrap sm:items-center">
+                <Botao type="submit" disabled={!valido} carregando={enviando} className="w-full sm:w-auto">
                   {enviando
                     ? "Enviando…"
                     : modo === "criar"
@@ -215,7 +215,7 @@ function AuthPage() {
                         : "Entrar"}
                 </Botao>
                 {modo === "entrar" ? (
-                  <Botao variante="contorno" onClick={() => setModo("recuperar")}>
+                  <Botao variante="contorno" onClick={() => setModo("recuperar")} className="w-full sm:w-auto">
                     Esqueci a senha
                   </Botao>
                 ) : null}

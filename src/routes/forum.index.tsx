@@ -166,7 +166,7 @@ function ForumPage() {
                       params={{ slug: t.slug }}
                       className="surface-card surface-card-interactive focus-ring block p-6"
                     >
-                      <div className="flex items-center gap-3 mb-3 kicker">
+                      <div className="flex min-w-0 flex-wrap items-center gap-x-3 gap-y-1 mb-3 kicker">
                         {t.fixado ? <Pin className="size-3" aria-hidden="true" /> : null}
                         {t.trancado ? <Lock className="size-3" aria-hidden="true" /> : null}
                         <span>{secaoNome ?? "Fórum"}</span>
@@ -182,7 +182,7 @@ function ForumPage() {
                       <p className="text-sm text-muted-foreground line-clamp-2 mb-5 font-light">
                         {t.corpo}
                       </p>
-                      <div className="flex items-center justify-between gap-4">
+                      <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4">
                         <AutorSelo autor={autor} />
                         <span className="flex items-center gap-4 text-xs text-paper/60">
                           <span className="inline-flex items-center gap-2">
@@ -332,11 +332,11 @@ function NovoTopico({
             e-mail nunca aparece para ninguém. Pode escrever agora: o rascunho fica guardado neste
             navegador enquanto você cria a conta.
           </p>
-          <span className="mt-3 flex flex-wrap items-center gap-3">
-            <BotaoLink para="/auth" search={{ modo: "entrar" }} tamanho="md">
+          <span className="mt-3 grid grid-cols-2 items-center gap-3 sm:flex sm:flex-wrap">
+            <BotaoLink para="/auth" search={{ modo: "entrar" }} tamanho="md" className="w-full sm:w-auto">
               Entrar
             </BotaoLink>
-            <BotaoLink para="/auth" search={{ modo: "criar" }} tamanho="md">
+            <BotaoLink para="/auth" search={{ modo: "criar" }} tamanho="md" className="w-full sm:w-auto">
               Criar conta
             </BotaoLink>
           </span>
@@ -392,18 +392,18 @@ function NovoTopico({
           />
         </label>
 
-        <div className="action-tray">
-          <Botao type="submit" disabled={!valido} carregando={criar.isPending}>
+        <div className="grid grid-cols-1 items-center gap-3 sm:flex sm:flex-wrap">
+          <Botao type="submit" disabled={!valido} carregando={criar.isPending} className="w-full sm:w-auto">
             {criar.isPending ? "Publicando…" : "Publicar"}
           </Botao>
-          <Botao variante="contorno" onClick={onPronto}>
+          <Botao variante="contorno" onClick={onPronto} className="w-full sm:w-auto">
             Cancelar
           </Botao>
-          <Botao variante="contorno" onClick={rascunho.limpar}>
+          <Botao variante="contorno" onClick={rascunho.limpar} className="w-full sm:w-auto">
             Descartar rascunho
           </Botao>
           {identidade ? (
-            <span className="text-xs text-muted-foreground">
+            <span className="min-w-0 text-xs text-muted-foreground sm:ml-auto">
               como <span className="text-gold">{identidade.apelido ?? identidade.santoNome}</span>
             </span>
           ) : null}
