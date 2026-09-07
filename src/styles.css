@@ -948,48 +948,51 @@
   --measure: 68ch;
 
 
-  /* Brand Tokens — Sacred Editorial Noir
+  /* Brand Tokens — Noir Dourado Editorial
      Ouro em três graus (folha, ouro, bronze) sobre tinta quente de impressão.
      Cada valor foi calibrado para contraste AA sobre --background. */
-  --gold: #d0b262;
-  --gold-soft: #9c8340;
-  --gold-accent: #f4e2ab;
+  --gold: #cda63a;
+  --gold-soft: #8f7526;
+  --gold-accent: #f0dfa8;
   --marian: #2a5f97;
   --marian-soft: #4a83c6;
   --cardinal: #8e1c1c;
-  --deep: #0b0a09;
-  --paper: #fbf8f2;
-  --glass-bg: rgba(22, 20, 18, 0.8);
-  --glass-border: rgba(208, 178, 98, 0.22);
+  --deep: #0b0a08;
+  --paper: #f2ede3;
+  --glass-bg: rgba(20, 18, 16, 0.82);
+  --glass-border: rgba(205, 166, 58, 0.24);
 
-  /* Semantic Palette */
-  --background: #0b0a09;
-  --foreground: #f4f0e8;
-  --card: #181613;
-  --card-foreground: #f4f0e8;
-  --popover: #181613;
-  --popover-foreground: #f4f0e8;
-  --primary: #d0b262;
-  --primary-foreground: #100e0b;
+  /* Semantic Palette — três camadas de profundidade */
+  --background: #0b0a08;
+  --foreground: #f2ede3;
+  --card: #161311;
+  --card-foreground: #f2ede3;
+  --surface-raised: #1d1917;
+  --popover: #1d1917;
+  --popover-foreground: #f2ede3;
+  --primary: #cda63a;
+  --primary-foreground: #0f0d0a;
   --secondary: #2a5f97;
   --secondary-foreground: #f5f2ec;
-  --muted: #15130f;
-  --muted-foreground: #bcb4a6;
+  --muted: #131110;
+  --muted-foreground: #b8afa0;
   --accent: #2a5f97;
   --accent-foreground: #f5f2ec;
   --destructive: #8e1c1c;
   --destructive-foreground: #fcfaf7;
   /* Vermelho legível como TEXTO sobre fundo escuro (WCAG AA). */
   --destructive-text: #f39c93;
-  --border: rgba(208, 178, 98, 0.19);
-  --input: rgba(208, 178, 98, 0.24);
-  --ring: #d0b262;
+  --border: rgba(205, 166, 58, 0.2);
+  --input: rgba(205, 166, 58, 0.26);
+  --ring: #cda63a;
 
   /* Superfícies e realces reutilizáveis */
   --gradient-gold: linear-gradient(135deg, var(--gold-accent), var(--gold) 48%, var(--gold-soft));
-  --gradient-surface: linear-gradient(180deg, color-mix(in oklab, var(--card) 94%, var(--gold) 6%), var(--background) 62%);
-  --shadow-elegant: 0 28px 68px -28px rgba(0, 0, 0, 0.76);
-  --hairline: color-mix(in oklab, var(--gold) 17%, transparent);
+  --gradient-surface: linear-gradient(180deg, color-mix(in oklab, var(--card) 92%, var(--gold) 8%), var(--background) 58%);
+  --shadow-elegant: 0 28px 68px -28px rgba(0, 0, 0, 0.8);
+  --hairline: color-mix(in oklab, var(--gold) 18%, transparent);
+  /* Grão de papel impresso: aplicado só em faixas escuras grandes */
+  --grao: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.45'/%3E%3C/svg%3E");
 
   /* Interação: um easing e três durações para todo o portal */
   --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
