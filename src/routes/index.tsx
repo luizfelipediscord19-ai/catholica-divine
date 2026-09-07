@@ -370,7 +370,7 @@ function Home() {
       {/* Percursos ilustrados */}
       <section aria-labelledby="percursos" className="shell py-section">
         <ScrollReveal className="mb-[var(--space-lg)] max-w-2xl">
-          <p className="kicker mb-4">Três portas de entrada</p>
+          <p className="num-secao mb-4">02 · Três portas de entrada</p>
           <h2 id="percursos" className="title-page text-balance leading-[1.08] text-foreground">
             Fé vivida, <span className="text-gold/80 italic">rezada e estudada.</span>
           </h2>
