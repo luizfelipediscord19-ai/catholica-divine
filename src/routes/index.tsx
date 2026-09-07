@@ -213,17 +213,18 @@ function Home() {
 
         <div className="absolute inset-x-0 bottom-0 h-32 bg-linear-to-t from-background to-transparent" />
 
-        <div className="shell relative w-full">
+        <div className="shell relative z-[1] w-full">
           <div className="max-w-2xl animate-reveal">
             <p className="mb-6 flex items-center gap-3 kicker text-gold sm:gap-4">
               <span className="hidden h-px w-10 shrink-0 bg-gold/50 sm:block" />
               <span className="min-w-0 tracking-[0.32em]">Una · Sancta · Catholica · Apostolica</span>
             </p>
-            <h1 className="mb-4 font-display text-[length:var(--step-4)] font-bold leading-[1.08] tracking-tight text-balance text-foreground sm:mb-6 sm:text-[length:var(--step-5)]">
+            <h1 className="mb-4 font-display text-[length:var(--step-4)] font-semibold leading-[1.02] tracking-[-0.02em] text-balance text-foreground sm:mb-6 sm:text-[length:var(--step-5)]">
               A biblioteca{" "}
-              <span className="block font-normal italic text-gold-accent">da Fé</span>
+              <span className="block font-normal italic tracking-[-0.01em] text-gold-accent">da Fé</span>
             </h1>
-            <p className="measure mb-7 text-[length:var(--step-0)] font-light leading-relaxed text-foreground/70 sm:mb-10 sm:text-[length:var(--step-1)]">
+            <div aria-hidden className="filete-ouro mb-6 max-w-[9rem] sm:mb-8" />
+            <p className="measure mb-7 text-[length:var(--step-0)] font-light leading-relaxed text-foreground/75 sm:mb-10 sm:text-[length:var(--step-1)]">
 
               Escritura, Catecismo, Padres da Igreja, santos e devoções tradicionais —
               reunidos em uma única referência de estudo, fiel ao Magistério desde
