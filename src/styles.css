@@ -40,6 +40,7 @@
   --color-cardinal: var(--cardinal);
   --color-deep: var(--deep);
   --color-paper: var(--paper);
+  --color-surface-raised: var(--surface-raised);
 
   /* Status semântico (feedback) */
   --color-success: var(--success);
