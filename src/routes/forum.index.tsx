@@ -333,10 +333,10 @@ function NovoTopico({
             navegador enquanto você cria a conta.
           </p>
           <span className="mt-3 grid grid-cols-2 items-center gap-3 sm:flex sm:flex-wrap">
-            <BotaoLink para="/auth" search={{ modo: "entrar" }} tamanho="md" bloco>
+            <BotaoLink para="/auth" search={{ modo: "entrar" }} tamanho="md" className="w-full sm:w-auto">
               Entrar
             </BotaoLink>
-            <BotaoLink para="/auth" search={{ modo: "criar" }} tamanho="md" bloco>
+            <BotaoLink para="/auth" search={{ modo: "criar" }} tamanho="md" className="w-full sm:w-auto">
               Criar conta
             </BotaoLink>
           </span>
