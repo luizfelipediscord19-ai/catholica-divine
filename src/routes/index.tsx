@@ -559,12 +559,12 @@ function Home() {
             {PADRES.map((p, i) => (
               <ScrollReveal key={p.author + i} delay={i * 120}>
                 <figure className="h-full p-card bg-background flex flex-col gap-[var(--space-sm)]">
-                  <span className="text-gold/40 font-display text-6xl leading-none">"</span>
-                  <blockquote className="font-display italic text-[length:var(--step-2)] text-foreground/90 leading-snug flex-1">
+                  <span aria-hidden className="text-gold/35 font-display text-6xl leading-none">“</span>
+                  <blockquote className="citacao-destaque flex-1">
                     {p.quote}
                   </blockquote>
                   <figcaption className="border-t border-gold/10 pt-6">
-                    <p className="text-sm font-medium text-gold tracking-wide">{p.author}</p>
+                    <p className="text-sm font-semibold text-gold tracking-wide">{p.author}</p>
                     <p className="label-btn text-muted-foreground mt-2">{p.ref}</p>
                   </figcaption>
                 </figure>
