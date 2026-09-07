@@ -495,19 +495,24 @@ function Home() {
         <div className="shell py-section grid grid-cols-1 lg:grid-cols-2 gap-[var(--space-lg)] items-center">
           <ScrollReveal direction="left" className="relative">
             <div className="absolute -inset-4 border border-gold/10 -z-10 translate-x-4 translate-y-4" />
-            <div className="aspect-[4/5] overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000 shadow-[0_30px_60px_rgba(0,0,0,0.5)]">
-              <ImagemOtimizada
-                src={maria}
-                alt="Imagem devocional de Nossa Senhora"
-                width={1024}
-                height={1280}
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="size-full object-cover"
-              />
-            </div>
-            <div className="absolute bottom-8 right-8 bg-background/80 backdrop-blur-md px-6 py-4 border border-gold/20">
-              <p className="label-btn text-gold">Regina Caeli</p>
-            </div>
+            <figure className="m-0">
+              <div className="figura-editorial aspect-[4/5]">
+                <ImagemOtimizada
+                  src={maria}
+                  alt="Imagem devocional de Nossa Senhora"
+                  width={1024}
+                  height={1280}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="size-full object-cover transition-transform duration-[1.4s] ease-out hover:scale-[1.03]"
+                />
+                <div className="absolute bottom-6 left-6 z-[1] border border-gold/25 bg-background/80 px-5 py-3 backdrop-blur-md">
+                  <p className="label-btn text-gold">Regina Caeli</p>
+                </div>
+              </div>
+              <figcaption className="legenda-figura">
+                Nossa Senhora, Mãe da Igreja · reprodução de arte sacra em domínio público
+              </figcaption>
+            </figure>
           </ScrollReveal>
           <ScrollReveal direction="right" delay={200}>
             <p className="kicker mb-6 flex items-center gap-4">
