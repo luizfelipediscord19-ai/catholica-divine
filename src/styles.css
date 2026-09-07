@@ -78,24 +78,35 @@
   --container-shell: var(--shell);
   --container-shell-wide: var(--shell-wide);
 
-
-
   /* Premium Animations */
   --animate-reveal: reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
   --animate-float: float 6s ease-in-out infinite;
 
   @keyframes reveal {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, ::before, ::after {
+  *,
+  ::before,
+  ::after {
     animation-delay: -1ms !important;
     animation-duration: 1ms !important;
     animation-iteration-count: 1 !important;
@@ -130,7 +141,7 @@
   will-change: transform;
 
   &::after {
-    content: '';
+    content: "";
     @apply pointer-events-none absolute inset-0 bg-white/5 opacity-0 transition-opacity duration-200;
   }
 
@@ -221,15 +232,10 @@
   border-radius: var(--radius-card);
   border: 1px solid var(--hairline);
   background:
-    linear-gradient(
-      180deg,
-      color-mix(in oklab, var(--gold) 3%, transparent),
-      transparent 42%
-    ),
+    linear-gradient(180deg, color-mix(in oklab, var(--gold) 3%, transparent), transparent 42%),
     color-mix(in oklab, var(--card) 92%, transparent);
   box-shadow: var(--shadow-card);
 }
-
 
 /* Card interativo: elevação discreta no hover e foco visível quando é link */
 @utility surface-card-interactive {
@@ -271,7 +277,6 @@
       transform: none;
     }
   }
-
 }
 
 @utility card-premium-hover {
@@ -483,11 +488,9 @@
   }
 }
 
-
 @utility perspective-1000 {
   perspective: 1000px;
 }
-
 
 /* Padding lateral fluido, usado por heros, seções e barras */
 @utility px-gutter {
@@ -621,7 +624,6 @@
   }
 }
 
-
 /* ============================================================
    TIPOGRAFIA DO DESIGN SYSTEM
    Uma classe por papel de texto. Nenhuma página deve repetir
@@ -651,7 +653,10 @@
   letter-spacing: -0.014em;
   color: var(--color-foreground);
   text-wrap: balance;
-  font-feature-settings: "kern" 1, "liga" 1, "dlig" 1;
+  font-feature-settings:
+    "kern" 1,
+    "liga" 1,
+    "dlig" 1;
 }
 
 /* Título de seção (H2) */
@@ -914,9 +919,6 @@
   }
 }
 
-
-
-
 :root {
   --radius: 0.5rem;
 
@@ -947,7 +949,6 @@
   --shell-wide: 90rem;
   /* Comprimento de linha confortável para leitura */
   --measure: 68ch;
-
 
   /* Brand Tokens — Noir Dourado Editorial
      Ouro em três graus (folha, ouro, bronze) sobre tinta quente de impressão.
@@ -989,7 +990,11 @@
 
   /* Superfícies e realces reutilizáveis */
   --gradient-gold: linear-gradient(135deg, var(--gold-accent), var(--gold) 48%, var(--gold-soft));
-  --gradient-surface: linear-gradient(180deg, color-mix(in oklab, var(--card) 92%, var(--gold) 8%), var(--background) 58%);
+  --gradient-surface: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--card) 92%, var(--gold) 8%),
+    var(--background) 58%
+  );
   --shadow-elegant: 0 28px 68px -28px rgba(0, 0, 0, 0.8);
   --hairline: color-mix(in oklab, var(--gold) 18%, transparent);
   /* Grão de papel impresso: aplicado só em faixas escuras grandes */
@@ -1021,12 +1026,7 @@
   --warning-foreground: #fff8e6;
   --info: #23568f;
   --info-foreground: #eef4fb;
-
 }
-
-
-
-
 
 @layer base {
   * {
@@ -1050,7 +1050,9 @@
     -moz-osx-font-smoothing: grayscale;
     line-height: 1.7;
     letter-spacing: 0;
-    font-feature-settings: "kern" 1, "liga" 1;
+    font-feature-settings:
+      "kern" 1,
+      "liga" 1;
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
   }
@@ -1066,7 +1068,6 @@
       min-height: 2.25rem;
     }
   }
-
 
   /* Microinterações consistentes em qualquer botão do portal */
   button,
@@ -1086,7 +1087,6 @@
     opacity: 0.5;
   }
 
-
   /* Visible keyboard focus for every interactive element */
   a:focus-visible,
   button:focus-visible,
@@ -1099,24 +1099,36 @@
     outline-offset: 2px;
     border-radius: 2px;
   }
-  h1, h2, h3, h4, .font-display {
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-display {
     font-family: var(--font-display);
     font-weight: 500;
     letter-spacing: -0.008em;
     line-height: 1.14;
-    font-feature-settings: "kern" 1, "liga" 1, "dlig" 1;
+    font-feature-settings:
+      "kern" 1,
+      "liga" 1,
+      "dlig" 1;
   }
   h1 {
     letter-spacing: -0.014em;
     line-height: 1.04;
   }
-  h4, h5, h6 {
+  h4,
+  h5,
+  h6 {
     letter-spacing: -0.006em;
   }
-  p, li {
+  p,
+  li {
     text-wrap: pretty;
   }
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     text-wrap: balance;
   }
   hr {
@@ -1126,7 +1138,6 @@
     background-color: color-mix(in oklab, var(--color-gold) 32%, transparent);
     color: var(--color-foreground);
   }
-
 }
 
 /* Legibilidade: micro-rótulos nunca ficam abaixo do mínimo confortável */
@@ -1138,15 +1149,6 @@
 .text-\[12px\] {
   font-size: var(--step--1);
 }
-
-
-
-
-
-
-
-
-
 
 @layer utilities {
   .text-glow-gold {
@@ -1175,22 +1177,34 @@
   }
 }
 
-
-.stagger-1 { animation-delay: 100ms; }
-.stagger-2 { animation-delay: 200ms; }
-.stagger-3 { animation-delay: 300ms; }
-.stagger-4 { animation-delay: 400ms; }
+.stagger-1 {
+  animation-delay: 100ms;
+}
+.stagger-2 {
+  animation-delay: 200ms;
+}
+.stagger-3 {
+  animation-delay: 300ms;
+}
+.stagger-4 {
+  animation-delay: 400ms;
+}
 
 /* Custom Scrollbar */
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: var(--color-background); }
-::-webkit-scrollbar-thumb { 
-  background: var(--color-muted); 
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-muted);
   border-radius: 4px;
   border: 2px solid var(--color-background);
 }
-::-webkit-scrollbar-thumb:hover { background: var(--color-gold-soft); }
-
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold-soft);
+}
 
 /* ============================================================
    MODO LEITURA — largura confortável, mais respiro, sem distrações.
