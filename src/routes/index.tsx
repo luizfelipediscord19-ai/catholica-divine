@@ -299,12 +299,15 @@ function Home() {
       <section aria-labelledby="hoje-na-igreja" className="bg-background relative z-10">
         <div className="shell pt-block-sm pb-[var(--space-sm)]">
           <div className="flex flex-col gap-1 sm:flex-row sm:flex-wrap sm:items-baseline sm:justify-between sm:gap-4">
-            <h2
-              id="hoje-na-igreja"
-              className="title-card"
-            >
-              Hoje na Igreja
-            </h2>
+            <div className="min-w-0">
+              <p className="num-secao mb-2">01 · Diário</p>
+              <h2
+                id="hoje-na-igreja"
+                className="title-card"
+              >
+                Hoje na Igreja
+              </h2>
+            </div>
             <p className="label-btn text-muted-foreground">
               {dataDoIso(lit.iso).toLocaleDateString("pt-BR", { day: "2-digit", month: "long", year: "numeric", timeZone: "UTC" })}
             </p>
