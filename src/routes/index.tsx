@@ -444,7 +444,7 @@ function Home() {
       <section className="shell py-section">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-[var(--space-lg)] gap-[var(--space-sm)]">
           <ScrollReveal className="max-w-2xl">
-            <p className="kicker mb-4">Os pilares da verdade</p>
+            <p className="num-secao mb-4">03 · Os pilares da verdade</p>
             <h2 className="title-page text-foreground leading-[1.08] text-balance">
               Duas mil anos de fé, <span className="text-gold/75">em um só lugar.</span>
             </h2>
