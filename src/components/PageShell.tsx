@@ -57,8 +57,10 @@ export function PageHero({
           <span aria-hidden className="h-px w-6 shrink-0 bg-gold/40" />
           <span className="min-w-0">{eyebrow}</span>
         </p>
-        <h1 className="mb-sm title-page text-paper">{title}</h1>
+        <h1 className="mb-2xs title-page text-paper">{title}</h1>
+        <div className="filete-ouro mb-sm" aria-hidden="true" />
         <p className="measure body-lead text-paper/70">{intro}</p>
+
 
         {autoridade?.length ? (
           <FaixaAutoridade
