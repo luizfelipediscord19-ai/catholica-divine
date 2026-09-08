@@ -7,7 +7,7 @@ import { PARTES, SECOES, VATICAN_URL } from "../lib/data/catecismo";
 import { ExternalLink } from "lucide-react";
 import { keywordsPara } from "@/lib/seo/palavras-chave";
 
-export const Route = createFileRoute("/catecismo")({
+export const Route = createFileRoute("/catecismo/")({
   head: () => ({
     meta: [
       { title: "Catecismo da Igreja Católica — Exposição orgânica da fé" },
