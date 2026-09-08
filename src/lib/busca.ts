@@ -1,6 +1,7 @@
 // Índice da busca global inteligente. Puramente estático: nenhum acesso a rede.
 import { LIVROS } from "./data/biblia/index";
 import { PARTES, SECOES } from "./data/catecismo/index";
+import { ARTIGOS, faixa } from "./data/catecismo/artigos";
 import { GLOSSARIO } from "./data/glossario";
 import { NOVENAS } from "./data/devocoes/novenas";
 import { ORACOES } from "./data/oracoes";
