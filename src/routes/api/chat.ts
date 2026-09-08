@@ -23,18 +23,17 @@ export const Route = createFileRoute("/api/chat")({
           return comCors(new Response("Forbidden", { status: 403 }), request);
         }
 
-        const { chaveCliente, dentroDoLimitePersistido } = await import(
-          "../../lib/seguranca/limite.server"
-        );
+        const { chaveCliente, dentroDoLimitePersistido } =
+          await import("../../lib/seguranca/limite.server");
         const cliente = chaveCliente(request);
 
         // 20 mensagens por minuto por origem (contagem no banco).
         if (!(await dentroDoLimitePersistido("chat", cliente, 20, 60_000))) {
           return comCors(
-            new Response(
-              "Muitas perguntas em pouco tempo. Aguarde um instante e tente de novo.",
-              { status: 429, headers: { "retry-after": "30" } },
-            ),
+            new Response("Muitas perguntas em pouco tempo. Aguarde um instante e tente de novo.", {
+              status: 429,
+              headers: { "retry-after": "30" },
+            }),
             request,
           );
         }
@@ -107,16 +106,23 @@ export const Route = createFileRoute("/api/chat")({
               .join(" ");
 
           // Histórico enxuto: só as últimas trocas, cada mensagem limitada.
+          // Também removemos as partes de "raciocínio" das respostas anteriores:
+          // o modelo do Groq recusa receber de volta o próprio reasoning_content.
           const limiteMensagem = usandoGroq ? 1400 : 6000;
           const maxMensagens = usandoGroq ? 6 : 20;
-          const mensagens = (messages as UIMessage[]).slice(-maxMensagens).map((m) => ({
-            ...m,
-            parts: (m.parts ?? []).map((p) =>
-              p.type === "text" && typeof (p as { text?: string }).text === "string"
-                ? { ...p, text: (p as { text: string }).text.slice(0, limiteMensagem) }
-                : p,
-            ),
-          })) as UIMessage[];
+          const mensagens = (messages as UIMessage[])
+            .slice(-maxMensagens)
+            .map((m) => ({
+              ...m,
+              parts: (m.parts ?? [])
+                .filter((p) => p.type === "text" || p.type === "file")
+                .map((p) =>
+                  p.type === "text" && typeof (p as { text?: string }).text === "string"
+                    ? { ...p, text: (p as { text: string }).text.slice(0, limiteMensagem) }
+                    : p,
+                ),
+            }))
+            .filter((m) => (m.parts ?? []).length > 0) as UIMessage[];
 
           const charsHistorico = mensagens.reduce((t, m) => t + textoDe(m).length, 0);
 
@@ -160,7 +166,6 @@ export const Route = createFileRoute("/api/chat")({
             topP: 0.9,
             maxOutputTokens: saidaMaxima,
           });
-
 
           return comCors(
             result.toUIMessageStreamResponse({
