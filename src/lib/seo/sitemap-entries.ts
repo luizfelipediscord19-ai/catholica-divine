@@ -16,7 +16,6 @@ export interface SitemapEntry {
   priority?: string;
 }
 
-
 /** Páginas institucionais e índices — as mais importantes para o rastreador. */
 export const PAGINAS: SitemapEntry[] = [
   { path: "/", changefreq: "daily", priority: "1.0" },
@@ -121,7 +120,6 @@ export function respostaSitemap(entries: SitemapEntry[]): Response {
       .filter(Boolean)
       .join("\n"),
   );
-
 
   const xml = [
     `<?xml version="1.0" encoding="UTF-8"?>`,

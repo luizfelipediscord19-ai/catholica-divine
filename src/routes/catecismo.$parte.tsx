@@ -28,16 +28,23 @@ export const Route = createFileRoute("/catecismo/$parte")({
       { property: "og:title", content: `${loaderData?.parte.titulo ?? "Catecismo"} — CIC` },
       { property: "og:description", content: loaderData?.parte.resumo ?? "" },
       { property: "og:type", content: "article" },
-      { property: "og:url", content: `https://portalcatolico.vercel.app/catecismo/${params.parte}` },
+      {
+        property: "og:url",
+        content: `https://portalcatolico.vercel.app/catecismo/${params.parte}`,
+      },
     ],
-    links: [{ rel: "canonical", href: `https://portalcatolico.vercel.app/catecismo/${params.parte}` }],
+    links: [
+      { rel: "canonical", href: `https://portalcatolico.vercel.app/catecismo/${params.parte}` },
+    ],
   }),
 
   component: Page,
   notFoundComponent: () => (
     <div className="shell-narrow py-block text-center">
       <p className="text-gold">Parte não encontrada.</p>
-      <Link to="/catecismo" className="text-sm underline mt-4 inline-block">← Catecismo</Link>
+      <Link to="/catecismo" className="text-sm underline mt-4 inline-block">
+        ← Catecismo
+      </Link>
     </div>
   ),
 });
@@ -46,18 +53,13 @@ function Page() {
   const { parte, secoes } = Route.useLoaderData();
   return (
     <div className="shell py-block">
-      <Link
-        to="/catecismo"
-        className="inline-flex items-center gap-2 kicker hover:text-gold mb-6"
-      >
+      <Link to="/catecismo" className="inline-flex items-center gap-2 kicker hover:text-gold mb-6">
         <ArrowLeft className="size-3" /> Catecismo
       </Link>
       <p className="kicker mb-4">
         Parte {parte.num} · {parte.paragrafos}
       </p>
-      <h1 className="title-page text-foreground leading-tight">
-        {parte.titulo}
-      </h1>
+      <h1 className="title-page text-foreground leading-tight">{parte.titulo}</h1>
       <p className="mt-6 text-lg text-muted-foreground leading-relaxed">{parte.resumo}</p>
 
       <FaixaAutoridade
@@ -66,16 +68,13 @@ function Page() {
         className="mt-6 max-w-3xl"
       />
 
-
       <div className="mt-12 space-y-4">
         {secoes.map((s: SecaoCIC) => {
           const capitulos = capitulosDaSecao(s.slug);
           return (
             <section key={s.slug} className="surface-card p-5 sm:p-6">
               <MarcarEstudo tipo="catecismo" chave={s.slug} />
-              <p className="kicker mb-2">
-                {s.paragrafos}
-              </p>
+              <p className="kicker mb-2">{s.paragrafos}</p>
               <h2 className="font-display text-xl sm:text-2xl text-foreground">{s.titulo}</h2>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.resumo}</p>
 
@@ -92,9 +91,7 @@ function Page() {
                       <h3 className="font-display text-base text-foreground leading-snug">
                         {c.titulo}
                       </h3>
-                      <p className="kicker mt-1">
-                        {c.paragrafos}
-                      </p>
+                      <p className="kicker mt-1">{c.paragrafos}</p>
                       <ul className="mt-2 space-y-1.5">
                         {c.itens.map((item) => (
                           <li
@@ -114,13 +111,9 @@ function Page() {
         })}
       </div>
 
-
       <Relacionados topic={`catecismo:${parte.slug}`} className="mt-10" />
 
-      <Link
-        to="/catecismo/artigos"
-        className="mt-10 mr-3 btn-base btn-gold gap-2 label-btn"
-      >
+      <Link to="/catecismo/artigos" className="mt-10 mr-3 btn-base btn-gold gap-2 label-btn">
         Artigo por artigo, com faixas de parágrafos
       </Link>
 
