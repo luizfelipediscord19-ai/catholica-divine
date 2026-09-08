@@ -107,16 +107,24 @@ export const Route = createFileRoute("/api/chat")({
               .join(" ");
 
           // Histórico enxuto: só as últimas trocas, cada mensagem limitada.
+          // Também removemos as partes de "raciocínio" das respostas anteriores:
+          // o modelo do Groq recusa receber de volta o próprio reasoning_content.
           const limiteMensagem = usandoGroq ? 1400 : 6000;
           const maxMensagens = usandoGroq ? 6 : 20;
-          const mensagens = (messages as UIMessage[]).slice(-maxMensagens).map((m) => ({
-            ...m,
-            parts: (m.parts ?? []).map((p) =>
-              p.type === "text" && typeof (p as { text?: string }).text === "string"
-                ? { ...p, text: (p as { text: string }).text.slice(0, limiteMensagem) }
-                : p,
-            ),
-          })) as UIMessage[];
+          const mensagens = (messages as UIMessage[])
+            .slice(-maxMensagens)
+            .map((m) => ({
+              ...m,
+              parts: (m.parts ?? [])
+                .filter((p) => p.type === "text" || p.type === "file")
+                .map((p) =>
+                  p.type === "text" && typeof (p as { text?: string }).text === "string"
+                    ? { ...p, text: (p as { text: string }).text.slice(0, limiteMensagem) }
+                    : p,
+                ),
+            }))
+            .filter((m) => (m.parts ?? []).length > 0) as UIMessage[];
+
 
           const charsHistorico = mensagens.reduce((t, m) => t + textoDe(m).length, 0);
 
