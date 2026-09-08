@@ -246,7 +246,7 @@ export const ARTIGOS: ArtigoCIC[] = [
     de: 456,
     ate: 483,
     sintese:
-      "O Verbo assumiu a carne para nos salvar, para que conhecêssemos o amor de Deus, para nos dar um modelo de santidade e para nos tornar participantes da natureza divina. A Igloreja precisou de séculos e de vários concílios para dizer com exatidão esse mistério contra as heresias: Cristo é verdadeiro Deus e verdadeiro homem, uma só Pessoa em duas naturezas, unidas sem confusão e sem separação. Sua humanidade é íntegra: alma humana, conhecimento humano, vontade humana livre, corpo real — e é justamente essa humanidade que se torna, na fé, o ícone visível do Deus invisível.",
+      "O Verbo assumiu a carne para nos salvar, para que conhecêssemos o amor de Deus, para nos dar um modelo de santidade e para nos tornar participantes da natureza divina. A Igreja precisou de séculos e de vários concílios para dizer com exatidão esse mistério contra as heresias: Cristo é verdadeiro Deus e verdadeiro homem, uma só Pessoa em duas naturezas, unidas sem confusão e sem separação. Sua humanidade é íntegra: alma humana, conhecimento humano, vontade humana livre, corpo real — e é justamente essa humanidade que se torna, na fé, o ícone visível do Deus invisível.",
     pontos: [
       "Quatro razões da Encarnação (§§ 457-460).",
       "União hipostática: uma Pessoa, duas naturezas (§§ 464-469).",
@@ -511,7 +511,7 @@ export const ARTIGOS: ArtigoCIC[] = [
     ],
   },
   {
-    slug: "mistério-sacramental",
+    slug: "misterio-sacramental",
     parte: 2,
     bloco: "A economia sacramental",
     titulo: "Os sacramentos de Cristo, da Igreja, da fé e da salvação",
