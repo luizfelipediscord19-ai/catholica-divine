@@ -101,6 +101,16 @@ export function indiceBusca(): ItemBusca[] {
     });
   }
 
+  for (const artigo of ARTIGOS) {
+    itens.push({
+      id: `ca-${artigo.slug}`,
+      titulo: artigo.titulo,
+      descricao: `Catecismo ${faixa(artigo)} · ${artigo.bloco}`,
+      categoria: "Catecismo",
+      href: `/catecismo/artigos#${artigo.slug}`,
+    });
+  }
+
   for (const santo of SANTOS_LISTA) {
     itens.push({
       id: `s-${santo.slug}`,
