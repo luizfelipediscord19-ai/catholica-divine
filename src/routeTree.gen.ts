@@ -51,6 +51,7 @@ import { Route as SantosIndexRouteImport } from './routes/santos.index'
 import { Route as OracoesIndexRouteImport } from './routes/oracoes.index'
 import { Route as NoticiasIndexRouteImport } from './routes/noticias.index'
 import { Route as ForumIndexRouteImport } from './routes/forum.index'
+import { Route as CatecismoIndexRouteImport } from './routes/catecismo.index'
 import { Route as BibliaIndexRouteImport } from './routes/biblia.index'
 import { Route as SantosSlugRouteImport } from './routes/santos.$slug'
 import { Route as OracoesViaSacraRouteImport } from './routes/oracoes.via-sacra'
@@ -60,6 +61,7 @@ import { Route as OracoesNovenasRouteImport } from './routes/oracoes.novenas'
 import { Route as OracoesLiturgiaDasHorasRouteImport } from './routes/oracoes.liturgia-das-horas'
 import { Route as NoticiasSlugRouteImport } from './routes/noticias.$slug'
 import { Route as ForumSlugRouteImport } from './routes/forum.$slug'
+import { Route as CatecismoArtigosRouteImport } from './routes/catecismo.artigos'
 import { Route as CatecismoParteRouteImport } from './routes/catecismo.$parte'
 import { Route as BibliaPlanosRouteImport } from './routes/biblia.planos'
 import { Route as BibliaLeiturasRouteImport } from './routes/biblia.leituras'
@@ -291,6 +293,11 @@ const ForumIndexRoute = ForumIndexRouteImport.update({
   path: '/forum/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CatecismoIndexRoute = CatecismoIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => CatecismoRoute,
+} as any)
 const BibliaIndexRoute = BibliaIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -336,6 +343,11 @@ const ForumSlugRoute = ForumSlugRouteImport.update({
   id: '/forum/$slug',
   path: '/forum/$slug',
   getParentRoute: () => rootRouteImport,
+} as any)
+const CatecismoArtigosRoute = CatecismoArtigosRouteImport.update({
+  id: '/artigos',
+  path: '/artigos',
+  getParentRoute: () => CatecismoRoute,
 } as any)
 const CatecismoParteRoute = CatecismoParteRouteImport.update({
   id: '/$parte',
@@ -473,6 +485,7 @@ export interface FileRoutesByFullPath {
   '/biblia/leituras': typeof BibliaLeiturasRoute
   '/biblia/planos': typeof BibliaPlanosRouteWithChildren
   '/catecismo/$parte': typeof CatecismoParteRoute
+  '/catecismo/artigos': typeof CatecismoArtigosRoute
   '/forum/$slug': typeof ForumSlugRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
   '/oracoes/liturgia-das-horas': typeof OracoesLiturgiaDasHorasRoute
@@ -482,6 +495,7 @@ export interface FileRoutesByFullPath {
   '/oracoes/via-sacra': typeof OracoesViaSacraRoute
   '/santos/$slug': typeof SantosSlugRoute
   '/biblia/': typeof BibliaIndexRoute
+  '/catecismo/': typeof CatecismoIndexRoute
   '/forum/': typeof ForumIndexRoute
   '/noticias/': typeof NoticiasIndexRoute
   '/oracoes/': typeof OracoesIndexRoute
@@ -507,7 +521,6 @@ export interface FileRoutesByTo {
   '/auth': typeof AuthRoute
   '/busca': typeof BuscaRoute
   '/calendario-liturgico': typeof CalendarioLiturgicoRoute
-  '/catecismo': typeof CatecismoRouteWithChildren
   '/confissao': typeof ConfissaoRoute
   '/contato': typeof ContatoRoute
   '/coroinhas': typeof CoroinhasRoute
@@ -539,6 +552,7 @@ export interface FileRoutesByTo {
   '/api/transcrever': typeof ApiTranscreverRoute
   '/biblia/leituras': typeof BibliaLeiturasRoute
   '/catecismo/$parte': typeof CatecismoParteRoute
+  '/catecismo/artigos': typeof CatecismoArtigosRoute
   '/forum/$slug': typeof ForumSlugRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
   '/oracoes/liturgia-das-horas': typeof OracoesLiturgiaDasHorasRoute
@@ -548,6 +562,7 @@ export interface FileRoutesByTo {
   '/oracoes/via-sacra': typeof OracoesViaSacraRoute
   '/santos/$slug': typeof SantosSlugRoute
   '/biblia': typeof BibliaIndexRoute
+  '/catecismo': typeof CatecismoIndexRoute
   '/forum': typeof ForumIndexRoute
   '/noticias': typeof NoticiasIndexRoute
   '/oracoes': typeof OracoesIndexRoute
@@ -611,6 +626,7 @@ export interface FileRoutesById {
   '/biblia/leituras': typeof BibliaLeiturasRoute
   '/biblia/planos': typeof BibliaPlanosRouteWithChildren
   '/catecismo/$parte': typeof CatecismoParteRoute
+  '/catecismo/artigos': typeof CatecismoArtigosRoute
   '/forum/$slug': typeof ForumSlugRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
   '/oracoes/liturgia-das-horas': typeof OracoesLiturgiaDasHorasRoute
@@ -620,6 +636,7 @@ export interface FileRoutesById {
   '/oracoes/via-sacra': typeof OracoesViaSacraRoute
   '/santos/$slug': typeof SantosSlugRoute
   '/biblia/': typeof BibliaIndexRoute
+  '/catecismo/': typeof CatecismoIndexRoute
   '/forum/': typeof ForumIndexRoute
   '/noticias/': typeof NoticiasIndexRoute
   '/oracoes/': typeof OracoesIndexRoute
@@ -684,6 +701,7 @@ export interface FileRouteTypes {
     | '/biblia/leituras'
     | '/biblia/planos'
     | '/catecismo/$parte'
+    | '/catecismo/artigos'
     | '/forum/$slug'
     | '/noticias/$slug'
     | '/oracoes/liturgia-das-horas'
@@ -693,6 +711,7 @@ export interface FileRouteTypes {
     | '/oracoes/via-sacra'
     | '/santos/$slug'
     | '/biblia/'
+    | '/catecismo/'
     | '/forum/'
     | '/noticias/'
     | '/oracoes/'
@@ -718,7 +737,6 @@ export interface FileRouteTypes {
     | '/auth'
     | '/busca'
     | '/calendario-liturgico'
-    | '/catecismo'
     | '/confissao'
     | '/contato'
     | '/coroinhas'
@@ -750,6 +768,7 @@ export interface FileRouteTypes {
     | '/api/transcrever'
     | '/biblia/leituras'
     | '/catecismo/$parte'
+    | '/catecismo/artigos'
     | '/forum/$slug'
     | '/noticias/$slug'
     | '/oracoes/liturgia-das-horas'
@@ -759,6 +778,7 @@ export interface FileRouteTypes {
     | '/oracoes/via-sacra'
     | '/santos/$slug'
     | '/biblia'
+    | '/catecismo'
     | '/forum'
     | '/noticias'
     | '/oracoes'
@@ -821,6 +841,7 @@ export interface FileRouteTypes {
     | '/biblia/leituras'
     | '/biblia/planos'
     | '/catecismo/$parte'
+    | '/catecismo/artigos'
     | '/forum/$slug'
     | '/noticias/$slug'
     | '/oracoes/liturgia-das-horas'
@@ -830,6 +851,7 @@ export interface FileRouteTypes {
     | '/oracoes/via-sacra'
     | '/santos/$slug'
     | '/biblia/'
+    | '/catecismo/'
     | '/forum/'
     | '/noticias/'
     | '/oracoes/'
@@ -1199,6 +1221,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ForumIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/catecismo/': {
+      id: '/catecismo/'
+      path: '/'
+      fullPath: '/catecismo/'
+      preLoaderRoute: typeof CatecismoIndexRouteImport
+      parentRoute: typeof CatecismoRoute
+    }
     '/biblia/': {
       id: '/biblia/'
       path: '/'
@@ -1261,6 +1290,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/forum/$slug'
       preLoaderRoute: typeof ForumSlugRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/catecismo/artigos': {
+      id: '/catecismo/artigos'
+      path: '/artigos'
+      fullPath: '/catecismo/artigos'
+      preLoaderRoute: typeof CatecismoArtigosRouteImport
+      parentRoute: typeof CatecismoRoute
     }
     '/catecismo/$parte': {
       id: '/catecismo/$parte'
@@ -1438,10 +1474,14 @@ const BibliaRouteWithChildren =
 
 interface CatecismoRouteChildren {
   CatecismoParteRoute: typeof CatecismoParteRoute
+  CatecismoArtigosRoute: typeof CatecismoArtigosRoute
+  CatecismoIndexRoute: typeof CatecismoIndexRoute
 }
 
 const CatecismoRouteChildren: CatecismoRouteChildren = {
   CatecismoParteRoute: CatecismoParteRoute,
+  CatecismoArtigosRoute: CatecismoArtigosRoute,
+  CatecismoIndexRoute: CatecismoIndexRoute,
 }
 
 const CatecismoRouteWithChildren = CatecismoRoute._addFileChildren(

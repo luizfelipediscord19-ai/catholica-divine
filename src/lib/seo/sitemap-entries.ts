@@ -16,13 +16,13 @@ export interface SitemapEntry {
   priority?: string;
 }
 
-
 /** Páginas institucionais e índices — as mais importantes para o rastreador. */
 export const PAGINAS: SitemapEntry[] = [
   { path: "/", changefreq: "daily", priority: "1.0" },
   { path: "/trilhas", changefreq: "weekly", priority: "0.9" },
   { path: "/biblia", changefreq: "weekly", priority: "0.9" },
   { path: "/catecismo", changefreq: "monthly", priority: "0.9" },
+  { path: "/catecismo/artigos", changefreq: "monthly", priority: "0.8" },
   { path: "/liturgia-diaria", changefreq: "daily", priority: "0.9" },
   { path: "/biblia/leituras", changefreq: "daily", priority: "0.8" },
   { path: "/biblia/planos", changefreq: "monthly", priority: "0.8" },
@@ -120,7 +120,6 @@ export function respostaSitemap(entries: SitemapEntry[]): Response {
       .filter(Boolean)
       .join("\n"),
   );
-
 
   const xml = [
     `<?xml version="1.0" encoding="UTF-8"?>`,
