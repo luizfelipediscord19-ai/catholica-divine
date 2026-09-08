@@ -23,18 +23,17 @@ export const Route = createFileRoute("/api/chat")({
           return comCors(new Response("Forbidden", { status: 403 }), request);
         }
 
-        const { chaveCliente, dentroDoLimitePersistido } = await import(
-          "../../lib/seguranca/limite.server"
-        );
+        const { chaveCliente, dentroDoLimitePersistido } =
+          await import("../../lib/seguranca/limite.server");
         const cliente = chaveCliente(request);
 
         // 20 mensagens por minuto por origem (contagem no banco).
         if (!(await dentroDoLimitePersistido("chat", cliente, 20, 60_000))) {
           return comCors(
-            new Response(
-              "Muitas perguntas em pouco tempo. Aguarde um instante e tente de novo.",
-              { status: 429, headers: { "retry-after": "30" } },
-            ),
+            new Response("Muitas perguntas em pouco tempo. Aguarde um instante e tente de novo.", {
+              status: 429,
+              headers: { "retry-after": "30" },
+            }),
             request,
           );
         }
@@ -125,7 +124,6 @@ export const Route = createFileRoute("/api/chat")({
             }))
             .filter((m) => (m.parts ?? []).length > 0) as UIMessage[];
 
-
           const charsHistorico = mensagens.reduce((t, m) => t + textoDe(m).length, 0);
 
           // Aterramento local: injeta o acervo real do portal ligado à pergunta.
@@ -168,7 +166,6 @@ export const Route = createFileRoute("/api/chat")({
             topP: 0.9,
             maxOutputTokens: saidaMaxima,
           });
-
 
           return comCors(
             result.toUIMessageStreamResponse({

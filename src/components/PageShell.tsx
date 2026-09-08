@@ -35,7 +35,6 @@ export function PageHero({
             posicao="50% 22%"
             className="art-plate size-full object-cover"
           />
-
         </div>
       ) : null}
       <div
@@ -51,7 +50,6 @@ export function PageHero({
 
       <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-gold/20 to-transparent" />
 
-
       <div className="shell relative w-full py-[var(--space-lg)] animate-reveal">
         <p className="mb-xs flex items-center gap-2 kicker">
           <span aria-hidden className="h-px w-6 shrink-0 bg-gold/40" />
@@ -60,7 +58,6 @@ export function PageHero({
         <h1 className="mb-2xs title-page text-paper">{title}</h1>
         <div className="filete-ouro mb-sm" aria-hidden="true" />
         <p className="measure body-lead text-paper/70">{intro}</p>
-
 
         {autoridade?.length ? (
           <FaixaAutoridade
@@ -85,12 +82,9 @@ export function PageHero({
           </p>
         ) : null}
       </div>
-
     </section>
   );
 }
-
-
 
 export function Section({
   title,
@@ -119,7 +113,6 @@ export function Section({
       ) : null}
 
       {children}
-
     </section>
   );
 }
@@ -153,9 +146,7 @@ export function ContentCard({
       {media ? <div className="relative">{media}</div> : null}
       <div className="relative min-w-0 p-card">
         {subtitle ? (
-          <p className="mb-xs kicker group-hover:text-gold transition-colors">
-            {subtitle}
-          </p>
+          <p className="mb-xs kicker group-hover:text-gold transition-colors">{subtitle}</p>
         ) : null}
         <h3 className="mb-[var(--space-xs)] title-card group-hover:text-paper transition-colors">
           {title}
@@ -169,8 +160,6 @@ export function ContentCard({
     </article>
   );
 }
-
-
 
 export function Prose({ children }: { children: ReactNode }) {
   return (
@@ -201,7 +190,6 @@ export function Prose({ children }: { children: ReactNode }) {
   );
 }
 
-
 export function Sources({ items }: { items: { label: string; ref: string }[] }) {
   return (
     <aside className="measure mx-auto mt-[var(--space-lg)] border-t border-gold/20 pt-[var(--space-sm)]">
@@ -231,11 +219,7 @@ export function Pullquote({ children, cite }: { children: ReactNode; cite?: stri
         “{children}”
       </blockquote>
 
-      {cite ? (
-        <figcaption className="mt-[var(--space-xs)] kicker">
-          {cite}
-        </figcaption>
-      ) : null}
+      {cite ? <figcaption className="mt-[var(--space-xs)] kicker">{cite}</figcaption> : null}
     </figure>
   );
 }
