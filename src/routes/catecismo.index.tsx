@@ -155,6 +155,17 @@ function Page() {
       </Section>
 
 
+      <Section kicker="Leitura detalhada" title="Artigo por artigo">
+        <p className="body-base measure text-muted-foreground">
+          Cada artigo do Catecismo com sua faixa exata de parágrafos, uma síntese fiel e os
+          pontos-chave referenciados. Você também pode digitar um número de parágrafo e descobrir
+          em que artigo ele está.
+        </p>
+        <Link to="/catecismo/artigos" className="btn-base btn-gold btn-md label-btn mt-6">
+          Abrir o Catecismo artigo por artigo
+        </Link>
+      </Section>
+
       <Section kicker="As quatro partes" title="A estrutura do Catecismo">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-gold/15">
           {PARTES.map((p) => (
