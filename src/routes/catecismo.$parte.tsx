@@ -117,6 +117,13 @@ function Page() {
 
       <Relacionados topic={`catecismo:${parte.slug}`} className="mt-10" />
 
+      <Link
+        to="/catecismo/artigos"
+        className="mt-10 mr-3 btn-base btn-gold gap-2 label-btn"
+      >
+        Artigo por artigo, com faixas de parágrafos
+      </Link>
+
       <a
         href={VATICAN_URL}
         target="_blank"
