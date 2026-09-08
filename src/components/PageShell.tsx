@@ -22,7 +22,7 @@ export function PageHero({
 }) {
   const obra = obraDaUrl(image);
   return (
-    <section data-leitura-oculto className="relative overflow-hidden bg-deep">
+    <section data-leitura-oculto className="grao relative overflow-hidden bg-deep">
       {image ? (
         <div className="absolute inset-0 scale-105 opacity-45" aria-hidden>
           <ImagemOtimizada
@@ -109,7 +109,13 @@ export function Section({
           <span className="min-w-0">{kicker}</span>
         </p>
       ) : null}
-      {title ? <h2 className="mb-md title-section">{title}</h2> : null}
+      {title ? (
+        <>
+          <h2 className="mb-2xs title-section">{title}</h2>
+          <div className="filete-ouro mb-md" aria-hidden="true" />
+        </>
+      ) : null}
+
       {children}
 
     </section>
