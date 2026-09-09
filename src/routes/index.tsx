@@ -32,6 +32,8 @@ import { RetomarLeitura } from "../components/portal/RetomarLeitura";
 import { UltimosArtigos, TrilhasIlustradas } from "../components/portal/DestaquesHome";
 import { ImagemOtimizada } from "../components/ImagemOtimizada";
 import { keywordsPara } from "@/lib/seo/palavras-chave";
+import { OBRAS } from "@/lib/data/obras";
+import { VERBETES_ENCICLOPEDIA } from "@/lib/data/enciclopedia";
 
 const SITE_URL = "https://portalcatolico.vercel.app";
 
@@ -84,6 +86,7 @@ export const Route = createFileRoute("/")({
       { property: "og:type", content: "website" },
       { property: "og:url", content: `${SITE_URL}/` },
       { property: "og:image", content: `${SITE_URL}/og-image.jpg` },
+      { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:image", content: `${SITE_URL}/og-image.jpg` },
     ],
     links: [{ rel: "canonical", href: `${SITE_URL}/` }],
@@ -252,82 +255,79 @@ function Home() {
 
   return (
     <div className="overflow-x-hidden">
-      {/* Hero */}
-      <section className="grao relative flex min-h-[26rem] items-center overflow-hidden py-block sm:py-section sm:h-[calc(100svh-4.5rem)] sm:max-h-[44rem]">
-        <div className="absolute inset-0" aria-hidden>
-          <ImagemOtimizada
-            src={hero}
-            alt=""
-            width={1920}
-            height={1080}
-            prioridade
-            sizes="100vw"
-            className="size-full object-cover"
-          />
-        </div>
-        {/* Noir editorial: escurece da esquerda para a direita, preservando a luz da nave */}
-        <div className="absolute inset-0 bg-linear-to-r from-background via-background/85 to-background/10" />
-        {/* No celular a arte fica atrás do texto: gradiente vertical garante o contraste */}
-        <div className="absolute inset-0 bg-linear-to-b from-background/85 via-background/70 to-background/90 sm:hidden" />
-        <div className="absolute inset-0 bg-background/45" />
+      {/* Santuário de abertura — eixo central inspirado na nave de uma basílica */}
+      <section className="grao eixo-nave relative overflow-hidden bg-deep py-block sm:py-section">
+        <div className="shell relative z-[1] flex flex-col items-center">
+          <div className="arco-sacral relative aspect-[4/5] w-full max-w-5xl sm:aspect-[21/10]">
+            <div className="absolute inset-0" aria-hidden>
+              <ImagemOtimizada
+                src={hero}
+                alt=""
+                width={1920}
+                height={1080}
+                prioridade
+                sizes="100vw"
+                className="size-full object-cover"
+              />
+            </div>
+            <div className="absolute inset-0 bg-linear-to-t from-deep via-deep/45 to-deep/10" />
+            <div className="absolute inset-0 bg-deep/20" />
+            <div className="absolute inset-x-0 bottom-0 h-2/3 bg-linear-to-t from-deep via-deep/55 to-transparent" />
 
-        <div className="absolute inset-x-0 bottom-0 h-32 bg-linear-to-t from-background to-transparent" />
-
-        <div className="shell relative z-[1] w-full">
-          <div className="max-w-2xl animate-reveal">
-            <p className="mb-6 flex items-center gap-3 kicker text-gold sm:gap-4">
-              <span className="hidden h-px w-10 shrink-0 bg-gold/50 sm:block" />
-              <span className="min-w-0 tracking-[0.32em]">
-                Una · Sancta · Catholica · Apostolica
-              </span>
-            </p>
-            <h1 className="mb-4 font-display text-[length:var(--step-4)] font-semibold leading-[1.02] tracking-[-0.02em] text-balance text-foreground sm:mb-6 sm:text-[length:var(--step-5)]">
-              A biblioteca{" "}
-              <span className="block font-normal italic tracking-[-0.01em] text-gold-accent">
-                da Fé
-              </span>
-            </h1>
-            <div aria-hidden className="filete-ouro mb-6 max-w-[9rem] sm:mb-8" />
-            <p className="measure mb-7 text-[length:var(--step-0)] font-light leading-relaxed text-foreground/75 sm:mb-10 sm:text-[length:var(--step-1)]">
-              Escritura, Catecismo, Padres da Igreja, santos e devoções tradicionais — reunidos em
-              uma única referência de estudo, fiel ao Magistério desde Pedro até hoje.
-            </p>
-            <div className="action-tray flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:gap-4">
-              <BotaoLink para="/estudar" variante="ouro" tamanho="lg" className="w-full sm:w-auto">
-                <BookOpen className="size-4 shrink-0" />
-                Começar a estudar
-              </BotaoLink>
-              <BotaoLink
-                para="/assistente"
-                variante="contorno"
-                tamanho="lg"
-                className="w-full sm:w-auto"
-              >
-                <Sparkles className="size-4 shrink-0" />
-                Falar com a IA
-              </BotaoLink>
+            <div className="absolute inset-0 flex items-end justify-center px-5 pb-8 text-center sm:px-10 sm:pb-12">
+              <div className="max-w-3xl animate-reveal">
+                <p className="mb-4 flex items-center justify-center gap-3 kicker text-gold sm:mb-6 sm:gap-4">
+                  <span className="h-px w-6 shrink-0 bg-gold/50 sm:w-10" />
+                  <span className="min-w-0 tracking-[0.32em]">
+                    Una · Sancta · Catholica · Apostolica
+                  </span>
+                  <span className="h-px w-6 shrink-0 bg-gold/50 sm:w-10" />
+                </p>
+                <h1 className="mb-4 font-display text-[length:var(--step-4)] font-semibold leading-[1.02] text-balance text-paper sm:mb-6 sm:text-[length:var(--step-5)]">
+                  A biblioteca{" "}
+                  <span className="block font-normal italic text-gold-accent">da Fé</span>
+                </h1>
+                <div aria-hidden className="filete-ouro mx-auto mb-5 max-w-[12rem] sm:mb-7" />
+                <p className="measure mx-auto mb-6 text-[length:var(--step-0)] font-light leading-relaxed text-paper/80 sm:mb-8 sm:text-[length:var(--step-1)]">
+                  Escritura, Catecismo, Padres da Igreja, santos e devoções tradicionais — reunidos
+                  em uma única referência de estudo, fiel ao Magistério desde Pedro até hoje.
+                </p>
+                <div className="action-tray justify-center gap-3">
+                  <BotaoLink
+                    para="/estudar"
+                    variante="ouro"
+                    tamanho="lg"
+                    className="w-full sm:w-auto"
+                  >
+                    <BookOpen className="size-4 shrink-0" />
+                    Começar a estudar
+                  </BotaoLink>
+                  <BotaoLink
+                    para="/assistente"
+                    variante="contorno"
+                    tamanho="lg"
+                    className="w-full sm:w-auto"
+                  >
+                    <Sparkles className="size-4 shrink-0" />
+                    Falar com a IA
+                  </BotaoLink>
+                </div>
+              </div>
             </div>
           </div>
+          <p className="mt-3 max-w-5xl self-stretch text-center text-step--2 text-foreground/45">
+            {OBRAS["hero-catedral"].titulo} — {OBRAS["hero-catedral"].autor},{" "}
+            {OBRAS["hero-catedral"].ano} · {OBRAS["hero-catedral"].local} ·{" "}
+            <a
+              href={OBRAS["hero-catedral"].fonte}
+              target="_blank"
+              rel="noreferrer"
+              className="underline decoration-gold/40 underline-offset-2 hover:text-gold"
+            >
+              domínio público
+            </a>
+          </p>
         </div>
-
-        {/* Filete de ouro: assinatura vertical do hero */}
-        <div
-          aria-hidden
-          className="absolute bottom-0 right-12 hidden h-64 w-px bg-linear-to-t from-gold to-transparent lg:block"
-        />
-
-        {/* Crédito da obra: transparência editorial sobre a arte usada */}
-        <p className="shell absolute inset-x-0 bottom-4 hidden text-step--2 text-foreground/40 md:block">
-          Disputa do Santíssimo Sacramento — Rafael Sanzio, 1509–1510 · Museus Vaticanos ·{" "}
-          <a
-            href="https://commons.wikimedia.org/wiki/File:Raphael%27s_Disputation_of_the_Holy_Sacrament.jpg"
-            target="_blank"
-            rel="noreferrer"
-            className="underline decoration-gold/40 underline-offset-2 hover:text-gold"
-          >
-            domínio público
-          </a>
-        </p>
       </section>
 
       {/* Tempo litúrgico em tempo real */}
@@ -348,6 +348,47 @@ function Home() {
           >
             Liturgia diária →
           </Link>
+        </div>
+      </section>
+
+      {/* Enciclopédia — corredor central entre a liturgia e os percursos */}
+      <section className="eixo-nave santuario-editorial py-section">
+        <div className="shell relative z-[1]">
+          <ScrollReveal className="mx-auto max-w-3xl text-center">
+            <p className="kicker">Nave central · Enciclopédia interligada</p>
+            <h2 className="title-page mt-4 leading-[1.08] text-foreground">
+              Uma verdade conduz <span className="italic text-gold/85">à outra.</span>
+            </h2>
+            <div className="filete-ouro mx-auto my-6 max-w-xs" aria-hidden="true" />
+            <p className="body-base mx-auto measure text-muted-foreground">
+              Comece por um conceito e siga suas relações com a Escritura, o Catecismo, a liturgia e
+              a vida espiritual. Cada síntese indica onde conferir a doutrina.
+            </p>
+          </ScrollReveal>
+
+          <div className="mx-auto mt-10 grid max-w-5xl gap-px border-y border-gold/15 bg-gold/15 md:grid-cols-3">
+            {VERBETES_ENCICLOPEDIA.slice(0, 6).map((verbete) => (
+              <Link
+                key={verbete.slug}
+                to="/enciclopedia"
+                hash={verbete.slug}
+                className="group bg-background p-card text-center transition-premium hover:bg-card/80"
+              >
+                <p className="kicker">{verbete.categoria}</p>
+                <h3 className="title-card mt-3 text-foreground group-hover:text-gold">
+                  {verbete.termo}
+                </h3>
+                <p className="body-sm mt-3 line-clamp-3 text-muted-foreground">{verbete.sintese}</p>
+                <p className="mt-4 label-btn text-gold/70">{verbete.referencias[0]}</p>
+              </Link>
+            ))}
+          </div>
+
+          <div className="mt-8 flex justify-center">
+            <BotaoLink para="/enciclopedia" variante="contorno" tamanho="lg">
+              Abrir a Enciclopédia Católica
+            </BotaoLink>
+          </div>
         </div>
       </section>
 
@@ -673,7 +714,7 @@ function Home() {
         <ScrollReveal className="shell py-section relative text-center">
           <div className="relative inline-block mb-[var(--space-md)]">
             <div className="absolute inset-0 bg-gold/20 blur-3xl rounded-full" />
-            <div className="relative size-24 rounded-full glass border border-gold/30 flex items-center justify-center shadow-[0_0_50px_rgba(212,175,55,0.15)]">
+            <div className="relative size-24 rounded-full glass border border-gold/30 flex items-center justify-center shadow-[var(--shadow-elegant)]">
               <Sparkles className="size-10 text-gold animate-pulse" />
             </div>
           </div>
@@ -690,7 +731,7 @@ function Home() {
           </p>
           <Link
             to="/assistente"
-            className="group relative inline-flex items-center gap-4 px-8 py-4 min-h-12 bg-paper text-deep text-step--2 sm:label-btn transition-premium hover:shadow-[0_0_50px_rgba(252,250,247,0.2)]"
+            className="group relative inline-flex items-center gap-4 px-8 py-4 min-h-12 bg-paper text-deep text-step--2 sm:label-btn transition-premium hover:shadow-[var(--shadow-btn-hover)]"
           >
             <MessageCircle className="size-4" aria-hidden="true" />
             <span>Conversar agora</span>

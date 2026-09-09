@@ -2,6 +2,7 @@
 import { LIVROS } from "./data/biblia/index";
 import { PARTES, SECOES } from "./data/catecismo/index";
 import { ARTIGOS, faixa } from "./data/catecismo/artigos";
+import { VERBETES_ENCICLOPEDIA } from "./data/enciclopedia";
 import { GLOSSARIO } from "./data/glossario";
 import { NOVENAS } from "./data/devocoes/novenas";
 import { ORACOES } from "./data/oracoes";
@@ -16,6 +17,7 @@ export type Categoria =
   | "Catecismo"
   | "Santo"
   | "Glossário"
+  | "Enciclopédia"
   | "Oração"
   | "Apologética"
   | "Trilha";
@@ -172,6 +174,13 @@ const PAGINAS: ItemBusca[] = [
     href: "/glossario",
   },
   {
+    id: "p-enciclopedia",
+    titulo: "Enciclopédia Católica Interligada",
+    descricao: "Doutrina, Escritura, liturgia e vida espiritual com fontes",
+    categoria: "Página",
+    href: "/enciclopedia",
+  },
+  {
     id: "p-forum",
     titulo: "Fórum Agora Ecclesiae",
     descricao: "Conversas da comunidade",
@@ -258,6 +267,16 @@ export function indiceBusca(): ItemBusca[] {
       descricao: `Catecismo ${faixa(artigo)} · ${artigo.bloco}`,
       categoria: "Catecismo",
       href: `/catecismo/artigos#${artigo.slug}`,
+    });
+  }
+
+  for (const verbete of VERBETES_ENCICLOPEDIA) {
+    itens.push({
+      id: `e-${verbete.slug}`,
+      titulo: verbete.termo,
+      descricao: `${verbete.categoria} · ${verbete.referencias.join(" · ")}`,
+      categoria: "Enciclopédia",
+      href: `/enciclopedia#${verbete.slug}`,
     });
   }
 
