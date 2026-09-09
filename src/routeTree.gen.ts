@@ -32,6 +32,7 @@ import { Route as FeCatolicaRouteImport } from './routes/fe-catolica'
 import { Route as FavoritosRouteImport } from './routes/favoritos'
 import { Route as ExplorarRouteImport } from './routes/explorar'
 import { Route as EstudarRouteImport } from './routes/estudar'
+import { Route as EnciclopediaRouteImport } from './routes/enciclopedia'
 import { Route as EmailConfirmadoRouteImport } from './routes/email-confirmado'
 import { Route as DoutoresDaIgrejaRouteImport } from './routes/doutores-da-igreja'
 import { Route as DesignSystemRouteImport } from './routes/design-system'
@@ -196,6 +197,11 @@ const ExplorarRoute = ExplorarRouteImport.update({
 const EstudarRoute = EstudarRouteImport.update({
   id: '/estudar',
   path: '/estudar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnciclopediaRoute = EnciclopediaRouteImport.update({
+  id: '/enciclopedia',
+  path: '/enciclopedia',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EmailConfirmadoRoute = EmailConfirmadoRouteImport.update({
@@ -456,6 +462,7 @@ export interface FileRoutesByFullPath {
   '/design-system': typeof DesignSystemRoute
   '/doutores-da-igreja': typeof DoutoresDaIgrejaRoute
   '/email-confirmado': typeof EmailConfirmadoRoute
+  '/enciclopedia': typeof EnciclopediaRoute
   '/estudar': typeof EstudarRoute
   '/explorar': typeof ExplorarRoute
   '/favoritos': typeof FavoritosRoute
@@ -527,6 +534,7 @@ export interface FileRoutesByTo {
   '/design-system': typeof DesignSystemRoute
   '/doutores-da-igreja': typeof DoutoresDaIgrejaRoute
   '/email-confirmado': typeof EmailConfirmadoRoute
+  '/enciclopedia': typeof EnciclopediaRoute
   '/estudar': typeof EstudarRoute
   '/explorar': typeof ExplorarRoute
   '/favoritos': typeof FavoritosRoute
@@ -597,6 +605,7 @@ export interface FileRoutesById {
   '/design-system': typeof DesignSystemRoute
   '/doutores-da-igreja': typeof DoutoresDaIgrejaRoute
   '/email-confirmado': typeof EmailConfirmadoRoute
+  '/enciclopedia': typeof EnciclopediaRoute
   '/estudar': typeof EstudarRoute
   '/explorar': typeof ExplorarRoute
   '/favoritos': typeof FavoritosRoute
@@ -672,6 +681,7 @@ export interface FileRouteTypes {
     | '/design-system'
     | '/doutores-da-igreja'
     | '/email-confirmado'
+    | '/enciclopedia'
     | '/estudar'
     | '/explorar'
     | '/favoritos'
@@ -743,6 +753,7 @@ export interface FileRouteTypes {
     | '/design-system'
     | '/doutores-da-igreja'
     | '/email-confirmado'
+    | '/enciclopedia'
     | '/estudar'
     | '/explorar'
     | '/favoritos'
@@ -812,6 +823,7 @@ export interface FileRouteTypes {
     | '/design-system'
     | '/doutores-da-igreja'
     | '/email-confirmado'
+    | '/enciclopedia'
     | '/estudar'
     | '/explorar'
     | '/favoritos'
@@ -886,6 +898,7 @@ export interface RootRouteChildren {
   DesignSystemRoute: typeof DesignSystemRoute
   DoutoresDaIgrejaRoute: typeof DoutoresDaIgrejaRoute
   EmailConfirmadoRoute: typeof EmailConfirmadoRoute
+  EnciclopediaRoute: typeof EnciclopediaRoute
   EstudarRoute: typeof EstudarRoute
   ExplorarRoute: typeof ExplorarRoute
   FavoritosRoute: typeof FavoritosRoute
@@ -1086,6 +1099,13 @@ declare module '@tanstack/react-router' {
       path: '/estudar'
       fullPath: '/estudar'
       preLoaderRoute: typeof EstudarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/enciclopedia': {
+      id: '/enciclopedia'
+      path: '/enciclopedia'
+      fullPath: '/enciclopedia'
+      preLoaderRoute: typeof EnciclopediaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/email-confirmado': {
@@ -1549,6 +1569,7 @@ const rootRouteChildren: RootRouteChildren = {
   DesignSystemRoute: DesignSystemRoute,
   DoutoresDaIgrejaRoute: DoutoresDaIgrejaRoute,
   EmailConfirmadoRoute: EmailConfirmadoRoute,
+  EnciclopediaRoute: EnciclopediaRoute,
   EstudarRoute: EstudarRoute,
   ExplorarRoute: ExplorarRoute,
   FavoritosRoute: FavoritosRoute,
