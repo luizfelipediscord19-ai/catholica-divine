@@ -195,8 +195,8 @@ export function Sources({ items }: { items: { label: string; ref: string }[] }) 
     <aside className="measure mx-auto mt-[var(--space-lg)] border-t border-gold/20 pt-[var(--space-sm)]">
       <p className="kicker mb-4">Fontes consultadas</p>
       <ol className="space-y-2 text-xs text-muted-foreground leading-relaxed list-decimal pl-5">
-        {items.map((s) => (
-          <li key={s.label}>
+        {items.map((s, i) => (
+          <li key={`${s.label}-${i}`}>
             <span className="text-foreground/80">{s.label}</span>
             {s.ref ? <span className="text-muted-foreground"> — {s.ref}</span> : null}
           </li>
