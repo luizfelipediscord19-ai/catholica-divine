@@ -255,67 +255,56 @@ function Home() {
 
   return (
     <div className="overflow-x-hidden">
-      {/* Santuário de abertura — eixo central inspirado na nave de uma basílica */}
-      <section className="grao eixo-nave relative overflow-hidden bg-deep py-block sm:py-section">
-        <div className="shell relative z-[1] flex flex-col items-center">
-          <div className="arco-sacral relative aspect-[4/5] w-full max-w-5xl sm:aspect-[21/10]">
-            <div className="absolute inset-0" aria-hidden>
-              <ImagemOtimizada
-                src={hero}
-                alt=""
-                width={1920}
-                height={1080}
-                prioridade
-                sizes="100vw"
-                className="size-full object-cover"
-              />
-            </div>
-            <div className="absolute inset-0 bg-linear-to-t from-deep via-deep/45 to-deep/10" />
-            <div className="absolute inset-0 bg-deep/20" />
-            <div className="absolute inset-x-0 bottom-0 h-2/3 bg-linear-to-t from-deep via-deep/55 to-transparent" />
+      {/* Abertura em tela cheia — a catedral volta a ocupar todo o primeiro plano */}
+      <section className="grao relative flex min-h-[calc(100svh-4rem)] items-end justify-center overflow-hidden bg-deep">
+        <div className="absolute inset-0" aria-hidden>
+          <ImagemOtimizada
+            src={hero}
+            alt=""
+            width={1920}
+            height={1080}
+            prioridade
+            sizes="100vw"
+            className="size-full object-cover object-center"
+          />
+        </div>
+        <div className="absolute inset-0 bg-linear-to-t from-deep via-deep/35 to-deep/10" />
+        <div className="absolute inset-x-0 bottom-0 h-3/4 bg-linear-to-t from-deep via-deep/40 to-transparent" />
 
-            <div className="absolute inset-0 flex items-end justify-center px-5 pb-8 text-center sm:px-10 sm:pb-12">
-              <div className="max-w-3xl animate-reveal">
-                <p className="mb-4 flex items-center justify-center gap-3 kicker text-gold sm:mb-6 sm:gap-4">
-                  <span className="h-px w-6 shrink-0 bg-gold/50 sm:w-10" />
-                  <span className="min-w-0 tracking-[0.32em]">
-                    Una · Sancta · Catholica · Apostolica
-                  </span>
-                  <span className="h-px w-6 shrink-0 bg-gold/50 sm:w-10" />
-                </p>
-                <h1 className="mb-4 font-display text-[length:var(--step-4)] font-semibold leading-[1.02] text-balance text-paper sm:mb-6 sm:text-[length:var(--step-5)]">
-                  A biblioteca{" "}
-                  <span className="block font-normal italic text-gold-accent">da Fé</span>
-                </h1>
-                <div aria-hidden className="filete-ouro mx-auto mb-5 max-w-[12rem] sm:mb-7" />
-                <p className="measure mx-auto mb-6 text-[length:var(--step-0)] font-light leading-relaxed text-paper/80 sm:mb-8 sm:text-[length:var(--step-1)]">
-                  Escritura, Catecismo, Padres da Igreja, santos e devoções tradicionais — reunidos
-                  em uma única referência de estudo, fiel ao Magistério desde Pedro até hoje.
-                </p>
-                <div className="action-tray justify-center gap-3">
-                  <BotaoLink
-                    para="/estudar"
-                    variante="ouro"
-                    tamanho="lg"
-                    className="w-full sm:w-auto"
-                  >
-                    <BookOpen className="size-4 shrink-0" />
-                    Começar a estudar
-                  </BotaoLink>
-                  <BotaoLink
-                    para="/assistente"
-                    variante="contorno"
-                    tamanho="lg"
-                    className="w-full sm:w-auto"
-                  >
-                    <Sparkles className="size-4 shrink-0" />
-                    Falar com a IA
-                  </BotaoLink>
-                </div>
-              </div>
+        <div className="shell relative z-[1] flex w-full flex-col items-center px-5 pb-16 pt-28 text-center sm:pb-20 sm:pt-36">
+          <div className="max-w-3xl animate-reveal">
+            <p className="mb-4 flex items-center justify-center gap-3 kicker text-gold sm:mb-6 sm:gap-4">
+              <span className="h-px w-6 shrink-0 bg-gold/50 sm:w-10" />
+              <span className="min-w-0 tracking-[0.32em]">
+                Una · Sancta · Catholica · Apostolica
+              </span>
+              <span className="h-px w-6 shrink-0 bg-gold/50 sm:w-10" />
+            </p>
+            <h1 className="mb-4 font-display text-[length:var(--step-4)] font-semibold leading-[1.02] text-balance text-paper sm:mb-6 sm:text-[length:var(--step-5)]">
+              A biblioteca <span className="block font-normal italic text-gold-accent">da Fé</span>
+            </h1>
+            <div aria-hidden className="filete-ouro mx-auto mb-5 max-w-[12rem] sm:mb-7" />
+            <p className="measure mx-auto mb-6 text-[length:var(--step-0)] font-light leading-relaxed text-paper/80 sm:mb-8 sm:text-[length:var(--step-1)]">
+              Escritura, Catecismo, Padres da Igreja, santos e devoções tradicionais — reunidos em
+              uma única referência de estudo, fiel ao Magistério desde Pedro até hoje.
+            </p>
+            <div className="action-tray justify-center gap-3">
+              <BotaoLink para="/estudar" variante="ouro" tamanho="lg" className="w-full sm:w-auto">
+                <BookOpen className="size-4 shrink-0" />
+                Começar a estudar
+              </BotaoLink>
+              <BotaoLink
+                para="/assistente"
+                variante="contorno"
+                tamanho="lg"
+                className="w-full sm:w-auto"
+              >
+                <Sparkles className="size-4 shrink-0" />
+                Falar com a IA
+              </BotaoLink>
             </div>
           </div>
-          <p className="mt-3 max-w-5xl self-stretch text-center text-step--2 text-foreground/45">
+          <p className="absolute inset-x-5 bottom-3 text-center text-step--2 text-paper/45">
             {OBRAS["hero-catedral"].titulo} — {OBRAS["hero-catedral"].autor},{" "}
             {OBRAS["hero-catedral"].ano} · {OBRAS["hero-catedral"].local} ·{" "}
             <a
