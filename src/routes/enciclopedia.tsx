@@ -67,9 +67,9 @@ function EnciclopediaPage() {
             conduz aos assuntos que completam o estudo.
           </p>
 
-          <label className="mx-auto mt-8 block max-w-xl text-left">
+          <label className="mx-auto mt-8 block w-full max-w-xl text-left">
             <span className="kicker">Buscar na enciclopédia</span>
-            <span className="field-base mt-2 flex items-center gap-2">
+            <span className="field-base mt-2 flex w-full items-center gap-2">
               <Search className="size-4 shrink-0 text-gold" aria-hidden="true" />
               <input
                 type="search"
@@ -77,7 +77,7 @@ function EnciclopediaPage() {
                 value={busca}
                 onChange={(evento) => setBusca(evento.target.value)}
                 placeholder="Ex.: Eucaristia, graça, Trindade"
-                className="w-full bg-transparent outline-none"
+                className="min-w-0 flex-1 bg-transparent outline-none"
               />
             </span>
           </label>
