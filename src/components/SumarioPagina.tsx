@@ -96,10 +96,10 @@ export function SumarioPagina() {
       {aberto ? (
         <aside
           id="sumario-pagina"
-          className="fixed right-4 bottom-[calc(13.5rem+env(safe-area-inset-bottom))] z-[60] w-[min(21rem,calc(100vw-2rem))] max-h-[60vh] overflow-y-auto border border-gold/25 bg-background/95 p-5 shadow-[var(--shadow-elegant)] backdrop-blur-md"
+          className="fixed right-4 bottom-[calc(13.5rem+env(safe-area-inset-bottom))] z-[60] flex max-h-[60vh] w-[min(21rem,calc(100vw-2rem))] flex-col border border-gold/25 bg-background/95 p-5 shadow-[var(--shadow-elegant)] backdrop-blur-md"
         >
-          <p className="kicker mb-4">Nesta página</p>
-          <nav>
+          <p className="kicker mb-4 shrink-0">Nesta página</p>
+          <nav className="min-h-0 flex-1 overflow-y-auto pr-1">
             <ul className="space-y-1">
               {itens.map((i) => (
                 <li key={i.id}>
