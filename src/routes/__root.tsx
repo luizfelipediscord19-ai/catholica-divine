@@ -20,10 +20,9 @@ import { InstalarApp } from "../components/portal/InstalarApp";
 import { AtualizacaoApp } from "../components/portal/AtualizacaoApp";
 import { TarefasDoDia } from "../components/portal/TarefasDoDia";
 import { ConsentimentoLGPD } from "../components/portal/ConsentimentoLGPD";
+import { SumarioPagina } from "../components/SumarioPagina";
 import { NotificacoesProvider } from "../hooks/use-notificacoes";
 import { SCRIPT_TEMA } from "../lib/tema";
-
-
 
 function NotFoundComponent() {
   return (
@@ -55,10 +54,7 @@ function NotFoundComponent() {
           ))}
         </ul>
         <div className="mt-8">
-          <Link
-            to="/"
-            className="btn-base btn-gold px-6 py-3 label-btn"
-          >
+          <Link to="/" className="btn-base btn-gold px-6 py-3 label-btn">
             Voltar ao início
           </Link>
         </div>
@@ -91,10 +87,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
           >
             Tentar de novo
           </button>
-          <a
-            href="/"
-            className="btn-base btn-outline-gold px-5 py-2.5 label-btn"
-          >
+          <a href="/" className="btn-base btn-outline-gold px-5 py-2.5 label-btn">
             Início
           </a>
         </div>
@@ -141,7 +134,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "icon", type: "image/png", href: "/favicon.png" },
       { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
       { rel: "manifest", href: "/manifest.webmanifest" },
-
     ],
     scripts: [
       {
@@ -165,8 +157,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
               name: "Portal Católico",
               url: SITE_URL,
               logo: `${SITE_URL}/favicon.png`,
-              description:
-                "Portal de formação católica fiel ao Magistério da Igreja.",
+              description: "Portal de formação católica fiel ao Magistério da Igreja.",
             },
           ],
         }),
@@ -200,33 +191,32 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <NotificacoesProvider>
-      <CelebracaoProvider>
-        <div className="min-h-dvh flex flex-col">
-          <a
-            href="#conteudo"
-            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-gold focus:px-5 focus:py-3 focus:text-step--2 focus:uppercase focus:tracking-[0.16em] focus:text-deep"
-          >
-            Pular para o conteúdo principal
-          </a>
-          <SiteHeader />
-          <main id="conteudo" className="flex-1">
-            <Outlet />
-          </main>
-          <SiteFooter />
-          <ScrollToTop />
-          <InstalarApp />
-          <AtualizacaoApp />
-          <div data-leitura-oculto>
-            <TarefasDoDia />
-          </div>
-          <ConsentimentoLGPD />
+        <CelebracaoProvider>
+          <div className="min-h-dvh flex flex-col">
+            <a
+              href="#conteudo"
+              className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-gold focus:px-5 focus:py-3 focus:text-step--2 focus:uppercase focus:tracking-[0.16em] focus:text-deep"
+            >
+              Pular para o conteúdo principal
+            </a>
+            <SiteHeader />
+            <main id="conteudo" className="flex-1">
+              <Outlet />
+            </main>
+            <SiteFooter />
+            <ScrollToTop />
+            <SumarioPagina />
+            <InstalarApp />
+            <AtualizacaoApp />
+            <div data-leitura-oculto>
+              <TarefasDoDia />
+            </div>
+            <ConsentimentoLGPD />
 
-          <Toaster />
-        </div>
-      </CelebracaoProvider>
+            <Toaster />
+          </div>
+        </CelebracaoProvider>
       </NotificacoesProvider>
     </QueryClientProvider>
-
   );
 }
-

@@ -1,6 +1,13 @@
 import anunciacao from "../assets/anunciacao.jpg";
 import { createFileRoute } from "@tanstack/react-router";
-import { PageHero, CardGrid, ContentCard, Prose, Pullquote, Prancha } from "../components/PageShell";
+import {
+  PageHero,
+  CardGrid,
+  ContentCard,
+  Prose,
+  Pullquote,
+  Prancha,
+} from "../components/PageShell";
 import { ReadingMode, FnRef } from "../components/ReadingMode";
 import { Termo } from "../components/Termo";
 import maria from "../assets/maria.jpg";
@@ -13,10 +20,17 @@ export const Route = createFileRoute("/maria")({
     meta: [
       { title: "Maria, Mãe de Deus — Mariologia católica completa" },
       { property: "og:url", content: "https://portalcatolico.vercel.app/maria" },
-      { name: "description", content: "Mariologia católica: quatro dogmas marianos, títulos, aparições aprovadas, devoções e o lugar de Maria na economia da salvação, com fontes magisteriais oficiais." },
+      {
+        name: "description",
+        content:
+          "Mariologia católica: quatro dogmas marianos, títulos, aparições aprovadas, devoções e o lugar de Maria na economia da salvação, com fontes magisteriais oficiais.",
+      },
       { name: "keywords", content: keywordsPara(["maria"]) },
       { property: "og:title", content: "Maria, Mãe de Deus" },
-      { property: "og:description", content: "Dogmas marianos, aparições aprovadas e devoções segundo o Magistério." },
+      {
+        property: "og:description",
+        content: "Dogmas marianos, aparições aprovadas e devoções segundo o Magistério.",
+      },
     ],
     links: [{ rel: "canonical", href: "https://portalcatolico.vercel.app/maria" }],
   }),
@@ -35,36 +49,134 @@ const TOC = [
   { id: "assuncao", label: "Assunção (1950)" },
   { id: "titulos", label: "Títulos marianos" },
   { id: "mediacao", label: "Mediação e cooperação" },
+  { id: "liturgia", label: "Maria no ano litúrgico" },
+  { id: "culto", label: "Que culto se presta a Maria" },
+  { id: "objecoes", label: "Objeções e mal-entendidos" },
+  { id: "ecumenismo", label: "Maria entre os cristãos separados" },
   { id: "aparicoes", label: "Aparições aprovadas" },
   { id: "devocoes", label: "Devoções marianas" },
   { id: "notas", label: "Notas e fontes" },
 ];
 
 const FOOTNOTES = [
-  { id: "efeso", label: "Concílio de Éfeso (431), Anátemas de Cirilo de Alexandria", ref: "DH 250–264 — definição de Theotókos" },
-  { id: "latrao", label: "Sínodo de Latrão (649), Cân. 3, sob o Papa São Martinho I", ref: "DH 503 — virgindade perpétua de Maria. Trata-se de um sínodo romano, não do Concílio Ecumênico de Latrão I (1123); a doutrina é constante na Tradição e no magistério ordinário e universal." },
-  { id: "ineffabilis", label: "Pio IX, Bula Ineffabilis Deus (08.12.1854)", ref: "DH 2803 — definição da Imaculada Conceição" },
-  { id: "munificentissimus", label: "Pio XII, Constituição Apostólica Munificentissimus Deus (01.11.1950)", ref: "DH 3903 — definição da Assunção" },
-  { id: "lg8", label: "Concílio Vaticano II, Lumen Gentium (1964), cap. VIII", ref: "nn. 52–69 — “Bem-aventurada Virgem Maria, Mãe de Deus, no mistério de Cristo e da Igreja”" },
-  { id: "marialis", label: "Paulo VI, Exortação Apostólica Marialis Cultus (02.02.1974)", ref: "sobre o reto culto à Virgem" },
-  { id: "redmater", label: "São João Paulo II, Encíclica Redemptoris Mater (25.03.1987)", ref: "Maria na vida da Igreja peregrina" },
-  { id: "rosarium", label: "São João Paulo II, Carta Apostólica Rosarium Virginis Mariae (16.10.2002)", ref: "instituição dos Mistérios Luminosos" },
-  { id: "cic", label: "Catecismo da Igreja Católica", ref: "§§ 484–511 (Encarnação); 963–975 (Maternidade espiritual); 484–507; 2673–2682 (oração mariana)" },
-  { id: "cdf-aparicoes", label: "Congregação para a Doutrina da Fé, Normæ Sacrae Congregationis pro Doctrina Fidei de modo procedendi in diudicandis praesumptis apparitionibus ac revelationibus (25.02.1978)", ref: "publicadas em 2011; substituídas pelas Normas de 17.05.2024 (Dicastério para a Doutrina da Fé)" },
+  {
+    id: "efeso",
+    label: "Concílio de Éfeso (431), Anátemas de Cirilo de Alexandria",
+    ref: "DH 250–264 — definição de Theotókos",
+  },
+  {
+    id: "latrao",
+    label: "Sínodo de Latrão (649), Cân. 3, sob o Papa São Martinho I",
+    ref: "DH 503 — virgindade perpétua de Maria. Trata-se de um sínodo romano, não do Concílio Ecumênico de Latrão I (1123); a doutrina é constante na Tradição e no magistério ordinário e universal.",
+  },
+  {
+    id: "ineffabilis",
+    label: "Pio IX, Bula Ineffabilis Deus (08.12.1854)",
+    ref: "DH 2803 — definição da Imaculada Conceição",
+  },
+  {
+    id: "munificentissimus",
+    label: "Pio XII, Constituição Apostólica Munificentissimus Deus (01.11.1950)",
+    ref: "DH 3903 — definição da Assunção",
+  },
+  {
+    id: "lg8",
+    label: "Concílio Vaticano II, Lumen Gentium (1964), cap. VIII",
+    ref: "nn. 52–69 — “Bem-aventurada Virgem Maria, Mãe de Deus, no mistério de Cristo e da Igreja”",
+  },
+  {
+    id: "marialis",
+    label: "Paulo VI, Exortação Apostólica Marialis Cultus (02.02.1974)",
+    ref: "sobre o reto culto à Virgem",
+  },
+  {
+    id: "redmater",
+    label: "São João Paulo II, Encíclica Redemptoris Mater (25.03.1987)",
+    ref: "Maria na vida da Igreja peregrina",
+  },
+  {
+    id: "rosarium",
+    label: "São João Paulo II, Carta Apostólica Rosarium Virginis Mariae (16.10.2002)",
+    ref: "instituição dos Mistérios Luminosos",
+  },
+  {
+    id: "cic",
+    label: "Catecismo da Igreja Católica",
+    ref: "§§ 484–511 (Encarnação); 963–975 (Maternidade espiritual); 484–507; 2673–2682 (oração mariana)",
+  },
+  {
+    id: "cdf-aparicoes",
+    label:
+      "Congregação para a Doutrina da Fé, Normæ Sacrae Congregationis pro Doctrina Fidei de modo procedendi in diudicandis praesumptis apparitionibus ac revelationibus (25.02.1978)",
+    ref: "publicadas em 2011; substituídas pelas Normas de 17.05.2024 (Dicastério para a Doutrina da Fé)",
+  },
+  {
+    id: "nicea2",
+    label: "Concílio de Niceia II (787), definição sobre as imagens sagradas",
+    ref: "DH 600–603 — distinção entre latria (adoração devida só a Deus) e proskýnesis/veneração das imagens e dos santos",
+  },
+  {
+    id: "collectio",
+    label: "Congregação para o Culto Divino, Collectio Missarum de Beata Maria Virgine (1986)",
+    ref: "46 formulários de Missas marianas distribuídos pelos tempos litúrgicos",
+  },
+  {
+    id: "trento-invocacao",
+    label:
+      "Concílio de Trento, sessão XXV (1563), decreto sobre a invocação dos santos e as imagens",
+    ref: "DH 1821–1825 — é bom e útil invocar os santos; a honra às imagens refere-se aos que elas representam",
+  },
+  {
+    id: "unitatis",
+    label: "Concílio Vaticano II, Unitatis Redintegratio (1964)",
+    ref: "n. 15 — reconhecimento do culto mariano nas Igrejas orientais separadas",
+  },
 ];
 
 const DOGMAS_CARDS = [
-  { title: "Maternidade Divina (Theotókos)", year: "Éfeso, 431", body: "Maria é verdadeiramente Mãe de Deus, pois gerou segundo a carne o Verbo eterno do Pai." },
-  { title: "Virgindade Perpétua", year: "Sínodo de Latrão, 649", body: "Antes, durante e depois do parto, Maria permaneceu sempre Virgem (ante partum, in partu, post partum)." },
-  { title: "Imaculada Conceição", year: "Pio IX, 1854", body: "Por singular privilégio, preservada de todo pecado original desde o primeiro instante de sua concepção." },
-  { title: "Assunção", year: "Pio XII, 1950", body: "Terminado o curso de sua vida terrena, foi assunta de corpo e alma à glória celeste." },
+  {
+    title: "Maternidade Divina (Theotókos)",
+    year: "Éfeso, 431",
+    body: "Maria é verdadeiramente Mãe de Deus, pois gerou segundo a carne o Verbo eterno do Pai.",
+  },
+  {
+    title: "Virgindade Perpétua",
+    year: "Sínodo de Latrão, 649",
+    body: "Antes, durante e depois do parto, Maria permaneceu sempre Virgem (ante partum, in partu, post partum).",
+  },
+  {
+    title: "Imaculada Conceição",
+    year: "Pio IX, 1854",
+    body: "Por singular privilégio, preservada de todo pecado original desde o primeiro instante de sua concepção.",
+  },
+  {
+    title: "Assunção",
+    year: "Pio XII, 1950",
+    body: "Terminado o curso de sua vida terrena, foi assunta de corpo e alma à glória celeste.",
+  },
 ];
 
 const APARICOES = [
-  { local: "Guadalupe (México)", ano: "1531", body: "A São Juan Diego: a Virgem morena, imagem impressa na tilma. O culto goza de aprovação e incentivo papal contínuo desde o séc. XVIII (Bento XIV, 1754); Pio X a proclamou Padroeira da América Latina e a coroou canonicamente em 1895/1910. Não há um decreto formal único de 'reconhecimento da sobrenaturalidade' nos moldes modernos, mas séculos de aprovação litúrgica e devocional pela Santa Sé." },
-  { local: "Rue du Bac (Paris)", ano: "1830", body: "A Santa Catarina Labouré: origem da Medalha Milagrosa, que antecipou em linguagem popular o dogma da Imaculada Conceição (1854). O arcebispo de Paris autorizou a cunhagem da medalha em 1832, reconhecendo a devoção; não houve declaração dogmática sobre a aparição em si." },
-  { local: "Lourdes (França)", ano: "1858", body: "A Santa Bernadette Soubirous: ‘Eu sou a Imaculada Conceição.’ O bispo de Tarbes declarou em 1862 que a aparição reveste 'os caracteres da verdade' e autorizou o culto, reconhecimento formal raro entre as aparições marianas." },
-  { local: "Fátima (Portugal)", ano: "1917", body: "Aos três pastorinhos: oração, penitência e consagração ao Imaculado Coração. O bispo de Leiria declarou em 1930 as aparições 'dignas de fé' e aprovou o culto público." },
+  {
+    local: "Guadalupe (México)",
+    ano: "1531",
+    body: "A São Juan Diego: a Virgem morena, imagem impressa na tilma. O culto goza de aprovação e incentivo papal contínuo desde o séc. XVIII (Bento XIV, 1754); Pio X a proclamou Padroeira da América Latina e a coroou canonicamente em 1895/1910. Não há um decreto formal único de 'reconhecimento da sobrenaturalidade' nos moldes modernos, mas séculos de aprovação litúrgica e devocional pela Santa Sé.",
+  },
+  {
+    local: "Rue du Bac (Paris)",
+    ano: "1830",
+    body: "A Santa Catarina Labouré: origem da Medalha Milagrosa, que antecipou em linguagem popular o dogma da Imaculada Conceição (1854). O arcebispo de Paris autorizou a cunhagem da medalha em 1832, reconhecendo a devoção; não houve declaração dogmática sobre a aparição em si.",
+  },
+  {
+    local: "Lourdes (França)",
+    ano: "1858",
+    body: "A Santa Bernadette Soubirous: ‘Eu sou a Imaculada Conceição.’ O bispo de Tarbes declarou em 1862 que a aparição reveste 'os caracteres da verdade' e autorizou o culto, reconhecimento formal raro entre as aparições marianas.",
+  },
+  {
+    local: "Fátima (Portugal)",
+    ano: "1917",
+    body: "Aos três pastorinhos: oração, penitência e consagração ao Imaculado Coração. O bispo de Leiria declarou em 1930 as aparições 'dignas de fé' e aprovou o culto público.",
+  },
 ];
 
 function Page() {
@@ -81,173 +193,358 @@ function Page() {
       <ReadingMode title="Maria, Mãe de Deus" toc={TOC} footnotes={FOOTNOTES}>
         <Prose>
           <section id="introducao" className="scroll-mt-24">
-          <MarcarEstudo tipo="maria" chave="introducao" />
+            <MarcarEstudo tipo="maria" chave="introducao" />
             <h3>Maria na economia da salvação</h3>
             <p>
-              A mariologia católica não é um tratado autônomo, mas um capítulo da cristologia e da eclesiologia.
-              O Concílio Vaticano II quis evidenciá-lo colocando toda a doutrina sobre a Virgem no{" "}
-              <em> capítulo VIII de Lumen Gentium</em>, intitulado <em>“A Bem-aventurada Virgem Maria, Mãe de Deus,
-              no mistério de Cristo e da Igreja”</em><FnRef n="lg8" />. A função de Maria <em>nasce e tira a sua
-              eficácia da plenitude dos méritos de Cristo, apoia-se neles, depende inteiramente deles, e deles
-              haure toda a sua virtude</em> (<em>LG</em> 60).
+              A mariologia católica não é um tratado autônomo, mas um capítulo da cristologia e da
+              eclesiologia. O Concílio Vaticano II quis evidenciá-lo colocando toda a doutrina sobre
+              a Virgem no <em> capítulo VIII de Lumen Gentium</em>, intitulado{" "}
+              <em>
+                “A Bem-aventurada Virgem Maria, Mãe de Deus, no mistério de Cristo e da Igreja”
+              </em>
+              <FnRef n="lg8" />. A função de Maria{" "}
+              <em>
+                nasce e tira a sua eficácia da plenitude dos méritos de Cristo, apoia-se neles,
+                depende inteiramente deles, e deles haure toda a sua virtude
+              </em>{" "}
+              (<em>LG</em> 60).
             </p>
 
             <Pullquote cite="Lumen Gentium 53 — Concílio Vaticano II">
-              Maria é verdadeiramente Mãe dos membros de Cristo, porque cooperou com a caridade para que
-              nascessem na Igreja os fiéis, que são membros daquela Cabeça.
+              Maria é verdadeiramente Mãe dos membros de Cristo, porque cooperou com a caridade para
+              que nascessem na Igreja os fiéis, que são membros daquela Cabeça.
             </Pullquote>
           </section>
 
           <section id="escrituras" className="scroll-mt-24">
-          <MarcarEstudo tipo="maria" chave="escrituras" />
+            <MarcarEstudo tipo="maria" chave="escrituras" />
             <h3>Maria nas Escrituras</h3>
             <p>
-              O Novo Testamento fala de Maria com sobriedade, mas em momentos decisivos. Lucas narra a{" "}
-              <strong> Anunciação</strong> (Lc 1,26-38), em que o <em>“faça-se em mim segundo a tua palavra”</em>{" "}
-              inaugura a obediência da fé; a <strong>Visitação</strong> e o <em>Magnificat</em> (Lc 1,39-56), o
-              cântico dos pobres de Deus; o <strong>Natal</strong> e a apresentação no Templo, com a profecia da
-              espada de Simeão (Lc 2,35). João apresenta-a em <strong>Caná</strong> (Jo 2,1-11), onde intercede e
-              remete os discípulos a Cristo (<em>“fazei tudo o que ele vos disser”</em>), e junto à{" "}
-              <strong> Cruz</strong> (Jo 19,25-27), onde é entregue como mãe ao discípulo amado — texto que a
-              Tradição lê como fundamento da maternidade espiritual de Maria sobre a Igreja. Atos 1,14 mostra-a
-              em oração com os Apóstolos à espera do Espírito, e Ap 12 apresenta a <em>Mulher</em> cujo sentido
-              primeiro é eclesial e que a tradição aplica também à Virgem.
+              O Novo Testamento fala de Maria com sobriedade, mas em momentos decisivos. Lucas narra
+              a <strong> Anunciação</strong> (Lc 1,26-38), em que o{" "}
+              <em>“faça-se em mim segundo a tua palavra”</em> inaugura a obediência da fé; a{" "}
+              <strong>Visitação</strong> e o <em>Magnificat</em> (Lc 1,39-56), o cântico dos pobres
+              de Deus; o <strong>Natal</strong> e a apresentação no Templo, com a profecia da espada
+              de Simeão (Lc 2,35). João apresenta-a em <strong>Caná</strong> (Jo 2,1-11), onde
+              intercede e remete os discípulos a Cristo (<em>“fazei tudo o que ele vos disser”</em>
+              ), e junto à <strong> Cruz</strong> (Jo 19,25-27), onde é entregue como mãe ao
+              discípulo amado — texto que a Tradição lê como fundamento da maternidade espiritual de
+              Maria sobre a Igreja. Atos 1,14 mostra-a em oração com os Apóstolos à espera do
+              Espírito, e Ap 12 apresenta a <em>Mulher</em> cujo sentido primeiro é eclesial e que a
+              tradição aplica também à Virgem.
             </p>
             <p>
-              No Antigo Testamento, a leitura tipológica reconhece prefigurações: o <em>protoevangelho</em> de
-              Gn 3,15, o <em>“eis que a virgem conceberá”</em> de Is 7,14 lido pelo Novo Testamento à luz da
-              tradição grega (Mt 1,22-23), a Arca da Aliança, a Filha de Sião de Sf 3,14-17 e a rainha-mãe
-              (<em>gebirah</em>) da corte davídica (1Rs 2,19). São figuras que iluminam o mistério; não
-              substituem o sentido literal dos textos.
+              No Antigo Testamento, a leitura tipológica reconhece prefigurações: o{" "}
+              <em>protoevangelho</em> de Gn 3,15, o <em>“eis que a virgem conceberá”</em> de Is 7,14
+              lido pelo Novo Testamento à luz da tradição grega (Mt 1,22-23), a Arca da Aliança, a
+              Filha de Sião de Sf 3,14-17 e a rainha-mãe (<em>gebirah</em>) da corte davídica (1Rs
+              2,19). São figuras que iluminam o mistério; não substituem o sentido literal dos
+              textos.
             </p>
             <NotaConfiabilidade nivel="teologia">
-              A leitura mariana de Gn 3,15 e de Ap 12 é consagrada na liturgia e no magistério
-              (<em>LG</em> 55; <em>CIC</em> §§ 410-411, 501), mas pertence ao sentido espiritual da Escritura:
-              é interpretação teológica autorizada, não definição dogmática do sentido literal desses versículos.
+              A leitura mariana de Gn 3,15 e de Ap 12 é consagrada na liturgia e no magistério (
+              <em>LG</em> 55; <em>CIC</em> §§ 410-411, 501), mas pertence ao sentido espiritual da
+              Escritura: é interpretação teológica autorizada, não definição dogmática do sentido
+              literal desses versículos.
             </NotaConfiabilidade>
           </section>
 
           <section id="patristica" className="scroll-mt-24">
-          <MarcarEstudo tipo="maria" chave="patristica" />
+            <MarcarEstudo tipo="maria" chave="patristica" />
             <h3>Os Padres: Maria, a nova Eva</h3>
             <p>
-              Já no século II, Santo Ireneu de Lião formula o paralelo que atravessará toda a tradição:{" "}
-              <em> “o nó da desobediência de Eva foi desfeito pela obediência de Maria”</em>{" "}
-              (<em>Adversus Haereses</em> III, 22, 4) — texto retomado por <em>Lumen Gentium</em> 56
-              <FnRef n="lg8" />. São Justino (<em>Diálogo com Trifão</em> 100) desenvolve a mesma antítese
-              Eva/Maria, e Tertuliano insiste na realidade da carne recebida da Virgem, contra o docetismo.
+              Já no século II, Santo Ireneu de Lião formula o paralelo que atravessará toda a
+              tradição:{" "}
+              <em> “o nó da desobediência de Eva foi desfeito pela obediência de Maria”</em> (
+              <em>Adversus Haereses</em> III, 22, 4) — texto retomado por <em>Lumen Gentium</em> 56
+              <FnRef n="lg8" />. São Justino (<em>Diálogo com Trifão</em> 100) desenvolve a mesma
+              antítese Eva/Maria, e Tertuliano insiste na realidade da carne recebida da Virgem,
+              contra o docetismo.
             </p>
             <p>
-              O testemunho litúrgico é igualmente antigo: o <em>Sub tuum praesidium</em> (“À vossa proteção
-              recorremos, Santa Mãe de Deus”), conservado num papiro grego habitualmente datado entre os
-              séculos III e IV, atesta que já então se rezava a Maria com o título de <em>Theotókos</em>. Santo
-              Ambrósio a chama <em>tipo da Igreja</em> na fé, na caridade e na perfeita união com Cristo, tema
-              que o Vaticano II recolherá em <em>LG</em> 63-65.
+              O testemunho litúrgico é igualmente antigo: o <em>Sub tuum praesidium</em> (“À vossa
+              proteção recorremos, Santa Mãe de Deus”), conservado num papiro grego habitualmente
+              datado entre os séculos III e IV, atesta que já então se rezava a Maria com o título
+              de <em>Theotókos</em>. Santo Ambrósio a chama <em>tipo da Igreja</em> na fé, na
+              caridade e na perfeita união com Cristo, tema que o Vaticano II recolherá em{" "}
+              <em>LG</em> 63-65.
             </p>
             <NotaConfiabilidade nivel="historia">
-              A datação do papiro do <em>Sub tuum praesidium</em> é discutida entre especialistas (propostas
-              variam do séc. III ao séc. V). O que é seguro é a antiguidade da invocação da Virgem como Mãe de
-              Deus, anterior ao Concílio de Éfeso (431).
+              A datação do papiro do <em>Sub tuum praesidium</em> é discutida entre especialistas
+              (propostas variam do séc. III ao séc. V). O que é seguro é a antiguidade da invocação
+              da Virgem como Mãe de Deus, anterior ao Concílio de Éfeso (431).
             </NotaConfiabilidade>
           </section>
 
-
           <section id="dogmas" className="scroll-mt-24">
-          <MarcarEstudo tipo="maria" chave="dogmas" />
+            <MarcarEstudo tipo="maria" chave="dogmas" />
             <h3>Os quatro dogmas marianos</h3>
             <p>
-              A Igreja Católica define solenemente quatro verdades sobre a Virgem Maria, que devem ser cridas
-              com fé divina e católica (<em>de fide divina et catholica</em>): a Maternidade Divina, a Virgindade
-              Perpétua, a Imaculada Conceição e a Assunção.
+              A Igreja Católica define solenemente quatro verdades sobre a Virgem Maria, que devem
+              ser cridas com fé divina e católica (<em>de fide divina et catholica</em>): a
+              Maternidade Divina, a Virgindade Perpétua, a Imaculada Conceição e a Assunção.
             </p>
           </section>
 
           <section id="theotokos" className="scroll-mt-24">
-          <MarcarEstudo tipo="maria" chave="theotokos" />
+            <MarcarEstudo tipo="maria" chave="theotokos" />
             <h4>I. Maternidade Divina — Theotókos (Éfeso, 431)</h4>
             <p>
-              Contra Nestório, que distinguia em Cristo duas pessoas (uma humana, outra divina) e queria chamar
-              Maria apenas <em>Christotókos</em> (Mãe de Cristo), o Concílio de Éfeso, sob a presidência de São
-              Cirilo de Alexandria, definiu que Maria é verdadeiramente <strong><Termo termo="theotokos">Theotókos</Termo></strong> (<em>Mãe de
-              Deus</em>), pois gerou segundo a carne o Verbo eterno feito carne<FnRef n="efeso" />. O Catecismo
-              recolhe: <em>O que ela concebeu como homem do Espírito Santo, esse mesmo é verdadeiramente seu
-              Filho segundo a carne. É o Filho do Pai eterno na natureza divina, e o Filho de Maria na natureza
-              humana, mas é propriamente Filho de Deus em ambas as naturezas</em> (<em>CIC</em> § 495).
+              Contra Nestório, que distinguia em Cristo duas pessoas (uma humana, outra divina) e
+              queria chamar Maria apenas <em>Christotókos</em> (Mãe de Cristo), o Concílio de Éfeso,
+              sob a presidência de São Cirilo de Alexandria, definiu que Maria é verdadeiramente{" "}
+              <strong>
+                <Termo termo="theotokos">Theotókos</Termo>
+              </strong>{" "}
+              (<em>Mãe de Deus</em>), pois gerou segundo a carne o Verbo eterno feito carne
+              <FnRef n="efeso" />. O Catecismo recolhe:{" "}
+              <em>
+                O que ela concebeu como homem do Espírito Santo, esse mesmo é verdadeiramente seu
+                Filho segundo a carne. É o Filho do Pai eterno na natureza divina, e o Filho de
+                Maria na natureza humana, mas é propriamente Filho de Deus em ambas as naturezas
+              </em>{" "}
+              (<em>CIC</em> § 495).
             </p>
           </section>
 
           <section id="virgindade" className="scroll-mt-24">
-          <MarcarEstudo tipo="maria" chave="virgindade" />
+            <MarcarEstudo tipo="maria" chave="virgindade" />
             <h4>II. Virgindade Perpétua (Sínodo de Latrão, 649)</h4>
             <p>
-              A Igreja confessa que Maria foi e permaneceu Virgem <em>antes, durante e depois do parto</em>{" "}
-              (<em>ante partum, in partu, post partum</em>). Essa verdade foi solenemente formulada pelo Sínodo
-              de Latrão de 649, convocado pelo Papa São Martinho I<FnRef n="latrao" /> — um sínodo romano, não o
-              Concílio Ecumênico de Latrão I (1123) —, confirmando uma fé já atestada por Santo Inácio, São
-              Justino, Santo Ireneu e retomada pelos Concílios Ecumênicos de Constantinopla II (553) e III
-              (680–681). A perpétua virgindade de Maria é ensinada de modo constante e unânime pela Tradição e
-              pelo magistério ordinário e universal da Igreja (<em>LG</em> 57; <em>CIC</em> § 499). O Catecismo
-              trata do tema em <em>CIC</em> §§ 496–507<FnRef n="cic" />, explicando que os “irmãos de Jesus”
-              mencionados pelos Evangelhos são parentes próximos, segundo o uso semítico.
+              A Igreja confessa que Maria foi e permaneceu Virgem{" "}
+              <em>antes, durante e depois do parto</em> (<em>ante partum, in partu, post partum</em>
+              ). Essa verdade foi solenemente formulada pelo Sínodo de Latrão de 649, convocado pelo
+              Papa São Martinho I<FnRef n="latrao" /> — um sínodo romano, não o Concílio Ecumênico
+              de Latrão I (1123) —, confirmando uma fé já atestada por Santo Inácio, São Justino,
+              Santo Ireneu e retomada pelos Concílios Ecumênicos de Constantinopla II (553) e III
+              (680–681). A perpétua virgindade de Maria é ensinada de modo constante e unânime pela
+              Tradição e pelo magistério ordinário e universal da Igreja (<em>LG</em> 57;{" "}
+              <em>CIC</em> § 499). O Catecismo trata do tema em <em>CIC</em> §§ 496–507
+              <FnRef n="cic" />, explicando que os “irmãos de Jesus” mencionados pelos Evangelhos
+              são parentes próximos, segundo o uso semítico.
             </p>
           </section>
 
           <section id="imaculada" className="scroll-mt-24">
-          <MarcarEstudo tipo="maria" chave="imaculada" />
-            <h4>III. <Termo termo="imaculada_conceicao">Imaculada Conceição</Termo> (Pio IX, 1854)</h4>
+            <MarcarEstudo tipo="maria" chave="imaculada" />
+            <h4>
+              III. <Termo termo="imaculada_conceicao">Imaculada Conceição</Termo> (Pio IX, 1854)
+            </h4>
             <p>
-              Pelo Papa <strong>Pio IX</strong>, na Bula <em>Ineffabilis Deus</em>, de 8 de dezembro de 1854,
-              foi definido que <em>a beatíssima Virgem Maria, no primeiro instante da sua concepção, por
-              singular <Termo termo="graca">graça</Termo> e privilégio de Deus onipotente, em vista dos méritos de Cristo Jesus Salvador do
-              gênero humano, foi preservada imune de toda mancha do <Termo termo="pecado_original">pecado original</Termo></em><FnRef n="ineffabilis" />.
-              É preservação <em>per modum redemptionis</em>: Maria foi salva por Cristo, antecipadamente
-              (<em>CIC</em> §§ 490–493).
+              Pelo Papa <strong>Pio IX</strong>, na Bula <em>Ineffabilis Deus</em>, de 8 de dezembro
+              de 1854, foi definido que{" "}
+              <em>
+                a beatíssima Virgem Maria, no primeiro instante da sua concepção, por singular{" "}
+                <Termo termo="graca">graça</Termo> e privilégio de Deus onipotente, em vista dos
+                méritos de Cristo Jesus Salvador do gênero humano, foi preservada imune de toda
+                mancha do <Termo termo="pecado_original">pecado original</Termo>
+              </em>
+              <FnRef n="ineffabilis" />. É preservação <em>per modum redemptionis</em>: Maria foi
+              salva por Cristo, antecipadamente (<em>CIC</em> §§ 490–493).
             </p>
           </section>
 
           <section id="assuncao" className="scroll-mt-24">
-          <MarcarEstudo tipo="maria" chave="assuncao" />
+            <MarcarEstudo tipo="maria" chave="assuncao" />
             <h4>IV. Assunção corporal (Pio XII, 1950)</h4>
             <p>
-              Pelo Papa <strong>Pio XII</strong>, na Constituição Apostólica <em>Munificentissimus Deus</em>, de
-              1.º de novembro de 1950, foi definido que <em>a Imaculada Mãe de Deus, sempre Virgem Maria,
-              terminado o curso da sua vida terrena, foi assunta em corpo e alma à glória celeste</em>
-              <FnRef n="munificentissimus" />. A definição é eco final do mistério pascal: a primeira redimida
-              já participa, em alma e corpo, da ressurreição do Filho (<em>LG</em> 59; <em>CIC</em> §§ 966–967).
+              Pelo Papa <strong>Pio XII</strong>, na Constituição Apostólica{" "}
+              <em>Munificentissimus Deus</em>, de 1.º de novembro de 1950, foi definido que{" "}
+              <em>
+                a Imaculada Mãe de Deus, sempre Virgem Maria, terminado o curso da sua vida terrena,
+                foi assunta em corpo e alma à glória celeste
+              </em>
+              <FnRef n="munificentissimus" />. A definição é eco final do mistério pascal: a
+              primeira redimida já participa, em alma e corpo, da ressurreição do Filho (<em>LG</em>{" "}
+              59; <em>CIC</em> §§ 966–967).
             </p>
           </section>
 
           <section id="titulos" className="scroll-mt-24">
-          <MarcarEstudo tipo="maria" chave="titulos" />
+            <MarcarEstudo tipo="maria" chave="titulos" />
             <h3>Títulos marianos</h3>
             <p>
-              A liturgia e o magistério atribuem a Maria, entre muitos, os seguintes títulos: <em>Mãe da Igreja</em>{" "}
-              (Paulo VI, 1964; memória obrigatória instituída por Francisco em 2018), <em>Mediadora de todas as
-              graças</em>, <em>Auxílio dos cristãos</em>, <em>Causa da nossa alegria</em>, <em>Rainha do Céu</em>,{" "}
-              <em> Mãe da Misericórdia</em>. Todos esses títulos, ensina <em>Lumen Gentium</em> 62,{" "}
-              <em> nada acrescentam nem subtraem à dignidade e eficácia de Cristo, único Mediador</em>.
+              A liturgia e o magistério atribuem a Maria, entre muitos, os seguintes títulos:{" "}
+              <em>Mãe da Igreja</em> (Paulo VI, 1964; memória obrigatória instituída por Francisco
+              em 2018), <em>Mediadora de todas as graças</em>, <em>Auxílio dos cristãos</em>,{" "}
+              <em>Causa da nossa alegria</em>, <em>Rainha do Céu</em>, <em> Mãe da Misericórdia</em>
+              . Todos esses títulos, ensina <em>Lumen Gentium</em> 62,{" "}
+              <em>
+                {" "}
+                nada acrescentam nem subtraem à dignidade e eficácia de Cristo, único Mediador
+              </em>
+              .
             </p>
             <NotaConfiabilidade nivel="teologia">
-              “Mediadora de todas as graças” é um título devocional e teológico, não um quinto dogma mariano —
-              a Igreja Católica define solenemente apenas quatro dogmas marianos (Maternidade Divina, Virgindade
-              Perpétua, Imaculada Conceição e Assunção). O Concílio Vaticano II, embora reconheça a cooperação
-              singular de Maria na obra da salvação, evitou deliberadamente proclamar essa expressão como
-              definição dogmática, preferindo a linguagem de “mediação materna” sempre subordinada e
-              participada (<em>LG</em> 60-62). Como recorda São Paulo, “há um só Deus e um só mediador entre
-              Deus e os homens, Cristo Jesus” (1Tm 2,5); toda intercessão de Maria e dos santos deriva
-              inteiramente dessa única mediação e nela se apoia.
+              “Mediadora de todas as graças” é um título devocional e teológico, não um quinto dogma
+              mariano — a Igreja Católica define solenemente apenas quatro dogmas marianos
+              (Maternidade Divina, Virgindade Perpétua, Imaculada Conceição e Assunção). O Concílio
+              Vaticano II, embora reconheça a cooperação singular de Maria na obra da salvação,
+              evitou deliberadamente proclamar essa expressão como definição dogmática, preferindo a
+              linguagem de “mediação materna” sempre subordinada e participada (<em>LG</em> 60-62).
+              Como recorda São Paulo, “há um só Deus e um só mediador entre Deus e os homens, Cristo
+              Jesus” (1Tm 2,5); toda intercessão de Maria e dos santos deriva inteiramente dessa
+              única mediação e nela se apoia.
             </NotaConfiabilidade>
           </section>
 
           <section id="mediacao" className="scroll-mt-24">
-          <MarcarEstudo tipo="maria" chave="mediacao" />
+            <MarcarEstudo tipo="maria" chave="mediacao" />
             <h3>Mediação e cooperação maternal</h3>
             <p>
-              Maria coopera de modo singular na obra da Redenção pela obediência, fé, esperança e ardente
-              caridade (<em>LG</em> 61). Sua cooperação não compete com a única mediação de Cristo, mas é{" "}
-              <em> participação</em> dela (<em>LG</em> 62). É o que Paulo VI desenvolveu em <em>Marialis Cultus</em>
-              <FnRef n="marialis" /> e São João Paulo II em <em>Redemptoris Mater</em><FnRef n="redmater" />.
+              Maria coopera de modo singular na obra da Redenção pela obediência, fé, esperança e
+              ardente caridade (<em>LG</em> 61). Sua cooperação não compete com a única mediação de
+              Cristo, mas é <em> participação</em> dela (<em>LG</em> 62). É o que Paulo VI
+              desenvolveu em <em>Marialis Cultus</em>
+              <FnRef n="marialis" /> e São João Paulo II em <em>Redemptoris Mater</em>
+              <FnRef n="redmater" />.
             </p>
+          </section>
+
+          <section id="liturgia" className="scroll-mt-24">
+            <MarcarEstudo tipo="maria" chave="liturgia" />
+            <h3>Maria no ano litúrgico</h3>
+            <p>
+              A doutrina mariana não vive de tratados, mas do calendário: a Igreja ensina rezando. O
+              ano começa com a solenidade de <strong>Santa Maria, Mãe de Deus</strong> (1.º de
+              janeiro), oitavo dia do Natal, herdeira da mais antiga festa mariana romana.
+              Seguem-se, entre as celebrações de grau maior, a{" "}
+              <strong>Apresentação do Senhor</strong> (2 de fevereiro), a{" "}
+              <strong>Anunciação</strong> (25 de março), a <strong>Visitação</strong> (31 de maio),
+              a <strong>Assunção</strong> (15 de agosto), a <strong>Natividade de Maria</strong> (8
+              de setembro), a <strong>Imaculada Conceição</strong> (8 de dezembro) e, no Brasil, a
+              solenidade de <strong>Nossa Senhora Aparecida</strong> (12 de outubro), padroeira do
+              país. A memória de <strong>Maria, Mãe da Igreja</strong>, na segunda-feira depois de
+              Pentecostes, foi instituída como obrigatória em 2018.
+            </p>
+            <p>
+              A cada tempo litúrgico corresponde um modo de olhar a Virgem: no Advento, a mulher da
+              espera; no Natal, a Mãe que dá o Verbo ao mundo; na Quaresma e na Semana Santa, a que
+              permanece ao pé da cruz; no tempo pascal, a que ora com os Apóstolos aguardando o
+              Espírito. O sábado sem celebração própria é tradicionalmente dedicado a Nossa Senhora,
+              e a <em>Collectio Missarum de Beata Maria Virgine</em> (1986) reuniu quarenta e seis
+              formulários de Missas marianas distribuídos por esses tempos
+              <FnRef n="collectio" />. As quatro antífonas finais — <em>Alma Redemptoris Mater</em>,{" "}
+              <em>Ave Regina caelorum</em>, <em>Regina caeli</em> e <em>Salve Regina</em> — encerram
+              cada noite do ofício divino segundo a estação.
+            </p>
+            <p>
+              Paulo VI, em <em>Marialis Cultus</em>
+              <FnRef n="marialis" />, estabeleceu os critérios do reto culto mariano: que seja{" "}
+              <em>bíblico</em>, <em>litúrgico</em>, <em>ecumênico</em> e{" "}
+              <em>antropologicamente correto</em> — isto é, fundado na Escritura, integrado à
+              liturgia, atento a não ofender os irmãos separados e capaz de apresentar Maria como
+              mulher real, e não como figura alheia à condição humana.
+            </p>
+          </section>
+
+          <section id="culto" className="scroll-mt-24">
+            <MarcarEstudo tipo="maria" chave="culto" />
+            <h3>Que culto se presta a Maria</h3>
+            <p>
+              A teologia católica distingue com precisão três realidades que a linguagem comum
+              confunde: <strong>latria</strong> (<em>latreia</em>), a adoração devida unicamente a
+              Deus; <strong>dulia</strong>, a veneração prestada aos santos; e{" "}
+              <strong>hiperdulia</strong>, a veneração singular — superior à dos santos, mas de
+              natureza inteiramente diversa da adoração — prestada à Mãe de Deus. Essa distinção não
+              é uma sutileza tardia: o Concílio de <strong>Niceia II</strong> (787) a formulou ao
+              definir o culto das imagens sagradas, reservando a Deus a adoração e atribuindo às
+              imagens e aos santos a honra e a veneração que se referem sempre ao original
+              <FnRef n="nicea2" />. O Concílio de Trento a reafirmou contra as acusações de
+              idolatria
+              <FnRef n="trento-invocacao" />.
+            </p>
+            <p>
+              Daí decorrem consequências práticas claras: a Maria não se oferece sacrifício algum —
+              o único sacrifício da Igreja é o de Cristo, oferecido na Missa; não se lhe atribui
+              poder próprio independente de Deus; não se lhe pede o que só Deus concede por si, mas
+              a sua intercessão junto ao Filho, como faz qualquer cristão que pede oração a um irmão
+              (<em>CIC</em> §§ 2673-2679). Rezar o Rosário, portanto, é meditar os mistérios de
+              Cristo com os olhos de sua Mãe.
+            </p>
+            <NotaConfiabilidade nivel="oficial">
+              <em>Lumen Gentium</em> 66-67 ensina que o culto à Virgem, embora singular, é{" "}
+              <em>
+                essencialmente diverso do culto de adoração prestado ao Verbo encarnado, ao Pai e ao
+                Espírito Santo
+              </em>
+              , e exorta os teólogos e pregadores a evitar tanto a exageração como a estreiteza de
+              espírito ao tratar da dignidade da Mãe de Deus.
+            </NotaConfiabilidade>
+          </section>
+
+          <section id="objecoes" className="scroll-mt-24">
+            <MarcarEstudo tipo="maria" chave="objecoes" />
+            <h3>Objeções e mal-entendidos frequentes</h3>
+            <p>
+              <strong>“Os católicos adoram Maria.”</strong> Não. A adoração é devida só a Deus, e
+              atribuí-la a qualquer criatura seria idolatria, condenada pela própria Igreja. O que
+              se presta a Maria é veneração e pedido de intercessão, distinção definida em Niceia II
+              e em Trento
+              <FnRef n="nicea2" />.
+            </p>
+            <p>
+              <strong>“Só há um mediador, logo não se pede a Maria.”</strong> A Igreja subscreve
+              inteiramente 1Tm 2, 5: há um só mediador, Cristo Jesus. Pedir a intercessão de Maria e
+              dos santos não acrescenta um segundo mediador, do mesmo modo que pedir oração a um
+              amigo vivo não substitui Cristo; toda intercessão criada deriva da única mediação dele
+              e nela se apoia (<em>LG</em> 60-62).
+            </p>
+            <p>
+              <strong>“A Bíblia fala dos irmãos de Jesus.”</strong> O termo grego <em>adelphós</em>,
+              na linguagem bíblica de fundo semítico, abrange parentes próximos — o Antigo
+              Testamento chama Ló de “irmão” de Abraão, sendo seu sobrinho (Gn 13, 8; 14, 14). Os
+              Evangelhos nomeiam Tiago e José como filhos de outra Maria (Mt 27, 56; Mc 15, 40), e
+              Jesus confia sua Mãe ao discípulo amado (Jo 19, 26-27), gesto difícil de explicar se
+              houvesse outros filhos. O Catecismo trata o assunto em <em>CIC</em> § 500
+              <FnRef n="cic" />.
+            </p>
+            <p>
+              <strong>“A Imaculada Conceição significa que Maria não precisou de salvação.”</strong>{" "}
+              Ao contrário: a bula <em>Ineffabilis Deus</em> define a preservação{" "}
+              <em>em vista dos méritos de Cristo</em>
+              <FnRef n="ineffabilis" />. Maria é a primeira e a mais perfeitamente redimida — salva
+              por antecipação, não fora da redenção.
+            </p>
+            <p>
+              <strong>“A Assunção não está na Bíblia.”</strong> A Escritura não a narra, e o dogma
+              não pretende o contrário: <em>Munificentissimus Deus</em> apoia a definição na
+              Tradição constante, no consenso dos Padres, na fé do povo cristão e na coerência com a
+              Imaculada Conceição e a maternidade divina
+              <FnRef n="munificentissimus" />. A definição, aliás, não se pronuncia sobre se Maria
+              morreu antes de ser assunta — questão deliberadamente deixada aberta entre a tradição
+              da <em>Dormição</em>, majoritária no Oriente, e outras opiniões teológicas.
+            </p>
+          </section>
+
+          <section id="ecumenismo" className="scroll-mt-24">
+            <MarcarEstudo tipo="maria" chave="ecumenismo" />
+            <h3>Maria entre os cristãos separados</h3>
+            <p>
+              O lugar de Maria não divide os cristãos do mesmo modo em toda parte. As{" "}
+              <strong>Igrejas orientais ortodoxas</strong> professam com os católicos a maternidade
+              divina definida em Éfeso, a virgindade perpétua e a glorificação de Maria — que
+              celebram como <em>Dormição</em> —, veneram-na com hinografia riquíssima, como o{" "}
+              <em>Akáthistos</em>, e o Vaticano II reconheceu expressamente esse culto comum
+              <FnRef n="unitatis" />. Divergem quanto à formulação latina da Imaculada Conceição,
+              por não partilharem a mesma linguagem teológica sobre o pecado original, e quanto à
+              definição dogmática da Assunção como tal.
+            </p>
+            <p>
+              Entre as <strong>comunidades protestantes</strong>, a posição varia. Lutero manteve
+              por toda a vida a virgindade perpétua e pregou sobre o <em>Magnificat</em>; a tradição
+              reformada posterior reduziu progressivamente o lugar de Maria, por receio de que a
+              intercessão obscurecesse a única mediação de Cristo e por rejeição de definições sem
+              base explícita na Escritura. Diálogos ecumênicos do século XX e XXI — como os
+              documentos do Grupo de Dombes e da Comissão Anglicano-Católica — reconheceram avanços
+              reais na compreensão comum de Maria como primeira crente e figura da Igreja.
+            </p>
+            <NotaConfiabilidade nivel="teologia">
+              A exposição das posições ortodoxas e protestantes acima é síntese informativa e não
+              substitui a autodescrição dessas comunidades, que apresentam variações internas
+              relevantes. Onde persiste divergência, este portal a apresenta como divergência, sem
+              resolvê-la por conta própria.
+            </NotaConfiabilidade>
           </section>
         </Prose>
 
@@ -259,54 +556,70 @@ function Page() {
 
         <section id="aparicoes" className="scroll-mt-24 mt-12">
           <MarcarEstudo tipo="maria" chave="aparicoes" />
-          <h3 className="font-display text-2xl text-foreground mb-3">Aparições aprovadas pela Igreja</h3>
+          <h3 className="font-display text-2xl text-foreground mb-3">
+            Aparições aprovadas pela Igreja
+          </h3>
           <p className="text-sm text-muted-foreground max-w-3xl mb-6 leading-relaxed">
-            Diferentemente da Revelação pública (encerrada com a morte do último Apóstolo, <em>DV</em> 4), as{" "}
-            <em> revelações privadas</em> não pertencem ao depósito da fé e não obrigam à fé divina e católica
-            (<em>CIC</em> §§ 66-67). O reconhecimento eclesiástico admite graus distintos — declaração de que
-            "nada obsta" à devoção (<em>nihil obstat</em>), constatação de que a aparição não contradiz a fé e
-            a moral, ou, mais raramente, afirmação de que os fatos revestem "caracteres de verdade" — segundo as{" "}
-            <em> Normas</em> do Dicastério para a Doutrina da Fé<FnRef n="cdf-aparicoes" />. Nenhuma aprovação
-            eclesiástica equivale a uma declaração de que a aparição é "comprovadamente sobrenatural"; trata-se
-            sempre de um juízo prudencial e pastoral, ao qual os fiéis podem aderir com fé humana e prudente,
-            nunca com o assentimento devido ao dogma.
+            Diferentemente da Revelação pública (encerrada com a morte do último Apóstolo,{" "}
+            <em>DV</em> 4), as <em> revelações privadas</em> não pertencem ao depósito da fé e não
+            obrigam à fé divina e católica (<em>CIC</em> §§ 66-67). O reconhecimento eclesiástico
+            admite graus distintos — declaração de que "nada obsta" à devoção (<em>nihil obstat</em>
+            ), constatação de que a aparição não contradiz a fé e a moral, ou, mais raramente,
+            afirmação de que os fatos revestem "caracteres de verdade" — segundo as <em>
+              {" "}
+              Normas
+            </em>{" "}
+            do Dicastério para a Doutrina da Fé
+            <FnRef n="cdf-aparicoes" />. Nenhuma aprovação eclesiástica equivale a uma declaração de
+            que a aparição é "comprovadamente sobrenatural"; trata-se sempre de um juízo prudencial
+            e pastoral, ao qual os fiéis podem aderir com fé humana e prudente, nunca com o
+            assentimento devido ao dogma.
           </p>
           <NotaConfiabilidade nivel="privada" className="mb-6 max-w-3xl">
-            As aparições abaixo têm graus de reconhecimento eclesial diversos, do simples incentivo à devoção
-            até a declaração formal de que os fatos são "dignos de fé". Em nenhum caso a Igreja obriga os fiéis
-            a crer nelas.
+            As aparições abaixo têm graus de reconhecimento eclesial diversos, do simples incentivo
+            à devoção até a declaração formal de que os fatos são "dignos de fé". Em nenhum caso a
+            Igreja obriga os fiéis a crer nelas.
           </NotaConfiabilidade>
           <CardGrid cols={2}>
             {APARICOES.map((a) => (
-              <ContentCard key={a.local} title={a.local} subtitle={a.ano}>{a.body}</ContentCard>
+              <ContentCard key={a.local} title={a.local} subtitle={a.ano}>
+                {a.body}
+              </ContentCard>
             ))}
           </CardGrid>
         </section>
 
         <section id="devocoes" className="scroll-mt-24 mt-12">
           <MarcarEstudo tipo="maria" chave="devocoes" />
-          <h3 className="font-display text-2xl text-foreground mb-3">Devoções marianas recomendadas</h3>
+          <h3 className="font-display text-2xl text-foreground mb-3">
+            Devoções marianas recomendadas
+          </h3>
           <CardGrid cols={3}>
             <ContentCard title="Santo Rosário" subtitle="Compêndio do Evangelho">
-              Quinze mistérios tradicionais (gozosos, dolorosos, gloriosos); São João Paulo II acrescentou os
-              luminosos em <em>Rosarium Virginis Mariae</em> (2002)<FnRef n="rosarium" />.
+              Quinze mistérios tradicionais (gozosos, dolorosos, gloriosos); São João Paulo II
+              acrescentou os luminosos em <em>Rosarium Virginis Mariae</em> (2002)
+              <FnRef n="rosarium" />.
             </ContentCard>
             <ContentCard title="Angelus / Regina Cæli" subtitle="Oração tríplice diária">
               Recitado às 6h, 12h e 18h; substituído pelo <em>Regina Cæli</em> no tempo pascal.
             </ContentCard>
             <ContentCard title="Consagração mariana" subtitle="São Luís Maria Grignion de Montfort">
-              <em>Tratado da Verdadeira Devoção</em>; renovada e proposta por São João Paulo II (lema{" "}
-              <em> Totus Tuus</em>).
+              <em>Tratado da Verdadeira Devoção</em>; renovada e proposta por São João Paulo II
+              (lema <em> Totus Tuus</em>).
             </ContentCard>
-            <ContentCard title="Escapulário do Carmo" subtitle="Aparecimento a São Simão Stock (1251)">
+            <ContentCard
+              title="Escapulário do Carmo"
+              subtitle="Aparecimento a São Simão Stock (1251)"
+            >
               Sinal sacramental da pertença a Nossa Senhora; festa em 16 de julho.
             </ContentCard>
             <ContentCard title="Medalha Milagrosa" subtitle="Rue du Bac, 1830">
-              Originada das aparições a Santa Catarina Labouré; cunhada por ordem do arcebispo de Paris em 1832.
+              Originada das aparições a Santa Catarina Labouré; cunhada por ordem do arcebispo de
+              Paris em 1832.
             </ContentCard>
             <ContentCard title="Consagração ao Imaculado Coração" subtitle="Fátima, 1917">
-              Proposta pela própria Virgem aos pastorinhos; realizada universalmente por Pio XII (1942), São João
-              Paulo II (1984) e Francisco (2022).
+              Proposta pela própria Virgem aos pastorinhos; realizada universalmente por Pio XII
+              (1942), São João Paulo II (1984) e Francisco (2022).
             </ContentCard>
           </CardGrid>
         </section>

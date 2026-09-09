@@ -1485,3 +1485,107 @@ html[data-leitura="on"] [data-sonner-toaster] {
     display: none;
   }
 }
+
+/* ==========================================================================
+   Impressão — página limpa, em cores ou em preto e branco, alta qualidade
+   ========================================================================== */
+
+@media print {
+  @page {
+    size: A4;
+    margin: 16mm 15mm;
+  }
+
+  html,
+  body {
+    background: #fff !important;
+    color: #14110f !important;
+  }
+
+  header[data-site-header],
+  .site-header,
+  footer,
+  nav[aria-label="Paginação"],
+  [data-leitura-oculto],
+  [data-nao-imprimir],
+  .print\:hidden {
+    display: none !important;
+  }
+
+  main {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    backdrop-filter: none !important;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: #14110f !important;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  p,
+  li,
+  blockquote {
+    color: #22201d !important;
+    orphans: 3;
+    widows: 3;
+  }
+
+  section,
+  article,
+  figure,
+  blockquote,
+  table {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  img,
+  picture {
+    max-width: 100% !important;
+    height: auto !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  figcaption {
+    font-size: 9pt !important;
+    color: #55504a !important;
+  }
+
+  a {
+    color: #14110f !important;
+    text-decoration: none !important;
+  }
+
+  main a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 8.5pt;
+    color: #6b655e;
+    word-break: break-all;
+  }
+
+  /* Impressão em preto e branco: sem tinta de cor, mantendo contraste */
+  html.imprimir-pb main,
+  html.imprimir-pb main * {
+    filter: grayscale(100%) !important;
+    color: #14110f !important;
+    border-color: #b9b3ab !important;
+    background-image: none !important;
+    background-color: transparent !important;
+  }
+
+  html.imprimir-pb img,
+  html.imprimir-pb picture img {
+    filter: grayscale(100%) contrast(1.08) !important;
+  }
+}
