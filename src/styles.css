@@ -1461,7 +1461,11 @@ html[data-leitura="on"] [data-sonner-toaster] {
     top: 50%;
     width: clamp(2rem, 8vw, 7rem);
     height: 1px;
-    background: linear-gradient(to right, transparent, color-mix(in oklab, var(--gold) 35%, transparent));
+    background: linear-gradient(
+      to right,
+      transparent,
+      color-mix(in oklab, var(--gold) 35%, transparent)
+    );
   }
 
   &::before {

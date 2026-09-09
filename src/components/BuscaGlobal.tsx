@@ -159,8 +159,8 @@ export function BuscaGlobal({ aberto, onFechar }: { aberto: boolean; onFechar: (
                 ))}
               </div>
               <p className="mt-5 text-xs text-foreground/50">
-                Dica: digite uma referência bíblica como <span className="text-gold">Jo 3</span> para abrir o capítulo
-                direto.
+                Dica: digite uma referência bíblica como <span className="text-gold">Jo 3</span>{" "}
+                para abrir o capítulo direto.
               </p>
             </div>
           ) : planos.length === 0 ? (
@@ -237,7 +237,9 @@ export function useAtalhoBusca(abrir: () => void) {
     function onKey(e: KeyboardEvent) {
       const alvo = e.target as HTMLElement | null;
       const digitando =
-        alvo?.tagName === "INPUT" || alvo?.tagName === "TEXTAREA" || alvo?.isContentEditable === true;
+        alvo?.tagName === "INPUT" ||
+        alvo?.tagName === "TEXTAREA" ||
+        alvo?.isContentEditable === true;
       if ((e.key === "k" || e.key === "K") && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
         abrir();
