@@ -351,7 +351,7 @@ function Home() {
       <section className="eixo-nave santuario-editorial py-section">
         <div className="shell relative z-[1]">
           <ScrollReveal className="mx-auto max-w-3xl text-center">
-            <p className="num-secao justify-center">02 · Enciclopédia interligada</p>
+            <p className="kicker">Nave central · Enciclopédia interligada</p>
             <h2 className="title-page mt-4 leading-[1.08] text-foreground">
               Uma verdade conduz <span className="italic text-gold/85">à outra.</span>
             </h2>
@@ -468,7 +468,7 @@ function Home() {
       {/* Percursos ilustrados */}
       <section aria-labelledby="percursos" className="shell py-section">
         <ScrollReveal className="mb-[var(--space-lg)] max-w-2xl">
-          <p className="num-secao mb-4">03 · Três portas de entrada</p>
+          <p className="num-secao mb-4">02 · Três portas de entrada</p>
           <h2 id="percursos" className="title-page text-balance leading-[1.08] text-foreground">
             Fé vivida, <span className="text-gold/80 italic">rezada e estudada.</span>
           </h2>
@@ -542,7 +542,7 @@ function Home() {
       <section className="shell py-section">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-[var(--space-lg)] gap-[var(--space-sm)]">
           <ScrollReveal className="max-w-2xl">
-            <p className="num-secao mb-4">04 · Os pilares da verdade</p>
+            <p className="num-secao mb-4">03 · Os pilares da verdade</p>
             <h2 className="title-page text-foreground leading-[1.08] text-balance">
               Duas mil anos de fé, <span className="text-gold/75">em um só lugar.</span>
             </h2>

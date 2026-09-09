@@ -10,6 +10,7 @@ const CORES: Record<Categoria, string> = {
   Catecismo: "text-sky-400/80",
   Santo: "text-amber-300/80",
   Glossário: "text-violet-300/80",
+  Enciclopédia: "text-gold-accent/80",
   Oração: "text-rose-300/80",
   Apologética: "text-cyan-300/80",
   Trilha: "text-teal-300/80",

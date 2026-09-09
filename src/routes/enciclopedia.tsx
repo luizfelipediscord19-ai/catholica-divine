@@ -73,6 +73,7 @@ function EnciclopediaPage() {
               <Search className="size-4 shrink-0 text-gold" aria-hidden="true" />
               <input
                 type="search"
+                aria-label="Buscar na Enciclopédia Católica"
                 value={busca}
                 onChange={(evento) => setBusca(evento.target.value)}
                 placeholder="Ex.: Eucaristia, graça, Trindade"
