@@ -1416,3 +1416,68 @@ html[data-leitura="on"] [data-sonner-toaster] {
   letter-spacing: 0.02em;
   color: color-mix(in oklab, var(--color-muted-foreground) 92%, transparent);
 }
+
+/* Arco inspirado na nave e nos retábulos, sem introduzir novas cores. */
+@utility arco-sacral {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid color-mix(in oklab, var(--gold) 32%, transparent);
+  border-radius: min(42vw, 24rem) min(42vw, 24rem) 0 0;
+  box-shadow: var(--shadow-elegant);
+}
+
+/* Eixo central sutil que organiza a página como uma nave processional. */
+@utility eixo-nave {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset-block: 0;
+    left: 50%;
+    width: 1px;
+    transform: translateX(-50%);
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      color-mix(in oklab, var(--gold) 13%, transparent) 12%,
+      color-mix(in oklab, var(--gold) 13%, transparent) 88%,
+      transparent
+    );
+    pointer-events: none;
+  }
+}
+
+/* Moldura axial para conteúdo central; funciona como o coro de uma igreja. */
+@utility santuario-editorial {
+  position: relative;
+  border-block: 1px solid color-mix(in oklab, var(--gold) 18%, transparent);
+  background: color-mix(in oklab, var(--card) 52%, transparent);
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: clamp(2rem, 8vw, 7rem);
+    height: 1px;
+    background: linear-gradient(to right, transparent, color-mix(in oklab, var(--gold) 35%, transparent));
+  }
+
+  &::before {
+    right: calc(50% + min(23rem, 38vw));
+  }
+
+  &::after {
+    left: calc(50% + min(23rem, 38vw));
+    transform: rotate(180deg);
+  }
+}
+
+@media (max-width: 767px) {
+  .eixo-nave::before,
+  .santuario-editorial::before,
+  .santuario-editorial::after {
+    display: none;
+  }
+}
