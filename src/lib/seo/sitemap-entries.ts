@@ -42,6 +42,7 @@ export const PAGINAS: SitemapEntry[] = [
   { path: "/oracoes/liturgia-das-horas", changefreq: "daily", priority: "0.7" },
   { path: "/doutores-da-igreja", changefreq: "monthly", priority: "0.7" },
   { path: "/glossario", changefreq: "monthly", priority: "0.7" },
+  { path: "/enciclopedia", changefreq: "monthly", priority: "0.8" },
   { path: "/calendario-liturgico", changefreq: "weekly", priority: "0.7" },
   { path: "/assistente", changefreq: "monthly", priority: "0.7" },
   { path: "/estudar", changefreq: "monthly", priority: "0.7" },
