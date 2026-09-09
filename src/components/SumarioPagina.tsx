@@ -125,7 +125,7 @@ export function SumarioPagina() {
             </ul>
           </nav>
 
-          <div className="mt-5 space-y-2 border-t border-gold/20 pt-4">
+          <div className="mt-5 shrink-0 space-y-2 border-t border-gold/20 pt-4">
             <p className="kicker flex items-center gap-2">
               <Printer className="size-3.5" /> Imprimir ou salvar em PDF
             </p>
