@@ -714,7 +714,7 @@ function Home() {
         <ScrollReveal className="shell py-section relative text-center">
           <div className="relative inline-block mb-[var(--space-md)]">
             <div className="absolute inset-0 bg-gold/20 blur-3xl rounded-full" />
-            <div className="relative size-24 rounded-full glass border border-gold/30 flex items-center justify-center shadow-[0_0_50px_rgba(212,175,55,0.15)]">
+            <div className="relative size-24 rounded-full glass border border-gold/30 flex items-center justify-center shadow-[var(--shadow-elegant)]">
               <Sparkles className="size-10 text-gold animate-pulse" />
             </div>
           </div>
@@ -731,7 +731,7 @@ function Home() {
           </p>
           <Link
             to="/assistente"
-            className="group relative inline-flex items-center gap-4 px-8 py-4 min-h-12 bg-paper text-deep text-step--2 sm:label-btn transition-premium hover:shadow-[0_0_50px_rgba(252,250,247,0.2)]"
+            className="group relative inline-flex items-center gap-4 px-8 py-4 min-h-12 bg-paper text-deep text-step--2 sm:label-btn transition-premium hover:shadow-[var(--shadow-btn-hover)]"
           >
             <MessageCircle className="size-4" aria-hidden="true" />
             <span>Conversar agora</span>
