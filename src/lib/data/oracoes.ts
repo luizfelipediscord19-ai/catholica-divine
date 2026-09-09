@@ -831,6 +831,322 @@ export const ORACOES: Oracao[] = [
       "São Francisco de Assis, que abraçastes a Dama Pobreza e louvastes a Deus em todas as criaturas: ensinai-me a viver com simplicidade, a cuidar da criação como irmã e a encontrar em Cristo pobre e crucificado toda a minha riqueza. Amém.",
   },
 
+  // ===== CÂNTICOS EVANGÉLICOS E HINOS ANTIGOS =====
+  {
+    slug: "magnificat",
+    titulo: "Cântico de Maria",
+    latim: "Magnificat",
+    categoria: "Marianas",
+    nota: "Cântico de Maria em Lc 1, 46-55, rezado todos os dias nas Vésperas da Liturgia das Horas.",
+    paraQue: "Louvar a Deus reconhecendo suas obras nos humildes.",
+    quando: "Ao fim da tarde, com a Igreja, nas Vésperas.",
+    texto:
+      "A minha alma engrandece o Senhor e o meu espírito se alegra em Deus, meu Salvador, porque olhou para a humildade de sua serva: desde agora todas as gerações me chamarão bem-aventurada. O Todo-Poderoso realizou em mim maravilhas, e santo é o seu nome. Sua misericórdia se estende de geração em geração sobre todos os que o temem. Manifestou o poder de seu braço, dispersou os soberbos. Derrubou os poderosos de seus tronos e elevou os humildes. Saciou de bens os famintos e despediu os ricos de mãos vazias. Acolheu Israel, seu servo, lembrando-se de sua misericórdia, como havia prometido a nossos pais, em favor de Abraão e de seus filhos, para sempre. Amém.",
+  },
+  {
+    slug: "benedictus",
+    titulo: "Cântico de Zacarias",
+    latim: "Benedictus",
+    categoria: "Diárias",
+    nota: "Cântico de Zacarias em Lc 1, 68-79, rezado cada manhã nas Laudes.",
+    paraQue: "Começar o dia agradecendo a visita salvadora de Deus.",
+    quando: "De manhã, ao despertar.",
+    texto:
+      "Bendito seja o Senhor, Deus de Israel, que visitou e redimiu o seu povo, e nos deu um Salvador poderoso na casa de Davi, seu servo, como havia anunciado pela boca de seus santos profetas: que nos salvaria de nossos inimigos e de todos os que nos odeiam, para mostrar sua misericórdia a nossos pais, lembrando de sua santa aliança e do juramento que fez a Abraão, nosso pai, de nos conceder que, libertados de nossos inimigos, sem temor o sirvamos em santidade e justiça, na sua presença, todos os dias de nossa vida. E tu, menino, serás chamado profeta do Altíssimo, pois irás adiante do Senhor preparando os seus caminhos, para dar ao povo o conhecimento da salvação e o perdão de todos os pecados. É a ternura do coração de nosso Deus que nos visita como sol que nasce do alto, para iluminar os que jazem nas trevas e na sombra da morte e dirigir nossos passos no caminho da paz. Amém.",
+  },
+  {
+    slug: "nunc-dimittis",
+    titulo: "Cântico de Simeão",
+    latim: "Nunc dimittis",
+    categoria: "Diárias",
+    nota: "Cântico de Simeão em Lc 2, 29-32, rezado cada noite nas Completas.",
+    paraQue: "Entregar o dia terminado nas mãos de Deus e preparar-se para o descanso.",
+    quando: "Antes de dormir.",
+    texto:
+      "Agora, Senhor, podes despedir em paz o teu servo, porque cumpriste a tua palavra: os meus olhos viram a tua salvação, que preparaste diante de todos os povos — luz para iluminar as nações e glória do teu povo Israel. Amém.",
+  },
+  {
+    slug: "te-deum",
+    titulo: "Hino de louvor e ação de graças",
+    latim: "Te Deum laudamus",
+    categoria: "Fundamentais",
+    nota: "Hino latino do século IV, entoado pela Igreja em ações de graças solenes e no fim do ano civil.",
+    paraQue: "Agradecer solenemente um bem recebido, pessoal ou comunitário.",
+    quando: "Em aniversários, no último dia do ano e em toda ocasião de gratidão pública.",
+    texto:
+      "A vós, ó Deus, louvamos; a vós, Senhor, confessamos. A vós, Pai eterno, adora toda a terra. A vós cantam os anjos e todas as potestades dos céus: Santo, Santo, Santo é o Senhor, Deus do universo. Os céus e a terra estão cheios da majestade de vossa glória. A vós louva o coro glorioso dos Apóstolos, a multidão admirável dos Profetas, o exército radiante dos Mártires; a vós proclama por toda a terra a santa Igreja. Vós sois o Rei da glória, ó Cristo, Filho eterno do Pai. Para libertar o homem não hesitastes em nascer da Virgem. Vencido o aguilhão da morte, abristes aos que creem o Reino dos céus. Salvai, Senhor, o vosso povo e abençoai a vossa herança. Guiai-nos e conduzi-nos à glória eterna. Dia por dia vos bendizemos e louvamos vosso nome para sempre. Em vós, Senhor, esperei: não serei confundido eternamente. Amém.",
+  },
+  {
+    slug: "ave-maris-stella",
+    titulo: "Ave, estrela do mar",
+    latim: "Ave maris stella",
+    categoria: "Marianas",
+    nota: "Hino mariano latino atestado desde o século IX, próprio das Vésperas nas festas de Nossa Senhora.",
+    paraQue: "Pedir a Maria orientação segura nas travessias difíceis da vida.",
+    quando: "Nas festas marianas e em tempos de incerteza.",
+    texto:
+      "Ave, estrela do mar, augusta Mãe de Deus e sempre Virgem, feliz porta do céu. Recebendo aquele Ave da boca de Gabriel, restabelece-nos na paz, mudando o nome de Eva. Rompe as cadeias dos culpados, traz luz aos cegos, afasta os nossos males e alcança-nos todo bem. Mostra que és Mãe: leve por ti as nossas preces aquele que, nascendo por nós, quis ser teu Filho. Virgem sem igual, mansa acima de todas, torna-nos livres de culpa, mansos e castos. Concede-nos vida pura, prepara-nos caminho seguro, para que, vendo Jesus, para sempre nos alegremos. Louvor a Deus Pai, glória a Cristo Altíssimo e ao Espírito Santo: aos três, uma só honra. Amém.",
+  },
+  {
+    slug: "stabat-mater",
+    titulo: "Estava a Mãe ao pé da cruz",
+    latim: "Stabat Mater dolorosa",
+    categoria: "Marianas",
+    nota: "Sequência medieval, atribuída ao franciscano Jacopone da Todi (século XIII), usada na memória de Nossa Senhora das Dores e na Via-Sacra.",
+    paraQue: "Unir a própria dor à compaixão de Maria junto à cruz.",
+    quando: "Nas sextas-feiras da Quaresma, na Via-Sacra e em 15 de setembro.",
+    texto:
+      "Estava a Mãe dolorosa, em lágrimas, junto à cruz onde pendia o seu Filho. Sua alma, gemendo, entristecida e aflita, foi atravessada pela espada. Ó quão triste e afligida esteve aquela bendita Mãe do Unigênito, que sofria e tremia ao contemplar as penas de seu Filho glorioso! Que homem não choraria ao ver a Mãe de Cristo em tamanha desolação? Ó Mãe, fonte de amor, faz-me sentir a força da tua dor, para que contigo eu chore. Faz que meu coração arda no amor de Cristo, meu Deus, para que eu lhe seja agradável. Santa Mãe, imprime em meu coração as feridas do Crucificado. Faz-me chorar contigo e compadecer-me do Crucificado enquanto eu viver. Quando meu corpo morrer, dá-me, por tua Mãe, ó Cristo, a palma da vitória. Amém.",
+  },
+  {
+    slug: "pange-lingua",
+    titulo: "Canta, ó língua, o mistério",
+    latim: "Pange lingua gloriosi",
+    categoria: "Eucarísticas",
+    nota: "Hino de Santo Tomás de Aquino (1264) para a festa de Corpus Christi; suas duas últimas estrofes formam o Tantum ergo.",
+    paraQue: "Professar a fé na presença real de Cristo na Eucaristia.",
+    quando: "Na procissão de Corpus Christi e na exposição do Santíssimo.",
+    texto:
+      "Canta, ó língua, o mistério do Corpo glorioso e do Sangue precioso, que o Rei das nações, fruto de nobre ventre, derramou como preço do mundo. Dado a nós, nascido para nós da Virgem sem mácula, viveu no mundo semeando a palavra e encerrou de modo admirável o tempo de sua morada. Na noite da última ceia, sentado com os irmãos, cumprida plenamente a lei antiga, deu-se em alimento com as próprias mãos aos doze. O Verbo feito carne faz do pão verdadeira carne, e o vinho torna-se sangue de Cristo; se o sentido não alcança, basta a fé para confirmar o coração sincero. Adoremos, prostrados, tão grande sacramento; ceda o rito antigo ao novo, e a fé supra o que os sentidos não podem ver. Ao Pai e ao Filho seja louvor e júbilo, saúde, honra, poder e bênção; e ao que de ambos procede, igual louvor. Amém.",
+  },
+  {
+    slug: "o-salutaris-hostia",
+    titulo: "Ó salutar Hóstia",
+    latim: "O salutaris Hostia",
+    categoria: "Eucarísticas",
+    nota: "Últimas estrofes do hino Verbum supernum prodiens, de Santo Tomás de Aquino, cantadas na exposição do Santíssimo.",
+    paraQue: "Adorar Cristo Eucarístico e pedir força na luta espiritual.",
+    quando: "No início da adoração ao Santíssimo Sacramento.",
+    texto:
+      "Ó salutar Hóstia, que abris a porta do céu: as guerras nos assaltam, dai-nos força, trazei auxílio. Ao Senhor uno e trino seja glória sempiterna; que ele nos dê na pátria a vida sem fim. Amém.",
+  },
+  {
+    slug: "panis-angelicus",
+    titulo: "Pão dos anjos",
+    latim: "Panis angelicus",
+    categoria: "Eucarísticas",
+    nota: "Estrofes do hino Sacris solemniis, de Santo Tomás de Aquino, para o Ofício de Corpus Christi.",
+    paraQue: "Admirar-se de que Deus se faça alimento dos pobres e pequenos.",
+    quando: "Na ação de graças depois da comunhão.",
+    texto:
+      "O pão dos anjos torna-se pão dos homens; o pão do céu põe fim às figuras antigas. Ó realidade admirável: come o Senhor o servo pobre, humilde e pequeno. A vós, Deus uno e trino, nós pedimos: visitai-nos, como vos adoramos; conduzi-nos por vossos caminhos até a luz que habitais. Amém.",
+  },
+  {
+    slug: "ave-verum-corpus",
+    titulo: "Ave, verdadeiro Corpo",
+    latim: "Ave verum Corpus",
+    categoria: "Eucarísticas",
+    nota: "Antífona eucarística do século XIV, tradicionalmente rezada na elevação e na comunhão.",
+    paraQue: "Adorar o Corpo nascido de Maria e imolado na cruz.",
+    quando: "Na elevação da Hóstia e depois de comungar.",
+    texto:
+      "Ave, verdadeiro Corpo nascido da Virgem Maria, que verdadeiramente padecestes e fostes imolado na cruz pelo homem; de cujo lado transpassado correu água e sangue: sede nosso alimento na provação da morte. Ó Jesus doce, ó Jesus piedoso, ó Jesus, Filho de Maria, tende piedade de mim. Amém.",
+  },
+  {
+    slug: "jesus-eu-confio-em-vos",
+    titulo: "Invocação da Divina Misericórdia",
+    categoria: "Penitenciais",
+    nota: "Jaculatória ligada à devoção difundida por Santa Faustina Kowalska e aprovada pela Igreja.",
+    paraQue: "Renovar a confiança na misericórdia divina em momentos de angústia ou culpa.",
+    quando: "Às três da tarde, hora da morte do Senhor, e sempre que faltar a paz.",
+    texto:
+      "Ó Sangue e Água que jorrastes do Coração de Jesus como fonte de misericórdia para nós, eu confio em Vós. Jesus, eu confio em Vós. Jesus, eu confio em Vós. Jesus, eu confio em Vós. Amém.",
+  },
+  {
+    slug: "oracao-de-fatima-do-rosario",
+    titulo: "Oração de Fátima",
+    categoria: "Marianas",
+    nota: "Oração transmitida pelos pastorinhos de Fátima em 1917 e habitualmente rezada ao fim de cada mistério do Rosário.",
+    paraQue: "Pedir perdão pelos pecados e a salvação de todos.",
+    quando: "Ao final de cada dezena do Rosário.",
+    texto:
+      "Ó meu Jesus, perdoai-nos e livrai-nos do fogo do inferno; levai as almas todas para o céu, principalmente as que mais precisarem de vossa misericórdia. Amém.",
+  },
+  {
+    slug: "tres-ave-marias",
+    titulo: "As três Ave-Marias",
+    categoria: "Marianas",
+    nota: "Prática devocional difundida a partir da Idade Média, recomendada por vários santos, em honra do poder, da sabedoria e da misericórdia recebidos por Maria.",
+    paraQue: "Pedir a Maria a graça de conservar a pureza de vida ao longo do dia.",
+    quando: "De manhã ao levantar e à noite antes de dormir.",
+    texto:
+      "Ó minha Senhora e minha Mãe, eu me ofereço todo a vós e, em prova de minha devoção, consagro-vos hoje meus olhos, meus ouvidos, minha boca, meu coração e todo o meu ser. Já que sou vosso, boa Mãe, guardai-me e defendei-me como coisa e propriedade vossa. Rezam-se então três Ave-Marias, pedindo pureza de corpo e de alma.",
+  },
+  {
+    slug: "salmo-23",
+    titulo: "O Senhor é meu pastor (Salmo 22/23)",
+    categoria: "Diárias",
+    nota: "Salmo davídico, um dos mais rezados pelos cristãos desde a antiguidade.",
+    paraQue: "Recobrar confiança quando falta segurança ou direção.",
+    quando: "Em momentos de medo, doença ou luto.",
+    texto:
+      "O Senhor é o meu pastor, nada me faltará. Em verdes pastagens me faz repousar, conduz-me a águas tranquilas e restaura as minhas forças. Guia-me pelos caminhos retos, por amor do seu nome. Ainda que eu atravesse o vale escuro, nada temerei, porque estás comigo: teu bordão e teu cajado me dão segurança. Preparas para mim uma mesa à vista de meus adversários, unges com óleo a minha cabeça, e minha taça transborda. Bondade e fidelidade me acompanharão todos os dias da minha vida, e habitarei na casa do Senhor por longos anos. Amém.",
+  },
+  {
+    slug: "salmo-91",
+    titulo: "Quem habita à sombra do Altíssimo (Salmo 90/91)",
+    categoria: "Proteção",
+    nota: "Salmo de confiança, rezado pela Igreja nas Completas do domingo.",
+    paraQue: "Pedir proteção contra todo perigo do corpo e da alma.",
+    quando: "Antes de dormir e em tempos de ameaça ou temor.",
+    texto:
+      "Quem habita à sombra do Altíssimo e mora à proteção do Onipotente diz ao Senhor: sois meu refúgio e minha cidadela, meu Deus, em quem confio. Ele te livrará do laço do caçador e da peste destruidora. Sob suas asas encontrarás refúgio, e sua fidelidade será teu escudo. Não temerás o terror da noite, nem a flecha que voa de dia. Nenhum mal te atingirá, porque ele deu ordem a seus anjos para que te guardem em todos os teus caminhos. Porque esperaste em mim, eu te salvarei; ao invocar meu nome, eu te responderei: estarei contigo na tribulação e te mostrarei a minha salvação. Amém.",
+  },
+  {
+    slug: "ladainha-do-espirito-santo",
+    titulo: "Ladainha do Espírito Santo",
+    categoria: "Litanias",
+    nota: "Ladainha de uso devocional aprovada para a piedade popular, rezada especialmente na novena de Pentecostes.",
+    paraQue: "Invocar os dons do Espírito Santo sobre a própria vida e sobre a Igreja.",
+    quando: "Entre a Ascensão e Pentecostes e antes de decisões importantes.",
+    texto:
+      "Senhor, tende piedade de nós. Cristo, tende piedade de nós. Senhor, tende piedade de nós. Espírito Santo, que procedeis do Pai e do Filho, — vinde a nós. Espírito do Senhor, que enchestes o mundo desde o princípio, — vinde a nós. Espírito de sabedoria e de entendimento, — vinde a nós. Espírito de conselho e de fortaleza, — vinde a nós. Espírito de ciência e de piedade, — vinde a nós. Espírito de temor do Senhor, — vinde a nós. Espírito de verdade, que nos guiais à verdade plena, — vinde a nós. Espírito consolador dos aflitos, — vinde a nós. Espírito que intercedeis por nós com gemidos inefáveis, — vinde a nós. Espírito de caridade derramado em nossos corações, — vinde a nós. Cordeiro de Deus, que tirais o pecado do mundo, enviai-nos o vosso Espírito. Amém.",
+  },
+  {
+    slug: "ladainha-do-santissimo-nome-de-jesus",
+    titulo: "Ladainha do Santíssimo Nome de Jesus",
+    categoria: "Litanias",
+    nota: "Ladainha de origem medieval, ligada à pregação de São Bernardino de Sena, aprovada para o culto público em 1886.",
+    paraQue: "Adorar o nome de Jesus, único em que há salvação.",
+    quando: "No mês de janeiro e em tempos de tentação.",
+    texto:
+      "Senhor, tende piedade de nós. Cristo, tende piedade de nós. Senhor, tende piedade de nós. Jesus, ouvi-nos. Jesus, atendei-nos. Jesus, Filho de Deus vivo, — tende piedade de nós. Jesus, esplendor do Pai, — tende piedade de nós. Jesus, rei da glória, — tende piedade de nós. Jesus, sol de justiça, — tende piedade de nós. Jesus, Filho da Virgem Maria, — tende piedade de nós. Jesus admirável, — tende piedade de nós. Jesus, Deus forte, — tende piedade de nós. Jesus, pai do século futuro, — tende piedade de nós. Jesus, pacientíssimo, — tende piedade de nós. Jesus, obedientíssimo, — tende piedade de nós. Jesus, manso e humilde de coração, — tende piedade de nós. Jesus, amante da castidade, — tende piedade de nós. Jesus, refúgio dos pobres, — tende piedade de nós. Jesus, bom pastor, — tende piedade de nós. Jesus, nossa vida e ressurreição, — tende piedade de nós. Cordeiro de Deus, que tirais o pecado do mundo, tende piedade de nós. Amém.",
+  },
+  {
+    slug: "oracao-pelos-sacerdotes",
+    titulo: "Oração pelos sacerdotes",
+    categoria: "Ocasiões",
+    paraQue: "Sustentar com a oração os que administram os sacramentos.",
+    quando: "Nas quintas-feiras, dia da instituição do sacerdócio, e na Missa.",
+    texto:
+      "Senhor Jesus, sumo e eterno Sacerdote, guardai os vossos sacerdotes na proteção de vosso Coração. Conservai puras as suas mãos que tocam cada dia o vosso Corpo santíssimo, puros os seus lábios que anunciam a vossa palavra, puro e desprendido o seu coração, marcado com o selo do vosso sacerdócio. Fazei que cresçam no amor por vós e afastai deles o contágio do mundo. Dai-lhes, com o poder de transformar o pão e o vinho, a força de transformar corações. Abençoai os seus trabalhos e conduzi-os um dia ao rebanho eterno. Amém.",
+  },
+  {
+    slug: "oracao-pelos-governantes",
+    titulo: "Oração pelos governantes",
+    categoria: "Ocasiões",
+    nota: "Responde à recomendação de 1Tm 2, 1-2, de orar por reis e por todos os que exercem autoridade.",
+    paraQue: "Pedir retidão, prudência e serviço ao bem comum a quem governa.",
+    quando: "Em tempos de eleição, crise pública ou decisões que afetam muitos.",
+    texto:
+      "Ó Deus, de quem procede toda autoridade legítima, iluminai os que governam a nossa nação: dai-lhes retidão de intenção, coragem para servir o bem comum, respeito pela vida e pela dignidade de cada pessoa e desprendimento de todo interesse próprio. Livrai-nos da violência, da corrupção e da mentira, e concedei ao nosso povo a paz que nasce da justiça. Por Cristo, nosso Senhor. Amém.",
+  },
+  {
+    slug: "oracao-pelos-migrantes",
+    titulo: "Oração pelos migrantes e refugiados",
+    categoria: "Ocasiões",
+    paraQue: "Interceder por quem deixou a própria terra em busca de vida e segurança.",
+    quando: "No Dia Mundial do Migrante e do Refugiado e ao acolher alguém de fora.",
+    texto:
+      "Senhor Jesus, que fostes menino refugiado no Egito com Maria e José, olhai por todos os que hoje deixam sua terra por causa da guerra, da fome ou da perseguição. Guardai-os nos caminhos perigosos, reuni as famílias separadas, consolai os que perderam alguém e abri em nós o coração para acolher sem medo. Que ninguém seja tratado como estrangeiro na casa do Pai. Amém.",
+  },
+  {
+    slug: "oracao-pelo-batismo-de-um-filho",
+    titulo: "Oração pelo batismo de um filho",
+    categoria: "Ocasiões",
+    paraQue: "Agradecer o dom do batismo e assumir a responsabilidade da educação na fé.",
+    quando: "No dia do batismo e em cada aniversário dele.",
+    texto:
+      "Pai santo, que pelo batismo tornastes este filho vossa criatura nova e membro de vossa Igreja, dai-nos a graça de sermos, para ele, os primeiros mestres da fé. Que nossa casa lhe ensine a rezar, nossa palavra lhe mostre a verdade e nossa vida lhe torne crível o Evangelho. Guardai nele a veste branca da graça até o dia em que vos contemple face a face. Por Cristo, nosso Senhor. Amém.",
+  },
+  {
+    slug: "bencao-da-casa",
+    titulo: "Bênção da casa",
+    categoria: "Ocasiões",
+    nota: "Fórmula de bênção que qualquer fiel pode rezar; a bênção solene com aspersão pertence ao ministro ordenado, conforme o Ritual.",
+    paraQue: "Colocar o lar sob a proteção de Deus.",
+    quando: "Na mudança para uma nova casa e no tempo do Natal e da Epifania.",
+    texto:
+      "Senhor Deus, visitai esta casa e afastai dela todas as ciladas do inimigo. Habitem aqui os vossos anjos, que nos guardem em paz, e desça sobre nós, sobre esta família e sobre tudo o que aqui vivemos a vossa bênção. Fazei desta casa lugar de perdão, de trabalho honesto, de acolhida ao visitante e de oração. Por Cristo, nosso Senhor. Amém.",
+  },
+  {
+    slug: "oracao-do-casal",
+    titulo: "Oração dos esposos",
+    categoria: "Ocasiões",
+    paraQue: "Pedir fidelidade, paciência e alegria na vida conjugal.",
+    quando: "No aniversário de casamento e à noite, juntos.",
+    texto:
+      "Senhor, que quisestes elevar a união dos esposos à dignidade de sacramento, dai-nos amar-nos como vós amais a vossa Igreja. Ensinai-nos a pedir perdão antes que a noite caia, a guardar a confiança que nos une, a carregar juntos o que é pesado e a repartir juntos o que é bom. Que nosso amor seja fiel na saúde e na doença, fecundo em obras de caridade e sinal visível da vossa fidelidade. Amém.",
+  },
+  {
+    slug: "oracao-pela-conversao-dos-pecadores",
+    titulo: "Oração pela conversão dos pecadores",
+    categoria: "Penitenciais",
+    paraQue: "Interceder por quem se afastou de Deus, inclusive por si mesmo.",
+    quando: "Na Quaresma, nas sextas-feiras e ao rezar por alguém amado que se afastou.",
+    texto:
+      "Ó Deus, que não quereis a morte do pecador, mas que se converta e viva, olhai com misericórdia todos os que hoje estão longe de vós — e primeiro a mim. Tocai os corações endurecidos, devolvei a esperança aos que se julgam perdidos, dai coragem aos que temem confessar-se e sustentai os que recomeçam. Que ninguém morra sem ter conhecido a vossa misericórdia. Por Cristo, nosso Senhor. Amém.",
+  },
+  {
+    slug: "oracao-de-santo-agostinho-tarde-te-amei",
+    titulo: "Tarde vos amei — Santo Agostinho",
+    categoria: "Fundamentais",
+    nota: "Passagem das Confissões (livro X, 27), obra do século IV, em domínio público.",
+    paraQue: "Reconhecer que Deus antecede todas as nossas buscas.",
+    quando: "Na oração pessoal e depois da confissão.",
+    texto:
+      "Tarde vos amei, ó beleza tão antiga e tão nova, tarde vos amei! Eis que estáveis dentro de mim e eu estava fora, e fora vos procurava; deformado, lançava-me sobre as coisas belas que criastes. Estáveis comigo e eu não estava convosco. Retinham-me longe de vós as coisas que não existiriam se não existissem em vós. Chamastes e clamastes, e rompestes a minha surdez; brilhastes e dissipastes a minha cegueira; exalastes o vosso perfume e eu respirei, e agora suspiro por vós. Tocastes-me, e ardi de desejo da vossa paz. Amém.",
+  },
+  {
+    slug: "oracao-de-sao-tomas-pelo-estudo",
+    titulo: "Oração do estudante — Santo Tomás de Aquino",
+    latim: "Creator ineffabilis",
+    categoria: "Ocasiões",
+    nota: "Oração atribuída a Santo Tomás de Aquino, tradicionalmente rezada antes do estudo.",
+    paraQue: "Pedir luz para compreender e retidão para usar bem o que se aprende.",
+    quando: "Antes de estudar, escrever ou ensinar.",
+    texto:
+      "Criador inefável, que dos tesouros de vossa sabedoria constituístes as ordens dos anjos e dispusestes admiravelmente o universo: vós que sois chamado a verdadeira fonte da luz e da sabedoria, dignai-vos infundir sobre a escuridão do meu entendimento um raio de vossa claridade. Dai-me agudeza para compreender, capacidade para retermos, método e facilidade para aprender, sutileza para interpretar e graça abundante para falar. Guiai o início do meu trabalho, orientai o seu progresso e coroai o seu fim. Por Cristo, nosso Senhor. Amém.",
+  },
+  {
+    slug: "oracao-de-newman-pela-luz",
+    titulo: "Conduz-me, luz benigna — São John Henry Newman",
+    categoria: "Fundamentais",
+    nota: "Versão em prosa do poema Lead, Kindly Light (1833), de São John Henry Newman; texto em domínio público.",
+    paraQue: "Pedir a Deus o passo seguinte quando o caminho inteiro não se vê.",
+    quando: "Em decisões difíceis e em tempos de escuridão interior.",
+    texto:
+      "Conduz-me, luz benigna, entre a treva que me cerca: conduz-me tu adiante. Não peço ver o horizonte distante; basta-me um passo. Não fui sempre assim, nem sempre rezei que me conduzisses: escolhia e via o meu caminho; mas agora, conduz-me tu. Amava o dia brilhante e, apesar do temor, o orgulho governava a minha vontade: não te lembres dos anos passados. Tanto tempo tua bondade me abençoou: ela me conduzirá ainda, por charneca e pântano, por rocha e torrente, até que a noite passe e amanheçam os rostos dos anjos que amei e perdi por um tempo. Amém.",
+  },
+  {
+    slug: "sao-cristovao",
+    titulo: "A São Cristóvão",
+    categoria: "Aos Santos",
+    nota: "Mártir de culto antigo no Oriente; os episódios sobre a travessia do rio pertencem à tradição hagiográfica medieval.",
+    paraQue: "Pedir proteção nas estradas e prudência no volante.",
+    quando: "Antes de viagens e no dia 25 de julho.",
+    texto:
+      "Glorioso São Cristóvão, que carregastes Cristo no caminho, alcançai-nos das mãos de Deus prudência e serenidade nas estradas. Guardai-nos dos acidentes, dos excessos e da pressa que mata; que nossa viagem não traga dano a ninguém e que Cristo, verdadeiro peso e verdadeira alegria, seja levado por nós a toda parte. Amém.",
+  },
+  {
+    slug: "sao-sebastiao",
+    titulo: "A São Sebastião",
+    categoria: "Aos Santos",
+    nota: "Mártir romano do século III, mencionado na Depositio martyrum de 354; padroeiro do Rio de Janeiro.",
+    paraQue: "Pedir fortaleza na perseguição e proteção contra pestes e violências.",
+    quando: "Em 20 de janeiro e em tempos de epidemia ou insegurança.",
+    texto:
+      "Ó glorioso São Sebastião, soldado de Cristo, que preferistes as flechas dos homens à traição da fé: alcançai-nos coragem para confessar o Evangelho no meio hostil, paciência na dor e fortaleza nas provações. Defendei nossa cidade das pestes, das guerras e da violência, e obtende-nos a graça de perseverar até o fim. Amém.",
+  },
+  {
+    slug: "santa-luzia",
+    titulo: "A Santa Luzia",
+    categoria: "Aos Santos",
+    nota: "Mártir de Siracusa venerada desde o século IV e nomeada no Canon Romano.",
+    paraQue: "Pedir a saúde dos olhos e a luz interior da fé.",
+    quando: "Em 13 de dezembro e em doenças da visão.",
+    texto:
+      "Santa Luzia, virgem e mártir, que ofereceste a vida antes que a luz da fé: obtende-nos a saúde dos olhos do corpo e, sobretudo, a clareza dos olhos da alma, para vermos o bem e escolhê-lo. Iluminai os que caminham na escuridão da dúvida e sustentai os que perdem a vista. Amém.",
+  },
+  {
+    slug: "oracao-pela-patria",
+    titulo: "Oração pela pátria",
+    categoria: "Ocasiões",
+    paraQue: "Confiar a Deus a vida do próprio povo.",
+    quando: "Em datas nacionais e em tempos de divisão social.",
+    texto:
+      "Senhor, Deus de todas as nações, abençoai o nosso país. Curai as suas feridas de desigualdade e violência, dai pão e trabalho a quem falta, escola às crianças, cuidado aos doentes e voz aos esquecidos. Reconciliai os que a política dividiu, sustentai os que servem com honestidade e fazei-nos um povo de irmãos, capaz de reconhecer em cada rosto a vossa imagem. Por Cristo, nosso Senhor. Amém.",
+  },
 ];
 
 
