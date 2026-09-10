@@ -7,6 +7,12 @@ export type Introducao = {
   temas: string[]; // 3-5 temas teológicos centrais
   passagens: string[]; // 2-4 passagens-chave (ref + breve glosa)
   cristo: string; // como o livro aponta para Cristo (sentido pleno)
+  /** Divisão interna do livro, com faixas de capítulos. */
+  estrutura?: string[];
+  /** Uso do livro na liturgia da Igreja. */
+  liturgia?: string;
+  /** Dificuldades frequentes de leitura e como a Igreja as lê. */
+  dificuldades?: string[];
 };
 
 export const INTRODUCOES: Record<string, Introducao> = {
