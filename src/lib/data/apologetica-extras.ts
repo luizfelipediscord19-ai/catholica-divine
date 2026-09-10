@@ -47,17 +47,6 @@ export const OBJECOES_ADICIONAIS: Objecao[] = [
   },
   // ===== ESCRITURA =====
   {
-    slug: "biblia-cheia-de-contradicoes",
-    categoria: "Escritura",
-    objecao: "A Bíblia está cheia de contradições, logo não é confiável.",
-    resposta: [
-      "A Escritura reúne setenta e três livros de gêneros diferentes — história, poesia, lei, profecia, carta — escritos ao longo de mais de mil anos; ler um salmo como manual científico produz contradições artificiais.",
-      "Divergências entre relatos paralelos, como a ordem dos episódios nos Evangelhos, refletem intenções teológicas distintas dos autores, não erro sobre o essencial; a crítica textual mostra transmissão notavelmente estável.",
-      "A Igreja ensina a interpretar cada passagem dentro do conjunto da Escritura, da Tradição viva e da analogia da fé, exatamente para não isolar versículos.",
-    ],
-    fontes: ["Dei Verbum, nn. 11-13", "CIC §§ 105-114", "Divino Afflante Spiritu, nn. 33-40"],
-  },
-  {
     slug: "igreja-escondeu-a-biblia",
     categoria: "Escritura",
     objecao: "A Igreja proibia o povo de ler a Bíblia.",
@@ -73,18 +62,6 @@ export const OBJECOES_ADICIONAIS: Objecao[] = [
       "Enchiridion Indulgentiarum, conc. 30",
     ],
   },
-  {
-    slug: "sola-scriptura",
-    categoria: "Escritura",
-    objecao: "Só a Escritura é regra de fé; a Tradição é invenção humana.",
-    resposta: [
-      "A própria Escritura manda conservar as tradições recebidas por palavra e por carta, e chama a Igreja de coluna e sustento da verdade.",
-      "O cânon dos livros inspirados não está listado em nenhum livro bíblico: quem aceita apenas a Escritura precisa de uma autoridade externa a ela para saber quais livros são Escritura.",
-      "A Igreja não coloca a Tradição acima da Palavra de Deus: ensina que Escritura e Tradição brotam da mesma fonte e que o Magistério as serve, não as domina.",
-    ],
-    fontes: ["2Ts 2,15", "1Tm 3,15", "Dei Verbum, nn. 9-10", "CIC §§ 80-84, 120"],
-  },
-  // ===== IGREJA E PAPADO =====
   {
     slug: "infalibilidade-papal",
     categoria: "Igreja e Papado",
@@ -129,17 +106,6 @@ export const OBJECOES_ADICIONAIS: Objecao[] = [
     ],
   },
   // ===== SACRAMENTOS =====
-  {
-    slug: "batismo-de-criancas",
-    categoria: "Sacramentos",
-    objecao: "Batizar bebês é errado: ninguém pode decidir a fé por outro.",
-    resposta: [
-      "O Novo Testamento registra o batismo de casas inteiras, expressão que no mundo antigo incluía crianças e servos, e a prática é atestada como apostólica desde o século II-III.",
-      "O batismo não substitui a decisão futura: inicia uma vida que deverá ser assumida pessoalmente, do mesmo modo que pais transmitem língua, cultura e cuidados médicos sem esperar o consentimento do filho.",
-      "A Igreja exige fundada esperança de educação cristã; sem ela, o batismo de criança deve ser adiado.",
-    ],
-    fontes: ["At 16,15.33", "1Cor 1,16", "CIC §§ 1250-1252, 1282", "CDC c. 868"],
-  },
   {
     slug: "confissao-ao-padre",
     categoria: "Sacramentos",
