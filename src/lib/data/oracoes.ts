@@ -3,6 +3,8 @@
  * Textos em português (uso corrente no Brasil) e, quando clássicos, o incipit latino.
  */
 
+import { ORACOES_ADICIONAIS } from "./oracoes-extras";
+
 export type CategoriaOracao =
   | "Fundamentais"
   | "Marianas"
@@ -44,8 +46,11 @@ export const CATEGORIAS_ORACAO: CategoriaOracao[] = [
   "Defuntos",
 ];
 
+export const ORACOES: Oracao[] = [...ORACOES_NUCLEO, ...ORACOES_ADICIONAIS];
 
-export const ORACOES: Oracao[] = [
+
+
+const ORACOES_NUCLEO: Oracao[] = [
   // ===== FUNDAMENTAIS =====
   {
     slug: "sinal-da-cruz",
