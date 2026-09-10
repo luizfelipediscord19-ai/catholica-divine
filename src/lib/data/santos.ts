@@ -1200,19 +1200,6 @@ export const SANTOS: Santo[] = [
     frase: "Não, é pecado; Deus não quer.",
   },
   {
-    slug: "santa-monica-2",
-    nome: "Santa Mônica",
-    titulo: "Mãe de Santo Agostinho",
-    data: "27/08",
-    seculo: "IV",
-    padroeiro: "Mães, esposas cristãs",
-    resumo: "Mãe de Santo Agostinho, exemplo de fé e oração paciente.",
-    biografia:
-      "Esta entrada é redundante e deve ser ignorada — usar 'santa-monica'.",
-    virtudes: ["Oração", "Paciência"],
-    frase: "Filho de tantas lágrimas não há de perder-se.",
-  },
-  {
     slug: "ns-aparecida",
     nome: "Nossa Senhora Aparecida",
     titulo: "Padroeira do Brasil",
