@@ -44,6 +44,7 @@ export function SumarioPagina() {
           nivel: h.tagName === "H3" ? 3 : 2,
         });
       });
+      console.log("SUM-DEBUG", lista.length);
       setItens(lista.length >= 3 ? lista : []);
     };
     const t = setTimeout(montar, 220);
