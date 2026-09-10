@@ -12,16 +12,6 @@ import type { Oracao } from "./oracoes";
 export const ORACOES_ADICIONAIS: Oracao[] = [
   // ===== FUNDAMENTAIS =====
   {
-    slug: "oferecimento-do-dia",
-    titulo: "Oferecimento do dia",
-    categoria: "Fundamentais",
-    nota: "Fórmula difundida pelo Apostolado da Oração no séc. XIX; redação própria do portal.",
-    paraQue: "Colocar cada trabalho, alegria e dor do dia dentro do sacrifício de Cristo.",
-    quando: "Ao acordar, antes de qualquer tarefa.",
-    texto:
-      "Senhor Jesus, no começo deste dia eu vos ofereço tudo o que ele trouxer: o meu trabalho e o meu descanso, as pessoas que vou encontrar, o que me alegrar e o que me pesar. Unido ao vosso sacrifício, que nada seja perdido: nem o cansaço, nem o silêncio, nem a espera. Dai-me fazer bem as coisas pequenas e recomeçar sem tristeza quando eu falhar. Amém.",
-  },
-  {
     slug: "ato-de-humildade",
     titulo: "Ato de humildade",
     categoria: "Fundamentais",
@@ -44,17 +34,6 @@ export const ORACOES_ADICIONAIS: Oracao[] = [
 
   // ===== MARIANAS =====
   {
-    slug: "ave-maris-stella",
-    titulo: "Ave, Estrela do Mar",
-    latim: "Ave maris stella",
-    categoria: "Marianas",
-    nota: "Hino latino do séc. IX, usado nas Vésperas marianas; tradução própria em prosa.",
-    paraQue: "Pedir a proteção de Maria em travessias difíceis.",
-    quando: "Em viagens, mudanças e tempos de incerteza.",
-    texto:
-      "Salve, Estrela do mar, Mãe santa de Deus e sempre Virgem, porta feliz do céu. Recebendo aquele Ave dos lábios de Gabriel, firmai-nos na paz e desfazei o nome de Eva. Rompei as cadeias dos culpados, dai luz aos cegos, afastai de nós os males e alcançai-nos todos os bens. Mostrai-vos Mãe: aquele que por nós se fez vosso Filho acolha por vós as nossas preces. Virgem única entre todas, mansa acima de todas, livrai-nos das culpas e fazei-nos mansos e castos. Dai-nos vida pura, preparai um caminho seguro, para que, vendo Jesus, nos alegremos para sempre. Louvor a Deus Pai, glória a Cristo Altíssimo e ao Espírito Santo: aos três, uma só honra. Amém.",
-  },
-  {
     slug: "alma-redemptoris-mater",
     titulo: "Ó Mãe Redentora",
     latim: "Alma Redemptoris Mater",
@@ -75,27 +54,6 @@ export const ORACOES_ADICIONAIS: Oracao[] = [
     quando: "No tempo comum de fevereiro e na Quaresma, ao fim do dia.",
     texto:
       "Salve, Rainha dos céus, salve, Senhora dos anjos, raiz santa e porta pela qual a luz nasceu para o mundo. Alegra-te, Virgem gloriosa, bela acima de todas: salve, ó cheia de beleza, e roga a Cristo por nós. Amém.",
-  },
-  {
-    slug: "regina-caeli",
-    titulo: "Rainha do Céu, alegrai-vos",
-    latim: "Regina caeli",
-    categoria: "Marianas",
-    nota: "Antífona pascal que substitui o Angelus no tempo da Páscoa; tradução própria.",
-    paraQue: "Unir-se à alegria de Maria pela Ressurreição.",
-    quando: "Do Domingo de Páscoa a Pentecostes, em lugar do Angelus.",
-    texto:
-      "Rainha do céu, alegrai-vos, aleluia! Porque aquele que merecestes trazer em vosso seio, aleluia, ressuscitou como havia dito, aleluia. Rogai por nós a Deus, aleluia. Alegrai-vos e exultai, ó Virgem Maria, aleluia, porque o Senhor ressuscitou verdadeiramente, aleluia. Ó Deus, que vos alegrais em dar ao mundo a vida pela ressurreição de vosso Filho, concedei-nos, pela intercessão da Virgem Maria, alcançar as alegrias da vida eterna. Por Cristo, nosso Senhor. Amém.",
-  },
-  {
-    slug: "tres-ave-marias",
-    titulo: "As três Ave-Marias",
-    categoria: "Marianas",
-    nota: "Prática difundida por Santo Antônio Maria Claret e por São Leonardo de Porto Maurício.",
-    paraQue: "Pedir a pureza do corpo e da alma sob a proteção de Maria.",
-    quando: "Ao levantar e ao deitar, três Ave-Marias com esta jaculatória final.",
-    texto:
-      "Três vezes: Ave, Maria, cheia de graça, o Senhor é contigo; bendita és tu entre as mulheres e bendito é o fruto do teu ventre, Jesus. Santa Maria, Mãe de Deus, rogai por nós, pecadores, agora e na hora da nossa morte. Amém. Ao fim: Por vossa Imaculada Conceição, ó Maria, guardai puro o meu corpo e santa a minha alma.",
   },
   {
     slug: "oracao-nossa-senhora-do-carmo",
@@ -133,17 +91,6 @@ export const ORACOES_ADICIONAIS: Oracao[] = [
 
   // ===== EUCARÍSTICAS =====
   {
-    slug: "adoro-te-devote",
-    titulo: "Eu vos adoro devotamente",
-    latim: "Adoro te devote",
-    categoria: "Eucarísticas",
-    nota: "Hino atribuído a Santo Tomás de Aquino (séc. XIII); tradução própria em prosa.",
-    paraQue: "Adorar Cristo presente sob os sinais do pão e do vinho.",
-    quando: "Na adoração eucarística e depois da comunhão.",
-    texto:
-      "Eu vos adoro devotamente, Deus escondido, que verdadeiramente vos oculta sob estas figuras. A vós se rende todo o meu coração, porque, contemplando-vos, tudo em mim se reconhece pequeno. A vista, o tato e o gosto se enganam aqui; só pelo ouvido se crê com firmeza. Creio tudo o que disse o Filho de Deus: nada é mais verdadeiro do que esta palavra da verdade. Na cruz escondia-se só a divindade; aqui esconde-se também a humanidade. Crendo e confessando ambas, peço o que pediu o ladrão arrependido. Não vejo as chagas como Tomé, mas confesso que sois meu Deus: fazei que eu creia sempre mais em vós, que espere em vós e que vos ame. Ó memorial da morte do Senhor, pão vivo que dais a vida ao homem, concedei que a minha alma viva de vós e que em vós encontre sempre o seu sabor. Jesus, que agora vejo velado, quando será que se cumprirá o que tanto desejo: ver-vos face a face e ser feliz na visão da vossa glória? Amém.",
-  },
-  {
     slug: "anima-christi",
     titulo: "Alma de Cristo",
     latim: "Anima Christi",
@@ -153,16 +100,6 @@ export const ORACOES_ADICIONAIS: Oracao[] = [
     quando: "Na ação de graças depois da Missa.",
     texto:
       "Alma de Cristo, santificai-me. Corpo de Cristo, salvai-me. Sangue de Cristo, embriagai-me. Água do lado de Cristo, lavai-me. Paixão de Cristo, fortalecei-me. Ó bom Jesus, ouvi-me. Dentro das vossas chagas, escondei-me. Não permitais que eu me separe de vós. Do inimigo maligno, defendei-me. Na hora da minha morte, chamai-me e mandai-me ir a vós, para que com os vossos santos eu vos louve por todos os séculos. Amém.",
-  },
-  {
-    slug: "comunhao-espiritual",
-    titulo: "Comunhão espiritual",
-    categoria: "Eucarísticas",
-    nota: "Fórmula atribuída a Santo Afonso Maria de Ligório (séc. XVIII).",
-    paraQue: "Unir-se a Cristo quando não é possível comungar sacramentalmente.",
-    quando: "Em doença, viagem, impedimento ou fora da Missa.",
-    texto:
-      "Meu Jesus, creio que estais presente no Santíssimo Sacramento. Amo-vos sobre todas as coisas e desejo receber-vos na minha alma. Como não posso agora receber-vos sacramentalmente, vinde ao menos espiritualmente ao meu coração. Como se já viesses, eu vos abraço e me uno inteiramente a vós; não permitais que eu me separe de vós. Amém.",
   },
   {
     slug: "o-sacrum-convivium",
@@ -177,17 +114,6 @@ export const ORACOES_ADICIONAIS: Oracao[] = [
   },
 
   // ===== PENITENCIAIS =====
-  {
-    slug: "salmo-51-miserere",
-    titulo: "Salmo 51 — Misericórdia, meu Deus",
-    latim: "Miserere mei, Deus",
-    categoria: "Penitenciais",
-    nota: "Salmo penitencial rezado nas Laudes de toda sexta-feira; tradução própria do texto hebraico e da Vulgata.",
-    paraQue: "Reconhecer o pecado e pedir um coração novo.",
-    quando: "Antes da confissão, nas sextas-feiras e na Quaresma.",
-    texto:
-      "Tende piedade de mim, ó Deus, segundo a vossa bondade; pela vossa grande misericórdia, apagai o meu delito. Lavai-me inteiramente da minha culpa e purificai-me do meu pecado, porque eu reconheço a minha falta e o meu pecado está sempre diante de mim. Contra vós, só contra vós, pequei, e fiz o que é mau aos vossos olhos. Criai em mim, ó Deus, um coração puro, e renovai no meu íntimo um espírito firme. Não me afasteis da vossa presença nem retireis de mim o vosso Espírito santo. Devolvei-me a alegria da salvação e sustentai-me com espírito generoso. Senhor, abri os meus lábios, e a minha boca anunciará o vosso louvor. Sacrifício não vos agrada; o sacrifício que vos ofereço é um coração contrito: um coração arrependido e humilhado vós não desprezais. Amém.",
-  },
   {
     slug: "oracao-antes-da-confissao",
     titulo: "Oração antes da confissão",
@@ -263,17 +189,6 @@ export const ORACOES_ADICIONAIS: Oracao[] = [
     quando: "Antes de estudar, escrever ou ensinar.",
     texto:
       "Criador inefável, fonte de toda luz e de toda sabedoria, derramai sobre a escuridão da minha inteligência um raio da vossa claridade. Dai-me agudeza para compreender, memória para retinir o que aprendo, método e facilidade no estudo, precisão ao interpretar e graça abundante ao falar. Ensinai-me a começar, guiai-me no percurso e levai a obra ao seu fim. Que eu estude não para brilhar, mas para servir à verdade. Amém.",
-  },
-  {
-    slug: "bencao-da-mesa",
-    titulo: "Bênção da mesa",
-    latim: "Benedic, Domine",
-    categoria: "Diárias",
-    nota: "Fórmula tradicional latina; tradução própria, com ação de graças final.",
-    paraQue: "Reconhecer que o alimento é dom e lembrar quem não o tem.",
-    quando: "Antes e depois das refeições.",
-    texto:
-      "Antes: Abençoai, Senhor, a nós e a estes alimentos que da vossa bondade vamos receber, por Cristo, nosso Senhor. Amém. Dai pão a quem tem fome e fome de justiça a nós, que temos pão. Depois: Nós vos damos graças, Deus todo-poderoso, por todos os vossos benefícios, vós que viveis e reinais para sempre. Amém.",
   },
   {
     slug: "exame-de-consciencia-noturno",
