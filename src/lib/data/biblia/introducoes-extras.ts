@@ -98,7 +98,8 @@ export const DETALHES_LIVROS: Record<string, Partial<Introducao>> = {
       "8–10: caminho para Jerusalém e três anúncios da Paixão",
       "11–16: Jerusalém, paixão e ressurreição",
     ],
-    liturgia: "Evangelho do ano B do ciclo dominical; é o mais antigo dos quatro, escrito por volta de 65-70.",
+    liturgia:
+      "Evangelho do ano B do ciclo dominical; é o mais antigo dos quatro, escrito por volta de 65-70.",
     dificuldades: [
       "O chamado segredo messiânico — Jesus pede silêncio sobre sua identidade — protege a revelação de um messianismo político; só sob a cruz um homem o confessa Filho de Deus.",
       "O final longo (16,9-20) tem atestação textual mais fraca, mas é canônico e inspirado, como confirmou o Concílio de Trento.",
@@ -152,7 +153,8 @@ export const DETALHES_LIVROS: Record<string, Partial<Introducao>> = {
       "9–11: o mistério de Israel",
       "12–16: exortações concretas",
     ],
-    liturgia: "Lida no tempo comum dos anos ímpares e em grande parte da Quaresma e do tempo pascal do ano A.",
+    liturgia:
+      "Lida no tempo comum dos anos ímpares e em grande parte da Quaresma e do tempo pascal do ano A.",
     dificuldades: [
       "A justificação pela fé, em Paulo, não exclui as obras da caridade: o mesmo apóstolo afirma que a fé age pelo amor (Gl 5,6), e Trento precisou o sentido católico.",
       "Os capítulos sobre a predestinação afirmam a primazia absoluta da graça, não uma condenação decidida de antemão: Deus quer que todos se salvem (1Tm 2,4).",
