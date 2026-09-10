@@ -1,3 +1,5 @@
+import { SANTOS_ADICIONAIS } from "./santos-extras";
+
 export type Santo = {
   slug: string;
   nome: string;
@@ -15,7 +17,7 @@ export type Santo = {
 // Biografias aprofundadas para todos os santos da lista.
 // Slugs gerados a partir do nome exibido (mesma normalização do slugify),
 // para casar com SANTOS_LISTA. O findRico também aceita variações sem prefixo.
-export const SANTOS: Santo[] = [
+const SANTOS_NUCLEO: Santo[] = [
   {
     slug: "sao-pedro",
     nome: "São Pedro",
@@ -2611,6 +2613,9 @@ export const SANTOS: Santo[] = [
     frase: "Deixai que Deus vos leve: basta não resistir.",
   },
 ];
+
+export const SANTOS: Santo[] = [...SANTOS_NUCLEO, ...SANTOS_ADICIONAIS];
+
 
 export function getSanto(slug: string) {
   return SANTOS.find((s) => s.slug === slug);
