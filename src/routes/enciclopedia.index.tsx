@@ -83,6 +83,33 @@ function EnciclopediaPage() {
           </label>
         </section>
 
+        <section id="paginas-tematicas" className="relative z-[1] mt-16 scroll-mt-28">
+          <h2 className="title-section text-center text-foreground">Páginas temáticas</h2>
+          <p className="body-base mx-auto mt-4 measure text-center text-muted-foreground">
+            Quatro percursos completos, com sumário lateral e impressão em PDF colorido ou em preto
+            e branco.
+          </p>
+          <div className="mt-8 grid gap-px border-y border-gold/15 bg-gold/15 lg:grid-cols-2">
+            {TEMAS_ENCICLOPEDIA.map((tema) => (
+              <Link
+                key={tema.slug}
+                to="/enciclopedia/$tema"
+                params={{ tema: tema.slug }}
+                className="group bg-background p-card transition-premium hover:bg-card/70"
+              >
+                <p className="kicker">{tema.kicker}</p>
+                <h3 className="title-card mt-2 text-foreground group-hover:text-gold">
+                  {tema.nome}
+                </h3>
+                <p className="body-sm mt-3 text-muted-foreground">{tema.resumo}</p>
+                <span className="label-btn mt-4 inline-flex items-center gap-2 text-gold">
+                  Abrir tema <ArrowRight className="size-4" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </section>
+
         <section className="relative z-[1] mt-16 grid gap-px border-y border-gold/15 bg-gold/15 lg:grid-cols-2">
           {verbetes.map((verbete) => (
             <article
