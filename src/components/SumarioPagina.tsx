@@ -21,6 +21,7 @@ export function SumarioPagina() {
   useEffect(() => {
     setAberto(false);
     const montar = () => {
+      console.log("SUM-START", !!document.getElementById("conteudo"));
       const raiz = document.getElementById("conteudo");
       if (!raiz || raiz.querySelector(".reading-mode")) {
         setItens([]);
