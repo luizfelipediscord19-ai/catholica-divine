@@ -236,6 +236,20 @@ const RAW: { nome: string; data: string; body: string }[] = [
   { nome: "São Columbano", data: "23 de novembro", body: "Monge irlandês que fundou Luxeuil e Bobbio; um dos pais da Europa." },
   { nome: "São Edmundo Campion", data: "1 de dezembro", body: "Orador de Oxford e jesuíta, executado em Tyburn em 1581." },
   { nome: "Santa Bárbara", data: "4 de dezembro", body: "Mártir de culto antigo, invocada nas tempestades e por mineiros." },
+  { nome: "São Clemente Romano", data: "23 de novembro", body: "Terceiro sucessor de Pedro, autor da Carta aos Coríntios, o mais antigo escrito cristão fora do Novo Testamento." },
+  { nome: "Santas Perpétua e Felicidade", data: "7 de março", body: "Matrona e escrava martirizadas juntas em Cartago em 203; seu diário de prisão é documento raro da Igreja antiga." },
+  { nome: "São Cornélio", data: "16 de setembro", body: "Papa mártir que reconciliou os cristãos caídos na perseguição, contra o rigorismo de Novaciano." },
+  { nome: "São Máximo, o Confessor", data: "13 de agosto", body: "Monge bizantino mutilado e exilado por defender a verdadeira vontade humana de Cristo." },
+  { nome: "São João Clímaco", data: "30 de março", body: "Abade do Sinai, autor da Escada do Paraíso, clássico do combate espiritual." },
+  { nome: "Santo Antônio Maria Zacarias", data: "5 de julho", body: "Médico e sacerdote, fundador dos Barnabitas e promotor das Quarenta Horas." },
+  { nome: "Santo Antônio Maria Claret", data: "24 de outubro", body: "Tecelão catalão, arcebispo de Santiago de Cuba, fundador dos claretianos e da imprensa católica popular." },
+  { nome: "São José de Calasanz", data: "25 de agosto", body: "Abriu em Roma a primeira escola pública e gratuita da Europa." },
+  { nome: "Santa Luísa de Marillac", data: "9 de maio", body: "Cofundadora, com São Vicente de Paulo, das Filhas da Caridade." },
+  { nome: "Santa Joana Jugan", data: "30 de agosto", body: "Fundadora das Irmãzinhas dos Pobres, dedicada aos idosos abandonados." },
+  { nome: "São José Bento Cottolengo", data: "30 de abril", body: "Fundador em Turim da Pequena Casa da Divina Providência para doentes incuráveis." },
+  { nome: "Santa Teresa de Los Andes", data: "13 de julho", body: "Carmelita chilena morta aos dezenove anos, mestra de vida interior em suas cartas." },
+  { nome: "São Josafá Kuncewicz", data: "12 de novembro", body: "Arcebispo greco-católico de Polock, morto em 1623 por defender a comunhão com Roma." },
+  { nome: "Santo Tomás de Vilanova", data: "22 de setembro", body: "Arcebispo de Valência que distribuía como esmola toda a renda da sé." },
 ];
 
 export const SANTOS_LISTA: SantoLista[] = RAW.map((s) => ({

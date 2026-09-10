@@ -2,6 +2,8 @@
  * Banco de objeções e respostas apologéticas.
  * Cada resposta cita fontes verificáveis (Escritura, Padres, concílios, CIC).
  */
+import { OBJECOES_ADICIONAIS } from "./apologetica-extras";
+
 export type CategoriaObjecao =
   | "Deus e razão"
   | "Escritura"
@@ -27,7 +29,7 @@ export const CATEGORIAS_OBJECAO: CategoriaObjecao[] = [
   "Moral e história",
 ];
 
-export const OBJECOES: Objecao[] = [
+const OBJECOES_NUCLEO: Objecao[] = [
   {
     slug: "deus-nao-existe-sem-provas",
     categoria: "Deus e razão",
@@ -37,7 +39,12 @@ export const OBJECOES: Objecao[] = [
       "Os argumentos clássicos partem de fatos observáveis: existe mudança, existem causas ordenadas, existem seres que podem não existir. Cada série exige um princípio que não dependa de outro — o que chamamos Deus.",
       "Negar isso obriga a aceitar um universo autoexplicativo, o que é justamente a afirmação que se pedia provar.",
     ],
-    fontes: ["Dei Filius, cap. 2 (DH 3004)", "CIC §§ 31–36", "Summa Theologiae I, q. 2, a. 3", "Rm 1,19–20"],
+    fontes: [
+      "Dei Filius, cap. 2 (DH 3004)",
+      "CIC §§ 31–36",
+      "Summa Theologiae I, q. 2, a. 3",
+      "Rm 1,19–20",
+    ],
   },
   {
     slug: "ciencia-substituiu-religiao",
@@ -130,7 +137,11 @@ export const OBJECOES: Objecao[] = [
       "Já no séc. V, o Concílio de Calcedônia acolhe o Tomus de São Leão Magno com a aclamação 'Pedro falou pela boca de Leão'.",
       "Mt 16,18–19, Lc 22,32 e Jo 21,15–17 fundamentam o ministério petrino no próprio Evangelho.",
     ],
-    fontes: ["Clemente, Carta aos Coríntios 42–44", "Adversus Haereses III, 3, 1–3", "Pastor Aeternus (DH 3050–3075)"],
+    fontes: [
+      "Clemente, Carta aos Coríntios 42–44",
+      "Adversus Haereses III, 3, 1–3",
+      "Pastor Aeternus (DH 3050–3075)",
+    ],
   },
   {
     slug: "igreja-mudou-doutrina",
@@ -161,7 +172,12 @@ export const OBJECOES: Objecao[] = [
       "Santo Inácio de Antioquia († c. 107) e São Justino († c. 165) já testemunham a fé na presença real como doutrina recebida.",
       "São Paulo declara réu quem come indignamente 'o Corpo e o Sangue do Senhor' (1Cor 11,27–29) — algo sem sentido para um mero símbolo.",
     ],
-    fontes: ["Jo 6,51–58", "1Cor 11,27–29", "Trento, Sessão XIII (DH 1640–1642)", "CIC §§ 1373–1377"],
+    fontes: [
+      "Jo 6,51–58",
+      "1Cor 11,27–29",
+      "Trento, Sessão XIII (DH 1640–1642)",
+      "CIC §§ 1373–1377",
+    ],
   },
   {
     slug: "confissao-a-padre",
@@ -249,7 +265,11 @@ export const OBJECOES: Objecao[] = [
       "As Cruzadas nasceram como resposta militar à conquista de territórios cristãos e ao bloqueio das peregrinações; isso não justifica os abusos cometidos.",
       "São João Paulo II pediu perdão publicamente pelos pecados dos filhos da Igreja no Jubileu de 2000, distinguindo a santidade da Igreja das faltas de seus membros.",
     ],
-    fontes: ["Memória e Reconciliação (CTI, 2000)", "Incarnationis Mysterium 11 (1998)", "CIC §§ 827, 1428"],
+    fontes: [
+      "Memória e Reconciliação (CTI, 2000)",
+      "Incarnationis Mysterium 11 (1998)",
+      "CIC §§ 827, 1428",
+    ],
   },
   {
     slug: "igreja-rica",
@@ -305,7 +325,12 @@ export const OBJECOES: Objecao[] = [
       "Pio XII e depois São João Paulo II afirmaram que um começo temporal do cosmos é compatível com a criação, embora advertissem contra identificar apressadamente o Big Bang com o ato criador propriamente dito, que é metafísico e não físico.",
       "A ciência estuda causas segundas dentro do tempo e do espaço; a criação é a causação do próprio ser do universo, algo de outra ordem que a física não pode nem afirmar nem negar.",
     ],
-    fontes: ["CIC §§ 282–289", "Pio XII, Discurso à Pontifícia Academia das Ciências (1951)", "Fides et Ratio, n. 34", "Gn 1,1"],
+    fontes: [
+      "CIC §§ 282–289",
+      "Pio XII, Discurso à Pontifícia Academia das Ciências (1951)",
+      "Fides et Ratio, n. 34",
+      "Gn 1,1",
+    ],
   },
   {
     slug: "argumento-do-relojoeiro-refutado",
@@ -317,19 +342,30 @@ export const OBJECOES: Objecao[] = [
       "Afirmar um Criador que atua através de causas segundas, inclusive processos evolutivos, não é contraditório: Deus pode ser autor tanto da lei natural quanto dos eventos que dela decorrem, como ensina Santo Tomás sobre a causalidade primeira e segunda.",
       "Reduzir a evolução a um argumento contra Deus é confundir o nível científico com o nível metafísico, dois planos de explicação que se complementam, não competem.",
     ],
-    fontes: ["São João Paulo II, Mensagem à Pontifícia Academia das Ciências (1996)", "CIC §§ 159, 283–284", "Summa Theologiae I, q. 105, a. 5", "Humani Generis (1950)"],
+    fontes: [
+      "São João Paulo II, Mensagem à Pontifícia Academia das Ciências (1996)",
+      "CIC §§ 159, 283–284",
+      "Summa Theologiae I, q. 105, a. 5",
+      "Humani Generis (1950)",
+    ],
   },
   {
     slug: "deus-do-antigo-testamento-cruel",
     categoria: "Deus e razão",
-    objecao: "O Deus do Antigo Testamento é cruel e vingativo, incompatível com o Deus de amor do Evangelho.",
+    objecao:
+      "O Deus do Antigo Testamento é cruel e vingativo, incompatível com o Deus de amor do Evangelho.",
     resposta: [
       "A Revelação é progressiva: Deus se adapta pedagogicamente à dureza de coração de um povo antigo, revelando-se plenamente apenas em Cristo, 'imagem do Deus invisível' (Cl 1,15).",
       "Muitos textos de guerra e juízo devem ser lidos com atenção ao gênero literário e ao contexto histórico do antigo Oriente Médio, sem transformar hipérboles bélicas em relatórios etnográficos literais.",
       "O mesmo Antigo Testamento revela, lado a lado com páginas duras, uma ternura constante — 'Como uma mãe consola um filho, assim Eu vos consolarei' (Is 66,13) — que prepara e antecipa a revelação plena da misericórdia em Jesus.",
       "A Igreja ensina que o Deus dos dois Testamentos é o mesmo, único e verdadeiro, contra o antigo erro marcionita que os opunha.",
     ],
-    fontes: ["CIC §§ 122, 128–130", "Dei Verbum 14–15", "Is 66,13; Cl 1,15", "Concílio de Roma contra Marcião (144 d.C.)"],
+    fontes: [
+      "CIC §§ 122, 128–130",
+      "Dei Verbum 14–15",
+      "Is 66,13; Cl 1,15",
+      "Concílio de Roma contra Marcião (144 d.C.)",
+    ],
   },
   {
     slug: "predestinacao-e-liberdade",
@@ -341,24 +377,36 @@ export const OBJECOES: Objecao[] = [
       "Santo Tomás explica que a causalidade divina, sendo causa do próprio ser da liberdade, não a suprime, mas a funda: Deus move a vontade a agir livremente, não a contragosto.",
       "O Concílio de Trento condenou tanto quem nega o livre-arbítrio depois do pecado original quanto quem o considera capaz de se salvar sem a graça.",
     ],
-    fontes: ["Trento, Decreto sobre a Justificação (DH 1554)", "Summa Theologiae I, q. 14, a. 13", "CIC §§ 154, 1731–1738, 2002", "Concílio de Orange II (529)"],
+    fontes: [
+      "Trento, Decreto sobre a Justificação (DH 1554)",
+      "Summa Theologiae I, q. 14, a. 13",
+      "CIC §§ 154, 1731–1738, 2002",
+      "Concílio de Orange II (529)",
+    ],
   },
   {
     slug: "genesis-nao-e-historico",
     categoria: "Escritura",
-    objecao: "Gênesis 1-3 é apenas mito; a Igreja obriga a crer em seis dias literais e num jardim geográfico.",
+    objecao:
+      "Gênesis 1-3 é apenas mito; a Igreja obriga a crer em seis dias literais e num jardim geográfico.",
     resposta: [
       "A Igreja nunca exigiu leitura fundamentalista dos primeiros capítulos de Gênesis: já Santo Agostinho, no séc. IV, discutia várias interpretações possíveis dos 'dias' da criação, incluindo leituras não literais.",
       "O gênero literário de Gênesis 1-11 é etiológico e teológico, transmitindo verdades essenciais — a criação por Deus, a bondade original, a queda pelo pecado — através de narrativa simbólica adequada ao seu tempo, sem pretender ser um relato científico ou geográfico exato.",
       "A Pontifícia Comissão Bíblica (1909) e Pio XII em Humani Generis afirmaram a historicidade substancial de um pecado original cometido por um casal humano real, deixando aberta a questão da forma literária dos detalhes narrativos.",
       "Assim, negar o literalismo cronológico não equivale a negar as verdades de fé que o texto realmente ensina: a origem divina do mundo, a dignidade do homem e a realidade do pecado original.",
     ],
-    fontes: ["Agostinho, De Genesi ad litteram", "Humani Generis, n. 38 (1950)", "CIC §§ 289–290, 396–390", "Dei Verbum 11"],
+    fontes: [
+      "Agostinho, De Genesi ad litteram",
+      "Humani Generis, n. 38 (1950)",
+      "CIC §§ 289–290, 396–390",
+      "Dei Verbum 11",
+    ],
   },
   {
     slug: "evangelhos-escritos-tarde-demais",
     categoria: "Escritura",
-    objecao: "Os Evangelhos foram escritos décadas depois dos fatos e não são confiáveis historicamente.",
+    objecao:
+      "Os Evangelhos foram escritos décadas depois dos fatos e não são confiáveis historicamente.",
     resposta: [
       "Um intervalo de trinta a sessenta anos entre os eventos e a redação é curto para os padrões da historiografia antiga: as biografias de Alexandre Magno, por exemplo, foram escritas séculos depois de sua morte e são tidas como fontes históricas válidas.",
       "Os Evangelhos se apoiam em tradições orais cuidadosamente memorizadas, típicas da cultura judaica de transmissão de ensinamentos rabínicos, e em fontes escritas anteriores, como o hipotético documento Q e os primeiros credos citados por São Paulo (1Cor 15,3-8, datável de meados dos anos 30).",
@@ -370,38 +418,56 @@ export const OBJECOES: Objecao[] = [
   {
     slug: "profecias-cumpridas-coincidencia",
     categoria: "Escritura",
-    objecao: "As profecias messiânicas cumpridas em Jesus são coincidência ou invenção retroativa dos evangelistas.",
+    objecao:
+      "As profecias messiânicas cumpridas em Jesus são coincidência ou invenção retroativa dos evangelistas.",
     resposta: [
       "Profecias como o nascimento em Belém (Mq 5,1), a traição por trinta moedas de prata (Zc 11,12-13) e o sofrimento detalhado do Servo (Is 53) foram escritas séculos antes, com manuscritos anteriores a Cristo preservados, por exemplo, entre os Manuscritos do Mar Morto.",
       "A convergência de dezenas de detalhes específicos, de origens e épocas distintas, cumpridos numa única pessoa histórica, ultrapassa amplamente o que se poderia atribuir ao acaso estatístico.",
       "Ainda que alguns evangelistas tenham selecionado e destacado paralelos proféticos ao narrar a vida de Jesus, isso não inventa os fatos históricos centrais — a crucificação sob Pôncio Pilatos é atestada também por fontes não cristãs.",
       "A Igreja sempre leu o Antigo Testamento como preparação providencial que encontra em Cristo seu sentido pleno, sem que isso negue o valor histórico independente das próprias profecias.",
     ],
-    fontes: ["Is 53; Mq 5,1; Zc 11,12-13", "Manuscritos do Mar Morto (1QIsa)", "Dei Verbum 15–16", "CIC §§ 122, 601"],
+    fontes: [
+      "Is 53; Mq 5,1; Zc 11,12-13",
+      "Manuscritos do Mar Morto (1QIsa)",
+      "Dei Verbum 15–16",
+      "CIC §§ 122, 601",
+    ],
   },
   {
     slug: "canon-decidido-por-constantino",
     categoria: "Escritura",
-    objecao: "O cânon bíblico foi decidido por Constantino no Concílio de Niceia para servir a interesses políticos.",
+    objecao:
+      "O cânon bíblico foi decidido por Constantino no Concílio de Niceia para servir a interesses políticos.",
     resposta: [
       "O Concílio de Niceia (325) tratou da controvérsia ariana sobre a divindade de Cristo e não discutiu nem definiu o cânon das Escrituras — essa é uma confusão histórica popularizada por obras de ficção sem base documental.",
       "O processo de discernimento do cânon do Novo Testamento foi gradual, apoiado em critérios de origem apostólica, uso litúrgico universal e conformidade com a regra da fé, culminando formalmente nos sínodos de Hipona (393) e Cartago (397), décadas depois de Niceia.",
       "Listas como o Cânon de Muratori (séc. II) já atestam consenso sobre a maioria dos livros do Novo Testamento muito antes de qualquer intervenção imperial.",
       "A tese de manipulação política ignora que o processo de reconhecimento canônico foi obra de discernimento eclesial ao longo de gerações, não de um decreto único e arbitrário.",
     ],
-    fontes: ["Cânon de Muratori (séc. II)", "Sínodo de Hipona (393)", "Sínodo de Cartago (397)", "CIC §§ 120, 138"],
+    fontes: [
+      "Cânon de Muratori (séc. II)",
+      "Sínodo de Hipona (393)",
+      "Sínodo de Cartago (397)",
+      "CIC §§ 120, 138",
+    ],
   },
   {
     slug: "papa-pode-errar-infalibilidade",
     categoria: "Igreja e Papado",
-    objecao: "Papas já cometeram erros graves; logo a infalibilidade papal é uma contradição histórica.",
+    objecao:
+      "Papas já cometeram erros graves; logo a infalibilidade papal é uma contradição histórica.",
     resposta: [
       "A infalibilidade não significa impecabilidade pessoal nem imunidade a erros de julgamento, disciplina ou governo: papas pecadores e imprudentes existiram, e a Igreja nunca negou isso.",
       "A infalibilidade, definida no Vaticano I, se aplica estritamente às definições solenes ex cathedra sobre fé e moral, dirigidas a toda a Igreja como vinculantes — condição cumprida rarissimamente na história, como na definição da Imaculada Conceição (1854) e da Assunção (1950).",
       "Casos frequentemente citados como 'erros papais', como o de Honório I, referem-se a ambiguidades disciplinares ou pessoais, jamais a uma definição ex cathedra formal contrária à fé recebida.",
       "A garantia da infalibilidade é dom do Espírito Santo à Igreja, não mérito pessoal do homem que ocupa a sé de Pedro, o que explica a coexistência de fraquezas humanas com a assistência divina nos momentos definidos.",
     ],
-    fontes: ["Pastor Aeternus, cap. 4 (DH 3073–3075)", "CIC §§ 891, 2035", "Lumen Gentium 25", "Concílio III de Constantinopla (680-681)"],
+    fontes: [
+      "Pastor Aeternus, cap. 4 (DH 3073–3075)",
+      "CIC §§ 891, 2035",
+      "Lumen Gentium 25",
+      "Concílio III de Constantinopla (680-681)",
+    ],
   },
   {
     slug: "concilio-vaticano-ii-ruptura",
@@ -413,7 +479,12 @@ export const OBJECOES: Objecao[] = [
       "Documentos como Lumen Gentium e Dei Verbum retomam e aprofundam ensinamentos patrísticos e escolásticos sobre a Igreja e a Revelação, mostrando continuidade doutrinal, não invenção.",
       "Interpretações extremas — seja rejeitando o Concílio, seja lendo-o como ruptura revolucionária — foram ambas corrigidas pelo Magistério posterior como leituras equivocadas de um concílio pastoral, mas plenamente autêntico.",
     ],
-    fontes: ["Bento XVI, Discurso à Cúria Romana (22/12/2005)", "Lumen Gentium; Dei Verbum", "CIC § 892", "Sacrosanctum Concilium 4"],
+    fontes: [
+      "Bento XVI, Discurso à Cúria Romana (22/12/2005)",
+      "Lumen Gentium; Dei Verbum",
+      "CIC § 892",
+      "Sacrosanctum Concilium 4",
+    ],
   },
   {
     slug: "cisma-do-oriente-culpa-de-roma",
@@ -425,19 +496,30 @@ export const OBJECOES: Objecao[] = [
       "A Igreja Católica reconhece a validade dos sacramentos das Igrejas ortodoxas e trabalha ativamente pelo diálogo ecumênico, reconhecendo responsabilidades de ambos os lados na ruptura histórica.",
       "O primado de Pedro não nasceu do cisma nem foi anulado por ele: permanece ensinado como fundamento da unidade visível da Igreja querida por Cristo (Jo 17,21).",
     ],
-    fontes: ["Jo 17,20-21", "Unitatis Redintegratio 14–18", "CIC §§ 817–822", "Inocêncio I, Cartas a João Crisóstomo (404-406)"],
+    fontes: [
+      "Jo 17,20-21",
+      "Unitatis Redintegratio 14–18",
+      "CIC §§ 817–822",
+      "Inocêncio I, Cartas a João Crisóstomo (404-406)",
+    ],
   },
   {
     slug: "extrema-uncao-e-so-para-moribundos",
     categoria: "Sacramentos",
-    objecao: "A unção dos enfermos é apenas o antigo rito da 'extrema-unção' para quem está morrendo.",
+    objecao:
+      "A unção dos enfermos é apenas o antigo rito da 'extrema-unção' para quem está morrendo.",
     resposta: [
       "O Concílio Vaticano II restaurou o nome e o sentido original do sacramento, esclarecendo que ele se destina a todo fiel gravemente enfermo ou debilitado pela idade, não apenas aos moribundos em agonia final.",
       "O fundamento bíblico está em Tiago 5,14-15, onde os presbíteros são chamados para ungir 'o enfermo', sem restrição a estado terminal, prometendo alívio, perdão e possível cura.",
       "A prática de reservar a unção só para a hora da morte era uma restrição pastoral medieval, não a intenção original do sacramento instituído por Cristo através dos apóstolos.",
       "Hoje a Igreja incentiva receber esse sacramento antes de cirurgias graves ou no início de doenças sérias, como fonte de força espiritual, e não apenas como rito derradeiro.",
     ],
-    fontes: ["Tg 5,14-15", "Sacrosanctum Concilium 73", "CIC §§ 1499–1523", "Concílio de Trento, Sessão XIV (DH 1694-1700)"],
+    fontes: [
+      "Tg 5,14-15",
+      "Sacrosanctum Concilium 73",
+      "CIC §§ 1499–1523",
+      "Concílio de Trento, Sessão XIV (DH 1694-1700)",
+    ],
   },
   {
     slug: "crisma-repete-o-batismo",
@@ -449,7 +531,12 @@ export const OBJECOES: Objecao[] = [
       "A tradição da Igreja desde os primeiros séculos preserva essa distinção sacramental de unção pós-batismal, atestada por Tertuliano e Santo Hipólito de Roma.",
       "Longe de ser repetição, a Crisma é o selo (character) que sela e completa a iniciação cristã, junto com a Eucaristia, formando os três sacramentos da iniciação.",
     ],
-    fontes: ["At 8,14-17; At 19,1-6", "CIC §§ 1285–1305", "Tertuliano, De Baptismo 7-8", "Lumen Gentium 11"],
+    fontes: [
+      "At 8,14-17; At 19,1-6",
+      "CIC §§ 1285–1305",
+      "Tertuliano, De Baptismo 7-8",
+      "Lumen Gentium 11",
+    ],
   },
   {
     slug: "matrimonio-catolico-e-so-contrato",
@@ -466,19 +553,26 @@ export const OBJECOES: Objecao[] = [
   {
     slug: "por-que-precisa-de-padre-para-casar",
     categoria: "Sacramentos",
-    objecao: "Por que a Igreja exige a presença de um padre para validar o matrimônio, se os próprios noivos são os ministros do sacramento?",
+    objecao:
+      "Por que a Igreja exige a presença de um padre para validar o matrimônio, se os próprios noivos são os ministros do sacramento?",
     resposta: [
       "É verdade que, na doutrina católica, os próprios cônjuges são os ministros do sacramento, conferindo-o um ao outro através do consentimento livre e mútuo.",
       "Contudo, desde o Concílio de Trento, a Igreja exige a chamada 'forma canônica' — a presença de um padre ou diácono testemunhando em nome da Igreja, além de duas testemunhas — para evitar os graves abusos de casamentos clandestinos que causavam bigamia e disputas de validade na Europa medieval.",
       "Essa exigência é disciplina eclesial, não elemento essencial do sacramento em si — daí a Igreja reconhecer, sob certas condições específicas, matrimônios de católicos orientais celebrados sem essa forma, ou dispensar dela em casos excepcionais.",
       "A presença de um ministro sagrado também expressa que o matrimônio não é assunto privado entre duas pessoas, mas ato eclesial que insere o casal na comunidade de fé com direitos e responsabilidades públicas.",
     ],
-    fontes: ["Trento, Decreto Tametsi (1563)", "CIC §§ 1623–1624", "Código de Direito Canônico, cânones 1108–1123", "Familiaris Consortio 68"],
+    fontes: [
+      "Trento, Decreto Tametsi (1563)",
+      "CIC §§ 1623–1624",
+      "Código de Direito Canônico, cânones 1108–1123",
+      "Familiaris Consortio 68",
+    ],
   },
   {
     slug: "nossa-senhora-medianeira-usurpa-cristo",
     categoria: "Maria e santos",
-    objecao: "Chamar Maria de 'Medianeira' e 'Corredentora' usurpa o papel único de Cristo como único Mediador.",
+    objecao:
+      "Chamar Maria de 'Medianeira' e 'Corredentora' usurpa o papel único de Cristo como único Mediador.",
     resposta: [
       "A Igreja é categórica: 'há um só Deus e um só Mediador entre Deus e os homens, Cristo Jesus' (1Tm 2,5), e nenhum título mariano pode diminuir ou dividir essa mediação única e insubstituível.",
       "Quando a tradição chama Maria de 'medianeira', o Concílio Vaticano II explica que isso 'nada tira nem acrescenta à dignidade e eficácia de Cristo, único Mediador', mas expressa a cooperação subordinada e derivada que ela exerceu ao dar à luz o Redentor e ao permanecer unida à sua obra.",
@@ -502,7 +596,8 @@ export const OBJECOES: Objecao[] = [
   {
     slug: "culto-aos-santos-e-politeismo",
     categoria: "Maria e santos",
-    objecao: "Ter tantos santos padroeiros para causas diferentes é uma forma disfarçada de politeísmo.",
+    objecao:
+      "Ter tantos santos padroeiros para causas diferentes é uma forma disfarçada de politeísmo.",
     resposta: [
       "Politeísmo é a crença em múltiplas divindades com poder próprio e independente; os santos não têm poder algum em si mesmos — são criaturas que, unidas a Deus na glória, intercedem junto a Ele, como amigos que rezam uns pelos outros (Ap 5,8).",
       "A escolha de padroeiros para ofícios, cidades ou causas específicas reflete a biografia e a virtude particular de cada santo — por exemplo, Santa Rita para causas difíceis por sua própria vida marcada por provações —, não uma divisão de poderes cósmicos entre divindades.",
@@ -521,19 +616,30 @@ export const OBJECOES: Objecao[] = [
       "Desde os primeiros séculos, os cristãos guardavam com reverência os restos dos mártires, celebrando a Eucaristia sobre seus túmulos — prática que deu origem, inclusive, ao costume de relíquias em altares até hoje.",
       "Como toda devoção popular, pode haver abusos supersticiosos individuais, mas a doutrina da Igreja distingue claramente entre veneração legítima e superstição condenável.",
     ],
-    fontes: ["2Rs 13,21; At 19,11-12", "1Cor 6,19", "CIC §§ 1674, 2111", "Concílio de Trento, Sessão XXV (DH 1822)"],
+    fontes: [
+      "2Rs 13,21; At 19,11-12",
+      "1Cor 6,19",
+      "CIC §§ 1674, 2111",
+      "Concílio de Trento, Sessão XXV (DH 1822)",
+    ],
   },
   {
     slug: "aborto-questao-apenas-religiosa",
     categoria: "Moral e história",
-    objecao: "A posição da Igreja contra o aborto é uma imposição religiosa que não deveria valer para quem não é católico.",
+    objecao:
+      "A posição da Igreja contra o aborto é uma imposição religiosa que não deveria valer para quem não é católico.",
     resposta: [
       "A defesa da vida humana desde a concepção não se apoia primariamente em um argumento de fé, mas na razão e na biologia: desde a fecundação existe um organismo humano geneticamente completo, distinto e em desenvolvimento contínuo, fato reconhecido pela embriologia independentemente de qualquer crença religiosa.",
       "O princípio de que toda vida humana inocente merece proteção jurídica é fundamento de direitos humanos universalmente reconhecidos, não exclusividade católica — daí legislações civis em muitos países, de tradições religiosas diversas, protegerem a vida pré-natal.",
       "A Igreja condena o aborto desde o primeiro século, como atesta o Didaquê ('não matarás o filho no seio materno'), independentemente de definições dogmáticas posteriores, mostrando coerência moral constante, não invenção contemporânea.",
       "Defender a vida do mais frágil e vulnerável dos seres humanos é, antes de tudo, questão de justiça elementar, que a fé ilumina, mas que a própria razão natural já pode reconhecer.",
     ],
-    fontes: ["Didaquê 2,2 (séc. I-II)", "CIC §§ 2270–2275", "Evangelium Vitae 58–62", "Declaração sobre o Aborto Provocado (1974)"],
+    fontes: [
+      "Didaquê 2,2 (séc. I-II)",
+      "CIC §§ 2270–2275",
+      "Evangelium Vitae 58–62",
+      "Declaração sobre o Aborto Provocado (1974)",
+    ],
   },
   {
     slug: "escravidao-aprovada-pela-igreja",
@@ -545,7 +651,12 @@ export const OBJECOES: Objecao[] = [
       "Santos como Pedro Claver dedicaram a vida ao serviço direto dos escravizados, e ordens religiosas promoveram alforrias e educação para libertos, mostrando que a coerência doutrinal com a dignidade humana sempre esteve presente, mesmo quando desobedecida na prática.",
       "São João Paulo II pediu publicamente perdão pelos pecados históricos ligados à escravidão cometidos por filhos da Igreja, reafirmando que tais práticas contradizem a própria fé que professavam.",
     ],
-    fontes: ["Sublimis Deus (1537)", "In Supremo Apostolatus (1839)", "CIC §§ 2414", "João Paulo II, Discurso em Gorée, Senegal (1992)"],
+    fontes: [
+      "Sublimis Deus (1537)",
+      "In Supremo Apostolatus (1839)",
+      "CIC §§ 2414",
+      "João Paulo II, Discurso em Gorée, Senegal (1992)",
+    ],
   },
   {
     slug: "galileu-prova-que-igreja-e-anticientifica",
@@ -557,7 +668,12 @@ export const OBJECOES: Objecao[] = [
       "São João Paulo II reconheceu publicamente, em 1992, os erros cometidos pelos teólogos que condenaram Galileu, promovendo uma revisão histórica completa do caso pela Pontifícia Academia das Ciências.",
       "A relação histórica entre Igreja e ciência é predominantemente de colaboração fecunda, sendo o caso Galileu uma exceção dramática e mal compreendida, não a regra.",
     ],
-    fontes: ["João Paulo II, Discurso à Pontifícia Academia das Ciências (1992)", "Fides et Ratio, nn. 34, 106", "CIC §§ 159", "Gaudium et Spes 36"],
+    fontes: [
+      "João Paulo II, Discurso à Pontifícia Academia das Ciências (1992)",
+      "Fides et Ratio, nn. 34, 106",
+      "CIC §§ 159",
+      "Gaudium et Spes 36",
+    ],
   },
   {
     slug: "cristianismo-oprime-a-mulher",
@@ -569,7 +685,12 @@ export const OBJECOES: Objecao[] = [
       "A Igreja proclamou quatro mulheres Doutoras da Igreja — Teresa d'Ávila, Catarina de Sena, Teresinha de Lisieux e Hildegarda de Bingen — reconhecendo sua autoridade teológica ao lado dos maiores mestres homens da tradição.",
       "São João Paulo II, na Mulieris Dignitatem, desenvolveu extensamente a igual dignidade e a complementaridade vocacional entre homem e mulher, condenando explicitamente qualquer discriminação injusta baseada no sexo.",
     ],
-    fontes: ["Jo 4,1-42; Lc 8,1-3; Gl 3,28", "Mulieris Dignitatem (1988)", "CIC §§ 369–372, 2334–2335", "Christifideles Laici 49"],
+    fontes: [
+      "Jo 4,1-42; Lc 8,1-3; Gl 3,28",
+      "Mulieris Dignitatem (1988)",
+      "CIC §§ 369–372, 2334–2335",
+      "Christifideles Laici 49",
+    ],
   },
   {
     slug: "confissao-so-a-deus",
@@ -581,7 +702,11 @@ export const OBJECOES: Objecao[] = [
       "São Paulo descreve esse mesmo ministério como reconciliação confiada a homens: 'Deus nos confiou o ministério da reconciliação... em nome de Cristo, deixai-vos reconciliar com Deus' (2Cor 5,18-20). E São Tiago manda: 'confessai vossos pecados uns aos outros' (Tg 5,16).",
       "A encarnação segue essa lógica: Deus salva por meios visíveis. Assim como o Verbo se fez carne e a água do Batismo lava de fato, também a palavra audível da absolvição dá certeza sensível do perdão — bem mais que um sentimento interior incerto.",
     ],
-    fontes: ["Jo 20,21-23; 2Cor 5,18-20; Tg 5,14-16", "CIC §§ 1441-1449, 1461-1467", "Concílio de Trento, sessão XIV"],
+    fontes: [
+      "Jo 20,21-23; 2Cor 5,18-20; Tg 5,14-16",
+      "CIC §§ 1441-1449, 1461-1467",
+      "Concílio de Trento, sessão XIV",
+    ],
   },
   {
     slug: "por-que-igreja-tem-tantas-regras",
@@ -593,7 +718,11 @@ export const OBJECOES: Objecao[] = [
       "O Catecismo define a liberdade não como ausência de vínculo, mas como 'poder de agir ou de não agir, e assim de realizar por si mesmo ações deliberadas' ordenadas ao bem — quanto mais alguém se enraíza no bem, mais livre se torna.",
       "Cristo resume toda a Lei em dois mandamentos de amor (Mt 22,37-40) e São Paulo declara que 'a caridade é a plenitude da Lei' (Rm 13,10). A moral católica é, no fim, uma pedagogia da caridade, não um código penal.",
     ],
-    fontes: ["Mt 22,37-40; Rm 13,10; Gl 5,13", "CIC §§ 1730-1742, 1950-1974", "Veritatis Splendor 34-35"],
+    fontes: [
+      "Mt 22,37-40; Rm 13,10; Gl 5,13",
+      "CIC §§ 1730-1742, 1950-1974",
+      "Veritatis Splendor 34-35",
+    ],
   },
   {
     slug: "por-que-existe-o-inferno",
@@ -617,7 +746,12 @@ export const OBJECOES: Objecao[] = [
       "Diferenças de perspectiva entre os Evangelhos — número de anjos no sepulcro, ordem das tentações — são típicas de testemunhos independentes e reforçam sua credibilidade histórica; testemunhos idênticos em cada detalhe sugeririam combinação prévia.",
       "A inerrância bíblica refere-se à verdade salvífica que Deus quis revelar, não a precisão científica ou cronológica moderna. Santo Agostinho já advertia contra usar a Escritura como manual de astronomia.",
     ],
-    fontes: ["Dei Verbum 11-13", "CIC §§ 105-119", "Providentissimus Deus 18-20", "Pontifícia Comissão Bíblica, A interpretação da Bíblia na Igreja (1993)"],
+    fontes: [
+      "Dei Verbum 11-13",
+      "CIC §§ 105-119",
+      "Providentissimus Deus 18-20",
+      "Pontifícia Comissão Bíblica, A interpretação da Bíblia na Igreja (1993)",
+    ],
   },
   {
     slug: "papa-infalivel-sempre",
@@ -629,7 +763,12 @@ export const OBJECOES: Objecao[] = [
       "Definições ex cathedra são raríssimas: a Imaculada Conceição (1854) e a Assunção (1950) são os exemplos clássicos. Não se trata de um poder de inventar doutrinas, mas de um carisma negativo de preservação: impedir o erro na formulação definitiva do que a Igreja recebeu.",
       "A infalibilidade não implica impecabilidade nem sabedoria universal. Pedro, o primeiro Papa, foi publicamente corrigido por Paulo em Antioquia (Gl 2,11-14) — episódio conservado na Escritura pela própria Igreja.",
     ],
-    fontes: ["Concílio Vaticano I, Pastor Aeternus 4", "Lumen Gentium 25", "CIC §§ 888-892", "Gl 2,11-14"],
+    fontes: [
+      "Concílio Vaticano I, Pastor Aeternus 4",
+      "Lumen Gentium 25",
+      "CIC §§ 888-892",
+      "Gl 2,11-14",
+    ],
   },
   {
     slug: "maria-corredentora-diminui-cristo",
@@ -641,7 +780,12 @@ export const OBJECOES: Objecao[] = [
       "Lumen Gentium 62 usa vários títulos — advogada, auxiliadora, medianeira — mas explica que devem ser entendidos de modo que nada subtraiam à dignidade e à eficácia de Cristo, único Redentor.",
       "A Igreja nunca definiu dogmaticamente o título de 'corredentora', e teólogos alertam que ele exige cuidado justamente para não sugerir igualdade com Cristo. Isso mostra o esforço católico de proteger, e não de obscurecer, a centralidade do Redentor.",
     ],
-    fontes: ["1Tm 2,1-5", "Lumen Gentium 60-62", "CIC §§ 969-970, 2673-2675", "Redemptoris Mater 38-41"],
+    fontes: [
+      "1Tm 2,1-5",
+      "Lumen Gentium 60-62",
+      "CIC §§ 969-970, 2673-2675",
+      "Redemptoris Mater 38-41",
+    ],
   },
   {
     slug: "religiao-so-para-fracos",
@@ -665,11 +809,16 @@ export const OBJECOES: Objecao[] = [
       "O ensino social católico afirma o destino universal dos bens e a opção preferencial pelos pobres, e a própria doutrina condena o luxo eclesiástico escandaloso — a crítica legítima ao mau uso de bens é interna à tradição, não externa a ela.",
       "A venda única de um acervo produziria alívio momentâneo; a estrutura permanente permite caridade continuada por gerações — princípio que a doutrina social chama de solidariedade ordenada ao bem comum duradouro.",
     ],
-    fontes: ["CIC §§ 2401-2406, 2443-2449", "Compêndio da Doutrina Social 171-184, 328-329", "Evangelii Gaudium 186-201"],
+    fontes: [
+      "CIC §§ 2401-2406, 2443-2449",
+      "Compêndio da Doutrina Social 171-184, 328-329",
+      "Evangelii Gaudium 186-201",
+    ],
   },
 ];
-
 
 export function objecaoPorSlug(slug: string): Objecao | undefined {
   return OBJECOES.find((o) => o.slug === slug);
 }
+
+export const OBJECOES: Objecao[] = [...OBJECOES_NUCLEO, ...OBJECOES_ADICIONAIS];

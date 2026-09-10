@@ -3,6 +3,8 @@
  * Textos em português (uso corrente no Brasil) e, quando clássicos, o incipit latino.
  */
 
+import { ORACOES_ADICIONAIS } from "./oracoes-extras";
+
 export type CategoriaOracao =
   | "Fundamentais"
   | "Marianas"
@@ -44,8 +46,7 @@ export const CATEGORIAS_ORACAO: CategoriaOracao[] = [
   "Defuntos",
 ];
 
-
-export const ORACOES: Oracao[] = [
+const ORACOES_NUCLEO: Oracao[] = [
   // ===== FUNDAMENTAIS =====
   {
     slug: "sinal-da-cruz",
@@ -408,7 +409,8 @@ export const ORACOES: Oracao[] = [
     slug: "santo-antonio",
     titulo: "A Santo Antônio de Pádua",
     categoria: "Aos Santos",
-    paraQue: "Pedir a intercessão do Doutor Evangélico, invocado nas coisas perdidas e nas causas urgentes.",
+    paraQue:
+      "Pedir a intercessão do Doutor Evangélico, invocado nas coisas perdidas e nas causas urgentes.",
     quando: "Às terças-feiras e na festa de 13 de junho.",
     texto:
       "Glorioso Santo Antônio, servo fiel e amigo de Jesus Cristo, que recebestes de Deus o poder de operar prodígios e a graça de restituir o que se perdeu: alcançai-me a graça de reencontrar o que perdi — sobretudo a paz, a fé e a caridade. Fazei que, imitando o vosso zelo pela Palavra de Deus, eu una à minha oração a emenda de vida. Amém.",
@@ -523,7 +525,8 @@ export const ORACOES: Oracao[] = [
     slug: "oracao-antes-da-leitura-biblica",
     titulo: "Oração antes da leitura da Sagrada Escritura",
     categoria: "Ocasiões",
-    paraQue: "Dispor o coração para escutar a Palavra como Palavra de Deus, e não como texto qualquer.",
+    paraQue:
+      "Dispor o coração para escutar a Palavra como Palavra de Deus, e não como texto qualquer.",
     quando: "Antes da Lectio Divina e de cada leitura bíblica.",
     texto:
       "Falai, Senhor, que o vosso servo escuta. Abri o meu coração à vossa Palavra, para que ela seja lâmpada aos meus passos e luz ao meu caminho. Dai-me o Espírito que inspirou os autores sagrados, a fim de que eu compreenda o que devo crer, ame o que compreendo e viva o que amo. Amém.",
@@ -769,7 +772,8 @@ export const ORACOES: Oracao[] = [
     titulo: "Síntese dos Sete Salmos Penitenciais",
     categoria: "Penitenciais",
     nota: "Tradição de rezar os Salmos 6, 31, 37, 50, 101, 129 e 142 juntos, muito usada na Idade Média.",
-    paraQue: "Percorrer, em síntese, o itinerário bíblico do arrependimento e da confiança em Deus.",
+    paraQue:
+      "Percorrer, em síntese, o itinerário bíblico do arrependimento e da confiança em Deus.",
     quando: "Na Quaresma e em retiros espirituais de penitência.",
     texto:
       "Senhor, não me repreendais na vossa ira (Sl 6). Bem-aventurado aquele cuja culpa é perdoada (Sl 31). Não me abandoneis no dia da vossa indignação (Sl 37). Tende piedade de mim, ó Deus (Sl 50). Ouvi, Senhor, a minha oração e chegue a Vós o meu clamor (Sl 101). Das profundezas clamo a Vós, Senhor (Sl 129). Ouvi depressa, Senhor, pois meu espírito desfalece (Sl 142). Em todos eles, uma só súplica: misericórdia e vida nova. Amém.",
@@ -816,7 +820,8 @@ export const ORACOES: Oracao[] = [
     slug: "santo-expedito",
     titulo: "A Santo Expedito",
     categoria: "Aos Santos",
-    paraQue: "Invocar o patrono das causas urgentes, sem substituir a paciência cristã pela pressa.",
+    paraQue:
+      "Invocar o patrono das causas urgentes, sem substituir a paciência cristã pela pressa.",
     quando: "Diante de necessidades imediatas e prazos apertados.",
     texto:
       "Santo Expedito, venerado pela tradição popular como mártir e soldado de Cristo, que sempre respondestes prontamente ao chamado da fé: intercedei por esta minha necessidade urgente. Alcançai-me também a virtude de nunca adiar o bem que devo fazer hoje. Amém.",
@@ -1149,7 +1154,8 @@ export const ORACOES: Oracao[] = [
   },
 ];
 
-
 export function oracoesPorCategoria(categoria: CategoriaOracao): Oracao[] {
   return ORACOES.filter((o) => o.categoria === categoria);
 }
+
+export const ORACOES: Oracao[] = [...ORACOES_NUCLEO, ...ORACOES_ADICIONAIS];

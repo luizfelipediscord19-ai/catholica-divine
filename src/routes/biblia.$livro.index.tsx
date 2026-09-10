@@ -62,10 +62,7 @@ function Page() {
     <div>
       <div className="border-b border-gold/20 bg-card">
         <div className="shell py-[var(--space-lg)]">
-          <Link
-            to="/biblia"
-            className="inline-flex items-center gap-2 kicker hover:text-gold mb-6"
-          >
+          <Link to="/biblia" className="inline-flex items-center gap-2 kicker hover:text-gold mb-6">
             <ArrowLeft className="size-3" /> Bíblia
           </Link>
           <p className="kicker mb-3">
@@ -107,7 +104,10 @@ function Page() {
                 <p className="kicker mb-3">Passagens-chave</p>
                 <ul className="space-y-2">
                   {intro.passagens.map((p) => (
-                    <li key={p} className="text-sm text-muted-foreground leading-relaxed border-l-2 border-gold/40 pl-3">
+                    <li
+                      key={p}
+                      className="text-sm text-muted-foreground leading-relaxed border-l-2 border-gold/40 pl-3"
+                    >
                       {p}
                     </li>
                   ))}
@@ -118,22 +118,59 @@ function Page() {
                 <p className="text-sm italic text-foreground/85 leading-relaxed">{intro.cristo}</p>
               </div>
             </div>
-            <aside>
-              <p className="kicker mb-3">Temas centrais</p>
-              <ul className="space-y-3">
-                {intro.temas.map((t) => (
-                  <li key={t} className="text-sm text-foreground/90 surface-card p-3">
-                    {t}
+            <aside className="space-y-8">
+              <div>
+                <p className="kicker mb-3">Temas centrais</p>
+                <ul className="space-y-3">
+                  {intro.temas.map((t) => (
+                    <li key={t} className="text-sm text-foreground/90 surface-card p-3">
+                      {t}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              {intro.estrutura ? (
+                <div>
+                  <p className="kicker mb-3">Como o livro se divide</p>
+                  <ol className="space-y-2">
+                    {intro.estrutura.map((e) => (
+                      <li
+                        key={e}
+                        className="text-sm text-muted-foreground leading-relaxed border-l-2 border-gold/30 pl-3"
+                      >
+                        {e}
+                      </li>
+                    ))}
+                  </ol>
+                </div>
+              ) : null}
+              {intro.liturgia ? (
+                <div>
+                  <p className="kicker mb-3">Na liturgia</p>
+                  <p className="text-sm text-foreground/85 leading-relaxed">{intro.liturgia}</p>
+                </div>
+              ) : null}
+            </aside>
+          </div>
+          {intro.dificuldades ? (
+            <div className="mt-10 pt-8 border-t border-gold/15">
+              <p className="kicker mb-3">Dificuldades frequentes de leitura</p>
+              <ul className="grid md:grid-cols-2 gap-4">
+                {intro.dificuldades.map((d) => (
+                  <li
+                    key={d}
+                    className="surface-card p-4 text-sm leading-relaxed text-foreground/85"
+                  >
+                    {d}
                   </li>
                 ))}
               </ul>
-            </aside>
-          </div>
+            </div>
+          ) : null}
         </section>
       ) : null}
 
       <section className="shell py-block">
-
         <div className="flex items-end justify-between flex-wrap gap-4 mb-6">
           <h2 className="font-display text-2xl text-foreground flex items-center gap-3">
             <BookOpen className="size-5 text-gold" /> Capítulos
@@ -155,12 +192,22 @@ function Page() {
 
       <section className="shell pb-20 border-t border-gold/15 pt-10 flex flex-wrap justify-between gap-4">
         {anterior ? (
-          <Link to="/biblia/$livro" params={{ livro: anterior.slug }} className="text-sm text-muted-foreground hover:text-gold">
+          <Link
+            to="/biblia/$livro"
+            params={{ livro: anterior.slug }}
+            className="text-sm text-muted-foreground hover:text-gold"
+          >
             ← {anterior.nome}
           </Link>
-        ) : <span />}
+        ) : (
+          <span />
+        )}
         {proximo ? (
-          <Link to="/biblia/$livro" params={{ livro: proximo.slug }} className="text-sm text-muted-foreground hover:text-gold ml-auto">
+          <Link
+            to="/biblia/$livro"
+            params={{ livro: proximo.slug }}
+            className="text-sm text-muted-foreground hover:text-gold ml-auto"
+          >
             {proximo.nome} →
           </Link>
         ) : null}

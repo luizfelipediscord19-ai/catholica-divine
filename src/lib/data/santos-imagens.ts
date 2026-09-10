@@ -235,6 +235,20 @@ export const IMAGENS_SANTOS: Record<string, ImagemSanto> = {
   "santa-edwiges": { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Hedwig_von_Schlesien.jpg/960px-Hedwig_von_Schlesien.jpg", credito: "Santa Edwiges da Silésia — Wikimedia Commons" },
   "santa-maria-egipciaca": { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Ribera-marie-%C3%A9gyptienne-mus%C3%A9e-Fabre.jpg/960px-Ribera-marie-%C3%A9gyptienne-mus%C3%A9e-Fabre.jpg", credito: "Ribera, Santa Maria Egipcíaca — Wikimedia Commons" },
   "sao-luis-martin": { url: "https://upload.wikimedia.org/wikipedia/commons/b/b2/Louis_Martin-edt.jpg", credito: "Retrato de Luís Martin — Wikimedia Commons" },
+  "sao-clemente-romano": { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Clemens_Romanus.jpg/960px-Clemens_Romanus.jpg", credito: "pt.wikipedia:Papa Clemente I" },
+  "santas-perpetua-e-felicidade": { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Greater_Poland_Sacra_Conversazione.jpg/960px-Greater_Poland_Sacra_Conversazione.jpg", credito: "pt.wikipedia:Perpétua e Felicidade" },
+  "sao-cornelio": { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Pope_Cornelius_%E2%80%93_Santa_Maria_in_Trastevere.jpg/960px-Pope_Cornelius_%E2%80%93_Santa_Maria_in_Trastevere.jpg", credito: "pt.wikipedia:Papa Cornélio" },
+  "sao-maximo-o-confessor": { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Maximus_the_Confessor_%28mosaic%29.jpg/960px-Maximus_the_Confessor_%28mosaic%29.jpg", credito: "pt.wikipedia:Máximo, o Confessor" },
+  "sao-joao-climaco": { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Lestvichnik.jpg/960px-Lestvichnik.jpg", credito: "pt.wikipedia:João Clímaco" },
+  "santo-antonio-maria-zacarias": { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/ANTONIO-MARIA-ZACCARIA.jpg/960px-ANTONIO-MARIA-ZACCARIA.jpg", credito: "pt.wikipedia:Antônio Maria Zaccaria" },
+  "santo-antonio-maria-claret": { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/San_Antonio_Mar%C3%ADa_Claret_%28Museo_Nacional_del_Romanticismo_de_Madrid%29.jpg/960px-San_Antonio_Mar%C3%ADa_Claret_%28Museo_Nacional_del_Romanticismo_de_Madrid%29.jpg", credito: "pt.wikipedia:Antonio María Claret" },
+  "sao-jose-de-calasanz": { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Joseph_Calasanctius_-_Basilica_de_Montserrat_-_Montserrat_2014.JPG/960px-Joseph_Calasanctius_-_Basilica_de_Montserrat_-_Montserrat_2014.JPG", credito: "pt.wikipedia:José de Calasanz" },
+  "santa-luisa-de-marillac": { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Luisa-marillac.jpg/960px-Luisa-marillac.jpg", credito: "pt.wikipedia:Luísa de Marillac" },
+  "santa-joana-jugan": { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Jeanne_Jugan.jpg/960px-Jeanne_Jugan.jpg", credito: "pt.wikipedia:Joana Jugan" },
+  "sao-jose-bento-cottolengo": { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Giuseppe_Benedetto_Cottolengo.jpg/960px-Giuseppe_Benedetto_Cottolengo.jpg", credito: "it.wikipedia:Giuseppe Benedetto Cottolengo" },
+  "santa-teresa-de-los-andes": { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Teresa_de_los_Andes.jpg/960px-Teresa_de_los_Andes.jpg", credito: "en.wikipedia:Teresa of the Andes" },
+  "sao-josafa-kuncewicz": { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/JKuncewicz.jpg/960px-JKuncewicz.jpg", credito: "en.wikipedia:Josaphat Kuntsevych" },
+  "santo-tomas-de-vilanova": { url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Camilo-santo_tomas_de_villanueva-prado.jpg/960px-Camilo-santo_tomas_de_villanueva-prado.jpg", credito: "pt.wikipedia:Tomás de Vilanova" },
 };
 
 /**
