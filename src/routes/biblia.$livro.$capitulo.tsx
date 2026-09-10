@@ -18,6 +18,8 @@ import { EstudarComSophia, SophiaVersiculo } from "../components/portal/Pergunta
 import { useMarcadorCapitulo } from "../components/portal/RetomarLeitura";
 
 import { capituloLocal, temTextoLocal } from "../lib/biblia/local";
+import { CatecismoDoVersiculo } from "../components/biblia/CatecismoDoVersiculo";
+import { CapituloNoCatecismo } from "../components/biblia/CapituloNoCatecismo";
 
 type Verso = { v: number; t: string };
 
@@ -393,6 +395,7 @@ function Page() {
                 />
                 <span className="block">
                   {v.t}
+                  <CatecismoDoVersiculo livro={livro.slug} capitulo={capitulo} versiculo={v.v} />
                   <span data-leitura-oculto>
                     <SophiaVersiculo
                       livro={livro.nome}
@@ -413,6 +416,7 @@ function Page() {
       </article>
 
       <div data-leitura-oculto>
+        <CapituloNoCatecismo livro={livro.slug} capitulo={capitulo} className="mt-10" />
         <NotasCapitulo livro={livro.slug} capitulo={capitulo} className="mt-10" />
         <EstudarComSophia
           titulo={`${livro.nome} ${capitulo}`}
