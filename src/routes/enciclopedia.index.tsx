@@ -5,6 +5,7 @@ import { ArrowRight, BookOpen, ExternalLink, Search } from "lucide-react";
 import { PageHero } from "@/components/PageShell";
 import { FaixaAutoridade } from "@/components/SeloConfiabilidade";
 import { VERBETES_ENCICLOPEDIA } from "@/lib/data/enciclopedia";
+import { TEMAS_ENCICLOPEDIA } from "@/lib/data/enciclopedia-temas";
 import { normalizar } from "@/lib/busca";
 import { keywordsPara } from "@/lib/seo/palavras-chave";
 import manuscrito from "@/assets/manuscrito.jpg";
