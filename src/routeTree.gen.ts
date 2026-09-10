@@ -63,6 +63,7 @@ import { Route as OracoesNovenasRouteImport } from './routes/oracoes.novenas'
 import { Route as OracoesLiturgiaDasHorasRouteImport } from './routes/oracoes.liturgia-das-horas'
 import { Route as NoticiasSlugRouteImport } from './routes/noticias.$slug'
 import { Route as ForumSlugRouteImport } from './routes/forum.$slug'
+import { Route as EnciclopediaTemaRouteImport } from './routes/enciclopedia.$tema'
 import { Route as CatecismoArtigosRouteImport } from './routes/catecismo.artigos'
 import { Route as CatecismoParteRouteImport } from './routes/catecismo.$parte'
 import { Route as BibliaPlanosRouteImport } from './routes/biblia.planos'
@@ -356,6 +357,11 @@ const ForumSlugRoute = ForumSlugRouteImport.update({
   path: '/forum/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EnciclopediaTemaRoute = EnciclopediaTemaRouteImport.update({
+  id: '/$tema',
+  path: '/$tema',
+  getParentRoute: () => EnciclopediaRoute,
+} as any)
 const CatecismoArtigosRoute = CatecismoArtigosRouteImport.update({
   id: '/artigos',
   path: '/artigos',
@@ -499,6 +505,7 @@ export interface FileRoutesByFullPath {
   '/biblia/planos': typeof BibliaPlanosRouteWithChildren
   '/catecismo/$parte': typeof CatecismoParteRoute
   '/catecismo/artigos': typeof CatecismoArtigosRoute
+  '/enciclopedia/$tema': typeof EnciclopediaTemaRoute
   '/forum/$slug': typeof ForumSlugRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
   '/oracoes/liturgia-das-horas': typeof OracoesLiturgiaDasHorasRoute
@@ -567,6 +574,7 @@ export interface FileRoutesByTo {
   '/biblia/leituras': typeof BibliaLeiturasRoute
   '/catecismo/$parte': typeof CatecismoParteRoute
   '/catecismo/artigos': typeof CatecismoArtigosRoute
+  '/enciclopedia/$tema': typeof EnciclopediaTemaRoute
   '/forum/$slug': typeof ForumSlugRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
   '/oracoes/liturgia-das-horas': typeof OracoesLiturgiaDasHorasRoute
@@ -643,6 +651,7 @@ export interface FileRoutesById {
   '/biblia/planos': typeof BibliaPlanosRouteWithChildren
   '/catecismo/$parte': typeof CatecismoParteRoute
   '/catecismo/artigos': typeof CatecismoArtigosRoute
+  '/enciclopedia/$tema': typeof EnciclopediaTemaRoute
   '/forum/$slug': typeof ForumSlugRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
   '/oracoes/liturgia-das-horas': typeof OracoesLiturgiaDasHorasRoute
@@ -720,6 +729,7 @@ export interface FileRouteTypes {
     | '/biblia/planos'
     | '/catecismo/$parte'
     | '/catecismo/artigos'
+    | '/enciclopedia/$tema'
     | '/forum/$slug'
     | '/noticias/$slug'
     | '/oracoes/liturgia-das-horas'
@@ -788,6 +798,7 @@ export interface FileRouteTypes {
     | '/biblia/leituras'
     | '/catecismo/$parte'
     | '/catecismo/artigos'
+    | '/enciclopedia/$tema'
     | '/forum/$slug'
     | '/noticias/$slug'
     | '/oracoes/liturgia-das-horas'
@@ -863,6 +874,7 @@ export interface FileRouteTypes {
     | '/biblia/planos'
     | '/catecismo/$parte'
     | '/catecismo/artigos'
+    | '/enciclopedia/$tema'
     | '/forum/$slug'
     | '/noticias/$slug'
     | '/oracoes/liturgia-das-horas'
@@ -1328,6 +1340,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ForumSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/enciclopedia/$tema': {
+      id: '/enciclopedia/$tema'
+      path: '/$tema'
+      fullPath: '/enciclopedia/$tema'
+      preLoaderRoute: typeof EnciclopediaTemaRouteImport
+      parentRoute: typeof EnciclopediaRoute
+    }
     '/catecismo/artigos': {
       id: '/catecismo/artigos'
       path: '/artigos'
@@ -1526,10 +1545,12 @@ const CatecismoRouteWithChildren = CatecismoRoute._addFileChildren(
 )
 
 interface EnciclopediaRouteChildren {
+  EnciclopediaTemaRoute: typeof EnciclopediaTemaRoute
   EnciclopediaIndexRoute: typeof EnciclopediaIndexRoute
 }
 
 const EnciclopediaRouteChildren: EnciclopediaRouteChildren = {
+  EnciclopediaTemaRoute: EnciclopediaTemaRoute,
   EnciclopediaIndexRoute: EnciclopediaIndexRoute,
 }
 
