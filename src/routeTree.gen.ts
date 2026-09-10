@@ -52,6 +52,7 @@ import { Route as SantosIndexRouteImport } from './routes/santos.index'
 import { Route as OracoesIndexRouteImport } from './routes/oracoes.index'
 import { Route as NoticiasIndexRouteImport } from './routes/noticias.index'
 import { Route as ForumIndexRouteImport } from './routes/forum.index'
+import { Route as EnciclopediaIndexRouteImport } from './routes/enciclopedia.index'
 import { Route as CatecismoIndexRouteImport } from './routes/catecismo.index'
 import { Route as BibliaIndexRouteImport } from './routes/biblia.index'
 import { Route as SantosSlugRouteImport } from './routes/santos.$slug'
@@ -62,6 +63,7 @@ import { Route as OracoesNovenasRouteImport } from './routes/oracoes.novenas'
 import { Route as OracoesLiturgiaDasHorasRouteImport } from './routes/oracoes.liturgia-das-horas'
 import { Route as NoticiasSlugRouteImport } from './routes/noticias.$slug'
 import { Route as ForumSlugRouteImport } from './routes/forum.$slug'
+import { Route as EnciclopediaTemaRouteImport } from './routes/enciclopedia.$tema'
 import { Route as CatecismoArtigosRouteImport } from './routes/catecismo.artigos'
 import { Route as CatecismoParteRouteImport } from './routes/catecismo.$parte'
 import { Route as BibliaPlanosRouteImport } from './routes/biblia.planos'
@@ -299,6 +301,11 @@ const ForumIndexRoute = ForumIndexRouteImport.update({
   path: '/forum/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EnciclopediaIndexRoute = EnciclopediaIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => EnciclopediaRoute,
+} as any)
 const CatecismoIndexRoute = CatecismoIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -349,6 +356,11 @@ const ForumSlugRoute = ForumSlugRouteImport.update({
   id: '/forum/$slug',
   path: '/forum/$slug',
   getParentRoute: () => rootRouteImport,
+} as any)
+const EnciclopediaTemaRoute = EnciclopediaTemaRouteImport.update({
+  id: '/$tema',
+  path: '/$tema',
+  getParentRoute: () => EnciclopediaRoute,
 } as any)
 const CatecismoArtigosRoute = CatecismoArtigosRouteImport.update({
   id: '/artigos',
@@ -462,7 +474,7 @@ export interface FileRoutesByFullPath {
   '/design-system': typeof DesignSystemRoute
   '/doutores-da-igreja': typeof DoutoresDaIgrejaRoute
   '/email-confirmado': typeof EmailConfirmadoRoute
-  '/enciclopedia': typeof EnciclopediaRoute
+  '/enciclopedia': typeof EnciclopediaRouteWithChildren
   '/estudar': typeof EstudarRoute
   '/explorar': typeof ExplorarRoute
   '/favoritos': typeof FavoritosRoute
@@ -493,6 +505,7 @@ export interface FileRoutesByFullPath {
   '/biblia/planos': typeof BibliaPlanosRouteWithChildren
   '/catecismo/$parte': typeof CatecismoParteRoute
   '/catecismo/artigos': typeof CatecismoArtigosRoute
+  '/enciclopedia/$tema': typeof EnciclopediaTemaRoute
   '/forum/$slug': typeof ForumSlugRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
   '/oracoes/liturgia-das-horas': typeof OracoesLiturgiaDasHorasRoute
@@ -503,6 +516,7 @@ export interface FileRoutesByFullPath {
   '/santos/$slug': typeof SantosSlugRoute
   '/biblia/': typeof BibliaIndexRoute
   '/catecismo/': typeof CatecismoIndexRoute
+  '/enciclopedia/': typeof EnciclopediaIndexRoute
   '/forum/': typeof ForumIndexRoute
   '/noticias/': typeof NoticiasIndexRoute
   '/oracoes/': typeof OracoesIndexRoute
@@ -534,7 +548,6 @@ export interface FileRoutesByTo {
   '/design-system': typeof DesignSystemRoute
   '/doutores-da-igreja': typeof DoutoresDaIgrejaRoute
   '/email-confirmado': typeof EmailConfirmadoRoute
-  '/enciclopedia': typeof EnciclopediaRoute
   '/estudar': typeof EstudarRoute
   '/explorar': typeof ExplorarRoute
   '/favoritos': typeof FavoritosRoute
@@ -561,6 +574,7 @@ export interface FileRoutesByTo {
   '/biblia/leituras': typeof BibliaLeiturasRoute
   '/catecismo/$parte': typeof CatecismoParteRoute
   '/catecismo/artigos': typeof CatecismoArtigosRoute
+  '/enciclopedia/$tema': typeof EnciclopediaTemaRoute
   '/forum/$slug': typeof ForumSlugRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
   '/oracoes/liturgia-das-horas': typeof OracoesLiturgiaDasHorasRoute
@@ -571,6 +585,7 @@ export interface FileRoutesByTo {
   '/santos/$slug': typeof SantosSlugRoute
   '/biblia': typeof BibliaIndexRoute
   '/catecismo': typeof CatecismoIndexRoute
+  '/enciclopedia': typeof EnciclopediaIndexRoute
   '/forum': typeof ForumIndexRoute
   '/noticias': typeof NoticiasIndexRoute
   '/oracoes': typeof OracoesIndexRoute
@@ -605,7 +620,7 @@ export interface FileRoutesById {
   '/design-system': typeof DesignSystemRoute
   '/doutores-da-igreja': typeof DoutoresDaIgrejaRoute
   '/email-confirmado': typeof EmailConfirmadoRoute
-  '/enciclopedia': typeof EnciclopediaRoute
+  '/enciclopedia': typeof EnciclopediaRouteWithChildren
   '/estudar': typeof EstudarRoute
   '/explorar': typeof ExplorarRoute
   '/favoritos': typeof FavoritosRoute
@@ -636,6 +651,7 @@ export interface FileRoutesById {
   '/biblia/planos': typeof BibliaPlanosRouteWithChildren
   '/catecismo/$parte': typeof CatecismoParteRoute
   '/catecismo/artigos': typeof CatecismoArtigosRoute
+  '/enciclopedia/$tema': typeof EnciclopediaTemaRoute
   '/forum/$slug': typeof ForumSlugRoute
   '/noticias/$slug': typeof NoticiasSlugRoute
   '/oracoes/liturgia-das-horas': typeof OracoesLiturgiaDasHorasRoute
@@ -646,6 +662,7 @@ export interface FileRoutesById {
   '/santos/$slug': typeof SantosSlugRoute
   '/biblia/': typeof BibliaIndexRoute
   '/catecismo/': typeof CatecismoIndexRoute
+  '/enciclopedia/': typeof EnciclopediaIndexRoute
   '/forum/': typeof ForumIndexRoute
   '/noticias/': typeof NoticiasIndexRoute
   '/oracoes/': typeof OracoesIndexRoute
@@ -712,6 +729,7 @@ export interface FileRouteTypes {
     | '/biblia/planos'
     | '/catecismo/$parte'
     | '/catecismo/artigos'
+    | '/enciclopedia/$tema'
     | '/forum/$slug'
     | '/noticias/$slug'
     | '/oracoes/liturgia-das-horas'
@@ -722,6 +740,7 @@ export interface FileRouteTypes {
     | '/santos/$slug'
     | '/biblia/'
     | '/catecismo/'
+    | '/enciclopedia/'
     | '/forum/'
     | '/noticias/'
     | '/oracoes/'
@@ -753,7 +772,6 @@ export interface FileRouteTypes {
     | '/design-system'
     | '/doutores-da-igreja'
     | '/email-confirmado'
-    | '/enciclopedia'
     | '/estudar'
     | '/explorar'
     | '/favoritos'
@@ -780,6 +798,7 @@ export interface FileRouteTypes {
     | '/biblia/leituras'
     | '/catecismo/$parte'
     | '/catecismo/artigos'
+    | '/enciclopedia/$tema'
     | '/forum/$slug'
     | '/noticias/$slug'
     | '/oracoes/liturgia-das-horas'
@@ -790,6 +809,7 @@ export interface FileRouteTypes {
     | '/santos/$slug'
     | '/biblia'
     | '/catecismo'
+    | '/enciclopedia'
     | '/forum'
     | '/noticias'
     | '/oracoes'
@@ -854,6 +874,7 @@ export interface FileRouteTypes {
     | '/biblia/planos'
     | '/catecismo/$parte'
     | '/catecismo/artigos'
+    | '/enciclopedia/$tema'
     | '/forum/$slug'
     | '/noticias/$slug'
     | '/oracoes/liturgia-das-horas'
@@ -864,6 +885,7 @@ export interface FileRouteTypes {
     | '/santos/$slug'
     | '/biblia/'
     | '/catecismo/'
+    | '/enciclopedia/'
     | '/forum/'
     | '/noticias/'
     | '/oracoes/'
@@ -898,7 +920,7 @@ export interface RootRouteChildren {
   DesignSystemRoute: typeof DesignSystemRoute
   DoutoresDaIgrejaRoute: typeof DoutoresDaIgrejaRoute
   EmailConfirmadoRoute: typeof EmailConfirmadoRoute
-  EnciclopediaRoute: typeof EnciclopediaRoute
+  EnciclopediaRoute: typeof EnciclopediaRouteWithChildren
   EstudarRoute: typeof EstudarRoute
   ExplorarRoute: typeof ExplorarRoute
   FavoritosRoute: typeof FavoritosRoute
@@ -1241,6 +1263,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ForumIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/enciclopedia/': {
+      id: '/enciclopedia/'
+      path: '/'
+      fullPath: '/enciclopedia/'
+      preLoaderRoute: typeof EnciclopediaIndexRouteImport
+      parentRoute: typeof EnciclopediaRoute
+    }
     '/catecismo/': {
       id: '/catecismo/'
       path: '/'
@@ -1310,6 +1339,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/forum/$slug'
       preLoaderRoute: typeof ForumSlugRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/enciclopedia/$tema': {
+      id: '/enciclopedia/$tema'
+      path: '/$tema'
+      fullPath: '/enciclopedia/$tema'
+      preLoaderRoute: typeof EnciclopediaTemaRouteImport
+      parentRoute: typeof EnciclopediaRoute
     }
     '/catecismo/artigos': {
       id: '/catecismo/artigos'
@@ -1508,6 +1544,20 @@ const CatecismoRouteWithChildren = CatecismoRoute._addFileChildren(
   CatecismoRouteChildren,
 )
 
+interface EnciclopediaRouteChildren {
+  EnciclopediaTemaRoute: typeof EnciclopediaTemaRoute
+  EnciclopediaIndexRoute: typeof EnciclopediaIndexRoute
+}
+
+const EnciclopediaRouteChildren: EnciclopediaRouteChildren = {
+  EnciclopediaTemaRoute: EnciclopediaTemaRoute,
+  EnciclopediaIndexRoute: EnciclopediaIndexRoute,
+}
+
+const EnciclopediaRouteWithChildren = EnciclopediaRoute._addFileChildren(
+  EnciclopediaRouteChildren,
+)
+
 interface OracoesNovenasRouteChildren {
   OracoesNovenasSlugRoute: typeof OracoesNovenasSlugRoute
 }
@@ -1569,7 +1619,7 @@ const rootRouteChildren: RootRouteChildren = {
   DesignSystemRoute: DesignSystemRoute,
   DoutoresDaIgrejaRoute: DoutoresDaIgrejaRoute,
   EmailConfirmadoRoute: EmailConfirmadoRoute,
-  EnciclopediaRoute: EnciclopediaRoute,
+  EnciclopediaRoute: EnciclopediaRouteWithChildren,
   EstudarRoute: EstudarRoute,
   ExplorarRoute: ExplorarRoute,
   FavoritosRoute: FavoritosRoute,

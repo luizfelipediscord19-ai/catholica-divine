@@ -13,3 +13,6 @@
 - [x] Ampliar a Mariologia com ano litúrgico, culto, objeções e outras tradições.
 - [x] Sumário automático em páginas de explicação, com impressão em cores e em preto e branco.
 - [x] Remover a ficha duplicada de Santa Mônica; todo santo tem imagem.
+
+- [x] Enciclopédia: páginas temáticas (Teologia, Moral, Liturgia, Mariologia) com sumário e impressão em PDF
+- [x] Bíblia: versículos com elo para os parágrafos do Catecismo (índice de citações + painel "Este capítulo no Catecismo")

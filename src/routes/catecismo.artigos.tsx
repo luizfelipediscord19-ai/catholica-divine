@@ -19,7 +19,13 @@ const URL_PAGINA = "https://portalcatolico.vercel.app/catecismo/artigos";
 const DESCRICAO =
   "O Catecismo da Igreja Católica artigo por artigo: faixa de parágrafos, síntese de cada artigo, pontos-chave com referência e busca por número de parágrafo.";
 
+type Busca = { p?: number };
+
 export const Route = createFileRoute("/catecismo/artigos")({
+  validateSearch: (raw: Record<string, unknown>): Busca => {
+    const n = Number(raw.p);
+    return Number.isFinite(n) && n >= 1 && n <= 2865 ? { p: Math.floor(n) } : {};
+  },
   head: () => ({
     meta: [
       { title: "Catecismo artigo por artigo — buscar por parágrafo — Portal Católico" },
@@ -44,7 +50,9 @@ function normalizar(t: string): string {
 }
 
 function Page() {
-  const [consulta, setConsulta] = useState("");
+  // Um link vindo da Bíblia (ex.: "CIC §1406") já abre a página no parágrafo.
+  const { p } = Route.useSearch();
+  const [consulta, setConsulta] = useState(p ? String(p) : "");
 
   const { resultado, paragrafo } = useMemo(() => {
     const bruto = consulta.trim();
