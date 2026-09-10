@@ -21,7 +21,10 @@ export function CatecismoDoVersiculo({
   if (elos.length === 0) return null;
 
   return (
-    <span data-leitura-oculto className="ml-2 inline-flex flex-wrap items-baseline gap-1.5 align-baseline">
+    <span
+      data-leitura-oculto
+      className="ml-2 inline-flex flex-wrap items-baseline gap-1.5 align-baseline"
+    >
       {elos.map((elo) =>
         elo.paragrafos.map((p) => (
           <Link

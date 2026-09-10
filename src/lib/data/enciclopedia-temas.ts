@@ -103,7 +103,14 @@ export const TEMAS_ENCICLOPEDIA: TemaEnciclopedia[] = [
         referencias: ["CIC §§ 84-95", "Dei Verbum 8"],
       },
     ],
-    verbetes: ["revelacao", "trindade", "tradicao-apostolica", "magisterio", "graca", "justificacao"],
+    verbetes: [
+      "revelacao",
+      "trindade",
+      "tradicao-apostolica",
+      "magisterio",
+      "graca",
+      "justificacao",
+    ],
   },
   {
     slug: "moral",
