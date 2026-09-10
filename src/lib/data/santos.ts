@@ -36,10 +36,16 @@ export const SANTOS: Santo[] = [
     data: "29/06",
     seculo: "I",
     padroeiro: "Missionários, teólogos, imprensa católica",
-    resumo: "Saulo de Tarso, fariseu perseguidor convertido pela visão do Ressuscitado a caminho de Damasco.",
+    resumo:
+      "Saulo de Tarso, fariseu perseguidor convertido pela visão do Ressuscitado a caminho de Damasco.",
     biografia:
       "Nascido em Tarso da Cilícia por volta do ano 8, judeu da tribo de Benjamim e cidadão romano de nascimento, formou-se aos pés do rabino Gamaliel em Jerusalém. Zelosíssimo fariseu, perseguiu os cristãos e assistiu ao martírio de Estêvão. A caminho de Damasco, por volta do ano 34, foi derrubado pela luz de Cristo que lhe disse: 'Saulo, Saulo, por que me persegues?'. Batizado por Ananias, retirou-se na Arábia e iniciou a maior aventura missionária da história: três grandes viagens fundando comunidades em todo o Mediterrâneo, da Síria à Grécia, depois a Roma e, segundo a tradição, até as Espanhas. Escreveu treze epístolas que estruturam a teologia cristã: a justificação pela fé, a primazia da caridade, a Igreja como Corpo de Cristo. Preso, julgado e libertado, foi finalmente decapitado em Roma sob Nero, na via Ostiense, por volta do ano 67. Seus restos repousam na basílica de São Paulo Fora dos Muros.",
-    virtudes: ["Zelo apostólico", "Caridade sobrenatural", "Constância nas tribulações", "Profundidade teológica"],
+    virtudes: [
+      "Zelo apostólico",
+      "Caridade sobrenatural",
+      "Constância nas tribulações",
+      "Profundidade teológica",
+    ],
     frase: "Já não sou eu que vivo, é Cristo que vive em mim.",
   },
   {
@@ -192,7 +198,8 @@ export const SANTOS: Santo[] = [
     data: "25/04",
     seculo: "I",
     padroeiro: "Veneza, secretários, advogados",
-    resumo: "O 'intérprete' de Pedro, autor do Evangelho mais antigo e fundador da Igreja de Alexandria.",
+    resumo:
+      "O 'intérprete' de Pedro, autor do Evangelho mais antigo e fundador da Igreja de Alexandria.",
     biografia:
       "João Marcos era judeu de Jerusalém; sua mãe Maria abriu a casa à comunidade primitiva — foi lá que Pedro acudiu ao sair milagrosamente do cárcere. Acompanhou Paulo e Barnabé na primeira viagem missionária, da qual se separou em Panfília; tornou-se depois colaborador fidelíssimo de Pedro em Roma, onde o chama 'meu filho'. Recolhendo a catequese viva do apóstolo, é tradicionalmente considerado o redator, por volta dos anos 60, do segundo Evangelho — o mais breve e o mais antigo —, vibrante de detalhes concretos e centrado no mistério de Cristo que se desvela na cruz como Filho de Deus. Segundo a tradição eclesiástica antiga, recolhida por Eusébio de Cesareia, foi enviado a Alexandria, onde teria fundado uma das maiores Igrejas da antiguidade, ligada à célebre escola catequética que daria à Igreja Clemente e Orígenes; a mesma tradição situa seu martírio em 68, arrastado por cordas pelas ruas até a morte. Suas relíquias foram levadas em 828 para Veneza, da qual é principal padroeiro; seu símbolo é o leão alado, porque seu Evangelho começa com a voz que clama no deserto.",
     virtudes: ["Fidelidade", "Discrição", "Espírito missionário"],
@@ -234,7 +241,12 @@ export const SANTOS: Santo[] = [
     resumo: "O homem justo a quem o Pai confiou o Filho e a Mãe.",
     biografia:
       "Carpinteiro de Nazaré, descendente da casa de Davi, foi escolhido por Deus para ser o pai virginal e legal de Jesus e o esposo da Virgem Maria. Sua justiça resplandece no silêncio: avisado em sonho de que o Filho concebido em Maria era do Espírito Santo, acolheu-a sem hesitação, deu o nome ao Menino, conduziu-os a Belém para o censo, fugiu de noite com eles para o Egito ante a fúria de Herodes e os trouxe de volta a Nazaré. Ali trabalhou com as mãos para sustentar a Sagrada Família e ensinou ao Filho de Deus o ofício humilde da carpintaria. Está presente no episódio do menino perdido e reencontrado no Templo, depois desaparece dos Evangelhos: a tradição o tem por morto antes da vida pública de Jesus, nos braços de Maria e do próprio Filho — daí ser invocado como padroeiro da boa morte. Pio IX o declarou padroeiro da Igreja universal em 1870; São João Paulo II lhe dedicou a exortação 'Redemptoris Custos', e o Papa Francisco proclamou o Ano de São José em 2020.",
-    virtudes: ["Justiça", "Silêncio orante", "Obediência aos sonhos de Deus", "Trabalho santificado"],
+    virtudes: [
+      "Justiça",
+      "Silêncio orante",
+      "Obediência aos sonhos de Deus",
+      "Trabalho santificado",
+    ],
     frase: "Fez tudo como o Anjo do Senhor lhe ordenara.",
   },
   {
@@ -309,7 +321,8 @@ export const SANTOS: Santo[] = [
     data: "17/10",
     seculo: "I–II",
     padroeiro: "Igreja do Oriente, catequistas",
-    resumo: "Bispo da Síria devorado pelos leões em Roma c. 107, autor de sete cartas fundadoras da teologia eclesial.",
+    resumo:
+      "Bispo da Síria devorado pelos leões em Roma c. 107, autor de sete cartas fundadoras da teologia eclesial.",
     biografia:
       "Discípulo direto dos apóstolos — segundo a tradição, de João — sucedeu Evódio como bispo de Antioquia, a terceira maior Igreja da cristandade, governando-a por cerca de quarenta anos. Sob Trajano foi condenado às feras e conduzido sob escolta militar de Antioquia a Roma, atravessando longo trajeto pela Ásia Menor. Durante o percurso escreveu sete cartas memoráveis — às Igrejas de Éfeso, Magnésia, Trales, Roma, Filadélfia, Esmirna e ao bispo Policarpo —, hoje pedras fundamentais do depósito patrístico. Nelas afirma pela primeira vez o nome 'Igreja católica', explicita a estrutura hierárquica em torno do bispo (assistido por presbíteros e diáconos), defende a verdade da Encarnação contra os docetas e proclama a Eucaristia como 'remédio de imortalidade'. À comunidade romana suplica que não interceda por sua libertação: 'Sou trigo de Deus; que eu seja moído pelos dentes das feras para tornar-me pão puro de Cristo'. Foi devorado no Coliseu por volta de 107.",
     virtudes: ["Amor a Cristo até o sangue", "Senso eclesial", "Coragem episcopal"],
@@ -348,7 +361,8 @@ export const SANTOS: Santo[] = [
     data: "16/09",
     seculo: "III",
     padroeiro: "África, advogados",
-    resumo: "Bispo africano da unidade da Igreja, primeiro grande mártir episcopal do Ocidente latino.",
+    resumo:
+      "Bispo africano da unidade da Igreja, primeiro grande mártir episcopal do Ocidente latino.",
     biografia:
       "Tascio Cecílio Cipriano nasceu em Cartago por volta de 210, em família pagã abastada; foi advogado e mestre de retórica antes de se converter por volta de 246, sob influência do presbítero Cecílio. Eleito bispo de Cartago apenas dois anos depois, governou com pulso firme em meio às perseguições de Décio e Valeriano. Refugiou-se durante a primeira para conduzir a Igreja por cartas, e enfrentou o cisma dos 'lapsos' — fiéis que tinham apostatado sob tortura — com firmeza e misericórdia, fixando o uso da penitência canônica. Combateu o rigorismo de Novaciano e formulou clássicas teses sobre o batismo e a unidade eclesial em obras como 'De unitate Ecclesiae', onde lê-se a célebre sentença 'Salus extra Ecclesiam non est'. Escreveu também tratados sobre o Pai-Nosso, o vestuário das virgens, a mortalidade e cerca de 80 cartas. Sob Valeriano foi exilado e, recusando-se a sacrificar aos deuses, decapitado em 14 de setembro de 258, na vinha de Sexto, diante de seu povo — primeiro bispo mártir da África.",
     virtudes: ["Senso de Igreja", "Coragem pastoral", "Misericórdia equilibrada com firmeza"],
@@ -426,7 +440,8 @@ export const SANTOS: Santo[] = [
     data: "02/05",
     seculo: "IV",
     padroeiro: "Teólogos, defensores da fé",
-    resumo: "'Atanásio contra o mundo': defensor inflexível da divindade do Verbo contra o arianismo.",
+    resumo:
+      "'Atanásio contra o mundo': defensor inflexível da divindade do Verbo contra o arianismo.",
     biografia:
       "Nasceu em Alexandria por volta de 295, formou-se na célebre escola catequética e foi diácono e secretário do bispo Alexandre no Concílio de Niceia (325), no qual brilhou como teólogo da consubstancialidade do Filho com o Pai. Sucedeu Alexandre na sé alexandrina em 328 com apenas 33 anos. Por mais de quarenta anos governou a maior Igreja do Oriente em meio à tormenta ariana, sofrendo cinco exílios sob quatro imperadores e somando dezessete anos longe da sé. Refugiou-se entre os monges do deserto egípcio, aos quais se liga a 'Vida de Santo Antão', tradicionalmente tida como sua — obra que difundiu o monasticismo no Ocidente e converteu, entre outros, Santo Agostinho. Suas obras 'De Incarnatione', 'Contra os Arianos' e os 'Discursos' fixaram para sempre a fé na divindade plena de Cristo: 'Deus se fez homem para que o homem se tornasse Deus'. Morreu em paz em sua cidade em 2 de maio de 373, depois de ver triunfar a fé nicena que tantas vezes lhe parecera perdida. Foi proclamado Doutor da Igreja em 1568.",
     virtudes: ["Constância heroica", "Profundidade teológica", "Comunhão com os monges"],
@@ -439,7 +454,8 @@ export const SANTOS: Santo[] = [
     data: "02/01",
     seculo: "IV",
     padroeiro: "Capadócia, monges orientais, hospitais",
-    resumo: "Pastor, teólogo e legislador monástico, fundador da grande caridade institucional cristã.",
+    resumo:
+      "Pastor, teólogo e legislador monástico, fundador da grande caridade institucional cristã.",
     biografia:
       "Nasceu em Cesareia da Capadócia em 329, em família de santos: irmão de São Gregório de Nissa, de Santa Macrina e de São Pedro de Sebaste. Estudou em Constantinopla e Atenas, onde travou amizade entranhável com Gregório Nazianzeno. Renunciou à brilhante carreira civil, percorreu os mosteiros do Egito e da Síria e fundou comunidades cenobíticas no Ponto, redigindo as 'Regras Maior e Menor' que ainda governam o monasticismo bizantino. Ordenado sacerdote e, em 370, bispo de Cesareia, governou heroicamente sua Igreja em meio à perseguição ariana do imperador Valente, a quem replicou com firmeza memorável: 'Nunca vi um bispo'. Criou nos arredores da cidade a 'Basiliade', vasto complexo de hospital, asilo e leprosário, primeiro grande exemplo de assistência cristã organizada. Escreveu o 'De Spiritu Sancto', as 'Homilias sobre o Hexamerão', e uma das mais belas liturgias eucarísticas do Oriente. Morreu em 379, exausto pelas vigílias e jejuns, e é venerado como Cappadocio insigne junto aos dois Gregórios.",
     virtudes: ["Sabedoria pastoral", "Caridade institucional", "Austeridade monástica"],
@@ -452,7 +468,8 @@ export const SANTOS: Santo[] = [
     data: "02/01",
     seculo: "IV",
     padroeiro: "Poetas cristãos, oradores sacros",
-    resumo: "Cantor da Trindade, o único, com São João Evangelista, chamado pela liturgia oriental 'o Teólogo'.",
+    resumo:
+      "Cantor da Trindade, o único, com São João Evangelista, chamado pela liturgia oriental 'o Teólogo'.",
     biografia:
       "Nasceu em Arianzo, na Capadócia, por volta de 329, filho do bispo Gregório, o Velho. Estudou retórica e filosofia em Cesareia, Alexandria e Atenas, onde se ligou de amizade indissolúvel a Basílio. De temperamento contemplativo, atraído pelo silêncio do mosteiro, foi sucessivamente arrancado à solidão pela ordenação sacerdotal, pelo episcopado de Sasima (que jamais quis ocupar) e, em 379, pela missão de pregar à pequena comunidade católica de Constantinopla, capital invadida pelo arianismo. Em poucos meses, com os cinco célebres 'Discursos Teológicos', reconverteu a cidade e foi aclamado bispo. Presidiu o Concílio de Constantinopla (381), que completou o Credo de Niceia proclamando a divindade do Espírito Santo. Renunciou pouco depois em prol da paz, voltou a Nazianzo e Arianzo, e ali consumiu os últimos anos em oração, poesia (deixou cerca de 17 mil versos) e cartas, falecendo em 389 ou 390. Sua eloquência e teologia trinitária permanecem cume da patrística grega.",
     virtudes: ["Contemplação", "Eloquência", "Humildade que renuncia ao poder"],
@@ -465,7 +482,8 @@ export const SANTOS: Santo[] = [
     data: "10/01",
     seculo: "IV",
     padroeiro: "Místicos, teólogos",
-    resumo: "Irmão mais novo de Basílio, fino metafísico da infinitude divina e do progresso na vida espiritual.",
+    resumo:
+      "Irmão mais novo de Basílio, fino metafísico da infinitude divina e do progresso na vida espiritual.",
     biografia:
       "Nasceu em Cesareia da Capadócia por volta de 335, num lar excepcional: irmão de Basílio, de Macrina e de Pedro de Sebaste. Inicialmente retórico e casado, foi conduzido à vida eclesiástica por insistência do irmão, que o sagrou bispo de Nissa em 371 para defender a fé nicena na pequena diocese. Pouco hábil para a administração, brilhou, porém, como teólogo e místico de primeira grandeza. Participou ativamente do Concílio de Constantinopla (381), que o reconheceu coluna da ortodoxia. Suas obras — 'Vida de Moisés', 'Homilias sobre o Cântico dos Cânticos', 'A Grande Catequese', 'Sobre a alma e a ressurreição' (diálogo com a irmã Macrina às portas da morte) — desenvolveram a doutrina da ascensão sem fim da alma para Deus ('epektasis'), a teologia apofática da incompreensibilidade divina e a antropologia da imagem. Falecendo por volta de 395, completa, com Basílio e Gregório Nazianzeno, a tríade dos Padres Capadócios e foi inscrito por Roma entre os Doutores da Igreja.",
     virtudes: ["Profundidade contemplativa", "Liberdade interior", "Audácia metafísica"],
@@ -491,7 +509,8 @@ export const SANTOS: Santo[] = [
     data: "07/12",
     seculo: "IV",
     padroeiro: "Milão, apicultores, abelheiros",
-    resumo: "Catecúmeno aclamado bispo pelo povo, mestre de Santo Agostinho e legislador da liturgia ocidental.",
+    resumo:
+      "Catecúmeno aclamado bispo pelo povo, mestre de Santo Agostinho e legislador da liturgia ocidental.",
     biografia:
       "Nasceu em Tréveris por volta de 339, filho do prefeito da Gália. Brilhante advogado e governador da Ligúria e Emília, com sede em Milão, foi providencialmente eleito bispo pelos cidadãos em 374, ainda catecúmeno: em uma semana recebeu o batismo e todas as ordens. Distribuiu seus bens aos pobres, mergulhou no estudo das Escrituras e dos Padres gregos e reformou energicamente a Igreja. Compôs hinos litúrgicos imortais — origem do chamado canto ambrosiano —, escreveu tratados como 'De officiis ministrorum', 'De mysteriis' e 'De Spiritu Sancto', e enfrentou imperadores: obrigou o jovem Valentiniano a recusar a restauração do altar da Vitória, e impôs pública penitência a Teodósio o Grande após o massacre de Tessalônica — episódio simbólico das relações entre Igreja e poder no Ocidente. Foi instrumento decisivo da conversão de Agostinho, a quem batizou em 387 na noite pascal em Milão. Morreu em 4 de abril de 397, sábado santo, e seu corpo repousa intacto na basílica milanesa.",
     virtudes: ["Coragem episcopal", "Caridade", "Eloquência"],
@@ -504,11 +523,13 @@ export const SANTOS: Santo[] = [
     data: "28/08",
     seculo: "IV–V",
     padroeiro: "Teólogos, tipógrafos, conversões tardias",
-    resumo: "O coração inquieto que encontrou em Deus o repouso e moldou o pensamento cristão ocidental.",
+    resumo:
+      "O coração inquieto que encontrou em Deus o repouso e moldou o pensamento cristão ocidental.",
     biografia:
       "Aurélio Agostinho nasceu em Tagaste, na Numídia, em 354, do pagão Patrício e da cristã Mônica. Brilhante em retórica, levou em Cartago e Roma vida desregrada, teve um filho fora do casamento (Adeodato) e aderiu por nove anos ao maniqueísmo. Insatisfeito, passou ao ceticismo e, em Milão, conheceu Santo Ambrósio, cuja pregação dissolveu seus preconceitos contra as Escrituras. A leitura de Paulo no jardim ('Toma e lê'), após anos de luta moral narrados nas 'Confissões', selou a conversão; foi batizado por Ambrósio na Páscoa de 387. Voltou à África, viveu em comunidade monástica e foi ordenado sacerdote e, em 395, bispo de Hipona. Durante 35 anos governou a Igreja africana e enfrentou maniqueus, donatistas e pelagianos, escrevendo cerca de 113 obras, 200 cartas e 500 sermões. As 'Confissões', a 'Cidade de Deus' e o 'De Trinitate' moldaram para sempre o Ocidente cristão. Morreu em 28 de agosto de 430, durante o cerco vândalo a Hipona, rezando os salmos penitenciais pregados na parede.",
     virtudes: ["Busca incansável da verdade", "Humildade na conversão", "Caridade pastoral"],
-    frase: "Fizestes-nos para Vós, Senhor, e o nosso coração vive inquieto enquanto não repousa em Vós.",
+    frase:
+      "Fizestes-nos para Vós, Senhor, e o nosso coração vive inquieto enquanto não repousa em Vós.",
   },
   {
     slug: "sao-jeronimo",
@@ -582,7 +603,8 @@ export const SANTOS: Santo[] = [
     data: "21/04",
     seculo: "XI–XII",
     padroeiro: "Filósofos, teólogos",
-    resumo: "Monge benedictino que pôs a razão a serviço da fé com o lema 'Fides quaerens intellectum'.",
+    resumo:
+      "Monge benedictino que pôs a razão a serviço da fé com o lema 'Fides quaerens intellectum'.",
     biografia:
       "Nasceu em Aosta, no Piemonte, em 1033. Após a morte da mãe, deixou a casa paterna e, depois de andanças pela Borgonha e pela França, atraído pela fama de Lanfranco, entrou no mosteiro beneditino de Bec, na Normandia, em 1060. Tornou-se prior, depois abade, e ali compôs as obras filosófico-teológicas que abrem a era escolástica: o 'Monologion', o 'Proslogion' — onde formula o famoso 'argumento ontológico' da existência de Deus —, e o 'Cur Deus homo', tratado decisivo sobre a redenção como satisfação do amor. Em 1093, contra sua vontade, foi sagrado arcebispo de Cantuária; defendeu a liberdade da Igreja inglesa contra Guilherme II e Henrique I, e sofreu dois longos exílios. Participou do Concílio de Bari (1098), onde rebateu os erros gregos sobre o Filioque. Mestre dos discípulos pela ternura paterna, mais que pela severidade, deixou também magníficas orações e meditações. Morreu em Cantuária em 21 de abril de 1109. Foi proclamado Doutor da Igreja por Clemente XI em 1720.",
     virtudes: ["Inteligência crente", "Mansidão paterna", "Liberdade eclesial"],
@@ -595,7 +617,8 @@ export const SANTOS: Santo[] = [
     data: "20/08",
     seculo: "XI–XII",
     padroeiro: "Cistercienses, apicultores, alpinistas",
-    resumo: "Místico e reformador que sacudiu o século XII com a doçura ardente de seu amor a Cristo e a Maria.",
+    resumo:
+      "Místico e reformador que sacudiu o século XII com a doçura ardente de seu amor a Cristo e a Maria.",
     biografia:
       "Nasceu em 1090 no castelo de Fontaine-lès-Dijon, terceiro de sete filhos da nobreza borgonhesa. Aos 22 anos entrou no recém-fundado mosteiro de Cister, levando consigo trinta companheiros — entre os quais quatro irmãos e o tio. Três anos depois foi enviado a fundar uma nova casa em Claraval (Clairvaux), da qual seria abade até a morte. Sob seu impulso, a Ordem de Cister espalhou-se em 343 mosteiros pela Europa em vida sua. Conselheiro de papas, reis e bispos, conduziu o cisma de Anacleto II em favor de Inocêncio II, fundamentou a regra dos Templários, combateu os erros de Abelardo no Sínodo de Sens, e pregou aos povos a Segunda Cruzada por encargo de Eugênio III, seu antigo discípulo. Seus sermões sobre o Cântico dos Cânticos, os tratados 'De diligendo Deo' e 'De consideratione', e os escritos marianos — especialmente o 'Memorare' e as quatro homilias 'Super missus est' — fizeram dele cantor incomparável do amor a Cristo e a Maria. Morreu em Claraval em 20 de agosto de 1153; canonizado em 1174, foi proclamado Doutor da Igreja em 1830.",
     virtudes: ["Amor a Cristo crucificado", "Devoção mariana", "Liberdade evangélica"],
@@ -621,7 +644,8 @@ export const SANTOS: Santo[] = [
     data: "15/07",
     seculo: "XIII",
     padroeiro: "Franciscanos, teólogos místicos",
-    resumo: "Místico e organizador, segundo fundador da Ordem Franciscana e amigo de Tomás de Aquino.",
+    resumo:
+      "Místico e organizador, segundo fundador da Ordem Franciscana e amigo de Tomás de Aquino.",
     biografia:
       "Giovanni di Fidanza nasceu em Bagnoregio, em 1217 ou 1221. A tradição liga seu nome à exclamação do próprio São Francisco — 'O buona ventura!' — ao curar a criança gravemente enferma. Entrou nos Frades Menores por volta de 1243, estudou em Paris sob Alexandre de Hales, ensinou na mesma universidade junto a Tomás de Aquino, com quem fez doutorado em 1257. No mesmo ano foi eleito Ministro Geral dos Franciscanos: governou a Ordem treze anos com tal sabedoria em meio às tensões entre 'espirituais' e 'conventuais' que mereceu o título de segundo fundador. Reformou-a com novas Constituições em Narbona e redigiu a 'Legenda Maior' de São Francisco. Suas obras — 'Itinerarium mentis in Deum', 'Breviloquium', comentários às Sentenças, sermões — são síntese magistral de teologia e mística. Recusou várias mitras antes de aceitar, em 1273, o cardinalato e a sé de Albano. Preparou e abriu o Segundo Concílio de Lyon, decisivo na união provisória com os ortodoxos, mas faleceu antes do encerramento, em 15 de julho de 1274. Canonizado em 1482 e proclamado Doutor da Igreja em 1588.",
     virtudes: ["Sabedoria conciliadora", "Humildade", "Amor à pobreza franciscana"],
@@ -634,11 +658,13 @@ export const SANTOS: Santo[] = [
     data: "15/11",
     seculo: "XIII",
     padroeiro: "Cientistas naturais, estudantes de ciências",
-    resumo: "Mestre de Tomás de Aquino, pioneiro do diálogo entre fé, filosofia aristotélica e ciências naturais.",
+    resumo:
+      "Mestre de Tomás de Aquino, pioneiro do diálogo entre fé, filosofia aristotélica e ciências naturais.",
     biografia:
       "Nasceu em Lauingen, na Suábia, por volta de 1200, de família nobre. Estudou em Pádua, onde, fascinado pelo beato Jordão da Saxônia, entrou nos Dominicanos contra a vontade do tio. Lecionou em Hildesheim, Friburgo, Ratisbona, Estrasburgo, Colônia e Paris, tornando-se o primeiro grande mestre alemão da Ordem. Em Colônia teve por discípulo Tomás de Aquino, em quem reconheceu imediatamente o gênio. Sua obra — 38 volumes na edição de Borgnet — comenta sistematicamente toda a filosofia de Aristóteles e estende a investigação a botânica, zoologia, mineralogia, astronomia, química, medicina, geografia, intuindo séculos antes muitas teses da ciência moderna. Foi provincial dos dominicanos alemães, bispo de Ratisbona (1260-1262) — cargo que renunciou para voltar ao ensino —, conselheiro em concílios e pregador da cruzada. Ainda velho, deslocou-se ao Concílio de Lyon (1274) e defendeu em Paris a memória de Tomás. Morreu em Colônia, em 15 de novembro de 1280, e Pio XI o canonizou e proclamou Doutor da Igreja em 1931, declarando-o em 1941 padroeiro dos cultores das ciências naturais.",
     virtudes: ["Saber enciclopédico", "Humildade do mestre", "Curiosidade contemplativa"],
-    frase: "Investigar a verdade onde ela se encontre, pois tudo o que é verdadeiro vem do Espírito.",
+    frase:
+      "Investigar a verdade onde ela se encontre, pois tudo o que é verdadeiro vem do Espírito.",
   },
   {
     slug: "santo-domingos-de-gusmao",
@@ -663,7 +689,12 @@ export const SANTOS: Santo[] = [
     resumo: "O Pobrezinho de Assis, místico do amor a Cristo crucificado e a toda criatura.",
     biografia:
       "Nasceu em 1181/82 em Assis, na Úmbria, filho do rico mercador Pietro di Bernardone e de dona Pica. De juventude fastosa e mundana, sonhou com a cavalaria, foi à guerra contra Perugia e amargou um ano de cárcere. Doente, ouviu a chamada de Deus e, diante do crucifixo de São Damião, a ordem: 'Vai, Francisco, restaura a minha casa'. Despojou-se publicamente perante o bispo de Assis, devolveu até as vestes ao pai, e abraçou a Senhora Pobreza. Em 1209, com onze companheiros, obteve do papa Inocêncio III a aprovação da regra primitiva e fundou a Ordem dos Frades Menores; em 1212 nascia, com Santa Clara, a Segunda Ordem; depois, a Ordem dos Penitentes (hoje OFS). Viveu de esmola, pregou a paz nas cidades em guerra, foi até o sultão al-Kamil em Damieta (1219) durante a Quinta Cruzada. No Natal de 1223, em Greccio, criou o primeiro presépio vivo; em 1224, no monte Alverne, recebeu, segundo a tradição franciscana e o testemunho de seus companheiros, os estigmas — sendo tido como o primeiro a recebê-los. Quase cego e exausto, compôs o 'Cântico das Criaturas' e morreu cantando, nu sobre a terra, em Porciúncula, em 3 de outubro de 1226.",
-    virtudes: ["Pobreza radical", "Alegria evangélica", "Amor à criação", "Conformidade com Cristo crucificado"],
+    virtudes: [
+      "Pobreza radical",
+      "Alegria evangélica",
+      "Amor à criação",
+      "Conformidade com Cristo crucificado",
+    ],
     frase: "Senhor, fazei de mim um instrumento da vossa paz.",
   },
   {
@@ -673,7 +704,8 @@ export const SANTOS: Santo[] = [
     data: "11/08",
     seculo: "XIII",
     padroeiro: "Televisão, oftalmologistas, bordadeiras",
-    resumo: "Primeira mulher a escrever uma regra para mulheres na Igreja, planta delicada de São Francisco.",
+    resumo:
+      "Primeira mulher a escrever uma regra para mulheres na Igreja, planta delicada de São Francisco.",
     biografia:
       "Nasceu em Assis em 1193 ou 1194, em família nobre. Aos dezoito anos, fascinada pela pregação de Francisco, fugiu de casa na noite do Domingo de Ramos de 1212, recebeu dele o hábito penitencial em Porciúncula e refugiou-se primeiro entre as beneditinas; estabeleceu-se finalmente em São Damião, onde permaneceu por 42 anos sem nunca sair, governando a comunidade que dela tomaria o nome — as Clarissas. Conquistou do papa Gregório IX o 'privilégio da pobreza': nem em comum a comunidade poderia possuir bens, vivendo unicamente da Providência. Em 1240 e 1241, o mosteiro foi cercado por mercenários sarracenos a serviço de Frederico II; Clara, doente, fez-se levar com o ostensório do Santíssimo até as muralhas, e os atacantes fugiram. Redigiu para suas irmãs a primeira regra feminina escrita por uma mulher, aprovada em 1253 dois dias antes de sua morte. Santíssima do Sacramento e fidelíssima ao espírito de Francisco, faleceu em 11 de agosto de 1253. Canonizada em 1255, é, desde Pio XII (1958), padroeira da televisão por ter visto à distância, doente no leito, a missa da basílica.",
     virtudes: ["Pobreza absoluta", "Adoração eucarística", "Fidelidade ao carisma franciscano"],
@@ -699,7 +731,8 @@ export const SANTOS: Santo[] = [
     data: "29/04",
     seculo: "XIV",
     padroeiro: "Itália, Europa, enfermeiras, jornalistas",
-    resumo: "A jovem analfabeta que reconduziu o Papa de Avignon a Roma e ditou obras de altíssima mística.",
+    resumo:
+      "A jovem analfabeta que reconduziu o Papa de Avignon a Roma e ditou obras de altíssima mística.",
     biografia:
       "Caterina Benincasa nasceu em Siena em 25 de março de 1347, vigésima quarta filha de Jacopo, tintureiro. Aos seis anos, voltando da casa de uma irmã, teve a primeira visão de Cristo em glória sobre a igreja de São Domingos. Aos sete consagrou a virgindade; recusou as bodas que a família lhe impunha e, aos dezesseis, recebeu o hábito das Mantelatas dominicanas, terceira ordem leiga. Após três anos de reclusão e oração na 'cela do conhecimento de si', recebeu de Cristo os místicos esponsais e foi enviada à ação. Cercou-se de discípulos — a 'bella brigata' — de toda condição, e tornou-se diplomata, conselheira de papas e de príncipes, pacificadora de cidades. Em 1376 foi a Avignon e persuadiu Gregório XI a retornar a Roma, pondo fim ao exílio de 70 anos. Trabalhou pela unidade do Cisma do Ocidente. Segundo o testemunho de seus confessores, recebeu os estigmas invisíveis em Pisa (1375). Ditou em êxtase o 'Diálogo da Divina Providência' e cerca de 380 cartas, monumentos do italiano espiritual. Morreu em Roma em 29 de abril de 1380, aos 33 anos. Doutora da Igreja (1970), Padroeira da Europa (1999).",
     virtudes: ["Mística ardente", "Coragem profética", "Caridade com os doentes"],
@@ -712,7 +745,8 @@ export const SANTOS: Santo[] = [
     data: "23/07",
     seculo: "XIV",
     padroeiro: "Europa, Suécia, viúvas, peregrinos",
-    resumo: "Esposa, mãe de oito filhos, viúva e mística que recebeu da Cruz as 'Revelações' celebérrimas.",
+    resumo:
+      "Esposa, mãe de oito filhos, viúva e mística que recebeu da Cruz as 'Revelações' celebérrimas.",
     biografia:
       "Nasceu em 1303, na província sueca de Uppland, filha do governador Birger. Casou-se aos 14 anos com Ulf Gudmarsson e teve oito filhos — entre eles Santa Catarina da Suécia. Levou vida de profunda piedade, peregrinou com o marido a Compostela em 1341; depois da morte deste, em 1344, repartiu seus bens, abraçou austera vida penitente em Alvastra e começou a receber as 'Revelações' celestes, ditadas em sueco e traduzidas ao latim por seus confessores. Por mandato divino, fundou a Ordem do Santíssimo Salvador — as 'brigidinas' — com mosteiro duplo em Vadstena. Partiu para Roma em 1349 e ali viveu vinte e quatro anos, repreendendo papas e cardeais, exigindo o retorno do Pontífice a Roma e a reforma da Igreja, e exercendo intensa caridade entre os pobres e peregrinos. Empreendeu peregrinação à Terra Santa em 1372, onde teve novas visões da Paixão e do Nascimento de Cristo, que mudariam a iconografia ocidental do presépio. Morreu em Roma em 23 de julho de 1373; canonizada em 1391, foi declarada por São João Paulo II Padroeira da Europa em 1999.",
     virtudes: ["Vida conjugal santa", "Caridade", "Coragem profética com os poderosos"],
@@ -725,7 +759,8 @@ export const SANTOS: Santo[] = [
     data: "30/05",
     seculo: "XV",
     padroeiro: "França, soldados, telegrafistas, vítimas de injustiça",
-    resumo: "A jovem camponesa de Domrémy que, guiada pelas vozes do céu, salvou um reino e morreu na fogueira por fidelidade.",
+    resumo:
+      "A jovem camponesa de Domrémy que, guiada pelas vozes do céu, salvou um reino e morreu na fogueira por fidelidade.",
     biografia:
       "Nasceu em 1412 em Domrémy, na Lorena, em família camponesa profundamente cristã. Em plena Guerra dos Cem Anos, com a França quase inteira nas mãos inglesas, começou aos treze anos a ouvir vozes de São Miguel, Santa Catarina e Santa Margarida que lhe pediam libertar Orléans e conduzir o delfim Carlos a Reims para sua consagração. Vencidas as resistências, recebeu em Chinon armadura e tropas; em 8 de maio de 1429 libertou Orléans em poucos dias; em 17 de julho, fez Carlos VII coroar-se rei na catedral de Reims, com ela ao seu lado. Capturada em Compiègne em 23 de maio de 1430, foi vendida aos ingleses por João de Luxemburgo e julgada em Ruão pelo tribunal eclesiástico parcial do bispo Pedro Cauchon. Após meses de perguntas insidiosas, recusando-se a desmentir suas vozes e sua missão divina, foi condenada como herética e bruxa. Foi queimada viva na praça de Ruão, em 30 de maio de 1431, com 19 anos, segurando a cruz e pronunciando o nome de Jesus. Reabilitada em 1456, canonizada em 1920, é Padroeira secundária da França.",
     virtudes: ["Pureza", "Coragem", "Obediência às vozes divinas", "Fidelidade até o fogo"],
@@ -751,7 +786,8 @@ export const SANTOS: Santo[] = [
     data: "15/10",
     seculo: "XVI",
     padroeiro: "Espanha, doentes da cabeça, escritores místicos",
-    resumo: "Reformadora do Carmelo, mestra incomparável da oração mística e da audácia espiritual.",
+    resumo:
+      "Reformadora do Carmelo, mestra incomparável da oração mística e da audácia espiritual.",
     biografia:
       "Teresa Sánchez de Cepeda y Ahumada nasceu em Ávila em 28 de março de 1515, em família de origem judaico-conversa. Aos vinte entrou no Carmelo da Encarnação de Ávila, então mosteiro mundano e relaxado. Doente, atravessou anos de mediocridade até uma conversão decisiva diante de um 'Cristo todo chagado' em 1554. Começou então uma vida de oração contemplativa intensíssima, com graças místicas extraordinárias: arrebatamentos, visões, a transverberação do coração descrita pela escultura de Bernini em Roma. Decidiu, ainda monja simples, reformar o Carmelo e voltá-lo à primitiva austeridade. Fundou em 1562 o pequeno mosteiro de São José de Ávila, com regra observantíssima e sem rendas; nasciam os Carmelitas Descalços. Em vinte anos de itinerâncias por toda a Espanha, fundou outros dezesseis mosteiros femininos e, com a colaboração de São João da Cruz, ramos masculinos. Escreveu obras imortais — 'Vida', 'Caminho de Perfeição', 'Castelo Interior', 'Fundações', cartas —, todas redigidas no meio de viagens, doenças, oposições e processos inquisitoriais. Morreu em Alba de Tormes em 4 de outubro de 1582. Primeira mulher Doutora da Igreja (1970).",
     virtudes: ["Oração contínua", "Determinação varonil", "Senso comum santificado", "Alegria"],
@@ -777,7 +813,8 @@ export const SANTOS: Santo[] = [
     data: "31/07",
     seculo: "XVI",
     padroeiro: "Retiros espirituais, militares, exército",
-    resumo: "Soldado convertido pela leitura dos santos, deu à Igreja os 'Exercícios' e os Jesuítas.",
+    resumo:
+      "Soldado convertido pela leitura dos santos, deu à Igreja os 'Exercícios' e os Jesuítas.",
     biografia:
       "Íñigo López de Loyola nasceu em 1491 no castelo de Loyola, no País Basco, treze filhos de família nobre. Pajem na corte, depois cavaleiro a serviço do vice-rei de Navarra, ferido em ambas as pernas no cerco de Pamplona em 1521. Na longa convalescença, à falta de romances, leu uma 'Vida de Cristo' e o 'Floretum Sanctorum'; comparou os movimentos da alma e descobriu o discernimento dos espíritos. Convertido, peregrinou a Montserrat, depositou as armas ante a Virgem e passou um ano em Manresa, em durísima penitência e oração, onde compôs o primeiro esboço dos 'Exercícios Espirituais'. Estudou em Barcelona, Alcalá, Salamanca e Paris (já com mais de 30 anos), reunindo companheiros — Francisco Xavier, Pedro Fabro, entre outros. Em Montmartre, em 1534, fizeram votos. Em 1540, Paulo III aprovou a Companhia de Jesus; Inácio foi eleito primeiro Prepósito Geral. Durante 15 anos governou da casa de Roma a Ordem que cresceu a mil membros e à evangelização da Índia, do Japão, do Brasil e da Europa. Escreveu as 'Constituições' e o 'Diário Espiritual'. Morreu em Roma em 31 de julho de 1556. Canonizado em 1622.",
     virtudes: ["Discernimento", "Indiferença santa", "Obediência à Igreja", "Magnanimidade"],
@@ -803,7 +840,8 @@ export const SANTOS: Santo[] = [
     data: "26/05",
     seculo: "XVI",
     padroeiro: "Roma, jovens, humoristas, alegria cristã",
-    resumo: "O santo da alegria, que reformou a Roma do Renascimento com brincadeiras e confessionário.",
+    resumo:
+      "O santo da alegria, que reformou a Roma do Renascimento com brincadeiras e confessionário.",
     biografia:
       "Nasceu em Florença em 21 de julho de 1515, em família modesta. Deixou aos 18 anos a casa do tio que lhe propunha herança em San Germano e foi a Roma, onde viveu pobremente como preceptor e estudante de filosofia e teologia, em prolongada vida laical de oração nas catacumbas de São Sebastião. Em 1544, na vigília de Pentecostes, recebeu o 'fogo do Espírito Santo' que lhe dilatou fisicamente o coração — fenômeno verificado após a morte. Apóstolo nas ruas, abordava romanos com 'Quando começaremos a fazer o bem?'. Ordenado sacerdote em 1551 e instalado em San Girolamo della Carità, atraía com seu confessionário multidões; reunia leigos e clérigos em reuniões informais de oração, leitura espiritual, conversa, música — origem do Oratório. Em 1575 obteve a igreja Santa Maria in Vallicella, hoje 'Chiesa Nuova', e fundou a Congregação do Oratório, comunidade de sacerdotes seculares aprovada por Gregório XIII. Conselheiro de papas, cardeais (Carlos Borromeu, Cesar Baronio) e artistas, transformou a vida cristã da cidade pelo humor, a humildade e a alegria. Morreu em Roma em 26 de maio de 1595, aos 79 anos. Canonizado em 1622 com Inácio, Xavier, Teresa e Isidoro.",
     virtudes: ["Alegria cristã", "Humildade extravagante", "Direção espiritual paterna"],
@@ -842,7 +880,8 @@ export const SANTOS: Santo[] = [
     data: "16/10",
     seculo: "XVII",
     padroeiro: "Apostolado da Oração, devotos do Sagrado Coração",
-    resumo: "A religiosa silenciosa de Paray-le-Monial a quem Cristo confiou a devoção a seu Coração.",
+    resumo:
+      "A religiosa silenciosa de Paray-le-Monial a quem Cristo confiou a devoção a seu Coração.",
     biografia:
       "Nasceu em Lhautecour, na Borgonha, em 22 de julho de 1647. Doente longamente na infância, foi curada por intercessão de Nossa Senhora, a quem prometeu virgindade. Em 1671 entrou na Visitação de Paray-le-Monial. Pouco notada, sofrida por humildades em comunidade, relatou ter recebido entre 1673 e 1675 quatro grandes aparições do Sagrado Coração de Jesus — revelações privadas, que não pertencem ao depósito da fé, que lhe revelou o amor desprezado, instituiu a 'comunhão reparadora' nas primeiras sextas-feiras, pediu a 'Hora Santa' às quintas e a instituição da festa do Sagrado Coração na sexta após a oitava de Corpus Christi: 'Eis o Coração que tanto amou os homens'. Encontrou o apoio decisivo do jesuíta São Cláudio La Colombière, seu confessor, que reconheceu a autenticidade das visões e divulgou-as. Faleceu em Paray-le-Monial em 17 de outubro de 1690, aos 43 anos. Canonizada em 1920, sua mensagem inspirou Leão XIII a consagrar o gênero humano ao Sagrado Coração em 1899 e Pio XI a fixar a doutrina na encíclica 'Miserentissimus Redemptor'.",
     virtudes: ["Reparação", "Obediência", "Amor ardente a Cristo"],
@@ -907,7 +946,8 @@ export const SANTOS: Santo[] = [
     data: "04/08",
     seculo: "XVIII–XIX",
     padroeiro: "Párocos, confessores",
-    resumo: "O humilde pároco do vilarejo perdido a quem afluía a França inteira em busca de absolvição.",
+    resumo:
+      "O humilde pároco do vilarejo perdido a quem afluía a França inteira em busca de absolvição.",
     biografia:
       "Jean-Marie Vianney nasceu em Dardilly, perto de Lyon, em 8 de maio de 1786, em família camponesa. Cresceu durante a Revolução Francesa, escondendo padres que celebravam em segredo. Vocação tardia e estudos penosos: a falta de aptidão para o latim quase impediu sua ordenação, alcançada em 1815 graças à insistência de seu reitor M. Balley. Coadjutor primeiro, em 1818 foi enviado à pequena Ars, vilarejo de 230 habitantes religiosamente decaído. Em poucos anos transformou a paróquia pela pregação simples, a oração, o jejum extremo (vivia de poucas batatas), as visitas e a luta espiritual contra ataques visíveis e audíveis do demônio, que apelidou de 'le grappin'. Desde 1827 começaram as peregrinações: nos últimos anos ouvia confissões 16 a 18 horas por dia, atendendo a mais de 100 mil pessoas por ano, lendo nos corações com dom de discernimento. Várias vezes tentou fugir para a Trapa, mas voltou. Diminuto, esquálido, exausto, jamais se queixou. Morreu em Ars em 4 de agosto de 1859. Canonizado por Pio XI em 1925, declarado padroeiro principal de todos os párocos em 1929.",
     virtudes: ["Penitência heroica", "Oração", "Direção espiritual penetrante"],
@@ -946,7 +986,8 @@ export const SANTOS: Santo[] = [
     data: "09/08",
     seculo: "XIX–XX",
     padroeiro: "Europa, vítimas do nazismo, conversões intelectuais",
-    resumo: "Filósofa judia convertida, carmelita assassinada em Auschwitz pela sua estirpe e sua fé.",
+    resumo:
+      "Filósofa judia convertida, carmelita assassinada em Auschwitz pela sua estirpe e sua fé.",
     biografia:
       "Edith Stein nasceu em Breslávia, capital da Silésia, em 12 de outubro de 1891, no Yom Kippur judaico, décima primeira filha de família judia ortodoxa. Adolescente, declarou-se ateia. Brilhante estudante, foi discípula e assistente de Edmund Husserl em Gotinga e Friburgo, tornando-se uma das principais fenomenólogas da escola; sua tese sobre a empatia recebeu o sumo louvor 'summa cum laude'. Em 1921, lendo de uma só sentada a autobiografia de Teresa de Ávila, exclamou: 'Esta é a verdade'. Recebeu o batismo em 1922; lecionou em Speyer e em Münster, mas em 1933 as leis raciais nazistas a expulsaram da cátedra. Em 14 de outubro de 1933, entrou no Carmelo de Colônia, recebendo o nome de Teresa Benedita da Cruz. Escreveu obras de antropologia e mística — entre elas o 'Ser finito e ser eterno' e 'Ciência da Cruz' sobre João da Cruz, concluída pouco antes da morte. Em 1938, frente ao avanço da perseguição, transferiu-se ao Carmelo holandês de Echt. Em 2 de agosto de 1942, em retaliação à carta dos bispos holandeses contra a deportação dos judeus, foi presa com sua irmã Rosa. Morta na câmara de gás em Auschwitz em 9 de agosto de 1942. Canonizada em 1998, declarada Padroeira da Europa em 1999.",
     virtudes: ["Busca da verdade", "Imolação pelo seu povo", "Coragem intelectual"],
@@ -1011,10 +1052,15 @@ export const SANTOS: Santo[] = [
     data: "22/10",
     seculo: "XX–XXI",
     padroeiro: "Famílias, jovens, Jornada Mundial da Juventude",
-    resumo: "Karol Wojtyła, o Papa que atravessou o século e proclamou ao mundo: 'Não tenhais medo!'",
+    resumo:
+      "Karol Wojtyła, o Papa que atravessou o século e proclamou ao mundo: 'Não tenhais medo!'",
     biografia:
       "Karol Józef Wojtyła nasceu em Wadowice, Polônia, em 18 de maio de 1920. Perdeu a mãe aos 9 anos, o irmão médico aos 12, o pai aos 21. Estudante de filologia em Cracóvia, durante a ocupação nazista trabalhou em pedreira e fábrica química, foi ator do Teatro Rapsódico clandestino e, em 1942, entrou no seminário também clandestino do Cardeal Sapieha. Ordenado em 1946, doutorou-se em Roma sob Garrigou-Lagrange. Foi professor de ética em Lublin, bispo auxiliar de Cracóvia em 1958, arcebispo em 1964, cardeal em 1967. Participou ativamente do Vaticano II. Eleito Papa em 16 de outubro de 1978, primeiro não italiano em 455 anos. Inaugurou o pontificado com o grito 'Não tenhais medo, abri as portas a Cristo!'. Em 27 anos, realizou 104 viagens internacionais, beatificou 1340 e canonizou 482 servos de Deus, escreveu 14 encíclicas (Redemptor Hominis, Veritatis Splendor, Evangelium Vitae, Fides et Ratio), promulgou o Catecismo (1992) e o novo Código de Direito Canônico (1983), instituiu a Jornada Mundial da Juventude (1985), a festa da Divina Misericórdia (2000) e o Ano Mariano. Sobreviveu ao atentado em 13 de maio de 1981. Contribuiu decisivamente para o fim do comunismo no Leste europeu. Atravessou a doença com testemunho conmovedor. Morreu em 2 de abril de 2005, vigília da Divina Misericórdia. Canonizado em 2014.",
-    virtudes: ["Coragem profética", "Devoção mariana ('Totus Tuus')", "Amor à juventude e à família"],
+    virtudes: [
+      "Coragem profética",
+      "Devoção mariana ('Totus Tuus')",
+      "Amor à juventude e à família",
+    ],
     frase: "Não tenhais medo! Abri, escancarai as portas a Cristo!",
   },
   {
@@ -1063,7 +1109,8 @@ export const SANTOS: Santo[] = [
     data: "22/05",
     seculo: "XIV–XV",
     padroeiro: "Causas impossíveis, esposas em dificuldade, perdão",
-    resumo: "Esposa, mãe e viúva antes de ser monja; carregou um espinho da coroa de Cristo na fronte.",
+    resumo:
+      "Esposa, mãe e viúva antes de ser monja; carregou um espinho da coroa de Cristo na fronte.",
     biografia:
       "Margherita Lotti nasceu em Roccaporena, perto de Cássia, na Úmbria, por volta de 1381, filha tardia de pais idosos chamados de 'pacificadores'. Sentiu-se chamada à vida religiosa desde a infância, mas foi obrigada pelos pais a se casar aos doze anos com Paolo Mancini, homem rude e violento envolvido nas vendetas de Cássia. Por dezoito anos de paciência, oração e doçura, ganhou-o à mansidão. Quando, finalmente convertido, ele foi assassinado pelos rivais, Rita perdoou publicamente os assassinos e rezou para que seus dois filhos adolescentes não vingassem o pai — ambos morreram pouco depois, antes de cometer o crime, segundo a tradição em estado de graça. Viúva, pediu a entrada no mosteiro agostiniano de Santa Maria Madalena em Cássia. Recusada três vezes pelas irmãs por temor das vinganças familiares, foi conduzida ao mosteiro pela ação dos seus santos patronos (Agostinho, Nicolau de Tolentino, João Batista). Aos 56 anos, ouvindo um sermão sobre a coroa de espinhos, recebeu na fronte o estigma de um espinho que sangrou por quinze anos. Os últimos quatro anos passou-os na cama; pediu, no inverno, uma rosa e dois figos do jardim de Roccaporena — encontrados em pleno frio. Morreu em 22 de maio de 1457. Canonizada em 1900.",
     virtudes: ["Paciência heroica", "Perdão", "Fortaleza na dor"],
@@ -1076,7 +1123,8 @@ export const SANTOS: Santo[] = [
     data: "23/04",
     seculo: "III–IV",
     padroeiro: "Inglaterra, Catalunha, Geórgia, Portugal, soldados, cavaleiros, escoteiros",
-    resumo: "Soldado romano da Capadócia que rasgou o edito de Diocleciano e venceu o dragão do paganismo.",
+    resumo:
+      "Soldado romano da Capadócia que rasgou o edito de Diocleciano e venceu o dragão do paganismo.",
     biografia:
       "Pouco se sabe historicamente do soldado Jorge, oficial cristão do exército romano nascido na Capadócia ou na Palestina, por volta de 280, em família ilustre. Tribuno do exército imperial sob Diocleciano, sofreu martírio em Lida (Lod), na Palestina, por volta de 303, ao publicar-se o edito de perseguição aos cristãos: a tradição relata que rasgou publicamente o edito, distribuiu seus bens aos pobres e enfrentou prolongadas torturas — espinhos, roda de espadas, óleo fervente, veneno — antes de ser decapitado, convertendo pelo testemunho até a imperatriz Alexandra. Seu culto difundiu-se rapidamente em todo o Oriente e, a partir das Cruzadas, no Ocidente. A célebre lenda do dragão, narrada na 'Legenda Áurea' (séc. XIII), simboliza a vitória de Cristo sobre o paganismo: Jorge salva a princesa de Silene, na Líbia, transpassando a fera; sua imagem a cavalo, com lança e bandeira branca cruzada de vermelho, tornou-se ícone universal da cavalaria cristã. É padroeiro nacional da Inglaterra (desde Eduardo III), da Geórgia, da Catalunha, de Portugal e de inúmeras cidades. No Brasil, sua devoção é viva sobretudo no Rio de Janeiro.",
     virtudes: ["Coragem", "Fidelidade à fé", "Defesa dos fracos"],
@@ -1128,7 +1176,8 @@ export const SANTOS: Santo[] = [
     data: "24/07",
     seculo: "XIX",
     padroeiro: "Líbano, Igreja maronita, curas extraordinárias",
-    resumo: "O eremita silencioso do monte Líbano cujo corpo intacto continua a derramar curas pelo mundo.",
+    resumo:
+      "O eremita silencioso do monte Líbano cujo corpo intacto continua a derramar curas pelo mundo.",
     biografia:
       "Youssef Antoun Makhlouf nasceu em Bekaa Kafra, no norte do Líbano, em 8 de maio de 1828, em humilde família maronita. Perdeu o pai aos três anos. Cresceu pastoreando, em oração contínua, atraído pela vida monástica. Aos 23 anos deixou em segredo a família e entrou no mosteiro de Nossa Senhora de Mayfouk e, depois, no mosteiro de São Marun de Annaya, da Ordem Libanesa Maronita, tomando o nome do mártir Charbel do século II. Estudou em Kfifan, ali tendo por mestre São Nimatullah Hardini. Foi ordenado sacerdote em 1859. Após dezesseis anos de exemplar vida cenobítica, obteve permissão em 1875 para retirar-se à eremida de Sant'Anna, anexa ao mosteiro, onde viveu 23 anos no mais rigoroso silêncio, jejum perpétuo, oração noturna, mortificação extrema e celebração diária da divina liturgia, da qual fazia o centro do dia. Não saía senão para cultivar um pequeno horto. Em 16 de dezembro de 1898, ao celebrar a missa, foi atingido por um derrame; agonizou durante oito dias, repetindo o triságio. Morreu no Natal de 1898. Logo após o sepultamento, luminosidade extraordinária envolveu sua tumba, e seu corpo, exumado várias vezes, foi achado incorrupto e exsudando 'sangue e água'. Canonizado em 1977 por Paulo VI.",
     virtudes: ["Silêncio", "Penitência", "União eucarística", "Hesicasmo cristão"],
@@ -1154,7 +1203,8 @@ export const SANTOS: Santo[] = [
     data: "09/07",
     seculo: "XIX–XX",
     padroeiro: "Doentes de diabetes, imigrantes italianos no Brasil",
-    resumo: "Imigrante italiana de Vígolo Vattaro que fundou no sul do Brasil a Congregação das Pequenas Irmãs.",
+    resumo:
+      "Imigrante italiana de Vígolo Vattaro que fundou no sul do Brasil a Congregação das Pequenas Irmãs.",
     biografia:
       "Amabile Lúcia Visintainer nasceu em Vígolo Vattaro, então pertencente ao Império Austro-Húngaro (hoje Trentino, Itália), em 16 de dezembro de 1865, primogênita de família camponesa católica. Em 1875, emigrou com os pais para o sul do Brasil, instalando-se em Vígolo, núcleo da nova colônia italiana junto a Nova Trento, em Santa Catarina. Profundamente religiosa, dedicou-se desde a juventude ao catecismo das crianças, ao cuidado dos doentes nas casas pobres e à oração contemplativa. Em 12 de julho de 1890, com a companheira Virgínia Rosa Nicolodi e o apoio do pároco padre Luigi Rossi, recolheu numa pequena casa de Vígolo uma anciã enferma e abandonada — gesto considerado fundação da Congregação das Pequenas Irmãs da Imaculada Conceição. Recebeu o hábito em 7 de dezembro de 1895 com o nome de Paulina do Coração Agonizante de Jesus. Eleita superiora-geral, transferiu a casa-mãe para São Paulo em 1903, ampliou a obra para escolas, asilos e hospitais. Em 1909, sob duras incompreensões e calúnias, foi destituída e enviada como simples irmã ao Asilo Santa Catarina, em Bragança Paulista, onde permaneceu humilde, doente e silenciosa por muitos anos. Reabilitada antes da morte, padeceu longa agonia de diabetes e cegueira. Morreu em São Paulo em 9 de julho de 1942. Canonizada em 19 de maio de 2002 por João Paulo II: primeira santa brasileira por adoção.",
     virtudes: ["Caridade pelos doentes", "Humildade na injustiça", "Confiança no Coração de Jesus"],
@@ -1163,11 +1213,13 @@ export const SANTOS: Santo[] = [
   {
     slug: "santa-dulce-dos-pobres",
     nome: "Santa Dulce dos Pobres",
-    titulo: "Religiosa, fundadora, 'Anjo Bom da Bahia' — nome de nascimento: Maria Rita de Sousa Brito Lopes Pontes",
+    titulo:
+      "Religiosa, fundadora, 'Anjo Bom da Bahia' — nome de nascimento: Maria Rita de Sousa Brito Lopes Pontes",
     data: "13/08",
     seculo: "XX",
     padroeiro: "Doentes pobres, Bahia, obras sociais",
-    resumo: "A franciscana de Salvador que abrigou os pobres num galinheiro e ergueu a maior obra social do Nordeste.",
+    resumo:
+      "A franciscana de Salvador que abrigou os pobres num galinheiro e ergueu a maior obra social do Nordeste.",
     biografia:
       "Batizada Maria Rita de Sousa Brito Lopes Pontes — nome de nascimento da santa, conhecida na Igreja como Santa Dulce dos Pobres —, nasceu em Salvador, Bahia, em 26 de maio de 1914, filha de família próspera de dentistas. Aos 13 anos, ao testemunhar a miséria dos bairros operários, prometeu dedicar-se aos pobres. Entrou em 1933 na Congregação das Irmãs Missionárias da Imaculada Conceição em São Cristóvão (Sergipe), recebendo o nome de Dulce, em homenagem à mãe falecida. Voltou a Salvador como professora; fundou em 1936 a União Operária São Francisco e o Círculo Operário da Bahia, primeiros sindicatos católicos da Bahia. Em 1939, viu na rua um homem doente abandonado: recolheu-o, recolheu outros, ocupou casas abandonadas e finalmente, em 1949, o galinheiro do Convento de Santo Antônio em Salvador, onde acomodou os primeiros sessenta enfermos sob o lema 'Aqui se cura, mas sobretudo aqui se ama'. Cresceu dali a Obras Sociais Irmã Dulce, hoje complexo hospitalar e assistencial entre os maiores do Brasil. Atendia 16 a 20 horas por dia, vivia em cela paupérrima, pesava no fim da vida apenas 40 quilos por um pulmão atrofiado. Foi visitada em 1980 pelo papa João Paulo II; a frase 'sereis a santa do Brasil', a ele atribuída nessa ocasião, é transmitida pela tradição biográfica e não por documento oficial. Morreu em Salvador em 13 de março de 1992. Canonizada em 13 de outubro de 2019 por Francisco — primeira santa nascida no Brasil.",
     virtudes: ["Caridade incansável", "Pobreza", "Confiança na Providência"],
@@ -1200,26 +1252,14 @@ export const SANTOS: Santo[] = [
     frase: "Não, é pecado; Deus não quer.",
   },
   {
-    slug: "santa-monica-2",
-    nome: "Santa Mônica",
-    titulo: "Mãe de Santo Agostinho",
-    data: "27/08",
-    seculo: "IV",
-    padroeiro: "Mães, esposas cristãs",
-    resumo: "Mãe de Santo Agostinho, exemplo de fé e oração paciente.",
-    biografia:
-      "Esta entrada é redundante e deve ser ignorada — usar 'santa-monica'.",
-    virtudes: ["Oração", "Paciência"],
-    frase: "Filho de tantas lágrimas não há de perder-se.",
-  },
-  {
     slug: "ns-aparecida",
     nome: "Nossa Senhora Aparecida",
     titulo: "Padroeira do Brasil",
     data: "12/10",
     seculo: "—",
     padroeiro: "Brasil, pescadores, lavradores",
-    resumo: "A pequena imagem encontrada nas redes do rio Paraíba que se tornou a Mãe de todo o povo brasileiro.",
+    resumo:
+      "A pequena imagem encontrada nas redes do rio Paraíba que se tornou a Mãe de todo o povo brasileiro.",
     biografia:
       "Em outubro de 1717, três humildes pescadores — Domingos Garcia, Filipe Pedroso e João Alves — saíram para pescar nas águas turvas do rio Paraíba do Sul, em Guaratinguetá, São Paulo, por encomenda do conde de Assumar, em trânsito pela região. Após muitas tentativas sem sucesso, lançaram a rede junto ao porto de Itaguaçu e retiraram o corpo de uma pequena imagem da Imaculada Conceição em terracota escura, com cerca de 39 cm. Numa segunda lançada, recolheram a cabeça correspondente. A partir daquele instante, a pesca tornou-se milagrosamente abundante. A imagem, atribuída ao escultor beneditino Frei Agostinho de Jesus por volta de 1650, foi venerada inicialmente na casa de Filipe Pedroso e seu filho Atanásio Pedroso, que abriu pequena capela em sua honra. Em 1745 foi inaugurada a primeira capela pública e em 1834 a Basílica Velha. A fama dos milagres difundiu-se: a libertação do escravo Zacarias das correntes, em 1850, é o mais célebre. Coroada em 1904 pelo papa Pio X através do bispo de São Paulo, foi proclamada Padroeira oficial do Brasil em 16 de julho de 1930 por Pio XI. A nova Basílica Nacional de Aparecida, segundo maior templo católico do mundo, foi consagrada em 1980 por João Paulo II. Recebe anualmente mais de 13 milhões de peregrinos.",
     virtudes: ["Maternidade espiritual", "Humildade", "Proximidade com o povo"],
@@ -1232,7 +1272,8 @@ export const SANTOS: Santo[] = [
     data: "12/10",
     seculo: "XX–XXI",
     padroeiro: "Jovens, internautas, programadores, primeira comunhão",
-    resumo: "Adolescente milanês que catalogou os milagres eucarísticos do mundo num site e morreu santo aos 15 anos.",
+    resumo:
+      "Adolescente milanês que catalogou os milagres eucarísticos do mundo num site e morreu santo aos 15 anos.",
     biografia:
       "Carlo Acutis nasceu em Londres em 3 de maio de 1991, único filho de pais italianos — Andrea Acutis e Antonia Salzano. Ainda bebê voltou a Milão. Cresceu em ambiente burguês não particularmente praticante; foi ele quem trouxe a mãe de volta à fé com perguntas e exemplo. Recebeu a primeira comunhão antecipadamente aos 7 anos, depois de longa preparação, e desde então participou da missa diária e da adoração eucarística — 'a minha autoestrada para o céu'. Sentia particular ternura pela Virgem Maria, rezando todos os dias o rosário. Estudante brilhante, dedicava-se à programação informática, criando websites para a paróquia e para uma associação de voluntariado. Em 2002, com 11 anos, começou seu projeto mais conhecido: catalogar e publicar online todos os 187 milagres eucarísticos reconhecidos pela Igreja no mundo, com fotografias, decretos e descrições — a exposição itinerante decorrente já passou por mais de dez mil paróquias em cinco continentes. Generoso com pobres da estação central de Milão, alegre, amigo querido entre colegas, defensor de adolescentes intimidados, futebolístico (torcedor do Milan), comum em tudo, extraordinário no amor a Cristo eucarístico. Em outubro de 2006 foi diagnosticado com leucemia fulminante. Ofereceu seus sofrimentos pelo Papa e pela Igreja. Morreu em Monza em 12 de outubro de 2006, aos 15 anos. Beatificado em Assis em 10 de outubro de 2020. Canonizado em 2025, é o primeiro santo da geração millennial.",
     virtudes: ["Eucaristia", "Castidade adolescente", "Originalidade no seguir Cristo"],
@@ -1258,7 +1299,8 @@ export const SANTOS: Santo[] = [
     data: "06/12",
     seculo: "IV",
     padroeiro: "Crianças, marinheiros, comerciantes, noivas pobres",
-    resumo: "Bispo de Mira na Lícia, célebre pela generosidade escondida e pelos milagres em favor dos pobres.",
+    resumo:
+      "Bispo de Mira na Lícia, célebre pela generosidade escondida e pelos milagres em favor dos pobres.",
     biografia:
       "Nicolau nasceu em Patara, na Lícia (atual Turquia), por volta de 270, filho único de pais cristãos abastados que morreram numa epidemia. Herdeiro de grande fortuna, resolveu distribuí-la secretamente. O episódio mais famoso, transmitido desde o séc. VI, narra que salvou três jovens da prostituição lançando de noite, pela janela, bolsas de ouro que serviram de dote — origem remota do costume dos presentes natalinos e da figura do Papai Noel. Eleito bispo de Mira ainda jovem, governou a diocese com firmeza pastoral. Sofreu prisão e tortura durante a perseguição de Diocleciano e foi libertado com o Edito de Milão em 313. A tradição o coloca entre os padres do Concílio de Niceia (325), defensor ardoroso da divindade de Cristo contra Ário. Intercedeu junto ao imperador pela vida de três oficiais condenados injustamente e, segundo os relatos, teria acalmado tempestades em favor de marinheiros. Morreu em Mira por volta de 343. Em 1087 mercadores italianos transladaram suas relíquias para Bari, onde a basílica venera o fenômeno tradicionalmente chamado 'manná di San Nicola'. É um dos santos mais venerados do Oriente e do Ocidente.",
     virtudes: ["Generosidade oculta", "Defesa da fé", "Proteção dos indefesos"],
@@ -1271,7 +1313,8 @@ export const SANTOS: Santo[] = [
     data: "11/11",
     seculo: "IV",
     padroeiro: "Soldados, alfaiates, mendigos, França",
-    resumo: "Soldado romano que partiu o manto com um mendigo e tornou-se bispo missionário da Gália.",
+    resumo:
+      "Soldado romano que partiu o manto com um mendigo e tornou-se bispo missionário da Gália.",
     biografia:
       "Martinho nasceu em Sabária, na Panônia (atual Hungria), por volta de 316, filho de um tribuno militar pagão. Ainda menino, em Pavia, foi atraído pelo cristianismo e inscreveu-se como catecúmeno aos dez anos. Obrigado pela lei a servir no exército, foi cavaleiro da guarda imperial em Amiens. Ali ocorreu o episódio que o imortalizou: num inverno rigoroso, cortou o próprio manto militar em dois com a espada e deu metade a um mendigo nu; na noite seguinte viu em sonho Cristo revestido daquele meio manto, dizendo aos anjos: 'Martinho, ainda catecúmeno, cobriu-me com este manto'. Batizado, deixou as armas declarando-se 'soldado de Cristo'. Discípulo de Santo Hilário de Poitiers, fundou em Ligugé o primeiro mosteiro do Ocidente, cerca de 361. Aclamado bispo de Tours pelo povo em 371 — apesar da resistência dele, que se escondeu num galinheiro —, continuou vivendo como monge em Marmoutier. Evangelizou incansavelmente o campo gaulês, destruindo santuários pagãos e fundando paróquias rurais, e defendeu os priscilianistas condenados à morte, opondo-se à pena capital em matéria de fé. Morreu em Candes em 397. Sua capa (cappa) guardada como relíquia deu origem às palavras 'capela' e 'capelão'.",
     virtudes: ["Misericórdia com os pobres", "Renúncia militar", "Zelo missionário"],
@@ -1284,7 +1327,8 @@ export const SANTOS: Santo[] = [
     data: "04/04",
     seculo: "VI–VII",
     padroeiro: "Estudantes, enciclopedistas, internet e informática",
-    resumo: "Arcebispo hispano-romano que salvou a cultura antiga nas Etimologias e organizou a Igreja visigótica.",
+    resumo:
+      "Arcebispo hispano-romano que salvou a cultura antiga nas Etimologias e organizou a Igreja visigótica.",
     biografia:
       "Isidoro nasceu em Cartagena por volta de 560, numa família de santos: seus irmãos Leandro, Fulgêncio e Florentina são igualmente venerados. Educado pelo irmão mais velho Leandro, arcebispo de Sevilha, sucedeu-lhe na sé por volta de 600 e governou-a por quase quarenta anos. Viveu no delicado momento em que os visigodos, recém-convertidos do arianismo, precisavam de unidade doutrinal e institucional: presidiu o II Concílio de Sevilha (619) e o IV Concílio de Toledo (633), que impôs a criação de escolas catedralícias em toda diocese, unificou a liturgia hispânica e defendeu o batismo livre dos judeus contra conversões forçadas. Sua obra maior, as Etimologias, em vinte livros, compila em ordem sistemática todo o saber antigo — gramática, medicina, direito, agricultura, cosmologia, teologia — e foi o manual básico da Europa por oito séculos. Escreveu também a História dos godos, o De natura rerum e as Sentenças. Morreu em Sevilha em 4 de abril de 636, tendo distribuído seus bens aos pobres nos últimos dias. Foi proclamado Doutor da Igreja em 1722 e é hoje popularmente invocado como patrono da internet, pela intuição enciclopédica de sua obra.",
     virtudes: ["Amor ao estudo", "Zelo pastoral", "Serviço à unidade da Igreja"],
@@ -1297,7 +1341,8 @@ export const SANTOS: Santo[] = [
     data: "25/05",
     seculo: "VII–VIII",
     padroeiro: "Historiadores, eruditos, escritores",
-    resumo: "Monge de Jarrow, exegeta e historiador, autor da História Eclesiástica do Povo Inglês.",
+    resumo:
+      "Monge de Jarrow, exegeta e historiador, autor da História Eclesiástica do Povo Inglês.",
     biografia:
       "Beda nasceu por volta de 673 nas terras do mosteiro de Wearmouth-Jarrow, na Nortúmbria. Aos sete anos foi confiado ao abade Bento Biscop e passou toda a vida naquele mosteiro duplo, ordenado diácono aos dezenove e sacerdote aos trinta. Nunca viajou para além de poucas milhas, mas dispôs de uma das melhores bibliotecas do Ocidente, formada com os livros que Biscop trouxera de Roma. Escreveu cerca de sessenta obras: comentários bíblicos que se tornaram padrão na exegese medieval, homilias, hagiografias, tratados de ortografia, métrica e cronologia. Foi ele quem popularizou a datação a partir da Encarnação — o 'anno Domini' — hoje universal. Sua obra-prima, a Historia ecclesiastica gentis Anglorum, concluída em 731, narra com escrupuloso cuidado documental a evangelização da Inglaterra, citando fontes e testemunhas: é o texto fundador da historiografia inglesa. Morreu em 26 de maio de 735, ditando a tradução do Evangelho de João em língua anglo-saxônica; terminou a última frase e expirou cantando o Gloria Patri no chão de sua cela. Recebeu já no séc. IX o título de 'Venerável' e foi declarado Doutor da Igreja por Leão XIII em 1899, o único inglês com esse título.",
     virtudes: ["Fidelidade monástica", "Rigor intelectual", "Humildade do estudioso"],
@@ -1310,7 +1355,8 @@ export const SANTOS: Santo[] = [
     data: "17/09",
     seculo: "XII",
     padroeiro: "Músicos, herboristas, cientistas, esperantistas",
-    resumo: "Abadessa beneditina alemã, mística visionária, compositora, naturalista e conselheira de papas e imperadores.",
+    resumo:
+      "Abadessa beneditina alemã, mística visionária, compositora, naturalista e conselheira de papas e imperadores.",
     biografia:
       "Hildegarda nasceu em Bermersheim, na Renânia, em 1098, décima filha de família nobre. Aos oito anos foi confiada à reclusa Jutta de Sponheim, junto ao mosteiro beneditino de Disibodenberg, e ali fez profissão. Eleita magistra em 1136, recebeu em 1141 a ordem interior de escrever as visões que a acompanhavam desde a infância: nasceu assim o Scivias, aprovado pelo papa Eugênio III no Sínodo de Trier (1147-48) sob o testemunho de São Bernardo. Fundou o mosteiro de Rupertsberg, perto de Bingen, e depois o de Eibingen. Escreveu ainda o Liber vitae meritorum e o Liber divinorum operum, além de duas obras de história natural e medicina — Physica e Causae et curae — que catalogam plantas, minerais e remédios com notável observação empírica. Compôs cerca de setenta e sete cânticos litúrgicos reunidos na Symphonia armonie celestium revelationum e o drama musical Ordo virtutum, o mais antigo do gênero. Pregou publicamente em quatro viagens pela Alemanha, algo excepcional para uma mulher medieval, e correspondeu-se com Frederico Barbarossa, Bernardo de Claraval e vários papas, sem poupar repreensões. Morreu em Bingen em 17 de setembro de 1179. Bento XVI a canonizou e a proclamou Doutora da Igreja em 2012.",
     virtudes: ["Contemplação", "Coragem profética", "Harmonia entre fé e criação"],
@@ -1336,7 +1382,8 @@ export const SANTOS: Santo[] = [
     data: "17/11",
     seculo: "XIII",
     padroeiro: "Obras de caridade, padeiros, viúvas, Terceira Ordem Franciscana",
-    resumo: "Princesa húngara, landgravina da Turíngia, que despojou-se de tudo para servir leprosos e famintos.",
+    resumo:
+      "Princesa húngara, landgravina da Turíngia, que despojou-se de tudo para servir leprosos e famintos.",
     biografia:
       "Isabel nasceu em 1207, filha do rei André II da Hungria e de Gertrudes de Merânia. Aos quatro anos foi levada ao castelo de Wartburg, na Turíngia, para ser educada como noiva do futuro landgrave. Casou-se aos catorze com Luís IV, num matrimônio raro na Idade Média por ser feliz e profundamente cristão; tiveram três filhos. Influenciada pelos frades menores recém-chegados à Alemanha e dirigida pelo severo Conrado de Marburgo, abraçou o ideal de pobreza franciscana dentro do próprio palácio: vestia-se com simplicidade, servia à mesa dos pobres, cuidava pessoalmente de leprosos e chegou a instalar um deles no leito real. Durante a fome de 1226 abriu os celeiros do castelo e distribuiu o trigo do reino. Também a ela se atribui o 'milagre das rosas'. Viúva aos vinte anos, quando Luís morreu de peste rumo à cruzada, foi expulsa de Wartburg pela família do marido. Estabeleceu-se em Marburgo, fez profissão como terciária franciscana em 1228 — a primeira na Alemanha — e com o dote construiu um hospital dedicado a São Francisco, onde trabalhou como enfermeira até a morte, aos vinte e quatro anos, em 17 de novembro de 1231. Foi canonizada apenas quatro anos depois, em 1235, por Gregório IX.",
     virtudes: ["Pobreza voluntária", "Serviço aos leprosos", "Alegria no despojamento"],
@@ -1349,7 +1396,8 @@ export const SANTOS: Santo[] = [
     data: "25/08",
     seculo: "XIII",
     padroeiro: "França, terciários franciscanos, governantes, tapeceiros",
-    resumo: "Rei que uniu justiça, penitência e caridade no exercício do poder, construtor da Sainte-Chapelle.",
+    resumo:
+      "Rei que uniu justiça, penitência e caridade no exercício do poder, construtor da Sainte-Chapelle.",
     biografia:
       "Luís nasceu em Poissy em 1214 e tornou-se rei aos doze anos, sob a regência da mãe Branca de Castela, que lhe repetia preferir vê-lo morto a sabê-lo em pecado mortal. Casou-se com Margarida de Provença, com quem teve onze filhos. Governou a França de 1226 a 1270 num dos períodos mais prósperos do reino: reformou a justiça criando os inquéritos reais para reparar abusos dos oficiais, aboliu as ordálias e o duelo judiciário, instituiu a presunção de inocência e recebia pessoalmente as queixas dos súditos, célebre pelas audiências sob o carvalho de Vincennes. Fundou hospitais como o Quinze-Vingts para cegos, sustentou a Sorbonne e alimentava diariamente pobres à própria mesa. Adquiriu de Balduíno II o que se venerava como relíquias da Paixão — a coroa de espinhos — e ergueu para guardá-las a Sainte-Chapelle de Paris, joia do gótico radiante, concluída em 1248. Terciário franciscano, vivia austeramente, com jejuns, cilício e confissão frequente. Conduziu duas cruzadas: na sétima (1248-54) foi feito prisioneiro no Egito e resgatado; na oitava morreu de disenteria diante de Túnis, em 25 de agosto de 1270, murmurando 'Jerusalém, Jerusalém'. Foi canonizado em 1297 por Bonifácio VIII.",
     virtudes: ["Justiça", "Penitência", "Caridade régia", "Fidelidade conjugal"],
@@ -1362,7 +1410,8 @@ export const SANTOS: Santo[] = [
     data: "11/04",
     seculo: "XIX–XX",
     padroeiro: "Estudantes, farmacêuticos, tuberculosos, tentados",
-    resumo: "Jovem leiga de Lucca, mística da Paixão de Cristo, marcada pelos estigmas todas as sextas-feiras.",
+    resumo:
+      "Jovem leiga de Lucca, mística da Paixão de Cristo, marcada pelos estigmas todas as sextas-feiras.",
     biografia:
       "Gema nasceu em Camigliano, perto de Lucca, na Itália, em 12 de março de 1878, quinta de oito filhos de um farmacêutico. Perdeu a mãe aos sete anos e o pai aos dezenove, quando a família caiu na miséria; passou a servir como doméstica e a cuidar dos irmãos menores. Estudou nas Irmãs Oblatas do Espírito Santo, onde recebeu a primeira comunhão aos nove anos e desde então concebeu ardente devoção à Paixão. Sofreu meningite e tuberculose vertebral, ficando paralítica; teria curado-se subitamente em 1899, segundo os relatos hagiográficos, após uma novena a São Gabriel da Virgem das Dores. Desejou ardentemente ser passionista, mas a saúde precária lhe fechou as portas do claustro; acolhida pela família Giannini, viveu como leiga em profunda vida mística sob a direção do padre Germano Ruoppolo. A partir de junho de 1899 recebeu os estigmas, que se abriam nas quintas-feiras à noite e se fechavam nas sextas à tarde, além de suores de sangue, êxtases e uma coroa de espinhos invisível; relatou também violentos assaltos diabólicos, descritos com sobriedade em suas cartas e no diário. Morreu no Sábado Santo, 11 de abril de 1903, aos vinte e cinco anos, de tuberculose. Foi canonizada por Pio XII em 1940.",
     virtudes: ["Amor à Paixão de Cristo", "Pureza", "Paciência na doença"],
@@ -1375,7 +1424,8 @@ export const SANTOS: Santo[] = [
     data: "14/07",
     seculo: "XVI–XVII",
     padroeiro: "Enfermos, hospitais, enfermeiros, agonizantes",
-    resumo: "Ex-soldado e jogador convertido que revolucionou o cuidado dos doentes na Roma barroca.",
+    resumo:
+      "Ex-soldado e jogador convertido que revolucionou o cuidado dos doentes na Roma barroca.",
     biografia:
       "Camilo nasceu em Bucchianico, nos Abruzos, em 25 de maio de 1550, filho de mãe já sexagenária. Cresceu rude, alto e violento, seguiu o pai na carreira das armas e combateu contra os turcos em serviço de Veneza e Nápoles. Viciado no jogo, perdeu tudo, até a camisa, e acabou trabalhando como servente numa obra dos capuchinhos em Manfredônia. Uma exortação do guardião do convento, em 2 de fevereiro de 1575, provocou sua conversão radical. Uma chaga incurável na perna, que o acompanharia toda a vida, impediu-o de entrar entre os capuchinhos; recolheu-se então ao hospital romano de São Tiago dos Incuráveis, primeiro como paciente e depois como enfermeiro e administrador. Horrorizado pela negligência dos mercenários que serviam os doentes, decidiu formar uma companhia de homens que cuidassem dos enfermos 'como mães cuidam de seus filhos doentes'. Ordenado sacerdote em 1584 com o apoio de São Filipe Néri, seu confessor, fundou os Ministros dos Enfermos — os camilianos —, que acrescentam aos três votos um quarto: servir os doentes mesmo com perigo da própria vida. Adotou a cruz vermelha no hábito, símbolo depois universal. Introduziu normas revolucionárias de higiene, dieta, isolamento de contagiosos e cuidado espiritual dos agonizantes, e enviou religiosos aos campos de batalha da Hungria e da Croácia em 1595, primeira unidade sanitária militar da história. Morreu em Roma em 14 de julho de 1614, canonizado em 1746.",
     virtudes: ["Compaixão heroica", "Conversão radical", "Serviço aos moribundos"],
@@ -1388,7 +1438,8 @@ export const SANTOS: Santo[] = [
     data: "08/03",
     seculo: "XVI",
     padroeiro: "Enfermeiros, hospitais, livreiros, doentes mentais",
-    resumo: "Português convertido em Granada que criou o hospital moderno e o tratamento humano dos doentes mentais.",
+    resumo:
+      "Português convertido em Granada que criou o hospital moderno e o tratamento humano dos doentes mentais.",
     biografia:
       "João Cidade nasceu em Montemor-o-Novo, Portugal, em 8 de março de 1495. Aos oito anos deixou a casa paterna com um clérigo peregrino e nunca mais viu os pais. Foi pastor na Espanha, soldado nas guerras contra a França e os turcos, trabalhador em Ceuta e vendedor ambulante de livros em Granada. Em 20 de janeiro de 1537, ouvindo um sermão de São João de Ávila sobre a conversão, teve uma crise tão violenta de arrependimento — rasgando as roupas e gritando pelas ruas — que foi internado como louco no Hospital Real, onde sofreu os tratamentos brutais então usuais. Visitado por João de Ávila, que se tornou seu diretor espiritual, saiu curado e resolveu dedicar a vida exatamente àqueles que tinham sido seus companheiros de sofrimento. Alugou uma casa na rua Lucena e começou a recolher doentes, mendigos, prostitutas arrependidas e alienados, mendigando à noite pela cidade com o grito 'Fazei o bem, irmãos, a vós mesmos!'. Sua novidade absoluta foi separar os doentes por patologia, dar leito individual a cada um e tratar os enfermos mentais com bondade em vez de correntes. O arcebispo lhe deu o nome de João de Deus. Morreu em Granada em 8 de março de 1550, de pneumonia contraída ao salvar um jovem das águas do rio Genil. Seus seguidores formaram a Ordem Hospitaleira. Canonizado em 1690, é copadroeiro dos hospitais com São Camilo.",
     virtudes: ["Caridade sem medida", "Humildade", "Dignificação dos doentes mentais"],
@@ -1401,7 +1452,8 @@ export const SANTOS: Santo[] = [
     data: "13/11",
     seculo: "XVI",
     padroeiro: "Noviços, jovens estudantes, Polônia",
-    resumo: "Nobre polonês que fugiu a pé até Roma para entrar na Companhia de Jesus e morreu aos dezoito anos.",
+    resumo:
+      "Nobre polonês que fugiu a pé até Roma para entrar na Companhia de Jesus e morreu aos dezoito anos.",
     biografia:
       "Estanislau nasceu no castelo de Rostkowo, na Mazóvia polonesa, em 28 de outubro de 1550, filho de senador do reino. Aos catorze anos foi enviado com o irmão mais velho Paulo ao colégio dos jesuítas em Viena. Enquanto o irmão levava vida mundana e o maltratava por sua devoção, Estanislau cultivava intensa vida interior e devoção mariana. Em dezembro de 1565 caiu gravemente enfermo na casa de um senhor luterano que não permitia a entrada de sacerdote; segundo seu testemunho, Santa Bárbara lhe trouxe a comunhão e depois a Virgem Maria lhe entregou o Menino nos braços, ordenando que entrasse na Companhia de Jesus. Curado subitamente, e sabendo que o pai jamais consentiria, empreendeu em agosto de 1567 uma fuga extraordinária: disfarçado de mendigo, caminhou cerca de mil e quinhentos quilômetros de Viena a Dillingen e depois a Roma, atravessando a Alemanha a pé. São Pedro Canísio o acolheu e São Francisco de Borja, então geral da Companhia, admitiu-o ao noviciado de Sant'Andrea al Quirinale em 28 de outubro de 1567. Viveu apenas dez meses de vida religiosa, marcados por obediência exata, alegria e êxtases eucarísticos. Predisse a própria morte para a festa da Assunção e faleceu na madrugada de 15 de agosto de 1568, aos dezoito anos incompletos. Canonizado em 1726.",
     virtudes: ["Determinação na vocação", "Pureza", "Devoção mariana"],
@@ -1414,7 +1466,8 @@ export const SANTOS: Santo[] = [
     data: "21/06",
     seculo: "XVI",
     padroeiro: "Juventude, estudantes, vítimas de epidemias, AIDS",
-    resumo: "Marquês herdeiro que renunciou ao principado, entrou entre os jesuítas e morreu servindo pestilentos.",
+    resumo:
+      "Marquês herdeiro que renunciou ao principado, entrou entre os jesuítas e morreu servindo pestilentos.",
     biografia:
       "Luís Gonzaga nasceu em Castiglione delle Stiviere, na Lombardia, em 9 de março de 1568, primogênito do marquês Ferrante Gonzaga, e destinado a herdar o principado. Educado nas cortes de Florença, Mântua e Madri, onde foi pajem do infante Diogo, filho de Filipe II, conheceu de perto a corrupção cortesã e fez voto de castidade perpétua aos nove anos. A leitura das cartas dos missionários jesuítas na Índia acendeu-lhe a vocação. Enfrentou três anos de resistência do pai, que chegou a levá-lo pelas cortes italianas para dissuadi-lo; em novembro de 1585 renunciou formalmente ao marquesado em favor do irmão Rodolfo e entrou no noviciado romano de Sant'Andrea. Teve como diretor espiritual São Roberto Belarmino. Estudou filosofia e teologia no Colégio Romano, moderando por obediência as penitências extremas que praticava. Em 1591 uma violenta peste assolou Roma; os jesuítas abriram um hospital e Luís pediu para servir os doentes, carregando pelas ruas os moribundos abandonados, lavando-os e preparando-os para a morte. Contraiu a doença, teve breve remissão e definhou durante três meses de febre. Morreu na noite de 20 para 21 de junho de 1591, aos vinte e três anos, com o nome de Jesus nos lábios. Beatificado em 1605 e canonizado em 1726, foi declarado padroeiro da juventude por Bento XIII.",
     virtudes: ["Castidade angélica", "Renúncia ao mundo", "Caridade heroica com os pestilentos"],
@@ -1427,7 +1480,8 @@ export const SANTOS: Santo[] = [
     data: "15/08",
     seculo: "III",
     padroeiro: "Coroinhas, acólitos, primeira comunhão",
-    resumo: "Jovem acólito romano morto a pauladas por não entregar a Eucaristia que levava aos presos.",
+    resumo:
+      "Jovem acólito romano morto a pauladas por não entregar a Eucaristia que levava aos presos.",
     biografia:
       "Tarcísio foi um jovem cristão de Roma, provavelmente acólito, martirizado no século III, verossimilmente durante a perseguição de Valeriano, por volta de 257. O testemunho antigo mais importante é o epitáfio composto pelo papa São Dâmaso I (366-384) para seu túmulo na catacumba de São Calisto, na Via Ápia, comparando-o ao protomártir Estêvão. Segundo esse texto e a tradição romana, o menino levava escondidos junto ao peito os sagrados mistérios — a Eucaristia destinada aos cristãos encarcerados que aguardavam o martírio — quando foi interceptado por um grupo de pagãos. Instado a mostrar o que carregava e a entregar o 'tesouro' dos cristãos, recusou-se firmemente; a multidão o espancou com paus e pedras até a morte. Ao recolherem seu corpo, nada se encontrou nas mãos: a tradição afirma que preferiu perder a vida a expor o Corpo do Senhor à profanação. Seus restos foram sepultados na catacumba calistiana e mais tarde parte deles transferida para a basílica de San Silvestro in Capite. Sua figura foi popularizada no século XIX pelo romance Fabíola, do cardeal Nicholas Wiseman, e desde então tornou-se o modelo por excelência dos coroinhas e dos jovens servidores do altar, celebrado com particular afeto pela Igreja no dia 15 de agosto.",
     virtudes: ["Fidelidade à Eucaristia", "Coragem juvenil", "Fortaleza no martírio"],
@@ -1440,7 +1494,8 @@ export const SANTOS: Santo[] = [
     data: "23/08",
     seculo: "XVI–XVII",
     padroeiro: "América Latina, Peru, Filipinas, floricultores, jardineiros",
-    resumo: "Mística peruana de penitência extrema e caridade, canonizada como primeira santa do Novo Mundo.",
+    resumo:
+      "Mística peruana de penitência extrema e caridade, canonizada como primeira santa do Novo Mundo.",
     biografia:
       "Isabel Flores de Oliva nasceu em Lima, no Vice-Reino do Peru, em 20 de abril de 1586, filha de um arcabuzeiro espanhol e de mãe criolla. Recebeu o apelido de Rosa por causa da beleza do rosto na infância, nome confirmado na crisma pelo arcebispo Santo Toríbio de Mogrovejo. Desde menina fez voto de virgindade e, para desencorajar pretendentes, cortou os cabelos e desfigurou o rosto com pimenta e cal. Trabalhava bordando e cultivando flores para sustentar os pais empobrecidos. Recusou tanto o casamento arranjado quanto a entrada no convento por não poder abandonar a família; tornou-se terciária dominicana em 1606, inspirada em Santa Catarina de Sena, e viveu numa pequena cabana construída no jardim de casa, onde passava horas em oração diante de um oratório. Praticou penitências severíssimas — coroa de espinhos oculta sob o véu, jejuns, vigílias —, sempre sob obediência de seus confessores. Ao mesmo tempo abriu num cômodo da casa uma enfermaria para indígenas doentes, crianças abandonadas e velhos desamparados, considerada germe da assistência social no Peru. Passou longos anos em provações interiores de aridez, alternadas com graças místicas. Morreu em 24 de agosto de 1617, aos trinta e um anos, na casa do contador Gonzalo de la Maza. Foi canonizada em 1671 por Clemente X, a primeira santa nascida nas Américas.",
     virtudes: ["Penitência", "Virgindade consagrada", "Caridade com indígenas e enfermos"],
@@ -1453,7 +1508,8 @@ export const SANTOS: Santo[] = [
     data: "03/11",
     seculo: "XVI–XVII",
     padroeiro: "Justiça social, harmonia racial, barbeiros, enfermeiros, animais",
-    resumo: "Frade mulato limenho, enfermeiro dos pobres e taumaturgo, símbolo de fraternidade universal.",
+    resumo:
+      "Frade mulato limenho, enfermeiro dos pobres e taumaturgo, símbolo de fraternidade universal.",
     biografia:
       "Martinho nasceu em Lima em 9 de dezembro de 1579, filho ilegítimo do fidalgo espanhol Juan de Porres e de Ana Velázquez, negra liberta do Panamá. O pai o abandonou por causa da cor da pele e a mãe o criou na pobreza. Aos doze anos foi aprendiz de barbeiro e cirurgião, aprendendo a sangrar, extrair dentes e curar feridas, ofício que marcaria toda a sua vida. Aos quinze pediu para servir no convento dominicano do Santo Rosário como donado, isto é, servo voluntário, pois a legislação da época impedia mulatos de professar. Nove anos depois, vencendo os preconceitos pela evidência de sua virtude, o prior o admitiu à profissão como irmão cooperador. Foi enfermeiro do convento e da cidade, atendendo indistintamente frades, escravos, indígenas e espanhóis. Recolhia doentes da rua para a própria cela, distribuía diariamente comida a centenas de pobres, fundou com o auxílio de benfeitores o Colégio da Santa Cruz para crianças órfãs e obteve dotes para moças sem recursos. A tradição lhe atribui inúmeros prodígios: bilocação, curas instantâneas, conhecimento de consciências e uma singular amizade com os animais — dizia-se que fazia cão, gato e rato comerem da mesma tigela. Chamava a si mesmo de 'pobre mulato' e pedia para ser vendido como escravo quando o convento passava por dificuldades. Morreu em 3 de novembro de 1639. Canonizado por João XXIII em 1962.",
     virtudes: ["Humildade", "Caridade universal", "Paciência diante do preconceito"],
@@ -1466,7 +1522,8 @@ export const SANTOS: Santo[] = [
     data: "09/12",
     seculo: "XV–XVI",
     padroeiro: "Povos indígenas, México, leigos evangelizadores",
-    resumo: "Indígena chichimeca a quem a Virgem apareceu no Tepeyac, deixando sua imagem impressa na tilma.",
+    resumo:
+      "Indígena chichimeca a quem a Virgem apareceu no Tepeyac, deixando sua imagem impressa na tilma.",
     biografia:
       "Cuauhtlatoatzin — 'águia que fala' — nasceu por volta de 1474 em Cuautitlán, no altiplano mexicano, membro do povo chichimeca. Camponês e tecelão de esteiras, converteu-se com a esposa Maria Lúcia por volta de 1524, sob a pregação dos primeiros franciscanos, recebendo no batismo o nome de Juan Diego. Viúvo em 1529, passou a percorrer a pé, várias vezes por semana, os quinze quilômetros que o separavam da capela de Tlatelolco para a catequese e a missa. Segundo o relato guadalupano (Nican Mopohua, séc. XVI), em 9 de dezembro de 1531, ao passar pelo cerro do Tepeyac, ouviu música e uma voz que o chamava 'Juanito, Juan Dieguito'. A Virgem Maria apresentou-se como 'a perfeita sempre Virgem Santa Maria, mãe do verdadeiro Deus por quem se vive' e pediu que se erguesse ali um templo. O bispo Juan de Zumárraga exigiu um sinal. No dia 12 de dezembro, a Senhora mandou que colhesse rosas de Castela florescidas fora de estação no morro árido; ao abrir a tilma diante do bispo, as flores caíram e apareceu impressa no tecido de fibra de agave a imagem da Virgem morena, grávida, vestida com símbolos legíveis pela cultura náuatle. O acontecimento provocou a conversão de milhões de indígenas em poucos anos. Juan Diego passou o resto da vida como guardião da ermida, atendendo peregrinos. Morreu em 30 de maio de 1548. Foi canonizado por João Paulo II na própria basílica de Guadalupe, em 31 de julho de 2002.",
     virtudes: ["Simplicidade", "Obediência à Virgem", "Perseverança diante da descrença"],
@@ -1479,7 +1536,8 @@ export const SANTOS: Santo[] = [
     data: "23/03",
     seculo: "XVI–XVII",
     padroeiro: "Bispos latino-americanos, Peru, direitos dos indígenas",
-    resumo: "Jurista leigo feito arcebispo, percorreu a pé os Andes catequizando indígenas em suas línguas.",
+    resumo:
+      "Jurista leigo feito arcebispo, percorreu a pé os Andes catequizando indígenas em suas línguas.",
     biografia:
       "Toríbio Alfonso de Mogrovejo nasceu em Mayorga de Campos, Espanha, em 16 de novembro de 1538, de família nobre. Estudou direito em Valladolid e Salamanca e tornou-se professor e depois presidente do Tribunal da Inquisição de Granada, sendo ainda leigo. Em 1579 Filipe II o indicou para a sé de Lima; recebeu as ordens sacras em poucos meses e chegou ao Peru em 1581, aos quarenta e três anos. Encontrou uma Igreja desorganizada, colonos abusivos e indígenas explorados. Convocou o III Concílio Limense (1582-83), cujos decretos e catecismo trilíngue — em castelhano, quíchua e aimará — moldaram a evangelização de toda a América espanhola por dois séculos. Realizou três visitas pastorais que somaram cerca de quarenta mil quilômetros percorridos a pé e a lombo de mula, atravessando desertos, selvas e cordilheiras, ficando anos fora da capital. Aprendeu o quíchua para confirmar e catequizar pessoalmente; crismou cerca de meio milhão de pessoas, entre elas Santa Rosa de Lima e São Martinho de Porres. Fundou em 1591 o primeiro seminário do continente, além de hospitais, escolas e igrejas rurais. Defendeu com energia os indígenas contra encomenderos e autoridades civis, o que lhe custou processos e inimizades. Morreu em visita pastoral, em Saña, em 23 de março de 1606, e foi canonizado em 1726.",
     virtudes: ["Zelo pastoral", "Defesa dos indígenas", "Austeridade pessoal"],
@@ -1492,7 +1550,8 @@ export const SANTOS: Santo[] = [
     data: "09/09",
     seculo: "XVI–XVII",
     padroeiro: "Missões entre afrodescendentes, Colômbia, direitos humanos",
-    resumo: "Missionário catalão que socorreu por quarenta anos os africanos escravizados no porto de Cartagena.",
+    resumo:
+      "Missionário catalão que socorreu por quarenta anos os africanos escravizados no porto de Cartagena.",
     biografia:
       "Pedro Claver nasceu em Verdú, na Catalunha, em 26 de junho de 1580, filho de camponeses. Entrou na Companhia de Jesus em 1602 e, durante os estudos em Maiorca, foi decisivamente influenciado pelo humilde porteiro São Afonso Rodríguez, que, segundo a tradição jesuíta, lhe profetizou a missão nas Índias. Chegou a Cartagena das Índias em 1610, então o maior mercado de escravos da América espanhola, onde desembarcavam cerca de dez mil africanos por ano em condições atrozes. Ordenado sacerdote em 1616, fez em 1622 um voto singular ao emitir a profissão solene, assinando-se 'Petrus Claver, aethiopum semper servus' — Pedro Claver, para sempre escravo dos negros. Ao avistar um navio negreiro, corria ao porto com intérpretes, remédios, água, frutas, tabaco e aguardente; entrava nos porões fétidos, curava chagas, alimentava os moribundos, defendia-os dos maus-tratos e só então, respeitando a pessoa antes da alma, ensinava-lhes o catecismo com imagens pintadas. Batizou pessoalmente, segundo os registros, mais de trezentos mil africanos em quarenta anos. Visitava também hospitais de leprosos, presídios e condenados à morte, enfrentando a hostilidade de traficantes e senhores. Atingido pela peste em 1650, ficou quatro anos paralítico e abandonado, cuidado por um servo negligente. Morreu em 8 de setembro de 1654. Canonizado em 1888 por Leão XIII, é padroeiro das missões entre afrodescendentes.",
     virtudes: ["Serviço aos escravizados", "Paciência", "Reverência pela dignidade humana"],
@@ -1505,7 +1564,8 @@ export const SANTOS: Santo[] = [
     data: "31/12",
     seculo: "XIX",
     padroeiro: "Idosos, obras de caridade, devoção à Medalha Milagrosa",
-    resumo: "Religiosa francesa que recebeu da Virgem, em 1830, o pedido de cunhar a Medalha Milagrosa.",
+    resumo:
+      "Religiosa francesa que recebeu da Virgem, em 1830, o pedido de cunhar a Medalha Milagrosa.",
     biografia:
       "Catarina Labouré nasceu em Fain-lès-Moutiers, na Borgonha, em 2 de maio de 1806, nona de dez filhos de uma família camponesa. Órfã de mãe aos nove anos, disse então à imagem da Virgem: 'Agora sereis vós a minha mãe'. Analfabeta até tarde, cuidou da casa e dos irmãos e enfrentou a oposição do pai para seguir a vocação. Entrou nas Filhas da Caridade de São Vicente de Paulo em 1830, no seminário da rua du Bac, em Paris. Naquele mesmo ano recebeu três aparições marianas. Na noite de 18 para 19 de julho, uma criança luminosa a conduziu à capela, onde conversou longamente com a Virgem ajoelhada junto ao altar, que lhe anunciou provações para a França e a Igreja. Em 27 de novembro, viu Maria de pé sobre o globo, com raios de luz brotando de seus dedos, cercada pela invocação 'Ó Maria concebida sem pecado, rogai por nós que recorremos a vós'. O quadro girou e apresentou o monograma de Maria com uma cruz e os dois corações; a Senhora pediu que se cunhasse uma medalha com aquela imagem, prometendo graças abundantes a quem a usasse. Cunhada em 1832 durante uma epidemia de cólera, difundiu-se com tal rapidez de prodígios que o povo a chamou de 'Milagrosa'. Catarina guardou absoluto silêncio sobre sua identidade por quarenta e seis anos, vivendo obscura no hospício de Enghien, em Reuilly, cuidando de velhos e da criação de aves. Morreu em 31 de dezembro de 1876 e foi canonizada em 1947.",
     virtudes: ["Humildade escondida", "Obediência", "Confiança em Maria"],
@@ -1518,7 +1578,8 @@ export const SANTOS: Santo[] = [
     data: "20/02",
     seculo: "XX",
     padroeiro: "Crianças doentes, pastores, devoção reparadora",
-    resumo: "Irmãos portugueses que viram a Virgem em 1917 e se ofereceram em reparação pelos pecadores.",
+    resumo:
+      "Irmãos portugueses que viram a Virgem em 1917 e se ofereceram em reparação pelos pecadores.",
     biografia:
       "Francisco Marto nasceu em Aljustrel, freguesia de Fátima, em 11 de junho de 1908, e sua irmã Jacinta em 11 de março de 1910, filhos de Manuel Pedro Marto e Olímpia de Jesus. Guardavam ovelhas com a prima Lúcia dos Santos. Em 1916 receberam três visitas do Anjo de Portugal, que lhes ensinou orações de reparação e lhes deu a comunhão. Entre 13 de maio e 13 de outubro de 1917, na Cova da Iria, viram por seis vezes Nossa Senhora, que pediu a reza diária do terço pela paz, a penitência pela conversão dos pecadores e a devoção ao Imaculado Coração; a última aparição foi acompanhada pelo 'milagre do sol' diante de cerca de setenta mil pessoas. Interrogados com dureza pelas autoridades e até presos pelo administrador de Ourém, que os ameaçou de morte em óleo fervente, mantiveram firmemente o testemunho. Francisco, mais contemplativo, escolheu 'consolar o Senhor escondido', passando horas de joelhos na igreja diante do sacrário; Jacinta, tocada pela visão do inferno, oferecia sacrifícios contínuos pelos pecadores e pelo Santo Padre. Ambos adoeceram na pandemia de gripe espanhola. Francisco morreu em casa em 4 de abril de 1919, aos dez anos; Jacinta, após meses de sofrimento e duas cirurgias sem anestesia adequada, morreu sozinha num hospital de Lisboa em 20 de fevereiro de 1920, aos nove anos. Beatificados por João Paulo II em 2000 e canonizados por Francisco no centenário das aparições, em 13 de maio de 2017.",
     virtudes: ["Espírito de reparação", "Oração pelos pecadores", "Fortaleza infantil"],
@@ -1531,7 +1592,8 @@ export const SANTOS: Santo[] = [
     data: "23/11",
     seculo: "XX",
     padroeiro: "Perseguidos pela fé, México, sacerdotes clandestinos",
-    resumo: "Sacerdote jesuíta fuzilado em 1927 no México, morreu de braços abertos gritando 'Viva Cristo Rei!'.",
+    resumo:
+      "Sacerdote jesuíta fuzilado em 1927 no México, morreu de braços abertos gritando 'Viva Cristo Rei!'.",
     biografia:
       "Miguel Agustín Pro Juárez nasceu em Guadalupe, Zacatecas, em 13 de janeiro de 1891, filho de um engenheiro de minas. Jovem alegre, brincalhão e exímio imitador, entrou na Companhia de Jesus em 1911. A revolução mexicana e as leis anticlericais obrigaram os jesuítas ao exílio: estudou na Califórnia, na Nicarágua, na Espanha e na Bélgica, onde foi ordenado sacerdote em 31 de agosto de 1925, já sofrendo de graves úlceras estomacais. Voltou ao México em julho de 1926, exatamente quando o governo de Plutarco Elías Calles fechava as igrejas e proibia o culto público, desencadeando a Guerra Cristera. Exerceu por dezesseis meses um ministério clandestino de audácia notável: disfarçado de mecânico, estudante, mendigo ou policial, celebrava missas em casas particulares, distribuía a comunhão a centenas de pessoas por dia, organizava socorro a famílias de operários desempregados e ouvia confissões em automóveis. Em novembro de 1927 foi preso com dois irmãos, acusado sem provas de participar de um atentado contra o general Obregón — o próprio autor do ato depois inocentou-o. Sem julgamento, Calles ordenou o fuzilamento e convocou fotógrafos para intimidar os católicos. Em 23 de novembro de 1927, no pátio da delegacia, Miguel Pro perdoou os algozes, recusou a venda nos olhos, ajoelhou-se em oração e ergueu os braços em cruz gritando 'Viva Cristo Rei!'. As fotografias produziram o efeito contrário ao desejado. Foi beatificado por João Paulo II em 1988.",
     virtudes: ["Coragem apostólica", "Alegria no perigo", "Perdão aos perseguidores"],
@@ -1544,7 +1606,8 @@ export const SANTOS: Santo[] = [
     data: "28/04",
     seculo: "XX",
     padroeiro: "Mães, gestantes, médicos, nascituros, famílias",
-    resumo: "Pediatra italiana que recusou o aborto terapêutico para salvar a filha e morreu poucos dias após o parto.",
+    resumo:
+      "Pediatra italiana que recusou o aborto terapêutico para salvar a filha e morreu poucos dias após o parto.",
     biografia:
       "Gianna Beretta nasceu em Magenta, perto de Milão, em 4 de outubro de 1922, décima de treze filhos de uma família profundamente cristã de terciários franciscanos. Formou-se em medicina em Pávia em 1949 e especializou-se em pediatria em 1952, abrindo consultório em Mesero, onde atendia com particular carinho mães, crianças, idosos e pobres, muitas vezes sem cobrar. Ativa na Ação Católica e no Movimento dos Universitários Católicos, praticava esqui e montanhismo e considerava seriamente a vocação missionária junto ao irmão sacerdote no Brasil, desistindo por razões de saúde. Discerniu então o matrimônio como sua vocação: casou-se em 24 de setembro de 1955 com o engenheiro Pietro Molla, e escreveu-lhe que queria formar 'uma família verdadeiramente cristã'. Tiveram Pierluigi, Maria Zita e Laura. Em setembro de 1961, no segundo mês da quarta gravidez, foi diagnosticado um volumoso fibroma no útero. Diante das três opções — histerectomia, aborto ou a arriscada remoção apenas do tumor —, escolheu a última, a única que preservava a criança, e disse claramente aos médicos: 'Se tiverem de decidir entre mim e a criança, nenhuma hesitação: escolham a criança'. A cirurgia foi bem-sucedida e a gestação prosseguiu. Em 21 de abril de 1962, Sábado Santo, nasceu por cesariana Gianna Emanuela, saudável. A mãe desenvolveu septicemia e morreu em casa em 28 de abril de 1962, aos trinta e nove anos, repetindo 'Jesus, eu te amo'. Foi canonizada por João Paulo II em 16 de maio de 2004, na presença do marido e dos filhos.",
     virtudes: ["Amor materno heroico", "Santidade no estado laical", "Serviço médico caritativo"],
@@ -1557,10 +1620,16 @@ export const SANTOS: Santo[] = [
     data: "21/08",
     seculo: "XIX–XX",
     padroeiro: "Catequistas, primeira comunhão, peregrinos",
-    resumo: "Giuseppe Sarto, papa camponês que antecipou a comunhão frequente e combateu o modernismo.",
+    resumo:
+      "Giuseppe Sarto, papa camponês que antecipou a comunhão frequente e combateu o modernismo.",
     biografia:
       "Giuseppe Melchiorre Sarto nasceu em Riese, no Vêneto, em 2 de junho de 1835, filho de um humilde carteiro. Ordenado sacerdote em 1858, exerceu ministério paroquial dedicado aos pobres antes de tornar-se bispo de Mântua e, depois, cardeal-patriarca de Veneza. Eleito papa em 1903 com o lema 'Instaurare omnia in Christo', manteve estilo simples e paternal, recusando pompas desnecessárias. Sua obra mais duradoura foi pastoral: antecipou a idade da primeira comunhão para os sete anos, incentivou a comunhão frequente e até diária dos fiéis, reformou o catecismo tornando-o acessível ao povo simples e promoveu a restauração do canto gregoriano na liturgia. Diante da crise do modernismo, que relativizava dogmas e Escrituras sob influência do racionalismo, publicou a encíclica Pascendi Dominici Gregis (1907) condenando os erros com firmeza doutrinal. Reorganizou também a Cúria Romana e iniciou a codificação do Direito Canônico. Viveu com angústia profética a iminência da Primeira Guerra Mundial, falecendo em 20 de agosto de 1914, dias após seu início, oferecendo a vida pela paz. Canonizado em 1954 por Pio XII, é o primeiro papa elevado aos altares desde São Pio V.",
-    virtudes: ["Simplicidade evangélica","Zelo pela Eucaristia","Firmeza doutrinal","Amor aos pequenos"],
+    virtudes: [
+      "Simplicidade evangélica",
+      "Zelo pela Eucaristia",
+      "Firmeza doutrinal",
+      "Amor aos pequenos",
+    ],
     frase: "Deixai vir a mim as criancinhas.",
   },
   {
@@ -1570,10 +1639,16 @@ export const SANTOS: Santo[] = [
     data: "10/11",
     seculo: "V",
     padroeiro: "Músicos, cantores, Roma",
-    resumo: "Papa que deteve Átila diante de Roma e definiu a doutrina das duas naturezas de Cristo.",
+    resumo:
+      "Papa que deteve Átila diante de Roma e definiu a doutrina das duas naturezas de Cristo.",
     biografia:
       "Nascido na Toscana por volta de 400, Leão foi diácono de Roma antes de ser eleito papa em 440, num tempo de graves invasões bárbaras e disputas cristológicas no Oriente. Sua célebre carta dogmática, o 'Tomo a Flaviano', enviada ao Concílio de Calcedônia em 451, formulou com precisão luminosa a união das duas naturezas, divina e humana, numa só Pessoa de Cristo, sendo aclamada pelos padres conciliares com a frase: 'Pedro falou pela boca de Leão'. No plano temporal, encontrou-se pessoalmente com Átila, rei dos hunos, nas margens do Mincio em 452, persuadindo-o a poupar Roma da destruição; três anos depois intercedeu junto aos vândalos de Genserico, atenuando a violência do saque da cidade. Pregou numerosas homilias de grande beleza literária sobre o Natal, a Quaresma e a primazia romana, insistindo que o papa é sucessor de Pedro não por mérito próprio, mas por ofício confiado por Cristo. Reformou a disciplina eclesiástica e consolidou a autoridade do Bispo de Roma sobre toda a Igreja. Morreu em 461, sendo o primeiro papa sepultado na basílica de São Pedro, e recebeu o título de Doutor da Igreja por Bento XIV em 1754.",
-    virtudes: ["Firmeza doutrinal","Coragem diante do perigo","Eloquência pastoral","Fidelidade à Sé de Pedro"],
+    virtudes: [
+      "Firmeza doutrinal",
+      "Coragem diante do perigo",
+      "Eloquência pastoral",
+      "Fidelidade à Sé de Pedro",
+    ],
     frase: "Reconhece, ó cristão, a tua dignidade!",
   },
   {
@@ -1583,10 +1658,11 @@ export const SANTOS: Santo[] = [
     data: "13/01",
     seculo: "IV",
     padroeiro: "Advogados, mães que amamentam",
-    resumo: "'Atanásio do Ocidente', bispo exilado por defender a divindade de Cristo contra o arianismo.",
+    resumo:
+      "'Atanásio do Ocidente', bispo exilado por defender a divindade de Cristo contra o arianismo.",
     biografia:
       "Nascido em Poitiers, na Gália, por volta de 315, em família pagã culta, converteu-se ao cristianismo pela leitura das Escrituras, especialmente do prólogo de João, e foi eleito bispo de sua cidade natal por volta de 353, já casado e pai de uma filha, Ábra. Empenhou-se com energia contra o arianismo, que negava a plena divindade do Filho, e por isso foi denunciado ao imperador ariano Constâncio II e exilado na Frígia por quatro anos, período em que aprofundou o estudo da teologia oriental e escreveu sua obra-prima, 'De Trinitate', síntese rigorosa da fé niceana em doze livros. Tão eficaz foi sua pregação no exílio que os bispos arianos pediram ao imperador que o devolvesse à Gália para 'não perturbar mais o Oriente'. De volta, presidiu sínodos que restauraram a ortodoxia nas Gálias e escreveu comentários bíblicos, hinos litúrgicos — sendo um dos primeiros hinógrafos latinos — e tratados sobre os Salmos. Faleceu por volta de 367. Pio IX o proclamou Doutor da Igreja em 1851, reconhecendo nele o principal defensor ocidental do dogma trinitário no século mais turbulento das controvérsias cristológicas.",
-    virtudes: ["Firmeza na fé","Amor à verdade revelada","Perseverança no exílio"],
+    virtudes: ["Firmeza na fé", "Amor à verdade revelada", "Perseverança no exílio"],
     frase: "Deus não pode ser conhecido senão por meio de si mesmo.",
   },
   {
@@ -1599,7 +1675,7 @@ export const SANTOS: Santo[] = [
     resumo: "Bispo catequista, autor das célebres Catequeses aos candidatos ao Batismo.",
     biografia:
       "Nascido em Jerusalém ou arredores por volta de 315, foi ordenado sacerdote e encarregado da catequese dos candidatos ao batismo na cidade santa, tornando-se bispo por volta de 348. Suas dezenove 'Catequeses', pronunciadas durante a Quaresma e a semana pascal na basílica do Santo Sepulcro, constituem o testemunho mais completo da iniciação cristã do século IV: explicam o Credo artigo por artigo e, nas 'catequeses mistagógicas', os sacramentos do Batismo, da Crisma e da Eucaristia recém-recebidos pelos neófitos. Sua vida episcopal foi marcada por três exílios, impostos por adversários arianos e por disputas jurisdicionais sobre a sé de Jerusalém, totalizando cerca de dezesseis anos fora de sua cidade. Participou do primeiro Concílio de Constantinopla em 381, que confirmou sua ortodoxia. Testemunhou também, em 351, o aparecimento de uma luminosa cruz no céu de Jerusalém, relatado em carta ao imperador Constâncio. Morreu em 386, deixando uma catequese que continua modelo de clareza doutrinal unida à beleza mistagógica. Foi proclamado Doutor da Igreja por Leão XIII em 1883.",
-    virtudes: ["Paciência nas provações","Clareza no ensino da fé","Amor aos catecúmenos"],
+    virtudes: ["Paciência nas provações", "Clareza no ensino da fé", "Amor aos catecúmenos"],
     frase: "Um só é o Batismo, uma só é a fé, um só é Deus e Pai.",
   },
   {
@@ -1612,7 +1688,7 @@ export const SANTOS: Santo[] = [
     resumo: "Campeão da divina maternidade de Maria no Concílio de Éfeso contra Nestório.",
     biografia:
       "Sobrinho e sucessor do patriarca Teófilo, tornou-se bispo de Alexandria em 412, num contexto de tensões religiosas e sociais na grande metrópole egípcia. Sua atuação mais decisiva deu-se contra Nestório, patriarca de Constantinopla, que negava a Maria o título de Theotókos, Mãe de Deus, sustentando existirem em Cristo duas pessoas distintas. Cirilo, com rigor teológico e habilidade diplomática, obteve a condenação de Nestório no Concílio de Éfeso, em 431, definindo solenemente que Maria é verdadeiramente Mãe de Deus porque gerou a Pessoa única do Verbo encarnado. A proclamação foi recebida em Éfeso com aclamações populares e procissões de tochas em honra da Virgem. Escreveu numerosos comentários bíblicos, tratados cristológicos e cartas dogmáticas de grande precisão, sendo considerado o maior teólogo da escola alexandrina depois de Atanásio. Sua insistência na unidade da Pessoa de Cristo — 'uma só natureza encarnada do Verbo de Deus', em fórmula posteriormente reinterpretada com equilíbrio em Calcedônia — moldou definitivamente a cristologia católica e ortodoxa. Morreu em 444. Foi declarado Doutor da Igreja por Leão XIII em 1882.",
-    virtudes: ["Zelo pela verdade mariana","Rigor teológico","Coragem pastoral"],
+    virtudes: ["Zelo pela verdade mariana", "Rigor teológico", "Coragem pastoral"],
     frase: "A Virgem Santíssima é verdadeiramente Mãe de Deus.",
   },
   {
@@ -1625,7 +1701,7 @@ export const SANTOS: Santo[] = [
     resumo: "'Palavra de ouro', bispo de Ravena célebre por homilias breves e luminosas.",
     biografia:
       "Nascido em Ímola por volta de 380, foi diácono sob o bispo Cornélio antes de ser escolhido, segundo a tradição de modo providencial, arcebispo de Ravena por volta de 433, então capital do Império Romano do Ocidente e sede imperial de Gala Placídia. Recebeu o sobrenome Crisólogo — 'palavra de ouro' — pela eloquência concisa e luminosa de suas homilias, das quais restam cerca de 176, quase todas breves, adaptadas à capacidade de assimilação do povo, mas densas de doutrina sobre o Credo, os sacramentos e a vida moral. Insistia que a pregação deveria ser 'curta, mas cheia', evitando tanto a superficialidade quanto o excesso retórico então em voga. Foi conselheiro espiritual de Eutiques antes de este cair no erro monofisita, exortando-o com carta prudente a submeter-se ao julgamento do papa Leão Magno. Promoveu a devoção à Virgem Maria e à Eucaristia, e zelou pela dignidade do culto na esplêndida Ravena bizantina, cujos mosaicos ainda hoje testemunham o esplendor litúrgico daquela época. Morreu por volta de 450 em Ímola, sua terra natal, e foi declarado Doutor da Igreja por Bento XIII em 1729.",
-    virtudes: ["Clareza na pregação","Prudência pastoral","Devoção eucarística"],
+    virtudes: ["Clareza na pregação", "Prudência pastoral", "Devoção eucarística"],
     frase: "Quem quer ser ouvido por Deus, ouça primeiro Deus quando ele fala.",
   },
   {
@@ -1638,7 +1714,7 @@ export const SANTOS: Santo[] = [
     resumo: "Monge camaldulense, reformador implacável da disciplina do clero no século XI.",
     biografia:
       "Nascido em Ravena por volta de 1007, órfão e maltratado na infância, foi criado por um irmão que o fez estudar; tornou-se professor brilhante antes de renunciar a tudo para entrar no eremitério camaldulense de Fonte Avellana, do qual chegou a ser prior, imprimindo-lhe rigor ascético e vida de intensa oração e trabalho manual. Tornou-se o principal colaborador dos papas reformadores do século XI, sendo criado cardeal-bispo de Óstia em 1057, contra sua vontade de permanecer eremita. Combateu com veemência dois grandes males do clero de seu tempo: a simonia, compra e venda de cargos eclesiásticos, denunciada no 'Liber Gratissimus', e o nicolaísmo, a incontinência dos clérigos, atacado no áspero 'Liber Gomorrhianus'. Foi enviado como legado papal a Milão, à Alemanha e à França para resolver disputas episcopais e impor a reforma gregoriana antes mesmo de Gregório VII. Escreveu também tratados espirituais, cartas e uma vida de São Romualdo, fundador dos Camaldulenses. Homem de oração intensa e penitência severa, ansiava sempre voltar à solidão do eremitério. Morreu em Faenza em 1072, voltando de uma missão de paz. Foi proclamado Doutor da Igreja por Leão XII em 1828.",
-    virtudes: ["Zelo reformador","Amor à vida eremítica","Coragem na correção fraterna"],
+    virtudes: ["Zelo reformador", "Amor à vida eremítica", "Coragem na correção fraterna"],
     frase: "Nada é mais precioso que a caridade, que sempre reina.",
   },
   {
@@ -1651,7 +1727,7 @@ export const SANTOS: Santo[] = [
     resumo: "Último dos Padres gregos, grande defensor da veneração das imagens sagradas.",
     biografia:
       "Nascido em Damasco por volta de 675, numa família cristã de alto funcionalismo na corte do califa omíada, sucedeu ao pai como administrador dos tributos cristãos antes de renunciar ao cargo e retirar-se ao mosteiro de São Sabas, perto de Jerusalém, onde foi ordenado sacerdote. Viveu no auge da crise iconoclasta, quando imperadores bizantinos ordenaram a destruição das imagens sagradas sob acusação de idolatria; protegido pelo domínio muçulmano, fora do alcance direto de Constantinopla, escreveu três tratados vigorosos 'Contra os que difamam as santas imagens', argumentando que, tendo Deus assumido carne visível na Encarnação, é legítimo representar visualmente o mistério e venerar, através da imagem, o modelo representado. Sua obra-prima, 'A Fonte do Conhecimento', sintetiza toda a teologia oriental precedente, tornando-se referência obrigatória inclusive para a escolástica latina, que a conheceu em tradução. Compôs também belíssimos hinos litúrgicos ainda cantados no rito bizantino, sobretudo os cânones pascais. Diz a tradição que teve a mão decepada por calúnia palaciana e milagrosamente restaurada pela Virgem, à qual ficou eternamente devoto. Morreu por volta de 749. Foi declarado Doutor da Igreja por Leão XIII em 1890.",
-    virtudes: ["Defesa da tradição","Devoção mariana","Amor à beleza litúrgica"],
+    virtudes: ["Defesa da tradição", "Devoção mariana", "Amor à beleza litúrgica"],
     frase: "Não adoro a matéria, mas o Criador da matéria.",
   },
   {
@@ -1664,7 +1740,7 @@ export const SANTOS: Santo[] = [
     resumo: "Capuchinho poliglota, pregador e diplomata, general da Ordem e Doutor Apostólico.",
     biografia:
       "Cesare de Rossi nasceu em Brindisi, no reino de Nápoles, em 1559, e entrou aos dezesseis anos entre os frades capuchinhos, recebendo o nome de Lourenço. Dotado de extraordinária facilidade para línguas, dominava latim, grego, hebraico, siríaco, francês, alemão, espanhol e sua língua materna, o que lhe permitiu pregar diretamente a públicos diversos e refutar controvérsias com protestantes e judeus a partir dos textos originais. Pregou incansavelmente pela Europa central, fundando conventos capuchinhos na Áustria, Boêmia e Alemanha, região então dilacerada pelas guerras de religião. Em 1601, a pedido do imperador Rodolfo II, atuou como capelão e conselheiro militar do exército cristão contra os turcos otomanos na Hungria, cavalgando à frente das tropas apenas com o crucifixo erguido, sem armas, na vitória de Székesfehérvár. Foi eleito ministro geral da Ordem Capuchinha em 1602 e, posteriormente, desempenhou delicadas missões diplomáticas a serviço da Santa Sé junto a príncipes católicos da Europa. Escreveu numerosos sermões e comentários bíblicos de refinada erudição, reunidos em quinze volumes. Morreu em Lisboa em 22 de julho de 1619, em missão diplomática. Foi proclamado Doutor da Igreja por João XXIII em 1959, com o título de 'Doutor Apostólico'.",
-    virtudes: ["Zelo missionário","Erudição a serviço da fé","Coragem diplomática"],
+    virtudes: ["Zelo missionário", "Erudição a serviço da fé", "Coragem diplomática"],
     frase: "Quem confia em Deus não teme exército algum.",
   },
   {
@@ -1674,10 +1750,11 @@ export const SANTOS: Santo[] = [
     data: "17/09",
     seculo: "XVI–XVII",
     padroeiro: "Catequistas, canonistas",
-    resumo: "Teólogo jesuíta, principal controversista católico da Reforma, autor de catecismos populares.",
+    resumo:
+      "Teólogo jesuíta, principal controversista católico da Reforma, autor de catecismos populares.",
     biografia:
       "Nascido em Montepulciano, na Toscana, em 1542, sobrinho do futuro papa Marcelo II, entrou na Companhia de Jesus em 1560 e destacou-se como pregador e professor em Lovaina e depois na Universidade Gregoriana de Roma, onde ocupou a nova cátedra de controvérsias criada para responder sistematicamente ao protestantismo. Sua obra máxima, 'Disputationes de Controversiis Christianae Fidei', em três volumes, tratou com rigor histórico e bíblico os pontos disputados com luteranos e calvinistas — a autoridade do papa, os sacramentos, a justificação — tornando-se referência obrigatória de ambos os lados da polêmica. Criado cardeal em 1599 e depois arcebispo de Cápua, exerceu funções decisivas na Cúria Romana, participando do processo contra Giordano Bruno e das primeiras diligências relativas a Galileu Galilei, buscando sempre equilíbrio prudente entre ciência e fé. Escreveu ainda dois catecismos de extraordinária difusão popular, traduzidos em dezenas de línguas, e obras espirituais de grande unção, como 'A Arte de Bem Morrer'. Homem de vida austera, distribuía quase toda a renda aos pobres e recusou honrarias desnecessárias. Morreu em Roma em 1621. Foi canonizado e declarado Doutor da Igreja por Pio XI em 1931.",
-    virtudes: ["Rigor doutrinal","Simplicidade pessoal","Caridade com os pobres"],
+    virtudes: ["Rigor doutrinal", "Simplicidade pessoal", "Caridade com os pobres"],
     frase: "Não há maior sabedoria que conhecer e amar a Deus.",
   },
   {
@@ -1687,10 +1764,11 @@ export const SANTOS: Santo[] = [
     data: "10/05",
     seculo: "XVI",
     padroeiro: "Clero secular espanhol",
-    resumo: "'Apóstolo da Andaluzia', mestre espiritual de Inácio de Loyola, Teresa de Ávila e João de Deus.",
+    resumo:
+      "'Apóstolo da Andaluzia', mestre espiritual de Inácio de Loyola, Teresa de Ávila e João de Deus.",
     biografia:
       "Nascido em Almodóvar del Campo, na Espanha, em 1499, estudou direito em Salamanca e teologia em Alcalá, sendo ordenado sacerdote em 1526. Destinado a partir como missionário para as Índias, foi persuadido pelo arcebispo de Sevilha a permanecer na Espanha, onde havia campo vastíssimo para evangelizar. Pregou por toda a Andaluzia com tal eficácia que recebeu o título de 'Apóstolo da Andaluzia', convertendo multidões, entre elas nobres, universitários e futuros santos: aconselhou espiritualmente Inácio de Loyola, Francisco de Borja, João de Deus, Teresa de Ávila e Luís de Granada. Sofreu processo inquisitorial em 1531 por supostas afirmações imprudentes sobre a pobreza evangélica, sendo plenamente absolvido após um ano de prisão, período que aproveitou para aprofundar seus escritos espirituais. Fundou colégios e seminários que influenciaram decisivamente a formação sacerdotal tridentina, e sua obra-prima, 'Audi, Filia' ('Ouve, filha'), tratado de vida espiritual dedicado a uma jovem penitente, tornou-se clássico da mística castelhana. Enviou também memoriais aos padres do Concílio de Trento sobre a reforma do clero. Homem de saúde frágil e vida austera, morreu em Montilla em 1569. Foi declarado Doutor da Igreja por Bento XVI em 2012.",
-    virtudes: ["Zelo pela reforma do clero","Paciência na injustiça","Direção espiritual sábia"],
+    virtudes: ["Zelo pela reforma do clero", "Paciência na injustiça", "Direção espiritual sábia"],
     frase: "Mais vale um 'Pai Nosso' dito devagar que muitos ditos às pressas.",
   },
   {
@@ -1703,8 +1781,9 @@ export const SANTOS: Santo[] = [
     resumo: "'Harpa do Espírito Santo', diácono e poeta que evangelizou em hinos a fé trinitária.",
     biografia:
       "Nascido em Nísibis, na Mesopotâmia, por volta de 306, de família cristã, foi discípulo do bispo Jaime de Nísibis e recebeu o diaconato, ofício que exerceu toda a vida sem jamais aceitar o sacerdócio por humildade. Quando a cidade caiu sob domínio persa em 363, refugiou-se em Edessa, onde fundou uma escola catequética e dedicou-se à composição de hinos e sermões em versos siríacos de extraordinária beleza poética, valendo-lhe o título de 'Harpa do Espírito Santo'. Compôs milhares de estrofes contra as heresias arianas e gnósticas que então se espalhavam, mas sua maior originalidade está nos hinos marianos, eucarísticos e sobre o paraíso, que uniam doutrina sólida a imagens simbólicas de rara delicadeza, cantados por corais femininos que ele mesmo organizou nas igrejas de Edessa. Viveu com austeridade extrema, dormindo em caverna e alimentando-se de pão e ervas, mas em 373, durante uma fome que assolou a cidade, saiu de sua reclusão para organizar pessoalmente a distribuição de víveres aos famintos, exercendo intensa caridade prática até morrer, ainda naquele ano, contaminado pelas doenças que atendia. Sua influência marcou profundamente a liturgia siríaca oriental. Foi proclamado Doutor da Igreja por Bento XV em 1920.",
-    virtudes: ["Humildade diaconal","Poesia a serviço da fé","Caridade com os famintos"],
-    frase: "Senhor, encha meus lábios de louvores para que meu coração encontre alegria em cantar-te.",
+    virtudes: ["Humildade diaconal", "Poesia a serviço da fé", "Caridade com os famintos"],
+    frase:
+      "Senhor, encha meus lábios de louvores para que meu coração encontre alegria em cantar-te.",
   },
   {
     slug: "santo-ireneu-de-lyon",
@@ -1713,10 +1792,11 @@ export const SANTOS: Santo[] = [
     data: "28/06",
     seculo: "II",
     padroeiro: "Teólogos, unidade da Igreja",
-    resumo: "Discípulo de Policarpo, o maior refutador do gnosticismo e teólogo da tradição apostólica.",
+    resumo:
+      "Discípulo de Policarpo, o maior refutador do gnosticismo e teólogo da tradição apostólica.",
     biografia:
       "Nascido em Esmirna, na Ásia Menor, por volta de 140, ouviu ainda menino as pregações de Policarpo, que por sua vez fora discípulo do apóstolo João, formando assim elo vivo com a geração apostólica. Emigrou para as Gálias, onde se tornou sacerdote em Lyon e, após o martírio do bispo Potino durante a perseguição de 177, sucedeu-lhe na sé episcopal. Sua obra-prima, 'Contra as Heresias', em cinco livros, desmonta sistematicamente os sistemas gnósticos que then floresciam, opondo-lhes a regra da fé transmitida publicamente pelos apóstolos através da sucessão episcopal, com especial destaque à Igreja de Roma como referência de unidade: 'É necessário que toda Igreja concorde com esta Igreja, por causa de sua superior origem'. Desenvolveu a teologia da 'recapitulação', segundo a qual Cristo, novo Adão, refaz e eleva toda a história humana, e insistiu na unidade dos dois Testamentos contra o dualismo gnóstico. Interveio também na disputa sobre a data da Páscoa entre Roma e as Igrejas da Ásia, pedindo ao papa Vítor moderação e comunhão apesar da diversidade de costumes. Terá morrido mártir por volta de 202, durante perseguição em Lyon, embora a tradição não seja unânime. Foi proclamado Doutor da Igreja por Francisco em 2022, com o título de 'Doutor da Unidade'.",
-    virtudes: ["Fidelidade à tradição apostólica","Zelo pela unidade","Rigor teológico"],
+    virtudes: ["Fidelidade à tradição apostólica", "Zelo pela unidade", "Rigor teológico"],
     frase: "A glória de Deus é o homem vivo, e a vida do homem é a visão de Deus.",
   },
   {
@@ -1726,10 +1806,11 @@ export const SANTOS: Santo[] = [
     data: "05/04",
     seculo: "XIV–XV",
     padroeiro: "Pregadores, construtores, Valência",
-    resumo: "Frade dominicano espanhol, pregador itinerante que percorreu a Europa anunciando a penitência.",
+    resumo:
+      "Frade dominicano espanhol, pregador itinerante que percorreu a Europa anunciando a penitência.",
     biografia:
       "Nascido em Valência, na Espanha, em 1350, entrou na Ordem dos Pregadores aos dezoito anos, destacando-se rapidamente como teólogo e mestre em Toulouse. Durante o Grande Cisma do Ocidente, que dividiu a cristandade entre papas rivais, serviu como confessor e conselheiro do antipapa Bento XIII de Avinhão, esforçando-se por resolver o cisma, até finalmente romper com ele e contribuir para a solução unitária no Concílio de Constança. Dedicou os últimos vinte anos de vida a uma prodigiosa peregrinação de pregação a pé por toda a Espanha, França, Suíça e Itália, sempre acompanhado de penitentes cantando o 'Miserere', anunciando com veemência apocalíptica a urgência da conversão e do juízo final, o que lhe valeu fama de taumaturgo e converteu, segundo a tradição, milhares de judeus e mouros, além de reconciliar comunidades cristãs divididas. Falava apenas o valenciano, mas era compreendido, segundo relatos da época, por ouvintes de línguas diferentes — dom atribuído ao Espírito Santo. Contribuiu decisivamente para a resolução do compromisso de Caspe, que definiu a sucessão ao trono de Aragão. Morreu em Vannes, na Bretanha francesa, em 1419, durante uma de suas missões. Foi canonizado em 1455.",
-    virtudes: ["Zelo pela conversão","Espírito de penitência","Trabalho pela unidade da Igreja"],
+    virtudes: ["Zelo pela conversão", "Espírito de penitência", "Trabalho pela unidade da Igreja"],
     frase: "Temei a Deus e dai-lhe glória, porque chegou a hora do seu juízo.",
   },
   {
@@ -1739,10 +1820,11 @@ export const SANTOS: Santo[] = [
     data: "10/02",
     seculo: "V–VI",
     padroeiro: "Freiras beneditinas, contra tempestades",
-    resumo: "Irmã gêmea de São Bento, consagrada a Deus desde a infância, fundadora do monaquismo feminino beneditino.",
+    resumo:
+      "Irmã gêmea de São Bento, consagrada a Deus desde a infância, fundadora do monaquismo feminino beneditino.",
     biografia:
       "Nascida em Núrsia por volta de 480, irmã gêmea de São Bento, consagrou-se a Deus desde jovem e, segundo o testemunho de São Gregório Magno em seus 'Diálogos', fundou e dirigiu uma comunidade de virgens perto de Monte Cassino, em Plombariola, seguindo a Regra que o irmão redigira para os monges. Uma vez por ano os dois irmãos se encontravam numa casa a meio caminho entre os respectivos mosteiros para conversar sobre as coisas de Deus. No último encontro, sentindo aproximar-se a morte, Escolástica implorou ao irmão que prolongasse a conversa noturna sobre as alegrias do Paraíso; diante da recusa de Bento, que insistia em respeitar a regra do retorno ao mosteiro antes da noite, ela orou com lágrimas, e imediatamente desencadeou-se uma tempestade tão violenta que impediu qualquer saída, obrigando-o a permanecer até de madrugada. Bento então lhe disse: 'Deus te perdoe, irmã, que fizeste?', ao que ela respondeu terem sido atendidas suas preces porque o amor pode mais do que a norma. Três dias depois, Bento viu em visão a alma da irmã subindo ao céu em forma de pomba, e mandou sepultá-la no túmulo que preparara para si mesmo em Monte Cassino. Faleceu por volta de 547.",
-    virtudes: ["Amor superior à norma","Perseverança na oração","Vida contemplativa"],
+    virtudes: ["Amor superior à norma", "Perseverança na oração", "Vida contemplativa"],
     frase: "Pedi a Deus, e ele fez o que eu não pude obter de ti.",
   },
   {
@@ -1752,10 +1834,15 @@ export const SANTOS: Santo[] = [
     data: "10/05",
     seculo: "XIX",
     padroeiro: "Leprosos, portadores de HIV, excluídos sociais",
-    resumo: "Padre belga que se entregou aos hansenianos da ilha de Molokai até contrair a própria doença.",
+    resumo:
+      "Padre belga que se entregou aos hansenianos da ilha de Molokai até contrair a própria doença.",
     biografia:
       "Jozef De Veuster nasceu em Tremelo, na Bélgica, em 1840, e entrou na congregação dos Sagrados Corações, recebendo o nome de Damião. Partiu como missionário para o Havaí em 1864, onde foi ordenado sacerdote, e em 1873 ofereceu-se voluntariamente para servir a colônia de hansenianos isolada compulsoriamente na península de Kalaupapa, na ilha de Molokai, para onde eram deportados os doentes sem qualquer estrutura médica ou espiritual, em condições de abandono, violência e desespero. Ali construiu igrejas, casas, um sistema de água potável, organizou coral e banda musical, cuidou pessoalmente dos feridos, cavou sepulturas e devolveu dignidade humana e cristã a milhares de excluídos, insistindo em tratá-los como irmãos e não como parias. Em 1885 diagnosticou em si mesmo os primeiros sinais da lepra, contraída no convívio direto com os doentes, e passou a dirigir-se aos fiéis dizendo 'nós, os leprosos', identificando-se totalmente com seu rebanho sofredor. Continuou o trabalho por mais quatro anos apesar do avanço da doença, obtendo recursos internacionais e o apoio de outras congregações religiosas. Morreu em Kalaupapa em 15 de abril de 1889, aos 49 anos. Foi canonizado por Bento XVI em 2009.",
-    virtudes: ["Doação total aos excluídos","Identificação com os sofredores","Coragem diante do contágio"],
+    virtudes: [
+      "Doação total aos excluídos",
+      "Identificação com os sofredores",
+      "Coragem diante do contágio",
+    ],
     frase: "Sem o Santíssimo Sacramento, uma posição como a minha seria insustentável.",
   },
   {
@@ -1765,10 +1852,15 @@ export const SANTOS: Santo[] = [
     data: "17/04",
     seculo: "XVII",
     padroeiro: "Povos indígenas, ecologia, órfãos",
-    resumo: "Primeira santa indígena da América do Norte, virgem consagrada apesar de tradições e perseguições tribais.",
+    resumo:
+      "Primeira santa indígena da América do Norte, virgem consagrada apesar de tradições e perseguições tribais.",
     biografia:
       "Nascida em 1656 numa aldeia mohawk no atual estado de Nova York, filha de chefe mohawk pagão e de mãe cristã algonquina, ficou órfã aos quatro anos numa epidemia de varíola que também lhe deixou o rosto marcado e a visão enfraquecida — daí o nome Tekakwitha, 'a que avança tateando'. Criada por tios que se opunham ao cristianismo, foi instruída na fé por missionários jesuítas e batizada aos vinte anos, assumindo o nome de Catarina — Kateri, em mohawk. A conversão provocou hostilidade violenta da própria comunidade, que a via como traidora das tradições ancestrais; obrigada a fugir, refugiou-se numa missão cristã indígena junto ao rio São Lourenço, no atual Canadá. Ali viveu com austeridade extraordinária, fazendo voto perpétuo de virgindade — algo inédito entre as mulheres indígenas de sua nação —, dedicando-se à catequese das crianças, ao cuidado dos doentes e idosos e a rigorosas penitências corporais. Morreu em 1680, aos vinte e quatro anos; testemunhas relataram que, momentos após a morte, as marcas da varíola desapareceram de seu rosto, deixando-o de repente resplandecente. Foi canonizada por Bento XVI em 2012, tornando-se a primeira santa indígena norte-americana.",
-    virtudes: ["Fidelidade apesar da perseguição familiar","Virgindade consagrada","Amor aos pobres e doentes"],
+    virtudes: [
+      "Fidelidade apesar da perseguição familiar",
+      "Virgindade consagrada",
+      "Amor aos pobres e doentes",
+    ],
     frase: "Jesus, eu te amo.",
   },
   {
@@ -1781,7 +1873,11 @@ export const SANTOS: Santo[] = [
     resumo: "Primeiro padre nativo da Coreia, decapitado aos 25 anos na perseguição de 1846.",
     biografia:
       "Nascido em 1821 numa família de nobres convertidos ao catolicismo numa Coreia hermeticamente fechada ao cristianismo, teve o avô e o pai martirizados antes dele. Batizado ainda menino, foi enviado clandestinamente a Macau para estudar no seminário, cruzando a pé e de barco milhares de quilômetros através da Manchúria. Ordenado sacerdote em Xangai em 1845, o primeiro coreano a receber o presbiterato, voltou secretamente à pátria para organizar rotas de entrada de missionários estrangeiros e sustentar a Igreja subterrânea, que já contava dezenas de milhares de fiéis apesar de décadas de perseguições sangrentas. Foi preso pouco depois do retorno, ao tentar recolher um bispo francês que desembarcava clandestinamente, e submetido a torturas e interrogatórios em que confessou serenamente a fé, recusando renegar Cristo apesar das promessas de perdão em troca da apostasia. Escreveu, da prisão, uma última carta aos fiéis exortando-os à perseverança: 'Não tenhamos medo, meus queridos irmãos... apertai-vos ao Senhor como o filho se apega ao seio da mãe'. Foi decapitado às margens do rio Han, em Seul, em 16 de setembro de 1846, junto com outros companheiros. É venerado como o mais célebre dos 103 mártires coreanos canonizados por João Paulo II em 1984.",
-    virtudes: ["Coragem apostólica","Fidelidade filial à Igreja perseguida","Serenidade no martírio"],
+    virtudes: [
+      "Coragem apostólica",
+      "Fidelidade filial à Igreja perseguida",
+      "Serenidade no martírio",
+    ],
     frase: "Apertai-vos ao Senhor como o filho se apega ao seio da mãe.",
   },
   {
@@ -1791,10 +1887,11 @@ export const SANTOS: Santo[] = [
     data: "06/02",
     seculo: "XVI",
     padroeiro: "Japão, catequistas leigos",
-    resumo: "Noviço jesuíta japonês, o mais célebre dos 26 mártires crucificados em Nagasaki em 1597.",
+    resumo:
+      "Noviço jesuíta japonês, o mais célebre dos 26 mártires crucificados em Nagasaki em 1597.",
     biografia:
       "Nascido por volta de 1562 em família nobre japonesa, educado no colégio jesuíta de Azuchi, entrou na Companhia de Jesus e destacou-se como pregador eloquente, atraindo grande número de conversões entre samurais e comerciantes num Japão ainda parcialmente aberto ao Evangelho trazido por Francisco Xavier décadas antes. Quando o regente Toyotomi Hideyoshi, temendo a influência estrangeira e a fidelidade dividida dos convertidos, decretou a perseguição aos cristãos, Paulo Miki foi preso em Kyoto junto com outros vinte e cinco cristãos — sacerdotes, religiosos e leigos, entre eles crianças — e obrigado a marchar centenas de quilômetros até Nagasaki, mutilada uma orelha de cada um como sinal de infâmia pública. Ao longo da marcha de um mês, sob frio e escárnio, os prisioneiros seguiam cantando o Te Deum e rezando o terço. Chegados à colina de Nishizaka, em 5 de fevereiro de 1597, foram amarrados a vinte e seis cruzes; Paulo Miki, do alto da própria cruz, pregou ao povo reunido, perdoando os executores e proclamando não haver outro caminho de salvação senão o cristão, antes de ser traspassado por lanças junto com os companheiros. O episódio, narrado por testemunhas europeias presentes, tornou-se o relato fundador do martírio cristão japonês. Foram canonizados em 1862.",
-    virtudes: ["Coragem juvenil","Perdão aos algozes","Testemunho até o fim"],
+    virtudes: ["Coragem juvenil", "Perdão aos algozes", "Testemunho até o fim"],
     frase: "Não tenho outro caminho a seguir senão o cristão.",
   },
   {
@@ -1804,10 +1901,15 @@ export const SANTOS: Santo[] = [
     data: "03/06",
     seculo: "XIX",
     padroeiro: "Jovens africanos, catequistas, escoteiros",
-    resumo: "Chefe dos pajens do rei de Buganda, queimado vivo por defender a castidade dos jovens cristãos.",
+    resumo:
+      "Chefe dos pajens do rei de Buganda, queimado vivo por defender a castidade dos jovens cristãos.",
     biografia:
       "Carlos Lwanga servia na corte do rei Mwanga II do reino de Buganda, na atual Uganda, como responsável pelos jovens pajens reais, muitos deles catecúmenos ou já cristãos, instruídos pelos Missionários de África conhecidos como Padres Brancos. O rei, de conduta dissoluta, exigia dos pajens submissão a práticas imorais, e os jovens cristãos, sob liderança e proteção de Carlos, resistiam firmemente, protegendo especialmente os mais novos da corrupção real. Irritado com a recusa e temendo a crescente influência cristã na corte, Mwanga decretou em 1886 a execução de todos os cristãos da casa real. Carlos foi batizado às pressas na própria noite anterior à prisão, sabendo do perigo iminente, e no dia seguinte, junto com outros doze pajens e companheiros de fé, foi condenado a morrer envolto em esteiras de palha e queimado vivo em Namugongo. Testemunhas relataram que os jovens mártires — ao todo vinte e dois católicos, além de mártires anglicanos executados na mesma perseguição — enfrentaram a fogueira cantando e perdoando os carrascos, alguns pedindo apenas para morrer mais lentamente a fim de ter mais tempo de oferecer o sofrimento a Deus. Foram canonizados por Paulo VI em 1964, primeiros santos oficialmente reconhecidos da África subsaariana moderna.",
-    virtudes: ["Defesa da castidade alheia","Coragem diante do poder tirânico","Fé firme apesar da juventude"],
+    virtudes: [
+      "Defesa da castidade alheia",
+      "Coragem diante do poder tirânico",
+      "Fé firme apesar da juventude",
+    ],
     frase: "Deus há de me ajudar; morro por defender meus meninos.",
   },
   {
@@ -1817,10 +1919,11 @@ export const SANTOS: Santo[] = [
     data: "16/04",
     seculo: "XVIII",
     padroeiro: "Sem-teto, peregrinos, mendigos",
-    resumo: "Peregrino francês que renunciou a tudo para viver mendicante pelos santuários da Europa.",
+    resumo:
+      "Peregrino francês que renunciou a tudo para viver mendicante pelos santuários da Europa.",
     biografia:
       "Nascido em Amettes, no norte da França, em 1748, primogênito de quinze irmãos, tentou por diversas vezes ingressar em ordens religiosas contemplativas — trapistas e cartuxos — sendo sempre recusado por fragilidade de saúde ou falta de vocação claramente monástica. Discerniu então uma vocação singular: viver como peregrino mendicante perpétuo, visitando a pé os principais santuários da cristandade europeia — Loreto, Assis, Nápoles, Santiago de Compostela e, repetidamente, Roma — vestido de trapos, dormindo ao relento ou em abrigos de caridade, alimentando-se do que lhe davam e repartindo com outros mendigos o pouco que recebia. Passava longas horas em adoração diante do Santíssimo Sacramento nas igrejas romanas, especialmente no Coliseu, então lugar de devoção aos mártires, e rezava o rosário incessantemente. Apesar da aparência miserável, transmitia paz e atraía a atenção de quem o observava em oração prolongada e imóvel. Recusou toda forma de conforto ou reconhecimento, vivendo radicalmente as bem-aventuranças da pobreza. Morreu em Roma, exausto, na escadaria da igreja de Santa Maria dei Monti, em 16 de abril de 1783, aos trinta e cinco anos; imediatamente o povo romano o aclamou como santo, gritando pelas ruas 'è morto il santo!'. Foi canonizado em 1881.",
-    virtudes: ["Pobreza radical","Perseverança na oração","Humildade extrema"],
+    virtudes: ["Pobreza radical", "Perseverança na oração", "Humildade extrema"],
     frase: "É preciso amar a Deus sobre todas as coisas, sem medida.",
   },
   {
@@ -1830,10 +1933,11 @@ export const SANTOS: Santo[] = [
     data: "08/02",
     seculo: "XIX–XX",
     padroeiro: "Vítimas de tráfico humano, Sudão",
-    resumo: "Sequestrada e escravizada na infância no Sudão, tornou-se religiosa e símbolo da dignidade humana.",
+    resumo:
+      "Sequestrada e escravizada na infância no Sudão, tornou-se religiosa e símbolo da dignidade humana.",
     biografia:
       "Nascida por volta de 1869 numa aldeia da região de Darfur, no Sudão, foi sequestrada aos sete anos por traficantes de escravos, que lhe deram o nome árabe 'Bakhita' — 'a afortunada' — em cruel ironia, apagando de propósito seu nome original, jamais recuperado. Vendida e revendida sucessivas vezes por mais de uma década, sofreu torturas físicas terríveis, entre elas mais de cem incisões rituais no corpo, marcas que carregou pela vida inteira. Comprada em 1883 pelo cônsul italiano Callisto Legnani em Cartum, foi finalmente tratada com humanidade e, levada à Itália, entregue aos cuidados da família Michieli, que a confiou às Irmãs Canossianas de Veneza para instrução enquanto viajavam. Ali ouviu falar de Deus pela primeira vez como Pai amoroso e não como senhor a ser temido, e decidiu permanecer com as irmãs quando a família quis levá-la de volta ao Sudão; um tribunal italiano reconheceu-lhe a liberdade, pois a escravidão era ilegal em solo italiano. Batizada em 1890, entrou na congregação em 1893 e viveu por décadas em Schio, dedicada à cozinha, à portaria e ao acolhimento carinhoso de todos, sempre repetindo: 'Se encontrasse os que me escravizaram, ajoelhar-me-ia para beijar-lhes as mãos, pois, se não fosse o que aconteceu, não seria hoje cristã e religiosa'. Morreu em 1947. Foi canonizada por João Paulo II em 2000.",
-    virtudes: ["Perdão aos algozes","Serenidade após o sofrimento","Alegria simples no serviço"],
+    virtudes: ["Perdão aos algozes", "Serenidade após o sofrimento", "Alegria simples no serviço"],
     frase: "Se encontrasse aqueles que me escravizaram, ajoelhar-me-ia para beijar-lhes as mãos.",
   },
   {
@@ -1843,10 +1947,15 @@ export const SANTOS: Santo[] = [
     data: "20/01",
     seculo: "III",
     padroeiro: "Soldados, atletas, cidade do Rio de Janeiro, contra epidemias",
-    resumo: "Oficial romano cristão, transpassado por flechas por ordem de Diocleciano e depois trucidado.",
+    resumo:
+      "Oficial romano cristão, transpassado por flechas por ordem de Diocleciano e depois trucidado.",
     biografia:
       "Segundo a tradição consolidada por Santo Ambrósio e pela Paixão de São Sebastião do século V, nasceu em Milão ou na Gália Narbonense por volta de 256 e ingressou no exército romano, alcançando o posto de capitão da guarda pretoriana sob os imperadores Diocleciano e Maximiano, sem revelar publicamente sua fé cristã. Usava a posição privilegiada para assistir secretamente cristãos presos e condenados, fortalecendo-os na hora do martírio e, segundo relatos, operando conversões mesmo entre funcionários imperiais. Descoberta sua fé, foi condenado por Diocleciano a ser atado a um poste e alvejado por arqueiros mouros, sendo dado como morto e abandonado. Uma viúva cristã, Irene, ao recolher o corpo para sepultá-lo, encontrou-o ainda vivo e cuidou de seus ferimentos até a recuperação. Restabelecido, em vez de fugir, apresentou-se novamente diante do imperador para denunciar publicamente a crueldade das perseguições contra os cristãos; furioso, Diocleciano ordenou que fosse espancado até a morte e seu corpo lançado na Cloaca Máxima, de onde outra piedosa cristã o recolheu para sepultura digna nas catacumbas que hoje levam seu nome, na via Ápia. Desde a Idade Média é invocado contra pestes e epidemias, e sua iconografia — o corpo atravessado de flechas — tornou-se uma das mais representadas da arte cristã.",
-    virtudes: ["Coragem militar a serviço da fé","Fidelidade aos perseguidos","Perseverança após o sofrimento"],
+    virtudes: [
+      "Coragem militar a serviço da fé",
+      "Fidelidade aos perseguidos",
+      "Perseverança após o sofrimento",
+    ],
     frase: "Nunca estive mais próximo de Cristo do que quando as flechas me atravessavam.",
   },
   {
@@ -1856,10 +1965,15 @@ export const SANTOS: Santo[] = [
     data: "16/08",
     seculo: "XIV",
     padroeiro: "Enfermos contagiosos, cães, cirurgiões",
-    resumo: "Peregrino francês que curou pestilentos na Itália e sofreu a própria peste em solidão exemplar.",
+    resumo:
+      "Peregrino francês que curou pestilentos na Itália e sofreu a própria peste em solidão exemplar.",
     biografia:
       "Nascido em Montpellier, no sul da França, por volta de 1295, filho de família nobre, ficou órfão ainda jovem e distribuiu toda a herança aos pobres antes de partir em peregrinação a Roma, vestido de peregrino com bastão, bornal e a concha característica. Atravessando a Itália durante uma violenta epidemia de peste, dedicou-se ao cuidado dos doentes em hospitais de Acquapendente, Cesena, Roma e outras cidades, curando muitos, segundo a tradição, apenas com o sinal da cruz e a imposição das mãos, recusando fugir do contágio como faziam a maioria dos que podiam. Contraiu ele mesmo a peste em Piacenza e, para não contaminar ninguém, retirou-se sozinho a uma cabana na floresta, onde teria sido sustentado milagrosamente por um cão que lhe trazia diariamente um pedaço de pão roubado da mesa de seu dono — motivo pelo qual é sempre representado com um cão a seu lado. Recuperado, voltou à cidade natal, mas, não sendo reconhecido devido à aparência desfigurada pela doença e pelos anos de peregrinação, foi preso como suposto espião e morreu na prisão, ainda jovem, por volta de 1327, sendo identificado postumamente por uma marca de nascença em forma de cruz. Sua devoção espalhou-se amplamente pela Europa e pelo Brasil durante surtos epidêmicos, sobretudo de cólera e varíola.",
-    virtudes: ["Caridade com os contagiados","Solidariedade autoisolada","Confiança na Providência"],
+    virtudes: [
+      "Caridade com os contagiados",
+      "Solidariedade autoisolada",
+      "Confiança na Providência",
+    ],
     frase: "Aqueles que me invocarem serão livres de toda peste.",
   },
   {
@@ -1869,10 +1983,15 @@ export const SANTOS: Santo[] = [
     data: "19/04",
     seculo: "III–IV",
     padroeiro: "Causas urgentes, comerciantes, estudantes em exames",
-    resumo: "Soldado mártir de tradição antiga, invocado com grande popularidade para necessidades urgentes.",
+    resumo:
+      "Soldado mártir de tradição antiga, invocado com grande popularidade para necessidades urgentes.",
     biografia:
       "A tradição hagiográfica mais difundida apresenta Expedito como oficial do exército romano estacionado em Melitene, na Armênia, martirizado durante as perseguições do século III ou início do IV por professar publicamente a fé cristã. Reza a piedade popular que, no momento de sua conversão, o demônio lhe teria aparecido sob a forma de um corvo grasnando 'cras, cras' — em latim, 'amanhã, amanhã' — tentando-o a adiar a decisão de abraçar o cristianismo; Expedito, pisando o corvo, teria respondido 'hodie', 'hoje', batizando-se imediatamente e selando pouco depois com o próprio sangue essa resposta pronta e sem demora. Embora os dados históricos precisos sobre sua vida sejam escassos, restando sobretudo a antiguíssima veneração litúrgica atestada em calendários romanos desde ao menos o século IX, seu culto floresceu extraordinariamente a partir do século XIX, primeiro na Europa e depois, com grande intensidade, no Brasil, onde se tornou um dos santos mais invocados popularmente para necessidades urgentes, exames, empregos e questões que não admitem demora — precisamente pelo simbolismo do 'hoje' contra o 'amanhã' da procrastinação. Sua imagem tradicional, um jovem soldado romano com uma cruz na mão erguendo a palavra 'HODIE' e pisando o corvo do 'CRAS', tornou-se ícone de devoção popular difundida em capelas, medalhas e estampas por todo o país.",
-    virtudes: ["Presteza na conversão","Coragem no martírio","Confiança na Providência sem demora"],
+    virtudes: [
+      "Presteza na conversão",
+      "Coragem no martírio",
+      "Confiança na Providência sem demora",
+    ],
     frase: "Hoje, não amanhã.",
   },
   {
@@ -1882,10 +2001,11 @@ export const SANTOS: Santo[] = [
     data: "15/03",
     seculo: "I",
     padroeiro: "Objetos e causas perdidas (devoção popular brasileira)",
-    resumo: "Soldado romano que, segundo a tradição, transpassou o lado de Cristo e se converteu ao ver os prodígios do Calvário.",
+    resumo:
+      "Soldado romano que, segundo a tradição, transpassou o lado de Cristo e se converteu ao ver os prodígios do Calvário.",
     biografia:
       "A tradição cristã antiga, recolhida em apócrifos como o Evangelho de Nicodemos e transmitida por diversos Padres da Igreja, identifica com o nome de Longuinho o soldado romano que, no Calvário, cravou a lança no lado de Cristo já morto, do qual, segundo o relato joanino, jorrou sangue e água — símbolo sacramental caro à tradição patrística. O mesmo relato popular funde essa figura com a do centurião que, testemunhando os prodígios que acompanharam a morte de Jesus — o véu do templo rasgado, o terremoto, o eclipse — exclamou: 'Verdadeiramente este homem era Filho de Deus', reconhecendo publicamente a divindade do Crucificado no instante em que os próprios discípulos haviam fugido apavorados. A tradição posterior acrescenta que, segundo alguns escritos apócrifos, o soldado sofria de fraqueza na visão e, ao ser tocado pelo sangue e água que jorraram da lançada, teria recuperado a vista, tornando-se ainda mais convicto testemunha do mistério que presenciara; convertido, teria deixado a vida militar para pregar o Evangelho, morrendo mártir na Capadócia. Embora os estudiosos apontem a natureza devocional e não estritamente histórica dessa tradição composta, a piedade popular, sobretudo no Brasil, consagrou amplamente a figura de São Longuinho como padroeiro invocado para encontrar objetos perdidos, unindo-se nessa devoção a Santo Antônio.",
-    virtudes: ["Conversão diante da verdade","Testemunho corajoso","Fé nascida da graça"],
+    virtudes: ["Conversão diante da verdade", "Testemunho corajoso", "Fé nascida da graça"],
     frase: "Verdadeiramente este homem era o Filho de Deus.",
   },
   {
@@ -1921,7 +2041,8 @@ export const SANTOS: Santo[] = [
     data: "27/01",
     seculo: "XV-XVI",
     padroeiro: "Educadoras, doentes, órfãos",
-    resumo: "Leiga franciscana que criou a primeira companhia de mulheres consagradas dedicada à educação.",
+    resumo:
+      "Leiga franciscana que criou a primeira companhia de mulheres consagradas dedicada à educação.",
     biografia:
       "Nasceu em Desenzano, no lago de Garda, em 1474. Órfã cedo, tornou-se terciária franciscana e viveu como leiga consagrada, sem clausura, dedicando-se ao catecismo das meninas pobres e à reconciliação de famílias em conflito. Peregrinou à Terra Santa e a Roma no jubileu de 1525. Em Bréscia, em 1535, reuniu vinte e oito companheiras e fundou a Companhia de Santa Úrsula: mulheres que permaneciam nas próprias casas e no próprio trabalho, unidas por uma regra de oração, castidade e serviço — uma forma de vida inédita, aprovada pelo bispo em 1536 e depois pelo papa Paulo III. Deixou uma Regra e escritos de direção espiritual marcados pela suavidade e pela confiança na liberdade das pessoas. Morreu em 1540 e foi canonizada em 1807; as Ursulinas tornaram-se a primeira grande rede educativa feminina da Igreja.",
     virtudes: ["Zelo pela educação", "Doçura firme", "Iniciativa apostólica"],
@@ -1947,7 +2068,8 @@ export const SANTOS: Santo[] = [
     data: "03/02",
     seculo: "IV",
     padroeiro: "Doenças da garganta, médicos, tecelões",
-    resumo: "Bispo de Sebaste, na Armênia, mártir invocado desde a antiguidade contra os males da garganta.",
+    resumo:
+      "Bispo de Sebaste, na Armênia, mártir invocado desde a antiguidade contra os males da garganta.",
     biografia:
       "Os dados históricos seguros sobre Brás são poucos: foi bispo de Sebaste, na Armênia, e morreu mártir por volta de 316, no contexto das perseguições que se seguiram ao edito de Licínio no Oriente. Seu culto está atestado no Oriente já no século VI e difundiu-se largamente no Ocidente a partir do século VIII. A tradição hagiográfica, recolhida em atas tardias e de valor devocional, narra que exercia a medicina antes do episcopado, que se refugiou numa gruta durante a perseguição — onde os animais o procuravam — e que, sendo conduzido ao martírio, curou um menino que sufocava com uma espinha de peixe presa na garganta. Dessa narrativa nasceu a bênção das gargantas com duas velas cruzadas, celebrada em sua memória e ainda presente no Bento Ritual. A Igreja distingue claramente o fato do martírio, historicamente firme, dos episódios lendários que a piedade popular conservou.",
     virtudes: ["Fortaleza no martírio", "Compaixão pelos doentes", "Fidelidade pastoral"],
@@ -1960,7 +2082,8 @@ export const SANTOS: Santo[] = [
     data: "09/02",
     seculo: "III",
     padroeiro: "Dentistas, doentes dos dentes",
-    resumo: "Diaconisa idosa martirizada em Alexandria em 249, testemunha citada por Eusébio de Cesareia.",
+    resumo:
+      "Diaconisa idosa martirizada em Alexandria em 249, testemunha citada por Eusébio de Cesareia.",
     biografia:
       "Apolônia é uma das mártires de quem se possui testemunho antigo e direto: Eusébio de Cesareia, na História Eclesiástica, transcreve uma carta de Dionísio de Alexandria que descreve o tumulto anticristão de 249, sob Décio, e nomeia 'a admirável virgem idosa Apolônia', a quem os agressores quebraram os dentes e ameaçaram queimar viva se não blasfemasse. Segundo o relato, ela pediu um instante, rezou e lançou-se ela mesma ao fogo — gesto que os Padres interpretaram não como suicídio, mas como impulso do Espírito, discussão que Santo Agostinho retoma na Cidade de Deus. A iconografia a representa com uma tenaz e um dente, e daí nasceu sua invocação contra as dores dentárias, atestada na Europa desde a Idade Média. Seu culto é antigo em Alexandria e em Roma, onde recebeu igreja própria.",
     virtudes: ["Constância na velhice", "Coragem diante da tortura", "Confissão pública da fé"],
@@ -1973,7 +2096,8 @@ export const SANTOS: Santo[] = [
     data: "08/02",
     seculo: "XVI",
     padroeiro: "Órfãos e crianças abandonadas",
-    resumo: "Soldado veneziano convertido no cárcere, fundador dos Somascos e organizador dos primeiros orfanatos modernos.",
+    resumo:
+      "Soldado veneziano convertido no cárcere, fundador dos Somascos e organizador dos primeiros orfanatos modernos.",
     biografia:
       "Nasceu em Veneza em 1486, de família patrícia, e seguiu a carreira militar da República. Feito prisioneiro na defesa do castelo de Castelnuovo, viveu no cárcere uma conversão profunda e, libertado, dedicou o resto da vida aos pobres. Durante a fome e a peste que assolaram o norte da Itália em 1528, vendeu bens e casa para alimentar famintos e sepultar mortos, recolhendo as crianças órfãs que vagavam pelas ruas. Abriu casas de acolhida em Veneza, Bréscia, Bérgamo, Como e Milão, e criou um método de assistência que unia teto, catequese, alfabetização e aprendizado de um ofício — inovação notável para a época. Em 1534 fundou em Somasca a Companhia dos Servos dos Pobres, hoje Clérigos Regulares Somascos. Morreu em 1537 ao contrair uma epidemia cuidando dos doentes; Pio XI o declarou padroeiro universal dos órfãos.",
     virtudes: ["Caridade heroica", "Humildade após a conversão", "Serviço às crianças"],
@@ -1986,7 +2110,8 @@ export const SANTOS: Santo[] = [
     data: "14/02",
     seculo: "IX",
     padroeiro: "Europa, povos eslavos, tradutores",
-    resumo: "Irmãos de Tessalônica que criaram a escrita eslava e a liturgia na língua do povo evangelizado.",
+    resumo:
+      "Irmãos de Tessalônica que criaram a escrita eslava e a liturgia na língua do povo evangelizado.",
     biografia:
       "Constantino — que tomou em religião o nome de Cirilo — e Miguel, chamado Metódio, nasceram em Tessalônica no início do século IX, filhos de um oficial bizantino. Cirilo foi bibliotecário e professor de filosofia em Constantinopla; Metódio, administrador e depois monge. Em 863, enviados pelo imperador ao pedido do príncipe Ratislau da Morávia, criaram um alfabeto para a língua eslava — o glagolítico, base do futuro cirílico — e traduziram os Evangelhos, o Saltério e os livros litúrgicos. A opção pela língua vernácula na liturgia provocou forte oposição do clero franco; os irmãos foram a Roma, onde o papa Adriano II aprovou os livros eslavos, ato de enorme alcance pastoral. Cirilo morreu em Roma em 869; Metódio, ordenado arcebispo, prosseguiu a missão até 885, enfrentando prisão e calúnias. João Paulo II os proclamou copadroeiros da Europa em 1980 na carta Egregiae virtutis.",
     virtudes: ["Inculturação do Evangelho", "Fidelidade a Roma", "Paciência nas perseguições"],
@@ -2012,7 +2137,8 @@ export const SANTOS: Santo[] = [
     data: "01/04",
     seculo: "IV-V",
     padroeiro: "Penitentes, mulheres em conversão",
-    resumo: "Antiga cortesã de Alexandria que viveu quase meio século de penitência no deserto da Transjordânia.",
+    resumo:
+      "Antiga cortesã de Alexandria que viveu quase meio século de penitência no deserto da Transjordânia.",
     biografia:
       "A vida de Maria Egipcíaca chegou até nós pela biografia atribuída a São Sofrônio de Jerusalém, no século VII, texto de enorme influência na espiritualidade oriental e ocidental. Segundo esse relato — de caráter edificante, cujos detalhes os historiadores tratam com cautela —, Maria deixou a casa paterna aos doze anos e viveu de prostituição em Alexandria por dezessete anos. Embarcou com peregrinos para Jerusalém e, na porta da basílica do Santo Sepulcro, foi interiormente impedida de entrar; convertida diante de um ícone da Mãe de Deus, atravessou o Jordão e viveu quarenta e sete anos em solidão absoluta no deserto. Ali foi encontrada pelo monge Zósimo, que lhe deu a comunhão e recebeu sua história. A Igreja bizantina lhe consagra o quinto domingo da Quaresma, e a tradição latina a apresenta como ícone da misericórdia que alcança qualquer passado.",
     virtudes: ["Penitência perseverante", "Humildade", "Confiança na misericórdia"],
@@ -2038,7 +2164,8 @@ export const SANTOS: Santo[] = [
     data: "09/05",
     seculo: "IV",
     padroeiro: "Comunidades religiosas",
-    resumo: "Soldado egípcio convertido pela caridade dos cristãos, criador da primeira regra monástica comunitária.",
+    resumo:
+      "Soldado egípcio convertido pela caridade dos cristãos, criador da primeira regra monástica comunitária.",
     biografia:
       "Nasceu por volta de 292 na Tebaida, de família pagã. Recrutado à força para o exército imperial, foi encarcerado em Tebas e ficou marcado pela caridade dos cristãos que socorriam os presos; libertado, pediu o batismo. Depois de alguns anos junto ao eremita Palamon, teve a intuição decisiva que mudou a história da vida religiosa: em vez do isolamento absoluto dos anacoretas, reunir os monges em comunidade, sob um mesmo teto, com trabalho, refeições, oração comum e obediência a um superior. Em Tabennisi, por volta de 320, organizou o primeiro cenóbio e redigiu uma Regra prática — traduzida ao latim por São Jerônimo — que influenciou São Basílio e, através dele, São Bento. Ao morrer, em 346, seus mosteiros contavam milhares de monges e algumas comunidades femininas dirigidas por sua irmã. É reconhecido pelas Igrejas do Oriente e do Ocidente.",
     virtudes: ["Obediência", "Trabalho ordenado", "Sabedoria organizadora"],
@@ -2077,7 +2204,8 @@ export const SANTOS: Santo[] = [
     data: "16/05",
     seculo: "XIV",
     padroeiro: "Confessores, boa fama, Boêmia",
-    resumo: "Vigário-geral de Praga afogado no Vltava em 1393, venerado como mártir do segredo sacramental.",
+    resumo:
+      "Vigário-geral de Praga afogado no Vltava em 1393, venerado como mártir do segredo sacramental.",
     biografia:
       "Nasceu em Nepomuk, na Boêmia, por volta de 1345, estudou direito canônico em Praga e Pádua e chegou a vigário-geral do arcebispo de Praga. Envolveu-se no violento conflito entre o arcebispo e o rei Venceslau IV a propósito da autonomia da Igreja e da nomeação de abades; preso, torturado e morto, foi lançado da ponte Carlos ao rio Vltava em 20 de março de 1393. O motivo político da execução é documentado; a tradição, difundida já no século XV, acrescenta que a hostilidade do rei nasceu da recusa de João em revelar o que a rainha lhe havia confessado. Foi canonizado em 1729 e tornou-se um dos santos mais representados da Europa central — sua estátua na ponte Carlos deu origem à difusão universal da imagem do santo com dedo nos lábios e coroa de cinco estrelas. Sua memória sustenta a inviolabilidade absoluta do sigilo confessional.",
     virtudes: ["Fidelidade ao sigilo", "Coragem diante do poder", "Zelo pela liberdade da Igreja"],
@@ -2090,7 +2218,8 @@ export const SANTOS: Santo[] = [
     data: "25/05",
     seculo: "XVI-XVII",
     padroeiro: "Doentes, reforma do clero",
-    resumo: "Carmelita florentina de grandes êxtases e de intensa intercessão pela reforma da Igreja.",
+    resumo:
+      "Carmelita florentina de grandes êxtases e de intensa intercessão pela reforma da Igreja.",
     biografia:
       "Caterina de Pazzi nasceu em Florença em 1566, de família patrícia. Entrou no Carmelo de Santa Maria degli Angeli em 1582, tomando o nome de Maria Madalena. Sua vida religiosa foi marcada por longos períodos de êxtase, cujas palavras as irmãs anotavam — daí os volumes de seus Colóquios, que registram uma doutrina espiritual centrada no Verbo encarnado, no Espírito Santo e na Igreja. Alternou anos de grande consolação com cinco anos de prova interior severa, que ela chamava 'o leão', vividos em obediência e serviço comum: foi mestra de noviças, sacristã e enfermeira. Escreveu cartas à Cúria e a bispos pedindo a reforma dos costumes do clero, no espírito de Trento. Sofreu os últimos três anos com doença dolorosa, morrendo em 1607. Foi canonizada em 1669 e é venerada especialmente por sua devoção ao Espírito Santo.",
     virtudes: ["Amor à Igreja", "Obediência nas provações", "Devoção ao Espírito Santo"],
@@ -2142,7 +2271,8 @@ export const SANTOS: Santo[] = [
     data: "06/06",
     seculo: "XIX",
     padroeiro: "Educadores, professores de crianças pobres",
-    resumo: "Sacerdote francês que criou uma congregação de irmãos para educar as crianças do campo.",
+    resumo:
+      "Sacerdote francês que criou uma congregação de irmãos para educar as crianças do campo.",
     biografia:
       "Nasceu em Marlhes, na França, em 1789, filho de camponeses, num tempo em que a Revolução havia desmantelado o ensino religioso. Entrou tarde no seminário e teve dificuldades escolares, o que marcaria sua sensibilidade pedagógica. Ordenado em 1816, foi vigário em La Valla, região rural pobre; chamado a atender um adolescente moribundo que ignorava o essencial da fé, decidiu fundar naquele mesmo ano uma congregação de irmãos leigos dedicada à educação dos meninos do campo: os Pequenos Irmãos de Maria, ou Maristas. Formou os primeiros irmãos ele próprio, construiu com as próprias mãos a casa de L'Hermitage e desenvolveu um método educativo baseado na presença simples entre os alunos, no afeto e na formação da consciência. Morreu em 1840, deixando quase trezentos irmãos; foi canonizado por João Paulo II em 1999.",
     virtudes: ["Amor educativo", "Confiança em Maria", "Trabalho perseverante"],
@@ -2337,7 +2467,8 @@ export const SANTOS: Santo[] = [
     data: "19/10",
     seculo: "XVII",
     padroeiro: "América do Norte, missionários",
-    resumo: "Jesuíta francês martirizado entre os iroqueses em 1646, após anos de cativeiro e mutilação.",
+    resumo:
+      "Jesuíta francês martirizado entre os iroqueses em 1646, após anos de cativeiro e mutilação.",
     biografia:
       "Nasceu em Orléans, França, em 1607, entrou na Companhia de Jesus e partiu em 1636 para a Nova França, onde trabalhou entre os hurons na região dos Grandes Lagos, aprendendo suas línguas. Em 1642 foi capturado por uma partida mohawk, torturado com mutilação de dedos e mantido como escravo por mais de um ano; escapou com ajuda de comerciantes holandeses e regressou à Europa, onde obteve de Urbano VIII dispensa para celebrar a Missa apesar das mãos mutiladas. Voltou voluntariamente à missão e, em 1646, participou de uma embaixada de paz junto aos mohawks; acusado de trazer doença e má colheita, foi morto a golpes de machado em Ossernenon, na atual Nova York, com seu companheiro leigo João de La Lande. Seus escritos, publicados nas Relações dos Jesuítas, são fonte histórica importante. Foi canonizado em 1930 com os demais Mártires Canadenses.",
     virtudes: ["Coragem missionária", "Perdão aos torturadores", "Perseverança"],
@@ -2350,7 +2481,8 @@ export const SANTOS: Santo[] = [
     data: "21/10",
     seculo: "IV (tradição)",
     padroeiro: "Educadoras, estudantes, Colônia",
-    resumo: "Mártir venerada em Colônia desde a antiguidade, cuja lenda medieval difundiu o culto pela Europa.",
+    resumo:
+      "Mártir venerada em Colônia desde a antiguidade, cuja lenda medieval difundiu o culto pela Europa.",
     biografia:
       "O núcleo verificável do culto de Úrsula é uma inscrição do século IV ou V, na igreja de Santa Úrsula em Colônia, que registra a restauração de uma basílica erguida no lugar do martírio de virgens cristãs, sem citar nomes nem número. A partir do século IX, textos hagiográficos desenvolveram a narrativa de Úrsula, princesa britânica que, viajando em peregrinação com um cortejo de companheiras, foi massacrada com elas em Colônia pelos hunos; um erro de leitura de abreviaturas medievais transformou o número em onze mil virgens, cifra que a crítica histórica há muito reconhece como lendária. A Igreja manteve a memória das mártires de Colônia e retirou a festa do calendário universal em 1969, conservando-a como memória local e nas famílias religiosas. Santa Ângela de Mérici escolheu Úrsula como patrona das Ursulinas, ligando seu nome à educação cristã.",
     virtudes: ["Virgindade consagrada", "Fidelidade", "Testemunho comunitário"],
@@ -2366,7 +2498,11 @@ export const SANTOS: Santo[] = [
     resumo: "Rainha que reformou a Igreja escocesa e serviu pessoalmente os pobres de Dunfermline.",
     biografia:
       "Nasceu por volta de 1045 na Hungria, onde sua família anglo-saxã vivia exilada, e foi educada na piedade e nas letras. Após a conquista normanda de 1066, refugiou-se na Escócia e casou-se com o rei Malcolm III, homem rude que ela influenciou profundamente. Teve oito filhos, entre eles David I e a rainha Matilde da Inglaterra, e cuidou pessoalmente de sua educação cristã. Como rainha, promoveu sínodos que corrigiram abusos e uniformizaram a disciplina da Igreja escocesa — observância da Quaresma, comunhão pascal, descanso dominical —, restaurou a abadia de Iona, fundou a abadia de Dunfermline e criou albergues para peregrinos. Servia diariamente órfãos e pobres à mesa, resgatava cativos ingleses e jejuava com rigor. Morreu em 1093, dias depois do marido e do filho mortos em batalha. Foi canonizada em 1250 e proclamada padroeira da Escócia.",
-    virtudes: ["Caridade pessoal com os pobres", "Zelo pela reforma da Igreja", "Educação dos filhos"],
+    virtudes: [
+      "Caridade pessoal com os pobres",
+      "Zelo pela reforma da Igreja",
+      "Educação dos filhos",
+    ],
     frase: "Servi a Cristo nos pobres, que estão sempre à nossa porta.",
   },
   {
@@ -2441,7 +2577,8 @@ export const SANTOS: Santo[] = [
     data: "29/12",
     seculo: "XII",
     padroeiro: "Clero secular, liberdade da Igreja",
-    resumo: "Chanceler de Henrique II que, feito arcebispo, morreu defendendo a liberdade da Igreja.",
+    resumo:
+      "Chanceler de Henrique II que, feito arcebispo, morreu defendendo a liberdade da Igreja.",
     biografia:
       "Nasceu em Londres em 1118 ou 1120, filho de mercadores normandos. Estudou direito, entrou no serviço do arcebispo Teobaldo e tornou-se chanceler do rei Henrique II, com quem manteve uma amizade estreita e um estilo de vida mundano. Nomeado arcebispo de Cantuária em 1162 por vontade do rei, que esperava um aliado, converteu-se profundamente à responsabilidade do ofício: adotou vida austera e passou a defender os direitos da Igreja contra as Constituições de Clarendon, que submetiam o clero à jurisdição régia. O conflito o levou a seis anos de exílio na França. De volta a Cantuária, foi assassinado na própria catedral, em 29 de dezembro de 1170, por quatro cavaleiros que interpretaram como ordem as palavras iradas do rei. O choque foi imenso na Europa; foi canonizado em 1173, e Henrique II fez penitência pública em seu túmulo, que se tornou o maior santuário de peregrinação da Inglaterra medieval.",
     virtudes: ["Conversão profunda", "Fortaleza episcopal", "Fidelidade à Igreja"],
