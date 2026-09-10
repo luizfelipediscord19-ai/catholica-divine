@@ -10,6 +10,8 @@
 // Numeração conforme a edição típica latina (1997), a mesma da edição
 // portuguesa em uso no Brasil.
 
+import { ARTIGOS_ADICIONAIS } from "./artigos-extras";
+
 export type ArtigoCIC = {
   slug: string;
   parte: 1 | 2 | 3 | 4;
@@ -26,7 +28,7 @@ export type ArtigoCIC = {
   pontos: string[];
 };
 
-export const ARTIGOS: ArtigoCIC[] = [
+const ARTIGOS_NUCLEO: ArtigoCIC[] = [
   // ═══════════════ PARTE I — A PROFISSÃO DA FÉ ═══════════════
   {
     slug: "desejo-de-deus",
@@ -1189,3 +1191,7 @@ export function artigoPorSlug(slug: string): ArtigoCIC | undefined {
 /** URL do texto integral no site da Santa Sé. */
 export const VATICAN_INDICE =
   "https://www.vatican.va/archive/cathechism_po/index_new/prima-pagina-cic_po.html";
+
+export const ARTIGOS: ArtigoCIC[] = [...ARTIGOS_NUCLEO, ...ARTIGOS_ADICIONAIS].sort(
+  (a, b) => a.de - b.de,
+);

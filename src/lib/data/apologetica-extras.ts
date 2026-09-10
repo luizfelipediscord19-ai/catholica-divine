@@ -94,7 +94,12 @@ export const OBJECOES_ADICIONAIS: Objecao[] = [
       "Fora desse ato, o ensino pontifício exige respeito religioso, mas não é infalível; declarações sobre política, ciência ou estratégia pastoral não têm essa nota.",
       "Em quase dois mil anos, definições reconhecidas como ex cathedra são raríssimas — os exemplos citados são a Imaculada Conceição (1854) e a Assunção (1950).",
     ],
-    fontes: ["Pastor Aeternus, cap. 4 (DH 3074)", "Lumen Gentium 25", "CIC §§ 888-892", "CDC c. 749"],
+    fontes: [
+      "Pastor Aeternus, cap. 4 (DH 3074)",
+      "Lumen Gentium 25",
+      "CIC §§ 888-892",
+      "CDC c. 749",
+    ],
   },
   {
     slug: "papas-maus-invalidam-a-igreja",
