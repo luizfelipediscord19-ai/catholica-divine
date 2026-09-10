@@ -21,7 +21,6 @@ export function SumarioPagina() {
   useEffect(() => {
     setAberto(false);
     const montar = () => {
-      console.log("SUM-START", !!document.getElementById("conteudo"));
       const raiz = document.getElementById("conteudo");
       if (!raiz || raiz.querySelector(".reading-mode")) {
         setItens([]);
@@ -45,7 +44,6 @@ export function SumarioPagina() {
           nivel: h.tagName === "H3" ? 3 : 2,
         });
       });
-      console.log("SUM-DEBUG", lista.length);
       setItens(lista.length >= 3 ? lista : []);
     };
     const t = setTimeout(montar, 220);
