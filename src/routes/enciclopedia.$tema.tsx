@@ -2,7 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, BookOpen, ExternalLink } from "lucide-react";
 
 import { FaixaAutoridade } from "@/components/SeloConfiabilidade";
-import { CitacoesLinkadas } from "@/components/CitacoesLinkadas";
+import { linkificarNos } from "@/components/CitacoesLinkadas";
 import { TEMAS_ENCICLOPEDIA, temaPorSlug } from "@/lib/data/enciclopedia-temas";
 import { VERBETES_ENCICLOPEDIA } from "@/lib/data/enciclopedia";
 import { keywordsPara } from "@/lib/seo/palavras-chave";
@@ -74,7 +74,7 @@ function Page() {
             <div className="mt-4 space-y-4">
               {secao.paragrafos.map((p) => (
                 <p key={p.slice(0, 32)} className="body-base measure text-muted-foreground">
-                  <CitacoesLinkadas>{p}</CitacoesLinkadas>
+                  {linkificarNos(p)}
                 </p>
               ))}
             </div>
@@ -86,7 +86,7 @@ function Page() {
                     key={ponto}
                     className="body-sm border-l-2 border-gold/30 pl-4 text-muted-foreground"
                   >
-                    <CitacoesLinkadas>{ponto}</CitacoesLinkadas>
+                    {linkificarNos(ponto)}
                   </li>
                 ))}
               </ul>
@@ -95,7 +95,7 @@ function Page() {
             {secao.referencias ? (
               <p className="mt-5 text-step--2 text-foreground/75">
                 <span className="label-btn text-gold">Referências: </span>
-                <CitacoesLinkadas>{secao.referencias.join(" · ")}</CitacoesLinkadas>
+                {linkificarNos(secao.referencias.join(" · "))}
               </p>
             ) : null}
           </section>
