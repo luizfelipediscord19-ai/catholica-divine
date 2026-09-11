@@ -162,9 +162,11 @@ export function respostaSitemap(entries: SitemapEntry[]): Response {
   });
 }
 
-/** Uma URL por aula semanal do curso de catecismo. */
-export const AULAS_CATECISMO_URLS = AULAS.map((a) => ({
-  path: `/catecismo/aulas/${a.slug}`,
-  changefreq: "monthly" as const,
-  priority: "0.6",
-}));
+// Uma URL por aula semanal do curso de catecismo.
+PAGINAS.push(
+  ...AULAS.map((a) => ({
+    path: `/catecismo/aulas/${a.slug}`,
+    changefreq: "monthly" as const,
+    priority: "0.6",
+  })),
+);
