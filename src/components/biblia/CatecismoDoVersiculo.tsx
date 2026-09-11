@@ -12,12 +12,16 @@ export function CatecismoDoVersiculo({
   livro,
   capitulo,
   versiculo,
+  somenteInicio = false,
 }: {
   livro: string;
   capitulo: number;
   versiculo: number;
+  /** Em leitura contínua, mostra os elos só no primeiro versículo da faixa. */
+  somenteInicio?: boolean;
 }) {
-  const elos = elosDoVersiculo(livro, capitulo, versiculo);
+  const todos = elosDoVersiculo(livro, capitulo, versiculo);
+  const elos = somenteInicio ? todos.filter((elo) => elo.de === versiculo) : todos;
   if (elos.length === 0) return null;
 
   return (

@@ -253,6 +253,14 @@ function Page() {
       <p className="mt-3 text-xs sm:text-sm text-muted-foreground tracking-wider uppercase">
         {livro.abrev} {capitulo} · Capítulo {capitulo} de {livro.capitulos}
       </p>
+      <Link
+        data-leitura-oculto
+        to="/biblia/$livro/leitura"
+        params={{ livro: livro.slug }}
+        className="btn-base btn-quiet btn-sm label-btn mt-4"
+      >
+        Ler {livro.nome} inteiro · sumário e PDF
+      </Link>
 
       {/* Seletor de passagens */}
       <form

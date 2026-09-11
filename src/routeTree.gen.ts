@@ -49,13 +49,16 @@ import { Route as ApologeticaRouteImport } from './routes/apologetica'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as TrilhasIndexRouteImport } from './routes/trilhas.index'
 import { Route as SantosIndexRouteImport } from './routes/santos.index'
+import { Route as SacramentosIndexRouteImport } from './routes/sacramentos.index'
 import { Route as OracoesIndexRouteImport } from './routes/oracoes.index'
 import { Route as NoticiasIndexRouteImport } from './routes/noticias.index'
 import { Route as ForumIndexRouteImport } from './routes/forum.index'
 import { Route as EnciclopediaIndexRouteImport } from './routes/enciclopedia.index'
 import { Route as CatecismoIndexRouteImport } from './routes/catecismo.index'
 import { Route as BibliaIndexRouteImport } from './routes/biblia.index'
+import { Route as ApologeticaIndexRouteImport } from './routes/apologetica.index'
 import { Route as SantosSlugRouteImport } from './routes/santos.$slug'
+import { Route as SacramentosTemaRouteImport } from './routes/sacramentos.$tema'
 import { Route as OracoesViaSacraRouteImport } from './routes/oracoes.via-sacra'
 import { Route as OracoesTercoMisericordiaRouteImport } from './routes/oracoes.terco-misericordia'
 import { Route as OracoesRosarioRouteImport } from './routes/oracoes.rosario'
@@ -69,6 +72,7 @@ import { Route as CatecismoParteRouteImport } from './routes/catecismo.$parte'
 import { Route as BibliaPlanosRouteImport } from './routes/biblia.planos'
 import { Route as BibliaLeiturasRouteImport } from './routes/biblia.leituras'
 import { Route as BibliaLivroRouteImport } from './routes/biblia.$livro'
+import { Route as ApologeticaTemaRouteImport } from './routes/apologetica.$tema'
 import { Route as ApiTranscreverRouteImport } from './routes/api/transcrever'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
 import { Route as TrilhasTrilhaIndexRouteImport } from './routes/trilhas.$trilha.index'
@@ -77,6 +81,7 @@ import { Route as BibliaLivroIndexRouteImport } from './routes/biblia.$livro.ind
 import { Route as TrilhasTrilhaLicaoRouteImport } from './routes/trilhas.$trilha.$licao'
 import { Route as OracoesNovenasSlugRouteImport } from './routes/oracoes.novenas.$slug'
 import { Route as BibliaPlanosSlugRouteImport } from './routes/biblia.planos.$slug'
+import { Route as BibliaLivroLeituraRouteImport } from './routes/biblia.$livro.leitura'
 import { Route as BibliaLivroCapituloRouteImport } from './routes/biblia.$livro.$capitulo'
 import { Route as ApiPublicNoticiasDiariasRouteImport } from './routes/api/public/noticias-diarias'
 import { Route as ApiPublicNoticiasRouteImport } from './routes/api/public/noticias'
@@ -286,6 +291,11 @@ const SantosIndexRoute = SantosIndexRouteImport.update({
   path: '/',
   getParentRoute: () => SantosRoute,
 } as any)
+const SacramentosIndexRoute = SacramentosIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => SacramentosRoute,
+} as any)
 const OracoesIndexRoute = OracoesIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -316,10 +326,20 @@ const BibliaIndexRoute = BibliaIndexRouteImport.update({
   path: '/',
   getParentRoute: () => BibliaRoute,
 } as any)
+const ApologeticaIndexRoute = ApologeticaIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ApologeticaRoute,
+} as any)
 const SantosSlugRoute = SantosSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
   getParentRoute: () => SantosRoute,
+} as any)
+const SacramentosTemaRoute = SacramentosTemaRouteImport.update({
+  id: '/$tema',
+  path: '/$tema',
+  getParentRoute: () => SacramentosRoute,
 } as any)
 const OracoesViaSacraRoute = OracoesViaSacraRouteImport.update({
   id: '/via-sacra',
@@ -387,6 +407,11 @@ const BibliaLivroRoute = BibliaLivroRouteImport.update({
   path: '/$livro',
   getParentRoute: () => BibliaRoute,
 } as any)
+const ApologeticaTemaRoute = ApologeticaTemaRouteImport.update({
+  id: '/$tema',
+  path: '/$tema',
+  getParentRoute: () => ApologeticaRoute,
+} as any)
 const ApiTranscreverRoute = ApiTranscreverRouteImport.update({
   id: '/api/transcrever',
   path: '/api/transcrever',
@@ -427,6 +452,11 @@ const BibliaPlanosSlugRoute = BibliaPlanosSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => BibliaPlanosRoute,
 } as any)
+const BibliaLivroLeituraRoute = BibliaLivroLeituraRouteImport.update({
+  id: '/leitura',
+  path: '/leitura',
+  getParentRoute: () => BibliaLivroRoute,
+} as any)
 const BibliaLivroCapituloRoute = BibliaLivroCapituloRouteImport.update({
   id: '/$capitulo',
   path: '/$capitulo',
@@ -461,7 +491,7 @@ const ApiPublicCspReportRoute = ApiPublicCspReportRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/apologetica': typeof ApologeticaRoute
+  '/apologetica': typeof ApologeticaRouteWithChildren
   '/assistente': typeof AssistenteRoute
   '/auth': typeof AuthRoute
   '/biblia': typeof BibliaRouteWithChildren
@@ -487,7 +517,7 @@ export interface FileRoutesByFullPath {
   '/painel': typeof PainelRoute
   '/privacidade': typeof PrivacidadeRoute
   '/redefinir-senha': typeof RedefinirSenhaRoute
-  '/sacramentos': typeof SacramentosRoute
+  '/sacramentos': typeof SacramentosRouteWithChildren
   '/santos': typeof SantosRouteWithChildren
   '/sitemap-biblia-capitulos.xml': typeof SitemapBibliaCapitulosDotxmlRoute
   '/sitemap-biblia-livros.xml': typeof SitemapBibliaLivrosDotxmlRoute
@@ -500,6 +530,7 @@ export interface FileRoutesByFullPath {
   '/testemunhos': typeof TestemunhosRoute
   '/api/chat': typeof ApiChatRoute
   '/api/transcrever': typeof ApiTranscreverRoute
+  '/apologetica/$tema': typeof ApologeticaTemaRoute
   '/biblia/$livro': typeof BibliaLivroRouteWithChildren
   '/biblia/leituras': typeof BibliaLeiturasRoute
   '/biblia/planos': typeof BibliaPlanosRouteWithChildren
@@ -513,13 +544,16 @@ export interface FileRoutesByFullPath {
   '/oracoes/rosario': typeof OracoesRosarioRoute
   '/oracoes/terco-misericordia': typeof OracoesTercoMisericordiaRoute
   '/oracoes/via-sacra': typeof OracoesViaSacraRoute
+  '/sacramentos/$tema': typeof SacramentosTemaRoute
   '/santos/$slug': typeof SantosSlugRoute
+  '/apologetica/': typeof ApologeticaIndexRoute
   '/biblia/': typeof BibliaIndexRoute
   '/catecismo/': typeof CatecismoIndexRoute
   '/enciclopedia/': typeof EnciclopediaIndexRoute
   '/forum/': typeof ForumIndexRoute
   '/noticias/': typeof NoticiasIndexRoute
   '/oracoes/': typeof OracoesIndexRoute
+  '/sacramentos/': typeof SacramentosIndexRoute
   '/santos/': typeof SantosIndexRoute
   '/trilhas/': typeof TrilhasIndexRoute
   '/api/public/csp-report': typeof ApiPublicCspReportRoute
@@ -528,6 +562,7 @@ export interface FileRoutesByFullPath {
   '/api/public/noticias': typeof ApiPublicNoticiasRoute
   '/api/public/noticias-diarias': typeof ApiPublicNoticiasDiariasRoute
   '/biblia/$livro/$capitulo': typeof BibliaLivroCapituloRoute
+  '/biblia/$livro/leitura': typeof BibliaLivroLeituraRoute
   '/biblia/planos/$slug': typeof BibliaPlanosSlugRoute
   '/oracoes/novenas/$slug': typeof OracoesNovenasSlugRoute
   '/trilhas/$trilha/$licao': typeof TrilhasTrilhaLicaoRoute
@@ -537,7 +572,6 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/apologetica': typeof ApologeticaRoute
   '/assistente': typeof AssistenteRoute
   '/auth': typeof AuthRoute
   '/busca': typeof BuscaRoute
@@ -559,7 +593,6 @@ export interface FileRoutesByTo {
   '/painel': typeof PainelRoute
   '/privacidade': typeof PrivacidadeRoute
   '/redefinir-senha': typeof RedefinirSenhaRoute
-  '/sacramentos': typeof SacramentosRoute
   '/sitemap-biblia-capitulos.xml': typeof SitemapBibliaCapitulosDotxmlRoute
   '/sitemap-biblia-livros.xml': typeof SitemapBibliaLivrosDotxmlRoute
   '/sitemap-noticias.xml': typeof SitemapNoticiasDotxmlRoute
@@ -571,6 +604,7 @@ export interface FileRoutesByTo {
   '/testemunhos': typeof TestemunhosRoute
   '/api/chat': typeof ApiChatRoute
   '/api/transcrever': typeof ApiTranscreverRoute
+  '/apologetica/$tema': typeof ApologeticaTemaRoute
   '/biblia/leituras': typeof BibliaLeiturasRoute
   '/catecismo/$parte': typeof CatecismoParteRoute
   '/catecismo/artigos': typeof CatecismoArtigosRoute
@@ -582,13 +616,16 @@ export interface FileRoutesByTo {
   '/oracoes/rosario': typeof OracoesRosarioRoute
   '/oracoes/terco-misericordia': typeof OracoesTercoMisericordiaRoute
   '/oracoes/via-sacra': typeof OracoesViaSacraRoute
+  '/sacramentos/$tema': typeof SacramentosTemaRoute
   '/santos/$slug': typeof SantosSlugRoute
+  '/apologetica': typeof ApologeticaIndexRoute
   '/biblia': typeof BibliaIndexRoute
   '/catecismo': typeof CatecismoIndexRoute
   '/enciclopedia': typeof EnciclopediaIndexRoute
   '/forum': typeof ForumIndexRoute
   '/noticias': typeof NoticiasIndexRoute
   '/oracoes': typeof OracoesIndexRoute
+  '/sacramentos': typeof SacramentosIndexRoute
   '/santos': typeof SantosIndexRoute
   '/trilhas': typeof TrilhasIndexRoute
   '/api/public/csp-report': typeof ApiPublicCspReportRoute
@@ -597,6 +634,7 @@ export interface FileRoutesByTo {
   '/api/public/noticias': typeof ApiPublicNoticiasRoute
   '/api/public/noticias-diarias': typeof ApiPublicNoticiasDiariasRoute
   '/biblia/$livro/$capitulo': typeof BibliaLivroCapituloRoute
+  '/biblia/$livro/leitura': typeof BibliaLivroLeituraRoute
   '/biblia/planos/$slug': typeof BibliaPlanosSlugRoute
   '/oracoes/novenas/$slug': typeof OracoesNovenasSlugRoute
   '/trilhas/$trilha/$licao': typeof TrilhasTrilhaLicaoRoute
@@ -607,7 +645,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/apologetica': typeof ApologeticaRoute
+  '/apologetica': typeof ApologeticaRouteWithChildren
   '/assistente': typeof AssistenteRoute
   '/auth': typeof AuthRoute
   '/biblia': typeof BibliaRouteWithChildren
@@ -633,7 +671,7 @@ export interface FileRoutesById {
   '/painel': typeof PainelRoute
   '/privacidade': typeof PrivacidadeRoute
   '/redefinir-senha': typeof RedefinirSenhaRoute
-  '/sacramentos': typeof SacramentosRoute
+  '/sacramentos': typeof SacramentosRouteWithChildren
   '/santos': typeof SantosRouteWithChildren
   '/sitemap-biblia-capitulos.xml': typeof SitemapBibliaCapitulosDotxmlRoute
   '/sitemap-biblia-livros.xml': typeof SitemapBibliaLivrosDotxmlRoute
@@ -646,6 +684,7 @@ export interface FileRoutesById {
   '/testemunhos': typeof TestemunhosRoute
   '/api/chat': typeof ApiChatRoute
   '/api/transcrever': typeof ApiTranscreverRoute
+  '/apologetica/$tema': typeof ApologeticaTemaRoute
   '/biblia/$livro': typeof BibliaLivroRouteWithChildren
   '/biblia/leituras': typeof BibliaLeiturasRoute
   '/biblia/planos': typeof BibliaPlanosRouteWithChildren
@@ -659,13 +698,16 @@ export interface FileRoutesById {
   '/oracoes/rosario': typeof OracoesRosarioRoute
   '/oracoes/terco-misericordia': typeof OracoesTercoMisericordiaRoute
   '/oracoes/via-sacra': typeof OracoesViaSacraRoute
+  '/sacramentos/$tema': typeof SacramentosTemaRoute
   '/santos/$slug': typeof SantosSlugRoute
+  '/apologetica/': typeof ApologeticaIndexRoute
   '/biblia/': typeof BibliaIndexRoute
   '/catecismo/': typeof CatecismoIndexRoute
   '/enciclopedia/': typeof EnciclopediaIndexRoute
   '/forum/': typeof ForumIndexRoute
   '/noticias/': typeof NoticiasIndexRoute
   '/oracoes/': typeof OracoesIndexRoute
+  '/sacramentos/': typeof SacramentosIndexRoute
   '/santos/': typeof SantosIndexRoute
   '/trilhas/': typeof TrilhasIndexRoute
   '/api/public/csp-report': typeof ApiPublicCspReportRoute
@@ -674,6 +716,7 @@ export interface FileRoutesById {
   '/api/public/noticias': typeof ApiPublicNoticiasRoute
   '/api/public/noticias-diarias': typeof ApiPublicNoticiasDiariasRoute
   '/biblia/$livro/$capitulo': typeof BibliaLivroCapituloRoute
+  '/biblia/$livro/leitura': typeof BibliaLivroLeituraRoute
   '/biblia/planos/$slug': typeof BibliaPlanosSlugRoute
   '/oracoes/novenas/$slug': typeof OracoesNovenasSlugRoute
   '/trilhas/$trilha/$licao': typeof TrilhasTrilhaLicaoRoute
@@ -724,6 +767,7 @@ export interface FileRouteTypes {
     | '/testemunhos'
     | '/api/chat'
     | '/api/transcrever'
+    | '/apologetica/$tema'
     | '/biblia/$livro'
     | '/biblia/leituras'
     | '/biblia/planos'
@@ -737,13 +781,16 @@ export interface FileRouteTypes {
     | '/oracoes/rosario'
     | '/oracoes/terco-misericordia'
     | '/oracoes/via-sacra'
+    | '/sacramentos/$tema'
     | '/santos/$slug'
+    | '/apologetica/'
     | '/biblia/'
     | '/catecismo/'
     | '/enciclopedia/'
     | '/forum/'
     | '/noticias/'
     | '/oracoes/'
+    | '/sacramentos/'
     | '/santos/'
     | '/trilhas/'
     | '/api/public/csp-report'
@@ -752,6 +799,7 @@ export interface FileRouteTypes {
     | '/api/public/noticias'
     | '/api/public/noticias-diarias'
     | '/biblia/$livro/$capitulo'
+    | '/biblia/$livro/leitura'
     | '/biblia/planos/$slug'
     | '/oracoes/novenas/$slug'
     | '/trilhas/$trilha/$licao'
@@ -761,7 +809,6 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/apologetica'
     | '/assistente'
     | '/auth'
     | '/busca'
@@ -783,7 +830,6 @@ export interface FileRouteTypes {
     | '/painel'
     | '/privacidade'
     | '/redefinir-senha'
-    | '/sacramentos'
     | '/sitemap-biblia-capitulos.xml'
     | '/sitemap-biblia-livros.xml'
     | '/sitemap-noticias.xml'
@@ -795,6 +841,7 @@ export interface FileRouteTypes {
     | '/testemunhos'
     | '/api/chat'
     | '/api/transcrever'
+    | '/apologetica/$tema'
     | '/biblia/leituras'
     | '/catecismo/$parte'
     | '/catecismo/artigos'
@@ -806,13 +853,16 @@ export interface FileRouteTypes {
     | '/oracoes/rosario'
     | '/oracoes/terco-misericordia'
     | '/oracoes/via-sacra'
+    | '/sacramentos/$tema'
     | '/santos/$slug'
+    | '/apologetica'
     | '/biblia'
     | '/catecismo'
     | '/enciclopedia'
     | '/forum'
     | '/noticias'
     | '/oracoes'
+    | '/sacramentos'
     | '/santos'
     | '/trilhas'
     | '/api/public/csp-report'
@@ -821,6 +871,7 @@ export interface FileRouteTypes {
     | '/api/public/noticias'
     | '/api/public/noticias-diarias'
     | '/biblia/$livro/$capitulo'
+    | '/biblia/$livro/leitura'
     | '/biblia/planos/$slug'
     | '/oracoes/novenas/$slug'
     | '/trilhas/$trilha/$licao'
@@ -869,6 +920,7 @@ export interface FileRouteTypes {
     | '/testemunhos'
     | '/api/chat'
     | '/api/transcrever'
+    | '/apologetica/$tema'
     | '/biblia/$livro'
     | '/biblia/leituras'
     | '/biblia/planos'
@@ -882,13 +934,16 @@ export interface FileRouteTypes {
     | '/oracoes/rosario'
     | '/oracoes/terco-misericordia'
     | '/oracoes/via-sacra'
+    | '/sacramentos/$tema'
     | '/santos/$slug'
+    | '/apologetica/'
     | '/biblia/'
     | '/catecismo/'
     | '/enciclopedia/'
     | '/forum/'
     | '/noticias/'
     | '/oracoes/'
+    | '/sacramentos/'
     | '/santos/'
     | '/trilhas/'
     | '/api/public/csp-report'
@@ -897,6 +952,7 @@ export interface FileRouteTypes {
     | '/api/public/noticias'
     | '/api/public/noticias-diarias'
     | '/biblia/$livro/$capitulo'
+    | '/biblia/$livro/leitura'
     | '/biblia/planos/$slug'
     | '/oracoes/novenas/$slug'
     | '/trilhas/$trilha/$licao'
@@ -907,7 +963,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  ApologeticaRoute: typeof ApologeticaRoute
+  ApologeticaRoute: typeof ApologeticaRouteWithChildren
   AssistenteRoute: typeof AssistenteRoute
   AuthRoute: typeof AuthRoute
   BibliaRoute: typeof BibliaRouteWithChildren
@@ -933,7 +989,7 @@ export interface RootRouteChildren {
   PainelRoute: typeof PainelRoute
   PrivacidadeRoute: typeof PrivacidadeRoute
   RedefinirSenhaRoute: typeof RedefinirSenhaRoute
-  SacramentosRoute: typeof SacramentosRoute
+  SacramentosRoute: typeof SacramentosRouteWithChildren
   SantosRoute: typeof SantosRouteWithChildren
   SitemapBibliaCapitulosDotxmlRoute: typeof SitemapBibliaCapitulosDotxmlRoute
   SitemapBibliaLivrosDotxmlRoute: typeof SitemapBibliaLivrosDotxmlRoute
@@ -1242,6 +1298,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SantosIndexRouteImport
       parentRoute: typeof SantosRoute
     }
+    '/sacramentos/': {
+      id: '/sacramentos/'
+      path: '/'
+      fullPath: '/sacramentos/'
+      preLoaderRoute: typeof SacramentosIndexRouteImport
+      parentRoute: typeof SacramentosRoute
+    }
     '/oracoes/': {
       id: '/oracoes/'
       path: '/'
@@ -1284,12 +1347,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BibliaIndexRouteImport
       parentRoute: typeof BibliaRoute
     }
+    '/apologetica/': {
+      id: '/apologetica/'
+      path: '/'
+      fullPath: '/apologetica/'
+      preLoaderRoute: typeof ApologeticaIndexRouteImport
+      parentRoute: typeof ApologeticaRoute
+    }
     '/santos/$slug': {
       id: '/santos/$slug'
       path: '/$slug'
       fullPath: '/santos/$slug'
       preLoaderRoute: typeof SantosSlugRouteImport
       parentRoute: typeof SantosRoute
+    }
+    '/sacramentos/$tema': {
+      id: '/sacramentos/$tema'
+      path: '/$tema'
+      fullPath: '/sacramentos/$tema'
+      preLoaderRoute: typeof SacramentosTemaRouteImport
+      parentRoute: typeof SacramentosRoute
     }
     '/oracoes/via-sacra': {
       id: '/oracoes/via-sacra'
@@ -1382,6 +1459,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BibliaLivroRouteImport
       parentRoute: typeof BibliaRoute
     }
+    '/apologetica/$tema': {
+      id: '/apologetica/$tema'
+      path: '/$tema'
+      fullPath: '/apologetica/$tema'
+      preLoaderRoute: typeof ApologeticaTemaRouteImport
+      parentRoute: typeof ApologeticaRoute
+    }
     '/api/transcrever': {
       id: '/api/transcrever'
       path: '/api/transcrever'
@@ -1438,6 +1522,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BibliaPlanosSlugRouteImport
       parentRoute: typeof BibliaPlanosRoute
     }
+    '/biblia/$livro/leitura': {
+      id: '/biblia/$livro/leitura'
+      path: '/leitura'
+      fullPath: '/biblia/$livro/leitura'
+      preLoaderRoute: typeof BibliaLivroLeituraRouteImport
+      parentRoute: typeof BibliaLivroRoute
+    }
     '/biblia/$livro/$capitulo': {
       id: '/biblia/$livro/$capitulo'
       path: '/$capitulo'
@@ -1483,13 +1574,29 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface ApologeticaRouteChildren {
+  ApologeticaTemaRoute: typeof ApologeticaTemaRoute
+  ApologeticaIndexRoute: typeof ApologeticaIndexRoute
+}
+
+const ApologeticaRouteChildren: ApologeticaRouteChildren = {
+  ApologeticaTemaRoute: ApologeticaTemaRoute,
+  ApologeticaIndexRoute: ApologeticaIndexRoute,
+}
+
+const ApologeticaRouteWithChildren = ApologeticaRoute._addFileChildren(
+  ApologeticaRouteChildren,
+)
+
 interface BibliaLivroRouteChildren {
   BibliaLivroCapituloRoute: typeof BibliaLivroCapituloRoute
+  BibliaLivroLeituraRoute: typeof BibliaLivroLeituraRoute
   BibliaLivroIndexRoute: typeof BibliaLivroIndexRoute
 }
 
 const BibliaLivroRouteChildren: BibliaLivroRouteChildren = {
   BibliaLivroCapituloRoute: BibliaLivroCapituloRoute,
+  BibliaLivroLeituraRoute: BibliaLivroLeituraRoute,
   BibliaLivroIndexRoute: BibliaLivroIndexRoute,
 }
 
@@ -1591,6 +1698,20 @@ const OracoesRouteChildren: OracoesRouteChildren = {
 const OracoesRouteWithChildren =
   OracoesRoute._addFileChildren(OracoesRouteChildren)
 
+interface SacramentosRouteChildren {
+  SacramentosTemaRoute: typeof SacramentosTemaRoute
+  SacramentosIndexRoute: typeof SacramentosIndexRoute
+}
+
+const SacramentosRouteChildren: SacramentosRouteChildren = {
+  SacramentosTemaRoute: SacramentosTemaRoute,
+  SacramentosIndexRoute: SacramentosIndexRoute,
+}
+
+const SacramentosRouteWithChildren = SacramentosRoute._addFileChildren(
+  SacramentosRouteChildren,
+)
+
 interface SantosRouteChildren {
   SantosSlugRoute: typeof SantosSlugRoute
   SantosIndexRoute: typeof SantosIndexRoute
@@ -1606,7 +1727,7 @@ const SantosRouteWithChildren =
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  ApologeticaRoute: ApologeticaRoute,
+  ApologeticaRoute: ApologeticaRouteWithChildren,
   AssistenteRoute: AssistenteRoute,
   AuthRoute: AuthRoute,
   BibliaRoute: BibliaRouteWithChildren,
@@ -1632,7 +1753,7 @@ const rootRouteChildren: RootRouteChildren = {
   PainelRoute: PainelRoute,
   PrivacidadeRoute: PrivacidadeRoute,
   RedefinirSenhaRoute: RedefinirSenhaRoute,
-  SacramentosRoute: SacramentosRoute,
+  SacramentosRoute: SacramentosRouteWithChildren,
   SantosRoute: SantosRouteWithChildren,
   SitemapBibliaCapitulosDotxmlRoute: SitemapBibliaCapitulosDotxmlRoute,
   SitemapBibliaLivrosDotxmlRoute: SitemapBibliaLivrosDotxmlRoute,

@@ -47,6 +47,20 @@ export const PAGINAS: SitemapEntry[] = [
   { path: "/enciclopedia/moral", changefreq: "monthly", priority: "0.7" },
   { path: "/enciclopedia/liturgia", changefreq: "monthly", priority: "0.7" },
   { path: "/enciclopedia/mariologia", changefreq: "monthly", priority: "0.7" },
+  { path: "/apologetica/filosofia", changefreq: "monthly", priority: "0.7" },
+  { path: "/apologetica/ciencia", changefreq: "monthly", priority: "0.7" },
+  { path: "/apologetica/historia", changefreq: "monthly", priority: "0.7" },
+  { path: "/apologetica/escritura", changefreq: "monthly", priority: "0.7" },
+  { path: "/sacramentos/sacramentais", changefreq: "monthly", priority: "0.7" },
+  { path: "/sacramentos/sacramentarios", changefreq: "monthly", priority: "0.7" },
+  { path: "/sacramentos/rituais", changefreq: "monthly", priority: "0.7" },
+  { path: "/sacramentos/batismo", changefreq: "monthly", priority: "0.7" },
+  { path: "/sacramentos/confirmacao", changefreq: "monthly", priority: "0.7" },
+  { path: "/sacramentos/eucaristia", changefreq: "monthly", priority: "0.7" },
+  { path: "/sacramentos/penitencia", changefreq: "monthly", priority: "0.7" },
+  { path: "/sacramentos/uncao-dos-enfermos", changefreq: "monthly", priority: "0.7" },
+  { path: "/sacramentos/ordem", changefreq: "monthly", priority: "0.7" },
+  { path: "/sacramentos/matrimonio", changefreq: "monthly", priority: "0.7" },
   { path: "/calendario-liturgico", changefreq: "weekly", priority: "0.7" },
   { path: "/assistente", changefreq: "monthly", priority: "0.7" },
   { path: "/estudar", changefreq: "monthly", priority: "0.7" },
@@ -91,11 +105,10 @@ export const PAGINAS: SitemapEntry[] = [
 ];
 
 /** Índices dos 73 livros — poucas URLs, alta prioridade. */
-export const BIBLIA_LIVROS: SitemapEntry[] = LIVROS.map((l) => ({
-  path: `/biblia/${l.slug}`,
-  changefreq: "monthly" as const,
-  priority: "0.7",
-}));
+export const BIBLIA_LIVROS: SitemapEntry[] = LIVROS.flatMap((l) => [
+  { path: `/biblia/${l.slug}`, changefreq: "monthly" as const, priority: "0.7" },
+  { path: `/biblia/${l.slug}/leitura`, changefreq: "monthly" as const, priority: "0.6" },
+]);
 
 /** Capítulos da Bíblia — o maior volume, isolado em seu próprio sitemap. */
 export const BIBLIA_CAPITULOS: SitemapEntry[] = LIVROS.flatMap((l) =>
