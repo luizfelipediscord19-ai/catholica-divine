@@ -3,6 +3,7 @@ import { BookOpen } from "lucide-react";
 
 import { LIVROS, getLivro } from "@/lib/data/biblia";
 import { usePainel } from "@/hooks/use-identidade";
+import { useAuth } from "@/hooks/use-auth";
 
 export const TOTAL_CAPITULOS = LIVROS.reduce((s, l) => s + l.capitulos, 0);
 
@@ -31,9 +32,11 @@ export function proximoCapitulo(ultima: Leitura | null, lidos: Leitura[]) {
 
 /** Cartão "Continuar de onde parei" — usa o progresso da identidade anônima. */
 export function ContinuarLeitura({ className = "" }: { className?: string }) {
+  const { autenticado } = useAuth();
   const painel = usePainel();
   const dados = painel.data;
-  if (!dados) return null;
+  // Progresso pessoal só aparece para quem entrou na conta.
+  if (!autenticado || !dados) return null;
 
   const alvo = proximoCapitulo(dados.ultimaLeitura ?? null, dados.leituras);
   const lidos = dados.leituras.length;
@@ -41,12 +44,8 @@ export function ContinuarLeitura({ className = "" }: { className?: string }) {
   const primeiraVez = lidos === 0;
 
   return (
-    <section
-      className={`surface-card backdrop-blur-sm p-6 md:p-8 space-y-5 ${className}`}
-    >
-      <p className="kicker">
-        {primeiraVez ? "Comece sua leitura" : "Continuar de onde parei"}
-      </p>
+    <section className={`surface-card backdrop-blur-sm p-6 md:p-8 space-y-5 ${className}`}>
+      <p className="kicker">{primeiraVez ? "Comece sua leitura" : "Continuar de onde parei"}</p>
       <h2 className="font-display text-2xl md:text-3xl text-foreground leading-tight">
         {alvo.livro.nome} <span className="text-gold">{alvo.capitulo}</span>
       </h2>
@@ -67,10 +66,7 @@ export function ContinuarLeitura({ className = "" }: { className?: string }) {
           <BookOpen className="size-3.5" aria-hidden="true" />
           {primeiraVez ? "Começar a ler" : "Continuar leitura"}
         </Link>
-        <Link
-          to="/biblia"
-          className="kicker hover:underline"
-        >
+        <Link to="/biblia" className="kicker hover:underline">
           Ver todos os livros
         </Link>
       </div>

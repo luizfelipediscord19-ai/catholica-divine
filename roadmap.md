@@ -25,3 +25,7 @@
 - /leitura-diaria: Escritura do dia versículo a versículo + parágrafos do CIC + tema da Enciclopédia + oração
 - /oracoes/diarias: uma oração por dia, com CIC, verbetes e próximos 7 dias
 - Índice Escritura→CIC ampliado com as passagens do plano diário
+
+## Concluído (rodada de membros + aulas)
+- Missões, tarefas do dia, sequências, XP e progresso de leitura agora só aparecem após login (`SomenteMembros`, painel com convite, RetomarLeitura/ContinuarLeitura/MarcarEstudo silenciosos sem conta).
+- Curso de catecismo em 16 semanas (`/catecismo/aulas`) com exposição, perguntas e respostas, leitura, tarefa e links diretos para os parágrafos do CIC; entradas no sitemap e link no Catecismo.

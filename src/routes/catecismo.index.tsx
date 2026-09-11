@@ -234,6 +234,12 @@ function Page() {
         <Link to="/catecismo/artigos" className="btn-base btn-gold btn-md label-btn mt-6">
           Abrir o Catecismo artigo por artigo
         </Link>
+        <Link
+          to="/catecismo/aulas"
+          className="btn-base btn-outline-gold btn-md label-btn mt-6 sm:ml-3"
+        >
+          Aulas por semana (16 semanas)
+        </Link>
       </Section>
 
       <Section kicker="As quatro partes" title="A estrutura do Catecismo">

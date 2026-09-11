@@ -2,6 +2,7 @@ import { LIVROS } from "@/lib/data/biblia/index";
 import { PLANOS } from "@/lib/data/biblia/planos";
 import { SANTOS_LISTA } from "@/lib/santos-lista";
 import { PARTES } from "@/lib/data/catecismo/index";
+import { AULAS } from "@/lib/data/catecismo/aulas";
 import { NOVENAS } from "@/lib/data/devocoes/novenas";
 import { SECOES_FORUM } from "@/lib/data/forum-secoes";
 import { TRILHAS } from "@/lib/data/trilhas";
@@ -23,6 +24,7 @@ export const PAGINAS: SitemapEntry[] = [
   { path: "/biblia", changefreq: "weekly", priority: "0.9" },
   { path: "/catecismo", changefreq: "monthly", priority: "0.9" },
   { path: "/catecismo/artigos", changefreq: "monthly", priority: "0.8" },
+  { path: "/catecismo/aulas", changefreq: "monthly", priority: "0.8" },
   { path: "/liturgia-diaria", changefreq: "daily", priority: "0.9" },
   { path: "/biblia/leituras", changefreq: "daily", priority: "0.8" },
   { path: "/leitura-diaria", changefreq: "daily", priority: "0.9" },
@@ -159,3 +161,12 @@ export function respostaSitemap(entries: SitemapEntry[]): Response {
     },
   });
 }
+
+// Uma URL por aula semanal do curso de catecismo.
+PAGINAS.push(
+  ...AULAS.map((a) => ({
+    path: `/catecismo/aulas/${a.slug}`,
+    changefreq: "monthly" as const,
+    priority: "0.6",
+  })),
+);

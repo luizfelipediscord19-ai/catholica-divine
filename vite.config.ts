@@ -37,6 +37,9 @@ export default defineConfig({
         manifest: false,
         workbox: {
           globPatterns: ["**/*.{js,css,woff,woff2,png,svg,ico,webmanifest}"],
+          // O bundle principal já passa de 2 MB (acervo grande de conteúdo);
+          // eleva o limite para que continue sendo pré-armazenado para uso offline.
+          maximumFileSizeToCacheInBytes: 6 * 1024 * 1024,
           // Recebe os avisos enviados pelo servidor (aparecem no telefone
           // mesmo com o site fechado).
           importScripts: ["/push-handler.js"],

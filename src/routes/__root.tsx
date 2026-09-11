@@ -19,6 +19,7 @@ import { CelebracaoProvider } from "../components/portal/Celebracao";
 import { InstalarApp } from "../components/portal/InstalarApp";
 import { AtualizacaoApp } from "../components/portal/AtualizacaoApp";
 import { TarefasDoDia } from "../components/portal/TarefasDoDia";
+import { SomenteMembros } from "../components/portal/SomenteMembros";
 import { ConsentimentoLGPD } from "../components/portal/ConsentimentoLGPD";
 import { SumarioPagina } from "../components/SumarioPagina";
 import { NotificacoesProvider } from "../hooks/use-notificacoes";
@@ -209,7 +210,9 @@ function RootComponent() {
             <InstalarApp />
             <AtualizacaoApp />
             <div data-leitura-oculto>
-              <TarefasDoDia />
+              <SomenteMembros silencioso>
+                <TarefasDoDia />
+              </SomenteMembros>
             </div>
             <ConsentimentoLGPD />
 
