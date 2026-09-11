@@ -125,8 +125,8 @@ function Page() {
               {elos.length ? (
                 <div className="mt-6 border-l-2 border-gold/30 pl-4">
                   <p className="kicker flex items-center gap-2">
-                    <BookMarked className="size-3.5 text-gold" aria-hidden="true" /> Este capítulo no
-                    Catecismo
+                    <BookMarked className="size-3.5 text-gold" aria-hidden="true" /> Este capítulo
+                    no Catecismo
                   </p>
                   <ul className="mt-3 space-y-2">
                     {elos.map((elo) => (
