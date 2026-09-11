@@ -175,6 +175,13 @@ function Page() {
           <h2 className="font-display text-2xl text-foreground flex items-center gap-3">
             <BookOpen className="size-5 text-gold" /> Capítulos
           </h2>
+          <Link
+            to="/biblia/$livro/leitura"
+            params={{ livro: livro.slug }}
+            className="btn-base btn-outline-gold btn-sm label-btn"
+          >
+            Ler o livro inteiro · sumário e PDF
+          </Link>
         </div>
         <div className="grid grid-cols-5 sm:grid-cols-8 md:grid-cols-10 lg:grid-cols-12 gap-2">
           {Array.from({ length: livro.capitulos }, (_, i) => i + 1).map((c) => (

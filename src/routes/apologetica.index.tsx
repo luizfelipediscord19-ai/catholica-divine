@@ -199,6 +199,29 @@ function Page() {
         />
       </Section>
 
+      <Section kicker="Estudo por área" title="Páginas temáticas" id="temas">
+        <p className="body-base measure text-muted-foreground">
+          Cada área tem uma página própria de leitura longa, com sumário lateral, impressão em PDF
+          colorido ou em preto e branco, e ligação direta aos parágrafos do Catecismo.
+        </p>
+        <div className="mt-8 grid gap-px border-y border-gold/15 bg-gold/15 lg:grid-cols-2">
+          {TEMAS_APOLOGETICA.map((t) => (
+            <article key={t.slug} className="bg-background p-card">
+              <p className="kicker">{t.kicker}</p>
+              <h3 className="title-card mt-2 text-foreground">{t.nome}</h3>
+              <p className="body-sm mt-3 text-muted-foreground">{t.resumo}</p>
+              <Link
+                to="/apologetica/$tema"
+                params={{ tema: t.slug }}
+                className="btn-base btn-outline-gold btn-sm label-btn mt-5"
+              >
+                Abrir {t.nome}
+              </Link>
+            </article>
+          ))}
+        </div>
+      </Section>
+
       <Section
         kicker="Objeção e resposta"
         title="Banco de objeções"
