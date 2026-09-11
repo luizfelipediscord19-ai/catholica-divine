@@ -17,7 +17,7 @@ import {
 } from "@/lib/fontes/magisterio";
 
 const RE_CIC =
-  /(?:CIC|CCC|Catecismo(?:\s+da\s+Igreja\s+Cat[óo]lica)?)\s*(?:§{1,2}\s?)?(\d{1,4})(?:\s?[-–,]\s?\d{1,4})?/g;
+  /(?:CIC|CCC|Catecismo(?:\s+da\s+Igreja\s+Cat[óo]lica)?)\s*(?:§{1,2}\s?)?(\d{1,4})(?:\s?[-–,]\s?\d{1,4})*/g;
 const RE_CANON = /c[âa]n\.\s?(\d{1,4})(?:\s?,\s?§\s?\d)?/gi;
 const RE_DOC = new RegExp(`\\b(${SIGLAS_MAGISTERIO.join("|")})\\s(\\d{1,3})\\b`, "g");
 const RE_BIBLIA =
