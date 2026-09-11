@@ -5,7 +5,7 @@ import { PageHero, Section, Prose, Sources, Pullquote, Prancha } from "../compon
 import { BancoObjecoes } from "../components/portal/BancoObjecoes";
 import { keywordsPara } from "@/lib/seo/palavras-chave";
 
-export const Route = createFileRoute("/apologetica")({
+export const Route = createFileRoute("/apologetica/")({
   head: () => ({
     meta: [
       { title: "Apologética Católica — Razões para crer com fundamento" },

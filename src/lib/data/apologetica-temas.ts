@@ -76,7 +76,7 @@ export const TEMAS_APOLOGETICA: TemaApologetica[] = [
         ],
         pontos: [
           "Criação do nada não é um evento entre eventos, mas relação de dependência total (CIC §§ 296-301).",
-          "A fé não fica hostage de um modelo cosmológico particular.",
+          "A fé não fica prisioneira de um modelo cosmológico particular.",
           "Opinião teológica: o argumento de contingência é mais robusto do que o argumento do começo, precisamente porque não muda com a física.",
         ],
         referencias: ["CIC §§ 279-301", "Fides et Ratio 16-48"],
@@ -110,7 +110,7 @@ export const TEMAS_APOLOGETICA: TemaApologetica[] = [
         referencias: ["CIC §§ 355-368, 1730-1742", "Fides et Ratio 4-6, 80-91"],
       },
     ],
-    verbetes: ["graca", "trindade"],
+    verbetes: ["revelacao", "graca"],
     paragrafosCIC: [31, 156, 309, 366, 1730],
   },
   {
@@ -209,7 +209,7 @@ export const TEMAS_APOLOGETICA: TemaApologetica[] = [
         ],
       },
     ],
-    verbetes: ["graca"],
+    verbetes: ["revelacao", "virtudes-teologais"],
     paragrafosCIC: [159, 283, 366, 2270, 2293],
   },
   {
@@ -270,7 +270,7 @@ export const TEMAS_APOLOGETICA: TemaApologetica[] = [
         id: "escravidao-e-direitos",
         titulo: "Escravidão, povos indígenas e direitos humanos",
         paragrafos: [
-          "A imagem de uma Igreja simplesmente cúmplice da escravidão colonial não resiste à documentação. Em Sublimis Deus (1537), Paulo III declarou que os indígenas americanos são verdaderos homens, capazes de fé e não passíveis de escravização. Gregório XIV, Urbano VIII, Bento XIV e Gregório XVI, em In Supremo Apostolatus (1839), condenaram o tráfico de escravos; Leão XIII retomou a condenação em In Plurimis (1888).",
+          "A imagem de uma Igreja simplesmente cúmplice da escravidão colonial não resiste à documentação. Em Sublimis Deus (1537), Paulo III declarou que os indígenas americanos são verdadeiros homens, capazes de fé e não passíveis de escravização. Gregório XIV, Urbano VIII, Bento XIV e Gregório XVI, em In Supremo Apostolatus (1839), condenaram o tráfico de escravos; Leão XIII retomou a condenação em In Plurimis (1888).",
           "Também é fato que muitos católicos, incluindo instituições eclesiásticas, participaram do sistema escravista, e que teólogos buscaram justificativas. Ambas as coisas são verdadeiras. A doutrina firmou-se de modo definitivo no século XX: Gaudium et Spes elenca a escravidão entre as ofensas à dignidade humana, e o Catecismo a condena sem reservas.",
           "Do lado da teoria jurídica, a Escola de Salamanca — Francisco de Vitoria, Domingo de Soto, Francisco Suárez — desenvolveu, no século XVI, argumentos sobre direitos dos povos que estão na raiz do direito internacional moderno.",
         ],
@@ -296,7 +296,7 @@ export const TEMAS_APOLOGETICA: TemaApologetica[] = [
         referencias: ["CIC §§ 1867, 2284-2287", "Gaudium et Spes 76"],
       },
     ],
-    verbetes: ["trindade"],
+    verbetes: ["tradicao-apostolica", "magisterio"],
     paragrafosCIC: [857, 2106, 2307, 2414],
   },
   {
@@ -343,7 +343,7 @@ export const TEMAS_APOLOGETICA: TemaApologetica[] = [
           "Isso não é concessão moderna. Leão XIII, em Providentissimus Deus (1893), já ensinava que o Espírito Santo não pretendeu ensinar aos homens a constituição íntima das coisas visíveis. Dei Verbum 11-13 e o Catecismo pedem atenção ao que o autor humano quis dizer e ao modo como o disse.",
         ],
         pontos: [
-          "Deus é autor da Escritura, agindo por autores humanos verdaderos (CIC §§ 105-107).",
+          "Deus é autor da Escritura, agindo por autores humanos verdadeiros (CIC §§ 105-107).",
           "Interpretar exige atender ao gênero literário e ao contexto (CIC §§ 109-110; Dei Verbum 12).",
           "Os quatro sentidos clássicos — literal, alegórico, moral, anagógico — permanecem úteis (CIC §§ 115-119).",
         ],
@@ -383,7 +383,7 @@ export const TEMAS_APOLOGETICA: TemaApologetica[] = [
         referencias: ["CIC §§ 120-127", "Dei Verbum 22", "Divino Afflante Spiritu (1943)"],
       },
     ],
-    verbetes: ["eucaristia"],
+    verbetes: ["sagrada-escritura", "revelacao"],
     paragrafosCIC: [105, 120, 80, 115],
   },
 ];

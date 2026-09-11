@@ -7,7 +7,7 @@ import { Termo } from "../components/Termo";
 import { NotaConfiabilidade } from "../components/SeloConfiabilidade";
 import { keywordsPara } from "@/lib/seo/palavras-chave";
 
-export const Route = createFileRoute("/sacramentos")({
+export const Route = createFileRoute("/sacramentos/")({
   head: () => ({
     meta: [
       { title: "Os Sete Sacramentos — Doutrina, matéria, forma e ministro" },

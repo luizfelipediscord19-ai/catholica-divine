@@ -99,7 +99,7 @@ export const TEMAS_SACRAMENTAIS: TemaSacramental[] = [
       },
     ],
     paragrafosCIC: [1667, 1671, 1673, 1674, 2111],
-    verbetes: ["sacramentos"],
+    verbetes: ["liturgia", "graca"],
   },
   {
     slug: "sacramentarios",
@@ -185,7 +185,7 @@ export const TEMAS_SACRAMENTAIS: TemaSacramental[] = [
       },
     ],
     paragrafosCIC: [1140, 1200, 1345, 1174],
-    verbetes: ["missa", "eucaristia"],
+    verbetes: ["liturgia", "eucaristia"],
   },
   {
     slug: "rituais",
@@ -266,7 +266,7 @@ export const TEMAS_SACRAMENTAIS: TemaSacramental[] = [
       },
     ],
     paragrafosCIC: [1127, 1210, 1480, 1517],
-    verbetes: ["missa", "sacramentos"],
+    verbetes: ["liturgia", "oracao-crista"],
   },
 ];
 
