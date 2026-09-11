@@ -50,6 +50,7 @@ import { Route as AssistenteRouteImport } from './routes/assistente'
 import { Route as ApologeticaRouteImport } from './routes/apologetica'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as TrilhasIndexRouteImport } from './routes/trilhas.index'
+import { Route as TestemunhosIndexRouteImport } from './routes/testemunhos.index'
 import { Route as SantosIndexRouteImport } from './routes/santos.index'
 import { Route as SacramentosIndexRouteImport } from './routes/sacramentos.index'
 import { Route as OracoesIndexRouteImport } from './routes/oracoes.index'
@@ -60,6 +61,7 @@ import { Route as DoutrinaIndexRouteImport } from './routes/doutrina.index'
 import { Route as CatecismoIndexRouteImport } from './routes/catecismo.index'
 import { Route as BibliaIndexRouteImport } from './routes/biblia.index'
 import { Route as ApologeticaIndexRouteImport } from './routes/apologetica.index'
+import { Route as TestemunhosSlugRouteImport } from './routes/testemunhos.$slug'
 import { Route as SantosSlugRouteImport } from './routes/santos.$slug'
 import { Route as SacramentosTemaRouteImport } from './routes/sacramentos.$tema'
 import { Route as OracoesViaSacraRouteImport } from './routes/oracoes.via-sacra'
@@ -303,6 +305,11 @@ const TrilhasIndexRoute = TrilhasIndexRouteImport.update({
   path: '/trilhas/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TestemunhosIndexRoute = TestemunhosIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => TestemunhosRoute,
+} as any)
 const SantosIndexRoute = SantosIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -352,6 +359,11 @@ const ApologeticaIndexRoute = ApologeticaIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => ApologeticaRoute,
+} as any)
+const TestemunhosSlugRoute = TestemunhosSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => TestemunhosRoute,
 } as any)
 const SantosSlugRoute = SantosSlugRouteImport.update({
   id: '/$slug',
@@ -571,7 +583,7 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/termos': typeof TermosRoute
-  '/testemunhos': typeof TestemunhosRoute
+  '/testemunhos': typeof TestemunhosRouteWithChildren
   '/api/chat': typeof ApiChatRoute
   '/api/transcrever': typeof ApiTranscreverRoute
   '/apologetica/$tema': typeof ApologeticaTemaRoute
@@ -592,6 +604,7 @@ export interface FileRoutesByFullPath {
   '/oracoes/via-sacra': typeof OracoesViaSacraRoute
   '/sacramentos/$tema': typeof SacramentosTemaRoute
   '/santos/$slug': typeof SantosSlugRoute
+  '/testemunhos/$slug': typeof TestemunhosSlugRoute
   '/apologetica/': typeof ApologeticaIndexRoute
   '/biblia/': typeof BibliaIndexRoute
   '/catecismo/': typeof CatecismoIndexRoute
@@ -602,6 +615,7 @@ export interface FileRoutesByFullPath {
   '/oracoes/': typeof OracoesIndexRoute
   '/sacramentos/': typeof SacramentosIndexRoute
   '/santos/': typeof SantosIndexRoute
+  '/testemunhos/': typeof TestemunhosIndexRoute
   '/trilhas/': typeof TrilhasIndexRoute
   '/api/public/csp-report': typeof ApiPublicCspReportRoute
   '/api/public/imagem': typeof ApiPublicImagemRoute
@@ -651,7 +665,6 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/termos': typeof TermosRoute
-  '/testemunhos': typeof TestemunhosRoute
   '/api/chat': typeof ApiChatRoute
   '/api/transcrever': typeof ApiTranscreverRoute
   '/apologetica/$tema': typeof ApologeticaTemaRoute
@@ -670,6 +683,7 @@ export interface FileRoutesByTo {
   '/oracoes/via-sacra': typeof OracoesViaSacraRoute
   '/sacramentos/$tema': typeof SacramentosTemaRoute
   '/santos/$slug': typeof SantosSlugRoute
+  '/testemunhos/$slug': typeof TestemunhosSlugRoute
   '/apologetica': typeof ApologeticaIndexRoute
   '/biblia': typeof BibliaIndexRoute
   '/catecismo': typeof CatecismoIndexRoute
@@ -680,6 +694,7 @@ export interface FileRoutesByTo {
   '/oracoes': typeof OracoesIndexRoute
   '/sacramentos': typeof SacramentosIndexRoute
   '/santos': typeof SantosIndexRoute
+  '/testemunhos': typeof TestemunhosIndexRoute
   '/trilhas': typeof TrilhasIndexRoute
   '/api/public/csp-report': typeof ApiPublicCspReportRoute
   '/api/public/imagem': typeof ApiPublicImagemRoute
@@ -738,7 +753,7 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/termos': typeof TermosRoute
-  '/testemunhos': typeof TestemunhosRoute
+  '/testemunhos': typeof TestemunhosRouteWithChildren
   '/api/chat': typeof ApiChatRoute
   '/api/transcrever': typeof ApiTranscreverRoute
   '/apologetica/$tema': typeof ApologeticaTemaRoute
@@ -759,6 +774,7 @@ export interface FileRoutesById {
   '/oracoes/via-sacra': typeof OracoesViaSacraRoute
   '/sacramentos/$tema': typeof SacramentosTemaRoute
   '/santos/$slug': typeof SantosSlugRoute
+  '/testemunhos/$slug': typeof TestemunhosSlugRoute
   '/apologetica/': typeof ApologeticaIndexRoute
   '/biblia/': typeof BibliaIndexRoute
   '/catecismo/': typeof CatecismoIndexRoute
@@ -769,6 +785,7 @@ export interface FileRoutesById {
   '/oracoes/': typeof OracoesIndexRoute
   '/sacramentos/': typeof SacramentosIndexRoute
   '/santos/': typeof SantosIndexRoute
+  '/testemunhos/': typeof TestemunhosIndexRoute
   '/trilhas/': typeof TrilhasIndexRoute
   '/api/public/csp-report': typeof ApiPublicCspReportRoute
   '/api/public/imagem': typeof ApiPublicImagemRoute
@@ -849,6 +866,7 @@ export interface FileRouteTypes {
     | '/oracoes/via-sacra'
     | '/sacramentos/$tema'
     | '/santos/$slug'
+    | '/testemunhos/$slug'
     | '/apologetica/'
     | '/biblia/'
     | '/catecismo/'
@@ -859,6 +877,7 @@ export interface FileRouteTypes {
     | '/oracoes/'
     | '/sacramentos/'
     | '/santos/'
+    | '/testemunhos/'
     | '/trilhas/'
     | '/api/public/csp-report'
     | '/api/public/imagem'
@@ -908,7 +927,6 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/sobre'
     | '/termos'
-    | '/testemunhos'
     | '/api/chat'
     | '/api/transcrever'
     | '/apologetica/$tema'
@@ -927,6 +945,7 @@ export interface FileRouteTypes {
     | '/oracoes/via-sacra'
     | '/sacramentos/$tema'
     | '/santos/$slug'
+    | '/testemunhos/$slug'
     | '/apologetica'
     | '/biblia'
     | '/catecismo'
@@ -937,6 +956,7 @@ export interface FileRouteTypes {
     | '/oracoes'
     | '/sacramentos'
     | '/santos'
+    | '/testemunhos'
     | '/trilhas'
     | '/api/public/csp-report'
     | '/api/public/imagem'
@@ -1015,6 +1035,7 @@ export interface FileRouteTypes {
     | '/oracoes/via-sacra'
     | '/sacramentos/$tema'
     | '/santos/$slug'
+    | '/testemunhos/$slug'
     | '/apologetica/'
     | '/biblia/'
     | '/catecismo/'
@@ -1025,6 +1046,7 @@ export interface FileRouteTypes {
     | '/oracoes/'
     | '/sacramentos/'
     | '/santos/'
+    | '/testemunhos/'
     | '/trilhas/'
     | '/api/public/csp-report'
     | '/api/public/imagem'
@@ -1083,7 +1105,7 @@ export interface RootRouteChildren {
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SobreRoute: typeof SobreRoute
   TermosRoute: typeof TermosRoute
-  TestemunhosRoute: typeof TestemunhosRoute
+  TestemunhosRoute: typeof TestemunhosRouteWithChildren
   ApiChatRoute: typeof ApiChatRoute
   ApiTranscreverRoute: typeof ApiTranscreverRoute
   ForumSlugRoute: typeof ForumSlugRoute
@@ -1389,6 +1411,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TrilhasIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/testemunhos/': {
+      id: '/testemunhos/'
+      path: '/'
+      fullPath: '/testemunhos/'
+      preLoaderRoute: typeof TestemunhosIndexRouteImport
+      parentRoute: typeof TestemunhosRoute
+    }
     '/santos/': {
       id: '/santos/'
       path: '/'
@@ -1458,6 +1487,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/apologetica/'
       preLoaderRoute: typeof ApologeticaIndexRouteImport
       parentRoute: typeof ApologeticaRoute
+    }
+    '/testemunhos/$slug': {
+      id: '/testemunhos/$slug'
+      path: '/$slug'
+      fullPath: '/testemunhos/$slug'
+      preLoaderRoute: typeof TestemunhosSlugRouteImport
+      parentRoute: typeof TestemunhosRoute
     }
     '/santos/$slug': {
       id: '/santos/$slug'
@@ -1878,6 +1914,20 @@ const SantosRouteChildren: SantosRouteChildren = {
 const SantosRouteWithChildren =
   SantosRoute._addFileChildren(SantosRouteChildren)
 
+interface TestemunhosRouteChildren {
+  TestemunhosSlugRoute: typeof TestemunhosSlugRoute
+  TestemunhosIndexRoute: typeof TestemunhosIndexRoute
+}
+
+const TestemunhosRouteChildren: TestemunhosRouteChildren = {
+  TestemunhosSlugRoute: TestemunhosSlugRoute,
+  TestemunhosIndexRoute: TestemunhosIndexRoute,
+}
+
+const TestemunhosRouteWithChildren = TestemunhosRoute._addFileChildren(
+  TestemunhosRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ApologeticaRoute: ApologeticaRouteWithChildren,
@@ -1918,7 +1968,7 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SobreRoute: SobreRoute,
   TermosRoute: TermosRoute,
-  TestemunhosRoute: TestemunhosRoute,
+  TestemunhosRoute: TestemunhosRouteWithChildren,
   ApiChatRoute: ApiChatRoute,
   ApiTranscreverRoute: ApiTranscreverRoute,
   ForumSlugRoute: ForumSlugRoute,

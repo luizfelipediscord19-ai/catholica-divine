@@ -412,7 +412,7 @@ function Home() {
           <div className="grid grid-cols-1 gap-px bg-gold/10 md:grid-cols-3 sm:border-x sm:border-gold/10">
             {DAILY_ITEMS.map((d, i) => {
               const inner = (
-                <div className="group h-full flex flex-col px-[var(--space-sm)] py-[var(--space-sm)] sm:px-0 sm:p-card transition-premium hover:bg-gold/[0.03]">
+                <div className="group h-full flex flex-col p-[var(--space-sm)] sm:p-card transition-premium hover:bg-gold/[0.03]">
                   <p className="label-btn text-gold/80 mb-3 group-hover:text-gold transition-colors">
                     {d.kicker}
                   </p>
