@@ -36,6 +36,7 @@ export const Route = createFileRoute("/oracoes/")({
 });
 
 const DEVOCOES = [
+  { to: "/oracoes/diarias" as const, title: "Orações diárias", body: "Uma oração por dia, com finalidade, momento indicado e ligação ao Catecismo." },
   { to: "/oracoes/rosario" as const, title: "Santo Rosário (interativo)", body: "Mistérios Gozosos, Luminosos, Dolorosos e Gloriosos — guiado etapa a etapa." },
   { to: "/oracoes/terco-misericordia" as const, title: "Terço da Misericórdia", body: "Revelado a Santa Faustina — rezado especialmente às 15h." },
   { to: "/oracoes/via-sacra" as const, title: "Via-Sacra", body: "Catorze estações que acompanham os passos de Cristo até o Calvário." },
