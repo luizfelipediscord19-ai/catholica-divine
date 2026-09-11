@@ -118,7 +118,10 @@ export function PaginaTematica({
       {ligados.length ? (
         <section id="na-enciclopedia" className="mt-16 scroll-mt-28">
           <h2 className="title-section text-foreground">Na Enciclopédia Católica</h2>
-          <div className="mt-5 grid gap-px border-y border-gold/15 bg-gold/15 lg:grid-cols-2">
+          <div
+            data-sem-sumario
+            className="mt-5 grid gap-px border-y border-gold/15 bg-gold/15 lg:grid-cols-2"
+          >
             {ligados.map((verbete) => (
               <article key={verbete.slug} className="bg-background p-card">
                 <p className="kicker">{verbete.categoria}</p>
