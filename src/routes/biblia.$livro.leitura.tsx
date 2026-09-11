@@ -116,6 +116,7 @@ function Page() {
                         livro={livro.slug}
                         capitulo={cap.numero}
                         versiculo={v.v}
+                        somenteInicio
                       />
                     </span>
                   </p>
