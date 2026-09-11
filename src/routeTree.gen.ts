@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TestemunhosRouteImport } from './routes/testemunhos'
 import { Route as TermosRouteImport } from './routes/termos'
 import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
@@ -60,6 +61,7 @@ import { Route as DoutrinaIndexRouteImport } from './routes/doutrina.index'
 import { Route as CatecismoIndexRouteImport } from './routes/catecismo.index'
 import { Route as BibliaIndexRouteImport } from './routes/biblia.index'
 import { Route as ApologeticaIndexRouteImport } from './routes/apologetica.index'
+import { Route as TestemunhosSlugRouteImport } from './routes/testemunhos.$slug'
 import { Route as SantosSlugRouteImport } from './routes/santos.$slug'
 import { Route as SacramentosTemaRouteImport } from './routes/sacramentos.$tema'
 import { Route as OracoesViaSacraRouteImport } from './routes/oracoes.via-sacra'
@@ -96,6 +98,11 @@ import { Route as ApiPublicLembretesRouteImport } from './routes/api/public/lemb
 import { Route as ApiPublicImagemRouteImport } from './routes/api/public/imagem'
 import { Route as ApiPublicCspReportRouteImport } from './routes/api/public/csp-report'
 
+const TestemunhosRoute = TestemunhosRouteImport.update({
+  id: '/testemunhos',
+  path: '/testemunhos',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TermosRoute = TermosRouteImport.update({
   id: '/termos',
   path: '/termos',
@@ -299,9 +306,9 @@ const TrilhasIndexRoute = TrilhasIndexRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const TestemunhosIndexRoute = TestemunhosIndexRouteImport.update({
-  id: '/testemunhos/',
-  path: '/testemunhos/',
-  getParentRoute: () => rootRouteImport,
+  id: '/',
+  path: '/',
+  getParentRoute: () => TestemunhosRoute,
 } as any)
 const SantosIndexRoute = SantosIndexRouteImport.update({
   id: '/',
@@ -352,6 +359,11 @@ const ApologeticaIndexRoute = ApologeticaIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => ApologeticaRoute,
+} as any)
+const TestemunhosSlugRoute = TestemunhosSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => TestemunhosRoute,
 } as any)
 const SantosSlugRoute = SantosSlugRouteImport.update({
   id: '/$slug',
@@ -571,6 +583,7 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/termos': typeof TermosRoute
+  '/testemunhos': typeof TestemunhosRouteWithChildren
   '/api/chat': typeof ApiChatRoute
   '/api/transcrever': typeof ApiTranscreverRoute
   '/apologetica/$tema': typeof ApologeticaTemaRoute
@@ -591,6 +604,7 @@ export interface FileRoutesByFullPath {
   '/oracoes/via-sacra': typeof OracoesViaSacraRoute
   '/sacramentos/$tema': typeof SacramentosTemaRoute
   '/santos/$slug': typeof SantosSlugRoute
+  '/testemunhos/$slug': typeof TestemunhosSlugRoute
   '/apologetica/': typeof ApologeticaIndexRoute
   '/biblia/': typeof BibliaIndexRoute
   '/catecismo/': typeof CatecismoIndexRoute
@@ -669,6 +683,7 @@ export interface FileRoutesByTo {
   '/oracoes/via-sacra': typeof OracoesViaSacraRoute
   '/sacramentos/$tema': typeof SacramentosTemaRoute
   '/santos/$slug': typeof SantosSlugRoute
+  '/testemunhos/$slug': typeof TestemunhosSlugRoute
   '/apologetica': typeof ApologeticaIndexRoute
   '/biblia': typeof BibliaIndexRoute
   '/catecismo': typeof CatecismoIndexRoute
@@ -738,6 +753,7 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/termos': typeof TermosRoute
+  '/testemunhos': typeof TestemunhosRouteWithChildren
   '/api/chat': typeof ApiChatRoute
   '/api/transcrever': typeof ApiTranscreverRoute
   '/apologetica/$tema': typeof ApologeticaTemaRoute
@@ -758,6 +774,7 @@ export interface FileRoutesById {
   '/oracoes/via-sacra': typeof OracoesViaSacraRoute
   '/sacramentos/$tema': typeof SacramentosTemaRoute
   '/santos/$slug': typeof SantosSlugRoute
+  '/testemunhos/$slug': typeof TestemunhosSlugRoute
   '/apologetica/': typeof ApologeticaIndexRoute
   '/biblia/': typeof BibliaIndexRoute
   '/catecismo/': typeof CatecismoIndexRoute
@@ -828,6 +845,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/sobre'
     | '/termos'
+    | '/testemunhos'
     | '/api/chat'
     | '/api/transcrever'
     | '/apologetica/$tema'
@@ -848,6 +866,7 @@ export interface FileRouteTypes {
     | '/oracoes/via-sacra'
     | '/sacramentos/$tema'
     | '/santos/$slug'
+    | '/testemunhos/$slug'
     | '/apologetica/'
     | '/biblia/'
     | '/catecismo/'
@@ -926,6 +945,7 @@ export interface FileRouteTypes {
     | '/oracoes/via-sacra'
     | '/sacramentos/$tema'
     | '/santos/$slug'
+    | '/testemunhos/$slug'
     | '/apologetica'
     | '/biblia'
     | '/catecismo'
@@ -994,6 +1014,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/sobre'
     | '/termos'
+    | '/testemunhos'
     | '/api/chat'
     | '/api/transcrever'
     | '/apologetica/$tema'
@@ -1014,6 +1035,7 @@ export interface FileRouteTypes {
     | '/oracoes/via-sacra'
     | '/sacramentos/$tema'
     | '/santos/$slug'
+    | '/testemunhos/$slug'
     | '/apologetica/'
     | '/biblia/'
     | '/catecismo/'
@@ -1083,13 +1105,13 @@ export interface RootRouteChildren {
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SobreRoute: typeof SobreRoute
   TermosRoute: typeof TermosRoute
+  TestemunhosRoute: typeof TestemunhosRouteWithChildren
   ApiChatRoute: typeof ApiChatRoute
   ApiTranscreverRoute: typeof ApiTranscreverRoute
   ForumSlugRoute: typeof ForumSlugRoute
   NoticiasSlugRoute: typeof NoticiasSlugRoute
   ForumIndexRoute: typeof ForumIndexRoute
   NoticiasIndexRoute: typeof NoticiasIndexRoute
-  TestemunhosIndexRoute: typeof TestemunhosIndexRoute
   TrilhasIndexRoute: typeof TrilhasIndexRoute
   ApiPublicCspReportRoute: typeof ApiPublicCspReportRoute
   ApiPublicImagemRoute: typeof ApiPublicImagemRoute
@@ -1102,6 +1124,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/testemunhos': {
+      id: '/testemunhos'
+      path: '/testemunhos'
+      fullPath: '/testemunhos'
+      preLoaderRoute: typeof TestemunhosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/termos': {
       id: '/termos'
       path: '/termos'
@@ -1384,10 +1413,10 @@ declare module '@tanstack/react-router' {
     }
     '/testemunhos/': {
       id: '/testemunhos/'
-      path: '/testemunhos'
+      path: '/'
       fullPath: '/testemunhos/'
       preLoaderRoute: typeof TestemunhosIndexRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof TestemunhosRoute
     }
     '/santos/': {
       id: '/santos/'
@@ -1458,6 +1487,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/apologetica/'
       preLoaderRoute: typeof ApologeticaIndexRouteImport
       parentRoute: typeof ApologeticaRoute
+    }
+    '/testemunhos/$slug': {
+      id: '/testemunhos/$slug'
+      path: '/$slug'
+      fullPath: '/testemunhos/$slug'
+      preLoaderRoute: typeof TestemunhosSlugRouteImport
+      parentRoute: typeof TestemunhosRoute
     }
     '/santos/$slug': {
       id: '/santos/$slug'
@@ -1878,6 +1914,20 @@ const SantosRouteChildren: SantosRouteChildren = {
 const SantosRouteWithChildren =
   SantosRoute._addFileChildren(SantosRouteChildren)
 
+interface TestemunhosRouteChildren {
+  TestemunhosSlugRoute: typeof TestemunhosSlugRoute
+  TestemunhosIndexRoute: typeof TestemunhosIndexRoute
+}
+
+const TestemunhosRouteChildren: TestemunhosRouteChildren = {
+  TestemunhosSlugRoute: TestemunhosSlugRoute,
+  TestemunhosIndexRoute: TestemunhosIndexRoute,
+}
+
+const TestemunhosRouteWithChildren = TestemunhosRoute._addFileChildren(
+  TestemunhosRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ApologeticaRoute: ApologeticaRouteWithChildren,
@@ -1918,13 +1968,13 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SobreRoute: SobreRoute,
   TermosRoute: TermosRoute,
+  TestemunhosRoute: TestemunhosRouteWithChildren,
   ApiChatRoute: ApiChatRoute,
   ApiTranscreverRoute: ApiTranscreverRoute,
   ForumSlugRoute: ForumSlugRoute,
   NoticiasSlugRoute: NoticiasSlugRoute,
   ForumIndexRoute: ForumIndexRoute,
   NoticiasIndexRoute: NoticiasIndexRoute,
-  TestemunhosIndexRoute: TestemunhosIndexRoute,
   TrilhasIndexRoute: TrilhasIndexRoute,
   ApiPublicCspReportRoute: ApiPublicCspReportRoute,
   ApiPublicImagemRoute: ApiPublicImagemRoute,
