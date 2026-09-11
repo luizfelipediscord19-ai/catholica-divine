@@ -45,6 +45,7 @@ function TestemunhosPage() {
     queryFn: () => listarTopicosFn({ data: { secaoSlug: SECAO, token } }),
   });
 
+  const publicados = testemunhosOrdenados();
   const lista = testemunhos.data ?? [];
   const totalAmens = lista.reduce((soma, t) => soma + (t.amens ?? 0), 0);
   const totalRespostas = lista.reduce((soma, t) => soma + (t.respostas_count ?? 0), 0);
