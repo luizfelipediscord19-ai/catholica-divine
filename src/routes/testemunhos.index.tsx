@@ -12,7 +12,7 @@ import { keywordsPara } from "@/lib/seo/palavras-chave";
 const SECAO = "santos-e-testemunhos";
 const URL = "https://portalcatolico.vercel.app/testemunhos";
 
-export const Route = createFileRoute("/testemunhos")({
+export const Route = createFileRoute("/testemunhos/")({
   head: () => ({
     meta: [
       { title: "Testemunhos de Fé — Graças e Conversões | Portal Católico" },

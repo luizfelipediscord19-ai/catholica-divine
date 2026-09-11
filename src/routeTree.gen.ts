@@ -9,7 +9,6 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as TestemunhosRouteImport } from './routes/testemunhos'
 import { Route as TermosRouteImport } from './routes/termos'
 import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
@@ -50,6 +49,7 @@ import { Route as AssistenteRouteImport } from './routes/assistente'
 import { Route as ApologeticaRouteImport } from './routes/apologetica'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as TrilhasIndexRouteImport } from './routes/trilhas.index'
+import { Route as TestemunhosIndexRouteImport } from './routes/testemunhos.index'
 import { Route as SantosIndexRouteImport } from './routes/santos.index'
 import { Route as SacramentosIndexRouteImport } from './routes/sacramentos.index'
 import { Route as OracoesIndexRouteImport } from './routes/oracoes.index'
@@ -96,11 +96,6 @@ import { Route as ApiPublicLembretesRouteImport } from './routes/api/public/lemb
 import { Route as ApiPublicImagemRouteImport } from './routes/api/public/imagem'
 import { Route as ApiPublicCspReportRouteImport } from './routes/api/public/csp-report'
 
-const TestemunhosRoute = TestemunhosRouteImport.update({
-  id: '/testemunhos',
-  path: '/testemunhos',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const TermosRoute = TermosRouteImport.update({
   id: '/termos',
   path: '/termos',
@@ -301,6 +296,11 @@ const IndexRoute = IndexRouteImport.update({
 const TrilhasIndexRoute = TrilhasIndexRouteImport.update({
   id: '/trilhas/',
   path: '/trilhas/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TestemunhosIndexRoute = TestemunhosIndexRouteImport.update({
+  id: '/testemunhos/',
+  path: '/testemunhos/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SantosIndexRoute = SantosIndexRouteImport.update({
@@ -571,7 +571,6 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/termos': typeof TermosRoute
-  '/testemunhos': typeof TestemunhosRoute
   '/api/chat': typeof ApiChatRoute
   '/api/transcrever': typeof ApiTranscreverRoute
   '/apologetica/$tema': typeof ApologeticaTemaRoute
@@ -602,6 +601,7 @@ export interface FileRoutesByFullPath {
   '/oracoes/': typeof OracoesIndexRoute
   '/sacramentos/': typeof SacramentosIndexRoute
   '/santos/': typeof SantosIndexRoute
+  '/testemunhos/': typeof TestemunhosIndexRoute
   '/trilhas/': typeof TrilhasIndexRoute
   '/api/public/csp-report': typeof ApiPublicCspReportRoute
   '/api/public/imagem': typeof ApiPublicImagemRoute
@@ -651,7 +651,6 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/termos': typeof TermosRoute
-  '/testemunhos': typeof TestemunhosRoute
   '/api/chat': typeof ApiChatRoute
   '/api/transcrever': typeof ApiTranscreverRoute
   '/apologetica/$tema': typeof ApologeticaTemaRoute
@@ -680,6 +679,7 @@ export interface FileRoutesByTo {
   '/oracoes': typeof OracoesIndexRoute
   '/sacramentos': typeof SacramentosIndexRoute
   '/santos': typeof SantosIndexRoute
+  '/testemunhos': typeof TestemunhosIndexRoute
   '/trilhas': typeof TrilhasIndexRoute
   '/api/public/csp-report': typeof ApiPublicCspReportRoute
   '/api/public/imagem': typeof ApiPublicImagemRoute
@@ -738,7 +738,6 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/termos': typeof TermosRoute
-  '/testemunhos': typeof TestemunhosRoute
   '/api/chat': typeof ApiChatRoute
   '/api/transcrever': typeof ApiTranscreverRoute
   '/apologetica/$tema': typeof ApologeticaTemaRoute
@@ -769,6 +768,7 @@ export interface FileRoutesById {
   '/oracoes/': typeof OracoesIndexRoute
   '/sacramentos/': typeof SacramentosIndexRoute
   '/santos/': typeof SantosIndexRoute
+  '/testemunhos/': typeof TestemunhosIndexRoute
   '/trilhas/': typeof TrilhasIndexRoute
   '/api/public/csp-report': typeof ApiPublicCspReportRoute
   '/api/public/imagem': typeof ApiPublicImagemRoute
@@ -828,7 +828,6 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/sobre'
     | '/termos'
-    | '/testemunhos'
     | '/api/chat'
     | '/api/transcrever'
     | '/apologetica/$tema'
@@ -859,6 +858,7 @@ export interface FileRouteTypes {
     | '/oracoes/'
     | '/sacramentos/'
     | '/santos/'
+    | '/testemunhos/'
     | '/trilhas/'
     | '/api/public/csp-report'
     | '/api/public/imagem'
@@ -908,7 +908,6 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/sobre'
     | '/termos'
-    | '/testemunhos'
     | '/api/chat'
     | '/api/transcrever'
     | '/apologetica/$tema'
@@ -937,6 +936,7 @@ export interface FileRouteTypes {
     | '/oracoes'
     | '/sacramentos'
     | '/santos'
+    | '/testemunhos'
     | '/trilhas'
     | '/api/public/csp-report'
     | '/api/public/imagem'
@@ -994,7 +994,6 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/sobre'
     | '/termos'
-    | '/testemunhos'
     | '/api/chat'
     | '/api/transcrever'
     | '/apologetica/$tema'
@@ -1025,6 +1024,7 @@ export interface FileRouteTypes {
     | '/oracoes/'
     | '/sacramentos/'
     | '/santos/'
+    | '/testemunhos/'
     | '/trilhas/'
     | '/api/public/csp-report'
     | '/api/public/imagem'
@@ -1083,13 +1083,13 @@ export interface RootRouteChildren {
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SobreRoute: typeof SobreRoute
   TermosRoute: typeof TermosRoute
-  TestemunhosRoute: typeof TestemunhosRoute
   ApiChatRoute: typeof ApiChatRoute
   ApiTranscreverRoute: typeof ApiTranscreverRoute
   ForumSlugRoute: typeof ForumSlugRoute
   NoticiasSlugRoute: typeof NoticiasSlugRoute
   ForumIndexRoute: typeof ForumIndexRoute
   NoticiasIndexRoute: typeof NoticiasIndexRoute
+  TestemunhosIndexRoute: typeof TestemunhosIndexRoute
   TrilhasIndexRoute: typeof TrilhasIndexRoute
   ApiPublicCspReportRoute: typeof ApiPublicCspReportRoute
   ApiPublicImagemRoute: typeof ApiPublicImagemRoute
@@ -1102,13 +1102,6 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/testemunhos': {
-      id: '/testemunhos'
-      path: '/testemunhos'
-      fullPath: '/testemunhos'
-      preLoaderRoute: typeof TestemunhosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/termos': {
       id: '/termos'
       path: '/termos'
@@ -1387,6 +1380,13 @@ declare module '@tanstack/react-router' {
       path: '/trilhas'
       fullPath: '/trilhas/'
       preLoaderRoute: typeof TrilhasIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/testemunhos/': {
+      id: '/testemunhos/'
+      path: '/testemunhos'
+      fullPath: '/testemunhos/'
+      preLoaderRoute: typeof TestemunhosIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/santos/': {
@@ -1918,13 +1918,13 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SobreRoute: SobreRoute,
   TermosRoute: TermosRoute,
-  TestemunhosRoute: TestemunhosRoute,
   ApiChatRoute: ApiChatRoute,
   ApiTranscreverRoute: ApiTranscreverRoute,
   ForumSlugRoute: ForumSlugRoute,
   NoticiasSlugRoute: NoticiasSlugRoute,
   ForumIndexRoute: ForumIndexRoute,
   NoticiasIndexRoute: NoticiasIndexRoute,
+  TestemunhosIndexRoute: TestemunhosIndexRoute,
   TrilhasIndexRoute: TrilhasIndexRoute,
   ApiPublicCspReportRoute: ApiPublicCspReportRoute,
   ApiPublicImagemRoute: ApiPublicImagemRoute,
