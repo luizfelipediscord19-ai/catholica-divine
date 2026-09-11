@@ -1,5 +1,7 @@
 import batismo from "@/assets/batismo.jpg";
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { SACRAMENTOS } from "@/lib/data/sacramentos";
+import { TEMAS_SACRAMENTAIS } from "@/lib/data/sacramentos-temas";
 import eucaristia from "@/assets/eucaristia.jpg";
 import { PageHero, CardGrid, ContentCard, Prose, Pullquote, Prancha } from "../components/PageShell";
 import { ReadingMode, FnRef } from "../components/ReadingMode";
@@ -427,6 +429,47 @@ function Page() {
           </CardGrid>
         </section>
       </ReadingMode>
+
+      <section className="shell pb-block">
+        <p className="kicker">Estudo por página</p>
+        <h2 className="title-section mt-2 text-foreground">
+          Páginas de cada sacramento, sacramentais e rituais
+        </h2>
+        <p className="body-base measure mt-4 text-muted-foreground">
+          Cada página abaixo é de leitura longa, com sumário lateral, impressão em PDF colorido ou em
+          preto e branco, e ligação direta aos parágrafos do Catecismo e aos verbetes da Enciclopédia.
+        </p>
+
+        <div className="mt-8 grid gap-px border-y border-gold/15 bg-gold/15 lg:grid-cols-2">
+          {TEMAS_SACRAMENTAIS.map((t) => (
+            <article key={t.slug} className="bg-background p-card">
+              <p className="kicker">{t.kicker}</p>
+              <h3 className="title-card mt-2 text-foreground">{t.nome}</h3>
+              <p className="body-sm mt-3 text-muted-foreground">{t.resumo}</p>
+              <Link
+                to="/sacramentos/$tema"
+                params={{ tema: t.slug }}
+                className="btn-base btn-outline-gold btn-sm label-btn mt-5"
+              >
+                Abrir {t.nome}
+              </Link>
+            </article>
+          ))}
+        </div>
+
+        <div className="action-tray mt-8">
+          {SACRAMENTOS.map((s) => (
+            <Link
+              key={s.slug}
+              to="/sacramentos/$tema"
+              params={{ tema: s.slug }}
+              className="btn-base btn-quiet btn-md"
+            >
+              {s.nome}
+            </Link>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }

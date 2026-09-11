@@ -1,5 +1,6 @@
 import chaves from "@/assets/vitral.jpg";
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { TEMAS_APOLOGETICA } from "@/lib/data/apologetica-temas";
 import biblioteca from "@/assets/biblioteca.jpg";
 import { PageHero, Section, Prose, Sources, Pullquote, Prancha } from "../components/PageShell";
 import { BancoObjecoes } from "../components/portal/BancoObjecoes";
