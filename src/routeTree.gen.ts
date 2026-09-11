@@ -34,6 +34,7 @@ import { Route as ExplorarRouteImport } from './routes/explorar'
 import { Route as EstudarRouteImport } from './routes/estudar'
 import { Route as EnciclopediaRouteImport } from './routes/enciclopedia'
 import { Route as EmailConfirmadoRouteImport } from './routes/email-confirmado'
+import { Route as DoutrinaRouteImport } from './routes/doutrina'
 import { Route as DoutoresDaIgrejaRouteImport } from './routes/doutores-da-igreja'
 import { Route as DesignSystemRouteImport } from './routes/design-system'
 import { Route as CoroinhasRouteImport } from './routes/coroinhas'
@@ -214,6 +215,11 @@ const EnciclopediaRoute = EnciclopediaRouteImport.update({
 const EmailConfirmadoRoute = EmailConfirmadoRouteImport.update({
   id: '/email-confirmado',
   path: '/email-confirmado',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DoutrinaRoute = DoutrinaRouteImport.update({
+  id: '/doutrina',
+  path: '/doutrina',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DoutoresDaIgrejaRoute = DoutoresDaIgrejaRouteImport.update({
@@ -503,6 +509,7 @@ export interface FileRoutesByFullPath {
   '/coroinhas': typeof CoroinhasRoute
   '/design-system': typeof DesignSystemRoute
   '/doutores-da-igreja': typeof DoutoresDaIgrejaRoute
+  '/doutrina': typeof DoutrinaRoute
   '/email-confirmado': typeof EmailConfirmadoRoute
   '/enciclopedia': typeof EnciclopediaRouteWithChildren
   '/estudar': typeof EstudarRoute
@@ -581,6 +588,7 @@ export interface FileRoutesByTo {
   '/coroinhas': typeof CoroinhasRoute
   '/design-system': typeof DesignSystemRoute
   '/doutores-da-igreja': typeof DoutoresDaIgrejaRoute
+  '/doutrina': typeof DoutrinaRoute
   '/email-confirmado': typeof EmailConfirmadoRoute
   '/estudar': typeof EstudarRoute
   '/explorar': typeof ExplorarRoute
@@ -657,6 +665,7 @@ export interface FileRoutesById {
   '/coroinhas': typeof CoroinhasRoute
   '/design-system': typeof DesignSystemRoute
   '/doutores-da-igreja': typeof DoutoresDaIgrejaRoute
+  '/doutrina': typeof DoutrinaRoute
   '/email-confirmado': typeof EmailConfirmadoRoute
   '/enciclopedia': typeof EnciclopediaRouteWithChildren
   '/estudar': typeof EstudarRoute
@@ -740,6 +749,7 @@ export interface FileRouteTypes {
     | '/coroinhas'
     | '/design-system'
     | '/doutores-da-igreja'
+    | '/doutrina'
     | '/email-confirmado'
     | '/enciclopedia'
     | '/estudar'
@@ -818,6 +828,7 @@ export interface FileRouteTypes {
     | '/coroinhas'
     | '/design-system'
     | '/doutores-da-igreja'
+    | '/doutrina'
     | '/email-confirmado'
     | '/estudar'
     | '/explorar'
@@ -893,6 +904,7 @@ export interface FileRouteTypes {
     | '/coroinhas'
     | '/design-system'
     | '/doutores-da-igreja'
+    | '/doutrina'
     | '/email-confirmado'
     | '/enciclopedia'
     | '/estudar'
@@ -975,6 +987,7 @@ export interface RootRouteChildren {
   CoroinhasRoute: typeof CoroinhasRoute
   DesignSystemRoute: typeof DesignSystemRoute
   DoutoresDaIgrejaRoute: typeof DoutoresDaIgrejaRoute
+  DoutrinaRoute: typeof DoutrinaRoute
   EmailConfirmadoRoute: typeof EmailConfirmadoRoute
   EnciclopediaRoute: typeof EnciclopediaRouteWithChildren
   EstudarRoute: typeof EstudarRoute
@@ -1191,6 +1204,13 @@ declare module '@tanstack/react-router' {
       path: '/email-confirmado'
       fullPath: '/email-confirmado'
       preLoaderRoute: typeof EmailConfirmadoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/doutrina': {
+      id: '/doutrina'
+      path: '/doutrina'
+      fullPath: '/doutrina'
+      preLoaderRoute: typeof DoutrinaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/doutores-da-igreja': {
@@ -1739,6 +1759,7 @@ const rootRouteChildren: RootRouteChildren = {
   CoroinhasRoute: CoroinhasRoute,
   DesignSystemRoute: DesignSystemRoute,
   DoutoresDaIgrejaRoute: DoutoresDaIgrejaRoute,
+  DoutrinaRoute: DoutrinaRoute,
   EmailConfirmadoRoute: EmailConfirmadoRoute,
   EnciclopediaRoute: EnciclopediaRouteWithChildren,
   EstudarRoute: EstudarRoute,
