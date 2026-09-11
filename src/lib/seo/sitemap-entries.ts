@@ -105,11 +105,10 @@ export const PAGINAS: SitemapEntry[] = [
 ];
 
 /** Índices dos 73 livros — poucas URLs, alta prioridade. */
-export const BIBLIA_LIVROS: SitemapEntry[] = LIVROS.map((l) => ({
-  path: `/biblia/${l.slug}`,
-  changefreq: "monthly" as const,
-  priority: "0.7",
-}));
+export const BIBLIA_LIVROS: SitemapEntry[] = LIVROS.flatMap((l) => [
+  { path: `/biblia/${l.slug}`, changefreq: "monthly" as const, priority: "0.7" },
+  { path: `/biblia/${l.slug}/leitura`, changefreq: "monthly" as const, priority: "0.6" },
+]);
 
 /** Capítulos da Bíblia — o maior volume, isolado em seu próprio sitemap. */
 export const BIBLIA_CAPITULOS: SitemapEntry[] = LIVROS.flatMap((l) =>
