@@ -81,6 +81,7 @@ import { Route as BibliaLivroIndexRouteImport } from './routes/biblia.$livro.ind
 import { Route as TrilhasTrilhaLicaoRouteImport } from './routes/trilhas.$trilha.$licao'
 import { Route as OracoesNovenasSlugRouteImport } from './routes/oracoes.novenas.$slug'
 import { Route as BibliaPlanosSlugRouteImport } from './routes/biblia.planos.$slug'
+import { Route as BibliaLivroLeituraRouteImport } from './routes/biblia.$livro.leitura'
 import { Route as BibliaLivroCapituloRouteImport } from './routes/biblia.$livro.$capitulo'
 import { Route as ApiPublicNoticiasDiariasRouteImport } from './routes/api/public/noticias-diarias'
 import { Route as ApiPublicNoticiasRouteImport } from './routes/api/public/noticias'
@@ -451,6 +452,11 @@ const BibliaPlanosSlugRoute = BibliaPlanosSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => BibliaPlanosRoute,
 } as any)
+const BibliaLivroLeituraRoute = BibliaLivroLeituraRouteImport.update({
+  id: '/leitura',
+  path: '/leitura',
+  getParentRoute: () => BibliaLivroRoute,
+} as any)
 const BibliaLivroCapituloRoute = BibliaLivroCapituloRouteImport.update({
   id: '/$capitulo',
   path: '/$capitulo',
@@ -556,6 +562,7 @@ export interface FileRoutesByFullPath {
   '/api/public/noticias': typeof ApiPublicNoticiasRoute
   '/api/public/noticias-diarias': typeof ApiPublicNoticiasDiariasRoute
   '/biblia/$livro/$capitulo': typeof BibliaLivroCapituloRoute
+  '/biblia/$livro/leitura': typeof BibliaLivroLeituraRoute
   '/biblia/planos/$slug': typeof BibliaPlanosSlugRoute
   '/oracoes/novenas/$slug': typeof OracoesNovenasSlugRoute
   '/trilhas/$trilha/$licao': typeof TrilhasTrilhaLicaoRoute
@@ -627,6 +634,7 @@ export interface FileRoutesByTo {
   '/api/public/noticias': typeof ApiPublicNoticiasRoute
   '/api/public/noticias-diarias': typeof ApiPublicNoticiasDiariasRoute
   '/biblia/$livro/$capitulo': typeof BibliaLivroCapituloRoute
+  '/biblia/$livro/leitura': typeof BibliaLivroLeituraRoute
   '/biblia/planos/$slug': typeof BibliaPlanosSlugRoute
   '/oracoes/novenas/$slug': typeof OracoesNovenasSlugRoute
   '/trilhas/$trilha/$licao': typeof TrilhasTrilhaLicaoRoute
@@ -708,6 +716,7 @@ export interface FileRoutesById {
   '/api/public/noticias': typeof ApiPublicNoticiasRoute
   '/api/public/noticias-diarias': typeof ApiPublicNoticiasDiariasRoute
   '/biblia/$livro/$capitulo': typeof BibliaLivroCapituloRoute
+  '/biblia/$livro/leitura': typeof BibliaLivroLeituraRoute
   '/biblia/planos/$slug': typeof BibliaPlanosSlugRoute
   '/oracoes/novenas/$slug': typeof OracoesNovenasSlugRoute
   '/trilhas/$trilha/$licao': typeof TrilhasTrilhaLicaoRoute
@@ -790,6 +799,7 @@ export interface FileRouteTypes {
     | '/api/public/noticias'
     | '/api/public/noticias-diarias'
     | '/biblia/$livro/$capitulo'
+    | '/biblia/$livro/leitura'
     | '/biblia/planos/$slug'
     | '/oracoes/novenas/$slug'
     | '/trilhas/$trilha/$licao'
@@ -861,6 +871,7 @@ export interface FileRouteTypes {
     | '/api/public/noticias'
     | '/api/public/noticias-diarias'
     | '/biblia/$livro/$capitulo'
+    | '/biblia/$livro/leitura'
     | '/biblia/planos/$slug'
     | '/oracoes/novenas/$slug'
     | '/trilhas/$trilha/$licao'
@@ -941,6 +952,7 @@ export interface FileRouteTypes {
     | '/api/public/noticias'
     | '/api/public/noticias-diarias'
     | '/biblia/$livro/$capitulo'
+    | '/biblia/$livro/leitura'
     | '/biblia/planos/$slug'
     | '/oracoes/novenas/$slug'
     | '/trilhas/$trilha/$licao'
@@ -1510,6 +1522,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BibliaPlanosSlugRouteImport
       parentRoute: typeof BibliaPlanosRoute
     }
+    '/biblia/$livro/leitura': {
+      id: '/biblia/$livro/leitura'
+      path: '/leitura'
+      fullPath: '/biblia/$livro/leitura'
+      preLoaderRoute: typeof BibliaLivroLeituraRouteImport
+      parentRoute: typeof BibliaLivroRoute
+    }
     '/biblia/$livro/$capitulo': {
       id: '/biblia/$livro/$capitulo'
       path: '/$capitulo'
@@ -1571,11 +1590,13 @@ const ApologeticaRouteWithChildren = ApologeticaRoute._addFileChildren(
 
 interface BibliaLivroRouteChildren {
   BibliaLivroCapituloRoute: typeof BibliaLivroCapituloRoute
+  BibliaLivroLeituraRoute: typeof BibliaLivroLeituraRoute
   BibliaLivroIndexRoute: typeof BibliaLivroIndexRoute
 }
 
 const BibliaLivroRouteChildren: BibliaLivroRouteChildren = {
   BibliaLivroCapituloRoute: BibliaLivroCapituloRoute,
+  BibliaLivroLeituraRoute: BibliaLivroLeituraRoute,
   BibliaLivroIndexRoute: BibliaLivroIndexRoute,
 }
 
