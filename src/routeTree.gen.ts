@@ -86,6 +86,7 @@ import { Route as BibliaPlanosIndexRouteImport } from './routes/biblia.planos.in
 import { Route as BibliaLivroIndexRouteImport } from './routes/biblia.$livro.index'
 import { Route as TrilhasTrilhaLicaoRouteImport } from './routes/trilhas.$trilha.$licao'
 import { Route as OracoesNovenasSlugRouteImport } from './routes/oracoes.novenas.$slug'
+import { Route as CatecismoAulasSemanaRouteImport } from './routes/catecismo.aulas.$semana'
 import { Route as BibliaPlanosSlugRouteImport } from './routes/biblia.planos.$slug'
 import { Route as BibliaLivroLeituraRouteImport } from './routes/biblia.$livro.leitura'
 import { Route as BibliaLivroCapituloRouteImport } from './routes/biblia.$livro.$capitulo'
@@ -483,6 +484,11 @@ const OracoesNovenasSlugRoute = OracoesNovenasSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => OracoesNovenasRoute,
 } as any)
+const CatecismoAulasSemanaRoute = CatecismoAulasSemanaRouteImport.update({
+  id: '/aulas/$semana',
+  path: '/aulas/$semana',
+  getParentRoute: () => CatecismoRoute,
+} as any)
 const BibliaPlanosSlugRoute = BibliaPlanosSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
@@ -605,6 +611,7 @@ export interface FileRoutesByFullPath {
   '/biblia/$livro/$capitulo': typeof BibliaLivroCapituloRoute
   '/biblia/$livro/leitura': typeof BibliaLivroLeituraRoute
   '/biblia/planos/$slug': typeof BibliaPlanosSlugRoute
+  '/catecismo/aulas/$semana': typeof CatecismoAulasSemanaRoute
   '/oracoes/novenas/$slug': typeof OracoesNovenasSlugRoute
   '/trilhas/$trilha/$licao': typeof TrilhasTrilhaLicaoRoute
   '/biblia/$livro/': typeof BibliaLivroIndexRoute
@@ -682,6 +689,7 @@ export interface FileRoutesByTo {
   '/biblia/$livro/$capitulo': typeof BibliaLivroCapituloRoute
   '/biblia/$livro/leitura': typeof BibliaLivroLeituraRoute
   '/biblia/planos/$slug': typeof BibliaPlanosSlugRoute
+  '/catecismo/aulas/$semana': typeof CatecismoAulasSemanaRoute
   '/oracoes/novenas/$slug': typeof OracoesNovenasSlugRoute
   '/trilhas/$trilha/$licao': typeof TrilhasTrilhaLicaoRoute
   '/biblia/$livro': typeof BibliaLivroIndexRoute
@@ -770,6 +778,7 @@ export interface FileRoutesById {
   '/biblia/$livro/$capitulo': typeof BibliaLivroCapituloRoute
   '/biblia/$livro/leitura': typeof BibliaLivroLeituraRoute
   '/biblia/planos/$slug': typeof BibliaPlanosSlugRoute
+  '/catecismo/aulas/$semana': typeof CatecismoAulasSemanaRoute
   '/oracoes/novenas/$slug': typeof OracoesNovenasSlugRoute
   '/trilhas/$trilha/$licao': typeof TrilhasTrilhaLicaoRoute
   '/biblia/$livro/': typeof BibliaLivroIndexRoute
@@ -859,6 +868,7 @@ export interface FileRouteTypes {
     | '/biblia/$livro/$capitulo'
     | '/biblia/$livro/leitura'
     | '/biblia/planos/$slug'
+    | '/catecismo/aulas/$semana'
     | '/oracoes/novenas/$slug'
     | '/trilhas/$trilha/$licao'
     | '/biblia/$livro/'
@@ -936,6 +946,7 @@ export interface FileRouteTypes {
     | '/biblia/$livro/$capitulo'
     | '/biblia/$livro/leitura'
     | '/biblia/planos/$slug'
+    | '/catecismo/aulas/$semana'
     | '/oracoes/novenas/$slug'
     | '/trilhas/$trilha/$licao'
     | '/biblia/$livro'
@@ -1023,6 +1034,7 @@ export interface FileRouteTypes {
     | '/biblia/$livro/$capitulo'
     | '/biblia/$livro/leitura'
     | '/biblia/planos/$slug'
+    | '/catecismo/aulas/$semana'
     | '/oracoes/novenas/$slug'
     | '/trilhas/$trilha/$licao'
     | '/biblia/$livro/'
@@ -1629,6 +1641,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OracoesNovenasSlugRouteImport
       parentRoute: typeof OracoesNovenasRoute
     }
+    '/catecismo/aulas/$semana': {
+      id: '/catecismo/aulas/$semana'
+      path: '/aulas/$semana'
+      fullPath: '/catecismo/aulas/$semana'
+      preLoaderRoute: typeof CatecismoAulasSemanaRouteImport
+      parentRoute: typeof CatecismoRoute
+    }
     '/biblia/planos/$slug': {
       id: '/biblia/planos/$slug'
       path: '/$slug'
@@ -1753,6 +1772,7 @@ interface CatecismoRouteChildren {
   CatecismoParteRoute: typeof CatecismoParteRoute
   CatecismoArtigosRoute: typeof CatecismoArtigosRoute
   CatecismoIndexRoute: typeof CatecismoIndexRoute
+  CatecismoAulasSemanaRoute: typeof CatecismoAulasSemanaRoute
   CatecismoAulasIndexRoute: typeof CatecismoAulasIndexRoute
 }
 
@@ -1760,6 +1780,7 @@ const CatecismoRouteChildren: CatecismoRouteChildren = {
   CatecismoParteRoute: CatecismoParteRoute,
   CatecismoArtigosRoute: CatecismoArtigosRoute,
   CatecismoIndexRoute: CatecismoIndexRoute,
+  CatecismoAulasSemanaRoute: CatecismoAulasSemanaRoute,
   CatecismoAulasIndexRoute: CatecismoAulasIndexRoute,
 }
 
