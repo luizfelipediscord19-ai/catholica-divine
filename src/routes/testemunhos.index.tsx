@@ -91,6 +91,46 @@ function TestemunhosPage() {
         </div>
       </Section>
 
+      {publicados.length > 0 ? (
+        <Section kicker="Depoimentos publicados" title="Relatos com nome, cidade e data">
+          <ul className="grid gap-[var(--space-sm)] md:grid-cols-2">
+            {publicados.map((t) => (
+              <li key={t.slug}>
+                <Link
+                  to="/testemunhos/$slug"
+                  params={{ slug: t.slug }}
+                  className="surface-card surface-card-interactive group flex h-full flex-col overflow-hidden"
+                >
+                  {t.foto ? (
+                    <img
+                      src={t.foto}
+                      alt={`Foto do testemunho de ${t.autor}`}
+                      loading="lazy"
+                      className="aspect-16/10 w-full object-cover"
+                    />
+                  ) : null}
+                  <div className="flex min-w-0 flex-1 flex-col p-card">
+                    <h3 className="mb-2 title-card">{t.titulo}</h3>
+                    <p className="mb-4 body-sm text-muted-foreground line-clamp-3">{t.resumo}</p>
+                    <div className="mt-auto flex flex-wrap items-center gap-x-4 gap-y-1 body-meta">
+                      <span className="text-foreground/70">{t.autor}</span>
+                      <span className="inline-flex items-center gap-1.5">
+                        <MapPin className="size-3 shrink-0" aria-hidden="true" />
+                        {t.cidade}
+                      </span>
+                      <span className="inline-flex items-center gap-1.5">
+                        <CalendarDays className="size-3 shrink-0" aria-hidden="true" />
+                        {dataTestemunho(t.data)}
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </Section>
+      ) : null}
+
       <Section kicker="Depoimentos" title="O que a comunidade partilha">
         {testemunhos.isPending ? (
           <div className="grid gap-4 sm:grid-cols-2" aria-busy="true" aria-label="Carregando testemunhos">
