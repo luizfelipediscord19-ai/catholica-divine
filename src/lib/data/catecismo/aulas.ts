@@ -129,7 +129,8 @@ export const AULAS: AulaCatecismo[] = [
     leitura: { ref: "2 Timóteo 3,14-17", livro: "2timoteo", capitulo: 3 },
     estudo: "CIC §§ 50-141",
     paragrafosCIC: [65, 80, 85, 107, 113],
-    tarefa: "Leia um capítulo do Evangelho de João e anote o que ele afirma sobre a identidade de Jesus.",
+    tarefa:
+      "Leia um capítulo do Evangelho de João e anote o que ele afirma sobre a identidade de Jesus.",
   },
   {
     semana: 3,
@@ -178,7 +179,8 @@ export const AULAS: AulaCatecismo[] = [
     leitura: { ref: "Gênesis 1,1-31", livro: "genesis", capitulo: 1 },
     estudo: "CIC §§ 199-421",
     paragrafosCIC: [253, 279, 295, 311, 328],
-    tarefa: "Reze o Credo dos Apóstolos com calma, parando em cada artigo que você não sabia explicar.",
+    tarefa:
+      "Reze o Credo dos Apóstolos com calma, parando em cada artigo que você não sabia explicar.",
   },
   {
     semana: 4,
@@ -227,7 +229,8 @@ export const AULAS: AulaCatecismo[] = [
     leitura: { ref: "João 1,1-18", livro: "joao", capitulo: 1 },
     estudo: "CIC §§ 422-975",
     paragrafosCIC: [464, 599, 639, 683, 830],
-    tarefa: "Escolha um dos artigos do Credo sobre Cristo e explique-o em voz alta para alguém da família.",
+    tarefa:
+      "Escolha um dos artigos do Credo sobre Cristo e explique-o em voz alta para alguém da família.",
   },
 
   // ═══════════ PILAR II — A CELEBRAÇÃO DO MISTÉRIO CRISTÃO ═══════════
@@ -278,7 +281,8 @@ export const AULAS: AulaCatecismo[] = [
     leitura: { ref: "Atos 2,42-47", livro: "atos", capitulo: 2 },
     estudo: "CIC §§ 1066-1209",
     paragrafosCIC: [1067, 1113, 1128, 1145, 1210],
-    tarefa: "Na próxima Missa, observe um gesto do sacerdote e procure na semana o que ele significa.",
+    tarefa:
+      "Na próxima Missa, observe um gesto do sacerdote e procure na semana o que ele significa.",
   },
   {
     semana: 6,
@@ -476,7 +480,8 @@ export const AULAS: AulaCatecismo[] = [
     leitura: { ref: "Mateus 5,1-16", livro: "mateus", capitulo: 5 },
     estudo: "CIC §§ 1691-2051",
     paragrafosCIC: [1750, 1783, 1855, 1805, 1996],
-    tarefa: "Escolha uma virtude cardeal e defina um ato concreto para exercitá-la todos os dias desta semana.",
+    tarefa:
+      "Escolha uma virtude cardeal e defina um ato concreto para exercitá-la todos os dias desta semana.",
   },
   {
     semana: 10,
@@ -574,7 +579,8 @@ export const AULAS: AulaCatecismo[] = [
     leitura: { ref: "Efésios 5,21-33", livro: "efesios", capitulo: 5 },
     estudo: "CIC §§ 2196-2400",
     paragrafosCIC: [2214, 2270, 2277, 2263, 2337],
-    tarefa: "Faça uma obra concreta de cuidado com alguém idoso ou doente da sua família ou paróquia.",
+    tarefa:
+      "Faça uma obra concreta de cuidado com alguém idoso ou doente da sua família ou paróquia.",
   },
   {
     semana: 12,
@@ -674,7 +680,8 @@ export const AULAS: AulaCatecismo[] = [
     leitura: { ref: "Lucas 11,1-13", livro: "lucas", capitulo: 11 },
     estudo: "CIC §§ 2558-2758",
     paragrafosCIC: [2559, 2626, 2700, 2729, 2735],
-    tarefa: "Marque quinze minutos fixos de oração silenciosa por dia e cumpra-os, mesmo sem sentir nada.",
+    tarefa:
+      "Marque quinze minutos fixos de oração silenciosa por dia e cumpra-os, mesmo sem sentir nada.",
   },
   {
     semana: 14,

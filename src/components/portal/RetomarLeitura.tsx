@@ -128,9 +128,7 @@ export function useMarcadorCapitulo(
       const agora = Date.now();
       if (agora - ultimo.current < 1200) return;
       ultimo.current = agora;
-      const versos = document.querySelectorAll<HTMLElement>(
-        "[data-leitura-texto] p[id^='v']",
-      );
+      const versos = document.querySelectorAll<HTMLElement>("[data-leitura-texto] p[id^='v']");
       let atual = 1;
       for (const el of versos) {
         if (el.getBoundingClientRect().top > 120) break;

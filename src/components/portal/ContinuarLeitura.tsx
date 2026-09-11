@@ -44,12 +44,8 @@ export function ContinuarLeitura({ className = "" }: { className?: string }) {
   const primeiraVez = lidos === 0;
 
   return (
-    <section
-      className={`surface-card backdrop-blur-sm p-6 md:p-8 space-y-5 ${className}`}
-    >
-      <p className="kicker">
-        {primeiraVez ? "Comece sua leitura" : "Continuar de onde parei"}
-      </p>
+    <section className={`surface-card backdrop-blur-sm p-6 md:p-8 space-y-5 ${className}`}>
+      <p className="kicker">{primeiraVez ? "Comece sua leitura" : "Continuar de onde parei"}</p>
       <h2 className="font-display text-2xl md:text-3xl text-foreground leading-tight">
         {alvo.livro.nome} <span className="text-gold">{alvo.capitulo}</span>
       </h2>
@@ -70,10 +66,7 @@ export function ContinuarLeitura({ className = "" }: { className?: string }) {
           <BookOpen className="size-3.5" aria-hidden="true" />
           {primeiraVez ? "Começar a ler" : "Continuar leitura"}
         </Link>
-        <Link
-          to="/biblia"
-          className="kicker hover:underline"
-        >
+        <Link to="/biblia" className="kicker hover:underline">
           Ver todos os livros
         </Link>
       </div>
