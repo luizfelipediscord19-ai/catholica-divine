@@ -81,6 +81,7 @@ import { Route as ApologeticaTemaRouteImport } from './routes/apologetica.$tema'
 import { Route as ApiTranscreverRouteImport } from './routes/api/transcrever'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
 import { Route as TrilhasTrilhaIndexRouteImport } from './routes/trilhas.$trilha.index'
+import { Route as CatecismoAulasIndexRouteImport } from './routes/catecismo.aulas.index'
 import { Route as BibliaPlanosIndexRouteImport } from './routes/biblia.planos.index'
 import { Route as BibliaLivroIndexRouteImport } from './routes/biblia.$livro.index'
 import { Route as TrilhasTrilhaLicaoRouteImport } from './routes/trilhas.$trilha.$licao'
@@ -457,6 +458,11 @@ const TrilhasTrilhaIndexRoute = TrilhasTrilhaIndexRouteImport.update({
   path: '/trilhas/$trilha/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CatecismoAulasIndexRoute = CatecismoAulasIndexRouteImport.update({
+  id: '/aulas/',
+  path: '/aulas/',
+  getParentRoute: () => CatecismoRoute,
+} as any)
 const BibliaPlanosIndexRoute = BibliaPlanosIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -603,6 +609,7 @@ export interface FileRoutesByFullPath {
   '/trilhas/$trilha/$licao': typeof TrilhasTrilhaLicaoRoute
   '/biblia/$livro/': typeof BibliaLivroIndexRoute
   '/biblia/planos/': typeof BibliaPlanosIndexRoute
+  '/catecismo/aulas/': typeof CatecismoAulasIndexRoute
   '/trilhas/$trilha/': typeof TrilhasTrilhaIndexRoute
 }
 export interface FileRoutesByTo {
@@ -679,6 +686,7 @@ export interface FileRoutesByTo {
   '/trilhas/$trilha/$licao': typeof TrilhasTrilhaLicaoRoute
   '/biblia/$livro': typeof BibliaLivroIndexRoute
   '/biblia/planos': typeof BibliaPlanosIndexRoute
+  '/catecismo/aulas': typeof CatecismoAulasIndexRoute
   '/trilhas/$trilha': typeof TrilhasTrilhaIndexRoute
 }
 export interface FileRoutesById {
@@ -766,6 +774,7 @@ export interface FileRoutesById {
   '/trilhas/$trilha/$licao': typeof TrilhasTrilhaLicaoRoute
   '/biblia/$livro/': typeof BibliaLivroIndexRoute
   '/biblia/planos/': typeof BibliaPlanosIndexRoute
+  '/catecismo/aulas/': typeof CatecismoAulasIndexRoute
   '/trilhas/$trilha/': typeof TrilhasTrilhaIndexRoute
 }
 export interface FileRouteTypes {
@@ -854,6 +863,7 @@ export interface FileRouteTypes {
     | '/trilhas/$trilha/$licao'
     | '/biblia/$livro/'
     | '/biblia/planos/'
+    | '/catecismo/aulas/'
     | '/trilhas/$trilha/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -930,6 +940,7 @@ export interface FileRouteTypes {
     | '/trilhas/$trilha/$licao'
     | '/biblia/$livro'
     | '/biblia/planos'
+    | '/catecismo/aulas'
     | '/trilhas/$trilha'
   id:
     | '__root__'
@@ -1016,6 +1027,7 @@ export interface FileRouteTypes {
     | '/trilhas/$trilha/$licao'
     | '/biblia/$livro/'
     | '/biblia/planos/'
+    | '/catecismo/aulas/'
     | '/trilhas/$trilha/'
   fileRoutesById: FileRoutesById
 }
@@ -1582,6 +1594,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TrilhasTrilhaIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/catecismo/aulas/': {
+      id: '/catecismo/aulas/'
+      path: '/aulas'
+      fullPath: '/catecismo/aulas/'
+      preLoaderRoute: typeof CatecismoAulasIndexRouteImport
+      parentRoute: typeof CatecismoRoute
+    }
     '/biblia/planos/': {
       id: '/biblia/planos/'
       path: '/'
@@ -1734,12 +1753,14 @@ interface CatecismoRouteChildren {
   CatecismoParteRoute: typeof CatecismoParteRoute
   CatecismoArtigosRoute: typeof CatecismoArtigosRoute
   CatecismoIndexRoute: typeof CatecismoIndexRoute
+  CatecismoAulasIndexRoute: typeof CatecismoAulasIndexRoute
 }
 
 const CatecismoRouteChildren: CatecismoRouteChildren = {
   CatecismoParteRoute: CatecismoParteRoute,
   CatecismoArtigosRoute: CatecismoArtigosRoute,
   CatecismoIndexRoute: CatecismoIndexRoute,
+  CatecismoAulasIndexRoute: CatecismoAulasIndexRoute,
 }
 
 const CatecismoRouteWithChildren = CatecismoRoute._addFileChildren(
