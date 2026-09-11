@@ -129,8 +129,8 @@ function Page() {
         <p className="num-secao">02</p>
         <h2 className="title-section mt-2 text-foreground">Esta oração no Catecismo</h2>
         <p className="body-base measure mt-4 text-muted-foreground">
-          A quarta parte do Catecismo trata inteiramente da oração cristã: o que é orar, as formas de
-          oração da Tradição, as dificuldades e o Pai-Nosso comentado petição por petição. Os
+          A quarta parte do Catecismo trata inteiramente da oração cristã: o que é orar, as formas
+          de oração da Tradição, as dificuldades e o Pai-Nosso comentado petição por petição. Os
           parágrafos abaixo tratam da forma de oração a que a oração de hoje pertence.
         </p>
         <div className="mt-5 flex flex-wrap gap-2 print:hidden">
@@ -177,7 +177,10 @@ function Page() {
         <h2 className="title-section mt-2 text-foreground">Próximos sete dias</h2>
         <div className="mt-5 divide-y divide-gold/15 border border-gold/20">
           {proximos.map(({ data, oracao: o }) => (
-            <div key={data.toISOString()} className="flex flex-col gap-1 p-4 md:flex-row md:items-baseline md:gap-4">
+            <div
+              key={data.toISOString()}
+              className="flex flex-col gap-1 p-4 md:flex-row md:items-baseline md:gap-4"
+            >
               <div className="kicker md:w-56">{fmt(data)}</div>
               <div className="flex-1">
                 <p className="font-display text-lg text-foreground">{o.titulo}</p>

@@ -62,7 +62,12 @@ export const TEMAS_DOUTRINA: TemaDoutrina[] = [
           "Calcedônia (451) fundamenta a devoção: uma Pessoa, duas naturezas.",
           "O lado transpassado é lido pelos Padres como origem dos sacramentos (Jo 19,34).",
         ],
-        referencias: ["CIC §§ 470-478", "Concílio de Calcedônia (451)", "João 19,34", "Haurietis Aquas (Pio XII, 1956)"],
+        referencias: [
+          "CIC §§ 470-478",
+          "Concílio de Calcedônia (451)",
+          "João 19,34",
+          "Haurietis Aquas (Pio XII, 1956)",
+        ],
       },
       {
         id: "historia-da-devocao",
@@ -254,7 +259,11 @@ export const TEMAS_DOUTRINA: TemaDoutrina[] = [
           "O juízo final manifestará publicamente essa verdade (CIC §§ 1038-1041).",
           "A canonização declara que alguém está no céu; nunca se declara o inverso.",
         ],
-        referencias: ["CIC §§ 1021-1022; 1038-1041", "Benedictus Deus (Bento XII, 1336)", "2Cor 5,10"],
+        referencias: [
+          "CIC §§ 1021-1022; 1038-1041",
+          "Benedictus Deus (Bento XII, 1336)",
+          "2Cor 5,10",
+        ],
       },
       {
         id: "purgatorio",

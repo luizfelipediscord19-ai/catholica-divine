@@ -37,8 +37,7 @@ export const Route = createFileRoute("/leitura-diaria")({
       queryKey: ["leitura-diaria", dia],
       queryFn: async () => {
         const livro = getLivro(leitura.livro);
-        const versaoId =
-          livro && temTextoLocal("almeida", livro.slug) ? "almeida" : "vulgata";
+        const versaoId = livro && temTextoLocal("almeida", livro.slug) ? "almeida" : "vulgata";
         let versos: VersoTexto[] = [];
         if (livro) {
           const todos = await capituloLocal(versaoId, livro.slug, leitura.capitulo);
@@ -77,7 +76,8 @@ function Page() {
     ).values(),
   ];
 
-  const tema = TEMAS_ENCICLOPEDIA[(dia - 1 + TEMAS_ENCICLOPEDIA.length * 1000) % TEMAS_ENCICLOPEDIA.length];
+  const tema =
+    TEMAS_ENCICLOPEDIA[(dia - 1 + TEMAS_ENCICLOPEDIA.length * 1000) % TEMAS_ENCICLOPEDIA.length];
   const oracao = ORACOES[(dia - 1 + ORACOES.length * 1000) % ORACOES.length];
   const hoje = new Date().toLocaleDateString("pt-BR", {
     weekday: "long",
@@ -108,12 +108,8 @@ function Page() {
       {/* 01 — Escritura */}
       <section id="escritura-do-dia" className="mt-14 scroll-mt-28">
         <p className="num-secao">01</p>
-        <h2 className="title-section mt-2 text-foreground">
-          A Escritura de hoje — {leitura.tema}
-        </h2>
-        <p className="mt-2 text-step--2 tracking-wider text-gold uppercase">
-          {refTexto(leitura)}
-        </p>
+        <h2 className="title-section mt-2 text-foreground">A Escritura de hoje — {leitura.tema}</h2>
+        <p className="mt-2 text-step--2 tracking-wider text-gold uppercase">{refTexto(leitura)}</p>
 
         {versos.length ? (
           <div className="mt-6 space-y-4 font-display text-lg leading-[1.85] text-foreground/90">
@@ -219,9 +215,7 @@ function Page() {
       {/* 03 — Enciclopédia */}
       <section id="tema-da-enciclopedia" className="mt-16 scroll-mt-28">
         <p className="num-secao">03</p>
-        <h2 className="title-section mt-2 text-foreground">
-          Tema de estudo — {tema.nome}
-        </h2>
+        <h2 className="title-section mt-2 text-foreground">Tema de estudo — {tema.nome}</h2>
         <p className="mt-2 text-step--2 tracking-wider text-gold uppercase">{tema.kicker}</p>
         <p className="body-base measure mt-4 text-muted-foreground">{tema.resumo}</p>
         <ul className="mt-5 space-y-2">
@@ -250,9 +244,7 @@ function Page() {
         <div className="mt-5 border-l-2 border-gold/30 pl-5 font-display text-lg leading-[1.9] whitespace-pre-line text-foreground/90">
           {oracao.texto}
         </div>
-        {oracao.nota ? (
-          <p className="body-sm mt-4 text-muted-foreground">{oracao.nota}</p>
-        ) : null}
+        {oracao.nota ? <p className="body-sm mt-4 text-muted-foreground">{oracao.nota}</p> : null}
         <Link
           to="/oracoes/diarias"
           className="btn-base btn-quiet btn-sm label-btn mt-6 print:hidden"
