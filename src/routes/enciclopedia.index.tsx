@@ -155,6 +155,9 @@ function EnciclopediaPage() {
             <Link to="/catecismo/artigos" className="btn-base btn-gold btn-md">
               Catecismo por artigos <ArrowRight className="size-4" />
             </Link>
+            <Link to="/doutrina" className="btn-base btn-outline-gold btn-md">
+              Estudos de doutrina
+            </Link>
             <a
               href="https://www.vatican.va/archive/cathechism_po/index_new/prima-pagina-cic_po.html"
               target="_blank"

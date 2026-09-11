@@ -19,3 +19,9 @@
 - [x] Apologética: páginas temáticas (Filosofia, Ciência, História, Escritura) com sumário, PDF e elos ao Catecismo e à Enciclopédia
 - [x] Sacramentos: páginas de sacramentais, sacramentários/livros litúrgicos, rituais e uma página para cada um dos sete sacramentos
 - [x] Bíblia: leitura contínua por livro (/biblia/{livro}/leitura) com versículos em ordem, sumário, PDF e elos ao Catecismo
+
+## Concluído (esta rodada)
+- Estudos de doutrina: /doutrina + Através do Coração, Pecado Original, Morte e Ressurreição (sumário + PDF)
+- /leitura-diaria: Escritura do dia versículo a versículo + parágrafos do CIC + tema da Enciclopédia + oração
+- /oracoes/diarias: uma oração por dia, com CIC, verbetes e próximos 7 dias
+- Índice Escritura→CIC ampliado com as passagens do plano diário

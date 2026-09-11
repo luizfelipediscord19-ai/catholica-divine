@@ -3,12 +3,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import rosario from "@/assets/rosario.jpg";
 import { useEffect, useMemo, useState } from "react";
 import { PageHero, Section, CardGrid, ContentCard, Prancha } from "../components/PageShell";
-import {
-  CATEGORIAS_ORACAO,
-  ORACOES,
-  type CategoriaOracao,
-  type Oracao,
-} from "@/lib/data/oracoes";
+import { CATEGORIAS_ORACAO, ORACOES, type CategoriaOracao, type Oracao } from "@/lib/data/oracoes";
 
 import { keywordsPara } from "@/lib/seo/palavras-chave";
 export const Route = createFileRoute("/oracoes/")({
@@ -36,11 +31,36 @@ export const Route = createFileRoute("/oracoes/")({
 });
 
 const DEVOCOES = [
-  { to: "/oracoes/rosario" as const, title: "Santo Rosário (interativo)", body: "Mistérios Gozosos, Luminosos, Dolorosos e Gloriosos — guiado etapa a etapa." },
-  { to: "/oracoes/terco-misericordia" as const, title: "Terço da Misericórdia", body: "Revelado a Santa Faustina — rezado especialmente às 15h." },
-  { to: "/oracoes/via-sacra" as const, title: "Via-Sacra", body: "Catorze estações que acompanham os passos de Cristo até o Calvário." },
-  { to: "/oracoes/liturgia-das-horas" as const, title: "Liturgia das Horas", body: "Laudes, Vésperas, Completas e demais Horas — a oração oficial da Igreja." },
-  { to: "/oracoes/novenas" as const, title: "Novenas", body: "Ao Espírito Santo, à Aparecida, a São José, ao Sagrado Coração e outras." },
+  {
+    to: "/oracoes/diarias" as const,
+    title: "Orações diárias",
+    body: "Uma oração por dia, com finalidade, momento indicado e ligação ao Catecismo.",
+  },
+  {
+    to: "/oracoes/rosario" as const,
+    title: "Santo Rosário (interativo)",
+    body: "Mistérios Gozosos, Luminosos, Dolorosos e Gloriosos — guiado etapa a etapa.",
+  },
+  {
+    to: "/oracoes/terco-misericordia" as const,
+    title: "Terço da Misericórdia",
+    body: "Revelado a Santa Faustina — rezado especialmente às 15h.",
+  },
+  {
+    to: "/oracoes/via-sacra" as const,
+    title: "Via-Sacra",
+    body: "Catorze estações que acompanham os passos de Cristo até o Calvário.",
+  },
+  {
+    to: "/oracoes/liturgia-das-horas" as const,
+    title: "Liturgia das Horas",
+    body: "Laudes, Vésperas, Completas e demais Horas — a oração oficial da Igreja.",
+  },
+  {
+    to: "/oracoes/novenas" as const,
+    title: "Novenas",
+    body: "Ao Espírito Santo, à Aparecida, a São José, ao Sagrado Coração e outras.",
+  },
 ];
 
 function CartaoOracao({
@@ -83,11 +103,7 @@ function CartaoOracao({
             <span className="block font-display text-lg sm:text-xl text-foreground group-hover:text-gold transition-colors">
               {oracao.titulo}
             </span>
-            {oracao.latim ? (
-              <span className="mt-1 block kicker">
-                {oracao.latim}
-              </span>
-            ) : null}
+            {oracao.latim ? <span className="mt-1 block kicker">{oracao.latim}</span> : null}
             {!aberto && (oracao.paraQue ?? oracao.nota) ? (
               <span className="mt-3 block text-xs leading-relaxed text-muted-foreground line-clamp-2">
                 {oracao.paraQue ?? oracao.nota}
@@ -107,18 +123,14 @@ function CartaoOracao({
         <div id={`oracao-${oracao.slug}`} className="px-6 pb-6 sm:px-8 sm:pb-8 space-y-5">
           {oracao.paraQue ? (
             <p className="text-sm leading-relaxed text-foreground/80">
-              <span className="mr-2 kicker">
-                Para que serve
-              </span>
+              <span className="mr-2 kicker">Para que serve</span>
               {oracao.paraQue}
             </p>
           ) : null}
 
           {oracao.quando ? (
             <p className="text-sm leading-relaxed text-foreground/80">
-              <span className="mr-2 kicker">
-                Quando rezar
-              </span>
+              <span className="mr-2 kicker">Quando rezar</span>
               {oracao.quando}
             </p>
           ) : null}
@@ -151,7 +163,6 @@ function CartaoOracao({
   );
 }
 
-
 function Page() {
   const [filtro, setFiltro] = useState<CategoriaOracao | "Todas">("Todas");
   const [aberto, setAberto] = useState<string | null>(null);
@@ -164,7 +175,6 @@ function Page() {
       document.getElementById(slug)?.scrollIntoView({ block: "start" });
     });
   }, []);
-
 
   const visiveis = useMemo(
     () => (filtro === "Todas" ? ORACOES : ORACOES.filter((o) => o.categoria === filtro)),
@@ -185,7 +195,7 @@ function Page() {
         eyebrow="Oratio"
         title="A Vida de Oração"
         intro="A oração é a respiração da alma cristã. Aqui você encontra a tradição orante da Igreja, das fórmulas mais antigas às devoções consagradas pelos séculos."
-      image={rosario}
+        image={rosario}
       />
 
       <Section kicker="Devoções" title="Caminhos consagrados pela Igreja">
@@ -207,10 +217,7 @@ function Page() {
         />
       </div>
 
-      <Section
-        kicker="Acervo de orações"
-        title={`${ORACOES.length} orações com texto integral`}
-      >
+      <Section kicker="Acervo de orações" title={`${ORACOES.length} orações com texto integral`}>
         <div
           role="group"
           aria-label="Filtrar orações por categoria"
@@ -239,9 +246,7 @@ function Page() {
         <div className="space-y-14">
           {grupos.map((grupo) => (
             <div key={grupo.cat}>
-              <h2 className="mb-6 kicker">
-                {grupo.cat}
-              </h2>
+              <h2 className="mb-6 kicker">{grupo.cat}</h2>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 {grupo.itens.map((o) => (
                   <CartaoOracao
@@ -251,7 +256,6 @@ function Page() {
                     onAlternar={() => setAberto(aberto === o.slug ? null : o.slug)}
                   />
                 ))}
-
               </div>
             </div>
           ))}

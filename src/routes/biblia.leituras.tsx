@@ -5,16 +5,21 @@ import { leituraDoDia, proximosDias, PLANO, dayOfYear } from "../lib/data/biblia
 import { keywordsPara } from "@/lib/seo/palavras-chave";
 import { FaixaAutoridade } from "@/components/SeloConfiabilidade";
 
-
 export const Route = createFileRoute("/biblia/leituras")({
   head: () => ({
     meta: [
       { title: "Leituras Diárias — Bíblia — Portal Católico" },
       { property: "og:url", content: "https://portalcatolico.vercel.app/biblia/leituras" },
-      { name: "description", content: "Plano de leitura bíblica diária com passagens e marcação de progresso." },
+      {
+        name: "description",
+        content: "Plano de leitura bíblica diária com passagens e marcação de progresso.",
+      },
       { name: "keywords", content: keywordsPara(["biblia", "liturgia"]) },
       { property: "og:title", content: "Leituras Diárias da Bíblia" },
-      { property: "og:description", content: "Um capítulo ou passagem da Sagrada Escritura para cada dia." },
+      {
+        property: "og:description",
+        content: "Um capítulo ou passagem da Sagrada Escritura para cada dia.",
+      },
     ],
     links: [{ rel: "canonical", href: "https://portalcatolico.vercel.app/biblia/leituras" }],
   }),
@@ -54,15 +59,22 @@ function useConcluidas() {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
       if (raw) setSet(new Set(JSON.parse(raw)));
-    } catch { /* noop */ }
+    } catch {
+      /* noop */
+    }
   }, []);
   const persist = (next: Set<string>) => {
     setSet(new Set(next));
-    try { localStorage.setItem(STORAGE_KEY, JSON.stringify([...next])); } catch { /* noop */ }
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify([...next]));
+    } catch {
+      /* noop */
+    }
   };
   const toggle = (id: string) => {
     const next = new Set(set);
-    if (next.has(id)) next.delete(id); else next.add(id);
+    if (next.has(id)) next.delete(id);
+    else next.add(id);
     persist(next);
   };
   const reset = () => persist(new Set());
@@ -87,8 +99,8 @@ function Page() {
       <p className="kicker mb-3">Lectio Divina · Plano Diário</p>
       <h1 className="title-page text-foreground">Leituras Diárias</h1>
       <p className="mt-4 text-muted-foreground max-w-2xl">
-        Uma passagem da Sagrada Escritura para cada dia, ligada diretamente ao texto carregado em Almeida.
-        Marque como concluído para acompanhar seu progresso.
+        Uma passagem da Sagrada Escritura para cada dia, ligada diretamente ao texto carregado em
+        Almeida. Marque como concluído para acompanhar seu progresso.
       </p>
 
       <FaixaAutoridade
@@ -97,19 +109,23 @@ function Page() {
         className="mt-6 max-w-3xl"
       />
 
-
       {/* Progresso */}
       <div className="mt-8 surface-card p-5">
         <div className="flex items-center justify-between gap-4 mb-3">
           <p className="kicker">Progresso</p>
-          <button onClick={reset} className="inline-flex items-center gap-1 label-btn text-muted-foreground hover:text-gold">
+          <button
+            onClick={reset}
+            className="inline-flex items-center gap-1 label-btn text-muted-foreground hover:text-gold"
+          >
             <RotateCcw className="size-3" /> Reiniciar
           </button>
         </div>
         <div className="h-1.5 bg-gold/10 overflow-hidden">
           <div className="h-full bg-gold transition-all" style={{ width: `${pct}%` }} />
         </div>
-        <p className="mt-2 text-step--2 text-muted-foreground">{feitas} de {total} leituras concluídas ({pct}%)</p>
+        <p className="mt-2 text-step--2 text-muted-foreground">
+          {feitas} de {total} leituras concluídas ({pct}%)
+        </p>
       </div>
 
       {/* Hoje */}
@@ -120,12 +136,13 @@ function Page() {
         <h2 className="font-display text-3xl md:text-4xl text-foreground">{hoje.tema}</h2>
         <p className="mt-2 text-gold text-sm tracking-wider uppercase">{refTexto(hoje)}</p>
         <div className="mt-6 flex flex-wrap items-center gap-3">
-          <Link
-            {...linkParaLeitura(hoje)}
-            className="btn-base btn-gold gap-2 label-btn"
-          >
+          <Link {...linkParaLeitura(hoje)} className="btn-base btn-gold gap-2 label-btn">
             <BookOpen className="size-3.5" /> Ler agora
           </Link>
+          <Link to="/leitura-diaria" className="btn-base btn-outline-gold gap-2 label-btn">
+            Leitura diária completa
+          </Link>
+
           <button
             onClick={() => toggle(idHoje)}
             className={
@@ -135,7 +152,8 @@ function Page() {
                 : "border-gold/30 text-muted-foreground hover:text-gold hover:border-gold/60")
             }
           >
-            <Check className="size-3.5" /> {concluidas.has(idHoje) ? "Concluído hoje" : "Marcar concluído"}
+            <Check className="size-3.5" />{" "}
+            {concluidas.has(idHoje) ? "Concluído hoje" : "Marcar concluído"}
           </button>
         </div>
       </article>
@@ -148,8 +166,8 @@ function Page() {
             const id = isoDia(data);
             const feita = concluidas.has(id);
             return (
-              <div 
-                key={id} 
+              <div
+                key={id}
                 className="flex flex-col md:flex-row md:items-center gap-3 p-5 hover:bg-gold/5 transition-smooth animate-content-fade"
                 style={{ animationDelay: `${i * 100}ms` }}
               >
@@ -158,18 +176,27 @@ function Page() {
                   aria-label={feita ? "Marcar como pendente" : "Marcar como concluído"}
                   className={
                     "size-7 grid place-items-center border shrink-0 transition-smooth " +
-                    (feita ? "bg-gold border-gold text-deep" : "border-gold/40 hover:border-gold hover:bg-gold/5")
+                    (feita
+                      ? "bg-gold border-gold text-deep"
+                      : "border-gold/40 hover:border-gold hover:bg-gold/5")
                   }
                 >
                   {feita ? <Check className="size-4" /> : null}
                 </button>
                 <Link {...linkParaLeitura(leitura)} className="flex-1 group">
                   <div className="kicker">{fmtData(data)}</div>
-                  <div className={"font-display text-lg group-hover:text-gold transition-smooth " + (feita ? "line-through text-muted-foreground" : "text-foreground")}>
+                  <div
+                    className={
+                      "font-display text-lg group-hover:text-gold transition-smooth " +
+                      (feita ? "line-through text-muted-foreground" : "text-foreground")
+                    }
+                  >
                     {leitura.tema}
                   </div>
                 </Link>
-                <div className="text-sm text-muted-foreground tracking-wider uppercase">{refTexto(leitura)}</div>
+                <div className="text-sm text-muted-foreground tracking-wider uppercase">
+                  {refTexto(leitura)}
+                </div>
               </div>
             );
           })}
@@ -178,15 +205,13 @@ function Page() {
 
       {/* Plano completo */}
       <section className="mt-14">
-        <h3 className="kicker mb-4">
-          Plano completo · ciclo de {PLANO.length} dias
-        </h3>
+        <h3 className="kicker mb-4">Plano completo · ciclo de {PLANO.length} dias</h3>
         <div className="grid sm:grid-cols-2 gap-px bg-gold/15">
           {PLANO.map((l, i) => {
             // Identificador estável por posição no plano (independe da data).
             const id = `plano-${i}`;
             const feita = concluidas.has(id);
-            const ehHoje = ((dayOfYear() - 1) % PLANO.length) === i;
+            const ehHoje = (dayOfYear() - 1) % PLANO.length === i;
             return (
               <div key={i} className="bg-background hover:bg-card p-4 group flex items-start gap-3">
                 <button
@@ -203,7 +228,12 @@ function Page() {
                   <div className="kicker">
                     Dia {i + 1} {ehHoje && <span className="text-gold">· hoje</span>}
                   </div>
-                  <div className={"font-display text-base group-hover:text-gold " + (feita ? "line-through text-muted-foreground" : "text-foreground")}>
+                  <div
+                    className={
+                      "font-display text-base group-hover:text-gold " +
+                      (feita ? "line-through text-muted-foreground" : "text-foreground")
+                    }
+                  >
                     {l.tema}
                   </div>
                   <div className="text-step--2 text-muted-foreground mt-1">{refTexto(l)}</div>
