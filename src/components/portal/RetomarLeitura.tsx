@@ -11,6 +11,7 @@ import {
 } from "@/lib/leitura-local";
 import { lerPlanos, proximoDia } from "@/lib/biblia/planos-progresso";
 import { acharPlano } from "@/lib/data/biblia/planos";
+import { useAuth } from "@/hooks/use-auth";
 
 /**
  * Retomada do plano de leitura em andamento — usada quando não há
@@ -56,12 +57,15 @@ function RetomarPlano({ className = "" }: { className?: string }) {
 
 /** Faixa discreta "Retomar leitura" — só aparece se houver marcador local. */
 export function RetomarLeitura({ className = "" }: { className?: string }) {
+  const { autenticado } = useAuth();
   const [marcador, setMarcador] = useState<MarcadorLeitura | null>(null);
 
   useEffect(() => {
     setMarcador(lerMarcador());
   }, []);
 
+  // Retomada de leitura é dado pessoal: exige conta.
+  if (!autenticado) return null;
   if (!marcador) return <RetomarPlano className={className} />;
 
   return (

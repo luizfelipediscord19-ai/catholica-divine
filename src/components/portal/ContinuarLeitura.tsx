@@ -3,6 +3,7 @@ import { BookOpen } from "lucide-react";
 
 import { LIVROS, getLivro } from "@/lib/data/biblia";
 import { usePainel } from "@/hooks/use-identidade";
+import { useAuth } from "@/hooks/use-auth";
 
 export const TOTAL_CAPITULOS = LIVROS.reduce((s, l) => s + l.capitulos, 0);
 
@@ -31,9 +32,11 @@ export function proximoCapitulo(ultima: Leitura | null, lidos: Leitura[]) {
 
 /** Cartão "Continuar de onde parei" — usa o progresso da identidade anônima. */
 export function ContinuarLeitura({ className = "" }: { className?: string }) {
+  const { autenticado } = useAuth();
   const painel = usePainel();
   const dados = painel.data;
-  if (!dados) return null;
+  // Progresso pessoal só aparece para quem entrou na conta.
+  if (!autenticado || !dados) return null;
 
   const alvo = proximoCapitulo(dados.ultimaLeitura ?? null, dados.leituras);
   const lidos = dados.leituras.length;

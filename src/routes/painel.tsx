@@ -13,6 +13,7 @@ import { useCelebracao } from "@/components/portal/Celebracao";
 import { EscolherSanto } from "@/components/portal/EscolherSanto";
 import { grauDoNivel, proximoGrau } from "@/lib/portal/niveis";
 import { EstadoSessao } from "@/components/portal/EstadoSessao";
+import { ConviteEntrar } from "@/components/portal/SomenteMembros";
 import { useIdentidade, usePainel } from "@/hooks/use-identidade";
 import { useAuth } from "@/hooks/use-auth";
 import { registrarOracaoFn } from "@/lib/portal.functions";
@@ -74,6 +75,29 @@ function PainelPage() {
         <Link to="/auth" className="btn-base btn-gold px-6 py-3 label-btn inline-flex w-fit">
           Entrar na minha conta
         </Link>
+      </div>
+    );
+  }
+
+  // Missões, tarefas do dia, sequência e XP são dados da pessoa: só após entrar.
+  if (!autenticado) {
+    return (
+      <div className="shell py-block space-y-8">
+        <p className="kicker">Área de membros</p>
+        <h1 className="title-page leading-tight text-foreground">Meu Painel Espiritual</h1>
+        <div className="filete-ouro" />
+        <ConviteEntrar
+          titulo="Entre para abrir seu painel"
+          texto="Missões, tarefas do dia, sequência de oração, diário espiritual, progresso de leitura e conquistas ficam guardados na sua conta e voltam em qualquer aparelho. Todo o conteúdo do portal — Bíblia, Catecismo, santos e orações — continua livre sem conta."
+        />
+        <div className="action-tray">
+          <Link to="/leitura-diaria" className="btn-base btn-outline-gold btn-md">
+            Leitura diária
+          </Link>
+          <Link to="/catecismo/aulas" className="btn-base btn-quiet btn-md">
+            Aulas de catecismo
+          </Link>
+        </div>
       </div>
     );
   }
