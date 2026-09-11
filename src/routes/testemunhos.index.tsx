@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
-import { Heart, MessageSquare, ArrowRight } from "lucide-react";
+import { Heart, MessageSquare, ArrowRight, MapPin, CalendarDays } from "lucide-react";
 import santosGloria from "@/assets/santos-gloria.jpg";
 
 import { PageHero, Section } from "@/components/PageShell";
@@ -8,6 +8,7 @@ import { AutorSelo, Painel, Rotulo, autorDe, botaoClass, formatarData } from "@/
 import { useIdentidade } from "@/hooks/use-identidade";
 import { listarTopicosFn } from "@/lib/portal.functions";
 import { keywordsPara } from "@/lib/seo/palavras-chave";
+import { dataTestemunho, testemunhosOrdenados } from "@/lib/data/testemunhos";
 
 const SECAO = "santos-e-testemunhos";
 const URL = "https://portalcatolico.vercel.app/testemunhos";
