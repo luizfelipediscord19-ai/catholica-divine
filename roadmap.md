@@ -16,3 +16,6 @@
 
 - [x] Enciclopédia: páginas temáticas (Teologia, Moral, Liturgia, Mariologia) com sumário e impressão em PDF
 - [x] Bíblia: versículos com elo para os parágrafos do Catecismo (índice de citações + painel "Este capítulo no Catecismo")
+- [x] Apologética: páginas temáticas (Filosofia, Ciência, História, Escritura) com sumário, PDF e elos ao Catecismo e à Enciclopédia
+- [x] Sacramentos: páginas de sacramentais, sacramentários/livros litúrgicos, rituais e uma página para cada um dos sete sacramentos
+- [x] Bíblia: leitura contínua por livro (/biblia/{livro}/leitura) com versículos em ordem, sumário, PDF e elos ao Catecismo
