@@ -126,6 +126,10 @@ function Page() {
           >
             <BookOpen className="size-3.5" /> Ler agora
           </Link>
+          <Link to="/leitura-diaria" className="btn-base btn-outline-gold gap-2 label-btn">
+            Leitura diária completa
+          </Link>
+
           <button
             onClick={() => toggle(idHoje)}
             className={
