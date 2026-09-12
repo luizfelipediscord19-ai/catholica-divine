@@ -1,31 +1,11 @@
-# Roadmap
+# Roadmap — Atualização profissional do Portal Católico
 
-- [x] Restaurar todos os botões ao comportamento e dimensões anteriores.
-- [x] Refinar UX/UI geral sem redesenhar botões.
-- [x] Conectar cadastro, login, reconciliação de identidade e publicação no fórum.
-- [x] Validar tipos e fluxos principais em desktop e celular.
-- [x] Corrigir alinhamento interno e entre ações em todas as larguras, sem alterar o desenho dos botões.
-- [x] Aplicar a direção visual Sacred Nave Symmetry mantendo paleta, fontes e imagens atuais.
-- [x] Ampliar o conteúdo com uma Enciclopédia Católica interligada e fontes verificáveis.
-- [x] Validar a nova composição e o conteúdo em celular e computador.
-- [x] Ampliar acervo de santos (imagens e perfis longos) e de orações.
-- [x] Nova ampliação: +23 santos com imagem, +23 orações, +16 objeções apologéticas, +8 artigos do Catecismo, detalhes (estrutura, liturgia, dificuldades) em 12 livros bíblicos.
-- [x] Ampliar a Mariologia com ano litúrgico, culto, objeções e outras tradições.
-- [x] Sumário automático em páginas de explicação, com impressão em cores e em preto e branco.
-- [x] Remover a ficha duplicada de Santa Mônica; todo santo tem imagem.
-
-- [x] Enciclopédia: páginas temáticas (Teologia, Moral, Liturgia, Mariologia) com sumário e impressão em PDF
-- [x] Bíblia: versículos com elo para os parágrafos do Catecismo (índice de citações + painel "Este capítulo no Catecismo")
-- [x] Apologética: páginas temáticas (Filosofia, Ciência, História, Escritura) com sumário, PDF e elos ao Catecismo e à Enciclopédia
-- [x] Sacramentos: páginas de sacramentais, sacramentários/livros litúrgicos, rituais e uma página para cada um dos sete sacramentos
-- [x] Bíblia: leitura contínua por livro (/biblia/{livro}/leitura) com versículos em ordem, sumário, PDF e elos ao Catecismo
-
-## Concluído (esta rodada)
-- Estudos de doutrina: /doutrina + Através do Coração, Pecado Original, Morte e Ressurreição (sumário + PDF)
-- /leitura-diaria: Escritura do dia versículo a versículo + parágrafos do CIC + tema da Enciclopédia + oração
-- /oracoes/diarias: uma oração por dia, com CIC, verbetes e próximos 7 dias
-- Índice Escritura→CIC ampliado com as passagens do plano diário
-
-## Concluído (rodada de membros + aulas)
-- Missões, tarefas do dia, sequências, XP e progresso de leitura agora só aparecem após login (`SomenteMembros`, painel com convite, RetomarLeitura/ContinuarLeitura/MarcarEstudo silenciosos sem conta).
-- Curso de catecismo em 16 semanas (`/catecismo/aulas`) com exposição, perguntas e respostas, leitura, tarefa e links diretos para os parágrafos do CIC; entradas no sitemap e link no Catecismo.
+- [ ] Auditoria completa: rotas, links, erros, imagens, ações, responsividade, acessibilidade, SEO e desempenho
+- [ ] Arquitetura de navegação desktop e mobile
+- [ ] Home e busca orientadas a estudo
+- [ ] Sistema de fontes e melhorias da Sophia
+- [ ] Modo estudo, Bíblia, Catecismo e formação
+- [ ] Padronização editorial: santos, sacramentos, liturgia e orações
+- [ ] Privacidade, design system e microinterações
+- [ ] SEO, performance e acessibilidade WCAG AA
+- [ ] Testes finais e relatório consolidado
