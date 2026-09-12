@@ -23,6 +23,7 @@ import { Route as SacramentosRouteImport } from './routes/sacramentos'
 import { Route as RedefinirSenhaRouteImport } from './routes/redefinir-senha'
 import { Route as PrivacidadeRouteImport } from './routes/privacidade'
 import { Route as PainelRouteImport } from './routes/painel'
+import { Route as PadresDaIgrejaRouteImport } from './routes/padres-da-igreja'
 import { Route as OracoesRouteImport } from './routes/oracoes'
 import { Route as MariaRouteImport } from './routes/maria'
 import { Route as LiturgiaDiariaRouteImport } from './routes/liturgia-diaria'
@@ -169,6 +170,11 @@ const PrivacidadeRoute = PrivacidadeRouteImport.update({
 const PainelRoute = PainelRouteImport.update({
   id: '/painel',
   path: '/painel',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PadresDaIgrejaRoute = PadresDaIgrejaRouteImport.update({
+  id: '/padres-da-igreja',
+  path: '/padres-da-igreja',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OracoesRoute = OracoesRouteImport.update({
@@ -577,6 +583,7 @@ export interface FileRoutesByFullPath {
   '/liturgia-diaria': typeof LiturgiaDiariaRoute
   '/maria': typeof MariaRoute
   '/oracoes': typeof OracoesRouteWithChildren
+  '/padres-da-igreja': typeof PadresDaIgrejaRoute
   '/painel': typeof PainelRoute
   '/privacidade': typeof PrivacidadeRoute
   '/redefinir-senha': typeof RedefinirSenhaRoute
@@ -662,6 +669,7 @@ export interface FileRoutesByTo {
   '/leitura-diaria': typeof LeituraDiariaRoute
   '/liturgia-diaria': typeof LiturgiaDiariaRoute
   '/maria': typeof MariaRoute
+  '/padres-da-igreja': typeof PadresDaIgrejaRoute
   '/painel': typeof PainelRoute
   '/privacidade': typeof PrivacidadeRoute
   '/redefinir-senha': typeof RedefinirSenhaRoute
@@ -749,6 +757,7 @@ export interface FileRoutesById {
   '/liturgia-diaria': typeof LiturgiaDiariaRoute
   '/maria': typeof MariaRoute
   '/oracoes': typeof OracoesRouteWithChildren
+  '/padres-da-igreja': typeof PadresDaIgrejaRoute
   '/painel': typeof PainelRoute
   '/privacidade': typeof PrivacidadeRoute
   '/redefinir-senha': typeof RedefinirSenhaRoute
@@ -842,6 +851,7 @@ export interface FileRouteTypes {
     | '/liturgia-diaria'
     | '/maria'
     | '/oracoes'
+    | '/padres-da-igreja'
     | '/painel'
     | '/privacidade'
     | '/redefinir-senha'
@@ -927,6 +937,7 @@ export interface FileRouteTypes {
     | '/leitura-diaria'
     | '/liturgia-diaria'
     | '/maria'
+    | '/padres-da-igreja'
     | '/painel'
     | '/privacidade'
     | '/redefinir-senha'
@@ -1013,6 +1024,7 @@ export interface FileRouteTypes {
     | '/liturgia-diaria'
     | '/maria'
     | '/oracoes'
+    | '/padres-da-igreja'
     | '/painel'
     | '/privacidade'
     | '/redefinir-senha'
@@ -1105,6 +1117,7 @@ export interface RootRouteChildren {
   LiturgiaDiariaRoute: typeof LiturgiaDiariaRoute
   MariaRoute: typeof MariaRoute
   OracoesRoute: typeof OracoesRouteWithChildren
+  PadresDaIgrejaRoute: typeof PadresDaIgrejaRoute
   PainelRoute: typeof PainelRoute
   PrivacidadeRoute: typeof PrivacidadeRoute
   RedefinirSenhaRoute: typeof RedefinirSenhaRoute
@@ -1233,6 +1246,13 @@ declare module '@tanstack/react-router' {
       path: '/painel'
       fullPath: '/painel'
       preLoaderRoute: typeof PainelRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/padres-da-igreja': {
+      id: '/padres-da-igreja'
+      path: '/padres-da-igreja'
+      fullPath: '/padres-da-igreja'
+      preLoaderRoute: typeof PadresDaIgrejaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/oracoes': {
@@ -1976,6 +1996,7 @@ const rootRouteChildren: RootRouteChildren = {
   LiturgiaDiariaRoute: LiturgiaDiariaRoute,
   MariaRoute: MariaRoute,
   OracoesRoute: OracoesRouteWithChildren,
+  PadresDaIgrejaRoute: PadresDaIgrejaRoute,
   PainelRoute: PainelRoute,
   PrivacidadeRoute: PrivacidadeRoute,
   RedefinirSenhaRoute: RedefinirSenhaRoute,
