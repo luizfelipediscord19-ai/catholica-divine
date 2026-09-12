@@ -6,6 +6,7 @@ import { AULAS } from "@/lib/data/catecismo/aulas";
 import { NOVENAS } from "@/lib/data/devocoes/novenas";
 import { SECOES_FORUM } from "@/lib/data/forum-secoes";
 import { TRILHAS } from "@/lib/data/trilhas";
+import { TESTEMUNHOS } from "@/lib/data/testemunhos";
 
 export const BASE_URL = "https://portalcatolico.vercel.app";
 
@@ -108,6 +109,12 @@ export const PAGINAS: SitemapEntry[] = [
   ...SECOES_FORUM.map((s) => ({
     path: `/forum/${s.slug}`,
     changefreq: "daily" as const,
+    priority: "0.6",
+  })),
+  ...TESTEMUNHOS.map((t) => ({
+    path: `/testemunhos/${t.slug}`,
+    lastmod: t.data,
+    changefreq: "yearly" as const,
     priority: "0.6",
   })),
 ];

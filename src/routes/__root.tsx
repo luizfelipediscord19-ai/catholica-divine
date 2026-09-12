@@ -22,6 +22,7 @@ import { TarefasDoDia } from "../components/portal/TarefasDoDia";
 import { SomenteMembros } from "../components/portal/SomenteMembros";
 import { ConsentimentoLGPD } from "../components/portal/ConsentimentoLGPD";
 import { SumarioPagina } from "../components/SumarioPagina";
+import { MobileBottomNav } from "../components/MobileBottomNav";
 import { NotificacoesProvider } from "../hooks/use-notificacoes";
 import { SCRIPT_TEMA } from "../lib/tema";
 
@@ -193,7 +194,7 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <NotificacoesProvider>
         <CelebracaoProvider>
-          <div className="min-h-dvh flex flex-col">
+          <div className="min-h-dvh flex flex-col pb-[calc(4rem+env(safe-area-inset-bottom))] lg:pb-0">
             <a
               href="#conteudo"
               className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-gold focus:px-5 focus:py-3 focus:text-step--2 focus:uppercase focus:tracking-[0.16em] focus:text-deep"
@@ -205,6 +206,7 @@ function RootComponent() {
               <Outlet />
             </main>
             <SiteFooter />
+            <MobileBottomNav />
             <ScrollToTop />
             <SumarioPagina />
             <InstalarApp />

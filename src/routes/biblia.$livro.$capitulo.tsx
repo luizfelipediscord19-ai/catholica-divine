@@ -31,7 +31,6 @@ async function carregarCapitulo(
   return capituloLocal(versao, slug, cap);
 }
 
-
 type Search = { vi?: number; vf?: number };
 
 export const Route = createFileRoute("/biblia/$livro/$capitulo")({
@@ -124,8 +123,18 @@ export const Route = createFileRoute("/biblia/$livro/$capitulo")({
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Início", item: "https://portalcatolico.vercel.app/" },
-              { "@type": "ListItem", position: 2, name: "Bíblia", item: "https://portalcatolico.vercel.app/biblia" },
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Início",
+                item: "https://portalcatolico.vercel.app/",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Bíblia",
+                item: "https://portalcatolico.vercel.app/biblia",
+              },
               {
                 "@type": "ListItem",
                 position: 3,
@@ -144,7 +153,9 @@ export const Route = createFileRoute("/biblia/$livro/$capitulo")({
   notFoundComponent: () => (
     <div className="shell-narrow py-block text-center">
       <p className="text-gold">Capítulo não encontrado.</p>
-      <Link to="/biblia" className="text-sm underline mt-4 inline-block">← Voltar</Link>
+      <Link to="/biblia" className="text-sm underline mt-4 inline-block">
+        ← Voltar
+      </Link>
     </div>
   ),
 });
@@ -211,7 +222,8 @@ function Page() {
   };
 
   const limparPassagem = () => {
-    setInicio(""); setFim("");
+    setInicio("");
+    setFim("");
     navigate({
       to: "/biblia/$livro/$capitulo",
       params: { livro: livro.slug, capitulo: String(capitulo) },
@@ -246,7 +258,8 @@ function Page() {
         {livro.nome} <span className="text-gold">{capitulo}</span>
         {refPassagem && (
           <span className="text-gold/80 text-2xl sm:text-4xl">
-            :{vi}{vf && vf !== vi ? `-${vf}` : ""}
+            :{vi}
+            {vf && vf !== vi ? `-${vf}` : ""}
           </span>
         )}
       </h1>
@@ -275,8 +288,11 @@ function Page() {
           <label className="label-btn text-muted-foreground">
             Versículo inicial
             <input
-              type="number" min={1} inputMode="numeric"
-              value={inicio} onChange={(e) => setInicio(e.target.value)}
+              type="number"
+              min={1}
+              inputMode="numeric"
+              value={inicio}
+              onChange={(e) => setInicio(e.target.value)}
               placeholder="ex. 16"
               className="field-base mt-1 sm:w-24 text-base sm:text-sm"
             />
@@ -284,8 +300,11 @@ function Page() {
           <label className="label-btn text-muted-foreground">
             Final (opcional)
             <input
-              type="number" min={1} inputMode="numeric"
-              value={fim} onChange={(e) => setFim(e.target.value)}
+              type="number"
+              min={1}
+              inputMode="numeric"
+              value={fim}
+              onChange={(e) => setFim(e.target.value)}
               placeholder="ex. 18"
               className="field-base mt-1 sm:w-24 text-base sm:text-sm"
             />
@@ -296,7 +315,11 @@ function Page() {
             Abrir passagem
           </button>
           {passagemAtiva && (
-            <button type="button" onClick={limparPassagem} className="inline-flex items-center gap-1 min-h-11 px-3 label-btn text-muted-foreground hover:text-gold">
+            <button
+              type="button"
+              onClick={limparPassagem}
+              className="inline-flex items-center gap-1 min-h-11 px-3 label-btn text-muted-foreground hover:text-gold"
+            >
               <X className="size-3" /> Capítulo inteiro
             </button>
           )}
@@ -314,16 +337,22 @@ function Page() {
       )}
 
       <div data-leitura-oculto>
-      <BarraLeitura
-        lido={pessoal.lido}
-        pronto={pessoal.pronto}
-        pendente={pessoal.marcar.isPending}
-        onAlternar={() => pessoal.marcar.mutate(!pessoal.lido)}
-      />
+        <BarraLeitura
+          lido={pessoal.lido}
+          pronto={pessoal.pronto}
+          pendente={pessoal.marcar.isPending}
+          onAlternar={() => pessoal.marcar.mutate(!pessoal.lido)}
+        />
       </div>
 
       {/* Seletor de versão — todas servidas pelo próprio portal */}
-      <div data-leitura-oculto className="mt-6 -mx-4 px-4 sm:mx-0 sm:px-0 flex gap-2 overflow-x-auto pb-1 sm:flex-wrap sm:overflow-visible">
+      <div
+        data-leitura-oculto
+        tabIndex={0}
+        role="group"
+        aria-label="Versões disponíveis da Bíblia; deslize horizontalmente para ver todas"
+        className="mt-6 -mx-4 px-4 sm:mx-0 sm:px-0 flex gap-2 overflow-x-auto pb-1 sm:flex-wrap sm:overflow-visible focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+      >
         {VERSOES.map((v) => {
           const ativo = v.id === versao;
           return (
@@ -345,22 +374,22 @@ function Page() {
         })}
       </div>
       <p className="mt-2 text-step--2 text-muted-foreground">
-        Versão: <span className="text-gold">{versaoAtual.nome}</span> — {versaoAtual.lingua} · {versaoAtual.fonte}
+        Versão: <span className="text-gold">{versaoAtual.nome}</span> — {versaoAtual.lingua} ·{" "}
+        {versaoAtual.fonte}
       </p>
       {!almeidaTemLivro && (
         <p className="mt-1 text-step--2 text-muted-foreground leading-relaxed">
-          Livro deuterocanônico: reconhecido pela Igreja Católica (Concílio de Trento,
-          1546) e ausente das edições protestantes de domínio público. Por isso o texto
-          é servido aqui na Vulgata Clementina (latim) e na Douay-Rheims (inglês).
+          Livro deuterocanônico: reconhecido pela Igreja Católica (Concílio de Trento, 1546) e
+          ausente das edições protestantes de domínio público. Por isso o texto é servido aqui na
+          Vulgata Clementina (latim) e na Douay-Rheims (inglês).
         </p>
       )}
       {livro.slug === "salmos" && (versao === "vulgata" || versao === "grego") ? (
         <p className="mt-1 text-step--2 text-muted-foreground">
-          Atenção: na Vulgata e na Septuaginta a numeração dos Salmos é deslocada em uma unidade
-          em boa parte do saltério.
+          Atenção: na Vulgata e na Septuaginta a numeração dos Salmos é deslocada em uma unidade em
+          boa parte do saltério.
         </p>
       ) : null}
-
 
       <article className="mt-8 md:mt-12 surface-card backdrop-blur-sm p-5 sm:p-10 md:p-16 shadow-2xl shadow-gold/5">
         <p className="kicker mb-6">
@@ -374,13 +403,14 @@ function Page() {
               <div key={i} className="esqueleto h-4" style={{ width: `${92 - (i % 3) * 14}%` }} />
             ))}
           </div>
-
         ) : !versosFiltrados ? (
           <p className="text-muted-foreground text-sm">
             Esta edição não contém {livro.nome} {capitulo}. Escolha outra versão acima.
           </p>
         ) : versosFiltrados.length === 0 ? (
-          <p className="text-muted-foreground text-sm">Nenhum versículo encontrado nesse intervalo.</p>
+          <p className="text-muted-foreground text-sm">
+            Nenhum versículo encontrado nesse intervalo.
+          </p>
         ) : (
           <div
             dir={versaoAtual.direcao ?? "ltr"}
@@ -399,17 +429,15 @@ function Page() {
                 <EstrelaVersiculo
                   ativa={pessoal.favoritos.includes(v.v)}
                   disabled={!pessoal.pronto || pessoal.favoritar.isPending}
-                  onClick={() => pessoal.favoritar.mutate({ versiculo: v.v, texto: v.t.slice(0, 900) })}
+                  onClick={() =>
+                    pessoal.favoritar.mutate({ versiculo: v.v, texto: v.t.slice(0, 900) })
+                  }
                 />
                 <span className="block">
                   {v.t}
                   <CatecismoDoVersiculo livro={livro.slug} capitulo={capitulo} versiculo={v.v} />
                   <span data-leitura-oculto>
-                    <SophiaVersiculo
-                      livro={livro.nome}
-                      capitulo={capitulo}
-                      versiculo={v.v}
-                    />
+                    <SophiaVersiculo livro={livro.nome} capitulo={capitulo} versiculo={v.v} />
                   </span>
                 </span>
               </p>
@@ -418,8 +446,8 @@ function Page() {
         )}
 
         <p className="mt-8 pt-6 border-t border-gold/15 text-step--2 text-muted-foreground leading-relaxed">
-          Edições de domínio público hospedadas no próprio portal. Traduções protegidas por
-          direito autoral (Ave-Maria, Nova Vulgata) não são reproduzidas aqui.
+          Edições de domínio público hospedadas no próprio portal. Traduções protegidas por direito
+          autoral (Ave-Maria, Nova Vulgata) não são reproduzidas aqui.
         </p>
       </article>
 
@@ -445,16 +473,24 @@ function Page() {
             params={{ livro: livro.slug, capitulo: String(anterior) }}
             className="inline-flex items-center gap-2 min-h-11 text-sm text-muted-foreground hover:text-gold"
           >
-            <ChevronLeft className="size-4 shrink-0" /> <span className="truncate">{livro.abrev} {anterior}</span>
+            <ChevronLeft className="size-4 shrink-0" />{" "}
+            <span className="truncate">
+              {livro.abrev} {anterior}
+            </span>
           </Link>
-        ) : <span />}
+        ) : (
+          <span />
+        )}
         {proximo ? (
           <Link
             to="/biblia/$livro/$capitulo"
             params={{ livro: livro.slug, capitulo: String(proximo) }}
             className="inline-flex items-center gap-2 min-h-11 text-sm text-muted-foreground hover:text-gold ml-auto"
           >
-            <span className="truncate">{livro.abrev} {proximo}</span> <ChevronRight className="size-4 shrink-0" />
+            <span className="truncate">
+              {livro.abrev} {proximo}
+            </span>{" "}
+            <ChevronRight className="size-4 shrink-0" />
           </Link>
         ) : null}
       </nav>
