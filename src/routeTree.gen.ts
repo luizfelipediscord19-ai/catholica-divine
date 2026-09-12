@@ -41,6 +41,7 @@ import { Route as DesignSystemRouteImport } from './routes/design-system'
 import { Route as CoroinhasRouteImport } from './routes/coroinhas'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as ConfissaoRouteImport } from './routes/confissao'
+import { Route as ConciliosRouteImport } from './routes/concilios'
 import { Route as CatecismoRouteImport } from './routes/catecismo'
 import { Route as CalendarioLiturgicoRouteImport } from './routes/calendario-liturgico'
 import { Route as BuscaRouteImport } from './routes/busca'
@@ -258,6 +259,11 @@ const ContatoRoute = ContatoRouteImport.update({
 const ConfissaoRoute = ConfissaoRouteImport.update({
   id: '/confissao',
   path: '/confissao',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConciliosRoute = ConciliosRouteImport.update({
+  id: '/concilios',
+  path: '/concilios',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CatecismoRoute = CatecismoRouteImport.update({
@@ -552,6 +558,7 @@ export interface FileRoutesByFullPath {
   '/busca': typeof BuscaRoute
   '/calendario-liturgico': typeof CalendarioLiturgicoRoute
   '/catecismo': typeof CatecismoRouteWithChildren
+  '/concilios': typeof ConciliosRoute
   '/confissao': typeof ConfissaoRoute
   '/contato': typeof ContatoRoute
   '/coroinhas': typeof CoroinhasRoute
@@ -639,6 +646,7 @@ export interface FileRoutesByTo {
   '/auth': typeof AuthRoute
   '/busca': typeof BuscaRoute
   '/calendario-liturgico': typeof CalendarioLiturgicoRoute
+  '/concilios': typeof ConciliosRoute
   '/confissao': typeof ConfissaoRoute
   '/contato': typeof ContatoRoute
   '/coroinhas': typeof CoroinhasRoute
@@ -722,6 +730,7 @@ export interface FileRoutesById {
   '/busca': typeof BuscaRoute
   '/calendario-liturgico': typeof CalendarioLiturgicoRoute
   '/catecismo': typeof CatecismoRouteWithChildren
+  '/concilios': typeof ConciliosRoute
   '/confissao': typeof ConfissaoRoute
   '/contato': typeof ContatoRoute
   '/coroinhas': typeof CoroinhasRoute
@@ -814,6 +823,7 @@ export interface FileRouteTypes {
     | '/busca'
     | '/calendario-liturgico'
     | '/catecismo'
+    | '/concilios'
     | '/confissao'
     | '/contato'
     | '/coroinhas'
@@ -901,6 +911,7 @@ export interface FileRouteTypes {
     | '/auth'
     | '/busca'
     | '/calendario-liturgico'
+    | '/concilios'
     | '/confissao'
     | '/contato'
     | '/coroinhas'
@@ -983,6 +994,7 @@ export interface FileRouteTypes {
     | '/busca'
     | '/calendario-liturgico'
     | '/catecismo'
+    | '/concilios'
     | '/confissao'
     | '/contato'
     | '/coroinhas'
@@ -1074,6 +1086,7 @@ export interface RootRouteChildren {
   BuscaRoute: typeof BuscaRoute
   CalendarioLiturgicoRoute: typeof CalendarioLiturgicoRoute
   CatecismoRoute: typeof CatecismoRouteWithChildren
+  ConciliosRoute: typeof ConciliosRoute
   ConfissaoRoute: typeof ConfissaoRoute
   ContatoRoute: typeof ContatoRoute
   CoroinhasRoute: typeof CoroinhasRoute
@@ -1346,6 +1359,13 @@ declare module '@tanstack/react-router' {
       path: '/confissao'
       fullPath: '/confissao'
       preLoaderRoute: typeof ConfissaoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/concilios': {
+      id: '/concilios'
+      path: '/concilios'
+      fullPath: '/concilios'
+      preLoaderRoute: typeof ConciliosRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/catecismo': {
@@ -1937,6 +1957,7 @@ const rootRouteChildren: RootRouteChildren = {
   BuscaRoute: BuscaRoute,
   CalendarioLiturgicoRoute: CalendarioLiturgicoRoute,
   CatecismoRoute: CatecismoRouteWithChildren,
+  ConciliosRoute: ConciliosRoute,
   ConfissaoRoute: ConfissaoRoute,
   ContatoRoute: ContatoRoute,
   CoroinhasRoute: CoroinhasRoute,
