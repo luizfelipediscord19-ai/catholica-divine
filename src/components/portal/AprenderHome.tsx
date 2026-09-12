@@ -55,7 +55,7 @@ export function BuscaAprender() {
             type="search"
             value={termo}
             onChange={(e) => setTermo(e.target.value)}
-            placeholder="Digite uma dúvida sobre a fé..."
+            placeholder="Pesquise na Bíblia, Catecismo, Magistério, Santos…"
             className="field-base min-h-13 py-4 pl-11 pr-4 text-base"
           />
         </div>

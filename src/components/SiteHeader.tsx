@@ -13,50 +13,63 @@ const GRUPOS: { titulo: string; itens: { to: string; label: string }[] }[] = [
   {
     titulo: "Estudar",
     itens: [
-      { to: "/estudar", label: "Começar a estudar" },
-      { to: "/trilhas", label: "Trilhas de estudo" },
-      { to: "/fe-catolica", label: "A Fé Católica" },
+      { to: "/biblia", label: "Bíblia" },
       { to: "/catecismo", label: "Catecismo" },
+      { to: "/doutrina", label: "Doutrina" },
       { to: "/apologetica", label: "Apologética" },
+      { to: "/doutores-da-igreja", label: "Padres e Doutores" },
       { to: "/glossario", label: "Glossário" },
     ],
   },
   {
-    titulo: "Escrituras & Liturgia",
-    itens: [
-      { to: "/biblia", label: "Bíblia" },
-      { to: "/biblia/planos", label: "Planos de leitura" },
-      { to: "/liturgia-diaria", label: "Liturgia do dia" },
-      { to: "/calendario-liturgico", label: "Calendário litúrgico" },
-      { to: "/sacramentos", label: "Sacramentos" },
-      { to: "/coroinhas", label: "Coroinhas" },
-    ],
-  },
-  {
-    titulo: "Devoção",
+    titulo: "Viver a Fé",
     itens: [
       { to: "/oracoes", label: "Orações" },
+      { to: "/sacramentos", label: "Sacramentos" },
       { to: "/confissao", label: "Confissão" },
+      { to: "/oracoes/rosario", label: "Rosário" },
+      { to: "/oracoes/liturgia-das-horas", label: "Liturgia das Horas" },
       { to: "/santos", label: "Santos" },
-      { to: "/maria", label: "Maria" },
+      { to: "/maria", label: "Maria Santíssima" },
     ],
   },
   {
-    titulo: "Comunidade",
+    titulo: "Liturgia",
     itens: [
-      { to: "/forum", label: "Fórum" },
-      { to: "/noticias", label: "Notícias" },
-      { to: "/assistente", label: "Sophia IA" },
-      { to: "/sobre", label: "Sobre o Portal" },
+      { to: "/liturgia-diaria", label: "Liturgia do dia e Evangelho" },
+      { to: "/santos", label: "Santo do dia" },
+      { to: "/calendario-liturgico", label: "Calendário e Ano Litúrgico" },
+      { to: "/biblia/leituras", label: "Leituras" },
     ],
   },
   {
-    titulo: "Minha conta",
+    titulo: "Formação",
+    itens: [
+      { to: "/trilhas", label: "Trilhas de estudo" },
+      { to: "/trilhas/primeiros-passos", label: "Iniciante" },
+      { to: "/trilhas/catequese-intermediaria", label: "Intermediário" },
+      { to: "/trilhas/apologetica", label: "Avançado" },
+      { to: "/trilhas/teologia", label: "Teologia" },
+    ],
+  },
+  {
+    titulo: "Sophia e pesquisa",
+    itens: [
+      { to: "/assistente", label: "Assistente Católica" },
+      { to: "/fontes", label: "Fontes e metodologia" },
+      { to: "/busca", label: "Buscar no acervo" },
+      { to: "/enciclopedia", label: "Enciclopédia Católica" },
+    ],
+  },
+  {
+    titulo: "Portal e conta",
     itens: [
       { to: "/painel", label: "Meu painel" },
       { to: "/favoritos", label: "Favoritos" },
-      { to: "/busca", label: "Busca avançada" },
-      { to: "/auth", label: "Entrar / criar conta" },
+      { to: "/forum", label: "Fórum" },
+      { to: "/noticias", label: "Notícias" },
+      { to: "/explorar", label: "Explorar o Portal" },
+      { to: "/sobre", label: "Sobre" },
     ],
   },
 ];
@@ -64,12 +77,9 @@ const GRUPOS: { titulo: string; itens: { to: string; label: string }[] }[] = [
 /** Navegação principal: poucos destinos, sempre os mesmos, um só estilo. */
 const NAV_PRINCIPAL: { to: string; label: string; amplo?: boolean }[] = [
   { to: "/estudar", label: "Estudar" },
-  { to: "/biblia", label: "Bíblia" },
-  { to: "/oracoes", label: "Orações" },
-  { to: "/santos", label: "Santos" },
-  // Só aparecem quando há folga real de largura; no menu completo sempre estão.
-  { to: "/noticias", label: "Notícias", amplo: true },
-  { to: "/forum", label: "Fórum", amplo: true },
+  { to: "/oracoes", label: "Viver a Fé" },
+  { to: "/liturgia-diaria", label: "Liturgia" },
+  { to: "/trilhas", label: "Formação" },
 ];
 
 const ICONE_REDONDO =

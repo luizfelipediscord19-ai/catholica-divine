@@ -140,14 +140,8 @@ const PILLARS = [
   {
     to: "/calendario-liturgico",
     icon: Calendar,
-    title: "Calendário",
+    title: "Liturgia",
     desc: "Tempo litúrgico, festas, solenidades e memórias dos santos celebradas pela Igreja.",
-  },
-  {
-    to: "/assistente",
-    icon: Sparkles,
-    title: "Sophia IA",
-    desc: "Assistente que responde com base no Catecismo, na Escritura e nos documentos do Magistério.",
   },
 ];
 
@@ -285,8 +279,8 @@ function Home() {
             </h1>
             <div aria-hidden className="filete-ouro mx-auto mb-5 max-w-[12rem] sm:mb-7" />
             <p className="measure mx-auto mb-6 text-[length:var(--step-0)] font-light leading-relaxed text-paper/80 sm:mb-8 sm:text-[length:var(--step-1)]">
-              Escritura, Catecismo, Padres da Igreja, santos e devoções tradicionais — reunidos em
-              uma única referência de estudo, fiel ao Magistério desde Pedro até hoje.
+              Escritura, Catecismo, Tradição e Magistério reunidos para estudar a fé católica com
+              profundidade e fontes confiáveis.
             </p>
             <div className="action-tray justify-center gap-3">
               <BotaoLink para="/estudar" variante="ouro" tamanho="lg" className="w-full sm:w-auto">
@@ -294,13 +288,13 @@ function Home() {
                 Começar a estudar
               </BotaoLink>
               <BotaoLink
-                para="/assistente"
+                para="/explorar"
                 variante="contorno"
                 tamanho="lg"
                 className="w-full sm:w-auto"
               >
-                <Sparkles className="size-4 shrink-0" />
-                Falar com a IA
+                <Compass className="size-4 shrink-0" />
+                Explorar o Portal
               </BotaoLink>
             </div>
           </div>
@@ -714,9 +708,9 @@ function Home() {
             <em className="text-gold italic font-medium">ao serviço da Verdade</em>
           </h2>
           <p className="measure mx-auto text-[length:var(--step-0)] text-paper/75 leading-relaxed font-light mb-[var(--space-md)]">
-            Treinada exclusivamente sobre a Bíblia, o Catecismo e os documentos do Magistério. Cada
-            resposta vem com referências verificáveis — Escritura, parágrafos do CIC, concílios e
-            Padres da Igreja. Nada de opinião; só o que a Igreja ensina.
+            Sophia organiza caminhos de estudo com referências verificáveis à Escritura, ao
+            Catecismo, aos concílios e aos Padres da Igreja. É uma ferramenta de apoio ao estudo:
+            não possui autoridade doutrinal e não substitui um sacerdote.
           </p>
           <Link
             to="/assistente"

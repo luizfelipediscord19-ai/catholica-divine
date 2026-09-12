@@ -13,9 +13,13 @@ import { traduzirErroAuth } from "@/lib/auth/traduzir-erro";
 import { criarContaFn, vincularContaFn } from "@/lib/portal.functions";
 
 export const Route = createFileRoute("/auth")({
-  validateSearch: (busca: Record<string, unknown>): { modo?: "entrar" | "criar" | "recuperar" } => {
+  validateSearch: (busca: Record<string, unknown>): { modo?: "entrar" | "criar" | "recuperar"; retorno?: string } => {
     const valor = busca["modo"];
-    return valor === "criar" || valor === "recuperar" || valor === "entrar" ? { modo: valor } : {};
+    const retorno = typeof busca["retorno"] === "string" && busca["retorno"].startsWith("/") && !busca["retorno"].startsWith("//") ? busca["retorno"] : undefined;
+    return {
+      ...(valor === "criar" || valor === "recuperar" || valor === "entrar" ? { modo: valor } : {}),
+      ...(retorno ? { retorno } : {}),
+    };
   },
 
   head: () => ({
@@ -43,7 +47,7 @@ export const Route = createFileRoute("/auth")({
 type Modo = "entrar" | "criar" | "recuperar";
 
 function AuthPage() {
-  const { modo: modoInicial } = Route.useSearch();
+  const { modo: modoInicial, retorno } = Route.useSearch();
   const [modo, setModo] = useState<Modo>(modoInicial ?? "entrar");
 
   const [email, setEmail] = useState("");
@@ -86,7 +90,7 @@ function AuthPage() {
         const vinculo = await vincularContaFn({ data: { token: lerToken() } });
         adotarTokenDaConta(vinculo.token);
         toast.success("Conta criada. Bem-vindo!");
-        void navigate({ to: "/forum" });
+        void navigate({ to: retorno ?? "/painel" });
       } else {
         const { error } = await supabase.auth.signInWithPassword({
           email: email.trim(),
@@ -96,7 +100,7 @@ function AuthPage() {
         const vinculo = await vincularContaFn({ data: { token: lerToken() } });
         adotarTokenDaConta(vinculo.token);
         toast.success("Bem-vindo de volta.");
-        void navigate({ to: "/forum" });
+        void navigate({ to: retorno ?? "/painel" });
       }
     } catch (e) {
       setErro(traduzirErroAuth(e));
@@ -120,7 +124,7 @@ function AuthPage() {
         intro="Uma conta simples, com e-mail e senha, para participar do fórum com responsabilidade e guardar seu progresso espiritual em qualquer aparelho."
       />
 
-      <main className="shell-narrow py-block">
+      <div className="shell-narrow py-block">
         {carregando ? (
           <Painel>
             <p className="text-sm text-muted-foreground">Verificando sua sessão…</p>
@@ -256,7 +260,7 @@ function AuthPage() {
             </p>
           </Painel>
         )}
-      </main>
+      </div>
     </div>
   );
 }

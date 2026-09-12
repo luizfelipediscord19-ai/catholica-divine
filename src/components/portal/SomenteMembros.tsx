@@ -26,7 +26,7 @@ export function ConviteEntrar({
       <h2 className="font-display text-2xl leading-tight text-foreground md:text-3xl">{titulo}</h2>
       <p className="body-sm measure text-muted-foreground">{texto}</p>
       <div className="action-tray">
-        <Link to="/auth" className="btn-base btn-gold btn-md gap-2">
+        <Link to="/auth" search={{ retorno: "/painel" }} className="btn-base btn-gold btn-md gap-2">
           <LogIn className="size-4 shrink-0" /> Entrar ou criar conta
         </Link>
         <Link to="/explorar" className="btn-base btn-quiet btn-md">
