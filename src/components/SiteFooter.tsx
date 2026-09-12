@@ -33,6 +33,8 @@ export function SiteFooter() {
             <li><Link to="/apologetica" className="block py-2 hover:text-gold focus-visible:text-gold">Apologética</Link></li>
             <li><Link to="/doutores-da-igreja" className="block py-2 hover:text-gold focus-visible:text-gold">Doutores da Igreja</Link></li>
             <li><Link to="/glossario" className="block py-2 hover:text-gold focus-visible:text-gold">Glossário</Link></li>
+            <li><Link to="/padres-da-igreja" className="block py-2 hover:text-gold focus-visible:text-gold">Padres da Igreja</Link></li>
+            <li><Link to="/concilios" className="block py-2 hover:text-gold focus-visible:text-gold">Concílios Ecumênicos</Link></li>
           </ul>
         </nav>
 

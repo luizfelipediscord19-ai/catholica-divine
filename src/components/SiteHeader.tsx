@@ -19,6 +19,8 @@ const GRUPOS: { titulo: string; itens: { to: string; label: string }[] }[] = [
       { to: "/apologetica", label: "Apologética" },
       { to: "/doutores-da-igreja", label: "Padres e Doutores" },
       { to: "/glossario", label: "Glossário" },
+      { to: "/padres-da-igreja", label: "Padres da Igreja" },
+      { to: "/concilios", label: "Concílios" },
     ],
   },
   {
