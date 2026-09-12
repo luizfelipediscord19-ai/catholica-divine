@@ -5,12 +5,22 @@
 import { LIVROS } from "@/lib/data/biblia/index";
 import { INTRODUCOES } from "@/lib/data/biblia/introducoes";
 import { PARTES, SECOES } from "@/lib/data/catecismo/index";
+import { ARTIGOS } from "@/lib/data/catecismo/artigos";
+import { AULAS } from "@/lib/data/catecismo/aulas";
 import { GLOSSARIO } from "@/lib/data/glossario";
 import { OBJECOES } from "@/lib/data/apologetica-objecoes";
 import { ORACOES } from "@/lib/data/oracoes";
 import { SANTOS_LISTA } from "@/lib/santos-lista";
 import { SACRAMENTOS } from "@/lib/data/sacramentos";
 import { TRILHAS } from "@/lib/data/trilhas/index";
+import { VERBETES_ENCICLOPEDIA } from "@/lib/data/enciclopedia";
+import { TEMAS_ENCICLOPEDIA } from "@/lib/data/enciclopedia-temas";
+import { TEMAS_DOUTRINA } from "@/lib/data/doutrina-temas";
+import { TEMAS_APOLOGETICA } from "@/lib/data/apologetica-temas";
+import { TEMAS_SACRAMENTAIS } from "@/lib/data/sacramentos-temas";
+import { PADRES, ERA_NOME } from "@/lib/data/padres";
+import { CONCILIOS } from "@/lib/data/concilios";
+import { SANTORAL, GRAU_NOME, dataFixaExtenso } from "@/lib/liturgia/santoral";
 import { expandirTermos, palavrasChave } from "@/lib/busca/linguagem";
 
 export type EscopoBusca =
@@ -18,15 +28,25 @@ export type EscopoBusca =
   | "catecismo"
   | "sacramentos"
   | "magisterio"
+  | "enciclopedia"
+  | "glossario"
+  | "padres"
+  | "concilios"
+  | "liturgia"
   | "santos"
   | "oracoes"
   | "formacao";
 
 export const ESCOPOS: { id: EscopoBusca; label: string; descricao: string }[] = [
   { id: "biblia", label: "Bíblia", descricao: "Texto integral dos 73 livros" },
-  { id: "catecismo", label: "Catecismo", descricao: "Partes, seções e sínteses do CIC" },
-  { id: "sacramentos", label: "Sacramentos", descricao: "Os sete sacramentos, base bíblica e efeitos" },
-  { id: "magisterio", label: "Magistério e doutrina", descricao: "Glossário doutrinal e banco apologético com fontes" },
+  { id: "catecismo", label: "Catecismo", descricao: "Partes, artigos, aulas e sínteses do CIC" },
+  { id: "sacramentos", label: "Sacramentos", descricao: "Os sete sacramentos, sacramentais e rituais" },
+  { id: "magisterio", label: "Magistério e apologética", descricao: "Banco apologético e razões para crer com fontes" },
+  { id: "enciclopedia", label: "Enciclopédia", descricao: "Verbetes e páginas temáticas interligadas" },
+  { id: "glossario", label: "Glossário", descricao: "Termos doutrinais definidos com referência" },
+  { id: "padres", label: "Padres da Igreja", descricao: "Padres apostólicos, gregos, latinos e do deserto" },
+  { id: "concilios", label: "Concílios", descricao: "Os vinte e um concílios ecumênicos e suas definições" },
+  { id: "liturgia", label: "Liturgia e calendário", descricao: "Celebrações do Calendário Romano e do Brasil" },
   { id: "santos", label: "Santos", descricao: "Vidas, títulos e patronatos" },
   { id: "oracoes", label: "Orações", descricao: "Textos orantes da tradição" },
   { id: "formacao", label: "Trilhas de formação", descricao: "Lições das trilhas de estudo do portal" },
