@@ -3,7 +3,7 @@
 - [x] Auditoria completa: rotas, links, erros, imagens, ações, responsividade, acessibilidade, SEO e desempenho
 - [x] Arquitetura de navegação desktop e mobile
 - [x] Home orientada a estudo
-- [ ] Busca avançada com novos escopos e agrupamentos
+- [x] Busca avançada com novos escopos e agrupamentos (Enciclopédia, Glossário, Padres, Concílios, Liturgia)
 - [ ] Sistema de fontes e melhorias da Sophia
 - [ ] Modo estudo, Bíblia, Catecismo e formação
 - [ ] Padronização editorial: santos, sacramentos, liturgia e orações
