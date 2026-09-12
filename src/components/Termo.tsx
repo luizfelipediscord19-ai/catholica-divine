@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { getTermo } from "@/lib/data/glossario";
 
@@ -17,6 +17,7 @@ export function Termo({
   children: ReactNode;
 }) {
   const entrada = getTermo(termo);
+  const [aberto, setAberto] = useState(false);
 
   if (!entrada) {
     // Fallback gracioso: se a chave não existir, renderiza o texto cru.
@@ -25,10 +26,20 @@ export function Termo({
 
   return (
     <TooltipProvider delayDuration={150}>
-      <Tooltip>
+      <Tooltip open={aberto} onOpenChange={setAberto}>
         <TooltipTrigger asChild>
           <span
             tabIndex={0}
+            role="button"
+            aria-expanded={aberto}
+            aria-label={`${entrada.termo}: abrir definição`}
+            onClick={() => setAberto((valor) => !valor)}
+            onKeyDown={(evento) => {
+              if (evento.key === "Enter" || evento.key === " ") {
+                evento.preventDefault();
+                setAberto((valor) => !valor);
+              }
+            }}
             className="cursor-help underline decoration-gold/40 decoration-dotted underline-offset-4 hover:decoration-gold focus:outline-none focus-visible:ring-2 focus-visible:ring-gold/40 rounded-sm transition-colors"
           >
             {children}

@@ -131,7 +131,12 @@ function SantoPage() {
 
   const irmaos = SANTOS_LISTA
     .filter((s) => s.slug !== slug)
-    .sort(() => 0.5 - Math.random())
+    .sort((a, b) => a.slug.localeCompare(b.slug))
+    .sort((a, b) => {
+      const distanciaA = Math.abs(a.slug.charCodeAt(0) - slug.charCodeAt(0));
+      const distanciaB = Math.abs(b.slug.charCodeAt(0) - slug.charCodeAt(0));
+      return distanciaA - distanciaB;
+    })
     .slice(0, 6);
 
   return (

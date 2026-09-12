@@ -323,7 +323,13 @@ function Page() {
       </div>
 
       {/* Seletor de versão — todas servidas pelo próprio portal */}
-      <div data-leitura-oculto className="mt-6 -mx-4 px-4 sm:mx-0 sm:px-0 flex gap-2 overflow-x-auto pb-1 sm:flex-wrap sm:overflow-visible">
+      <div
+        data-leitura-oculto
+        tabIndex={0}
+        role="group"
+        aria-label="Versões disponíveis da Bíblia; deslize horizontalmente para ver todas"
+        className="mt-6 -mx-4 px-4 sm:mx-0 sm:px-0 flex gap-2 overflow-x-auto pb-1 sm:flex-wrap sm:overflow-visible focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+      >
         {VERSOES.map((v) => {
           const ativo = v.id === versao;
           return (

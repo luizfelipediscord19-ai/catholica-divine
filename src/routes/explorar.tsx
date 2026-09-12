@@ -19,6 +19,8 @@ const BLOCOS: Bloco[] = [
     itens: [
       { to: "/biblia", label: "Bíblia Sagrada", nota: "73 livros com texto integral e introduções" },
       { to: "/catecismo", label: "Catecismo", nota: "As quatro partes do CIC com sínteses" },
+      { to: "/doutrina", label: "Doutrina", nota: "Temas específicos conectados ao Catecismo" },
+      { to: "/enciclopedia", label: "Enciclopédia Católica", nota: "Teologia, moral, liturgia e mariologia" },
       { to: "/sacramentos", label: "Sacramentos", nota: "Os sete sinais eficazes da graça" },
       { to: "/fe-catolica", label: "Fé Católica", nota: "Tradição, Magistério e o Credo" },
       { to: "/apologetica", label: "Apologética", nota: "Objeções respondidas com fontes" },
@@ -35,6 +37,8 @@ const BLOCOS: Bloco[] = [
       { to: "/santos", label: "Santos", nota: "Biografias e memórias litúrgicas" },
       { to: "/maria", label: "Maria Santíssima", nota: "Dogmas, devoções e títulos" },
       { to: "/liturgia-diaria", label: "Liturgia diária", nota: "Leituras, salmo e Evangelho" },
+      { to: "/leitura-diaria", label: "Leitura diária", nota: "Bíblia, Catecismo e tema para cada dia" },
+      { to: "/oracoes/diarias", label: "Oração diária", nota: "Uma oração por dia para guardar e imprimir" },
       { to: "/calendario-liturgico", label: "Calendário litúrgico", nota: "Tempos, cores e solenidades" },
     ],
   },
@@ -48,6 +52,7 @@ const BLOCOS: Bloco[] = [
       { to: "/assistente", label: "Sophia — IA católica", nota: "Respostas com fontes citadas" },
       { to: "/busca", label: "Busca avançada", nota: "Cruza Bíblia, Catecismo e Magistério" },
       { to: "/favoritos", label: "Meus favoritos", nota: "O que você salvou no portal" },
+      { to: "/catecismo/aulas", label: "Aulas de Catecismo", nota: "Encontros semanais com perguntas e respostas" },
     ],
   },
   {
@@ -57,6 +62,8 @@ const BLOCOS: Bloco[] = [
       { to: "/sobre", label: "Sobre o Portal", nota: "Propósito e equipe editorial" },
       { to: "/fontes", label: "Fontes e metodologia", nota: "Como o conteúdo é verificado" },
       { to: "/forum", label: "Agora Ecclesiae", nota: "Comunidade moderada de estudo" },
+      { to: "/testemunhos", label: "Testemunhos", nota: "Relatos reais partilhados pela comunidade" },
+      { to: "/contato", label: "Contato", nota: "Sugestões, correções e atendimento" },
       { to: "/privacidade", label: "Privacidade", nota: "Dados e consentimento" },
       { to: "/termos", label: "Termos de uso", nota: "Condições de utilização" },
     ],
@@ -110,7 +117,7 @@ function ExplorarPage() {
         eyebrow="Mapa do portal"
         title="Explorar o Portal"
         intro="Todo o acervo em um único índice: a doutrina que a Igreja ensina, a oração que ela reza e os caminhos de formação para estudar com ordem."
-      image={claustro}
+        image={claustro}
       />
 
       {BLOCOS.map((bloco) => (

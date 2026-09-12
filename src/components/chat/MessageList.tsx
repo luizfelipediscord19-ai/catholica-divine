@@ -7,6 +7,7 @@ import { SourceReferences, extrairFontes } from "../SourceReferences";
 import { AprofundarLinks } from "./AprofundarLinks";
 import { ReferenciasInternas } from "./ReferenciasInternas";
 import { linkificarNos } from "../CitacoesLinkadas";
+import { BotaoSalvar } from "../portal/BotaoSalvar";
 
 /**
  * Nas respostas da Sophia, as citações escritas no texto ("CIC §1324",
@@ -38,6 +39,10 @@ export const ChatMessageItem = memo(({ message, onPerguntar, ultimaPergunta, ult
   const isUser = message.role === "user";
   const text = message.parts.map((p) => (p.type === "text" ? p.text : "")).join("");
   const [copiado, setCopiado] = useState(false);
+  const idResposta = Array.from(text).reduce(
+    (acumulado, caractere) => ((acumulado << 5) - acumulado + caractere.charCodeAt(0)) | 0,
+    0,
+  );
 
   const copiar = async () => {
     try {
@@ -105,6 +110,14 @@ export const ChatMessageItem = memo(({ message, onPerguntar, ultimaPergunta, ult
             >
               <Share2 className="size-3" aria-hidden="true" /> Compartilhar
             </button>
+            <BotaoSalvar
+              tipo="pagina"
+              slug={`sophia-${Math.abs(idResposta)}`}
+              titulo={`Resposta da Sophia${ultimaPergunta ? `: ${ultimaPergunta}` : ""}`}
+              descricao={text.slice(0, 220)}
+              href="/assistente"
+              className="min-h-9 border-0 p-0 text-gold"
+            />
             <Link
               to="/estudar"
               className="inline-flex min-h-9 items-center gap-2 kicker transition-colors hover:text-gold"
