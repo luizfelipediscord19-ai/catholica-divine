@@ -8,7 +8,6 @@ import { usePrefetchSanto } from "@/lib/santos/prefetch";
 import { BotaoSalvar } from "@/components/portal/BotaoSalvar";
 import { keywordsPara } from "@/lib/seo/palavras-chave";
 
-
 const SITE = "https://portalcatolico.vercel.app";
 
 export const Route = createFileRoute("/santos/$slug")({
@@ -41,7 +40,8 @@ export const Route = createFileRoute("/santos/$slug")({
       },
     };
     if (imagem) pessoa.image = imagem;
-    if (view.padroeiro) pessoa.description = `${desc} Padroeiro de ${view.padroeiro}.`.slice(0, 300);
+    if (view.padroeiro)
+      pessoa.description = `${desc} Padroeiro de ${view.padroeiro}.`.slice(0, 300);
 
     const trilha = {
       "@context": "https://schema.org",
@@ -124,13 +124,12 @@ export const Route = createFileRoute("/santos/$slug")({
 function SantoPage() {
   const { slug } = Route.useParams();
   const loaderData = Route.useLoaderData();
-  
+
   if (!loaderData) return null;
   const { basico } = loaderData;
   const v = buildSantoView(slug, basico);
 
-  const irmaos = SANTOS_LISTA
-    .filter((s) => s.slug !== slug)
+  const irmaos = SANTOS_LISTA.filter((s) => s.slug !== slug)
     .sort((a, b) => a.slug.localeCompare(b.slug))
     .sort((a, b) => {
       const distanciaA = Math.abs(a.slug.charCodeAt(0) - slug.charCodeAt(0));
@@ -150,7 +149,6 @@ function SantoPage() {
         notaAutoridade="Datas de canonização e culto litúrgico seguem os atos da Santa Sé; episódios da vida podem pertencer à tradição hagiográfica, nem sempre documentada por fontes históricas."
       />
 
-
       <Section>
         <div className="grid md:grid-cols-[1fr_280px] gap-12">
           <article className="space-y-10">
@@ -168,15 +166,14 @@ function SantoPage() {
             </div>
 
             <div>
-
               <h2 className="font-display text-2xl text-foreground mb-4">Biografia</h2>
               <p className="text-base leading-relaxed text-muted-foreground whitespace-pre-line">
                 {v.biografia}
               </p>
               {!v.temRico ? (
                 <p className="mt-4 text-xs text-muted-foreground/70 italic">
-                  Resumo breve. Em breve aprofundaremos a biografia deste santo com
-                  fontes hagiográficas tradicionais.
+                  Resumo breve. Em breve aprofundaremos a biografia deste santo com fontes
+                  hagiográficas tradicionais.
                 </p>
               ) : null}
             </div>
@@ -231,9 +228,7 @@ function SantoPage() {
             </figure>
 
             <div className="surface-card p-5">
-              <p className="kicker mb-3">
-                Ficha
-              </p>
+              <p className="kicker mb-3">Ficha</p>
               <dl className="space-y-3">
                 {v.data ? (
                   <div>
@@ -265,9 +260,7 @@ function SantoPage() {
             <Relacionados topic={`santo:${slug}`} variant="aside" />
 
             <div>
-              <p className="kicker mb-3">
-                Outros santos
-              </p>
+              <p className="kicker mb-3">Outros santos</p>
               <ul className="space-y-2">
                 {irmaos.map((s) => (
                   <LinkSantoPrefetch key={s.slug} slug={s.slug} nome={s.nome} />

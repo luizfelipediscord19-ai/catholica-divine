@@ -100,7 +100,9 @@ export function SinoNotificacoes() {
           className="fixed left-2 right-2 top-[4.5rem] z-[80] max-h-[70vh] overflow-y-auto border border-gold/25 bg-background/98 shadow-2xl backdrop-blur sm:absolute sm:left-auto sm:right-0 sm:top-[calc(100%+0.5rem)] sm:w-80"
         >
           <div className="flex items-center justify-between border-b border-gold/15 px-4 py-3">
-            <p className="kicker" id="titulo-notificacoes">Notificações</p>
+            <p className="kicker" id="titulo-notificacoes">
+              Notificações
+            </p>
             <button
               type="button"
               onClick={() => {
@@ -122,7 +124,6 @@ export function SinoNotificacoes() {
           </div>
 
           <AvisosNoAparelho />
-
 
           {notificacoes.length === 0 ? (
             <p className="px-4 py-8 text-center text-xs text-muted-foreground">

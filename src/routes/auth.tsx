@@ -13,9 +13,16 @@ import { traduzirErroAuth } from "@/lib/auth/traduzir-erro";
 import { criarContaFn, vincularContaFn } from "@/lib/portal.functions";
 
 export const Route = createFileRoute("/auth")({
-  validateSearch: (busca: Record<string, unknown>): { modo?: "entrar" | "criar" | "recuperar"; retorno?: string } => {
+  validateSearch: (
+    busca: Record<string, unknown>,
+  ): { modo?: "entrar" | "criar" | "recuperar"; retorno?: string } => {
     const valor = busca["modo"];
-    const retorno = typeof busca["retorno"] === "string" && busca["retorno"].startsWith("/") && !busca["retorno"].startsWith("//") ? busca["retorno"] : undefined;
+    const retorno =
+      typeof busca["retorno"] === "string" &&
+      busca["retorno"].startsWith("/") &&
+      !busca["retorno"].startsWith("//")
+        ? busca["retorno"]
+        : undefined;
     return {
       ...(valor === "criar" || valor === "recuperar" || valor === "entrar" ? { modo: valor } : {}),
       ...(retorno ? { retorno } : {}),

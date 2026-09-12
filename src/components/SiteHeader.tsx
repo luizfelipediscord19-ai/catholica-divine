@@ -137,7 +137,6 @@ export function SiteHeader() {
           aria-label="Navegação principal"
           className="hidden min-w-0 flex-1 items-center gap-0.5 overflow-hidden whitespace-nowrap lg:ml-1 lg:flex xl:ml-3 xl:gap-1"
         >
-
           {NAV_PRINCIPAL.map((item) => {
             const active = pathname === item.to || pathname.startsWith(`${item.to}/`);
             return (
@@ -171,7 +170,9 @@ export function SiteHeader() {
           >
             <Search className="size-4 shrink-0 text-gold" aria-hidden="true" />
             <span className="min-w-0 flex-1 truncate">O que você procura?</span>
-            <span aria-hidden="true" className="label-btn shrink-0 text-foreground/35">⌘K</span>
+            <span aria-hidden="true" className="label-btn shrink-0 text-foreground/35">
+              ⌘K
+            </span>
           </Botao>
           <Botao
             type="button"
@@ -216,7 +217,11 @@ export function SiteHeader() {
             tamanho="icone"
             className="shrink-0 border border-gold/30 bg-transparent text-gold transition-premium hover:bg-gold/10"
           >
-            {open ? <X className="size-5" aria-hidden="true" /> : <Menu className="size-5" aria-hidden="true" />}
+            {open ? (
+              <X className="size-5" aria-hidden="true" />
+            ) : (
+              <Menu className="size-5" aria-hidden="true" />
+            )}
           </Botao>
         </div>
       </div>
@@ -235,8 +240,7 @@ export function SiteHeader() {
                 <p className="kicker mb-2xs">{grupo.titulo}</p>
                 <ul className="grid gap-0.5">
                   {grupo.itens.map((item) => {
-                    const active =
-                      pathname === item.to || pathname.startsWith(`${item.to}/`);
+                    const active = pathname === item.to || pathname.startsWith(`${item.to}/`);
                     return (
                       <li key={item.to}>
                         <Link
@@ -292,17 +296,25 @@ function ContaBotao() {
   const { autenticado, carregando, sair } = useAuth();
 
   // Reserva o espaço enquanto a sessão carrega: evita o cabeçalho "saltar".
-  if (carregando)
-    return <span aria-hidden="true" className="hidden h-10 w-[5.25rem] lg:block" />;
+  if (carregando) return <span aria-hidden="true" className="hidden h-10 w-[5.25rem] lg:block" />;
 
   return autenticado ? (
-    <Botao variante="contorno" tamanho="sm" onClick={() => void sair()} className="hidden w-[5.25rem] lg:inline-flex">
+    <Botao
+      variante="contorno"
+      tamanho="sm"
+      onClick={() => void sair()}
+      className="hidden w-[5.25rem] lg:inline-flex"
+    >
       Sair
     </Botao>
   ) : (
-    <BotaoLink para="/auth" variante="contorno" tamanho="sm" className="hidden w-[5.25rem] lg:inline-flex">
+    <BotaoLink
+      para="/auth"
+      variante="contorno"
+      tamanho="sm"
+      className="hidden w-[5.25rem] lg:inline-flex"
+    >
       Entrar
     </BotaoLink>
   );
 }
-

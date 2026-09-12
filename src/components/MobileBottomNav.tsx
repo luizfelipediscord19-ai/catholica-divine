@@ -20,9 +20,10 @@ export function MobileBottomNav() {
     >
       <ul className="mx-auto grid h-16 max-w-lg grid-cols-5">
         {ITENS.map((item) => {
-          const ativo = item.to === "/"
-            ? pathname === item.to
-            : pathname === item.to || pathname.startsWith(`${item.to}/`);
+          const ativo =
+            item.to === "/"
+              ? pathname === item.to
+              : pathname === item.to || pathname.startsWith(`${item.to}/`);
           const Icone = item.icon;
           return (
             <li key={item.to} className="min-w-0">

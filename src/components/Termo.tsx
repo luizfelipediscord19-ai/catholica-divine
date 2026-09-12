@@ -9,13 +9,7 @@ import { getTermo } from "@/lib/data/glossario";
  * @example
  *   A <Termo termo="graca">graça</Termo> santificante é dom de Deus.
  */
-export function Termo({
-  termo,
-  children,
-}: {
-  termo: string;
-  children: ReactNode;
-}) {
+export function Termo({ termo, children }: { termo: string; children: ReactNode }) {
   const entrada = getTermo(termo);
   const [aberto, setAberto] = useState(false);
 
@@ -50,12 +44,8 @@ export function Termo({
           align="center"
           className="max-w-[20rem] bg-deep border border-gold/30 text-paper px-5 py-4 shadow-2xl"
         >
-          <p className="kicker mb-2">
-            {entrada.termo}
-          </p>
-          <p className="text-sm leading-relaxed text-paper/90 font-light">
-            {entrada.definicao}
-          </p>
+          <p className="kicker mb-2">{entrada.termo}</p>
+          <p className="text-sm leading-relaxed text-paper/90 font-light">{entrada.definicao}</p>
           {entrada.ref ? (
             <p className="text-step--2 text-gold/60 mt-3 italic">{entrada.ref}</p>
           ) : null}
