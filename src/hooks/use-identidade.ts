@@ -21,6 +21,15 @@ function guardarToken(token: string) {
   }
 }
 
+/**
+ * Adota o token devolvido pelo servidor após entrar na conta, para que o
+ * cabeçalho, o fórum e o painel mostrem imediatamente o santo da conta em vez
+ * do padroeiro sorteado para a identidade anônima deste navegador.
+ */
+export function adotarTokenDaConta(token: string) {
+  if (token && token !== lerToken()) guardarToken(token);
+}
+
 export function lerToken(): string | null {
   if (typeof window === "undefined") return null;
   try {
