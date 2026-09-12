@@ -282,7 +282,8 @@ export const CONCILIOS: Concilio[] = [
     anos: "1431–1445",
     local: "Basileia, Ferrara, Florença e Roma",
     papa: "Eugênio IV",
-    contexto: "Nova tentativa de união com gregos, armênios e coptas, sob pressão política e turca.",
+    contexto:
+      "Nova tentativa de união com gregos, armênios e coptas, sob pressão política e turca.",
     definicoes: [
       "Assinou o decreto de união com os gregos (Laetentur caeli, 1439).",
       "Reafirmou o primado do bispo de Roma.",

@@ -63,9 +63,9 @@ function PadresPage() {
           <h2 className="title-section mt-3">Por que ler os Padres</h2>
           <div className="filete-ouro mx-auto my-5 max-w-xs" aria-hidden="true" />
           <p className="body-base measure mx-auto text-muted-foreground">
-            A Igreja chama Padres os autores antigos que uniram ortodoxia da fé, santidade de
-            vida, antiguidade e reconhecimento eclesial. Lê-los é ouvir como a Escritura foi
-            compreendida antes de qualquer divisão posterior.
+            A Igreja chama Padres os autores antigos que uniram ortodoxia da fé, santidade de vida,
+            antiguidade e reconhecimento eclesial. Lê-los é ouvir como a Escritura foi compreendida
+            antes de qualquer divisão posterior.
           </p>
         </section>
 

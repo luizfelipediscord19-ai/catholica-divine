@@ -50,9 +50,9 @@ function ConciliosPage() {
           <h2 className="title-section mt-3">Da fé professada à fé definida</h2>
           <div className="filete-ouro mx-auto my-5 max-w-xs" aria-hidden="true" />
           <p className="body-base measure mx-auto text-muted-foreground">
-            Um concílio ecumênico reúne o colégio dos bispos com o Papa e, nessa comunhão,
-            exerce o Magistério da Igreja inteira. Nem todo concílio definiu dogmas: muitos
-            trataram de disciplina, reforma e unidade.
+            Um concílio ecumênico reúne o colégio dos bispos com o Papa e, nessa comunhão, exerce o
+            Magistério da Igreja inteira. Nem todo concílio definiu dogmas: muitos trataram de
+            disciplina, reforma e unidade.
           </p>
         </section>
 
@@ -70,8 +70,14 @@ function ConciliosPage() {
               <p className="mt-xs body-base text-muted-foreground">{linkificarNos(c.contexto)}</p>
               <ul className="mt-sm space-y-2xs">
                 {c.definicoes.map((d) => (
-                  <li key={d} className="flex gap-2 text-step--1 leading-relaxed text-foreground/85">
-                    <span aria-hidden="true" className="mt-2 size-1 shrink-0 rounded-full bg-gold/70" />
+                  <li
+                    key={d}
+                    className="flex gap-2 text-step--1 leading-relaxed text-foreground/85"
+                  >
+                    <span
+                      aria-hidden="true"
+                      className="mt-2 size-1 shrink-0 rounded-full bg-gold/70"
+                    />
                     <span>{linkificarNos(d)}</span>
                   </li>
                 ))}

@@ -40,16 +40,44 @@ export type EscopoBusca =
 export const ESCOPOS: { id: EscopoBusca; label: string; descricao: string }[] = [
   { id: "biblia", label: "Bíblia", descricao: "Texto integral dos 73 livros" },
   { id: "catecismo", label: "Catecismo", descricao: "Partes, artigos, aulas e sínteses do CIC" },
-  { id: "sacramentos", label: "Sacramentos", descricao: "Os sete sacramentos, sacramentais e rituais" },
-  { id: "magisterio", label: "Magistério e apologética", descricao: "Banco apologético e razões para crer com fontes" },
-  { id: "enciclopedia", label: "Enciclopédia", descricao: "Verbetes e páginas temáticas interligadas" },
+  {
+    id: "sacramentos",
+    label: "Sacramentos",
+    descricao: "Os sete sacramentos, sacramentais e rituais",
+  },
+  {
+    id: "magisterio",
+    label: "Magistério e apologética",
+    descricao: "Banco apologético e razões para crer com fontes",
+  },
+  {
+    id: "enciclopedia",
+    label: "Enciclopédia",
+    descricao: "Verbetes e páginas temáticas interligadas",
+  },
   { id: "glossario", label: "Glossário", descricao: "Termos doutrinais definidos com referência" },
-  { id: "padres", label: "Padres da Igreja", descricao: "Padres apostólicos, gregos, latinos e do deserto" },
-  { id: "concilios", label: "Concílios", descricao: "Os vinte e um concílios ecumênicos e suas definições" },
-  { id: "liturgia", label: "Liturgia e calendário", descricao: "Celebrações do Calendário Romano e do Brasil" },
+  {
+    id: "padres",
+    label: "Padres da Igreja",
+    descricao: "Padres apostólicos, gregos, latinos e do deserto",
+  },
+  {
+    id: "concilios",
+    label: "Concílios",
+    descricao: "Os vinte e um concílios ecumênicos e suas definições",
+  },
+  {
+    id: "liturgia",
+    label: "Liturgia e calendário",
+    descricao: "Celebrações do Calendário Romano e do Brasil",
+  },
   { id: "santos", label: "Santos", descricao: "Vidas, títulos e patronatos" },
   { id: "oracoes", label: "Orações", descricao: "Textos orantes da tradição" },
-  { id: "formacao", label: "Trilhas de formação", descricao: "Lições das trilhas de estudo do portal" },
+  {
+    id: "formacao",
+    label: "Trilhas de formação",
+    descricao: "Lições das trilhas de estudo do portal",
+  },
 ];
 
 export type Resultado = {
@@ -92,7 +120,12 @@ function tokens(termo: string): string[] {
  * palavras (e sinônimos católicos) o trecho contém, mais alto ele fica.
  * A frase exata continua valendo muito.
  */
-function pontuar(alvo: string, termoNorm: string, toks: string[], equivalentes: string[] = []): number {
+function pontuar(
+  alvo: string,
+  termoNorm: string,
+  toks: string[],
+  equivalentes: string[] = [],
+): number {
   let pontos = 0;
   let achados = 0;
   for (const tok of toks) {
@@ -233,7 +266,16 @@ function construirCorpus(): Documento[] {
     });
   }
 
-  const TEMAS: { base: string; rotulo: string; itens: { slug: string; nome: string; resumo: string; secoes: { titulo: string; paragrafos: string[] }[] }[] }[] = [
+  const TEMAS: {
+    base: string;
+    rotulo: string;
+    itens: {
+      slug: string;
+      nome: string;
+      resumo: string;
+      secoes: { titulo: string; paragrafos: string[] }[];
+    }[];
+  }[] = [
     { base: "/enciclopedia", rotulo: "Enciclopédia", itens: TEMAS_ENCICLOPEDIA },
     { base: "/doutrina", rotulo: "Doutrina", itens: TEMAS_DOUTRINA },
     { base: "/apologetica", rotulo: "Razões para crer", itens: TEMAS_APOLOGETICA },
@@ -392,7 +434,10 @@ type LivroJson = { slug: string; nome: string; capitulos: Record<string, VersoTe
 const BRUTOS = import.meta.glob<{ default: LivroJson }>("../data/biblia/almeida/*.json");
 const ARQUIVOS: Record<string, () => Promise<{ default: LivroJson }>> = {};
 for (const [caminho, carregar] of Object.entries(BRUTOS)) {
-  const slug = caminho.replace(/\.json$/, "").split("/").pop();
+  const slug = caminho
+    .replace(/\.json$/, "")
+    .split("/")
+    .pop();
   if (slug) ARQUIVOS[slug] = carregar;
 }
 

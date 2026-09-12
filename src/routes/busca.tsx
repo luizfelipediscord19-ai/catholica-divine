@@ -161,7 +161,6 @@ function BuscaAvancadaPage() {
     setConsulta(q);
   }, [q]);
 
-
   useEffect(() => {
     if (consulta.trim().length < 2) return;
     mutation.mutate({ termo: consulta, escopos: ativos });
@@ -204,10 +203,10 @@ function BuscaAvancadaPage() {
           Busca <span className="text-gold/70 italic">Avançada</span>
         </h1>
         <p className="text-base md:text-lg text-muted-foreground font-light leading-relaxed max-w-2xl">
-          Um só termo cruzando o texto integral da Bíblia (73 livros), o Catecismo,
-          os sete sacramentos, o glossário doutrinal, o banco apologético com fontes,
-          os santos, as orações da tradição e as trilhas de formação. A varredura roda
-          no servidor — nada pesa no seu aparelho.
+          Um só termo cruzando o texto integral da Bíblia (73 livros), o Catecismo, os sete
+          sacramentos, o glossário doutrinal, o banco apologético com fontes, os santos, as orações
+          da tradição e as trilhas de formação. A varredura roda no servidor — nada pesa no seu
+          aparelho.
         </p>
       </header>
 
@@ -273,9 +272,7 @@ function BuscaAvancadaPage() {
 
       {!consulta ? (
         <div className="mt-12">
-          <p className="kicker mb-4">
-            Comece por aqui
-          </p>
+          <p className="kicker mb-4">Comece por aqui</p>
           <div className="flex flex-wrap gap-2">
             {SUGESTOES.map((s) => (
               <button
@@ -366,8 +363,8 @@ function BuscaAvancadaPage() {
       </div>
 
       <p className="mt-16 border-t border-gold/15 pt-6 text-xs leading-relaxed text-muted-foreground">
-        Texto bíblico de domínio público hospedado no próprio portal. Os verbetes doutrinais
-        citam Catecismo, concílios e Padres — os critérios de curadoria estão descritos em{" "}
+        Texto bíblico de domínio público hospedado no próprio portal. Os verbetes doutrinais citam
+        Catecismo, concílios e Padres — os critérios de curadoria estão descritos em{" "}
         <Link to="/sobre" className="text-gold hover:underline">
           Sobre o Portal
         </Link>
