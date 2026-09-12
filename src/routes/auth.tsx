@@ -6,7 +6,7 @@ import { Botao, BotaoLink } from "@/components/ds";
 import { PageHero } from "@/components/PageShell";
 import { Painel, Rotulo, inputClass } from "@/components/portal/comuns";
 import { useAuth } from "@/hooks/use-auth";
-import { lerToken } from "@/hooks/use-identidade";
+import { adotarTokenDaConta, lerToken } from "@/hooks/use-identidade";
 import { supabase } from "@/integrations/supabase/client";
 import { baseParaEmails } from "@/lib/auth/site-url";
 import { traduzirErroAuth } from "@/lib/auth/traduzir-erro";
@@ -83,7 +83,8 @@ function AuthPage() {
           password: senha,
         });
         if (error) throw error;
-        await vincularContaFn({ data: { token: lerToken() } });
+        const vinculo = await vincularContaFn({ data: { token: lerToken() } });
+        adotarTokenDaConta(vinculo.token);
         toast.success("Conta criada. Bem-vindo!");
         void navigate({ to: "/forum" });
       } else {
@@ -92,7 +93,8 @@ function AuthPage() {
           password: senha,
         });
         if (error) throw error;
-        await vincularContaFn({ data: { token: lerToken() } });
+        const vinculo = await vincularContaFn({ data: { token: lerToken() } });
+        adotarTokenDaConta(vinculo.token);
         toast.success("Bem-vindo de volta.");
         void navigate({ to: "/forum" });
       }
@@ -205,7 +207,12 @@ function AuthPage() {
               )}
 
               <div className="grid grid-cols-1 gap-3 sm:flex sm:flex-wrap sm:items-center">
-                <Botao type="submit" disabled={!valido} carregando={enviando} className="w-full sm:w-auto">
+                <Botao
+                  type="submit"
+                  disabled={!valido}
+                  carregando={enviando}
+                  className="w-full sm:w-auto"
+                >
                   {enviando
                     ? "Enviando…"
                     : modo === "criar"
@@ -215,7 +222,11 @@ function AuthPage() {
                         : "Entrar"}
                 </Botao>
                 {modo === "entrar" ? (
-                  <Botao variante="contorno" onClick={() => setModo("recuperar")} className="w-full sm:w-auto">
+                  <Botao
+                    variante="contorno"
+                    onClick={() => setModo("recuperar")}
+                    className="w-full sm:w-auto"
+                  >
                     Esqueci a senha
                   </Botao>
                 ) : null}

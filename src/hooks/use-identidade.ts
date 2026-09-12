@@ -2,11 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
 import { supabase } from "@/integrations/supabase/client";
-import {
-  garantirIdentidadeFn,
-  obterPainelContaFn,
-  obterPainelFn,
-} from "@/lib/portal.functions";
+import { garantirIdentidadeFn, obterPainelContaFn, obterPainelFn } from "@/lib/portal.functions";
 
 const CHAVE = "portal-catolico:identidade";
 const EVENTO_IDENTIDADE = "portal-catolico:identidade-atualizada";
@@ -19,6 +15,15 @@ function guardarToken(token: string) {
   } catch {
     /* navegação privada */
   }
+}
+
+/**
+ * Adota o token devolvido pelo servidor após entrar na conta, para que o
+ * cabeçalho, o fórum e o painel mostrem imediatamente o santo da conta em vez
+ * do padroeiro sorteado para a identidade anônima deste navegador.
+ */
+export function adotarTokenDaConta(token: string) {
+  if (token && token !== lerToken()) guardarToken(token);
 }
 
 export function lerToken(): string | null {
@@ -216,8 +221,6 @@ async function obterPainelAnonimoResiliente(token: string) {
   }
 }
 
-
-
 /** Invalida painel e identidade após qualquer ação que dê XP. */
 export function useInvalidarProgresso() {
   const queryClient = useQueryClient();
@@ -228,5 +231,3 @@ export function useInvalidarProgresso() {
 }
 
 export { useMutation };
-
-
