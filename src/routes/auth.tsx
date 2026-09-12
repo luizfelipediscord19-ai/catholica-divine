@@ -6,7 +6,7 @@ import { Botao, BotaoLink } from "@/components/ds";
 import { PageHero } from "@/components/PageShell";
 import { Painel, Rotulo, inputClass } from "@/components/portal/comuns";
 import { useAuth } from "@/hooks/use-auth";
-import { lerToken } from "@/hooks/use-identidade";
+import { adotarTokenDaConta, lerToken } from "@/hooks/use-identidade";
 import { supabase } from "@/integrations/supabase/client";
 import { baseParaEmails } from "@/lib/auth/site-url";
 import { traduzirErroAuth } from "@/lib/auth/traduzir-erro";
@@ -83,7 +83,8 @@ function AuthPage() {
           password: senha,
         });
         if (error) throw error;
-        await vincularContaFn({ data: { token: lerToken() } });
+        const vinculo = await vincularContaFn({ data: { token: lerToken() } });
+        adotarTokenDaConta(vinculo.token);
         toast.success("Conta criada. Bem-vindo!");
         void navigate({ to: "/forum" });
       } else {
@@ -92,7 +93,8 @@ function AuthPage() {
           password: senha,
         });
         if (error) throw error;
-        await vincularContaFn({ data: { token: lerToken() } });
+        const vinculo = await vincularContaFn({ data: { token: lerToken() } });
+        adotarTokenDaConta(vinculo.token);
         toast.success("Bem-vindo de volta.");
         void navigate({ to: "/forum" });
       }
