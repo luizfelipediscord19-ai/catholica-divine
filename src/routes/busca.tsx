@@ -13,6 +13,11 @@ import {
   Heart,
   Droplets,
   GraduationCap,
+  Compass,
+  SpellCheck,
+  ScrollText,
+  Church,
+  CalendarDays,
   type LucideIcon,
 } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
@@ -24,8 +29,13 @@ import { keywordsPara } from "@/lib/seo/palavras-chave";
 const ESCOPOS: { id: EscopoBusca; label: string }[] = [
   { id: "biblia", label: "Bíblia" },
   { id: "catecismo", label: "Catecismo" },
+  { id: "enciclopedia", label: "Enciclopédia" },
+  { id: "glossario", label: "Glossário" },
   { id: "sacramentos", label: "Sacramentos" },
-  { id: "magisterio", label: "Magistério e doutrina" },
+  { id: "magisterio", label: "Magistério e apologética" },
+  { id: "padres", label: "Padres da Igreja" },
+  { id: "concilios", label: "Concílios" },
+  { id: "liturgia", label: "Liturgia e calendário" },
   { id: "santos", label: "Santos" },
   { id: "oracoes", label: "Orações" },
   { id: "formacao", label: "Trilhas de formação" },
@@ -34,7 +44,12 @@ const ESCOPOS: { id: EscopoBusca; label: string }[] = [
 const ICONES: Record<EscopoBusca, LucideIcon> = {
   biblia: BookOpen,
   catecismo: Library,
+  enciclopedia: Compass,
+  glossario: SpellCheck,
   magisterio: Landmark,
+  padres: ScrollText,
+  concilios: Church,
+  liturgia: CalendarDays,
   sacramentos: Droplets,
   santos: Crown,
   oracoes: Heart,
@@ -146,7 +161,6 @@ function BuscaAvancadaPage() {
     setConsulta(q);
   }, [q]);
 
-
   useEffect(() => {
     if (consulta.trim().length < 2) return;
     mutation.mutate({ termo: consulta, escopos: ativos });
@@ -189,10 +203,10 @@ function BuscaAvancadaPage() {
           Busca <span className="text-gold/70 italic">Avançada</span>
         </h1>
         <p className="text-base md:text-lg text-muted-foreground font-light leading-relaxed max-w-2xl">
-          Um só termo cruzando o texto integral da Bíblia (73 livros), o Catecismo,
-          os sete sacramentos, o glossário doutrinal, o banco apologético com fontes,
-          os santos, as orações da tradição e as trilhas de formação. A varredura roda
-          no servidor — nada pesa no seu aparelho.
+          Um só termo cruzando o texto integral da Bíblia (73 livros), o Catecismo, os sete
+          sacramentos, o glossário doutrinal, o banco apologético com fontes, os santos, as orações
+          da tradição e as trilhas de formação. A varredura roda no servidor — nada pesa no seu
+          aparelho.
         </p>
       </header>
 
@@ -258,9 +272,7 @@ function BuscaAvancadaPage() {
 
       {!consulta ? (
         <div className="mt-12">
-          <p className="kicker mb-4">
-            Comece por aqui
-          </p>
+          <p className="kicker mb-4">Comece por aqui</p>
           <div className="flex flex-wrap gap-2">
             {SUGESTOES.map((s) => (
               <button
@@ -351,8 +363,8 @@ function BuscaAvancadaPage() {
       </div>
 
       <p className="mt-16 border-t border-gold/15 pt-6 text-xs leading-relaxed text-muted-foreground">
-        Texto bíblico de domínio público hospedado no próprio portal. Os verbetes doutrinais
-        citam Catecismo, concílios e Padres — os critérios de curadoria estão descritos em{" "}
+        Texto bíblico de domínio público hospedado no próprio portal. Os verbetes doutrinais citam
+        Catecismo, concílios e Padres — os critérios de curadoria estão descritos em{" "}
         <Link to="/sobre" className="text-gold hover:underline">
           Sobre o Portal
         </Link>

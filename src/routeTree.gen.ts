@@ -23,6 +23,7 @@ import { Route as SacramentosRouteImport } from './routes/sacramentos'
 import { Route as RedefinirSenhaRouteImport } from './routes/redefinir-senha'
 import { Route as PrivacidadeRouteImport } from './routes/privacidade'
 import { Route as PainelRouteImport } from './routes/painel'
+import { Route as PadresDaIgrejaRouteImport } from './routes/padres-da-igreja'
 import { Route as OracoesRouteImport } from './routes/oracoes'
 import { Route as MariaRouteImport } from './routes/maria'
 import { Route as LiturgiaDiariaRouteImport } from './routes/liturgia-diaria'
@@ -41,6 +42,7 @@ import { Route as DesignSystemRouteImport } from './routes/design-system'
 import { Route as CoroinhasRouteImport } from './routes/coroinhas'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as ConfissaoRouteImport } from './routes/confissao'
+import { Route as ConciliosRouteImport } from './routes/concilios'
 import { Route as CatecismoRouteImport } from './routes/catecismo'
 import { Route as CalendarioLiturgicoRouteImport } from './routes/calendario-liturgico'
 import { Route as BuscaRouteImport } from './routes/busca'
@@ -170,6 +172,11 @@ const PainelRoute = PainelRouteImport.update({
   path: '/painel',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PadresDaIgrejaRoute = PadresDaIgrejaRouteImport.update({
+  id: '/padres-da-igreja',
+  path: '/padres-da-igreja',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OracoesRoute = OracoesRouteImport.update({
   id: '/oracoes',
   path: '/oracoes',
@@ -258,6 +265,11 @@ const ContatoRoute = ContatoRouteImport.update({
 const ConfissaoRoute = ConfissaoRouteImport.update({
   id: '/confissao',
   path: '/confissao',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConciliosRoute = ConciliosRouteImport.update({
+  id: '/concilios',
+  path: '/concilios',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CatecismoRoute = CatecismoRouteImport.update({
@@ -552,6 +564,7 @@ export interface FileRoutesByFullPath {
   '/busca': typeof BuscaRoute
   '/calendario-liturgico': typeof CalendarioLiturgicoRoute
   '/catecismo': typeof CatecismoRouteWithChildren
+  '/concilios': typeof ConciliosRoute
   '/confissao': typeof ConfissaoRoute
   '/contato': typeof ContatoRoute
   '/coroinhas': typeof CoroinhasRoute
@@ -570,6 +583,7 @@ export interface FileRoutesByFullPath {
   '/liturgia-diaria': typeof LiturgiaDiariaRoute
   '/maria': typeof MariaRoute
   '/oracoes': typeof OracoesRouteWithChildren
+  '/padres-da-igreja': typeof PadresDaIgrejaRoute
   '/painel': typeof PainelRoute
   '/privacidade': typeof PrivacidadeRoute
   '/redefinir-senha': typeof RedefinirSenhaRoute
@@ -639,6 +653,7 @@ export interface FileRoutesByTo {
   '/auth': typeof AuthRoute
   '/busca': typeof BuscaRoute
   '/calendario-liturgico': typeof CalendarioLiturgicoRoute
+  '/concilios': typeof ConciliosRoute
   '/confissao': typeof ConfissaoRoute
   '/contato': typeof ContatoRoute
   '/coroinhas': typeof CoroinhasRoute
@@ -654,6 +669,7 @@ export interface FileRoutesByTo {
   '/leitura-diaria': typeof LeituraDiariaRoute
   '/liturgia-diaria': typeof LiturgiaDiariaRoute
   '/maria': typeof MariaRoute
+  '/padres-da-igreja': typeof PadresDaIgrejaRoute
   '/painel': typeof PainelRoute
   '/privacidade': typeof PrivacidadeRoute
   '/redefinir-senha': typeof RedefinirSenhaRoute
@@ -722,6 +738,7 @@ export interface FileRoutesById {
   '/busca': typeof BuscaRoute
   '/calendario-liturgico': typeof CalendarioLiturgicoRoute
   '/catecismo': typeof CatecismoRouteWithChildren
+  '/concilios': typeof ConciliosRoute
   '/confissao': typeof ConfissaoRoute
   '/contato': typeof ContatoRoute
   '/coroinhas': typeof CoroinhasRoute
@@ -740,6 +757,7 @@ export interface FileRoutesById {
   '/liturgia-diaria': typeof LiturgiaDiariaRoute
   '/maria': typeof MariaRoute
   '/oracoes': typeof OracoesRouteWithChildren
+  '/padres-da-igreja': typeof PadresDaIgrejaRoute
   '/painel': typeof PainelRoute
   '/privacidade': typeof PrivacidadeRoute
   '/redefinir-senha': typeof RedefinirSenhaRoute
@@ -814,6 +832,7 @@ export interface FileRouteTypes {
     | '/busca'
     | '/calendario-liturgico'
     | '/catecismo'
+    | '/concilios'
     | '/confissao'
     | '/contato'
     | '/coroinhas'
@@ -832,6 +851,7 @@ export interface FileRouteTypes {
     | '/liturgia-diaria'
     | '/maria'
     | '/oracoes'
+    | '/padres-da-igreja'
     | '/painel'
     | '/privacidade'
     | '/redefinir-senha'
@@ -901,6 +921,7 @@ export interface FileRouteTypes {
     | '/auth'
     | '/busca'
     | '/calendario-liturgico'
+    | '/concilios'
     | '/confissao'
     | '/contato'
     | '/coroinhas'
@@ -916,6 +937,7 @@ export interface FileRouteTypes {
     | '/leitura-diaria'
     | '/liturgia-diaria'
     | '/maria'
+    | '/padres-da-igreja'
     | '/painel'
     | '/privacidade'
     | '/redefinir-senha'
@@ -983,6 +1005,7 @@ export interface FileRouteTypes {
     | '/busca'
     | '/calendario-liturgico'
     | '/catecismo'
+    | '/concilios'
     | '/confissao'
     | '/contato'
     | '/coroinhas'
@@ -1001,6 +1024,7 @@ export interface FileRouteTypes {
     | '/liturgia-diaria'
     | '/maria'
     | '/oracoes'
+    | '/padres-da-igreja'
     | '/painel'
     | '/privacidade'
     | '/redefinir-senha'
@@ -1074,6 +1098,7 @@ export interface RootRouteChildren {
   BuscaRoute: typeof BuscaRoute
   CalendarioLiturgicoRoute: typeof CalendarioLiturgicoRoute
   CatecismoRoute: typeof CatecismoRouteWithChildren
+  ConciliosRoute: typeof ConciliosRoute
   ConfissaoRoute: typeof ConfissaoRoute
   ContatoRoute: typeof ContatoRoute
   CoroinhasRoute: typeof CoroinhasRoute
@@ -1092,6 +1117,7 @@ export interface RootRouteChildren {
   LiturgiaDiariaRoute: typeof LiturgiaDiariaRoute
   MariaRoute: typeof MariaRoute
   OracoesRoute: typeof OracoesRouteWithChildren
+  PadresDaIgrejaRoute: typeof PadresDaIgrejaRoute
   PainelRoute: typeof PainelRoute
   PrivacidadeRoute: typeof PrivacidadeRoute
   RedefinirSenhaRoute: typeof RedefinirSenhaRoute
@@ -1222,6 +1248,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PainelRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/padres-da-igreja': {
+      id: '/padres-da-igreja'
+      path: '/padres-da-igreja'
+      fullPath: '/padres-da-igreja'
+      preLoaderRoute: typeof PadresDaIgrejaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/oracoes': {
       id: '/oracoes'
       path: '/oracoes'
@@ -1346,6 +1379,13 @@ declare module '@tanstack/react-router' {
       path: '/confissao'
       fullPath: '/confissao'
       preLoaderRoute: typeof ConfissaoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/concilios': {
+      id: '/concilios'
+      path: '/concilios'
+      fullPath: '/concilios'
+      preLoaderRoute: typeof ConciliosRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/catecismo': {
@@ -1937,6 +1977,7 @@ const rootRouteChildren: RootRouteChildren = {
   BuscaRoute: BuscaRoute,
   CalendarioLiturgicoRoute: CalendarioLiturgicoRoute,
   CatecismoRoute: CatecismoRouteWithChildren,
+  ConciliosRoute: ConciliosRoute,
   ConfissaoRoute: ConfissaoRoute,
   ContatoRoute: ContatoRoute,
   CoroinhasRoute: CoroinhasRoute,
@@ -1955,6 +1996,7 @@ const rootRouteChildren: RootRouteChildren = {
   LiturgiaDiariaRoute: LiturgiaDiariaRoute,
   MariaRoute: MariaRoute,
   OracoesRoute: OracoesRouteWithChildren,
+  PadresDaIgrejaRoute: PadresDaIgrejaRoute,
   PainelRoute: PainelRoute,
   PrivacidadeRoute: PrivacidadeRoute,
   RedefinirSenhaRoute: RedefinirSenhaRoute,

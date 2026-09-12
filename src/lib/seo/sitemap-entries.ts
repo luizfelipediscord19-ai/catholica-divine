@@ -51,6 +51,8 @@ export const PAGINAS: SitemapEntry[] = [
   { path: "/oracoes/liturgia-das-horas", changefreq: "daily", priority: "0.7" },
   { path: "/doutores-da-igreja", changefreq: "monthly", priority: "0.7" },
   { path: "/glossario", changefreq: "monthly", priority: "0.7" },
+  { path: "/padres-da-igreja", changefreq: "monthly", priority: "0.7" },
+  { path: "/concilios", changefreq: "monthly", priority: "0.7" },
   { path: "/enciclopedia", changefreq: "monthly", priority: "0.8" },
   { path: "/enciclopedia/teologia", changefreq: "monthly", priority: "0.7" },
   { path: "/enciclopedia/moral", changefreq: "monthly", priority: "0.7" },

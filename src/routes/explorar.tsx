@@ -33,6 +33,16 @@ const BLOCOS: Bloco[] = [
       { to: "/fe-catolica", label: "Fé Católica", nota: "Tradição, Magistério e o Credo" },
       { to: "/apologetica", label: "Apologética", nota: "Objeções respondidas com fontes" },
       { to: "/glossario", label: "Glossário", nota: "Termos doutrinais explicados" },
+      {
+        to: "/padres-da-igreja",
+        label: "Padres da Igreja",
+        nota: "Apostólicos, gregos, latinos e do deserto",
+      },
+      {
+        to: "/concilios",
+        label: "Concílios Ecumênicos",
+        nota: "Os 21 concílios e suas definições",
+      },
     ],
   },
   {

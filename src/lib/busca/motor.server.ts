@@ -5,12 +5,22 @@
 import { LIVROS } from "@/lib/data/biblia/index";
 import { INTRODUCOES } from "@/lib/data/biblia/introducoes";
 import { PARTES, SECOES } from "@/lib/data/catecismo/index";
+import { ARTIGOS } from "@/lib/data/catecismo/artigos";
+import { AULAS } from "@/lib/data/catecismo/aulas";
 import { GLOSSARIO } from "@/lib/data/glossario";
 import { OBJECOES } from "@/lib/data/apologetica-objecoes";
 import { ORACOES } from "@/lib/data/oracoes";
 import { SANTOS_LISTA } from "@/lib/santos-lista";
 import { SACRAMENTOS } from "@/lib/data/sacramentos";
 import { TRILHAS } from "@/lib/data/trilhas/index";
+import { VERBETES_ENCICLOPEDIA } from "@/lib/data/enciclopedia";
+import { TEMAS_ENCICLOPEDIA } from "@/lib/data/enciclopedia-temas";
+import { TEMAS_DOUTRINA } from "@/lib/data/doutrina-temas";
+import { TEMAS_APOLOGETICA } from "@/lib/data/apologetica-temas";
+import { TEMAS_SACRAMENTAIS } from "@/lib/data/sacramentos-temas";
+import { PADRES, ERA_NOME } from "@/lib/data/padres";
+import { CONCILIOS } from "@/lib/data/concilios";
+import { SANTORAL, GRAU_NOME, dataFixaExtenso } from "@/lib/liturgia/santoral";
 import { expandirTermos, palavrasChave } from "@/lib/busca/linguagem";
 
 export type EscopoBusca =
@@ -18,18 +28,56 @@ export type EscopoBusca =
   | "catecismo"
   | "sacramentos"
   | "magisterio"
+  | "enciclopedia"
+  | "glossario"
+  | "padres"
+  | "concilios"
+  | "liturgia"
   | "santos"
   | "oracoes"
   | "formacao";
 
 export const ESCOPOS: { id: EscopoBusca; label: string; descricao: string }[] = [
   { id: "biblia", label: "Bíblia", descricao: "Texto integral dos 73 livros" },
-  { id: "catecismo", label: "Catecismo", descricao: "Partes, seções e sínteses do CIC" },
-  { id: "sacramentos", label: "Sacramentos", descricao: "Os sete sacramentos, base bíblica e efeitos" },
-  { id: "magisterio", label: "Magistério e doutrina", descricao: "Glossário doutrinal e banco apologético com fontes" },
+  { id: "catecismo", label: "Catecismo", descricao: "Partes, artigos, aulas e sínteses do CIC" },
+  {
+    id: "sacramentos",
+    label: "Sacramentos",
+    descricao: "Os sete sacramentos, sacramentais e rituais",
+  },
+  {
+    id: "magisterio",
+    label: "Magistério e apologética",
+    descricao: "Banco apologético e razões para crer com fontes",
+  },
+  {
+    id: "enciclopedia",
+    label: "Enciclopédia",
+    descricao: "Verbetes e páginas temáticas interligadas",
+  },
+  { id: "glossario", label: "Glossário", descricao: "Termos doutrinais definidos com referência" },
+  {
+    id: "padres",
+    label: "Padres da Igreja",
+    descricao: "Padres apostólicos, gregos, latinos e do deserto",
+  },
+  {
+    id: "concilios",
+    label: "Concílios",
+    descricao: "Os vinte e um concílios ecumênicos e suas definições",
+  },
+  {
+    id: "liturgia",
+    label: "Liturgia e calendário",
+    descricao: "Celebrações do Calendário Romano e do Brasil",
+  },
   { id: "santos", label: "Santos", descricao: "Vidas, títulos e patronatos" },
   { id: "oracoes", label: "Orações", descricao: "Textos orantes da tradição" },
-  { id: "formacao", label: "Trilhas de formação", descricao: "Lições das trilhas de estudo do portal" },
+  {
+    id: "formacao",
+    label: "Trilhas de formação",
+    descricao: "Lições das trilhas de estudo do portal",
+  },
 ];
 
 export type Resultado = {
@@ -72,7 +120,12 @@ function tokens(termo: string): string[] {
  * palavras (e sinônimos católicos) o trecho contém, mais alto ele fica.
  * A frase exata continua valendo muito.
  */
-function pontuar(alvo: string, termoNorm: string, toks: string[], equivalentes: string[] = []): number {
+function pontuar(
+  alvo: string,
+  termoNorm: string,
+  toks: string[],
+  equivalentes: string[] = [],
+): number {
   let pontos = 0;
   let achados = 0;
   for (const tok of toks) {
@@ -152,7 +205,7 @@ function construirCorpus(): Documento[] {
   for (const [slug, termo] of Object.entries(GLOSSARIO)) {
     docs.push({
       id: `glo-${slug}`,
-      escopo: "magisterio",
+      escopo: "glossario",
       titulo: termo.termo,
       referencia: termo.ref ?? "Glossário doutrinal",
       texto: `${termo.termo}. ${termo.definicao}`,
@@ -170,6 +223,114 @@ function construirCorpus(): Documento[] {
       texto: `${obj.objecao} ${obj.resposta.join(" ")} ${obj.fontes.join(" ")}`,
       href: `/apologetica#${obj.slug}`,
       peso: 1.1,
+    });
+  }
+
+  for (const artigo of ARTIGOS) {
+    docs.push({
+      id: `cic-art-${artigo.slug}`,
+      escopo: "catecismo",
+      titulo: artigo.titulo,
+      referencia: `CIC §§ ${artigo.de}-${artigo.ate} · ${artigo.bloco}`,
+      texto: `${artigo.sintese} ${artigo.pontos.join(" ")}`,
+      href: `/catecismo/artigos#${artigo.slug}`,
+      peso: 1.4,
+    });
+  }
+
+  for (const aula of AULAS) {
+    docs.push({
+      id: `cic-aula-${aula.slug}`,
+      escopo: "catecismo",
+      titulo: `Semana ${aula.semana} — ${aula.titulo}`,
+      referencia: `Aulas de catecismo · CIC ${aula.estudo}`,
+      texto: [
+        aula.objetivo,
+        aula.exposicao.join(" "),
+        aula.perguntas.map((p) => `${p.pergunta} ${p.resposta}`).join(" "),
+      ].join(" "),
+      href: `/catecismo/aulas/${aula.slug}`,
+      peso: 1.2,
+    });
+  }
+
+  for (const verbete of VERBETES_ENCICLOPEDIA) {
+    docs.push({
+      id: `enc-${verbete.slug}`,
+      escopo: "enciclopedia",
+      titulo: verbete.termo,
+      referencia: `${verbete.categoria} · ${verbete.referencias.slice(0, 2).join(" · ")}`,
+      texto: `${verbete.termo}. ${verbete.sintese} ${verbete.referencias.join(" ")}`,
+      href: `/enciclopedia#${verbete.slug}`,
+      peso: 1.3,
+    });
+  }
+
+  const TEMAS: {
+    base: string;
+    rotulo: string;
+    itens: {
+      slug: string;
+      nome: string;
+      resumo: string;
+      secoes: { titulo: string; paragrafos: string[] }[];
+    }[];
+  }[] = [
+    { base: "/enciclopedia", rotulo: "Enciclopédia", itens: TEMAS_ENCICLOPEDIA },
+    { base: "/doutrina", rotulo: "Doutrina", itens: TEMAS_DOUTRINA },
+    { base: "/apologetica", rotulo: "Razões para crer", itens: TEMAS_APOLOGETICA },
+    { base: "/sacramentos", rotulo: "Sacramentos", itens: TEMAS_SACRAMENTAIS },
+  ];
+  for (const grupo of TEMAS) {
+    for (const tema of grupo.itens) {
+      docs.push({
+        id: `tema-${grupo.base}-${tema.slug}`,
+        escopo: grupo.base === "/sacramentos" ? "sacramentos" : "enciclopedia",
+        titulo: tema.nome,
+        referencia: `${grupo.rotulo} · página temática`,
+        texto: [
+          tema.resumo,
+          tema.secoes.map((s) => `${s.titulo} ${s.paragrafos.join(" ")}`).join(" "),
+        ].join(" "),
+        href: `${grupo.base}/${tema.slug}`,
+        peso: 1.35,
+      });
+    }
+  }
+
+  for (const padre of PADRES) {
+    docs.push({
+      id: `pad-${padre.slug}`,
+      escopo: "padres",
+      titulo: padre.nome,
+      referencia: `${ERA_NOME[padre.era]} · ${padre.datas}`,
+      texto: `${padre.nome} ${padre.sede} ${padre.contribuicao} ${padre.obras.join(" ")} ${padre.referencias.join(" ")}`,
+      href: `/padres-da-igreja#${padre.slug}`,
+      peso: 1.25,
+    });
+  }
+
+  for (const concilio of CONCILIOS) {
+    docs.push({
+      id: `con-${concilio.slug}`,
+      escopo: "concilios",
+      titulo: `${concilio.nome} (${concilio.anos})`,
+      referencia: `${concilio.numero}º concílio ecumênico · ${concilio.local}`,
+      texto: `${concilio.contexto} ${concilio.definicoes.join(" ")} ${concilio.papa} ${concilio.referencias.join(" ")}`,
+      href: `/concilios#${concilio.slug}`,
+      peso: 1.3,
+    });
+  }
+
+  for (const celebracao of SANTORAL) {
+    docs.push({
+      id: `lit-${celebracao.data}-${celebracao.nome.slice(0, 20)}`,
+      escopo: "liturgia",
+      titulo: celebracao.nome,
+      referencia: `${dataFixaExtenso(celebracao.data)} · ${GRAU_NOME[celebracao.grau]}${celebracao.brasil ? " · próprio do Brasil" : ""}`,
+      texto: `${celebracao.nome} ${GRAU_NOME[celebracao.grau]} ${celebracao.nota ?? ""}`,
+      href: celebracao.slug ? `/santos/${celebracao.slug}` : "/calendario-liturgico",
+      peso: 1.05,
     });
   }
 
@@ -273,7 +434,10 @@ type LivroJson = { slug: string; nome: string; capitulos: Record<string, VersoTe
 const BRUTOS = import.meta.glob<{ default: LivroJson }>("../data/biblia/almeida/*.json");
 const ARQUIVOS: Record<string, () => Promise<{ default: LivroJson }>> = {};
 for (const [caminho, carregar] of Object.entries(BRUTOS)) {
-  const slug = caminho.replace(/\.json$/, "").split("/").pop();
+  const slug = caminho
+    .replace(/\.json$/, "")
+    .split("/")
+    .pop();
   if (slug) ARQUIVOS[slug] = carregar;
 }
 
@@ -347,15 +511,7 @@ export async function buscarIndexado(input: {
     termo,
     total: 0,
     duracaoMs: 0,
-    porEscopo: {
-      biblia: 0,
-      catecismo: 0,
-      sacramentos: 0,
-      magisterio: 0,
-      santos: 0,
-      oracoes: 0,
-      formacao: 0,
-    },
+    porEscopo: Object.fromEntries(ESCOPOS.map((e) => [e.id, 0])) as Record<EscopoBusca, number>,
     resultados: [],
   };
   if (!toks.length) return vazio;

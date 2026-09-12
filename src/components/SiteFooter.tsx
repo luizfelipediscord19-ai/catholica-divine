@@ -5,12 +5,10 @@ export function SiteFooter() {
     <footer data-chrome="site" className="bg-deep border-t border-gold/30 mt-24">
       <div className="shell py-block grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 items-start">
         <div className="min-w-0 md:col-span-2">
-          <h2 className="font-display text-2xl text-gold italic">
-            Ad Maiorem Dei Gloriam
-          </h2>
+          <h2 className="font-display text-2xl text-gold italic">Ad Maiorem Dei Gloriam</h2>
           <p className="mt-4 text-sm text-paper/75 max-w-[28rem] leading-relaxed">
-            Portal Católico — biblioteca digital fiel ao Magistério da Igreja, dedicada ao
-            estudo, à evangelização e à formação na fé católica.
+            Portal Católico — biblioteca digital fiel ao Magistério da Igreja, dedicada ao estudo, à
+            evangelização e à formação na fé católica.
           </p>
           <p className="mt-4 text-sm text-paper/60 max-w-[28rem] leading-relaxed">
             Conteúdo desenvolvido para auxiliar no estudo e conhecimento da fé católica.
@@ -20,49 +18,167 @@ export function SiteFooter() {
           </p>
         </div>
 
-
         <nav aria-label="Doutrina" className="min-w-0">
-          <h3 className="kicker mb-4">
-            Doutrina
-          </h3>
+          <h3 className="kicker mb-4">Doutrina</h3>
           <ul className="space-y-1 text-sm text-paper/80">
-            <li><Link to="/trilhas" className="block py-2 hover:text-gold focus-visible:text-gold">Trilhas de Estudo</Link></li>
-            <li><Link to="/fe-catolica" className="block py-2 hover:text-gold focus-visible:text-gold">A Fé Católica</Link></li>
-            <li><Link to="/catecismo" className="block py-2 hover:text-gold focus-visible:text-gold">Catecismo</Link></li>
-            <li><Link to="/biblia" className="block py-2 hover:text-gold focus-visible:text-gold">Bíblia Sagrada</Link></li>
-            <li><Link to="/apologetica" className="block py-2 hover:text-gold focus-visible:text-gold">Apologética</Link></li>
-            <li><Link to="/doutores-da-igreja" className="block py-2 hover:text-gold focus-visible:text-gold">Doutores da Igreja</Link></li>
-            <li><Link to="/glossario" className="block py-2 hover:text-gold focus-visible:text-gold">Glossário</Link></li>
+            <li>
+              <Link to="/trilhas" className="block py-2 hover:text-gold focus-visible:text-gold">
+                Trilhas de Estudo
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/fe-catolica"
+                className="block py-2 hover:text-gold focus-visible:text-gold"
+              >
+                A Fé Católica
+              </Link>
+            </li>
+            <li>
+              <Link to="/catecismo" className="block py-2 hover:text-gold focus-visible:text-gold">
+                Catecismo
+              </Link>
+            </li>
+            <li>
+              <Link to="/biblia" className="block py-2 hover:text-gold focus-visible:text-gold">
+                Bíblia Sagrada
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/apologetica"
+                className="block py-2 hover:text-gold focus-visible:text-gold"
+              >
+                Apologética
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/doutores-da-igreja"
+                className="block py-2 hover:text-gold focus-visible:text-gold"
+              >
+                Doutores da Igreja
+              </Link>
+            </li>
+            <li>
+              <Link to="/glossario" className="block py-2 hover:text-gold focus-visible:text-gold">
+                Glossário
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/padres-da-igreja"
+                className="block py-2 hover:text-gold focus-visible:text-gold"
+              >
+                Padres da Igreja
+              </Link>
+            </li>
+            <li>
+              <Link to="/concilios" className="block py-2 hover:text-gold focus-visible:text-gold">
+                Concílios Ecumênicos
+              </Link>
+            </li>
           </ul>
         </nav>
 
         <nav aria-label="Vida espiritual" className="min-w-0">
-          <h3 className="kicker mb-4">
-            Vida Espiritual
-          </h3>
+          <h3 className="kicker mb-4">Vida Espiritual</h3>
           <ul className="space-y-1 text-sm text-paper/80">
-            <li><Link to="/oracoes" className="block py-2 hover:text-gold focus-visible:text-gold">Orações</Link></li>
-            <li><Link to="/sacramentos" className="block py-2 hover:text-gold focus-visible:text-gold">Sacramentos</Link></li>
-            <li><Link to="/confissao" className="block py-2 hover:text-gold focus-visible:text-gold">Confissão</Link></li>
-            <li><Link to="/biblia/planos" className="block py-2 hover:text-gold focus-visible:text-gold">Planos de leitura</Link></li>
-            <li><Link to="/santos" className="block py-2 hover:text-gold focus-visible:text-gold">Santos</Link></li>
-            <li><Link to="/maria" className="block py-2 hover:text-gold focus-visible:text-gold">Maria Santíssima</Link></li>
-            <li><Link to="/calendario-liturgico" className="block py-2 hover:text-gold focus-visible:text-gold">Calendário Litúrgico</Link></li>
+            <li>
+              <Link to="/oracoes" className="block py-2 hover:text-gold focus-visible:text-gold">
+                Orações
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/sacramentos"
+                className="block py-2 hover:text-gold focus-visible:text-gold"
+              >
+                Sacramentos
+              </Link>
+            </li>
+            <li>
+              <Link to="/confissao" className="block py-2 hover:text-gold focus-visible:text-gold">
+                Confissão
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/biblia/planos"
+                className="block py-2 hover:text-gold focus-visible:text-gold"
+              >
+                Planos de leitura
+              </Link>
+            </li>
+            <li>
+              <Link to="/santos" className="block py-2 hover:text-gold focus-visible:text-gold">
+                Santos
+              </Link>
+            </li>
+            <li>
+              <Link to="/maria" className="block py-2 hover:text-gold focus-visible:text-gold">
+                Maria Santíssima
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/calendario-liturgico"
+                className="block py-2 hover:text-gold focus-visible:text-gold"
+              >
+                Calendário Litúrgico
+              </Link>
+            </li>
           </ul>
 
-          <h3 className="kicker mt-8 mb-4">
-            Institucional
-          </h3>
+          <h3 className="kicker mt-8 mb-4">Institucional</h3>
           <ul className="space-y-1 text-sm text-paper/80">
-            <li><Link to="/explorar" className="block py-2 hover:text-gold focus-visible:text-gold">Explorar o Portal</Link></li>
-            <li><Link to="/sobre" className="block py-2 hover:text-gold focus-visible:text-gold">Sobre o Portal</Link></li>
-            <li><Link to="/testemunhos" className="block py-2 hover:text-gold focus-visible:text-gold">Testemunhos de fé</Link></li>
-            <li><Link to="/contato" className="block py-2 hover:text-gold focus-visible:text-gold">Contato e sugestões</Link></li>
-            <li><Link to="/fontes" className="block py-2 hover:text-gold focus-visible:text-gold">Fontes e Metodologia</Link></li>
-            <li><Link to="/busca" className="block py-2 hover:text-gold focus-visible:text-gold">Busca Avançada</Link></li>
+            <li>
+              <Link to="/explorar" className="block py-2 hover:text-gold focus-visible:text-gold">
+                Explorar o Portal
+              </Link>
+            </li>
+            <li>
+              <Link to="/sobre" className="block py-2 hover:text-gold focus-visible:text-gold">
+                Sobre o Portal
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/testemunhos"
+                className="block py-2 hover:text-gold focus-visible:text-gold"
+              >
+                Testemunhos de fé
+              </Link>
+            </li>
+            <li>
+              <Link to="/contato" className="block py-2 hover:text-gold focus-visible:text-gold">
+                Contato e sugestões
+              </Link>
+            </li>
+            <li>
+              <Link to="/fontes" className="block py-2 hover:text-gold focus-visible:text-gold">
+                Fontes e Metodologia
+              </Link>
+            </li>
+            <li>
+              <Link to="/busca" className="block py-2 hover:text-gold focus-visible:text-gold">
+                Busca Avançada
+              </Link>
+            </li>
 
-            <li><Link to="/privacidade" className="block py-2 hover:text-gold focus-visible:text-gold">Privacidade</Link></li>
-            <li><Link to="/termos" className="block py-2 hover:text-gold focus-visible:text-gold">Termos de Uso</Link></li>
+            <li>
+              <Link
+                to="/privacidade"
+                className="block py-2 hover:text-gold focus-visible:text-gold"
+              >
+                Privacidade
+              </Link>
+            </li>
+            <li>
+              <Link to="/termos" className="block py-2 hover:text-gold focus-visible:text-gold">
+                Termos de Uso
+              </Link>
+            </li>
           </ul>
         </nav>
       </div>
