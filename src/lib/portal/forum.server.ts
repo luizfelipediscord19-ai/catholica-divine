@@ -198,7 +198,12 @@ export async function criarTopico(
   if ((totalTopicos ?? 0) >= 5) conquistas.push("cinco-topicos");
   await premiar(identidadeId, 30, conquistas);
 
-  return { slug: data.slug, status: revisao.status, motivo: revisao.motivo };
+  return {
+    slug: data.slug,
+    status: revisao.status,
+    motivo: revisao.motivo,
+    risco: revisao.risco,
+  };
 }
 
 export async function responderTopico(token: string, topicoSlug: string, entradaCorpo: string) {
@@ -249,7 +254,7 @@ export async function responderTopico(token: string, topicoSlug: string, entrada
   if (totalRespostas >= 50) conquistasResposta.push("cinquenta-respostas");
   await premiar(identidadeId, 15, conquistasResposta);
 
-  return { ok: true, status: revisao.status, motivo: revisao.motivo };
+  return { ok: true, status: revisao.status, motivo: revisao.motivo, risco: revisao.risco };
 }
 
 export async function denunciar(
