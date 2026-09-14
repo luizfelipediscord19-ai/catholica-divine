@@ -7,6 +7,7 @@ import { Relacionados } from "../components/Relacionados";
 import rosario from "@/assets/rosario.jpg";
 import maria from "@/assets/maria.jpg";
 import { keywordsPara } from "@/lib/seo/palavras-chave";
+import { MagisterialAnchor } from "@/components/MagisterialAnchor";
 
 
 export const Route = createFileRoute("/oracoes/rosario")({
@@ -174,6 +175,10 @@ function Page() {
       />
 
       <Section kicker="Escolha os mistérios" title="Quatro conjuntos, um só Cristo contemplado com Maria">
+        <div className="mb-6 flex flex-wrap gap-2" aria-label="Fundamentos magisteriais do Rosário">
+          <MagisterialAnchor tipo="CIC" numero={971} contexto="A veneração de Maria na vida da Igreja." />
+          <MagisterialAnchor tipo="CIC" numero={2678} contexto="A tradição da Ave-Maria e a súplica da Igreja." />
+        </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10">
           {CONJUNTOS.map((c) => {
             const active = c.slug === conjunto.slug;

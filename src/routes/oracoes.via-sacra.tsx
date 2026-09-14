@@ -7,6 +7,7 @@ import { Relacionados } from "../components/Relacionados";
 import cristo from "@/assets/cristo.jpg";
 import emaus from "@/assets/emaus.jpg";
 import { keywordsPara } from "@/lib/seo/palavras-chave";
+import { MagisterialAnchor } from "@/components/MagisterialAnchor";
 
 
 export const Route = createFileRoute("/oracoes/via-sacra")({
@@ -128,6 +129,10 @@ function Page() {
             comunhão eucarística, oração pelas intenções do Sumo Pontífice e ausência de apego ao pecado, ainda
             que venial (cf. <em>CIC</em> §§ 1471–1479; CDC, cân. 992–997).
           </NotaConfiabilidade>
+          <div className="mt-4 flex flex-wrap gap-2" aria-label="Referências magisteriais">
+            <MagisterialAnchor tipo="CIC" numero={618} contexto="Participação do discípulo no sacrifício de Cristo." />
+            <MagisterialAnchor tipo="CDC" numero={992} contexto="Definição canônica das indulgências." />
+          </div>
           <ul>
             <li>Faz-se diante de estações legitimamente erigidas (ordinariamente catorze cruzes).</li>
             <li>Exige-se meditação sobre a Paixão, não a recitação de fórmulas determinadas.</li>
