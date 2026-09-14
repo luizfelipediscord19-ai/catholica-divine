@@ -71,11 +71,18 @@ function Page() {
       <Section kicker="Selecione uma novena" title="Tradição viva da Igreja">
         <CardGrid cols={2}>
           {NOVENAS.map((n) => (
-            <Link key={n.slug} to="/oracoes/novenas/$slug" params={{ slug: n.slug }}>
+            <div key={n.slug} className="flex h-full flex-col gap-3">
               <ContentCard title={n.titulo} subtitle={n.ocasiao}>
                 {n.resumo}
               </ContentCard>
-            </Link>
+              <Link
+                to="/oracoes/novenas/$slug"
+                params={{ slug: n.slug }}
+                className="btn-base btn-outline-gold w-fit px-4 py-2"
+              >
+                Abrir novena
+              </Link>
+            </div>
           ))}
         </CardGrid>
       </Section>
