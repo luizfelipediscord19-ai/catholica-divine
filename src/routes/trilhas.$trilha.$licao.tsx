@@ -112,13 +112,10 @@ function LicaoPagina() {
         className="mt-6 max-w-3xl"
       />
 
-
       <div className="mt-12 space-y-12">
         {licao.blocos.map((bloco, i) => (
           <section key={i}>
-            <p className="kicker">
-              {ROTULO_BLOCO[bloco.tipo]}
-            </p>
+            <p className="kicker">{ROTULO_BLOCO[bloco.tipo]}</p>
             <h2 className="mt-2 font-display text-2xl text-paper">{bloco.titulo}</h2>
 
             {bloco.paragrafos && (
@@ -144,7 +141,10 @@ function LicaoPagina() {
               <ul className="mt-5 space-y-2 text-step-0 leading-[1.8] text-paper/80">
                 {bloco.pontos.map((p, j) => (
                   <li key={j} className="flex gap-3">
-                    <span className="mt-2 size-1.5 shrink-0 rounded-full bg-gold" aria-hidden="true" />
+                    <span
+                      className="mt-2 size-1.5 shrink-0 rounded-full bg-gold"
+                      aria-hidden="true"
+                    />
                     <span>{p}</span>
                   </li>
                 ))}
