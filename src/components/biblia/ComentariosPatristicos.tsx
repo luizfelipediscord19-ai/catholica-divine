@@ -21,10 +21,12 @@ export function ComentariosPatristicos({ livro, capitulo }: { livro: string; cap
         <BookMarked className="mt-1 size-5 shrink-0 text-gold" aria-hidden="true" />
         <div>
           <p className="kicker">Catena do capítulo</p>
-          <h2 id="titulo-patristica" className="title-sub mt-1">Comentários dos Santos Padres</h2>
+          <h2 id="titulo-patristica" className="title-sub mt-1">
+            Comentários dos Santos Padres
+          </h2>
           <p className="body-sm mt-2 max-w-3xl">
-            Sínteses próprias de leituras patrísticas identificadas por autor, século e obra. Não são
-            traduções integrais dos textos antigos.
+            Sínteses próprias de leituras patrísticas identificadas por autor, século e obra. Não
+            são traduções integrais dos textos antigos.
           </p>
         </div>
       </div>
@@ -50,10 +52,15 @@ export function ComentariosPatristicos({ livro, capitulo }: { livro: string; cap
                   <div className="flex flex-wrap items-start justify-between gap-3">
                     <div>
                       <h3 className="title-card">{item.autor}</h3>
-                      <p className="kicker mt-1">Século {item.seculo} · {item.obra}</p>
+                      <p className="kicker mt-1">
+                        Século {item.seculo} · {item.obra}
+                      </p>
                     </div>
                     {item.versiculos ? (
-                      <a href={`#v${item.versiculos[0]}`} className="text-step--2 text-gold hover:underline">
+                      <a
+                        href={`#v${item.versiculos[0]}`}
+                        className="text-step--2 text-gold hover:underline"
+                      >
                         vv. {item.versiculos[0]}–{item.versiculos[1]}
                       </a>
                     ) : null}

@@ -108,7 +108,6 @@ export async function listarTopicos(secaoSlug?: string, token?: string | null, l
   }));
 }
 
-
 export async function obterTopico(slug: string, token?: string | null) {
   const identidadeId = await identidadeOpcional(token);
 
@@ -153,7 +152,6 @@ export async function obterTopico(slug: string, token?: string | null) {
     })),
   };
 }
-
 
 export async function criarTopico(
   token: string,
@@ -221,14 +219,12 @@ export async function responderTopico(token: string, topicoSlug: string, entrada
 
   const revisao = revisarTexto(corpo);
 
-  const { error } = await supabaseAdmin
-    .from("forum_respostas")
-    .insert({
-      topico_id: topico.id,
-      identidade_id: identidadeId,
-      corpo,
-      status: revisao.status,
-    });
+  const { error } = await supabaseAdmin.from("forum_respostas").insert({
+    topico_id: topico.id,
+    identidade_id: identidadeId,
+    corpo,
+    status: revisao.status,
+  });
 
   if (error) throw new Error("Não foi possível publicar a resposta.");
 
@@ -346,10 +342,8 @@ async function premiar(identidadeId: string, xp: number, conquistas: string[]) {
     .eq("id", identidadeId);
 
   if (conquistas.length === 0) return;
-  await supabaseAdmin
-    .from("conquistas_usuario")
-    .upsert(
-      conquistas.map((slug) => ({ identidade_id: identidadeId, conquista_slug: slug })),
-      { onConflict: "identidade_id,conquista_slug", ignoreDuplicates: true },
-    );
+  await supabaseAdmin.from("conquistas_usuario").upsert(
+    conquistas.map((slug) => ({ identidade_id: identidadeId, conquista_slug: slug })),
+    { onConflict: "identidade_id,conquista_slug", ignoreDuplicates: true },
+  );
 }

@@ -10,10 +10,7 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
-import {
-  criarAncoraMagisterial,
-  type TipoAncoraMagisterial,
-} from "@/lib/data/magisterio-anchors";
+import { criarAncoraMagisterial, type TipoAncoraMagisterial } from "@/lib/data/magisterio-anchors";
 import { cn } from "@/lib/utils";
 
 export function MagisterialAnchor({
@@ -54,7 +51,8 @@ export function MagisterialAnchor({
         <div className="mx-auto w-full max-w-3xl overflow-y-auto px-2 pb-[max(1rem,env(safe-area-inset-bottom))]">
           <DrawerHeader className="px-5 pt-7 text-left sm:px-8">
             <p className="kicker">
-              {ancora.tipo === "DH" ? "Referência catalográfica" : "Fonte primária"} · {ancora.rotulo}
+              {ancora.tipo === "DH" ? "Referência catalográfica" : "Fonte primária"} ·{" "}
+              {ancora.rotulo}
             </p>
             <DrawerTitle className="font-display text-2xl text-foreground sm:text-3xl">
               {ancora.titulo}
@@ -74,7 +72,9 @@ export function MagisterialAnchor({
           </div>
           <DrawerFooter className="px-5 sm:flex-row sm:justify-end sm:px-8">
             <DrawerClose asChild>
-              <Botao variante="discreto" tamanho="md">Fechar</Botao>
+              <Botao variante="discreto" tamanho="md">
+                Fechar
+              </Botao>
             </DrawerClose>
             <a
               href={ancora.url}

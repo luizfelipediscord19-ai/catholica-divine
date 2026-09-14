@@ -13,7 +13,10 @@ export type AncoraMagisterial = {
   url: string;
 };
 
-const CIC_SINTESES: Record<number, Omit<AncoraMagisterial, "tipo" | "numero" | "rotulo" | "url">> = {
+const CIC_SINTESES: Record<
+  number,
+  Omit<AncoraMagisterial, "tipo" | "numero" | "rotulo" | "url">
+> = {
   828: {
     titulo: "Santidade e canonização",
     sintese:
@@ -114,7 +117,8 @@ export function criarAncoraMagisterial(
         substituicao?.sintese ??
         base?.sintese ??
         "Consulte o cânon indicado no Código oficial para conhecer sua redação e contexto completos.",
-      contexto: substituicao?.contexto ?? base?.contexto ?? "Norma do Código de Direito Canônico de 1983.",
+      contexto:
+        substituicao?.contexto ?? base?.contexto ?? "Norma do Código de Direito Canônico de 1983.",
       fonte: "Código de Direito Canônico (1983)",
       url: URL_CDC,
     };
@@ -131,7 +135,9 @@ export function criarAncoraMagisterial(
       base?.sintese ??
       "Referência catalográfica a uma formulação histórica da fé; confira a edição crítica para o texto e o contexto completos.",
     contexto:
-      substituicao?.contexto ?? base?.contexto ?? "Enchiridion Symbolorum, definição e declaração magisterial catalogada.",
+      substituicao?.contexto ??
+      base?.contexto ??
+      "Enchiridion Symbolorum, definição e declaração magisterial catalogada.",
     fonte: "Denzinger-Hünermann, Enchiridion Symbolorum",
     // Não existe edição oficial integral do Denzinger no site da Santa Sé.
     // O portal direciona à página institucional, sem fingir oferecer o texto catalogado.

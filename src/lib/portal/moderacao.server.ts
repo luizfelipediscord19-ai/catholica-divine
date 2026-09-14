@@ -2,44 +2,123 @@
 
 const PALAVRAS_BLOQUEADAS = [
   // ofensas e vulgaridades
-  "porra", "caralho", "merda", "bosta", "puta", "putaria", "puto", "viado",
-  "bicha", "veado", "idiota", "imbecil", "burro", "retardado", "otario",
-  "vagabundo", "vagabunda", "corno", "arrombado", "desgracado", "fdp",
-  "filho da puta", "vai se fuder", "foder", "fudido", "cuzao", "escroto",
-  "piranha", "buceta", "pinto", "rola", "punheta", "pau no cu", "chupa",
+  "porra",
+  "caralho",
+  "merda",
+  "bosta",
+  "puta",
+  "putaria",
+  "puto",
+  "viado",
+  "bicha",
+  "veado",
+  "idiota",
+  "imbecil",
+  "burro",
+  "retardado",
+  "otario",
+  "vagabundo",
+  "vagabunda",
+  "corno",
+  "arrombado",
+  "desgracado",
+  "fdp",
+  "filho da puta",
+  "vai se fuder",
+  "foder",
+  "fudido",
+  "cuzao",
+  "escroto",
+  "piranha",
+  "buceta",
+  "pinto",
+  "rola",
+  "punheta",
+  "pau no cu",
+  "chupa",
   // ódio / violência
-  "macaco", "preto imundo", "judeu sujo", "morra", "te mato", "matar voce",
-  "suicidio metodo", "nazista", "heil hitler", "hereges devem morrer",
-  "herege maldito", "queimem", "estupro", "pedofilo",
+  "macaco",
+  "preto imundo",
+  "judeu sujo",
+  "morra",
+  "te mato",
+  "matar voce",
+  "suicidio metodo",
+  "nazista",
+  "heil hitler",
+  "hereges devem morrer",
+  "herege maldito",
+  "queimem",
+  "estupro",
+  "pedofilo",
   // inglês comum
-  "fuck", "shit", "bitch", "asshole", "nigger", "faggot", "cunt", "whore",
-  "kill yourself", "kys",
+  "fuck",
+  "shit",
+  "bitch",
+  "asshole",
+  "nigger",
+  "faggot",
+  "cunt",
+  "whore",
+  "kill yourself",
+  "kys",
 ];
 
 const PADROES_SUSPEITOS: { regex: RegExp; motivo: string }[] = [
   { regex: /(https?:\/\/|www\.)\S+/gi, motivo: "link externo" },
-  { regex: /\b[\w-]+\.(?:com|net|org|br|io|xyz|top|ru|shop)(?:\/|\b)/gi, motivo: "endereço externo" },
+  {
+    regex: /\b[\w-]+\.(?:com|net|org|br|io|xyz|top|ru|shop)(?:\/|\b)/gi,
+    motivo: "endereço externo",
+  },
   { regex: /\b(?:\+?55\s?)?\(?\d{2}\)?\s?9?\d{4}[-\s]?\d{4}\b/g, motivo: "telefone" },
   { regex: /[\w.+-]+@[\w-]+\.[\w.]+/g, motivo: "e-mail" },
-  { regex: /\b(pix|whatsapp|whats|telegram|compre|promo[çc][ãa]o|desconto|ganhe dinheiro|invista|bitcoin|cripto|apostas?|bet)\b/gi, motivo: "spam" },
+  {
+    regex:
+      /\b(pix|whatsapp|whats|telegram|compre|promo[çc][ãa]o|desconto|ganhe dinheiro|invista|bitcoin|cripto|apostas?|bet)\b/gi,
+    motivo: "spam",
+  },
   // tentativas de injeção / XSS / SQL
   { regex: /<\s*(script|iframe|img|svg|object|embed|style|link|meta)\b/gi, motivo: "código HTML" },
   { regex: /(javascript:|data:text\/html|on\w+\s*=)/gi, motivo: "script embutido" },
-  { regex: /(\bunion\b[\s\S]{0,20}\bselect\b|\bdrop\s+table\b|\binsert\s+into\b|--\s*$|\/\*[\s\S]*\*\/)/gi, motivo: "injeção SQL" },
+  {
+    regex:
+      /(\bunion\b[\s\S]{0,20}\bselect\b|\bdrop\s+table\b|\binsert\s+into\b|--\s*$|\/\*[\s\S]*\*\/)/gi,
+    motivo: "injeção SQL",
+  },
   { regex: /\{\{[\s\S]*\}\}|\$\{[\s\S]*\}/g, motivo: "template injection" },
   // prompt injection contra a IA
-  { regex: /\b(ignore (as )?(instru[çc][õo]es|previous instructions)|system prompt|voc[êe] agora [ée])\b/gi, motivo: "manipulação da IA" },
+  {
+    regex:
+      /\b(ignore (as )?(instru[çc][õo]es|previous instructions)|system prompt|voc[êe] agora [ée])\b/gi,
+    motivo: "manipulação da IA",
+  },
 ];
 
 const PADROES_GRAVES: { regex: RegExp; motivo: string }[] = [
-  { regex: /\b(?:matar|assassinar|agredir|atacar|explodir)\b[\s\S]{0,40}\b(?:papa|bispo|padre|freira|cat[oó]lico|igreja)\b/gi, motivo: "ameaça dirigida" },
-  { regex: /\b(?:dados pessoais|endere[cç]o|cpf|telefone)\b[\s\S]{0,30}\b(?:divulgar|expor|publicar)\b/gi, motivo: "risco de exposição pessoal" },
+  {
+    regex:
+      /\b(?:matar|assassinar|agredir|atacar|explodir)\b[\s\S]{0,40}\b(?:papa|bispo|padre|freira|cat[oó]lico|igreja)\b/gi,
+    motivo: "ameaça dirigida",
+  },
+  {
+    regex:
+      /\b(?:dados pessoais|endere[cç]o|cpf|telefone)\b[\s\S]{0,30}\b(?:divulgar|expor|publicar)\b/gi,
+    motivo: "risco de exposição pessoal",
+  },
   { regex: /\b(?:nazismo|supremacia racial|limpeza [ée]tnica)\b/gi, motivo: "extremismo ou ódio" },
 ];
 
 const PADROES_TEOLOGICOS: { regex: RegExp; motivo: string }[] = [
-  { regex: /\b(?:o papa|o magist[ée]rio|o conc[ií]lio)\b[\s\S]{0,45}\b(?:maldito|sat[aâ]nico|demon[ií]aco|ileg[ií]timo)\b/gi, motivo: "ofensa ao Papa ou ao Magistério" },
-  { regex: /\b(?:trindade|divindade de cristo|ressurrei[cç][aã]o)\b[\s\S]{0,35}\b(?:fraude|mentira|inven[cç][aã]o)\b/gi, motivo: "afirmação doutrinal grave" },
+  {
+    regex:
+      /\b(?:o papa|o magist[ée]rio|o conc[ií]lio)\b[\s\S]{0,45}\b(?:maldito|sat[aâ]nico|demon[ií]aco|ileg[ií]timo)\b/gi,
+    motivo: "ofensa ao Papa ou ao Magistério",
+  },
+  {
+    regex:
+      /\b(?:trindade|divindade de cristo|ressurrei[cç][aã]o)\b[\s\S]{0,35}\b(?:fraude|mentira|inven[cç][aã]o)\b/gi,
+    motivo: "afirmação doutrinal grave",
+  },
 ];
 
 /** Reduz disfarces (l33t, repetições, espaçamento) antes de comparar palavras. */
