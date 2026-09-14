@@ -1,10 +1,22 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useServerFn } from "@tanstack/react-start";
 import { useEffect, useState } from "react";
 import { GraduationCap, ArrowRight } from "lucide-react";
 import { TRILHAS } from "@/lib/data/trilhas";
-import { concluidasDe, lerProgresso, percentual, resumoGeral, type ProgressoTrilhas } from "@/lib/trilhas/progresso";
+import {
+  concluidasDe,
+  lerProgresso,
+  mesclarProgresso,
+  percentual,
+  resumoGeral,
+  salvarProgresso,
+  type ProgressoTrilhas,
+} from "@/lib/trilhas/progresso";
 import { PageHero } from "@/components/PageShell";
 import biblioteca from "@/assets/biblioteca.jpg";
+import { useAuth } from "@/hooks/use-auth";
+import { lerToken } from "@/hooks/use-identidade";
+import { reconciliarTrilhasFn } from "@/lib/portal.functions";
 
 const BASE = "https://portalcatolico.vercel.app";
 const TITULO = "Trilhas de Aprendizado — Formação Católica Passo a Passo";
@@ -28,6 +40,8 @@ export const Route = createFileRoute("/trilhas/")({
 });
 
 function TrilhasIndex() {
+  const { autenticado } = useAuth();
+  const reconciliar = useServerFn(reconciliarTrilhasFn);
   const [progresso, setProgresso] = useState<ProgressoTrilhas>({ concluidas: [] });
   useEffect(() => {
     const ler = () => setProgresso(lerProgresso());
@@ -35,6 +49,26 @@ function TrilhasIndex() {
     window.addEventListener("portal:trilhas", ler);
     return () => window.removeEventListener("portal:trilhas", ler);
   }, []);
+
+  useEffect(() => {
+    if (!autenticado) return;
+    let ativo = true;
+    void reconciliar({ data: { token: lerToken(), chaves: lerProgresso().concluidas } })
+      .then((remoto) => {
+        if (!ativo) return;
+        const local = lerProgresso();
+        const unido = mesclarProgresso(local, { concluidas: remoto.concluidas });
+        const mudou = unido.concluidas.length !== local.concluidas.length;
+        if (mudou) salvarProgresso(unido);
+        setProgresso(unido);
+      })
+      .catch(() => {
+        // O cache local continua funcional se a sincronização estiver indisponível.
+      });
+    return () => {
+      ativo = false;
+    };
+  }, [autenticado, reconciliar]);
 
   const geral = resumoGeral(TRILHAS, progresso);
   const ultima = progresso.ultima;
