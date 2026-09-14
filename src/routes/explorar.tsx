@@ -52,6 +52,11 @@ const BLOCOS: Bloco[] = [
       { to: "/oracoes", label: "Orações", nota: "Biblioteca orante da tradição" },
       { to: "/oracoes/rosario", label: "Rosário", nota: "Mistérios e modo de rezar" },
       {
+        to: "/lectio-divina",
+        label: "Lectio Divina",
+        nota: "Leitura orante guiada em quatro etapas",
+      },
+      {
         to: "/oracoes/liturgia-das-horas",
         label: "Liturgia das Horas",
         nota: "A oração do dia inteiro",

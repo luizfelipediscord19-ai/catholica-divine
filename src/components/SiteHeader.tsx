@@ -31,6 +31,7 @@ const GRUPOS: { titulo: string; itens: { to: string; label: string }[] }[] = [
       { to: "/confissao", label: "Confissão" },
       { to: "/oracoes/rosario", label: "Rosário" },
       { to: "/oracoes/liturgia-das-horas", label: "Liturgia das Horas" },
+      { to: "/lectio-divina", label: "Lectio Divina" },
       { to: "/santos", label: "Santos" },
       { to: "/maria", label: "Maria Santíssima" },
     ],
