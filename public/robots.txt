@@ -1,14 +1,6 @@
 User-agent: *
 Allow: /
-Disallow: /painel
-Disallow: /favoritos
-Disallow: /auth
-Disallow: /redefinir-senha
-Disallow: /email-confirmado
 Disallow: /api/
-Disallow: /busca
-Disallow: /*?vi=
-Disallow: /*?vf=
 
 User-agent: GPTBot
 Allow: /
