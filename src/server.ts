@@ -207,7 +207,8 @@ async function aplicarNonceNoHtml(
 
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
-    const dev = process.env["NODE_ENV"] !== "production";
+    const previsualizacao = ehPrevisualizacao(request);
+    const dev = process.env["NODE_ENV"] !== "production" || previsualizacao;
     const nonce = dev ? undefined : gerarNonce();
     try {
       normalizarEnvBackend();
@@ -218,7 +219,7 @@ export default {
       const comNonce = nonce
         ? await aplicarNonceNoHtml(normalizedResponse, nonce)
         : normalizedResponse;
-      return await applySecurityHeaders(comNonce, nonce);
+      return await applySecurityHeaders(comNonce, nonce, previsualizacao);
     } catch (error) {
       console.error(error);
       const errorResponse = new Response(renderErrorPage(), {
@@ -226,7 +227,7 @@ export default {
         headers: { "content-type": "text/html; charset=utf-8" },
       });
       const comNonce = nonce ? await aplicarNonceNoHtml(errorResponse, nonce) : errorResponse;
-      return await applySecurityHeaders(comNonce, nonce);
+      return await applySecurityHeaders(comNonce, nonce, previsualizacao);
     }
   },
 
