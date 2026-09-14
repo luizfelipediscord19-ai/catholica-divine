@@ -34,6 +34,10 @@ function salvar(dados: ProgressoTrilhas) {
   }
 }
 
+export function salvarProgresso(dados: ProgressoTrilhas) {
+  salvar(dados);
+}
+
 export function chaveLicao(trilha: string, licao: string) {
   return `${trilha}/${licao}`;
 }

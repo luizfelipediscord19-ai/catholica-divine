@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight, BookOpen, Check } from "lucide-react";
 import { Botao, BotaoLink } from "@/components/ds";
 import { acharLicao, ROTULO_BLOCO } from "@/lib/data/trilhas";
 import { FaixaAutoridade } from "@/components/SeloConfiabilidade";
+import { QuizLicao } from "@/components/trilhas/QuizLicao";
 
 import {
   alternarConclusao,
@@ -189,6 +190,8 @@ function LicaoPagina() {
           ))}
         </ul>
       </section>
+
+      {licao.quiz && <QuizLicao quiz={licao.quiz} trilha={trilha.slug} licao={licao.slug} />}
 
       {licao.relacionados && licao.relacionados.length > 0 && (
         <section className="mt-10">
