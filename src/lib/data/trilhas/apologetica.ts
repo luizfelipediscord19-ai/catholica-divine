@@ -135,8 +135,7 @@ export const APOLOGETICA: Trilha = {
             },
             {
               ref: "São Tomás de Aquino, Suma Teológica I, q. 2, a. 3",
-              texto:
-                "Existe portanto algo que é por si necessário... e a isso todos chamam Deus.",
+              texto: "Existe portanto algo que é por si necessário... e a isso todos chamam Deus.",
             },
           ],
         },
@@ -298,8 +297,7 @@ export const APOLOGETICA: Trilha = {
             },
             {
               ref: "1Tm 3, 15",
-              texto:
-                "A Igreja do Deus vivo, que é a coluna e o fundamento da verdade.",
+              texto: "A Igreja do Deus vivo, que é a coluna e o fundamento da verdade.",
             },
             {
               ref: "Jo 21, 25",
@@ -383,9 +381,13 @@ export const APOLOGETICA: Trilha = {
             },
             {
               ref: "Lc 22, 32",
-              texto: "Roguei por ti, para que a tua fé não desfaleça. E tu, uma vez convertido, confirma os teus irmãos.",
+              texto:
+                "Roguei por ti, para que a tua fé não desfaleça. E tu, uma vez convertido, confirma os teus irmãos.",
             },
-            { ref: "Jo 21, 15-17", texto: "Apascenta os meus cordeiros... apascenta as minhas ovelhas." },
+            {
+              ref: "Jo 21, 15-17",
+              texto: "Apascenta os meus cordeiros... apascenta as minhas ovelhas.",
+            },
             { ref: "Lc 1, 48", texto: "Todas as gerações me chamarão bem-aventurada." },
             {
               ref: "Ap 5, 8",

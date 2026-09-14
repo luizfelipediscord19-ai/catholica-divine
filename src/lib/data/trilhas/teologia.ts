@@ -35,16 +35,22 @@ export const TEOLOGIA: Trilha = {
           citacoes: [
             {
               ref: "Mt 28, 19",
-              texto:
-                "Batizai-os em nome do Pai, do Filho e do Espírito Santo.",
+              texto: "Batizai-os em nome do Pai, do Filho e do Espírito Santo.",
             },
-            { ref: "Jo 1, 1", texto: "No princípio era o Verbo, e o Verbo estava com Deus, e o Verbo era Deus." },
+            {
+              ref: "Jo 1, 1",
+              texto: "No princípio era o Verbo, e o Verbo estava com Deus, e o Verbo era Deus.",
+            },
             {
               ref: "Jo 15, 26",
               texto:
                 "Quando vier o Paráclito, que eu vos enviarei da parte do Pai, o Espírito da Verdade, que procede do Pai, ele dará testemunho de mim.",
             },
-            { ref: "2Cor 13, 13", texto: "A graça do Senhor Jesus Cristo, o amor de Deus e a comunhão do Espírito Santo estejam com todos vós." },
+            {
+              ref: "2Cor 13, 13",
+              texto:
+                "A graça do Senhor Jesus Cristo, o amor de Deus e a comunhão do Espírito Santo estejam com todos vós.",
+            },
           ],
         },
         {
@@ -98,8 +104,7 @@ export const TEOLOGIA: Trilha = {
     {
       slug: "cristologia",
       titulo: "Cristologia e os concílios",
-      resumo:
-        "Uma Pessoa, duas naturezas: Éfeso, Calcedônia e por que cada palavra importa.",
+      resumo: "Uma Pessoa, duas naturezas: Éfeso, Calcedônia e por que cada palavra importa.",
       minutos: 11,
       blocos: [
         {
@@ -270,7 +275,10 @@ export const TEOLOGIA: Trilha = {
           tipo: "escritura",
           titulo: "O que diz a Escritura",
           citacoes: [
-            { ref: "1Cor 12, 27", texto: "Vós sois o corpo de Cristo, e seus membros, cada um por sua parte." },
+            {
+              ref: "1Cor 12, 27",
+              texto: "Vós sois o corpo de Cristo, e seus membros, cada um por sua parte.",
+            },
             { ref: "Ef 5, 32", texto: "Este é um grande mistério: refiro-me a Cristo e à Igreja." },
             {
               ref: "At 2, 42",
@@ -332,7 +340,11 @@ export const TEOLOGIA: Trilha = {
           tipo: "escritura",
           titulo: "O que diz a Escritura",
           citacoes: [
-            { ref: "Hb 9, 27", texto: "Está determinado que os homens morram uma só vez, seguindo-se depois o juízo." },
+            {
+              ref: "Hb 9, 27",
+              texto:
+                "Está determinado que os homens morram uma só vez, seguindo-se depois o juízo.",
+            },
             {
               ref: "2Mc 12, 46",
               texto:

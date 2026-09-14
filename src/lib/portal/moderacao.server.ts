@@ -208,10 +208,12 @@ export function revisarTexto(...partes: (string | undefined)[]): ResultadoRevisa
 
 /** Remove qualquer marcação/controle antes de persistir o texto do usuário. */
 export function sanitizarTexto(texto: string, limite = 6000): string {
-  return texto
-    // eslint-disable-next-line no-control-regex -- remoção deliberada de controles invisíveis
-    .replace(/[\u0000-\u0008\u000b-\u001f\u200b-\u200f\u202a-\u202e]/g, "")
-    .replace(/<[^>]*>/g, "")
-    .trim()
-    .slice(0, limite);
+  return (
+    texto
+      // eslint-disable-next-line no-control-regex -- remoção deliberada de controles invisíveis
+      .replace(/[\u0000-\u0008\u000b-\u001f\u200b-\u200f\u202a-\u202e]/g, "")
+      .replace(/<[^>]*>/g, "")
+      .trim()
+      .slice(0, limite)
+  );
 }

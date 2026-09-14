@@ -5,7 +5,6 @@ import { SANTOS_LISTA } from "../santos-lista";
 import { SANTOS } from "../data/santos";
 import { LIVROS } from "../data/biblia";
 
-
 export type IdentidadePublica = {
   id: string;
   santoSlug: string;
@@ -83,7 +82,6 @@ export async function escolherSanto(token: string, slug: string) {
   return toPublica(data);
 }
 
-
 export const COLUNAS =
   "id, santo_slug, santo_nome, santo_imagem, santo_escolhido, apelido, xp, nivel, streak, melhor_streak, ultima_oracao";
 
@@ -100,18 +98,17 @@ export async function garantirIdentidade(
     if (data) return { token, identidade: toPublica(data) };
   }
 
-/**
- * Motivo do erro do backend em texto curto, sem jamais expor chaves:
- * qualquer trecho parecido com credencial é removido antes de sair do servidor.
- */
-function motivoSeguro(mensagem?: string) {
-  if (!mensagem) return "sem resposta do backend";
-  return mensagem
-    .replace(/sb_(secret|publishable)_[\w-]+/g, "[chave]")
-    .replace(/eyJ[\w-]+\.[\w-]+\.[\w-]+/g, "[chave]")
-    .slice(0, 140);
-}
-
+  /**
+   * Motivo do erro do backend em texto curto, sem jamais expor chaves:
+   * qualquer trecho parecido com credencial é removido antes de sair do servidor.
+   */
+  function motivoSeguro(mensagem?: string) {
+    if (!mensagem) return "sem resposta do backend";
+    return mensagem
+      .replace(/sb_(secret|publishable)_[\w-]+/g, "[chave]")
+      .replace(/eyJ[\w-]+\.[\w-]+\.[\w-]+/g, "[chave]")
+      .slice(0, 140);
+  }
 
   const santo = sortearSanto();
   const { data, error } = await supabaseAdmin
@@ -183,12 +180,14 @@ async function somarXp(identidadeId: string, xp: number) {
   return data ?? 0;
 }
 
-
 function hojeISO() {
   return new Date().toISOString().slice(0, 10);
 }
 
-async function contar(tabela: "diario_espiritual" | "favoritos" | "notas" | "leituras_biblia", identidadeId: string) {
+async function contar(
+  tabela: "diario_espiritual" | "favoritos" | "notas" | "leituras_biblia",
+  identidadeId: string,
+) {
   const { count } = await supabaseAdmin
     .from(tabela)
     .select("id", { count: "exact", head: true })
@@ -229,11 +228,8 @@ async function conquistasDeAcervo(identidadeId: string) {
     contar("favoritos", identidadeId),
     contar("notas", identidadeId),
   ]);
-  return oracoes > 0 && leituras > 0 && favoritos > 0 && notas > 0
-    ? ["caminho-completo"]
-    : [];
+  return oracoes > 0 && leituras > 0 && favoritos > 0 && notas > 0 ? ["caminho-completo"] : [];
 }
-
 
 /** Registra a oração do dia (diário espiritual), atualiza streak, XP e conquistas. */
 export async function registrarOracao(
@@ -290,7 +286,6 @@ export async function registrarOracao(
   alvos.push(...(await conquistasDeAcervo(id.id)));
   const novasConquistas = await desbloquear(id.id, alvos);
 
-
   return { streak, novasConquistas, jaRezouHoje };
 }
 
@@ -344,7 +339,6 @@ export async function marcarCapitulo(
   if (NOVO_TESTAMENTO.every((s) => completos.has(s))) alvos.push("novo-testamento");
   alvos.push(...(await conquistasDeAcervo(id.id)));
   const novasConquistas = await desbloquear(id.id, alvos);
-
 
   return { lido: true, novasConquistas };
 }
@@ -464,7 +458,6 @@ export async function alternarFavorito(
   if (totalFavoritos >= 50) alvos.push("favoritos-50");
   alvos.push(...(await conquistasDeAcervo(id.id)));
   return { favorito: true, novasConquistas: await desbloquear(id.id, alvos) };
-
 }
 
 /** Cria ou atualiza uma anotação pessoal. */
@@ -498,7 +491,6 @@ export async function salvarNota(
   if (totalNotas >= 25) alvos.push("notas-25");
   alvos.push(...(await conquistasDeAcervo(id.id)));
   return { novasConquistas: await desbloquear(id.id, alvos) };
-
 }
 
 export async function apagarNota(token: string, notaId: string) {
@@ -515,12 +507,8 @@ export async function obterPainel(token: string) {
   const hoje = hojeISO();
   void identidade;
 
-
   const [leituras, favoritos, notas, conquistas, catalogo, diarioHoje, ultima] = await Promise.all([
-    supabaseAdmin
-      .from("leituras_biblia")
-      .select("livro, capitulo")
-      .eq("identidade_id", id.id),
+    supabaseAdmin.from("leituras_biblia").select("livro, capitulo").eq("identidade_id", id.id),
     supabaseAdmin
       .from("favoritos")
       .select("livro, capitulo, versiculo, texto")
@@ -558,20 +546,20 @@ export async function obterPainel(token: string) {
   // Totais usados pelas barras de progresso das conquistas.
   const [diario, completos, topicos, respostas, favoritosTotal, notasTotal, estudos] =
     await Promise.all([
-    supabaseAdmin.from("diario_espiritual").select("minutos").eq("identidade_id", id.id),
-    livrosConcluidos(id.id),
-    supabaseAdmin
-      .from("forum_topicos")
-      .select("id", { count: "exact", head: true })
-      .eq("identidade_id", id.id),
-    supabaseAdmin
-      .from("forum_respostas")
-      .select("id", { count: "exact", head: true })
-      .eq("identidade_id", id.id),
-    contar("favoritos", id.id),
-    contar("notas", id.id),
-    totaisDeEstudo(id.id),
-  ]);
+      supabaseAdmin.from("diario_espiritual").select("minutos").eq("identidade_id", id.id),
+      livrosConcluidos(id.id),
+      supabaseAdmin
+        .from("forum_topicos")
+        .select("id", { count: "exact", head: true })
+        .eq("identidade_id", id.id),
+      supabaseAdmin
+        .from("forum_respostas")
+        .select("id", { count: "exact", head: true })
+        .eq("identidade_id", id.id),
+      contar("favoritos", id.id),
+      contar("notas", id.id),
+      totaisDeEstudo(id.id),
+    ]);
 
   const linhasDiario = diario.data ?? [];
 
@@ -603,7 +591,6 @@ export async function obterPainel(token: string) {
       desbloqueada: desbloqueadas.has(c.slug),
     })),
   };
-
 }
 
 /** Estado de leitura/favoritos/notas de um capítulo específico. */

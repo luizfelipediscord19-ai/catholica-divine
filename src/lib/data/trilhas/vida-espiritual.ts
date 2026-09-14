@@ -167,8 +167,7 @@ export const VIDA_ESPIRITUAL: Trilha = {
     {
       slug: "combate-espiritual",
       titulo: "O combate espiritual",
-      resumo:
-        "Tentação, pecados capitais e as armas concretas da tradição contra o desânimo.",
+      resumo: "Tentação, pecados capitais e as armas concretas da tradição contra o desânimo.",
       minutos: 9,
       blocos: [
         {
@@ -242,8 +241,7 @@ export const VIDA_ESPIRITUAL: Trilha = {
     {
       slug: "exame-e-confissao",
       titulo: "Exame de consciência e confissão",
-      resumo:
-        "Como se examinar sem escrúpulo e como confessar bem, passo a passo.",
+      resumo: "Como se examinar sem escrúpulo e como confessar bem, passo a passo.",
       minutos: 8,
       blocos: [
         {
@@ -269,7 +267,10 @@ export const VIDA_ESPIRITUAL: Trilha = {
               texto:
                 "Se reconhecermos os nossos pecados, Deus, que é fiel e justo, os perdoará e nos purificará de toda iniquidade.",
             },
-            { ref: "Tg 5, 16", texto: "Confessai os vossos pecados uns aos outros e orai uns pelos outros." },
+            {
+              ref: "Tg 5, 16",
+              texto: "Confessai os vossos pecados uns aos outros e orai uns pelos outros.",
+            },
           ],
         },
         {

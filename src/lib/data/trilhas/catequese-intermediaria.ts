@@ -75,8 +75,7 @@ export const CATEQUESE_INTERMEDIARIA: Trilha = {
             },
             {
               ref: "CIC §1327",
-              texto:
-                "Em suma, a Eucaristia é o resumo e a soma de nossa fé.",
+              texto: "Em suma, a Eucaristia é o resumo e a soma de nossa fé.",
             },
           ],
         },
@@ -171,8 +170,7 @@ export const CATEQUESE_INTERMEDIARIA: Trilha = {
     {
       slug: "graca-e-justificacao",
       titulo: "Graça e justificação",
-      resumo:
-        "O que é a graça, como o homem é justificado e por que fé e obras não se opõem.",
+      resumo: "O que é a graça, como o homem é justificado e por que fé e obras não se opõem.",
       minutos: 9,
       blocos: [
         {
@@ -188,8 +186,15 @@ export const CATEQUESE_INTERMEDIARIA: Trilha = {
           tipo: "escritura",
           titulo: "Textos-chave",
           citacoes: [
-            { ref: "Ef 2, 8-9", texto: "É pela graça que sois salvos, mediante a fé. E isso não vem de vós, é dom de Deus; não vem das obras, para que ninguém se glorie." },
-            { ref: "Tg 2, 24", texto: "Vede que o homem é justificado pelas obras, e não somente pela fé." },
+            {
+              ref: "Ef 2, 8-9",
+              texto:
+                "É pela graça que sois salvos, mediante a fé. E isso não vem de vós, é dom de Deus; não vem das obras, para que ninguém se glorie.",
+            },
+            {
+              ref: "Tg 2, 24",
+              texto: "Vede que o homem é justificado pelas obras, e não somente pela fé.",
+            },
             { ref: "Gl 5, 6", texto: "O que vale é a fé que atua pela caridade." },
           ],
         },
@@ -273,18 +278,38 @@ export const CATEQUESE_INTERMEDIARIA: Trilha = {
           tipo: "escritura",
           titulo: "Fundamento bíblico",
           citacoes: [
-            { ref: "Jo 20, 21-23", texto: "Assim como o Pai me enviou, também eu vos envio... Àqueles a quem perdoardes os pecados, ser-lhes-ão perdoados." },
+            {
+              ref: "Jo 20, 21-23",
+              texto:
+                "Assim como o Pai me enviou, também eu vos envio... Àqueles a quem perdoardes os pecados, ser-lhes-ão perdoados.",
+            },
             { ref: "2Cor 5, 18", texto: "Deus nos confiou o ministério da reconciliação." },
-            { ref: "Tg 5, 16", texto: "Confessai os vossos pecados uns aos outros e orai uns pelos outros para serdes curados." },
+            {
+              ref: "Tg 5, 16",
+              texto:
+                "Confessai os vossos pecados uns aos outros e orai uns pelos outros para serdes curados.",
+            },
           ],
         },
         {
           tipo: "catecismo",
           titulo: "Elementos essenciais",
           citacoes: [
-            { ref: "CIC §1422", texto: "Os que se aproximam do sacramento da Penitência recebem da misericórdia de Deus o perdão da ofensa que lhe fizeram e ao mesmo tempo se reconciliam com a Igreja." },
-            { ref: "CIC §1456", texto: "A confissão dos pecados ao sacerdote constitui parte essencial do sacramento: é preciso enumerar todos os pecados mortais de que se tem consciência." },
-            { ref: "CIC §1467", texto: "A Igreja declara que todo sacerdote que ouve confissões está obrigado, sob penas severíssimas, a guardar segredo absoluto." },
+            {
+              ref: "CIC §1422",
+              texto:
+                "Os que se aproximam do sacramento da Penitência recebem da misericórdia de Deus o perdão da ofensa que lhe fizeram e ao mesmo tempo se reconciliam com a Igreja.",
+            },
+            {
+              ref: "CIC §1456",
+              texto:
+                "A confissão dos pecados ao sacerdote constitui parte essencial do sacramento: é preciso enumerar todos os pecados mortais de que se tem consciência.",
+            },
+            {
+              ref: "CIC §1467",
+              texto:
+                "A Igreja declara que todo sacerdote que ouve confissões está obrigado, sob penas severíssimas, a guardar segredo absoluto.",
+            },
           ],
         },
         {
@@ -343,7 +368,11 @@ export const CATEQUESE_INTERMEDIARIA: Trilha = {
           citacoes: [
             { ref: "Lc 1, 48", texto: "Doravante todas as gerações me chamarão bem-aventurada." },
             { ref: "Jo 2, 5", texto: "Fazei tudo o que ele vos disser." },
-            { ref: "Ap 5, 8", texto: "Os anciãos tinham taças de ouro cheias de perfume, que são as orações dos santos." },
+            {
+              ref: "Ap 5, 8",
+              texto:
+                "Os anciãos tinham taças de ouro cheias de perfume, que são as orações dos santos.",
+            },
             { ref: "Hb 12, 1", texto: "Estamos rodeados de tão grande nuvem de testemunhas." },
           ],
         },
@@ -351,18 +380,40 @@ export const CATEQUESE_INTERMEDIARIA: Trilha = {
           tipo: "catecismo",
           titulo: "Ensino da Igreja",
           citacoes: [
-            { ref: "CIC §971", texto: "O culto da Santíssima Virgem é intrínseco ao culto cristão, mas difere essencialmente do culto de adoração prestado ao Verbo encarnado, ao Pai e ao Espírito Santo." },
-            { ref: "CIC §956", texto: "A intercessão dos santos: por estarem mais intimamente unidos a Cristo, consolidam mais firmemente toda a Igreja na santidade." },
-            { ref: "CIC §487", texto: "O que a fé católica crê a respeito de Maria funda-se no que ela crê a respeito de Cristo." },
+            {
+              ref: "CIC §971",
+              texto:
+                "O culto da Santíssima Virgem é intrínseco ao culto cristão, mas difere essencialmente do culto de adoração prestado ao Verbo encarnado, ao Pai e ao Espírito Santo.",
+            },
+            {
+              ref: "CIC §956",
+              texto:
+                "A intercessão dos santos: por estarem mais intimamente unidos a Cristo, consolidam mais firmemente toda a Igreja na santidade.",
+            },
+            {
+              ref: "CIC §487",
+              texto:
+                "O que a fé católica crê a respeito de Maria funda-se no que ela crê a respeito de Cristo.",
+            },
           ],
         },
         {
           tipo: "magisterio",
           titulo: "Documentos definidores",
           citacoes: [
-            { ref: "Ineffabilis Deus (Pio IX, 1854)", texto: "Definição do dogma da Imaculada Conceição." },
-            { ref: "Munificentissimus Deus (Pio XII, 1950)", texto: "Definição do dogma da Assunção." },
-            { ref: "Lumen Gentium, 62", texto: "A função materna de Maria para com os homens não obscurece nem diminui de modo algum a única mediação de Cristo, antes mostra a sua eficácia." },
+            {
+              ref: "Ineffabilis Deus (Pio IX, 1854)",
+              texto: "Definição do dogma da Imaculada Conceição.",
+            },
+            {
+              ref: "Munificentissimus Deus (Pio XII, 1950)",
+              texto: "Definição do dogma da Assunção.",
+            },
+            {
+              ref: "Lumen Gentium, 62",
+              texto:
+                "A função materna de Maria para com os homens não obscurece nem diminui de modo algum a única mediação de Cristo, antes mostra a sua eficácia.",
+            },
           ],
         },
       ],
@@ -396,19 +447,45 @@ export const CATEQUESE_INTERMEDIARIA: Trilha = {
           tipo: "escritura",
           titulo: "Textos fundamentais",
           citacoes: [
-            { ref: "2Mc 12, 46", texto: "É um pensamento santo e salutar orar pelos mortos, para que sejam livres de seus pecados." },
-            { ref: "1Cor 3, 15", texto: "Se a obra de alguém for queimada, ele sofrerá o dano; será salvo, mas como que através do fogo." },
-            { ref: "Mt 25, 46", texto: "E irão estes para o suplício eterno, e os justos para a vida eterna." },
-            { ref: "1Cor 15, 42-44", texto: "Semeia-se na corrupção, ressuscita-se na incorruptibilidade." },
+            {
+              ref: "2Mc 12, 46",
+              texto:
+                "É um pensamento santo e salutar orar pelos mortos, para que sejam livres de seus pecados.",
+            },
+            {
+              ref: "1Cor 3, 15",
+              texto:
+                "Se a obra de alguém for queimada, ele sofrerá o dano; será salvo, mas como que através do fogo.",
+            },
+            {
+              ref: "Mt 25, 46",
+              texto: "E irão estes para o suplício eterno, e os justos para a vida eterna.",
+            },
+            {
+              ref: "1Cor 15, 42-44",
+              texto: "Semeia-se na corrupção, ressuscita-se na incorruptibilidade.",
+            },
           ],
         },
         {
           tipo: "catecismo",
           titulo: "Definições",
           citacoes: [
-            { ref: "CIC §1030", texto: "Os que morrem na graça e na amizade de Deus, mas imperfeitamente purificados, embora seguros de sua salvação eterna, sofrem depois da morte uma purificação." },
-            { ref: "CIC §1033", texto: "Morrer em pecado mortal sem estar arrependido significa permanecer separado dele para sempre por nossa livre escolha. É esse estado de autoexclusão definitiva que se designa pela palavra inferno." },
-            { ref: "CIC §1023", texto: "Os que morrem na graça e amizade de Deus e estão perfeitamente purificados vivem para sempre com Cristo." },
+            {
+              ref: "CIC §1030",
+              texto:
+                "Os que morrem na graça e na amizade de Deus, mas imperfeitamente purificados, embora seguros de sua salvação eterna, sofrem depois da morte uma purificação.",
+            },
+            {
+              ref: "CIC §1033",
+              texto:
+                "Morrer em pecado mortal sem estar arrependido significa permanecer separado dele para sempre por nossa livre escolha. É esse estado de autoexclusão definitiva que se designa pela palavra inferno.",
+            },
+            {
+              ref: "CIC §1023",
+              texto:
+                "Os que morrem na graça e amizade de Deus e estão perfeitamente purificados vivem para sempre com Cristo.",
+            },
           ],
         },
         {
@@ -430,7 +507,10 @@ export const CATEQUESE_INTERMEDIARIA: Trilha = {
       ],
       fontes: [
         { obra: "Catecismo da Igreja Católica", ref: "§§1020-1065" },
-        { obra: "Concílio de Lyon II (1274) e Concílio de Florença (1439)", ref: "Sobre o purgatório" },
+        {
+          obra: "Concílio de Lyon II (1274) e Concílio de Florença (1439)",
+          ref: "Sobre o purgatório",
+        },
         { obra: "Bento XVI", ref: "Spe Salvi (2007), 45-47" },
       ],
     },
@@ -454,9 +534,21 @@ export const CATEQUESE_INTERMEDIARIA: Trilha = {
           tipo: "catecismo",
           titulo: "Critérios",
           citacoes: [
-            { ref: "CIC §1778", texto: "A consciência moral é um juízo da razão pelo qual a pessoa humana reconhece a qualidade moral de um ato concreto." },
-            { ref: "CIC §1783", texto: "É preciso que a consciência seja informada e o juízo moral esclarecido. A educação da consciência é tarefa de toda a vida." },
-            { ref: "CIC §1857", texto: "Para que um pecado seja mortal são requeridas três condições: matéria grave, plena advertência e consentimento deliberado." },
+            {
+              ref: "CIC §1778",
+              texto:
+                "A consciência moral é um juízo da razão pelo qual a pessoa humana reconhece a qualidade moral de um ato concreto.",
+            },
+            {
+              ref: "CIC §1783",
+              texto:
+                "É preciso que a consciência seja informada e o juízo moral esclarecido. A educação da consciência é tarefa de toda a vida.",
+            },
+            {
+              ref: "CIC §1857",
+              texto:
+                "Para que um pecado seja mortal são requeridas três condições: matéria grave, plena advertência e consentimento deliberado.",
+            },
           ],
         },
         {
