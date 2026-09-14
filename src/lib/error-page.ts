@@ -25,7 +25,7 @@ export function renderErrorPage(): string {
       <h1>Esta página não carregou</h1>
       <p>Algo falhou de nosso lado. Você pode tentar de novo ou voltar para o início.</p>
       <div class="actions">
-        <button class="primary" onclick="location.reload()">Tentar de novo</button>
+        <a class="primary" href=".">Tentar de novo</a>
         <a class="secondary" href="/">Ir para o início</a>
       </div>
     </div>

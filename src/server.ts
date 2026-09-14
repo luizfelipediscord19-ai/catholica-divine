@@ -5,7 +5,6 @@ import { garantirWebSocket } from "./lib/websocket-polyfill";
 import { consumeLastCapturedError } from "./lib/error-capture";
 import { renderErrorPage } from "./lib/error-page";
 
-
 type ServerEntry = {
   fetch: (request: Request, env: unknown, ctx: unknown) => Promise<Response> | Response;
 };
@@ -54,9 +53,7 @@ async function applySecurityHeaders(
   // O navegador precisa falar com o backend (contas, fórum, painel) e com a IA.
   const backend = process.env["VITE_SUPABASE_URL"] ?? process.env["SUPABASE_URL"] ?? "";
   const backendWs = backend.replace(/^https:/, "wss:");
-  const conexoes = ["'self'", "https://api.groq.com", backend, backendWs]
-    .filter(Boolean)
-    .join(" ");
+  const conexoes = ["'self'", "https://api.groq.com", backend, backendWs].filter(Boolean).join(" ");
 
   // Em produção não há necessidade de eval nem de inline liberado: cada <script>
   // do documento recebe um nonce por requisição e 'strict-dynamic' cobre os
@@ -92,14 +89,10 @@ async function applySecurityHeaders(
     "https://*.bing.com https://copilot.microsoft.com; " +
     "upgrade-insecure-requests;";
 
-
   // Content Security Policy (Strict but allows required fonts and AI gateway)
   newHeaders.set(
     "Content-Security-Policy",
-    comuns +
-      " " +
-      scripts +
-      "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;",
+    comuns + " " + scripts + "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;",
   );
 
   // Modo report-only: política mais rígida (sem 'unsafe-inline' em estilos e
@@ -120,9 +113,6 @@ async function applySecurityHeaders(
     );
     newHeaders.set("Reporting-Endpoints", 'csp-endpoint="/api/public/csp-report"');
   }
-
-
-
 
   // Anti-clickjacking fica a cargo do CSP (frame-ancestors), que aceita lista de
   // origens. X-Frame-Options: SAMEORIGIN bloquearia leitores externos como o
@@ -151,7 +141,6 @@ async function applySecurityHeaders(
 
   // HSTS (Strict-Transport-Security) - 1 year
   newHeaders.set("Strict-Transport-Security", "max-age=31536000; includeSubDomains; preload");
-
 
   return new Response(response.body, {
     status: response.status,
@@ -191,10 +180,7 @@ function gerarNonce(): string {
  * Aplica o nonce a todo <script> do documento HTML. Assim o CSP de produção
  * dispensa 'unsafe-inline' em script-src: só executa o que este servidor marcou.
  */
-async function aplicarNonceNoHtml(
-  response: Response,
-  nonce: string,
-): Promise<Response> {
+async function aplicarNonceNoHtml(response: Response, nonce: string): Promise<Response> {
   const tipo = response.headers.get("content-type") ?? "";
   if (!tipo.includes("text/html")) return response;
 
@@ -202,7 +188,11 @@ async function aplicarNonceNoHtml(
   const marcado = html.replace(/<script(?![^>]*\snonce=)/gi, `<script nonce="${nonce}"`);
   const headers = new Headers(response.headers);
   headers.delete("content-length");
-  return new Response(marcado, { status: response.status, statusText: response.statusText, headers });
+  return new Response(marcado, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  });
 }
 
 export default {
@@ -230,5 +220,4 @@ export default {
       return await applySecurityHeaders(comNonce, nonce, previsualizacao);
     }
   },
-
 };
