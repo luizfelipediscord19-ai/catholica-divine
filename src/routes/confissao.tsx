@@ -4,6 +4,7 @@ import { PerguntarSophia } from "../components/portal/PerguntarSophia";
 import velas from "../assets/velas.jpg";
 import bomPastor from "@/assets/bom-pastor.jpg";
 import { keywordsPara } from "@/lib/seo/palavras-chave";
+import { ExamePrivado } from "@/components/confissao/ExamePrivado";
 
 export const Route = createFileRoute("/confissao")({
   head: () => ({
@@ -241,6 +242,8 @@ function Page() {
             que é pecado, distinguir o grave do leve e nomear as coisas com clareza (CIC §§1857–1862).
           </p>
         </Prose>
+
+        <ExamePrivado blocos={EXAME} />
 
         <div className="mt-[var(--space-md)] space-y-[var(--space-sm)]">
           {EXAME.map((bloco) => (

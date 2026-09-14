@@ -7,6 +7,8 @@ import { RetratoSanto } from "@/components/santos/RetratoSanto";
 import { usePrefetchSanto } from "@/lib/santos/prefetch";
 import { BotaoSalvar } from "@/components/portal/BotaoSalvar";
 import { keywordsPara } from "@/lib/seo/palavras-chave";
+import { NotaConfiabilidade } from "@/components/SeloConfiabilidade";
+import { MagisterialAnchor } from "@/components/MagisterialAnchor";
 
 const SITE = "https://portalcatolico.vercel.app";
 
@@ -167,6 +169,10 @@ function SantoPage() {
 
             <div>
               <h2 className="font-display text-2xl text-foreground mb-4">Biografia</h2>
+              <NotaConfiabilidade nivel="historia">
+                O texto distingue fatos documentados de tradições hagiográficas. Fórmulas breves
+                atribuídas ao santo devem ser lidas com a indicação editorial disponível na ficha.
+              </NotaConfiabilidade>
               <p className="text-base leading-relaxed text-muted-foreground whitespace-pre-line">
                 {v.biografia}
               </p>
@@ -202,6 +208,12 @@ function SantoPage() {
                 </footer>
               </blockquote>
             ) : null}
+
+            <div className="flex flex-wrap items-center gap-2 border-t border-gold/15 pt-6">
+              <MagisterialAnchor tipo="CIC" numero={828} />
+              <MagisterialAnchor tipo="CIC" numero={2683} />
+              <MagisterialAnchor tipo="CDC" numero={1186} />
+            </div>
 
             <div className="pt-6 border-t border-gold/20">
               <Link to="/santos" className="text-sm text-gold hover:underline">

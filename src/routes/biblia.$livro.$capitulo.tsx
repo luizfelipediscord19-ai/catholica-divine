@@ -20,6 +20,7 @@ import { useMarcadorCapitulo } from "../components/portal/RetomarLeitura";
 import { capituloLocal, temTextoLocal } from "../lib/biblia/local";
 import { CatecismoDoVersiculo } from "../components/biblia/CatecismoDoVersiculo";
 import { CapituloNoCatecismo } from "../components/biblia/CapituloNoCatecismo";
+import { ComentariosPatristicos } from "../components/biblia/ComentariosPatristicos";
 
 type Verso = { v: number; t: string };
 
@@ -453,6 +454,7 @@ function Page() {
 
       <div data-leitura-oculto>
         <CapituloNoCatecismo livro={livro.slug} capitulo={capitulo} className="mt-10" />
+        <ComentariosPatristicos livro={livro.slug} capitulo={capitulo} />
         <NotasCapitulo livro={livro.slug} capitulo={capitulo} className="mt-10" />
         <EstudarComSophia
           titulo={`${livro.nome} ${capitulo}`}
