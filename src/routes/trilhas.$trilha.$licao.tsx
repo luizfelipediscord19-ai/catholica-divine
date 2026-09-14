@@ -1,10 +1,14 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import { useServerFn } from "@tanstack/react-start";
 import { ArrowLeft, ArrowRight, BookOpen, Check } from "lucide-react";
 import { Botao, BotaoLink } from "@/components/ds";
 import { acharLicao, ROTULO_BLOCO } from "@/lib/data/trilhas";
 import { FaixaAutoridade } from "@/components/SeloConfiabilidade";
 import { QuizLicao } from "@/components/trilhas/QuizLicao";
+import { useAuth } from "@/hooks/use-auth";
+import { lerToken } from "@/hooks/use-identidade";
+import { registrarEstudoFn } from "@/lib/portal.functions";
 
 import {
   alternarConclusao,
@@ -61,6 +65,8 @@ export const Route = createFileRoute("/trilhas/$trilha/$licao")({
 function LicaoPagina() {
   const params = Route.useParams();
   const achado = acharLicao(params.trilha, params.licao);
+  const { autenticado } = useAuth();
+  const registrar = useServerFn(registrarEstudoFn);
   const [progresso, setProgresso] = useState<ProgressoTrilhas>({ concluidas: [] });
 
   useEffect(() => {
@@ -89,6 +95,19 @@ function LicaoPagina() {
   const proxima = trilha.licoes[indice + 1];
   const anterior = trilha.licoes[indice - 1];
   const feita = progresso.concluidas.includes(chaveLicao(trilha.slug, licao.slug));
+
+  function alternarESincronizar() {
+    const concluiu = alternarConclusao(trilha.slug, licao.slug);
+    if (concluiu && autenticado) {
+      void registrar({
+        data: {
+          token: lerToken() ?? "",
+          tipo: "trilha-avancada",
+          chave: chaveLicao(trilha.slug, licao.slug),
+        },
+      });
+    }
+  }
 
   return (
     <article className="shell-narrow py-block">
@@ -212,7 +231,7 @@ function LicaoPagina() {
         <Botao
           tamanho="lg"
           variante={feita ? "contorno" : "ouro"}
-          onClick={() => alternarConclusao(trilha.slug, licao.slug)}
+          onClick={alternarESincronizar}
           aria-pressed={feita}
           className={feita ? "border-gold text-gold" : ""}
         >
