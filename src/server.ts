@@ -81,8 +81,13 @@ async function applySecurityHeaders(
     "worker-src 'self' blob:; " +
     "manifest-src 'self'; " +
     // Leitores externos (ChatGPT, Bing/Copilot, pré-visualizações do Lovable)
-    // precisam abrir o portal dentro do próprio painel deles.
-    "frame-ancestors 'self' https://*.lovable.app https://*.lovable.dev " +
+    // precisam abrir o portal dentro do próprio painel deles. Os domínios sem
+    // subdomínio precisam ser listados à parte: "*.lovable.dev" não cobre
+    // "lovable.dev", e sem isso a página aparece como "não carregou".
+    "frame-ancestors 'self' https://lovable.dev https://*.lovable.dev " +
+    "https://lovable.app https://*.lovable.app " +
+    "https://lovableproject.com https://*.lovableproject.com " +
+    "https://*.lovableproject-dev.com " +
     "https://chatgpt.com https://*.chatgpt.com https://*.openai.com " +
     "https://*.bing.com https://copilot.microsoft.com; " +
     "upgrade-insecure-requests;";
@@ -99,22 +104,22 @@ async function applySecurityHeaders(
 
   // Modo report-only: política mais rígida (sem 'unsafe-inline' em estilos e
   // sem 'unsafe-eval') apenas monitorada, para medirmos o que ainda quebraria
-  // antes de aplicá-la de verdade.
-  const nonceRelatorio = nonce ? ` 'nonce-${nonce}' 'strict-dynamic'` : "";
-  newHeaders.set(
-    "Content-Security-Policy-Report-Only",
-    comuns.replace("upgrade-insecure-requests;", "") +
-      ` script-src 'self'${nonceRelatorio}; ` +
-      "style-src 'self' https://fonts.googleapis.com; " +
-      "style-src-attr 'unsafe-inline'; " +
-      "require-trusted-types-for 'script'; " +
-      "report-uri /api/public/csp-report; " +
-      "report-to csp-endpoint;",
-  );
-  newHeaders.set(
-    "Reporting-Endpoints",
-    'csp-endpoint="/api/public/csp-report"',
-  );
+  // antes de aplicá-la de verdade. Na pré-visualização fica desligado: o editor
+  // injeta scripts próprios e gerava centenas de avisos por página.
+  if (!dev) {
+    const nonceRelatorio = nonce ? ` 'nonce-${nonce}' 'strict-dynamic'` : "";
+    newHeaders.set(
+      "Content-Security-Policy-Report-Only",
+      comuns.replace("upgrade-insecure-requests;", "") +
+        ` script-src 'self'${nonceRelatorio}; ` +
+        "style-src 'self' https://fonts.googleapis.com; " +
+        "style-src-attr 'unsafe-inline'; " +
+        "require-trusted-types-for 'script'; " +
+        "report-uri /api/public/csp-report; " +
+        "report-to csp-endpoint;",
+    );
+    newHeaders.set("Reporting-Endpoints", 'csp-endpoint="/api/public/csp-report"');
+  }
 
 
 
