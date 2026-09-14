@@ -2,30 +2,47 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useMemo, useState } from "react";
 import { Botao, BotaoLink } from "@/components/ds";
 import { PageHero, Section, Prancha } from "../components/PageShell";
-import { CONJUNTOS, ORACOES_BASE, conjuntoDoDia, type ConjuntoMisterios } from "../lib/data/devocoes/rosario";
+import {
+  CONJUNTOS,
+  ORACOES_BASE,
+  conjuntoDoDia,
+  type ConjuntoMisterios,
+} from "../lib/data/devocoes/rosario";
 import { Relacionados } from "../components/Relacionados";
 import rosario from "@/assets/rosario.jpg";
 import maria from "@/assets/maria.jpg";
 import { keywordsPara } from "@/lib/seo/palavras-chave";
 import { MagisterialAnchor } from "@/components/MagisterialAnchor";
 
-
 export const Route = createFileRoute("/oracoes/rosario")({
   head: () => ({
     meta: [
       { title: "Santo Rosário Interativo — Portal Católico" },
       { property: "og:url", content: "https://portalcatolico.vercel.app/oracoes/rosario" },
-      { name: "description", content: "Reze o Santo Rosário guiado com contagem automática, cronômetro e marcação de progresso." },
+      {
+        name: "description",
+        content:
+          "Reze o Santo Rosário guiado com contagem automática, cronômetro e marcação de progresso.",
+      },
       { name: "keywords", content: keywordsPara(["oracoes", "maria"]) },
       { property: "og:title", content: "Santo Rosário Interativo" },
-      { property: "og:description", content: "Mistérios Gozosos, Luminosos, Dolorosos e Gloriosos." },
+      {
+        property: "og:description",
+        content: "Mistérios Gozosos, Luminosos, Dolorosos e Gloriosos.",
+      },
     ],
     links: [{ rel: "canonical", href: "https://portalcatolico.vercel.app/oracoes/rosario" }],
   }),
   component: Page,
 });
 
-type Etapa = { titulo: string; subtitle?: string; texto: string; repeticao?: number; misterioIdx?: number };
+type Etapa = {
+  titulo: string;
+  subtitle?: string;
+  texto: string;
+  repeticao?: number;
+  misterioIdx?: number;
+};
 
 const STORAGE_KEY = "rosario:progresso:v1";
 type Saved = {
@@ -146,7 +163,11 @@ function Page() {
     setElapsed(0);
     setPlaying(false);
     setRestored(null);
-    try { localStorage.removeItem(STORAGE_KEY); } catch { /* ignore */ }
+    try {
+      localStorage.removeItem(STORAGE_KEY);
+    } catch {
+      /* ignore */
+    }
   }
 
   function mmss(s: number) {
@@ -174,10 +195,21 @@ function Page() {
         intro={`Hoje, ${dayName()}: sugestão de ${sugestao.nome.toLowerCase()}. Modo guiado com contagem automática e cronômetro.`}
       />
 
-      <Section kicker="Escolha os mistérios" title="Quatro conjuntos, um só Cristo contemplado com Maria">
+      <Section
+        kicker="Escolha os mistérios"
+        title="Quatro conjuntos, um só Cristo contemplado com Maria"
+      >
         <div className="mb-6 flex flex-wrap gap-2" aria-label="Fundamentos magisteriais do Rosário">
-          <MagisterialAnchor tipo="CIC" numero={971} contexto="A veneração de Maria na vida da Igreja." />
-          <MagisterialAnchor tipo="CIC" numero={2678} contexto="A tradição da Ave-Maria e a súplica da Igreja." />
+          <MagisterialAnchor
+            tipo="CIC"
+            numero={971}
+            contexto="A veneração de Maria na vida da Igreja."
+          />
+          <MagisterialAnchor
+            tipo="CIC"
+            numero={2678}
+            contexto="A tradição da Ave-Maria e a súplica da Igreja."
+          />
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10">
           {CONJUNTOS.map((c) => {
@@ -187,10 +219,16 @@ function Page() {
                 key={c.slug}
                 variante="discreto"
                 tamanho="lg"
-                onClick={() => { setConjunto(c); reiniciar(); }}
+                onClick={() => {
+                  setConjunto(c);
+                  reiniciar();
+                }}
                 className={`h-auto min-h-0 justify-start p-4 text-left normal-case tracking-normal ${active ? "border-gold bg-gold/10" : "border-gold/20 hover:border-gold/60"}`}
               >
-                <span><span className="kicker block">{c.dia}</span><span className="mt-1 block font-display text-lg">{c.nome}</span></span>
+                <span>
+                  <span className="kicker block">{c.dia}</span>
+                  <span className="mt-1 block font-display text-lg">{c.nome}</span>
+                </span>
               </Botao>
             );
           })}
@@ -199,10 +237,18 @@ function Page() {
         {restored ? (
           <div className="border border-gold/40 bg-gold/5 p-4 mb-4 flex items-center justify-between gap-3 text-sm">
             <span>
-              <span className="text-gold">●</span> Retomado de onde parou — etapa {restored.etapaIdx + 1}, conta {restored.contagem + 1}
+              <span className="text-gold">●</span> Retomado de onde parou — etapa{" "}
+              {restored.etapaIdx + 1}, conta {restored.contagem + 1}
               <span className="text-muted-foreground"> · salvo {tempoAtras(restored.savedAt)}</span>
             </span>
-            <Botao tamanho="sm" variante="discreto" onClick={() => setRestored(null)} className="text-xs font-normal normal-case tracking-normal text-muted-foreground">dispensar</Botao>
+            <Botao
+              tamanho="sm"
+              variante="discreto"
+              onClick={() => setRestored(null)}
+              className="text-xs font-normal normal-case tracking-normal text-muted-foreground"
+            >
+              dispensar
+            </Botao>
           </div>
         ) : null}
 
@@ -211,12 +257,17 @@ function Page() {
           <Botao tamanho="md" onClick={() => setPlaying((p) => !p)}>
             {playing ? "⏸ Pausar" : "▶ Iniciar"}
           </Botao>
-          <Botao tamanho="md" variante="contorno" onClick={reiniciar}>↺ Reiniciar</Botao>
+          <Botao tamanho="md" variante="contorno" onClick={reiniciar}>
+            ↺ Reiniciar
+          </Botao>
           <div className="font-mono text-xl text-gold tabular-nums">{mmss(elapsed)}</div>
           <label className="flex items-center gap-2 text-xs text-muted-foreground ml-auto">
             Ritmo por conta:
             <input
-              type="range" min={6} max={25} value={secPerBead}
+              type="range"
+              min={6}
+              max={25}
+              value={secPerBead}
               onChange={(e) => setSecPerBead(Number(e.target.value))}
               className="accent-gold"
             />
@@ -243,14 +294,35 @@ function Page() {
             </p>
             <div className="flex gap-2">
               {atual.misterioIdx !== undefined ? (
-                <Botao tamanho="md" variante="contorno" onClick={repetirMisterio} title="Reinicia este mistério">
+                <Botao
+                  tamanho="md"
+                  variante="contorno"
+                  onClick={repetirMisterio}
+                  title="Reinicia este mistério"
+                >
                   ↻ Repetir mistério
                 </Botao>
               ) : null}
-              <Botao tamanho="md" variante="contorno" onClick={() => { setEtapaIdx((n) => Math.max(0, n - 1)); setContagem(0); }} disabled={etapaIdx === 0}>
+              <Botao
+                tamanho="md"
+                variante="contorno"
+                onClick={() => {
+                  setEtapaIdx((n) => Math.max(0, n - 1));
+                  setContagem(0);
+                }}
+                disabled={etapaIdx === 0}
+              >
                 ← Anterior
               </Botao>
-              <Botao tamanho="md" variante="contorno" onClick={() => { setEtapaIdx((n) => Math.min(etapas.length - 1, n + 1)); setContagem(0); }} disabled={etapaIdx === etapas.length - 1}>
+              <Botao
+                tamanho="md"
+                variante="contorno"
+                onClick={() => {
+                  setEtapaIdx((n) => Math.min(etapas.length - 1, n + 1));
+                  setContagem(0);
+                }}
+                disabled={etapaIdx === etapas.length - 1}
+              >
                 Próximo →
               </Botao>
             </div>
@@ -266,9 +338,12 @@ function Page() {
             <div className="mt-8">
               <div className="flex items-center justify-between mb-3">
                 <span className="text-sm text-muted-foreground">
-                  Conta <span className="font-mono text-gold">{contagem + 1}</span> de {atual.repeticao}
+                  Conta <span className="font-mono text-gold">{contagem + 1}</span> de{" "}
+                  {atual.repeticao}
                 </span>
-                <Botao tamanho="md" variante="contorno" onClick={avancarConta}>+ 1 conta</Botao>
+                <Botao tamanho="md" variante="contorno" onClick={avancarConta}>
+                  + 1 conta
+                </Botao>
               </div>
               <div className="flex gap-2">
                 {Array.from({ length: atual.repeticao }, (_, i) => (
@@ -287,7 +362,9 @@ function Page() {
           <div className="flex-1 h-1 bg-gold/15 rounded">
             <div
               className="h-1 bg-gold rounded transition-all"
-              style={{ width: `${((etapaIdx + (contagem + 1) / Math.max(1, total)) / etapas.length) * 100}%` }}
+              style={{
+                width: `${((etapaIdx + (contagem + 1) / Math.max(1, total)) / etapas.length) * 100}%`,
+              }}
             />
           </div>
           <span className="text-xs text-muted-foreground font-mono">
@@ -305,18 +382,23 @@ function Page() {
         />
       </div>
 
-
-
       <Section kicker="Mais devoções" title="Continue na vida de oração">
         <div className="flex flex-wrap gap-3">
-          <BotaoLink para="/oracoes" variante="contorno" tamanho="lg">← Todas as orações</BotaoLink>
-          <BotaoLink para="/oracoes/via-sacra" variante="contorno" tamanho="lg">Via-Sacra</BotaoLink>
-          <BotaoLink para="/oracoes/novenas" variante="contorno" tamanho="lg">Novenas</BotaoLink>
-          <BotaoLink para="/oracoes/liturgia-das-horas" variante="contorno" tamanho="lg">Liturgia das Horas</BotaoLink>
+          <BotaoLink para="/oracoes" variante="contorno" tamanho="lg">
+            ← Todas as orações
+          </BotaoLink>
+          <BotaoLink para="/oracoes/via-sacra" variante="contorno" tamanho="lg">
+            Via-Sacra
+          </BotaoLink>
+          <BotaoLink para="/oracoes/novenas" variante="contorno" tamanho="lg">
+            Novenas
+          </BotaoLink>
+          <BotaoLink para="/oracoes/liturgia-das-horas" variante="contorno" tamanho="lg">
+            Liturgia das Horas
+          </BotaoLink>
         </div>
         <Relacionados topic="rosario" className="mt-8" />
       </Section>
-
     </div>
   );
 }
@@ -337,7 +419,12 @@ function buildEtapas(c: ConjuntoMisterios): Etapa[] {
       misterioIdx: i,
     });
     e.push({ titulo: "Pai-Nosso", texto: ORACOES_BASE.paiNosso, misterioIdx: i });
-    e.push({ titulo: "Dez Ave-Marias", texto: ORACOES_BASE.aveMaria, repeticao: 10, misterioIdx: i });
+    e.push({
+      titulo: "Dez Ave-Marias",
+      texto: ORACOES_BASE.aveMaria,
+      repeticao: 10,
+      misterioIdx: i,
+    });
     e.push({ titulo: "Glória", texto: ORACOES_BASE.gloria, misterioIdx: i });
     e.push({ titulo: "Oração de Fátima", texto: ORACOES_BASE.fatima, misterioIdx: i });
   });
