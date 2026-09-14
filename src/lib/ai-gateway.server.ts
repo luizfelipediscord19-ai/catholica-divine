@@ -10,11 +10,16 @@ export function createLovableAiGatewayRunIdFetch(initialRunId?: string) {
   let runId = initialRunId?.trim() || undefined;
   let resolver: (value: string | undefined) => void = () => {};
   let resolvido = false;
-  const pronto = new Promise<string | undefined>((resolve) => { resolver = resolve; });
+  const pronto = new Promise<string | undefined>((resolve) => {
+    resolver = resolve;
+  });
   const publicar = (value?: string) => {
     const recebido = value?.trim() || undefined;
     if (!runId && recebido) runId = recebido;
-    if (!resolvido) { resolvido = true; resolver(runId); }
+    if (!resolvido) {
+      resolvido = true;
+      resolver(runId);
+    }
   };
   if (runId) publicar(runId);
 
@@ -75,7 +80,11 @@ export async function withLovableAiGatewayRunIdHeader(
   if (!response.body) {
     const runId = gateway.getRunId();
     if (runId) headers.set(CABECALHO_RUN_ID, runId);
-    return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
+    return new Response(response.body, {
+      status: response.status,
+      statusText: response.statusText,
+      headers,
+    });
   }
   const reader = response.body.getReader();
   const primeiro = reader.read();
@@ -92,9 +101,13 @@ export async function withLovableAiGatewayRunIdHeader(
           controller.enqueue(parte.value);
         }
         controller.close();
-      } catch (error) { controller.error(error); }
+      } catch (error) {
+        controller.error(error);
+      }
     },
-    cancel(reason) { return reader.cancel(reason); },
+    cancel(reason) {
+      return reader.cancel(reason);
+    },
   });
   return new Response(body, { status: response.status, statusText: response.statusText, headers });
 }

@@ -1,11 +1,6 @@
 import { SophiaMode } from "../types/chat";
 
-const DOMINIOS_PERMITIDOS = [
-  "localhost",
-  ".lovable.app",
-  ".lovableproject.com",
-  ".lovable.dev",
-];
+const DOMINIOS_PERMITIDOS = ["localhost", ".lovable.app", ".lovableproject.com", ".lovable.dev"];
 
 export function isAllowedBrowserRequest(request: Request): boolean {
   const origin = request.headers.get("origin");
@@ -80,7 +75,8 @@ export function handleChatError(err: unknown): Response {
       "A conversa ficou longa demais para a Sophia responder agora. Comece uma nova conversa ou faça a pergunta de forma mais curta.";
   } else if (/401|LOVABLE_API_KEY|api key/i.test(message)) {
     status = 500;
-    userMessage = "A Sophia está sem a configuração segura necessária. O responsável pelo portal precisa revisar a chave de IA.";
+    userMessage =
+      "A Sophia está sem a configuração segura necessária. O responsável pelo portal precisa revisar a chave de IA.";
   } else if (message.includes("429")) {
     status = 429;
     userMessage = "Muitas requisições. Aguarde um instante e tente novamente.";

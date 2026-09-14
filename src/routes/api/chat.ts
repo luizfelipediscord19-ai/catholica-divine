@@ -104,8 +104,7 @@ export const Route = createFileRoute("/api/chat")({
           const mensagens = (messages as UIMessage[])
             .map((m) => ({
               ...m,
-              parts: (m.parts ?? [])
-                .filter((p) => p.type === "text" || p.type === "file"),
+              parts: (m.parts ?? []).filter((p) => p.type === "text" || p.type === "file"),
             }))
             .filter((m) => (m.parts ?? []).length > 0) as UIMessage[];
 
@@ -158,13 +157,13 @@ export const Route = createFileRoute("/api/chat")({
           });
 
           const response = result.toUIMessageStreamResponse({
-              originalMessages: messages as UIMessage[],
-              sendReasoning: true,
-              headers: getLovableAiGatewayResponseHeaders({
-                ...cabecalhosCors(request),
-                ...(initialRunId ? { "X-Lovable-AIG-Run-ID": initialRunId } : {}),
-              }),
-            });
+            originalMessages: messages as UIMessage[],
+            sendReasoning: true,
+            headers: getLovableAiGatewayResponseHeaders({
+              ...cabecalhosCors(request),
+              ...(initialRunId ? { "X-Lovable-AIG-Run-ID": initialRunId } : {}),
+            }),
+          });
           return withLovableAiGatewayRunIdHeader(response, gateway, cabecalhosCors(request));
         } catch (err) {
           return comCors(handleChatError(err), request);
