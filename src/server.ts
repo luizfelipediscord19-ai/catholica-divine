@@ -23,7 +23,32 @@ async function getServerEntry(): Promise<ServerEntry> {
 
 // h3 swallows in-handler throws into a normal 500 Response with body
 // {"unhandled":true,"message":"HTTPError"} — try/catch alone never fires for those.
-async function applySecurityHeaders(response: Response, nonce?: string): Promise<Response> {
+/**
+ * Hospedagens de pré-visualização (Lovable). Nelas a página é aberta dentro de
+ * um painel e recebe ferramentas extras do editor, então a política rígida de
+ * produção não se aplica: ela deixaria a tela em branco / "não carregou".
+ */
+function ehPrevisualizacao(request: Request): boolean {
+  let host = "";
+  try {
+    host = new URL(request.url).hostname;
+  } catch {
+    return false;
+  }
+  return (
+    host === "localhost" ||
+    host.endsWith(".lovable.app") ||
+    host.endsWith(".lovable.dev") ||
+    host.endsWith(".lovableproject.com") ||
+    host.endsWith(".lovableproject-dev.com")
+  );
+}
+
+async function applySecurityHeaders(
+  response: Response,
+  nonce?: string,
+  previsualizacao = false,
+): Promise<Response> {
   const newHeaders = new Headers(response.headers);
 
   // O navegador precisa falar com o backend (contas, fórum, painel) e com a IA.
@@ -35,10 +60,11 @@ async function applySecurityHeaders(response: Response, nonce?: string): Promise
 
   // Em produção não há necessidade de eval nem de inline liberado: cada <script>
   // do documento recebe um nonce por requisição e 'strict-dynamic' cobre os
-  // módulos carregados por eles. O dev server (HMR) ainda precisa do modo antigo.
-  const dev = process.env["NODE_ENV"] !== "production";
+  // módulos carregados por eles. O dev server (HMR) e a pré-visualização ainda
+  // precisam do modo antigo.
+  const dev = process.env["NODE_ENV"] !== "production" || previsualizacao;
   const scripts = dev
-    ? "script-src 'self' 'unsafe-inline' 'unsafe-eval'; "
+    ? "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://lovable.dev https://*.lovable.dev https://*.lovable.app; "
     : nonce
       ? `script-src 'self' 'nonce-${nonce}' 'strict-dynamic'; `
       : "script-src 'self'; ";
