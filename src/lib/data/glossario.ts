@@ -11,6 +11,27 @@ export type EntradaGlossario = {
   definicao: string;
   /** Referência opcional (parágrafo do CIC, concílio, doutor). */
   ref?: string;
+  /** Classificação editorial usada pelos filtros acadêmicos. */
+  categoria?: CategoriaGlossario;
+};
+
+export type CategoriaGlossario =
+  | "tomismo"
+  | "dogmatica"
+  | "moral"
+  | "liturgia"
+  | "escritura"
+  | "espiritualidade"
+  | "historia";
+
+export const ROTULO_CATEGORIA_GLOSSARIO: Record<CategoriaGlossario, string> = {
+  tomismo: "Tomismo e filosofia",
+  dogmatica: "Teologia dogmática",
+  moral: "Teologia moral",
+  liturgia: "Liturgia e sacramentos",
+  escritura: "Sagrada Escritura",
+  espiritualidade: "Espiritualidade",
+  historia: "História da Igreja",
 };
 
 export const GLOSSARIO: Record<string, EntradaGlossario> = {
@@ -190,8 +211,7 @@ export const GLOSSARIO: Record<string, EntradaGlossario> = {
   },
   apostasia: {
     termo: "Apostasia",
-    definicao:
-      "Repúdio total da fé cristã por quem foi batizado.",
+    definicao: "Repúdio total da fé cristã por quem foi batizado.",
     ref: "CIC § 2089",
   },
   anatema: {
@@ -327,20 +347,17 @@ export const GLOSSARIO: Record<string, EntradaGlossario> = {
   },
   adoracao: {
     termo: "Adoração Eucarística",
-    definicao:
-      "Culto de latria prestado a Cristo presente no Santíssimo Sacramento fora da Missa.",
+    definicao: "Culto de latria prestado a Cristo presente no Santíssimo Sacramento fora da Missa.",
     ref: "CIC § 1378",
   },
   latria: {
     termo: "Latria",
-    definicao:
-      "Culto de adoração devido somente a Deus.",
+    definicao: "Culto de adoração devido somente a Deus.",
     ref: "CIC § 2096",
   },
   dulia: {
     termo: "Dulia",
-    definicao:
-      "Culto de veneração prestado aos santos, essencialmente distinto da adoração.",
+    definicao: "Culto de veneração prestado aos santos, essencialmente distinto da adoração.",
     ref: "CIC § 971",
   },
   hiperdulia: {
@@ -435,20 +452,17 @@ export const GLOSSARIO: Record<string, EntradaGlossario> = {
   },
   igreja_militante: {
     termo: "Igreja Militante",
-    definicao:
-      "Os fiéis que ainda peregrinam na terra, em luta espiritual.",
+    definicao: "Os fiéis que ainda peregrinam na terra, em luta espiritual.",
     ref: "CIC §§ 954-956",
   },
   igreja_padecente: {
     termo: "Igreja Padecente",
-    definicao:
-      "As almas do purgatório, que se purificam antes da visão de Deus.",
+    definicao: "As almas do purgatório, que se purificam antes da visão de Deus.",
     ref: "CIC §§ 1030-1032",
   },
   igreja_triunfante: {
     termo: "Igreja Triunfante",
-    definicao:
-      "Os bem-aventurados que já gozam da visão beatífica no céu.",
+    definicao: "Os bem-aventurados que já gozam da visão beatífica no céu.",
     ref: "CIC §§ 954, 1023",
   },
   visao_beatifica: {
@@ -483,8 +497,7 @@ export const GLOSSARIO: Record<string, EntradaGlossario> = {
   },
   parusia: {
     termo: "Parusia",
-    definicao:
-      "Segunda vinda glorioso de Cristo no fim da história, para julgar vivos e mortos.",
+    definicao: "Segunda vinda glorioso de Cristo no fim da história, para julgar vivos e mortos.",
     ref: "CIC §§ 668-682",
   },
   kerigma: {
@@ -495,14 +508,12 @@ export const GLOSSARIO: Record<string, EntradaGlossario> = {
   },
   catequese: {
     termo: "Catequese",
-    definicao:
-      "Educação sistemática e orgânica na fé, ordenada à maturidade cristã do batizado.",
+    definicao: "Educação sistemática e orgânica na fé, ordenada à maturidade cristã do batizado.",
     ref: "CIC §§ 4-10",
   },
   apologetica: {
     termo: "Apologética",
-    definicao:
-      "Disciplina que expõe e defende racionalmente a credibilidade da fé cristã.",
+    definicao: "Disciplina que expõe e defende racionalmente a credibilidade da fé cristã.",
     ref: "1Pd 3,15",
   },
   teologia: {
@@ -541,13 +552,11 @@ export const GLOSSARIO: Record<string, EntradaGlossario> = {
   },
   curia: {
     termo: "Cúria Romana",
-    definicao:
-      "Conjunto de dicastérios pelos quais o Papa exerce o governo da Igreja universal.",
+    definicao: "Conjunto de dicastérios pelos quais o Papa exerce o governo da Igreja universal.",
   },
   sede_vacante: {
     termo: "Sede Vacante",
-    definicao:
-      "Período entre a morte ou renúncia de um Papa e a eleição de seu sucessor.",
+    definicao: "Período entre a morte ou renúncia de um Papa e a eleição de seu sucessor.",
   },
   conclave: {
     termo: "Conclave",
@@ -657,8 +666,7 @@ export const GLOSSARIO: Record<string, EntradaGlossario> = {
   },
   solenidade: {
     termo: "Solenidade, Festa e Memória",
-    definicao:
-      "Graus de celebração litúrgica, em ordem decrescente de importância.",
+    definicao: "Graus de celebração litúrgica, em ordem decrescente de importância.",
   },
   vulgata: {
     termo: "Vulgata",
@@ -1370,13 +1378,118 @@ export const GLOSSARIO: Record<string, EntradaGlossario> = {
   },
 };
 
-
 export function getTermo(chave: string): EntradaGlossario | null {
   return GLOSSARIO[chave] ?? null;
 }
 
 export function listarTermos(): EntradaGlossario[] {
-  return Object.values(GLOSSARIO).sort((a, b) =>
-    a.termo.localeCompare(b.termo, "pt-BR"),
-  );
+  return Object.values(GLOSSARIO).sort((a, b) => a.termo.localeCompare(b.termo, "pt-BR"));
+}
+
+const CHAVES_CATEGORIA: Record<CategoriaGlossario, string[]> = {
+  tomismo: [
+    "ato",
+    "potencia",
+    "substancia",
+    "acidente",
+    "essencia",
+    "existencia",
+    "causa",
+    "tom",
+    "escolast",
+    "metafis",
+    "hilemorf",
+    "analogia",
+  ],
+  dogmatica: [
+    "dogma",
+    "trind",
+    "cristo",
+    "encarn",
+    "graca",
+    "revel",
+    "magister",
+    "maria",
+    "redenc",
+    "escat",
+    "pecado original",
+  ],
+  moral: [
+    "moral",
+    "virtude",
+    "pecado",
+    "consciencia",
+    "lei natural",
+    "prudencia",
+    "justica",
+    "temperanca",
+    "fortaleza",
+  ],
+  liturgia: [
+    "liturg",
+    "sacramento",
+    "eucar",
+    "batismo",
+    "missa",
+    "rito",
+    "altar",
+    "crisma",
+    "penitencia",
+  ],
+  escritura: ["biblia", "escritura", "evangel", "exegese", "canon", "inspiracao", "tipologia"],
+  espiritualidade: [
+    "oracao",
+    "contempla",
+    "mistica",
+    "devoc",
+    "ascese",
+    "desolacao",
+    "consolacao",
+    "discernimento",
+  ],
+  historia: ["concilio", "patrist", "padres", "cisma", "heresia", "reforma", "cruzada"],
+};
+
+function semAcentos(texto: string) {
+  return texto
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
+}
+
+export function categoriaDoTermo(entrada: EntradaGlossario): CategoriaGlossario {
+  if (entrada.categoria) return entrada.categoria;
+  const texto = semAcentos(`${entrada.termo} ${entrada.definicao}`);
+  let melhor: CategoriaGlossario = "dogmatica";
+  let pontos = 0;
+  for (const [categoria, chaves] of Object.entries(CHAVES_CATEGORIA) as [
+    CategoriaGlossario,
+    string[],
+  ][]) {
+    const atual = chaves.reduce((total, chave) => total + (texto.includes(chave) ? 1 : 0), 0);
+    if (atual > pontos) {
+      melhor = categoria;
+      pontos = atual;
+    }
+  }
+  return melhor;
+}
+
+/** Pontuação fuzzy leve: prefixos, palavras fora de ordem e pequenas omissões. */
+export function pontuarTermo(entrada: EntradaGlossario, consulta: string): number {
+  const q = semAcentos(consulta).trim();
+  if (!q) return 1;
+  const termo = semAcentos(entrada.termo);
+  const corpo = semAcentos(`${entrada.definicao} ${entrada.ref ?? ""}`);
+  if (termo === q) return 100;
+  if (termo.startsWith(q)) return 80;
+  if (termo.includes(q)) return 65;
+  const palavras = q.split(/\s+/).filter(Boolean);
+  const cobertura = palavras.filter(
+    (palavra) => termo.includes(palavra) || corpo.includes(palavra),
+  ).length;
+  if (cobertura) return cobertura * 12;
+  let qi = 0;
+  for (const caractere of termo) if (caractere === q[qi]) qi += 1;
+  return qi === q.length ? 5 : 0;
 }

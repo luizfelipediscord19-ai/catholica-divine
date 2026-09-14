@@ -108,7 +108,6 @@ export async function listarTopicos(secaoSlug?: string, token?: string | null, l
   }));
 }
 
-
 export async function obterTopico(slug: string, token?: string | null) {
   const identidadeId = await identidadeOpcional(token);
 
@@ -154,7 +153,6 @@ export async function obterTopico(slug: string, token?: string | null) {
   };
 }
 
-
 export async function criarTopico(
   token: string,
   entrada: { secaoSlug: string; titulo: string; corpo: string },
@@ -198,7 +196,12 @@ export async function criarTopico(
   if ((totalTopicos ?? 0) >= 5) conquistas.push("cinco-topicos");
   await premiar(identidadeId, 30, conquistas);
 
-  return { slug: data.slug, status: revisao.status, motivo: revisao.motivo };
+  return {
+    slug: data.slug,
+    status: revisao.status,
+    motivo: revisao.motivo,
+    risco: revisao.risco,
+  };
 }
 
 export async function responderTopico(token: string, topicoSlug: string, entradaCorpo: string) {
@@ -216,14 +219,12 @@ export async function responderTopico(token: string, topicoSlug: string, entrada
 
   const revisao = revisarTexto(corpo);
 
-  const { error } = await supabaseAdmin
-    .from("forum_respostas")
-    .insert({
-      topico_id: topico.id,
-      identidade_id: identidadeId,
-      corpo,
-      status: revisao.status,
-    });
+  const { error } = await supabaseAdmin.from("forum_respostas").insert({
+    topico_id: topico.id,
+    identidade_id: identidadeId,
+    corpo,
+    status: revisao.status,
+  });
 
   if (error) throw new Error("Não foi possível publicar a resposta.");
 
@@ -249,7 +250,7 @@ export async function responderTopico(token: string, topicoSlug: string, entrada
   if (totalRespostas >= 50) conquistasResposta.push("cinquenta-respostas");
   await premiar(identidadeId, 15, conquistasResposta);
 
-  return { ok: true, status: revisao.status, motivo: revisao.motivo };
+  return { ok: true, status: revisao.status, motivo: revisao.motivo, risco: revisao.risco };
 }
 
 export async function denunciar(
@@ -341,10 +342,8 @@ async function premiar(identidadeId: string, xp: number, conquistas: string[]) {
     .eq("id", identidadeId);
 
   if (conquistas.length === 0) return;
-  await supabaseAdmin
-    .from("conquistas_usuario")
-    .upsert(
-      conquistas.map((slug) => ({ identidade_id: identidadeId, conquista_slug: slug })),
-      { onConflict: "identidade_id,conquista_slug", ignoreDuplicates: true },
-    );
+  await supabaseAdmin.from("conquistas_usuario").upsert(
+    conquistas.map((slug) => ({ identidade_id: identidadeId, conquista_slug: slug })),
+    { onConflict: "identidade_id,conquista_slug", ignoreDuplicates: true },
+  );
 }

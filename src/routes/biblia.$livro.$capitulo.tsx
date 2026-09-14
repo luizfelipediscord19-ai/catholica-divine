@@ -20,6 +20,7 @@ import { useMarcadorCapitulo } from "../components/portal/RetomarLeitura";
 import { capituloLocal, temTextoLocal } from "../lib/biblia/local";
 import { CatecismoDoVersiculo } from "../components/biblia/CatecismoDoVersiculo";
 import { CapituloNoCatecismo } from "../components/biblia/CapituloNoCatecismo";
+import { ComentariosPatristicos } from "../components/biblia/ComentariosPatristicos";
 
 type Verso = { v: number; t: string };
 
@@ -450,6 +451,8 @@ function Page() {
           autoral (Ave-Maria, Nova Vulgata) não são reproduzidas aqui.
         </p>
       </article>
+
+      <ComentariosPatristicos livro={livro.slug} capitulo={capitulo} />
 
       <div data-leitura-oculto>
         <CapituloNoCatecismo livro={livro.slug} capitulo={capitulo} className="mt-10" />

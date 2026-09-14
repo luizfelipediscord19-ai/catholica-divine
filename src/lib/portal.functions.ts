@@ -92,6 +92,57 @@ export const registrarEstudoFn = createServerFn({ method: "POST" })
     return registrarEstudo(data.token, data.tipo, data.chave);
   });
 
+export const reconciliarTrilhasFn = createServerFn({ method: "POST" })
+  .middleware([exigirConta])
+  .inputValidator(TokenOpcional.extend({ chaves: z.array(z.string().max(120)).max(500) }))
+  .handler(async ({ data, context }) => {
+    const { limitarAbuso } = await import("./seguranca/guarda.server");
+    limitarAbuso("sincronizar-trilhas", 10, 60_000);
+    const { tokenDaConta } = await import("./portal/conta.server");
+    const { reconciliarProgressoTrilhas } = await import("./portal/identidade.server");
+    const token = await tokenDaConta(
+      context.userId,
+      (context.claims["email"] as string | undefined) ?? null,
+      data.token ?? null,
+    );
+    return reconciliarProgressoTrilhas(token, data.chaves);
+  });
+
+export const corrigirQuizFn = createServerFn({ method: "POST" })
+  .middleware([exigirConta])
+  .inputValidator(
+    TokenOpcional.extend({
+      trilha: z.string().max(80),
+      licao: z.string().max(80),
+      respostas: z.array(z.number().int().min(0).max(10)).min(1).max(50),
+    }),
+  )
+  .handler(async ({ data, context }) => {
+    const { acharLicao } = await import("./data/trilhas");
+    const quiz = acharLicao(data.trilha, data.licao)?.licao.quiz;
+    if (!quiz || data.respostas.length !== quiz.questoes.length) {
+      throw new Error("Quiz inválido ou incompleto.");
+    }
+    const acertos = quiz.questoes.reduce(
+      (total, questao, indice) =>
+        total + (questao.alternativas[data.respostas[indice]]?.correta ? 1 : 0),
+      0,
+    );
+    const nota = Math.round((acertos / quiz.questoes.length) * 100);
+    const aprovado = nota >= quiz.notaMinima;
+    if (aprovado) {
+      const { tokenDaConta } = await import("./portal/conta.server");
+      const { registrarEstudo } = await import("./portal/identidade.server");
+      const token = await tokenDaConta(
+        context.userId,
+        (context.claims["email"] as string | undefined) ?? null,
+        data.token ?? null,
+      );
+      await registrarEstudo(token, "trilha-avancada", `${data.trilha}/${data.licao}`);
+    }
+    return { acertos, total: quiz.questoes.length, nota, aprovado };
+  });
+
 export const obterCapituloFn = createServerFn({ method: "POST" })
   .inputValidator(
     TokenObrigatorio.extend({

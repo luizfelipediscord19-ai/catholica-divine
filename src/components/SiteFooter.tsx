@@ -182,6 +182,31 @@ export function SiteFooter() {
           </ul>
         </nav>
       </div>
+      <section className="border-t border-gold/15" aria-labelledby="fidelidade-eclesiastica">
+        <div className="shell py-block-sm">
+          <div className="grid gap-6 lg:grid-cols-[minmax(0,1.5fr)_minmax(18rem,1fr)] lg:items-center">
+            <div>
+              <p className="kicker">Declaração institucional</p>
+              <h2 id="fidelidade-eclesiastica" className="mt-2 font-display text-2xl text-paper">
+                Fidelidade eclesiástica e hermenêutica da continuidade
+              </h2>
+              <p className="mt-3 max-w-[52rem] text-sm leading-relaxed text-paper/70">
+                O Portal Católico recebe a Sagrada Escritura na Tradição viva e interpreta seu
+                conteúdo em submissão ao Magistério da Igreja. Distinguimos definições doutrinais,
+                disciplina, opinião teológica, devoção e tradição histórica, rejeitando leituras de
+                ruptura. O portal auxilia o estudo; não substitui a autoridade pastoral da Igreja.
+              </p>
+            </div>
+            <ul className="grid grid-cols-3 gap-2" aria-label="Pilares da transmissão da fé">
+              {["Escritura", "Tradição", "Magistério"].map((pilar) => (
+                <li key={pilar} className="grid min-h-20 place-items-center border border-gold/25 px-2 text-center">
+                  <span className="font-display text-sm text-gold sm:text-base">{pilar}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
       <div className="border-t border-gold/15">
         <div className="shell py-block-sm text-step--2 tracking-widest uppercase text-paper/55 text-center">
           Fontes oficiais: vatican.va · cnbb.org.br · Catecismo da Igreja Católica

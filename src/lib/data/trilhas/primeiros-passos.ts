@@ -5,6 +5,7 @@ export const PRIMEIROS_PASSOS: Trilha = {
   titulo: "Primeiros passos na fé católica",
   subtitulo: "Do zero ao essencial, na ordem certa",
   nivel: "Iniciante",
+  familia: "sacramentos-liturgia",
   marcador: "✝️",
   descricao:
     "Dez lições que percorrem os fundamentos da fé: quem é Deus, quem é Jesus Cristo, o que é a Igreja, como Escritura e Tradição se articulam, os sacramentos, os mandamentos, o Credo, a oração, a Missa e a vida cristã concreta.",
@@ -106,6 +107,70 @@ export const PRIMEIROS_PASSOS: Trilha = {
         { obra: "Concílio Vaticano II", ref: "Dei Verbum, 2-6" },
         { obra: "Bíblia Sagrada", ref: "Ex 3, 14; Rm 1, 20; 1Jo 4, 8" },
       ],
+      quiz: {
+        slug: "quem-e-deus-fundamentos",
+        notaMinima: 70,
+        questoes: [
+          {
+            pergunta: "Como o ser humano pode conhecer Deus?",
+            alternativas: [
+              {
+                texto: "Somente pelo sentimento",
+                correta: false,
+                explicacao: "A fé não reduz Deus ao sentimento.",
+              },
+              {
+                texto: "Pela razão e pela Revelação",
+                correta: true,
+                explicacao:
+                  "A razão reconhece o Criador, e a Revelação manifesta seu plano (CIC §§31–38).",
+              },
+              {
+                texto: "Apenas por revelações privadas",
+                correta: false,
+                explicacao: "Revelações privadas não pertencem ao depósito da fé.",
+              },
+            ],
+          },
+          {
+            pergunta: "O que a Igreja confessa sobre a Trindade?",
+            alternativas: [
+              { texto: "Três deuses", correta: false, explicacao: "Isso seria triteísmo." },
+              {
+                texto: "Uma Pessoa com três aparências",
+                correta: false,
+                explicacao: "Isso seria modalismo.",
+              },
+              {
+                texto: "Um só Deus em três Pessoas",
+                correta: true,
+                explicacao:
+                  "A única natureza divina subsiste no Pai, no Filho e no Espírito Santo (CIC §253).",
+              },
+            ],
+          },
+          {
+            pergunta: "Qual afirmação preserva a distinção entre Criador e criação?",
+            alternativas: [
+              {
+                texto: "Deus é idêntico ao universo",
+                correta: false,
+                explicacao: "O panteísmo confunde Deus com o mundo.",
+              },
+              {
+                texto: "Tudo depende de Deus, que transcende o universo",
+                correta: true,
+                explicacao: "Deus é o fundamento transcendente de todo ser criado.",
+              },
+              {
+                texto: "Deus criou e abandonou a criação",
+                correta: false,
+                explicacao: "O deísmo rompe indevidamente a providência divina.",
+              },
+            ],
+          },
+        ],
+      },
       relacionados: [
         { label: "Catecismo — A profissão de fé", to: "/catecismo" },
         { label: "Glossário: Trindade, Revelação", to: "/glossario" },
@@ -143,8 +208,7 @@ export const PRIMEIROS_PASSOS: Trilha = {
             },
             {
               ref: "1Cor 15, 14",
-              texto:
-                "E se Cristo não ressuscitou, é vã a nossa pregação e é vã também a vossa fé.",
+              texto: "E se Cristo não ressuscitou, é vã a nossa pregação e é vã também a vossa fé.",
             },
           ],
         },
@@ -421,9 +485,21 @@ export const PRIMEIROS_PASSOS: Trilha = {
           tipo: "escritura",
           titulo: "Instituição pelos textos",
           citacoes: [
-            { ref: "Mt 28, 19", texto: "Ide, pois, e ensinai a todas as nações, batizando-as em nome do Pai e do Filho e do Espírito Santo." },
-            { ref: "Jo 20, 22-23", texto: "Recebei o Espírito Santo. Àqueles a quem perdoardes os pecados, ser-lhes-ão perdoados." },
-            { ref: "Tg 5, 14-15", texto: "Está alguém doente entre vós? Chame os presbíteros da Igreja, e estes façam oração sobre ele, ungindo-o com óleo em nome do Senhor." },
+            {
+              ref: "Mt 28, 19",
+              texto:
+                "Ide, pois, e ensinai a todas as nações, batizando-as em nome do Pai e do Filho e do Espírito Santo.",
+            },
+            {
+              ref: "Jo 20, 22-23",
+              texto:
+                "Recebei o Espírito Santo. Àqueles a quem perdoardes os pecados, ser-lhes-ão perdoados.",
+            },
+            {
+              ref: "Tg 5, 14-15",
+              texto:
+                "Está alguém doente entre vós? Chame os presbíteros da Igreja, e estes façam oração sobre ele, ungindo-o com óleo em nome do Senhor.",
+            },
           ],
         },
         {
@@ -627,7 +703,11 @@ export const PRIMEIROS_PASSOS: Trilha = {
           tipo: "escritura",
           titulo: "Ensino de Jesus",
           citacoes: [
-            { ref: "Mt 6, 6", texto: "Quando orares, entra no teu quarto, fecha a porta e ora ao teu Pai que está no segredo." },
+            {
+              ref: "Mt 6, 6",
+              texto:
+                "Quando orares, entra no teu quarto, fecha a porta e ora ao teu Pai que está no segredo.",
+            },
             { ref: "Lc 18, 1", texto: "É preciso orar sempre, sem jamais esmorecer." },
             { ref: "1Ts 5, 17", texto: "Orai sem cessar." },
           ],
@@ -679,8 +759,7 @@ export const PRIMEIROS_PASSOS: Trilha = {
             },
             {
               ref: "CIC §1324",
-              texto:
-                "A Eucaristia é fonte e ápice de toda a vida cristã.",
+              texto: "A Eucaristia é fonte e ápice de toda a vida cristã.",
             },
             {
               ref: "CIC §1385",

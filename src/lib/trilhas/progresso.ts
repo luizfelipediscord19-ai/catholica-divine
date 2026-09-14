@@ -15,7 +15,10 @@ export function lerProgresso(): ProgressoTrilhas {
     const raw = window.localStorage.getItem(CHAVE);
     if (!raw) return VAZIO;
     const dados = JSON.parse(raw) as ProgressoTrilhas;
-    return { concluidas: Array.isArray(dados.concluidas) ? dados.concluidas : [], ultima: dados.ultima };
+    return {
+      concluidas: Array.isArray(dados.concluidas) ? dados.concluidas : [],
+      ultima: dados.ultima,
+    };
   } catch {
     return VAZIO;
   }
@@ -29,6 +32,10 @@ function salvar(dados: ProgressoTrilhas) {
   } catch {
     /* armazenamento indisponível */
   }
+}
+
+export function salvarProgresso(dados: ProgressoTrilhas) {
+  salvar(dados);
 }
 
 export function chaveLicao(trilha: string, licao: string) {
@@ -51,10 +58,27 @@ export function alternarConclusao(trilha: string, licao: string): boolean {
   return !concluida;
 }
 
-export function percentual(trilhaSlug: string, licoes: { slug: string }[], progresso: ProgressoTrilhas) {
+export function percentual(
+  trilhaSlug: string,
+  licoes: { slug: string }[],
+  progresso: ProgressoTrilhas,
+) {
   if (licoes.length === 0) return 0;
-  const feitas = licoes.filter((l) => progresso.concluidas.includes(chaveLicao(trilhaSlug, l.slug))).length;
+  const feitas = licoes.filter((l) =>
+    progresso.concluidas.includes(chaveLicao(trilhaSlug, l.slug)),
+  ).length;
   return Math.round((feitas / licoes.length) * 100);
+}
+
+export function mesclarProgresso(
+  local: ProgressoTrilhas,
+  remoto: ProgressoTrilhas,
+): ProgressoTrilhas {
+  return {
+    concluidas: [...new Set([...local.concluidas, ...remoto.concluidas])],
+    ultima:
+      !local.ultima || (remoto.ultima?.em ?? 0) > local.ultima.em ? remoto.ultima : local.ultima,
+  };
 }
 
 /** Quantidade de lições concluídas de uma trilha. */

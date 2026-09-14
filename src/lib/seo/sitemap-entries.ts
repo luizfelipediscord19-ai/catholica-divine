@@ -29,6 +29,7 @@ export const PAGINAS: SitemapEntry[] = [
   { path: "/liturgia-diaria", changefreq: "daily", priority: "0.9" },
   { path: "/biblia/leituras", changefreq: "daily", priority: "0.8" },
   { path: "/leitura-diaria", changefreq: "daily", priority: "0.9" },
+  { path: "/lectio-divina", changefreq: "monthly", priority: "0.8" },
   { path: "/oracoes/diarias", changefreq: "daily", priority: "0.8" },
   { path: "/doutrina", changefreq: "monthly", priority: "0.8" },
   { path: "/doutrina/atraves-do-coracao", changefreq: "monthly", priority: "0.7" },

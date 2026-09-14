@@ -1,9 +1,14 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import { useServerFn } from "@tanstack/react-start";
 import { ArrowLeft, ArrowRight, BookOpen, Check } from "lucide-react";
 import { Botao, BotaoLink } from "@/components/ds";
 import { acharLicao, ROTULO_BLOCO } from "@/lib/data/trilhas";
 import { FaixaAutoridade } from "@/components/SeloConfiabilidade";
+import { QuizLicao } from "@/components/trilhas/QuizLicao";
+import { useAuth } from "@/hooks/use-auth";
+import { lerToken } from "@/hooks/use-identidade";
+import { registrarEstudoFn } from "@/lib/portal.functions";
 
 import {
   alternarConclusao,
@@ -60,6 +65,8 @@ export const Route = createFileRoute("/trilhas/$trilha/$licao")({
 function LicaoPagina() {
   const params = Route.useParams();
   const achado = acharLicao(params.trilha, params.licao);
+  const { autenticado } = useAuth();
+  const registrar = useServerFn(registrarEstudoFn);
   const [progresso, setProgresso] = useState<ProgressoTrilhas>({ concluidas: [] });
 
   useEffect(() => {
@@ -89,6 +96,19 @@ function LicaoPagina() {
   const anterior = trilha.licoes[indice - 1];
   const feita = progresso.concluidas.includes(chaveLicao(trilha.slug, licao.slug));
 
+  function alternarESincronizar() {
+    const concluiu = alternarConclusao(trilha.slug, licao.slug);
+    if (concluiu && autenticado) {
+      void registrar({
+        data: {
+          token: lerToken() ?? "",
+          tipo: "trilha-avancada",
+          chave: chaveLicao(trilha.slug, licao.slug),
+        },
+      });
+    }
+  }
+
   return (
     <article className="shell-narrow py-block">
       <Link
@@ -111,13 +131,10 @@ function LicaoPagina() {
         className="mt-6 max-w-3xl"
       />
 
-
       <div className="mt-12 space-y-12">
         {licao.blocos.map((bloco, i) => (
           <section key={i}>
-            <p className="kicker">
-              {ROTULO_BLOCO[bloco.tipo]}
-            </p>
+            <p className="kicker">{ROTULO_BLOCO[bloco.tipo]}</p>
             <h2 className="mt-2 font-display text-2xl text-paper">{bloco.titulo}</h2>
 
             {bloco.paragrafos && (
@@ -143,7 +160,10 @@ function LicaoPagina() {
               <ul className="mt-5 space-y-2 text-step-0 leading-[1.8] text-paper/80">
                 {bloco.pontos.map((p, j) => (
                   <li key={j} className="flex gap-3">
-                    <span className="mt-2 size-1.5 shrink-0 rounded-full bg-gold" aria-hidden="true" />
+                    <span
+                      className="mt-2 size-1.5 shrink-0 rounded-full bg-gold"
+                      aria-hidden="true"
+                    />
                     <span>{p}</span>
                   </li>
                 ))}
@@ -190,6 +210,8 @@ function LicaoPagina() {
         </ul>
       </section>
 
+      {licao.quiz && <QuizLicao quiz={licao.quiz} trilha={trilha.slug} licao={licao.slug} />}
+
       {licao.relacionados && licao.relacionados.length > 0 && (
         <section className="mt-10">
           <h2 className="kicker">Aprofundar</h2>
@@ -209,7 +231,7 @@ function LicaoPagina() {
         <Botao
           tamanho="lg"
           variante={feita ? "contorno" : "ouro"}
-          onClick={() => alternarConclusao(trilha.slug, licao.slug)}
+          onClick={alternarESincronizar}
           aria-pressed={feita}
           className={feita ? "border-gold text-gold" : ""}
         >

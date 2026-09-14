@@ -8,8 +8,12 @@ import {
   comCors,
 } from "../../lib/api/chat-utils.server";
 import { SYSTEM_PROMPT, SYSTEM_PROMPT_COMPACTO, COROINHAS_PROMPT } from "../../lib/prompts/sophia";
-import { createGroqProvider, GROQ_MODEL } from "../../lib/groq.server";
-import { createLovableAiGatewayProvider, GATEWAY_MODEL } from "../../lib/ai-gateway.server";
+import {
+  createLovableResponsesProvider,
+  getLovableAiGatewayResponseHeaders,
+  getLovableAiGatewayRunId,
+  withLovableAiGatewayRunIdHeader,
+} from "../../lib/ai-gateway.server";
 
 export const Route = createFileRoute("/api/chat")({
   server: {
@@ -70,10 +74,9 @@ export const Route = createFileRoute("/api/chat")({
 
           const { messages, mode } = parsed.data;
           // As chaves vivem apenas no servidor (variáveis de ambiente), nunca no navegador.
-          const groqKey = process.env["GROQ_API_KEY"];
           const gatewayKey = process.env["LOVABLE_API_KEY"];
 
-          if (!groqKey && !gatewayKey) {
+          if (!gatewayKey) {
             return comCors(
               new Response(
                 "Assistente indisponível: nenhuma chave de IA configurada no servidor.",
@@ -83,21 +86,13 @@ export const Route = createFileRoute("/api/chat")({
             );
           }
 
-          const usandoGroq = Boolean(groqKey);
-
-          // O Groq limita tokens por minuto (8.000 no plano gratuito) e conta
-          // entrada + saída máxima. Por isso, quando é ele quem responde, usamos
-          // o prompt enxuto, menos histórico e um contexto mais curto.
           const systemPrompt =
             mode === "coroinhas"
               ? COROINHAS_PROMPT
-              : usandoGroq
+              : messages.length > 40
                 ? SYSTEM_PROMPT_COMPACTO
                 : SYSTEM_PROMPT;
-
-          const saidaMaxima = usandoGroq ? 1400 : 3600;
-          // ~4 caracteres por token: orçamento total de entrada.
-          const orcamentoEntradaChars = usandoGroq ? 16000 : 90000 - systemPrompt.length;
+          const orcamentoEntradaChars = 160_000 - systemPrompt.length;
 
           const textoDe = (m: UIMessage) =>
             (m.parts ?? [])
@@ -105,22 +100,11 @@ export const Route = createFileRoute("/api/chat")({
               .map((p) => p.text)
               .join(" ");
 
-          // Histórico enxuto: só as últimas trocas, cada mensagem limitada.
-          // Também removemos as partes de "raciocínio" das respostas anteriores:
-          // o modelo do Groq recusa receber de volta o próprio reasoning_content.
-          const limiteMensagem = usandoGroq ? 1400 : 6000;
-          const maxMensagens = usandoGroq ? 6 : 20;
+          // A conversa completa é reenviada: o gateway não guarda estado entre turnos.
           const mensagens = (messages as UIMessage[])
-            .slice(-maxMensagens)
             .map((m) => ({
               ...m,
-              parts: (m.parts ?? [])
-                .filter((p) => p.type === "text" || p.type === "file")
-                .map((p) =>
-                  p.type === "text" && typeof (p as { text?: string }).text === "string"
-                    ? { ...p, text: (p as { text: string }).text.slice(0, limiteMensagem) }
-                    : p,
-                ),
+              parts: (m.parts ?? []).filter((p) => p.type === "text" || p.type === "file"),
             }))
             .filter((m) => (m.parts ?? []).length > 0) as UIMessage[];
 
@@ -153,26 +137,34 @@ export const Route = createFileRoute("/api/chat")({
                 : completo;
           }
 
-          const model = groqKey
-            ? createGroqProvider(groqKey)(GROQ_MODEL)
-            : createLovableAiGatewayProvider(gatewayKey!)(GATEWAY_MODEL);
+          const initialRunId = getLovableAiGatewayRunId(request);
+          const gateway = createLovableResponsesProvider(gatewayKey, initialRunId);
 
           const result = streamText({
-            model,
+            model: gateway.model,
             system: systemPrompt + contexto,
             messages: await convertToModelMessages(mensagens),
-            // Menos criatividade, mais fidelidade doutrinal e às citações.
-            temperature: 0.45,
-            topP: 0.9,
-            maxOutputTokens: saidaMaxima,
+            abortSignal: request.signal,
+            providerOptions: {
+              openai: {
+                store: false,
+                include: ["reasoning.encrypted_content"],
+                forceReasoning: true,
+                reasoningEffort: "medium",
+                reasoningSummary: "auto",
+              },
+            },
           });
 
-          return comCors(
-            result.toUIMessageStreamResponse({
-              originalMessages: messages as UIMessage[],
+          const response = result.toUIMessageStreamResponse({
+            originalMessages: messages as UIMessage[],
+            sendReasoning: true,
+            headers: getLovableAiGatewayResponseHeaders({
+              ...cabecalhosCors(request),
+              ...(initialRunId ? { "X-Lovable-AIG-Run-ID": initialRunId } : {}),
             }),
-            request,
-          );
+          });
+          return withLovableAiGatewayRunIdHeader(response, gateway, cabecalhosCors(request));
         } catch (err) {
           return comCors(handleChatError(err), request);
         }

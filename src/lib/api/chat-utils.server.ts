@@ -1,11 +1,6 @@
 import { SophiaMode } from "../types/chat";
 
-const DOMINIOS_PERMITIDOS = [
-  "localhost",
-  ".lovable.app",
-  ".lovableproject.com",
-  ".lovable.dev",
-];
+const DOMINIOS_PERMITIDOS = ["localhost", ".lovable.app", ".lovableproject.com", ".lovable.dev"];
 
 export function isAllowedBrowserRequest(request: Request): boolean {
   const origin = request.headers.get("origin");
@@ -75,15 +70,24 @@ export function handleChatError(err: unknown): Response {
   let userMessage = "Não foi possível responder agora. Tente novamente em instantes.";
 
   if (/too large|413|context_length|tokens per minute|TPM/i.test(message)) {
-    status = 429;
+    status = 400;
     userMessage =
       "A conversa ficou longa demais para a Sophia responder agora. Comece uma nova conversa ou faça a pergunta de forma mais curta.";
+  } else if (/401|LOVABLE_API_KEY|api key/i.test(message)) {
+    status = 500;
+    userMessage =
+      "A Sophia está sem a configuração segura necessária. O responsável pelo portal precisa revisar a chave de IA.";
   } else if (message.includes("429")) {
     status = 429;
     userMessage = "Muitas requisições. Aguarde um instante e tente novamente.";
   } else if (message.includes("402")) {
     status = 402;
     userMessage = "Créditos de IA esgotados. Adicione créditos no painel da Lovable.";
+  } else if (message.includes("403")) {
+    status = 403;
+    userMessage = /provider_not_available_in_region/i.test(message)
+      ? "O modelo da Sophia não está disponível na região configurada."
+      : "O uso da Sophia está bloqueado pela política do espaço de trabalho.";
   }
 
   return new Response(userMessage, {
