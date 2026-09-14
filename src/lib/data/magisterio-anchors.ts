@@ -133,6 +133,8 @@ export function criarAncoraMagisterial(
     contexto:
       substituicao?.contexto ?? base?.contexto ?? "Enchiridion Symbolorum, definição e declaração magisterial catalogada.",
     fonte: "Denzinger-Hünermann, Enchiridion Symbolorum",
+    // Não existe edição oficial integral do Denzinger no site da Santa Sé.
+    // O portal direciona à página institucional, sem fingir oferecer o texto catalogado.
     url: "https://www.vatican.va/content/vatican/pt.html",
   };
 }

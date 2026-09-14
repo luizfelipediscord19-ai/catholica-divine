@@ -11,6 +11,27 @@ export type EntradaGlossario = {
   definicao: string;
   /** Referência opcional (parágrafo do CIC, concílio, doutor). */
   ref?: string;
+  /** Classificação editorial usada pelos filtros acadêmicos. */
+  categoria?: CategoriaGlossario;
+};
+
+export type CategoriaGlossario =
+  | "tomismo"
+  | "dogmatica"
+  | "moral"
+  | "liturgia"
+  | "escritura"
+  | "espiritualidade"
+  | "historia";
+
+export const ROTULO_CATEGORIA_GLOSSARIO: Record<CategoriaGlossario, string> = {
+  tomismo: "Tomismo e filosofia",
+  dogmatica: "Teologia dogmática",
+  moral: "Teologia moral",
+  liturgia: "Liturgia e sacramentos",
+  escritura: "Sagrada Escritura",
+  espiritualidade: "Espiritualidade",
+  historia: "História da Igreja",
 };
 
 export const GLOSSARIO: Record<string, EntradaGlossario> = {
@@ -1379,4 +1400,47 @@ export function listarTermos(): EntradaGlossario[] {
   return Object.values(GLOSSARIO).sort((a, b) =>
     a.termo.localeCompare(b.termo, "pt-BR"),
   );
+}
+
+const CHAVES_CATEGORIA: Record<CategoriaGlossario, string[]> = {
+  tomismo: ["ato", "potencia", "substancia", "acidente", "essencia", "existencia", "causa", "tom", "escolast", "metafis", "hilemorf", "analogia"],
+  dogmatica: ["dogma", "trind", "cristo", "encarn", "graca", "revel", "magister", "maria", "redenc", "escat", "pecado original"],
+  moral: ["moral", "virtude", "pecado", "consciencia", "lei natural", "prudencia", "justica", "temperanca", "fortaleza"],
+  liturgia: ["liturg", "sacramento", "eucar", "batismo", "missa", "rito", "altar", "crisma", "penitencia"],
+  escritura: ["biblia", "escritura", "evangel", "exegese", "canon", "inspiracao", "tipologia"],
+  espiritualidade: ["oracao", "contempla", "mistica", "devoc", "ascese", "desolacao", "consolacao", "discernimento"],
+  historia: ["concilio", "patrist", "padres", "cisma", "heresia", "reforma", "cruzada"],
+};
+
+function semAcentos(texto: string) {
+  return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+}
+
+export function categoriaDoTermo(entrada: EntradaGlossario): CategoriaGlossario {
+  if (entrada.categoria) return entrada.categoria;
+  const texto = semAcentos(`${entrada.termo} ${entrada.definicao}`);
+  let melhor: CategoriaGlossario = "dogmatica";
+  let pontos = 0;
+  for (const [categoria, chaves] of Object.entries(CHAVES_CATEGORIA) as [CategoriaGlossario, string[]][]) {
+    const atual = chaves.reduce((total, chave) => total + (texto.includes(chave) ? 1 : 0), 0);
+    if (atual > pontos) { melhor = categoria; pontos = atual; }
+  }
+  return melhor;
+}
+
+/** Pontuação fuzzy leve: prefixos, palavras fora de ordem e pequenas omissões. */
+export function pontuarTermo(entrada: EntradaGlossario, consulta: string): number {
+  const q = semAcentos(consulta).trim();
+  if (!q) return 1;
+  const termo = semAcentos(entrada.termo);
+  const corpo = semAcentos(`${entrada.definicao} ${entrada.ref ?? ""}`);
+  if (termo === q) return 100;
+  if (termo.startsWith(q)) return 80;
+  if (termo.includes(q)) return 65;
+  const palavras = q.split(/\s+/).filter(Boolean);
+  const cobertura = palavras.filter((palavra) => termo.includes(palavra) || corpo.includes(palavra)).length;
+  if (cobertura) return cobertura * 12;
+  let qi = 0;
+  for (const caractere of termo) if (caractere === q[qi]) qi += 1;
+  return qi === q.length ? 5 : 0;
 }

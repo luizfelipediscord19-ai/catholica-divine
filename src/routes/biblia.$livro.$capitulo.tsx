@@ -452,9 +452,10 @@ function Page() {
         </p>
       </article>
 
+      <ComentariosPatristicos livro={livro.slug} capitulo={capitulo} />
+
       <div data-leitura-oculto>
         <CapituloNoCatecismo livro={livro.slug} capitulo={capitulo} className="mt-10" />
-        <ComentariosPatristicos livro={livro.slug} capitulo={capitulo} />
         <NotasCapitulo livro={livro.slug} capitulo={capitulo} className="mt-10" />
         <EstudarComSophia
           titulo={`${livro.nome} ${capitulo}`}

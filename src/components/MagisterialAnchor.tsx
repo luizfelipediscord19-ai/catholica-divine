@@ -53,7 +53,9 @@ export function MagisterialAnchor({
       <DrawerContent className="max-h-[88dvh] border-gold/30 bg-background">
         <div className="mx-auto w-full max-w-3xl overflow-y-auto px-2 pb-[max(1rem,env(safe-area-inset-bottom))]">
           <DrawerHeader className="px-5 pt-7 text-left sm:px-8">
-            <p className="kicker">Fonte primária · {ancora.rotulo}</p>
+            <p className="kicker">
+              {ancora.tipo === "DH" ? "Referência catalográfica" : "Fonte primária"} · {ancora.rotulo}
+            </p>
             <DrawerTitle className="font-display text-2xl text-foreground sm:text-3xl">
               {ancora.titulo}
             </DrawerTitle>
@@ -80,7 +82,8 @@ export function MagisterialAnchor({
               rel="noopener noreferrer"
               className="btn-base btn-gold btn-md gap-2"
             >
-              Conferir fonte <ExternalLink className="size-4" aria-hidden="true" />
+              {ancora.tipo === "DH" ? "Abrir portal da Santa Sé" : "Conferir fonte"}{" "}
+              <ExternalLink className="size-4" aria-hidden="true" />
             </a>
           </DrawerFooter>
         </div>

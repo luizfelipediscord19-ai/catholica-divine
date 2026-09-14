@@ -6,7 +6,6 @@ import {
   FAMILIA_PATRISTICA,
   type FamiliaPatristica,
 } from "@/lib/data/biblia/patristica";
-import { MagisterialAnchor } from "@/components/MagisterialAnchor";
 
 const ORDEM: FamiliaPatristica[] = ["apostolicos", "apologistas", "doutores"];
 
@@ -67,7 +66,6 @@ export function ComentariosPatristicos({ livro, capitulo }: { livro: string; cap
         ))}
       </Tabs>
       <div className="mt-5 flex flex-wrap items-center gap-3">
-        <MagisterialAnchor tipo="CIC" numero={113} />
         <Link to="/padres-da-igreja" className="btn-base btn-outline-gold btn-sm gap-2">
           Biblioteca patrística <ExternalLink className="size-3.5" aria-hidden="true" />
         </Link>
