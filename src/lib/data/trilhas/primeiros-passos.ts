@@ -107,10 +107,6 @@ export const PRIMEIROS_PASSOS: Trilha = {
         { obra: "Concílio Vaticano II", ref: "Dei Verbum, 2-6" },
         { obra: "Bíblia Sagrada", ref: "Ex 3, 14; Rm 1, 20; 1Jo 4, 8" },
       ],
-      relacionados: [
-        { label: "Catecismo — A profissão de fé", to: "/catecismo" },
-        { label: "Glossário: Trindade, Revelação", to: "/glossario" },
-      ],
       quiz: {
         slug: "quem-e-deus-fundamentos",
         notaMinima: 70,
@@ -175,6 +171,10 @@ export const PRIMEIROS_PASSOS: Trilha = {
           },
         ],
       },
+      relacionados: [
+        { label: "Catecismo — A profissão de fé", to: "/catecismo" },
+        { label: "Glossário: Trindade, Revelação", to: "/glossario" },
+      ],
     },
     {
       slug: "quem-e-jesus",
