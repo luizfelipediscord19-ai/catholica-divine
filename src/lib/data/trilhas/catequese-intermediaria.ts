@@ -5,6 +5,7 @@ export const CATEQUESE_INTERMEDIARIA: Trilha = {
   titulo: "Catequese intermediária",
   subtitulo: "Aprofundar o que já se professa",
   nivel: "Intermediário",
+  familia: "sacramentos-liturgia",
   marcador: "📚",
   descricao:
     "Seis lições sobre os temas que mais aparecem na vida sacramental concreta: graça, Eucaristia, confissão, Maria e os santos, as últimas realidades e a formação da consciência moral.",

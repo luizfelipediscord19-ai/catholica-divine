@@ -5,6 +5,7 @@ export const TEOLOGIA: Trilha = {
   titulo: "Teologia fundamental",
   subtitulo: "As grandes chaves do dogma",
   nivel: "Avançado",
+  familia: "patristica",
   marcador: "📖",
   descricao:
     "Cinco lições sobre os pilares do dogma: Trindade, Cristologia e os concílios, graça e liberdade, eclesiologia e sacramentalidade, e escatologia. Com terminologia explicada e fontes conciliares.",

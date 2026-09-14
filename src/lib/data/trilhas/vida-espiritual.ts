@@ -5,6 +5,7 @@ export const VIDA_ESPIRITUAL: Trilha = {
   titulo: "Vida espiritual",
   subtitulo: "Uma rotina de oração que se sustenta",
   nivel: "Iniciante",
+  familia: "mariologia-escatologia",
   marcador: "🕯️",
   descricao:
     "Cinco lições práticas sobre oração: como começar, oração mental e lectio divina, o combate espiritual, exame de consciência e confissão, e a construção de uma regra de vida realista.",

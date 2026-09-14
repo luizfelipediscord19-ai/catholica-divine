@@ -393,6 +393,29 @@ export async function registrarEstudo(token: string, tipo: TipoEstudo, chave: st
   return { novasConquistas };
 }
 
+/** Progresso acadêmico relacional, reutilizando a tabela pessoal protegida existente. */
+export async function obterProgressoTrilhas(token: string) {
+  const identidade = await identidadePorToken(token);
+  const { data, error } = await supabaseAdmin
+    .from("estudos_conteudo")
+    .select("chave, created_at")
+    .eq("identidade_id", identidade.id)
+    .eq("tipo", "trilha-avancada")
+    .like("chave", "%/%")
+    .order("created_at", { ascending: false });
+  if (error) throw new Error("Não foi possível carregar o progresso das trilhas.");
+  return { concluidas: (data ?? []).map((item) => item.chave) };
+}
+
+/** Reconciliação idempotente: une conclusões locais à conta sem apagar dados. */
+export async function reconciliarProgressoTrilhas(token: string, chaves: string[]) {
+  const validas = [...new Set(chaves)]
+    .filter((chave) => /^[a-z0-9-]{1,59}\/[a-z0-9-]{1,59}$/.test(chave))
+    .slice(0, 500);
+  for (const chave of validas) await registrarEstudo(token, "trilha-avancada", chave);
+  return obterProgressoTrilhas(token);
+}
+
 /** Contagens de estudo por tipo, para as barras de progresso do painel. */
 async function totaisDeEstudo(identidadeId: string) {
   const { data } = await supabaseAdmin

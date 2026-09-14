@@ -5,6 +5,7 @@ export const APOLOGETICA: Trilha = {
   titulo: "Apologética católica",
   subtitulo: "Dar razão da esperança, com serenidade",
   nivel: "Intermediário",
+  familia: "apologetica",
   marcador: "🛡️",
   descricao:
     "Cinco lições para responder às objeções mais frequentes: existência de Deus, confiabilidade dos Evangelhos, canon e Tradição, o papado e a mediação de Maria e dos santos. Cada resposta traz a fonte verificável.",

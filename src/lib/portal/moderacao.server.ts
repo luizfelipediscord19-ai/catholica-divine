@@ -194,6 +194,7 @@ export function revisarTexto(...partes: (string | undefined)[]): ResultadoRevisa
   }
 
   // Caracteres de controle / invisíveis usados para burlar filtros.
+  // eslint-disable-next-line no-control-regex -- detecção deliberada de controles invisíveis
   if (/[\u0000-\u0008\u000b-\u001f\u200b-\u200f\u202a-\u202e]/.test(texto)) {
     return { status: "em_revisao", motivo: "caracteres invisíveis", risco: "alto" };
   }
@@ -208,6 +209,7 @@ export function revisarTexto(...partes: (string | undefined)[]): ResultadoRevisa
 /** Remove qualquer marcação/controle antes de persistir o texto do usuário. */
 export function sanitizarTexto(texto: string, limite = 6000): string {
   return texto
+    // eslint-disable-next-line no-control-regex -- remoção deliberada de controles invisíveis
     .replace(/[\u0000-\u0008\u000b-\u001f\u200b-\u200f\u202a-\u202e]/g, "")
     .replace(/<[^>]*>/g, "")
     .trim()

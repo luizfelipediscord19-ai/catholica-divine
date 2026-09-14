@@ -5,6 +5,7 @@ export const PRIMEIROS_PASSOS: Trilha = {
   titulo: "Primeiros passos na fé católica",
   subtitulo: "Do zero ao essencial, na ordem certa",
   nivel: "Iniciante",
+  familia: "sacramentos-liturgia",
   marcador: "✝️",
   descricao:
     "Dez lições que percorrem os fundamentos da fé: quem é Deus, quem é Jesus Cristo, o que é a Igreja, como Escritura e Tradição se articulam, os sacramentos, os mandamentos, o Credo, a oração, a Missa e a vida cristã concreta.",
@@ -110,6 +111,36 @@ export const PRIMEIROS_PASSOS: Trilha = {
         { label: "Catecismo — A profissão de fé", to: "/catecismo" },
         { label: "Glossário: Trindade, Revelação", to: "/glossario" },
       ],
+      quiz: {
+        slug: "quem-e-deus-fundamentos",
+        notaMinima: 70,
+        questoes: [
+          {
+            pergunta: "Como o ser humano pode conhecer Deus?",
+            alternativas: [
+              { texto: "Somente pelo sentimento", correta: false, explicacao: "A fé não reduz Deus ao sentimento." },
+              { texto: "Pela razão e pela Revelação", correta: true, explicacao: "A razão reconhece o Criador, e a Revelação manifesta seu plano (CIC §§31–38)." },
+              { texto: "Apenas por revelações privadas", correta: false, explicacao: "Revelações privadas não pertencem ao depósito da fé." },
+            ],
+          },
+          {
+            pergunta: "O que a Igreja confessa sobre a Trindade?",
+            alternativas: [
+              { texto: "Três deuses", correta: false, explicacao: "Isso seria triteísmo." },
+              { texto: "Uma Pessoa com três aparências", correta: false, explicacao: "Isso seria modalismo." },
+              { texto: "Um só Deus em três Pessoas", correta: true, explicacao: "A única natureza divina subsiste no Pai, no Filho e no Espírito Santo (CIC §253)." },
+            ],
+          },
+          {
+            pergunta: "Qual afirmação preserva a distinção entre Criador e criação?",
+            alternativas: [
+              { texto: "Deus é idêntico ao universo", correta: false, explicacao: "O panteísmo confunde Deus com o mundo." },
+              { texto: "Tudo depende de Deus, que transcende o universo", correta: true, explicacao: "Deus é o fundamento transcendente de todo ser criado." },
+              { texto: "Deus criou e abandonou a criação", correta: false, explicacao: "O deísmo rompe indevidamente a providência divina." },
+            ],
+          },
+        ],
+      },
     },
     {
       slug: "quem-e-jesus",
