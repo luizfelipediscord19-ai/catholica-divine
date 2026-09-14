@@ -85,6 +85,7 @@ import { Route as ApologeticaTemaRouteImport } from './routes/apologetica.$tema'
 import { Route as ApiTranscreverRouteImport } from './routes/api/transcrever'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
 import { Route as TrilhasTrilhaIndexRouteImport } from './routes/trilhas.$trilha.index'
+import { Route as OracoesNovenasIndexRouteImport } from './routes/oracoes.novenas.index'
 import { Route as CatecismoAulasIndexRouteImport } from './routes/catecismo.aulas.index'
 import { Route as BibliaPlanosIndexRouteImport } from './routes/biblia.planos.index'
 import { Route as BibliaLivroIndexRouteImport } from './routes/biblia.$livro.index'
@@ -483,6 +484,11 @@ const TrilhasTrilhaIndexRoute = TrilhasTrilhaIndexRouteImport.update({
   path: '/trilhas/$trilha/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OracoesNovenasIndexRoute = OracoesNovenasIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => OracoesNovenasRoute,
+} as any)
 const CatecismoAulasIndexRoute = CatecismoAulasIndexRouteImport.update({
   id: '/aulas/',
   path: '/aulas/',
@@ -645,6 +651,7 @@ export interface FileRoutesByFullPath {
   '/biblia/$livro/': typeof BibliaLivroIndexRoute
   '/biblia/planos/': typeof BibliaPlanosIndexRoute
   '/catecismo/aulas/': typeof CatecismoAulasIndexRoute
+  '/oracoes/novenas/': typeof OracoesNovenasIndexRoute
   '/trilhas/$trilha/': typeof TrilhasTrilhaIndexRoute
 }
 export interface FileRoutesByTo {
@@ -693,7 +700,6 @@ export interface FileRoutesByTo {
   '/noticias/$slug': typeof NoticiasSlugRoute
   '/oracoes/diarias': typeof OracoesDiariasRoute
   '/oracoes/liturgia-das-horas': typeof OracoesLiturgiaDasHorasRoute
-  '/oracoes/novenas': typeof OracoesNovenasRouteWithChildren
   '/oracoes/rosario': typeof OracoesRosarioRoute
   '/oracoes/terco-misericordia': typeof OracoesTercoMisericordiaRoute
   '/oracoes/via-sacra': typeof OracoesViaSacraRoute
@@ -726,6 +732,7 @@ export interface FileRoutesByTo {
   '/biblia/$livro': typeof BibliaLivroIndexRoute
   '/biblia/planos': typeof BibliaPlanosIndexRoute
   '/catecismo/aulas': typeof CatecismoAulasIndexRoute
+  '/oracoes/novenas': typeof OracoesNovenasIndexRoute
   '/trilhas/$trilha': typeof TrilhasTrilhaIndexRoute
 }
 export interface FileRoutesById {
@@ -819,6 +826,7 @@ export interface FileRoutesById {
   '/biblia/$livro/': typeof BibliaLivroIndexRoute
   '/biblia/planos/': typeof BibliaPlanosIndexRoute
   '/catecismo/aulas/': typeof CatecismoAulasIndexRoute
+  '/oracoes/novenas/': typeof OracoesNovenasIndexRoute
   '/trilhas/$trilha/': typeof TrilhasTrilhaIndexRoute
 }
 export interface FileRouteTypes {
@@ -913,6 +921,7 @@ export interface FileRouteTypes {
     | '/biblia/$livro/'
     | '/biblia/planos/'
     | '/catecismo/aulas/'
+    | '/oracoes/novenas/'
     | '/trilhas/$trilha/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -961,7 +970,6 @@ export interface FileRouteTypes {
     | '/noticias/$slug'
     | '/oracoes/diarias'
     | '/oracoes/liturgia-das-horas'
-    | '/oracoes/novenas'
     | '/oracoes/rosario'
     | '/oracoes/terco-misericordia'
     | '/oracoes/via-sacra'
@@ -994,6 +1002,7 @@ export interface FileRouteTypes {
     | '/biblia/$livro'
     | '/biblia/planos'
     | '/catecismo/aulas'
+    | '/oracoes/novenas'
     | '/trilhas/$trilha'
   id:
     | '__root__'
@@ -1086,6 +1095,7 @@ export interface FileRouteTypes {
     | '/biblia/$livro/'
     | '/biblia/planos/'
     | '/catecismo/aulas/'
+    | '/oracoes/novenas/'
     | '/trilhas/$trilha/'
   fileRoutesById: FileRoutesById
 }
@@ -1682,6 +1692,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TrilhasTrilhaIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/oracoes/novenas/': {
+      id: '/oracoes/novenas/'
+      path: '/'
+      fullPath: '/oracoes/novenas/'
+      preLoaderRoute: typeof OracoesNovenasIndexRouteImport
+      parentRoute: typeof OracoesNovenasRoute
+    }
     '/catecismo/aulas/': {
       id: '/catecismo/aulas/'
       path: '/aulas'
@@ -1894,10 +1911,12 @@ const EnciclopediaRouteWithChildren = EnciclopediaRoute._addFileChildren(
 
 interface OracoesNovenasRouteChildren {
   OracoesNovenasSlugRoute: typeof OracoesNovenasSlugRoute
+  OracoesNovenasIndexRoute: typeof OracoesNovenasIndexRoute
 }
 
 const OracoesNovenasRouteChildren: OracoesNovenasRouteChildren = {
   OracoesNovenasSlugRoute: OracoesNovenasSlugRoute,
+  OracoesNovenasIndexRoute: OracoesNovenasIndexRoute,
 }
 
 const OracoesNovenasRouteWithChildren = OracoesNovenasRoute._addFileChildren(
