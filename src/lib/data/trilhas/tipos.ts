@@ -52,6 +52,23 @@ export interface LinkRelacionado {
   params?: Record<string, string>;
 }
 
+export interface AlternativaQuiz {
+  texto: string;
+  correta: boolean;
+  explicacao: string;
+}
+
+export interface QuestaoQuiz {
+  pergunta: string;
+  alternativas: AlternativaQuiz[];
+}
+
+export interface QuizLicao {
+  slug: string;
+  notaMinima: number;
+  questoes: QuestaoQuiz[];
+}
+
 export interface Licao {
   slug: string;
   titulo: string;
@@ -61,6 +78,7 @@ export interface Licao {
   blocos: Bloco[];
   fontes: Fonte[];
   relacionados?: LinkRelacionado[];
+  quiz?: QuizLicao;
 }
 
 export interface Trilha {
@@ -73,6 +91,7 @@ export interface Trilha {
   descricao: string;
   paraQuem: string;
   licoes: Licao[];
+  familia?: "apologetica" | "patristica" | "sacramentos-liturgia" | "mariologia-escatologia";
 }
 
 export const ROTULO_BLOCO: Record<TipoBloco, string> = {

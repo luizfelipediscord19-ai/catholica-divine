@@ -57,6 +57,14 @@ export function percentual(trilhaSlug: string, licoes: { slug: string }[], progr
   return Math.round((feitas / licoes.length) * 100);
 }
 
+export function mesclarProgresso(local: ProgressoTrilhas, remoto: ProgressoTrilhas): ProgressoTrilhas {
+  return {
+    concluidas: [...new Set([...local.concluidas, ...remoto.concluidas])],
+    ultima:
+      !local.ultima || (remoto.ultima?.em ?? 0) > local.ultima.em ? remoto.ultima : local.ultima,
+  };
+}
+
 /** Quantidade de lições concluídas de uma trilha. */
 export function concluidasDe(
   trilhaSlug: string,
