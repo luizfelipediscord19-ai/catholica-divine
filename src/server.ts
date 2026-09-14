@@ -5,7 +5,6 @@ import { garantirWebSocket } from "./lib/websocket-polyfill";
 import { consumeLastCapturedError } from "./lib/error-capture";
 import { renderErrorPage } from "./lib/error-page";
 
-
 type ServerEntry = {
   fetch: (request: Request, env: unknown, ctx: unknown) => Promise<Response> | Response;
 };
@@ -23,22 +22,46 @@ async function getServerEntry(): Promise<ServerEntry> {
 
 // h3 swallows in-handler throws into a normal 500 Response with body
 // {"unhandled":true,"message":"HTTPError"} — try/catch alone never fires for those.
-async function applySecurityHeaders(response: Response, nonce?: string): Promise<Response> {
+/**
+ * Hospedagens de pré-visualização (Lovable). Nelas a página é aberta dentro de
+ * um painel e recebe ferramentas extras do editor, então a política rígida de
+ * produção não se aplica: ela deixaria a tela em branco / "não carregou".
+ */
+function ehPrevisualizacao(request: Request): boolean {
+  let host = "";
+  try {
+    host = new URL(request.url).hostname;
+  } catch {
+    return false;
+  }
+  return (
+    host === "localhost" ||
+    host.endsWith(".lovable.app") ||
+    host.endsWith(".lovable.dev") ||
+    host.endsWith(".lovableproject.com") ||
+    host.endsWith(".lovableproject-dev.com")
+  );
+}
+
+async function applySecurityHeaders(
+  response: Response,
+  nonce?: string,
+  previsualizacao = false,
+): Promise<Response> {
   const newHeaders = new Headers(response.headers);
 
   // O navegador precisa falar com o backend (contas, fórum, painel) e com a IA.
   const backend = process.env["VITE_SUPABASE_URL"] ?? process.env["SUPABASE_URL"] ?? "";
   const backendWs = backend.replace(/^https:/, "wss:");
-  const conexoes = ["'self'", "https://api.groq.com", backend, backendWs]
-    .filter(Boolean)
-    .join(" ");
+  const conexoes = ["'self'", "https://api.groq.com", backend, backendWs].filter(Boolean).join(" ");
 
   // Em produção não há necessidade de eval nem de inline liberado: cada <script>
   // do documento recebe um nonce por requisição e 'strict-dynamic' cobre os
-  // módulos carregados por eles. O dev server (HMR) ainda precisa do modo antigo.
-  const dev = process.env["NODE_ENV"] !== "production";
+  // módulos carregados por eles. O dev server (HMR) e a pré-visualização ainda
+  // precisam do modo antigo.
+  const dev = process.env["NODE_ENV"] !== "production" || previsualizacao;
   const scripts = dev
-    ? "script-src 'self' 'unsafe-inline' 'unsafe-eval'; "
+    ? "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://lovable.dev https://*.lovable.dev https://*.lovable.app; "
     : nonce
       ? `script-src 'self' 'nonce-${nonce}' 'strict-dynamic'; `
       : "script-src 'self'; ";
@@ -55,43 +78,41 @@ async function applySecurityHeaders(response: Response, nonce?: string): Promise
     "worker-src 'self' blob:; " +
     "manifest-src 'self'; " +
     // Leitores externos (ChatGPT, Bing/Copilot, pré-visualizações do Lovable)
-    // precisam abrir o portal dentro do próprio painel deles.
-    "frame-ancestors 'self' https://*.lovable.app https://*.lovable.dev " +
+    // precisam abrir o portal dentro do próprio painel deles. Os domínios sem
+    // subdomínio precisam ser listados à parte: "*.lovable.dev" não cobre
+    // "lovable.dev", e sem isso a página aparece como "não carregou".
+    "frame-ancestors 'self' https://lovable.dev https://*.lovable.dev " +
+    "https://lovable.app https://*.lovable.app " +
+    "https://lovableproject.com https://*.lovableproject.com " +
+    "https://*.lovableproject-dev.com " +
     "https://chatgpt.com https://*.chatgpt.com https://*.openai.com " +
     "https://*.bing.com https://copilot.microsoft.com; " +
     "upgrade-insecure-requests;";
 
-
   // Content Security Policy (Strict but allows required fonts and AI gateway)
   newHeaders.set(
     "Content-Security-Policy",
-    comuns +
-      " " +
-      scripts +
-      "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;",
+    comuns + " " + scripts + "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;",
   );
 
   // Modo report-only: política mais rígida (sem 'unsafe-inline' em estilos e
   // sem 'unsafe-eval') apenas monitorada, para medirmos o que ainda quebraria
-  // antes de aplicá-la de verdade.
-  const nonceRelatorio = nonce ? ` 'nonce-${nonce}' 'strict-dynamic'` : "";
-  newHeaders.set(
-    "Content-Security-Policy-Report-Only",
-    comuns.replace("upgrade-insecure-requests;", "") +
-      ` script-src 'self'${nonceRelatorio}; ` +
-      "style-src 'self' https://fonts.googleapis.com; " +
-      "style-src-attr 'unsafe-inline'; " +
-      "require-trusted-types-for 'script'; " +
-      "report-uri /api/public/csp-report; " +
-      "report-to csp-endpoint;",
-  );
-  newHeaders.set(
-    "Reporting-Endpoints",
-    'csp-endpoint="/api/public/csp-report"',
-  );
-
-
-
+  // antes de aplicá-la de verdade. Na pré-visualização fica desligado: o editor
+  // injeta scripts próprios e gerava centenas de avisos por página.
+  if (!dev) {
+    const nonceRelatorio = nonce ? ` 'nonce-${nonce}' 'strict-dynamic'` : "";
+    newHeaders.set(
+      "Content-Security-Policy-Report-Only",
+      comuns.replace("upgrade-insecure-requests;", "") +
+        ` script-src 'self'${nonceRelatorio}; ` +
+        "style-src 'self' https://fonts.googleapis.com; " +
+        "style-src-attr 'unsafe-inline'; " +
+        "require-trusted-types-for 'script'; " +
+        "report-uri /api/public/csp-report; " +
+        "report-to csp-endpoint;",
+    );
+    newHeaders.set("Reporting-Endpoints", 'csp-endpoint="/api/public/csp-report"');
+  }
 
   // Anti-clickjacking fica a cargo do CSP (frame-ancestors), que aceita lista de
   // origens. X-Frame-Options: SAMEORIGIN bloquearia leitores externos como o
@@ -120,7 +141,6 @@ async function applySecurityHeaders(response: Response, nonce?: string): Promise
 
   // HSTS (Strict-Transport-Security) - 1 year
   newHeaders.set("Strict-Transport-Security", "max-age=31536000; includeSubDomains; preload");
-
 
   return new Response(response.body, {
     status: response.status,
@@ -160,10 +180,7 @@ function gerarNonce(): string {
  * Aplica o nonce a todo <script> do documento HTML. Assim o CSP de produção
  * dispensa 'unsafe-inline' em script-src: só executa o que este servidor marcou.
  */
-async function aplicarNonceNoHtml(
-  response: Response,
-  nonce: string,
-): Promise<Response> {
+async function aplicarNonceNoHtml(response: Response, nonce: string): Promise<Response> {
   const tipo = response.headers.get("content-type") ?? "";
   if (!tipo.includes("text/html")) return response;
 
@@ -171,12 +188,17 @@ async function aplicarNonceNoHtml(
   const marcado = html.replace(/<script(?![^>]*\snonce=)/gi, `<script nonce="${nonce}"`);
   const headers = new Headers(response.headers);
   headers.delete("content-length");
-  return new Response(marcado, { status: response.status, statusText: response.statusText, headers });
+  return new Response(marcado, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  });
 }
 
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
-    const dev = process.env["NODE_ENV"] !== "production";
+    const previsualizacao = ehPrevisualizacao(request);
+    const dev = process.env["NODE_ENV"] !== "production" || previsualizacao;
     const nonce = dev ? undefined : gerarNonce();
     try {
       normalizarEnvBackend();
@@ -187,7 +209,7 @@ export default {
       const comNonce = nonce
         ? await aplicarNonceNoHtml(normalizedResponse, nonce)
         : normalizedResponse;
-      return await applySecurityHeaders(comNonce, nonce);
+      return await applySecurityHeaders(comNonce, nonce, previsualizacao);
     } catch (error) {
       console.error(error);
       const errorResponse = new Response(renderErrorPage(), {
@@ -195,8 +217,7 @@ export default {
         headers: { "content-type": "text/html; charset=utf-8" },
       });
       const comNonce = nonce ? await aplicarNonceNoHtml(errorResponse, nonce) : errorResponse;
-      return await applySecurityHeaders(comNonce, nonce);
+      return await applySecurityHeaders(comNonce, nonce, previsualizacao);
     }
   },
-
 };
