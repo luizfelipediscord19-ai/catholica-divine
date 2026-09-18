@@ -1,4 +1,5 @@
 import { slugify } from "./santos-helpers";
+import { SANTOS_DOCUMENTADOS } from "./data/santos-documentados";
 
 export type SantoLista = {
   slug: string;
@@ -252,10 +253,42 @@ const RAW: { nome: string; data: string; body: string }[] = [
   { nome: "Santo Tomás de Vilanova", data: "22 de setembro", body: "Arcebispo de Valência que distribuía como esmola toda a renda da sé." },
 ];
 
-export const SANTOS_LISTA: SantoLista[] = RAW.map((s) => ({
+const LISTA_HISTORICA: SantoLista[] = RAW.map((s) => ({
   ...s,
   slug: slugify(s.nome),
 }));
+
+const slugsHistoricos = new Set(LISTA_HISTORICA.map((s) => s.slug));
+
+export const SANTOS_LISTA: SantoLista[] = [
+  ...LISTA_HISTORICA,
+  ...SANTOS_DOCUMENTADOS.filter((s) => !slugsHistoricos.has(s.slug)).map((s) => ({
+    slug: s.slug,
+    nome: s.nome,
+    data: formatarDataCatalogo(s.data),
+    body: s.resumo,
+  })),
+];
+
+function formatarDataCatalogo(data: string): string {
+  const match = data.match(/^(\d{1,2})\/(\d{1,2})$/);
+  if (!match) return data;
+  const meses = [
+    "janeiro",
+    "fevereiro",
+    "março",
+    "abril",
+    "maio",
+    "junho",
+    "julho",
+    "agosto",
+    "setembro",
+    "outubro",
+    "novembro",
+    "dezembro",
+  ];
+  return `${Number(match[1])} de ${meses[Number(match[2]) - 1] ?? "janeiro"}`;
+}
 
 export function getSantoBasicoBySlug(slug: string): SantoLista | undefined {
   return SANTOS_LISTA.find((s) => s.slug === slug);
