@@ -72,8 +72,18 @@ function formatarData(dd_mm: string): string {
   const dia = parseInt(m[1], 10);
   const mes = parseInt(m[2], 10);
   const meses = [
-    "janeiro", "fevereiro", "março", "abril", "maio", "junho",
-    "julho", "agosto", "setembro", "outubro", "novembro", "dezembro",
+    "janeiro",
+    "fevereiro",
+    "março",
+    "abril",
+    "maio",
+    "junho",
+    "julho",
+    "agosto",
+    "setembro",
+    "outubro",
+    "novembro",
+    "dezembro",
   ];
   return `${dia} de ${meses[mes - 1] ?? ""}`.trim();
 }

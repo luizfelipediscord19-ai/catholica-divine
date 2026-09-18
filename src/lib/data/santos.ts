@@ -2624,8 +2624,4 @@ export function getSanto(slug: string) {
   return SANTOS.find((s) => s.slug === slug);
 }
 
-export const SANTOS: Santo[] = [
-  ...SANTOS_NUCLEO,
-  ...SANTOS_ADICIONAIS,
-  ...SANTOS_DOCUMENTADOS,
-];
+export const SANTOS: Santo[] = [...SANTOS_NUCLEO, ...SANTOS_ADICIONAIS, ...SANTOS_DOCUMENTADOS];
