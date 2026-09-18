@@ -24,3 +24,4 @@
 - [ ] SEO, performance e acessibilidade WCAG AA
 - [ ] Testes finais e relatório consolidado
 - [x] Corrigir globalmente alturas forçadas e alinhamento dos contêineres e cards
+- [x] Ampliar a Biblioteca de Santos para 700+ perfis com imagens, créditos e fontes

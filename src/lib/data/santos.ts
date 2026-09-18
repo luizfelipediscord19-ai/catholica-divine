@@ -1,4 +1,7 @@
 import { SANTOS_ADICIONAIS } from "./santos-extras";
+import { SANTOS_DOCUMENTADOS } from "./santos-documentados";
+
+export type FonteSanto = { nome: string; url: string };
 
 export type Santo = {
   slug: string;
@@ -12,6 +15,9 @@ export type Santo = {
   virtudes: string[];
   frase: string;
   imagem?: string;
+  fontes?: FonteSanto[];
+  creditoImagem?: string;
+  licencaImagem?: string;
 };
 
 // Biografias aprofundadas para todos os santos da lista.
@@ -2618,4 +2624,4 @@ export function getSanto(slug: string) {
   return SANTOS.find((s) => s.slug === slug);
 }
 
-export const SANTOS: Santo[] = [...SANTOS_NUCLEO, ...SANTOS_ADICIONAIS];
+export const SANTOS: Santo[] = [...SANTOS_NUCLEO, ...SANTOS_ADICIONAIS, ...SANTOS_DOCUMENTADOS];

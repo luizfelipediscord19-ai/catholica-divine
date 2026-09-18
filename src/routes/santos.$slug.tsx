@@ -234,7 +234,8 @@ function SantoPage() {
               />
               {v.creditoImagem ? (
                 <figcaption className="px-3 py-2 kicker text-muted-foreground/70">
-                  Imagem: domínio público · {v.creditoImagem}
+                  Imagem: {v.creditoImagem}
+                  {v.licencaImagem ? ` · ${v.licencaImagem}` : " · domínio público"}
                 </figcaption>
               ) : null}
             </figure>
@@ -268,6 +269,26 @@ function SantoPage() {
                 ) : null}
               </dl>
             </div>
+
+            {v.fontes && v.fontes.length > 0 ? (
+              <div className="surface-card p-5">
+                <p className="kicker mb-3">Fontes desta ficha</p>
+                <ul className="space-y-2">
+                  {v.fontes.map((fonte) => (
+                    <li key={fonte.url}>
+                      <a
+                        href={fonte.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-gold hover:underline"
+                      >
+                        {fonte.nome} ↗
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
 
             <Relacionados topic={`santo:${slug}`} variant="aside" />
 
