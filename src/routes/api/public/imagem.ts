@@ -11,7 +11,8 @@ import { createFileRoute } from "@tanstack/react-router";
  */
 
 const HOSTS_PERMITIDOS = new Set(["upload.wikimedia.org"]);
-const LARGURAS = new Set([320, 480, 640, 800, 1024, 1280, 1600, 2000]);
+// Larguras que o Wikimedia realmente entrega; outras devolvem erro.
+const LARGURAS = new Set([120, 250, 500, 1280]);
 
 export const Route = createFileRoute("/api/public/imagem")({
   server: {
@@ -71,7 +72,8 @@ export const Route = createFileRoute("/api/public/imagem")({
         }
 
         const tipo = resposta.headers.get("content-type") ?? "";
-        if (!tipo.startsWith("image/")) return new Response("Conteúdo não é imagem", { status: 415 });
+        if (!tipo.startsWith("image/"))
+          return new Response("Conteúdo não é imagem", { status: 415 });
 
         return new Response(resposta.body, {
           headers: {

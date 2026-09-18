@@ -7,20 +7,33 @@ import { useEffect, useRef, useState } from "react";
  * largura ideal de cada tela, então o celular baixa um arquivo leve e o
  * desktop recebe a pintura em alta definição.
  */
-const LARGURAS_RETRATO = [480, 640, 800, 1024, 1280, 1600];
+/**
+ * O Wikimedia só entrega reduções em algumas larguras fixas; pedir outras
+ * devolve erro e o retrato ficava em branco. Usamos apenas as larguras aceitas.
+ */
+const LARGURAS_RETRATO = [250, 500, 1280];
+const RE_COMMONS =
+  /^https:\/\/upload\.wikimedia\.org\/wikipedia\/([^/]+)\/(?:thumb\/)?([0-9a-f])\/([0-9a-f]{2})\/([^/]+?)(?:\/\d+px-[^/]+)?$/;
+
+/** Converte a arte original numa redução leve na largura pedida. */
+function reduzida(url: string, largura: number): string {
+  const m = url.match(RE_COMMONS);
+  if (!m) return url;
+  const [, projeto, a, ab, arquivo] = m;
+  const sufixo = /\.svg$/i.test(arquivo!) ? ".png" : "";
+  return `https://upload.wikimedia.org/wikipedia/${projeto}/thumb/${a}/${ab}/${arquivo}/${largura}px-${arquivo}${sufixo}`;
+}
 
 function pelaNossaOrigem(url: string, largura?: number): string {
   if (!/^https:\/\/upload\.wikimedia\.org\//.test(url)) return url;
-  const q = new URLSearchParams({ u: url });
-  if (largura) q.set("w", String(largura));
-  return `/api/public/imagem?${q.toString()}`;
+  const alvo = largura ? reduzida(url, largura) : url;
+  return `/api/public/imagem?${new URLSearchParams({ u: alvo }).toString()}`;
 }
 
 function srcSetDe(url: string): string | undefined {
-  if (!/^https:\/\/upload\.wikimedia\.org\/.+\/thumb\/.+\/\d+px-/.test(url)) return undefined;
+  if (!RE_COMMONS.test(url)) return undefined;
   return LARGURAS_RETRATO.map((w) => `${pelaNossaOrigem(url, w)} ${w}w`).join(", ");
 }
-
 
 /**
  * Retrato de santo com carregamento otimizado: lazy por padrão, dimensões
@@ -63,7 +76,11 @@ export function RetratoSanto({
   const atual = fontes[tentativa];
 
   if (!atual) {
-    const inicial = nome.replace(/^(São|Santo|Santa)\s+/i, "").trim().charAt(0) || "✝";
+    const inicial =
+      nome
+        .replace(/^(São|Santo|Santa)\s+/i, "")
+        .trim()
+        .charAt(0) || "✝";
     return (
       <div
         role="img"
@@ -81,7 +98,7 @@ export function RetratoSanto({
     <img
       key={atual}
       ref={ref}
-      src={pelaNossaOrigem(atual, 1024)}
+      src={pelaNossaOrigem(atual, prioridade ? 1280 : 500)}
       srcSet={srcSetDe(atual)}
       alt={`Representação de ${nome}`}
       width={largura}

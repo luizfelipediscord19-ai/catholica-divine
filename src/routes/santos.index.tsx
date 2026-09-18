@@ -4,22 +4,26 @@ import gloriaSantos from "@/assets/santos-gloria.jpg";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { PageHero, Section, CardGrid, ContentCard } from "../components/PageShell";
 import { SANTOS_LISTA } from "@/lib/santos-lista";
-import { buildSantoView } from "@/lib/santos-helpers";
-import { imagemSanto } from "@/lib/data/santos-imagens";
+import { buildSantoView, retratoDoSanto } from "@/lib/santos-helpers";
 import { RetratoSanto } from "@/components/santos/RetratoSanto";
 import { usePrefetchSanto, usePrefetchLote } from "@/lib/santos/prefetch";
 import { BotaoSalvar } from "@/components/portal/BotaoSalvar";
 import { keywordsPara } from "@/lib/seo/palavras-chave";
 
-
 export const Route = createFileRoute("/santos/")({
   head: () => ({
     meta: [
       { title: "Santos — Portal Católico" },
-      { name: "description", content: "Vidas e ensinamentos dos santos: testemunhas da fé e amigos de Deus." },
+      {
+        name: "description",
+        content: "Vidas e ensinamentos dos santos: testemunhas da fé e amigos de Deus.",
+      },
       { name: "keywords", content: keywordsPara(["santos"]) },
       { property: "og:title", content: "Os Santos da Igreja" },
-      { property: "og:description", content: "Vidas, virtudes e ensinamentos dos santos católicos." },
+      {
+        property: "og:description",
+        content: "Vidas, virtudes e ensinamentos dos santos católicos.",
+      },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://portalcatolico.vercel.app/santos" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -79,20 +83,18 @@ function Page() {
     });
   }, [query, mes]);
 
-
   const visiveis = useMemo(() => filtered.slice(0, limite), [filtered, limite]);
 
   // Prepara em segundo plano os primeiros santos da próxima página
   const proximos = useMemo(
     () => filtered.slice(limite, limite + 8).map((s) => s.slug),
-    [filtered, limite]
+    [filtered, limite],
   );
   usePrefetchLote(proximos);
 
   useEffect(() => {
     setLimite(PAGINA);
   }, [query, mes]);
-
 
   useEffect(() => {
     if (!selectedSlug) return;
@@ -122,7 +124,7 @@ function Page() {
         eyebrow="Communio Sanctorum"
         title="Os Santos da Igreja"
         intro="As testemunhas vivas do Evangelho. Clique em qualquer santo para abrir a biografia e a imagem diretamente nesta página, sem recarregamento."
-      image={gloriaSantos}
+        image={gloriaSantos}
       />
 
       <Section kicker="Galeria dos santos" title="Os amigos de Deus">
@@ -134,11 +136,13 @@ function Page() {
               view={selected.view}
               onClose={() => setSelectedSlug(null)}
             />
-
           ) : null}
         </div>
 
-        <div className="mb-8 flex items-center gap-3 surface-card backdrop-blur-md px-4 py-3" role="search">
+        <div
+          className="mb-8 flex items-center gap-3 surface-card backdrop-blur-md px-4 py-3"
+          role="search"
+        >
           <label htmlFor="busca-santos" className="kicker">
             Buscar
           </label>
@@ -151,7 +155,13 @@ function Page() {
             className="flex-1 bg-transparent outline-none text-sm text-foreground placeholder:text-muted-foreground/60"
           />
           {query ? (
-            <Botao tamanho="sm" variante="discreto" onClick={() => setQuery("")} aria-label="Limpar busca de santos" className="px-2 font-normal normal-case tracking-normal">
+            <Botao
+              tamanho="sm"
+              variante="discreto"
+              onClick={() => setQuery("")}
+              aria-label="Limpar busca de santos"
+              className="px-2 font-normal normal-case tracking-normal"
+            >
               limpar
             </Botao>
           ) : null}
@@ -176,8 +186,6 @@ function Page() {
           </ul>
         </div>
 
-
-
         <CardGrid cols={3}>
           {visiveis.map((s, i) => (
             <CartaoSanto
@@ -189,7 +197,6 @@ function Page() {
             />
           ))}
         </CardGrid>
-
 
         {visiveis.length < filtered.length ? (
           <div className="mt-12 flex flex-col items-center gap-3">
@@ -247,8 +254,8 @@ function CartaoSanto({
         subtitle={`Memória · ${santo.data}`}
         media={
           <RetratoSanto
-            url={imagemSanto(santo.slug)?.url}
-            reserva={imagemSanto(santo.slug)?.remoto}
+            url={retratoDoSanto(santo.slug).url}
+            reserva={retratoDoSanto(santo.slug).reserva}
             nome={santo.nome}
             prioridade={indice < 3}
             sizes="(max-width: 768px) 100vw, (max-width: 1280px) 33vw, 380px"
@@ -274,7 +281,6 @@ function SantoDetail({
   view: ReturnType<typeof buildSantoView>;
   onClose: () => void;
 }) {
-
   const img = view.imagem;
   return (
     <article className="mb-12 surface-card backdrop-blur-xl overflow-hidden animate-content-fade shadow-2xl shadow-gold/5">
@@ -291,11 +297,7 @@ function SantoDetail({
 
           <div className="absolute inset-0 bg-linear-to-t from-background/90 via-background/20 to-transparent md:bg-linear-to-r" />
           <div className="absolute bottom-0 left-0 p-6 md:hidden">
-            {view.titulo ? (
-              <p className="kicker mb-2">
-                {view.titulo}
-              </p>
-            ) : null}
+            {view.titulo ? <p className="kicker mb-2">{view.titulo}</p> : null}
             <h3 className="font-display text-3xl text-paper leading-tight">{view.nome}</h3>
           </div>
         </div>
@@ -303,11 +305,7 @@ function SantoDetail({
         <div className="p-8 md:p-12 space-y-6">
           <div className="flex items-start justify-between gap-4">
             <div className="hidden md:block">
-              {view.titulo ? (
-                <p className="kicker mb-3">
-                  {view.titulo}
-                </p>
-              ) : null}
+              {view.titulo ? <p className="kicker mb-3">{view.titulo}</p> : null}
               <h3 className="font-display text-4xl text-paper leading-tight tracking-tight">
                 {view.nome}
               </h3>
@@ -333,7 +331,6 @@ function SantoDetail({
               </Botao>
             </div>
           </div>
-
 
           <dl className="flex flex-wrap gap-x-8 gap-y-2 text-xs text-muted-foreground">
             {view.data ? (
@@ -362,9 +359,7 @@ function SantoDetail({
 
           {view.virtudes && view.virtudes.length > 0 ? (
             <div>
-              <p className="kicker mb-3">
-                Virtudes
-              </p>
+              <p className="kicker mb-3">Virtudes</p>
               <ul className="flex flex-wrap gap-2">
                 {view.virtudes.map((v) => (
                   <li
@@ -386,7 +381,8 @@ function SantoDetail({
 
           {!view.temRico ? (
             <p className="text-xs text-muted-foreground/70 italic">
-              Resumo breve — em breve aprofundaremos a biografia deste santo com fontes hagiográficas.
+              Resumo breve — em breve aprofundaremos a biografia deste santo com fontes
+              hagiográficas.
             </p>
           ) : null}
         </div>
