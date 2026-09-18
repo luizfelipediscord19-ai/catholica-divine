@@ -8,7 +8,7 @@ import { usePrefetchSanto } from "@/lib/santos/prefetch";
 import { BotaoSalvar } from "@/components/portal/BotaoSalvar";
 import { keywordsPara } from "@/lib/seo/palavras-chave";
 import { NotaConfiabilidade } from "@/components/SeloConfiabilidade";
-import { MagisterialAnchor } from "@/components/MagisterialAnchor";
+import { AncorasSanto } from "@/components/santos/AncorasSanto";
 
 const SITE = "https://portalcatolico.vercel.app";
 
@@ -209,10 +209,11 @@ function SantoPage() {
               </blockquote>
             ) : null}
 
-            <div className="flex flex-wrap items-center gap-2 border-t border-gold/15 pt-6">
-              <MagisterialAnchor tipo="CIC" numero={828} />
-              <MagisterialAnchor tipo="CIC" numero={2683} />
-              <MagisterialAnchor tipo="CDC" numero={1186} />
+            <div className="border-t border-gold/15 pt-6">
+              <AncorasSanto
+                nome={v.nome}
+                texto={`${v.nome} ${v.titulo ?? ""} ${v.padroeiro ?? ""} ${(v.virtudes ?? []).join(" ")} ${v.resumo ?? ""} ${v.biografia ?? ""}`}
+              />
             </div>
 
             <div className="pt-6 border-t border-gold/20">

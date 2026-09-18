@@ -4,8 +4,7 @@ import gloriaSantos from "@/assets/santos-gloria.jpg";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { PageHero, Section, CardGrid, ContentCard } from "../components/PageShell";
 import { SANTOS_LISTA } from "@/lib/santos-lista";
-import { buildSantoView } from "@/lib/santos-helpers";
-import { imagemSanto } from "@/lib/data/santos-imagens";
+import { buildSantoView, retratoDoSanto } from "@/lib/santos-helpers";
 import { RetratoSanto } from "@/components/santos/RetratoSanto";
 import { usePrefetchSanto, usePrefetchLote } from "@/lib/santos/prefetch";
 import { BotaoSalvar } from "@/components/portal/BotaoSalvar";
@@ -247,8 +246,8 @@ function CartaoSanto({
         subtitle={`Memória · ${santo.data}`}
         media={
           <RetratoSanto
-            url={imagemSanto(santo.slug)?.url}
-            reserva={imagemSanto(santo.slug)?.remoto}
+            url={retratoDoSanto(santo.slug).url}
+            reserva={retratoDoSanto(santo.slug).reserva}
             nome={santo.nome}
             prioridade={indice < 3}
             sizes="(max-width: 768px) 100vw, (max-width: 1280px) 33vw, 380px"
