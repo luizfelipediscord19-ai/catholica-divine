@@ -33,14 +33,32 @@ function semPrefixo(slug: string): string {
   return slug;
 }
 
+/**
+ * Índice em memória dos santos com ficha completa. Com mais de 700 perfis,
+ * varrer a lista a cada cartão deixava a galeria e a abertura da ficha lentas;
+ * aqui a busca é imediata, aceitando o slug com ou sem o prefixo de título.
+ */
+const INDICE_RICOS = new Map<string, SantoRico>();
+for (const r of RICOS) {
+  for (const chave of [r.slug, semPrefixo(r.slug)]) {
+    if (chave && !INDICE_RICOS.has(chave)) INDICE_RICOS.set(chave, r);
+  }
+}
+
 export function findRico(slugUrl: string): SantoRico | undefined {
-  const a = slugUrl;
-  const b = semPrefixo(slugUrl);
-  return RICOS.find((r) => {
-    const rs = r.slug;
-    const rsBare = semPrefixo(rs);
-    return rs === a || rs === b || rsBare === a || rsBare === b;
-  });
+  return INDICE_RICOS.get(slugUrl) ?? INDICE_RICOS.get(semPrefixo(slugUrl));
+}
+
+/**
+ * Retrato de um santo para listas e cartões: primeiro a arte catalogada no
+ * portal, depois a arte da própria ficha (os perfis novos trazem a obra do
+ * Wikimedia Commons). Sem isso, os santos recém-incluídos apareciam sem imagem.
+ */
+export function retratoDoSanto(slug: string): { url?: string; reserva?: string } {
+  const propria = imagemSanto(slug);
+  const rico = findRico(slug);
+  const daFicha = rico?.imagem || (rico ? imagemSanto(rico.slug)?.url : undefined);
+  return { url: propria?.url ?? daFicha, reserva: propria?.remoto ?? (propria ? daFicha : undefined) };
 }
 
 export function buildSantoView(slugUrl: string, basico?: SantoBasico) {
