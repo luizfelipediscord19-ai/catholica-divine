@@ -5,13 +5,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "beata-bonifacia-rodriguez-de-castro",
     nome: "Beata Bonifacia Rodríguez de Castro",
-    titulo: "Spanish author (1837-1905)",
+    titulo: "Autora cristã e testemunha de fé",
     data: "08/08",
     seculo: "20",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Spanish author (1837-1905) (1837–1905).",
+    resumo: "Autora cristã e testemunha de fé (1837–1905).",
     biografia:
-      "Beata Bonifacia Rodríguez de Castro (1837–1905) é apresentado(a) nas fontes biográficas consultadas como spanish author (1837-1905). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 8 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Beata Bonifacia Rodríguez de Castro (1837–1905) é apresentado(a) nas fontes biográficas consultadas como autora cristã e testemunha de fé. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 8 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/f/f4/Bonifaciarodriguez.jpg",
@@ -49,15 +49,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "Public domain",
   },
   {
-    slug: "santa-agape-of-thessaloniki",
-    nome: "Santa Agape of Thessaloniki",
-    titulo: "Christian saint and martyr",
+    slug: "santa-agape-de-thessaloniki",
+    nome: "Santa Agape de Thessaloniki",
+    titulo: "Mártir cristã",
     data: "03/04",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Christian saint and martyr (300–304).",
+    resumo: "Mártir cristã (300–304).",
     biografia:
-      "Santa Agape of Thessaloniki (300–304) é apresentado(a) nas fontes biográficas consultadas como christian saint and martyr. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 3 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Agape de Thessaloniki (300–304) é apresentado(a) nas fontes biográficas consultadas como mártir cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 3 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -75,13 +75,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-agathoclia",
     nome: "Santa Agathoclia",
-    titulo: "Patron saint",
+    titulo: "Santa venerada pela tradição cristã",
     data: "17/09",
     seculo: "3",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Patron saint (201–230).",
+    resumo: "Santa venerada pela tradição cristã (201–230).",
     biografia:
-      "Santa Agathoclia (201–230) é apresentado(a) nas fontes biográficas consultadas como patron saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 17 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Agathoclia (201–230) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 17 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -98,15 +98,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "Public domain",
   },
   {
-    slug: "santa-agnes-of-assisi",
-    nome: "Santa Agnes of Assisi",
-    titulo: "Poor Clare abbess",
+    slug: "santa-agnes-de-assisi",
+    nome: "Santa Agnes de Assisi",
+    titulo: "Religiosa e testemunha da vida consagrada",
     data: "16/11",
     seculo: "13",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Poor Clare abbess (1197–1253).",
+    resumo: "Religiosa e testemunha da vida consagrada (1197–1253).",
     biografia:
-      "Santa Agnes of Assisi (1197–1253) é apresentado(a) nas fontes biográficas consultadas como poor clare abbess. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 16 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Agnes de Assisi (1197–1253) é apresentado(a) nas fontes biográficas consultadas como religiosa e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 16 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/c/c9/AgneseAssisi.jpg",
@@ -121,15 +121,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "Public domain",
   },
   {
-    slug: "santa-alberta-of-agen",
-    nome: "Santa Alberta of Agen",
-    titulo: "Martyr and saint",
+    slug: "santa-alberta-de-agen",
+    nome: "Santa Alberta de Agen",
+    titulo: "Mártir cristã",
     data: "11/03",
     seculo: "3",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Martyr and saint (201–286).",
+    resumo: "Mártir cristã (201–286).",
     biografia:
-      "Santa Alberta of Agen (201–286) é apresentado(a) nas fontes biográficas consultadas como martyr and saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 11 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Alberta de Agen (201–286) é apresentado(a) nas fontes biográficas consultadas como mártir cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 11 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/c/cf/SainteAlberteAgen.png",
@@ -146,13 +146,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-aldetrude-di-maubeuge",
     nome: "Santa Aldetrude di Maubeuge",
-    titulo: "Frankish saint",
+    titulo: "Santa venerada pela tradição cristã",
     data: "25/02",
     seculo: "7",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Frankish saint (700–696).",
+    resumo: "Santa venerada pela tradição cristã (700–696).",
     biografia:
-      "Santa Aldetrude di Maubeuge (700–696) é apresentado(a) nas fontes biográficas consultadas como frankish saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 25 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Aldetrude di Maubeuge (700–696) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 25 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/3/32/Waltraud_Waudru.jpg",
@@ -169,13 +169,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-alexandra-de-roma",
     nome: "Santa Alexandra de Roma",
-    titulo: "4th-century martyr and saint",
+    titulo: "Mártir cristã",
     data: "22/04",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "4th-century martyr and saint (250–303).",
+    resumo: "Mártir cristã (250–303).",
     biografia:
-      "Santa Alexandra de Roma (250–303) é apresentado(a) nas fontes biográficas consultadas como 4th-century martyr and saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 22 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Alexandra de Roma (250–303) é apresentado(a) nas fontes biográficas consultadas como mártir cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 22 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/0/04/Nikolai_Bodarevsky_003.jpg",
@@ -192,13 +192,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-alphais-de-cudot",
     nome: "Santa Alphais de Cudot",
-    titulo: "13th-century venerated Christian",
+    titulo: "Santa venerada pela tradição cristã",
     data: "03/11",
     seculo: "13",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "13th-century venerated Christian (1155–1211).",
+    resumo: "Santa venerada pela tradição cristã (1155–1211).",
     biografia:
-      "Santa Alphais de Cudot (1155–1211) é apresentado(a) nas fontes biográficas consultadas como 13th-century venerated christian. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 3 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Alphais de Cudot (1155–1211) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 3 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -216,13 +216,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-amabile-lucia-visintainer",
     nome: "Santa Amabile Lucia Visintainer",
-    titulo: "Santa Católica",
+    titulo: "Santa venerada pela tradição cristã",
     data: "09/07",
     seculo: "20",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Santa Católica (1865–1942).",
+    resumo: "Santa venerada pela tradição cristã (1865–1942).",
     biografia:
-      "Santa Amabile Lucia Visintainer (1865–1942) é apresentado(a) nas fontes biográficas consultadas como santa católica. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 9 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Amabile Lucia Visintainer (1865–1942) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 9 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/b/b7/Santa_Paolina.jpg",
@@ -239,13 +239,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-amalberga-de-maubeuge",
     nome: "Santa Amalberga de Maubeuge",
-    titulo: "Saint",
+    titulo: "Santa venerada pela tradição cristã",
     data: "21/11",
     seculo: "7",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Saint (601–670).",
+    resumo: "Santa venerada pela tradição cristã (601–670).",
     biografia:
-      "Santa Amalberga de Maubeuge (601–670) é apresentado(a) nas fontes biográficas consultadas como saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 21 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Amalberga de Maubeuge (601–670) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 21 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/0/0c/Saint_Madelberte-Maubeuge.jpg",
@@ -260,15 +260,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "Public domain",
   },
   {
-    slug: "santa-amalberga-of-temse",
-    nome: "Santa Amalberga of Temse",
+    slug: "santa-amalberga-de-temse",
+    nome: "Santa Amalberga de Temse",
     titulo: "Lotharingian noble woman",
     data: "10/07",
     seculo: "8",
     padroeiro: "Testemunho cristão e intercessão dos santos",
     resumo: "Lotharingian noble woman (741–772).",
     biografia:
-      "Santa Amalberga of Temse (741–772) é apresentado(a) nas fontes biográficas consultadas como lotharingian noble woman. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 10 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Amalberga de Temse (741–772) é apresentado(a) nas fontes biográficas consultadas como lotharingian noble woman. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 10 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/f/ff/Amelberga_van_Temse.jpg",
@@ -285,13 +285,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-ana-porfirogenita",
     nome: "Santa Ana Porfirogénita",
-    titulo: "Byzantine princess",
+    titulo: "Governante cristã e servidora dos necessitados",
     data: "01/01",
     seculo: "11",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Byzantine princess (963–1011).",
+    resumo: "Governante cristã e servidora dos necessitados (963–1011).",
     biografia:
-      "Santa Ana Porfirogénita (963–1011) é apresentado(a) nas fontes biográficas consultadas como byzantine princess. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Ana Porfirogénita (963–1011) é apresentado(a) nas fontes biográficas consultadas como governante cristã e servidora dos necessitados. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -307,15 +307,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "CC BY-SA 4.0",
   },
   {
-    slug: "santa-anastasia-of-rome",
-    nome: "Santa Anastasia of Rome",
-    titulo: "Martyred nun under emperor Valerian",
+    slug: "santa-anastasia-de-rome",
+    nome: "Santa Anastasia de Rome",
+    titulo: "Mártir cristã",
     data: "29/10",
     seculo: "3",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Martyred nun under emperor Valerian (220–250).",
+    resumo: "Mártir cristã (220–250).",
     biografia:
-      "Santa Anastasia of Rome (220–250) é apresentado(a) nas fontes biográficas consultadas como martyred nun under emperor valerian. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 29 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Anastasia de Rome (220–250) é apresentado(a) nas fontes biográficas consultadas como mártir cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 29 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/a/ad/Anastasia_of_Rome_%28III_c%29.jpg",
@@ -330,15 +330,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "Public domain",
   },
   {
-    slug: "santa-anastasia-of-serbia",
-    nome: "Santa Anastasia of Serbia",
-    titulo: "Princess consort of Serbia",
+    slug: "santa-anastasia-de-serbia",
+    nome: "Santa Anastasia de Serbia",
+    titulo: "Governante cristã e servidora dos necessitados",
     data: "22/06",
     seculo: "12",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Princess consort of Serbia (1200–1200).",
+    resumo: "Governante cristã e servidora dos necessitados (1200–1200).",
     biografia:
-      "Santa Anastasia of Serbia (1200–1200) é apresentado(a) nas fontes biográficas consultadas como princess consort of serbia. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Anastasia de Serbia (1200–1200) é apresentado(a) nas fontes biográficas consultadas como governante cristã e servidora dos necessitados. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -379,13 +379,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-apolonia-de-alexandria",
     nome: "Santa Apolónia de Alexandria",
-    titulo: "Mártir e santa cristã",
+    titulo: "Mártir cristã",
     data: "09/02",
     seculo: "3",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Mártir e santa cristã (150–249).",
+    resumo: "Mártir cristã (150–249).",
     biografia:
-      "Santa Apolónia de Alexandria (150–249) é apresentado(a) nas fontes biográficas consultadas como mártir e santa cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 9 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Apolónia de Alexandria (150–249) é apresentado(a) nas fontes biográficas consultadas como mártir cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 9 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -401,15 +401,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "Public domain",
   },
   {
-    slug: "santa-apronia-of-toul",
-    nome: "Santa Apronia of Toul",
-    titulo: "Nun and saint",
+    slug: "santa-apronia-de-toul",
+    nome: "Santa Apronia de Toul",
+    titulo: "Religiosa e testemunha da vida consagrada",
     data: "15/07",
     seculo: "não determinado",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Nun and saint.",
+    resumo: "Religiosa e testemunha da vida consagrada.",
     biografia:
-      "Santa Apronia of Toul é apresentado(a) nas fontes biográficas consultadas como nun and saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 15 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Apronia de Toul é apresentado(a) nas fontes biográficas consultadas como religiosa e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 15 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Cath%C3%A9drale_01889_Aprone.jpg",
@@ -426,13 +426,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-aquilina",
     nome: "Santa Aquilina",
-    titulo: "Christian child saint",
+    titulo: "Santa venerada pela tradição cristã",
     data: "13/06",
     seculo: "3",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Christian child saint (281–293).",
+    resumo: "Santa venerada pela tradição cristã (281–293).",
     biografia:
-      "Santa Aquilina (281–293) é apresentado(a) nas fontes biográficas consultadas como christian child saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 13 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Aquilina (281–293) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 13 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/4/48/Aquilina_old_icon.gif",
@@ -449,13 +449,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-ariadne",
     nome: "Santa Ariadne",
-    titulo: "Byzantine empress as the wife of Zeno and Anastasius I",
+    titulo: "Governante cristã e servidora dos necessitados",
     data: "01/01",
     seculo: "6",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Byzantine empress as the wife of Zeno and Anastasius I (452–515).",
+    resumo: "Governante cristã e servidora dos necessitados (452–515).",
     biografia:
-      "Santa Ariadne (452–515) é apresentado(a) nas fontes biográficas consultadas como byzantine empress as the wife of zeno and anastasius i. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Ariadne (452–515) é apresentado(a) nas fontes biográficas consultadas como governante cristã e servidora dos necessitados. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -471,15 +471,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "CC BY 3.0",
   },
   {
-    slug: "santa-ariadne-of-phrygia",
-    nome: "Santa Ariadne of Phrygia",
-    titulo: "2nd-century Christian saint",
+    slug: "santa-ariadne-de-phrygia",
+    nome: "Santa Ariadne de Phrygia",
+    titulo: "Santa venerada pela tradição cristã",
     data: "18/09",
     seculo: "2",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "2nd-century Christian saint (100–130).",
+    resumo: "Santa venerada pela tradição cristã (100–130).",
     biografia:
-      "Santa Ariadne of Phrygia (100–130) é apresentado(a) nas fontes biográficas consultadas como 2nd-century christian saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 18 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Ariadne de Phrygia (100–130) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 18 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/6/64/Menologion_of_Basil_060.jpg",
@@ -497,13 +497,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-asiquena",
     nome: "Santa Asiquena",
-    titulo: "Rainha da Armênia entre os séculos III e IV",
+    titulo: "Governante cristã e servidora dos necessitados",
     data: "01/01",
     seculo: "não determinado",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Rainha da Armênia entre os séculos III e IV.",
+    resumo: "Governante cristã e servidora dos necessitados.",
     biografia:
-      "Santa Asiquena é apresentado(a) nas fontes biográficas consultadas como rainha da armênia entre os séculos iii e iv. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data litúrgica a confirmar; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Asiquena é apresentado(a) nas fontes biográficas consultadas como governante cristã e servidora dos necessitados. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data litúrgica a confirmar; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -521,13 +521,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-aelia-flacila",
     nome: "Santa Aélia Flacila",
-    titulo: "4th-century Roman empress",
+    titulo: "Governante cristã e servidora dos necessitados",
     data: "14/09",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "4th-century Roman empress (356–386).",
+    resumo: "Governante cristã e servidora dos necessitados (356–386).",
     biografia:
-      "Santa Aélia Flacila (356–386) é apresentado(a) nas fontes biográficas consultadas como 4th-century roman empress. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 14 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Aélia Flacila (356–386) é apresentado(a) nas fontes biográficas consultadas como governante cristã e servidora dos necessitados. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 14 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -545,13 +545,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-aelia-pulqueria",
     nome: "Santa Aélia Pulquéria",
-    titulo: "Byzantine empress, wife of Marcian",
+    titulo: "Governante cristã e servidora dos necessitados",
     data: "10/09",
     seculo: "5",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Byzantine empress, wife of Marcian (399–453).",
+    resumo: "Governante cristã e servidora dos necessitados (399–453).",
     biografia:
-      "Santa Aélia Pulquéria (399–453) é apresentado(a) nas fontes biográficas consultadas como byzantine empress, wife of marcian. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 10 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Aélia Pulquéria (399–453) é apresentado(a) nas fontes biográficas consultadas como governante cristã e servidora dos necessitados. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 10 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/1/17/Pulcheria_Coin.JPG",
@@ -591,13 +591,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-berta-de-kent",
     nome: "Santa Berta de Kent",
-    titulo: "Rainha de Kent",
+    titulo: "Governante cristã e servidora dos necessitados",
     data: "01/05",
     seculo: "6",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Rainha de Kent.",
+    resumo: "Governante cristã e servidora dos necessitados.",
     biografia:
-      "Santa Berta de Kent é apresentado(a) nas fontes biográficas consultadas como rainha de kent. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 1 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Berta de Kent é apresentado(a) nas fontes biográficas consultadas como governante cristã e servidora dos necessitados. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 1 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -615,13 +615,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-bertile-de-mar-il",
     nome: "Santa Bertile de Marœil",
-    titulo: "7th-century Frankish saint",
+    titulo: "Santa venerada pela tradição cristã",
     data: "03/01",
     seculo: "não determinado",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "7th-century Frankish saint.",
+    resumo: "Santa venerada pela tradição cristã.",
     biografia:
-      "Santa Bertile de Marœil é apresentado(a) nas fontes biográficas consultadas como 7th-century frankish saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 3 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Bertile de Marœil é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 3 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -637,15 +637,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "Public domain",
   },
   {
-    slug: "santa-bona-of-pisa",
-    nome: "Santa Bona of Pisa",
-    titulo: "Nun who helped lead travellers on pilgrimages",
+    slug: "santa-bona-de-pisa",
+    nome: "Santa Bona de Pisa",
+    titulo: "Religiosa e testemunha da vida consagrada",
     data: "29/05",
     seculo: "13",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Nun who helped lead travellers on pilgrimages (1156–1207).",
+    resumo: "Religiosa e testemunha da vida consagrada (1156–1207).",
     biografia:
-      "Santa Bona of Pisa (1156–1207) é apresentado(a) nas fontes biográficas consultadas como nun who helped lead travellers on pilgrimages. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 29 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Bona de Pisa (1156–1207) é apresentado(a) nas fontes biográficas consultadas como religiosa e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 29 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -663,13 +663,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-barbara-de-nicomedia",
     nome: "Santa Bárbara de Nicomédia",
-    titulo: "Santa cristã",
+    titulo: "Santa venerada pela tradição cristã",
     data: "04/12",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Santa cristã (273–306).",
+    resumo: "Santa venerada pela tradição cristã (273–306).",
     biografia:
-      "Santa Bárbara de Nicomédia (273–306) é apresentado(a) nas fontes biográficas consultadas como santa cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 4 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Bárbara de Nicomédia (273–306) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 4 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -687,13 +687,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-cagina",
     nome: "Santa Cagina",
-    titulo: "5th-century female Welsh saint",
+    titulo: "Santa venerada pela tradição cristã",
     data: "08/10",
     seculo: "5",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "5th-century female Welsh saint.",
+    resumo: "Santa venerada pela tradição cristã.",
     biografia:
-      "Santa Cagina é apresentado(a) nas fontes biográficas consultadas como 5th-century female welsh saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 8 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Cagina é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 8 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -709,15 +709,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "CC BY-SA 2.0",
   },
   {
-    slug: "santa-candida-maria-of-jesus",
-    nome: "Santa Candida Maria of Jesus",
-    titulo: "Spanish saint (1845-1912)",
+    slug: "santa-candida-maria-de-jesus",
+    nome: "Santa Candida Maria de Jesus",
+    titulo: "Santa venerada pela tradição cristã",
     data: "09/08",
     seculo: "20",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Spanish saint (1845-1912) (1845–1912).",
+    resumo: "Santa venerada pela tradição cristã (1845–1912).",
     biografia:
-      "Santa Candida Maria of Jesus (1845–1912) é apresentado(a) nas fontes biográficas consultadas como spanish saint (1845-1912). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 9 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Candida Maria de Jesus (1845–1912) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 9 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/f/f4/MadreCandida.jpg",
@@ -781,13 +781,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-catarina-de-ricci",
     nome: "Santa Catarina de Ricci",
-    titulo: "Italian Dominican Tertiary Religious Sister",
+    titulo: "Religiosa e testemunha da vida consagrada",
     data: "04/02",
     seculo: "16",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Italian Dominican Tertiary Religious Sister (1522–1590).",
+    resumo: "Religiosa e testemunha da vida consagrada (1522–1590).",
     biografia:
-      "Santa Catarina de Ricci (1522–1590) é apresentado(a) nas fontes biográficas consultadas como italian dominican tertiary religious sister. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 4 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Catarina de Ricci (1522–1590) é apresentado(a) nas fontes biográficas consultadas como religiosa e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 4 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -806,13 +806,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-clara-de-montefalco",
     nome: "Santa Clara de Montefalco",
-    titulo: "Freira agostiniana e santa",
+    titulo: "Religiosa e testemunha da vida consagrada",
     data: "17/08",
     seculo: "14",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Freira agostiniana e santa (1268–1308).",
+    resumo: "Religiosa e testemunha da vida consagrada (1268–1308).",
     biografia:
-      "Santa Clara de Montefalco (1268–1308) é apresentado(a) nas fontes biográficas consultadas como freira agostiniana e santa. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 17 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Clara de Montefalco (1268–1308) é apresentado(a) nas fontes biográficas consultadas como religiosa e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 17 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/b/b7/Saint_Clare_of_Montefalco.jpg",
@@ -829,13 +829,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-clotilde-da-borgonha",
     nome: "Santa Clotilde da Borgonha",
-    titulo: "Santa e rainha dos francos",
+    titulo: "Governante cristã e servidora dos necessitados",
     data: "03/06",
     seculo: "6",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Santa e rainha dos francos (474–545).",
+    resumo: "Governante cristã e servidora dos necessitados (474–545).",
     biografia:
-      "Santa Clotilde da Borgonha (474–545) é apresentado(a) nas fontes biográficas consultadas como santa e rainha dos francos. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 3 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Clotilde da Borgonha (474–545) é apresentado(a) nas fontes biográficas consultadas como governante cristã e servidora dos necessitados. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 3 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -853,13 +853,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-cointha",
     nome: "Santa Cointha",
-    titulo: "Christian martyr (†249)",
+    titulo: "Mártir cristã",
     data: "08/02",
     seculo: "3",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Christian martyr (†249) (250–249).",
+    resumo: "Mártir cristã (250–249).",
     biografia:
-      "Santa Cointha (250–249) é apresentado(a) nas fontes biográficas consultadas como christian martyr (†249). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 8 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Cointha (250–249) é apresentado(a) nas fontes biográficas consultadas como mártir cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 8 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/9/9c/Sancta_Cointha.jpg",
@@ -874,15 +874,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "Public domain",
   },
   {
-    slug: "santa-columba-of-cornwall",
-    nome: "Santa Columba of Cornwall",
-    titulo: "Breton-cornish saint of the 6th century",
+    slug: "santa-columba-de-cornwall",
+    nome: "Santa Columba de Cornwall",
+    titulo: "Santa venerada pela tradição cristã",
     data: "11/11",
     seculo: "6",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Breton-cornish saint of the 6th century (401–600).",
+    resumo: "Santa venerada pela tradição cristã (401–600).",
     biografia:
-      "Santa Columba of Cornwall (401–600) é apresentado(a) nas fontes biográficas consultadas como breton-cornish saint of the 6th century. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 11 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Columba de Cornwall (401–600) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 11 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/d/d8/Columba3.jpg",
@@ -899,13 +899,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-comba-de-sens",
     nome: "Santa Comba de Sens",
-    titulo: "Mártir e santa cristã",
+    titulo: "Mártir cristã",
     data: "31/12",
     seculo: "3",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Mártir e santa cristã (257–273).",
+    resumo: "Mártir cristã (257–273).",
     biografia:
-      "Santa Comba de Sens (257–273) é apresentado(a) nas fontes biográficas consultadas como mártir e santa cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 31 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Comba de Sens (257–273) é apresentado(a) nas fontes biográficas consultadas como mártir cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 31 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/c/c8/SantaColumba.jpg",
@@ -922,13 +922,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-cristina-i-da-suecia",
     nome: "Santa Cristina I da Suécia",
-    titulo: "Rainha da Suécia",
+    titulo: "Governante cristã e servidora dos necessitados",
     data: "19/04",
     seculo: "17",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Rainha da Suécia (1626–1689).",
+    resumo: "Governante cristã e servidora dos necessitados (1626–1689).",
     biografia:
-      "Santa Cristina I da Suécia (1626–1689) é apresentado(a) nas fontes biográficas consultadas como rainha da suécia. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Cristina I da Suécia (1626–1689) é apresentado(a) nas fontes biográficas consultadas como governante cristã e servidora dos necessitados. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -946,13 +946,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-cunegunda-da-polonia",
     nome: "Santa Cunegunda da Polónia",
-    titulo: "Polish royal; later Poor Clare abbess",
+    titulo: "Religiosa e testemunha da vida consagrada",
     data: "24/07",
     seculo: "13",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Polish royal; later Poor Clare abbess (1224–1292).",
+    resumo: "Religiosa e testemunha da vida consagrada (1224–1292).",
     biografia:
-      "Santa Cunegunda da Polónia (1224–1292) é apresentado(a) nas fontes biográficas consultadas como polish royal; later poor clare abbess. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 24 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Cunegunda da Polónia (1224–1292) é apresentado(a) nas fontes biográficas consultadas como religiosa e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 24 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/4/41/%C5%9Awi%C4%99ta_Kinga.jpeg",
@@ -993,13 +993,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-domna-tomskaya",
     nome: "Santa Domna Tomskaya",
-    titulo: "Siberian Saint",
+    titulo: "Santa venerada pela tradição cristã",
     data: "28/10",
     seculo: "19",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Siberian Saint (1900–1872).",
+    resumo: "Santa venerada pela tradição cristã (1900–1872).",
     biografia:
-      "Santa Domna Tomskaya (1900–1872) é apresentado(a) nas fontes biográficas consultadas como siberian saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Domna Tomskaya (1900–1872) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/d/d1/Domna_of_Tomsk.jpg",
@@ -1016,13 +1016,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-doroteia",
     nome: "Santa Doroteia",
-    titulo: "Catholic saint",
+    titulo: "Santa venerada pela tradição cristã",
     data: "06/02",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Catholic saint (279–311).",
+    resumo: "Santa venerada pela tradição cristã (279–311).",
     biografia:
-      "Santa Doroteia (279–311) é apresentado(a) nas fontes biográficas consultadas como catholic saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 6 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Doroteia (279–311) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 6 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -1061,15 +1061,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "CC BY-SA 2.5",
   },
   {
-    slug: "santa-edith-of-wilton",
-    nome: "Santa Edith of Wilton",
-    titulo: "English nun",
+    slug: "santa-edith-de-wilton",
+    nome: "Santa Edith de Wilton",
+    titulo: "Religiosa e testemunha da vida consagrada",
     data: "16/09",
     seculo: "10",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "English nun (961–984).",
+    resumo: "Religiosa e testemunha da vida consagrada (961–984).",
     biografia:
-      "Santa Edith of Wilton (961–984) é apresentado(a) nas fontes biográficas consultadas como english nun. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 16 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Edith de Wilton (961–984) é apresentado(a) nas fontes biográficas consultadas como religiosa e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 16 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -1087,13 +1087,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-edviges-da-silesia",
     nome: "Santa Edviges da Silésia",
-    titulo: "Santa da Igreja Católica",
+    titulo: "Santa venerada pela tradição cristã",
     data: "16/10",
     seculo: "13",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Santa da Igreja Católica (1174–1243).",
+    resumo: "Santa venerada pela tradição cristã (1174–1243).",
     biografia:
-      "Santa Edviges da Silésia (1174–1243) é apresentado(a) nas fontes biográficas consultadas como santa da igreja católica. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 16 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Edviges da Silésia (1174–1243) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 16 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/7/76/Hl_Hedwig_Sehnde.JPG",
@@ -1110,13 +1110,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-efigenia",
     nome: "Santa Efigénia",
-    titulo: "Santa católica",
+    titulo: "Santa venerada pela tradição cristã",
     data: "21/09",
     seculo: "não determinado",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Santa católica.",
+    resumo: "Santa venerada pela tradição cristã.",
     biografia:
-      "Santa Efigénia é apresentado(a) nas fontes biográficas consultadas como santa católica. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 21 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Efigénia é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 21 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -1157,13 +1157,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-eluned",
     nome: "Santa Eluned",
-    titulo: "5c Welsh saint",
+    titulo: "Santa venerada pela tradição cristã",
     data: "01/08",
     seculo: "5",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "5c Welsh saint.",
+    resumo: "Santa venerada pela tradição cristã.",
     biografia:
-      "Santa Eluned é apresentado(a) nas fontes biográficas consultadas como 5c welsh saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 1 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Eluned é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 1 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -1181,13 +1181,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-emerenciana",
     nome: "Santa Emerenciana",
-    titulo: "Christian martyr",
+    titulo: "Mártir cristã",
     data: "23/01",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Christian martyr (250–304).",
+    resumo: "Mártir cristã (250–304).",
     biografia:
-      "Santa Emerenciana (250–304) é apresentado(a) nas fontes biográficas consultadas como christian martyr. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 23 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Emerenciana (250–304) é apresentado(a) nas fontes biográficas consultadas como mártir cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 23 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -1205,13 +1205,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-erentrudis-von-salzburg",
     nome: "Santa Erentrudis von Salzburg",
-    titulo: "Santa e abadessa da Igreja Católica",
+    titulo: "Monge e testemunha da vida consagrada",
     data: "30/06",
     seculo: "8",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Santa e abadessa da Igreja Católica (601–718).",
+    resumo: "Monge e testemunha da vida consagrada (601–718).",
     biografia:
-      "Santa Erentrudis von Salzburg (601–718) é apresentado(a) nas fontes biográficas consultadas como santa e abadessa da igreja católica. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 30 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Erentrudis von Salzburg (601–718) é apresentado(a) nas fontes biográficas consultadas como monge e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 30 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -1229,13 +1229,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-escrava-anastacia",
     nome: "Santa Escrava Anastácia",
-    titulo: "Brazilian saint",
+    titulo: "Santa venerada pela tradição cristã",
     data: "01/01",
     seculo: "18",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Brazilian saint.",
+    resumo: "Santa venerada pela tradição cristã.",
     biografia:
-      "Santa Escrava Anastácia é apresentado(a) nas fontes biográficas consultadas como brazilian saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data litúrgica a confirmar; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Escrava Anastácia é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data litúrgica a confirmar; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -1253,13 +1253,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-eteldreda-de-ely",
     nome: "Santa Eteldreda de Ely",
-    titulo: "Abbess of Ely",
+    titulo: "Religiosa e testemunha da vida consagrada",
     data: "23/06",
     seculo: "7",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Abbess of Ely (636–679).",
+    resumo: "Religiosa e testemunha da vida consagrada (636–679).",
     biografia:
-      "Santa Eteldreda de Ely (636–679) é apresentado(a) nas fontes biográficas consultadas como abbess of ely. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 23 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Eteldreda de Ely (636–679) é apresentado(a) nas fontes biográficas consultadas como religiosa e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 23 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/7/75/St-aethelthryth.jpg",
@@ -1274,15 +1274,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "Public domain",
   },
   {
-    slug: "santa-eudokia-of-heliopolis",
-    nome: "Santa Eudokia of Heliopolis",
-    titulo: "Samarian martyr",
+    slug: "santa-eudokia-de-heliopolis",
+    nome: "Santa Eudokia de Heliopolis",
+    titulo: "Mártir cristã",
     data: "01/03",
     seculo: "2",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Samarian martyr (100–107).",
+    resumo: "Mártir cristã (100–107).",
     biografia:
-      "Santa Eudokia of Heliopolis (100–107) é apresentado(a) nas fontes biográficas consultadas como samarian martyr. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 1 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Eudokia de Heliopolis (100–107) é apresentado(a) nas fontes biográficas consultadas como mártir cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 1 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/0/0e/Eudokia_of_Heliopolis.jpg",
@@ -1299,13 +1299,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-eulalia-de-merida",
     nome: "Santa Eulália de Mérida",
-    titulo: "Santa católica",
+    titulo: "Santa venerada pela tradição cristã",
     data: "10/12",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Santa católica (290–304).",
+    resumo: "Santa venerada pela tradição cristã (290–304).",
     biografia:
-      "Santa Eulália de Mérida (290–304) é apresentado(a) nas fontes biográficas consultadas como santa católica. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 10 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Eulália de Mérida (290–304) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 10 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -1321,15 +1321,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "Public domain",
   },
   {
-    slug: "santa-euphrasia-of-constantinople",
-    nome: "Santa Euphrasia of Constantinople",
-    titulo: "Christian saint",
+    slug: "santa-euphrasia-de-constantinople",
+    nome: "Santa Euphrasia de Constantinople",
+    titulo: "Santa venerada pela tradição cristã",
     data: "13/03",
     seculo: "5",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Christian saint (380–410).",
+    resumo: "Santa venerada pela tradição cristã (380–410).",
     biografia:
-      "Santa Euphrasia of Constantinople (380–410) é apresentado(a) nas fontes biográficas consultadas como christian saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Euphrasia de Constantinople (380–410) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/8/8f/Saint_Euphrasia_%28cropped%29.JPG",
@@ -1346,13 +1346,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-eurosia",
     nome: "Santa Eurosia",
-    titulo: "Patron saint of Jaca (Spain)",
+    titulo: "Santa venerada pela tradição cristã",
     data: "25/06",
     seculo: "9",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Patron saint of Jaca (Spain) (864–880).",
+    resumo: "Santa venerada pela tradição cristã (864–880).",
     biografia:
-      "Santa Eurosia (864–880) é apresentado(a) nas fontes biográficas consultadas como patron saint of jaca (spain). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 25 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Eurosia (864–880) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 25 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/6/68/Saint_eurosia.jpg",
@@ -1369,13 +1369,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-eusebia-de-bergamo",
     nome: "Santa Eusebia de Bergamo",
-    titulo: "Saint and martyr (Fl. 3rd C.)",
+    titulo: "Mártir cristã",
     data: "01/01",
     seculo: "não determinado",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Saint and martyr (Fl. 3rd C.).",
+    resumo: "Mártir cristã.",
     biografia:
-      "Santa Eusebia de Bergamo é apresentado(a) nas fontes biográficas consultadas como saint and martyr (fl. 3rd c.). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data litúrgica a confirmar; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Eusebia de Bergamo é apresentado(a) nas fontes biográficas consultadas como mártir cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data litúrgica a confirmar; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -1393,13 +1393,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-eustaquia-calafato",
     nome: "Santa Eustáquia Calafato",
-    titulo: "Santa católica italiana",
+    titulo: "Santa venerada pela tradição cristã",
     data: "20/01",
     seculo: "15",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Santa católica italiana (1434–1485).",
+    resumo: "Santa venerada pela tradição cristã (1434–1485).",
     biografia:
-      "Santa Eustáquia Calafato (1434–1485) é apresentado(a) nas fontes biográficas consultadas como santa católica italiana. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 20 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Eustáquia Calafato (1434–1485) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 20 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/5/54/Eustochia_smeraldo_calafato.jpg",
@@ -1416,13 +1416,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-eustoquia",
     nome: "Santa Eustóquia",
-    titulo: "Early Christian saint",
+    titulo: "Santa venerada pela tradição cristã",
     data: "28/09",
     seculo: "5",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Early Christian saint (368–420).",
+    resumo: "Santa venerada pela tradição cristã (368–420).",
     biografia:
-      "Santa Eustóquia (368–420) é apresentado(a) nas fontes biográficas consultadas como early christian saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 28 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Eustóquia (368–420) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 28 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -1440,13 +1440,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-fabiola",
     nome: "Santa Fabíola",
-    titulo: "Saint",
+    titulo: "Santa venerada pela tradição cristã",
     data: "27/12",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Saint (400–399).",
+    resumo: "Santa venerada pela tradição cristã (400–399).",
     biografia:
-      "Santa Fabíola (400–399) é apresentado(a) nas fontes biográficas consultadas como saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 27 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Fabíola (400–399) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 27 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/1/11/Jean-Jacques_Henner_Fabiola.jpg",
@@ -1461,15 +1461,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "Public domain",
   },
   {
-    slug: "santa-fausta-of-cyzicus",
-    nome: "Santa Fausta of Cyzicus",
-    titulo: "Early 4th century Roman saint",
+    slug: "santa-fausta-de-cyzicus",
+    nome: "Santa Fausta de Cyzicus",
+    titulo: "Santa venerada pela tradição cristã",
     data: "10/06",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Early 4th century Roman saint (298–311).",
+    resumo: "Santa venerada pela tradição cristã (298–311).",
     biografia:
-      "Santa Fausta of Cyzicus (298–311) é apresentado(a) nas fontes biográficas consultadas como early 4th century roman saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 10 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Fausta de Cyzicus (298–311) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 10 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -1486,15 +1486,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "Public domain",
   },
   {
-    slug: "santa-faustina-of-como",
-    nome: "Santa Faustina of Como",
-    titulo: "6th century saint",
+    slug: "santa-faustina-de-como",
+    nome: "Santa Faustina de Como",
+    titulo: "Santa venerada pela tradição cristã",
     data: "19/01",
     seculo: "6",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "6th century saint.",
+    resumo: "Santa venerada pela tradição cristã.",
     biografia:
-      "Santa Faustina of Como é apresentado(a) nas fontes biográficas consultadas como 6th century saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 19 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Faustina de Como é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 19 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -1512,13 +1512,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-felicidade-de-roma",
     nome: "Santa Felicidade de Roma",
-    titulo: "Christian saint and martyr",
+    titulo: "Mártir cristã",
     data: "23/11",
     seculo: "2",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Christian saint and martyr (101–165).",
+    resumo: "Mártir cristã (101–165).",
     biografia:
-      "Santa Felicidade de Roma (101–165) é apresentado(a) nas fontes biográficas consultadas como christian saint and martyr. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 23 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Felicidade de Roma (101–165) é apresentado(a) nas fontes biográficas consultadas como mártir cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 23 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/c/c0/SevenBrothers.jpg",
@@ -1535,13 +1535,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-felicula",
     nome: "Santa Felicula",
-    titulo: "4th century Christian martyr and saint",
+    titulo: "Mártir cristã",
     data: "13/06",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "4th century Christian martyr and saint.",
+    resumo: "Mártir cristã.",
     biografia:
-      "Santa Felicula é apresentado(a) nas fontes biográficas consultadas como 4th century christian martyr and saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 13 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Felicula é apresentado(a) nas fontes biográficas consultadas como mártir cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 13 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -1559,13 +1559,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-feodosia-morozova",
     nome: "Santa Feodosia Morozova",
-    titulo: "Russian noble and saint",
+    titulo: "Santa venerada pela tradição cristã",
     data: "02/11",
     seculo: "17",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Russian noble and saint (1632–1675).",
+    resumo: "Santa venerada pela tradição cristã (1632–1675).",
     biografia:
-      "Santa Feodosia Morozova (1632–1675) é apresentado(a) nas fontes biográficas consultadas como russian noble and saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Feodosia Morozova (1632–1675) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -1583,13 +1583,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-firmina",
     nome: "Santa Firmina",
-    titulo: "4th-century Roman saint",
+    titulo: "Santa venerada pela tradição cristã",
     data: "24/11",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "4th-century Roman saint (250–400).",
+    resumo: "Santa venerada pela tradição cristã (250–400).",
     biografia:
-      "Santa Firmina (250–400) é apresentado(a) nas fontes biográficas consultadas como 4th-century roman saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 24 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Firmina (250–400) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 24 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/6/6e/Santa_Fermina_%28cropped%29.JPG",
@@ -1604,15 +1604,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "CC BY-SA 3.0",
   },
   {
-    slug: "santa-flora-of-cordoba",
-    nome: "Santa Flora of Córdoba",
+    slug: "santa-flora-de-cordoba",
+    nome: "Santa Flora de Córdoba",
     titulo: "Prisoner",
     data: "24/11",
     seculo: "9",
     padroeiro: "Testemunho cristão e intercessão dos santos",
     resumo: "Prisoner (falecido em 851).",
     biografia:
-      "Santa Flora of Córdoba (falecido em 851) é apresentado(a) nas fontes biográficas consultadas como prisoner. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 24 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Flora de Córdoba (falecido em 851) é apresentado(a) nas fontes biográficas consultadas como prisoner. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 24 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -1651,15 +1651,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "CC0",
   },
   {
-    slug: "santa-fusca-of-ravenna",
-    nome: "Santa Fusca of Ravenna",
-    titulo: "Child martyr killed ca. 250 AD in Ravenna, Italy",
+    slug: "santa-fusca-de-ravenna",
+    nome: "Santa Fusca de Ravenna",
+    titulo: "Mártir cristã",
     data: "13/02",
     seculo: "3",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Child martyr killed ca. 250 AD in Ravenna, Italy (250–250).",
+    resumo: "Mártir cristã (250–250).",
     biografia:
-      "Santa Fusca of Ravenna (250–250) é apresentado(a) nas fontes biográficas consultadas como child martyr killed ca. 250 ad in ravenna, italy. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 13 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Fusca de Ravenna (250–250) é apresentado(a) nas fontes biográficas consultadas como mártir cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 13 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/7/76/Santa_Fosca_sculpture.JPG",
@@ -1676,13 +1676,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-gertrudes-de-nivelles",
     nome: "Santa Gertrudes de Nivelles",
-    titulo: "Santa belga",
+    titulo: "Santa venerada pela tradição cristã",
     data: "30/09",
     seculo: "7",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Santa belga (626–659).",
+    resumo: "Santa venerada pela tradição cristã (626–659).",
     biografia:
-      "Santa Gertrudes de Nivelles (626–659) é apresentado(a) nas fontes biográficas consultadas como santa belga. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 30 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Gertrudes de Nivelles (626–659) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 30 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/e/e4/GetrudNivelles.jpg",
@@ -1720,15 +1720,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "CC BY-SA 3.0",
   },
   {
-    slug: "santa-grata-of-bergamo",
-    nome: "Santa Grata of Bergamo",
-    titulo: "Christian saint martyred in 307",
+    slug: "santa-grata-de-bergamo",
+    nome: "Santa Grata de Bergamo",
+    titulo: "Mártir cristã",
     data: "01/05",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Christian saint martyred in 307 (falecido em 307).",
+    resumo: "Mártir cristã (falecido em 307).",
     biografia:
-      "Santa Grata of Bergamo (falecido em 307) é apresentado(a) nas fontes biográficas consultadas como christian saint martyred in 307. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 1 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Grata de Bergamo (falecido em 307) é apresentado(a) nas fontes biográficas consultadas como mártir cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 1 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -1746,13 +1746,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-helena-de-anjou",
     nome: "Santa Helena de Anjou",
-    titulo: "Serbian queen",
+    titulo: "Governante cristã e servidora dos necessitados",
     data: "08/02",
     seculo: "14",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Serbian queen (1237–1314).",
+    resumo: "Governante cristã e servidora dos necessitados (1237–1314).",
     biografia:
-      "Santa Helena de Anjou (1237–1314) é apresentado(a) nas fontes biográficas consultadas como serbian queen. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Helena de Anjou (1237–1314) é apresentado(a) nas fontes biográficas consultadas como governante cristã e servidora dos necessitados. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -1770,13 +1770,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-helena-de-constantinopla",
     nome: "Santa Helena de Constantinopla",
-    titulo: "Mãe do imperador romano Constantino I",
+    titulo: "Governante cristão e servidor dos necessitados",
     data: "18/08",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Mãe do imperador romano Constantino I (250–330).",
+    resumo: "Governante cristão e servidor dos necessitados (250–330).",
     biografia:
-      "Santa Helena de Constantinopla (250–330) é apresentado(a) nas fontes biográficas consultadas como mãe do imperador romano constantino i. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 18 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Helena de Constantinopla (250–330) é apresentado(a) nas fontes biográficas consultadas como governante cristão e servidor dos necessitados. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 18 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -1794,15 +1794,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-helena-de-skovde",
     nome: "Santa Helena de Skövde",
-    titulo:
-      "Swedish saint and patron to what is now Västergötland, in southwest Sweden (ca. 1101 – 1160)",
+    titulo: "Santa venerada pela tradição cristã",
     data: "31/07",
     seculo: "12",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo:
-      "Swedish saint and patron to what is now Västergötland, in southwest Sweden (ca. 1101 – 1160) (1100–1160).",
+    resumo: "Santa venerada pela tradição cristã (1100–1160).",
     biografia:
-      "Santa Helena de Skövde (1100–1160) é apresentado(a) nas fontes biográficas consultadas como swedish saint and patron to what is now västergötland, in southwest sweden (ca. 1101 – 1160). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 31 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Helena de Skövde (1100–1160) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 31 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -1818,17 +1816,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "CC BY-SA 3.0",
   },
   {
-    slug: "santa-hemma-of-gurk",
-    nome: "Santa Hemma of Gurk",
-    titulo:
-      "Carinthian princess, founder of Catholic churches and monasteries, and saint (c.980-1045)",
+    slug: "santa-hemma-de-gurk",
+    nome: "Santa Hemma de Gurk",
+    titulo: "Governante cristã e servidora dos necessitados",
     data: "27/06",
     seculo: "11",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo:
-      "Carinthian princess, founder of Catholic churches and monasteries, and saint (c.980-1045) (980–1045).",
+    resumo: "Governante cristã e servidora dos necessitados (980–1045).",
     biografia:
-      "Santa Hemma of Gurk (980–1045) é apresentado(a) nas fontes biográficas consultadas como carinthian princess, founder of catholic churches and monasteries, and saint (c.980-1045). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 27 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Hemma de Gurk (980–1045) é apresentado(a) nas fontes biográficas consultadas como governante cristã e servidora dos necessitados. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 27 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/9/9d/Hemma_von_Gurk_Bopp_1510.jpg",
@@ -1845,14 +1841,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-hilda-de-whitby",
     nome: "Santa Hilda de Whitby",
-    titulo: "Christian saint and the founding abbess of the monastery at Whitby, England",
+    titulo: "Religiosa e testemunha da vida consagrada",
     data: "17/11",
     seculo: "7",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo:
-      "Christian saint and the founding abbess of the monastery at Whitby, England (614–680).",
+    resumo: "Religiosa e testemunha da vida consagrada (614–680).",
     biografia:
-      "Santa Hilda de Whitby (614–680) é apresentado(a) nas fontes biográficas consultadas como christian saint and the founding abbess of the monastery at whitby, england. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 17 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Hilda de Whitby (614–680) é apresentado(a) nas fontes biográficas consultadas como religiosa e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 17 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -1892,15 +1887,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "Public domain",
   },
   {
-    slug: "santa-ida-of-toggenburg",
-    nome: "Santa Ida of Toggenburg",
-    titulo: "Catholic saint",
+    slug: "santa-ida-de-toggenburg",
+    nome: "Santa Ida de Toggenburg",
+    titulo: "Santa venerada pela tradição cristã",
     data: "03/11",
     seculo: "13",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Catholic saint (1140–1226).",
+    resumo: "Santa venerada pela tradição cristã (1140–1226).",
     biografia:
-      "Santa Ida of Toggenburg (1140–1226) é apresentado(a) nas fontes biográficas consultadas como catholic saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 3 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Ida de Toggenburg (1140–1226) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 3 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/9/97/StIdda.jpg",
@@ -1917,13 +1912,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-ingegerda-da-suecia",
     nome: "Santa Ingegerda da Suécia",
-    titulo: "Swedish princess and Grand Princess of Kiev",
+    titulo: "Governante cristã e servidora dos necessitados",
     data: "10/02",
     seculo: "11",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Swedish princess and Grand Princess of Kiev (1001–1050).",
+    resumo: "Governante cristã e servidora dos necessitados (1001–1050).",
     biografia:
-      "Santa Ingegerda da Suécia (1001–1050) é apresentado(a) nas fontes biográficas consultadas como swedish princess and grand princess of kiev. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 10 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Ingegerda da Suécia (1001–1050) é apresentado(a) nas fontes biográficas consultadas como governante cristã e servidora dos necessitados. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 10 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -1941,13 +1936,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-ines-de-praga",
     nome: "Santa Inês de Praga",
-    titulo: "Princess who became a nun and saint (1211-1282)",
+    titulo: "Religiosa e testemunha da vida consagrada",
     data: "02/03",
     seculo: "13",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Princess who became a nun and saint (1211-1282) (1211–1282).",
+    resumo: "Religiosa e testemunha da vida consagrada (1211–1282).",
     biografia:
-      "Santa Inês de Praga (1211–1282) é apresentado(a) nas fontes biográficas consultadas como princess who became a nun and saint (1211-1282). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 2 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Inês de Praga (1211–1282) é apresentado(a) nas fontes biográficas consultadas como religiosa e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 2 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/c/c4/AnezkaPremyslovna.jpg",
@@ -1964,13 +1959,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-irene-de-atenas",
     nome: "Santa Irene de Atenas",
-    titulo: "Imperatriz bizantina",
+    titulo: "Governante cristã e servidora dos necessitados",
     data: "07/08",
     seculo: "9",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Imperatriz bizantina (752–803).",
+    resumo: "Governante cristã e servidora dos necessitados (752–803).",
     biografia:
-      "Santa Irene de Atenas (752–803) é apresentado(a) nas fontes biográficas consultadas como imperatriz bizantina. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 7 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Irene de Atenas (752–803) é apresentado(a) nas fontes biográficas consultadas como governante cristã e servidora dos necessitados. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 7 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -1986,15 +1981,38 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "CC BY-SA 2.5",
   },
   {
+    slug: "santa-irene-de-lecce",
+    nome: "Santa Irene de Lecce",
+    titulo: "Santa venerada pela tradição cristã",
+    data: "05/05",
+    seculo: "1",
+    padroeiro: "Testemunho cristão e intercessão dos santos",
+    resumo: "Santa venerada pela tradição cristã (1–100).",
+    biografia:
+      "Santa Irene de Lecce (1–100) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 5 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+    virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
+    frase: "",
+    imagem: "https://upload.wikimedia.org/wikipedia/commons/5/5d/Iryna.jpg",
+    fontes: [
+      { nome: "Wikidata", url: "https://www.wikidata.org/wiki/Q3801920" },
+      {
+        nome: "Wikimedia Commons",
+        url: "https://upload.wikimedia.org/wikipedia/commons/5/5d/Iryna.jpg",
+      },
+    ],
+    creditoImagem: "Iryna.jpg",
+    licencaImagem: "Public domain",
+  },
+  {
     slug: "santa-irene-de-roma",
     nome: "Santa Irene de Roma",
-    titulo: "Widow who tended to Saint Sebastian",
+    titulo: "Santa venerada pela tradição cristã",
     data: "22/01",
     seculo: "3",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Widow who tended to Saint Sebastian (300–288).",
+    resumo: "Santa venerada pela tradição cristã (300–288).",
     biografia:
-      "Santa Irene de Roma (300–288) é apresentado(a) nas fontes biográficas consultadas como widow who tended to saint sebastian. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 22 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Irene de Roma (300–288) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 22 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -2012,13 +2030,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-irene-de-tessalonica",
     nome: "Santa Irene de Tessalónica",
-    titulo: "Santa católica",
+    titulo: "Santa venerada pela tradição cristã",
     data: "05/05",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Santa católica (201–304).",
+    resumo: "Santa venerada pela tradição cristã (201–304).",
     biografia:
-      "Santa Irene de Tessalónica (201–304) é apresentado(a) nas fontes biográficas consultadas como santa católica. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 5 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Irene de Tessalónica (201–304) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 5 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -2034,38 +2052,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "CC BY-SA 4.0",
   },
   {
-    slug: "santa-irene-of-lecce",
-    nome: "Santa Irene of Lecce",
-    titulo: "Pre-congregation saint",
-    data: "05/05",
-    seculo: "1",
-    padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Pre-congregation saint (1–100).",
-    biografia:
-      "Santa Irene of Lecce (1–100) é apresentado(a) nas fontes biográficas consultadas como pre-congregation saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 5 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
-    virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
-    frase: "",
-    imagem: "https://upload.wikimedia.org/wikipedia/commons/5/5d/Iryna.jpg",
-    fontes: [
-      { nome: "Wikidata", url: "https://www.wikidata.org/wiki/Q3801920" },
-      {
-        nome: "Wikimedia Commons",
-        url: "https://upload.wikimedia.org/wikipedia/commons/5/5d/Iryna.jpg",
-      },
-    ],
-    creditoImagem: "Iryna.jpg",
-    licencaImagem: "Public domain",
-  },
-  {
     slug: "santa-iria",
     nome: "Santa Iria",
-    titulo: "Santa portuguesa",
+    titulo: "Santa venerada pela tradição cristã",
     data: "20/10",
     seculo: "7",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Santa portuguesa (635–653).",
+    resumo: "Santa venerada pela tradição cristã (635–653).",
     biografia:
-      "Santa Iria (635–653) é apresentado(a) nas fontes biográficas consultadas como santa portuguesa. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 20 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Iria (635–653) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 20 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -2134,13 +2129,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-jeanne-elisabeth-bichier-des-ages",
     nome: "Santa Jeanne-Élisabeth Bichier des Âges",
-    titulo: "French saint",
+    titulo: "Santa venerada pela tradição cristã",
     data: "26/08",
     seculo: "19",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "French saint (1773–1838).",
+    resumo: "Santa venerada pela tradição cristã (1773–1838).",
     biografia:
-      "Santa Jeanne-Élisabeth Bichier des Âges (1773–1838) é apresentado(a) nas fontes biográficas consultadas como french saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 26 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Jeanne-Élisabeth Bichier des Âges (1773–1838) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 26 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -2182,13 +2177,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-joana-de-chantal",
     nome: "Santa Joana de Chantal",
-    titulo: "French nun and saint (1572-1641)",
+    titulo: "Religiosa e testemunha da vida consagrada",
     data: "12/12",
     seculo: "17",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "French nun and saint (1572-1641) (1572–1641).",
+    resumo: "Religiosa e testemunha da vida consagrada (1572–1641).",
     biografia:
-      "Santa Joana de Chantal (1572–1641) é apresentado(a) nas fontes biográficas consultadas como french nun and saint (1572-1641). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 12 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Joana de Chantal (1572–1641) é apresentado(a) nas fontes biográficas consultadas como religiosa e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 12 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/c/c0/Joanna_de_Chantal.jpg",
@@ -2205,13 +2200,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-joana-de-lestonnac",
     nome: "Santa Joana de Lestonnac",
-    titulo: "French saint",
+    titulo: "Santa venerada pela tradição cristã",
     data: "02/02",
     seculo: "17",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "French saint (1555–1640).",
+    resumo: "Santa venerada pela tradição cristã (1555–1640).",
     biografia:
-      "Santa Joana de Lestonnac (1555–1640) é apresentado(a) nas fontes biográficas consultadas como french saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 2 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Joana de Lestonnac (1555–1640) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 2 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/5/5b/Saint_Jeanne_de_Lestonnac.jpg",
@@ -2228,13 +2223,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-joana-de-tolosa",
     nome: "Santa Joana de Tolosa",
-    titulo: "French nun",
+    titulo: "Religiosa e testemunha da vida consagrada",
     data: "31/03",
     seculo: "15",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "French nun (1350–1450).",
+    resumo: "Religiosa e testemunha da vida consagrada (1350–1450).",
     biografia:
-      "Santa Joana de Tolosa (1350–1450) é apresentado(a) nas fontes biográficas consultadas como french nun. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 31 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Joana de Tolosa (1350–1450) é apresentado(a) nas fontes biográficas consultadas como religiosa e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 31 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -2252,15 +2247,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-joana-de-valois-duquesa-de-berry",
     nome: "Santa Joana de Valois, Duquesa de Berry",
-    titulo:
-      "French queen who entered religious life, became a nun and later an abbess who founded the Sisters of the Annunciation of Mary (canonized 1950)",
+    titulo: "Religiosa e testemunha da vida consagrada",
     data: "04/02",
     seculo: "16",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo:
-      "French queen who entered religious life, became a nun and later an abbess who founded the Sisters of the Annunciation of Mary (canonized 1950) (1464–1505).",
+    resumo: "Religiosa e testemunha da vida consagrada (1464–1505).",
     biografia:
-      "Santa Joana de Valois, Duquesa de Berry (1464–1505) é apresentado(a) nas fontes biográficas consultadas como french queen who entered religious life, became a nun and later an abbess who founded the sisters of the annunciation of mary (canonized 1950). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 4 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Joana de Valois, Duquesa de Berry (1464–1505) é apresentado(a) nas fontes biográficas consultadas como religiosa e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 4 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/3/30/Stjeannedevalois.jpg",
@@ -2275,15 +2268,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "Public domain",
   },
   {
-    slug: "santa-julia-of-emerita",
-    nome: "Santa Julia of Emerita",
-    titulo: "Early 4th-century martyr saint",
+    slug: "santa-julia-de-emerita",
+    nome: "Santa Julia de Emerita",
+    titulo: "Mártir cristã",
     data: "10/12",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Early 4th-century martyr saint (300–304).",
+    resumo: "Mártir cristã (300–304).",
     biografia:
-      "Santa Julia of Emerita (300–304) é apresentado(a) nas fontes biográficas consultadas como early 4th-century martyr saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 10 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Julia de Emerita (300–304) é apresentado(a) nas fontes biográficas consultadas como mártir cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 10 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/b/bb/J%C3%BAlia_de_m%C3%A8rida_b.jpg",
@@ -2300,13 +2293,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-juliana-de-mont-cornillon",
     nome: "Santa Juliana de Mont Cornillon",
-    titulo: "Premonstratensian canoness, saint and mystic",
+    titulo: "Santa venerada pela tradição cristã",
     data: "05/04",
     seculo: "13",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Premonstratensian canoness, saint and mystic (1193–1258).",
+    resumo: "Santa venerada pela tradição cristã (1193–1258).",
     biografia:
-      "Santa Juliana de Mont Cornillon (1193–1258) é apresentado(a) nas fontes biográficas consultadas como premonstratensian canoness, saint and mystic. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 5 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Juliana de Mont Cornillon (1193–1258) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 5 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -2324,13 +2317,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-juliana-falconieri",
     nome: "Santa Juliana Falconieri",
-    titulo: "Italian nun",
+    titulo: "Religiosa e testemunha da vida consagrada",
     data: "19/06",
     seculo: "14",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Italian nun (1270–1341).",
+    resumo: "Religiosa e testemunha da vida consagrada (1270–1341).",
     biografia:
-      "Santa Juliana Falconieri (1270–1341) é apresentado(a) nas fontes biográficas consultadas como italian nun. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 19 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Juliana Falconieri (1270–1341) é apresentado(a) nas fontes biográficas consultadas como religiosa e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 19 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -2348,13 +2341,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-justina-de-padua",
     nome: "Santa Justina de Pádua",
-    titulo: "Santa e mártir cristã",
+    titulo: "Mártir cristã",
     data: "07/10",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Santa e mártir cristã (300–304).",
+    resumo: "Mártir cristã (300–304).",
     biografia:
-      "Santa Justina de Pádua (300–304) é apresentado(a) nas fontes biográficas consultadas como santa e mártir cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 7 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Justina de Pádua (300–304) é apresentado(a) nas fontes biográficas consultadas como mártir cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 7 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/8/81/Moretto_da_Brescia_001b.jpg",
@@ -2369,15 +2362,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "Public domain",
   },
   {
-    slug: "santa-jutta-of-kulmsee",
-    nome: "Santa Jutta of Kulmsee",
-    titulo: "German noblewoman, mystic and saint",
+    slug: "santa-jutta-de-kulmsee",
+    nome: "Santa Jutta de Kulmsee",
+    titulo: "Santa venerada pela tradição cristã",
     data: "05/05",
     seculo: "13",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "German noblewoman, mystic and saint (1200–1260).",
+    resumo: "Santa venerada pela tradição cristã (1200–1260).",
     biografia:
-      "Santa Jutta of Kulmsee (1200–1260) é apresentado(a) nas fontes biográficas consultadas como german noblewoman, mystic and saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 5 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Jutta de Kulmsee (1200–1260) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 5 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -2418,13 +2411,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-julia-martir-de-cartago",
     nome: "Santa Júlia, mártir de Cartago",
-    titulo: "Carthaginian martyr",
+    titulo: "Mártir cristã",
     data: "22/05",
     seculo: "5",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Carthaginian martyr (420–450).",
+    resumo: "Mártir cristã (420–450).",
     biografia:
-      "Santa Júlia, mártir de Cartago (420–450) é apresentado(a) nas fontes biográficas consultadas como carthaginian martyr. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 22 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Júlia, mártir de Cartago (420–450) é apresentado(a) nas fontes biográficas consultadas como mártir cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 22 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/2/21/Meaux_Vitrail_1867_30808_2.jpg",
@@ -2464,13 +2457,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-kassia",
     nome: "Santa Kassia",
-    titulo: "Byzantine abbess, poet, composer, and hymnographer",
+    titulo: "Religiosa e testemunha da vida consagrada",
     data: "07/09",
     seculo: "9",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Byzantine abbess, poet, composer, and hymnographer (810–865).",
+    resumo: "Religiosa e testemunha da vida consagrada (810–865).",
     biografia:
-      "Santa Kassia (810–865) é apresentado(a) nas fontes biográficas consultadas como byzantine abbess, poet, composer, and hymnographer. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 7 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Kassia (810–865) é apresentado(a) nas fontes biográficas consultadas como religiosa e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 7 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/3/3b/Kassia.jpg",
@@ -2487,13 +2480,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-katharine-drexel",
     nome: "Santa Katharine Drexel",
-    titulo: "American Catholic sister and saint",
+    titulo: "Santa venerada pela tradição cristã",
     data: "03/03",
     seculo: "20",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "American Catholic sister and saint (1858–1955).",
+    resumo: "Santa venerada pela tradição cristã (1858–1955).",
     biografia:
-      "Santa Katharine Drexel (1858–1955) é apresentado(a) nas fontes biográficas consultadas como american catholic sister and saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 3 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Katharine Drexel (1858–1955) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 3 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/9/90/Katharine_Drexel.jpg",
@@ -2510,13 +2503,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-kyriaki",
     nome: "Santa Kyriaki",
-    titulo: "Greek saint",
+    titulo: "Santa venerada pela tradição cristã",
     data: "07/07",
     seculo: "3",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Greek saint (250–289).",
+    resumo: "Santa venerada pela tradição cristã (250–289).",
     biografia:
-      "Santa Kyriaki (250–289) é apresentado(a) nas fontes biográficas consultadas como greek saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 7 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Kyriaki (250–289) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 7 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -2534,13 +2527,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-landrada",
     nome: "Santa Landrada",
-    titulo: "Belgian saint",
+    titulo: "Santa venerada pela tradição cristã",
     data: "08/07",
     seculo: "7",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Belgian saint (650–700).",
+    resumo: "Santa venerada pela tradição cristã (650–700).",
     biografia:
-      "Santa Landrada (650–700) é apresentado(a) nas fontes biográficas consultadas como belgian saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 8 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Landrada (650–700) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 8 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/a/a1/St._Landrada.jpg",
@@ -2557,13 +2550,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-leoba",
     nome: "Santa Leoba",
-    titulo: "Anglo-Saxon nun",
+    titulo: "Religiosa e testemunha da vida consagrada",
     data: "28/09",
     seculo: "8",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Anglo-Saxon nun (710–782).",
+    resumo: "Religiosa e testemunha da vida consagrada (710–782).",
     biografia:
-      "Santa Leoba (710–782) é apresentado(a) nas fontes biográficas consultadas como anglo-saxon nun. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 28 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Leoba (710–782) é apresentado(a) nas fontes biográficas consultadas como religiosa e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 28 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/f/f6/Schornsheim-Lioba.JPG",
@@ -2580,13 +2573,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-leocadia-de-toledo",
     nome: "Santa Leocádia de Toledo",
-    titulo: "Spanish saint",
+    titulo: "Santa venerada pela tradição cristã",
     data: "09/12",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Spanish saint (300–304).",
+    resumo: "Santa venerada pela tradição cristã (300–304).",
     biografia:
-      "Santa Leocádia de Toledo (300–304) é apresentado(a) nas fontes biográficas consultadas como spanish saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 9 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Leocádia de Toledo (300–304) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 9 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -2602,15 +2595,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "CC BY 4.0",
   },
   {
-    slug: "santa-liberata-of-como",
-    nome: "Santa Liberata of Como",
-    titulo: "6th century saint",
+    slug: "santa-liberata-de-como",
+    nome: "Santa Liberata de Como",
+    titulo: "Santa venerada pela tradição cristã",
     data: "19/01",
     seculo: "6",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "6th century saint (falecido em 580).",
+    resumo: "Santa venerada pela tradição cristã (falecido em 580).",
     biografia:
-      "Santa Liberata of Como (falecido em 580) é apresentado(a) nas fontes biográficas consultadas como 6th century saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 19 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Liberata de Como (falecido em 580) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 19 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -2628,13 +2621,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-lucina",
     nome: "Santa Lucina",
-    titulo: "3rd Century saint",
+    titulo: "Santa venerada pela tradição cristã",
     data: "30/06",
     seculo: "2",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "3rd Century saint.",
+    resumo: "Santa venerada pela tradição cristã.",
     biografia:
-      "Santa Lucina é apresentado(a) nas fontes biográficas consultadas como 3rd century saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 30 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Lucina é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 30 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -2652,13 +2645,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-lutgarda",
     nome: "Santa Lutgarda",
-    titulo: "Flemish saint",
+    titulo: "Santa venerada pela tradição cristã",
     data: "16/06",
     seculo: "13",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Flemish saint (1182–1246).",
+    resumo: "Santa venerada pela tradição cristã (1182–1246).",
     biografia:
-      "Santa Lutgarda (1182–1246) é apresentado(a) nas fontes biográficas consultadas como flemish saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 16 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Lutgarda (1182–1246) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 16 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/6/6b/Santa_Lutgarda-Goya.JPG",
@@ -2699,15 +2692,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-lidia",
     nome: "Santa Lídia",
-    titulo:
-      "1st‑century Lydian merchant of purple cloth, Christian saint, early European convert to Christianity mentioned in the Acts of the Apostles",
+    titulo: "Santa venerada pela tradição cristã",
     data: "20/05",
     seculo: "1",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo:
-      "1st‑century Lydian merchant of purple cloth, Christian saint, early European convert to Christianity mentioned in the Acts of the Apostles (100–100).",
+    resumo: "Santa venerada pela tradição cristã (100–100).",
     biografia:
-      "Santa Lídia (100–100) é apresentado(a) nas fontes biográficas consultadas como 1st‑century lydian merchant of purple cloth, christian saint, early european convert to christianity mentioned in the acts of the apostles. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 20 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Lídia (100–100) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 20 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/b/ba/Lidia.jpg",
@@ -2724,13 +2715,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-lucia-filippini",
     nome: "Santa Lúcia Filippini",
-    titulo: "Santa católica",
+    titulo: "Santa venerada pela tradição cristã",
     data: "25/03",
     seculo: "18",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Santa católica (1672–1732).",
+    resumo: "Santa venerada pela tradição cristã (1672–1732).",
     biografia:
-      "Santa Lúcia Filippini (1672–1732) é apresentado(a) nas fontes biográficas consultadas como santa católica. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 25 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Lúcia Filippini (1672–1732) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 25 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/5/5f/Lucia_filippini.jpg",
@@ -2747,13 +2738,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-macrina-a-jovem",
     nome: "Santa Macrina, a Jovem",
-    titulo: "4th-century Roman nun",
+    titulo: "Religiosa e testemunha da vida consagrada",
     data: "19/07",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "4th-century Roman nun (324–379).",
+    resumo: "Religiosa e testemunha da vida consagrada (324–379).",
     biografia:
-      "Santa Macrina, a Jovem (324–379) é apresentado(a) nas fontes biográficas consultadas como 4th-century roman nun. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 19 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Macrina, a Jovem (324–379) é apresentado(a) nas fontes biográficas consultadas como religiosa e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 19 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/2/27/Macrina_the_Younger.jpg",
@@ -2770,13 +2761,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-madelberta",
     nome: "Santa Madelberta",
-    titulo: "7th-century nun",
+    titulo: "Religiosa e testemunha da vida consagrada",
     data: "07/09",
     seculo: "8",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "7th-century nun (700–705).",
+    resumo: "Religiosa e testemunha da vida consagrada (700–705).",
     biografia:
-      "Santa Madelberta (700–705) é apresentado(a) nas fontes biográficas consultadas como 7th-century nun. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 7 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Madelberta (700–705) é apresentado(a) nas fontes biográficas consultadas como religiosa e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 7 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/0/0c/Saint_Madelberte-Maubeuge.jpg",
@@ -2793,13 +2784,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-madre-paula-montalt",
     nome: "Santa Madre Paula Montalt",
-    titulo: "Spanish nun (1799–1889)",
+    titulo: "Religiosa e testemunha da vida consagrada",
     data: "26/02",
     seculo: "19",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Spanish nun (1799–1889) (1799–1889).",
+    resumo: "Religiosa e testemunha da vida consagrada (1799–1889).",
     biografia:
-      "Santa Madre Paula Montalt (1799–1889) é apresentado(a) nas fontes biográficas consultadas como spanish nun (1799–1889). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 26 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Madre Paula Montalt (1799–1889) é apresentado(a) nas fontes biográficas consultadas como religiosa e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 26 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -2817,13 +2808,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-marcelina-de-milao",
     nome: "Santa Marcelina de Milão",
-    titulo: "Sister of Saint Ambrose of Milan",
+    titulo: "Santa venerada pela tradição cristã",
     data: "17/07",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Sister of Saint Ambrose of Milan (327–397).",
+    resumo: "Santa venerada pela tradição cristã (327–397).",
     biografia:
-      "Santa Marcelina de Milão (327–397) é apresentado(a) nas fontes biográficas consultadas como sister of saint ambrose of milan. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 17 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Marcelina de Milão (327–397) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 17 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/1/12/Sainte_Marcellina.jpg",
@@ -2840,13 +2831,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-margarida-da-hungria",
     nome: "Santa Margarida da Hungria",
-    titulo: "Hungarian princess and saint (1242-1270)",
+    titulo: "Governante cristã e servidora dos necessitados",
     data: "18/01",
     seculo: "13",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Hungarian princess and saint (1242-1270) (1242–1270).",
+    resumo: "Governante cristã e servidora dos necessitados (1242–1270).",
     biografia:
-      "Santa Margarida da Hungria (1242–1270) é apresentado(a) nas fontes biográficas consultadas como hungarian princess and saint (1242-1270). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 18 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Margarida da Hungria (1242–1270) é apresentado(a) nas fontes biográficas consultadas como governante cristã e servidora dos necessitados. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 18 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/5/52/Arpadhazi_szent_margit.jpg",
@@ -2909,13 +2900,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-maria-alfonsina-danil-ghattas",
     nome: "Santa Maria Alfonsina Danil Ghattas",
-    titulo: "Palestinian Christian nun and saint (1843–1927)",
+    titulo: "Religiosa e testemunha da vida consagrada",
     data: "25/03",
     seculo: "20",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Palestinian Christian nun and saint (1843–1927) (1843–1927).",
+    resumo: "Religiosa e testemunha da vida consagrada (1843–1927).",
     biografia:
-      "Santa Maria Alfonsina Danil Ghattas (1843–1927) é apresentado(a) nas fontes biográficas consultadas como palestinian christian nun and saint (1843–1927). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 25 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Maria Alfonsina Danil Ghattas (1843–1927) é apresentado(a) nas fontes biográficas consultadas como religiosa e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 25 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -2980,13 +2971,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-maria-de-mattias",
     nome: "Santa Maria De Mattias",
-    titulo: "Italian Catholic nun, foundress and saint (1805-1866)",
+    titulo: "Religiosa e testemunha da vida consagrada",
     data: "20/08",
     seculo: "19",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Italian Catholic nun, foundress and saint (1805-1866) (1805–1866).",
+    resumo: "Religiosa e testemunha da vida consagrada (1805–1866).",
     biografia:
-      "Santa Maria De Mattias (1805–1866) é apresentado(a) nas fontes biográficas consultadas como italian catholic nun, foundress and saint (1805-1866). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 20 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Maria De Mattias (1805–1866) é apresentado(a) nas fontes biográficas consultadas como religiosa e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 20 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Santa_Mar%C3%ADa_de_Mattia.jpg",
@@ -3003,13 +2994,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-maria-giuseppa-rossello",
     nome: "Santa Maria Giuseppa Rossello",
-    titulo: "Italian Roman Catholic nun (1811–1880)",
+    titulo: "Religiosa e testemunha da vida consagrada",
     data: "07/12",
     seculo: "19",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Italian Roman Catholic nun (1811–1880) (1811–1880).",
+    resumo: "Religiosa e testemunha da vida consagrada (1811–1880).",
     biografia:
-      "Santa Maria Giuseppa Rossello (1811–1880) é apresentado(a) nas fontes biográficas consultadas como italian roman catholic nun (1811–1880). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 7 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Maria Giuseppa Rossello (1811–1880) é apresentado(a) nas fontes biográficas consultadas como religiosa e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 7 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Santa_Maria_Josefa.jpg",
@@ -3026,15 +3017,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-mariam-thresia-chiramel-mankidiyan",
     nome: "Santa Mariam Thresia Chiramel Mankidiyan",
-    titulo:
-      "20th‑century Indian Syro‑Malabar nun and foundress, Catholic saint, known for stigmata and family apostolate",
+    titulo: "Religiosa e testemunha da vida consagrada",
     data: "08/06",
     seculo: "20",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo:
-      "20th‑century Indian Syro‑Malabar nun and foundress, Catholic saint, known for stigmata and family apostolate (1876–1926).",
+    resumo: "Religiosa e testemunha da vida consagrada (1876–1926).",
     biografia:
-      "Santa Mariam Thresia Chiramel Mankidiyan (1876–1926) é apresentado(a) nas fontes biográficas consultadas como 20th‑century indian syro‑malabar nun and foundress, catholic saint, known for stigmata and family apostolate. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 8 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Mariam Thresia Chiramel Mankidiyan (1876–1926) é apresentado(a) nas fontes biográficas consultadas como religiosa e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 8 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/4/44/A_relic_of_Mariam_Thresia.jpg",
@@ -3051,13 +3040,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-marie-eugenie-de-jesus",
     nome: "Santa Marie-Eugénie de Jésus",
-    titulo: "Catholic Saint and Founder of religious order (1817–1898)",
+    titulo: "Fundadora de obra religiosa",
     data: "10/03",
     seculo: "19",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Catholic Saint and Founder of religious order (1817–1898) (1817–1898).",
+    resumo: "Fundadora de obra religiosa (1817–1898).",
     biografia:
-      "Santa Marie-Eugénie de Jésus (1817–1898) é apresentado(a) nas fontes biográficas consultadas como catholic saint and founder of religious order (1817–1898). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 10 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Marie-Eugénie de Jésus (1817–1898) é apresentado(a) nas fontes biográficas consultadas como fundadora de obra religiosa. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 10 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -3075,13 +3064,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-marta-de-astorga",
     nome: "Santa Marta de Astorga",
-    titulo: "Christian martyr of the 3rd century",
+    titulo: "Mártir cristã",
     data: "23/02",
     seculo: "3",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Christian martyr of the 3rd century (300–300).",
+    resumo: "Mártir cristã (300–300).",
     biografia:
-      "Santa Marta de Astorga (300–300) é apresentado(a) nas fontes biográficas consultadas como christian martyr of the 3rd century. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 23 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Marta de Astorga (300–300) é apresentado(a) nas fontes biográficas consultadas como mártir cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 23 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -3097,15 +3086,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "CC0",
   },
   {
-    slug: "santa-martha-mother-of-simeon-stylites-the-younger",
-    nome: "Santa Martha, mother of Simeon Stylites the Younger",
+    slug: "santa-martha-mother-de-simeon-stylites-o-jovem",
+    nome: "Santa Martha, mother de Simeon Stylites o Jovem",
     titulo: "Mother of Simeon Stylites the Younger",
     data: "04/07",
     seculo: "6",
     padroeiro: "Testemunho cristão e intercessão dos santos",
     resumo: "Mother of Simeon Stylites the Younger (falecido em 551).",
     biografia:
-      "Santa Martha, mother of Simeon Stylites the Younger (falecido em 551) é apresentado(a) nas fontes biográficas consultadas como mother of simeon stylites the younger. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 4 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Martha, mother de Simeon Stylites o Jovem (falecido em 551) é apresentado(a) nas fontes biográficas consultadas como mother of simeon stylites the younger. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 4 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -3123,13 +3112,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-mary-mackillop",
     nome: "Santa Mary MacKillop",
-    titulo: "Australian religious sister and saint (1842–1909)",
+    titulo: "Religiosa e testemunha da vida consagrada",
     data: "08/08",
     seculo: "20",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Australian religious sister and saint (1842–1909) (1842–1909).",
+    resumo: "Religiosa e testemunha da vida consagrada (1842–1909).",
     biografia:
-      "Santa Mary MacKillop (1842–1909) é apresentado(a) nas fontes biográficas consultadas como australian religious sister and saint (1842–1909). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 8 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Mary MacKillop (1842–1909) é apresentado(a) nas fontes biográficas consultadas como religiosa e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 8 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/0/0a/Mary_mackillop.jpg",
@@ -3146,13 +3135,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-maria-guadalupe-heilige-garcia-zavala",
     nome: "Santa María Guadalupe, Heilige García Zavala",
-    titulo: "Mexican Catholic nun and saint (1878-1963)",
+    titulo: "Religiosa e testemunha da vida consagrada",
     data: "24/06",
     seculo: "20",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Mexican Catholic nun and saint (1878-1963) (1878–1963).",
+    resumo: "Religiosa e testemunha da vida consagrada (1878–1963).",
     biografia:
-      "Santa María Guadalupe, Heilige García Zavala (1878–1963) é apresentado(a) nas fontes biográficas consultadas como mexican catholic nun and saint (1878-1963). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 24 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa María Guadalupe, Heilige García Zavala (1878–1963) é apresentado(a) nas fontes biográficas consultadas como religiosa e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 24 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -3170,13 +3159,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-matilde-de-hackeborn",
     nome: "Santa Matilde de Hackeborn",
-    titulo: "Escritora alemã",
+    titulo: "Autora cristã e testemunha de fé",
     data: "19/11",
     seculo: "13",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Escritora alemã (1241–1298).",
+    resumo: "Autora cristã e testemunha de fé (1241–1298).",
     biografia:
-      "Santa Matilde de Hackeborn (1241–1298) é apresentado(a) nas fontes biográficas consultadas como escritora alemã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 19 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Matilde de Hackeborn (1241–1298) é apresentado(a) nas fontes biográficas consultadas como autora cristã e testemunha de fé. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 19 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -3194,13 +3183,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-matilde-de-ringelheim",
     nome: "Santa Matilde de Ringelheim",
-    titulo: "Monja e santa alemã",
+    titulo: "Santa venerada pela tradição cristã",
     data: "14/03",
     seculo: "10",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Monja e santa alemã (896–968).",
+    resumo: "Santa venerada pela tradição cristã (896–968).",
     biografia:
-      "Santa Matilde de Ringelheim (896–968) é apresentado(a) nas fontes biográficas consultadas como monja e santa alemã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 14 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Matilde de Ringelheim (896–968) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 14 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/5/52/Ptacnik_Mechtilda2.jpg",
@@ -3215,16 +3204,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "Public domain",
   },
   {
-    slug: "santa-matrona-of-barcelona",
-    nome: "Santa Matrona of Barcelona",
-    titulo: "3rd-century saint of the Roman Catholic Church and the Eastern Orthodox Church",
+    slug: "santa-matrona-de-barcelona",
+    nome: "Santa Matrona de Barcelona",
+    titulo: "Santa venerada pela tradição cristã",
     data: "27/03",
     seculo: "3",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo:
-      "3rd-century saint of the Roman Catholic Church and the Eastern Orthodox Church (250–300).",
+    resumo: "Santa venerada pela tradição cristã (250–300).",
     biografia:
-      "Santa Matrona of Barcelona (250–300) é apresentado(a) nas fontes biográficas consultadas como 3rd-century saint of the roman catholic church and the eastern orthodox church. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 27 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Matrona de Barcelona (250–300) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 27 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/0/0c/Galeriag%C3%B2ticaMadrona.jpg",
@@ -3241,13 +3229,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-melania-a-jovem",
     nome: "Santa Melânia, a Jovem",
-    titulo: "Christian saint",
+    titulo: "Santa venerada pela tradição cristã",
     data: "31/12",
     seculo: "5",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Christian saint (383–439).",
+    resumo: "Santa venerada pela tradição cristã (383–439).",
     biografia:
-      "Santa Melânia, a Jovem (383–439) é apresentado(a) nas fontes biográficas consultadas como christian saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 31 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Melânia, a Jovem (383–439) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 31 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -3266,13 +3254,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-mildrith",
     nome: "Santa Mildrith",
-    titulo: "Anglo-Saxon Abbess",
+    titulo: "Religiosa e testemunha da vida consagrada",
     data: "13/07",
     seculo: "8",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Anglo-Saxon Abbess (700–734).",
+    resumo: "Religiosa e testemunha da vida consagrada (700–734).",
     biografia:
-      "Santa Mildrith (700–734) é apresentado(a) nas fontes biográficas consultadas como anglo-saxon abbess. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 13 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Mildrith (700–734) é apresentado(a) nas fontes biográficas consultadas como religiosa e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 13 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -3290,13 +3278,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-milica-hrebeljanovic",
     nome: "Santa Milica Hrebeljanović",
-    titulo: "Poet (1335-1405)",
+    titulo: "Autora cristã e testemunha de fé",
     data: "19/07",
     seculo: "15",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Poet (1335-1405) (1335–1405).",
+    resumo: "Autora cristã e testemunha de fé (1335–1405).",
     biografia:
-      "Santa Milica Hrebeljanović (1335–1405) é apresentado(a) nas fontes biográficas consultadas como poet (1335-1405). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 19 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Milica Hrebeljanović (1335–1405) é apresentado(a) nas fontes biográficas consultadas como autora cristã e testemunha de fé. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 19 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/b/ba/Milica_Ljubostinja1.jpg",
@@ -3313,13 +3301,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-mustiola",
     nome: "Santa Mustiola",
-    titulo: "Saint",
+    titulo: "Santa venerada pela tradição cristã",
     data: "03/07",
     seculo: "3",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Saint (201–300).",
+    resumo: "Santa venerada pela tradição cristã (201–300).",
     biografia:
-      "Santa Mustiola (201–300) é apresentado(a) nas fontes biográficas consultadas como saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 3 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Mustiola (201–300) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 3 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -3337,13 +3325,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-natalia-de-nicomedia",
     nome: "Santa Natália de Nicomédia",
-    titulo: "Mártir cristã e esposa de Santo Adriano de Nicomédia",
+    titulo: "Mártir cristã",
     data: "01/12",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Mártir cristã e esposa de Santo Adriano de Nicomédia (300–311).",
+    resumo: "Mártir cristã (300–311).",
     biografia:
-      "Santa Natália de Nicomédia (300–311) é apresentado(a) nas fontes biográficas consultadas como mártir cristã e esposa de santo adriano de nicomédia. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 1 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Natália de Nicomédia (300–311) é apresentado(a) nas fontes biográficas consultadas como mártir cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 1 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/8/8a/Agnatalia.jpg",
@@ -3360,13 +3348,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-odilia-da-alsacia",
     nome: "Santa Odília da Alsácia",
-    titulo: "Christian abbess and saint",
+    titulo: "Religiosa e testemunha da vida consagrada",
     data: "13/12",
     seculo: "8",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Christian abbess and saint (662–720).",
+    resumo: "Religiosa e testemunha da vida consagrada (662–720).",
     biografia:
-      "Santa Odília da Alsácia (662–720) é apresentado(a) nas fontes biográficas consultadas como christian abbess and saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 13 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Odília da Alsácia (662–720) é apresentado(a) nas fontes biográficas consultadas como religiosa e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 13 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/d/d8/Strasbourg_ChToussaint_12.JPG",
@@ -3383,15 +3371,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-olivia-de-palermo",
     nome: "Santa Olivia de Palermo",
-    titulo:
-      "5th‑century Sicilian teenage virgin and martyr, Christian saint, venerated in Palermo and Tunis",
+    titulo: "Mártir cristã",
     data: "10/06",
     seculo: "5",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo:
-      "5th‑century Sicilian teenage virgin and martyr, Christian saint, venerated in Palermo and Tunis (448–463).",
+    resumo: "Mártir cristã (448–463).",
     biografia:
-      "Santa Olivia de Palermo (448–463) é apresentado(a) nas fontes biográficas consultadas como 5th‑century sicilian teenage virgin and martyr, christian saint, venerated in palermo and tunis. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 10 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Olivia de Palermo (448–463) é apresentado(a) nas fontes biográficas consultadas como mártir cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 10 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/d/d8/Oliva_Rosalia001rid.jpg",
@@ -3408,13 +3394,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-olimpia-a-diaconisa",
     nome: "Santa Olímpia, a Diaconisa",
-    titulo: "Eastern Orthodox saint",
+    titulo: "Santa venerada pela tradição cristã",
     data: "25/07",
     seculo: "5",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Eastern Orthodox saint (368–408).",
+    resumo: "Santa venerada pela tradição cristã (368–408).",
     biografia:
-      "Santa Olímpia, a Diaconisa (368–408) é apresentado(a) nas fontes biográficas consultadas como eastern orthodox saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 25 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Olímpia, a Diaconisa (368–408) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 25 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/5/50/Olimpiada_diakonissa.jpg",
@@ -3429,15 +3415,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "Public domain",
   },
   {
-    slug: "santa-opportuna-of-montreuil",
-    nome: "Santa Opportuna of Montreuil",
-    titulo: "French Benedictine nun",
+    slug: "santa-opportuna-de-montreuil",
+    nome: "Santa Opportuna de Montreuil",
+    titulo: "Religiosa e testemunha da vida consagrada",
     data: "22/04",
     seculo: "8",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "French Benedictine nun (falecido em 770).",
+    resumo: "Religiosa e testemunha da vida consagrada (falecido em 770).",
     biografia:
-      "Santa Opportuna of Montreuil (falecido em 770) é apresentado(a) nas fontes biográficas consultadas como french benedictine nun. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 22 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Opportuna de Montreuil (falecido em 770) é apresentado(a) nas fontes biográficas consultadas como religiosa e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 22 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Stopportuna.PNG",
@@ -3454,15 +3440,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-paula-de-roma",
     nome: "Santa Paula de Roma",
-    titulo:
-      "Nobre romana, santa católica, discípula de São Jerónimo e co-patrona dos monges jerónimos e das monjas jerónimas",
+    titulo: "Monge e testemunha da vida consagrada",
     data: "26/01",
     seculo: "5",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo:
-      "Nobre romana, santa católica, discípula de São Jerónimo e co-patrona dos monges jerónimos e das monjas jerónimas (347–406).",
+    resumo: "Monge e testemunha da vida consagrada (347–406).",
     biografia:
-      "Santa Paula de Roma (347–406) é apresentado(a) nas fontes biográficas consultadas como nobre romana, santa católica, discípula de são jerónimo e co-patrona dos monges jerónimos e das monjas jerónimas. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 26 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Paula de Roma (347–406) é apresentado(a) nas fontes biográficas consultadas como monge e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 26 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -3480,13 +3464,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-paula-elisabete-cerioli",
     nome: "Santa Paula Elisabete Cerioli",
-    titulo: "Italian nun (1816–1865)",
+    titulo: "Religiosa e testemunha da vida consagrada",
     data: "24/12",
     seculo: "19",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Italian nun (1816–1865) (1816–1865).",
+    resumo: "Religiosa e testemunha da vida consagrada (1816–1865).",
     biografia:
-      "Santa Paula Elisabete Cerioli (1816–1865) é apresentado(a) nas fontes biográficas consultadas como italian nun (1816–1865). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 24 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Paula Elisabete Cerioli (1816–1865) é apresentado(a) nas fontes biográficas consultadas como religiosa e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 24 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/b/b8/Paola_Elisabetta_Cerioli.jpg",
@@ -3503,13 +3487,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-paula-frassinetti",
     nome: "Santa Paula Frassinetti",
-    titulo: "Italian Roman Catholic nun",
+    titulo: "Religiosa e testemunha da vida consagrada",
     data: "11/06",
     seculo: "19",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Italian Roman Catholic nun (1809–1882).",
+    resumo: "Religiosa e testemunha da vida consagrada (1809–1882).",
     biografia:
-      "Santa Paula Frassinetti (1809–1882) é apresentado(a) nas fontes biográficas consultadas como italian roman catholic nun. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 11 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Paula Frassinetti (1809–1882) é apresentado(a) nas fontes biográficas consultadas como religiosa e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 11 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/0/01/Paola_frassinetti.jpg",
@@ -3526,13 +3510,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-pelagia",
     nome: "Santa Pelagia",
-    titulo: "19th century Russian nun",
+    titulo: "Religiosa e testemunha da vida consagrada",
     data: "12/02",
     seculo: "19",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "19th century Russian nun (1807–1884).",
+    resumo: "Religiosa e testemunha da vida consagrada (1807–1884).",
     biografia:
-      "Santa Pelagia (1807–1884) é apresentado(a) nas fontes biográficas consultadas como 19th century russian nun. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 12 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Pelagia (1807–1884) é apresentado(a) nas fontes biográficas consultadas como religiosa e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 12 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -3550,13 +3534,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-pelagia-a-penitente",
     nome: "Santa Pelágia, a Penitente",
-    titulo: "Cortesã e santa",
+    titulo: "Santa venerada pela tradição cristã",
     data: "08/10",
     seculo: "5",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Cortesã e santa (400–457).",
+    resumo: "Santa venerada pela tradição cristã (400–457).",
     biografia:
-      "Santa Pelágia, a Penitente (400–457) é apresentado(a) nas fontes biográficas consultadas como cortesã e santa. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 8 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Pelágia, a Penitente (400–457) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 8 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/3/33/St._Pelagia_%283444743378%29.jpg",
@@ -3571,15 +3555,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "CC BY 2.0",
   },
   {
-    slug: "santa-philothei-of-athens",
-    nome: "Santa Philothei of Athens",
-    titulo: "Greek saint",
+    slug: "santa-philothei-de-athens",
+    nome: "Santa Philothei de Athens",
+    titulo: "Santa venerada pela tradição cristã",
     data: "19/02",
     seculo: "16",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Greek saint (1522–1589).",
+    resumo: "Santa venerada pela tradição cristã (1522–1589).",
     biografia:
-      "Santa Philothei of Athens (1522–1589) é apresentado(a) nas fontes biográficas consultadas como greek saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 19 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Philothei de Athens (1522–1589) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 19 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/1/17/Agia-philothei.jpg",
@@ -3596,13 +3580,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-polyxena",
     nome: "Santa Polyxena",
-    titulo: "Christian martyr and saint",
+    titulo: "Mártir cristã",
     data: "23/09",
     seculo: "1",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Christian martyr and saint (100–100).",
+    resumo: "Mártir cristã (100–100).",
     biografia:
-      "Santa Polyxena (100–100) é apresentado(a) nas fontes biográficas consultadas como christian martyr and saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 23 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Polyxena (100–100) é apresentado(a) nas fontes biográficas consultadas como mártir cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 23 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -3621,13 +3605,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-pudenciana",
     nome: "Santa Pudenciana",
-    titulo: "1st/2nd century Roman martyr and saint",
+    titulo: "Mártir cristã",
     data: "19/05",
     seculo: "2",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "1st/2nd century Roman martyr and saint (100–200).",
+    resumo: "Mártir cristã (100–200).",
     biografia:
-      "Santa Pudenciana (100–200) é apresentado(a) nas fontes biográficas consultadas como 1st/2nd century roman martyr and saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 19 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Pudenciana (100–200) é apresentado(a) nas fontes biográficas consultadas como mártir cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 19 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/3/3e/San_Pudenziana.034.JPG",
@@ -3644,13 +3628,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-radegunda",
     nome: "Santa Radegunda",
-    titulo: "Frankish queen consort",
+    titulo: "Governante cristã e servidora dos necessitados",
     data: "13/08",
     seculo: "6",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Frankish queen consort (518–587).",
+    resumo: "Governante cristã e servidora dos necessitados (518–587).",
     biografia:
-      "Santa Radegunda (518–587) é apresentado(a) nas fontes biográficas consultadas como frankish queen consort. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 13 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Radegunda (518–587) é apresentado(a) nas fontes biográficas consultadas como governante cristã e servidora dos necessitados. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 13 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -3666,17 +3650,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "CC BY 3.0",
   },
   {
-    slug: "santa-ragnhild-of-talje",
-    nome: "Santa Ragnhild of Tälje",
-    titulo:
-      "Local saint whose veneration is attested in late medieval Sweden and whose name was particularly associated with the church in Södertälje in the province of Södermanland and the diocese of Strängnäs",
+    slug: "santa-ragnhild-de-talje",
+    nome: "Santa Ragnhild de Tälje",
+    titulo: "Santa venerada pela tradição cristã",
     data: "00/00",
     seculo: "12",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo:
-      "Local saint whose veneration is attested in late medieval Sweden and whose name was particularly associated with the church in Södertälje in the province of Södermanland and the diocese of Strängnäs (1001–1117).",
+    resumo: "Santa venerada pela tradição cristã (1001–1117).",
     biografia:
-      "Santa Ragnhild of Tälje (1001–1117) é apresentado(a) nas fontes biográficas consultadas como local saint whose veneration is attested in late medieval sweden and whose name was particularly associated with the church in södertälje in the province of södermanland and the diocese of strängnäs. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Ragnhild de Tälje (1001–1117) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/6/6b/Ragenilda_of_Sweden_c_1350.jpg",
@@ -3691,15 +3673,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "Public domain",
   },
   {
-    slug: "santa-relindis-of-maaseik",
-    nome: "Santa Relindis of Maaseik",
-    titulo: "Belgian saint",
+    slug: "santa-relindis-de-maaseik",
+    nome: "Santa Relindis de Maaseik",
+    titulo: "Santa venerada pela tradição cristã",
     data: "06/02",
     seculo: "8",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Belgian saint (falecido em 750).",
+    resumo: "Santa venerada pela tradição cristã (falecido em 750).",
     biografia:
-      "Santa Relindis of Maaseik (falecido em 750) é apresentado(a) nas fontes biográficas consultadas como belgian saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 6 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Relindis de Maaseik (falecido em 750) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 6 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -3717,13 +3699,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-reparata",
     nome: "Santa Reparata",
-    titulo: "Christian saint",
+    titulo: "Santa venerada pela tradição cristã",
     data: "08/10",
     seculo: "3",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Christian saint (300–300).",
+    resumo: "Santa venerada pela tradição cristã (300–300).",
     biografia:
-      "Santa Reparata (300–300) é apresentado(a) nas fontes biográficas consultadas como christian saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 8 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Reparata (300–300) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 8 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/a/a2/St._Reparata_%28cropped%29.jpg",
@@ -3740,13 +3722,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-ricarda-da-suabia",
     nome: "Santa Ricarda da Suábia",
-    titulo: "Holy Roman Empress from 881 to 888, Catholic saint",
+    titulo: "Governante cristã e servidora dos necessitados",
     data: "18/09",
     seculo: "9",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Holy Roman Empress from 881 to 888, Catholic saint.",
+    resumo: "Governante cristã e servidora dos necessitados.",
     biografia:
-      "Santa Ricarda da Suábia é apresentado(a) nas fontes biográficas consultadas como holy roman empress from 881 to 888, catholic saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 18 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Ricarda da Suábia é apresentado(a) nas fontes biográficas consultadas como governante cristã e servidora dos necessitados. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 18 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/c/c9/Alb%C3%A9_074.JPG",
@@ -3763,13 +3745,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-rictrude",
     nome: "Santa Rictrude",
-    titulo: "Merovingian saint",
+    titulo: "Santa venerada pela tradição cristã",
     data: "12/05",
     seculo: "7",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Merovingian saint (614–687).",
+    resumo: "Santa venerada pela tradição cristã (614–687).",
     biografia:
-      "Santa Rictrude (614–687) é apresentado(a) nas fontes biográficas consultadas como merovingian saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 12 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Rictrude (614–687) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 12 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/0/08/S._Richtrudis.png",
@@ -3786,13 +3768,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-rosvita-de-gandersheim",
     nome: "Santa Rosvita de Gandersheim",
-    titulo: "Abadessa e escritora alemã",
+    titulo: "Monge e testemunha da vida consagrada",
     data: "18/09",
     seculo: "10",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Abadessa e escritora alemã (935–968).",
+    resumo: "Monge e testemunha da vida consagrada (935–968).",
     biografia:
-      "Santa Rosvita de Gandersheim (935–968) é apresentado(a) nas fontes biográficas consultadas como abadessa e escritora alemã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 18 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Rosvita de Gandersheim (935–968) é apresentado(a) nas fontes biográficas consultadas como monge e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 18 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/b/b1/Roswitha_of_Gandersheim.jpg",
@@ -3833,13 +3815,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-sabina",
     nome: "Santa Sabina",
-    titulo: "Saint",
+    titulo: "Santa venerada pela tradição cristã",
     data: "29/08",
     seculo: "2",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Saint (100–126).",
+    resumo: "Santa venerada pela tradição cristã (100–126).",
     biografia:
-      "Santa Sabina (100–126) é apresentado(a) nas fontes biográficas consultadas como saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 29 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Sabina (100–126) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 29 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -3857,13 +3839,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-saint-anatolia",
     nome: "Santa Saint Anatolia",
-    titulo: "Christian saint martyred in 250",
+    titulo: "Mártir cristã",
     data: "10/07",
     seculo: "3",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Christian saint martyred in 250 (236–251).",
+    resumo: "Mártir cristã (236–251).",
     biografia:
-      "Santa Saint Anatolia (236–251) é apresentado(a) nas fontes biográficas consultadas como christian saint martyred in 250. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 10 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Saint Anatolia (236–251) é apresentado(a) nas fontes biográficas consultadas como mártir cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 10 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -3881,14 +3863,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-saint-lea",
     nome: "Santa Saint Lea",
-    titulo: "Fourth-century saint in the Roman Catholic Church based on the authority of Jerome",
+    titulo: "Santa venerada pela tradição cristã",
     data: "22/03",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo:
-      "Fourth-century saint in the Roman Catholic Church based on the authority of Jerome (350–384).",
+    resumo: "Santa venerada pela tradição cristã (350–384).",
     biografia:
-      "Santa Saint Lea (350–384) é apresentado(a) nas fontes biográficas consultadas como fourth-century saint in the roman catholic church based on the authority of jerome. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 22 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Saint Lea (350–384) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 22 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/2/2d/Santa_lea.jpg",
@@ -3905,13 +3886,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-saint-lucille",
     nome: "Santa saint Lucille",
-    titulo: "Christian saint",
+    titulo: "Santa venerada pela tradição cristã",
     data: "31/10",
     seculo: "não determinado",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Christian saint.",
+    resumo: "Santa venerada pela tradição cristã.",
     biografia:
-      "Santa saint Lucille é apresentado(a) nas fontes biográficas consultadas como christian saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 31 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa saint Lucille é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 31 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/9/9f/Saint_Valentine_by_Bassano.jpg",
@@ -3928,13 +3909,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-saint-potenciana",
     nome: "Santa Saint Potenciana",
-    titulo: "Spanish saint",
+    titulo: "Santa venerada pela tradição cristã",
     data: "15/04",
     seculo: "16",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Spanish saint (1500–1501).",
+    resumo: "Santa venerada pela tradição cristã (1500–1501).",
     biografia:
-      "Santa Saint Potenciana (1500–1501) é apresentado(a) nas fontes biográficas consultadas como spanish saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 15 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Saint Potenciana (1500–1501) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 15 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -3952,13 +3933,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-saint-prisca",
     nome: "Santa Saint Prisca",
-    titulo: "Roman saint",
+    titulo: "Santa venerada pela tradição cristã",
     data: "18/01",
     seculo: "3",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Roman saint (100–269).",
+    resumo: "Santa venerada pela tradição cristã (100–269).",
     biografia:
-      "Santa Saint Prisca (100–269) é apresentado(a) nas fontes biográficas consultadas como roman saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 18 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Saint Prisca (100–269) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 18 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/0/07/Santa_Prisca.jpg",
@@ -3975,13 +3956,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-sainte-reine",
     nome: "Santa Sainte Reine",
-    titulo: "Uma Santa da Igreja Católica Romana",
+    titulo: "Santa venerada pela tradição cristã",
     data: "07/09",
     seculo: "3",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Uma Santa da Igreja Católica Romana (237–253).",
+    resumo: "Santa venerada pela tradição cristã (237–253).",
     biografia:
-      "Santa Sainte Reine (237–253) é apresentado(a) nas fontes biográficas consultadas como uma santa da igreja católica romana. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 7 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Sainte Reine (237–253) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 7 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -4071,13 +4052,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-sara-kali",
     nome: "Santa Sara Kali",
-    titulo: "Seguidora de Jesus, lendária santa francesa",
+    titulo: "Santa venerada pela tradição cristã",
     data: "24/05",
     seculo: "1",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Seguidora de Jesus, lendária santa francesa (100–100).",
+    resumo: "Santa venerada pela tradição cristã (100–100).",
     biografia:
-      "Santa Sara Kali (100–100) é apresentado(a) nas fontes biográficas consultadas como seguidora de jesus, lendária santa francesa. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 24 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Sara Kali (100–100) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 24 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/e/e0/Statue_de_Sainte-Sara.jpg",
@@ -4094,13 +4075,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-senhorinha-de-basto",
     nome: "Santa Senhorinha de Basto",
-    titulo: "Galician saint",
+    titulo: "Santa venerada pela tradição cristã",
     data: "22/04",
     seculo: "10",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Galician saint (924–982).",
+    resumo: "Santa venerada pela tradição cristã (924–982).",
     biografia:
-      "Santa Senhorinha de Basto (924–982) é apresentado(a) nas fontes biográficas consultadas como galician saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 22 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Senhorinha de Basto (924–982) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 22 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/a/a3/SenhorinhaBasto.jpg",
@@ -4117,13 +4098,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-serapia-de-roma",
     nome: "Santa Serápia de Roma",
-    titulo: "1st-century Roman saint and martyr",
+    titulo: "Mártir cristã",
     data: "29/07",
     seculo: "2",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "1st-century Roman saint and martyr (100–119).",
+    resumo: "Mártir cristã (100–119).",
     biografia:
-      "Santa Serápia de Roma (100–119) é apresentado(a) nas fontes biográficas consultadas como 1st-century roman saint and martyr. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 29 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Serápia de Roma (100–119) é apresentado(a) nas fontes biográficas consultadas como mártir cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 29 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/3/3e/Seraphia.JPG",
@@ -4140,14 +4121,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-sexburga-de-ely",
     nome: "Santa Sexburga de Ely",
-    titulo: "Esposa do rei Earcombert de Kent , foi também uma abadessa e santa de Igreja Católica",
+    titulo: "Monge e testemunha da vida consagrada",
     data: "06/07",
     seculo: "7",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo:
-      "Esposa do rei Earcombert de Kent , foi também uma abadessa e santa de Igreja Católica (640–699).",
+    resumo: "Monge e testemunha da vida consagrada (640–699).",
     biografia:
-      "Santa Sexburga de Ely (640–699) é apresentado(a) nas fontes biográficas consultadas como esposa do rei earcombert de kent , foi também uma abadessa e santa de igreja católica. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 6 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Sexburga de Ely (640–699) é apresentado(a) nas fontes biográficas consultadas como monge e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 6 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -4165,13 +4145,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-sinforosa",
     nome: "Santa Sinforosa",
-    titulo: "Roman saint",
+    titulo: "Santa venerada pela tradição cristã",
     data: "18/07",
     seculo: "2",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Roman saint (100–135).",
+    resumo: "Santa venerada pela tradição cristã (100–135).",
     biografia:
-      "Santa Sinforosa (100–135) é apresentado(a) nas fontes biográficas consultadas como roman saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 18 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Sinforosa (100–135) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 18 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/c/cd/Santa_Sinforosa_-_Tossicia.jpg",
@@ -4188,13 +4168,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-solange",
     nome: "Santa Solange",
-    titulo: "Carolingian saint",
+    titulo: "Santa venerada pela tradição cristã",
     data: "10/05",
     seculo: "9",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Carolingian saint (850–878).",
+    resumo: "Santa venerada pela tradição cristã (850–878).",
     biografia:
-      "Santa Solange (850–878) é apresentado(a) nas fontes biográficas consultadas como carolingian saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 10 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Solange (850–878) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 10 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/9/9b/Statue_de_Saint_Solange.JPG",
@@ -4211,13 +4191,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-sunniva",
     nome: "Santa Sunniva",
-    titulo: "Norwegian saint",
+    titulo: "Santa venerada pela tradição cristã",
     data: "08/07",
     seculo: "10",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Norwegian saint.",
+    resumo: "Santa venerada pela tradição cristã.",
     biografia:
-      "Santa Sunniva é apresentado(a) nas fontes biográficas consultadas como norwegian saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 8 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Sunniva é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 8 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/2/21/StSunniva.jpg",
@@ -4234,13 +4214,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-susana",
     nome: "Santa Susana",
-    titulo: "Armenian Christian martyr",
+    titulo: "Mártir cristã",
     data: "17/10",
     seculo: "5",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Armenian Christian martyr (440–475).",
+    resumo: "Mártir cristã (440–475).",
     biografia:
-      "Santa Susana (440–475) é apresentado(a) nas fontes biográficas consultadas como armenian christian martyr. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 17 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Susana (440–475) é apresentado(a) nas fontes biográficas consultadas como mártir cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 17 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/1/17/Shushanik.jpg",
@@ -4281,13 +4261,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-susana-de-roma",
     nome: "Santa Susana de Roma",
-    titulo: "Santa Susana de Roma",
+    titulo: "Santa venerada pela tradição cristã",
     data: "11/08",
     seculo: "3",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Santa Susana de Roma (280–295).",
+    resumo: "Santa venerada pela tradição cristã (280–295).",
     biografia:
-      "Santa Susana de Roma (280–295) é apresentado(a) nas fontes biográficas consultadas como santa susana de roma. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 11 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Susana de Roma (280–295) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 11 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -4305,13 +4285,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-tamara-i-da-georgia",
     nome: "Santa Tamara I da Geórgia",
-    titulo: "Rainha da Geórgia",
+    titulo: "Governante cristã e servidora dos necessitados",
     data: "01/05",
     seculo: "13",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Rainha da Geórgia (1166–1213).",
+    resumo: "Governante cristã e servidora dos necessitados (1166–1213).",
     biografia:
-      "Santa Tamara I da Geórgia (1166–1213) é apresentado(a) nas fontes biográficas consultadas como rainha da geórgia. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 1 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Tamara I da Geórgia (1166–1213) é apresentado(a) nas fontes biográficas consultadas como governante cristã e servidora dos necessitados. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 1 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/5/53/Betania_Monastery%2C_Tamar.jpg",
@@ -4328,13 +4308,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-tatiana",
     nome: "Santa Tatiana",
-    titulo: "Saint",
+    titulo: "Santa venerada pela tradição cristã",
     data: "12/01",
     seculo: "3",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Saint (300–226).",
+    resumo: "Santa venerada pela tradição cristã (300–226).",
     biografia:
-      "Santa Tatiana (300–226) é apresentado(a) nas fontes biográficas consultadas como saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 12 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Tatiana (300–226) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 12 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/f/f4/Tatiana_of_Rome.jpg",
@@ -4351,13 +4331,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-tecla",
     nome: "Santa Tecla",
-    titulo: "Santa do 1.º Seculo",
+    titulo: "Santa venerada pela tradição cristã",
     data: "24/09",
     seculo: "1",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Santa do 1.º Seculo (100–100).",
+    resumo: "Santa venerada pela tradição cristã (100–100).",
     biografia:
-      "Santa Tecla (100–100) é apresentado(a) nas fontes biográficas consultadas como santa do 1.º seculo. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 24 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Tecla (100–100) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 24 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/e/e2/0924Thecla.jpg",
@@ -4374,13 +4354,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-teodolinda",
     nome: "Santa Teodolinda",
-    titulo: "Rainha da Itália (589 a 1616)",
+    titulo: "Governante cristã e servidora dos necessitados",
     data: "22/01",
     seculo: "7",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Rainha da Itália (589 a 1616) (570–627).",
+    resumo: "Governante cristã e servidora dos necessitados (570–627).",
     biografia:
-      "Santa Teodolinda (570–627) é apresentado(a) nas fontes biográficas consultadas como rainha da itália (589 a 1616). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Teodolinda (570–627) é apresentado(a) nas fontes biográficas consultadas como governante cristã e servidora dos necessitados. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -4398,13 +4378,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-teodora",
     nome: "Santa Teodora",
-    titulo: "Imperatriz consorte do Império Bizantino",
+    titulo: "Governante cristã e servidora dos necessitados",
     data: "14/11",
     seculo: "6",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Imperatriz consorte do Império Bizantino (500–548).",
+    resumo: "Governante cristã e servidora dos necessitados (500–548).",
     biografia:
-      "Santa Teodora (500–548) é apresentado(a) nas fontes biográficas consultadas como imperatriz consorte do império bizantino. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 14 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Teodora (500–548) é apresentado(a) nas fontes biográficas consultadas como governante cristã e servidora dos necessitados. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 14 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Theodora_mosaik_ravenna.jpg",
@@ -4421,13 +4401,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-teodora-petralifaina",
     nome: "Santa Teodora Petralifaina",
-    titulo: "13th-century consort of Epirus and Orthodox saint",
+    titulo: "Santa venerada pela tradição cristã",
     data: "11/03",
     seculo: "13",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "13th-century consort of Epirus and Orthodox saint (1210–1280).",
+    resumo: "Santa venerada pela tradição cristã (1210–1280).",
     biografia:
-      "Santa Teodora Petralifaina (1210–1280) é apresentado(a) nas fontes biográficas consultadas como 13th-century consort of epirus and orthodox saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 11 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Teodora Petralifaina (1210–1280) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 11 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Agia_Theodora_of_Arta_Fresco.jpg",
@@ -4444,13 +4424,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-teodosia-de-constantinopla",
     nome: "Santa Teodósia de Constantinopla",
-    titulo: "Greek saint",
+    titulo: "Santa venerada pela tradição cristã",
     data: "29/05",
     seculo: "8",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Greek saint (700–726).",
+    resumo: "Santa venerada pela tradição cristã (700–726).",
     biografia:
-      "Santa Teodósia de Constantinopla (700–726) é apresentado(a) nas fontes biográficas consultadas como greek saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 29 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Teodósia de Constantinopla (700–726) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 29 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -4468,13 +4448,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-teresa-margarida-redi",
     nome: "Santa Teresa Margarida Redi",
-    titulo: "Freira Italiana, mística e santa católica",
+    titulo: "Religiosa e testemunha da vida consagrada",
     data: "07/03",
     seculo: "18",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Freira Italiana, mística e santa católica (1747–1770).",
+    resumo: "Religiosa e testemunha da vida consagrada (1747–1770).",
     biografia:
-      "Santa Teresa Margarida Redi (1747–1770) é apresentado(a) nas fontes biográficas consultadas como freira italiana, mística e santa católica. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 7 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Teresa Margarida Redi (1747–1770) é apresentado(a) nas fontes biográficas consultadas como religiosa e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 7 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -4492,13 +4472,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-thais",
     nome: "Santa Thais",
-    titulo: "Santa católica",
+    titulo: "Santa venerada pela tradição cristã",
     data: "08/10",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Santa católica (350–400).",
+    resumo: "Santa venerada pela tradição cristã (350–400).",
     biografia:
-      "Santa Thais (350–400) é apresentado(a) nas fontes biográficas consultadas como santa católica. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 8 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Thais (350–400) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 8 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -4517,13 +4497,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-theopista",
     nome: "Santa Theopista",
-    titulo: "Saint",
+    titulo: "Santa venerada pela tradição cristã",
     data: "20/09",
     seculo: "2",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Saint (100–120).",
+    resumo: "Santa venerada pela tradição cristã (100–120).",
     biografia:
-      "Santa Theopista (100–120) é apresentado(a) nas fontes biográficas consultadas como saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 20 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Theopista (100–120) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 20 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Santa_Teopista_Matera_Duomo.JPG",
@@ -4540,13 +4520,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-theodore-guerin",
     nome: "Santa Théodore Guérin",
-    titulo: "Catholic saint and nun from France (1798-1856)",
+    titulo: "Religiosa e testemunha da vida consagrada",
     data: "03/10",
     seculo: "19",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Catholic saint and nun from France (1798-1856) (1798–1856).",
+    resumo: "Religiosa e testemunha da vida consagrada (1798–1856).",
     biografia:
-      "Santa Théodore Guérin (1798–1856) é apresentado(a) nas fontes biográficas consultadas como catholic saint and nun from france (1798-1856). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 3 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Théodore Guérin (1798–1856) é apresentado(a) nas fontes biográficas consultadas como religiosa e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 3 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/c/c9/Saint_Mother_Theodore_8x10.jpg",
@@ -4564,13 +4544,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-tydfil",
     nome: "Santa Tydfil",
-    titulo: "Welsh saint",
+    titulo: "Santa venerada pela tradição cristã",
     data: "23/08",
     seculo: "5",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Welsh saint (falecido em 480).",
+    resumo: "Santa venerada pela tradição cristã (falecido em 480).",
     biografia:
-      "Santa Tydfil (falecido em 480) é apresentado(a) nas fontes biográficas consultadas como welsh saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 23 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Tydfil (falecido em 480) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 23 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -4588,13 +4568,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-valeria-de-milao",
     nome: "Santa Valéria de Milão",
-    titulo: "Ancient Christian saint",
+    titulo: "Santa venerada pela tradição cristã",
     data: "28/04",
     seculo: "2",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Ancient Christian saint (50–200).",
+    resumo: "Santa venerada pela tradição cristã (50–200).",
     biografia:
-      "Santa Valéria de Milão (50–200) é apresentado(a) nas fontes biográficas consultadas como ancient christian saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 28 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Valéria de Milão (50–200) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 28 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -4635,13 +4615,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-verena",
     nome: "Santa Verena",
-    titulo: "Egyptian saint",
+    titulo: "Santa venerada pela tradição cristã",
     data: "01/09",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Egyptian saint (260–344).",
+    resumo: "Santa venerada pela tradição cristã (260–344).",
     biografia:
-      "Santa Verena (260–344) é apresentado(a) nas fontes biográficas consultadas como egyptian saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 1 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Verena (260–344) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 1 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -4682,13 +4662,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-virginia-centurione-bracelli",
     nome: "Santa Virginia Centurione Bracelli",
-    titulo: "Italian saint (1587-1651)",
+    titulo: "Santa venerada pela tradição cristã",
     data: "15/12",
     seculo: "17",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Italian saint (1587-1651) (1587–1651).",
+    resumo: "Santa venerada pela tradição cristã (1587–1651).",
     biografia:
-      "Santa Virginia Centurione Bracelli (1587–1651) é apresentado(a) nas fontes biográficas consultadas como italian saint (1587-1651). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 15 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Virginia Centurione Bracelli (1587–1651) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 15 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -4706,13 +4686,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-waltrude",
     nome: "Santa Waltrude",
-    titulo: "Belgian saint (612-688)",
+    titulo: "Santa venerada pela tradição cristã",
     data: "09/04",
     seculo: "7",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Belgian saint (612-688) (612–688).",
+    resumo: "Santa venerada pela tradição cristã (612–688).",
     biografia:
-      "Santa Waltrude (612–688) é apresentado(a) nas fontes biográficas consultadas como belgian saint (612-688). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 9 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Waltrude (612–688) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 9 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -4730,13 +4710,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-wivina",
     nome: "Santa Wivina",
-    titulo: "12th-century Christian saint",
+    titulo: "Santa venerada pela tradição cristã",
     data: "17/12",
     seculo: "12",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "12th-century Christian saint (1103–1168).",
+    resumo: "Santa venerada pela tradição cristã (1103–1168).",
     biografia:
-      "Santa Wivina (1103–1168) é apresentado(a) nas fontes biográficas consultadas como 12th-century christian saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 17 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Wivina (1103–1168) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 17 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -4752,15 +4732,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "CC0",
   },
   {
-    slug: "santa-xenia-of-tarusa",
-    nome: "Santa Xenia of Tarusa",
+    slug: "santa-xenia-de-tarusa",
+    nome: "Santa Xenia de Tarusa",
     titulo: "Russian noblewoman",
     data: "01/01",
     seculo: "14",
     padroeiro: "Testemunho cristão e intercessão dos santos",
     resumo: "Russian noblewoman (1246–1312).",
     biografia:
-      "Santa Xenia of Tarusa (1246–1312) é apresentado(a) nas fontes biográficas consultadas como russian noblewoman. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Xenia de Tarusa (1246–1312) é apresentado(a) nas fontes biográficas consultadas como russian noblewoman. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -4778,13 +4758,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-xenia-de-sao-petersburgo",
     nome: "Santa Xênia de São Petersburgo",
-    titulo: "Russian saint",
+    titulo: "Santa venerada pela tradição cristã",
     data: "06/02",
     seculo: "19",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Russian saint (1719–1803).",
+    resumo: "Santa venerada pela tradição cristã (1719–1803).",
     biografia:
-      "Santa Xênia de São Petersburgo (1719–1803) é apresentado(a) nas fontes biográficas consultadas como russian saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 6 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Xênia de São Petersburgo (1719–1803) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 6 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Ksenia_of_petersbourg.jpeg",
@@ -4801,13 +4781,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-zenaide",
     nome: "Santa Zenaide",
-    titulo: "Early Christian martyr",
+    titulo: "Mártir cristã",
     data: "11/10",
     seculo: "1",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Early Christian martyr.",
+    resumo: "Mártir cristã.",
     biografia:
-      "Santa Zenaide é apresentado(a) nas fontes biográficas consultadas como early christian martyr. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 11 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Zenaide é apresentado(a) nas fontes biográficas consultadas como mártir cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 11 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/9/95/Menologion_of_Basil_023.jpg",
@@ -4823,15 +4803,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "Public domain",
   },
   {
-    slug: "santa-zoe-of-rome",
-    nome: "Santa Zoe of Rome",
-    titulo: "Martyr saint",
+    slug: "santa-zoe-de-rome",
+    nome: "Santa Zoe de Rome",
+    titulo: "Mártir cristã",
     data: "05/07",
     seculo: "3",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Martyr saint (falecido em 286).",
+    resumo: "Mártir cristã (falecido em 286).",
     biografia:
-      "Santa Zoe of Rome (falecido em 286) é apresentado(a) nas fontes biográficas consultadas como martyr saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 5 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Zoe de Rome (falecido em 286) é apresentado(a) nas fontes biográficas consultadas como mártir cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 5 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -4849,13 +4829,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-angela-da-cruz",
     nome: "Santa Ângela da Cruz",
-    titulo: "Spanish saint",
+    titulo: "Santa venerada pela tradição cristã",
     data: "02/03",
     seculo: "20",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Spanish saint (1846–1932).",
+    resumo: "Santa venerada pela tradição cristã (1846–1932).",
     biografia:
-      "Santa Ângela da Cruz (1846–1932) é apresentado(a) nas fontes biográficas consultadas como spanish saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 2 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Ângela da Cruz (1846–1932) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 2 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -4873,13 +4853,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-emilie-de-rodat",
     nome: "Santa Émilie de Rodat",
-    titulo: "Christian saint and mystic",
+    titulo: "Santa venerada pela tradição cristã",
     data: "19/09",
     seculo: "19",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Christian saint and mystic (1787–1852).",
+    resumo: "Santa venerada pela tradição cristã (1787–1852).",
     biografia:
-      "Santa Émilie de Rodat (1787–1852) é apresentado(a) nas fontes biográficas consultadas como christian saint and mystic. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 19 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Émilie de Rodat (1787–1852) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 19 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/4/4b/EmiliedeRodat.jpeg",
@@ -4896,13 +4876,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santa-emilie-de-vialar",
     nome: "Santa Émilie de Vialar",
-    titulo: "French saint (1797–1856)",
+    titulo: "Santa venerada pela tradição cristã",
     data: "24/08",
     seculo: "19",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "French saint (1797–1856) (1797–1856).",
+    resumo: "Santa venerada pela tradição cristã (1797–1856).",
     biografia:
-      "Santa Émilie de Vialar (1797–1856) é apresentado(a) nas fontes biográficas consultadas como french saint (1797–1856). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 24 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santa Émilie de Vialar (1797–1856) é apresentado(a) nas fontes biográficas consultadas como santa venerada pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 24 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/6/6e/EmiliVialar.jpg",
@@ -4919,13 +4899,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santo-acacio",
     nome: "Santo Acácio",
-    titulo: "Christian saint",
+    titulo: "Santo venerado pela tradição cristã",
     data: "08/05",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Christian saint (300–303).",
+    resumo: "Santo venerado pela tradição cristã (300–303).",
     biografia:
-      "Santo Acácio (300–303) é apresentado(a) nas fontes biográficas consultadas como christian saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 8 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santo Acácio (300–303) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 8 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -4943,13 +4923,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santo-adolfo",
     nome: "Santo Adolfo",
-    titulo: "Monge cisterciense e bispo de Osnabrück",
+    titulo: "Bispo e pastor da Igreja",
     data: "30/06",
     seculo: "13",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Monge cisterciense e bispo de Osnabrück (1185–1224).",
+    resumo: "Bispo e pastor da Igreja (1185–1224).",
     biografia:
-      "Santo Adolfo (1185–1224) é apresentado(a) nas fontes biográficas consultadas como monge cisterciense e bispo de osnabrück. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 30 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santo Adolfo (1185–1224) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 30 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -4967,13 +4947,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santo-amandio",
     nome: "Santo Amândio",
-    titulo: "7th-century high ranked Roman-Catholic functionary, saint after his death",
+    titulo: "Santo venerado pela tradição cristã",
     data: "06/02",
     seculo: "7",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "7th-century high ranked Roman-Catholic functionary, saint after his death (600–676).",
+    resumo: "Santo venerado pela tradição cristã (600–676).",
     biografia:
-      "Santo Amândio (600–676) é apresentado(a) nas fontes biográficas consultadas como 7th-century high ranked roman-catholic functionary, saint after his death. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 6 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santo Amândio (600–676) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 6 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Saintamandus.jpg",
@@ -4990,13 +4970,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santo-eustaquio",
     nome: "Santo Eustáquio",
-    titulo: "Christian martyr",
+    titulo: "Mártir cristão",
     data: "20/09",
     seculo: "2",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Christian martyr (100–118).",
+    resumo: "Mártir cristão (100–118).",
     biografia:
-      "Santo Eustáquio (100–118) é apresentado(a) nas fontes biográficas consultadas como christian martyr. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 20 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santo Eustáquio (100–118) é apresentado(a) nas fontes biográficas consultadas como mártir cristão. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 20 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/5/55/Witterschnee_Kirche_Decke_3c.jpg",
@@ -5013,13 +4993,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santo-herculano-de-brescia",
     nome: "Santo Herculano de Bréscia",
-    titulo: "6th century saint and Bishop of Brescia",
+    titulo: "Bispo e pastor da Igreja",
     data: "12/08",
     seculo: "não determinado",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "6th century saint and Bishop of Brescia.",
+    resumo: "Bispo e pastor da Igreja.",
     biografia:
-      "Santo Herculano de Bréscia é apresentado(a) nas fontes biográficas consultadas como 6th century saint and bishop of brescia. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 12 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santo Herculano de Bréscia é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 12 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -5037,13 +5017,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santo-herculano-de-piegaro",
     nome: "Santo Herculano de Piegaro",
-    titulo: "15th century Italian saint",
+    titulo: "Santo venerado pela tradição cristã",
     data: "01/06",
     seculo: "15",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "15th century Italian saint (1390–1451).",
+    resumo: "Santo venerado pela tradição cristã (1390–1451).",
     biografia:
-      "Santo Herculano de Piegaro (1390–1451) é apresentado(a) nas fontes biográficas consultadas como 15th century italian saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 1 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santo Herculano de Piegaro (1390–1451) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 1 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -5061,13 +5041,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santo-ivo",
     nome: "Santo Ivo",
-    titulo: "Santo Padroeiro dos trabalhadores da área da Justiça",
+    titulo: "Santo venerado pela tradição cristã",
     data: "19/05",
     seculo: "14",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Santo Padroeiro dos trabalhadores da área da Justiça (1253–1303).",
+    resumo: "Santo venerado pela tradição cristã (1253–1303).",
     biografia:
-      "Santo Ivo (1253–1303) é apresentado(a) nas fontes biográficas consultadas como santo padroeiro dos trabalhadores da área da justiça. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 19 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santo Ivo (1253–1303) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 19 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/f/fc/Weyden_Ivo.jpg",
@@ -5084,15 +5064,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "santo-nono",
     nome: "Santo Nono",
-    titulo:
-      "Christian saint, said to have been an Egyptian monk who became a bishop in Syria and was responsible for the conversion of St Pelagia the harlot during one of the Synods of Antioch",
+    titulo: "Bispo e pastor da Igreja",
     data: "02/12",
     seculo: "5",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo:
-      "Christian saint, said to have been an Egyptian monk who became a bishop in Syria and was responsible for the conversion of St Pelagia the harlot during one of the Synods of Antioch (400–471).",
+    resumo: "Bispo e pastor da Igreja (400–471).",
     biografia:
-      "Santo Nono (400–471) é apresentado(a) nas fontes biográficas consultadas como christian saint, said to have been an egyptian monk who became a bishop in syria and was responsible for the conversion of st pelagia the harlot during one of the synods of antioch. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 2 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "Santo Nono (400–471) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 2 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/a/af/Saint_pelagia.jpg",
@@ -5133,13 +5111,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-abdas-de-susa",
     nome: "São Abdas de Susa",
-    titulo: "Iranian catholic priest (C.E.400–C.E.418)",
+    titulo: "Sacerdote e servidor do povo de Deus",
     data: "16/05",
     seculo: "5",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Iranian catholic priest (C.E.400–C.E.418) (400–418).",
+    resumo: "Sacerdote e servidor do povo de Deus (400–418).",
     biografia:
-      "São Abdas de Susa (400–418) é apresentado(a) nas fontes biográficas consultadas como iranian catholic priest (c.e.400–c.e.418). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 16 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Abdas de Susa (400–418) é apresentado(a) nas fontes biográficas consultadas como sacerdote e servidor do povo de deus. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 16 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -5158,13 +5136,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-abdon-and-sennen",
     nome: "São Abdon and Sennen",
-    titulo: "Christian martyrs of the 3rd century",
+    titulo: "Mártir cristão",
     data: "30/07",
     seculo: "não determinado",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Christian martyrs of the 3rd century.",
+    resumo: "Mártir cristão.",
     biografia:
-      "São Abdon and Sennen é apresentado(a) nas fontes biográficas consultadas como christian martyrs of the 3rd century. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 30 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Abdon and Sennen é apresentado(a) nas fontes biográficas consultadas como mártir cristão. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 30 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -5182,13 +5160,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-abgar-de-edessa",
     nome: "São Abgar de Edessa",
-    titulo: "Rei de Osroena, Mesopotâmia",
+    titulo: "Governante cristão e servidor dos necessitados",
     data: "01/01",
     seculo: "1",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Rei de Osroena, Mesopotâmia (1–50).",
+    resumo: "Governante cristão e servidor dos necessitados (1–50).",
     biografia:
-      "São Abgar de Edessa (1–50) é apresentado(a) nas fontes biográficas consultadas como rei de osroena, mesopotâmia. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Abgar de Edessa (1–50) é apresentado(a) nas fontes biográficas consultadas como governante cristão e servidor dos necessitados. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -5230,13 +5208,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-abraham-kidunaia",
     nome: "São Abraham Kidunaia",
-    titulo: "Anatolian Roman Catholic saint",
+    titulo: "Santo venerado pela tradição cristã",
     data: "01/01",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Anatolian Roman Catholic saint (267–366).",
+    resumo: "Santo venerado pela tradição cristã (267–366).",
     biografia:
-      "São Abraham Kidunaia (267–366) é apresentado(a) nas fontes biográficas consultadas como anatolian roman catholic saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Abraham Kidunaia (267–366) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -5255,13 +5233,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-abao-de-fleury",
     nome: "São Abão de Fleury",
-    titulo: "Monge beneditino e matemático",
+    titulo: "Monge e testemunha da vida consagrada",
     data: "13/11",
     seculo: "11",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Monge beneditino e matemático (945–1004).",
+    resumo: "Monge e testemunha da vida consagrada (945–1004).",
     biografia:
-      "São Abão de Fleury (945–1004) é apresentado(a) nas fontes biográficas consultadas como monge beneditino e matemático. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 13 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Abão de Fleury (945–1004) é apresentado(a) nas fontes biográficas consultadas como monge e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 13 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Tract_by_Abbo_of_Fleury.jpg",
@@ -5276,15 +5254,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "Public domain",
   },
   {
-    slug: "sao-acepsimas-of-hnaita",
-    nome: "São Acepsimas of Hnaita",
-    titulo: "Bishop",
+    slug: "sao-acepsimas-de-hnaita",
+    nome: "São Acepsimas de Hnaita",
+    titulo: "Bispo e pastor da Igreja",
     data: "22/04",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Bishop (falecido em 376).",
+    resumo: "Bispo e pastor da Igreja (falecido em 376).",
     biografia:
-      "São Acepsimas of Hnaita (falecido em 376) é apresentado(a) nas fontes biográficas consultadas como bishop. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 22 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Acepsimas de Hnaita (falecido em 376) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 22 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -5302,13 +5280,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-acacio-de-amida",
     nome: "São Acácio de Amida",
-    titulo: "Bishop",
+    titulo: "Bispo e pastor da Igreja",
     data: "09/04",
     seculo: "5",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Bishop (301–425).",
+    resumo: "Bispo e pastor da Igreja (301–425).",
     biografia:
-      "São Acácio de Amida (301–425) é apresentado(a) nas fontes biográficas consultadas como bishop. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 9 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Acácio de Amida (301–425) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 9 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -5326,13 +5304,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-adalberto-de-egmond",
     nome: "São Adalberto de Egmond",
-    titulo: "Northumbrian Anglo-Saxon missionary (650-800)",
+    titulo: "Missionário cristão",
     data: "25/06",
     seculo: "8",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Northumbrian Anglo-Saxon missionary (650-800) (650–800).",
+    resumo: "Missionário cristão (650–800).",
     biografia:
-      "São Adalberto de Egmond (650–800) é apresentado(a) nas fontes biográficas consultadas como northumbrian anglo-saxon missionary (650-800). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 25 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Adalberto de Egmond (650–800) é apresentado(a) nas fontes biográficas consultadas como missionário cristão. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 25 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/3/3b/Adelbert_van_Egmond.jpg",
@@ -5349,13 +5327,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-adalberto-de-magdeburgo",
     nome: "São Adalberto de Magdeburgo",
-    titulo: "French saint, archbishop and missionary (c.910–981)",
+    titulo: "Arcebispo e pastor da Igreja",
     data: "20/06",
     seculo: "10",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "French saint, archbishop and missionary (c.910–981) (910–981).",
+    resumo: "Arcebispo e pastor da Igreja (910–981).",
     biografia:
-      "São Adalberto de Magdeburgo (910–981) é apresentado(a) nas fontes biográficas consultadas como french saint, archbishop and missionary (c.910–981). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 20 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Adalberto de Magdeburgo (910–981) é apresentado(a) nas fontes biográficas consultadas como arcebispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 20 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/b/b5/Adalbert_of_Magdeburg.jpg",
@@ -5372,13 +5350,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-adalberto-de-praga",
     nome: "São Adalberto de Praga",
-    titulo: "Bohemian missionary and saint (c.956–997)",
+    titulo: "Missionário cristão",
     data: "23/04",
     seculo: "10",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Bohemian missionary and saint (c.956–997) (956–997).",
+    resumo: "Missionário cristão (956–997).",
     biografia:
-      "São Adalberto de Praga (956–997) é apresentado(a) nas fontes biográficas consultadas como bohemian missionary and saint (c.956–997). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 23 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Adalberto de Praga (956–997) é apresentado(a) nas fontes biográficas consultadas como missionário cristão. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 23 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -5394,15 +5372,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "Public domain",
   },
   {
-    slug: "sao-adrian-of-may",
-    nome: "São Adrian of May",
-    titulo: "Martyr-saint of ancient Scotland",
+    slug: "sao-adrian-de-may",
+    nome: "São Adrian de May",
+    titulo: "Mártir cristão",
     data: "04/03",
     seculo: "9",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Martyr-saint of ancient Scotland (850–875).",
+    resumo: "Mártir cristão (850–875).",
     biografia:
-      "São Adrian of May (850–875) é apresentado(a) nas fontes biográficas consultadas como martyr-saint of ancient scotland. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 4 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Adrian de May (850–875) é apresentado(a) nas fontes biográficas consultadas como mártir cristão. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 4 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -5418,15 +5396,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "CC BY-SA 2.0",
   },
   {
-    slug: "sao-aedesius-of-alexandria",
-    nome: "São Aedesius of Alexandria",
-    titulo: "Saint",
+    slug: "sao-aedesius-de-alexandria",
+    nome: "São Aedesius de Alexandria",
+    titulo: "Santo venerado pela tradição cristã",
     data: "09/04",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Saint (falecido em 306).",
+    resumo: "Santo venerado pela tradição cristã (falecido em 306).",
     biografia:
-      "São Aedesius of Alexandria (falecido em 306) é apresentado(a) nas fontes biográficas consultadas como saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 9 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Aedesius de Alexandria (falecido em 306) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 9 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -5444,13 +5422,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-afraates",
     nome: "São Afraates",
-    titulo: "4th century Syriac-Christian theologian and author",
+    titulo: "Santo venerado pela tradição cristã",
     data: "29/01",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "4th century Syriac-Christian theologian and author (270–346).",
+    resumo: "Santo venerado pela tradição cristã (270–346).",
     biografia:
-      "São Afraates (270–346) é apresentado(a) nas fontes biográficas consultadas como 4th century syriac-christian theologian and author. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 29 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Afraates (270–346) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 29 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -5466,15 +5444,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "No restrictions",
   },
   {
-    slug: "sao-agapius-of-novara",
-    nome: "São Agapius of Novara",
-    titulo: "Italian bishop",
+    slug: "sao-agapius-de-novara",
+    nome: "São Agapius de Novara",
+    titulo: "Bispo e pastor da Igreja",
     data: "10/09",
     seculo: "5",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Italian bishop (falecido em 440).",
+    resumo: "Bispo e pastor da Igreja (falecido em 440).",
     biografia:
-      "São Agapius of Novara (falecido em 440) é apresentado(a) nas fontes biográficas consultadas como italian bishop. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 10 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Agapius de Novara (falecido em 440) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 10 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/b/bd/Agabio_di_novara.jpg",
@@ -5512,15 +5490,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "Public domain",
   },
   {
-    slug: "sao-agnellus-of-naples",
-    nome: "São Agnellus of Naples",
+    slug: "sao-agnellus-de-naples",
+    nome: "São Agnellus de Naples",
     titulo: "Italian presbyter",
     data: "14/12",
     seculo: "6",
     padroeiro: "Testemunho cristão e intercessão dos santos",
     resumo: "Italian presbyter (535–596).",
     biografia:
-      "São Agnellus of Naples (535–596) é apresentado(a) nas fontes biográficas consultadas como italian presbyter. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 14 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Agnellus de Naples (535–596) é apresentado(a) nas fontes biográficas consultadas como italian presbyter. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 14 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -5538,13 +5516,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-agobardo",
     nome: "São Agobardo",
-    titulo: "Spanish saint",
+    titulo: "Santo venerado pela tradição cristã",
     data: "06/06",
     seculo: "9",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Spanish saint (769–840).",
+    resumo: "Santo venerado pela tradição cristã (769–840).",
     biografia:
-      "São Agobardo (769–840) é apresentado(a) nas fontes biográficas consultadas como spanish saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 6 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Agobardo (769–840) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 6 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -5562,13 +5540,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-agostinho-de-hipona",
     nome: "São Agostinho de Hipona",
-    titulo: "Bispo, teólogo e filósofo cristão",
+    titulo: "Bispo e pastor da Igreja",
     data: "28/08",
     seculo: "5",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Bispo, teólogo e filósofo cristão (354–430).",
+    resumo: "Bispo e pastor da Igreja (354–430).",
     biografia:
-      "São Agostinho de Hipona (354–430) é apresentado(a) nas fontes biográficas consultadas como bispo, teólogo e filósofo cristão. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 28 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Agostinho de Hipona (354–430) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 28 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -5609,13 +5587,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-ailerano",
     nome: "São Ailerano",
-    titulo: "Scholar, saint",
+    titulo: "Santo venerado pela tradição cristã",
     data: "29/12",
     seculo: "7",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Scholar, saint (650–664).",
+    resumo: "Santo venerado pela tradição cristã (650–664).",
     biografia:
-      "São Ailerano (650–664) é apresentado(a) nas fontes biográficas consultadas como scholar, saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 29 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Ailerano (650–664) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 29 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/7/7d/Saint_Aileran.webp",
@@ -5632,13 +5610,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-alban-von-mainz",
     nome: "São Alban von Mainz",
-    titulo: "Missionary and martyr",
+    titulo: "Mártir cristão",
     data: "21/06",
     seculo: "5",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Missionary and martyr (400–406).",
+    resumo: "Mártir cristão (400–406).",
     biografia:
-      "São Alban von Mainz (400–406) é apresentado(a) nas fontes biográficas consultadas como missionary and martyr. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 21 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Alban von Mainz (400–406) é apresentado(a) nas fontes biográficas consultadas como mártir cristão. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 21 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/4/44/StAlbanMainz.jpg",
@@ -5653,15 +5631,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "Public domain",
   },
   {
-    slug: "sao-albert-of-riga",
-    nome: "São Albert of Riga",
-    titulo: "Bishop (1160s–1229)",
+    slug: "sao-albert-de-riga",
+    nome: "São Albert de Riga",
+    titulo: "Bispo e pastor da Igreja",
     data: "30/01",
     seculo: "13",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Bishop (1160s–1229) (1160–1229).",
+    resumo: "Bispo e pastor da Igreja (1160–1229).",
     biografia:
-      "São Albert of Riga (1160–1229) é apresentado(a) nas fontes biográficas consultadas como bishop (1160s–1229). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 30 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Albert de Riga (1160–1229) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 30 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/4/42/Albert_of_Riga.JPG",
@@ -5678,13 +5656,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-albuin",
     nome: "São Albuin",
-    titulo: "Bishop of Säben-Brixen",
+    titulo: "Bispo e pastor da Igreja",
     data: "05/02",
     seculo: "11",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Bishop of Säben-Brixen (1000–1006).",
+    resumo: "Bispo e pastor da Igreja (1000–1006).",
     biografia:
-      "São Albuin (1000–1006) é apresentado(a) nas fontes biográficas consultadas como bishop of säben-brixen. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 5 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Albuin (1000–1006) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 5 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/0/06/Ingenuin_Albuin_Brixen.jpg",
@@ -5699,15 +5677,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "Public domain",
   },
   {
-    slug: "sao-alchmund-of-hexham",
-    nome: "São Alchmund of Hexham",
-    titulo: "Bishop of Hexham",
+    slug: "sao-alchmund-de-hexham",
+    nome: "São Alchmund de Hexham",
+    titulo: "Bispo e pastor da Igreja",
     data: "07/09",
     seculo: "8",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Bishop of Hexham (falecido em 781).",
+    resumo: "Bispo e pastor da Igreja (falecido em 781).",
     biografia:
-      "São Alchmund of Hexham (falecido em 781) é apresentado(a) nas fontes biográficas consultadas como bishop of hexham. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 7 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Alchmund de Hexham (falecido em 781) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 7 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -5725,13 +5703,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-aleksy-solovyov",
     nome: "São Aleksy Solovyov",
-    titulo: "Russian priest",
+    titulo: "Sacerdote e servidor do povo de Deus",
     data: "02/10",
     seculo: "20",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Russian priest (1846–1928).",
+    resumo: "Sacerdote e servidor do povo de Deus (1846–1928).",
     biografia:
-      "São Aleksy Solovyov (1846–1928) é apresentado(a) nas fontes biográficas consultadas como russian priest. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Aleksy Solovyov (1846–1928) é apresentado(a) nas fontes biográficas consultadas como sacerdote e servidor do povo de deus. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -5747,15 +5725,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "Public domain",
   },
   {
-    slug: "sao-alexander-of-rome",
-    nome: "São Alexander of Rome",
-    titulo: "Christian martyr",
+    slug: "sao-alexander-de-rome",
+    nome: "São Alexander de Rome",
+    titulo: "Mártir cristão",
     data: "01/01",
     seculo: "3",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Christian martyr (201–289).",
+    resumo: "Mártir cristão (201–289).",
     biografia:
-      "São Alexander of Rome (201–289) é apresentado(a) nas fontes biográficas consultadas como christian martyr. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Alexander de Rome (201–289) é apresentado(a) nas fontes biográficas consultadas como mártir cristão. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Alexander%2C_at_Marcionopolis.jpg",
@@ -5797,13 +5775,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-alfano-i-de-salerno",
     nome: "São Alfano I de Salerno",
-    titulo: "Archbishop of Salerno",
+    titulo: "Arcebispo e pastor da Igreja",
     data: "01/01",
     seculo: "11",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Archbishop of Salerno (1015–1085).",
+    resumo: "Arcebispo e pastor da Igreja (1015–1085).",
     biografia:
-      "São Alfano I de Salerno (1015–1085) é apresentado(a) nas fontes biográficas consultadas como archbishop of salerno. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Alfano I de Salerno (1015–1085) é apresentado(a) nas fontes biográficas consultadas como arcebispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/9/96/Alfano_di_Salerno.jpg",
@@ -5820,13 +5798,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-alfredo-de-inglaterra",
     nome: "São Alfredo de Inglaterra",
-    titulo: "Rei de Wessex e dos Anglo-Saxões",
+    titulo: "Governante cristão e servidor dos necessitados",
     data: "26/10",
     seculo: "9",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Rei de Wessex e dos Anglo-Saxões (849–899).",
+    resumo: "Governante cristão e servidor dos necessitados (849–899).",
     biografia:
-      "São Alfredo de Inglaterra (849–899) é apresentado(a) nas fontes biográficas consultadas como rei de wessex e dos anglo-saxões. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 26 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Alfredo de Inglaterra (849–899) é apresentado(a) nas fontes biográficas consultadas como governante cristão e servidor dos necessitados. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 26 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -5865,15 +5843,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "CC0",
   },
   {
-    slug: "sao-amador-of-tucci",
-    nome: "São Amador of Tucci",
-    titulo: "Spanish priest",
+    slug: "sao-amador-de-tucci",
+    nome: "São Amador de Tucci",
+    titulo: "Sacerdote e servidor do povo de Deus",
     data: "05/05",
     seculo: "9",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Spanish priest (900–855).",
+    resumo: "Sacerdote e servidor do povo de Deus (900–855).",
     biografia:
-      "São Amador of Tucci (900–855) é apresentado(a) nas fontes biográficas consultadas como spanish priest. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 5 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Amador de Tucci (900–855) é apresentado(a) nas fontes biográficas consultadas como sacerdote e servidor do povo de deus. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 5 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -5891,13 +5869,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-amaro-de-burgos",
     nome: "São Amaro de Burgos",
-    titulo: "Saint",
+    titulo: "Santo venerado pela tradição cristã",
     data: "10/05",
     seculo: "13",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Saint (1300–1300).",
+    resumo: "Santo venerado pela tradição cristã (1300–1300).",
     biografia:
-      "São Amaro de Burgos (1300–1300) é apresentado(a) nas fontes biográficas consultadas como saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 10 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Amaro de Burgos (1300–1300) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 10 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -5913,15 +5891,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "CC0",
   },
   {
-    slug: "sao-amatus-of-nusco",
-    nome: "São Amatus of Nusco",
-    titulo: "Italian Roman Catholic bishop",
+    slug: "sao-amatus-de-nusco",
+    nome: "São Amatus de Nusco",
+    titulo: "Bispo e pastor da Igreja",
     data: "30/09",
     seculo: "11",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Italian Roman Catholic bishop (1003–1093).",
+    resumo: "Bispo e pastor da Igreja (1003–1093).",
     biografia:
-      "São Amatus of Nusco (1003–1093) é apresentado(a) nas fontes biográficas consultadas como italian roman catholic bishop. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 30 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Amatus de Nusco (1003–1093) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 30 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/1/13/Sant%27Amato_da_Nusco.jpg",
@@ -5962,14 +5940,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-ambrosio-de-milao",
     nome: "São Ambrósio de Milão",
-    titulo: "Santo católico e bispo de Milão; um dos quatro doutores originais do catolicismo",
+    titulo: "Bispo e pastor da Igreja",
     data: "07/12",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo:
-      "Santo católico e bispo de Milão; um dos quatro doutores originais do catolicismo (339–397).",
+    resumo: "Bispo e pastor da Igreja (339–397).",
     biografia:
-      "São Ambrósio de Milão (339–397) é apresentado(a) nas fontes biográficas consultadas como santo católico e bispo de milão; um dos quatro doutores originais do catolicismo. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 7 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Ambrósio de Milão (339–397) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 7 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/9/9a/AmbroseOfMilan.jpg",
@@ -5986,13 +5963,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-amico-di-avellana",
     nome: "São Amico di Avellana",
-    titulo: "Italian Roman Catholic monk and blessed",
+    titulo: "Monge e testemunha da vida consagrada",
     data: "03/11",
     seculo: "11",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Italian Roman Catholic monk and blessed (falecido em 1040).",
+    resumo: "Monge e testemunha da vida consagrada (falecido em 1040).",
     biografia:
-      "São Amico di Avellana (falecido em 1040) é apresentado(a) nas fontes biográficas consultadas como italian roman catholic monk and blessed. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 3 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Amico di Avellana (falecido em 1040) é apresentado(a) nas fontes biográficas consultadas como monge e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 3 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/f/f4/Sant_amico_icona_passatora.jpg",
@@ -6009,13 +5986,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-ampelius",
     nome: "São Ampelius",
-    titulo: "Saint Archbishop of Milan",
+    titulo: "Arcebispo e pastor da Igreja",
     data: "01/01",
     seculo: "7",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Saint Archbishop of Milan (falecido em 672).",
+    resumo: "Arcebispo e pastor da Igreja (falecido em 672).",
     biografia:
-      "São Ampelius (falecido em 672) é apresentado(a) nas fontes biográficas consultadas como saint archbishop of milan. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Ampelius (falecido em 672) é apresentado(a) nas fontes biográficas consultadas como arcebispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/8/81/Ampelius_bishop_of_Milan.JPG",
@@ -6032,13 +6009,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-amedee-de-lausanne",
     nome: "São Amédée de Lausanne",
-    titulo: "Bispo católico",
+    titulo: "Bispo e pastor da Igreja",
     data: "27/08",
     seculo: "12",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Bispo católico (1110–1159).",
+    resumo: "Bispo e pastor da Igreja (1110–1159).",
     biografia:
-      "São Amédée de Lausanne (1110–1159) é apresentado(a) nas fontes biográficas consultadas como bispo católico. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 27 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Amédée de Lausanne (1110–1159) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 27 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/e/ef/Amadeus_von_lausanne.jpg",
@@ -6102,13 +6079,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-anastacio-de-antioquia",
     nome: "São Anastácio de Antioquia",
-    titulo: "Christian martyr",
+    titulo: "Mártir cristão",
     data: "09/01",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Christian martyr (250–302).",
+    resumo: "Mártir cristão (250–302).",
     biografia:
-      "São Anastácio de Antioquia (250–302) é apresentado(a) nas fontes biográficas consultadas como christian martyr. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 9 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Anastácio de Antioquia (250–302) é apresentado(a) nas fontes biográficas consultadas como mártir cristão. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 9 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/1/12/Vrdnik-Ravanica_monastery_005.JPG",
@@ -6150,13 +6127,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-anno-ii",
     nome: "São Anno II",
-    titulo: "Arcebispo de Colônia (1056-1075)",
+    titulo: "Arcebispo e pastor da Igreja",
     data: "04/12",
     seculo: "11",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Arcebispo de Colônia (1056-1075) (1010–1075).",
+    resumo: "Arcebispo e pastor da Igreja (1010–1075).",
     biografia:
-      "São Anno II (1010–1075) é apresentado(a) nas fontes biográficas consultadas como arcebispo de colônia (1056-1075). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 4 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Anno II (1010–1075) é apresentado(a) nas fontes biográficas consultadas como arcebispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 4 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/4/42/Anno_II.jpg",
@@ -6173,13 +6150,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-anselmo-de-cantuaria",
     nome: "São Anselmo de Cantuária",
-    titulo: "Monge beneditino, filósofo e prelado inglês",
+    titulo: "Monge e testemunha da vida consagrada",
     data: "21/04",
     seculo: "12",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Monge beneditino, filósofo e prelado inglês (1033–1109).",
+    resumo: "Monge e testemunha da vida consagrada (1033–1109).",
     biografia:
-      "São Anselmo de Cantuária (1033–1109) é apresentado(a) nas fontes biográficas consultadas como monge beneditino, filósofo e prelado inglês. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 21 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Anselmo de Cantuária (1033–1109) é apresentado(a) nas fontes biográficas consultadas como monge e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 21 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/d/d8/Anselm-CanterburyVit.jpg",
@@ -6196,13 +6173,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-anthony-the-hermit",
     nome: "São Anthony the Hermit",
-    titulo: "German monk",
+    titulo: "Monge e testemunha da vida consagrada",
     data: "28/12",
     seculo: "6",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "German monk (460–520).",
+    resumo: "Monge e testemunha da vida consagrada (460–520).",
     biografia:
-      "São Anthony the Hermit (460–520) é apresentado(a) nas fontes biográficas consultadas como german monk. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 28 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Anthony the Hermit (460–520) é apresentado(a) nas fontes biográficas consultadas como monge e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 28 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/3/3e/Tapisserie_Beaune_143.jpg",
@@ -6219,13 +6196,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-anthony-john-and-eustathios",
     nome: "São Anthony, John, and Eustathios",
-    titulo: "Christian martyrs",
+    titulo: "Mártir cristão",
     data: "14/04",
     seculo: "14",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Christian martyrs (1300–1347).",
+    resumo: "Mártir cristão (1300–1347).",
     biografia:
-      "São Anthony, John, and Eustathios (1300–1347) é apresentado(a) nas fontes biográficas consultadas como christian martyrs. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 14 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Anthony, John, and Eustathios (1300–1347) é apresentado(a) nas fontes biográficas consultadas como mártir cristão. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 14 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/8/8c/Vilenskie_mucheniki.jpg",
@@ -6242,13 +6219,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-antigius",
     nome: "São Antigius",
-    titulo: "Bishop",
+    titulo: "Bispo e pastor da Igreja",
     data: "14/11",
     seculo: "8",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Bishop (falecido em 800).",
+    resumo: "Bispo e pastor da Igreja (falecido em 800).",
     biografia:
-      "São Antigius (falecido em 800) é apresentado(a) nas fontes biográficas consultadas como bishop. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 14 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Antigius (falecido em 800) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 14 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -6266,13 +6243,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-antoine-daniel",
     nome: "São Antoine Daniel",
-    titulo: "Jesuit missionary and martyr (1601-1648)",
+    titulo: "Mártir cristão",
     data: "19/10",
     seculo: "17",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Jesuit missionary and martyr (1601-1648) (1601–1648).",
+    resumo: "Mártir cristão (1601–1648).",
     biografia:
-      "São Antoine Daniel (1601–1648) é apresentado(a) nas fontes biográficas consultadas como jesuit missionary and martyr (1601-1648). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 19 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Antoine Daniel (1601–1648) é apresentado(a) nas fontes biográficas consultadas como mártir cristão. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 19 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/4/43/North_American_Martyrs.jpg",
@@ -6289,13 +6266,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-antoninusofsorrento",
     nome: "São AntoninusofSorrento",
-    titulo: "Italian abbot, hermit and saint",
+    titulo: "Monge e testemunha da vida consagrada",
     data: "14/02",
     seculo: "7",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Italian abbot, hermit and saint (501–625).",
+    resumo: "Monge e testemunha da vida consagrada (501–625).",
     biografia:
-      "São AntoninusofSorrento (501–625) é apresentado(a) nas fontes biográficas consultadas como italian abbot, hermit and saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 14 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São AntoninusofSorrento (501–625) é apresentado(a) nas fontes biográficas consultadas como monge e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 14 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/3/36/Antoninus_of_Sorrento_statue.jpg",
@@ -6312,13 +6289,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-antonio-maria-zaccaria",
     nome: "São Antonio Maria Zaccaria",
-    titulo: "Italian saint",
+    titulo: "Santo venerado pela tradição cristã",
     data: "05/07",
     seculo: "16",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Italian saint (1502–1539).",
+    resumo: "Santo venerado pela tradição cristã (1502–1539).",
     biografia:
-      "São Antonio Maria Zaccaria (1502–1539) é apresentado(a) nas fontes biográficas consultadas como italian saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 5 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Antonio Maria Zaccaria (1502–1539) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 5 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/f/f9/San_Antonio_Maria_Zaccaria.jpg",
@@ -6335,13 +6312,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-antao-do-deserto",
     nome: "São Antão do Deserto",
-    titulo: "Egyptian Christian monk, hermit, and saint (died 356)",
+    titulo: "Monge e testemunha da vida consagrada",
     data: "17/01",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Egyptian Christian monk, hermit, and saint (died 356) (251–357).",
+    resumo: "Monge e testemunha da vida consagrada (251–357).",
     biografia:
-      "São Antão do Deserto (251–357) é apresentado(a) nas fontes biográficas consultadas como egyptian christian monk, hermit, and saint (died 356). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 17 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Antão do Deserto (251–357) é apresentado(a) nas fontes biográficas consultadas como monge e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 17 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -6357,15 +6334,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "Public domain",
   },
   {
-    slug: "sao-aper-of-toul",
-    nome: "São Aper of Toul",
-    titulo: "Bishop of Toul",
+    slug: "sao-aper-de-toul",
+    nome: "São Aper de Toul",
+    titulo: "Bispo e pastor da Igreja",
     data: "15/09",
     seculo: "6",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Bishop of Toul (500–507).",
+    resumo: "Bispo e pastor da Igreja (500–507).",
     biografia:
-      "São Aper of Toul (500–507) é apresentado(a) nas fontes biográficas consultadas como bishop of toul. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 15 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Aper de Toul (500–507) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 15 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -6383,13 +6360,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-aphian",
     nome: "São Aphian",
-    titulo: "Venerated as a martyr by the Catholic Church/Eastern Orthodox Church",
+    titulo: "Mártir cristão",
     data: "02/04",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Venerated as a martyr by the Catholic Church/Eastern Orthodox Church (287–305).",
+    resumo: "Mártir cristão (287–305).",
     biografia:
-      "São Aphian (287–305) é apresentado(a) nas fontes biográficas consultadas como venerated as a martyr by the catholic church/eastern orthodox church. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 2 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Aphian (287–305) é apresentado(a) nas fontes biográficas consultadas como mártir cristão. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 2 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/8/81/Amfiano.jpg",
@@ -6406,13 +6383,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-aphrodise-de-beziers",
     nome: "São Aphrodise de Béziers",
-    titulo: "Bishop",
+    titulo: "Bispo e pastor da Igreja",
     data: "28/04",
     seculo: "3",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Bishop (200–300).",
+    resumo: "Bispo e pastor da Igreja (200–300).",
     biografia:
-      "São Aphrodise de Béziers (200–300) é apresentado(a) nas fontes biográficas consultadas como bishop. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 28 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Aphrodise de Béziers (200–300) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 28 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/e/eb/Saint_Aphrodisius.JPG",
@@ -6429,13 +6406,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-apolo",
     nome: "São Apolo",
-    titulo: "Early Christian proselytizer from Alexandria",
+    titulo: "Santo venerado pela tradição cristã",
     data: "13/02",
     seculo: "1",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Early Christian proselytizer from Alexandria (100–100).",
+    resumo: "Santo venerado pela tradição cristã (100–100).",
     biografia:
-      "São Apolo (100–100) é apresentado(a) nas fontes biográficas consultadas como early christian proselytizer from alexandria. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 13 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Apolo (100–100) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 13 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -6453,13 +6430,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-aprunculus",
     nome: "São Aprunculus",
-    titulo: "Bishop of Langres",
+    titulo: "Bispo e pastor da Igreja",
     data: "14/05",
     seculo: "5",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Bishop of Langres (500–491).",
+    resumo: "Bispo e pastor da Igreja (500–491).",
     biografia:
-      "São Aprunculus (500–491) é apresentado(a) nas fontes biográficas consultadas como bishop of langres. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 14 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Aprunculus (500–491) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 14 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -6475,15 +6452,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "CC BY-SA 4.0",
   },
   {
-    slug: "sao-arethas-of-najran",
-    nome: "São Arethas of Najran",
-    titulo: "6th century Miaphysite Christian leader in Najran",
+    slug: "sao-arethas-de-najran",
+    nome: "São Arethas de Najran",
+    titulo: "Santo venerado pela tradição cristã",
     data: "24/10",
     seculo: "6",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "6th century Miaphysite Christian leader in Najran (450–523).",
+    resumo: "Santo venerado pela tradição cristã (450–523).",
     biografia:
-      "São Arethas of Najran (450–523) é apresentado(a) nas fontes biográficas consultadas como 6th century miaphysite christian leader in najran. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 24 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Arethas de Najran (450–523) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 24 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -6502,13 +6479,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-arialdo",
     nome: "São Arialdo",
-    titulo: "Italian saint",
+    titulo: "Santo venerado pela tradição cristã",
     data: "27/06",
     seculo: "11",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Italian saint (1010–1066).",
+    resumo: "Santo venerado pela tradição cristã (1010–1066).",
     biografia:
-      "São Arialdo (1010–1066) é apresentado(a) nas fontes biográficas consultadas como italian saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 27 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Arialdo (1010–1066) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 27 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -6526,14 +6503,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-aristobulo-da-britania",
     nome: "São Aristóbulo da Britânia",
-    titulo: "Ancient Roman saint, mentioned in Romans 16:10, served as missionary to Britain",
+    titulo: "Missionário cristão",
     data: "15/03",
     seculo: "1",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo:
-      "Ancient Roman saint, mentioned in Romans 16:10, served as missionary to Britain (50–100).",
+    resumo: "Missionário cristão (50–100).",
     biografia:
-      "São Aristóbulo da Britânia (50–100) é apresentado(a) nas fontes biográficas consultadas como ancient roman saint, mentioned in romans 16:10, served as missionary to britain. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 15 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Aristóbulo da Britânia (50–100) é apresentado(a) nas fontes biográficas consultadas como missionário cristão. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 15 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/6/66/St._Aristobulus_of_Britain.jpg",
@@ -6550,13 +6526,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-arsen-iqaltoeli",
     nome: "São Arsen Iqaltoeli",
-    titulo: "Georgian saint",
+    titulo: "Santo venerado pela tradição cristã",
     data: "00/00",
     seculo: "12",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Georgian saint (1050–1127).",
+    resumo: "Santo venerado pela tradição cristã (1050–1127).",
     biografia:
-      "São Arsen Iqaltoeli (1050–1127) é apresentado(a) nas fontes biográficas consultadas como georgian saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Arsen Iqaltoeli (1050–1127) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -6572,15 +6548,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "Public domain",
   },
   {
-    slug: "sao-artemy-of-verkola",
-    nome: "São Artemy of Verkola",
-    titulo: "Child saint venerated in the Russian Orthodox Church",
+    slug: "sao-artemy-de-verkola",
+    nome: "São Artemy de Verkola",
+    titulo: "Santo venerado pela tradição cristã",
     data: "23/06",
     seculo: "16",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Child saint venerated in the Russian Orthodox Church (1532–1545).",
+    resumo: "Santo venerado pela tradição cristã (1532–1545).",
     biografia:
-      "São Artemy of Verkola (1532–1545) é apresentado(a) nas fontes biográficas consultadas como child saint venerated in the russian orthodox church. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 23 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Artemy de Verkola (1532–1545) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 23 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/e/e9/Artemy_of_Verkola.jpeg",
@@ -6597,13 +6573,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-arede-datane",
     nome: "São Arède d'Atane",
-    titulo: "Abbot of Limoges",
+    titulo: "Monge e testemunha da vida consagrada",
     data: "25/08",
     seculo: "6",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Abbot of Limoges (511–591).",
+    resumo: "Monge e testemunha da vida consagrada (511–591).",
     biografia:
-      "São Arède d'Atane (511–591) é apresentado(a) nas fontes biográficas consultadas como abbot of limoges. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 25 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Arède d'Atane (511–591) é apresentado(a) nas fontes biográficas consultadas como monge e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 25 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/0/03/Buste_d%27Aredius.jpg",
@@ -6618,15 +6594,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "CC BY-SA 3.0",
   },
   {
-    slug: "sao-ashot-i-of-iberia",
-    nome: "São Ashot I of Iberia",
+    slug: "sao-ashot-i-de-iberia",
+    nome: "São Ashot I de Iberia",
     titulo: "Presiding prince of Iberia (modern Georgia)",
     data: "29/01",
     seculo: "9",
     padroeiro: "Testemunho cristão e intercessão dos santos",
     resumo: "Presiding prince of Iberia (modern Georgia) (800–826).",
     biografia:
-      "São Ashot I of Iberia (800–826) é apresentado(a) nas fontes biográficas consultadas como presiding prince of iberia (modern georgia). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Ashot I de Iberia (800–826) é apresentado(a) nas fontes biográficas consultadas como presiding prince of iberia (modern georgia). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -6644,13 +6620,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-asturio",
     nome: "São Asturio",
-    titulo: "Bishop of Toletum",
+    titulo: "Bispo e pastor da Igreja",
     data: "00/00",
     seculo: "5",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Bishop of Toletum (350–412).",
+    resumo: "Bispo e pastor da Igreja (350–412).",
     biografia:
-      "São Asturio (350–412) é apresentado(a) nas fontes biográficas consultadas como bishop of toletum. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Asturio (350–412) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -6668,13 +6644,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-athanasius-i",
     nome: "São Athanasius I",
-    titulo: "Bishop of Naples",
+    titulo: "Bispo e pastor da Igreja",
     data: "15/07",
     seculo: "9",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Bishop of Naples (830–872).",
+    resumo: "Bispo e pastor da Igreja (830–872).",
     biografia:
-      "São Athanasius I (830–872) é apresentado(a) nas fontes biográficas consultadas como bishop of naples. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 15 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Athanasius I (830–872) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 15 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -6690,15 +6666,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "CC BY-SA 3.0",
   },
   {
-    slug: "sao-attilanus-of-zamora",
-    nome: "São Attilanus of Zamora",
-    titulo: "Spanish bishop",
+    slug: "sao-attilanus-de-zamora",
+    nome: "São Attilanus de Zamora",
+    titulo: "Bispo e pastor da Igreja",
     data: "05/10",
     seculo: "10",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Spanish bishop (850–919).",
+    resumo: "Bispo e pastor da Igreja (850–919).",
     biografia:
-      "São Attilanus of Zamora (850–919) é apresentado(a) nas fontes biográficas consultadas como spanish bishop. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 5 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Attilanus de Zamora (850–919) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 5 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/a/ae/San_Atilano.jpg",
@@ -6715,13 +6691,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-auctor-de-metz",
     nome: "São Auctor de Metz",
-    titulo: "French Catholic bishop",
+    titulo: "Bispo e pastor da Igreja",
     data: "09/08",
     seculo: "5",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "French Catholic bishop (falecido em 500).",
+    resumo: "Bispo e pastor da Igreja (falecido em 500).",
     biografia:
-      "São Auctor de Metz (falecido em 500) é apresentado(a) nas fontes biográficas consultadas como french catholic bishop. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 9 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Auctor de Metz (falecido em 500) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 9 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -6737,15 +6713,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "Public domain",
   },
   {
-    slug: "sao-augurius-of-tarragona",
-    nome: "São Augurius of Tarragona",
-    titulo: "Christian Hispano-Roman clergyman (died 259)",
+    slug: "sao-augurius-de-tarragona",
+    nome: "São Augurius de Tarragona",
+    titulo: "Santo venerado pela tradição cristã",
     data: "21/01",
     seculo: "3",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Christian Hispano-Roman clergyman (died 259) (200–259).",
+    resumo: "Santo venerado pela tradição cristã (200–259).",
     biografia:
-      "São Augurius of Tarragona (200–259) é apresentado(a) nas fontes biográficas consultadas como christian hispano-roman clergyman (died 259). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 21 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Augurius de Tarragona (200–259) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 21 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/1/19/MartirioFructuoso.JPG",
@@ -6762,13 +6738,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-ausano-di-milano",
     nome: "São Ausano di Milano",
-    titulo: "Bishop of Milan, Italy, 566-567",
+    titulo: "Bispo e pastor da Igreja",
     data: "03/09",
     seculo: "6",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Bishop of Milan, Italy, 566-567 (falecido em 567).",
+    resumo: "Bispo e pastor da Igreja (falecido em 567).",
     biografia:
-      "São Ausano di Milano (falecido em 567) é apresentado(a) nas fontes biográficas consultadas como bishop of milan, italy, 566-567. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 3 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Ausano di Milano (falecido em 567) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 3 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -6786,13 +6762,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-austromoine",
     nome: "São Austromoine",
-    titulo: "3rd century founding Bishop of Clermont",
+    titulo: "Bispo e pastor da Igreja",
     data: "01/11",
     seculo: "3",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "3rd century founding Bishop of Clermont (300–300).",
+    resumo: "Bispo e pastor da Igreja (300–300).",
     biografia:
-      "São Austromoine (300–300) é apresentado(a) nas fontes biográficas consultadas como 3rd century founding bishop of clermont. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 1 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Austromoine (300–300) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 1 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/2/21/Statue_saint_Austremoine.jpg",
@@ -6807,15 +6783,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "CC BY 2.5",
   },
   {
-    slug: "sao-aventinus-of-tours",
-    nome: "São Aventinus of Tours",
+    slug: "sao-aventinus-de-tours",
+    nome: "São Aventinus de Tours",
     titulo: "Hermit",
     data: "05/05",
     seculo: "12",
     padroeiro: "Testemunho cristão e intercessão dos santos",
     resumo: "Hermit (falecido em 1180).",
     biografia:
-      "São Aventinus of Tours (falecido em 1180) é apresentado(a) nas fontes biográficas consultadas como hermit. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 5 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Aventinus de Tours (falecido em 1180) é apresentado(a) nas fontes biográficas consultadas como hermit. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 5 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -6833,13 +6809,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-baha-ud-din-zakariya",
     nome: "São Baha-ud-din Zakariya",
-    titulo: "Sufi saint",
+    titulo: "Santo venerado pela tradição cristã",
     data: "01/01",
     seculo: "13",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Sufi saint (1170–1267).",
+    resumo: "Santo venerado pela tradição cristã (1170–1267).",
     biografia:
-      "São Baha-ud-din Zakariya (1170–1267) é apresentado(a) nas fontes biográficas consultadas como sufi saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Baha-ud-din Zakariya (1170–1267) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/0/0f/Bahauddin_Zakariya_Tomb_9.jpg",
@@ -6856,13 +6832,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-bahubali",
     nome: "São Bahubali",
-    titulo: "Jain deity/god/saint",
+    titulo: "Santo venerado pela tradição cristã",
     data: "01/01",
     seculo: "não determinado",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Jain deity/god/saint.",
+    resumo: "Santo venerado pela tradição cristã.",
     biografia:
-      "São Bahubali é apresentado(a) nas fontes biográficas consultadas como jain deity/god/saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data litúrgica a confirmar; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Bahubali é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data litúrgica a confirmar; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -6878,15 +6854,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "CC BY-SA 3.0",
   },
   {
-    slug: "sao-balderic-abbot-of-montfaucon",
-    nome: "São Balderic, Abbot of Montfaucon",
-    titulo: "Abbot of Montfaucon",
+    slug: "sao-balderic-abbot-de-montfaucon",
+    nome: "São Balderic, Abbot de Montfaucon",
+    titulo: "Monge e testemunha da vida consagrada",
     data: "16/10",
     seculo: "7",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Abbot of Montfaucon (580–630).",
+    resumo: "Monge e testemunha da vida consagrada (580–630).",
     biografia:
-      "São Balderic, Abbot of Montfaucon (580–630) é apresentado(a) nas fontes biográficas consultadas como abbot of montfaucon. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 16 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Balderic, Abbot de Montfaucon (580–630) é apresentado(a) nas fontes biográficas consultadas como monge e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 16 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/5/5f/Saint-Baudry.jpg",
@@ -6901,15 +6877,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "CC BY-SA 4.0",
   },
   {
-    slug: "sao-baldwin-of-rieti",
-    nome: "São Baldwin of Rieti",
-    titulo: "Benedictine abbot",
+    slug: "sao-baldwin-de-rieti",
+    nome: "São Baldwin de Rieti",
+    titulo: "Monge e testemunha da vida consagrada",
     data: "24/07",
     seculo: "12",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Benedictine abbot (1100–1140).",
+    resumo: "Monge e testemunha da vida consagrada (1100–1140).",
     biografia:
-      "São Baldwin of Rieti (1100–1140) é apresentado(a) nas fontes biográficas consultadas como benedictine abbot. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 24 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Baldwin de Rieti (1100–1140) é apresentado(a) nas fontes biográficas consultadas como monge e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 24 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -6927,15 +6903,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-barnabe",
     nome: "São Barnabé",
-    titulo:
-      "1st-century Cypriot Jewish apostle and missionary, Christian saint, companion of St. Paul and founder of the Cypriot Church",
+    titulo: "Missionário cristão",
     data: "11/06",
     seculo: "1",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo:
-      "1st-century Cypriot Jewish apostle and missionary, Christian saint, companion of St. Paul and founder of the Cypriot Church (1–61).",
+    resumo: "Missionário cristão (1–61).",
     biografia:
-      "São Barnabé (1–61) é apresentado(a) nas fontes biográficas consultadas como 1st-century cypriot jewish apostle and missionary, christian saint, companion of st. paul and founder of the cypriot church. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 11 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Barnabé (1–61) é apresentado(a) nas fontes biográficas consultadas como missionário cristão. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 11 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/0/0a/San_Barnaba.jpg",
@@ -6975,13 +6949,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-basiliscus",
     nome: "São Basiliscus",
-    titulo: "Early 4th century Greek martyr",
+    titulo: "Mártir cristão",
     data: "03/03",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Early 4th century Greek martyr (250–308).",
+    resumo: "Mártir cristão (250–308).",
     biografia:
-      "São Basiliscus (250–308) é apresentado(a) nas fontes biográficas consultadas como early 4th century greek martyr. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 3 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Basiliscus (250–308) é apresentado(a) nas fontes biográficas consultadas como mártir cristão. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 3 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -6999,13 +6973,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-benedito-jose-labre",
     nome: "São Benedito José Labre",
-    titulo: "French mendicant and saint",
+    titulo: "Santo venerado pela tradição cristã",
     data: "16/04",
     seculo: "18",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "French mendicant and saint (1748–1783).",
+    resumo: "Santo venerado pela tradição cristã (1748–1783).",
     biografia:
-      "São Benedito José Labre (1748–1783) é apresentado(a) nas fontes biográficas consultadas como french mendicant and saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 16 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Benedito José Labre (1748–1783) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 16 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -7021,15 +6995,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "Public domain",
   },
   {
-    slug: "sao-benignus-of-armagh",
-    nome: "São Benignus of Armagh",
-    titulo: "Roman Catholic archbishop and saint",
+    slug: "sao-benignus-de-armagh",
+    nome: "São Benignus de Armagh",
+    titulo: "Arcebispo e pastor da Igreja",
     data: "09/11",
     seculo: "5",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Roman Catholic archbishop and saint (falecido em 467).",
+    resumo: "Arcebispo e pastor da Igreja (falecido em 467).",
     biografia:
-      "São Benignus of Armagh (falecido em 467) é apresentado(a) nas fontes biográficas consultadas como roman catholic archbishop and saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 9 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Benignus de Armagh (falecido em 467) é apresentado(a) nas fontes biográficas consultadas como arcebispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 9 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -7047,13 +7021,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-benito-menni",
     nome: "São Benito Menni",
-    titulo: "Italian priest (1841–1914)",
+    titulo: "Sacerdote e servidor do povo de Deus",
     data: "24/04",
     seculo: "20",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Italian priest (1841–1914) (1841–1914).",
+    resumo: "Sacerdote e servidor do povo de Deus (1841–1914).",
     biografia:
-      "São Benito Menni (1841–1914) é apresentado(a) nas fontes biográficas consultadas como italian priest (1841–1914). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 24 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Benito Menni (1841–1914) é apresentado(a) nas fontes biográficas consultadas como sacerdote e servidor do povo de deus. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 24 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/f/f2/Benedeto-menni.jpg",
@@ -7118,13 +7092,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-bertin-de-sithiu",
     nome: "São Bertin de Sithiu",
-    titulo: "Abbot and saint",
+    titulo: "Monge e testemunha da vida consagrada",
     data: "05/09",
     seculo: "7",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Abbot and saint (615–698).",
+    resumo: "Monge e testemunha da vida consagrada (615–698).",
     biografia:
-      "São Bertin de Sithiu (615–698) é apresentado(a) nas fontes biográficas consultadas como abbot and saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 5 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Bertin de Sithiu (615–698) é apresentado(a) nas fontes biográficas consultadas como monge e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 5 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -7142,13 +7116,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-beuno",
     nome: "São Beuno",
-    titulo: "Abade galês do {{séc|VII}}, confessor, e santo",
+    titulo: "Monge e testemunha da vida consagrada",
     data: "20/04",
     seculo: "7",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Abade galês do {{séc|VII}}, confessor, e santo (570–640).",
+    resumo: "Monge e testemunha da vida consagrada (570–640).",
     biografia:
-      "São Beuno (570–640) é apresentado(a) nas fontes biográficas consultadas como abade galês do {{séc|vii}}, confessor, e santo. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 20 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Beuno (570–640) é apresentado(a) nas fontes biográficas consultadas como monge e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 20 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/b/be/Saint_Beuno_Window.png",
@@ -7165,13 +7139,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-bhai-bala",
     nome: "São Bhai Bala",
-    titulo: "Indian Sikh saint and Companion of Guru Nanak(1466–1544)",
+    titulo: "Santo venerado pela tradição cristã",
     data: "00/00",
     seculo: "16",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Indian Sikh saint and Companion of Guru Nanak(1466–1544) (1466–1544).",
+    resumo: "Santo venerado pela tradição cristã (1466–1544).",
     biografia:
-      "São Bhai Bala (1466–1544) é apresentado(a) nas fontes biográficas consultadas como indian sikh saint and companion of guru nanak(1466–1544). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Bhai Bala (1466–1544) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/8/82/Bala_with_Nanak.jpg",
@@ -7211,14 +7185,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-bhakti-prajnana-kesava-goswami",
     nome: "São Bhakti Prajnana Kesava Goswami",
-    titulo: "Gaudiya Vaishnava guru, founder of the Gaudiya Vedanta Samiti (1898-1968)",
+    titulo: "Fundador de obra religiosa",
     data: "06/10",
     seculo: "20",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo:
-      "Gaudiya Vaishnava guru, founder of the Gaudiya Vedanta Samiti (1898-1968) (1898–1968).",
+    resumo: "Fundador de obra religiosa (1898–1968).",
     biografia:
-      "São Bhakti Prajnana Kesava Goswami (1898–1968) é apresentado(a) nas fontes biográficas consultadas como gaudiya vaishnava guru, founder of the gaudiya vedanta samiti (1898-1968). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Bhakti Prajnana Kesava Goswami (1898–1968) é apresentado(a) nas fontes biográficas consultadas como fundador de obra religiosa. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -7236,13 +7209,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-bhakti-pramod-puri-goswami",
     nome: "São Bhakti Pramod Puri Goswami",
-    titulo: "Gaudiya Vaishnava guru, a founder of the Sri Gopinatha Gaudiya Math",
+    titulo: "Fundador de obra religiosa",
     data: "22/11",
     seculo: "20",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Gaudiya Vaishnava guru, a founder of the Sri Gopinatha Gaudiya Math (1898–1999).",
+    resumo: "Fundador de obra religiosa (1898–1999).",
     biografia:
-      "São Bhakti Pramod Puri Goswami (1898–1999) é apresentado(a) nas fontes biográficas consultadas como gaudiya vaishnava guru, a founder of the sri gopinatha gaudiya math. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Bhakti Pramod Puri Goswami (1898–1999) é apresentado(a) nas fontes biográficas consultadas como fundador de obra religiosa. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/2/25/Srila_puri_mj1.jpg",
@@ -7282,13 +7255,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-bhaktivedanta-swami-prabhupada",
     nome: "São Bhaktivedanta Swami Prabhupada",
-    titulo: "Mestre espiritual indiano e fundador da ISKCON",
+    titulo: "Fundador de obra religiosa",
     data: "01/01",
     seculo: "20",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Mestre espiritual indiano e fundador da ISKCON (1896–1977).",
+    resumo: "Fundador de obra religiosa (1896–1977).",
     biografia:
-      "São Bhaktivedanta Swami Prabhupada (1896–1977) é apresentado(a) nas fontes biográficas consultadas como mestre espiritual indiano e fundador da iskcon. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 1933; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Bhaktivedanta Swami Prabhupada (1896–1977) é apresentado(a) nas fontes biográficas consultadas como fundador de obra religiosa. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 1933; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -7306,14 +7279,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-boaventura-de-bagnoregio",
     nome: "São Boaventura de Bagnoregio",
-    titulo: "Franciscan, bishop, cardinal, Doctor of the Church, Catholic saint (1221–1274)",
+    titulo: "Bispo e pastor da Igreja",
     data: "15/07",
     seculo: "13",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo:
-      "Franciscan, bishop, cardinal, Doctor of the Church, Catholic saint (1221–1274) (1221–1274).",
+    resumo: "Bispo e pastor da Igreja (1221–1274).",
     biografia:
-      "São Boaventura de Bagnoregio (1221–1274) é apresentado(a) nas fontes biográficas consultadas como franciscan, bishop, cardinal, doctor of the church, catholic saint (1221–1274). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 15 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Boaventura de Bagnoregio (1221–1274) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 15 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -7331,13 +7303,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-bodfan",
     nome: "São Bodfan",
-    titulo: "Welsh saint",
+    titulo: "Santo venerado pela tradição cristã",
     data: "02/06",
     seculo: "não determinado",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Welsh saint.",
+    resumo: "Santo venerado pela tradição cristã.",
     biografia:
-      "São Bodfan é apresentado(a) nas fontes biográficas consultadas como welsh saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 2 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Bodfan é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 2 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -7355,13 +7327,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-brandao",
     nome: "São Brandão",
-    titulo: "Irish monastic saint",
+    titulo: "Santo venerado pela tradição cristã",
     data: "16/05",
     seculo: "6",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Irish monastic saint (486–577).",
+    resumo: "Santo venerado pela tradição cristã (486–577).",
     biografia:
-      "São Brandão (486–577) é apresentado(a) nas fontes biográficas consultadas como irish monastic saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 16 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Brandão (486–577) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 16 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -7379,13 +7351,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-brian-boru",
     nome: "São Brian Boru",
-    titulo: "Rei da Irlanda",
+    titulo: "Governante cristão e servidor dos necessitados",
     data: "12/03",
     seculo: "11",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Rei da Irlanda (941–1014).",
+    resumo: "Governante cristão e servidor dos necessitados (941–1014).",
     biografia:
-      "São Brian Boru (941–1014) é apresentado(a) nas fontes biográficas consultadas como rei da irlanda. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 12 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Brian Boru (941–1014) é apresentado(a) nas fontes biográficas consultadas como governante cristão e servidor dos necessitados. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 12 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -7403,13 +7375,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-brychan-brycheiniog",
     nome: "São Brychan Brycheiniog",
-    titulo: "King of Brycheiniog in South Wales",
+    titulo: "Governante cristão e servidor dos necessitados",
     data: "06/04",
     seculo: "5",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "King of Brycheiniog in South Wales (400–480).",
+    resumo: "Governante cristão e servidor dos necessitados (400–480).",
     biografia:
-      "São Brychan Brycheiniog (400–480) é apresentado(a) nas fontes biográficas consultadas como king of brycheiniog in south wales. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 6 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Brychan Brycheiniog (400–480) é apresentado(a) nas fontes biográficas consultadas como governante cristão e servidor dos necessitados. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 6 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -7427,13 +7399,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-brynach",
     nome: "São Brynach",
-    titulo: "Welsh saint",
+    titulo: "Santo venerado pela tradição cristã",
     data: "07/04",
     seculo: "6",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Welsh saint (falecido em 600).",
+    resumo: "Santo venerado pela tradição cristã (falecido em 600).",
     biografia:
-      "São Brynach (falecido em 600) é apresentado(a) nas fontes biográficas consultadas como welsh saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 7 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Brynach (falecido em 600) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 7 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -7451,13 +7423,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-budoc",
     nome: "São Budoc",
-    titulo: "Medieval bishop",
+    titulo: "Bispo e pastor da Igreja",
     data: "09/12",
     seculo: "6",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Medieval bishop (500–600).",
+    resumo: "Bispo e pastor da Igreja (500–600).",
     biografia:
-      "São Budoc (500–600) é apresentado(a) nas fontes biográficas consultadas como medieval bishop. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 9 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Budoc (500–600) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 9 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -7475,13 +7447,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-burcardo-de-worms",
     nome: "São Burcardo de Worms",
-    titulo: "Roman Catholic bishop",
+    titulo: "Bispo e pastor da Igreja",
     data: "20/08",
     seculo: "11",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Roman Catholic bishop (950–1025).",
+    resumo: "Bispo e pastor da Igreja (950–1025).",
     biografia:
-      "São Burcardo de Worms (950–1025) é apresentado(a) nas fontes biográficas consultadas como roman catholic bishop. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 20 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Burcardo de Worms (950–1025) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 20 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/c/ce/Worms_Doom_2005-05-27b.jpg",
@@ -7522,13 +7494,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-caedmon",
     nome: "São Caedmon",
-    titulo: "Ancient English poet",
+    titulo: "Autor cristão e testemunha de fé",
     data: "01/01",
     seculo: "7",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Ancient English poet (falecido em 680).",
+    resumo: "Autor cristão e testemunha de fé (falecido em 680).",
     biografia:
-      "São Caedmon (falecido em 680) é apresentado(a) nas fontes biográficas consultadas como ancient english poet. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Caedmon (falecido em 680) é apresentado(a) nas fontes biográficas consultadas como autor cristão e testemunha de fé. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -7546,13 +7518,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-callisto-caravario",
     nome: "São Callisto Caravario",
-    titulo: "Italian Roman Catholic missionary and saint (1903–1930)",
+    titulo: "Missionário cristão",
     data: "25/02",
     seculo: "20",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Italian Roman Catholic missionary and saint (1903–1930) (1903–1930).",
+    resumo: "Missionário cristão (1903–1930).",
     biografia:
-      "São Callisto Caravario (1903–1930) é apresentado(a) nas fontes biográficas consultadas como italian roman catholic missionary and saint (1903–1930). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 25 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Callisto Caravario (1903–1930) é apresentado(a) nas fontes biográficas consultadas como missionário cristão. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 25 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -7570,13 +7542,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-canuto-lavard",
     nome: "São Canuto Lavard",
-    titulo: "Príncipe da Dinamarca e Duque da Jutlândia do Norte",
+    titulo: "Governante cristão e servidor dos necessitados",
     data: "07/01",
     seculo: "12",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Príncipe da Dinamarca e Duque da Jutlândia do Norte (1096–1131).",
+    resumo: "Governante cristão e servidor dos necessitados (1096–1131).",
     biografia:
-      "São Canuto Lavard (1096–1131) é apresentado(a) nas fontes biográficas consultadas como príncipe da dinamarca e duque da jutlândia do norte. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 7 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Canuto Lavard (1096–1131) é apresentado(a) nas fontes biográficas consultadas como governante cristão e servidor dos necessitados. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 7 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/1/1a/Knut_Lavard.jpg",
@@ -7618,13 +7590,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-carlos-de-sezze",
     nome: "São Carlos de Sezze",
-    titulo: "Italian Franciscan friar and saint (1613-1670)",
+    titulo: "Santo venerado pela tradição cristã",
     data: "06/01",
     seculo: "17",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Italian Franciscan friar and saint (1613-1670) (1613–1670).",
+    resumo: "Santo venerado pela tradição cristã (1613–1670).",
     biografia:
-      "São Carlos de Sezze (1613–1670) é apresentado(a) nas fontes biográficas consultadas como italian franciscan friar and saint (1613-1670). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 6 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Carlos de Sezze (1613–1670) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 6 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -7642,13 +7614,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-carpo-de-beroea",
     nome: "São Carpo de Beroea",
-    titulo: "Greek priest",
+    titulo: "Sacerdote e servidor do povo de Deus",
     data: "13/10",
     seculo: "1",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Greek priest (50–100).",
+    resumo: "Sacerdote e servidor do povo de Deus (50–100).",
     biografia:
-      "São Carpo de Beroea (50–100) é apresentado(a) nas fontes biográficas consultadas como greek priest. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 13 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Carpo de Beroea (50–100) é apresentado(a) nas fontes biográficas consultadas como sacerdote e servidor do povo de deus. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 13 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Carpus%2C_bishop_of_Berroia.jpg",
@@ -7663,15 +7635,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "Public domain",
   },
   {
-    slug: "sao-carthage-the-elder",
-    nome: "São Carthage the Elder",
-    titulo: "Irish saint",
+    slug: "sao-carthage-o-velho",
+    nome: "São Carthage o Velho",
+    titulo: "Santo venerado pela tradição cristã",
     data: "05/03",
     seculo: "6",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Irish saint (500–600).",
+    resumo: "Santo venerado pela tradição cristã (500–600).",
     biografia:
-      "São Carthage the Elder (500–600) é apresentado(a) nas fontes biográficas consultadas como irish saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 5 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Carthage o Velho (500–600) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 5 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -7713,13 +7685,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-cassiano-de-imola",
     nome: "São Cassiano de Ímola",
-    titulo: "Bishop of Brescia",
+    titulo: "Bispo e pastor da Igreja",
     data: "13/08",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Bishop of Brescia (240–303).",
+    resumo: "Bispo e pastor da Igreja (240–303).",
     biografia:
-      "São Cassiano de Ímola (240–303) é apresentado(a) nas fontes biográficas consultadas como bishop of brescia. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 13 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Cassiano de Ímola (240–303) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 13 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/8/83/Cassianofimola.jpg",
@@ -7734,15 +7706,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "Public domain",
   },
   {
-    slug: "sao-cassius-of-clermont",
-    nome: "São Cassius of Clermont",
-    titulo: "Christian martyr",
+    slug: "sao-cassius-de-clermont",
+    nome: "São Cassius de Clermont",
+    titulo: "Mártir cristão",
     data: "15/05",
     seculo: "3",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Christian martyr (falecido em 264).",
+    resumo: "Mártir cristão (falecido em 264).",
     biografia:
-      "São Cassius of Clermont (falecido em 264) é apresentado(a) nas fontes biográficas consultadas como christian martyr. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 15 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Cassius de Clermont (falecido em 264) é apresentado(a) nas fontes biográficas consultadas como mártir cristão. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 15 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/f/f2/Cl-Fd_Saint-Eutrope_Cassius.jpg",
@@ -7759,13 +7731,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-castritian",
     nome: "São Castritian",
-    titulo: "Bishop of Milan",
+    titulo: "Bispo e pastor da Igreja",
     data: "01/12",
     seculo: "3",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Bishop of Milan (300–300).",
+    resumo: "Bispo e pastor da Igreja (300–300).",
     biografia:
-      "São Castritian (300–300) é apresentado(a) nas fontes biográficas consultadas como bishop of milan. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 1 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Castritian (300–300) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 1 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/a/aa/A4_Castriziano_47m.JPG",
@@ -7782,13 +7754,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-castulus",
     nome: "São Castulus",
-    titulo: "Saint",
+    titulo: "Santo venerado pela tradição cristã",
     data: "26/03",
     seculo: "3",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Saint (300–286).",
+    resumo: "Santo venerado pela tradição cristã (300–286).",
     biografia:
-      "São Castulus (300–286) é apresentado(a) nas fontes biográficas consultadas como saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 26 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Castulus (300–286) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 26 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -7804,15 +7776,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "Public domain",
   },
   {
-    slug: "sao-cephas-of-iconium",
-    nome: "São Cephas of Iconium",
-    titulo: "Orthodox saint",
+    slug: "sao-cephas-de-iconium",
+    nome: "São Cephas de Iconium",
+    titulo: "Santo venerado pela tradição cristã",
     data: "01/01",
     seculo: "não determinado",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Orthodox saint.",
+    resumo: "Santo venerado pela tradição cristã.",
     biografia:
-      "São Cephas of Iconium é apresentado(a) nas fontes biográficas consultadas como orthodox saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data litúrgica a confirmar; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Cephas de Iconium é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data litúrgica a confirmar; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -7830,13 +7802,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-ceraunus",
     nome: "São Ceraunus",
-    titulo: "French bishop",
+    titulo: "Bispo e pastor da Igreja",
     data: "27/09",
     seculo: "7",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "French bishop (550–621).",
+    resumo: "Bispo e pastor da Igreja (550–621).",
     biografia:
-      "São Ceraunus (550–621) é apresentado(a) nas fontes biográficas consultadas como french bishop. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 27 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Ceraunus (550–621) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 27 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/2/28/C%C3%A9ran_Landry.jpg",
@@ -7853,13 +7825,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-cesario-de-arles",
     nome: "São Cesário de Arles",
-    titulo: "Merovingian archbishop and saint",
+    titulo: "Arcebispo e pastor da Igreja",
     data: "27/08",
     seculo: "6",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Merovingian archbishop and saint (470–542).",
+    resumo: "Arcebispo e pastor da Igreja (470–542).",
     biografia:
-      "São Cesário de Arles (470–542) é apresentado(a) nas fontes biográficas consultadas como merovingian archbishop and saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 27 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Cesário de Arles (470–542) é apresentado(a) nas fontes biográficas consultadas como arcebispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 27 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -7877,13 +7849,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-cesario-de-nazianzo",
     nome: "São Cesário de Nazianzo",
-    titulo: "Physician and saint",
+    titulo: "Santo venerado pela tradição cristã",
     data: "25/02",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Physician and saint (330–368).",
+    resumo: "Santo venerado pela tradição cristã (330–368).",
     biografia:
-      "São Cesário de Nazianzo (330–368) é apresentado(a) nas fontes biográficas consultadas como physician and saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 25 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Cesário de Nazianzo (330–368) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 25 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/2/21/Cezary_z_Nazjanzu.jpg",
@@ -7900,13 +7872,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-charalambos",
     nome: "São Charalambos",
-    titulo: "Christian bishop and martyr (died 202)",
+    titulo: "Mártir cristão",
     data: "01/01",
     seculo: "3",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Christian bishop and martyr (died 202) (87–202).",
+    resumo: "Mártir cristão (87–202).",
     biografia:
-      "São Charalambos (87–202) é apresentado(a) nas fontes biográficas consultadas como christian bishop and martyr (died 202). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue February 10; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Charalambos (87–202) é apresentado(a) nas fontes biográficas consultadas como mártir cristão. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue February 10; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/f/f3/Ikonenkalender_1973-02.png",
@@ -7923,13 +7895,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-charles-garnier",
     nome: "São Charles Garnier",
-    titulo: "French Jesuit missionary (1606-1649)",
+    titulo: "Missionário cristão",
     data: "19/10",
     seculo: "17",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "French Jesuit missionary (1606-1649) (1606–1649).",
+    resumo: "Missionário cristão (1606–1649).",
     biografia:
-      "São Charles Garnier (1606–1649) é apresentado(a) nas fontes biográficas consultadas como french jesuit missionary (1606-1649). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 19 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Charles Garnier (1606–1649) é apresentado(a) nas fontes biográficas consultadas como missionário cristão. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 19 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/4/43/North_American_Martyrs.jpg",
@@ -7946,13 +7918,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-chiaffredo",
     nome: "São Chiaffredo",
-    titulo: "Patron saint of Saluzzo, Italy",
+    titulo: "Santo venerado pela tradição cristã",
     data: "07/09",
     seculo: "3",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Patron saint of Saluzzo, Italy (250–286).",
+    resumo: "Santo venerado pela tradição cristã (250–286).",
     biografia:
-      "São Chiaffredo (250–286) é apresentado(a) nas fontes biográficas consultadas como patron saint of saluzzo, italy. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 7 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Chiaffredo (250–286) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 7 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -7970,13 +7942,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-cipriano-de-kiev",
     nome: "São Cipriano de Kiev",
-    titulo: "Russian bishops",
+    titulo: "Bispo e pastor da Igreja",
     data: "16/09",
     seculo: "15",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Russian bishops (1336–1406).",
+    resumo: "Bispo e pastor da Igreja (1336–1406).",
     biografia:
-      "São Cipriano de Kiev (1336–1406) é apresentado(a) nas fontes biográficas consultadas como russian bishops. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 16 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Cipriano de Kiev (1336–1406) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 16 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Kyprian.jpg",
@@ -7993,13 +7965,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-clemente-de-alexandria",
     nome: "São Clemente de Alexandria",
-    titulo: "Christian theologian (c.150 – c.215)",
+    titulo: "Santo venerado pela tradição cristã",
     data: "04/12",
     seculo: "3",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Christian theologian (c.150 – c.215) (150–215).",
+    resumo: "Santo venerado pela tradição cristã (150–215).",
     biografia:
-      "São Clemente de Alexandria (150–215) é apresentado(a) nas fontes biográficas consultadas como christian theologian (c.150 – c.215). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 4 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Clemente de Alexandria (150–215) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 4 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/5/5c/Clement_alexandrin.jpg",
@@ -8016,13 +7988,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-colman-mac-duagh",
     nome: "São Colman mac Duagh",
-    titulo: "Irish saint",
+    titulo: "Santo venerado pela tradição cristã",
     data: "29/10",
     seculo: "7",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Irish saint (550–632).",
+    resumo: "Santo venerado pela tradição cristã (550–632).",
     biografia:
-      "São Colman mac Duagh (550–632) é apresentado(a) nas fontes biográficas consultadas como irish saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 29 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Colman mac Duagh (550–632) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 29 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -8038,15 +8010,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "CC BY-SA 4.0",
   },
   {
-    slug: "sao-coloman-of-stockerau",
-    nome: "São Coloman of Stockerau",
-    titulo: "Iro-Scottish monk patron saint of Austria until 1663",
+    slug: "sao-coloman-de-stockerau",
+    nome: "São Coloman de Stockerau",
+    titulo: "Monge e testemunha da vida consagrada",
     data: "17/07",
     seculo: "11",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Iro-Scottish monk patron saint of Austria until 1663 (1000–1012).",
+    resumo: "Monge e testemunha da vida consagrada (1000–1012).",
     biografia:
-      "São Coloman of Stockerau (1000–1012) é apresentado(a) nas fontes biográficas consultadas como iro-scottish monk patron saint of austria until 1663. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 17 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Coloman de Stockerau (1000–1012) é apresentado(a) nas fontes biográficas consultadas como monge e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 17 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Koloman-liesing.270.jpg",
@@ -8063,15 +8035,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-columba",
     nome: "São Columba",
-    titulo:
-      "6th‑century Gaelic Irish missionary monk, Christian saint, pioneer of Celtic Christianity in Scotland and “Apostle of the Picts”",
+    titulo: "Monge e testemunha da vida consagrada",
     data: "09/06",
     seculo: "6",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo:
-      "6th‑century Gaelic Irish missionary monk, Christian saint, pioneer of Celtic Christianity in Scotland and “Apostle of the Picts” (521–597).",
+    resumo: "Monge e testemunha da vida consagrada (521–597).",
     biografia:
-      "São Columba (521–597) é apresentado(a) nas fontes biográficas consultadas como 6th‑century gaelic irish missionary monk, christian saint, pioneer of celtic christianity in scotland and “apostle of the picts”. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 9 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Columba (521–597) é apresentado(a) nas fontes biográficas consultadas como monge e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 9 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -8113,13 +8083,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-constantino",
     nome: "São Constantino",
-    titulo: "Imperador romano (306–337) e primeiro a se converter ao cristianismo",
+    titulo: "Governante cristão e servidor dos necessitados",
     data: "21/05",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Imperador romano (306–337) e primeiro a se converter ao cristianismo (272–337).",
+    resumo: "Governante cristão e servidor dos necessitados (272–337).",
     biografia:
-      "São Constantino (272–337) é apresentado(a) nas fontes biográficas consultadas como imperador romano (306–337) e primeiro a se converter ao cristianismo. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 21 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Constantino (272–337) é apresentado(a) nas fontes biográficas consultadas como governante cristão e servidor dos necessitados. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 21 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -8137,13 +8107,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-constantino-xi-paleologo",
     nome: "São Constantino XI Paleólogo",
-    titulo: "Ultimo imperador bizantino (1449–1453)",
+    titulo: "Governante cristão e servidor dos necessitados",
     data: "29/05",
     seculo: "15",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Ultimo imperador bizantino (1449–1453) (1404–1453).",
+    resumo: "Governante cristão e servidor dos necessitados (1404–1453).",
     biografia:
-      "São Constantino XI Paleólogo (1404–1453) é apresentado(a) nas fontes biográficas consultadas como ultimo imperador bizantino (1449–1453). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Constantino XI Paleólogo (1404–1453) é apresentado(a) nas fontes biográficas consultadas como governante cristão e servidor dos necessitados. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -8161,13 +8131,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-corentin-de-quimper",
     nome: "São Corentin de Quimper",
-    titulo: "French bishop and saint",
+    titulo: "Bispo e pastor da Igreja",
     data: "12/12",
     seculo: "5",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "French bishop and saint (375–460).",
+    resumo: "Bispo e pastor da Igreja (375–460).",
     biografia:
-      "São Corentin de Quimper (375–460) é apresentado(a) nas fontes biográficas consultadas como french bishop and saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 12 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Corentin de Quimper (375–460) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 12 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/9/9f/Saint_Corentin.jpg",
@@ -8184,13 +8154,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-crispoldus",
     nome: "São Crispoldus",
-    titulo: "Italian bishop",
+    titulo: "Bispo e pastor da Igreja",
     data: "12/05",
     seculo: "1",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Italian bishop (falecido em 1).",
+    resumo: "Bispo e pastor da Igreja (falecido em 1).",
     biografia:
-      "São Crispoldus (falecido em 1) é apresentado(a) nas fontes biográficas consultadas como italian bishop. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 12 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Crispoldus (falecido em 1) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 12 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -8208,13 +8178,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-cristiolus",
     nome: "São Cristiolus",
-    titulo: "Welsh 6th century saint",
+    titulo: "Santo venerado pela tradição cristã",
     data: "03/12",
     seculo: "6",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Welsh 6th century saint.",
+    resumo: "Santo venerado pela tradição cristã.",
     biografia:
-      "São Cristiolus é apresentado(a) nas fontes biográficas consultadas como welsh 6th century saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 3 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Cristiolus é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 3 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -8232,13 +8202,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-crisogono",
     nome: "São Crisógono",
-    titulo: "Martyr and saint, bishop of Aquileia before 302/304",
+    titulo: "Mártir cristão",
     data: "24/11",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Martyr and saint, bishop of Aquileia before 302/304 (250–303).",
+    resumo: "Mártir cristão (250–303).",
     biografia:
-      "São Crisógono (250–303) é apresentado(a) nas fontes biográficas consultadas como martyr and saint, bishop of aquileia before 302/304. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 24 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Crisógono (250–303) é apresentado(a) nas fontes biográficas consultadas como mártir cristão. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 24 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -8254,15 +8224,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "Public domain",
   },
   {
-    slug: "sao-cyprian-of-toulon",
-    nome: "São Cyprian of Toulon",
-    titulo: "Bishop of Toulon",
+    slug: "sao-cyprian-de-toulon",
+    nome: "São Cyprian de Toulon",
+    titulo: "Bispo e pastor da Igreja",
     data: "03/10",
     seculo: "6",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Bishop of Toulon (476–546).",
+    resumo: "Bispo e pastor da Igreja (476–546).",
     biografia:
-      "São Cyprian of Toulon (476–546) é apresentado(a) nas fontes biográficas consultadas como bishop of toulon. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 3 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Cyprian de Toulon (476–546) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 3 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -8280,13 +8250,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-candido",
     nome: "São Cândido",
-    titulo: "Egyptian saint",
+    titulo: "Santo venerado pela tradição cristã",
     data: "22/09",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Egyptian saint (300–303).",
+    resumo: "Santo venerado pela tradição cristã (300–303).",
     biografia:
-      "São Cândido (300–303) é apresentado(a) nas fontes biográficas consultadas como egyptian saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 22 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Cândido (300–303) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 22 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -8304,13 +8274,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-cesar-de-dirraquio",
     nome: "São César de Dirráquio",
-    titulo: "1st–century Christian Bishop in the Roman Empire",
+    titulo: "Bispo e pastor da Igreja",
     data: "09/12",
     seculo: "não determinado",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "1st–century Christian Bishop in the Roman Empire.",
+    resumo: "Bispo e pastor da Igreja.",
     biografia:
-      "São César de Dirráquio é apresentado(a) nas fontes biográficas consultadas como 1st–century christian bishop in the roman empire. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 9 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São César de Dirráquio é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 9 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -8328,13 +8298,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-dabheog",
     nome: "São Dabheog",
-    titulo: "Irish saint",
+    titulo: "Santo venerado pela tradição cristã",
     data: "16/12",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Irish saint.",
+    resumo: "Santo venerado pela tradição cristã.",
     biografia:
-      "São Dabheog é apresentado(a) nas fontes biográficas consultadas como irish saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 16 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Dabheog é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 16 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -8375,13 +8345,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-davi-iv-da-georgia",
     nome: "São Davi IV da Geórgia",
-    titulo: "King of Georgia (1073-1125)",
+    titulo: "Governante cristão e servidor dos necessitados",
     data: "24/01",
     seculo: "12",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "King of Georgia (1073-1125) (1073–1125).",
+    resumo: "Governante cristão e servidor dos necessitados (1073–1125).",
     biografia:
-      "São Davi IV da Geórgia (1073–1125) é apresentado(a) nas fontes biográficas consultadas como king of georgia (1073-1125). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Davi IV da Geórgia (1073–1125) é apresentado(a) nas fontes biográficas consultadas como governante cristão e servidor dos necessitados. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -8400,13 +8370,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-david",
     nome: "São David",
-    titulo: "Rei de Israel e Judá",
+    titulo: "Governante cristão e servidor dos necessitados",
     data: "29/12",
     seculo: "10",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Rei de Israel e Judá (1040–969).",
+    resumo: "Governante cristão e servidor dos necessitados (1040–969).",
     biografia:
-      "São David (1040–969) é apresentado(a) nas fontes biográficas consultadas como rei de israel e judá. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 29 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São David (1040–969) é apresentado(a) nas fontes biográficas consultadas como governante cristão e servidor dos necessitados. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 29 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -8419,6 +8389,29 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
       },
     ],
     creditoImagem: "Gerard van Honthorst",
+    licencaImagem: "Public domain",
+  },
+  {
+    slug: "sao-david-de-yaroslavl",
+    nome: "São David de Yaroslavl",
+    titulo: "1284 - 1321",
+    data: "01/01",
+    seculo: "14",
+    padroeiro: "Testemunho cristão e intercessão dos santos",
+    resumo: "1284 - 1321 (falecido em 1321).",
+    biografia:
+      "São David de Yaroslavl (falecido em 1321) é apresentado(a) nas fontes biográficas consultadas como 1284 - 1321. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+    virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
+    frase: "",
+    imagem: "https://upload.wikimedia.org/wikipedia/commons/4/45/David_of_yaroslavl.jpg",
+    fontes: [
+      { nome: "Wikidata", url: "https://www.wikidata.org/wiki/Q4153586" },
+      {
+        nome: "Wikimedia Commons",
+        url: "https://upload.wikimedia.org/wikipedia/commons/4/45/David_of_yaroslavl.jpg",
+      },
+    ],
+    creditoImagem: "Unknown author",
     licencaImagem: "Public domain",
   },
   {
@@ -8448,13 +8441,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-david-i-da-escocia",
     nome: "São David I da Escócia",
-    titulo: "Rei dos escoceses, príncipe dos cúmbrios",
+    titulo: "Governante cristão e servidor dos necessitados",
     data: "11/01",
     seculo: "12",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Rei dos escoceses, príncipe dos cúmbrios (1084–1153).",
+    resumo: "Governante cristão e servidor dos necessitados (1084–1153).",
     biografia:
-      "São David I da Escócia (1084–1153) é apresentado(a) nas fontes biográficas consultadas como rei dos escoceses, príncipe dos cúmbrios. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 11 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São David I da Escócia (1084–1153) é apresentado(a) nas fontes biográficas consultadas como governante cristão e servidor dos necessitados. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 11 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -8464,29 +8457,6 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
       {
         nome: "Wikimedia Commons",
         url: "https://upload.wikimedia.org/wikipedia/commons/c/cc/Malcolm_IV%2C_King_of_Scotland%2C_charter_to_Kelso_Abbey%2C_1159%2C_initial_%28crop_David_I%29.jpg",
-      },
-    ],
-    creditoImagem: "Unknown author",
-    licencaImagem: "Public domain",
-  },
-  {
-    slug: "sao-david-of-yaroslavl",
-    nome: "São David of Yaroslavl",
-    titulo: "1284 - 1321",
-    data: "01/01",
-    seculo: "14",
-    padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "1284 - 1321 (falecido em 1321).",
-    biografia:
-      "São David of Yaroslavl (falecido em 1321) é apresentado(a) nas fontes biográficas consultadas como 1284 - 1321. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
-    virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
-    frase: "",
-    imagem: "https://upload.wikimedia.org/wikipedia/commons/4/45/David_of_yaroslavl.jpg",
-    fontes: [
-      { nome: "Wikidata", url: "https://www.wikidata.org/wiki/Q4153586" },
-      {
-        nome: "Wikimedia Commons",
-        url: "https://upload.wikimedia.org/wikipedia/commons/4/45/David_of_yaroslavl.jpg",
       },
     ],
     creditoImagem: "Unknown author",
@@ -8518,13 +8488,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-demetrio-de-tessalonica",
     nome: "São Demétrio de Tessalónica",
-    titulo: "Christian martyr (died 306)",
+    titulo: "Mártir cristão",
     data: "26/10",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Christian martyr (died 306) (300–306).",
+    resumo: "Mártir cristão (300–306).",
     biografia:
-      "São Demétrio de Tessalónica (300–306) é apresentado(a) nas fontes biográficas consultadas como christian martyr (died 306). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 26 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Demétrio de Tessalónica (300–306) é apresentado(a) nas fontes biográficas consultadas como mártir cristão. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 26 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/a/a5/Dimitirios_icon.jpg",
@@ -8541,13 +8511,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-demetrio-ii-da-georgia",
     nome: "São Demétrio II da Geórgia",
-    titulo: "Ex rei da Geórgia",
+    titulo: "Governante cristão e servidor dos necessitados",
     data: "12/03",
     seculo: "13",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Ex rei da Geórgia (1259–1289).",
+    resumo: "Governante cristão e servidor dos necessitados (1259–1289).",
     biografia:
-      "São Demétrio II da Geórgia (1259–1289) é apresentado(a) nas fontes biográficas consultadas como ex rei da geórgia. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 12 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Demétrio II da Geórgia (1259–1289) é apresentado(a) nas fontes biográficas consultadas como governante cristão e servidor dos necessitados. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 12 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/b/b4/Georgian_fresco_23.jpg",
@@ -8562,15 +8532,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "CC BY-SA 2.0",
   },
   {
-    slug: "sao-dentelin-of-mons",
-    nome: "São Dentelin of Mons",
-    titulo: "Frankish saint",
+    slug: "sao-dentelin-de-mons",
+    nome: "São Dentelin de Mons",
+    titulo: "Santo venerado pela tradição cristã",
     data: "16/03",
     seculo: "7",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Frankish saint (700–700).",
+    resumo: "Santo venerado pela tradição cristã (700–700).",
     biografia:
-      "São Dentelin of Mons (700–700) é apresentado(a) nas fontes biográficas consultadas como frankish saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 16 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Dentelin de Mons (700–700) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 16 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/3/32/Waltraud_Waudru.jpg",
@@ -8611,13 +8581,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-dikran-chokurian",
     nome: "São Dikran Chökürian",
-    titulo: "Armenian writer (1884-1915)",
+    titulo: "Autor cristão e testemunha de fé",
     data: "01/01",
     seculo: "20",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Armenian writer (1884-1915) (1884–1915).",
+    resumo: "Autor cristão e testemunha de fé (1884–1915).",
     biografia:
-      "São Dikran Chökürian (1884–1915) é apresentado(a) nas fontes biográficas consultadas como armenian writer (1884-1915). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Dikran Chökürian (1884–1915) é apresentado(a) nas fontes biográficas consultadas como autor cristão e testemunha de fé. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/5/53/Dikran_Ch%C3%B6k%C3%BCrian.jpg",
@@ -8634,13 +8604,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-diogo-kisai",
     nome: "São Diogo Kisai",
-    titulo: "One of the Twenty-six Martyrs of Japan",
+    titulo: "Mártir cristão",
     data: "06/02",
     seculo: "16",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "One of the Twenty-six Martyrs of Japan (1533–1597).",
+    resumo: "Mártir cristão (1533–1597).",
     biografia:
-      "São Diogo Kisai (1533–1597) é apresentado(a) nas fontes biográficas consultadas como one of the twenty-six martyrs of japan. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 6 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Diogo Kisai (1533–1597) é apresentado(a) nas fontes biográficas consultadas como mártir cristão. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 6 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -8681,13 +8651,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-dionisio-exiguo",
     nome: "São Dionísio Exíguo",
-    titulo: "Santo bizantino",
+    titulo: "Santo venerado pela tradição cristã",
     data: "01/09",
     seculo: "6",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Santo bizantino (475–550).",
+    resumo: "Santo venerado pela tradição cristã (475–550).",
     biografia:
-      "São Dionísio Exíguo (475–550) é apresentado(a) nas fontes biográficas consultadas como santo bizantino. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 1 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Dionísio Exíguo (475–550) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 1 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/5/5f/Dionysius_Exiguus.jpg",
@@ -8704,13 +8674,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-domecio-da-persia",
     nome: "São Domécio da Pérsia",
-    titulo: "Christian martyr and saint",
+    titulo: "Mártir cristão",
     data: "07/08",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Christian martyr and saint (falecido em 363).",
+    resumo: "Mártir cristão (falecido em 363).",
     biografia:
-      "São Domécio da Pérsia (falecido em 363) é apresentado(a) nas fontes biográficas consultadas como christian martyr and saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 7 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Domécio da Pérsia (falecido em 363) é apresentado(a) nas fontes biográficas consultadas como mártir cristão. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 7 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/c/c5/Menologion_of_Basil_031.jpg",
@@ -8726,15 +8696,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "Public domain",
   },
   {
-    slug: "sao-donatus-of-arezzo",
-    nome: "São Donatus of Arezzo",
-    titulo: "Bishop of Arezzo",
+    slug: "sao-donatus-de-arezzo",
+    nome: "São Donatus de Arezzo",
+    titulo: "Bispo e pastor da Igreja",
     data: "07/08",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Bishop of Arezzo (350–362).",
+    resumo: "Bispo e pastor da Igreja (350–362).",
     biografia:
-      "São Donatus of Arezzo (350–362) é apresentado(a) nas fontes biográficas consultadas como bishop of arezzo. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 7 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Donatus de Arezzo (350–362) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 7 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/b/b9/Filippino_lippi%2C_san_donato.JPG",
@@ -8751,13 +8721,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-didimo-o-cego",
     nome: "São Dídimo, o Cego",
-    titulo: "4th century Alexandrian Christian theologian",
+    titulo: "Santo venerado pela tradição cristã",
     data: "18/10",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "4th century Alexandrian Christian theologian (313–398).",
+    resumo: "Santo venerado pela tradição cristã (313–398).",
     biografia:
-      "São Dídimo, o Cego (313–398) é apresentado(a) nas fontes biográficas consultadas como 4th century alexandrian christian theologian. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 18 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Dídimo, o Cego (313–398) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 18 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/4/46/Didymus_the_blind.jpg",
@@ -8774,13 +8744,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-ebontius",
     nome: "São Ebontius",
-    titulo: "Roman Catholic bishop of Roda-Barbastro and saint (1097-1104)",
+    titulo: "Bispo e pastor da Igreja",
     data: "12/09",
     seculo: "12",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Roman Catholic bishop of Roda-Barbastro and saint (1097-1104) (1050–1104).",
+    resumo: "Bispo e pastor da Igreja (1050–1104).",
     biografia:
-      "São Ebontius (1050–1104) é apresentado(a) nas fontes biográficas consultadas como roman catholic bishop of roda-barbastro and saint (1097-1104). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 12 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Ebontius (1050–1104) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 12 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/0/06/Poncio_de_Roda_%28cropped%29.jpg",
@@ -8797,13 +8767,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-ecclesius",
     nome: "São Ecclesius",
-    titulo: "Italian bishop",
+    titulo: "Bispo e pastor da Igreja",
     data: "27/07",
     seculo: "6",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Italian bishop (falecido em 532).",
+    resumo: "Bispo e pastor da Igreja (falecido em 532).",
     biografia:
-      "São Ecclesius (falecido em 532) é apresentado(a) nas fontes biográficas consultadas como italian bishop. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 27 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Ecclesius (falecido em 532) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 27 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -8821,13 +8791,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-edgar-de-inglaterra",
     nome: "São Edgar de Inglaterra",
-    titulo: "5° rei da Inglaterra da Casa de Wessex",
+    titulo: "Governante cristão e servidor dos necessitados",
     data: "08/07",
     seculo: "10",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "5° rei da Inglaterra da Casa de Wessex (943–975).",
+    resumo: "Governante cristão e servidor dos necessitados (943–975).",
     biografia:
-      "São Edgar de Inglaterra (943–975) é apresentado(a) nas fontes biográficas consultadas como 5° rei da inglaterra da casa de wessex. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 8 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Edgar de Inglaterra (943–975) é apresentado(a) nas fontes biográficas consultadas como governante cristão e servidor dos necessitados. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 8 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -8845,13 +8815,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-edmund-gennings",
     nome: "São Edmund Gennings",
-    titulo: "English martyr",
+    titulo: "Mártir cristão",
     data: "10/12",
     seculo: "16",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "English martyr (1567–1591).",
+    resumo: "Mártir cristão (1567–1591).",
     biografia:
-      "São Edmund Gennings (1567–1591) é apresentado(a) nas fontes biográficas consultadas como english martyr. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 10 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Edmund Gennings (1567–1591) é apresentado(a) nas fontes biográficas consultadas como mártir cristão. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 10 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/b/b5/Edmund_Gennings.jpg",
@@ -8868,13 +8838,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-edmundo-da-anglia-oriental",
     nome: "São Edmundo da Ânglia Oriental",
-    titulo: "King of East Anglia from about 855 until 869",
+    titulo: "Governante cristão e servidor dos necessitados",
     data: "20/11",
     seculo: "9",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "King of East Anglia from about 855 until 869 (841–869).",
+    resumo: "Governante cristão e servidor dos necessitados (841–869).",
     biografia:
-      "São Edmundo da Ânglia Oriental (841–869) é apresentado(a) nas fontes biográficas consultadas como king of east anglia from about 855 until 869. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 20 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Edmundo da Ânglia Oriental (841–869) é apresentado(a) nas fontes biográficas consultadas como governante cristão e servidor dos necessitados. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 20 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -8892,13 +8862,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-edmundo-i-de-inglaterra",
     nome: "São Edmundo I de Inglaterra",
-    titulo: "2° rei da Inglaterra da Casa de Wessex",
+    titulo: "Governante cristão e servidor dos necessitados",
     data: "26/05",
     seculo: "10",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "2° rei da Inglaterra da Casa de Wessex (920–946).",
+    resumo: "Governante cristão e servidor dos necessitados (920–946).",
     biografia:
-      "São Edmundo I de Inglaterra (920–946) é apresentado(a) nas fontes biográficas consultadas como 2° rei da inglaterra da casa de wessex. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Edmundo I de Inglaterra (920–946) é apresentado(a) nas fontes biográficas consultadas como governante cristão e servidor dos necessitados. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/3/37/Edmund_I_-_MS_Royal_14_B_V.jpg",
@@ -8913,15 +8883,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "Public domain",
   },
   {
-    slug: "sao-egidio-maria-of-saint-joseph",
-    nome: "São Egidio Maria of Saint Joseph",
-    titulo: "Roman Catholic saint",
+    slug: "sao-egidio-maria-de-saint-joseph",
+    nome: "São Egidio Maria de Saint Joseph",
+    titulo: "Santo venerado pela tradição cristã",
     data: "07/02",
     seculo: "19",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Roman Catholic saint (1729–1812).",
+    resumo: "Santo venerado pela tradição cristã (1729–1812).",
     biografia:
-      "São Egidio Maria of Saint Joseph (1729–1812) é apresentado(a) nas fontes biográficas consultadas como roman catholic saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 7 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Egidio Maria de Saint Joseph (1729–1812) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 7 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -8939,13 +8909,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-eleutherius-and-antia",
     nome: "São Eleutherius and Antia",
-    titulo: "Italian bishop and saint",
+    titulo: "Bispo e pastor da Igreja",
     data: "18/04",
     seculo: "não determinado",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Italian bishop and saint.",
+    resumo: "Bispo e pastor da Igreja.",
     biografia:
-      "São Eleutherius and Antia é apresentado(a) nas fontes biográficas consultadas como italian bishop and saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 18 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Eleutherius and Antia é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 18 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -8962,15 +8932,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "Public domain",
   },
   {
-    slug: "sao-eleutherius-of-tournai",
-    nome: "São Eleutherius of Tournai",
-    titulo: "Frankish bishop (456-532)",
+    slug: "sao-eleutherius-de-tournai",
+    nome: "São Eleutherius de Tournai",
+    titulo: "Bispo e pastor da Igreja",
     data: "20/02",
     seculo: "6",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Frankish bishop (456-532) (456–532).",
+    resumo: "Bispo e pastor da Igreja (456–532).",
     biografia:
-      "São Eleutherius of Tournai (456–532) é apresentado(a) nas fontes biográficas consultadas como frankish bishop (456-532). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 20 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Eleutherius de Tournai (456–532) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 20 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -8988,13 +8958,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-elfrico-de-abingdon",
     nome: "São Elfrico de Abingdon",
-    titulo: "Archbishop of Canterbury in the late 10th century",
+    titulo: "Arcebispo e pastor da Igreja",
     data: "16/11",
     seculo: "11",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Archbishop of Canterbury in the late 10th century (901–1005).",
+    resumo: "Arcebispo e pastor da Igreja (901–1005).",
     biografia:
-      "São Elfrico de Abingdon (901–1005) é apresentado(a) nas fontes biográficas consultadas como archbishop of canterbury in the late 10th century. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 16 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Elfrico de Abingdon (901–1005) é apresentado(a) nas fontes biográficas consultadas como arcebispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 16 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/a/ab/Abingdon_Abbey%2C_geograph.jpg",
@@ -9035,13 +9005,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-elias-de-enna",
     nome: "São Elias de Enna",
-    titulo: "Italian saint",
+    titulo: "Santo venerado pela tradição cristã",
     data: "17/08",
     seculo: "10",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Italian saint (822–903).",
+    resumo: "Santo venerado pela tradição cristã (822–903).",
     biografia:
-      "São Elias de Enna (822–903) é apresentado(a) nas fontes biográficas consultadas como italian saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 17 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Elias de Enna (822–903) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 17 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/1/17/Ss.Elia_e_Filaretu.jpg",
@@ -9058,15 +9028,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-elisei-sumsky",
     nome: "São Elisei Sumsky",
-    titulo:
-      "Solovetsky wonderworker - Russian Orthodox saint, reverend. Lived in the C.E.15th century in the village of Suma (now Sumsky Posad). He was tonsured at the Solovetsky Monastery",
+    titulo: "Santo venerado pela tradição cristã",
     data: "27/06",
     seculo: "não determinado",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo:
-      "Solovetsky wonderworker - Russian Orthodox saint, reverend. Lived in the C.E.15th century in the village of Suma (now Sumsky Posad). He was tonsured at the Solovetsky Monastery.",
+    resumo: "Santo venerado pela tradição cristã.",
     biografia:
-      "São Elisei Sumsky é apresentado(a) nas fontes biográficas consultadas como solovetsky wonderworker - russian orthodox saint, reverend. lived in the c.e.15th century in the village of suma (now sumsky posad). he was tonsured at the solovetsky monastery. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 27 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Elisei Sumsky é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 27 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -9107,13 +9075,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-eliseu-da-albania",
     nome: "São Eliseu da Albânia",
-    titulo: "Albanian saint",
+    titulo: "Santo venerado pela tradição cristã",
     data: "20/07",
     seculo: "1",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Albanian saint (1–1).",
+    resumo: "Santo venerado pela tradição cristã (1–1).",
     biografia:
-      "São Eliseu da Albânia (1–1) é apresentado(a) nas fontes biográficas consultadas como albanian saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 20 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Eliseu da Albânia (1–1) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 20 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/9/9b/St._Eeliseus.jpg",
@@ -9130,13 +9098,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-elredo-de-rievaulx",
     nome: "São Elredo de Rievaulx",
-    titulo: "Escritor inglês, abade de Rievaulx de 1147 até sua morte, e santo",
+    titulo: "Monge e testemunha da vida consagrada",
     data: "12/01",
     seculo: "12",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Escritor inglês, abade de Rievaulx de 1147 até sua morte, e santo (1110–1167).",
+    resumo: "Monge e testemunha da vida consagrada (1110–1167).",
     biografia:
-      "São Elredo de Rievaulx (1110–1167) é apresentado(a) nas fontes biográficas consultadas como escritor inglês, abade de rievaulx de 1147 até sua morte, e santo. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 12 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Elredo de Rievaulx (1110–1167) é apresentado(a) nas fontes biográficas consultadas como monge e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 12 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/3/32/Saint.Aelred.jpg",
@@ -9153,13 +9121,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-epifanio-de-pavia",
     nome: "São Epifânio de Pavia",
-    titulo: "Bishop of Pavia, saint",
+    titulo: "Bispo e pastor da Igreja",
     data: "21/01",
     seculo: "5",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Bishop of Pavia, saint (438–496).",
+    resumo: "Bispo e pastor da Igreja (438–496).",
     biografia:
-      "São Epifânio de Pavia (438–496) é apresentado(a) nas fontes biográficas consultadas como bishop of pavia, saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 21 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Epifânio de Pavia (438–496) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 21 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -9177,13 +9145,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-equitius",
     nome: "São Equitius",
-    titulo: "6th-century Italian saint",
+    titulo: "Santo venerado pela tradição cristã",
     data: "11/08",
     seculo: "6",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "6th-century Italian saint (401–570).",
+    resumo: "Santo venerado pela tradição cristã (401–570).",
     biografia:
-      "São Equitius (401–570) é apresentado(a) nas fontes biográficas consultadas como 6th-century italian saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 11 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Equitius (401–570) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 11 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/f/f9/L%27Aquila_gonfalone.jpg",
@@ -9200,13 +9168,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-erkembode",
     nome: "São Erkembode",
-    titulo: "Irish priest",
+    titulo: "Sacerdote e servidor do povo de Deus",
     data: "12/04",
     seculo: "8",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Irish priest (falecido em 742).",
+    resumo: "Sacerdote e servidor do povo de Deus (falecido em 742).",
     biografia:
-      "São Erkembode (falecido em 742) é apresentado(a) nas fontes biográficas consultadas como irish priest. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 12 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Erkembode (falecido em 742) é apresentado(a) nas fontes biográficas consultadas como sacerdote e servidor do povo de deus. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 12 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -9224,13 +9192,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-erukhan",
     nome: "São Erukhan",
-    titulo: "Armenian writer",
+    titulo: "Autor cristão e testemunha de fé",
     data: "01/01",
     seculo: "20",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Armenian writer (1870–1915).",
+    resumo: "Autor cristão e testemunha de fé (1870–1915).",
     biografia:
-      "São Erukhan (1870–1915) é apresentado(a) nas fontes biográficas consultadas como armenian writer. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Erukhan (1870–1915) é apresentado(a) nas fontes biográficas consultadas como autor cristão e testemunha de fé. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/e/ea/Erukhan_photograph.jpg",
@@ -9247,13 +9215,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-estanislau-casimiritano",
     nome: "São Estanislau Casimiritano",
-    titulo: "Polish canon regular and saint",
+    titulo: "Santo venerado pela tradição cristã",
     data: "03/05",
     seculo: "15",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Polish canon regular and saint (1433–1489).",
+    resumo: "Santo venerado pela tradição cristã (1433–1489).",
     biografia:
-      "São Estanislau Casimiritano (1433–1489) é apresentado(a) nas fontes biográficas consultadas como polish canon regular and saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 3 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Estanislau Casimiritano (1433–1489) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 3 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -9271,14 +9239,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-estanislau-de-szczepanow",
     nome: "São Estanislau de Szczepanów",
-    titulo: "Polish Catholic bishop, saint, the principal patron of Poland (1030-1079)",
+    titulo: "Bispo e pastor da Igreja",
     data: "11/04",
     seculo: "11",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo:
-      "Polish Catholic bishop, saint, the principal patron of Poland (1030-1079) (1030–1079).",
+    resumo: "Bispo e pastor da Igreja (1030–1079).",
     biografia:
-      "São Estanislau de Szczepanów (1030–1079) é apresentado(a) nas fontes biográficas consultadas como polish catholic bishop, saint, the principal patron of poland (1030-1079). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 11 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Estanislau de Szczepanów (1030–1079) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 11 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -9296,13 +9263,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-estevao-decanski",
     nome: "São Estêvão Decanski",
-    titulo: "King of Serbia from 1322 to 1331",
+    titulo: "Governante cristão e servidor dos necessitados",
     data: "11/11",
     seculo: "14",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "King of Serbia from 1322 to 1331 (1276–1331).",
+    resumo: "Governante cristão e servidor dos necessitados (1276–1331).",
     biografia:
-      "São Estêvão Decanski (1276–1331) é apresentado(a) nas fontes biográficas consultadas como king of serbia from 1322 to 1331. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 11 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Estêvão Decanski (1276–1331) é apresentado(a) nas fontes biográficas consultadas como governante cristão e servidor dos necessitados. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 11 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/f/f6/Stefan_Decanski_ktitor.jpg",
@@ -9319,13 +9286,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-estevao-dragutino",
     nome: "São Estêvão Dragutino",
-    titulo: "Rei da Sérvia",
+    titulo: "Governante cristão e servidor dos necessitados",
     data: "12/03",
     seculo: "14",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Rei da Sérvia (1251–1316).",
+    resumo: "Governante cristão e servidor dos necessitados (1251–1316).",
     biografia:
-      "São Estêvão Dragutino (1251–1316) é apresentado(a) nas fontes biográficas consultadas como rei da sérvia. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Estêvão Dragutino (1251–1316) é apresentado(a) nas fontes biográficas consultadas como governante cristão e servidor dos necessitados. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -9343,13 +9310,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-estevao-i-da-hungria",
     nome: "São Estêvão I da Hungria",
-    titulo: "Rei da Hungria e Santo católico",
+    titulo: "Governante cristão e servidor dos necessitados",
     data: "20/08",
     seculo: "11",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Rei da Hungria e Santo católico (969–1038).",
+    resumo: "Governante cristão e servidor dos necessitados (969–1038).",
     biografia:
-      "São Estêvão I da Hungria (969–1038) é apresentado(a) nas fontes biográficas consultadas como rei da hungria e santo católico. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 20 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Estêvão I da Hungria (969–1038) é apresentado(a) nas fontes biográficas consultadas como governante cristão e servidor dos necessitados. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 20 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/5/58/StefanIHongarije.jpeg",
@@ -9366,13 +9333,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-estevao-i-da-servia",
     nome: "São Estêvão I da Sérvia",
-    titulo: "King of Serbia",
+    titulo: "Governante cristão e servidor dos necessitados",
     data: "24/09",
     seculo: "13",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "King of Serbia (1165–1227).",
+    resumo: "Governante cristão e servidor dos necessitados (1165–1227).",
     biografia:
-      "São Estêvão I da Sérvia (1165–1227) é apresentado(a) nas fontes biográficas consultadas como king of serbia. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Estêvão I da Sérvia (1165–1227) é apresentado(a) nas fontes biográficas consultadas como governante cristão e servidor dos necessitados. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -9390,13 +9357,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-eucharius",
     nome: "São Eucharius",
-    titulo: "Bishop of Trier",
+    titulo: "Bispo e pastor da Igreja",
     data: "08/12",
     seculo: "3",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Bishop of Trier (101–300).",
+    resumo: "Bispo e pastor da Igreja (101–300).",
     biografia:
-      "São Eucharius (101–300) é apresentado(a) nas fontes biográficas consultadas como bishop of trier. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 8 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Eucharius (101–300) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 8 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/2/28/Trier_Siegel.jpg",
@@ -9413,13 +9380,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-euphebius",
     nome: "São Euphebius",
-    titulo: "Bishop of Naples",
+    titulo: "Bispo e pastor da Igreja",
     data: "23/05",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Bishop of Naples (201–400).",
+    resumo: "Bispo e pastor da Igreja (201–400).",
     biografia:
-      "São Euphebius (201–400) é apresentado(a) nas fontes biográficas consultadas como bishop of naples. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 23 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Euphebius (201–400) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 23 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -9435,15 +9402,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "Public domain",
   },
   {
-    slug: "sao-euphrasius-of-illiturgis",
-    nome: "São Euphrasius of Illiturgis",
-    titulo: "Spanish saint",
+    slug: "sao-euphrasius-de-illiturgis",
+    nome: "São Euphrasius de Illiturgis",
+    titulo: "Santo venerado pela tradição cristã",
     data: "13/03",
     seculo: "1",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Spanish saint (50–100).",
+    resumo: "Santo venerado pela tradição cristã (50–100).",
     biografia:
-      "São Euphrasius of Illiturgis (50–100) é apresentado(a) nas fontes biográficas consultadas como spanish saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 13 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Euphrasius de Illiturgis (50–100) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 13 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/5/5e/EufrasioJa%C3%A9nCatedral.jpg",
@@ -9460,13 +9427,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-euquerio-de-lyon",
     nome: "São Euquério de Lyon",
-    titulo: "5th century Bishop of Lyon",
+    titulo: "Bispo e pastor da Igreja",
     data: "19/11",
     seculo: "5",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "5th century Bishop of Lyon (380–449).",
+    resumo: "Bispo e pastor da Igreja (380–449).",
     biografia:
-      "São Euquério de Lyon (380–449) é apresentado(a) nas fontes biográficas consultadas como 5th century bishop of lyon. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 19 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Euquério de Lyon (380–449) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 19 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -9484,13 +9451,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-eustace-white",
     nome: "São Eustace White",
-    titulo: "English saint and martyr",
+    titulo: "Mártir cristão",
     data: "10/12",
     seculo: "16",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "English saint and martyr (1559–1591).",
+    resumo: "Mártir cristão (1559–1591).",
     biografia:
-      "São Eustace White (1559–1591) é apresentado(a) nas fontes biográficas consultadas como english saint and martyr. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 10 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Eustace White (1559–1591) é apresentado(a) nas fontes biográficas consultadas como mártir cristão. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 10 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -9508,13 +9475,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-eustache-de-luxeuil",
     nome: "São Eustache de Luxeuil",
-    titulo: "Abbot of Luxeuil",
+    titulo: "Monge e testemunha da vida consagrada",
     data: "02/04",
     seculo: "7",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Abbot of Luxeuil (560–629).",
+    resumo: "Monge e testemunha da vida consagrada (560–629).",
     biografia:
-      "São Eustache de Luxeuil (560–629) é apresentado(a) nas fontes biográficas consultadas como abbot of luxeuil. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 2 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Eustache de Luxeuil (560–629) é apresentado(a) nas fontes biográficas consultadas como monge e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 2 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/1/18/Eustaci_b.jpg",
@@ -9531,13 +9498,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-eustacio-de-tessalonica",
     nome: "São Eustácio de Tessalónica",
-    titulo: "12th-century Byzantine scholar and bishop",
+    titulo: "Bispo e pastor da Igreja",
     data: "20/09",
     seculo: "12",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "12th-century Byzantine scholar and bishop (1115–1195).",
+    resumo: "Bispo e pastor da Igreja (1115–1195).",
     biografia:
-      "São Eustácio de Tessalónica (1115–1195) é apresentado(a) nas fontes biográficas consultadas como 12th-century byzantine scholar and bishop. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 20 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Eustácio de Tessalónica (1115–1195) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 20 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -9555,13 +9522,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-eusebio-de-roma",
     nome: "São Eusébio de Roma",
-    titulo: "Roman Catholic saint  (c.319 - c.357)",
+    titulo: "Santo venerado pela tradição cristã",
     data: "14/08",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Roman Catholic saint  (c.319 - c.357) (400–357).",
+    resumo: "Santo venerado pela tradição cristã (400–357).",
     biografia:
-      "São Eusébio de Roma (400–357) é apresentado(a) nas fontes biográficas consultadas como roman catholic saint  (c.319 - c.357). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 14 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Eusébio de Roma (400–357) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 14 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -9579,13 +9546,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-eusebio-de-vercelli",
     nome: "São Eusébio de Vercelli",
-    titulo: "Catholic bishop and saint",
+    titulo: "Bispo e pastor da Igreja",
     data: "02/08",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Catholic bishop and saint (283–371).",
+    resumo: "Bispo e pastor da Igreja (283–371).",
     biografia:
-      "São Eusébio de Vercelli (283–371) é apresentado(a) nas fontes biográficas consultadas como catholic bishop and saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 2 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Eusébio de Vercelli (283–371) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 2 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/e/e3/Eusebius_von_Vercelli.jpg",
@@ -9602,13 +9569,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-eutropio-de-orange",
     nome: "São Eutrópio de Orange",
-    titulo: "Bispo católico e santo francês",
+    titulo: "Bispo e pastor da Igreja",
     data: "27/05",
     seculo: "5",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Bispo católico e santo francês (401–475).",
+    resumo: "Bispo e pastor da Igreja (401–475).",
     biografia:
-      "São Eutrópio de Orange (401–475) é apresentado(a) nas fontes biográficas consultadas como bispo católico e santo francês. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 27 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Eutrópio de Orange (401–475) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 27 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -9626,13 +9593,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-eutimio-i-de-constantinopla",
     nome: "São Eutímio I de Constantinopla",
-    titulo: "Priest",
+    titulo: "Sacerdote e servidor do povo de Deus",
     data: "05/08",
     seculo: "10",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Priest (834–917).",
+    resumo: "Sacerdote e servidor do povo de Deus (834–917).",
     biografia:
-      "São Eutímio I de Constantinopla (834–917) é apresentado(a) nas fontes biográficas consultadas como priest. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 5 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Eutímio I de Constantinopla (834–917) é apresentado(a) nas fontes biográficas consultadas como sacerdote e servidor do povo de deus. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 5 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -9648,15 +9615,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "Public domain",
   },
   {
-    slug: "sao-exuperius-of-bayeux",
-    nome: "São Exuperius of Bayeux",
-    titulo: "Bishop of Bayeux",
+    slug: "sao-exuperius-de-bayeux",
+    nome: "São Exuperius de Bayeux",
+    titulo: "Bispo e pastor da Igreja",
     data: "01/08",
     seculo: "5",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Bishop of Bayeux (350–405).",
+    resumo: "Bispo e pastor da Igreja (350–405).",
     biografia:
-      "São Exuperius of Bayeux (350–405) é apresentado(a) nas fontes biográficas consultadas como bishop of bayeux. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 1 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Exuperius de Bayeux (350–405) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 1 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/9/9c/Saint_Exup%C3%A8re2.JPG",
@@ -9673,13 +9640,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-fantinus",
     nome: "São Fantinus",
-    titulo: "Italian saint",
+    titulo: "Santo venerado pela tradição cristã",
     data: "14/11",
     seculo: "10",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Italian saint (927–1000).",
+    resumo: "Santo venerado pela tradição cristã (927–1000).",
     biografia:
-      "São Fantinus (927–1000) é apresentado(a) nas fontes biográficas consultadas como italian saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 14 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Fantinus (927–1000) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 14 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -9697,13 +9664,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-fausto-de-riez",
     nome: "São Fausto de Riez",
-    titulo: "Bishop of Riez",
+    titulo: "Bispo e pastor da Igreja",
     data: "28/09",
     seculo: "5",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Bishop of Riez (500–495).",
+    resumo: "Bispo e pastor da Igreja (500–495).",
     biografia:
-      "São Fausto de Riez (500–495) é apresentado(a) nas fontes biográficas consultadas como bishop of riez. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 28 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Fausto de Riez (500–495) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 28 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -9719,38 +9686,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "CC BY-SA 3.0",
   },
   {
-    slug: "sao-felix-of-nola",
-    nome: "São Felix of Nola",
-    titulo: "Bishop of Nola and saint",
-    data: "14/01",
-    seculo: "1",
-    padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Bishop of Nola and saint (falecido em 95).",
-    biografia:
-      "São Felix of Nola (falecido em 95) é apresentado(a) nas fontes biográficas consultadas como bishop of nola and saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 14 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
-    virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
-    frase: "",
-    imagem: "https://upload.wikimedia.org/wikipedia/commons/3/36/San_felice_di_nola1.jpg",
-    fontes: [
-      { nome: "Wikidata", url: "https://www.wikidata.org/wiki/Q664601" },
-      {
-        nome: "Wikimedia Commons",
-        url: "https://upload.wikimedia.org/wikipedia/commons/3/36/San_felice_di_nola1.jpg",
-      },
-    ],
-    creditoImagem: "Unknown author",
-    licencaImagem: "Public domain",
-  },
-  {
-    slug: "sao-feodor-of-vladimir",
-    nome: "São Feodor of Vladimir",
+    slug: "sao-feodor-de-vladimir",
+    nome: "São Feodor de Vladimir",
     titulo: "(1219-1233)",
     data: "00/00",
     seculo: "13",
     padroeiro: "Testemunho cristão e intercessão dos santos",
     resumo: "(1219-1233) (1219–1233).",
     biografia:
-      "São Feodor of Vladimir (1219–1233) é apresentado(a) nas fontes biográficas consultadas como (1219-1233). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Feodor de Vladimir (1219–1233) é apresentado(a) nas fontes biográficas consultadas como (1219-1233). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -9767,15 +9711,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "CC BY-SA 4.0",
   },
   {
-    slug: "sao-ferdinand-of-aragon",
-    nome: "São Ferdinand of Aragon",
-    titulo: "Spanish Roman Catholic bishop and saint",
+    slug: "sao-ferdinand-de-aragon",
+    nome: "São Ferdinand de Aragon",
+    titulo: "Bispo e pastor da Igreja",
     data: "27/06",
     seculo: "11",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Spanish Roman Catholic bishop and saint (1030–1082).",
+    resumo: "Bispo e pastor da Igreja (1030–1082).",
     biografia:
-      "São Ferdinand of Aragon (1030–1082) é apresentado(a) nas fontes biográficas consultadas como spanish roman catholic bishop and saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 27 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Ferdinand de Aragon (1030–1082) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 27 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/a/a2/Affresco_di_San_Ferdinando.jpg",
@@ -9792,13 +9736,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-fernando-iii-de-leao-e-castela",
     nome: "São Fernando III de Leão e Castela",
-    titulo: "13th-century saint and king of Castile, Leon and Galicia",
+    titulo: "Governante cristão e servidor dos necessitados",
     data: "30/05",
     seculo: "13",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "13th-century saint and king of Castile, Leon and Galicia (1199–1252).",
+    resumo: "Governante cristão e servidor dos necessitados (1199–1252).",
     biografia:
-      "São Fernando III de Leão e Castela (1199–1252) é apresentado(a) nas fontes biográficas consultadas como 13th-century saint and king of castile, leon and galicia. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 30 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Fernando III de Leão e Castela (1199–1252) é apresentado(a) nas fontes biográficas consultadas como governante cristão e servidor dos necessitados. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 30 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/d/d7/Fernando_III_de_Castilla_02.jpg",
@@ -9815,13 +9759,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-ferreolus",
     nome: "São Ferreolus",
-    titulo: "Roman catholic saint",
+    titulo: "Santo venerado pela tradição cristã",
     data: "16/06",
     seculo: "3",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Roman catholic saint (101–212).",
+    resumo: "Santo venerado pela tradição cristã (101–212).",
     biografia:
-      "São Ferreolus (101–212) é apresentado(a) nas fontes biográficas consultadas como roman catholic saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 16 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Ferreolus (101–212) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 16 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/7/77/Saint_Ferr%C3%A9ol.jpg",
@@ -9839,13 +9783,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-ferrutio",
     nome: "São Ferrutio",
-    titulo: "Saint",
+    titulo: "Santo venerado pela tradição cristã",
     data: "16/06",
     seculo: "3",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Saint (101–212).",
+    resumo: "Santo venerado pela tradição cristã (101–212).",
     biografia:
-      "São Ferrutio (101–212) é apresentado(a) nas fontes biográficas consultadas como saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 16 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Ferrutio (101–212) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 16 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/a/ab/Saint_Ferjeux.jpg",
@@ -9860,15 +9804,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "CC BY-SA 3.0",
   },
   {
-    slug: "sao-fidentius-of-padua",
-    nome: "São Fidentius of Padua",
-    titulo: "Second century saint",
+    slug: "sao-fidentius-de-padua",
+    nome: "São Fidentius de Padua",
+    titulo: "Santo venerado pela tradição cristã",
     data: "16/11",
     seculo: "2",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Second century saint (falecido em 200).",
+    resumo: "Santo venerado pela tradição cristã (falecido em 200).",
     biografia:
-      "São Fidentius of Padua (falecido em 200) é apresentado(a) nas fontes biográficas consultadas como second century saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 16 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Fidentius de Padua (falecido em 200) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 16 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -9909,13 +9853,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-filologo-de-sinope",
     nome: "São Filólogo de Sínope",
-    titulo: "Ancient Christian saint numbered among the Seventy Disciples",
+    titulo: "Santo venerado pela tradição cristã",
     data: "05/11",
     seculo: "não determinado",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Ancient Christian saint numbered among the Seventy Disciples.",
+    resumo: "Santo venerado pela tradição cristã.",
     biografia:
-      "São Filólogo de Sínope é apresentado(a) nas fontes biográficas consultadas como ancient christian saint numbered among the seventy disciples. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 5 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Filólogo de Sínope é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 5 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -9932,15 +9876,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "Public domain",
   },
   {
-    slug: "sao-finbarr-of-cork",
-    nome: "São Finbarr of Cork",
-    titulo: "Bishop of Cork",
+    slug: "sao-finbarr-de-cork",
+    nome: "São Finbarr de Cork",
+    titulo: "Bispo e pastor da Igreja",
     data: "25/09",
     seculo: "7",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Bishop of Cork (550–623).",
+    resumo: "Bispo e pastor da Igreja (550–623).",
     biografia:
-      "São Finbarr of Cork (550–623) é apresentado(a) nas fontes biográficas consultadas como bishop of cork. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 25 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Finbarr de Cork (550–623) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 25 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/b/bf/Cork_%2847%29_1.jpg",
@@ -9957,13 +9901,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-finiano-de-movilla",
     nome: "São Finiano de Movilla",
-    titulo: "Missionário irlandês",
+    titulo: "Missionário cristão",
     data: "10/09",
     seculo: "6",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Missionário irlandês (495–589).",
+    resumo: "Missionário cristão (495–589).",
     biografia:
-      "São Finiano de Movilla (495–589) é apresentado(a) nas fontes biográficas consultadas como missionário irlandês. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 10 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Finiano de Movilla (495–589) é apresentado(a) nas fontes biográficas consultadas como missionário cristão. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 10 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -9981,13 +9925,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-finnian-de-clonard",
     nome: "São Finnian de Clonard",
-    titulo: "Irish saint",
+    titulo: "Santo venerado pela tradição cristã",
     data: "12/12",
     seculo: "6",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Irish saint (470–549).",
+    resumo: "Santo venerado pela tradição cristã (470–549).",
     biografia:
-      "São Finnian de Clonard (470–549) é apresentado(a) nas fontes biográficas consultadas como irish saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 12 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Finnian de Clonard (470–549) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 12 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -10003,15 +9947,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "CC BY-SA 4.0",
   },
   {
-    slug: "sao-flavian-of-ricina",
-    nome: "São Flavian of Ricina",
-    titulo: "3rd-century bishop",
+    slug: "sao-flavian-de-ricina",
+    nome: "São Flavian de Ricina",
+    titulo: "Bispo e pastor da Igreja",
     data: "24/11",
     seculo: "3",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "3rd-century bishop (201–300).",
+    resumo: "Bispo e pastor da Igreja (201–300).",
     biografia:
-      "São Flavian of Ricina (201–300) é apresentado(a) nas fontes biográficas consultadas como 3rd-century bishop. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 24 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Flavian de Ricina (201–300) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 24 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/8/8b/Lorenzo_Lotto_010.jpg",
@@ -10026,15 +9970,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "Public domain",
   },
   {
-    slug: "sao-flavianus-of-montefiascone",
-    nome: "São Flavianus of Montefiascone",
-    titulo: "4th-century saint",
+    slug: "sao-flavianus-de-montefiascone",
+    nome: "São Flavianus de Montefiascone",
+    titulo: "Santo venerado pela tradição cristã",
     data: "22/12",
     seculo: "não determinado",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "4th-century saint.",
+    resumo: "Santo venerado pela tradição cristã.",
     biografia:
-      "São Flavianus of Montefiascone é apresentado(a) nas fontes biográficas consultadas como 4th-century saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 22 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Flavianus de Montefiascone é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 22 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/d/db/Sanflaviano_montefiascone.JPG",
@@ -10051,13 +9995,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-florentius-von-stra-burg",
     nome: "São Florentius von Straßburg",
-    titulo: "Bishop of Strasbourg",
+    titulo: "Bispo e pastor da Igreja",
     data: "07/11",
     seculo: "6",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Bishop of Strasbourg.",
+    resumo: "Bispo e pastor da Igreja.",
     biografia:
-      "São Florentius von Straßburg é apresentado(a) nas fontes biográficas consultadas como bishop of strasbourg. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 7 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Florentius von Straßburg é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 7 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -10075,13 +10019,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-floriano",
     nome: "São Floriano",
-    titulo: "Santo cristão",
+    titulo: "Santo venerado pela tradição cristã",
     data: "04/05",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Santo cristão (250–304).",
+    resumo: "Santo venerado pela tradição cristã (250–304).",
     biografia:
-      "São Floriano (250–304) é apresentado(a) nas fontes biográficas consultadas como santo cristão. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 4 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Floriano (250–304) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 4 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/8/81/Saint_Florian.jpg",
@@ -10098,13 +10042,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-fortunatus",
     nome: "São Fortunatus",
-    titulo: "4th century Christian bishop; first historically-attested bishop of Naples",
+    titulo: "Bispo e pastor da Igreja",
     data: "14/06",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "4th century Christian bishop; first historically-attested bishop of Naples (201–301).",
+    resumo: "Bispo e pastor da Igreja (201–301).",
     biografia:
-      "São Fortunatus (201–301) é apresentado(a) nas fontes biográficas consultadas como 4th century christian bishop; first historically-attested bishop of naples. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 14 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Fortunatus (201–301) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 14 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/9/9c/San_Severo.JPG",
@@ -10121,13 +10065,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-francisco-de-paula",
     nome: "São Francisco de Paula",
-    titulo: "Eremita, fundador da Ordem dos Mínimos e santo da Igreja Católica",
+    titulo: "Fundador de obra religiosa",
     data: "02/04",
     seculo: "16",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Eremita, fundador da Ordem dos Mínimos e santo da Igreja Católica (1416–1507).",
+    resumo: "Fundador de obra religiosa (1416–1507).",
     biografia:
-      "São Francisco de Paula (1416–1507) é apresentado(a) nas fontes biográficas consultadas como eremita, fundador da ordem dos mínimos e santo da igreja católica. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 2 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Francisco de Paula (1416–1507) é apresentado(a) nas fontes biográficas consultadas como fundador de obra religiosa. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 2 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -10145,13 +10089,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-front-de-perigueux",
     nome: "São Front de Périgueux",
-    titulo: "Bishop of Périgueux, Catholic saint",
+    titulo: "Bispo e pastor da Igreja",
     data: "25/10",
     seculo: "1",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Bishop of Périgueux, Catholic saint (100–100).",
+    resumo: "Bispo e pastor da Igreja (100–100).",
     biografia:
-      "São Front de Périgueux (100–100) é apresentado(a) nas fontes biográficas consultadas como bishop of périgueux, catholic saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 25 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Front de Périgueux (100–100) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 25 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -10169,13 +10113,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-frumencio",
     nome: "São Frumêncio",
-    titulo: "Bispo de Aksum",
+    titulo: "Bispo e pastor da Igreja",
     data: "30/11",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Bispo de Aksum (310–380).",
+    resumo: "Bispo e pastor da Igreja (310–380).",
     biografia:
-      "São Frumêncio (310–380) é apresentado(a) nas fontes biográficas consultadas como bispo de aksum. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 30 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Frumêncio (310–380) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 30 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/4/47/St_Frumentius.jpg",
@@ -10192,13 +10136,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-fulgencio-de-ruspe",
     nome: "São Fulgêncio de Ruspe",
-    titulo: "6th-century Bishop of Ruspe",
+    titulo: "Bispo e pastor da Igreja",
     data: "01/01",
     seculo: "6",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "6th-century Bishop of Ruspe (468–533).",
+    resumo: "Bispo e pastor da Igreja (468–533).",
     biografia:
-      "São Fulgêncio de Ruspe (468–533) é apresentado(a) nas fontes biográficas consultadas como 6th-century bishop of ruspe. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 1 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Fulgêncio de Ruspe (468–533) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 1 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/0/08/Fulgentius_von_Ruspe_17Jh.jpg",
@@ -10215,13 +10159,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-fyodor-fyodorovich-ushakov",
     nome: "São Fyodor Fyodorovich Ushakov",
-    titulo: "Russian Saint and Admiral (1745-1817)",
+    titulo: "Santo venerado pela tradição cristã",
     data: "01/01",
     seculo: "19",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Russian Saint and Admiral (1745-1817) (1745–1817).",
+    resumo: "Santo venerado pela tradição cristã (1745–1817).",
     biografia:
-      "São Fyodor Fyodorovich Ushakov (1745–1817) é apresentado(a) nas fontes biográficas consultadas como russian saint and admiral (1745-1817). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue October 2; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Fyodor Fyodorovich Ushakov (1745–1817) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue October 2; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/c/c8/Ushakov_FF.jpg",
@@ -10238,13 +10182,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-felix",
     nome: "São Félix",
-    titulo: "Christian saints and martyrs",
+    titulo: "Mártir cristão",
     data: "23/04",
     seculo: "3",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Christian saints and martyrs (falecido em 212).",
+    resumo: "Mártir cristão (falecido em 212).",
     biografia:
-      "São Félix (falecido em 212) é apresentado(a) nas fontes biográficas consultadas como christian saints and martyrs. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 23 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Félix (falecido em 212) é apresentado(a) nas fontes biográficas consultadas como mártir cristão. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 23 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/f/f1/F09.Charlieu.0039.JPG",
@@ -10261,13 +10205,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-felix-o-eremita",
     nome: "São Félix (o eremita)",
-    titulo: "Portuguese hermit and saint",
+    titulo: "Santo venerado pela tradição cristã",
     data: "01/01",
     seculo: "9",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Portuguese hermit and saint (falecido em 900).",
+    resumo: "Santo venerado pela tradição cristã (falecido em 900).",
     biografia:
-      "São Félix (o eremita) (falecido em 900) é apresentado(a) nas fontes biográficas consultadas como portuguese hermit and saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Félix (o eremita) (falecido em 900) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/5/51/Sao_Felix.jpg",
@@ -10284,13 +10228,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-felix-de-nicosia",
     nome: "São Félix de Nicósia",
-    titulo: "Catholic Saint (1715-1787)",
+    titulo: "Santo venerado pela tradição cristã",
     data: "31/05",
     seculo: "18",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Catholic Saint (1715-1787) (1715–1787).",
+    resumo: "Santo venerado pela tradição cristã (1715–1787).",
     biografia:
-      "São Félix de Nicósia (1715–1787) é apresentado(a) nas fontes biográficas consultadas como catholic saint (1715-1787). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 31 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Félix de Nicósia (1715–1787) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 31 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -10378,13 +10322,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-gabriel-de-bia-ystok",
     nome: "São Gabriel de Białystok",
-    titulo: "Belarusian saint",
+    titulo: "Santo venerado pela tradição cristã",
     data: "03/05",
     seculo: "17",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Belarusian saint (1684–1690).",
+    resumo: "Santo venerado pela tradição cristã (1684–1690).",
     biografia:
-      "São Gabriel de Białystok (1684–1690) é apresentado(a) nas fontes biográficas consultadas como belarusian saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 3 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Gabriel de Białystok (1684–1690) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 3 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/4/4b/GavriilBelostok.jpg",
@@ -10399,15 +10343,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "Public domain",
   },
   {
-    slug: "sao-galactorius-of-lescar",
-    nome: "São Galactorius of Lescar",
-    titulo: "Bishop of Lescar",
+    slug: "sao-galactorius-de-lescar",
+    nome: "São Galactorius de Lescar",
+    titulo: "Bispo e pastor da Igreja",
     data: "27/07",
     seculo: "6",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Bishop of Lescar (401–507).",
+    resumo: "Bispo e pastor da Igreja (401–507).",
     biografia:
-      "São Galactorius of Lescar (401–507) é apresentado(a) nas fontes biográficas consultadas como bishop of lescar. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 27 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Galactorius de Lescar (401–507) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 27 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Galactorius.JPG",
@@ -10424,13 +10368,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-galo",
     nome: "São Galo",
-    titulo: "Irish disciple and saint",
+    titulo: "Santo venerado pela tradição cristã",
     data: "16/10",
     seculo: "7",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Irish disciple and saint (550–645).",
+    resumo: "Santo venerado pela tradição cristã (550–645).",
     biografia:
-      "São Galo (550–645) é apresentado(a) nas fontes biográficas consultadas como irish disciple and saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 16 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Galo (550–645) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 16 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/9/94/Rountzenheim_SteCroix_39.jpg",
@@ -10471,13 +10415,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-gaspare-del-bufalo",
     nome: "São Gaspare del Bufalo",
-    titulo: "Italian Catholic priest and saint (1786-1837)",
+    titulo: "Sacerdote e servidor do povo de Deus",
     data: "21/10",
     seculo: "19",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Italian Catholic priest and saint (1786-1837) (1786–1837).",
+    resumo: "Sacerdote e servidor do povo de Deus (1786–1837).",
     biografia:
-      "São Gaspare del Bufalo (1786–1837) é apresentado(a) nas fontes biográficas consultadas como italian catholic priest and saint (1786-1837). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 21 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Gaspare del Bufalo (1786–1837) é apresentado(a) nas fontes biográficas consultadas como sacerdote e servidor do povo de deus. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 21 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/5/51/Gaspare_del_Bufalo.jpg",
@@ -10492,15 +10436,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "Public domain",
   },
   {
-    slug: "sao-gaudentius-of-novara",
-    nome: "São Gaudentius of Novara",
-    titulo: "Bishop of Novara",
+    slug: "sao-gaudentius-de-novara",
+    nome: "São Gaudentius de Novara",
+    titulo: "Bispo e pastor da Igreja",
     data: "22/01",
     seculo: "5",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Bishop of Novara (327–418).",
+    resumo: "Bispo e pastor da Igreja (327–418).",
     biografia:
-      "São Gaudentius of Novara (327–418) é apresentado(a) nas fontes biográficas consultadas como bishop of novara. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 22 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Gaudentius de Novara (327–418) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 22 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -10518,13 +10462,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-george-el-mozahem",
     nome: "São George El Mozahem",
-    titulo: "Coptic Orthodox saint",
+    titulo: "Santo venerado pela tradição cristã",
     data: "26/06",
     seculo: "10",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Coptic Orthodox saint (940–969).",
+    resumo: "Santo venerado pela tradição cristã (940–969).",
     biografia:
-      "São George El Mozahem (940–969) é apresentado(a) nas fontes biográficas consultadas como coptic orthodox saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São George El Mozahem (940–969) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -10540,15 +10484,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "CC0",
   },
   {
-    slug: "sao-gerard-of-potenza",
-    nome: "São Gerard of Potenza",
-    titulo: "Roman Catholic saint and bishop of Potenza",
+    slug: "sao-gerard-de-potenza",
+    nome: "São Gerard de Potenza",
+    titulo: "Bispo e pastor da Igreja",
     data: "30/05",
     seculo: "12",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Roman Catholic saint and bishop of Potenza (falecido em 1119).",
+    resumo: "Bispo e pastor da Igreja (falecido em 1119).",
     biografia:
-      "São Gerard of Potenza (falecido em 1119) é apresentado(a) nas fontes biográficas consultadas como roman catholic saint and bishop of potenza. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 30 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Gerard de Potenza (falecido em 1119) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 30 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/b/be/Potenza2.JPG",
@@ -10565,13 +10509,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-germano-de-auxerre",
     nome: "São Germano de Auxerre",
-    titulo: "5th century Bishop of Auxerre and saint",
+    titulo: "Bispo e pastor da Igreja",
     data: "31/07",
     seculo: "5",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "5th century Bishop of Auxerre and saint (378–448).",
+    resumo: "Bispo e pastor da Igreja (378–448).",
     biografia:
-      "São Germano de Auxerre (378–448) é apresentado(a) nas fontes biográficas consultadas como 5th century bishop of auxerre and saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 31 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Germano de Auxerre (378–448) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 31 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -10589,13 +10533,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-germier-de-toulouse",
     nome: "São Germier de Toulouse",
-    titulo: "Bishop of Toulouse",
+    titulo: "Bispo e pastor da Igreja",
     data: "16/05",
     seculo: "6",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Bishop of Toulouse (480–560).",
+    resumo: "Bispo e pastor da Igreja (480–560).",
     biografia:
-      "São Germier de Toulouse (480–560) é apresentado(a) nas fontes biográficas consultadas como bishop of toulouse. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 16 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Germier de Toulouse (480–560) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 16 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -10613,13 +10557,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-gervasio-e-protasio",
     nome: "São Gervásio e Protásio",
-    titulo: "Christian saints and martyrs",
+    titulo: "Mártir cristão",
     data: "19/06",
     seculo: "2",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Christian saints and martyrs (falecido em 180).",
+    resumo: "Mártir cristão (falecido em 180).",
     biografia:
-      "São Gervásio e Protásio (falecido em 180) é apresentado(a) nas fontes biográficas consultadas como christian saints and martyrs. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 19 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Gervásio e Protásio (falecido em 180) é apresentado(a) nas fontes biográficas consultadas como mártir cristão. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 19 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Rapallo-IMG_1629.JPG",
@@ -10659,13 +10603,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-gilbert-de-moravia",
     nome: "São Gilbert de Moravia",
-    titulo: "Bishop of Caithness",
+    titulo: "Bispo e pastor da Igreja",
     data: "01/04",
     seculo: "13",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Bishop of Caithness (1101–1245).",
+    resumo: "Bispo e pastor da Igreja (1101–1245).",
     biografia:
-      "São Gilbert de Moravia (1101–1245) é apresentado(a) nas fontes biográficas consultadas como bishop of caithness. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 1 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Gilbert de Moravia (1101–1245) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 1 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -10683,13 +10627,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-giovanni-antonio-farina",
     nome: "São Giovanni Antonio Farina",
-    titulo: "Italian bishop and canonized saint. (1803–1888)",
+    titulo: "Bispo e pastor da Igreja",
     data: "04/03",
     seculo: "19",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Italian bishop and canonized saint. (1803–1888) (1803–1888).",
+    resumo: "Bispo e pastor da Igreja (1803–1888).",
     biografia:
-      "São Giovanni Antonio Farina (1803–1888) é apresentado(a) nas fontes biográficas consultadas como italian bishop and canonized saint. (1803–1888). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 4 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Giovanni Antonio Farina (1803–1888) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 4 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/3/34/Giovanni-Antonio-Farina-photo.jpg",
@@ -10706,13 +10650,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-glycerius",
     nome: "São Glycerius",
-    titulo: "Archbishop of Milan",
+    titulo: "Arcebispo e pastor da Igreja",
     data: "20/09",
     seculo: "5",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Archbishop of Milan (400–438).",
+    resumo: "Arcebispo e pastor da Igreja (400–438).",
     biografia:
-      "São Glycerius (400–438) é apresentado(a) nas fontes biográficas consultadas como archbishop of milan. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 20 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Glycerius (400–438) é apresentado(a) nas fontes biográficas consultadas como arcebispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 20 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -10730,13 +10674,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-godric-de-finchale",
     nome: "São Godric de Finchale",
-    titulo: "English merchant and saint",
+    titulo: "Santo venerado pela tradição cristã",
     data: "21/05",
     seculo: "12",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "English merchant and saint (1065–1170).",
+    resumo: "Santo venerado pela tradição cristã (1065–1170).",
     biografia:
-      "São Godric de Finchale (1065–1170) é apresentado(a) nas fontes biográficas consultadas como english merchant and saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 21 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Godric de Finchale (1065–1170) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 21 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/e/e2/Godric-Finchale.jpg",
@@ -10753,13 +10697,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-goeric-de-metz",
     nome: "São Goeric de Metz",
-    titulo: "Bishop of Metz",
+    titulo: "Bispo e pastor da Igreja",
     data: "19/09",
     seculo: "7",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Bishop of Metz (600–647).",
+    resumo: "Bispo e pastor da Igreja (600–647).",
     biografia:
-      "São Goeric de Metz (600–647) é apresentado(a) nas fontes biográficas consultadas como bishop of metz. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 19 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Goeric de Metz (600–647) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 19 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -10777,13 +10721,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-goeznovius",
     nome: "São Goeznovius",
-    titulo: "Medieval bishop",
+    titulo: "Bispo e pastor da Igreja",
     data: "25/10",
     seculo: "7",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Medieval bishop (601–675).",
+    resumo: "Bispo e pastor da Igreja (601–675).",
     biografia:
-      "São Goeznovius (601–675) é apresentado(a) nas fontes biográficas consultadas como medieval bishop. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 25 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Goeznovius (601–675) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 25 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -10801,13 +10745,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-gomario",
     nome: "São Gomário",
-    titulo: "Belgian saint",
+    titulo: "Santo venerado pela tradição cristã",
     data: "11/10",
     seculo: "8",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Belgian saint (717–774).",
+    resumo: "Santo venerado pela tradição cristã (717–774).",
     biografia:
-      "São Gomário (717–774) é apresentado(a) nas fontes biográficas consultadas como belgian saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 11 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Gomário (717–774) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 11 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -10825,13 +10769,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-gontrao-de-borgonha",
     nome: "São Gontrão de Borgonha",
-    titulo: "Rei da Borgonha",
+    titulo: "Governante cristão e servidor dos necessitados",
     data: "28/03",
     seculo: "6",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Rei da Borgonha (532–593).",
+    resumo: "Governante cristão e servidor dos necessitados (532–593).",
     biografia:
-      "São Gontrão de Borgonha (532–593) é apresentado(a) nas fontes biográficas consultadas como rei da borgonha. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 28 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Gontrão de Borgonha (532–593) é apresentado(a) nas fontes biográficas consultadas como governante cristão e servidor dos necessitados. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 28 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/b/b0/Gontran_et_Childebert_II.JPG",
@@ -10848,13 +10792,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-gorasdo-de-praga",
     nome: "São Gorasdo de Praga",
-    titulo: "Czechoslovak evangelic priest and theologist (1879–1942)",
+    titulo: "Sacerdote e servidor do povo de Deus",
     data: "04/09",
     seculo: "20",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Czechoslovak evangelic priest and theologist (1879–1942) (1879–1942).",
+    resumo: "Sacerdote e servidor do povo de Deus (1879–1942).",
     biografia:
-      "São Gorasdo de Praga (1879–1942) é apresentado(a) nas fontes biográficas consultadas como czechoslovak evangelic priest and theologist (1879–1942). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 4 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Gorasdo de Praga (1879–1942) é apresentado(a) nas fontes biográficas consultadas como sacerdote e servidor do povo de deus. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 4 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -10872,13 +10816,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-gorgonius",
     nome: "São Gorgonius",
-    titulo: "Christian martyr",
+    titulo: "Mártir cristão",
     data: "09/09",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Christian martyr (300–304).",
+    resumo: "Mártir cristão (300–304).",
     biografia:
-      "São Gorgonius (300–304) é apresentado(a) nas fontes biográficas consultadas como christian martyr. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 9 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Gorgonius (300–304) é apresentado(a) nas fontes biográficas consultadas como mártir cristão. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 9 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/c/c1/Martyr_de_saint_Gorgon.jpg",
@@ -10895,13 +10839,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-gossuin-danchin",
     nome: "São Gossuin d'Anchin",
-    titulo: "French abbot (1085-1166)",
+    titulo: "Monge e testemunha da vida consagrada",
     data: "09/10",
     seculo: "12",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "French abbot (1085-1166) (1085–1165).",
+    resumo: "Monge e testemunha da vida consagrada (1085–1165).",
     biografia:
-      "São Gossuin d'Anchin (1085–1165) é apresentado(a) nas fontes biográficas consultadas como french abbot (1085-1166). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 9 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Gossuin d'Anchin (1085–1165) é apresentado(a) nas fontes biográficas consultadas como monge e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 9 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/a/a2/Goswin.jpg",
@@ -10918,13 +10862,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-gregor-von-burtscheid",
     nome: "São Gregor von Burtscheid",
-    titulo: "Abbot",
+    titulo: "Monge e testemunha da vida consagrada",
     data: "04/11",
     seculo: "10",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Abbot (901–999).",
+    resumo: "Monge e testemunha da vida consagrada (901–999).",
     biografia:
-      "São Gregor von Burtscheid (901–999) é apresentado(a) nas fontes biográficas consultadas como abbot. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 4 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Gregor von Burtscheid (901–999) é apresentado(a) nas fontes biográficas consultadas como monge e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 4 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -10942,13 +10886,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-gregor-von-utrecht",
     nome: "São Gregor von Utrecht",
-    titulo: "Frankish bishop and saint",
+    titulo: "Bispo e pastor da Igreja",
     data: "25/08",
     seculo: "8",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Frankish bishop and saint (700–780).",
+    resumo: "Bispo e pastor da Igreja (700–780).",
     biografia:
-      "São Gregor von Utrecht (700–780) é apresentado(a) nas fontes biográficas consultadas como frankish bishop and saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 25 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Gregor von Utrecht (700–780) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 25 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -10964,15 +10908,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "CC BY-SA 3.0",
   },
   {
-    slug: "sao-gregory-of-khandzta",
-    nome: "São Gregory of Khandzta",
-    titulo: "Christian saint",
+    slug: "sao-gregory-de-khandzta",
+    nome: "São Gregory de Khandzta",
+    titulo: "Santo venerado pela tradição cristã",
     data: "18/10",
     seculo: "9",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Christian saint (759–861).",
+    resumo: "Santo venerado pela tradição cristã (759–861).",
     biografia:
-      "São Gregory of Khandzta (759–861) é apresentado(a) nas fontes biográficas consultadas como christian saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Gregory de Khandzta (759–861) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/e/e8/Grigol_Khandzteli%2C_XVIII_c.jpg",
@@ -10987,15 +10931,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "Public domain",
   },
   {
-    slug: "sao-gregory-of-spoleto",
-    nome: "São Gregory of Spoleto",
-    titulo: "Priest and martyr of the city of Spoleto, Italy",
+    slug: "sao-gregory-de-spoleto",
+    nome: "São Gregory de Spoleto",
+    titulo: "Mártir cristão",
     data: "24/12",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Priest and martyr of the city of Spoleto, Italy (300–304).",
+    resumo: "Mártir cristão (300–304).",
     biografia:
-      "São Gregory of Spoleto (300–304) é apresentado(a) nas fontes biográficas consultadas como priest and martyr of the city of spoleto, italy. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 24 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Gregory de Spoleto (300–304) é apresentado(a) nas fontes biográficas consultadas como mártir cristão. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 24 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -11013,13 +10957,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-gregorio-de-nazianzo",
     nome: "São Gregório de Nazianzo",
-    titulo: "Christian saint and theologian (c. 329 – 390)",
+    titulo: "Santo venerado pela tradição cristã",
     data: "02/01",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Christian saint and theologian (c. 329 – 390) (329–389).",
+    resumo: "Santo venerado pela tradição cristã (329–389).",
     biografia:
-      "São Gregório de Nazianzo (329–389) é apresentado(a) nas fontes biográficas consultadas como christian saint and theologian (c. 329 – 390). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 2 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Gregório de Nazianzo (329–389) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 2 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/5/5d/Gregor-Chora_%28cropped%29.jpg",
@@ -11036,13 +10980,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-gregorio-palamas",
     nome: "São Gregório Palamas",
-    titulo: "Santo e Monge venerado na Igreja Ortodoxa e Católica de Rito Bizantino",
+    titulo: "Monge e testemunha da vida consagrada",
     data: "14/11",
     seculo: "14",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Santo e Monge venerado na Igreja Ortodoxa e Católica de Rito Bizantino (1296–1359).",
+    resumo: "Monge e testemunha da vida consagrada (1296–1359).",
     biografia:
-      "São Gregório Palamas (1296–1359) é apresentado(a) nas fontes biográficas consultadas como santo e monge venerado na igreja ortodoxa e católica de rito bizantino. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 14 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Gregório Palamas (1296–1359) é apresentado(a) nas fontes biográficas consultadas como monge e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 14 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -11060,13 +11004,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-gregorio-o-iluminador",
     nome: "São Gregório, o Iluminador",
-    titulo: "Patron saint of the Armenian Apostolic Church (c.257–c.331)",
+    titulo: "Santo venerado pela tradição cristã",
     data: "30/09",
     seculo: "4",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Patron saint of the Armenian Apostolic Church (c.257–c.331) (239–329).",
+    resumo: "Santo venerado pela tradição cristã (239–329).",
     biografia:
-      "São Gregório, o Iluminador (239–329) é apresentado(a) nas fontes biográficas consultadas como patron saint of the armenian apostolic church (c.257–c.331). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 30 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Gregório, o Iluminador (239–329) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 30 de setembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Stgregoryilluminator.jpg",
@@ -11083,13 +11027,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-guiberto-de-gembloux",
     nome: "São Guiberto de Gembloux",
-    titulo: "Belgian monk and nobleman",
+    titulo: "Monge e testemunha da vida consagrada",
     data: "23/05",
     seculo: "10",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Belgian monk and nobleman (892–962).",
+    resumo: "Monge e testemunha da vida consagrada (892–962).",
     biografia:
-      "São Guiberto de Gembloux (892–962) é apresentado(a) nas fontes biográficas consultadas como belgian monk and nobleman. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 23 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Guiberto de Gembloux (892–962) é apresentado(a) nas fontes biográficas consultadas como monge e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 23 de maio; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -11107,13 +11051,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-guido-maria-conforti",
     nome: "São Guido Maria Conforti",
-    titulo: "Arcebispo católico italiano",
+    titulo: "Arcebispo e pastor da Igreja",
     data: "05/11",
     seculo: "20",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Arcebispo católico italiano (1865–1931).",
+    resumo: "Arcebispo e pastor da Igreja (1865–1931).",
     biografia:
-      "São Guido Maria Conforti (1865–1931) é apresentado(a) nas fontes biográficas consultadas como arcebispo católico italiano. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 5 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Guido Maria Conforti (1865–1931) é apresentado(a) nas fontes biográficas consultadas como arcebispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 5 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/4/48/Guido_Maria_Conforti_Vescovo.jpg",
@@ -11130,13 +11074,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-guilherme-de-paris",
     nome: "São Guilherme de Paris",
-    titulo: "Danish Roman Catholic saint",
+    titulo: "Santo venerado pela tradição cristã",
     data: "06/04",
     seculo: "13",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Danish Roman Catholic saint (1127–1203).",
+    resumo: "Santo venerado pela tradição cristã (1127–1203).",
     biografia:
-      "São Guilherme de Paris (1127–1203) é apresentado(a) nas fontes biográficas consultadas como danish roman catholic saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 6 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Guilherme de Paris (1127–1203) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 6 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -11154,13 +11098,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-guinefort",
     nome: "São Guinefort",
-    titulo: "Cão santo",
+    titulo: "Santo venerado pela tradição cristã",
     data: "01/01",
     seculo: "não determinado",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Cão santo.",
+    resumo: "Santo venerado pela tradição cristã.",
     biografia:
-      "São Guinefort é apresentado(a) nas fontes biográficas consultadas como cão santo. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data litúrgica a confirmar; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Guinefort é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data litúrgica a confirmar; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -11178,13 +11122,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-guiraud",
     nome: "São Guiraud",
-    titulo: "French bishop and saint",
+    titulo: "Bispo e pastor da Igreja",
     data: "05/11",
     seculo: "12",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "French bishop and saint (1070–1123).",
+    resumo: "Bispo e pastor da Igreja (1070–1123).",
     biografia:
-      "São Guiraud (1070–1123) é apresentado(a) nas fontes biográficas consultadas como french bishop and saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 5 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Guiraud (1070–1123) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 5 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -11202,13 +11146,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-gulsta-de-rhuys",
     nome: "São Gulstà de Rhuys",
-    titulo: "British monk",
+    titulo: "Monge e testemunha da vida consagrada",
     data: "27/11",
     seculo: "11",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "British monk (974–1040).",
+    resumo: "Monge e testemunha da vida consagrada (974–1040).",
     biografia:
-      "São Gulstà de Rhuys (974–1040) é apresentado(a) nas fontes biográficas consultadas como british monk. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 27 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Gulstà de Rhuys (974–1040) é apresentado(a) nas fontes biográficas consultadas como monge e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 27 de novembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/e/e9/St-Gildas_Saint-Goustan_0708.jpg",
@@ -11249,13 +11193,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-gurthiern",
     nome: "São Gurthiern",
-    titulo: "Welsh-born Breton saint",
+    titulo: "Santo venerado pela tradição cristã",
     data: "03/07",
     seculo: "5",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Welsh-born Breton saint.",
+    resumo: "Santo venerado pela tradição cristã.",
     biografia:
-      "São Gurthiern é apresentado(a) nas fontes biográficas consultadas como welsh-born breton saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 3 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Gurthiern é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 3 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -11273,13 +11217,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-guenole-de-landevennec",
     nome: "São Guénolé de Landévennec",
-    titulo: "Founder of Landévennec Abbey (c. 460–532)",
+    titulo: "Fundador de obra religiosa",
     data: "03/03",
     seculo: "6",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Founder of Landévennec Abbey (c. 460–532) (460–532).",
+    resumo: "Fundador de obra religiosa (460–532).",
     biografia:
-      "São Guénolé de Landévennec (460–532) é apresentado(a) nas fontes biográficas consultadas como founder of landévennec abbey (c. 460–532). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 3 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Guénolé de Landévennec (460–532) é apresentado(a) nas fontes biográficas consultadas como fundador de obra religiosa. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 3 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/a/a2/Saint_Gu%C3%A9nol%C3%A9.jpeg",
@@ -11294,39 +11238,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "CC BY-SA 3.0",
   },
   {
-    slug: "sao-gerard-de-toul",
-    nome: "São Gérard de Toul",
-    titulo: "Bishop of Toul",
-    data: "23/04",
-    seculo: "10",
-    padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Bishop of Toul (935–994).",
-    biografia:
-      "São Gérard de Toul (935–994) é apresentado(a) nas fontes biográficas consultadas como bishop of toul. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 23 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
-    virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
-    frase: "",
-    imagem:
-      "https://upload.wikimedia.org/wikipedia/commons/2/2b/Cath%C3%A9drale_de_Toul%2C_2009_%28tombe_de_St_G%C3%A9rard%29.jpg",
-    fontes: [
-      { nome: "Wikidata", url: "https://www.wikidata.org/wiki/Q1511823" },
-      {
-        nome: "Wikimedia Commons",
-        url: "https://upload.wikimedia.org/wikipedia/commons/2/2b/Cath%C3%A9drale_de_Toul%2C_2009_%28tombe_de_St_G%C3%A9rard%29.jpg",
-      },
-    ],
-    creditoImagem: "Diligent",
-    licencaImagem: "CC BY-SA 3.0",
-  },
-  {
-    slug: "sao-gerard-of-brogne",
-    nome: "São Gérard of Brogne",
-    titulo: "Abbot of Brogne (885-959)",
+    slug: "sao-gerard-de-brogne",
+    nome: "São Gérard de Brogne",
+    titulo: "Monge e testemunha da vida consagrada",
     data: "03/10",
     seculo: "10",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Abbot of Brogne (885-959) (885–959).",
+    resumo: "Monge e testemunha da vida consagrada (885–959).",
     biografia:
-      "São Gérard of Brogne (885–959) é apresentado(a) nas fontes biográficas consultadas como abbot of brogne (885-959). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 3 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Gérard de Brogne (885–959) é apresentado(a) nas fontes biográficas consultadas como monge e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 3 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -11342,15 +11262,39 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "Public domain",
   },
   {
+    slug: "sao-gerard-de-toul",
+    nome: "São Gérard de Toul",
+    titulo: "Bispo e pastor da Igreja",
+    data: "23/04",
+    seculo: "10",
+    padroeiro: "Testemunho cristão e intercessão dos santos",
+    resumo: "Bispo e pastor da Igreja (935–994).",
+    biografia:
+      "São Gérard de Toul (935–994) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 23 de abril; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+    virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
+    frase: "",
+    imagem:
+      "https://upload.wikimedia.org/wikipedia/commons/2/2b/Cath%C3%A9drale_de_Toul%2C_2009_%28tombe_de_St_G%C3%A9rard%29.jpg",
+    fontes: [
+      { nome: "Wikidata", url: "https://www.wikidata.org/wiki/Q1511823" },
+      {
+        nome: "Wikimedia Commons",
+        url: "https://upload.wikimedia.org/wikipedia/commons/2/2b/Cath%C3%A9drale_de_Toul%2C_2009_%28tombe_de_St_G%C3%A9rard%29.jpg",
+      },
+    ],
+    creditoImagem: "Diligent",
+    licencaImagem: "CC BY-SA 3.0",
+  },
+  {
     slug: "sao-geraud-daurillac",
     nome: "São Géraud d'Aurillac",
-    titulo: "French Roman Catholic saint",
+    titulo: "Santo venerado pela tradição cristã",
     data: "13/10",
     seculo: "10",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "French Roman Catholic saint (855–909).",
+    resumo: "Santo venerado pela tradição cristã (855–909).",
     biografia:
-      "São Géraud d'Aurillac (855–909) é apresentado(a) nas fontes biográficas consultadas como french roman catholic saint. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 13 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Géraud d'Aurillac (855–909) é apresentado(a) nas fontes biográficas consultadas como santo venerado pela tradição cristã. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 13 de outubro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/b/b7/G%C3%A9raud_d%27Aurillac.jpg",
@@ -11367,13 +11311,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-haakon-v",
     nome: "São Haakon V",
-    titulo: "King of Norway from 1299 until 1319",
+    titulo: "Governante cristão e servidor dos necessitados",
     data: "08/05",
     seculo: "14",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "King of Norway from 1299 until 1319 (1270–1319).",
+    resumo: "Governante cristão e servidor dos necessitados (1270–1319).",
     biografia:
-      "São Haakon V (1270–1319) é apresentado(a) nas fontes biográficas consultadas como king of norway from 1299 until 1319. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Haakon V (1270–1319) é apresentado(a) nas fontes biográficas consultadas como governante cristão e servidor dos necessitados. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -11391,13 +11335,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-haroldo-i-da-dinamarca",
     nome: "São Haroldo I da Dinamarca",
-    titulo: "Rei da Dinamarca",
+    titulo: "Governante cristão e servidor dos necessitados",
     data: "01/11",
     seculo: "10",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Rei da Dinamarca (911–985).",
+    resumo: "Governante cristão e servidor dos necessitados (911–985).",
     biografia:
-      "São Haroldo I da Dinamarca (911–985) é apresentado(a) nas fontes biográficas consultadas como rei da dinamarca. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Haroldo I da Dinamarca (911–985) é apresentado(a) nas fontes biográficas consultadas como governante cristão e servidor dos necessitados. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue data tradicional associada ao falecimento; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -11415,13 +11359,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-henri-dorie",
     nome: "São Henri Dorie",
-    titulo: "French missionary, martyr, saint of the Catholic Church (1839–1866)",
+    titulo: "Mártir cristão",
     data: "07/03",
     seculo: "19",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "French missionary, martyr, saint of the Catholic Church (1839–1866) (1839–1866).",
+    resumo: "Mártir cristão (1839–1866).",
     biografia:
-      "São Henri Dorie (1839–1866) é apresentado(a) nas fontes biográficas consultadas como french missionary, martyr, saint of the catholic church (1839–1866). O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 7 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Henri Dorie (1839–1866) é apresentado(a) nas fontes biográficas consultadas como mártir cristão. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 7 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/3/38/Pierre_Henri_Dorie_Korea_1864.jpg",
@@ -11438,13 +11382,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-henrique-de-uppsala",
     nome: "São Henrique de Uppsala",
-    titulo: "Bishop of Finland",
+    titulo: "Bispo e pastor da Igreja",
     data: "19/01",
     seculo: "12",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Bishop of Finland (1100–1156).",
+    resumo: "Bispo e pastor da Igreja (1100–1156).",
     biografia:
-      "São Henrique de Uppsala (1100–1156) é apresentado(a) nas fontes biográficas consultadas como bishop of finland. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 19 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Henrique de Uppsala (1100–1156) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 19 de janeiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/b/b5/Piispa_Henrik_ja_Lalli.jpg",
@@ -11461,13 +11405,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-herulph",
     nome: "São Herulph",
-    titulo: "Catholic bishop in 8th century",
+    titulo: "Bispo e pastor da Igreja",
     data: "13/08",
     seculo: "8",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Catholic bishop in 8th century (falecido em 785).",
+    resumo: "Bispo e pastor da Igreja (falecido em 785).",
     biografia:
-      "São Herulph (falecido em 785) é apresentado(a) nas fontes biográficas consultadas como catholic bishop in 8th century. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 13 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Herulph (falecido em 785) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 13 de agosto; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/1/1b/Hariolf.jpg",
@@ -11484,13 +11428,13 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
   {
     slug: "sao-hidulfo-de-moyenmoutier",
     nome: "São Hidulfo de Moyenmoutier",
-    titulo: "Benedictine abbot",
+    titulo: "Monge e testemunha da vida consagrada",
     data: "11/07",
     seculo: "8",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Benedictine abbot (601–707).",
+    resumo: "Monge e testemunha da vida consagrada (601–707).",
     biografia:
-      "São Hidulfo de Moyenmoutier (601–707) é apresentado(a) nas fontes biográficas consultadas como benedictine abbot. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 11 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Hidulfo de Moyenmoutier (601–707) é apresentado(a) nas fontes biográficas consultadas como monge e testemunha da vida consagrada. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 11 de julho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/e/e0/Moyenmoutier-Saint-Hydulphe.jpg",
@@ -11505,15 +11449,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "Public domain",
   },
   {
-    slug: "sao-hilarius-of-aquileia",
-    nome: "São Hilarius of Aquileia",
-    titulo: "Roman Catholic bishop",
+    slug: "sao-hilarius-de-aquileia",
+    nome: "São Hilarius de Aquileia",
+    titulo: "Bispo e pastor da Igreja",
     data: "16/03",
     seculo: "3",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Roman Catholic bishop (200–284).",
+    resumo: "Bispo e pastor da Igreja (200–284).",
     biografia:
-      "São Hilarius of Aquileia (200–284) é apresentado(a) nas fontes biográficas consultadas como roman catholic bishop. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 16 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Hilarius de Aquileia (200–284) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 16 de março; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -11529,15 +11473,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "CC BY-SA 3.0",
   },
   {
-    slug: "sao-hildegrim-of-chalons",
-    nome: "São Hildegrim of Châlons",
-    titulo: "French bishop",
+    slug: "sao-hildegrim-de-chalons",
+    nome: "São Hildegrim de Châlons",
+    titulo: "Bispo e pastor da Igreja",
     data: "19/06",
     seculo: "9",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "French bishop (760–827).",
+    resumo: "Bispo e pastor da Igreja (760–827).",
     biografia:
-      "São Hildegrim of Châlons (760–827) é apresentado(a) nas fontes biográficas consultadas como french bishop. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 19 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Hildegrim de Châlons (760–827) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 19 de junho; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem:
@@ -11553,15 +11497,15 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     licencaImagem: "CC BY-SA 4.0",
   },
   {
-    slug: "sao-himerius-of-bosto",
-    nome: "São Himerius of Bosto",
-    titulo: "Pilgrim and martyr",
+    slug: "sao-himerius-de-bosto",
+    nome: "São Himerius de Bosto",
+    titulo: "Mártir cristão",
     data: "04/02",
     seculo: "não determinado",
     padroeiro: "Testemunho cristão e intercessão dos santos",
-    resumo: "Pilgrim and martyr.",
+    resumo: "Mártir cristão.",
     biografia:
-      "São Himerius of Bosto é apresentado(a) nas fontes biográficas consultadas como pilgrim and martyr. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 4 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+      "São Himerius de Bosto é apresentado(a) nas fontes biográficas consultadas como mártir cristão. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 4 de fevereiro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
     virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
     frase: "",
     imagem: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Sainthimerius.jpg",
@@ -11574,5 +11518,29 @@ export const SANTOS_DOCUMENTADOS: Santo[] = [
     ],
     creditoImagem: "AnonymousUnknown author",
     licencaImagem: "Public domain",
+  },
+  {
+    slug: "sao-honoratus",
+    nome: "São Honoratus",
+    titulo: "Bispo e pastor da Igreja",
+    data: "22/12",
+    seculo: "3",
+    padroeiro: "Testemunho cristão e intercessão dos santos",
+    resumo: "Bispo e pastor da Igreja (201–300).",
+    biografia:
+      "São Honoratus (201–300) é apresentado(a) nas fontes biográficas consultadas como bispo e pastor da igreja. O registro estruturado de sua veneração o inclui entre os santos reconhecidos pela tradição católica e conserva uma representação histórica no Wikimedia Commons. A memória indicada nesta ficha segue 22 de dezembro; quando a documentação histórica é incompleta ou divergente, o Portal evita transformar tradição piedosa em certeza documental. Esta síntese editorial deve ser lida em conjunto com as fontes indicadas abaixo, especialmente para aprofundar o contexto de sua vida, culto e testemunho cristão.",
+    virtudes: ["Fidelidade cristã", "Perseverança", "Caridade"],
+    frase: "",
+    imagem:
+      "https://upload.wikimedia.org/wikipedia/commons/a/ac/31_-_Toulouse_-_Basilique_Saint-Sernin_-_Crypte_-_Buste_reliquaire_de_St_Honorat_de_Toulouse.jpg",
+    fontes: [
+      { nome: "Wikidata", url: "https://www.wikidata.org/wiki/Q3824590" },
+      {
+        nome: "Wikimedia Commons",
+        url: "https://upload.wikimedia.org/wikipedia/commons/a/ac/31_-_Toulouse_-_Basilique_Saint-Sernin_-_Crypte_-_Buste_reliquaire_de_St_Honorat_de_Toulouse.jpg",
+      },
+    ],
+    creditoImagem: "Didier Descouens",
+    licencaImagem: "CC BY-SA 4.0",
   },
 ];
