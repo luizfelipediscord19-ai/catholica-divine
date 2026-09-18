@@ -58,7 +58,10 @@ export function retratoDoSanto(slug: string): { url?: string; reserva?: string }
   const propria = imagemSanto(slug);
   const rico = findRico(slug);
   const daFicha = rico?.imagem || (rico ? imagemSanto(rico.slug)?.url : undefined);
-  return { url: propria?.url ?? daFicha, reserva: propria?.remoto ?? (propria ? daFicha : undefined) };
+  return {
+    url: propria?.url ?? daFicha,
+    reserva: propria?.remoto ?? (propria ? daFicha : undefined),
+  };
 }
 
 export function buildSantoView(slugUrl: string, basico?: SantoBasico) {

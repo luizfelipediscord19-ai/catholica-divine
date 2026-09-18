@@ -39,9 +39,7 @@ export function prefetchSanto(router: RouterLike | null, slug: string) {
       img.decoding = "async";
       img.src = url;
     }
-    router
-      ?.preloadRoute({ to: "/santos/$slug", params: { slug } })
-      .catch(() => {});
+    router?.preloadRoute({ to: "/santos/$slug", params: { slug } }).catch(() => {});
   });
 }
 
@@ -49,10 +47,7 @@ export function prefetchSanto(router: RouterLike | null, slug: string) {
  * Devolve um ref para anexar ao cartão/link do santo. Ao entrar na margem de
  * observação (antes de ficar visível), dispara o pré-carregamento.
  */
-export function usePrefetchSanto<T extends HTMLElement>(
-  slug: string,
-  rootMargin = "500px"
-) {
+export function usePrefetchSanto<T extends HTMLElement>(slug: string, rootMargin = "500px") {
   const router = useRouter();
   const ref = useRef<T | null>(null);
 
@@ -67,7 +62,7 @@ export function usePrefetchSanto<T extends HTMLElement>(
         io.disconnect();
         prefetchSanto(router, slug);
       },
-      { rootMargin }
+      { rootMargin },
     );
     io.observe(el);
     return () => io.disconnect();

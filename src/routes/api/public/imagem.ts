@@ -72,7 +72,8 @@ export const Route = createFileRoute("/api/public/imagem")({
         }
 
         const tipo = resposta.headers.get("content-type") ?? "";
-        if (!tipo.startsWith("image/")) return new Response("Conteúdo não é imagem", { status: 415 });
+        if (!tipo.startsWith("image/"))
+          return new Response("Conteúdo não é imagem", { status: 415 });
 
         return new Response(resposta.body, {
           headers: {

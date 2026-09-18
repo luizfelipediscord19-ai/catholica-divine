@@ -35,7 +35,6 @@ function srcSetDe(url: string): string | undefined {
   return LARGURAS_RETRATO.map((w) => `${pelaNossaOrigem(url, w)} ${w}w`).join(", ");
 }
 
-
 /**
  * Retrato de santo com carregamento otimizado: lazy por padrão, dimensões
  * declaradas (sem salto de layout), reserva na fonte pública de domínio
@@ -77,7 +76,11 @@ export function RetratoSanto({
   const atual = fontes[tentativa];
 
   if (!atual) {
-    const inicial = nome.replace(/^(São|Santo|Santa)\s+/i, "").trim().charAt(0) || "✝";
+    const inicial =
+      nome
+        .replace(/^(São|Santo|Santa)\s+/i, "")
+        .trim()
+        .charAt(0) || "✝";
     return (
       <div
         role="img"
