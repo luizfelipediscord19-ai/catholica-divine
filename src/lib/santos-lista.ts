@@ -1228,7 +1228,7 @@ const LISTA_HISTORICA: SantoLista[] = RAW.map((s) => ({
 
 const slugsHistoricos = new Set(LISTA_HISTORICA.map((s) => s.slug));
 
-export const SANTOS_LISTA: SantoLista[] = [
+const listaComDocumentados: SantoLista[] = [
   ...LISTA_HISTORICA,
   ...SANTOS_DOCUMENTADOS.filter((s) => !slugsHistoricos.has(s.slug)).map((s) => ({
     slug: s.slug,
@@ -1237,6 +1237,10 @@ export const SANTOS_LISTA: SantoLista[] = [
     body: s.resumo,
   })),
 ];
+
+export const SANTOS_LISTA: SantoLista[] = listaComDocumentados.filter(
+  (santo, indice, todos) => todos.findIndex((item) => item.slug === santo.slug) === indice,
+);
 
 function formatarDataCatalogo(data: string): string {
   const match = data.match(/^(\d{1,2})\/(\d{1,2})$/);
