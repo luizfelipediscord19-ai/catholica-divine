@@ -101,7 +101,7 @@ export function Grid({
 }) {
   return (
     <div
-      className={cn("grid gap-sm", className)}
+      className={cn("grid items-stretch gap-sm [&>*]:min-w-0", className)}
       style={{ gridTemplateColumns: `repeat(auto-fit, minmax(min(100%, ${min}), 1fr))` }}
     >
       {children}
@@ -421,7 +421,7 @@ export function Painel({
   href?: string;
 }) {
   const classes = cn(
-    "surface-card p-card min-w-0",
+    "surface-card p-card min-w-0 self-stretch",
     (interativo || para || href) && "surface-card-interactive focus-ring",
     className,
   );

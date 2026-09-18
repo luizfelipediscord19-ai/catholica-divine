@@ -228,7 +228,12 @@
    profundidade editorial ao noir sem introduzir novas cores. */
 @utility surface-card {
   position: relative;
-  height: 100%;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  height: auto;
+  align-self: stretch;
+  box-sizing: border-box;
   border-radius: var(--radius-card);
   border: 1px solid var(--hairline);
   background:
@@ -295,6 +300,12 @@
 /* Segundo nível de superfície: card sobre card, com leve destaque */
 @utility surface-card-raised {
   position: relative;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  height: auto;
+  align-self: stretch;
+  box-sizing: border-box;
   border-radius: var(--radius-card);
   border: 1px solid color-mix(in oklab, var(--gold) 18%, var(--hairline));
   background: color-mix(in oklab, var(--card) 100%, transparent);
@@ -304,6 +315,12 @@
 /* Card de destaque: filete de ouro no topo */
 @utility surface-card-featured {
   position: relative;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  height: auto;
+  align-self: stretch;
+  box-sizing: border-box;
   overflow: hidden;
   border-radius: var(--radius-card);
   border: 1px solid color-mix(in oklab, var(--gold) 26%, transparent);

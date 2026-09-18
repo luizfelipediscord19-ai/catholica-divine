@@ -23,3 +23,4 @@
 - [ ] Privacidade, design system e microinterações
 - [ ] SEO, performance e acessibilidade WCAG AA
 - [ ] Testes finais e relatório consolidado
+- [x] Corrigir globalmente alturas forçadas e alinhamento dos contêineres e cards
