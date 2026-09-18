@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useRouter } from "@tanstack/react-router";
-import { imagemSanto } from "@/lib/data/santos-imagens";
+import { retratoDoSanto } from "@/lib/santos-helpers";
 
 /**
  * Pré-carregamento inteligente dos santos: quando um cartão (ou link) se
@@ -33,7 +33,7 @@ export function prefetchSanto(router: RouterLike | null, slug: string) {
   jaFeitos.add(slug);
 
   agendar(() => {
-    const url = imagemSanto(slug)?.url;
+    const url = retratoDoSanto(slug).url;
     if (url) {
       const img = new Image();
       img.decoding = "async";
