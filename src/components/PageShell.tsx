@@ -121,7 +121,7 @@ export function CardGrid({ children, cols = 3 }: { children: ReactNode; cols?: 2
   const min = cols === 2 ? "22rem" : cols === 4 ? "14rem" : "17rem";
   return (
     <div
-      className="grid gap-[var(--space-sm)]"
+      className="grid items-stretch gap-[var(--space-sm)] [&>*]:min-w-0"
       style={{ gridTemplateColumns: `repeat(auto-fit, minmax(min(100%, ${min}), 1fr))` }}
     >
       {children}
@@ -141,10 +141,10 @@ export function ContentCard({
   media?: ReactNode;
 }) {
   return (
-    <article className="surface-card surface-card-interactive group flex min-w-0 flex-col overflow-hidden [content-visibility:auto] [contain-intrinsic-size:auto_420px]">
+    <article className="surface-card surface-card-interactive group flex min-w-0 flex-col overflow-hidden">
       <div className="pointer-events-none absolute top-0 right-0 size-32 -translate-y-1/2 translate-x-1/2 bg-gold/5 blur-3xl transition-premium group-hover:bg-gold/10" />
       {media ? <div className="relative">{media}</div> : null}
-      <div className="relative min-w-0 p-card">
+      <div className="relative flex min-w-0 flex-1 flex-col p-card">
         {subtitle ? (
           <p className="mb-xs kicker group-hover:text-gold transition-colors">{subtitle}</p>
         ) : null}
