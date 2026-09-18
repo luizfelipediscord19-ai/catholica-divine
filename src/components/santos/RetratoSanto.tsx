@@ -95,7 +95,7 @@ export function RetratoSanto({
     <img
       key={atual}
       ref={ref}
-      src={pelaNossaOrigem(atual, 1024)}
+      src={pelaNossaOrigem(atual, prioridade ? 1280 : 500)}
       srcSet={srcSetDe(atual)}
       alt={`Representação de ${nome}`}
       width={largura}
