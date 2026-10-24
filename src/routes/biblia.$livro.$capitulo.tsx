@@ -45,7 +45,7 @@ export const Route = createFileRoute("/biblia/$livro/$capitulo")({
   loader: async ({ params, context: { queryClient } }) => {
     const l = getLivro(params.livro);
     const c = Number(params.capitulo);
-    if (!l || !Number.isFinite(c) || c < 1 || c > l.capitulos) throw notFound();
+    if (!l || !Number.isInteger(c) || c < 1 || c > l.capitulos) throw notFound();
 
     return queryClient.ensureQueryData({
       queryKey: ["biblia", l.slug, c],
@@ -56,6 +56,17 @@ export const Route = createFileRoute("/biblia/$livro/$capitulo")({
     });
   },
   head: ({ params, loaderData }) => {
+    if (!loaderData) return {
+      meta: [
+        { title: "Capítulo não encontrado | Portal Católico" },
+        { name: "description", content: "Este capítulo não existe. Consulte os livros da Bíblia Católica no Portal Católico." },
+        { name: "robots", content: "noindex, follow" },
+        { property: "og:title", content: "Capítulo não encontrado | Portal Católico" },
+        { property: "og:description", content: "Consulte os livros e capítulos da Bíblia Católica." },
+        { property: "og:type", content: "website" },
+        { name: "twitter:card", content: "summary" },
+      ],
+    };
     const titulo = loaderData ? `${loaderData.livro.nome} ${loaderData.capitulo}` : "Bíblia";
     const url = `https://portalcatolico.vercel.app/biblia/${params.livro}/${params.capitulo}`;
     // Descrição única por capítulo: começa pelo texto real do primeiro
