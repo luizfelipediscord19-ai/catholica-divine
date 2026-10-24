@@ -9,304 +9,102 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as TestemunhosRouteImport } from './routes/testemunhos'
-import { Route as TermosRouteImport } from './routes/termos'
-import { Route as SobreRouteImport } from './routes/sobre'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as SitemapSantosDotxmlRouteImport } from './routes/sitemap-santos[.]xml'
-import { Route as SitemapPaginasDotxmlRouteImport } from './routes/sitemap-paginas[.]xml'
-import { Route as SitemapNoticiasDotxmlRouteImport } from './routes/sitemap-noticias[.]xml'
-import { Route as SitemapBibliaLivrosDotxmlRouteImport } from './routes/sitemap-biblia-livros[.]xml'
-import { Route as SitemapBibliaCapitulosDotxmlRouteImport } from './routes/sitemap-biblia-capitulos[.]xml'
-import { Route as SantosRouteImport } from './routes/santos'
-import { Route as SacramentosRouteImport } from './routes/sacramentos'
-import { Route as RedefinirSenhaRouteImport } from './routes/redefinir-senha'
-import { Route as PrivacidadeRouteImport } from './routes/privacidade'
-import { Route as PainelRouteImport } from './routes/painel'
-import { Route as PadresDaIgrejaRouteImport } from './routes/padres-da-igreja'
-import { Route as OracoesRouteImport } from './routes/oracoes'
-import { Route as MariaRouteImport } from './routes/maria'
-import { Route as LiturgiaDiariaRouteImport } from './routes/liturgia-diaria'
-import { Route as LeituraDiariaRouteImport } from './routes/leitura-diaria'
-import { Route as LectioDivinaRouteImport } from './routes/lectio-divina'
-import { Route as GlossarioRouteImport } from './routes/glossario'
-import { Route as FontesRouteImport } from './routes/fontes'
-import { Route as FeCatolicaRouteImport } from './routes/fe-catolica'
-import { Route as FavoritosRouteImport } from './routes/favoritos'
-import { Route as ExplorarRouteImport } from './routes/explorar'
-import { Route as EstudarRouteImport } from './routes/estudar'
-import { Route as EnciclopediaRouteImport } from './routes/enciclopedia'
-import { Route as EmailConfirmadoRouteImport } from './routes/email-confirmado'
-import { Route as DoutrinaRouteImport } from './routes/doutrina'
-import { Route as DoutoresDaIgrejaRouteImport } from './routes/doutores-da-igreja'
-import { Route as DesignSystemRouteImport } from './routes/design-system'
-import { Route as CoroinhasRouteImport } from './routes/coroinhas'
-import { Route as ContatoRouteImport } from './routes/contato'
-import { Route as ConfissaoRouteImport } from './routes/confissao'
-import { Route as ConciliosRouteImport } from './routes/concilios'
-import { Route as CatecismoRouteImport } from './routes/catecismo'
-import { Route as CalendarioLiturgicoRouteImport } from './routes/calendario-liturgico'
-import { Route as BuscaRouteImport } from './routes/busca'
-import { Route as BibliaRouteImport } from './routes/biblia'
-import { Route as AuthRouteImport } from './routes/auth'
-import { Route as AssistenteRouteImport } from './routes/assistente'
-import { Route as ApologeticaRouteImport } from './routes/apologetica'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as TrilhasIndexRouteImport } from './routes/trilhas.index'
-import { Route as TestemunhosIndexRouteImport } from './routes/testemunhos.index'
-import { Route as SantosIndexRouteImport } from './routes/santos.index'
-import { Route as SacramentosIndexRouteImport } from './routes/sacramentos.index'
-import { Route as OracoesIndexRouteImport } from './routes/oracoes.index'
-import { Route as NoticiasIndexRouteImport } from './routes/noticias.index'
-import { Route as ForumIndexRouteImport } from './routes/forum.index'
-import { Route as EnciclopediaIndexRouteImport } from './routes/enciclopedia.index'
-import { Route as DoutrinaIndexRouteImport } from './routes/doutrina.index'
-import { Route as CatecismoIndexRouteImport } from './routes/catecismo.index'
-import { Route as BibliaIndexRouteImport } from './routes/biblia.index'
-import { Route as ApologeticaIndexRouteImport } from './routes/apologetica.index'
-import { Route as TestemunhosSlugRouteImport } from './routes/testemunhos.$slug'
-import { Route as SantosSlugRouteImport } from './routes/santos.$slug'
-import { Route as SacramentosTemaRouteImport } from './routes/sacramentos.$tema'
-import { Route as OracoesViaSacraRouteImport } from './routes/oracoes.via-sacra'
-import { Route as OracoesTercoMisericordiaRouteImport } from './routes/oracoes.terco-misericordia'
-import { Route as OracoesRosarioRouteImport } from './routes/oracoes.rosario'
-import { Route as OracoesNovenasRouteImport } from './routes/oracoes.novenas'
-import { Route as OracoesLiturgiaDasHorasRouteImport } from './routes/oracoes.liturgia-das-horas'
-import { Route as OracoesDiariasRouteImport } from './routes/oracoes.diarias'
-import { Route as NoticiasSlugRouteImport } from './routes/noticias.$slug'
-import { Route as ForumSlugRouteImport } from './routes/forum.$slug'
-import { Route as EnciclopediaTemaRouteImport } from './routes/enciclopedia.$tema'
-import { Route as DoutrinaTemaRouteImport } from './routes/doutrina.$tema'
-import { Route as CatecismoArtigosRouteImport } from './routes/catecismo.artigos'
-import { Route as CatecismoParteRouteImport } from './routes/catecismo.$parte'
-import { Route as BibliaPlanosRouteImport } from './routes/biblia.planos'
-import { Route as BibliaLeiturasRouteImport } from './routes/biblia.leituras'
-import { Route as BibliaLivroRouteImport } from './routes/biblia.$livro'
-import { Route as ApologeticaTemaRouteImport } from './routes/apologetica.$tema'
-import { Route as ApiTranscreverRouteImport } from './routes/api/transcrever'
+import { Route as ApologeticaRouteImport } from './routes/apologetica'
+import { Route as AssistenteRouteImport } from './routes/assistente'
+import { Route as AuthRouteImport } from './routes/auth'
+import { Route as BibliaRouteImport } from './routes/biblia'
+import { Route as BuscaRouteImport } from './routes/busca'
+import { Route as CalendarioLiturgicoRouteImport } from './routes/calendario-liturgico'
+import { Route as CatecismoRouteImport } from './routes/catecismo'
+import { Route as ConciliosRouteImport } from './routes/concilios'
+import { Route as ConfissaoRouteImport } from './routes/confissao'
+import { Route as ContatoRouteImport } from './routes/contato'
+import { Route as CoroinhasRouteImport } from './routes/coroinhas'
+import { Route as DesignSystemRouteImport } from './routes/design-system'
+import { Route as DoutoresDaIgrejaRouteImport } from './routes/doutores-da-igreja'
+import { Route as DoutrinaRouteImport } from './routes/doutrina'
+import { Route as EmailConfirmadoRouteImport } from './routes/email-confirmado'
+import { Route as EnciclopediaRouteImport } from './routes/enciclopedia'
+import { Route as EstudarRouteImport } from './routes/estudar'
+import { Route as ExplorarRouteImport } from './routes/explorar'
+import { Route as FavoritosRouteImport } from './routes/favoritos'
+import { Route as FeCatolicaRouteImport } from './routes/fe-catolica'
+import { Route as FontesRouteImport } from './routes/fontes'
+import { Route as GlossarioRouteImport } from './routes/glossario'
+import { Route as LectioDivinaRouteImport } from './routes/lectio-divina'
+import { Route as LeituraDiariaRouteImport } from './routes/leitura-diaria'
+import { Route as LiturgiaDiariaRouteImport } from './routes/liturgia-diaria'
+import { Route as MariaRouteImport } from './routes/maria'
+import { Route as OracoesRouteImport } from './routes/oracoes'
+import { Route as PadresDaIgrejaRouteImport } from './routes/padres-da-igreja'
+import { Route as PainelRouteImport } from './routes/painel'
+import { Route as PrivacidadeRouteImport } from './routes/privacidade'
+import { Route as RedefinirSenhaRouteImport } from './routes/redefinir-senha'
+import { Route as SacramentosRouteImport } from './routes/sacramentos'
+import { Route as SantosRouteImport } from './routes/santos'
+import { Route as SitemapBibliaCapitulosDotxmlRouteImport } from './routes/sitemap-biblia-capitulos[.]xml'
+import { Route as SitemapBibliaLivrosDotxmlRouteImport } from './routes/sitemap-biblia-livros[.]xml'
+import { Route as SitemapNoticiasDotxmlRouteImport } from './routes/sitemap-noticias[.]xml'
+import { Route as SitemapPaginasDotxmlRouteImport } from './routes/sitemap-paginas[.]xml'
+import { Route as SitemapSantosDotxmlRouteImport } from './routes/sitemap-santos[.]xml'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as SobreRouteImport } from './routes/sobre'
+import { Route as TermosRouteImport } from './routes/termos'
+import { Route as TestemunhosRouteImport } from './routes/testemunhos'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
-import { Route as TrilhasTrilhaIndexRouteImport } from './routes/trilhas.$trilha.index'
-import { Route as OracoesNovenasIndexRouteImport } from './routes/oracoes.novenas.index'
-import { Route as CatecismoAulasIndexRouteImport } from './routes/catecismo.aulas.index'
-import { Route as BibliaPlanosIndexRouteImport } from './routes/biblia.planos.index'
-import { Route as BibliaLivroIndexRouteImport } from './routes/biblia.$livro.index'
-import { Route as TrilhasTrilhaLicaoRouteImport } from './routes/trilhas.$trilha.$licao'
-import { Route as OracoesNovenasSlugRouteImport } from './routes/oracoes.novenas.$slug'
-import { Route as CatecismoAulasSemanaRouteImport } from './routes/catecismo.aulas.$semana'
-import { Route as BibliaPlanosSlugRouteImport } from './routes/biblia.planos.$slug'
-import { Route as BibliaLivroLeituraRouteImport } from './routes/biblia.$livro.leitura'
-import { Route as BibliaLivroCapituloRouteImport } from './routes/biblia.$livro.$capitulo'
-import { Route as ApiPublicNoticiasDiariasRouteImport } from './routes/api/public/noticias-diarias'
-import { Route as ApiPublicNoticiasRouteImport } from './routes/api/public/noticias'
-import { Route as ApiPublicLembretesRouteImport } from './routes/api/public/lembretes'
-import { Route as ApiPublicImagemRouteImport } from './routes/api/public/imagem'
+import { Route as ApiTranscreverRouteImport } from './routes/api/transcrever'
+import { Route as ApologeticaIndexRouteImport } from './routes/apologetica.index'
+import { Route as ApologeticaTemaRouteImport } from './routes/apologetica.$tema'
+import { Route as BibliaIndexRouteImport } from './routes/biblia.index'
+import { Route as BibliaLivroRouteImport } from './routes/biblia.$livro'
+import { Route as BibliaLeiturasRouteImport } from './routes/biblia.leituras'
+import { Route as BibliaPlanosRouteImport } from './routes/biblia.planos'
+import { Route as CatecismoIndexRouteImport } from './routes/catecismo.index'
+import { Route as CatecismoParteRouteImport } from './routes/catecismo.$parte'
+import { Route as CatecismoArtigosRouteImport } from './routes/catecismo.artigos'
+import { Route as DoutrinaIndexRouteImport } from './routes/doutrina.index'
+import { Route as DoutrinaTemaRouteImport } from './routes/doutrina.$tema'
+import { Route as EnciclopediaIndexRouteImport } from './routes/enciclopedia.index'
+import { Route as EnciclopediaTemaRouteImport } from './routes/enciclopedia.$tema'
+import { Route as ForumIndexRouteImport } from './routes/forum.index'
+import { Route as ForumSlugRouteImport } from './routes/forum.$slug'
+import { Route as NoticiasIndexRouteImport } from './routes/noticias.index'
+import { Route as NoticiasSlugRouteImport } from './routes/noticias.$slug'
+import { Route as OracoesIndexRouteImport } from './routes/oracoes.index'
+import { Route as OracoesDiariasRouteImport } from './routes/oracoes.diarias'
+import { Route as OracoesLiturgiaDasHorasRouteImport } from './routes/oracoes.liturgia-das-horas'
+import { Route as OracoesNovenasRouteImport } from './routes/oracoes.novenas'
+import { Route as OracoesRosarioRouteImport } from './routes/oracoes.rosario'
+import { Route as OracoesTercoMisericordiaRouteImport } from './routes/oracoes.terco-misericordia'
+import { Route as OracoesViaSacraRouteImport } from './routes/oracoes.via-sacra'
+import { Route as SacramentosIndexRouteImport } from './routes/sacramentos.index'
+import { Route as SacramentosTemaRouteImport } from './routes/sacramentos.$tema'
+import { Route as SantosIndexRouteImport } from './routes/santos.index'
+import { Route as SantosSlugRouteImport } from './routes/santos.$slug'
+import { Route as TestemunhosIndexRouteImport } from './routes/testemunhos.index'
+import { Route as TestemunhosSlugRouteImport } from './routes/testemunhos.$slug'
+import { Route as TrilhasIndexRouteImport } from './routes/trilhas.index'
 import { Route as ApiPublicCspReportRouteImport } from './routes/api/public/csp-report'
+import { Route as ApiPublicImagemRouteImport } from './routes/api/public/imagem'
+import { Route as ApiPublicLembretesRouteImport } from './routes/api/public/lembretes'
+import { Route as ApiPublicNoticiasRouteImport } from './routes/api/public/noticias'
+import { Route as ApiPublicNoticiasDiariasRouteImport } from './routes/api/public/noticias-diarias'
+import { Route as BibliaLivroIndexRouteImport } from './routes/biblia.$livro.index'
+import { Route as BibliaLivroCapituloRouteImport } from './routes/biblia.$livro.$capitulo'
+import { Route as BibliaLivroLeituraRouteImport } from './routes/biblia.$livro.leitura'
+import { Route as BibliaPlanosIndexRouteImport } from './routes/biblia.planos.index'
+import { Route as BibliaPlanosSlugRouteImport } from './routes/biblia.planos.$slug'
+import { Route as CatecismoAulasIndexRouteImport } from './routes/catecismo.aulas.index'
+import { Route as CatecismoAulasSemanaRouteImport } from './routes/catecismo.aulas.$semana'
+import { Route as OracoesNovenasIndexRouteImport } from './routes/oracoes.novenas.index'
+import { Route as OracoesNovenasSlugRouteImport } from './routes/oracoes.novenas.$slug'
+import { Route as TrilhasTrilhaIndexRouteImport } from './routes/trilhas.$trilha.index'
+import { Route as TrilhasTrilhaLicaoRouteImport } from './routes/trilhas.$trilha.$licao'
 
-const TestemunhosRoute = TestemunhosRouteImport.update({
-  id: '/testemunhos',
-  path: '/testemunhos',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const TermosRoute = TermosRouteImport.update({
-  id: '/termos',
-  path: '/termos',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SobreRoute = SobreRouteImport.update({
-  id: '/sobre',
-  path: '/sobre',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SitemapSantosDotxmlRoute = SitemapSantosDotxmlRouteImport.update({
-  id: '/sitemap-santos.xml',
-  path: '/sitemap-santos.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SitemapPaginasDotxmlRoute = SitemapPaginasDotxmlRouteImport.update({
-  id: '/sitemap-paginas.xml',
-  path: '/sitemap-paginas.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SitemapNoticiasDotxmlRoute = SitemapNoticiasDotxmlRouteImport.update({
-  id: '/sitemap-noticias.xml',
-  path: '/sitemap-noticias.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SitemapBibliaLivrosDotxmlRoute =
-  SitemapBibliaLivrosDotxmlRouteImport.update({
-    id: '/sitemap-biblia-livros.xml',
-    path: '/sitemap-biblia-livros.xml',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const SitemapBibliaCapitulosDotxmlRoute =
-  SitemapBibliaCapitulosDotxmlRouteImport.update({
-    id: '/sitemap-biblia-capitulos.xml',
-    path: '/sitemap-biblia-capitulos.xml',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const SantosRoute = SantosRouteImport.update({
-  id: '/santos',
-  path: '/santos',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SacramentosRoute = SacramentosRouteImport.update({
-  id: '/sacramentos',
-  path: '/sacramentos',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RedefinirSenhaRoute = RedefinirSenhaRouteImport.update({
-  id: '/redefinir-senha',
-  path: '/redefinir-senha',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PrivacidadeRoute = PrivacidadeRouteImport.update({
-  id: '/privacidade',
-  path: '/privacidade',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PainelRoute = PainelRouteImport.update({
-  id: '/painel',
-  path: '/painel',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PadresDaIgrejaRoute = PadresDaIgrejaRouteImport.update({
-  id: '/padres-da-igreja',
-  path: '/padres-da-igreja',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const OracoesRoute = OracoesRouteImport.update({
-  id: '/oracoes',
-  path: '/oracoes',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MariaRoute = MariaRouteImport.update({
-  id: '/maria',
-  path: '/maria',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LiturgiaDiariaRoute = LiturgiaDiariaRouteImport.update({
-  id: '/liturgia-diaria',
-  path: '/liturgia-diaria',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LeituraDiariaRoute = LeituraDiariaRouteImport.update({
-  id: '/leitura-diaria',
-  path: '/leitura-diaria',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LectioDivinaRoute = LectioDivinaRouteImport.update({
-  id: '/lectio-divina',
-  path: '/lectio-divina',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const GlossarioRoute = GlossarioRouteImport.update({
-  id: '/glossario',
-  path: '/glossario',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FontesRoute = FontesRouteImport.update({
-  id: '/fontes',
-  path: '/fontes',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FeCatolicaRoute = FeCatolicaRouteImport.update({
-  id: '/fe-catolica',
-  path: '/fe-catolica',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FavoritosRoute = FavoritosRouteImport.update({
-  id: '/favoritos',
-  path: '/favoritos',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ExplorarRoute = ExplorarRouteImport.update({
-  id: '/explorar',
-  path: '/explorar',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EstudarRoute = EstudarRouteImport.update({
-  id: '/estudar',
-  path: '/estudar',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EnciclopediaRoute = EnciclopediaRouteImport.update({
-  id: '/enciclopedia',
-  path: '/enciclopedia',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EmailConfirmadoRoute = EmailConfirmadoRouteImport.update({
-  id: '/email-confirmado',
-  path: '/email-confirmado',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DoutrinaRoute = DoutrinaRouteImport.update({
-  id: '/doutrina',
-  path: '/doutrina',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DoutoresDaIgrejaRoute = DoutoresDaIgrejaRouteImport.update({
-  id: '/doutores-da-igreja',
-  path: '/doutores-da-igreja',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DesignSystemRoute = DesignSystemRouteImport.update({
-  id: '/design-system',
-  path: '/design-system',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CoroinhasRoute = CoroinhasRouteImport.update({
-  id: '/coroinhas',
-  path: '/coroinhas',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContatoRoute = ContatoRouteImport.update({
-  id: '/contato',
-  path: '/contato',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ConfissaoRoute = ConfissaoRouteImport.update({
-  id: '/confissao',
-  path: '/confissao',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ConciliosRoute = ConciliosRouteImport.update({
-  id: '/concilios',
-  path: '/concilios',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CatecismoRoute = CatecismoRouteImport.update({
-  id: '/catecismo',
-  path: '/catecismo',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CalendarioLiturgicoRoute = CalendarioLiturgicoRouteImport.update({
-  id: '/calendario-liturgico',
-  path: '/calendario-liturgico',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BuscaRoute = BuscaRouteImport.update({
-  id: '/busca',
-  path: '/busca',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BibliaRoute = BibliaRouteImport.update({
-  id: '/biblia',
-  path: '/biblia',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AuthRoute = AuthRouteImport.update({
-  id: '/auth',
-  path: '/auth',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AssistenteRoute = AssistenteRouteImport.update({
-  id: '/assistente',
-  path: '/assistente',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApologeticaRoute = ApologeticaRouteImport.update({
@@ -314,89 +112,331 @@ const ApologeticaRoute = ApologeticaRouteImport.update({
   path: '/apologetica',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const AssistenteRoute = AssistenteRouteImport.update({
+  id: '/assistente',
+  path: '/assistente',
   getParentRoute: () => rootRouteImport,
 } as any)
-const TrilhasIndexRoute = TrilhasIndexRouteImport.update({
-  id: '/trilhas/',
-  path: '/trilhas/',
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
   getParentRoute: () => rootRouteImport,
 } as any)
-const TestemunhosIndexRoute = TestemunhosIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => TestemunhosRoute,
-} as any)
-const SantosIndexRoute = SantosIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => SantosRoute,
-} as any)
-const SacramentosIndexRoute = SacramentosIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => SacramentosRoute,
-} as any)
-const OracoesIndexRoute = OracoesIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => OracoesRoute,
-} as any)
-const NoticiasIndexRoute = NoticiasIndexRouteImport.update({
-  id: '/noticias/',
-  path: '/noticias/',
+const BibliaRoute = BibliaRouteImport.update({
+  id: '/biblia',
+  path: '/biblia',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ForumIndexRoute = ForumIndexRouteImport.update({
-  id: '/forum/',
-  path: '/forum/',
+const BuscaRoute = BuscaRouteImport.update({
+  id: '/busca',
+  path: '/busca',
   getParentRoute: () => rootRouteImport,
 } as any)
-const EnciclopediaIndexRoute = EnciclopediaIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => EnciclopediaRoute,
+const CalendarioLiturgicoRoute = CalendarioLiturgicoRouteImport.update({
+  id: '/calendario-liturgico',
+  path: '/calendario-liturgico',
+  getParentRoute: () => rootRouteImport,
 } as any)
-const DoutrinaIndexRoute = DoutrinaIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => DoutrinaRoute,
+const CatecismoRoute = CatecismoRouteImport.update({
+  id: '/catecismo',
+  path: '/catecismo',
+  getParentRoute: () => rootRouteImport,
 } as any)
-const CatecismoIndexRoute = CatecismoIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => CatecismoRoute,
+const ConciliosRoute = ConciliosRouteImport.update({
+  id: '/concilios',
+  path: '/concilios',
+  getParentRoute: () => rootRouteImport,
 } as any)
-const BibliaIndexRoute = BibliaIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => BibliaRoute,
+const ConfissaoRoute = ConfissaoRouteImport.update({
+  id: '/confissao',
+  path: '/confissao',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContatoRoute = ContatoRouteImport.update({
+  id: '/contato',
+  path: '/contato',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CoroinhasRoute = CoroinhasRouteImport.update({
+  id: '/coroinhas',
+  path: '/coroinhas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DesignSystemRoute = DesignSystemRouteImport.update({
+  id: '/design-system',
+  path: '/design-system',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DoutoresDaIgrejaRoute = DoutoresDaIgrejaRouteImport.update({
+  id: '/doutores-da-igreja',
+  path: '/doutores-da-igreja',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DoutrinaRoute = DoutrinaRouteImport.update({
+  id: '/doutrina',
+  path: '/doutrina',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EmailConfirmadoRoute = EmailConfirmadoRouteImport.update({
+  id: '/email-confirmado',
+  path: '/email-confirmado',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnciclopediaRoute = EnciclopediaRouteImport.update({
+  id: '/enciclopedia',
+  path: '/enciclopedia',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EstudarRoute = EstudarRouteImport.update({
+  id: '/estudar',
+  path: '/estudar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExplorarRoute = ExplorarRouteImport.update({
+  id: '/explorar',
+  path: '/explorar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FavoritosRoute = FavoritosRouteImport.update({
+  id: '/favoritos',
+  path: '/favoritos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FeCatolicaRoute = FeCatolicaRouteImport.update({
+  id: '/fe-catolica',
+  path: '/fe-catolica',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FontesRoute = FontesRouteImport.update({
+  id: '/fontes',
+  path: '/fontes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GlossarioRoute = GlossarioRouteImport.update({
+  id: '/glossario',
+  path: '/glossario',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LectioDivinaRoute = LectioDivinaRouteImport.update({
+  id: '/lectio-divina',
+  path: '/lectio-divina',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LeituraDiariaRoute = LeituraDiariaRouteImport.update({
+  id: '/leitura-diaria',
+  path: '/leitura-diaria',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LiturgiaDiariaRoute = LiturgiaDiariaRouteImport.update({
+  id: '/liturgia-diaria',
+  path: '/liturgia-diaria',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MariaRoute = MariaRouteImport.update({
+  id: '/maria',
+  path: '/maria',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OracoesRoute = OracoesRouteImport.update({
+  id: '/oracoes',
+  path: '/oracoes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PadresDaIgrejaRoute = PadresDaIgrejaRouteImport.update({
+  id: '/padres-da-igreja',
+  path: '/padres-da-igreja',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PainelRoute = PainelRouteImport.update({
+  id: '/painel',
+  path: '/painel',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacidadeRoute = PrivacidadeRouteImport.update({
+  id: '/privacidade',
+  path: '/privacidade',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RedefinirSenhaRoute = RedefinirSenhaRouteImport.update({
+  id: '/redefinir-senha',
+  path: '/redefinir-senha',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SacramentosRoute = SacramentosRouteImport.update({
+  id: '/sacramentos',
+  path: '/sacramentos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SantosRoute = SantosRouteImport.update({
+  id: '/santos',
+  path: '/santos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapBibliaCapitulosDotxmlRoute =
+  SitemapBibliaCapitulosDotxmlRouteImport.update({
+    id: '/sitemap-biblia-capitulos.xml',
+    path: '/sitemap-biblia-capitulos.xml',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const SitemapBibliaLivrosDotxmlRoute =
+  SitemapBibliaLivrosDotxmlRouteImport.update({
+    id: '/sitemap-biblia-livros.xml',
+    path: '/sitemap-biblia-livros.xml',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const SitemapNoticiasDotxmlRoute = SitemapNoticiasDotxmlRouteImport.update({
+  id: '/sitemap-noticias.xml',
+  path: '/sitemap-noticias.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapPaginasDotxmlRoute = SitemapPaginasDotxmlRouteImport.update({
+  id: '/sitemap-paginas.xml',
+  path: '/sitemap-paginas.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapSantosDotxmlRoute = SitemapSantosDotxmlRouteImport.update({
+  id: '/sitemap-santos.xml',
+  path: '/sitemap-santos.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SobreRoute = SobreRouteImport.update({
+  id: '/sobre',
+  path: '/sobre',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermosRoute = TermosRouteImport.update({
+  id: '/termos',
+  path: '/termos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TestemunhosRoute = TestemunhosRouteImport.update({
+  id: '/testemunhos',
+  path: '/testemunhos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiChatRoute = ApiChatRouteImport.update({
+  id: '/api/chat',
+  path: '/api/chat',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiTranscreverRoute = ApiTranscreverRouteImport.update({
+  id: '/api/transcrever',
+  path: '/api/transcrever',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const ApologeticaIndexRoute = ApologeticaIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => ApologeticaRoute,
 } as any)
-const TestemunhosSlugRoute = TestemunhosSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => TestemunhosRoute,
-} as any)
-const SantosSlugRoute = SantosSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => SantosRoute,
-} as any)
-const SacramentosTemaRoute = SacramentosTemaRouteImport.update({
+const ApologeticaTemaRoute = ApologeticaTemaRouteImport.update({
   id: '/$tema',
   path: '/$tema',
-  getParentRoute: () => SacramentosRoute,
+  getParentRoute: () => ApologeticaRoute,
 } as any)
-const OracoesViaSacraRoute = OracoesViaSacraRouteImport.update({
-  id: '/via-sacra',
-  path: '/via-sacra',
+const BibliaIndexRoute = BibliaIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => BibliaRoute,
+} as any)
+const BibliaLivroRoute = BibliaLivroRouteImport.update({
+  id: '/$livro',
+  path: '/$livro',
+  getParentRoute: () => BibliaRoute,
+} as any)
+const BibliaLeiturasRoute = BibliaLeiturasRouteImport.update({
+  id: '/leituras',
+  path: '/leituras',
+  getParentRoute: () => BibliaRoute,
+} as any)
+const BibliaPlanosRoute = BibliaPlanosRouteImport.update({
+  id: '/planos',
+  path: '/planos',
+  getParentRoute: () => BibliaRoute,
+} as any)
+const CatecismoIndexRoute = CatecismoIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => CatecismoRoute,
+} as any)
+const CatecismoParteRoute = CatecismoParteRouteImport.update({
+  id: '/$parte',
+  path: '/$parte',
+  getParentRoute: () => CatecismoRoute,
+} as any)
+const CatecismoArtigosRoute = CatecismoArtigosRouteImport.update({
+  id: '/artigos',
+  path: '/artigos',
+  getParentRoute: () => CatecismoRoute,
+} as any)
+const DoutrinaIndexRoute = DoutrinaIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => DoutrinaRoute,
+} as any)
+const DoutrinaTemaRoute = DoutrinaTemaRouteImport.update({
+  id: '/$tema',
+  path: '/$tema',
+  getParentRoute: () => DoutrinaRoute,
+} as any)
+const EnciclopediaIndexRoute = EnciclopediaIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => EnciclopediaRoute,
+} as any)
+const EnciclopediaTemaRoute = EnciclopediaTemaRouteImport.update({
+  id: '/$tema',
+  path: '/$tema',
+  getParentRoute: () => EnciclopediaRoute,
+} as any)
+const ForumIndexRoute = ForumIndexRouteImport.update({
+  id: '/forum/',
+  path: '/forum/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForumSlugRoute = ForumSlugRouteImport.update({
+  id: '/forum/$slug',
+  path: '/forum/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NoticiasIndexRoute = NoticiasIndexRouteImport.update({
+  id: '/noticias/',
+  path: '/noticias/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NoticiasSlugRoute = NoticiasSlugRouteImport.update({
+  id: '/noticias/$slug',
+  path: '/noticias/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OracoesIndexRoute = OracoesIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => OracoesRoute,
+} as any)
+const OracoesDiariasRoute = OracoesDiariasRouteImport.update({
+  id: '/diarias',
+  path: '/diarias',
+  getParentRoute: () => OracoesRoute,
+} as any)
+const OracoesLiturgiaDasHorasRoute = OracoesLiturgiaDasHorasRouteImport.update({
+  id: '/liturgia-das-horas',
+  path: '/liturgia-das-horas',
+  getParentRoute: () => OracoesRoute,
+} as any)
+const OracoesNovenasRoute = OracoesNovenasRouteImport.update({
+  id: '/novenas',
+  path: '/novenas',
+  getParentRoute: () => OracoesRoute,
+} as any)
+const OracoesRosarioRoute = OracoesRosarioRouteImport.update({
+  id: '/rosario',
+  path: '/rosario',
   getParentRoute: () => OracoesRoute,
 } as any)
 const OracoesTercoMisericordiaRoute =
@@ -405,155 +445,49 @@ const OracoesTercoMisericordiaRoute =
     path: '/terco-misericordia',
     getParentRoute: () => OracoesRoute,
   } as any)
-const OracoesRosarioRoute = OracoesRosarioRouteImport.update({
-  id: '/rosario',
-  path: '/rosario',
+const OracoesViaSacraRoute = OracoesViaSacraRouteImport.update({
+  id: '/via-sacra',
+  path: '/via-sacra',
   getParentRoute: () => OracoesRoute,
 } as any)
-const OracoesNovenasRoute = OracoesNovenasRouteImport.update({
-  id: '/novenas',
-  path: '/novenas',
-  getParentRoute: () => OracoesRoute,
-} as any)
-const OracoesLiturgiaDasHorasRoute = OracoesLiturgiaDasHorasRouteImport.update({
-  id: '/liturgia-das-horas',
-  path: '/liturgia-das-horas',
-  getParentRoute: () => OracoesRoute,
-} as any)
-const OracoesDiariasRoute = OracoesDiariasRouteImport.update({
-  id: '/diarias',
-  path: '/diarias',
-  getParentRoute: () => OracoesRoute,
-} as any)
-const NoticiasSlugRoute = NoticiasSlugRouteImport.update({
-  id: '/noticias/$slug',
-  path: '/noticias/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ForumSlugRoute = ForumSlugRouteImport.update({
-  id: '/forum/$slug',
-  path: '/forum/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EnciclopediaTemaRoute = EnciclopediaTemaRouteImport.update({
-  id: '/$tema',
-  path: '/$tema',
-  getParentRoute: () => EnciclopediaRoute,
-} as any)
-const DoutrinaTemaRoute = DoutrinaTemaRouteImport.update({
-  id: '/$tema',
-  path: '/$tema',
-  getParentRoute: () => DoutrinaRoute,
-} as any)
-const CatecismoArtigosRoute = CatecismoArtigosRouteImport.update({
-  id: '/artigos',
-  path: '/artigos',
-  getParentRoute: () => CatecismoRoute,
-} as any)
-const CatecismoParteRoute = CatecismoParteRouteImport.update({
-  id: '/$parte',
-  path: '/$parte',
-  getParentRoute: () => CatecismoRoute,
-} as any)
-const BibliaPlanosRoute = BibliaPlanosRouteImport.update({
-  id: '/planos',
-  path: '/planos',
-  getParentRoute: () => BibliaRoute,
-} as any)
-const BibliaLeiturasRoute = BibliaLeiturasRouteImport.update({
-  id: '/leituras',
-  path: '/leituras',
-  getParentRoute: () => BibliaRoute,
-} as any)
-const BibliaLivroRoute = BibliaLivroRouteImport.update({
-  id: '/$livro',
-  path: '/$livro',
-  getParentRoute: () => BibliaRoute,
-} as any)
-const ApologeticaTemaRoute = ApologeticaTemaRouteImport.update({
-  id: '/$tema',
-  path: '/$tema',
-  getParentRoute: () => ApologeticaRoute,
-} as any)
-const ApiTranscreverRoute = ApiTranscreverRouteImport.update({
-  id: '/api/transcrever',
-  path: '/api/transcrever',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ApiChatRoute = ApiChatRouteImport.update({
-  id: '/api/chat',
-  path: '/api/chat',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const TrilhasTrilhaIndexRoute = TrilhasTrilhaIndexRouteImport.update({
-  id: '/trilhas/$trilha/',
-  path: '/trilhas/$trilha/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const OracoesNovenasIndexRoute = OracoesNovenasIndexRouteImport.update({
+const SacramentosIndexRoute = SacramentosIndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => OracoesNovenasRoute,
+  getParentRoute: () => SacramentosRoute,
 } as any)
-const CatecismoAulasIndexRoute = CatecismoAulasIndexRouteImport.update({
-  id: '/aulas/',
-  path: '/aulas/',
-  getParentRoute: () => CatecismoRoute,
+const SacramentosTemaRoute = SacramentosTemaRouteImport.update({
+  id: '/$tema',
+  path: '/$tema',
+  getParentRoute: () => SacramentosRoute,
 } as any)
-const BibliaPlanosIndexRoute = BibliaPlanosIndexRouteImport.update({
+const SantosIndexRoute = SantosIndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => BibliaPlanosRoute,
+  getParentRoute: () => SantosRoute,
 } as any)
-const BibliaLivroIndexRoute = BibliaLivroIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => BibliaLivroRoute,
-} as any)
-const TrilhasTrilhaLicaoRoute = TrilhasTrilhaLicaoRouteImport.update({
-  id: '/trilhas/$trilha/$licao',
-  path: '/trilhas/$trilha/$licao',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const OracoesNovenasSlugRoute = OracoesNovenasSlugRouteImport.update({
+const SantosSlugRoute = SantosSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
-  getParentRoute: () => OracoesNovenasRoute,
+  getParentRoute: () => SantosRoute,
 } as any)
-const CatecismoAulasSemanaRoute = CatecismoAulasSemanaRouteImport.update({
-  id: '/aulas/$semana',
-  path: '/aulas/$semana',
-  getParentRoute: () => CatecismoRoute,
+const TestemunhosIndexRoute = TestemunhosIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => TestemunhosRoute,
 } as any)
-const BibliaPlanosSlugRoute = BibliaPlanosSlugRouteImport.update({
+const TestemunhosSlugRoute = TestemunhosSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
-  getParentRoute: () => BibliaPlanosRoute,
+  getParentRoute: () => TestemunhosRoute,
 } as any)
-const BibliaLivroLeituraRoute = BibliaLivroLeituraRouteImport.update({
-  id: '/leitura',
-  path: '/leitura',
-  getParentRoute: () => BibliaLivroRoute,
-} as any)
-const BibliaLivroCapituloRoute = BibliaLivroCapituloRouteImport.update({
-  id: '/$capitulo',
-  path: '/$capitulo',
-  getParentRoute: () => BibliaLivroRoute,
-} as any)
-const ApiPublicNoticiasDiariasRoute =
-  ApiPublicNoticiasDiariasRouteImport.update({
-    id: '/api/public/noticias-diarias',
-    path: '/api/public/noticias-diarias',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const ApiPublicNoticiasRoute = ApiPublicNoticiasRouteImport.update({
-  id: '/api/public/noticias',
-  path: '/api/public/noticias',
+const TrilhasIndexRoute = TrilhasIndexRouteImport.update({
+  id: '/trilhas/',
+  path: '/trilhas/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiPublicLembretesRoute = ApiPublicLembretesRouteImport.update({
-  id: '/api/public/lembretes',
-  path: '/api/public/lembretes',
+const ApiPublicCspReportRoute = ApiPublicCspReportRouteImport.update({
+  id: '/api/public/csp-report',
+  path: '/api/public/csp-report',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiPublicImagemRoute = ApiPublicImagemRouteImport.update({
@@ -561,9 +495,75 @@ const ApiPublicImagemRoute = ApiPublicImagemRouteImport.update({
   path: '/api/public/imagem',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiPublicCspReportRoute = ApiPublicCspReportRouteImport.update({
-  id: '/api/public/csp-report',
-  path: '/api/public/csp-report',
+const ApiPublicLembretesRoute = ApiPublicLembretesRouteImport.update({
+  id: '/api/public/lembretes',
+  path: '/api/public/lembretes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPublicNoticiasRoute = ApiPublicNoticiasRouteImport.update({
+  id: '/api/public/noticias',
+  path: '/api/public/noticias',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPublicNoticiasDiariasRoute =
+  ApiPublicNoticiasDiariasRouteImport.update({
+    id: '/api/public/noticias-diarias',
+    path: '/api/public/noticias-diarias',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const BibliaLivroIndexRoute = BibliaLivroIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => BibliaLivroRoute,
+} as any)
+const BibliaLivroCapituloRoute = BibliaLivroCapituloRouteImport.update({
+  id: '/$capitulo',
+  path: '/$capitulo',
+  getParentRoute: () => BibliaLivroRoute,
+} as any)
+const BibliaLivroLeituraRoute = BibliaLivroLeituraRouteImport.update({
+  id: '/leitura',
+  path: '/leitura',
+  getParentRoute: () => BibliaLivroRoute,
+} as any)
+const BibliaPlanosIndexRoute = BibliaPlanosIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => BibliaPlanosRoute,
+} as any)
+const BibliaPlanosSlugRoute = BibliaPlanosSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => BibliaPlanosRoute,
+} as any)
+const CatecismoAulasIndexRoute = CatecismoAulasIndexRouteImport.update({
+  id: '/aulas/',
+  path: '/aulas/',
+  getParentRoute: () => CatecismoRoute,
+} as any)
+const CatecismoAulasSemanaRoute = CatecismoAulasSemanaRouteImport.update({
+  id: '/aulas/$semana',
+  path: '/aulas/$semana',
+  getParentRoute: () => CatecismoRoute,
+} as any)
+const OracoesNovenasIndexRoute = OracoesNovenasIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => OracoesNovenasRoute,
+} as any)
+const OracoesNovenasSlugRoute = OracoesNovenasSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => OracoesNovenasRoute,
+} as any)
+const TrilhasTrilhaIndexRoute = TrilhasTrilhaIndexRouteImport.update({
+  id: '/trilhas/$trilha/',
+  path: '/trilhas/$trilha/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TrilhasTrilhaLicaoRoute = TrilhasTrilhaLicaoRouteImport.update({
+  id: '/trilhas/$trilha/$licao',
+  path: '/trilhas/$trilha/$licao',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -1173,291 +1173,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/testemunhos': {
-      id: '/testemunhos'
-      path: '/testemunhos'
-      fullPath: '/testemunhos'
-      preLoaderRoute: typeof TestemunhosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/termos': {
-      id: '/termos'
-      path: '/termos'
-      fullPath: '/termos'
-      preLoaderRoute: typeof TermosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sobre': {
-      id: '/sobre'
-      path: '/sobre'
-      fullPath: '/sobre'
-      preLoaderRoute: typeof SobreRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sitemap-santos.xml': {
-      id: '/sitemap-santos.xml'
-      path: '/sitemap-santos.xml'
-      fullPath: '/sitemap-santos.xml'
-      preLoaderRoute: typeof SitemapSantosDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sitemap-paginas.xml': {
-      id: '/sitemap-paginas.xml'
-      path: '/sitemap-paginas.xml'
-      fullPath: '/sitemap-paginas.xml'
-      preLoaderRoute: typeof SitemapPaginasDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sitemap-noticias.xml': {
-      id: '/sitemap-noticias.xml'
-      path: '/sitemap-noticias.xml'
-      fullPath: '/sitemap-noticias.xml'
-      preLoaderRoute: typeof SitemapNoticiasDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sitemap-biblia-livros.xml': {
-      id: '/sitemap-biblia-livros.xml'
-      path: '/sitemap-biblia-livros.xml'
-      fullPath: '/sitemap-biblia-livros.xml'
-      preLoaderRoute: typeof SitemapBibliaLivrosDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sitemap-biblia-capitulos.xml': {
-      id: '/sitemap-biblia-capitulos.xml'
-      path: '/sitemap-biblia-capitulos.xml'
-      fullPath: '/sitemap-biblia-capitulos.xml'
-      preLoaderRoute: typeof SitemapBibliaCapitulosDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/santos': {
-      id: '/santos'
-      path: '/santos'
-      fullPath: '/santos'
-      preLoaderRoute: typeof SantosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sacramentos': {
-      id: '/sacramentos'
-      path: '/sacramentos'
-      fullPath: '/sacramentos'
-      preLoaderRoute: typeof SacramentosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/redefinir-senha': {
-      id: '/redefinir-senha'
-      path: '/redefinir-senha'
-      fullPath: '/redefinir-senha'
-      preLoaderRoute: typeof RedefinirSenhaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/privacidade': {
-      id: '/privacidade'
-      path: '/privacidade'
-      fullPath: '/privacidade'
-      preLoaderRoute: typeof PrivacidadeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/painel': {
-      id: '/painel'
-      path: '/painel'
-      fullPath: '/painel'
-      preLoaderRoute: typeof PainelRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/padres-da-igreja': {
-      id: '/padres-da-igreja'
-      path: '/padres-da-igreja'
-      fullPath: '/padres-da-igreja'
-      preLoaderRoute: typeof PadresDaIgrejaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/oracoes': {
-      id: '/oracoes'
-      path: '/oracoes'
-      fullPath: '/oracoes'
-      preLoaderRoute: typeof OracoesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/maria': {
-      id: '/maria'
-      path: '/maria'
-      fullPath: '/maria'
-      preLoaderRoute: typeof MariaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/liturgia-diaria': {
-      id: '/liturgia-diaria'
-      path: '/liturgia-diaria'
-      fullPath: '/liturgia-diaria'
-      preLoaderRoute: typeof LiturgiaDiariaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/leitura-diaria': {
-      id: '/leitura-diaria'
-      path: '/leitura-diaria'
-      fullPath: '/leitura-diaria'
-      preLoaderRoute: typeof LeituraDiariaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/lectio-divina': {
-      id: '/lectio-divina'
-      path: '/lectio-divina'
-      fullPath: '/lectio-divina'
-      preLoaderRoute: typeof LectioDivinaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/glossario': {
-      id: '/glossario'
-      path: '/glossario'
-      fullPath: '/glossario'
-      preLoaderRoute: typeof GlossarioRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/fontes': {
-      id: '/fontes'
-      path: '/fontes'
-      fullPath: '/fontes'
-      preLoaderRoute: typeof FontesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/fe-catolica': {
-      id: '/fe-catolica'
-      path: '/fe-catolica'
-      fullPath: '/fe-catolica'
-      preLoaderRoute: typeof FeCatolicaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/favoritos': {
-      id: '/favoritos'
-      path: '/favoritos'
-      fullPath: '/favoritos'
-      preLoaderRoute: typeof FavoritosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/explorar': {
-      id: '/explorar'
-      path: '/explorar'
-      fullPath: '/explorar'
-      preLoaderRoute: typeof ExplorarRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/estudar': {
-      id: '/estudar'
-      path: '/estudar'
-      fullPath: '/estudar'
-      preLoaderRoute: typeof EstudarRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/enciclopedia': {
-      id: '/enciclopedia'
-      path: '/enciclopedia'
-      fullPath: '/enciclopedia'
-      preLoaderRoute: typeof EnciclopediaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/email-confirmado': {
-      id: '/email-confirmado'
-      path: '/email-confirmado'
-      fullPath: '/email-confirmado'
-      preLoaderRoute: typeof EmailConfirmadoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/doutrina': {
-      id: '/doutrina'
-      path: '/doutrina'
-      fullPath: '/doutrina'
-      preLoaderRoute: typeof DoutrinaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/doutores-da-igreja': {
-      id: '/doutores-da-igreja'
-      path: '/doutores-da-igreja'
-      fullPath: '/doutores-da-igreja'
-      preLoaderRoute: typeof DoutoresDaIgrejaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/design-system': {
-      id: '/design-system'
-      path: '/design-system'
-      fullPath: '/design-system'
-      preLoaderRoute: typeof DesignSystemRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/coroinhas': {
-      id: '/coroinhas'
-      path: '/coroinhas'
-      fullPath: '/coroinhas'
-      preLoaderRoute: typeof CoroinhasRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contato': {
-      id: '/contato'
-      path: '/contato'
-      fullPath: '/contato'
-      preLoaderRoute: typeof ContatoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/confissao': {
-      id: '/confissao'
-      path: '/confissao'
-      fullPath: '/confissao'
-      preLoaderRoute: typeof ConfissaoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/concilios': {
-      id: '/concilios'
-      path: '/concilios'
-      fullPath: '/concilios'
-      preLoaderRoute: typeof ConciliosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/catecismo': {
-      id: '/catecismo'
-      path: '/catecismo'
-      fullPath: '/catecismo'
-      preLoaderRoute: typeof CatecismoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/calendario-liturgico': {
-      id: '/calendario-liturgico'
-      path: '/calendario-liturgico'
-      fullPath: '/calendario-liturgico'
-      preLoaderRoute: typeof CalendarioLiturgicoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/busca': {
-      id: '/busca'
-      path: '/busca'
-      fullPath: '/busca'
-      preLoaderRoute: typeof BuscaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/biblia': {
-      id: '/biblia'
-      path: '/biblia'
-      fullPath: '/biblia'
-      preLoaderRoute: typeof BibliaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/auth': {
-      id: '/auth'
-      path: '/auth'
-      fullPath: '/auth'
-      preLoaderRoute: typeof AuthRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/assistente': {
-      id: '/assistente'
-      path: '/assistente'
-      fullPath: '/assistente'
-      preLoaderRoute: typeof AssistenteRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/apologetica': {
@@ -1467,235 +1187,291 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApologeticaRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/assistente': {
+      id: '/assistente'
+      path: '/assistente'
+      fullPath: '/assistente'
+      preLoaderRoute: typeof AssistenteRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/trilhas/': {
-      id: '/trilhas/'
-      path: '/trilhas'
-      fullPath: '/trilhas/'
-      preLoaderRoute: typeof TrilhasIndexRouteImport
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/testemunhos/': {
-      id: '/testemunhos/'
-      path: '/'
-      fullPath: '/testemunhos/'
-      preLoaderRoute: typeof TestemunhosIndexRouteImport
-      parentRoute: typeof TestemunhosRoute
-    }
-    '/santos/': {
-      id: '/santos/'
-      path: '/'
-      fullPath: '/santos/'
-      preLoaderRoute: typeof SantosIndexRouteImport
-      parentRoute: typeof SantosRoute
-    }
-    '/sacramentos/': {
-      id: '/sacramentos/'
-      path: '/'
-      fullPath: '/sacramentos/'
-      preLoaderRoute: typeof SacramentosIndexRouteImport
-      parentRoute: typeof SacramentosRoute
-    }
-    '/oracoes/': {
-      id: '/oracoes/'
-      path: '/'
-      fullPath: '/oracoes/'
-      preLoaderRoute: typeof OracoesIndexRouteImport
-      parentRoute: typeof OracoesRoute
-    }
-    '/noticias/': {
-      id: '/noticias/'
-      path: '/noticias'
-      fullPath: '/noticias/'
-      preLoaderRoute: typeof NoticiasIndexRouteImport
+    '/biblia': {
+      id: '/biblia'
+      path: '/biblia'
+      fullPath: '/biblia'
+      preLoaderRoute: typeof BibliaRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/forum/': {
-      id: '/forum/'
-      path: '/forum'
-      fullPath: '/forum/'
-      preLoaderRoute: typeof ForumIndexRouteImport
+    '/busca': {
+      id: '/busca'
+      path: '/busca'
+      fullPath: '/busca'
+      preLoaderRoute: typeof BuscaRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/enciclopedia/': {
-      id: '/enciclopedia/'
-      path: '/'
-      fullPath: '/enciclopedia/'
-      preLoaderRoute: typeof EnciclopediaIndexRouteImport
-      parentRoute: typeof EnciclopediaRoute
-    }
-    '/doutrina/': {
-      id: '/doutrina/'
-      path: '/'
-      fullPath: '/doutrina/'
-      preLoaderRoute: typeof DoutrinaIndexRouteImport
-      parentRoute: typeof DoutrinaRoute
-    }
-    '/catecismo/': {
-      id: '/catecismo/'
-      path: '/'
-      fullPath: '/catecismo/'
-      preLoaderRoute: typeof CatecismoIndexRouteImport
-      parentRoute: typeof CatecismoRoute
-    }
-    '/biblia/': {
-      id: '/biblia/'
-      path: '/'
-      fullPath: '/biblia/'
-      preLoaderRoute: typeof BibliaIndexRouteImport
-      parentRoute: typeof BibliaRoute
-    }
-    '/apologetica/': {
-      id: '/apologetica/'
-      path: '/'
-      fullPath: '/apologetica/'
-      preLoaderRoute: typeof ApologeticaIndexRouteImport
-      parentRoute: typeof ApologeticaRoute
-    }
-    '/testemunhos/$slug': {
-      id: '/testemunhos/$slug'
-      path: '/$slug'
-      fullPath: '/testemunhos/$slug'
-      preLoaderRoute: typeof TestemunhosSlugRouteImport
-      parentRoute: typeof TestemunhosRoute
-    }
-    '/santos/$slug': {
-      id: '/santos/$slug'
-      path: '/$slug'
-      fullPath: '/santos/$slug'
-      preLoaderRoute: typeof SantosSlugRouteImport
-      parentRoute: typeof SantosRoute
-    }
-    '/sacramentos/$tema': {
-      id: '/sacramentos/$tema'
-      path: '/$tema'
-      fullPath: '/sacramentos/$tema'
-      preLoaderRoute: typeof SacramentosTemaRouteImport
-      parentRoute: typeof SacramentosRoute
-    }
-    '/oracoes/via-sacra': {
-      id: '/oracoes/via-sacra'
-      path: '/via-sacra'
-      fullPath: '/oracoes/via-sacra'
-      preLoaderRoute: typeof OracoesViaSacraRouteImport
-      parentRoute: typeof OracoesRoute
-    }
-    '/oracoes/terco-misericordia': {
-      id: '/oracoes/terco-misericordia'
-      path: '/terco-misericordia'
-      fullPath: '/oracoes/terco-misericordia'
-      preLoaderRoute: typeof OracoesTercoMisericordiaRouteImport
-      parentRoute: typeof OracoesRoute
-    }
-    '/oracoes/rosario': {
-      id: '/oracoes/rosario'
-      path: '/rosario'
-      fullPath: '/oracoes/rosario'
-      preLoaderRoute: typeof OracoesRosarioRouteImport
-      parentRoute: typeof OracoesRoute
-    }
-    '/oracoes/novenas': {
-      id: '/oracoes/novenas'
-      path: '/novenas'
-      fullPath: '/oracoes/novenas'
-      preLoaderRoute: typeof OracoesNovenasRouteImport
-      parentRoute: typeof OracoesRoute
-    }
-    '/oracoes/liturgia-das-horas': {
-      id: '/oracoes/liturgia-das-horas'
-      path: '/liturgia-das-horas'
-      fullPath: '/oracoes/liturgia-das-horas'
-      preLoaderRoute: typeof OracoesLiturgiaDasHorasRouteImport
-      parentRoute: typeof OracoesRoute
-    }
-    '/oracoes/diarias': {
-      id: '/oracoes/diarias'
-      path: '/diarias'
-      fullPath: '/oracoes/diarias'
-      preLoaderRoute: typeof OracoesDiariasRouteImport
-      parentRoute: typeof OracoesRoute
-    }
-    '/noticias/$slug': {
-      id: '/noticias/$slug'
-      path: '/noticias/$slug'
-      fullPath: '/noticias/$slug'
-      preLoaderRoute: typeof NoticiasSlugRouteImport
+    '/calendario-liturgico': {
+      id: '/calendario-liturgico'
+      path: '/calendario-liturgico'
+      fullPath: '/calendario-liturgico'
+      preLoaderRoute: typeof CalendarioLiturgicoRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/forum/$slug': {
-      id: '/forum/$slug'
-      path: '/forum/$slug'
-      fullPath: '/forum/$slug'
-      preLoaderRoute: typeof ForumSlugRouteImport
+    '/catecismo': {
+      id: '/catecismo'
+      path: '/catecismo'
+      fullPath: '/catecismo'
+      preLoaderRoute: typeof CatecismoRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/enciclopedia/$tema': {
-      id: '/enciclopedia/$tema'
-      path: '/$tema'
-      fullPath: '/enciclopedia/$tema'
-      preLoaderRoute: typeof EnciclopediaTemaRouteImport
-      parentRoute: typeof EnciclopediaRoute
+    '/concilios': {
+      id: '/concilios'
+      path: '/concilios'
+      fullPath: '/concilios'
+      preLoaderRoute: typeof ConciliosRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/doutrina/$tema': {
-      id: '/doutrina/$tema'
-      path: '/$tema'
-      fullPath: '/doutrina/$tema'
-      preLoaderRoute: typeof DoutrinaTemaRouteImport
-      parentRoute: typeof DoutrinaRoute
+    '/confissao': {
+      id: '/confissao'
+      path: '/confissao'
+      fullPath: '/confissao'
+      preLoaderRoute: typeof ConfissaoRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/catecismo/artigos': {
-      id: '/catecismo/artigos'
-      path: '/artigos'
-      fullPath: '/catecismo/artigos'
-      preLoaderRoute: typeof CatecismoArtigosRouteImport
-      parentRoute: typeof CatecismoRoute
+    '/contato': {
+      id: '/contato'
+      path: '/contato'
+      fullPath: '/contato'
+      preLoaderRoute: typeof ContatoRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/catecismo/$parte': {
-      id: '/catecismo/$parte'
-      path: '/$parte'
-      fullPath: '/catecismo/$parte'
-      preLoaderRoute: typeof CatecismoParteRouteImport
-      parentRoute: typeof CatecismoRoute
+    '/coroinhas': {
+      id: '/coroinhas'
+      path: '/coroinhas'
+      fullPath: '/coroinhas'
+      preLoaderRoute: typeof CoroinhasRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/biblia/planos': {
-      id: '/biblia/planos'
-      path: '/planos'
-      fullPath: '/biblia/planos'
-      preLoaderRoute: typeof BibliaPlanosRouteImport
-      parentRoute: typeof BibliaRoute
+    '/design-system': {
+      id: '/design-system'
+      path: '/design-system'
+      fullPath: '/design-system'
+      preLoaderRoute: typeof DesignSystemRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/biblia/leituras': {
-      id: '/biblia/leituras'
-      path: '/leituras'
-      fullPath: '/biblia/leituras'
-      preLoaderRoute: typeof BibliaLeiturasRouteImport
-      parentRoute: typeof BibliaRoute
+    '/doutores-da-igreja': {
+      id: '/doutores-da-igreja'
+      path: '/doutores-da-igreja'
+      fullPath: '/doutores-da-igreja'
+      preLoaderRoute: typeof DoutoresDaIgrejaRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/biblia/$livro': {
-      id: '/biblia/$livro'
-      path: '/$livro'
-      fullPath: '/biblia/$livro'
-      preLoaderRoute: typeof BibliaLivroRouteImport
-      parentRoute: typeof BibliaRoute
+    '/doutrina': {
+      id: '/doutrina'
+      path: '/doutrina'
+      fullPath: '/doutrina'
+      preLoaderRoute: typeof DoutrinaRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/apologetica/$tema': {
-      id: '/apologetica/$tema'
-      path: '/$tema'
-      fullPath: '/apologetica/$tema'
-      preLoaderRoute: typeof ApologeticaTemaRouteImport
-      parentRoute: typeof ApologeticaRoute
+    '/email-confirmado': {
+      id: '/email-confirmado'
+      path: '/email-confirmado'
+      fullPath: '/email-confirmado'
+      preLoaderRoute: typeof EmailConfirmadoRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/api/transcrever': {
-      id: '/api/transcrever'
-      path: '/api/transcrever'
-      fullPath: '/api/transcrever'
-      preLoaderRoute: typeof ApiTranscreverRouteImport
+    '/enciclopedia': {
+      id: '/enciclopedia'
+      path: '/enciclopedia'
+      fullPath: '/enciclopedia'
+      preLoaderRoute: typeof EnciclopediaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/estudar': {
+      id: '/estudar'
+      path: '/estudar'
+      fullPath: '/estudar'
+      preLoaderRoute: typeof EstudarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/explorar': {
+      id: '/explorar'
+      path: '/explorar'
+      fullPath: '/explorar'
+      preLoaderRoute: typeof ExplorarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/favoritos': {
+      id: '/favoritos'
+      path: '/favoritos'
+      fullPath: '/favoritos'
+      preLoaderRoute: typeof FavoritosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fe-catolica': {
+      id: '/fe-catolica'
+      path: '/fe-catolica'
+      fullPath: '/fe-catolica'
+      preLoaderRoute: typeof FeCatolicaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fontes': {
+      id: '/fontes'
+      path: '/fontes'
+      fullPath: '/fontes'
+      preLoaderRoute: typeof FontesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/glossario': {
+      id: '/glossario'
+      path: '/glossario'
+      fullPath: '/glossario'
+      preLoaderRoute: typeof GlossarioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lectio-divina': {
+      id: '/lectio-divina'
+      path: '/lectio-divina'
+      fullPath: '/lectio-divina'
+      preLoaderRoute: typeof LectioDivinaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/leitura-diaria': {
+      id: '/leitura-diaria'
+      path: '/leitura-diaria'
+      fullPath: '/leitura-diaria'
+      preLoaderRoute: typeof LeituraDiariaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/liturgia-diaria': {
+      id: '/liturgia-diaria'
+      path: '/liturgia-diaria'
+      fullPath: '/liturgia-diaria'
+      preLoaderRoute: typeof LiturgiaDiariaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/maria': {
+      id: '/maria'
+      path: '/maria'
+      fullPath: '/maria'
+      preLoaderRoute: typeof MariaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/oracoes': {
+      id: '/oracoes'
+      path: '/oracoes'
+      fullPath: '/oracoes'
+      preLoaderRoute: typeof OracoesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/padres-da-igreja': {
+      id: '/padres-da-igreja'
+      path: '/padres-da-igreja'
+      fullPath: '/padres-da-igreja'
+      preLoaderRoute: typeof PadresDaIgrejaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/painel': {
+      id: '/painel'
+      path: '/painel'
+      fullPath: '/painel'
+      preLoaderRoute: typeof PainelRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacidade': {
+      id: '/privacidade'
+      path: '/privacidade'
+      fullPath: '/privacidade'
+      preLoaderRoute: typeof PrivacidadeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/redefinir-senha': {
+      id: '/redefinir-senha'
+      path: '/redefinir-senha'
+      fullPath: '/redefinir-senha'
+      preLoaderRoute: typeof RedefinirSenhaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sacramentos': {
+      id: '/sacramentos'
+      path: '/sacramentos'
+      fullPath: '/sacramentos'
+      preLoaderRoute: typeof SacramentosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/santos': {
+      id: '/santos'
+      path: '/santos'
+      fullPath: '/santos'
+      preLoaderRoute: typeof SantosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap-biblia-capitulos.xml': {
+      id: '/sitemap-biblia-capitulos.xml'
+      path: '/sitemap-biblia-capitulos.xml'
+      fullPath: '/sitemap-biblia-capitulos.xml'
+      preLoaderRoute: typeof SitemapBibliaCapitulosDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap-biblia-livros.xml': {
+      id: '/sitemap-biblia-livros.xml'
+      path: '/sitemap-biblia-livros.xml'
+      fullPath: '/sitemap-biblia-livros.xml'
+      preLoaderRoute: typeof SitemapBibliaLivrosDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap-noticias.xml': {
+      id: '/sitemap-noticias.xml'
+      path: '/sitemap-noticias.xml'
+      fullPath: '/sitemap-noticias.xml'
+      preLoaderRoute: typeof SitemapNoticiasDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap-paginas.xml': {
+      id: '/sitemap-paginas.xml'
+      path: '/sitemap-paginas.xml'
+      fullPath: '/sitemap-paginas.xml'
+      preLoaderRoute: typeof SitemapPaginasDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap-santos.xml': {
+      id: '/sitemap-santos.xml'
+      path: '/sitemap-santos.xml'
+      fullPath: '/sitemap-santos.xml'
+      preLoaderRoute: typeof SitemapSantosDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sobre': {
+      id: '/sobre'
+      path: '/sobre'
+      fullPath: '/sobre'
+      preLoaderRoute: typeof SobreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/termos': {
+      id: '/termos'
+      path: '/termos'
+      fullPath: '/termos'
+      preLoaderRoute: typeof TermosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/testemunhos': {
+      id: '/testemunhos'
+      path: '/testemunhos'
+      fullPath: '/testemunhos'
+      preLoaderRoute: typeof TestemunhosRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/chat': {
@@ -1705,102 +1481,235 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiChatRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/trilhas/$trilha/': {
-      id: '/trilhas/$trilha/'
-      path: '/trilhas/$trilha'
-      fullPath: '/trilhas/$trilha/'
-      preLoaderRoute: typeof TrilhasTrilhaIndexRouteImport
+    '/api/transcrever': {
+      id: '/api/transcrever'
+      path: '/api/transcrever'
+      fullPath: '/api/transcrever'
+      preLoaderRoute: typeof ApiTranscreverRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/oracoes/novenas/': {
-      id: '/oracoes/novenas/'
+    '/apologetica/': {
+      id: '/apologetica/'
       path: '/'
-      fullPath: '/oracoes/novenas/'
-      preLoaderRoute: typeof OracoesNovenasIndexRouteImport
-      parentRoute: typeof OracoesNovenasRoute
+      fullPath: '/apologetica/'
+      preLoaderRoute: typeof ApologeticaIndexRouteImport
+      parentRoute: typeof ApologeticaRoute
     }
-    '/catecismo/aulas/': {
-      id: '/catecismo/aulas/'
-      path: '/aulas'
-      fullPath: '/catecismo/aulas/'
-      preLoaderRoute: typeof CatecismoAulasIndexRouteImport
+    '/apologetica/$tema': {
+      id: '/apologetica/$tema'
+      path: '/$tema'
+      fullPath: '/apologetica/$tema'
+      preLoaderRoute: typeof ApologeticaTemaRouteImport
+      parentRoute: typeof ApologeticaRoute
+    }
+    '/biblia/': {
+      id: '/biblia/'
+      path: '/'
+      fullPath: '/biblia/'
+      preLoaderRoute: typeof BibliaIndexRouteImport
+      parentRoute: typeof BibliaRoute
+    }
+    '/biblia/$livro': {
+      id: '/biblia/$livro'
+      path: '/$livro'
+      fullPath: '/biblia/$livro'
+      preLoaderRoute: typeof BibliaLivroRouteImport
+      parentRoute: typeof BibliaRoute
+    }
+    '/biblia/leituras': {
+      id: '/biblia/leituras'
+      path: '/leituras'
+      fullPath: '/biblia/leituras'
+      preLoaderRoute: typeof BibliaLeiturasRouteImport
+      parentRoute: typeof BibliaRoute
+    }
+    '/biblia/planos': {
+      id: '/biblia/planos'
+      path: '/planos'
+      fullPath: '/biblia/planos'
+      preLoaderRoute: typeof BibliaPlanosRouteImport
+      parentRoute: typeof BibliaRoute
+    }
+    '/catecismo/': {
+      id: '/catecismo/'
+      path: '/'
+      fullPath: '/catecismo/'
+      preLoaderRoute: typeof CatecismoIndexRouteImport
       parentRoute: typeof CatecismoRoute
     }
-    '/biblia/planos/': {
-      id: '/biblia/planos/'
-      path: '/'
-      fullPath: '/biblia/planos/'
-      preLoaderRoute: typeof BibliaPlanosIndexRouteImport
-      parentRoute: typeof BibliaPlanosRoute
-    }
-    '/biblia/$livro/': {
-      id: '/biblia/$livro/'
-      path: '/'
-      fullPath: '/biblia/$livro/'
-      preLoaderRoute: typeof BibliaLivroIndexRouteImport
-      parentRoute: typeof BibliaLivroRoute
-    }
-    '/trilhas/$trilha/$licao': {
-      id: '/trilhas/$trilha/$licao'
-      path: '/trilhas/$trilha/$licao'
-      fullPath: '/trilhas/$trilha/$licao'
-      preLoaderRoute: typeof TrilhasTrilhaLicaoRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/oracoes/novenas/$slug': {
-      id: '/oracoes/novenas/$slug'
-      path: '/$slug'
-      fullPath: '/oracoes/novenas/$slug'
-      preLoaderRoute: typeof OracoesNovenasSlugRouteImport
-      parentRoute: typeof OracoesNovenasRoute
-    }
-    '/catecismo/aulas/$semana': {
-      id: '/catecismo/aulas/$semana'
-      path: '/aulas/$semana'
-      fullPath: '/catecismo/aulas/$semana'
-      preLoaderRoute: typeof CatecismoAulasSemanaRouteImport
+    '/catecismo/$parte': {
+      id: '/catecismo/$parte'
+      path: '/$parte'
+      fullPath: '/catecismo/$parte'
+      preLoaderRoute: typeof CatecismoParteRouteImport
       parentRoute: typeof CatecismoRoute
     }
-    '/biblia/planos/$slug': {
-      id: '/biblia/planos/$slug'
+    '/catecismo/artigos': {
+      id: '/catecismo/artigos'
+      path: '/artigos'
+      fullPath: '/catecismo/artigos'
+      preLoaderRoute: typeof CatecismoArtigosRouteImport
+      parentRoute: typeof CatecismoRoute
+    }
+    '/doutrina/': {
+      id: '/doutrina/'
+      path: '/'
+      fullPath: '/doutrina/'
+      preLoaderRoute: typeof DoutrinaIndexRouteImport
+      parentRoute: typeof DoutrinaRoute
+    }
+    '/doutrina/$tema': {
+      id: '/doutrina/$tema'
+      path: '/$tema'
+      fullPath: '/doutrina/$tema'
+      preLoaderRoute: typeof DoutrinaTemaRouteImport
+      parentRoute: typeof DoutrinaRoute
+    }
+    '/enciclopedia/': {
+      id: '/enciclopedia/'
+      path: '/'
+      fullPath: '/enciclopedia/'
+      preLoaderRoute: typeof EnciclopediaIndexRouteImport
+      parentRoute: typeof EnciclopediaRoute
+    }
+    '/enciclopedia/$tema': {
+      id: '/enciclopedia/$tema'
+      path: '/$tema'
+      fullPath: '/enciclopedia/$tema'
+      preLoaderRoute: typeof EnciclopediaTemaRouteImport
+      parentRoute: typeof EnciclopediaRoute
+    }
+    '/forum/': {
+      id: '/forum/'
+      path: '/forum'
+      fullPath: '/forum/'
+      preLoaderRoute: typeof ForumIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/forum/$slug': {
+      id: '/forum/$slug'
+      path: '/forum/$slug'
+      fullPath: '/forum/$slug'
+      preLoaderRoute: typeof ForumSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/noticias/': {
+      id: '/noticias/'
+      path: '/noticias'
+      fullPath: '/noticias/'
+      preLoaderRoute: typeof NoticiasIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/noticias/$slug': {
+      id: '/noticias/$slug'
+      path: '/noticias/$slug'
+      fullPath: '/noticias/$slug'
+      preLoaderRoute: typeof NoticiasSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/oracoes/': {
+      id: '/oracoes/'
+      path: '/'
+      fullPath: '/oracoes/'
+      preLoaderRoute: typeof OracoesIndexRouteImport
+      parentRoute: typeof OracoesRoute
+    }
+    '/oracoes/diarias': {
+      id: '/oracoes/diarias'
+      path: '/diarias'
+      fullPath: '/oracoes/diarias'
+      preLoaderRoute: typeof OracoesDiariasRouteImport
+      parentRoute: typeof OracoesRoute
+    }
+    '/oracoes/liturgia-das-horas': {
+      id: '/oracoes/liturgia-das-horas'
+      path: '/liturgia-das-horas'
+      fullPath: '/oracoes/liturgia-das-horas'
+      preLoaderRoute: typeof OracoesLiturgiaDasHorasRouteImport
+      parentRoute: typeof OracoesRoute
+    }
+    '/oracoes/novenas': {
+      id: '/oracoes/novenas'
+      path: '/novenas'
+      fullPath: '/oracoes/novenas'
+      preLoaderRoute: typeof OracoesNovenasRouteImport
+      parentRoute: typeof OracoesRoute
+    }
+    '/oracoes/rosario': {
+      id: '/oracoes/rosario'
+      path: '/rosario'
+      fullPath: '/oracoes/rosario'
+      preLoaderRoute: typeof OracoesRosarioRouteImport
+      parentRoute: typeof OracoesRoute
+    }
+    '/oracoes/terco-misericordia': {
+      id: '/oracoes/terco-misericordia'
+      path: '/terco-misericordia'
+      fullPath: '/oracoes/terco-misericordia'
+      preLoaderRoute: typeof OracoesTercoMisericordiaRouteImport
+      parentRoute: typeof OracoesRoute
+    }
+    '/oracoes/via-sacra': {
+      id: '/oracoes/via-sacra'
+      path: '/via-sacra'
+      fullPath: '/oracoes/via-sacra'
+      preLoaderRoute: typeof OracoesViaSacraRouteImport
+      parentRoute: typeof OracoesRoute
+    }
+    '/sacramentos/': {
+      id: '/sacramentos/'
+      path: '/'
+      fullPath: '/sacramentos/'
+      preLoaderRoute: typeof SacramentosIndexRouteImport
+      parentRoute: typeof SacramentosRoute
+    }
+    '/sacramentos/$tema': {
+      id: '/sacramentos/$tema'
+      path: '/$tema'
+      fullPath: '/sacramentos/$tema'
+      preLoaderRoute: typeof SacramentosTemaRouteImport
+      parentRoute: typeof SacramentosRoute
+    }
+    '/santos/': {
+      id: '/santos/'
+      path: '/'
+      fullPath: '/santos/'
+      preLoaderRoute: typeof SantosIndexRouteImport
+      parentRoute: typeof SantosRoute
+    }
+    '/santos/$slug': {
+      id: '/santos/$slug'
       path: '/$slug'
-      fullPath: '/biblia/planos/$slug'
-      preLoaderRoute: typeof BibliaPlanosSlugRouteImport
-      parentRoute: typeof BibliaPlanosRoute
+      fullPath: '/santos/$slug'
+      preLoaderRoute: typeof SantosSlugRouteImport
+      parentRoute: typeof SantosRoute
     }
-    '/biblia/$livro/leitura': {
-      id: '/biblia/$livro/leitura'
-      path: '/leitura'
-      fullPath: '/biblia/$livro/leitura'
-      preLoaderRoute: typeof BibliaLivroLeituraRouteImport
-      parentRoute: typeof BibliaLivroRoute
+    '/testemunhos/': {
+      id: '/testemunhos/'
+      path: '/'
+      fullPath: '/testemunhos/'
+      preLoaderRoute: typeof TestemunhosIndexRouteImport
+      parentRoute: typeof TestemunhosRoute
     }
-    '/biblia/$livro/$capitulo': {
-      id: '/biblia/$livro/$capitulo'
-      path: '/$capitulo'
-      fullPath: '/biblia/$livro/$capitulo'
-      preLoaderRoute: typeof BibliaLivroCapituloRouteImport
-      parentRoute: typeof BibliaLivroRoute
+    '/testemunhos/$slug': {
+      id: '/testemunhos/$slug'
+      path: '/$slug'
+      fullPath: '/testemunhos/$slug'
+      preLoaderRoute: typeof TestemunhosSlugRouteImport
+      parentRoute: typeof TestemunhosRoute
     }
-    '/api/public/noticias-diarias': {
-      id: '/api/public/noticias-diarias'
-      path: '/api/public/noticias-diarias'
-      fullPath: '/api/public/noticias-diarias'
-      preLoaderRoute: typeof ApiPublicNoticiasDiariasRouteImport
+    '/trilhas/': {
+      id: '/trilhas/'
+      path: '/trilhas'
+      fullPath: '/trilhas/'
+      preLoaderRoute: typeof TrilhasIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/public/noticias': {
-      id: '/api/public/noticias'
-      path: '/api/public/noticias'
-      fullPath: '/api/public/noticias'
-      preLoaderRoute: typeof ApiPublicNoticiasRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/api/public/lembretes': {
-      id: '/api/public/lembretes'
-      path: '/api/public/lembretes'
-      fullPath: '/api/public/lembretes'
-      preLoaderRoute: typeof ApiPublicLembretesRouteImport
+    '/api/public/csp-report': {
+      id: '/api/public/csp-report'
+      path: '/api/public/csp-report'
+      fullPath: '/api/public/csp-report'
+      preLoaderRoute: typeof ApiPublicCspReportRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/public/imagem': {
@@ -1810,11 +1719,102 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiPublicImagemRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/public/csp-report': {
-      id: '/api/public/csp-report'
-      path: '/api/public/csp-report'
-      fullPath: '/api/public/csp-report'
-      preLoaderRoute: typeof ApiPublicCspReportRouteImport
+    '/api/public/lembretes': {
+      id: '/api/public/lembretes'
+      path: '/api/public/lembretes'
+      fullPath: '/api/public/lembretes'
+      preLoaderRoute: typeof ApiPublicLembretesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/noticias': {
+      id: '/api/public/noticias'
+      path: '/api/public/noticias'
+      fullPath: '/api/public/noticias'
+      preLoaderRoute: typeof ApiPublicNoticiasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/noticias-diarias': {
+      id: '/api/public/noticias-diarias'
+      path: '/api/public/noticias-diarias'
+      fullPath: '/api/public/noticias-diarias'
+      preLoaderRoute: typeof ApiPublicNoticiasDiariasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/biblia/$livro/': {
+      id: '/biblia/$livro/'
+      path: '/'
+      fullPath: '/biblia/$livro/'
+      preLoaderRoute: typeof BibliaLivroIndexRouteImport
+      parentRoute: typeof BibliaLivroRoute
+    }
+    '/biblia/$livro/$capitulo': {
+      id: '/biblia/$livro/$capitulo'
+      path: '/$capitulo'
+      fullPath: '/biblia/$livro/$capitulo'
+      preLoaderRoute: typeof BibliaLivroCapituloRouteImport
+      parentRoute: typeof BibliaLivroRoute
+    }
+    '/biblia/$livro/leitura': {
+      id: '/biblia/$livro/leitura'
+      path: '/leitura'
+      fullPath: '/biblia/$livro/leitura'
+      preLoaderRoute: typeof BibliaLivroLeituraRouteImport
+      parentRoute: typeof BibliaLivroRoute
+    }
+    '/biblia/planos/': {
+      id: '/biblia/planos/'
+      path: '/'
+      fullPath: '/biblia/planos/'
+      preLoaderRoute: typeof BibliaPlanosIndexRouteImport
+      parentRoute: typeof BibliaPlanosRoute
+    }
+    '/biblia/planos/$slug': {
+      id: '/biblia/planos/$slug'
+      path: '/$slug'
+      fullPath: '/biblia/planos/$slug'
+      preLoaderRoute: typeof BibliaPlanosSlugRouteImport
+      parentRoute: typeof BibliaPlanosRoute
+    }
+    '/catecismo/aulas/': {
+      id: '/catecismo/aulas/'
+      path: '/aulas'
+      fullPath: '/catecismo/aulas/'
+      preLoaderRoute: typeof CatecismoAulasIndexRouteImport
+      parentRoute: typeof CatecismoRoute
+    }
+    '/catecismo/aulas/$semana': {
+      id: '/catecismo/aulas/$semana'
+      path: '/aulas/$semana'
+      fullPath: '/catecismo/aulas/$semana'
+      preLoaderRoute: typeof CatecismoAulasSemanaRouteImport
+      parentRoute: typeof CatecismoRoute
+    }
+    '/oracoes/novenas/': {
+      id: '/oracoes/novenas/'
+      path: '/'
+      fullPath: '/oracoes/novenas/'
+      preLoaderRoute: typeof OracoesNovenasIndexRouteImport
+      parentRoute: typeof OracoesNovenasRoute
+    }
+    '/oracoes/novenas/$slug': {
+      id: '/oracoes/novenas/$slug'
+      path: '/$slug'
+      fullPath: '/oracoes/novenas/$slug'
+      preLoaderRoute: typeof OracoesNovenasSlugRouteImport
+      parentRoute: typeof OracoesNovenasRoute
+    }
+    '/trilhas/$trilha/': {
+      id: '/trilhas/$trilha/'
+      path: '/trilhas/$trilha'
+      fullPath: '/trilhas/$trilha/'
+      preLoaderRoute: typeof TrilhasTrilhaIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/trilhas/$trilha/$licao': {
+      id: '/trilhas/$trilha/$licao'
+      path: '/trilhas/$trilha/$licao'
+      fullPath: '/trilhas/$trilha/$licao'
+      preLoaderRoute: typeof TrilhasTrilhaLicaoRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
