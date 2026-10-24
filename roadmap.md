@@ -1,5 +1,11 @@
 # Expansão acadêmica e devocional — ciclo atual
 
+## Verificação de erros — outubro de 2026
+- [ ] Verificar disponibilidade do backend real e contas Gmail/Hotmail.
+- [ ] Corrigir sinais de páginas inválidas para o Google e verificar Search Console.
+- [ ] Diagnosticar Sophia na produção e corrigir falhas reproduzidas no portal.
+- [ ] Verificar se há registros de instalação do aplicativo.
+
 - Entregue: âncoras CIC, CDC e DH com gaveta, sínteses editoriais e links institucionais.
 - Entregue: Catena patrística visível na leitura bíblica, com autor, século, obra e classificação cronológica.
 - Entregue: declaração global de fidelidade à Escritura, Tradição e Magistério.
