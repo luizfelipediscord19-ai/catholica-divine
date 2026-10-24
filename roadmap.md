@@ -1,10 +1,10 @@
 # Expansão acadêmica e devocional — ciclo atual
 
 ## Verificação de erros — outubro de 2026
-- [ ] Verificar disponibilidade do backend real e contas Gmail/Hotmail.
-- [ ] Corrigir sinais de páginas inválidas para o Google e verificar Search Console.
-- [ ] Diagnosticar Sophia na produção e corrigir falhas reproduzidas no portal.
-- [ ] Verificar se há registros de instalação do aplicativo.
+- [x] Verificar disponibilidade do backend real: serviço de contas respondeu 200. Contagem de contas bloqueada pela ausência de credencial administrativa do backend real.
+- [x] Verificar Search Console: início indexado, sitemap sem erros/avisos. Capítulo inválido agora recebe noindex e continua HTTP 404; falta enviar alteração à Vercel.
+- [x] Diagnosticar Sophia: produção retorna configuração de IA ausente. Corrigido acesso pelo domínio oficial; testes passam. Configurar chave segura na Vercel e atualizar publicação ainda depende do proprietário.
+- [x] Verificar instalações: não existe histórico de eventos de instalação; não é possível contar retroativamente.
 
 - Entregue: âncoras CIC, CDC e DH com gaveta, sínteses editoriais e links institucionais.
 - Entregue: Catena patrística visível na leitura bíblica, com autor, século, obra e classificação cronológica.

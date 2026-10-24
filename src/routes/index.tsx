@@ -42,7 +42,7 @@ export const Route = createFileRoute("/")({
   errorComponent: ({ error }) => (
     <div className="shell-narrow py-block text-center" role="alert">
       <p className="text-gold">Não foi possível carregar o conteúdo do dia.</p>
-      <p className="mt-2 text-sm text-muted-foreground">{error.message}</p>
+      <p className="mt-2 text-sm text-muted-foreground">{error instanceof Error ? error.message : String(error)}</p>
     </div>
   ),
   notFoundComponent: () => (
