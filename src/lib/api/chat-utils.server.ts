@@ -1,6 +1,18 @@
-import { SophiaMode } from "../types/chat";
+import { SITE_URL } from "../auth/site-url";
 
 const DOMINIOS_PERMITIDOS = ["localhost", ".lovable.app", ".lovableproject.com", ".lovable.dev"];
+
+function fontePermitida(source: string, request?: Request): boolean {
+  try {
+    const url = new URL(source);
+    if (url.protocol !== "http:" && url.protocol !== "https:") return false;
+    if (url.origin === SITE_URL) return true;
+    if (request && url.origin === new URL(request.url).origin) return true;
+    return DOMINIOS_PERMITIDOS.some((domain) => url.hostname === domain || url.hostname.endsWith(domain));
+  } catch {
+    return false;
+  }
+}
 
 export function isAllowedBrowserRequest(request: Request): boolean {
   const origin = request.headers.get("origin");
@@ -15,22 +27,12 @@ export function isAllowedBrowserRequest(request: Request): boolean {
   const source = origin || referer;
   if (!source) return true;
 
-  try {
-    const hostname = new URL(source).hostname;
-    return DOMINIOS_PERMITIDOS.some((domain) => hostname === domain || hostname.endsWith(domain));
-  } catch {
-    return false;
-  }
+  return fontePermitida(source, request);
 }
 
-function origemPermitida(origin: string | null): string | null {
+function origemPermitida(origin: string | null, request: Request): string | null {
   if (!origin) return null;
-  try {
-    const hostname = new URL(origin).hostname;
-    return DOMINIOS_PERMITIDOS.some((d) => hostname === d || hostname.endsWith(d)) ? origin : null;
-  } catch {
-    return null;
-  }
+  return fontePermitida(origin, request) ? origin : null;
 }
 
 /**
@@ -39,7 +41,7 @@ function origemPermitida(origin: string | null): string | null {
  * site de terceiros consuma a IA em nome do portal.
  */
 export function cabecalhosCors(request: Request): Record<string, string> {
-  const permitida = origemPermitida(request.headers.get("origin"));
+  const permitida = origemPermitida(request.headers.get("origin"), request);
   const base: Record<string, string> = {
     Vary: "Origin",
     "Access-Control-Allow-Methods": "POST, OPTIONS",

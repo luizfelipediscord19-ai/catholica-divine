@@ -23,6 +23,7 @@ export const Route = createFileRoute("/assistente")({
       { property: "og:title", content: "Sophia — Assistente de IA Católica" },
       { property: "og:description", content: DESCRICAO },
       { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
       { property: "og:url", content: URL_PAGINA },
     ],
     links: [{ rel: "canonical", href: URL_PAGINA }],

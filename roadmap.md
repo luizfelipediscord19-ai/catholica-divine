@@ -1,5 +1,11 @@
 # Expansão acadêmica e devocional — ciclo atual
 
+## Verificação de erros — outubro de 2026
+- [ ] Contar contas Gmail/Hotmail: serviço de contas respondeu 200, mas falta acesso administrativo ao backend real.
+- [x] Verificar Search Console: início indexado, sitemap sem erros/avisos. Capítulo inválido agora recebe noindex e continua HTTP 404; falta enviar alteração à Vercel.
+- [ ] Restaurar Sophia publicada: diagnóstico concluído, produção retorna configuração de IA ausente. Corrigido acesso pelo domínio oficial e resposta validada na prévia; falta configurar chave segura na Vercel e atualizar publicação pelo proprietário.
+- [x] Verificar instalações: não existe histórico de eventos de instalação; não é possível contar retroativamente.
+
 - Entregue: âncoras CIC, CDC e DH com gaveta, sínteses editoriais e links institucionais.
 - Entregue: Catena patrística visível na leitura bíblica, com autor, século, obra e classificação cronológica.
 - Entregue: declaração global de fidelidade à Escritura, Tradição e Magistério.
